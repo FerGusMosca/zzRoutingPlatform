@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{565BBE97-74E2-4AF9-A579-A89D82F789F6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OptionsMarketDataTest</RootNamespace>
+    <AssemblyName>OptionsMarketDataTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MDFShared">
+      <HintPath>..\..\..\Librerias\MDFShared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolsShared">
+      <HintPath>..\..\..\Librerias\ToolsShared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.Main\zHFT.Main.csproj">
+      <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
+      <Name>zHFT.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OptionsMarketClient.Common\zHFT.OptionsMarketClient.Common.csproj">
+      <Project>{c7954e1a-4e65-484b-9db7-10f5ac81b2f9}</Project>
+      <Name>zHFT.OptionsMarketClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OptionsMarketClient.DemoFilters.Common\zHFT.OptionsMarketClient.DemoFilters.Common.csproj">
+      <Project>{181ce946-638b-4cc0-94ba-b063bddc2bb2}</Project>
+      <Name>zHFT.OptionsMarketClient.DemoFilters.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OptionsMarketClient.IB\zHFT.OptionsMarketClient.IB.csproj">
+      <Project>{46cc37b8-23a5-49ac-b9c2-c51cb5fd405a}</Project>
+      <Name>zHFT.OptionsMarketClient.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OptionsMarketClient.USA.Common\zHFT.OptionsMarketClient.USA.Common.csproj">
+      <Project>{600ad3e1-57bc-4c18-af03-669491de96b9}</Project>
+      <Name>zHFT.OptionsMarketClient.USA.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.StrategyHandler.OptionsContractSaver\zHFT.StrategyHandler.OptionsContractSaver.csproj">
+      <Project>{399a5743-86e5-4cec-85a8-aaa08763f7aa}</Project>
+      <Name>zHFT.StrategyHandler.OptionsContractSaver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="incomingIB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="outgoing.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll.config
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll.config
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csprojResolveAssemblyReference.cache

@@ -1,0 +1,46 @@
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojResolveAssemblyReference.cache
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.dll
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\MDFShared.dll
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\ToolsShared.dll
+C:\Users\Kramp SA\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\MDFShared.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\ToolsShared.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojResolveAssemblyReference.cache
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.dll
+C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.pdb

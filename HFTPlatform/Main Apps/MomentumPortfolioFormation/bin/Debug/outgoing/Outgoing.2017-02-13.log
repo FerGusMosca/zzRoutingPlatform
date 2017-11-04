@@ -1,0 +1,54 @@
+2017-02-13 21:32:56  :: 2/13/2017 9:32:56 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:32:56  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:32:56  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:32:56  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:34:03  :: 2/13/2017 9:34:03 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:34:03  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:34:03  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:34:03  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:35:52  :: 2/13/2017 9:35:52 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:35:52  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:35:52  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:35:52  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:47:52  :: 2/13/2017 9:47:52 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:47:52  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:47:52  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:47:52  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:48:01  :: 2/13/2017 9:48:01 PMOrderRouterBase.LoadConfig
+2017-02-13 21:48:01  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:48:01  :: .\outgoingRouterConfigFile.xml  does not exists
+2017-02-13 21:48:13  :: 2/13/2017 9:48:13 PMOrderRouterBase.LoadConfig
+2017-02-13 21:48:14  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:48:31  :: 2/13/2017 9:48:31 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:48:31  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:48:31  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:48:31  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:48:36  :: 2/13/2017 9:48:36 PMOrderRouterBase.LoadConfig
+2017-02-13 21:48:36  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:48:36  :: Processing config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:48:36  :: Error recovering config .\outgoingRouterConfigFile.xml : Invalid XML configuration file  Error en el documento XML (0, 0).
+2017-02-13 21:48:40  :: 2/13/2017 9:48:40 PMOrderRouterBase.LoadConfig
+2017-02-13 21:48:40  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:48:42  :: Processing config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:49:55  :: 2/13/2017 9:49:55 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:49:55  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:49:55  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:49:55  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:49:56  :: 2/13/2017 9:49:56 PMOrderRouterBase.LoadConfig
+2017-02-13 21:49:56  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:49:56  :: Processing config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:50:33  :: 2/13/2017 9:50:33 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:50:33  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:50:33  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:50:33  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:50:35  :: 2/13/2017 9:50:35 PMOrderRouterBase.LoadConfig
+2017-02-13 21:50:35  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:50:35  :: Processing config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:51:02  :: 2/13/2017 9:51:02 PMMomentumStrategyBase.LoadConfig
+2017-02-13 21:51:02  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:51:02  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:51:02  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-13 21:51:04  :: 2/13/2017 9:51:04 PMOrderRouterBase.LoadConfig
+2017-02-13 21:51:04  :: Loading config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:51:04  :: Processing config:.\outgoingRouterConfigFile.xml 
+2017-02-13 21:51:10  :: Ending GetConfiguracion .\outgoingRouterConfigFile.xml 

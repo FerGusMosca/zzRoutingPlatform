@@ -1,0 +1,16 @@
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.MarketOrderRouters.IB.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.MarketOrderRouters.IB.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\TWSLib.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.OrderRouters.Common.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.OrderRouters.IB.Common.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.OrderRouters.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.OrderRouters.IB.Common.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\obj\Debug\zHFT.MarketOrderRouters.IB.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\obj\Debug\zHFT.MarketOrderRouters.IB.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketOrderRouters.IB\obj\Debug\zHFT.MarketOrderRouters.IB.csprojResolveAssemblyReference.cache

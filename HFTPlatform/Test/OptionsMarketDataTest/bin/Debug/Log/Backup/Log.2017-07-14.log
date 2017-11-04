@@ -1,0 +1,27 @@
+2017-07-14 11:10:03  :: 14/7/2017 11:10:03MainApp.LoadConfig
+2017-07-14 11:10:03  :: Loading config:C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-07-14 11:10:03  :: Proccessing config:C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-07-14 11:10:03  :: Fin GetConfiguracion
+2017-07-14 11:10:04  :: Initializing Log
+2017-07-14 11:10:05  :: Initializing Incoming Module
+2017-07-14 11:10:05  :: Incoming Module successfully initialized
+2017-07-14 11:10:05  :: Initializing Outgoing Module
+2017-07-14 11:10:07  :: Outgoing Module successfully initialized
+2017-07-14 11:15:16  :: 14/7/2017 11:15:16MainApp.LoadConfig
+2017-07-14 11:15:16  :: Loading config:C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-07-14 11:15:16  :: Proccessing config:C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-07-14 11:15:16  :: Fin GetConfiguracion
+2017-07-14 11:15:16  :: Initializing Log
+2017-07-14 11:15:16  :: Initializing Incoming Module
+2017-07-14 11:15:16  :: Incoming Module successfully initialized
+2017-07-14 11:15:16  :: Initializing Outgoing Module
+2017-07-14 11:15:17  :: Outgoing Module successfully initialized
+2017-07-14 17:28:38  :: 14/7/2017 17:28:38MainApp.LoadConfig
+2017-07-14 17:28:38  :: Loading config:C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-07-14 17:28:38  :: Proccessing config:C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-07-14 17:28:38  :: Fin GetConfiguracion
+2017-07-14 17:28:40  :: Initializing Log
+2017-07-14 17:28:40  :: Initializing Incoming Module
+2017-07-14 17:28:40  :: Incoming Module successfully initialized
+2017-07-14 17:28:40  :: Initializing Outgoing Module
+2017-07-14 17:28:46  :: Outgoing Module successfully initialized

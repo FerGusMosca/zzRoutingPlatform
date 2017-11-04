@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MomentumTradingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MomentumTradingModelStoreContainer">
+          <EntitySet Name="alarmas" EntityType="MomentumTradingModel.Store.alarmas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="configuraciones" EntityType="MomentumTradingModel.Store.configuraciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="estrategias" EntityType="MomentumTradingModel.Store.estrategias" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="portfolios" EntityType="MomentumTradingModel.Store.portfolios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="posiciones" EntityType="MomentumTradingModel.Store.posiciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="usa_stocks" EntityType="MomentumTradingModel.Store.usa_stocks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="usa_stocks_dividends" EntityType="MomentumTradingModel.Store.usa_stocks_dividends" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="usa_stocks_floating" EntityType="MomentumTradingModel.Store.usa_stocks_floating" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="usa_stocks_prices" EntityType="MomentumTradingModel.Store.usa_stocks_prices" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="usa_stocks_splits" EntityType="MomentumTradingModel.Store.usa_stocks_splits" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_alarmas_portfolios" Association="MomentumTradingModel.Store.FK_alarmas_portfolios">
+            <End Role="portfolios" EntitySet="portfolios" />
+            <End Role="alarmas" EntitySet="alarmas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_alarmas_usa_stocks" Association="MomentumTradingModel.Store.FK_alarmas_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="alarmas" EntitySet="alarmas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_estrategias_configuraciones" Association="MomentumTradingModel.Store.FK_estrategias_configuraciones">
+            <End Role="configuraciones" EntitySet="configuraciones" />
+            <End Role="estrategias" EntitySet="estrategias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portfolios_estrategias" Association="MomentumTradingModel.Store.FK_portfolios_estrategias">
+            <End Role="estrategias" EntitySet="estrategias" />
+            <End Role="portfolios" EntitySet="portfolios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_posiciones_portfolios" Association="MomentumTradingModel.Store.FK_posiciones_portfolios">
+            <End Role="portfolios" EntitySet="portfolios" />
+            <End Role="posiciones" EntitySet="posiciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_posiciones_usa_stocks" Association="MomentumTradingModel.Store.FK_posiciones_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="posiciones" EntitySet="posiciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocks_dividends_usa_stocks" Association="MomentumTradingModel.Store.FK_usa_stocks_dividends_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_dividends" EntitySet="usa_stocks_dividends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocks_floating_usa_stocks" Association="MomentumTradingModel.Store.FK_usa_stocks_floating_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_floating" EntitySet="usa_stocks_floating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocks_prices_usa_stocks" Association="MomentumTradingModel.Store.FK_usa_stocks_prices_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_prices" EntitySet="usa_stocks_prices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocs_splits_usa_stocks" Association="MomentumTradingModel.Store.FK_usa_stocs_splits_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_splits" EntitySet="usa_stocks_splits" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="alarmas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="fecha_fin" Type="date" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="400" />
+          <Property Name="tipo_alarma" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="id_portfolio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="configuraciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="fecha_fin" Type="date" Nullable="false" />
+          <Property Name="meses_formacion" Type="int" Nullable="false" />
+          <Property Name="meses_tenencia" Type="int" Nullable="false" />
+          <Property Name="meses_skip" Type="int" Nullable="false" />
+          <Property Name="acciones_portfolo" Type="int" Nullable="false" />
+          <Property Name="peso" Type="varchar" Nullable="false" MaxLength="2" />
+          <Property Name="costos_por_tx" Type="decimal" Scale="2" />
+          <Property Name="threshold_big_cap" Type="decimal" Scale="2" />
+          <Property Name="threshold_medium_cap" Type="decimal" Scale="2" />
+          <Property Name="filtro_acciones" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="ratio_valorizacion" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="pais" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="estrategias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="id_configuracion" Type="int" Nullable="false" />
+          <Property Name="monto_inicial" Type="decimal" Scale="2" />
+          <Property Name="monto_final" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="portfolios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha_inicio_calculo" Type="date" Nullable="false" />
+          <Property Name="fecha_fin_calculo" Type="date" Nullable="false" />
+          <Property Name="fecha_inicio_procesamiento" Type="date" Nullable="false" />
+          <Property Name="fecha_fin_procesamiento" Type="date" Nullable="false" />
+          <Property Name="rendimiento" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="monto_inicial" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="monto_final" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="acciones_evaluadas" Type="int" Nullable="false" />
+          <Property Name="id_estrategia" Type="int" />
+        </EntityType>
+        <EntityType Name="posiciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="market_cap" Type="varchar" MaxLength="50" />
+          <Property Name="ratio_ganador" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="peso" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="fecha_precio_inicial" Type="date" Nullable="false" />
+          <Property Name="fecha_precio_final" Type="date" Nullable="false" />
+          <Property Name="precio_inicial" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="precio_final" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="precio_inicial_adj" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="precio_final_adj" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="dividendos" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="splits" Type="varchar" MaxLength="100" />
+          <Property Name="rendimiento" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="id_portfolio" Type="int" Nullable="false" />
+          <Property Name="procesado" Type="int" />
+        </EntityType>
+        <EntityType Name="usa_stocks">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+          </Key>
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="mercado" Type="varchar" MaxLength="100" />
+          <Property Name="pais" Type="varchar" MaxLength="100" />
+          <Property Name="categoria" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="usa_stocks_dividends">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="dividendo" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usa_stocks_floating">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="Float" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usa_stocks_prices">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="apertura" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="maximo" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="minimo" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="cierre" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="volumen" Type="bigint" Nullable="false" />
+          <Property Name="adj_cierre" Type="decimal" Nullable="false" Scale="8" />
+        </EntityType>
+        <EntityType Name="usa_stocks_splits">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="previo" Type="int" Nullable="false" />
+          <Property Name="post" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_alarmas_portfolios">
+          <End Role="portfolios" Type="MomentumTradingModel.Store.portfolios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="alarmas" Type="MomentumTradingModel.Store.alarmas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="portfolios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="alarmas">
+              <PropertyRef Name="id_portfolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_alarmas_usa_stocks">
+          <End Role="usa_stocks" Type="MomentumTradingModel.Store.usa_stocks" Multiplicity="1" />
+          <End Role="alarmas" Type="MomentumTradingModel.Store.alarmas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="alarmas">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_estrategias_configuraciones">
+          <End Role="configuraciones" Type="MomentumTradingModel.Store.configuraciones" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="estrategias" Type="MomentumTradingModel.Store.estrategias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="configuraciones">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="estrategias">
+              <PropertyRef Name="id_configuracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portfolios_estrategias">
+          <End Role="estrategias" Type="MomentumTradingModel.Store.estrategias" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="portfolios" Type="MomentumTradingModel.Store.portfolios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estrategias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portfolios">
+              <PropertyRef Name="id_estrategia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_posiciones_portfolios">
+          <End Role="portfolios" Type="MomentumTradingModel.Store.portfolios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="posiciones" Type="MomentumTradingModel.Store.posiciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="portfolios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="posiciones">
+              <PropertyRef Name="id_portfolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_posiciones_usa_stocks">
+          <End Role="usa_stocks" Type="MomentumTradingModel.Store.usa_stocks" Multiplicity="1" />
+          <End Role="posiciones" Type="MomentumTradingModel.Store.posiciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="posiciones">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocks_dividends_usa_stocks">
+          <End Role="usa_stocks" Type="MomentumTradingModel.Store.usa_stocks" Multiplicity="1" />
+          <End Role="usa_stocks_dividends" Type="MomentumTradingModel.Store.usa_stocks_dividends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_dividends">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocks_floating_usa_stocks">
+          <End Role="usa_stocks" Type="MomentumTradingModel.Store.usa_stocks" Multiplicity="1" />
+          <End Role="usa_stocks_floating" Type="MomentumTradingModel.Store.usa_stocks_floating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_floating">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocks_prices_usa_stocks">
+          <End Role="usa_stocks" Type="MomentumTradingModel.Store.usa_stocks" Multiplicity="1" />
+          <End Role="usa_stocks_prices" Type="MomentumTradingModel.Store.usa_stocks_prices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_prices">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocs_splits_usa_stocks">
+          <End Role="usa_stocks" Type="MomentumTradingModel.Store.usa_stocks" Multiplicity="1" />
+          <End Role="usa_stocks_splits" Type="MomentumTradingModel.Store.usa_stocks_splits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_splits">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MomentumTradingModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MomentumTradingEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="alarmas" EntityType="MomentumTradingModel.alarmas" />
+          <EntitySet Name="configuraciones" EntityType="MomentumTradingModel.configuraciones" />
+          <EntitySet Name="estrategias" EntityType="MomentumTradingModel.estrategias" />
+          <EntitySet Name="portfolios" EntityType="MomentumTradingModel.portfolios" />
+          <EntitySet Name="usa_stocks" EntityType="MomentumTradingModel.usa_stocks" />
+          <EntitySet Name="usa_stocks_dividends" EntityType="MomentumTradingModel.usa_stocks_dividends" />
+          <EntitySet Name="usa_stocks_floating" EntityType="MomentumTradingModel.usa_stocks_floating" />
+          <EntitySet Name="usa_stocks_prices" EntityType="MomentumTradingModel.usa_stocks_prices" />
+          <EntitySet Name="usa_stocks_splits" EntityType="MomentumTradingModel.usa_stocks_splits" />
+          <AssociationSet Name="FK_alarmas_portfolios" Association="MomentumTradingModel.FK_alarmas_portfolios">
+            <End Role="portfolios" EntitySet="portfolios" />
+            <End Role="alarmas" EntitySet="alarmas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_alarmas_usa_stocks" Association="MomentumTradingModel.FK_alarmas_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="alarmas" EntitySet="alarmas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_estrategias_configuraciones" Association="MomentumTradingModel.FK_estrategias_configuraciones">
+            <End Role="configuraciones" EntitySet="configuraciones" />
+            <End Role="estrategias" EntitySet="estrategias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portfolios_estrategias" Association="MomentumTradingModel.FK_portfolios_estrategias">
+            <End Role="estrategias" EntitySet="estrategias" />
+            <End Role="portfolios" EntitySet="portfolios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocks_dividends_usa_stocks" Association="MomentumTradingModel.FK_usa_stocks_dividends_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_dividends" EntitySet="usa_stocks_dividends" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocks_floating_usa_stocks" Association="MomentumTradingModel.FK_usa_stocks_floating_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_floating" EntitySet="usa_stocks_floating" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocks_prices_usa_stocks" Association="MomentumTradingModel.FK_usa_stocks_prices_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_prices" EntitySet="usa_stocks_prices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_usa_stocs_splits_usa_stocks" Association="MomentumTradingModel.FK_usa_stocs_splits_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="usa_stocks_splits" EntitySet="usa_stocks_splits" />
+          </AssociationSet>
+          <EntitySet Name="posiciones" EntityType="MomentumTradingModel.posiciones" />
+          <AssociationSet Name="FK_posiciones_portfolios" Association="MomentumTradingModel.FK_posiciones_portfolios">
+            <End Role="portfolios" EntitySet="portfolios" />
+            <End Role="posiciones" EntitySet="posiciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_posiciones_usa_stocks" Association="MomentumTradingModel.FK_posiciones_usa_stocks">
+            <End Role="usa_stocks" EntitySet="usa_stocks" />
+            <End Role="posiciones" EntitySet="posiciones" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="alarmas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha_inicio" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="fecha_fin" Nullable="false" Precision="0" />
+          <Property Type="String" Name="descripcion" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tipo_alarma" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="id_portfolio" Nullable="false" />
+          <NavigationProperty Name="portfolios" Relationship="MomentumTradingModel.FK_alarmas_portfolios" FromRole="alarmas" ToRole="portfolios" />
+          <NavigationProperty Name="usa_stocks" Relationship="MomentumTradingModel.FK_alarmas_usa_stocks" FromRole="alarmas" ToRole="usa_stocks" />
+        </EntityType>
+        <EntityType Name="configuraciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="fecha_inicio" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="fecha_fin" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="meses_formacion" Nullable="false" />
+          <Property Type="Int32" Name="meses_tenencia" Nullable="false" />
+          <Property Type="Int32" Name="meses_skip" Nullable="false" />
+          <Property Type="Int32" Name="acciones_portfolo" Nullable="false" />
+          <Property Type="String" Name="peso" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="costos_por_tx" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="threshold_big_cap" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="threshold_medium_cap" Precision="18" Scale="2" />
+          <Property Type="String" Name="filtro_acciones" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ratio_valorizacion" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pais" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="estrategias" Relationship="MomentumTradingModel.FK_estrategias_configuraciones" FromRole="configuraciones" ToRole="estrategias" />
+        </EntityType>
+        <EntityType Name="estrategias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="id_configuracion" Nullable="false" />
+          <Property Type="Decimal" Name="monto_inicial" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="monto_final" Precision="18" Scale="2" />
+          <NavigationProperty Name="configuraciones" Relationship="MomentumTradingModel.FK_estrategias_configuraciones" FromRole="estrategias" ToRole="configuraciones" />
+          <NavigationProperty Name="portfolios" Relationship="MomentumTradingModel.FK_portfolios_estrategias" FromRole="estrategias" ToRole="portfolios" />
+        </EntityType>
+        <EntityType Name="portfolios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="DateTime" Name="fecha_inicio_calculo" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="fecha_fin_calculo" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="fecha_inicio_procesamiento" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="fecha_fin_procesamiento" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="rendimiento" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="monto_inicial" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="monto_final" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="acciones_evaluadas" Nullable="false" />
+          <Property Type="Int32" Name="id_estrategia" />
+          <NavigationProperty Name="alarmas" Relationship="MomentumTradingModel.FK_alarmas_portfolios" FromRole="portfolios" ToRole="alarmas" />
+          <NavigationProperty Name="estrategias" Relationship="MomentumTradingModel.FK_portfolios_estrategias" FromRole="portfolios" ToRole="estrategias" />
+          <NavigationProperty Name="posiciones" Relationship="MomentumTradingModel.FK_posiciones_portfolios" FromRole="portfolios" ToRole="posiciones" />
+        </EntityType>
+        <EntityType Name="usa_stocks">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+          </Key>
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="mercado" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pais" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="categoria" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="alarmas" Relationship="MomentumTradingModel.FK_alarmas_usa_stocks" FromRole="usa_stocks" ToRole="alarmas" />
+          <NavigationProperty Name="usa_stocks_dividends" Relationship="MomentumTradingModel.FK_usa_stocks_dividends_usa_stocks" FromRole="usa_stocks" ToRole="usa_stocks_dividends" />
+          <NavigationProperty Name="usa_stocks_floating" Relationship="MomentumTradingModel.FK_usa_stocks_floating_usa_stocks" FromRole="usa_stocks" ToRole="usa_stocks_floating" />
+          <NavigationProperty Name="usa_stocks_prices" Relationship="MomentumTradingModel.FK_usa_stocks_prices_usa_stocks" FromRole="usa_stocks" ToRole="usa_stocks_prices" />
+          <NavigationProperty Name="usa_stocks_splits" Relationship="MomentumTradingModel.FK_usa_stocs_splits_usa_stocks" FromRole="usa_stocks" ToRole="usa_stocks_splits" />
+          <NavigationProperty Name="posiciones" Relationship="MomentumTradingModel.FK_posiciones_usa_stocks" FromRole="usa_stocks" ToRole="posiciones" />
+        </EntityType>
+        <EntityType Name="usa_stocks_dividends">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+          <Property Type="Double" Name="dividendo" Nullable="false" />
+          <NavigationProperty Name="usa_stocks" Relationship="MomentumTradingModel.FK_usa_stocks_dividends_usa_stocks" FromRole="usa_stocks_dividends" ToRole="usa_stocks" />
+        </EntityType>
+        <EntityType Name="usa_stocks_floating">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+          <Property Type="Int64" Name="Float" Nullable="false" />
+          <NavigationProperty Name="usa_stocks" Relationship="MomentumTradingModel.FK_usa_stocks_floating_usa_stocks" FromRole="usa_stocks_floating" ToRole="usa_stocks" />
+        </EntityType>
+        <EntityType Name="usa_stocks_prices">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="apertura" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="maximo" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="minimo" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="cierre" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Int64" Name="volumen" Nullable="false" />
+          <Property Type="Decimal" Name="adj_cierre" Nullable="false" Precision="18" Scale="8" />
+          <NavigationProperty Name="usa_stocks" Relationship="MomentumTradingModel.FK_usa_stocks_prices_usa_stocks" FromRole="usa_stocks_prices" ToRole="usa_stocks" />
+        </EntityType>
+        <EntityType Name="usa_stocks_splits">
+          <Key>
+            <PropertyRef Name="codigo_especie" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="previo" Nullable="false" />
+          <Property Type="Int32" Name="post" Nullable="false" />
+          <NavigationProperty Name="usa_stocks" Relationship="MomentumTradingModel.FK_usa_stocs_splits_usa_stocks" FromRole="usa_stocks_splits" ToRole="usa_stocks" />
+        </EntityType>
+        <Association Name="FK_alarmas_portfolios">
+          <End Type="MomentumTradingModel.portfolios" Role="portfolios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumTradingModel.alarmas" Role="alarmas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="portfolios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="alarmas">
+              <PropertyRef Name="id_portfolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_alarmas_usa_stocks">
+          <End Type="MomentumTradingModel.usa_stocks" Role="usa_stocks" Multiplicity="1" />
+          <End Type="MomentumTradingModel.alarmas" Role="alarmas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="alarmas">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_estrategias_configuraciones">
+          <End Type="MomentumTradingModel.configuraciones" Role="configuraciones" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumTradingModel.estrategias" Role="estrategias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="configuraciones">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="estrategias">
+              <PropertyRef Name="id_configuracion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portfolios_estrategias">
+          <End Type="MomentumTradingModel.estrategias" Role="estrategias" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumTradingModel.portfolios" Role="portfolios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estrategias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portfolios">
+              <PropertyRef Name="id_estrategia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocks_dividends_usa_stocks">
+          <End Type="MomentumTradingModel.usa_stocks" Role="usa_stocks" Multiplicity="1" />
+          <End Type="MomentumTradingModel.usa_stocks_dividends" Role="usa_stocks_dividends" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_dividends">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocks_floating_usa_stocks">
+          <End Type="MomentumTradingModel.usa_stocks" Role="usa_stocks" Multiplicity="1" />
+          <End Type="MomentumTradingModel.usa_stocks_floating" Role="usa_stocks_floating" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_floating">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocks_prices_usa_stocks">
+          <End Type="MomentumTradingModel.usa_stocks" Role="usa_stocks" Multiplicity="1" />
+          <End Type="MomentumTradingModel.usa_stocks_prices" Role="usa_stocks_prices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_prices">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_usa_stocs_splits_usa_stocks">
+          <End Type="MomentumTradingModel.usa_stocks" Role="usa_stocks" Multiplicity="1" />
+          <End Type="MomentumTradingModel.usa_stocks_splits" Role="usa_stocks_splits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="usa_stocks_splits">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="posiciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="codigo_especie" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="market_cap" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ratio_ganador" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="peso" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="DateTime" Name="fecha_precio_inicial" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="fecha_precio_final" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="precio_inicial" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="precio_final" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="precio_inicial_adj" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="precio_final_adj" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="dividendos" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="String" Name="splits" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="rendimiento" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Int32" Name="id_portfolio" Nullable="false" />
+          <Property Type="Int32" Name="procesado" />
+          <NavigationProperty Name="portfolios" Relationship="MomentumTradingModel.FK_posiciones_portfolios" FromRole="posiciones" ToRole="portfolios" />
+          <NavigationProperty Name="usa_stocks" Relationship="MomentumTradingModel.FK_posiciones_usa_stocks" FromRole="posiciones" ToRole="usa_stocks" />
+        </EntityType>
+        <Association Name="FK_posiciones_portfolios">
+          <End Type="MomentumTradingModel.portfolios" Role="portfolios" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumTradingModel.posiciones" Role="posiciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="portfolios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="posiciones">
+              <PropertyRef Name="id_portfolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_posiciones_usa_stocks">
+          <End Type="MomentumTradingModel.usa_stocks" Role="usa_stocks" Multiplicity="1" />
+          <End Type="MomentumTradingModel.posiciones" Role="posiciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usa_stocks">
+              <PropertyRef Name="codigo_especie" />
+            </Principal>
+            <Dependent Role="posiciones">
+              <PropertyRef Name="codigo_especie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MomentumTradingModelStoreContainer" CdmEntityContainer="MomentumTradingEntities">
+          <EntitySetMapping Name="alarmas">
+            <EntityTypeMapping TypeName="MomentumTradingModel.alarmas">
+              <MappingFragment StoreEntitySet="alarmas">
+                <ScalarProperty Name="id_portfolio" ColumnName="id_portfolio" />
+                <ScalarProperty Name="tipo_alarma" ColumnName="tipo_alarma" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="configuraciones">
+            <EntityTypeMapping TypeName="MomentumTradingModel.configuraciones">
+              <MappingFragment StoreEntitySet="configuraciones">
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="ratio_valorizacion" ColumnName="ratio_valorizacion" />
+                <ScalarProperty Name="filtro_acciones" ColumnName="filtro_acciones" />
+                <ScalarProperty Name="threshold_medium_cap" ColumnName="threshold_medium_cap" />
+                <ScalarProperty Name="threshold_big_cap" ColumnName="threshold_big_cap" />
+                <ScalarProperty Name="costos_por_tx" ColumnName="costos_por_tx" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="acciones_portfolo" ColumnName="acciones_portfolo" />
+                <ScalarProperty Name="meses_skip" ColumnName="meses_skip" />
+                <ScalarProperty Name="meses_tenencia" ColumnName="meses_tenencia" />
+                <ScalarProperty Name="meses_formacion" ColumnName="meses_formacion" />
+                <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estrategias">
+            <EntityTypeMapping TypeName="MomentumTradingModel.estrategias">
+              <MappingFragment StoreEntitySet="estrategias">
+                <ScalarProperty Name="monto_final" ColumnName="monto_final" />
+                <ScalarProperty Name="monto_inicial" ColumnName="monto_inicial" />
+                <ScalarProperty Name="id_configuracion" ColumnName="id_configuracion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="portfolios">
+            <EntityTypeMapping TypeName="MomentumTradingModel.portfolios">
+              <MappingFragment StoreEntitySet="portfolios">
+                <ScalarProperty Name="id_estrategia" ColumnName="id_estrategia" />
+                <ScalarProperty Name="acciones_evaluadas" ColumnName="acciones_evaluadas" />
+                <ScalarProperty Name="monto_final" ColumnName="monto_final" />
+                <ScalarProperty Name="monto_inicial" ColumnName="monto_inicial" />
+                <ScalarProperty Name="rendimiento" ColumnName="rendimiento" />
+                <ScalarProperty Name="fecha_fin_procesamiento" ColumnName="fecha_fin_procesamiento" />
+                <ScalarProperty Name="fecha_inicio_procesamiento" ColumnName="fecha_inicio_procesamiento" />
+                <ScalarProperty Name="fecha_fin_calculo" ColumnName="fecha_fin_calculo" />
+                <ScalarProperty Name="fecha_inicio_calculo" ColumnName="fecha_inicio_calculo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usa_stocks">
+            <EntityTypeMapping TypeName="MomentumTradingModel.usa_stocks">
+              <MappingFragment StoreEntitySet="usa_stocks">
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="mercado" ColumnName="mercado" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usa_stocks_dividends">
+            <EntityTypeMapping TypeName="MomentumTradingModel.usa_stocks_dividends">
+              <MappingFragment StoreEntitySet="usa_stocks_dividends">
+                <ScalarProperty Name="dividendo" ColumnName="dividendo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usa_stocks_floating">
+            <EntityTypeMapping TypeName="MomentumTradingModel.usa_stocks_floating">
+              <MappingFragment StoreEntitySet="usa_stocks_floating">
+                <ScalarProperty Name="Float" ColumnName="Float" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usa_stocks_prices">
+            <EntityTypeMapping TypeName="MomentumTradingModel.usa_stocks_prices">
+              <MappingFragment StoreEntitySet="usa_stocks_prices">
+                <ScalarProperty Name="adj_cierre" ColumnName="adj_cierre" />
+                <ScalarProperty Name="volumen" ColumnName="volumen" />
+                <ScalarProperty Name="cierre" ColumnName="cierre" />
+                <ScalarProperty Name="minimo" ColumnName="minimo" />
+                <ScalarProperty Name="maximo" ColumnName="maximo" />
+                <ScalarProperty Name="apertura" ColumnName="apertura" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usa_stocks_splits">
+            <EntityTypeMapping TypeName="MomentumTradingModel.usa_stocks_splits">
+              <MappingFragment StoreEntitySet="usa_stocks_splits">
+                <ScalarProperty Name="post" ColumnName="post" />
+                <ScalarProperty Name="previo" ColumnName="previo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="posiciones">
+            <EntityTypeMapping TypeName="MomentumTradingModel.posiciones">
+              <MappingFragment StoreEntitySet="posiciones">
+                <ScalarProperty Name="procesado" ColumnName="procesado" />
+                <ScalarProperty Name="id_portfolio" ColumnName="id_portfolio" />
+                <ScalarProperty Name="rendimiento" ColumnName="rendimiento" />
+                <ScalarProperty Name="splits" ColumnName="splits" />
+                <ScalarProperty Name="dividendos" ColumnName="dividendos" />
+                <ScalarProperty Name="precio_final_adj" ColumnName="precio_final_adj" />
+                <ScalarProperty Name="precio_inicial_adj" ColumnName="precio_inicial_adj" />
+                <ScalarProperty Name="precio_final" ColumnName="precio_final" />
+                <ScalarProperty Name="precio_inicial" ColumnName="precio_inicial" />
+                <ScalarProperty Name="fecha_precio_final" ColumnName="fecha_precio_final" />
+                <ScalarProperty Name="fecha_precio_inicial" ColumnName="fecha_precio_inicial" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="ratio_ganador" ColumnName="ratio_ganador" />
+                <ScalarProperty Name="market_cap" ColumnName="market_cap" />
+                <ScalarProperty Name="codigo_especie" ColumnName="codigo_especie" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <edmx:Diagram Name="MomentumTradingEntityDataModel" ZoomLevel="54">
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.alarmas" Width="1.5" PointX="2.895132474086775" PointY="11.791996842153369" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.configuraciones" Width="1.5" PointX="6.2655520896732586" PointY="7.3740674291616619" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.estrategias" Width="1.5" PointX="8.7786730121721863" PointY="23.782741855728787" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.portfolios" Width="1.5" PointX="9.05816672977906" PointY="26.089048338164133" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.usa_stocks" Width="1.5" PointX="3.4590025746538315" PointY="4.4173204174345919" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.usa_stocks_dividends" Width="1.5" PointX="4.768947296202624" PointY="16.551251702267329" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.usa_stocks_floating" Width="1.5" PointX="0.60277544735128785" PointY="20.273663768672229" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.usa_stocks_prices" Width="1.5" PointX="1.3748926750267356" PointY="17.019912727652077" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.usa_stocks_splits" Width="1.5" PointX="8.1939893999109" PointY="16.619532563080792" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_alarmas_portfolios" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_alarmas_usa_stocks" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_estrategias_configuraciones" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_portfolios_estrategias" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_usa_stocks_dividends_usa_stocks" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_usa_stocks_floating_usa_stocks" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_usa_stocks_prices_usa_stocks" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_usa_stocs_splits_usa_stocks" />
+        <edmx:EntityTypeShape EntityType="MomentumTradingModel.posiciones" Width="1.5" PointX="1.0299228769866391" PointY="4.7571596823433229" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_posiciones_portfolios" />
+        <edmx:AssociationConnector Association="MomentumTradingModel.FK_posiciones_usa_stocks" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

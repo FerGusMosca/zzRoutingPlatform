@@ -1,0 +1,10 @@
+2017-11-02 17:32:54  :: 2/11/2017 17:32:54MainApp.LoadConfig
+2017-11-02 17:32:54  :: Loading config:C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\config.xml
+2017-11-02 17:32:54  :: Proccessing config:C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\config.xml
+2017-11-02 17:32:54  :: Fin GetConfiguracion
+2017-11-02 17:32:54  :: assembly not found: zHFT.StrategyHandler.SecurityListSaver.xxxx, xxx
+2017-11-02 17:32:56  :: Initializing Log
+2017-11-02 17:32:56  :: Initializing Incoming Module
+2017-11-02 17:33:19  :: Incoming Module successfully initialized
+2017-11-02 17:33:19  :: Initializing Outgoing Module
+2017-11-02 17:33:19  :: Outgoing module could not be initialized because it was not instantiated

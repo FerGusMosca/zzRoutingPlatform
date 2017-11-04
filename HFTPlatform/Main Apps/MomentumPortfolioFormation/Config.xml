@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>zHFT-Momentum Portfolio Formation Main App</Name>
+  <OutgoingConfigPath>.\outgoingMomentumPorfolioFormation.xml</OutgoingConfigPath>
+  <!--PATH AL ARCHIVO INITITATOR FIX-->
+  <IncomingConfigPath></IncomingConfigPath>
+  <OutgoingModule>zHFT.StrategyHandler.MomentumPortfolios.StrategyHandler.MomentumStrategyPortfolioFormation,zHFT.StrategyHandler.MomentumPortfolios</OutgoingModule>
+  <IncomingModule></IncomingModule>
+</Configuration>

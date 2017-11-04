@@ -1,0 +1,128 @@
+2017-02-12 20:46:18  :: 2/12/2017 8:46:18 PMMomentumStrategyBase.LoadConfig
+2017-02-12 20:46:18  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:46:18  :: .\outgoingMomentumPorfolioFormation.xml does not exists
+2017-02-12 20:46:37  :: Error initializing config file .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:47:20  :: 2/12/2017 8:47:20 PMMomentumStrategyBase.LoadConfig
+2017-02-12 20:47:20  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:47:22  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:47:24  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:48:28  :: 2/12/2017 8:48:28 PMMomentumStrategyBase.LoadConfig
+2017-02-12 20:48:28  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:48:28  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 20:48:28  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:02:49  :: 2/12/2017 9:02:49 PMMomentumStrategyBase.LoadConfig
+2017-02-12 21:02:49  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:02:49  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:02:49  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:03:50  :: 2/12/2017 9:03:50 PMMomentumStrategyBase.LoadConfig
+2017-02-12 21:03:50  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:03:50  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:03:50  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:04:50  :: 2/12/2017 9:04:50 PMMomentumStrategyBase.LoadConfig
+2017-02-12 21:04:50  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:04:50  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:04:50  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:06:47  :: 2/12/2017 9:06:47 PMMomentumStrategyBase.LoadConfig
+2017-02-12 21:06:47  :: Loading config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:06:47  :: Processing config:.\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:06:47  :: Ending GetConfiguracion .\outgoingMomentumPorfolioFormation.xml
+2017-02-12 21:07:16  :: Creating Position: Stock:SILJ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UBR - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XME - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SLX - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RUSL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SLVP - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RSXJ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SOXL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SIL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XIV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SVXY - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PNC.W - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SGDJ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PICK - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:URTY - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:TNA - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSCM - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UMDD - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RING - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SAA - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:NUGT - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:OIIL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SGDM - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSAU - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:USD - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UYM - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SDYL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UXI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UDOW - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XOP - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RBL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:NANR - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UWM - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PALL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RSX - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PXI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:OILX - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RYE - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:QABA - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PXH - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:TRTN - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:USLV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:REMX - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RZV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PUW - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SMDV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSCE - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PXSV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSCI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:TPYP - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RFV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XTN - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSCT - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SLYV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VIOV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SOXX - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VTWV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SMLV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UHN - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UYG - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SMH - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:REGL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PSCF - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XSLV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PEY - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:UPRO - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PXMV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RWJ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VDE - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SPXL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RDIV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:TECL - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:THD - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SPHB - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XLE - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PYZ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SGG - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XAR - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SLY - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VIOO - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:WFC.W - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:YMLI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:OIH - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SPYD - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VFH - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SDEM - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:WMW - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:QCAN - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VAW - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PZI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RGI - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PRFZ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:PXLV - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:VBR - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RJZ - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:SPPP - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:XLF - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RTM - Weight:0.01
+2017-02-12 21:07:16  :: Creating Position: Stock:RYF - Weight:0.01

@@ -1,0 +1,251 @@
+2017-11-02 13:35:46  :: 11/2/2017 1:35:46 PMBaseCommunicationModule.LoadConfig
+2017-11-02 13:35:46  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:35:46  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:35:47  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 13:35:48  :: Processing Security List:Wrapper
+2017-11-02 13:35:54  :: Processing Security List:Wrapper
+2017-11-02 13:35:55  :: Processing Security List:Wrapper
+2017-11-02 13:36:10  :: Processing Security List:Wrapper
+2017-11-02 13:36:32  :: 11/2/2017 1:36:32 PMBaseCommunicationModule.LoadConfig
+2017-11-02 13:36:32  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:36:32  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:36:32  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 13:36:33  :: Processing Security List:Wrapper
+2017-11-02 13:36:38  :: Processing Security List:Wrapper
+2017-11-02 13:36:39  :: Processing Security List:Wrapper
+2017-11-02 13:37:10  :: Processing Security List:Wrapper
+2017-11-02 13:37:19  :: 11/2/2017 1:37:19 PMBaseCommunicationModule.LoadConfig
+2017-11-02 13:37:19  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:37:19  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:37:19  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 13:37:20  :: Processing Security List:Wrapper
+2017-11-02 13:37:26  :: Processing Security List:Wrapper
+2017-11-02 13:37:27  :: Processing Security List:Wrapper
+2017-11-02 13:43:45  :: 11/2/2017 1:43:45 PMBaseCommunicationModule.LoadConfig
+2017-11-02 13:43:45  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:43:45  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:43:45  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 13:43:48  :: Processing Security List:Wrapper
+2017-11-02 13:43:53  :: Processing Security List:Wrapper
+2017-11-02 13:43:54  :: Processing Security List:Wrapper
+2017-11-02 13:53:02  :: 11/2/2017 1:53:02 PMBaseCommunicationModule.LoadConfig
+2017-11-02 13:53:02  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:53:02  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:53:02  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 13:53:04  :: Processing Security List:Wrapper
+2017-11-02 13:53:09  :: Processing Security List:Wrapper
+2017-11-02 13:53:10  :: Processing Security List:Wrapper
+2017-11-02 13:53:34  :: Inserting new stock from market  AA17 .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  TGNO4 .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  TGNO2 .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  AM18 .BUE:
+2017-11-02 13:53:37  :: Stock  AM18  already existed
+2017-11-02 13:53:37  :: Inserting new stock from market  PAMP .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  CELU .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  JPM .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  TRAN .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  PERK .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  VALE .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  PESA .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  MOLI .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  JMIN .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  COMC3.15AG .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  MIRG .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  TGSU2 .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  TVPP .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  TECO2 .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  AMX9 .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  CVX .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  PETR .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  GGAL .BUE:
+2017-11-02 13:53:37  :: Inserting new stock from market  YPFD .BUE:
+2017-11-02 13:53:38  :: Processing Security List:Wrapper
+2017-11-02 13:56:18  :: 11/2/2017 1:56:18 PMBaseCommunicationModule.LoadConfig
+2017-11-02 13:56:18  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:56:18  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 13:56:19  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 13:56:20  :: Processing Security List:Wrapper
+2017-11-02 13:56:26  :: Processing Security List:Wrapper
+2017-11-02 13:56:29  :: Processing Security List:Wrapper
+2017-11-02 13:56:34  :: Inserting new stock from market AA17.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market TGNO4.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market TGNO2.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market AM18.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market AM18.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market PAMP.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market CELU.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market JPM.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market TRAN.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market PERK.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market VALE.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market PESA.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market MOLI.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market JMIN.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market COMC3.15AG.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market MIRG.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market TGSU2.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market TVPP.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market TECO2.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market AMX9.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market CVX.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market PETR.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market GGAL.BUE:
+2017-11-02 13:56:34  :: Inserting new stock from market YPFD.BUE:
+2017-11-02 13:56:36  :: Processing Security List:Wrapper
+2017-11-02 14:14:19  :: 11/2/2017 2:14:19 PMBaseCommunicationModule.LoadConfig
+2017-11-02 14:14:19  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:14:19  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:14:19  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 14:14:20  :: Processing Security List:Wrapper
+2017-11-02 14:14:26  :: Processing Security List:Wrapper
+2017-11-02 14:14:28  :: Processing Security List:Wrapper
+2017-11-02 14:14:28  :: Inserting new stock from market AA17.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market TGNO4.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market TGNO2.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market AM18.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market AM18.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market PAMP.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market CELU.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market JPM.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market TRAN.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market PERK.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market VALE.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market PESA.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market MOLI.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market JMIN.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market COMC3.15AG.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market MIRG.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market TGSU2.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market TVPP.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market TECO2.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market AMX9.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market CVX.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market PETR.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market GGAL.BUE:
+2017-11-02 14:14:28  :: Inserting new stock from market YPFD.BUE:
+2017-11-02 14:14:29  :: Processing Security List:Wrapper
+2017-11-02 14:19:32  :: 11/2/2017 2:19:32 PMBaseCommunicationModule.LoadConfig
+2017-11-02 14:19:32  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:19:32  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:19:32  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 14:19:34  :: Processing Security List:Wrapper
+2017-11-02 14:19:39  :: Processing Security List:Wrapper
+2017-11-02 14:19:40  :: Processing Security List:Wrapper
+2017-11-02 14:19:40  :: Inserting new stock from market AA17.BUE:
+2017-11-02 14:19:40  :: Inserting new stock from market TGNO4.BUE:
+2017-11-02 14:19:40  :: Inserting new stock from market TGNO2.BUE:
+2017-11-02 14:19:40  :: Inserting new stock from market AM18.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market AM18.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market PAMP.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market CELU.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market JPM.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market TRAN.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market PERK.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market VALE.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market PESA.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market MOLI.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market JMIN.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market COMC3.15AG.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market MIRG.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market TGSU2.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market TVPP.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market TECO2.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market AMX9.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market CVX.BUE:
+2017-11-02 14:19:41  :: Inserting new stock from market PETR.BUE:
+2017-11-02 14:21:01  :: 11/2/2017 2:21:01 PMBaseCommunicationModule.LoadConfig
+2017-11-02 14:21:01  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:21:01  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:21:01  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 14:21:03  :: Processing Security List:Wrapper
+2017-11-02 14:21:10  :: Processing Security List:Wrapper
+2017-11-02 14:21:11  :: Processing Security List:Wrapper
+2017-11-02 14:21:11  :: Stock AA17 already existed
+2017-11-02 14:21:11  :: Stock TGNO4 already existed
+2017-11-02 14:21:11  :: Stock TGNO2 already existed
+2017-11-02 14:21:11  :: Stock AM18 already existed
+2017-11-02 14:21:11  :: Stock AM18 already existed
+2017-11-02 14:21:11  :: Stock PAMP already existed
+2017-11-02 14:21:11  :: Stock CELU already existed
+2017-11-02 14:21:11  :: Stock JPM already existed
+2017-11-02 14:21:11  :: Stock TRAN already existed
+2017-11-02 14:21:11  :: Stock PERK already existed
+2017-11-02 14:21:11  :: Stock VALE already existed
+2017-11-02 14:21:11  :: Stock PESA already existed
+2017-11-02 14:21:11  :: Stock MOLI already existed
+2017-11-02 14:21:11  :: Stock JMIN already existed
+2017-11-02 14:21:11  :: Stock COMC3.15AG already existed
+2017-11-02 14:21:11  :: Stock MIRG already existed
+2017-11-02 14:21:11  :: Stock TGSU2 already existed
+2017-11-02 14:21:11  :: Stock TVPP already existed
+2017-11-02 14:21:11  :: Stock TECO2 already existed
+2017-11-02 14:21:11  :: Stock AMX9 already existed
+2017-11-02 14:21:11  :: Stock CVX already existed
+2017-11-02 14:21:11  :: Stock PETR already existed
+2017-11-02 14:21:11  :: Stock GGAL already existed
+2017-11-02 14:21:11  :: Stock YPFD already existed
+2017-11-02 14:21:12  :: Processing Security List:Wrapper
+2017-11-02 14:21:34  :: 11/2/2017 2:21:34 PMBaseCommunicationModule.LoadConfig
+2017-11-02 14:21:34  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:21:34  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 14:21:34  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 14:21:36  :: Processing Security List:Wrapper
+2017-11-02 14:21:41  :: Processing Security List:Wrapper
+2017-11-02 14:21:42  :: Processing Security List:Wrapper
+2017-11-02 14:21:42  :: Stock AA17 already existed
+2017-11-02 14:21:42  :: Stock TGNO4 already existed
+2017-11-02 14:21:42  :: Stock TGNO2 already existed
+2017-11-02 14:21:42  :: Stock AM18 already existed
+2017-11-02 14:21:42  :: Stock AM18 already existed
+2017-11-02 14:21:42  :: Stock PAMP already existed
+2017-11-02 14:21:42  :: Stock CELU already existed
+2017-11-02 14:21:42  :: Stock JPM already existed
+2017-11-02 14:21:42  :: Stock TRAN already existed
+2017-11-02 14:21:42  :: Stock PERK already existed
+2017-11-02 14:21:42  :: Stock VALE already existed
+2017-11-02 14:21:42  :: Stock PESA already existed
+2017-11-02 14:21:42  :: Stock MOLI already existed
+2017-11-02 14:21:42  :: Stock JMIN already existed
+2017-11-02 14:21:42  :: Stock COMC3.15AG already existed
+2017-11-02 14:21:42  :: Stock MIRG already existed
+2017-11-02 14:21:42  :: Stock TGSU2 already existed
+2017-11-02 14:21:42  :: Stock TVPP already existed
+2017-11-02 14:21:42  :: Stock TECO2 already existed
+2017-11-02 14:21:42  :: Stock AMX9 already existed
+2017-11-02 14:21:42  :: Stock CVX already existed
+2017-11-02 14:21:42  :: Stock PETR already existed
+2017-11-02 14:21:42  :: Stock GGAL already existed
+2017-11-02 14:21:42  :: Stock YPFD already existed
+2017-11-02 14:21:43  :: Processing Security List:Wrapper
+2017-11-02 15:12:44  :: 11/2/2017 3:12:44 PMBaseCommunicationModule.LoadConfig
+2017-11-02 15:12:44  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-02 15:12:44  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-02 15:12:44  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-02 15:12:45  :: Processing Security List:Wrapper
+2017-11-02 15:12:50  :: Processing Security List:Wrapper
+2017-11-02 15:12:51  :: Processing Security List:Wrapper
+2017-11-02 15:12:51  :: Inserting new stock from market AA17.BUE:
+2017-11-02 15:12:51  :: Stock TGNO4 already existed
+2017-11-02 15:12:51  :: Stock TGNO2 already existed
+2017-11-02 15:12:51  :: Inserting new stock from market AM18.BUE:
+2017-11-02 15:12:51  :: Stock AM18 already existed
+2017-11-02 15:12:51  :: Stock PAMP already existed
+2017-11-02 15:12:51  :: Stock CELU already existed
+2017-11-02 15:12:51  :: Stock JPM already existed
+2017-11-02 15:12:51  :: Stock TRAN already existed
+2017-11-02 15:12:51  :: Stock PERK already existed
+2017-11-02 15:12:51  :: Stock VALE already existed
+2017-11-02 15:12:51  :: Stock PESA already existed
+2017-11-02 15:12:51  :: Stock MOLI already existed
+2017-11-02 15:12:51  :: Stock JMIN already existed
+2017-11-02 15:12:51  :: Inserting new stock from market COMC3.15AG.BUE:
+2017-11-02 15:12:51  :: Stock MIRG already existed
+2017-11-02 15:12:51  :: Stock TGSU2 already existed
+2017-11-02 15:12:51  :: Inserting new stock from market TVPP.BUE:
+2017-11-02 15:12:51  :: Stock TECO2 already existed
+2017-11-02 15:12:51  :: Inserting new stock from market AMX9.BUE:
+2017-11-02 15:12:51  :: Inserting new stock from market CVX.BUE:
+2017-11-02 15:12:51  :: Stock PETR already existed
+2017-11-02 15:12:51  :: Stock GGAL already existed
+2017-11-02 15:12:51  :: Stock YPFD already existed
+2017-11-02 15:12:52  :: Processing Security List:Wrapper

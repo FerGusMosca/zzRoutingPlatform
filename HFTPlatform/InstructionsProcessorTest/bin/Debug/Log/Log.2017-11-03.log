@@ -1,0 +1,9 @@
+2017-11-03 14:59:19  :: 3/11/2017 14:59:19MainApp.LoadConfig
+2017-11-03 14:59:19  :: Loading config:C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2017-11-03 14:59:19  :: Proccessing config:C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2017-11-03 14:59:20  :: Fin GetConfiguracion
+2017-11-03 14:59:21  :: Initializing Log
+2017-11-03 14:59:21  :: Initializing Incoming Module
+2017-11-03 14:59:24  :: Incoming Module successfully initialized
+2017-11-03 14:59:24  :: Initializing Outgoing Module
+2017-11-03 14:59:29  :: Outgoing Module successfully initialized

@@ -1,0 +1,14 @@
+2017-11-02 17:33:02  :: 11/2/2017 5:33:02 PMBaseCommunicationModule.LoadConfig
+2017-11-02 17:33:02  :: Loading config:.\incomingPrimary.xml
+2017-11-02 17:33:02  :: Processing config:.\incomingPrimary.xml
+2017-11-02 17:33:02  :: Ending GetConfiguracion .\incomingPrimary.xml
+2017-11-02 17:33:14  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-02 17:33:19  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171102-20:33:18.30556=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=184
+2017-11-02 17:33:19  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171102-20:33:18.62556=fmosca98=0108=30141=Y1137=910=119
+2017-11-02 17:33:19  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-02 17:33:19  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-02 17:33:20  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171102-20:33:19.13556=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=164
+2017-11-02 17:33:20  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171102-20:33:19.13556=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=160
+2017-11-02 17:33:20  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171102-20:33:19.13556=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=019
+2017-11-02 17:33:20  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171102-20:33:19.13556=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=000
+2017-11-02 17:33:20  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171102-20:33:19.13556=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=083

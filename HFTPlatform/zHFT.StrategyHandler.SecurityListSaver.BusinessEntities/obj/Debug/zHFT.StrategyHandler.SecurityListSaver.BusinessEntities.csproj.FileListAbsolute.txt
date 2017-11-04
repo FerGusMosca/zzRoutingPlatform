@@ -1,0 +1,8 @@
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
+C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb

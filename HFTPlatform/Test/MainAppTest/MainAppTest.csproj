@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDC628CE-A55A-4E6E-A8BC-CC61C6827BE1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MainAppTest</RootNamespace>
+    <AssemblyName>MainAppTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\Desktop\Trading SW\zHFT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MDFShared">
+      <HintPath>..\..\..\Librerias\MDFShared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolsShared">
+      <HintPath>..\..\..\Librerias\ToolsShared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.Main\zHFT.Main.csproj">
+      <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
+      <Name>zHFT.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.MarketClient.IB\zHFT.MarketClient.IB.csproj">
+      <Project>{ad8cf334-5123-465f-81c4-f784c88f7632}</Project>
+      <Name>zHFT.MarketClient.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.MarketClient.Quickfix\zHFT.MarketClient.Quickfix.csproj">
+      <Project>{bfceebbf-3b84-464f-866c-3aa632cc5b35}</Project>
+      <Name>zHFT.MarketClient.Quickfix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OrderRouters.IB\zHFT.OrderRouters.IB.csproj">
+      <Project>{ae6ca067-5460-4957-93e4-3031b74f45e7}</Project>
+      <Name>zHFT.OrderRouters.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OrderRouters.Mock\zHFT.OrderRouters.Mock.csproj">
+      <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>
+      <Name>zHFT.OrderRouters.Mock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
+      <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
+      <Name>zHFT.OrderRouters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer\zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer.csproj">
+      <Project>{e792f6a2-8892-4334-b4cc-9e49b142f597}</Project>
+      <Name>zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj">
+      <Project>{93993848-41a7-4bc7-8e79-3bb163ef259a}</Project>
+      <Name>zHFT.StrategyHandler.MomentumPortfolios.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.StrategyHandler.MomentumPortfolios\zHFT.StrategyHandler.MomentumPortfolios.csproj">
+      <Project>{2058b65f-b40c-4e48-8682-18d68413b993}</Project>
+      <Name>zHFT.StrategyHandler.MomentumPortfolios</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zHFT.StrategyHandler.SingleStockBuyer\zHFT.StrategyHandler.SingleStockBuyer.csproj">
+      <Project>{f6b2555d-7f2b-4b51-b816-c7913c95853f}</Project>
+      <Name>zHFT.StrategyHandler.SingleStockBuyer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fix\FIX44.xml" />
+    <Content Include="incomingConfigQuickFix.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="incomingIB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.IB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingStrategyHandler.MomentumPortfolios.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="outgoingStrategyHandler.SingleStockBuyer.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FIX Sessions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

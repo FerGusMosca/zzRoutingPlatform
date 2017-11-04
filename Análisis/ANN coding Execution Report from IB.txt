@@ -1,0 +1,58 @@
+  
+-------------Execution
+        public Execution();
+        public Execution(int orderId, int clientId, string execId, string time, string acctNumber, string exchange, string side, int shares, double price, int permId, int liquidation, int cumQty, double avgPrice, string orderRef, string evRule, double evMultiplier);
+
+        public string AcctNumber { get; set; }
+        public double AvgPrice { get; set; } ---> x-ExecutionReportFields.AvgPx
+        public int ClientId { get; set; }
+        public int CumQty { get; set; } ---> x-ExecutionReportFields.CumQty
+        public double EvMultiplier { get; set; }
+        public string EvRule { get; set; }
+        public string Exchange { get; set; } ---> ExecutionReport.LastMkt
+        public string ExecId { get; set; } ---> <<New Field ExecID>>
+        public int Liquidation { get; set; }
+        public int OrderId { get; set; } <0>
+        public string OrderRef { get; set; } 
+        public int PermId { get; set; } ---> x-ExecutionReportFields.ClOrdID
+        public double Price { get; set; } ---> x-ExecutionReportFields.LastPx
+        public int Shares { get; set; } ---> ExecutionReportFields.LastQty
+        public string Side { get; set; } ---> <<New Field Side @Order>>
+        public string Time { get; set; } ---> ExecutionReportFields.TransactTime
+
+-------------OrdStatus
+status <---ExecutionReportFields.ExecType/ExecutionReportFields.OrdStatus
+filled <---ExecutionReportFields.CumQty
+remaining <--- ExecutionReportFields.LeavesQty
+avgFillPrice <---  ExecutionReportFields.AvgPx       
+id <---ExecutionReportFields.ClOrdID
+lastFilledPrice <--- ExecutionReportFields.LastPx
+
+
+---- NULL
+ExecutionReportFields.OrdRejReason
+ExecutionReportFields.Commission
+ExecutionReportFields.Text    
+
+---- Campos de la orden
+	 if (xrField == ExecutionReportFields.OrderID)
+                return ExecutionReport.Order.OrderId;
+            else if (xrField == ExecutionReportFields.ClOrdID)
+                return ExecutionReport.Order.ClOrdId;
+            else if (xrField == ExecutionReportFields.Symbol)
+                return ExecutionReport.Order.Security.Symbol;
+ 
+            else if (xrField == ExecutionReportFields.CashOrderQty)
+                return ExecutionReport.Order.CashOrderQty;
+            else if (xrField == ExecutionReportFields.OrdType)
+                return ExecutionReport.Order.OrdType;
+            else if (xrField == ExecutionReportFields.Price)
+                return ExecutionReport.Order.Price;
+            else if (xrField == ExecutionReportFields.StopPx)
+                return ExecutionReport.Order.StopPx;
+            else if (xrField == ExecutionReportFields.Currency)
+                return ExecutionReport.Order.Currency;
+            else if (xrField == ExecutionReportFields.ExpireDate)
+                return ExecutionReport.Order.ExpireTime;
+            else if (xrField == ExecutionReportFields.MinQty)
+                return ExecutionReport.Order.MinQty;

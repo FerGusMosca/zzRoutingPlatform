@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MomentumTradingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MomentumTradingModelStoreContainer">
+    <EntitySet Name="execution_reports" EntityType="MomentumTradingModel.Store.execution_reports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="execution_summaries" EntityType="MomentumTradingModel.Store.execution_summaries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="orders" EntityType="MomentumTradingModel.Store.orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="positions" EntityType="MomentumTradingModel.Store.positions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="MomentumTradingModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_execution_reports_positions" Association="MomentumTradingModel.Store.FK_execution_reports_positions">
+      <End Role="positions" EntitySet="positions" />
+      <End Role="execution_reports" EntitySet="execution_reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_execution_summaries_positions1" Association="MomentumTradingModel.Store.FK_execution_summaries_positions1">
+      <End Role="positions" EntitySet="positions" />
+      <End Role="execution_summaries" EntitySet="execution_summaries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orders_positions" Association="MomentumTradingModel.Store.FK_orders_positions">
+      <End Role="positions" EntitySet="positions" />
+      <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="execution_reports">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="exec_id" Type="varchar" MaxLength="50" />
+    <Property Name="transact_time" Type="datetime" />
+    <Property Name="exec_type" Type="varchar" MaxLength="1" />
+    <Property Name="ord_status" Type="nchar" MaxLength="10" />
+    <Property Name="ord_rej_reason" Type="int" />
+    <Property Name="last_qty" Type="float" />
+    <Property Name="last_px" Type="float" />
+    <Property Name="last_mkt" Type="varchar" MaxLength="50" />
+    <Property Name="leaves_qty" Type="float" Nullable="false" />
+    <Property Name="cum_qty" Type="float" Nullable="false" />
+    <Property Name="avg_px" Type="float" />
+    <Property Name="commission" Type="float" />
+    <Property Name="text" Type="varchar" MaxLength="200" />
+    <Property Name="pos_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="execution_summaries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="avg_px" Type="float" />
+    <Property Name="cum_qty" Type="float" Nullable="false" />
+    <Property Name="leaves_qty" Type="float" Nullable="false" />
+    <Property Name="commission" Type="float" />
+    <Property Name="text" Type="varchar" MaxLength="200" />
+    <Property Name="pos_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="clord_id" Type="varchar" MaxLength="50" />
+    <Property Name="order_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="settl_type" Type="varchar" MaxLength="1" />
+    <Property Name="settl_date" Type="datetime" />
+    <Property Name="side" Type="varchar" Nullable="false" MaxLength="1" />
+    <Property Name="exchange" Type="varchar" MaxLength="50" />
+    <Property Name="ord_type" Type="varchar" MaxLength="1" />
+    <Property Name="quantity_type" Type="int" Nullable="false" />
+    <Property Name="order_qty" Type="float" />
+    <Property Name="cash_order_qty" Type="float" />
+    <Property Name="order_percent" Type="float" />
+    <Property Name="price_type" Type="int" Nullable="false" />
+    <Property Name="price" Type="float" />
+    <Property Name="stop_px" Type="float" />
+    <Property Name="currency" Type="varchar" MaxLength="10" />
+    <Property Name="time_inforce" Type="int" />
+    <Property Name="expire_time" Type="datetime" />
+    <Property Name="effective_time" Type="datetime" />
+    <Property Name="min_qty" Type="float" />
+    <Property Name="index" Type="int" Nullable="false" />
+    <Property Name="pos_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="positions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pos_id" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="pos_status" Type="varchar" MaxLength="1" />
+    <Property Name="side" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="exchange" Type="varchar" MaxLength="50" />
+    <Property Name="quantity_type" Type="int" Nullable="false" />
+    <Property Name="price_type" Type="int" Nullable="false" />
+    <Property Name="qty" Type="float" />
+    <Property Name="cash_qty" Type="float" />
+    <Property Name="percent" Type="float" />
+    <Property Name="cum_qty" Type="float" Nullable="false" />
+    <Property Name="leaves_qty" Type="float" />
+    <Property Name="avg_px" Type="float" />
+    <Property Name="last_qty" Type="float" />
+    <Property Name="last_mkt" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_execution_reports_positions">
+    <End Role="positions" Type="MomentumTradingModel.Store.positions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="execution_reports" Type="MomentumTradingModel.Store.execution_reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="positions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="execution_reports">
+        <PropertyRef Name="pos_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_execution_summaries_positions1">
+    <End Role="positions" Type="MomentumTradingModel.Store.positions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="execution_summaries" Type="MomentumTradingModel.Store.execution_summaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="positions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="execution_summaries">
+        <PropertyRef Name="pos_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orders_positions">
+    <End Role="positions" Type="MomentumTradingModel.Store.positions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="orders" Type="MomentumTradingModel.Store.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="positions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="orders">
+        <PropertyRef Name="pos_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+</Schema>
