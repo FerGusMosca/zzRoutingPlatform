@@ -7,11 +7,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 
 
 namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 {
-    public class IBAccountManager : EWrapper
+    public class IBAccountManager : EWrapper, IAccountReferenceHandler
     {
         #region Private Static Consts
 
@@ -25,19 +26,6 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         #endregion
 
-        #region Public Attributes
-
-        public Boolean ReqAccountSummary { get; set; }
-
-        public Boolean ReqAccountPositions { get; set; }
-
-        public bool AbortOnTimeout { get; set; }
-
-        public Account AccountToSync { get; set; }
-
-        public List<AccountPosition> Positions { get; set; }
-
-        #endregion
 
         #region Private Attributes
 
@@ -46,6 +34,45 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
         protected static object tLock = new object();
 
         protected OnLogMessage  Logger { get; set; }
+
+        protected Boolean ReqAccountSummary { get; set; }
+
+        protected Boolean ReqAccountPositions { get; set; }
+
+        protected bool AbortOnTimeout { get; set; }
+
+        protected Account AccountToSync { get; set; }
+
+        protected List<AccountPosition> Positions { get; set; }
+
+        #endregion
+
+        #region IAccountReferenceHandler
+
+        public Boolean ReadyAccountSummary()
+        {
+            return ReqAccountSummary;
+        }
+
+        public Boolean WaitingAccountPositions()
+        {
+            return ReqAccountPositions;
+        }
+
+        public bool IsAbortOnTimeout()
+        {
+            return AbortOnTimeout;
+        }
+
+        public Account GetAccountToSync()
+        {
+            return AccountToSync;
+        }
+
+        public List<AccountPosition> GetPositions()
+        {
+            return Positions;
+        }
 
         #endregion
 

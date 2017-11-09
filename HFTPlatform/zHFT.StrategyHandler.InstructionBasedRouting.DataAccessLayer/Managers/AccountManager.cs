@@ -32,6 +32,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             accountDB.ib_port = account.IBPort;
             accountDB.ib_balance = account.IBBalance;
             accountDB.ib_currency = account.IBCurrency;
+            accountDB.ib_name = account.IBName;
         }
 
         private void FieldMap(accounts accountDB, Account account)
@@ -54,6 +55,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             account.IBBalance = accountDB.ib_balance;
             account.IBCurrency = accountDB.ib_currency;
             account.Id = accountDB.id;
+            account.IBName = accountDB.ib_name;
         }
 
         private accounts Map(Account account)

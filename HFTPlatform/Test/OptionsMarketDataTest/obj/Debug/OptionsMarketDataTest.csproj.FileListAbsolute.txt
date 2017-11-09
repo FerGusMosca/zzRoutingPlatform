@@ -124,3 +124,6 @@ C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\D
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\OptionsMarketDataTest.exe.config
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\obj\Debug\OptionsMarketDataTest.exe
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\obj\Debug\OptionsMarketDataTest.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\OptionsMarketDataTest.exe.config
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\obj\Debug\OptionsMarketDataTest.exe
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\obj\Debug\OptionsMarketDataTest.pdb

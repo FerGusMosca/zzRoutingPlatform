@@ -1,0 +1,128 @@
+2017-11-07 11:23:57  :: 11/7/2017 11:23:57 AMMomentumStrategyBase.LoadConfig
+2017-11-07 11:23:57  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:23:57  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:23:57  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:23:57  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 11:23:57  :: 11/7/2017 11:23:57 AMOrderRouterBase.LoadConfig
+2017-11-07 11:23:57  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 11:23:57  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 11:23:57  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 11:23:57  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 11:23:57  :: 11/7/2017 11:23:57 AMBaseCommunicationModule.LoadConfig
+2017-11-07 11:23:57  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 11:23:57  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 11:23:57  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 11:30:11  :: 11/7/2017 11:30:11 AMMomentumStrategyBase.LoadConfig
+2017-11-07 11:30:11  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:30:11  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:30:11  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:30:11  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 11:30:11  :: 11/7/2017 11:30:11 AMOrderRouterBase.LoadConfig
+2017-11-07 11:30:11  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 11:30:11  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 11:30:11  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 11:30:11  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 11:30:11  :: 11/7/2017 11:30:11 AMBaseCommunicationModule.LoadConfig
+2017-11-07 11:30:11  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 11:30:11  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 11:30:11  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 11:30:52  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 11:46:27  :: 11/7/2017 11:46:27 AMMomentumStrategyBase.LoadConfig
+2017-11-07 11:46:27  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:46:27  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:46:27  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 11:46:27  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 11:46:27  :: 11/7/2017 11:46:27 AMOrderRouterBase.LoadConfig
+2017-11-07 11:46:27  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 11:46:27  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 11:46:27  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 11:46:27  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 11:46:27  :: 11/7/2017 11:46:27 AMBaseCommunicationModule.LoadConfig
+2017-11-07 11:46:27  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 11:46:27  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 11:46:27  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 11:47:43  :: Processing Market Data:Symbol=PAMP Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 12:03:18  :: 11/7/2017 12:03:18 PMMomentumStrategyBase.LoadConfig
+2017-11-07 12:03:18  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 12:03:18  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 12:03:18  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 12:03:18  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 12:03:18  :: 11/7/2017 12:03:18 PMOrderRouterBase.LoadConfig
+2017-11-07 12:03:18  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 12:03:18  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 12:03:18  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 12:03:18  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 12:03:18  :: 11/7/2017 12:03:18 PMBaseCommunicationModule.LoadConfig
+2017-11-07 12:03:18  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 12:03:18  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 12:03:18  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 12:04:18  :: Processing Market Data:Symbol=PAMP Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 21:16:36  :: 11/7/2017 9:16:36 PMMomentumStrategyBase.LoadConfig
+2017-11-07 21:16:36  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 21:16:36  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 21:16:36  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 21:16:36  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 21:16:36  :: 11/7/2017 9:16:36 PMOrderRouterBase.LoadConfig
+2017-11-07 21:16:36  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 21:16:36  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 21:16:37  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 21:16:37  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 21:16:37  :: 11/7/2017 9:16:37 PMBaseCommunicationModule.LoadConfig
+2017-11-07 21:16:37  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 21:16:37  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 21:16:37  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 21:16:41  :: Processing Market Data:Symbol=PAMP Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 21:16:46  :: Processing Market Data:Symbol=PAMP Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 21:16:51  :: Processing Market Data:Symbol=PAMP Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:16:23  :: 11/7/2017 11:16:23 PMMomentumStrategyBase.LoadConfig
+2017-11-07 23:16:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:16:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:16:23  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:16:23  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 23:16:23  :: 11/7/2017 11:16:23 PMOrderRouterBase.LoadConfig
+2017-11-07 23:16:23  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 23:16:23  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 23:16:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 23:16:24  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 23:16:24  :: 11/7/2017 11:16:24 PMBaseCommunicationModule.LoadConfig
+2017-11-07 23:16:24  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 23:16:24  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 23:16:24  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 23:17:05  :: 11/7/2017 11:17:05 PMMomentumStrategyBase.LoadConfig
+2017-11-07 23:17:05  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:17:05  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:17:05  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:17:05  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 23:17:05  :: 11/7/2017 11:17:05 PMOrderRouterBase.LoadConfig
+2017-11-07 23:17:05  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 23:17:05  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 23:17:05  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 23:17:05  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 23:17:05  :: 11/7/2017 11:17:05 PMBaseCommunicationModule.LoadConfig
+2017-11-07 23:17:05  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 23:17:05  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 23:17:05  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 23:18:40  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:19:48  :: 11/7/2017 11:19:48 PMMomentumStrategyBase.LoadConfig
+2017-11-07 23:19:48  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:19:48  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:19:48  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-07 23:19:48  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-07 23:19:48  :: 11/7/2017 11:19:48 PMOrderRouterBase.LoadConfig
+2017-11-07 23:19:48  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-07 23:19:48  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-07 23:19:48  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-07 23:19:48  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2017-11-07 23:19:48  :: 11/7/2017 11:19:48 PMBaseCommunicationModule.LoadConfig
+2017-11-07 23:19:48  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-07 23:19:48  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-07 23:19:48  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-07 23:19:53  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:19:58  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:03  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:08  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:13  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:18  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:23  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:28  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-07 23:20:33  :: Processing Market Data:Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume= LastPrice=no data LastTradeSize=no data BestBidPrice=85 BestBidSize=20 BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data

@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Interfaces\IAccountReferenceHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +51,10 @@
     <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
       <Project>{453e183d-9557-4a96-ad08-d2ad0db68765}</Project>
       <Name>zHFT.StrategyHandler.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj">
+      <Project>{aed28ef6-ddf7-40ad-bc25-dec1b9b1c6f2}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

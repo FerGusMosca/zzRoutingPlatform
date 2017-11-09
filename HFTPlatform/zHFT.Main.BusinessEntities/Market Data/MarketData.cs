@@ -40,6 +40,9 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         public long? BestAskSize { get; set; }
         public string BestAskExch { get; set; }
 
+        public double? CashVolume { get; set; }
+        public double? NominalVolume { get; set; }
+
         #endregion
 
         public UpdateAction MDUpdateAction { get; set; }

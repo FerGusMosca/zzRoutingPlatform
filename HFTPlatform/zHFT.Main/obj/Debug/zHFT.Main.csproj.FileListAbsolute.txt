@@ -42,3 +42,14 @@ C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\zHFT.Main.Co
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.Main\obj\Debug\zHFT.Main.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.Main\obj\Debug\zHFT.Main.dll
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.Main\obj\Debug\zHFT.Main.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\zHFT.Main.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\zHFT.Main.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\obj\Debug\zHFT.Main.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\obj\Debug\zHFT.Main.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main\obj\Debug\zHFT.Main.pdb

@@ -130,21 +130,31 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
         {
             lock (tLock)
             {
-                DoLog("Invocación de fromApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-
-                if (value is QuickFix50.SecurityList)
+                try
                 {
-                    SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix50.SecurityList)value, (IConfiguration)Config);
+                    DoLog("Invocación de fromApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
 
-                    CMState state = OnMessageRcv(wrapper);
+                    if (value is QuickFix50.SecurityList)
+                    {
+                        SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix50.SecurityList)value, (IConfiguration)Config);
 
-                    if (state.Success)
-                        DoLog(string.Format("Primary Publishing Security List "), Main.Common.Util.Constants.MessageType.Information);
-                    else
-                        DoLog(string.Format("Error Publishing Security List. Error={0} ",
-                                            state.Exception != null ? state.Exception.Message : ""),
-                                            Main.Common.Util.Constants.MessageType.Error);
+                        CMState state = OnMessageRcv(wrapper);
 
+                        if (state.Success)
+                            DoLog(string.Format("Primary Publishing Security List "), Main.Common.Util.Constants.MessageType.Information);
+                        else
+                            DoLog(string.Format("Error Publishing Security List. Error={0} ",
+                                                state.Exception != null ? state.Exception.Message : ""),
+                                                Main.Common.Util.Constants.MessageType.Error);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{0}:Critical Error @fromApp. Error={1} ",
+                                                    PrimaryConfiguration.Name,
+                                                    ex.Message),
+                                                    Main.Common.Util.Constants.MessageType.Error);
                 }
             }
         }
@@ -161,23 +171,33 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
         {
             lock (tLock)
             {
-                SessionID = value;
-                DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
-
-                if (SessionID != null)
+                try
                 {
-                    DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                    QuickFix50Sp2.SecurityListRequest rq = new QuickFix50Sp2.SecurityListRequest();
+                    SessionID = value;
+                    DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
 
-                    rq.setInt(QuickFix.SecurityListRequestType.FIELD, PrimaryConfiguration.SecurityListRequestType);
-                    rq.setString(SecurityReqID.FIELD, _DUMMY_SECURITY);
+                    if (SessionID != null)
+                    {
+                        DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
+                        QuickFix50Sp2.SecurityListRequest rq = new QuickFix50Sp2.SecurityListRequest();
 
-                    Session.sendToTarget(rq, SessionID);
+                        rq.setInt(QuickFix.SecurityListRequestType.FIELD, PrimaryConfiguration.SecurityListRequestType);
+                        rq.setString(SecurityReqID.FIELD, _DUMMY_SECURITY);
 
+                        Session.sendToTarget(rq, SessionID);
+
+                    }
+                    else
+                    {
+                        DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
+                    DoLog(string.Format("@{0}:Critical Error @onLogon. Error={1} ",
+                                        PrimaryConfiguration.Name,
+                                        ex.Message),
+                                        Main.Common.Util.Constants.MessageType.Error);
                 }
             }
         }
@@ -195,20 +215,30 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
         {
             lock (tLock)
             {
-                if (value is QuickFixT11.Logon)
+                try
                 {
-                    QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
-                    logon.setField(Username.FIELD, PrimaryConfiguration.User);
-                    logon.setField(Password.FIELD, PrimaryConfiguration.Password);
-                    DoLog("Invocación de toAdmin-logon por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                    if (value is QuickFixT11.Logon)
+                    {
+                        QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
+                        logon.setField(Username.FIELD, PrimaryConfiguration.User);
+                        logon.setField(Password.FIELD, PrimaryConfiguration.Password);
+                        DoLog("Invocación de toAdmin-logon por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                    }
+                    else if (value is QuickFixT11.Reject)
+                    {
+                        QuickFixT11.Reject reject = (QuickFixT11.Reject)value;
+                        DoLog("Invocación de toAdmin-reject por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                    }
+                    else
+                        DoLog("Invocación de toAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
                 }
-                else if (value is QuickFixT11.Reject)
+                catch (Exception ex)
                 {
-                    QuickFixT11.Reject reject = (QuickFixT11.Reject)value;
-                    DoLog("Invocación de toAdmin-reject por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                    DoLog(string.Format("@{0}:Critical Error @toAdmin. Error={1} ",
+                                        PrimaryConfiguration.Name,
+                                        ex.Message),
+                                        Main.Common.Util.Constants.MessageType.Error);
                 }
-                else
-                    DoLog("Invocación de toAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
             }
         }
 

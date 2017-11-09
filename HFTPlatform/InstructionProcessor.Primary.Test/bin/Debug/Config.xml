@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Security List Processor</Name>
-  <IncomingConfigPath>.\incomingPrimary.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.InstructionBasedMarketClient.Primary.Client.PrimaryInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Primary</IncomingModule>
-  <OutgoingModule>zHFT.StrategyHandler.SecurityListSaver.xxxx, xxx</OutgoingModule>
-  <OutgoingConfigPath>.\outgoingOrderRouter.xml</OutgoingConfigPath>
-  <LogToConsole>true</LogToConsole>
+  <Name>InstructionProcessor.Primary.Test</Name>
+  <IncomingConfigPath>.\IncomingSingletonConfig.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+
+  <OutgoingModule>zHFT.StrategyHandler.InstructionBasedRouting.InstructionBasedRouter, zHFT.StrategyHandler.InstructionBasedRouting</OutgoingModule>
+  <OutgoingConfigPath>.\outgoingStrategyHandler.InstructionBasedRouting.xml</OutgoingConfigPath>
+
+ <LogToConsole>true</LogToConsole>
 </Configuration>

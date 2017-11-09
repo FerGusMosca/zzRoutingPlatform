@@ -21,6 +21,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
 
         public int RoutingUpdateInMilliseconds { get; set; }
 
+        public string AccoutReferenceHandler { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -48,6 +50,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
                 result.Add("RoutingUpdateInMilliseconds");
                 resultado = false;
             }
+
+            if (string.IsNullOrEmpty(AccoutReferenceHandler))
+            {
+                result.Add("AccoutReferenceHandler");
+                resultado = false;
+            }
+
 
             return resultado;
         }

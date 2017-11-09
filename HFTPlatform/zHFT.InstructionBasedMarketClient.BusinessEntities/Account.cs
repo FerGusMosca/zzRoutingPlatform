@@ -28,6 +28,23 @@ namespace zHFT.InstructionBasedMarketClient.BusinessEntities
 
         public string IBCurrency { get; set; }
 
+        public string IBName { get; set; }
+
+        public string BrokerAccountName
+        {
+            get
+            {
+                if (IBName != null && IBAccount != null)
+                    return IBAccount + " - " + IBName;
+                else if (IBName != null)
+                    return IBName;
+                else
+                    return "";
+
+            }
+
+        }
+
         #endregion
     }
 }

@@ -38,3 +38,17 @@ C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\obj\Debug\zHFT.OrderRouters.IB.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\obj\Debug\zHFT.OrderRouters.IB.Common.dll
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\obj\Debug\zHFT.OrderRouters.IB.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\zHFT.OrderRouters.IB.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\zHFT.OrderRouters.IB.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\TWSLib.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\obj\Debug\zHFT.OrderRouters.IB.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\obj\Debug\zHFT.OrderRouters.IB.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.IB.Common\obj\Debug\zHFT.OrderRouters.IB.Common.pdb

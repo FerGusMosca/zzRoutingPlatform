@@ -1,0 +1,81 @@
+2017-11-05 20:18:40  :: 11/5/2017 8:18:40 PMMomentumStrategyBase.LoadConfig
+2017-11-05 20:18:40  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:18:40  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:18:40  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:18:40  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-05 20:18:40  :: 11/5/2017 8:18:40 PMOrderRouterBase.LoadConfig
+2017-11-05 20:18:40  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-05 20:18:40  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-05 20:18:40  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-05 20:18:40  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2017-11-05 20:18:40  :: 11/5/2017 8:18:40 PMOrderRouterBase.LoadConfig
+2017-11-05 20:18:40  :: Loading config:.\outgoingOrderRouter.IB.xml
+2017-11-05 20:18:40  :: Processing config:.\outgoingOrderRouter.IB.xml
+2017-11-05 20:18:40  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2017-11-05 20:18:42  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2017-11-05 20:22:20  :: 11/5/2017 8:22:20 PMMomentumStrategyBase.LoadConfig
+2017-11-05 20:22:20  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:22:20  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:22:20  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:22:20  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-05 20:22:20  :: 11/5/2017 8:22:20 PMOrderRouterBase.LoadConfig
+2017-11-05 20:22:20  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-05 20:22:20  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-05 20:22:20  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-05 20:22:20  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2017-11-05 20:22:20  :: 11/5/2017 8:22:20 PMOrderRouterBase.LoadConfig
+2017-11-05 20:22:20  :: Loading config:.\outgoingOrderRouter.IB.xml
+2017-11-05 20:22:20  :: Processing config:.\outgoingOrderRouter.IB.xml
+2017-11-05 20:22:20  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2017-11-05 20:22:22  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2017-11-05 20:30:08  :: 11/5/2017 8:30:08 PMMomentumStrategyBase.LoadConfig
+2017-11-05 20:30:08  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:30:08  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:30:08  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-05 20:30:08  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-05 20:30:08  :: 11/5/2017 8:30:08 PMOrderRouterBase.LoadConfig
+2017-11-05 20:30:08  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-05 20:30:08  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-05 20:30:08  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-05 20:30:08  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2017-11-05 20:30:08  :: 11/5/2017 8:30:08 PMOrderRouterBase.LoadConfig
+2017-11-05 20:30:08  :: Loading config:.\outgoingOrderRouter.IB.xml
+2017-11-05 20:30:08  :: Processing config:.\outgoingOrderRouter.IB.xml
+2017-11-05 20:30:08  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2017-11-05 20:30:10  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2017-11-05 20:32:40  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2017-11-05 20:32:40  :: error: reqId=-1 start=504 end=Not connected  
+2017-11-05 20:33:06  :: Critical error processing account sync instruction: Timeout completado en la sincronización del estado de la cuenta con Interactive Brokers. Por favor revise el estado de la conexión - 
+2017-11-05 20:33:20  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2017-11-05 20:33:20  :: error: reqId=-1 start=504 end=Not connected  
+2017-11-05 20:33:40  :: Critical error processing account sync instruction: Timeout completado en la sincronización del estado de la cuenta con Interactive Brokers. Por favor revise el estado de la conexión - 
+2017-11-05 20:33:49  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2017-11-05 20:33:49  :: error: reqId=-1 start=504 end=Not connected  
+2017-11-05 20:34:12  :: Critical error processing account sync instruction: Timeout completado en la sincronización del estado de la cuenta con Interactive Brokers. Por favor revise el estado de la conexión - 
+2017-11-05 20:34:44  :: error: ex=No se puede leer más allá del final de la secuencia.   
+2017-11-05 20:35:04  :: Critical error processing account sync instruction: Timeout completado en la sincronización del estado de la cuenta con Interactive Brokers. Por favor revise el estado de la conexión - 
+2017-11-05 20:35:09  :: error: ex=No se puede leer más allá del final de la secuencia.   
+2017-11-05 20:35:31  :: Critical error processing account sync instruction: Timeout completado en la sincronización del estado de la cuenta con Interactive Brokers. Por favor revise el estado de la conexión - 
+2017-11-05 20:35:41  :: managedAccounts: =DU634652   
+2017-11-05 20:35:42  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:hfarm  
+2017-11-05 20:35:42  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2017-11-05 20:35:42  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:jfarm  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.us  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ilhmds  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2017-11-05 20:35:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2017-11-05 20:35:49  :: accountSummary: reqId=3 account=DU634652 tag=AvailableFunds value=1012058.38 currency=USD  
+2017-11-05 20:35:49  :: accountSummaryEnd: reqId=3
+2017-11-05 20:35:55  :: Account DU634652 balance succesfully synchronized
+2017-11-05 20:37:14  :: managedAccounts: =DU634652   
+2017-11-05 20:37:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2017-11-05 20:37:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2017-11-05 20:37:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ilhmds  
+2017-11-05 20:37:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2017-11-05 20:37:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2017-11-05 20:37:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2017-11-05 20:37:23  :: @Strategy Handler - Instruction Based Router - Account DU634652 positions succesfully synchronized

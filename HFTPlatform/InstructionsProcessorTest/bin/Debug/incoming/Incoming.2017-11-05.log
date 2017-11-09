@@ -1,0 +1,39 @@
+2017-11-05 20:18:39  :: 11/5/2017 8:18:39 PMMarketClientBase.LoadConfig
+2017-11-05 20:18:39  :: Loading config:.\incomingIB.xml
+2017-11-05 20:18:39  :: Processing config:.\incomingIB.xml
+2017-11-05 20:18:39  :: Ending GetConfiguracion .\incomingIB.xml
+2017-11-05 20:18:39  :: managedAccounts: accountsList=U1504022,U2089626,
+2017-11-05 20:18:39  :: nextValidId: orderId=1
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:hfarm  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:jfarm  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.us  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:cashhmds  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2017-11-05 20:18:39  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2017-11-05 20:22:20  :: 11/5/2017 8:22:20 PMMarketClientBase.LoadConfig
+2017-11-05 20:22:20  :: Loading config:.\incomingIB.xml
+2017-11-05 20:22:20  :: Processing config:.\incomingIB.xml
+2017-11-05 20:22:20  :: Ending GetConfiguracion .\incomingIB.xml
+2017-11-05 20:22:20  :: managedAccounts: accountsList=U1504022,U2089626,
+2017-11-05 20:22:20  :: nextValidId: orderId=1
+2017-11-05 20:22:20  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2017-11-05 20:22:20  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2017-11-05 20:22:20  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:cashhmds  
+2017-11-05 20:22:20  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2017-11-05 20:22:20  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2017-11-05 20:30:07  :: 11/5/2017 8:30:07 PMMarketClientBase.LoadConfig
+2017-11-05 20:30:07  :: Loading config:.\incomingIB.xml
+2017-11-05 20:30:07  :: Processing config:.\incomingIB.xml
+2017-11-05 20:30:08  :: Ending GetConfiguracion .\incomingIB.xml
+2017-11-05 20:30:08  :: managedAccounts: accountsList=U1504022,U2089626,
+2017-11-05 20:30:08  :: nextValidId: orderId=1
+2017-11-05 20:30:08  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2017-11-05 20:30:08  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2017-11-05 20:30:08  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:cashhmds  
+2017-11-05 20:30:08  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2017-11-05 20:30:08  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  

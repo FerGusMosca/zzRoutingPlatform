@@ -32,6 +32,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
             accountDB.ib_port = account.IBPort;
             accountDB.ib_balance = account.IBBalance;
             accountDB.ib_currency = account.IBCurrency;
+            accountDB.ib_name = account.IBName;
         }
 
         private void FieldMap(accounts accountDB, Account account)
@@ -47,7 +48,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
 
             account.AccountNumber = accountDB.account_number;
             account.Broker = new Broker() { Id = accountDB.brokers.id, Code = accountDB.brokers.code, Name = accountDB.brokers.name };
-
+            account.IBName = accountDB.ib_name;
             account.IBAccount = accountDB.ib_account;
             account.IBURL = accountDB.ib_url;
             account.IBPort = accountDB.ib_port;

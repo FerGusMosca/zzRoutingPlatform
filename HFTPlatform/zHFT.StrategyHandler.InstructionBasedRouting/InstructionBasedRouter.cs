@@ -12,6 +12,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.LogicLayer;
 
@@ -28,6 +29,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
         protected AccountManager AccountManager { get; set; }
 
         protected PositionManager PositionManager { get; set; }
+
+        protected IAccountReferenceHandler AccountReferenceHandler { get; set; }
 
         protected Dictionary<string, Instruction> PositionInstructions { get; set; }
 
@@ -70,15 +73,14 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 {
                     if (instr.Account.AccountNumber == IBRConfiguration.AccountNumber)
                     {
-                        IBAccountManager ibMgr = new IBAccountManager(OnLogMsg);
                         Account account = AccountManager.GetById(instr.Account.Id);
-                        ibMgr.SyncAccountBalance(account);
+                        AccountReferenceHandler.SyncAccountBalance(account);
 
-                        if (!ibMgr.ReqAccountSummary)
+                        if (!AccountReferenceHandler.ReadyAccountSummary())
                         {
-                            Account accountToSync = ibMgr.AccountToSync;
+                            Account accountToSync = AccountReferenceHandler.GetAccountToSync();
                             AccountManager.Persist(accountToSync);
-                            DoLog(string.Format("Account {0} balance succesfully synchronized", accountToSync.IBAccount), Main.Common.Util.Constants.MessageType.Information);
+                            DoLog(string.Format("Account {0} balance succesfully synchronized", accountToSync.BrokerAccountName), Main.Common.Util.Constants.MessageType.Information);
                             instr.Executed = true;
                             InstructionManager.Persist(instr);
                         }
@@ -299,23 +301,22 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 {
                     if (instr.Account.AccountNumber == IBRConfiguration.AccountNumber)
                     {
-                        IBAccountManager ibMgr = new IBAccountManager(OnLogMsg);
                         Account account = AccountManager.GetById(instr.Account.Id);
-                        ibMgr.SyncAccountPositions(account);
+                        AccountReferenceHandler.SyncAccountPositions(account);
 
-                        while (ibMgr.ReqAccountPositions &&!ibMgr.AbortOnTimeout)
+                        while (AccountReferenceHandler.WaitingAccountPositions() && !AccountReferenceHandler.IsAbortOnTimeout())
                             Thread.Sleep(100);
 
-                        bool reqAccountPosition = ibMgr.ReqAccountPositions;
-                        bool abortOnTimeout = ibMgr.AbortOnTimeout;
+                        bool reqAccountPosition = AccountReferenceHandler.WaitingAccountPositions();
+                        bool abortOnTimeout = AccountReferenceHandler.IsAbortOnTimeout();
 
                         if (!reqAccountPosition && !abortOnTimeout)
                         {
                             Instruction relInstr = null;
-                            List<AccountPosition> onlinePositions = ibMgr.Positions.Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
+                            List<AccountPosition> onlinePositions = AccountReferenceHandler.GetPositions().Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
                             //we only consider available positions
                             PersistSyncPositions(instr, ref relInstr, onlinePositions);
-                            DoLog(string.Format("@{1} - Account {0} positions succesfully synchronized", ibMgr.AccountToSync.IBAccount, IBRConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                            DoLog(string.Format("@{1} - Account {0} positions succesfully synchronized", AccountReferenceHandler.GetAccountToSync().BrokerAccountName, IBRConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
 
                             if (relInstr != null)
                             {
@@ -444,7 +445,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     if (!newPosRelated.Any(x => x.Symbol == pos.Stock.Symbol)
                         && !unwindPossRelated.Any(x=>x.Symbol==pos.Stock.Symbol))
                     {
-                        if(pos.Account.IBAccount==instr.Account.IBAccount)
+                        if (pos.Account.AccountNumber == instr.Account.AccountNumber)
                             positionsToPersist.Add(pos);
                     }
                 }
@@ -616,6 +617,15 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 InstructionManager = new InstructionManager(IBRConfiguration.InstructionsAccessLayerConnectionString);
                 AccountManager = new AccountManager(IBRConfiguration.InstructionsAccessLayerConnectionString);
                 PositionManager = new PositionManager(IBRConfiguration.InstructionsAccessLayerConnectionString);
+
+                var accountReferenceHandler = Type.GetType(IBRConfiguration.AccoutReferenceHandler);
+                if (accountReferenceHandler != null)
+                    AccountReferenceHandler = (IAccountReferenceHandler)Activator.CreateInstance(accountReferenceHandler, OnLogMsg);
+                else
+                {
+                    DoLog("assembly not found: " + IBRConfiguration.AccoutReferenceHandler, Main.Common.Util.Constants.MessageType.Error);
+                    return false;
+                }
 
                 CleanPrevInstructions();
 

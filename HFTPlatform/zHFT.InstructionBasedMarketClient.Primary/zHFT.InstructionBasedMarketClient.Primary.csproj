@@ -50,6 +50,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
+      <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Common\zHFT.InstructionBasedMarketClient.Common.csproj">
+      <Project>{2b6248b2-af75-4687-9faf-f9ea29d9335f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.DataAccessLayer\zHFT.InstructionBasedMarketClient.DataAccessLayer.csproj">
+      <Project>{8a415a08-9b31-443e-9355-5595b3ef596e}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.DataAccess\zHFT.InstructionBasedMarketClient.DataAccess.csproj">
+      <Project>{be426ed1-c461-4436-9545-a861c20e4a10}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Primary.Common\zHFT.InstructionBasedMarketClient.Primary.Common.csproj">
       <Project>{07c9c46e-6857-4b36-aa19-b5c29245817c}</Project>
       <Name>zHFT.InstructionBasedMarketClient.Primary.Common</Name>
@@ -65,22 +81,6 @@
     <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
       <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
       <Name>zHFT.MarketClient.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj">
-      <Project>{aed28ef6-ddf7-40ad-bc25-dec1b9b1c6f2}</Project>
-      <Name>zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.Common\zHFT.StrategyHandler.InstructionBasedRouting.Common.csproj">
-      <Project>{12e8c682-1075-41c9-bbd8-0020c62aaae5}</Project>
-      <Name>zHFT.StrategyHandler.InstructionBasedRouting.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj">
-      <Project>{58324d7e-90c3-46f4-96e2-ea0fe424663b}</Project>
-      <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.csproj">
-      <Project>{ef14f70f-ad59-4903-b736-774481bec9cb}</Project>
-      <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

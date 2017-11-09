@@ -26,6 +26,12 @@ namespace zHFT.InstructionBasedMarketClient.Primary.Common.Configuration
 
         public long AccountNumber { get; set; }
 
+        public string Market { get; set; }
+
+        public string MarketPrefixCode { get; set; }
+
+        public string MarketClearingID { get; set; }
+
         #endregion
 
         #region Public Methods
@@ -70,6 +76,11 @@ namespace zHFT.InstructionBasedMarketClient.Primary.Common.Configuration
                 resultado = false;
             }
 
+            if (string.IsNullOrEmpty(Market))
+            {
+                result.Add("Market");
+                resultado = false;
+            }
 
             return resultado;
         }

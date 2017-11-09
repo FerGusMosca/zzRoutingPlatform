@@ -36,6 +36,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly ExecutionReportFields Side = new ExecutionReportFields(26);
         public static readonly ExecutionReportFields QuantityType = new ExecutionReportFields(27);
         public static readonly ExecutionReportFields PriceType = new ExecutionReportFields(28);
+        public static readonly ExecutionReportFields OrigClOrdID = new ExecutionReportFields(29);
 
         protected ExecutionReportFields(int pInternalValue)
             : base(pInternalValue)

@@ -16,4 +16,6 @@
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
+  <AccoutReferenceHandler>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.IBAccountManager, zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer</AccoutReferenceHandler>
+
 </Configuration>
