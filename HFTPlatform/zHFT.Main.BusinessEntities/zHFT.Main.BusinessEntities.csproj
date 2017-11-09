@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Market Data\MarketData.cs" />
+    <Compile Include="Market Data\MarketDataRequest.cs" />
     <Compile Include="Securities\BaseTradingRule.cs" />
     <Compile Include="Securities\ExecInstRule.cs" />
     <Compile Include="Securities\FinancingDetail.cs" />

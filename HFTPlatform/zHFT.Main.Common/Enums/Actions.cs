@@ -9,6 +9,7 @@ namespace zHFT.Main.Common.Enums
     public enum Actions
     {
         MARKET_DATA,
+        MARKET_DATA_REQUEST,
         ORDER_BOOK,
         OFFER,
         EXECUTION_REPORT,

@@ -21,3 +21,8 @@ C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAcc
 C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
 C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.pdb

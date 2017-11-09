@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.FixMessageCreator.Primary.Common\zHFT.FixMessageCreator.Primary.Common.csproj">
+      <Project>{0d4cb00d-382b-4503-a9a0-b05574ef4218}</Project>
+      <Name>zHFT.FixMessageCreator.Primary.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.Primary\zHFT.InstructionBasedFullMarketConnectivity.Primary.csproj">
       <Project>{f6a7d207-af0a-48a8-b69c-f067d63e8f6b}</Project>
       <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary</Name>

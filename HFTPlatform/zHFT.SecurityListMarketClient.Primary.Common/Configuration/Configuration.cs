@@ -14,6 +14,10 @@ namespace zHFT.SecurityListMarketClient.Primary.Common.Configuration
 
         public string FIXInitiatorPath { get; set; }
 
+        public string FIXMessageCreator { get; set; }
+
+        public string MarketClearingID { get; set; }
+
         public string User { get; set; }
 
         public string Password { get; set; }
@@ -31,6 +35,12 @@ namespace zHFT.SecurityListMarketClient.Primary.Common.Configuration
             if (string.IsNullOrEmpty(FIXInitiatorPath))
             {
                 result.Add("FIXInitiatorPath");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(FIXMessageCreator))
+            {
+                result.Add("FIXMessageCreator");
                 resultado = false;
             }
 

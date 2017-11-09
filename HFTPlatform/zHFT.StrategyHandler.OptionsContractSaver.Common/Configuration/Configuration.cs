@@ -21,7 +21,7 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.Common.Configuration
 
         #region Public Methods
 
-        public bool CheckDefaults(List<string> result)
+        public override bool CheckDefaults(List<string> result)
         {
             bool resultado = true;
 

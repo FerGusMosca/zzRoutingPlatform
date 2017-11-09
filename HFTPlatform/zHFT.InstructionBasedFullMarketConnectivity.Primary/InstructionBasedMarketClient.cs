@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Converters;
+using zHFT.FixMessageCreator.Primary.Common.v50Sp2;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
 using zHFT.Main.BusinessEntities.Securities;
@@ -15,6 +15,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.MarketClient.Common.Wrappers;
+using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
 
@@ -36,10 +37,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         private int _SECURITIES_REMOVEL_PERIOD = 60 * 60 * 1000;//Once every hour in milliseconds
 
         private int _MAX_ELAPSED_HOURS_FOR_MARKET_DATA = 12;
-
-        private char _CASH_VOLUME = 'w';
-
-        private char _NOMINAL_VOLUME = 'x';
 
         private string _DUMMY_SECURITY = "kcdlsncslkd";
 
@@ -73,6 +70,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             get { return (Common.Configuration.Configuration)Config; }
             set { Config = value; }
         }
+
+        private IFIXMessageCreator FIXMessageCreator { get; set; }
 
         private InstructionManager InstructionManager { get; set; }
 
@@ -115,38 +114,9 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 if (SessionID != null)
                 {
-                    QuickFix50Sp2.MarketDataRequest mdRequest = new QuickFix50Sp2.MarketDataRequest();
+                    string symbol = SecurityConverter.GetSymbolToPrimary(instr.Symbol, PrimaryConfiguration.Market, PrimaryConfiguration.MarketPrefixCode, PrimaryConfiguration.MarketClearingID);
+                    QuickFix.Message mdRequest = FIXMessageCreator.RequestMarketData(instr.Id, symbol);
 
-                    mdRequest.setString(MDReqID.FIELD, instr.Id.ToString());
-                    mdRequest.setChar(SubscriptionRequestType.FIELD, SubscriptionRequestType.SNAPSHOT_PLUS_UPDATES);
-                    mdRequest.setInt(MarketDepth.FIELD, 1);
-                    mdRequest.setInt(MDUpdateType.FIELD, MDUpdateType.FULL);
-                    mdRequest.setChar(AggregatedBook.FIELD, AggregatedBook.YES);
-
-
-                    QuickFix50Sp2.MarketDataRequest.NoMDEntryTypes entriesBlock = new QuickFix50Sp2.MarketDataRequest.NoMDEntryTypes();
-                    entriesBlock.setField(new MDEntryType(MDEntryType.BID));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.OFFER));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.TRADE));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.OPENING_PRICE));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.CLOSING_PRICE));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.SETTLEMENT_PRICE));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.TRADING_SESSION_HIGH_PRICE));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.TRADING_SESSION_LOW_PRICE));
-                    mdRequest.addGroup(entriesBlock);
-                    entriesBlock.setField(new MDEntryType(MDEntryType.TRADE_VOLUME));
-                    mdRequest.addGroup(entriesBlock);
-
-                    QuickFix50Sp2.MarketDataRequest.NoRelatedSym symbolBlock = new QuickFix50Sp2.MarketDataRequest.NoRelatedSym();
-                    symbolBlock.setField(new Symbol(SecurityConverter.ProcessSymbolFromInstrToPrimary(instr.Symbol, PrimaryConfiguration)));
-                    mdRequest.addGroup(symbolBlock);
 
                     DoLog(string.Format("@{0}:Sending message: {1}", PrimaryConfiguration.Name, mdRequest.ToString()),
                             Main.Common.Util.Constants.MessageType.Information);
@@ -171,98 +141,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
             }
         }
-
-        protected void LoadCurrentEntry(Security sec, QuickFix50.MarketDataIncrementalRefresh.NoMDEntries entry)
-        {
-            char type = ' ';
-            try
-            {
-                type = entry.getChar(MDEntryType.FIELD);
-
-                if (type == MDEntryType.BID)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    double qty = entry.getDouble(MDEntrySize.FIELD);
-                    sec.MarketData.BestBidPrice = price;
-                    sec.MarketData.BestBidSize = Convert.ToInt64(qty);
-                }
-                else if (type == MDEntryType.OFFER)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    double qty = entry.getDouble(MDEntrySize.FIELD);
-                    sec.MarketData.BestAskPrice = price;
-                    sec.MarketData.BestAskSize = Convert.ToInt64(qty);
-                }
-                else if (type == MDEntryType.TRADE)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    double qty = entry.getDouble(MDEntrySize.FIELD);
-
-                    string cond = entry.getField(TradeCondition.FIELD);
-                    int trdType = entry.getInt(TrdType.FIELD);
-
-                    if (cond == TradeCondition.EXCHANGE_LAST.ToString()
-                        && trdType == TrdType.REGULAR_TRADE)
-                    {//we want the Trade field to only have the last and regular trade
-                        sec.MarketData.Trade = price;
-                        sec.MarketData.MDTradeSize = qty;
-                    }
-                }
-                else if (type == MDEntryType.OPENING_PRICE)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    sec.MarketData.OpeningPrice = price;
-                }
-                else if (type == MDEntryType.CLOSING_PRICE)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    sec.MarketData.ClosingPrice = price;
-                }
-                else if (type == MDEntryType.SETTLEMENT_PRICE)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    sec.MarketData.SettlementPrice = price;
-                }
-                else if (type == MDEntryType.TRADING_SESSION_HIGH_PRICE)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    sec.MarketData.TradingSessionHighPrice = price;
-                }
-                else if (type == MDEntryType.TRADING_SESSION_LOW_PRICE)
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    sec.MarketData.TradingSessionLowPrice = price;
-                }
-                else if (type == MDEntryType.TRADEVOLUME)
-                {
-                    double qty = entry.getDouble(MDEntrySize.FIELD);
-                    sec.MarketData.TradeVolume = qty;
-                }
-                else if (type == MDEntryType.OPENINTEREST)
-                {
-                    double qty = entry.getDouble(MDEntrySize.FIELD);
-                    sec.MarketData.OpenInterest = qty;
-                }
-                else if (type == _CASH_VOLUME)//Primary Custom Field
-                {
-                    double price = entry.getDouble(MDEntryPx.FIELD);
-                    sec.MarketData.CashVolume = price;
-                }
-                else if (type == _NOMINAL_VOLUME)
-                {
-                    double qty = entry.getDouble(MDEntrySize.FIELD);
-                    sec.MarketData.NominalVolume = qty;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                DoLog(string.Format("@{0}: Exception recovering market data for type {1}:{2} ", PrimaryConfiguration.Name, type, ex.Message), Main.Common.Util.Constants.MessageType.Error);
-
-            }
-        }
-
-        protected void ProcesssMDFullRefreshMessage(QuickFix50.MarketDataSnapshotFullRefresh message)
+    
+        protected void ProcesssMDFullRefreshMessage(QuickFix.Message message)
         {
             DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
@@ -276,21 +156,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     Security sec = ActiveSecurities.Values.Where(x => x.Symbol == symbol).FirstOrDefault();
 
-                    if (message.isSetNoMDEntries())
-                    {
-                        QuickFix50.MarketDataIncrementalRefresh.NoMDEntries entry = new QuickFix50.MarketDataIncrementalRefresh.NoMDEntries();
-                        int noEntries = message.getField(new NoMDEntries()).getValue();
-                        sec.MarketData.MDUpdateAction = UpdateAction.New;
-                        sec.MarketData.MDEntryDate = DateTime.Now;
-                        sec.MarketData.MDLocalEntryDate = DateTime.Now;
-                        sec.MarketData.Security = sec;
-
-                        for (uint i = 1; i <= noEntries; i++)
-                        {
-                            message.getGroup(i, entry);
-                            LoadCurrentEntry(sec, entry);
-                        }
-                    }
+                    FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
                 }
             }
             else
@@ -323,7 +189,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                                 Security sec = new Security()
                                 {
-                                    Symbol = SecurityConverter.GetCleanSymbolFromInstr(instr.Symbol, PrimaryConfiguration.Market),
+                                    Symbol = SecurityConverter.GetCleanSymbolFromFullSymbol(instr.Symbol, PrimaryConfiguration.Market),
                                 };
 
                                 ActiveSecurities.Add(instr.Id, sec);
@@ -446,7 +312,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         RunPublishSecurity(sec, PrimaryConfiguration);
                     }
                 }
-
             }
         }
 
@@ -514,6 +379,15 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     InstructionManager = new InstructionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
                     PositionManager = new PositionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
                     AccountManager = new AccountManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
+
+                    var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
+                    if (fixMessageCreator != null)
+                    {
+                        FIXMessageCreator = (IFIXMessageCreator)Activator.CreateInstance(fixMessageCreator);
+                    }
+                    else
+                        throw new Exception(string.Format("@{0}:Assembly not found: " + PrimaryConfiguration.FIXMessageCreator));
+
 
                     SessionSettings = new SessionSettings(PrimaryConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
@@ -583,7 +457,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         ProcesssMDFullRefreshMessage(msg);
 
                     }
-                    else if (value is QuickFix50.MarketDataRequestReject)
+                    else if (value is QuickFix50Sp2.MarketDataRequestReject)
                     {
                         DoLog(string.Format("{0}: MarketDataRequestReject:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
                     }

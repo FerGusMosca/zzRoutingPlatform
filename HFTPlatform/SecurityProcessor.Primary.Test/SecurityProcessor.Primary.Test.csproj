@@ -55,6 +55,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.FixMessageCreator.Primary.Common\zHFT.FixMessageCreator.Primary.Common.csproj">
+      <Project>{0d4cb00d-382b-4503-a9a0-b05574ef4218}</Project>
+      <Name>zHFT.FixMessageCreator.Primary.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>

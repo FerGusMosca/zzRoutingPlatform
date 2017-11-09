@@ -2,6 +2,7 @@
 <Configuration>
   <Name>InstructionProcessor.Primary.Test</Name>
   <FIXInitiatorPath>.\FIX Sessions\initiator.cfg</FIXInitiatorPath>
+  <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
   <User>fmosca</User>
   <Password>WhYbs5wY</Password>
 

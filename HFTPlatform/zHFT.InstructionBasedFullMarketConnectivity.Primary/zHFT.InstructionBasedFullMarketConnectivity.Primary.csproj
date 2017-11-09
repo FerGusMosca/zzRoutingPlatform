@@ -63,6 +63,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.FixMessageCreator.Primary.Common\zHFT.FixMessageCreator.Primary.Common.csproj">
+      <Project>{0d4cb00d-382b-4503-a9a0-b05574ef4218}</Project>
+      <Name>zHFT.FixMessageCreator.Primary.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.csproj">
       <Project>{1fc8714d-80f5-40d8-a202-56aedbf57a6d}</Project>
       <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary.Common</Name>
@@ -98,6 +102,10 @@
     <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
       <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
       <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Primary.Common\zHFT.MarketClient.Primary.Common.csproj">
+      <Project>{851bd5d9-25fd-4718-9953-cdd6f4c10d11}</Project>
+      <Name>zHFT.MarketClient.Primary.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.SingletonModulesHandler.Common\zHFT.SingletonModulesHandler.Common.csproj">
       <Project>{89dcba08-faf9-47df-8cd1-8d076ce75c9c}</Project>

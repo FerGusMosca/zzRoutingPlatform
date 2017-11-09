@@ -19,6 +19,5 @@ C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\z
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\bin\Debug\zHFT.Main.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\bin\Debug\zHFT.Main.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\bin\Debug\zHFT.Main.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.pdb

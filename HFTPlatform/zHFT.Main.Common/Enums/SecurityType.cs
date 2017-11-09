@@ -15,6 +15,7 @@ namespace zHFT.Main.Common.Enums
         CASH,//Cash,
         TB,//Treasury Bill - non US
         IRS,// Interest Rate Swap
-        REPO,//Repurchase        OTH//Other
+        REPO,//Repurchase
+        OTH//Other
     }
 }

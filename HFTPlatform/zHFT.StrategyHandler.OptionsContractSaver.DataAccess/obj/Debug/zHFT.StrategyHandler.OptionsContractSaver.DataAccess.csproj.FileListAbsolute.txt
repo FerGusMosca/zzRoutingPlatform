@@ -14,3 +14,8 @@ C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsCont
 C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.pdb
 C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.dll
 C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.pdb

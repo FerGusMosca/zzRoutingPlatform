@@ -1,0 +1,245 @@
+2017-11-09 11:55:12  :: 11/9/2017 11:55:12 AMBaseCommunicationModule.LoadConfig
+2017-11-09 11:55:12  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 11:55:12  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 11:55:12  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 11:56:26  :: 11/9/2017 11:56:26 AMBaseCommunicationModule.LoadConfig
+2017-11-09 11:56:26  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 11:56:26  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 11:56:26  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 14:46:02  :: 11/9/2017 2:46:02 PMBaseCommunicationModule.LoadConfig
+2017-11-09 14:46:02  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 14:46:02  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 14:46:02  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 14:46:40  :: Processing Security List:Wrapper
+2017-11-09 14:46:46  :: Processing Security List:Wrapper
+2017-11-09 14:46:47  :: Processing Security List:Wrapper
+2017-11-09 14:47:28  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 14:47:28  :: Stock TGSU2 already existed
+2017-11-09 14:47:28  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 14:47:28  :: Stock YPFD already existed
+2017-11-09 14:47:28  :: Stock PETR already existed
+2017-11-09 14:47:28  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 14:47:28  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 14:47:28  :: Stock TECO2 already existed
+2017-11-09 14:47:28  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 14:47:28  :: Stock MIRG already existed
+2017-11-09 14:47:28  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 14:47:28  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 14:47:28  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 14:47:28  :: Stock TGNO4 already existed
+2017-11-09 14:47:28  :: Stock CELU already existed
+2017-11-09 14:47:28  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 14:47:28  :: Stock TRAN already existed
+2017-11-09 14:47:28  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 14:47:28  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 14:47:28  :: Stock PESA already existed
+2017-11-09 14:47:28  :: Stock MOLI already existed
+2017-11-09 14:47:28  :: Stock JMIN already existed
+2017-11-09 15:07:52  :: 11/9/2017 3:07:52 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:07:52  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:07:52  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:07:52  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:07:54  :: Processing Security List:Wrapper
+2017-11-09 15:07:59  :: Processing Security List:Wrapper
+2017-11-09 15:08:00  :: Processing Security List:Wrapper
+2017-11-09 15:08:00  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 15:08:00  :: Stock TGSU2 already existed
+2017-11-09 15:08:00  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 15:08:00  :: Stock YPFD already existed
+2017-11-09 15:08:00  :: Stock PETR already existed
+2017-11-09 15:08:00  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 15:08:00  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 15:08:00  :: Stock TECO2 already existed
+2017-11-09 15:08:00  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 15:08:00  :: Stock MIRG already existed
+2017-11-09 15:08:00  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 15:08:00  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:08:00  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:08:00  :: Stock TGNO4 already existed
+2017-11-09 15:08:00  :: Stock CELU already existed
+2017-11-09 15:08:00  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 15:08:00  :: Stock TRAN already existed
+2017-11-09 15:08:00  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 15:08:00  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 15:08:00  :: Stock PESA already existed
+2017-11-09 15:08:00  :: Stock MOLI already existed
+2017-11-09 15:08:00  :: Stock JMIN already existed
+2017-11-09 15:16:33  :: 11/9/2017 3:16:33 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:16:33  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:16:33  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:16:33  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:16:35  :: Processing Security List:Wrapper
+2017-11-09 15:16:40  :: Processing Security List:Wrapper
+2017-11-09 15:16:41  :: Processing Security List:Wrapper
+2017-11-09 15:16:41  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 15:16:41  :: Stock TGSU2 already existed
+2017-11-09 15:16:41  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 15:16:41  :: Stock YPFD already existed
+2017-11-09 15:16:41  :: Stock PETR already existed
+2017-11-09 15:16:41  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 15:16:41  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 15:16:41  :: Stock TECO2 already existed
+2017-11-09 15:16:41  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 15:16:41  :: Stock MIRG already existed
+2017-11-09 15:16:41  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 15:16:41  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:16:41  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:16:41  :: Stock TGNO4 already existed
+2017-11-09 15:16:41  :: Stock CELU already existed
+2017-11-09 15:16:41  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 15:16:41  :: Stock TRAN already existed
+2017-11-09 15:16:41  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 15:16:41  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 15:16:41  :: Stock PESA already existed
+2017-11-09 15:16:41  :: Stock MOLI already existed
+2017-11-09 15:16:41  :: Stock JMIN already existed
+2017-11-09 15:16:58  :: ProcessOutgoing: Wrapper
+2017-11-09 15:20:19  :: 11/9/2017 3:20:19 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:20:19  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:20:19  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:20:19  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:21:51  :: 11/9/2017 3:21:51 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:21:51  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:21:51  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:21:51  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:22:03  :: Processing Security List:Wrapper
+2017-11-09 15:22:53  :: 11/9/2017 3:22:53 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:22:53  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:22:53  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:22:53  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:23:28  :: Processing Security List:Wrapper
+2017-11-09 15:23:37  :: Processing Security List:Wrapper
+2017-11-09 15:23:38  :: Processing Security List:Wrapper
+2017-11-09 15:23:38  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 15:23:38  :: Stock TGSU2 already existed
+2017-11-09 15:23:38  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 15:23:38  :: Stock YPFD already existed
+2017-11-09 15:23:38  :: Stock PETR already existed
+2017-11-09 15:23:38  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 15:23:38  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 15:23:38  :: Stock TECO2 already existed
+2017-11-09 15:23:38  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 15:23:38  :: Stock MIRG already existed
+2017-11-09 15:23:38  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 15:23:38  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:23:38  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:23:38  :: Stock TGNO4 already existed
+2017-11-09 15:23:38  :: Stock CELU already existed
+2017-11-09 15:23:38  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 15:23:38  :: Stock TRAN already existed
+2017-11-09 15:23:38  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 15:23:38  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 15:23:38  :: Stock PESA already existed
+2017-11-09 15:23:38  :: Stock MOLI already existed
+2017-11-09 15:23:38  :: Stock JMIN already existed
+2017-11-09 15:23:38  :: ProcessOutgoing: Wrapper
+2017-11-09 15:24:29  :: 11/9/2017 3:24:29 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:24:29  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:24:29  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:24:29  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:25:02  :: Processing Security List:Wrapper
+2017-11-09 15:25:45  :: 11/9/2017 3:25:45 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:25:45  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:25:45  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:25:45  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:26:50  :: Processing Security List:Wrapper
+2017-11-09 15:26:55  :: Processing Security List:Wrapper
+2017-11-09 15:26:57  :: Processing Security List:Wrapper
+2017-11-09 15:26:57  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 15:26:57  :: Stock TGSU2 already existed
+2017-11-09 15:26:57  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 15:26:57  :: Stock YPFD already existed
+2017-11-09 15:26:57  :: Stock PETR already existed
+2017-11-09 15:26:57  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 15:26:57  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 15:26:57  :: Stock TECO2 already existed
+2017-11-09 15:26:57  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 15:26:57  :: Stock MIRG already existed
+2017-11-09 15:26:57  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 15:26:57  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:26:57  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:26:57  :: Stock TGNO4 already existed
+2017-11-09 15:26:57  :: Stock CELU already existed
+2017-11-09 15:26:57  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 15:26:57  :: Stock TRAN already existed
+2017-11-09 15:26:57  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 15:26:57  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 15:26:57  :: Stock PESA already existed
+2017-11-09 15:26:57  :: Stock MOLI already existed
+2017-11-09 15:26:57  :: Stock JMIN already existed
+2017-11-09 15:26:57  :: ProcessOutgoing: Wrapper
+2017-11-09 15:29:55  :: 11/9/2017 3:29:55 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:29:55  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:29:55  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:29:55  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:30:04  :: Processing Security List:Wrapper
+2017-11-09 15:31:58  :: Processing Security List:Wrapper
+2017-11-09 15:32:04  :: Processing Security List:Wrapper
+2017-11-09 15:32:05  :: Processing Security List:Wrapper
+2017-11-09 15:32:05  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 15:32:05  :: Stock TGSU2 already existed
+2017-11-09 15:32:05  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 15:32:05  :: Stock YPFD already existed
+2017-11-09 15:32:05  :: Stock PETR already existed
+2017-11-09 15:32:05  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 15:32:05  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 15:32:05  :: Stock TECO2 already existed
+2017-11-09 15:32:05  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 15:32:05  :: Stock MIRG already existed
+2017-11-09 15:32:05  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 15:32:05  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:32:05  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:32:05  :: Stock TGNO4 already existed
+2017-11-09 15:32:05  :: Stock CELU already existed
+2017-11-09 15:32:05  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 15:32:05  :: Stock TRAN already existed
+2017-11-09 15:32:05  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 15:32:05  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 15:32:05  :: Stock PESA already existed
+2017-11-09 15:32:05  :: Stock MOLI already existed
+2017-11-09 15:32:05  :: Stock JMIN already existed
+2017-11-09 15:32:05  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:09  :: 11/9/2017 3:37:09 PMBaseCommunicationModule.LoadConfig
+2017-11-09 15:37:09  :: Loading config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:37:09  :: Processing config:.\outgoingSecurityListSaver.xml
+2017-11-09 15:37:09  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2017-11-09 15:37:11  :: Processing Security List:Wrapper
+2017-11-09 15:37:16  :: Processing Security List:Wrapper
+2017-11-09 15:37:17  :: Processing Security List:Wrapper
+2017-11-09 15:37:17  :: @AA17: New symbol AA17 not saved because of configuration
+2017-11-09 15:37:17  :: Stock TGSU2 already existed
+2017-11-09 15:37:17  :: @COMC3.15AG: New symbol COMC3.15AG not saved because of configuration
+2017-11-09 15:37:17  :: Stock YPFD already existed
+2017-11-09 15:37:17  :: Stock PETR already existed
+2017-11-09 15:37:17  :: @CVX: New symbol CVX not saved because of configuration
+2017-11-09 15:37:17  :: @AMX9: New symbol AMX9 not saved because of configuration
+2017-11-09 15:37:17  :: Stock TECO2 already existed
+2017-11-09 15:37:17  :: @TVPP: New symbol TVPP not saved because of configuration
+2017-11-09 15:37:17  :: Stock MIRG already existed
+2017-11-09 15:37:17  :: @TGNO2: New symbol TGNO2 not saved because of configuration
+2017-11-09 15:37:17  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:37:17  :: @AM18: New symbol AM18 not saved because of configuration
+2017-11-09 15:37:17  :: Stock TGNO4 already existed
+2017-11-09 15:37:17  :: Stock CELU already existed
+2017-11-09 15:37:17  :: @JPM: New symbol JPM not saved because of configuration
+2017-11-09 15:37:17  :: Stock TRAN already existed
+2017-11-09 15:37:17  :: @PERK: New symbol PERK not saved because of configuration
+2017-11-09 15:37:17  :: @VALE: New symbol VALE not saved because of configuration
+2017-11-09 15:37:17  :: Stock PESA already existed
+2017-11-09 15:37:17  :: Stock MOLI already existed
+2017-11-09 15:37:17  :: Stock JMIN already existed
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:17  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:18  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:18  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:18  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:18  :: ProcessOutgoing: Wrapper
+2017-11-09 15:37:19  :: Processing Security List:Wrapper

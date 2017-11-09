@@ -5,11 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.Main.Common.Wrappers;
+using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SecurityListMarketClient.Primary.Common.Wrappers;
 
 namespace zHFT.SecurityListMarketClient.Primary.Client
@@ -30,6 +33,8 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
             set { Config = value; }
         }
 
+        private IFIXMessageCreator FIXMessageCreator { get; set; }
+
         protected SessionSettings SessionSettings { get; set; }
         protected FileStoreFactory FileStoreFactory { get; set; }
         protected ScreenLogFactory ScreenLogFactory { get; set; }
@@ -37,21 +42,37 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
         protected MessageFactory MessageFactory { get; set; }
         protected SocketInitiator Initiator { get; set; }
 
+        protected int MarketDataRequestId { get; set; }
+
 
         #endregion
 
         #region Public Overriden Methods
 
-        public override Main.Common.DTO.CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
+        public override Main.Common.DTO.CMState ProcessMessage(Wrapper wrapper)
         {
             try
             {
                 if (wrapper != null)
                 {
                     Actions action = wrapper.GetAction();
-                    DoLog("Sending message " + action + " not implemented", Main.Common.Util.Constants.MessageType.Information);
-
-                    return CMState.BuildFail(new Exception("Sending message " + action + " not implemented"));
+                    if (action == Actions.MARKET_DATA_REQUEST)
+                    {
+                        try
+                        {
+                            ProcessMarketDataRequest(wrapper);
+                            return CMState.BuildSuccess();
+                        }
+                        catch (Exception ex)
+                        {
+                            return CMState.BuildFail(ex);
+                        }
+                    }
+                    else
+                    {
+                        DoLog("Sending message " + action + " not implemented", Main.Common.Util.Constants.MessageType.Information);
+                        return CMState.BuildFail(new Exception("Sending message " + action + " not implemented"));
+                    }
                 }
                 else
                     throw new Exception("Invalid Wrapper");
@@ -74,6 +95,16 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
                 if (LoadConfig(moduleConfigFile))
                 {
+
+                    var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
+                    if (fixMessageCreator != null)
+                    {
+                        FIXMessageCreator = (IFIXMessageCreator)Activator.CreateInstance(fixMessageCreator);
+                    }
+                    else
+                        throw new Exception(string.Format("@{0}:Assembly not found: " + PrimaryConfiguration.FIXMessageCreator));
+
+                    MarketDataRequestId = 1;
 
                     SessionSettings = new SessionSettings(PrimaryConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
@@ -101,6 +132,30 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
         #endregion
 
         #region Protected Methods
+
+        protected void ProcessMarketDataRequest(Wrapper marketDataRequestWrapper)
+        {
+            if (SessionID != null)
+            {
+                try
+                {
+                    string exchange = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Exchange);
+                    string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
+
+                    MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
+                                                                                            PrimaryConfiguration.MarketClearingID);
+
+                    QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);
+                    MarketDataRequestId++;
+
+                    Session.sendToTarget(msg, SessionID);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(string.Format("@{0}: Error requesting market data:{1}", PrimaryConfiguration.Name, ex.Message));
+                }
+            }
+        }
 
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
@@ -179,11 +234,8 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                     if (SessionID != null)
                     {
                         DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                        QuickFix50Sp2.SecurityListRequest rq = new QuickFix50Sp2.SecurityListRequest();
 
-                        rq.setInt(QuickFix.SecurityListRequestType.FIELD, PrimaryConfiguration.SecurityListRequestType);
-                        rq.setString(SecurityReqID.FIELD, _DUMMY_SECURITY);
-
+                        QuickFix.Message rq = FIXMessageCreator.RequestSecurityList(PrimaryConfiguration.SecurityListRequestType, _DUMMY_SECURITY);
                         Session.sendToTarget(rq, SessionID);
 
                     }

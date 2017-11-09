@@ -3,8 +3,18 @@
   <Name>Security List Processor</Name>
 
   <SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >
-  <Market>BUE</Market> <!--BUE=BYMA,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
   <Country>ARG</Country><!--USA=Estados Unidos,ARG=Argentna-->
+  <MarketClearingID>48hs</MarketClearingID>
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
 
+  <SaveNewSecurities>false</SaveNewSecurities>
+  <SecurityTypes>
+    <SecurityType>CS</SecurityType><!--CS= Common Stock-->
+    <SecurityType>OPT</SecurityType><!--OPT=Options-->
+  </SecurityTypes>
+
+  <Markets>
+    <Market>BUE</Market> <!--BUE=BYMA,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
+  </Markets>
+  
 </Configuration>

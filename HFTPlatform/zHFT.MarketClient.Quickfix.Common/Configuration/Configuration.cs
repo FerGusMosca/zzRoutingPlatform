@@ -24,7 +24,7 @@ namespace zHFT.MarketClient.Quickfix.Common.Configuration
 
         #region Private Methods
 
-        public  bool CheckDefaults(List<string> result)
+        public override  bool CheckDefaults(List<string> result)
         {
             bool resultado = true;
 

@@ -16,3 +16,7 @@ C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.Busines
 C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
 C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb
 C:\Users\fmosca\Desktop\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\bin\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\bin\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb

@@ -103,6 +103,19 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             }
         }
 
+        public List<Stock> GetByMarket(string market)
+        {
+            List<s_stocks> stocksDB = ctx.s_stocks.Where(x => x.mercado == market).ToList();
+            List<Stock> stocks = new List<Stock>();
+
+            foreach (s_stocks stockDB in stocksDB)
+            {
+                stocks.Add(Map(stockDB));
+            }
+
+            return stocks;
+        }
+
         #endregion
     }
 }

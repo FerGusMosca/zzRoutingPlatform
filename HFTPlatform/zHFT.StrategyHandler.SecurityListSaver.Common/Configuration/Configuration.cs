@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using zHFT.Main.Common.Abstract;
 
 namespace zHFT.StrategyHandler.SecurityListSaver.Common.Configuration
@@ -11,13 +12,21 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Common.Configuration
     {
         #region Public Attributes
 
-        public string Market { get; set; }
-
         public string Country { get; set; }
 
         public string SecuritiesAccessLayerConnectionString { get; set; }
 
         public string SecuritiesMarketTranslator { get; set; }
+
+        public bool? SaveNewSecurities { get; set; }
+
+        [XmlArray]
+        [XmlArrayItem(ElementName = "SecurityType")]
+        public List<string> SecurityTypes { get; set; }
+
+        [XmlArray]
+        [XmlArrayItem(ElementName = "Market")]
+        public List<string> Markets { get; set; }
 
 
         #endregion
@@ -33,15 +42,16 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Common.Configuration
                 resultado = false;
             }
 
-            if (string.IsNullOrEmpty(Market))
-            {
-                result.Add("Market");
-                resultado = false;
-            }
 
             if (string.IsNullOrEmpty(Country))
             {
                 result.Add("Country");
+                resultado = false;
+            }
+
+            if (!SaveNewSecurities.HasValue)
+            {
+                result.Add("SaveNewSecurities");
                 resultado = false;
             }
 

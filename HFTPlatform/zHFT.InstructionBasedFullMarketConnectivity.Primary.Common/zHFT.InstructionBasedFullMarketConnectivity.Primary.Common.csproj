@@ -40,7 +40,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
-    <Compile Include="Converters\SecurityConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappers\MarketDataWrapper.cs" />
   </ItemGroup>
@@ -57,7 +56,12 @@
       <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
       <Name>zHFT.MarketClient.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Primary.Common\zHFT.MarketClient.Primary.Common.csproj">
+      <Project>{851bd5d9-25fd-4718-9953-cdd6f4c10d11}</Project>
+      <Name>zHFT.MarketClient.Primary.Common</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

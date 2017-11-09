@@ -13,6 +13,7 @@ using zHFT.Main.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.SecurityListSaver.BusinessEntities;
 using zHFT.StrategyHandler.SecurityListSaver.Common.Interfaces;
+using zHFT.StrategyHandler.SecurityListSaver.Common.Wrappers;
 using zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers;
 
 namespace zHFT.StrategyHandler.SecurityListSaver
@@ -38,9 +39,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
         protected CountryManager CountryManager { get; set; }
 
-        Market MainMarket { get; set; }
+        protected List<Market> Markets { get; set; }
 
-        Country MainCountry { get; set; }
+        protected Country MainCountry { get; set; }
 
         #endregion
 
@@ -56,36 +57,121 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
         #region Private Methods
 
-        protected void ProcessStocks(SecurityList securityList)
+        protected void RequestMarketData()
         {
-            SecurityTranslator.DoTranslate(securityList);
+            if (SecurityListSaverConfiguration.SecurityTypes == null)
+                return;
 
-            List<Security> stocksSecurities = securityList.Securities.Where(x => x.SecType == SecurityType.CS).ToList();
-
-            //solo trabajamos con el main market
-            foreach (Security security in stocksSecurities.Where(x => x.Exchange == MainMarket.Code))
+            foreach (string secType in SecurityListSaverConfiguration.SecurityTypes)
             {
-                Stock stock = new Stock();
-                stock.Market = MainMarket;
-                stock.Country = MainCountry.Code;
-                stock.Symbol = security.Symbol.Trim();
-                stock.Name = "";
-                stock.Category = "";
-
-                Stock prevStock = StockManager.GetByCode(security.Symbol.Trim(), MainMarket.Code, MainCountry.Code);
-
-                if (prevStock == null)
+                if (secType == SecurityType.CS.ToString())
                 {
-                    stock.LoadFinalSymbol();
-                    StockManager.Persist(stock);
-                    DoLog(string.Format("Inserting new stock from market {0}:", stock.Symbol),
-                          Main.Common.Util.Constants.MessageType.Information);
+                    foreach (Market market in Markets)
+                    {
+                        IList<Stock> stocks = StockManager.GetByMarket(market.Code);
 
+                        foreach(Stock stock in stocks)
+                        {
+                            Security stockSecToRequest = new Security();
+                            stockSecToRequest.Symbol = stock.Symbol;
+                            stockSecToRequest.Exchange = market.Code;
+
+                            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                            OnMessageRcv(wrapper);
+                        }
+                    }
+                
+                }
+                else if (secType == SecurityType.OPT.ToString())
+                {
+
+                    //Pedimos el md de todas las opciones
                 }
                 else
                 {
-                    DoLog(string.Format("Stock {0} already existed", stock.Symbol),
-                             Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("@{0}: Could not handle market data for asset class {1}:", SecurityListSaverConfiguration.Name, secType),
+                                        Main.Common.Util.Constants.MessageType.Error);
+                }
+            }
+        }
+
+        protected void ProcessStocksList(List<Security> stocksSecurities)
+        {
+            foreach (Market market in Markets)
+            {
+                //solo trabajamos con el main market
+                foreach (Security security in stocksSecurities.Where(x => x.Exchange == market.Code))
+                {
+                    Stock stock = new Stock();
+                    stock.Market = market;
+                    stock.Country = MainCountry.Code;
+                    stock.Symbol = security.Symbol.Trim();
+                    stock.Name = "";
+                    stock.Category = "";
+
+                    Stock prevStock = StockManager.GetByCode(security.Symbol.Trim(), market.Code, MainCountry.Code);
+
+                    if (prevStock == null)
+                    {
+                        if (SecurityListSaverConfiguration.SaveNewSecurities.HasValue && SecurityListSaverConfiguration.SaveNewSecurities.Value)
+                        {
+                            stock.LoadFinalSymbol();
+
+                            StockManager.Persist(stock);
+                            DoLog(string.Format("Inserting new stock from market {0}:", stock.Symbol),
+                                  Main.Common.Util.Constants.MessageType.Information);
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", stock.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+
+                        }
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("Stock {0} already existed", stock.Symbol),
+                                 Main.Common.Util.Constants.MessageType.Information);
+                    }
+                }
+            }
+
+            RequestMarketData();
+        }
+
+        protected void ProcessOptionsList(List<Security> optionSecurities)
+        {
+            foreach (Market market in Markets)
+            {
+                //solo trabajamos con el main market
+                foreach (Security security in optionSecurities.Where(x => x.Exchange == market.Code))
+                {
+                  //TODO: Implementar 
+                }
+            }
+        }
+
+        protected void ProcessSecurities(SecurityList securityList)
+        {
+            SecurityTranslator.DoTranslate(securityList);
+
+            foreach (string secType in SecurityListSaverConfiguration.SecurityTypes)
+            {
+                if (secType == SecurityType.CS.ToString())
+                {
+                    List<Security> stocksSecurities = securityList.Securities.Where(x => x.SecType == SecurityType.CS).ToList();
+                    ProcessStocksList(stocksSecurities);
+                }
+                else if (secType == SecurityType.OPT.ToString())
+                {
+                    List<Security> optionSecurities = securityList.Securities.Where(x => x.SecType == SecurityType.OPT).ToList();
+                    ProcessOptionsList(optionSecurities);
+                }
+                else
+                {
+                    DoLog(string.Format("@{0}: Security Type not handled {1}:", SecurityListSaverConfiguration.Name, secType),
+                        Main.Common.Util.Constants.MessageType.Error);
                 }
             }
         }
@@ -97,9 +183,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver
             {
                 SecurityList securityList =  SecurityListConverter.GetSecurityList(wrapper, Config);
 
-                //Procesar y guardar
-                //List<Security> options = securityList.Securities.Where(x => x.SecType == SecurityType.OPT).ToList();
-                ProcessStocks(securityList);
+                ProcessSecurities(securityList);
                 return CMState.BuildSuccess();
             }
             catch (Exception ex)
@@ -149,14 +233,19 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
                     CountryManager = new CountryManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
-                    MainMarket= MarketManager.GetByCode(SecurityListSaverConfiguration.Market);
+                    Markets = new List<Market>();
+                    foreach(string market in SecurityListSaverConfiguration.Markets)
+                    {
+                        Market mrk = MarketManager.GetByCode(market);
+                        if (mrk != null)
+                            Markets.Add(mrk);
+                        else
+                        {
+                            DoLog(string.Format("@{0}:Market {0} not found", market), Main.Common.Util.Constants.MessageType.Error);
+                        }
+                    }
 
                     MainCountry = CountryManager.GetByCode(SecurityListSaverConfiguration.Country);
-
-
-                    if (MainMarket == null)
-                        throw new Exception(string.Format("No hay ningún mercado configurado para el código {0}", SecurityListSaverConfiguration.Market));
-
 
                     var typeMarketTranslator = Type.GetType(SecurityListSaverConfiguration.SecuritiesMarketTranslator);
                     if (typeMarketTranslator != null)

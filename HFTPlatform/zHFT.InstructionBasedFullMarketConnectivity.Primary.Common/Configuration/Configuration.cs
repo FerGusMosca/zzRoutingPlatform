@@ -14,6 +14,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configurati
 
         public string FIXInitiatorPath { get; set; }
 
+        public string FIXMessageCreator { get; set; }
+
         public string User { get; set; }
 
         public string Password { get; set; }
@@ -43,6 +45,12 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configurati
             if (string.IsNullOrEmpty(FIXInitiatorPath))
             {
                 result.Add("FIXInitiatorPath");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(FIXMessageCreator))
+            {
+                result.Add("FIXMessageCreator");
                 resultado = false;
             }
 

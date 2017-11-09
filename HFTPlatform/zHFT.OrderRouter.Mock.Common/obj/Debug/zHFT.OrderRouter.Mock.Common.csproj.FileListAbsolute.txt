@@ -16,3 +16,14 @@ C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin
 C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\obj\Debug\zHFT.OrderRouter.Mock.Common.dll
 C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\obj\Debug\zHFT.OrderRouter.Mock.Common.pdb
 C:\Users\zimzum\Dropbox\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\obj\Debug\zHFT.OrderRouter.Mock.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\zHFT.OrderRouter.Mock.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\zHFT.OrderRouter.Mock.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\obj\Debug\zHFT.OrderRouter.Mock.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\obj\Debug\zHFT.OrderRouter.Mock.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouter.Mock.Common\obj\Debug\zHFT.OrderRouter.Mock.Common.pdb

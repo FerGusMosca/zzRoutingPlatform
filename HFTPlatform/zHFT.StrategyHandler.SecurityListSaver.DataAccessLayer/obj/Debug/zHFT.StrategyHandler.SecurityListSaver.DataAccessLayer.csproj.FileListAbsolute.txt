@@ -16,3 +16,12 @@ C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityLis
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.pdb

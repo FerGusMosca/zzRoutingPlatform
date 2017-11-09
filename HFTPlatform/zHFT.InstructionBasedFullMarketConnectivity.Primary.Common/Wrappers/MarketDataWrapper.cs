@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Converters;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.MarketClient.Primary.Common.Converters;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Wrappers
 {
