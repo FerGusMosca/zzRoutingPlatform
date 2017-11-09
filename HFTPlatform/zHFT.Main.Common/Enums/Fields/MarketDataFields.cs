@@ -53,6 +53,8 @@ namespace zHFT.Main.Common.Enums
         public static readonly MarketDataFields BestAskExch = new MarketDataFields(35);
         public static readonly MarketDataFields BestBidExch = new MarketDataFields(36);
         public static readonly MarketDataFields MDTradeSize = new MarketDataFields(37);
+
+        public static readonly MarketDataFields MDLocalEntryDate = new MarketDataFields(38);
         
         protected MarketDataFields(int pInternalValue)
             : base(pInternalValue)

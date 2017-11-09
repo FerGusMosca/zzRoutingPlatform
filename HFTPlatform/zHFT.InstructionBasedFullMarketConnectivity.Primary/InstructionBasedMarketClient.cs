@@ -239,7 +239,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             try
             {
-                zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Wrappers.MarketDataWrapper(sec, Config);
+                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec,PrimaryConfiguration.Market, Config);
                 CMState state = OnMarketDataMessageRcv(wrapper);
 
                 if (state.Success)

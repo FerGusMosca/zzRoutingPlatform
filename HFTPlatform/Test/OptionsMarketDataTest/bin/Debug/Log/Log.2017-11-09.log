@@ -1,0 +1,9 @@
+2017-11-09 19:50:18  :: 9/11/2017 19:50:18MainApp.LoadConfig
+2017-11-09 19:50:18  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-11-09 19:50:18  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\OptionsMarketDataTest\bin\Debug\config.xml
+2017-11-09 19:50:18  :: Fin GetConfiguracion
+2017-11-09 19:50:19  :: Initializing Log
+2017-11-09 19:50:19  :: Initializing Incoming Module
+2017-11-09 19:50:19  :: Incoming Module successfully initialized
+2017-11-09 19:50:19  :: Initializing Outgoing Module
+2017-11-09 19:50:19  :: Outgoing Module successfully initialized

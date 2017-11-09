@@ -39,6 +39,8 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Common.Wrappers
                 return Security.Symbol;
             if (mdrField == MarketDataRequestField.Exchange)
                 return Security.Exchange;
+            if (mdrField == MarketDataRequestField.SecurityType)
+                return Security.SecType;
             else
                 return MarketDataRequestField.NULL;
         }

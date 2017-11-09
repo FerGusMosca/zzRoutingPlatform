@@ -32,35 +32,11 @@ namespace zHFT.StrategyHandler.SecurityListSaver.BusinessEntities
 
         public long Id { get; set; }
 
+        public string Symbol { get; set; }
+
         public string SymbolSfx { get; set; }
 
-        public int StrikeMultiplier { get; set; }
-
-        public PutOrCall PutOrCall { get; set; }
-
-        public decimal StrikePrice { get; set; }
-
-        public string StrikeCurrency { get; set; }
-
-        public string MaturityMonthYear { get; set; }
-
-        public DateTime MaturityDate { get; set; }
-
-        public string Currency { get; set; }
-
-        public string SecurityExchange { get; set; }
-
-        public bool Expired { get; set; }
-
-        #region Accessors
-
-        public string PutOrCallDesc
-        {
-            get { return PutOrCall.ToString(); }
-
-        }
-
-        #endregion
+        public string Market { get; set; }
 
         #endregion
     }

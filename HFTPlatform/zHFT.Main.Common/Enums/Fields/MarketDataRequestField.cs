@@ -10,6 +10,7 @@ namespace zHFT.Main.Common.Enums
     {
         public static readonly MarketDataRequestField Symbol = new MarketDataRequestField(2);
         public static readonly MarketDataRequestField Exchange = new MarketDataRequestField(3);
+        public static readonly MarketDataRequestField SecurityType = new MarketDataRequestField(4);
 
 
 

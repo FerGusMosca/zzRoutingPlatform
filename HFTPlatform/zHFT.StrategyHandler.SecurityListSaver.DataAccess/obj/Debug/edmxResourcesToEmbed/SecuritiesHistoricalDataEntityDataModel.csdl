@@ -17,6 +17,7 @@
       <End Role="s_option_closing_prices" EntitySet="s_option_closing_prices" />
     </AssociationSet>
     <EntitySet Name="s_stocks" EntityType="StocksHistoricalDataModel.s_stocks" />
+    <EntitySet Name="stocks_market_data" EntityType="StocksHistoricalDataModel.stocks_market_data" />
   </EntityContainer>
   <EntityType Name="stocks_prices">
     <Key>
@@ -144,5 +145,30 @@
     <Property Type="String" Name="mercado" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="pais" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="categoria" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="stocks_market_data">
+    <Key>
+      <PropertyRef Name="symbol" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
+    <Property Type="Double" Name="apertura" />
+    <Property Type="Double" Name="maximo" />
+    <Property Type="Double" Name="minimo" />
+    <Property Type="Double" Name="cierre" />
+    <Property Type="Double" Name="volumen_nominal" />
+    <Property Type="Double" Name="volumen_monetario" />
+    <Property Type="Double" Name="precio_ultima_operacion" />
+    <Property Type="Double" Name="volumen_ultima_operacion" />
+    <Property Type="Double" Name="mejor_bid_precio" />
+    <Property Type="Int64" Name="mejor_bid_tamano" />
+    <Property Type="String" Name="mejor_bid_exch" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="mejor_ask_precio" />
+    <Property Type="Int64" Name="mejor_ask_tamano" />
+    <Property Type="String" Name="mejor_ask_exch" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="moneda" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="timestamp" Precision="3" />
   </EntityType>
 </Schema>

@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SecurityListMarketClient.Primary.Common.Wrappers;
 
@@ -44,6 +46,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
         protected int MarketDataRequestId { get; set; }
 
+        protected Dictionary<string, zHFT.Main.Common.Enums.SecurityType> SecurityTypes { get; set; }
 
         #endregion
 
@@ -105,6 +108,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                         throw new Exception(string.Format("@{0}:Assembly not found: " + PrimaryConfiguration.FIXMessageCreator));
 
                     MarketDataRequestId = 1;
+                    SecurityTypes = new Dictionary<string, Main.Common.Enums.SecurityType>();
 
                     SessionSettings = new SessionSettings(PrimaryConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
@@ -140,11 +144,14 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                 try
                 {
                     string exchange = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Exchange);
+                    string fullSymbol = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Symbol);
                     string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
+                    zHFT.Main.Common.Enums.SecurityType secType = (zHFT.Main.Common.Enums.SecurityType)marketDataRequestWrapper.GetField(MarketDataRequestField.SecurityType);
 
                     MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
                                                                                             PrimaryConfiguration.MarketClearingID);
 
+                    SecurityTypes.Add(fullSymbol, secType);
                     QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);
                     MarketDataRequestId++;
 
@@ -161,6 +168,45 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
         {
             List<string> noValueFields = new List<string>();
             Config = new SecurityListMarketClient.Primary.Common.Configuration.Configuration().GetConfiguration<SecurityListMarketClient.Primary.Common.Configuration.Configuration>(configFile, noValueFields);
+        }
+
+        protected void ProcesssMDFullRefreshMessage(QuickFix.Message message)
+        {
+            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            string primarySymbol = message.getField(Symbol.FIELD);
+
+            if (primarySymbol != null)
+            {
+                string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
+                string fullSymbol = SecurityConverter.GetFullSymbolFromPrimary(primarySymbol,market);
+                zHFT.Main.Common.Enums.SecurityType secType;
+                if (SecurityTypes.Keys.Contains(fullSymbol))
+                    secType = SecurityTypes[fullSymbol];
+                else
+                    throw new Exception(string.Format("Could not find Security Type for symbol {0}", fullSymbol));
+
+
+                Security sec = new Security()
+                {
+                    Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol),
+                    Exchange = market,
+                    SecType = secType
+                };
+                
+                FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
+
+                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+
+                OnMessageRcv(mdWrapper);
+            }
+            else
+            {
+                if (primarySymbol != null)
+                    DoLog(string.Format("@{0}:Unknown market data for symbol {1} ", PrimaryConfiguration.Name, primarySymbol), Main.Common.Util.Constants.MessageType.Error);
+                else
+                    DoLog(string.Format("@{0}:Market data with no symbol", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+            }
         }
 
         #endregion
@@ -202,6 +248,21 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                                                 state.Exception != null ? state.Exception.Message : ""),
                                                 Main.Common.Util.Constants.MessageType.Error);
 
+                    }
+                    else if (value is QuickFix50.MarketDataIncrementalRefresh)
+                    {
+                        DoLog(string.Format("{0}: Market Data Incremental Refresh Message received and not processed:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
+
+                    }
+                    else if (value is QuickFix50.MarketDataSnapshotFullRefresh)
+                    {
+                        QuickFix50.MarketDataSnapshotFullRefresh msg = (QuickFix50.MarketDataSnapshotFullRefresh)value;
+                        ProcesssMDFullRefreshMessage(msg);
+
+                    }
+                    else if (value is QuickFix50Sp2.MarketDataRequestReject)
+                    {
+                        DoLog(string.Format("{0}: MarketDataRequestReject:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
                     }
                 }
                 catch (Exception ex)

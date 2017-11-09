@@ -33,6 +33,24 @@ namespace zHFT.MarketClient.Primary.Common.Converters
 
         }
 
+        public static string GetFullSymbolFromPrimary(string symbol,string market)
+        {
+            if (string.IsNullOrEmpty(symbol))
+                throw new Exception(string.Format("Symbol not specified for security"));
+
+            if (string.IsNullOrEmpty(market))
+                throw new Exception(string.Format("Market not specified for security"));
+
+
+            string[] fields = symbol.Split(new string[] { _PRIMARY_FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (fields.Length <= _SYMBOL_INDEX)
+                throw new Exception(string.Format("Could not find field symbol for security {0}", symbol));
+
+            return fields[_SYMBOL_INDEX].Trim() + _INSTR_FIELD_SEPARATOR + market;
+
+        }
+
         public static string GetFullSymbolFromCleanSymbol(string symbol, string market)
         {
             if (string.IsNullOrEmpty(symbol))

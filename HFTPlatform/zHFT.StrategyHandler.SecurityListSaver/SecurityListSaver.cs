@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.BusinessEntities.Security_List;
 using zHFT.Main.Common.Abstract;
@@ -37,11 +39,21 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
         protected StockManager StockManager { get; set; }
 
+        protected OptionManager OptionManager { get; set; }
+
         protected CountryManager CountryManager { get; set; }
+
+        protected StockMarketManager StockMarketManager { get; set; }
 
         protected List<Market> Markets { get; set; }
 
         protected Country MainCountry { get; set; }
+
+        protected Dictionary<string, bool> MarketDataRequested { get; set; }
+
+        protected Thread MarketDataRequestThread { get; set; }
+
+        protected DateTime Start { get; set; }
 
         #endregion
 
@@ -57,49 +69,62 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
         #region Private Methods
 
-        protected void RequestMarketData()
+        protected void RequestMarketData(string secType)
         {
             if (SecurityListSaverConfiguration.SecurityTypes == null)
                 return;
-
-            foreach (string secType in SecurityListSaverConfiguration.SecurityTypes)
+          
+            if (secType == SecurityType.CS.ToString())
             {
-                if (secType == SecurityType.CS.ToString())
+                foreach (Market market in Markets)
                 {
-                    foreach (Market market in Markets)
+                    IList<Stock> stocks = StockManager.GetByMarket(market.Code);
+
+                    foreach(Stock stock in stocks)
                     {
-                        IList<Stock> stocks = StockManager.GetByMarket(market.Code);
+                        Security stockSecToRequest = new Security();
+                        stockSecToRequest.Symbol = stock.Symbol;
+                        stockSecToRequest.Exchange = market.Code;
+                        stockSecToRequest.SecType = SecurityType.CS;
 
-                        foreach(Stock stock in stocks)
-                        {
-                            Security stockSecToRequest = new Security();
-                            stockSecToRequest.Symbol = stock.Symbol;
-                            stockSecToRequest.Exchange = market.Code;
-
-                            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
-                            OnMessageRcv(wrapper);
-                        }
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                        OnMessageRcv(wrapper);
                     }
+                }
                 
-                }
-                else if (secType == SecurityType.OPT.ToString())
-                {
+            }
+            else if (secType == SecurityType.OPT.ToString())
+            {
 
-                    //Pedimos el md de todas las opciones
-                }
-                else
+                foreach (Market market in Markets)
                 {
-                    DoLog(string.Format("@{0}: Could not handle market data for asset class {1}:", SecurityListSaverConfiguration.Name, secType),
-                                        Main.Common.Util.Constants.MessageType.Error);
+                    IList<Security> options = OptionManager.GetByMarket(market.Code);
+
+                    foreach (Security option in options)
+                    {
+                        Security stockSecToRequest = new Security();
+                        stockSecToRequest.Symbol = option.Symbol;
+                        stockSecToRequest.Exchange = market.Code;
+                        stockSecToRequest.SecType = SecurityType.OPT;
+
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                        OnMessageRcv(wrapper);
+                    }
                 }
             }
+            else
+            {
+                DoLog(string.Format("@{0}: Could not handle market data for asset class {1}:", SecurityListSaverConfiguration.Name, secType),
+                                    Main.Common.Util.Constants.MessageType.Error);
+            }
+           
         }
 
         protected void ProcessStocksList(List<Security> stocksSecurities)
         {
+           
             foreach (Market market in Markets)
             {
-                //solo trabajamos con el main market
                 foreach (Security security in stocksSecurities.Where(x => x.Exchange == market.Code))
                 {
                     Stock stock = new Stock();
@@ -136,18 +161,38 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                     }
                 }
             }
-
-            RequestMarketData();
         }
 
         protected void ProcessOptionsList(List<Security> optionSecurities)
         {
             foreach (Market market in Markets)
             {
-                //solo trabajamos con el main market
                 foreach (Security security in optionSecurities.Where(x => x.Exchange == market.Code))
                 {
-                  //TODO: Implementar 
+                    Security prevOption = OptionManager.GetBySymbol(security.Symbol.Trim(), market.Code, MainCountry.Code);
+
+                    if (prevOption == null)
+                    {
+                        if (SecurityListSaverConfiguration.SaveNewSecurities.HasValue && SecurityListSaverConfiguration.SaveNewSecurities.Value)
+                        {
+
+                            OptionManager.Persist(prevOption);
+                            DoLog(string.Format("Inserting new option contract from market: {0}", security.Symbol),
+                                  Main.Common.Util.Constants.MessageType.Information);
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", security.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+
+                        }
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("Stock {0} already existed", prevOption.Symbol),
+                                 Main.Common.Util.Constants.MessageType.Information);
+                    }
                 }
             }
         }
@@ -176,15 +221,41 @@ namespace zHFT.StrategyHandler.SecurityListSaver
             }
         }
 
-        protected CMState ProcessSecurityList(Wrapper wrapper)
+        protected CMState ProcessMarketData(Wrapper wrapper)
         {
-
             try
             {
-                SecurityList securityList =  SecurityListConverter.GetSecurityList(wrapper, Config);
+            
+                MarketDataConverter conv = new MarketDataConverter();
 
-                ProcessSecurities(securityList);
+                MarketData md = conv.GetMarketData(wrapper, Config);
+
+                Security sec = md.Security;
+                sec.MarketData = md;
+
+                StockMarketManager.Persist(sec);
+
                 return CMState.BuildSuccess();
+               
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
+        
+        }
+
+        protected CMState ProcessSecurityList(Wrapper wrapper)
+        {
+            try
+            {
+                lock (tLock)
+                {
+                    SecurityList securityList = SecurityListConverter.GetSecurityList(wrapper, Config);
+
+                    ProcessSecurities(securityList);
+                    return CMState.BuildSuccess();
+                }
             }
             catch (Exception ex)
             {
@@ -192,11 +263,35 @@ namespace zHFT.StrategyHandler.SecurityListSaver
             }
         }
 
+        protected void DoRequestMarketData()
+        {
+            bool active = true;
+            while (active)
+            {
+                Thread.Sleep(SecurityListSaverConfiguration.MaxWaitingTimeForMarketDataRequest * 1000);
+                  
+                TimeSpan elapsed = DateTime.Now - Start;
+
+                if (elapsed.TotalSeconds > Convert.ToDouble(SecurityListSaverConfiguration.MaxWaitingTimeForMarketDataRequest))
+                {
+                    foreach (string secType in MarketDataRequested.Keys)
+                    {
+                        if (!MarketDataRequested[secType])
+                        {
+                            RequestMarketData(secType);
+                        }
+                    }
+
+                    active = false;
+                }
+            }
+        }
+
         #endregion
 
         #region Public Methods
 
-        public override Main.Common.DTO.CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
+        public override CMState ProcessMessage(Wrapper wrapper)
         {
             try
             {
@@ -204,6 +299,11 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                 {
                     DoLog("Processing Security List:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
                     return ProcessSecurityList(wrapper);
+                }
+                else if (wrapper.GetAction() == Actions.MARKET_DATA)
+                {
+                    DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
+                    return ProcessMarketData(wrapper);
                 }
                 else
                     return CMState.BuildFail(new Exception(string.Format("Could not process action {0} for strategy {1}", wrapper.GetAction().ToString(), SecurityListSaverConfiguration.Name)));
@@ -225,13 +325,22 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                 if (LoadConfig(configFile))
                 {
                     SecurityListConverter = new SecurityListConverter();
+
+                    MarketDataRequested = new Dictionary<string, bool>();
+
+                    Start = DateTime.Now;
+
                     //Inicializar conexión con BD y demases
 
                     MarketManager = new MarketManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
                     StockManager = new StockManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
+                    OptionManager = new OptionManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
+
                     CountryManager = new CountryManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
+
+                    StockMarketManager = new StockMarketManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
                     Markets = new List<Market>();
                     foreach(string market in SecurityListSaverConfiguration.Markets)
@@ -245,6 +354,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                         }
                     }
 
+                    foreach (string secType in SecurityListSaverConfiguration.SecurityTypes)
+                        MarketDataRequested.Add(secType, false);
+
                     MainCountry = CountryManager.GetByCode(SecurityListSaverConfiguration.Country);
 
                     var typeMarketTranslator = Type.GetType(SecurityListSaverConfiguration.SecuritiesMarketTranslator);
@@ -255,6 +367,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                         DoLog("assembly not found: " + SecurityListSaverConfiguration.SecuritiesMarketTranslator, Main.Common.Util.Constants.MessageType.Error);
                         return false;
                     }
+
+                    MarketDataRequestThread = new Thread(DoRequestMarketData);
+                    MarketDataRequestThread.Start();
 
                     return true;
                 }

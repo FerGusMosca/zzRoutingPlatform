@@ -39,6 +39,10 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public string StrikeCurrency { get; set; }
 
+        public string PutOrCall { get; set; }
+
+        public int StrikeMultiplier { get; set; }
+
         #endregion
 
         #region Contract Attributes

@@ -18,6 +18,8 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Common.Configuration
 
         public string SecuritiesMarketTranslator { get; set; }
 
+        public int MaxWaitingTimeForMarketDataRequest { get; set; }
+
         public bool? SaveNewSecurities { get; set; }
 
         [XmlArray]
@@ -60,6 +62,13 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Common.Configuration
                 result.Add("SecuritiesAccessLayerConnectionString");
                 resultado = false;
             }
+
+            if (MaxWaitingTimeForMarketDataRequest<=0)
+            {
+                result.Add("MaxWaitingTimeForMarketDataRequest");
+                resultado = false;
+            }
+
 
             if (string.IsNullOrEmpty(SecuritiesMarketTranslator))
             {

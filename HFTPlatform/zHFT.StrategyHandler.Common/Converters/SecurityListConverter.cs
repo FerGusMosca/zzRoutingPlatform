@@ -55,8 +55,15 @@ namespace zHFT.StrategyHandler.Common.Converters
             {
                 foreach(Wrapper securityWrapper in securityWrappers)
                 {
-                    Security security = securityConverter.GetSecurity(securityWrapper, Config);
-                    sl.Securities.Add(security);
+                    try
+                    {
+                        Security security = securityConverter.GetSecurity(securityWrapper, Config);
+                        sl.Securities.Add(security);
+                    }
+                    catch (Exception ex)
+                    { 
+                        //TODO: DoLOG
+                    }
                 }
             }
             

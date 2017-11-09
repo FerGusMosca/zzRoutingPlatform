@@ -6,7 +6,8 @@
   <Country>ARG</Country><!--USA=Estados Unidos,ARG=Argentna-->
   <MarketClearingID>48hs</MarketClearingID>
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
-
+  <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest><!--Seconds-->
+  
   <SaveNewSecurities>false</SaveNewSecurities>
   <SecurityTypes>
     <SecurityType>CS</SecurityType><!--CS= Common Stock-->

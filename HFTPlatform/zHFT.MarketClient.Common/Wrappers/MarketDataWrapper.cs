@@ -128,8 +128,12 @@ namespace zHFT.MarketClient.Common.Wrappers
                 return Security.MarketData.BestBidExch;
             else if (mdField == MarketDataFields.BestAskExch)
                 return Security.MarketData.BestAskExch;
-           
-
+            else if (mdField == MarketDataFields.MDEntryDate)
+                return Security.MarketData.MDEntryDate;
+            else if (mdField == MarketDataFields.MDEntryTime)
+                return Security.MarketData.MDLocalEntryDate;
+            else if (mdField == MarketDataFields.MDLocalEntryDate)
+                return Security.MarketData.MDLocalEntryDate;
 
             return MarketDataFields.NULL;
         }

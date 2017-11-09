@@ -49,6 +49,7 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarket
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.Main.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\MDFShared.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\ToolsShared.dll
@@ -56,9 +57,8 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarket
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\obj\Debug\zHFT.SecurityListMarketClient.Primary.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\obj\Debug\zHFT.SecurityListMarketClient.Primary.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\obj\Debug\zHFT.SecurityListMarketClient.Primary.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.pdb

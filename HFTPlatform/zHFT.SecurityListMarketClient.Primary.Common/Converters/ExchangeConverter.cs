@@ -32,6 +32,17 @@ namespace zHFT.SecurityListMarketClient.Primary.Common.Converters
         
         }
 
+        public static string GetMarketFromFullSymbol(string fullSymbol)
+        {
+            if (fullSymbol.StartsWith(_BYMA_PRIMARY_PREFIX_CODE))
+            {
+                return _BYMA;
+            }
+            else
+                throw new Exception(string.Format("Exchange Prefix Code translation not implemented {0}", fullSymbol));
+
+        }
+
         #endregion
 
     }

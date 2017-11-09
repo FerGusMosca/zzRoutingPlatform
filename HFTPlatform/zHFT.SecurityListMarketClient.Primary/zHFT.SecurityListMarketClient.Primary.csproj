@@ -70,6 +70,10 @@
       <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
       <Name>zHFT.MarketClient.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Primary.Common\zHFT.MarketClient.Primary.Common.csproj">
+      <Project>{851bd5d9-25fd-4718-9953-cdd6f4c10d11}</Project>
+      <Name>zHFT.MarketClient.Primary.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.SecurityListMarketClient.Primary.Common\zHFT.SecurityListMarketClient.Primary.Common.csproj">
       <Project>{a8a99cee-61da-4308-94ef-a272abc831f9}</Project>
       <Name>zHFT.SecurityListMarketClient.Primary.Common</Name>
