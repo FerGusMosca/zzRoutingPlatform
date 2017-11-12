@@ -15,6 +15,8 @@ namespace zHFT.SingletonModulesHandler
     {
         #region Protected Attributes
 
+        ISingletonModule SingletonHandler { get; set; }
+
         public IConfiguration Config { get; set; }
 
         protected Common.Configuration.Configuration SingletonModuleConfiguration
@@ -42,7 +44,7 @@ namespace zHFT.SingletonModulesHandler
         {
             try
             {
-                CMState state = OnMessageRcv(wrapper);
+                CMState state = SingletonHandler.ProcessMessage(wrapper);
 
                 if (state.Success)
                     DoLog(string.Format("@{0}:Publishing Wrapper ", SingletonModuleConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
@@ -77,12 +79,12 @@ namespace zHFT.SingletonModulesHandler
                     var singletonHandlerClass = Type.GetType(SingletonModuleConfiguration.SingletonAssembly);
                     if (singletonHandlerClass != null)
                     {
-                        ISingletonModule singletonHandler = (ISingletonModule)singletonHandlerClass.GetMethod("GetInstance").Invoke(null, new object[] { pOnLogMsg, SingletonModuleConfiguration.SingletonConfigFile });
+                        SingletonHandler = (ISingletonModule)singletonHandlerClass.GetMethod("GetInstance").Invoke(null, new object[] { pOnLogMsg, SingletonModuleConfiguration.SingletonConfigFile });
 
                         if (SingletonModuleConfiguration.ModuleDirection == ModuleDirection.Incoming)
-                            singletonHandler.SetIncomingEvent(pOnMessageRcv);
+                            SingletonHandler.SetIncomingEvent(pOnMessageRcv);
                         else if (SingletonModuleConfiguration.ModuleDirection == ModuleDirection.Outgoing)
-                            singletonHandler.SetOutgoingEvent(pOnMessageRcv);
+                            SingletonHandler.SetOutgoingEvent(pOnMessageRcv);
                         else
                             throw new Exception(string.Format("Unkown module direction for {0}", SingletonModuleConfiguration.ModuleDirection));
 

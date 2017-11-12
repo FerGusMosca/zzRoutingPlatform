@@ -43,8 +43,9 @@
     <Compile Include="Managers\CountryManager.cs" />
     <Compile Include="Managers\MarketManager.cs" />
     <Compile Include="Managers\OptionManager.cs" />
+    <Compile Include="Managers\OptionMarketDataManager.cs" />
     <Compile Include="Managers\StockManager.cs" />
-    <Compile Include="Managers\StockMarketManager.cs" />
+    <Compile Include="Managers\StockMarkeDataManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

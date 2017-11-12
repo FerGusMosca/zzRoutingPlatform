@@ -20,6 +20,7 @@ namespace zHFT.Main.Common.Enums
         UPDATE_ORDER,
         CANCEL_ORDER,
         CANCEL_POSITION,
-        SECURITY_LIST
+        SECURITY_LIST,
+        SECURITY_LIST_REQUEST
     }
 }

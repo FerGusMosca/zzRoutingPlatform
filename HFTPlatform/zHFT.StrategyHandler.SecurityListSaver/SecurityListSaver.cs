@@ -43,7 +43,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
         protected CountryManager CountryManager { get; set; }
 
-        protected StockMarketManager StockMarketManager { get; set; }
+        protected StockMarkeDataManager StockMarketDataManager { get; set; }
+
+        protected OptionMarketDataManager OptionMarketDataManager { get; set; }
 
         protected List<Market> Markets { get; set; }
 
@@ -98,9 +100,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
                 foreach (Market market in Markets)
                 {
-                    IList<Security> options = OptionManager.GetByMarket(market.Code);
+                    IList<Option> options = OptionManager.GetByMarket(market.Code);
 
-                    foreach (Security option in options)
+                    foreach (Option option in options)
                     {
                         Security stockSecToRequest = new Security();
                         stockSecToRequest.Symbol = option.Symbol;
@@ -140,11 +142,21 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                     {
                         if (SecurityListSaverConfiguration.SaveNewSecurities.HasValue && SecurityListSaverConfiguration.SaveNewSecurities.Value)
                         {
-                            stock.LoadFinalSymbol();
+                            try
+                            {
+                                stock.LoadFinalSymbol();
 
-                            StockManager.Persist(stock);
-                            DoLog(string.Format("Inserting new stock from market {0}:", stock.Symbol),
-                                  Main.Common.Util.Constants.MessageType.Information);
+                                StockManager.Persist(stock);
+                                DoLog(string.Format("Inserting new stock from market {0}:", stock.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Error saving new stock for symbol {0}:{1}", stock.Symbol,ex.Message),
+                                                    Main.Common.Util.Constants.MessageType.Error);
+
+                            
+                            }
                         }
                         else
                         {
@@ -163,26 +175,55 @@ namespace zHFT.StrategyHandler.SecurityListSaver
             }
         }
 
+        protected void TraceUnderlying(Security option)
+        {
+            Option temp = new Option();
+            temp.Exchange = option.Exchange;
+            temp.Symbol = option.Symbol;
+
+            string symbolSfxPrefix = temp.GetSymboSfxPrefix();
+            
+            Option optExample = OptionManager.GetOptionByPrefix(symbolSfxPrefix, option.Exchange);
+
+            if (optExample != null)
+            {
+                option.SymbolSfx = optExample.SymbolSfx;
+                option.PutOrCall = temp.GetPutOrCall();
+                option.StrikeCurrency = temp.GetStrikeCurrency();
+            }
+            else
+                throw new Exception(string.Format("Could not find underlying for symbol {0}", option.Symbol));
+        }
+
         protected void ProcessOptionsList(List<Security> optionSecurities)
         {
             foreach (Market market in Markets)
             {
-                foreach (Security security in optionSecurities.Where(x => x.Exchange == market.Code))
+                foreach (Security option in optionSecurities.Where(x => x.Exchange == market.Code))
                 {
-                    Security prevOption = OptionManager.GetBySymbol(security.Symbol.Trim(), market.Code, MainCountry.Code);
+                    Option prevOption = OptionManager.GetBySymbol(option.Symbol.Trim(), market.Code);
 
                     if (prevOption == null)
                     {
                         if (SecurityListSaverConfiguration.SaveNewSecurities.HasValue && SecurityListSaverConfiguration.SaveNewSecurities.Value)
                         {
-
-                            OptionManager.Persist(prevOption);
-                            DoLog(string.Format("Inserting new option contract from market: {0}", security.Symbol),
-                                  Main.Common.Util.Constants.MessageType.Information);
+                            try
+                            {
+                                TraceUnderlying(option);//We need to know the SymbolSfx field using other options
+                                OptionManager.Insert(option);
+                                DoLog(string.Format("Inserting new option contract from market: {0}", option.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Error trying to save option for symbol {0} : {1}", option.Symbol,ex.Message),
+                                    Main.Common.Util.Constants.MessageType.Error);
+                            
+                            }
                         }
                         else
                         {
-                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", security.Symbol),
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", option.Symbol),
                                       Main.Common.Util.Constants.MessageType.Information);
 
                         }
@@ -233,9 +274,26 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                 Security sec = md.Security;
                 sec.MarketData = md;
 
-                StockMarketManager.Persist(sec);
+                if (sec.SecType == SecurityType.CS)
+                {
 
-                return CMState.BuildSuccess();
+                    StockMarketDataManager.Persist(sec);
+
+                    return CMState.BuildSuccess();
+                }
+                else if (sec.SecType == SecurityType.OPT)
+                {
+                    Option opt = OptionManager.GetBySymbol(sec.Symbol, sec.Exchange);
+
+                    opt.MarketData = md;
+
+                    OptionMarketDataManager.Persist(opt);
+
+                    return CMState.BuildSuccess();
+
+                }
+                else
+                    throw new Exception(string.Format("Market Data not implemented for security type {0} in symbol {1}", sec.SecType.ToString(), sec.Symbol));
                
             }
             catch (Exception ex)
@@ -340,7 +398,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver
 
                     CountryManager = new CountryManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
-                    StockMarketManager = new StockMarketManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
+                    StockMarketDataManager = new StockMarkeDataManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
+
+                    OptionMarketDataManager = new OptionMarketDataManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
                     Markets = new List<Market>();
                     foreach(string market in SecurityListSaverConfiguration.Markets)

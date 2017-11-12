@@ -128,5 +128,32 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="options_market_data">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.options_market_data">
+        <MappingFragment StoreEntitySet="options_market_data">
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="sesion" ColumnName="sesion" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="mejor_ask_exch" ColumnName="mejor_ask_exch" />
+          <ScalarProperty Name="mejor_ask_tamano" ColumnName="mejor_ask_tamano" />
+          <ScalarProperty Name="mejor_ask_precio" ColumnName="mejor_ask_precio" />
+          <ScalarProperty Name="mejor_bid_exch" ColumnName="mejor_bid_exch" />
+          <ScalarProperty Name="mejor_bid_tamano" ColumnName="mejor_bid_tamano" />
+          <ScalarProperty Name="mejor_bid_precio" ColumnName="mejor_bid_precio" />
+          <ScalarProperty Name="volumen_ultima_operacion" ColumnName="volumen_ultima_operacion" />
+          <ScalarProperty Name="precio_ultima_operacion" ColumnName="precio_ultima_operacion" />
+          <ScalarProperty Name="volumen_monetario" ColumnName="volumen_monetario" />
+          <ScalarProperty Name="volumen_nominal" ColumnName="volumen_nominal" />
+          <ScalarProperty Name="cierre" ColumnName="cierre" />
+          <ScalarProperty Name="minimo" ColumnName="minimo" />
+          <ScalarProperty Name="maximo" ColumnName="maximo" />
+          <ScalarProperty Name="apertura" ColumnName="apertura" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="symbol_sfx" ColumnName="symbol_sfx" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="option_id" ColumnName="option_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

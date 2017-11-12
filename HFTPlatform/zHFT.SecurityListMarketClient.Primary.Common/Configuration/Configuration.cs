@@ -16,8 +16,6 @@ namespace zHFT.SecurityListMarketClient.Primary.Common.Configuration
 
         public string FIXMessageCreator { get; set; }
 
-        public string MarketClearingID { get; set; }
-
         public string User { get; set; }
 
         public string Password { get; set; }

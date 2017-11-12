@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.SingletonModulesHandler.Common.Interfaces
 {
@@ -17,5 +19,7 @@ namespace zHFT.SingletonModulesHandler.Common.Interfaces
         void SetOutgoingEvent(OnMessageReceived OnMessageRcv);
 
         void SetIncomingEvent(OnMessageReceived OnMessageRcv);
+
+        CMState ProcessMessage(Wrapper wrapper);
     }
 }

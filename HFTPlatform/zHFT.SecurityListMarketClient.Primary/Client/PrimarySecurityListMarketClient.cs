@@ -147,9 +147,11 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                     string fullSymbol = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Symbol);
                     string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
                     zHFT.Main.Common.Enums.SecurityType secType = (zHFT.Main.Common.Enums.SecurityType)marketDataRequestWrapper.GetField(MarketDataRequestField.SecurityType);
+                    string marketClearingID = ExchangeConverter.GetMarketClearingID(secType, exchange);
+
 
                     MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
-                                                                                            PrimaryConfiguration.MarketClearingID);
+                                                                                            marketClearingID, secType);
 
                     SecurityTypes.Add(fullSymbol, secType);
                     QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);

@@ -12,7 +12,7 @@ using zHFT.Main.Common.Util;
 
 namespace SecurityProcessor.Primary.Test
 {
-    //Test2
+    
     class Program
     {
         private static bool ToConsole { get; set; }
@@ -26,8 +26,6 @@ namespace SecurityProcessor.Primary.Test
                 Console.WriteLine(msg.Replace("toConsole->", ""));
                 Console.WriteLine("");
             }
-
-
         }
 
         static void Main(string[] args)

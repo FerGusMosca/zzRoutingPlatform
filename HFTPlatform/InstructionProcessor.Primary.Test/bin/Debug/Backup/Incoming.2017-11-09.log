@@ -1,0 +1,116 @@
+2017-11-09 13:58:39  :: 11/9/2017 1:58:39 PMBaseCommunicationModule.LoadConfig
+2017-11-09 13:58:39  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-09 13:58:39  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-09 13:58:39  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-09 13:58:42  :: 11/9/2017 1:58:42 PMConfigLoader.LoadConfig
+2017-11-09 13:58:42  :: Loading config:.\Primary.xml
+2017-11-09 13:58:42  :: Processing config:.\Primary.xml
+2017-11-09 13:58:42  :: Ending GetConfiguracion .\Primary.xml
+2017-11-09 13:58:53  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-09 13:58:53  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171109-16:58:53.36056=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=203
+2017-11-09 13:58:54  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171109-16:58:53.38756=fmosca98=0108=30141=Y1137=910=142
+2017-11-09 13:58:54  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-09 13:58:54  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-09 13:59:41  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171109-16:58:53.91056=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=182
+2017-11-09 14:01:39  :: 11/9/2017 2:01:39 PMBaseCommunicationModule.LoadConfig
+2017-11-09 14:01:39  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-09 14:01:39  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-09 14:01:39  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-09 14:01:39  :: 11/9/2017 2:01:39 PMConfigLoader.LoadConfig
+2017-11-09 14:01:39  :: Loading config:.\Primary.xml
+2017-11-09 14:01:39  :: Processing config:.\Primary.xml
+2017-11-09 14:01:39  :: Ending GetConfiguracion .\Primary.xml
+2017-11-09 14:01:40  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:01:40  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171109-17:01:40.31556=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=188
+2017-11-09 14:01:41  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:01:50  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:02:11  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171109-17:02:11.32656=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=189
+2017-11-09 14:02:13  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:02:14  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:02:14  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171109-17:02:13.58156=fmosca98=0108=30141=Y1137=910=124
+2017-11-09 14:02:14  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:02:14  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:02:17  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171109-17:02:14.09156=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=169
+2017-11-09 14:02:32  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171109-17:02:14.09156=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=169 
+2017-11-09 14:02:32  :: @InstructionProcessor.Primary.Test:Sending message: 8=FIXT.1.19=13335=V146=155=MERV - XMEV - GGAL - 48hs262=8504263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=028
+2017-11-09 14:02:32  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18135=V34=249=fmosca52=20171109-17:02:32.28056=ROFX146=155=MERV - XMEV - GGAL - 48hs262=8504263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=212
+2017-11-09 14:02:33  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171109-17:02:14.09156=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=165
+2017-11-09 14:02:40  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171109-17:02:14.09156=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=165 
+2017-11-09 14:02:40  :: ProcessIncoming...Symbol=GGAL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-09 14:02:40  :: @InstructionProcessor.Primary.Test:Publishing Market Data for Security GGAL 
+2017-11-09 14:02:42  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171109-17:02:14.09156=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=004
+2017-11-09 14:02:42  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171109-17:02:14.09156=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=004 
+2017-11-09 14:02:43  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171109-17:02:14.09256=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=026
+2017-11-09 14:02:43  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171109-17:02:14.09256=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=026 
+2017-11-09 14:02:44  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171109-17:02:14.09256=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=089
+2017-11-09 14:02:44  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171109-17:02:14.09256=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=089 
+2017-11-09 14:02:44  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=19735=W34=749=ROFX52=20171109-17:02:31.78856=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=8504264=1268=5269=0270=85.00271=19290=1269=1290=0269=5270=90.00269=6270=89.00269=B271=010=046
+2017-11-09 14:02:48  :: @InstructionProcessor.Primary.Test:8=FIXT.1.19=19735=W34=749=ROFX52=20171109-17:02:31.78856=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=8504264=1268=5269=0270=85.00271=19290=1269=1290=0269=5270=90.00269=6270=89.00269=B271=010=046 
+2017-11-09 14:03:16  :: 11/9/2017 2:03:16 PMBaseCommunicationModule.LoadConfig
+2017-11-09 14:03:16  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-09 14:03:16  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-09 14:03:16  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-09 14:03:16  :: 11/9/2017 2:03:16 PMConfigLoader.LoadConfig
+2017-11-09 14:03:16  :: Loading config:.\Primary.xml
+2017-11-09 14:03:16  :: Processing config:.\Primary.xml
+2017-11-09 14:03:16  :: Ending GetConfiguracion .\Primary.xml
+2017-11-09 14:03:16  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:03:17  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171109-17:03:17.08156=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=194
+2017-11-09 14:03:18  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:27  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:03:39  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:40  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:41  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:42  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:43  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:44  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:45  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:46  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:47  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:48  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171109-17:03:48.10556=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=195
+2017-11-09 14:03:48  :: @InstructionProcessor.Primary.Test:Could not request market data for null SessionID
+2017-11-09 14:03:48  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171109-17:03:47.96256=fmosca98=0108=30141=Y1137=910=135
+2017-11-09 14:03:48  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:03:48  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:03:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171109-17:03:48.47356=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=181
+2017-11-09 14:03:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171109-17:03:48.47356=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=181 
+2017-11-09 14:03:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171109-17:03:48.47356=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=177
+2017-11-09 14:03:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171109-17:03:48.47356=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=177 
+2017-11-09 14:03:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171109-17:03:48.47356=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=036
+2017-11-09 14:03:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171109-17:03:48.47356=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=036 
+2017-11-09 14:03:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171109-17:03:48.47456=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=018
+2017-11-09 14:03:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171109-17:03:48.47456=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=018 
+2017-11-09 14:03:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171109-17:03:48.47456=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=101
+2017-11-09 14:03:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171109-17:03:48.47456=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=101 
+2017-11-09 14:03:49  :: @InstructionProcessor.Primary.Test:Sending message: 8=FIXT.1.19=13335=V146=155=MERV - XMEV - GGAL - 48hs262=8508263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=032
+2017-11-09 14:03:49  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18135=V34=249=fmosca52=20171109-17:03:49.65056=ROFX146=155=MERV - XMEV - GGAL - 48hs262=8508263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=226
+2017-11-09 14:03:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=19735=W34=749=ROFX52=20171109-17:03:49.13556=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=8508264=1268=5269=0270=85.00271=19290=1269=1290=0269=5270=90.00269=6270=89.00269=B271=010=046
+2017-11-09 14:03:49  :: @InstructionProcessor.Primary.Test:8=FIXT.1.19=19735=W34=749=ROFX52=20171109-17:03:49.13556=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=8508264=1268=5269=0270=85.00271=19290=1269=1290=0269=5270=90.00269=6270=89.00269=B271=010=046 
+2017-11-09 14:09:01  :: 11/9/2017 2:09:01 PMBaseCommunicationModule.LoadConfig
+2017-11-09 14:09:02  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-09 14:09:02  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-09 14:09:02  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-09 14:09:02  :: 11/9/2017 2:09:02 PMConfigLoader.LoadConfig
+2017-11-09 14:09:02  :: Loading config:.\Primary.xml
+2017-11-09 14:09:02  :: Processing config:.\Primary.xml
+2017-11-09 14:09:02  :: Ending GetConfiguracion .\Primary.xml
+2017-11-09 14:09:02  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:09:03  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171109-17:09:03.06056=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=192
+2017-11-09 14:09:03  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171109-17:09:02.91256=fmosca98=0108=30141=Y1137=910=127
+2017-11-09 14:09:03  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:09:03  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-09 14:09:12  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171109-17:09:03.42156=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=171
+2017-11-09 14:09:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171109-17:09:03.42156=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=171 
+2017-11-09 14:09:12  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171109-17:09:03.42256=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=168
+2017-11-09 14:09:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171109-17:09:03.42256=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=168 
+2017-11-09 14:09:13  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171109-17:09:03.42256=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=027
+2017-11-09 14:09:13  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171109-17:09:03.42256=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=027 
+2017-11-09 14:09:13  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171109-17:09:03.42256=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=008
+2017-11-09 14:09:13  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171109-17:09:03.42256=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=008 
+2017-11-09 14:09:13  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171109-17:09:03.42256=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=091
+2017-11-09 14:09:13  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171109-17:09:03.42256=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=091 
+2017-11-09 14:09:13  :: @InstructionProcessor.Primary.Test:Sending message: 8=FIXT.1.19=13335=V146=155=MERV - XMEV - GGAL - 48hs262=8512263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=027
+2017-11-09 14:09:13  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18135=V34=249=fmosca52=20171109-17:09:13.36756=ROFX146=155=MERV - XMEV - GGAL - 48hs262=8512263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=223
+2017-11-09 14:09:13  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=19735=W34=749=ROFX52=20171109-17:09:12.87956=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=8512264=1268=5269=0270=85.00271=19290=1269=1290=0269=5270=90.00269=6270=89.00269=B271=010=052
+2017-11-09 14:09:13  :: @InstructionProcessor.Primary.Test:8=FIXT.1.19=19735=W34=749=ROFX52=20171109-17:09:12.87956=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=8512264=1268=5269=0270=85.00271=19290=1269=1290=0269=5270=90.00269=6270=89.00269=B271=010=052 
+2017-11-09 14:09:20  :: @ProcessMarketData:Error recovering market data for type 1:Se produjo una excepción de tipo 'QuickFix.FieldNotFound'. 

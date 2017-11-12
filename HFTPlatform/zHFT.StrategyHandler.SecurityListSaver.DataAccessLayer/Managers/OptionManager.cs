@@ -22,8 +22,9 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
 
         #region Private Methods
 
-        private void FieldMap(s_options optionDB, Security option)
+        private void FieldMap(s_options optionDB, Option option)
         {
+            option.Id = optionDB.id;
             option.Symbol = optionDB.symbol;
             option.SymbolSfx = optionDB.symbol_sfx;
             option.StrikePrice = Convert.ToDouble(optionDB.strike_price);
@@ -35,6 +36,21 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             option.StrikeCurrency = optionDB.currency;
             option.Exchange = optionDB.security_exchange;
          
+        }
+
+        private void FieldMap(Option option, s_options optionDB)
+        {
+            optionDB.id = option.Id;
+            optionDB.symbol = option.Symbol;
+            optionDB.symbol_sfx = option.SymbolSfx;
+            optionDB.strike_price = Convert.ToDecimal(option.StrikePrice);
+            optionDB.put_or_call = option.PutOrCall;
+            optionDB.strike_multiplier = option.StrikeMultiplier;
+            optionDB.strike_currency = option.StrikeCurrency;
+            optionDB.maturity_month_year = option.MaturityMonthYear;
+            optionDB.maturity_date = option.MaturityDate.HasValue ? option.MaturityDate.Value : DateTime.Now.Date;
+            optionDB.strike_currency = option.StrikeCurrency;
+            optionDB.security_exchange = option.Exchange;
         }
 
         private void FieldMap(Security option, s_options optionDB)
@@ -51,11 +67,18 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             optionDB.security_exchange = option.Exchange;
         }
 
-        private Security Map(s_options optionDB)
+        private Option Map(s_options optionDB)
         {
-            Security option = new Security();
+            Option option = new Option();
             FieldMap(optionDB, option);
             return option;
+        }
+
+        private s_options Map(Option option)
+        {
+            s_options optionDB = new s_options();
+            FieldMap(option, optionDB);
+            return optionDB;
         }
 
         private s_options Map(Security option)
@@ -69,14 +92,14 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
 
         #region Public Methods
 
-        public Security GetBySymbol(string symbol, string market, string country)
+        public Option GetBySymbol(string symbol, string market)
         {
 
-            s_options optionDB = ctx.s_options.Where(x => x.symbol == symbol).FirstOrDefault();
+            s_options optionDB = ctx.s_options.Where(x => x.symbol == symbol && x.security_exchange==market).OrderByDescending(x=>x.maturity_date).FirstOrDefault();
 
             if (optionDB != null)
             {
-                Security option = Map(optionDB);
+                Option option = Map(optionDB);
                 return option;
             }
             else
@@ -84,10 +107,25 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
 
         }
 
-        public List<Security> GetByMarket(string market)
+        public Option GetOptionByPrefix(string symbolPrefix, string market)
         {
-            List<s_options> optionsDB = ctx.s_options.Where(x => x.security_exchange == market).ToList();
-            List<Security> options = new List<Security>();
+
+            s_options optionDB = ctx.s_options.Where(x => x.symbol.StartsWith(symbolPrefix) && x.security_exchange==market).OrderByDescending(x => x.maturity_date).FirstOrDefault();
+
+            if (optionDB != null)
+            {
+                Option option = Map(optionDB);
+                return option;
+            }
+            else
+                return null;
+
+        }
+
+        public List<Option> GetByMarket(string market)
+        {
+            List<s_options> optionsDB = ctx.s_options.Where(x => x.security_exchange == market && x.expired==false).ToList();
+            List<Option> options = new List<Option>();
 
             foreach (s_options optionDB in optionsDB)
             {
@@ -97,7 +135,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             return options;
         }
 
-        public void Persist(Security option)
+        public void Persist(Option option)
         {
             //Insert
             s_options prevOptionDB = ctx.s_options.Where(x => x.symbol == option.Symbol).FirstOrDefault();
@@ -112,6 +150,13 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
                 FieldMap(option, prevOptionDB);
                 ctx.SaveChanges();
             }
+        }
+
+        public void Insert(Security option)
+        {
+            s_options optionDB = Map(option);
+            ctx.s_options.AddObject(optionDB);
+            ctx.SaveChanges();
         }
 
         #endregion

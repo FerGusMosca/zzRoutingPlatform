@@ -71,6 +71,7 @@
     <Compile Include="Enums\Fields\PositionFields.cs" />
     <Compile Include="Enums\Fields\SecurityFields.cs" />
     <Compile Include="Enums\Fields\SecurityListFields.cs" />
+    <Compile Include="Enums\Fields\SecurityListRequestField.cs" />
     <Compile Include="Enums\Halted.cs" />
     <Compile Include="Enums\OrdRejReason.cs" />
     <Compile Include="Enums\OrdStatus.cs" />

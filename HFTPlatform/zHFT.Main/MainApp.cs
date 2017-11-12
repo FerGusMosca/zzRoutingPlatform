@@ -236,6 +236,34 @@ namespace zHFT.Main
             }
         }
 
+        public CMState ProcessMessageToIncoming(Wrapper wrapper)
+        {
+            try
+            {
+                Log("ProcessMessageToIncoming");
+                return IncomingModule.ProcessMessage(wrapper);
+            }
+            catch (Exception ex)
+            {
+                Log(string.Format("ProcessMessageToIncoming Error: {0}", ex.Message));
+                return CMState.BuildFail(ex);
+            }
+        }
+
+        public CMState ProcessMessageToOutgoing(Wrapper wrapper)
+        {
+            try
+            {
+                Log("ProcessMessageToOutgoing");
+                return OutgoingModule.ProcessMessage(wrapper);
+            }
+            catch (Exception ex)
+            {
+                Log(string.Format("ProcessMessageToOutgoing Error: {0}", ex.Message));
+                return CMState.BuildFail(ex);
+            }
+        }
+
         #endregion
     }
 }

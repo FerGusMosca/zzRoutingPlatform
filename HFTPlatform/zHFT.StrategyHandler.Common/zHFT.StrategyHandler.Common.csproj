@@ -57,6 +57,7 @@
     <Compile Include="Wrappers\MarketDataWrapper.cs" />
     <Compile Include="Wrappers\OrderWrapper.cs" />
     <Compile Include="Wrappers\PositionWrapper.cs" />
+    <Compile Include="Wrappers\SecurityListRequestWrapper.cs" />
     <Compile Include="Wrappers\SecurityWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
