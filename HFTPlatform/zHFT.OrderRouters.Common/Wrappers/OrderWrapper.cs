@@ -78,6 +78,8 @@ namespace zHFT.OrderRouters.Common.Wrappers
                 return Order.TimeInForce;
             else if (oField == OrderFields.MinQty)
                 return Order.MinQty;
+            else if (oField == OrderFields.Account)
+                return Order.Account;
 
 
 

@@ -57,7 +57,7 @@ namespace zHFT.OrderRouters.Common.Converters
             order.ClOrdId = (ValidateField(wrapper, ExecutionReportFields.ClOrdID) ? Convert.ToString(wrapper.GetField(ExecutionReportFields.ClOrdID)) : null);
             order.OrderQty = (ValidateField(wrapper, ExecutionReportFields.OrderQty) ? (double?) Convert.ToDouble(wrapper.GetField(ExecutionReportFields.OrderQty)) : null);
             order.CashOrderQty = (ValidateField(wrapper, ExecutionReportFields.CashOrderQty) ? (double?) Convert.ToDouble( wrapper.GetField(ExecutionReportFields.CashOrderQty)) : null);
-            order.OrdType = (OrdType?)(ValidateField(wrapper, ExecutionReportFields.OrdType) ? wrapper.GetField(ExecutionReportFields.OrdType) : null);
+            order.OrdType = (OrdType)(ValidateField(wrapper, ExecutionReportFields.OrdType) ? wrapper.GetField(ExecutionReportFields.OrdType) : OrdType.Limit);
             order.Price =(ValidateField(wrapper, ExecutionReportFields.Price) ? (double?) Convert.ToDouble(wrapper.GetField(ExecutionReportFields.Price)) : null);
             order.StopPx = (ValidateField(wrapper, ExecutionReportFields.StopPx) ?(double?) Convert.ToDouble( wrapper.GetField(ExecutionReportFields.StopPx)) : null);
             order.Currency = (ValidateField(wrapper, ExecutionReportFields.Currency) ? Convert.ToString( wrapper.GetField(ExecutionReportFields.Currency)) : null);

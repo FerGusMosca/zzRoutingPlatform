@@ -63,7 +63,7 @@ namespace zHFT.Main.DataAccessLayer.Managers
             orderBD.settl_date = order.SettlDate;
             orderBD.side = Convert.ToChar(order.Side).ToString();
             orderBD.exchange = order.Exchange;
-            orderBD.ord_type = order.OrdType != null ? Convert.ToChar(order.OrdType).ToString() : null;
+            orderBD.ord_type =  Convert.ToChar(order.OrdType).ToString();
             orderBD.quantity_type = Convert.ToInt32(order.QuantityType);
             orderBD.order_qty = order.OrderQty;
             orderBD.cash_order_qty = order.CashOrderQty;

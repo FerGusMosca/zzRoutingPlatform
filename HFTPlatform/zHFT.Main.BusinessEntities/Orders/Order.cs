@@ -31,7 +31,7 @@ namespace zHFT.Main.BusinessEntities.Orders
 
         public string Exchange { get; set; }
 
-        public OrdType? OrdType { get; set; }
+        public OrdType OrdType { get; set; }
 
         public QuantityType QuantityType { get; set; }
 
@@ -58,6 +58,8 @@ namespace zHFT.Main.BusinessEntities.Orders
         public double? MinQty { get; set; }
 
         public int Index { get; set; }
+
+        public string Account { get; set; }
 
         public string Symbol
         {
@@ -106,6 +108,7 @@ namespace zHFT.Main.BusinessEntities.Orders
             newOrder.EffectiveTime = EffectiveTime;
             newOrder.MinQty = MinQty;
             newOrder.Index = Index;
+            newOrder.Account = Account;
 
             return newOrder;
         

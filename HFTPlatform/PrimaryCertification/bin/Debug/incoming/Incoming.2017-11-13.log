@@ -1,0 +1,106 @@
+2017-11-13 0:02:38  :: 11/13/2017 12:02:38 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:02:38  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-13 0:02:38  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-13 0:02:38  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-13 0:02:38  :: 11/13/2017 12:02:38 AMConfigLoader.LoadConfig
+2017-11-13 0:02:38  :: Loading config:.\Primary.xml
+2017-11-13 0:02:38  :: Processing config:.\Primary.xml
+2017-11-13 0:02:38  :: Ending GetConfiguracion .\Primary.xml
+2017-11-13 0:02:38  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=534=449=fmosca52=20171113-03:02:38.84156=ROFX10=223
+2017-11-13 0:02:38  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:02:38  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171113-03:02:38.96056=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=192
+2017-11-13 0:02:39  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171113-03:02:37.90856=fmosca98=0108=30141=Y1137=910=123
+2017-11-13 0:02:39  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:02:39  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:02:40  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:02:38.41756=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=167
+2017-11-13 0:02:40  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:02:38.41756=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=167 
+2017-11-13 0:02:40  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:02:38.44656=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=165
+2017-11-13 0:02:40  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:02:38.44656=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=165 
+2017-11-13 0:02:40  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:02:38.44956=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=027
+2017-11-13 0:02:40  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:02:38.44956=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=027 
+2017-11-13 0:02:40  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:02:38.45256=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=002
+2017-11-13 0:02:40  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:02:38.45256=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=002 
+2017-11-13 0:02:40  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:02:38.45556=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=088
+2017-11-13 0:02:40  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:02:38.45556=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=088 
+2017-11-13 0:02:54  :: @Primary Ceritifaction Test:Routing with Primary to market for symbol GGAL
+2017-11-13 0:03:08  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=249=fmosca52=20171113-03:03:08.91456=ROFX10=215
+2017-11-13 0:03:10  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=749=ROFX52=20171113-03:03:08.67556=fmosca10=224
+2017-11-13 0:22:00  :: 11/13/2017 12:22:00 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:22:00  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-13 0:22:00  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-13 0:22:00  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-13 0:22:01  :: 11/13/2017 12:22:01 AMConfigLoader.LoadConfig
+2017-11-13 0:22:01  :: Loading config:.\Primary.xml
+2017-11-13 0:22:01  :: Processing config:.\Primary.xml
+2017-11-13 0:22:01  :: Ending GetConfiguracion .\Primary.xml
+2017-11-13 0:22:01  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:22:01  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171113-03:22:01.72056=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=178
+2017-11-13 0:22:02  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171113-03:22:00.56556=fmosca98=0108=30141=Y1137=910=114
+2017-11-13 0:22:02  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:22:02  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:22:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=158
+2017-11-13 0:22:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=158 
+2017-11-13 0:22:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=154
+2017-11-13 0:22:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=154 
+2017-11-13 0:22:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=013
+2017-11-13 0:22:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=013 
+2017-11-13 0:22:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=250
+2017-11-13 0:22:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:22:01.07456=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=250 
+2017-11-13 0:22:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:22:01.07456=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=077
+2017-11-13 0:22:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:22:01.07456=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=077 
+2017-11-13 0:22:16  :: @Primary Ceritifaction Test:Routing with Primary to market for symbol GGAL
+2017-11-13 0:22:43  :: 11/13/2017 12:22:43 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:22:43  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-13 0:22:43  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-13 0:22:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-13 0:22:43  :: 11/13/2017 12:22:43 AMConfigLoader.LoadConfig
+2017-11-13 0:22:43  :: Loading config:.\Primary.xml
+2017-11-13 0:22:43  :: Processing config:.\Primary.xml
+2017-11-13 0:22:44  :: Ending GetConfiguracion .\Primary.xml
+2017-11-13 0:22:44  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:22:44  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171113-03:22:44.53056=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=184
+2017-11-13 0:22:45  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171113-03:22:43.36556=fmosca98=0108=30141=Y1137=910=119
+2017-11-13 0:22:45  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:22:45  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:22:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=172
+2017-11-13 0:22:45  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=172 
+2017-11-13 0:22:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=168
+2017-11-13 0:22:45  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=168 
+2017-11-13 0:22:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=027
+2017-11-13 0:22:45  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=027 
+2017-11-13 0:22:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=008
+2017-11-13 0:22:45  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:22:43.87456=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=008 
+2017-11-13 0:22:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:22:43.87456=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=091
+2017-11-13 0:22:45  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:22:43.87456=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=091 
+2017-11-13 0:25:01  :: 11/13/2017 12:25:01 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:25:01  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-13 0:25:01  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-13 0:25:01  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-13 0:25:01  :: 11/13/2017 12:25:01 AMConfigLoader.LoadConfig
+2017-11-13 0:25:01  :: Loading config:.\Primary.xml
+2017-11-13 0:25:01  :: Processing config:.\Primary.xml
+2017-11-13 0:25:01  :: Ending GetConfiguracion .\Primary.xml
+2017-11-13 0:25:01  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:25:01  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20171113-03:25:01.84856=ROFX98=0108=30141=Y553=fmosca554=WhYbs5wY1137=910=192
+2017-11-13 0:25:02  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20171113-03:25:00.68556=fmosca98=0108=30141=Y1137=910=120
+2017-11-13 0:25:02  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:25:02  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2017-11-13 0:25:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=165
+2017-11-13 0:25:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=249=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=DDF1301=ROFX10=165 
+2017-11-13 0:25:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=161
+2017-11-13 0:25:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10535=h34=349=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=DDA1301=ROFX10=161 
+2017-11-13 0:25:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=020
+2017-11-13 0:25:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=449=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=MERV1301=ROFX10=020 
+2017-11-13 0:25:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=001
+2017-11-13 0:25:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=10635=h34=549=ROFX52=20171113-03:25:01.19556=fmosca325=Y335=NONE336=1340=2625=11300=DUAL1301=ROFX10=001 
+2017-11-13 0:25:03  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:25:01.19556=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=084
+2017-11-13 0:25:03  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=11935=h34=649=ROFX52=20171113-03:25:01.19556=fmosca58=EXTERNAL325=Y335=NONE336=1340=0625=41300=MATBA1301=ROFX10=084 
+2017-11-13 0:25:10  :: @Primary Ceritifaction Test:Routing with Primary to market for symbol GGAL
+2017-11-13 0:25:21  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14035=D34=249=fmosca52=20171113-03:25:21.89356=ROFX1=805111=10038=10040=244=8054=155=MERV - XMEV - GGAL - 48hs60=20171113-00:25:2110=073
+2017-11-13 0:25:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=28135=834=749=ROFX52=20171113-03:25:20.19356=fmosca1=80516=011=10014=017=171110080148-fix1-11185431=032=037=802915738=10039=040=244=80.0054=155=MERV - XMEV - GGAL - 48hs58=Aceptada 59=060=20171113-03:25:20.148150=0151=100207=ROFX453=1448=fmosca447=D452=1110=173
+2017-11-13 0:25:23  :: Primary Ceritifaction Test: Unknown message:8=FIXT.1.19=28135=834=749=ROFX52=20171113-03:25:20.19356=fmosca1=80516=011=10014=017=171110080148-fix1-11185431=032=037=802915738=10039=040=244=80.0054=155=MERV - XMEV - GGAL - 48hs58=Aceptada 59=060=20171113-03:25:20.148150=0151=100207=ROFX453=1448=fmosca447=D452=1110=173 
+2017-11-13 0:25:51  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=349=fmosca52=20171113-03:25:51.52356=ROFX10=214
+2017-11-13 0:25:52  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=849=ROFX52=20171113-03:25:50.67556=fmosca10=226
+2017-11-13 0:26:21  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=449=fmosca52=20171113-03:26:21.54056=ROFX10=212
+2017-11-13 0:26:22  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=949=ROFX52=20171113-03:26:20.67556=fmosca10=225
+2017-11-13 0:26:51  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=034=549=fmosca52=20171113-03:26:51.56056=ROFX10=218

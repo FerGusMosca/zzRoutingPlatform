@@ -111,6 +111,32 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
             }
         }
 
+        protected void ValidateNewOrderSingleFields(string account, string clOrderId, zHFT.Main.Common.Enums.OrdType ordType,
+                                                    double? price,double? stopPx)
+        {
+
+            if (string.IsNullOrEmpty(account))
+                throw new Exception("Must specify an account for a new order");
+
+            if (string.IsNullOrEmpty(clOrderId))
+                throw new Exception("Must specify an order id for a new order");
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.Limit
+              || ordType == zHFT.Main.Common.Enums.OrdType.LimitOnClose
+             )
+            {
+                if (!price.HasValue)
+                    throw new Exception("Must specify a price for a limit order");
+            }
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.StopLimit)
+            {
+                if (!stopPx.HasValue)
+                    throw new Exception("Must specify a price for a stop limit order");
+            }
+        
+        }
+
         #endregion
 
         #region Public Methods
@@ -191,6 +217,48 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                 }
             }
         }
+
+        public QuickFix.Message CreateNewOrderSingle(string clOrderId, string symbol,
+                                                     zHFT.Main.Common.Enums.Side side,
+                                                     zHFT.Main.Common.Enums.OrdType ordType,
+                                                     zHFT.Main.Common.Enums.SettlType? settlType,
+                                                     zHFT.Main.Common.Enums.TimeInForce? timeInForce,
+                                                     double ordQty,double? price,double? stopPx,string account)
+        {
+
+
+            ValidateNewOrderSingleFields(account, clOrderId, ordType, price, stopPx);
+
+            QuickFix50Sp2.NewOrderSingle nos = new QuickFix50Sp2.NewOrderSingle();
+
+            nos.setField(Account.FIELD, account);
+            nos.setField(ClOrdID.FIELD, clOrderId);
+            nos.setUtcTimeStamp(TransactTime.FIELD, DateTime.Now);
+            nos.setField(Symbol.FIELD, symbol);
+            nos.setDouble(OrderQty.FIELD, ordQty);
+            nos.setChar(QuickFix.OrdType.FIELD, Convert.ToChar(ordType));
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.Limit || ordType == zHFT.Main.Common.Enums.OrdType.LimitOnClose)
+            {
+                nos.setDouble(QuickFix.Price.FIELD, price.Value);
+            }
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.StopLimit)
+            {
+                nos.setDouble(QuickFix.Price.FIELD, stopPx.Value);
+            }
+
+            nos.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
+
+            //TODO: Completar parte de BlockParties si tiene sentido
+
+            if(timeInForce.HasValue)
+                nos.setChar(QuickFix.TimeInForce.FIELD, Convert.ToChar(timeInForce.Value));
+
+            return nos;
+
+        }
+
 
         #endregion
     }

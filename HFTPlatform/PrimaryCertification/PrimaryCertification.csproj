@@ -75,6 +75,10 @@
       <Project>{94aaa41a-1d62-4057-a22b-f2db5fa4c76d}</Project>
       <Name>zHFT.MessageBasedFullMarketConnectivity.Primary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
+      <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
+      <Name>zHFT.OrderRouters.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
       <Name>zHFT.OrderRouters</Name>

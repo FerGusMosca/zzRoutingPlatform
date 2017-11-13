@@ -15,3 +15,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMa
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb

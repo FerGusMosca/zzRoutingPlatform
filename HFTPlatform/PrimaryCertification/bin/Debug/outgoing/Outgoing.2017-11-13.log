@@ -1,0 +1,18 @@
+2017-11-13 0:02:38  :: 11/13/2017 12:02:38 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:02:38  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:02:38  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:02:38  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-13 0:02:54  :: @Missing account for order:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2017-11-13 0:22:01  :: 11/13/2017 12:22:01 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:22:01  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:22:01  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:22:01  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-13 0:22:44  :: 11/13/2017 12:22:44 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:22:44  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:22:44  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:22:44  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-13 0:25:01  :: 11/13/2017 12:25:01 AMBaseCommunicationModule.LoadConfig
+2017-11-13 0:25:01  :: Loading config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:25:01  :: Processing config:.\OutgoingSingletonConfig.xml
+2017-11-13 0:25:01  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2017-11-13 0:25:23  :: @Outgoing Singleton FIX:Publishing Wrapper 

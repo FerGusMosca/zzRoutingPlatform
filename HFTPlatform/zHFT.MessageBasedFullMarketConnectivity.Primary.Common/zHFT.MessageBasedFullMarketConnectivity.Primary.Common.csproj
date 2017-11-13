@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Converters\OrderConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,10 @@
     <ProjectReference Include="..\zHFT.MarketClient.Primary.Common\zHFT.MarketClient.Primary.Common.csproj">
       <Project>{851bd5d9-25fd-4718-9953-cdd6f4c10d11}</Project>
       <Name>zHFT.MarketClient.Primary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.SecurityListMarketClient.Primary.Common\zHFT.SecurityListMarketClient.Primary.Common.csproj">
+      <Project>{a8a99cee-61da-4308-94ef-a272abc831f9}</Project>
+      <Name>zHFT.SecurityListMarketClient.Primary.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

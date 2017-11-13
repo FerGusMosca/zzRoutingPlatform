@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
@@ -13,6 +14,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.MarketClient.Primary.Common.Wrappers;
+using zHFT.MessageBasedFullMarketConnectivity.Primary.Common.Converters;
 using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
@@ -85,35 +87,42 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
         protected int MarketDataRequestId { get; set; }
 
+        protected int OrderIndexId { get; set; }
+
+        protected OrderConverter OrderConverter { get; set; }
+
+        protected Dictionary<string, Order> ActiveOrders { get; set; }
+
         #endregion
 
         #region Protected Methods
 
-        protected void ProcessMarketDataRequest(Wrapper marketDataRequestWrapper)
+        protected CMState ProcessMarketDataRequest(Wrapper marketDataRequestWrapper)
         {
             if (SessionID != null)
             {
-                try
-                {
-                    string exchange = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Exchange);
-                    string fullSymbol = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Symbol);
-                    string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
-                    zHFT.Main.Common.Enums.SecurityType secType = (zHFT.Main.Common.Enums.SecurityType)marketDataRequestWrapper.GetField(MarketDataRequestField.SecurityType);
-                    string marketClearingID = ExchangeConverter.GetMarketClearingID(secType, exchange);
+                string exchange = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Exchange);
+                string fullSymbol = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Symbol);
+                string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
+                zHFT.Main.Common.Enums.SecurityType secType = (zHFT.Main.Common.Enums.SecurityType)marketDataRequestWrapper.GetField(MarketDataRequestField.SecurityType);
+                string marketClearingID = ExchangeConverter.GetMarketClearingID(secType, exchange);
 
 
-                    MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
-                                                                                            marketClearingID, secType);
-                   
-                    QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);
-                    MarketDataRequestId++;
+                MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
+                                                                                        marketClearingID, secType);
 
-                    Session.sendToTarget(msg, SessionID);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(string.Format("@{0}: Error requesting market data:{1}", PrimaryConfiguration.Name, ex.Message));
-                }
+                QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);
+                MarketDataRequestId++;
+
+                Session.sendToTarget(msg, SessionID);
+
+                return CMState.BuildSuccess();
+              
+            }
+            else
+            {
+                DoLog(string.Format("@{0}:Session not initialized on new market data request ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildSuccess();
             }
         }
 
@@ -142,16 +151,59 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
         protected CMState ProcessSecurityListRequest(Wrapper wrapper)
         {
-            zHFT.Main.Common.Enums.SecurityListRequestType type = (zHFT.Main.Common.Enums.SecurityListRequestType)wrapper.GetField(SecurityListRequestField.SecurityListRequestType);
-
-            if (type == zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities)
+            if (SessionID != null)
             {
-                QuickFix.Message rq = FIXMessageCreator.RequestSecurityList((int)type, _DUMMY_SECURITY);
-                Session.sendToTarget(rq, SessionID);
-                return CMState.BuildSuccess();
+                zHFT.Main.Common.Enums.SecurityListRequestType type = (zHFT.Main.Common.Enums.SecurityListRequestType)wrapper.GetField(SecurityListRequestField.SecurityListRequestType);
+
+                if (type == zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities)
+                {
+                    QuickFix.Message rq = FIXMessageCreator.RequestSecurityList((int)type, _DUMMY_SECURITY);
+                    Session.sendToTarget(rq, SessionID);
+                    return CMState.BuildSuccess();
+                }
+                else
+                    throw new Exception(string.Format("@{0} SecurityListRequestType not implemented: {1}", PrimaryConfiguration.Name, type.ToString()));
             }
             else
-                throw new Exception(string.Format("@{0} SecurityListRequestType not implemented: {1}", PrimaryConfiguration.Name, type.ToString()));
+            {
+                DoLog(string.Format("@{0}:Session not initialized on security list request ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildSuccess();
+            }
+        }
+
+        protected CMState RouteNewOrder(Wrapper wrapper)
+        {
+            try
+            {
+                if(SessionID!=null)
+                {
+                    lock(tLock)
+                    {
+                        Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
+
+                        newOrder.ClOrdId=(OrderIndexId*100).ToString();
+                        OrderIndexId++;
+
+                        QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(newOrder.ClOrdId,newOrder.Symbol,newOrder.Side,newOrder.OrdType,
+                                                                                      newOrder.SettlType,newOrder.TimeInForce,newOrder.OrderQty.Value,newOrder.Price,
+                                                                                      newOrder.StopPx,newOrder.Account);
+                    
+                        Session.sendToTarget(msg,SessionID);
+                    }
+                    
+                    return CMState.BuildSuccess();
+                }
+                else
+                {
+                    DoLog(string.Format("@{0}:Session not initialized on new order ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                    return CMState.BuildSuccess();
+                }
+
+            }
+            catch(Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
         }
 
         #endregion
@@ -167,6 +219,9 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                 if (ConfigLoader.DoLoadConfig(this, configFile))
                 {
                     MarketDataRequestId = 1;
+                    OrderIndexId = 1;
+                    OrderConverter = new OrderConverter();
+                    ActiveOrders = new Dictionary<string, Order>();
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
                     if (fixMessageCreator != null)
@@ -214,26 +269,14 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     Actions action = wrapper.GetAction();
                     if (action == Actions.SECURITY_LIST_REQUEST)
                     {
-                        try
-                        {
-                            return ProcessSecurityListRequest(wrapper);
-                        }
-                        catch (Exception ex)
-                        {
-                            return CMState.BuildFail(ex);
-                        }
+                        DoLog(string.Format("Receiving Security List Request: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+                        return ProcessSecurityListRequest(wrapper);
                     }
                     else if (action == Actions.MARKET_DATA_REQUEST)
                     {
-                        try
-                        {
-                            ProcessMarketDataRequest(wrapper);
-                            return CMState.BuildSuccess();
-                        }
-                        catch (Exception ex)
-                        {
-                            return CMState.BuildFail(ex);
-                        }
+                        DoLog(string.Format("Receiving Market Data Request: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return ProcessMarketDataRequest(wrapper);
                     }
                     else if (action == Actions.MARKET_DATA)
                     {
@@ -243,9 +286,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     else if (wrapper.GetAction() == Actions.NEW_ORDER)
                     {
                         DoLog(string.Format("@{0}:Routing with Primary to market for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //RouteNewOrder(wrapper);
-                        return CMState.BuildSuccess();
-
+                        return RouteNewOrder(wrapper);
                     }
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
@@ -262,7 +303,6 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     }
                     else
                     {
-
                         DoLog(string.Format("@{0}:Sending message " + action + " not implemented", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                         return CMState.BuildFail(new Exception(string.Format("@{0}:Sending message " + action + " not implemented", PrimaryConfiguration.Name)));
                     }
@@ -274,7 +314,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             catch (Exception ex)
             {
                 DoLog(ex.Message, Main.Common.Util.Constants.MessageType.Error);
-                throw;
+                return CMState.BuildFail(ex);
             }
         }
 
