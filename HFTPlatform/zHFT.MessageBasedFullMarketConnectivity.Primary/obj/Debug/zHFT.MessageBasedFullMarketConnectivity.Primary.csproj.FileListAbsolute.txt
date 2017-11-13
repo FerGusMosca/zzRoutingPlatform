@@ -24,3 +24,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMa
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.SingletonModulesHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.OrderRouters.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.OrderRouters.Primary.Common.pdb

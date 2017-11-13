@@ -15,40 +15,57 @@ namespace zHFT.MarketClient.Primary.Common.Converters
         private static int _SYMBOL_INDEX = 2;
         private static int _EXCHANGE_INDEX = 0;
 
+        private static string _BYMA = "BUE";
+        private static string _ROFX = "ROFX";
+
         #endregion
 
         #region Public Static Methods
-        public static string GetCleanSymbolFromPrimary(string symbol)
+        public static string GetCleanSymbolFromPrimary(string symbol,string exchange)
         {
-            if (string.IsNullOrEmpty(symbol))
-                throw new Exception(string.Format("Symbol not specified for security"));
+            if (exchange == _BYMA)
+            {
+                if (string.IsNullOrEmpty(symbol))
+                    throw new Exception(string.Format("Symbol not specified for security"));
 
 
-            string[] fields = symbol.Split(new string[] { _PRIMARY_FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
+                string[] fields = symbol.Split(new string[] { _PRIMARY_FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (fields.Length <= _SYMBOL_INDEX)
-                throw new Exception(string.Format("Could not find field symbol for security {0}", symbol));
+                if (fields.Length <= _SYMBOL_INDEX)
+                    throw new Exception(string.Format("Could not find field symbol for security {0}", symbol));
 
-            return fields[_SYMBOL_INDEX].Trim();
-
+                return fields[_SYMBOL_INDEX].Trim();
+            }
+            else if (exchange == _ROFX)
+            {
+                return symbol;
+            }
+            else
+                throw new Exception(string.Format("Exchange symbol translation from Primary not implemented for exchange {0}", exchange));
         }
 
         public static string GetFullSymbolFromPrimary(string symbol,string market)
         {
-            if (string.IsNullOrEmpty(symbol))
-                throw new Exception(string.Format("Symbol not specified for security"));
+            if (market == _BYMA)
+            {
+                if (string.IsNullOrEmpty(symbol))
+                    throw new Exception(string.Format("Symbol not specified for security"));
 
-            if (string.IsNullOrEmpty(market))
-                throw new Exception(string.Format("Market not specified for security"));
+                if (string.IsNullOrEmpty(market))
+                    throw new Exception(string.Format("Market not specified for security"));
 
 
-            string[] fields = symbol.Split(new string[] { _PRIMARY_FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
+                string[] fields = symbol.Split(new string[] { _PRIMARY_FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (fields.Length <= _SYMBOL_INDEX)
-                throw new Exception(string.Format("Could not find field symbol for security {0}", symbol));
+                if (fields.Length <= _SYMBOL_INDEX)
+                    throw new Exception(string.Format("Could not find field symbol for security {0}", symbol));
 
-            return fields[_SYMBOL_INDEX].Trim() + _INSTR_FIELD_SEPARATOR + market;
-
+                return fields[_SYMBOL_INDEX].Trim() + _INSTR_FIELD_SEPARATOR + market;
+            }
+            else if (market == _ROFX)
+                return symbol;
+            else
+                throw new Exception(string.Format("GetFullSymbolFromPrimary translation not implemented for exchange {0}", market));
         }
 
         public static string GetFullSymbolFromCleanSymbol(string symbol, string market)

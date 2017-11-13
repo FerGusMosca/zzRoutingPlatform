@@ -21,6 +21,9 @@ namespace zHFT.Main.Common.Enums
         CANCEL_ORDER,
         CANCEL_POSITION,
         SECURITY_LIST,
-        SECURITY_LIST_REQUEST
+        SECURITY_LIST_REQUEST,
+        ORDER_CANCEL_REJECT,
+        BUSINESS_MESSAGE_REJECT,
+        ORDER_LIST
     }
 }

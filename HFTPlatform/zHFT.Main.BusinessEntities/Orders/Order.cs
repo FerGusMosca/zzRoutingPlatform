@@ -61,6 +61,8 @@ namespace zHFT.Main.BusinessEntities.Orders
 
         public string Account { get; set; }
 
+        public OrdStatus OrdStatus { get; set; }
+
         public string Symbol
         {
             get 
@@ -109,6 +111,7 @@ namespace zHFT.Main.BusinessEntities.Orders
             newOrder.MinQty = MinQty;
             newOrder.Index = Index;
             newOrder.Account = Account;
+            newOrder.OrdStatus = OrdStatus;
 
             return newOrder;
         

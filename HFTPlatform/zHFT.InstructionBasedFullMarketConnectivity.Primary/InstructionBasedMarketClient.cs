@@ -16,6 +16,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
+using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
 
@@ -146,22 +147,23 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
-            string symbol = message.getField(Symbol.FIELD);
+            string primarySymbol = message.getField(Symbol.FIELD);
+            string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
 
-            if (symbol != null)
+            if (primarySymbol != null)
             {
-                symbol = SecurityConverter.GetCleanSymbolFromPrimary(symbol);
+                primarySymbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol,market);
 
-                if (ActiveSecurities.Values.Any(x => x.Symbol == symbol))
+                if (ActiveSecurities.Values.Any(x => x.Symbol == primarySymbol))
                 {
-                    Security sec = ActiveSecurities.Values.Where(x => x.Symbol == symbol).FirstOrDefault();
+                    Security sec = ActiveSecurities.Values.Where(x => x.Symbol == primarySymbol).FirstOrDefault();
 
                     FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
                 }
             }
             else
             {
-                if (symbol != null)
+                if (primarySymbol != null)
                     DoLog(string.Format("@{0}:Unknown market data for symbol {1} ", PrimaryConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Error);
                 else
                     DoLog(string.Format("@{0}:Market data with no symbol", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);

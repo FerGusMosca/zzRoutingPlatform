@@ -191,7 +191,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
                 Security sec = new Security()
                 {
-                    Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol),
+                    Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol, market),
                     Exchange = market,
                     SecType = secType
                 };

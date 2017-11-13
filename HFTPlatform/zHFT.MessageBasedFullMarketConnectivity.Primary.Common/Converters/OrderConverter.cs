@@ -58,7 +58,10 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary.Common.Converters
             string marketPrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
             string marketClearingId = ExchangeConverter.GetMarketClearingID(secType, exchange);
 
-            return  marketPrefixCode + " - " + cleanSymbol + " - " + marketClearingId;
+            if (!string.IsNullOrEmpty(marketPrefixCode) && !string.IsNullOrEmpty(marketClearingId))
+                return marketPrefixCode + " - " + cleanSymbol + " - " + marketClearingId;
+            else
+                return cleanSymbol;
 
         }
 

@@ -19,6 +19,21 @@ namespace zHFT.Main.Common.Interfaces
                                              zHFT.Main.Common.Enums.TimeInForce? timeInForce,
                                              double ordQty, double? price, double? stopPx, string account);
 
+        QuickFix.Message CreateOrderCancelReplaceRequest(string clOrderId, string orderId, string origClOrdId,
+                                                             string symbol,
+                                                             zHFT.Main.Common.Enums.Side side,
+                                                             zHFT.Main.Common.Enums.OrdType ordType,
+                                                             zHFT.Main.Common.Enums.SettlType? settlType,
+                                                             zHFT.Main.Common.Enums.TimeInForce? timeInForce,
+                                                             double? ordQty, double? price, double? stopPx, string account);
+
+        QuickFix.Message CreateOrderCancelRequest(string clOrderId, string origClOrderId, string orderId, string symbol,
+                                                  zHFT.Main.Common.Enums.Side side,
+                                                  double? ordQty, string account);
+
+
         void ProcessMarketData(QuickFix.Message snapshot, object security, OnLogMessage pOnLogMsg);
+
+        
     }
 }

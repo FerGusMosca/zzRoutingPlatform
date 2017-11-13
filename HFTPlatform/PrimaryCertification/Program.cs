@@ -126,6 +126,47 @@ namespace PrimaryCertification
             App.ProcessMessageToIncoming(mdrWrapper);
         }
 
+        protected static void ProcessCancelOrderCommand(string command)
+        {
+            string[] fields = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+             if (fields.Length != 2)
+                throw new Exception("Comando CO con mal formato");
+
+            Order order = new Order();
+            order.ClOrdId = fields[1].Trim();
+
+            zHFT.OrderRouters.Common.Wrappers.CancelOrderWrapper cancelWrapper = new zHFT.OrderRouters.Common.Wrappers.CancelOrderWrapper(order, null);
+
+            App.ProcessMessageToOutgoing(cancelWrapper);
+        }
+
+        protected static void ProcessUpdateOrderCommand(string command)
+        {
+            string[] fields = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (fields.Length != 4)
+                throw new Exception("Comando UO con mal formato");
+
+            Order order = new Order();
+            order.ClOrdId = fields[1].Trim();
+            order.OrderQty = Convert.ToDouble(fields[2].Trim());
+            order.Price = Convert.ToDouble(fields[3].Trim());
+
+            zHFT.OrderRouters.Common.Wrappers.UpdateOrderWrapper updateWrapper = new zHFT.OrderRouters.Common.Wrappers.UpdateOrderWrapper(order, null);
+
+            App.ProcessMessageToOutgoing(updateWrapper);
+        }
+
+        protected static void ProcessListOrdersRequest(string command)
+        {
+            Console.Clear();
+
+            OrderListWrapper wrapper = new OrderListWrapper();
+
+            App.ProcessMessageToOutgoing(wrapper);
+        }
+
         protected static void ProcessCommand(string command)
         {
             if (command == "cls")
@@ -142,9 +183,23 @@ namespace PrimaryCertification
                 ProcessNewOrderSingleCommand(command);
             
             }
+            else if (command.StartsWith("CO"))
+            {
+                ProcessCancelOrderCommand(command);
+
+            }
+            else if (command.StartsWith("UO"))
+            {
+                ProcessUpdateOrderCommand(command);
+
+            }
             else if (command.StartsWith("MD"))
             {
                 ProcessMarketDataRequest(command);
+            }
+            else if (command.StartsWith("LO"))
+            {
+                ProcessListOrdersRequest(command);
             }
         }
 
@@ -197,7 +252,10 @@ namespace PrimaryCertification
                 Console.WriteLine("Ingrese comando");
                 Console.WriteLine("SL-Security List Request");
                 Console.WriteLine("MD-Market Data Request. Ejemplo: MD GGAL BUE");
-                Console.WriteLine("NOS-New Order Single. Ejemplo: NOS GGAL BUE B LMT 100 80");//B=Buy,LMT=Limit,100=Qty,80=Limit Price
+                Console.WriteLine("NOS-New Order Single. Ejemplo: NOS GGAL BUE <Side:B/S> <OrdType:LMT/MKT> <qty> <price>");//B=Buy,LMT=Limit,100=Qty,80=Limit Price
+                Console.WriteLine("CO-Cancel Order. Ejemplo: CO <ClOrderId>");//100 es el Id de la orden
+                Console.WriteLine("UO-Cancel Order. Ejemplo: CO <ClOrderId> <qty> <price>");//100 es el Id de la orden
+                Console.WriteLine("LO-List Orders.");
                 Console.WriteLine("cls-Limpiar Pantalla");
                 Console.WriteLine("q-Quit");
 

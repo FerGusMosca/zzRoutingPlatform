@@ -9,7 +9,9 @@ namespace zHFT.Main.Common.Util
 {
     public class FixHelperExtended : FixHelper
     {
-        #region Public Static Methods
+
+
+        #region Public Static Group Methods
 
         public static string GetNullFieldIfSet(QuickFix.Group group, int field)
         {

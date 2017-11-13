@@ -30,7 +30,8 @@ namespace zHFT.SecurityListMarketClient.Primary.Common.Converters
 
             mdr.Exchange = (string)wrapper.GetField(MarketDataRequestField.Exchange);
 
-            mdr.Symbol = marketPrefixCode + " - " + mdr.Symbol + " - " + marketClearingId;
+            if(!string.IsNullOrEmpty(marketPrefixCode) &&  !string.IsNullOrEmpty(marketClearingId))
+                mdr.Symbol = marketPrefixCode + " - " + mdr.Symbol + " - " + marketClearingId;
 
             return mdr;
 

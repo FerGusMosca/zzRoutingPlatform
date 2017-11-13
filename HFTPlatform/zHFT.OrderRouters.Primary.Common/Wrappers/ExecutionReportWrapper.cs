@@ -16,7 +16,7 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
     {
         #region Private Attributes
         
-        protected QuickFix50Sp2.ExecutionReport ExecutionReport { get; set; }
+        protected QuickFix50.ExecutionReport ExecutionReport { get; set; }
 
         protected IConfiguration Config { get; set; }
 
@@ -24,7 +24,7 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
 
         #region Constructors
 
-        public ExecutionReportWrapper(QuickFix50Sp2.ExecutionReport pExecReport, IConfiguration pConfig)
+        public ExecutionReportWrapper(QuickFix50.ExecutionReport pExecReport, IConfiguration pConfig)
         {
             ExecutionReport = pExecReport;
 
@@ -35,7 +35,7 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
 
         #region Private Methods
 
-        protected string GetOrdId(QuickFix50Sp2.Message msg, int field)
+        protected string GetOrdId(QuickFix50.Message msg, int field)
         {
             string OrdId = null;
             if (field == ClOrdID.FIELD)
@@ -203,6 +203,10 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
                 return zHFT.Main.Common.Enums.QuantityType.SHARES;//In Primary v1.0 we only work with SHARE orders
             else if (xrField == ExecutionReportFields.PriceType)
                 return zHFT.Main.Common.Enums.PriceType.FixedAmount;//In Primary v1.0 we only work with FIXED AMMOUNT orders
+            else if (xrField == ExecutionReportFields.Account)
+                return ExecutionReport.getField(QuickFix.Account.FIELD);
+            else if (xrField == ExecutionReportFields.ExecInst)
+                return ExecutionReport.getField(QuickFix.ExecInst.FIELD);
 
             return ExecutionReportFields.NULL;
         }

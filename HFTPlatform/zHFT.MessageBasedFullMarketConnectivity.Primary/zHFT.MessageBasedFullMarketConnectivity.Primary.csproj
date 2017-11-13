@@ -79,6 +79,10 @@
       <Project>{9a5db1df-0e1f-4772-9a1c-0f9603aa29fa}</Project>
       <Name>zHFT.MessageBasedFullMarketConnectivity.Primary.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Primary.Common\zHFT.OrderRouters.Primary.Common.csproj">
+      <Project>{52efba55-18ee-472d-8613-063d172b6705}</Project>
+      <Name>zHFT.OrderRouters.Primary.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.SecurityListMarketClient.Primary.Common\zHFT.SecurityListMarketClient.Primary.Common.csproj">
       <Project>{a8a99cee-61da-4308-94ef-a272abc831f9}</Project>
       <Name>zHFT.SecurityListMarketClient.Primary.Common</Name>

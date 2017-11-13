@@ -48,6 +48,7 @@
     <Compile Include="Wrappers\CancelOrderWrapper.cs" />
     <Compile Include="Wrappers\InvalidNewPositionWrapper.cs" />
     <Compile Include="Wrappers\NewOrderWrapper.cs" />
+    <Compile Include="Wrappers\OrderListWrapper.cs" />
     <Compile Include="Wrappers\OrderWrapper.cs" />
     <Compile Include="Wrappers\UpdateOrderWrapper.cs" />
   </ItemGroup>

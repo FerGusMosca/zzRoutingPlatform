@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
@@ -137,6 +138,59 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
         
         }
 
+        protected void ValidateOrderCancelReplaceRequestFields(string account, string clOrderId,string origClOrderId,string orderId,
+                                                               zHFT.Main.Common.Enums.OrdType ordType, double? price, double? stopPx,
+                                                               string symbol, double? orderQty)
+        {
+            if (string.IsNullOrEmpty(account))
+                throw new Exception("Must specify an account for a updated order");
+
+            if (string.IsNullOrEmpty(clOrderId))
+                throw new Exception("Must specify an order id for a updated order");
+
+            if (string.IsNullOrEmpty(symbol))
+                throw new Exception("Must specify a symbol a updated order");
+
+            if (!orderQty.HasValue)
+                throw new Exception("Must specify an order quantity for an updated order");
+
+
+
+            if (string.IsNullOrEmpty(origClOrderId) && string.IsNullOrEmpty(orderId))
+                throw new Exception("Must specify an OrigClOrderId or OrderId for an updated order");
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.Limit
+              || ordType == zHFT.Main.Common.Enums.OrdType.LimitOnClose
+             )
+            {
+                if (!price.HasValue)
+                    throw new Exception("Must specify a price for a limit order");
+            }
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.StopLimit)
+            {
+                if (!stopPx.HasValue)
+                    throw new Exception("Must specify a price for a stop limit order");
+            }
+
+        
+        }
+
+        protected void ValidateOrderCancelRequestFields(string account, string clOrderId,string origClOrdId , 
+                                                        string orderId)
+        {
+
+            if (string.IsNullOrEmpty(account))
+                throw new Exception("Must specify an account for a new order");
+
+            if (string.IsNullOrEmpty(clOrderId))
+                throw new Exception("Must specify an order id for a new order");
+
+            if (string.IsNullOrEmpty(origClOrdId) && string.IsNullOrEmpty(orderId))
+                throw new Exception("Must specify a client order id or an exchange order id");
+
+        }
+
         #endregion
 
         #region Public Methods
@@ -218,6 +272,7 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
             }
         }
 
+
         public QuickFix.Message CreateNewOrderSingle(string clOrderId, string symbol,
                                                      zHFT.Main.Common.Enums.Side side,
                                                      zHFT.Main.Common.Enums.OrdType ordType,
@@ -257,6 +312,82 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             return nos;
 
+        }
+
+
+        public QuickFix.Message CreateOrderCancelReplaceRequest(string clOrderId,string orderId,string origClOrdId, 
+                                                             string symbol,
+                                                             zHFT.Main.Common.Enums.Side side,
+                                                             zHFT.Main.Common.Enums.OrdType ordType,
+                                                             zHFT.Main.Common.Enums.SettlType? settlType,
+                                                             zHFT.Main.Common.Enums.TimeInForce? timeInForce,
+                                                             double? ordQty, double? price, double? stopPx, string account)
+        {
+
+
+            ValidateOrderCancelReplaceRequestFields(account, clOrderId, origClOrdId, orderId, ordType, price, stopPx, symbol, ordQty);
+
+            QuickFix50Sp2.OrderCancelReplaceRequest ocr = new QuickFix50Sp2.OrderCancelReplaceRequest();
+
+            ocr.setField(Account.FIELD, account);
+            ocr.setField(ClOrdID.FIELD, clOrderId);
+            ocr.setField(OrigClOrdID.FIELD, origClOrdId);
+            ocr.setField(OrderID.FIELD, orderId);
+            ocr.setUtcTimeStamp(TransactTime.FIELD, DateTime.Now);
+            ocr.setField(Symbol.FIELD, symbol);
+
+            if(ordQty.HasValue)
+                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+
+            ocr.setChar(QuickFix.OrdType.FIELD, Convert.ToChar(ordType));
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.Limit || ordType == zHFT.Main.Common.Enums.OrdType.LimitOnClose)
+            {
+                ocr.setDouble(QuickFix.Price.FIELD, price.Value);
+            }
+
+            if (ordType == zHFT.Main.Common.Enums.OrdType.StopLimit)
+            {
+                ocr.setDouble(QuickFix.Price.FIELD, stopPx.Value);
+            }
+
+            ocr.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
+
+            //TODO: Completar parte de BlockParties si tiene sentido
+
+            if (timeInForce.HasValue)
+                ocr.setChar(QuickFix.TimeInForce.FIELD, Convert.ToChar(timeInForce.Value));
+
+            return ocr;
+
+        }
+
+        public QuickFix.Message CreateOrderCancelRequest(string clOrderId,string origClOrderId, string orderId, string symbol,
+                                                          zHFT.Main.Common.Enums.Side side,
+                                                          double? ordQty, string account)
+        {
+
+            ValidateOrderCancelRequestFields(account, clOrderId, origClOrderId, orderId);
+
+            QuickFix50Sp2.OrderCancelRequest ocr = new QuickFix50Sp2.OrderCancelRequest();
+
+            ocr.setField(Account.FIELD, account);
+            ocr.setField(ClOrdID.FIELD, clOrderId);
+            
+            if(!string.IsNullOrEmpty(origClOrderId))
+                ocr.setField(OrigClOrdID.FIELD, origClOrderId);
+            else
+                ocr.setField(OrderID.FIELD, orderId);
+
+            ocr.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
+            
+            if (ordQty.HasValue)
+                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+
+            ocr.setUtcTimeStamp(TransactTime.FIELD, DateTime.Now);
+            ocr.setField(Symbol.FIELD, symbol);
+
+            return ocr;
         }
 
 

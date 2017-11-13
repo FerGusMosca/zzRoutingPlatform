@@ -15,6 +15,7 @@ using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.MarketClient.Primary.Common.Wrappers;
 using zHFT.MessageBasedFullMarketConnectivity.Primary.Common.Converters;
+using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
@@ -137,7 +138,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
             Security sec = new Security()
             {
-                Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol),
+                Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol, market),
                 Exchange = market
             };
 
@@ -147,6 +148,177 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
             OnIncomingMessageRcv(mdWrapper);
         
+        }
+
+        protected void ProcesssExecutionReportMessage(QuickFix.Message message)
+        {
+            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            ExecutionReportWrapper erWrapper = new ExecutionReportWrapper((QuickFix50.ExecutionReport )message, Config);
+
+            string clOrdId = (string) erWrapper.GetField(ExecutionReportFields.ClOrdID);
+            string origClOrdId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
+            zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
+
+            if (clOrdId != null)
+            {
+                if (ActiveOrders.Keys.Contains(clOrdId))
+                {
+                    if (execType == zHFT.Main.Common.Enums.ExecType.New)
+                    {
+                        Order order = ActiveOrders[clOrdId];
+                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                        order.OrderId = orderId;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(origClOrdId) && ActiveOrders.Keys.Contains(origClOrdId))
+                {
+                    if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
+                    {
+                        Order order = ActiveOrders[origClOrdId];
+                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                        order.OrderId = orderId;
+                    }
+                }
+                else
+                {
+                    DoLog(string.Format("@{0} Could not find order for ClOrderId {1} ", PrimaryConfiguration.Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+                }
+
+            }
+            else
+            {
+                DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+            }
+
+            OnIncomingMessageRcv(erWrapper);
+        }
+
+        protected void ProcesssBusinessMessageReject(QuickFix.Message message)
+        {
+            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            BusinessMessageRejectWrapper bmrWrapper = new BusinessMessageRejectWrapper((QuickFix50.BusinessMessageReject)message);
+
+            OnIncomingMessageRcv(bmrWrapper);
+        
+        }
+
+        protected CMState ProccessBusinessMessageReject(Wrapper wrapper)
+        {
+            string refMsgType = (string)wrapper.GetField(BusinessMessageRejectField.RefMsgType);
+            string businessRejectRefID = (string)wrapper.GetField(BusinessMessageRejectField.BusinessRejectRefID);
+            zHFT.Main.Common.Enums.BusinessRejectReason businessRejectReason = (zHFT.Main.Common.Enums.BusinessRejectReason)wrapper.GetField(BusinessMessageRejectField.BusinessRejectReason);
+
+
+            DoLog(string.Format("@{0}:Processing business message reject for refMsgType {1} - businessRejectRefID {2} - BusinessRejectReason {3} ",
+                                PrimaryConfiguration.Name, refMsgType, businessRejectRefID, businessRejectReason.ToString()),
+                                Main.Common.Util.Constants.MessageType.Information);
+
+
+
+            return CMState.BuildSuccess();
+        }
+
+        protected void ProcesssOrderCancelReject(QuickFix.Message message)
+        {
+            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            OrderCancelRejectWrapper ocrWrapper = new OrderCancelRejectWrapper((QuickFix50.OrderCancelReject)message);
+
+            OnIncomingMessageRcv(ocrWrapper);
+        }
+
+        protected CMState ProccessOrderCancelRejectMessage(Wrapper wrapper)
+        {
+            string clOrdId = (string)wrapper.GetField(OrderCancelRejectField.ClOrdID);
+            string orderId = (string)wrapper.GetField(OrderCancelRejectField.OrderID);
+            string text = (string)wrapper.GetField(OrderCancelRejectField.Text);
+
+            DoLog(string.Format("@{0}:Processing order cancel reject for ClOrdId {1} - OrderId {2}:{3} ",
+                                PrimaryConfiguration.Name, clOrdId, orderId, text),
+                                Main.Common.Util.Constants.MessageType.Information);
+
+
+
+            return CMState.BuildSuccess();
+        }
+
+        protected CMState ProcessExecutionReportMessage(Wrapper wrapper)
+        {
+            string symbol = (string) wrapper.GetField(ExecutionReportFields.Symbol);
+            string origClOrdId = (string)wrapper.GetField(ExecutionReportFields.OrigClOrdID);
+            string clOrdId = (string)wrapper.GetField(ExecutionReportFields.ClOrdID);
+            string orderId = (string)wrapper.GetField(ExecutionReportFields.OrderID);
+            string text= (string)wrapper.GetField(ExecutionReportFields.Text);
+
+            zHFT.Main.Common.Enums.OrdStatus status = (zHFT.Main.Common.Enums.OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
+            zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)wrapper.GetField(ExecutionReportFields.ExecType);
+
+            #region DoLog
+            if (!ActiveOrders.Keys.Contains(clOrdId) && string.IsNullOrEmpty(origClOrdId))
+            {
+                DoLog(string.Format("@{0} Could not find order  execution report for OrigClOrdId={1} ClOrdId={2} Status={3} ",
+                                   PrimaryConfiguration.Name, origClOrdId, clOrdId, status.ToString()),
+                                   Main.Common.Util.Constants.MessageType.Error);
+
+                return CMState.BuildSuccess();
+            }
+            else if (!string.IsNullOrEmpty(origClOrdId) && !ActiveOrders.Keys.Contains(origClOrdId))
+            {
+                DoLog(string.Format("@{0} Could not find order  execution report for OrigClOrdId={1} ClOrdId={2} Status={3} ",
+                                   PrimaryConfiguration.Name, origClOrdId, clOrdId, status.ToString()),
+                                   Main.Common.Util.Constants.MessageType.Error);
+
+                return CMState.BuildSuccess();
+            }
+            else
+            {
+                DoLog(string.Format("@{0} Processing execution report for OrigClOrdId={1} ClOrdId={2} Status={3} ",
+                                       PrimaryConfiguration.Name, origClOrdId, clOrdId, status.ToString()),
+                                       Main.Common.Util.Constants.MessageType.Information);
+            }
+            #endregion
+
+            if (execType == zHFT.Main.Common.Enums.ExecType.Canceled)
+            {
+                if (ActiveOrders.Keys.Contains(origClOrdId))
+                {
+                    Order order = ActiveOrders[origClOrdId];
+                    order.ClOrdId = clOrdId;
+                    order.OrdStatus = status;
+                }
+            }
+            else if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
+            {//Tengo que actualizar el Id 
+                if (ActiveOrders.Keys.Contains(origClOrdId))
+                {
+                    Order rplOrder = ActiveOrders[origClOrdId];
+
+                    double? newOrdQty = (double)wrapper.GetField(ExecutionReportFields.OrderQty);
+                    double? newPrice = (double)wrapper.GetField(ExecutionReportFields.Price);
+
+                    rplOrder.ClOrdId = clOrdId;
+                    rplOrder.OrigClOrdId = origClOrdId;
+                    rplOrder.OrdStatus = status;
+                    rplOrder.OrderQty = newOrdQty;
+                    rplOrder.Price = newPrice;
+
+                    ActiveOrders.Remove(origClOrdId);
+                    ActiveOrders.Add(clOrdId, rplOrder);
+                }
+            }
+            else
+            {
+
+                if (ActiveOrders.Keys.Contains(clOrdId))
+                {
+                    Order order = ActiveOrders[clOrdId];
+                    order.OrdStatus = status;
+                }
+            }
+
+            return CMState.BuildSuccess();
         }
 
         protected CMState ProcessSecurityListRequest(Wrapper wrapper)
@@ -189,6 +361,8 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                                                                                       newOrder.StopPx,newOrder.Account);
                     
                         Session.sendToTarget(msg,SessionID);
+
+                        ActiveOrders.Add(newOrder.ClOrdId, newOrder);
                     }
                     
                     return CMState.BuildSuccess();
@@ -204,6 +378,134 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             {
                 return CMState.BuildFail(ex);
             }
+        }
+
+        protected CMState UpdateOrder(Wrapper wrapper)
+        {
+            try
+            {
+                if (SessionID != null)
+                {
+                    string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+                    double? ordQty = (double?)wrapper.GetField(OrderFields.OrderQty);
+                    double? price = (double?)wrapper.GetField(OrderFields.Price);
+
+                    if (ActiveOrders.Keys.Contains(clOrdId))
+                    {
+                        Order order = ActiveOrders[clOrdId];
+
+                        string newClOrderIdRequested = (Convert.ToInt32(clOrdId) + 1).ToString();
+                        
+
+
+                        QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
+                                                                            newClOrderIdRequested,
+                                                                            order.OrderId,
+                                                                            order.ClOrdId,
+                                                                            order.Security.Symbol, 
+                                                                            order.Side,
+                                                                            order.OrdType,
+                                                                            order.SettlType,
+                                                                            order.TimeInForce,
+                                                                            ordQty,//qty to update
+                                                                            price,//price to update
+                                                                            order.StopPx,
+                                                                            order.Account
+                                                                            );
+
+                        Session.sendToTarget(cancelMessage, SessionID);
+
+                        return CMState.BuildSuccess();
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", PrimaryConfiguration.Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", PrimaryConfiguration.Name, clOrdId));
+                    }
+                }
+                else
+                {
+                    DoLog(string.Format("@{0}:Session not initialized on update order ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                    return CMState.BuildSuccess();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
+
+        }
+
+        protected CMState DisplayFullOrderList(Wrapper wrapper)
+        {
+            string result = "----------------------- ORDER LIST -----------------------" + System.Environment.NewLine;
+
+
+            foreach (Order order in ActiveOrders.Values)
+            {
+                result += string.Format("ClOrdId={0} OrderId={1} Symbol={2} Exchange={3} Side={4} Qty={5} Price={6} OrdStatus={7} {8}",
+                                       order.ClOrdId, order.OrderId, order.Symbol, order.Exchange, order.Side.ToString(),
+                                       order.OrderQty.HasValue ? order.OrderQty.Value.ToString("0.##") : "",
+                                       order.Price.HasValue ? order.Price.Value.ToString("0.##") : "",
+                                       order.OrdStatus.ToString(), System.Environment.NewLine);
+            }
+
+            result += "----------------------- ORDER LIST END  -----------------------" + System.Environment.NewLine;
+
+            DoLog(result, Main.Common.Util.Constants.MessageType.Error);
+
+            return CMState.BuildSuccess();
+        }
+
+        protected CMState CancelOrder(Wrapper wrapper)
+        {
+            try
+            {
+                if (SessionID != null)
+                {
+                    string clOrdId = (string) wrapper.GetField(OrderFields.ClOrdID);
+
+                    if (ActiveOrders.Keys.Contains(clOrdId))
+                    {
+                        Order order = ActiveOrders[clOrdId];
+
+                        order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
+                        order.OrigClOrdId = clOrdId;
+
+
+                        QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
+                                                        order.ClOrdId,
+                                                        null,
+                                                        order.OrderId,
+                                                        order.Security.Symbol, order.Side,
+                                                        order.OrderQty, order.Account
+                                                        );
+
+                        Session.sendToTarget(cancelMessage, SessionID);
+
+                        return CMState.BuildSuccess();
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", PrimaryConfiguration.Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", PrimaryConfiguration.Name, clOrdId));
+                    }
+                }
+                else
+                {
+                    DoLog(string.Format("@{0}:Session not initialized on cancel order ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                    return CMState.BuildSuccess();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
+        
         }
 
         #endregion
@@ -283,6 +585,21 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                         DoLog(string.Format("Receiving Market Data: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
                         return CMState.BuildSuccess();
                     }
+                    else if (action == Actions.EXECUTION_REPORT)
+                    {
+                        DoLog(string.Format("Receiving Execution Report from other module: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return ProcessExecutionReportMessage(wrapper);
+                    }
+                    else if (action == Actions.ORDER_CANCEL_REJECT)
+                    {
+                        DoLog(string.Format("Receiving Order CancelReject from other module: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return ProccessOrderCancelRejectMessage(wrapper);
+                    }
+                    else if (action == Actions.BUSINESS_MESSAGE_REJECT)
+                    {
+                        DoLog(string.Format("Receiving Business Message Reject from other module: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return ProccessBusinessMessageReject(wrapper);
+                    }
                     else if (wrapper.GetAction() == Actions.NEW_ORDER)
                     {
                         DoLog(string.Format("@{0}:Routing with Primary to market for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
@@ -290,15 +607,21 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     }
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
-                        DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //UpdateOrder(wrapper, false);
+                        DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        UpdateOrder(wrapper);
                         return CMState.BuildSuccess();
 
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                     {
-                        DoLog(string.Format("@{0}:Canceling order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //UpdateOrder(wrapper, true);
+                        DoLog(string.Format("@{0}:Canceling order with Primary  for ClOrdId {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        CancelOrder(wrapper);
+                        return CMState.BuildSuccess();
+                    }
+                    else if (wrapper.GetAction() == Actions.ORDER_LIST)
+                    {
+                        DoLog(string.Format("@{0}:Displaying full order list active in memory", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        DisplayFullOrderList(wrapper);
                         return CMState.BuildSuccess();
                     }
                     else
@@ -375,6 +698,21 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                         QuickFix50.MarketDataSnapshotFullRefresh msg = (QuickFix50.MarketDataSnapshotFullRefresh)value;
                         ProcesssMDFullRefreshMessage(msg);
 
+                    }
+                    else if (value is QuickFix50.ExecutionReport)
+                    {
+                        QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
+                        ProcesssExecutionReportMessage(msg);
+                    }
+                    else if (value is QuickFix50.OrderCancelReject)
+                    {
+                        QuickFix50.OrderCancelReject msg = (QuickFix50.OrderCancelReject)value;
+                        ProcesssOrderCancelReject(msg);
+                    }
+                    else if (value is QuickFix50.BusinessMessageReject)
+                    {
+                        QuickFix50.BusinessMessageReject msg = (QuickFix50.BusinessMessageReject)value;
+                        ProcesssBusinessMessageReject(msg);
                     }
                     else if (value is QuickFix50Sp2.MarketDataRequestReject)
                     {
