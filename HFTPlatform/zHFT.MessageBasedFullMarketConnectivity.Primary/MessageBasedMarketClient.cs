@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.BasedFullMarketConnectivity.Primary.Common;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
@@ -14,7 +16,6 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.MarketClient.Primary.Common.Wrappers;
-using zHFT.MessageBasedFullMarketConnectivity.Primary.Common.Converters;
 using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
@@ -22,7 +23,7 @@ using zHFT.SingletonModulesHandler.Common.Util;
 
 namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 {
-    public class MessageBasedMarketClient : Application, ISingletonModule
+    public class MessageBasedMarketClient : BaseFullMarketConnectivity, ISingletonModule
     {
 
         #region Constructors
@@ -31,12 +32,6 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
         {
             Initialize(pOnLogMsg, configFile);
         }
-
-        #endregion
-
-        #region Private  Consts
-
-        private string _DUMMY_SECURITY = "kcdlsncslkd";
 
         #endregion
 
@@ -69,63 +64,13 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             set { Config = value; }
         }
 
-        private IFIXMessageCreator FIXMessageCreator { get; set; }
-
-        protected SessionSettings SessionSettings { get; set; }
-        protected FileStoreFactory FileStoreFactory { get; set; }
-        protected ScreenLogFactory ScreenLogFactory { get; set; }
-        protected SessionID SessionID { get; set; }
-        protected MessageFactory MessageFactory { get; set; }
-        protected SocketInitiator Initiator { get; set; }
-
-        protected OnMessageReceived OnIncomingMessageRcv { get; set; }
-
         protected OnMessageReceived OnExecutionReportMessageRcv { get; set; }
 
-        protected OnLogMessage OnLogMsg { get; set; }
-
-        protected object tLock = new object();
-
-        protected int MarketDataRequestId { get; set; }
-
-        protected int OrderIndexId { get; set; }
-
-        protected OrderConverter OrderConverter { get; set; }
-
-        protected Dictionary<string, Order> ActiveOrders { get; set; }
+        protected OnMessageReceived OnIncomingMessageRcv { get; set; }
 
         #endregion
 
         #region Protected Methods
-
-        protected CMState ProcessMarketDataRequest(Wrapper marketDataRequestWrapper)
-        {
-            if (SessionID != null)
-            {
-                string exchange = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Exchange);
-                string fullSymbol = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Symbol);
-                string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
-                zHFT.Main.Common.Enums.SecurityType secType = (zHFT.Main.Common.Enums.SecurityType)marketDataRequestWrapper.GetField(MarketDataRequestField.SecurityType);
-                string marketClearingID = ExchangeConverter.GetMarketClearingID(secType, exchange);
-
-
-                MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
-                                                                                        marketClearingID, secType);
-
-                QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);
-                MarketDataRequestId++;
-
-                Session.sendToTarget(msg, SessionID);
-
-                return CMState.BuildSuccess();
-              
-            }
-            else
-            {
-                DoLog(string.Format("@{0}:Session not initialized on new market data request ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                return CMState.BuildSuccess();
-            }
-        }
 
         protected void ProcesssMDFullRefreshMessage(QuickFix.Message message)
         {
@@ -321,121 +266,9 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             return CMState.BuildSuccess();
         }
 
-        protected CMState ProcessSecurityListRequest(Wrapper wrapper)
+        protected override void ProcessSecurities(Main.BusinessEntities.Security_List.SecurityList securityList)
         {
-            if (SessionID != null)
-            {
-                zHFT.Main.Common.Enums.SecurityListRequestType type = (zHFT.Main.Common.Enums.SecurityListRequestType)wrapper.GetField(SecurityListRequestField.SecurityListRequestType);
-
-                if (type == zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities)
-                {
-                    QuickFix.Message rq = FIXMessageCreator.RequestSecurityList((int)type, _DUMMY_SECURITY);
-                    Session.sendToTarget(rq, SessionID);
-                    return CMState.BuildSuccess();
-                }
-                else
-                    throw new Exception(string.Format("@{0} SecurityListRequestType not implemented: {1}", PrimaryConfiguration.Name, type.ToString()));
-            }
-            else
-            {
-                DoLog(string.Format("@{0}:Session not initialized on security list request ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                return CMState.BuildSuccess();
-            }
-        }
-
-        protected CMState RouteNewOrder(Wrapper wrapper)
-        {
-            try
-            {
-                if(SessionID!=null)
-                {
-                    lock(tLock)
-                    {
-                        Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
-
-                        newOrder.ClOrdId=(OrderIndexId*100).ToString();
-                        OrderIndexId++;
-
-                        QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(newOrder.ClOrdId,newOrder.Symbol,newOrder.Side,newOrder.OrdType,
-                                                                                      newOrder.SettlType,newOrder.TimeInForce,newOrder.OrderQty.Value,newOrder.Price,
-                                                                                      newOrder.StopPx,newOrder.Account);
-                    
-                        Session.sendToTarget(msg,SessionID);
-
-                        ActiveOrders.Add(newOrder.ClOrdId, newOrder);
-                    }
-                    
-                    return CMState.BuildSuccess();
-                }
-                else
-                {
-                    DoLog(string.Format("@{0}:Session not initialized on new order ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                    return CMState.BuildSuccess();
-                }
-
-            }
-            catch(Exception ex)
-            {
-                return CMState.BuildFail(ex);
-            }
-        }
-
-        protected CMState UpdateOrder(Wrapper wrapper)
-        {
-            try
-            {
-                if (SessionID != null)
-                {
-                    string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
-                    double? ordQty = (double?)wrapper.GetField(OrderFields.OrderQty);
-                    double? price = (double?)wrapper.GetField(OrderFields.Price);
-
-                    if (ActiveOrders.Keys.Contains(clOrdId))
-                    {
-                        Order order = ActiveOrders[clOrdId];
-
-                        string newClOrderIdRequested = (Convert.ToInt32(clOrdId) + 1).ToString();
-                        
-
-
-                        QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
-                                                                            newClOrderIdRequested,
-                                                                            order.OrderId,
-                                                                            order.ClOrdId,
-                                                                            order.Security.Symbol, 
-                                                                            order.Side,
-                                                                            order.OrdType,
-                                                                            order.SettlType,
-                                                                            order.TimeInForce,
-                                                                            ordQty,//qty to update
-                                                                            price,//price to update
-                                                                            order.StopPx,
-                                                                            order.Account
-                                                                            );
-
-                        Session.sendToTarget(cancelMessage, SessionID);
-
-                        return CMState.BuildSuccess();
-
-                    }
-                    else
-                    {
-                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", PrimaryConfiguration.Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
-                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", PrimaryConfiguration.Name, clOrdId));
-                    }
-                }
-                else
-                {
-                    DoLog(string.Format("@{0}:Session not initialized on update order ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                    return CMState.BuildSuccess();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return CMState.BuildFail(ex);
-            }
-
+           //No procesamos security lists
         }
 
         protected CMState DisplayFullOrderList(Wrapper wrapper)
@@ -459,55 +292,6 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             return CMState.BuildSuccess();
         }
 
-        protected CMState CancelOrder(Wrapper wrapper)
-        {
-            try
-            {
-                if (SessionID != null)
-                {
-                    string clOrdId = (string) wrapper.GetField(OrderFields.ClOrdID);
-
-                    if (ActiveOrders.Keys.Contains(clOrdId))
-                    {
-                        Order order = ActiveOrders[clOrdId];
-
-                        order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
-                        order.OrigClOrdId = clOrdId;
-
-
-                        QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
-                                                        order.ClOrdId,
-                                                        null,
-                                                        order.OrderId,
-                                                        order.Security.Symbol, order.Side,
-                                                        order.OrderQty, order.Account
-                                                        );
-
-                        Session.sendToTarget(cancelMessage, SessionID);
-
-                        return CMState.BuildSuccess();
-
-                    }
-                    else
-                    {
-                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", PrimaryConfiguration.Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
-                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", PrimaryConfiguration.Name, clOrdId));
-                    }
-                }
-                else
-                {
-                    DoLog(string.Format("@{0}:Session not initialized on cancel order ", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                    return CMState.BuildSuccess();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return CMState.BuildFail(ex);
-            }
-        
-        }
-
         #endregion
 
         #region Public Methods
@@ -522,7 +306,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                 {
                     MarketDataRequestId = 1;
                     OrderIndexId = 1;
-                    OrderConverter = new OrderConverter();
+                    OrderConverter = new zHFT.BasedFullMarketConnectivity.Primary.Common.OrderConverter();
                     ActiveOrders = new Dictionary<string, Order>();
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
@@ -641,6 +425,8 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             }
         }
 
+        public override BaseConfiguration GetConfig() { return (BaseConfiguration)PrimaryConfiguration; } 
+
         #endregion
 
         #region ISingletonModule Methods
@@ -650,12 +436,6 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             List<string> noValueFields = new List<string>();
             Config = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
 
-        }
-
-        public void DoLog(string msg, Main.Common.Util.Constants.MessageType type)
-        {
-            if (OnLogMsg != null)
-                OnLogMsg(msg, type);
         }
 
         public void SetOutgoingEvent(Main.Common.Interfaces.OnMessageReceived OnMessageRcv)
@@ -672,15 +452,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
         #region QuickFix Methods
 
-        public void fromAdmin(Message value, SessionID sessionId)
-        {
-            lock (tLock)
-            {
-                DoLog("Invocación de fromAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-            }
-        }
-
-        public void fromApp(Message value, SessionID sessionId)
+        public override void fromApp(Message value, SessionID sessionId)
         {
             lock (tLock)
             {
@@ -732,38 +504,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             }
         }
 
-        public void onCreate(SessionID value)
-        {
-            lock (tLock)
-            {
-                DoLog("Invocación de onCreate : " + value.ToString(), Constants.MessageType.Information);
-            }
-        }
-
-        public void onLogon(SessionID value)
-        {
-            lock (tLock)
-            {
-                SessionID = value;
-                DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
-
-                if (SessionID != null)
-                    DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                else
-                    DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
-            }
-        }
-
-        public void onLogout(SessionID value)
-        {
-            lock (tLock)
-            {
-                SessionID = null;
-                DoLog("Invocación de onLogout : " + value.ToString(), Constants.MessageType.Information);
-            }
-        }
-
-        public void toAdmin(Message value, SessionID sessionId)
+        public override void toAdmin(Message value, SessionID sessionId)
         {
             lock (tLock)
             {
@@ -788,14 +529,6 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                 {
                     DoLog(string.Format("{0}: Error processing message @toAdmin:{1} ", PrimaryConfiguration.Name, ex.Message), Constants.MessageType.Error);
                 }
-            }
-        }
-
-        public void toApp(Message value, SessionID sessionId)
-        {
-            lock (tLock)
-            {
-                DoLog("Invocación de toApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
             }
         }
 

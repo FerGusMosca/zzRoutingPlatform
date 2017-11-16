@@ -47,3 +47,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bi
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\zHFT.OrderRouters.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\zHFT.OrderRouters.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\zHFT.BasedFullMarketConnectivity.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\zHFT.BasedFullMarketConnectivity.Primary.Common.pdb

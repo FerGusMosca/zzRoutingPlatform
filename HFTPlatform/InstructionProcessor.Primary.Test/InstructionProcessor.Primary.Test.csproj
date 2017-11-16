@@ -85,6 +85,10 @@
       <Project>{17ca0ba8-f7b0-4d4e-bd40-568fe93a345e}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csproj">
+      <Project>{18729e41-bf73-4e7c-a76a-6300a2c272ac}</Project>
+      <Name>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

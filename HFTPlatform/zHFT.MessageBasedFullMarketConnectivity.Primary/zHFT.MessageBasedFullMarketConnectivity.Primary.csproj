@@ -59,6 +59,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.BasedFullMarketConnectivity.Primary.Common\zHFT.BasedFullMarketConnectivity.Primary.Common.csproj">
+      <Project>{80d12777-2916-4253-ad29-28483df30e0f}</Project>
+      <Name>zHFT.BasedFullMarketConnectivity.Primary.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

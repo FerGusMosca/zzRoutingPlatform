@@ -6,23 +6,35 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using zHFT.BasedFullMarketConnectivity.Primary.Common;
 using zHFT.FixMessageCreator.Primary.Common.v50Sp2;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.BusinessEntities.Security_List;
+using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.SecurityListMarketClient.Primary.Common.Converters;
+using zHFT.SecurityListMarketClient.Primary.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
+using zHFT.StrategyHandler.Common.Converters;
+using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandler.SecurityListSaver.BusinessEntities;
+using zHFT.StrategyHandler.SecurityListSaver.Common.Interfaces;
+using zHFT.StrategyHandler.SecurityListSaver.Common.Wrappers;
+using zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {
-    public class InstructionBasedMarketClient : Application, ISingletonModule
+    public class InstructionBasedMarketClient : BaseFullMarketConnectivity, ISingletonModule
     {
         #region Constructors
 
@@ -30,16 +42,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             Initialize(pOnLogMsg, configFile);
         }
-
-        #endregion
-
-        #region Private  Consts
-
-        private int _SECURITIES_REMOVEL_PERIOD = 60 * 60 * 1000;//Once every hour in milliseconds
-
-        private int _MAX_ELAPSED_HOURS_FOR_MARKET_DATA = 12;
-
-        private string _DUMMY_SECURITY = "kcdlsncslkd";
 
         #endregion
 
@@ -66,13 +68,13 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected IConfiguration Config { get; set; }
 
+        protected ISecurityTranslator SecurityTranslator { get; set; }
+
         protected Common.Configuration.Configuration PrimaryConfiguration
         {
             get { return (Common.Configuration.Configuration)Config; }
             set { Config = value; }
         }
-
-        private IFIXMessageCreator FIXMessageCreator { get; set; }
 
         private InstructionManager InstructionManager { get; set; }
 
@@ -80,20 +82,31 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         private PositionManager PositionManager { get; set; }
 
+        protected MarketManager MarketManager { get; set; }
+
+        protected StockManager StockManager { get; set; }
+
+        protected OptionManager OptionManager { get; set; }
+
+        protected StockMarkeDataManager StockMarketDataManager { get; set; }
+
+        protected OptionMarketDataManager OptionMarketDataManager { get; set; }
+
+        protected List<Market> Markets { get; set; }
+
         private Dictionary<int, Security> ActiveSecurities { get; set; }
+
+        private Dictionary<int, Security> SecuritiesToPublish { get; set; }
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
-        protected SessionSettings SessionSettings { get; set; }
-        protected FileStoreFactory FileStoreFactory { get; set; }
-        protected ScreenLogFactory ScreenLogFactory { get; set; }
-        protected SessionID SessionID { get; set; }
-        protected MessageFactory MessageFactory { get; set; }
-        protected SocketInitiator Initiator { get; set; }
+        protected Thread MarketDataRequestThread { get; set; }
 
         protected Thread ProcessInstructionsThread { get; set; }
 
         protected Thread PublishThread { get; set; }
+
+        protected Thread SaveMarketData { get; set; }
 
         protected Thread CleanOldSecuritiesThread { get; set; }
 
@@ -101,48 +114,12 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected OnMessageReceived OnExecutionReportMessageRcv { get; set; }
 
-        protected OnLogMessage OnLogMsg { get; set; }
-
-        protected object tLock = new object();
+        protected DateTime Start { get; set; }
 
         #endregion
 
         #region Quickfix Objects Methods
 
-        protected bool RequestMarketData(Instruction instr)
-        {
-            try
-            {
-                if (SessionID != null)
-                {
-                    string symbol = SecurityConverter.GetSymbolToPrimary(instr.Symbol, PrimaryConfiguration.Market, PrimaryConfiguration.MarketPrefixCode, PrimaryConfiguration.MarketClearingID);
-                    QuickFix.Message mdRequest = FIXMessageCreator.RequestMarketData(instr.Id, symbol);
-
-
-                    DoLog(string.Format("@{0}:Sending message: {1}", PrimaryConfiguration.Name, mdRequest.ToString()),
-                            Main.Common.Util.Constants.MessageType.Information);
-
-                    Session.sendToTarget(mdRequest, SessionID);
-                    return true;
-                }
-                else
-                {
-
-                    DoLog(string.Format("@{0}:Could not request market data for null SessionID", PrimaryConfiguration.Name),
-                          Main.Common.Util.Constants.MessageType.Error);
-                    return false;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                DoLog(string.Format("@{0}:Error @RequestMarketData: {1}", PrimaryConfiguration.Name, ex.Message),
-                      Main.Common.Util.Constants.MessageType.Error);
-                return false;
-
-            }
-        }
-    
         protected void ProcesssMDFullRefreshMessage(QuickFix.Message message)
         {
             DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
@@ -152,11 +129,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
             if (primarySymbol != null)
             {
-                primarySymbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol,market);
-
-                if (ActiveSecurities.Values.Any(x => x.Symbol == primarySymbol))
+                string cleanSymbol = zHFT.MarketClient.Primary.Common.Converters.SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol,market);
+                string fulSymbol = zHFT.MarketClient.Primary.Common.Converters.SecurityConverter.GetFullSymbolFromCleanSymbol(cleanSymbol, market);
+                if (ActiveSecurities.Values.Any(x => x.Symbol == fulSymbol))
                 {
-                    Security sec = ActiveSecurities.Values.Where(x => x.Symbol == primarySymbol).FirstOrDefault();
+                    Security sec = ActiveSecurities.Values.Where(x => x.Symbol == fulSymbol).FirstOrDefault();
 
                     FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
                 }
@@ -164,7 +141,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             else
             {
                 if (primarySymbol != null)
-                    DoLog(string.Format("@{0}:Unknown market data for symbol {1} ", PrimaryConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Error);
+                    DoLog(string.Format("@{0}:Unknown market data for symbol {1} ", PrimaryConfiguration.Name, primarySymbol), Main.Common.Util.Constants.MessageType.Error);
                 else
                     DoLog(string.Format("@{0}:Market data with no symbol", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
             }
@@ -174,28 +151,221 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         #region Protected Methods
 
+        protected void ProcessStocksList(List<Security> stocksSecurities)
+        {
+
+            foreach (Market market in Markets)
+            {
+                foreach (Security security in stocksSecurities.Where(x => x.Exchange == market.Code))
+                {
+                    zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.Stock stock = new zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.Stock();
+                    stock.Market = market;
+                    stock.Country = market.Country;
+                    stock.Symbol = security.Symbol.Trim();
+                    stock.Name = "";
+                    stock.Category = "";
+
+                    zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.Stock prevStock = StockManager.GetByCode(security.Symbol.Trim(), market.Code, market.Country);
+
+                    if (prevStock == null)
+                    {
+                        if (PrimaryConfiguration.RequestSecurityList)
+                        {
+                            try
+                            {
+                                stock.LoadFinalSymbol();
+
+                                StockManager.Persist(stock);
+                                DoLog(string.Format("Inserting new stock from market {0}:", stock.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Error saving new stock for symbol {0}:{1}", stock.Symbol, ex.Message),
+                                                    Main.Common.Util.Constants.MessageType.Error);
+                            }
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", stock.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                        }
+                    }
+                    else
+                    {
+                        DoLog(string.Format("Stock {0} already existed", stock.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                    }
+                }
+            }
+        }
+
+        protected void TraceUnderlying(Security option)
+        {
+            Option temp = new Option();
+            temp.Exchange = option.Exchange;
+            temp.Symbol = option.Symbol;
+
+            string symbolSfxPrefix = temp.GetSymboSfxPrefix();
+
+            Option optExample = OptionManager.GetOptionByPrefix(symbolSfxPrefix, option.Exchange);
+
+            if (optExample != null)
+            {
+                option.SymbolSfx = optExample.SymbolSfx;
+                option.PutOrCall = temp.GetPutOrCall();
+                option.StrikeCurrency = temp.GetStrikeCurrency();
+            }
+            else
+                throw new Exception(string.Format("Could not find underlying for symbol {0}", option.Symbol));
+        }
+
+        protected void ProcessOptionsList(List<Security> optionSecurities)
+        {
+            foreach (Market market in Markets)
+            {
+                foreach (Security option in optionSecurities.Where(x => x.Exchange == market.Code))
+                {
+                    Option prevOption = OptionManager.GetBySymbol(option.Symbol.Trim(), market.Code);
+
+                    if (prevOption == null)
+                    {
+                        if (PrimaryConfiguration.RequestSecurityList)
+                        {
+                            try
+                            {
+                                TraceUnderlying(option);//We need to know the SymbolSfx field using other options
+                                OptionManager.Insert(option);
+                                DoLog(string.Format("Inserting new option contract from market: {0}", option.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Error trying to save option for symbol {0} : {1}", option.Symbol, ex.Message),
+                                    Main.Common.Util.Constants.MessageType.Error);
+
+                            }
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", option.Symbol),Main.Common.Util.Constants.MessageType.Information);
+                        }
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("Stock {0} already existed", prevOption.Symbol),Main.Common.Util.Constants.MessageType.Information);
+                    }
+                }
+            }
+        }
+
+        protected override void ProcessSecurities(SecurityList securityList)
+        {
+            SecurityTranslator.DoTranslate(securityList);
+
+            foreach (string secType in PrimaryConfiguration.SecurityTypes)
+            {
+                if (secType == zHFT.Main.Common.Enums.SecurityType.CS.ToString())
+                {
+                    List<Security> stocksSecurities = securityList.Securities.Where(x => x.SecType == zHFT.Main.Common.Enums.SecurityType.CS).ToList();
+                    ProcessStocksList(stocksSecurities);
+                }
+                else if (secType == zHFT.Main.Common.Enums.SecurityType.OPT.ToString())
+                {
+                    List<Security> optionSecurities = securityList.Securities.Where(x => x.SecType == zHFT.Main.Common.Enums.SecurityType.OPT).ToList();
+                    ProcessOptionsList(optionSecurities);
+                }
+                else
+                {
+                    DoLog(string.Format("@{0}: Security Type not handled {1}:", PrimaryConfiguration.Name, secType),
+                        Main.Common.Util.Constants.MessageType.Error);
+                }
+            }
+        }
+
+        protected void RequestBulkMarketData(string secType)
+        {
+            if (PrimaryConfiguration.SecurityTypes == null)
+                return;
+
+            if (secType == zHFT.Main.Common.Enums.SecurityType.CS.ToString())
+            {
+                foreach (Market market in Markets)
+                {
+                    IList<zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.Stock> stocks = StockManager.GetByMarket(market.Code);
+
+                    foreach (zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.Stock stock in stocks)
+                    {
+                        Security stockSecToRequest = new Security();
+                        stockSecToRequest.Symbol = stock.Symbol;
+                        stockSecToRequest.Exchange = market.Code;
+                        stockSecToRequest.SecType = zHFT.Main.Common.Enums.SecurityType.CS;
+
+                        ActiveSecurities.Add(ActiveSecurities.Count() + 1, stockSecToRequest);
+
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                        ProcessMarketDataRequest(wrapper);
+                    }
+                }
+
+            }
+            else if (secType == zHFT.Main.Common.Enums.SecurityType.OPT.ToString())
+            {
+
+                foreach (Market market in Markets)
+                {
+                    IList<Option> options = OptionManager.GetByMarket(market.Code);
+
+                    foreach (Option option in options)
+                    {
+                        Security optSecToRequest = new Security();
+                        optSecToRequest.Symbol = option.Symbol;
+                        optSecToRequest.Exchange = market.Code;
+                        optSecToRequest.SecType = zHFT.Main.Common.Enums.SecurityType.OPT;
+
+                        ActiveSecurities.Add(ActiveSecurities.Count() + 1, optSecToRequest);
+
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(optSecToRequest);
+                        ProcessMarketDataRequest(wrapper);
+                    }
+                }
+            }
+            else
+            {
+                DoLog(string.Format("@{0}: Could not handle market data for asset class {1}:", PrimaryConfiguration.Name, secType),
+                                    Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
         protected void ProcessPositionInstruction(Instruction instr)
         {
             try
             {
                 if (instr != null)
                 {
-                    if (!ActiveSecurities.Keys.Contains(instr.Id))
+                    if (!ActiveSecurities.Values.Any(x => x.Symbol == instr.Symbol))
                     {
                         instr = InstructionManager.GetById(instr.Id);
 
                         if (instr.InstructionType.Type == InstructionType._NEW_POSITION || instr.InstructionType.Type == InstructionType._UNWIND_POSITION)
                         {
-                            if (RequestMarketData(instr))
+                            Security sec = new Security()
+                                                        {
+                                                            Symbol = zHFT.MarketClient.Primary.Common.Converters.SecurityConverter.GetCleanSymbolFromFullSymbol(instr.Symbol),
+                                                            Exchange = "",
+                                                            SecType = instr.SecurityType
+                                                        };
+                            ContractsTimeStamps.Add(instr.Id, DateTime.Now);
+
+                            if (!PrimaryConfiguration.RequestFullMarketData)//No tenemos todos los securities
                             {
-
-                                Security sec = new Security()
-                                {
-                                    Symbol = SecurityConverter.GetCleanSymbolFromFullSymbol(instr.Symbol, PrimaryConfiguration.Market),
-                                };
-
                                 ActiveSecurities.Add(instr.Id, sec);
-                                ContractsTimeStamps.Add(instr.Id, DateTime.Now);
+                                MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(sec);
+                                ProcessMarketDataRequest(wrapper);
+
+                            }
+                            else
+                            {
+                                SecuritiesToPublish.Add(instr.Id, sec);
                             }
                         }
                     }
@@ -241,7 +411,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             try
             {
-                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec,PrimaryConfiguration.Market, Config);
+                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec,sec.Exchange, Config);
                 CMState state = OnMarketDataMessageRcv(wrapper);
 
                 if (state.Success)
@@ -262,6 +432,47 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                                             Main.Common.Util.Constants.MessageType.Error);
             }
 
+        }
+
+        protected void RunSaveMarketData(Object param)
+        {
+            Security sec = (Security)param;
+
+            if (sec == null || sec.MarketData == null || sec.MarketData.MDEntryDate == null)
+                return;
+            try
+            {
+                lock (tLockSavingMarketData)
+                {
+
+                    DoLog(string.Format("@{1}:Saving Market Data For Symbol={0} ",sec.Symbol, PrimaryConfiguration.Name),Main.Common.Util.Constants.MessageType.Information);
+
+                    if (sec.SecType == zHFT.Main.Common.Enums.SecurityType.CS)
+                    {
+                        StockMarketDataManager.Persist(sec);
+                    }
+                    else if (sec.SecType == zHFT.Main.Common.Enums.SecurityType.OPT)
+                    {
+                        Option opt = OptionManager.GetBySymbol(sec.Symbol, sec.Exchange);
+
+                        opt.MarketData = sec.MarketData;
+
+                        OptionMarketDataManager.Persist(opt);
+                    }
+                    else
+                        DoLog(string.Format("Market Data not implemented for security type {0} in symbol {1}", sec.SecType.ToString(), sec.Symbol), Main.Common.Util.Constants.MessageType.Error);
+                }
+              
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{2}:Error Saving Market Data for Security {0}. Error={1} ",
+                                            sec.Symbol, ex != null ? ex.Message : "",
+                                            PrimaryConfiguration.Name),
+                                            Main.Common.Util.Constants.MessageType.Error);
+            }
+
+        
         }
 
         protected void DoCleanOldSecurities()
@@ -288,7 +499,10 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         foreach (int keyToRemove in keysToRemove)
                         {
                             ContractsTimeStamps.Remove(keyToRemove);
-                            ActiveSecurities.Remove(keyToRemove);
+                            if (PrimaryConfiguration.RequestFullMarketData)
+                                SecuritiesToPublish.Remove(keyToRemove);//Solo sacamos los securities que se publican
+                            else
+                                ActiveSecurities.Remove(keyToRemove);//los que se publican y aquellos de los que se tiene md son lo mismo
                         }
                     }
                     catch (Exception ex)
@@ -311,8 +525,46 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     foreach (Security sec in ActiveSecurities.Values)
                     {
-                        RunPublishSecurity(sec, PrimaryConfiguration);
+                        if(SecuritiesToPublish.Values.Any(x=>x.Symbol==sec.Symbol))
+                            RunPublishSecurity(sec, PrimaryConfiguration);
+
+                        if (PrimaryConfiguration.SaveFullMarketData)
+                        {
+                            SaveMarketData = new Thread(RunSaveMarketData);
+                            SaveMarketData.Start(sec);
+                        }
                     }
+                }
+            }
+        }
+
+        protected void DoRequestMarketData()
+        {
+            bool active = PrimaryConfiguration.RequestFullMarketData;
+
+            while (active)
+            {
+                Thread.Sleep(PrimaryConfiguration.MaxWaitingTimeForMarketDataRequest * 1000);
+
+                try
+                {
+
+                    TimeSpan elapsed = DateTime.Now - Start;
+
+                    if (elapsed.TotalSeconds > Convert.ToDouble(PrimaryConfiguration.MaxWaitingTimeForMarketDataRequest))
+                    {
+
+                        foreach(string secType in PrimaryConfiguration.SecurityTypes)
+                            RequestBulkMarketData(secType);
+
+                        active = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{0}:Critic error requessting market data :{1}", PrimaryConfiguration.Name,
+                                         ex.Message),Main.Common.Util.Constants.MessageType.Error);
+                    active = false;
                 }
             }
         }
@@ -331,21 +583,19 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     if (wrapper.GetAction() == Actions.NEW_ORDER)
                     {
                         DoLog(string.Format("@{0}:Routing with Primary to market for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //RouteNewOrder(wrapper);
-                        return CMState.BuildSuccess();
-
+                        return RouteNewOrder(wrapper);
                     }
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
-                        DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //UpdateOrder(wrapper, false);
+                        DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        UpdateOrder(wrapper);
                         return CMState.BuildSuccess();
 
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                     {
-                        DoLog(string.Format("@{0}:Canceling order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //UpdateOrder(wrapper, true);
+                        DoLog(string.Format("@{0}:Canceling order with Primary  for ClOrdId {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        CancelOrder(wrapper);
                         return CMState.BuildSuccess();
                     }
                     else
@@ -377,10 +627,22 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     ActiveSecurities = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
+                    OrderConverter = new OrderConverter();
+                    SecurityListConverter = new SecurityListConverter();
+                    ActiveOrders = new Dictionary<string, Order>();
+                    SecuritiesToPublish = new Dictionary<int,Security>();
+                    OrderIndexId = 1;
+                    Start = DateTime.Now;
 
                     InstructionManager = new InstructionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
                     PositionManager = new PositionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
                     AccountManager = new AccountManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
+                    MarketManager = new MarketManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    StockManager = new StockManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    OptionManager = new OptionManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    StockMarketDataManager = new StockMarkeDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    OptionMarketDataManager = new OptionMarketDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
                     if (fixMessageCreator != null)
@@ -390,6 +652,26 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     else
                         throw new Exception(string.Format("@{0}:Assembly not found: " + PrimaryConfiguration.FIXMessageCreator));
 
+                    var typeMarketTranslator = Type.GetType(PrimaryConfiguration.SecuritiesMarketTranslator);
+                    if (typeMarketTranslator != null)
+                        SecurityTranslator = (ISecurityTranslator)Activator.CreateInstance(typeMarketTranslator);
+                    else
+                    {
+                        DoLog("assembly not found: " + PrimaryConfiguration.SecuritiesMarketTranslator, Main.Common.Util.Constants.MessageType.Error);
+                        return false;
+                    }
+
+                    Markets = new List<Market>();
+                    foreach (string market in PrimaryConfiguration.Markets)
+                    {
+                        Market mrk = MarketManager.GetByCode(market);
+                        if (mrk != null)
+                            Markets.Add(mrk);
+                        else
+                        {
+                            DoLog(string.Format("@{0}:Market {0} not found", market), Main.Common.Util.Constants.MessageType.Error);
+                        }
+                    }
 
                     SessionSettings = new SessionSettings(PrimaryConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
@@ -408,6 +690,9 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                     ProcessInstructionsThread = new Thread(DoFindInstructions);
                     ProcessInstructionsThread.Start();
+
+                    MarketDataRequestThread = new Thread(DoRequestMarketData);
+                    MarketDataRequestThread.Start();
 
                     return true;
 
@@ -428,19 +713,13 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
+        public override BaseConfiguration GetConfig() { return (BaseConfiguration)PrimaryConfiguration; } 
+
         #endregion
 
         #region QuickFix Methods
 
-        public void fromAdmin(Message value, SessionID sessionId)
-        {
-            lock (tLock)
-            {
-                DoLog("Invocación de fromAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-            }
-        }
-
-        public void fromApp(Message value, SessionID sessionId)
+        public override void fromApp(Message value, SessionID sessionId)
         {
             lock (tLock)
             {
@@ -457,6 +736,20 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     {
                         QuickFix50.MarketDataSnapshotFullRefresh msg = (QuickFix50.MarketDataSnapshotFullRefresh)value;
                         ProcesssMDFullRefreshMessage(msg);
+
+                    }
+                    else if (value is QuickFix50.SecurityList)
+                    {
+                        SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix50.SecurityList)value, (IConfiguration)Config);
+
+                        CMState state = ProcessSecurityList(wrapper);
+
+                        if (state.Success)
+                            DoLog(string.Format("Primary Publishing Security List "), Main.Common.Util.Constants.MessageType.Information);
+                        else
+                            DoLog(string.Format("Error Publishing Security List. Error={0} ",
+                                                state.Exception != null ? state.Exception.Message : ""),
+                                                Main.Common.Util.Constants.MessageType.Error);
 
                     }
                     else if (value is QuickFix50Sp2.MarketDataRequestReject)
@@ -477,38 +770,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
-        public void onCreate(SessionID value)
-        {
-            lock (tLock)
-            {
-                DoLog("Invocación de onCreate : " + value.ToString(), Constants.MessageType.Information);
-            }
-        }
-
-        public void onLogon(SessionID value)
-        {
-            lock (tLock)
-            {
-                SessionID = value;
-                DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
-
-                if (SessionID != null)
-                    DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                else
-                    DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
-            }
-        }
-
-        public void onLogout(SessionID value)
-        {
-            lock (tLock)
-            {
-                SessionID = null;
-                DoLog("Invocación de onLogout : " + value.ToString(), Constants.MessageType.Information);
-            }
-        }
-
-        public void toAdmin(Message value, SessionID sessionId)
+        public override void toAdmin(Message value, SessionID sessionId)
         {
             lock (tLock)
             {
@@ -536,11 +798,25 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
-        public void toApp(Message value, SessionID sessionId)
+        public override void onLogon(SessionID value)
         {
             lock (tLock)
             {
-                DoLog("Invocación de toApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                SessionID = value;
+                DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
+
+                if (SessionID != null)
+                {
+                    if (PrimaryConfiguration.RequestSecurityList)
+                    {
+                        SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities, null);
+                        ProcessSecurityListRequest(slWrapper);
+                    }
+                    DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
+                    
+                }
+                else
+                    DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
             }
         }
 
@@ -562,12 +838,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         public void SetIncomingEvent(OnMessageReceived OnMessageRcv)
         {
             OnMarketDataMessageRcv += OnMessageRcv;
-        }
-
-        public void DoLog(string msg, Constants.MessageType type)
-        {
-            if (OnLogMsg != null)
-                OnLogMsg(msg, type);
         }
 
         #endregion

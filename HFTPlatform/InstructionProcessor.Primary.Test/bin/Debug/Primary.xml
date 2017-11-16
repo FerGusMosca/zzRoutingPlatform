@@ -7,6 +7,9 @@
   <Password>WhYbs5wY</Password>
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >
+
+  <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
 
   <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds>
   <!--5 segundos-->
@@ -16,10 +19,26 @@
 
   <AccountNumber>5</AccountNumber><!--Primary-->
 
-  <Market>BUE</Market>
+  <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest>
+  <!--Seconds-->
 
-  <MarketPrefixCode>MERV - XMEV</MarketPrefixCode>
+  <SaveNewSecurities>false</SaveNewSecurities>
+  <SecurityTypes>
+    <SecurityType>CS</SecurityType>
+    <!--CS= Common Stock-->
+    <SecurityType>OPT</SecurityType>
+    <!--OPT=Options-->
+  </SecurityTypes>
 
-  <MarketClearingID>48hs</MarketClearingID>
+  <Markets>
+    <Market>BUE</Market>
+    <!--BUE=BYMA,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
+  </Markets>
 
+
+  <RequestSecurityList>true</RequestSecurityList>
+  <RequestFullMarketData>true</RequestFullMarketData>
+  <SaveFullMarketData>true</SaveFullMarketData>
+  
+  
 </Configuration>
