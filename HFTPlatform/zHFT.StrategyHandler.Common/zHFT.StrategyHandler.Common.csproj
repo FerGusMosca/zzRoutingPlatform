@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappers\CancelOrderWrapper.cs" />
     <Compile Include="Wrappers\CancelPositionWrapper.cs" />
-    <Compile Include="Wrappers\MarketDataWrapper.cs" />
+    <Compile Include="Wrappers\MarketDataRequestWrapper.cs" />
     <Compile Include="Wrappers\OrderWrapper.cs" />
     <Compile Include="Wrappers\PositionWrapper.cs" />
     <Compile Include="Wrappers\SecurityListRequestWrapper.cs" />
@@ -68,6 +68,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

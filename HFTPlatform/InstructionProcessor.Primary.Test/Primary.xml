@@ -22,7 +22,6 @@
   <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest>
   <!--Seconds-->
 
-  <SaveNewSecurities>false</SaveNewSecurities>
   <SecurityTypes>
     <SecurityType>CS</SecurityType>
     <!--CS= Common Stock-->
@@ -36,7 +35,7 @@
   </Markets>
 
 
-  <RequestSecurityList>true</RequestSecurityList>
+  <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
   <RequestFullMarketData>true</RequestFullMarketData>
   <SaveFullMarketData>true</SaveFullMarketData>
   

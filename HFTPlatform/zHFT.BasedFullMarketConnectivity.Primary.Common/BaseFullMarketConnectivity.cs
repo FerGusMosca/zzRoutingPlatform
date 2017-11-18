@@ -13,7 +13,8 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
-using zHFT.SecurityListMarketClient.Primary.Common.Converters;
+using zHFT.MarketClient.Primary.Common.Converters;
+using zHFT.OrderRouters.Primary.Common;
 using zHFT.StrategyHandler.Common.Converters;
 
 namespace zHFT.BasedFullMarketConnectivity.Primary.Common
@@ -133,11 +134,14 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     SecurityList securityList = SecurityListConverter.GetSecurityList(wrapper, GetConfig());
 
                     ProcessSecurities(securityList);
+                    DoLog(string.Format("@{0}:Processing Security List ",GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
                     return CMState.BuildSuccess();
                 }
             }
             catch (Exception ex)
             {
+                DoLog(string.Format("@{0}:Error Publishing Security List. Error={1} ",
+                                                GetConfig().Name, ex.Message),Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }

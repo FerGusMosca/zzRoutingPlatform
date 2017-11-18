@@ -91,10 +91,6 @@
       <Project>{be426ed1-c461-4436-9545-a861c20e4a10}</Project>
       <Name>zHFT.InstructionBasedMarketClient.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Primary.Common\zHFT.InstructionBasedMarketClient.Primary.Common.csproj">
-      <Project>{07c9c46e-6857-4b36-aa19-b5c29245817c}</Project>
-      <Name>zHFT.InstructionBasedMarketClient.Primary.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
@@ -114,6 +110,10 @@
     <ProjectReference Include="..\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csproj">
       <Project>{9a5db1df-0e1f-4772-9a1c-0f9603aa29fa}</Project>
       <Name>zHFT.MessageBasedFullMarketConnectivity.Primary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Primary.Common\zHFT.OrderRouters.Primary.Common.csproj">
+      <Project>{52efba55-18ee-472d-8613-063d172b6705}</Project>
+      <Name>zHFT.OrderRouters.Primary.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.SecurityListMarketClient.Primary.Common\zHFT.SecurityListMarketClient.Primary.Common.csproj">
       <Project>{a8a99cee-61da-4308-94ef-a272abc831f9}</Project>

@@ -46,3 +46,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.In
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.pdb

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Converters\OrderConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappers\BusinessMessageRejectWrapper.cs" />
     <Compile Include="Wrappers\ExecutionReportWrapper.cs" />
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Primary.Common\zHFT.MarketClient.Primary.Common.csproj">
+      <Project>{851bd5d9-25fd-4718-9953-cdd6f4c10d11}</Project>
+      <Name>zHFT.MarketClient.Primary.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

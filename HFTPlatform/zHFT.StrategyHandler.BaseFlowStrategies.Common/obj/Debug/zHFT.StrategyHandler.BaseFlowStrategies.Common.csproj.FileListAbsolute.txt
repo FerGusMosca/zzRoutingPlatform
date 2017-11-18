@@ -38,3 +38,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Ba
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BaseFlowStrategies.Common\obj\Debug\zHFT.StrategyHandler.BaseFlowStrategies.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BaseFlowStrategies.Common\obj\Debug\zHFT.StrategyHandler.BaseFlowStrategies.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BaseFlowStrategies.Common\obj\Debug\zHFT.StrategyHandler.BaseFlowStrategies.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BaseFlowStrategies.Common\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BaseFlowStrategies.Common\bin\Debug\zHFT.MarketClient.Common.pdb

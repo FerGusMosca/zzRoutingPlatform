@@ -34,7 +34,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
             MarketDataFields mdField = (MarketDataFields)field;
 
             if (mdField == MarketDataFields.Symbol)
-                return SecurityConverter.GetFullSymbolFromCleanSymbol(base.Security.Symbol, Market);
+                return SymbolConverter.GetFullSymbolFromCleanSymbol(base.Security.Symbol, Market);
             else
                 return base.GetField(field);
         }

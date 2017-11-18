@@ -16,8 +16,8 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.MarketClient.Primary.Common.Wrappers;
+using zHFT.OrderRouters.Primary.Common;
 using zHFT.OrderRouters.Primary.Common.Wrappers;
-using zHFT.SecurityListMarketClient.Primary.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
 
@@ -79,11 +79,11 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             string primarySymbol = message.getField(Symbol.FIELD);
 
             string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
-            string fullSymbol = SecurityConverter.GetFullSymbolFromPrimary(primarySymbol, market);
+            string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, market);
 
             Security sec = new Security()
             {
-                Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol, market),
+                Symbol = SymbolConverter.GetCleanSymbolFromPrimary(primarySymbol, market),
                 Exchange = market
             };
 
@@ -306,7 +306,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                 {
                     MarketDataRequestId = 1;
                     OrderIndexId = 1;
-                    OrderConverter = new zHFT.BasedFullMarketConnectivity.Primary.Common.OrderConverter();
+                    OrderConverter = new OrderConverter();
                     ActiveOrders = new Dictionary<string, Order>();
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);

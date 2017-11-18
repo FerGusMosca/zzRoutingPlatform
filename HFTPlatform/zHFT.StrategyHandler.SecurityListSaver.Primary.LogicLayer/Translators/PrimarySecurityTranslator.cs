@@ -26,6 +26,8 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators
 
             foreach (Security sec in SecurityList.Securities)
             {
+                sec.Symbol = sec.Symbol.Trim();
+
                 if (sec.Exchange.Trim() == _PRIMARY_BYMA_CODE)
                     sec.Exchange = _SECURITIES_HISTORICAL_DATA_BYMA_CODE;
 

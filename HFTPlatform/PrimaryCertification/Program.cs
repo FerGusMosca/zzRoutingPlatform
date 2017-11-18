@@ -15,7 +15,6 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
-using zHFT.StrategyHandler.SecurityListSaver.Common.Wrappers;
 
 namespace PrimaryCertification
 {

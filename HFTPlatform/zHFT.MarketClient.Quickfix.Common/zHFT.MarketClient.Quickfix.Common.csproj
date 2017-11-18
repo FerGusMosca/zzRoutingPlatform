@@ -48,7 +48,6 @@
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Wrappers\OfferWrapper.cs" />
     <Compile Include="Wrappers\OrderBookWrapper.cs" />
-    <Compile Include="Wrappers\MarketDataWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickfixMarketClientBase.cs" />
   </ItemGroup>

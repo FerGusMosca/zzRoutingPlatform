@@ -50,11 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
-    <Compile Include="Converters\ExchangeConverter.cs" />
-    <Compile Include="Converters\MarketDataRequestConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Wrappers\SecurityListWrapper.cs" />
-    <Compile Include="Wrappers\SecurityWrapper.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

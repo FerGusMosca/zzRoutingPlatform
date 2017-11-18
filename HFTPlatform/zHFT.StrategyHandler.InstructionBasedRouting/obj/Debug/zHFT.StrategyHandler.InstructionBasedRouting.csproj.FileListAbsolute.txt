@@ -126,3 +126,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.In
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.MarketClient.Common.pdb

@@ -8,6 +8,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Wrappers;
 
 namespace zHFT.StrategyHandler.Common.Wrappers
 {

@@ -54,10 +54,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Primary.Common\zHFT.InstructionBasedMarketClient.Primary.Common.csproj">
-      <Project>{07c9c46e-6857-4b36-aa19-b5c29245817c}</Project>
-      <Name>zHFT.InstructionBasedMarketClient.Primary.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

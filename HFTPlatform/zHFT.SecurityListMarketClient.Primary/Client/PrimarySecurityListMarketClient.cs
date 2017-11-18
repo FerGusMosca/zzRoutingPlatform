@@ -14,8 +14,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
-using zHFT.SecurityListMarketClient.Primary.Common.Converters;
-using zHFT.SecurityListMarketClient.Primary.Common.Wrappers;
+using zHFT.MarketClient.Primary.Common.Wrappers;
 
 namespace zHFT.SecurityListMarketClient.Primary.Client
 {
@@ -181,7 +180,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
             if (primarySymbol != null)
             {
                 string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
-                string fullSymbol = SecurityConverter.GetFullSymbolFromPrimary(primarySymbol,market);
+                string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol,market);
                 zHFT.Main.Common.Enums.SecurityType secType;
                 if (SecurityTypes.Keys.Contains(fullSymbol))
                     secType = SecurityTypes[fullSymbol];
@@ -191,7 +190,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
                 Security sec = new Security()
                 {
-                    Symbol = SecurityConverter.GetCleanSymbolFromPrimary(primarySymbol, market),
+                    Symbol = SymbolConverter.GetCleanSymbolFromPrimary(primarySymbol, market),
                     Exchange = market,
                     SecType = secType
                 };
