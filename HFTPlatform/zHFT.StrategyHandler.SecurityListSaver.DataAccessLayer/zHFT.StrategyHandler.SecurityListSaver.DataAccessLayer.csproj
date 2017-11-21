@@ -58,6 +58,10 @@
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csproj">
+      <Project>{3515b58c-6998-48fe-b794-58989c65ce04}</Project>
+      <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csproj">
       <Project>{395702dc-e051-4321-b171-d8343ba2b5cc}</Project>
       <Name>zHFT.StrategyHandler.SecurityListSaver.BusinessEntities</Name>

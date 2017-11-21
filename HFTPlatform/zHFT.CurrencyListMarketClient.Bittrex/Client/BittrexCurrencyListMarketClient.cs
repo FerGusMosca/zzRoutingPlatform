@@ -63,8 +63,8 @@ namespace zHFT.CurrencyListMarketClient.Bittrex.Client
 
                     List<CryptoCurrency> items = ((JArray)jCurrencies).Select(x => new CryptoCurrency
                     {
-                        Currency = (string)x["Currency"],
-                        CurrencyLong = (string)x["CurrencyLong"],
+                        Symbol = (string)x["Currency"],
+                        Name = (string)x["CurrencyLong"],
                         MinConfirmation = (double)x["MinConfirmation"],
                         TxFee = (double)x["TxFee"],
                         IsActive = (bool)x["IsActive"],

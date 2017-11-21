@@ -9,8 +9,8 @@ namespace zHFT.CurrencyListMarketClient.Bittrex.BusinessEntities
     public class CryptoCurrency
     {
 
-        public string Currency { get; set; }
-        public string CurrencyLong { get; set; }
+        public string Symbol { get; set; }
+        public string Name { get; set; }
 
         public double MinConfirmation { get; set; }
         public double TxFee { get; set; }

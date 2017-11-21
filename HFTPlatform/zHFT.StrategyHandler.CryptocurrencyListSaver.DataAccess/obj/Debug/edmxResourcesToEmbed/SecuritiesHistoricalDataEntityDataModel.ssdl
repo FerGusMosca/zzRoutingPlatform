@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MomentumBackTestsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MomentumBackTestsModelStoreContainer">
+    <EntitySet Name="categories" EntityType="MomentumBackTestsModel.Store.categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="countries" EntityType="MomentumBackTestsModel.Store.countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="markets" EntityType="MomentumBackTestsModel.Store.markets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="options_market_data" EntityType="MomentumBackTestsModel.Store.options_market_data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_option_bids" EntityType="MomentumBackTestsModel.Store.s_option_bids" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_option_closing_prices" EntityType="MomentumBackTestsModel.Store.s_option_closing_prices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_options" EntityType="MomentumBackTestsModel.Store.s_options" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_stocks" EntityType="MomentumBackTestsModel.Store.s_stocks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="stocks_market_data" EntityType="MomentumBackTestsModel.Store.stocks_market_data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="stocks_prices" EntityType="MomentumBackTestsModel.Store.stocks_prices" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_option_bids_options" Association="MomentumBackTestsModel.Store.FK_option_bids_options">
+      <End Role="s_options" EntitySet="s_options" />
+      <End Role="s_option_bids" EntitySet="s_option_bids" />
+    </AssociationSet>
+    <AssociationSet Name="FK_option_closing_prices_options" Association="MomentumBackTestsModel.Store.FK_option_closing_prices_options">
+      <End Role="s_options" EntitySet="s_options" />
+      <End Role="s_option_closing_prices" EntitySet="s_option_closing_prices" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="countries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="markets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="country" Type="varchar" Nullable="false" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="options_market_data">
+    <Key>
+      <PropertyRef Name="option_id" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="option_id" Type="bigint" Nullable="false" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="apertura" Type="float" />
+    <Property Name="maximo" Type="float" />
+    <Property Name="minimo" Type="float" />
+    <Property Name="cierre" Type="float" />
+    <Property Name="volumen_nominal" Type="float" />
+    <Property Name="volumen_monetario" Type="float" />
+    <Property Name="precio_ultima_operacion" Type="float" />
+    <Property Name="volumen_ultima_operacion" Type="float" />
+    <Property Name="mejor_bid_precio" Type="float" />
+    <Property Name="mejor_bid_tamano" Type="bigint" />
+    <Property Name="mejor_bid_exch" Type="varchar" MaxLength="50" />
+    <Property Name="mejor_ask_precio" Type="float" />
+    <Property Name="mejor_ask_tamano" Type="bigint" />
+    <Property Name="mejor_ask_exch" Type="varchar" MaxLength="50" />
+    <Property Name="moneda" Type="varchar" MaxLength="10" />
+    <Property Name="sesion" Type="varchar" MaxLength="10" />
+    <Property Name="timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="s_cryptocurrencies">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="active" Type="bit" />
+    <Property Name="coin_type" Type="varchar" MaxLength="50" />
+    <Property Name="base_address" Type="varchar" MaxLength="200" />
+    <Property Name="notice" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="s_option_bids">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="timestamp" Type="datetime" Nullable="false" />
+    <Property Name="size" Type="int" Nullable="false" />
+    <Property Name="price" Type="decimal" Nullable="false" Scale="4" />
+    <Property Name="side" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="underlying_price" Type="decimal" Scale="4" />
+    <Property Name="option_id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="s_option_closing_prices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="option_id" Type="bigint" Nullable="false" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="timestamp" Type="datetime" Nullable="false" />
+    <Property Name="open" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="maximum" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="minimum" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="close" Type="decimal" Scale="8" />
+    <Property Name="last_trade" Type="decimal" Scale="8" />
+    <Property Name="volume" Type="decimal" Scale="8" />
+    <Property Name="open_interest" Type="decimal" Scale="8" />
+    <Property Name="underlying_price" Type="decimal" Scale="8" />
+  </EntityType>
+  <EntityType Name="s_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="strike_multiplier" Type="int" Nullable="false" />
+    <Property Name="put_or_call" Type="char" Nullable="false" MaxLength="1" />
+    <Property Name="strike_price" Type="decimal" Nullable="false" Scale="4" />
+    <Property Name="strike_currency" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="maturity_month_year" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="maturity_date" Type="date" Nullable="false" />
+    <Property Name="currency" Type="varchar" MaxLength="10" />
+    <Property Name="security_exchange" Type="varchar" MaxLength="50" />
+    <Property Name="expired" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="s_stocks">
+    <Key>
+      <PropertyRef Name="codigo_especie" />
+    </Key>
+    <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="mercado" Type="varchar" MaxLength="100" />
+    <Property Name="pais" Type="varchar" MaxLength="100" />
+    <Property Name="categoria" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="stocks_market_data">
+    <Key>
+      <PropertyRef Name="symbol" />
+      <PropertyRef Name="date" />
+    </Key>
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="apertura" Type="float" />
+    <Property Name="maximo" Type="float" />
+    <Property Name="minimo" Type="float" />
+    <Property Name="cierre" Type="float" />
+    <Property Name="volumen_nominal" Type="float" />
+    <Property Name="volumen_monetario" Type="float" />
+    <Property Name="precio_ultima_operacion" Type="float" />
+    <Property Name="volumen_ultima_operacion" Type="float" />
+    <Property Name="mejor_bid_precio" Type="float" />
+    <Property Name="mejor_bid_tamano" Type="bigint" />
+    <Property Name="mejor_bid_exch" Type="varchar" MaxLength="50" />
+    <Property Name="mejor_ask_precio" Type="float" />
+    <Property Name="mejor_ask_tamano" Type="bigint" />
+    <Property Name="mejor_ask_exch" Type="varchar" MaxLength="50" />
+    <Property Name="moneda" Type="varchar" MaxLength="10" />
+    <Property Name="sesion" Type="varchar" MaxLength="10" />
+    <Property Name="timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="stocks_prices">
+    <Key>
+      <PropertyRef Name="codigo_especie" />
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="codigo_especie" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="apertura" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="maximo" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="minimo" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="cierre" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="volumen" Type="bigint" Nullable="false" />
+    <Property Name="adj_cierre" Type="decimal" Nullable="false" Scale="8" />
+  </EntityType>
+  <Association Name="FK_option_bids_options">
+    <End Role="s_options" Type="MomentumBackTestsModel.Store.s_options" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="s_option_bids" Type="MomentumBackTestsModel.Store.s_option_bids" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_options">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="s_option_bids">
+        <PropertyRef Name="option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_option_closing_prices_options">
+    <End Role="s_options" Type="MomentumBackTestsModel.Store.s_options" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="s_option_closing_prices" Type="MomentumBackTestsModel.Store.s_option_closing_prices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_options">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="s_option_closing_prices">
+        <PropertyRef Name="option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

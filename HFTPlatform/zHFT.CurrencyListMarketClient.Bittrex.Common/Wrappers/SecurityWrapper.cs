@@ -38,33 +38,45 @@ namespace zHFT.CurrencyListMarketClient.Bittrex.Common.Wrappers
 
         public override object GetField(Fields field)
         {
-            CryptoCurrencyFields sField = (CryptoCurrencyFields)field;
-
             if (CryptoCurrency == null)
                 return CryptoCurrencyFields.NULL;
 
-            if (sField == CryptoCurrencyFields.Symbol)
-                return CryptoCurrency.Currency;
-            else if (sField == CryptoCurrencyFields.SecurityDesc)
-                return CryptoCurrency.CurrencyLong;
-            else if (sField == CryptoCurrencyFields.SecurityType)
-                return SecurityType.CC;
-            else if (sField == CryptoCurrencyFields.Exchange)
-                return Exchange;
-            else if (sField == CryptoCurrencyFields.MarketData)
-                return null;
-            else if (sField == CryptoCurrencyFields.MinConfirmation)
-                return CryptoCurrency.MinConfirmation;
-            else if (sField == CryptoCurrencyFields.TxFee)
-                return CryptoCurrency.TxFee;
-            else if (sField == CryptoCurrencyFields.CoinType)
-                return CryptoCurrency.CoinType;
-            else if (sField == CryptoCurrencyFields.BaseAddress)
-                return CryptoCurrency.BaseAddress;
-            else if (sField == CryptoCurrencyFields.Notice)
-                return CryptoCurrency.Notice;
+          
+            if (field is CryptoCurrencyFields)
+            {
+                CryptoCurrencyFields sField = (CryptoCurrencyFields)field;
 
-            return SecurityFields.NULL;
+                if (sField == CryptoCurrencyFields.MinConfirmation)
+                    return CryptoCurrency.MinConfirmation;
+                else if (sField == CryptoCurrencyFields.TxFee)
+                    return CryptoCurrency.TxFee;
+                else if (sField == CryptoCurrencyFields.CoinType)
+                    return CryptoCurrency.CoinType;
+                else if (sField == CryptoCurrencyFields.BaseAddress)
+                    return CryptoCurrency.BaseAddress;
+                else if (sField == CryptoCurrencyFields.Notice)
+                    return CryptoCurrency.Notice;
+            }
+            else if (field is SecurityFields)
+            {
+                SecurityFields sField = (SecurityFields)field;
+
+                if (sField == CryptoCurrencyFields.Symbol)
+                    return CryptoCurrency.Symbol;
+                else if (sField == CryptoCurrencyFields.SecurityDesc)
+                    return CryptoCurrency.Name;
+                else if (sField == CryptoCurrencyFields.SecurityType)
+                    return SecurityType.CC;
+                else if (sField == CryptoCurrencyFields.Exchange)
+                    return Exchange;
+                else if (sField == CryptoCurrencyFields.MarketData)
+                    return null;
+                else if (sField == CryptoCurrencyFields.Halted)
+                    return CryptoCurrency.IsActive;
+
+            }
+           
+            return CryptoCurrencyFields.NULL;
         }
 
         public override Main.Common.Enums.Actions GetAction()

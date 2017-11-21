@@ -71,7 +71,7 @@ namespace zHFT.CurrencyListMarketClient.Bittrex.Common.Wrappers
             else if (slField == SecurityListFields.TotNoRelatedSym)
                 return CryptoCurrencies != null ? CryptoCurrencies.Count() : 0;
             else if (slField == SecurityListFields.LastFragment)
-                return null;
+                return true;
             else if (slField == SecurityListFields.Securities)
                 return GetCurrencies();
 
