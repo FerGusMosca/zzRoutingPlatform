@@ -83,6 +83,7 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.MarketClient.IB.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.IB.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.MarketClient.IB.Common.dll
@@ -96,13 +97,12 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.IB.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.LogicLayer.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.Main.DataAccessLayer.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.Main.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\AutoMapper.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.InstructionBasedMarketClient.IB.pdb
@@ -111,6 +111,7 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.MarketClient.IB.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.IB.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.MarketClient.IB.Common.pdb
@@ -123,13 +124,12 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.IB.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.OrderRouters.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.LogicLayer.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.Main.DataAccessLayer.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\obj\Debug\InstructionsProcessor.IB.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessorTest\obj\Debug\InstructionsProcessorTest.exe

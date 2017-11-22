@@ -23,7 +23,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces
 
         Account GetAccountToSync();
 
-        List<AccountPosition> GetPositions();
+        List<AccountPosition> GetActivePositions();
 
         #endregion
     }

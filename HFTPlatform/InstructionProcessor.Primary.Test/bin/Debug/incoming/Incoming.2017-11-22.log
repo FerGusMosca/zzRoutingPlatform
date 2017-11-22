@@ -1,0 +1,270 @@
+2017-11-22 14:35:51  :: 11/22/2017 2:35:51 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:35:51  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:35:51  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:35:51  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:35:52  :: 11/22/2017 2:35:52 PMConfigLoader.LoadConfig
+2017-11-22 14:35:52  :: Loading config:.\Primary.xml
+2017-11-22 14:35:52  :: Processing config:.\Primary.xml
+2017-11-22 14:35:52  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:35:53  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:37:05  :: 11/22/2017 2:37:05 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:37:05  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:37:05  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:37:05  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:37:05  :: 11/22/2017 2:37:05 PMConfigLoader.LoadConfig
+2017-11-22 14:37:05  :: Loading config:.\Primary.xml
+2017-11-22 14:37:05  :: Processing config:.\Primary.xml
+2017-11-22 14:37:05  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:37:06  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:40:05  :: 11/22/2017 2:40:05 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:40:05  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:40:05  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:40:05  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:40:06  :: 11/22/2017 2:40:06 PMConfigLoader.LoadConfig
+2017-11-22 14:40:06  :: Loading config:.\Primary.xml
+2017-11-22 14:40:06  :: Processing config:.\Primary.xml
+2017-11-22 14:40:06  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:40:06  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:41:00  :: 11/22/2017 2:41:00 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:41:00  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:41:00  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:41:00  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:41:00  :: 11/22/2017 2:41:00 PMConfigLoader.LoadConfig
+2017-11-22 14:41:00  :: Loading config:.\Primary.xml
+2017-11-22 14:41:00  :: Processing config:.\Primary.xml
+2017-11-22 14:41:00  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:41:01  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:46:09  :: 11/22/2017 2:46:09 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:46:09  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:46:09  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:46:09  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:46:09  :: 11/22/2017 2:46:09 PMConfigLoader.LoadConfig
+2017-11-22 14:46:09  :: Loading config:.\Primary.xml
+2017-11-22 14:46:09  :: Processing config:.\Primary.xml
+2017-11-22 14:46:09  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:46:10  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:53:59  :: 11/22/2017 2:53:59 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:53:59  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:53:59  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:53:59  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:53:59  :: 11/22/2017 2:53:59 PMConfigLoader.LoadConfig
+2017-11-22 14:53:59  :: Loading config:.\Primary.xml
+2017-11-22 14:53:59  :: Processing config:.\Primary.xml
+2017-11-22 14:53:59  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:54:00  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:57:55  :: 11/22/2017 2:57:55 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:57:55  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:57:55  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:57:55  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:57:55  :: 11/22/2017 2:57:55 PMConfigLoader.LoadConfig
+2017-11-22 14:57:55  :: Loading config:.\Primary.xml
+2017-11-22 14:57:55  :: Processing config:.\Primary.xml
+2017-11-22 14:57:55  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:57:56  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:58:03  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:03  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:05  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:07  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:58:45  :: 11/22/2017 2:58:45 PMBaseCommunicationModule.LoadConfig
+2017-11-22 14:58:45  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 14:58:45  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 14:58:45  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 14:58:45  :: 11/22/2017 2:58:45 PMConfigLoader.LoadConfig
+2017-11-22 14:58:45  :: Loading config:.\Primary.xml
+2017-11-22 14:58:45  :: Processing config:.\Primary.xml
+2017-11-22 14:58:45  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 14:58:46  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 14:59:01  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 15:39:06  :: 11/22/2017 3:39:06 PMBaseCommunicationModule.LoadConfig
+2017-11-22 15:39:06  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 15:39:06  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 15:39:06  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 15:39:06  :: 11/22/2017 3:39:06 PMConfigLoader.LoadConfig
+2017-11-22 15:39:06  :: Loading config:.\Primary.xml
+2017-11-22 15:39:06  :: Processing config:.\Primary.xml
+2017-11-22 15:39:06  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 15:39:08  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 17:16:36  :: 11/22/2017 5:16:36 PMBaseCommunicationModule.LoadConfig
+2017-11-22 17:16:36  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 17:16:36  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 17:16:36  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 17:16:37  :: 11/22/2017 5:16:37 PMConfigLoader.LoadConfig
+2017-11-22 17:16:37  :: Loading config:.\Primary.xml
+2017-11-22 17:16:37  :: Processing config:.\Primary.xml
+2017-11-22 17:16:37  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 17:16:38  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 17:35:16  :: 11/22/2017 5:35:16 PMBaseCommunicationModule.LoadConfig
+2017-11-22 17:35:16  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 17:35:16  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 17:35:16  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 17:35:16  :: 11/22/2017 5:35:16 PMConfigLoader.LoadConfig
+2017-11-22 17:35:16  :: Loading config:.\Primary.xml
+2017-11-22 17:35:16  :: Processing config:.\Primary.xml
+2017-11-22 17:35:16  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 17:35:17  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:22  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2017-11-22 17:35:43  :: 11/22/2017 5:35:43 PMBaseCommunicationModule.LoadConfig
+2017-11-22 17:35:43  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 17:35:43  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 17:35:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 17:35:43  :: 11/22/2017 5:35:43 PMConfigLoader.LoadConfig
+2017-11-22 17:35:43  :: Loading config:.\Primary.xml
+2017-11-22 17:35:43  :: Processing config:.\Primary.xml
+2017-11-22 17:35:43  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 17:35:44  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2017-11-22 17:38:02  :: 11/22/2017 5:38:02 PMBaseCommunicationModule.LoadConfig
+2017-11-22 17:38:02  :: Loading config:.\IncomingSingletonConfig.xml
+2017-11-22 17:38:02  :: Processing config:.\IncomingSingletonConfig.xml
+2017-11-22 17:38:02  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2017-11-22 17:38:02  :: 11/22/2017 5:38:02 PMConfigLoader.LoadConfig
+2017-11-22 17:38:02  :: Loading config:.\Primary.xml
+2017-11-22 17:38:02  :: Processing config:.\Primary.xml
+2017-11-22 17:38:02  :: Ending GetConfiguracion .\Primary.xml
+2017-11-22 17:38:03  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX

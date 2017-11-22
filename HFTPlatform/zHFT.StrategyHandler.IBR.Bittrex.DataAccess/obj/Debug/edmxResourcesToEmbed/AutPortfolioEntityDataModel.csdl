@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MomentumBackTestsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AutPortfolioEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <FunctionImport Name="QRY_SCRN_COMBOS_FILTERS_BUNDLE" />
+    <FunctionImport Name="QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL_Result)">
+      <Parameter Name="PageNumber" Mode="In" Type="Int64" />
+      <Parameter Name="PageSize" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="QRY_UI_USER_SCREEN_STATE">
+      <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
+      <Parameter Name="NombrePantalla" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="QRY_SCRN_CUSTOMERS_ENTITY_FULL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_CUSTOMERS_ENTITY_FULL_Result)">
+      <Parameter Name="CustomerId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MomentumBackTestsModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MomentumBackTestsModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="QRY_SCRN_ACCOUNTPOSITIONS_ENTITY_FULL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_ENTITY_FULL_Result)">
+      <Parameter Name="PositionId" Mode="In" Type="Int64" />
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerId" Mode="In" Type="Int32" />
+      <Parameter Name="PageNumber" Mode="In" Type="Int64" />
+      <Parameter Name="PageSize" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="QRY_SCRN_ACCOUNTS_ENTITY_FULL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTS_ENTITY_FULL_Result)">
+      <Parameter Name="AccountId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="QRY_SCRN_ACCOUNTS_GRID_MAIN_ALL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTS_GRID_MAIN_ALL_Result)">
+      <Parameter Name="PageNumber" Mode="In" Type="Int64" />
+      <Parameter Name="PageSize" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL_Result)">
+      <Parameter Name="PositionId" Mode="In" Type="Int64" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL_Result">
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DocumentType" Nullable="false" MaxLength="10" />
+    <Property Type="Int64" Name="DocumentNumber" Nullable="false" />
+    <Property Type="String" Name="Sex" Nullable="false" MaxLength="9" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+    <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMail" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="QRY_SCRN_CUSTOMERS_ENTITY_FULL_Result">
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DocumentType" Nullable="false" MaxLength="10" />
+    <Property Type="Int64" Name="DocumentNumber" Nullable="false" />
+    <Property Type="String" Name="Sex" Nullable="true" MaxLength="1" />
+    <Property Type="DateTime" Name="BirthDate" Nullable="true" />
+    <Property Type="String" Name="Contact" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMail" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="QRY_SCRN_ACCOUNTPOSITIONS_ENTITY_FULL_Result">
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="String" Name="FullDesc" Nullable="true" MaxLength="182" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL_Result">
+    <Property Type="Int64" Name="PositionId" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="false" />
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="String" Name="Symbol" Nullable="false" MaxLength="10" />
+    <Property Type="Decimal" Name="Weight" Nullable="true" Precision="18" Scale="4" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="Shares" Nullable="true" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="QRY_SCRN_ACCOUNTS_ENTITY_FULL_Result">
+    <Property Type="Int32" Name="CustomerId" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="false" />
+    <Property Type="Int32" Name="BrokerId" Nullable="false" />
+    <Property Type="String" Name="IBAccount" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IBURL" Nullable="true" MaxLength="150" />
+    <Property Type="Int64" Name="IBPort" Nullable="true" />
+    <Property Type="Decimal" Name="IBBalance" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="QRY_SCRN_ACCOUNTS_GRID_MAIN_ALL_Result">
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DocumentType" Nullable="false" MaxLength="10" />
+    <Property Type="Int64" Name="DocumentNumber" Nullable="false" />
+    <Property Type="Int64" Name="AccountNumber" Nullable="false" />
+    <Property Type="String" Name="BrokerName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL_Result">
+    <Property Type="Int32" Name="AccountId" Nullable="false" />
+    <Property Type="String" Name="FullDesc" Nullable="true" MaxLength="182" />
+    <Property Type="String" Name="StockId" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Symbol" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="StockDesc" Nullable="true" MaxLength="113" />
+    <Property Type="Int32" Name="Shares" Nullable="true" />
+    <Property Type="Decimal" Name="Ammount" Nullable="true" Precision="18" Scale="4" />
+    <Property Type="Int32" Name="TotalRows" Nullable="true" />
+  </ComplexType>
+</Schema>

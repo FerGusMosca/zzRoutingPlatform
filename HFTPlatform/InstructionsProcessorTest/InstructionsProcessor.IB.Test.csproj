@@ -82,6 +82,10 @@
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
       <Name>zHFT.OrderRouters</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj">
+      <Project>{58324d7e-90c3-46f4-96e2-ea0fe424663b}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.csproj">
       <Project>{943d7342-fedc-4e71-aee0-c15a0857b18a}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer</Name>

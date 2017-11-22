@@ -68,6 +68,10 @@
       <Project>{aed28ef6-ddf7-40ad-bc25-dec1b9b1c6f2}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.Common\zHFT.StrategyHandler.InstructionBasedRouting.Common.csproj">
+      <Project>{12e8c682-1075-41c9-bbd8-0020c62aaae5}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.csproj">
       <Project>{ef14f70f-ad59-4903-b736-774481bec9cb}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccess</Name>

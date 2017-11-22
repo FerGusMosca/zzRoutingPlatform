@@ -6,19 +6,26 @@ using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.DataAccess;
 
 
 namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 {
-    public class InstructionManager : MappingEnabledAbstract
+    public class InstructionManager : MappingEnabledAbstract, IInstructionManagerAccessLayer
     {
+
+        #region Protected Attributes
+
+        protected IAccountManagerAccessLayer AccountManager { get; set; }
+
+        #endregion
         #region Constructors
 
-        public InstructionManager(string connectionString)
+        public InstructionManager(string connectionString,IAccountManagerAccessLayer pAccountManager)
             : base(connectionString)
         {
-
+            AccountManager = pAccountManager;
         }
         #endregion
 
@@ -37,17 +44,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
                     Id = instrxDB.account_positions.id
                 };
 
-            instr.Account = new Account()
-            {
-                Id = instrxDB.account_id,
-                AccountNumber = instrxDB.accounts.account_number,
-                IBAccount = instrxDB.accounts.ib_account,
-                IBBalance = instrxDB.accounts.ib_balance,
-                IBCurrency=instrxDB.accounts.ib_currency,
-                IBPort = instrxDB.accounts.ib_port,
-                IBURL = instrxDB.accounts.ib_url,
-            };
-
+            instr.Account = AccountManager.GetById(instrxDB.account_id);
             instr.Executed = instrxDB.executed;
             instr.Shares = instrxDB.shares;
             instr.Ammount = instrxDB.ammount;
@@ -92,8 +89,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             if(pos.Account!=null)
                 posDB.account_id = pos.Account.Id;
 
-            if(pos.Stock!=null)
-                posDB.symbol = pos.Stock.Symbol;
+            if(pos.Security!=null)
+                posDB.symbol = pos.Security.Symbol;
 
             posDB.weight = pos.Weight;
             posDB.shares = pos.Shares;
@@ -139,7 +136,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         }
 
-        public List<Instruction> GetPendingInstructions(long accountNumber)
+        public virtual List<Instruction> GetPendingInstructions(long accountNumber)
         {
             List<Instruction> instructions = new List<Instruction>();
             List<instructions> instructionsDB = ctx.instructions.Where(x => x.accounts.account_number == accountNumber && !x.executed).ToList();

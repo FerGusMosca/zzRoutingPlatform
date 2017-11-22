@@ -18,4 +18,11 @@
 
   <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Primary.DataAccessLayer.PrimaryAccountManager, zHFT.StrategyHandler.IBR.Primary.DataAccessLayer</AccoutReferenceHandler>
 
+  <AccountManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.AccountManager, zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</AccountManagerAccessLayer>
+
+  <InstructionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.InstructionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</InstructionManagerAccessLayer>
+
+  <PositionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.PositionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</PositionManagerAccessLayer>
+
+  <AccountManagerConfig></AccountManagerConfig>
 </Configuration>

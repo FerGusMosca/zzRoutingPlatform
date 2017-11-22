@@ -24,11 +24,11 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
         protected Thread ProcessInstructionsThread { get; set; }
 
-        protected InstructionManager InstructionManager { get; set; }
+        protected IInstructionManagerAccessLayer InstructionManager { get; set; }
 
-        protected AccountManager AccountManager { get; set; }
+        protected IAccountManagerAccessLayer AccountManager { get; set; }
 
-        protected PositionManager PositionManager { get; set; }
+        protected IPositionManagerAccessLayer PositionManager { get; set; }
 
         protected IAccountReferenceHandler AccountReferenceHandler { get; set; }
 
@@ -116,13 +116,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
         protected bool IsUnwindedPosition(Instruction relInstr, IList<AccountPosition> positions)
         {
             string instrSymbol = relInstr.Symbol;
-            if (!positions.Any(x => x.Stock.Symbol == instrSymbol))
+            if (!positions.Any(x => x.Security.Symbol == instrSymbol))
             {
                 return relInstr.AccountPosition.PositionStatus.Code == InstructionBasedRouting.BusinessEntities.PositionStatus._SENT_TO_UNWIND;
             }
             else
             {
-                AccountPosition pos = positions.Where(x => x.Stock.Symbol == instrSymbol).FirstOrDefault();
+                AccountPosition pos = positions.Where(x => x.Security.Symbol == instrSymbol).FirstOrDefault();
 
                 if (pos == null || pos.Shares == 0)
                     return true;
@@ -169,7 +169,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             if (relInstr.InstructionType.Type == InstructionType._NEW_POSITION)
             {
-                relInstr.IsOnlinePosition = positions.Any(x => x.Stock.Symbol == instrSymbol);
+                relInstr.IsOnlinePosition = positions.Any(x => x.Security.Symbol == instrSymbol);
                 relInstr.IsFromUnwindAll = false;
                 ProcessNewPosition(relInstr);
             }
@@ -185,7 +185,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     }
                     else
                     {
-                        relInstr.IsOnlinePosition = positions.Any(x => x.Stock.Symbol == instrSymbol);
+                        relInstr.IsOnlinePosition = positions.Any(x => x.Security.Symbol == instrSymbol);
                         relInstr.IsFromUnwindAll = unwindAll;
                         ProcessUnwindPosition(relInstr);
                     }
@@ -214,7 +214,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     if (instr.RelatedInstruction.InstructionType.Type == InstructionType._NEW_POSITION)
                     {
                         instr.Executed = true;
-                        instr.Text = "No ejecutada por existencia de otras sincronizacione";
+                        instr.Text = "No ejecutada por existencia de otras sincronizaciones";
                         //instr.RelatedInstruction.Text = "Ejecutada sin sincronización";
                         instr.RelatedInstruction.IsOnlinePosition = instr.RelatedInstruction.AccountPosition.PositionStatus.IsOnline();
                         ProcessNewPosition(instr.RelatedInstruction);
@@ -313,7 +313,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                         if (!reqAccountPosition && !abortOnTimeout)
                         {
                             Instruction relInstr = null;
-                            List<AccountPosition> onlinePositions = AccountReferenceHandler.GetPositions().Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
+                            List<AccountPosition> onlinePositions = AccountReferenceHandler.GetActivePositions();
                             //we only consider available positions
                             PersistSyncPositions(instr, ref relInstr, onlinePositions);
                             DoLog(string.Format("@{1} - Account {0} positions succesfully synchronized", AccountReferenceHandler.GetAccountToSync().BrokerAccountName, IBRConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
@@ -431,7 +431,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 relInstr = instr.RelatedInstruction;
                 string relSymbol = relInstr.Symbol;
-                PositionManager.PersistAndReplace(positions.Where(x => x.Stock.Symbol != relSymbol ).ToList(),instr.Account.Id);
+                PositionManager.PersistAndReplace(positions.Where(x => x.Security.Symbol != relSymbol ).ToList(),instr.Account.Id);
             }
             else // Tenemos una instrx con alta/baja de posiciones masiva
             {
@@ -442,8 +442,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
                 foreach (AccountPosition pos in positions)//Solo actualizamos las posiciones no afectadas por la instrx
                 {
-                    if (!newPosRelated.Any(x => x.Symbol == pos.Stock.Symbol)
-                        && !unwindPossRelated.Any(x=>x.Symbol==pos.Stock.Symbol))
+                    if (!newPosRelated.Any(x => x.Symbol == pos.Security.Symbol)
+                        && !unwindPossRelated.Any(x=>x.Symbol==pos.Security.Symbol))
                     {
                         if (pos.Account.AccountNumber == instr.Account.AccountNumber)
                             positionsToPersist.Add(pos);
@@ -614,13 +614,38 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 ExecutionSummaries = new Dictionary<string, ExecutionSummary>();
                 PositionInstructions = new Dictionary<string, Instruction>();
 
-                InstructionManager = new InstructionManager(IBRConfiguration.InstructionsAccessLayerConnectionString);
-                AccountManager = new AccountManager(IBRConfiguration.InstructionsAccessLayerConnectionString);
-                PositionManager = new PositionManager(IBRConfiguration.InstructionsAccessLayerConnectionString);
+                
+                var accountManagerAccessLayer = Type.GetType(IBRConfiguration.AccountManagerAccessLayer);
+                if (accountManagerAccessLayer != null)
+                    AccountManager = (IAccountManagerAccessLayer)Activator.CreateInstance(accountManagerAccessLayer, IBRConfiguration.InstructionsAccessLayerConnectionString);
+                else
+                {
+                    DoLog("assembly not found: " + IBRConfiguration.AccountManagerAccessLayer, Main.Common.Util.Constants.MessageType.Error);
+                    return false;
+                }
+
+                var positionManagerAccessLayer = Type.GetType(IBRConfiguration.PositionManagerAccessLayer);
+                if (positionManagerAccessLayer != null)
+                    PositionManager = (IPositionManagerAccessLayer)Activator.CreateInstance(positionManagerAccessLayer, IBRConfiguration.InstructionsAccessLayerConnectionString);
+                else
+                {
+                    DoLog("assembly not found: " + IBRConfiguration.InstructionsAccessLayerConnectionString, Main.Common.Util.Constants.MessageType.Error);
+                    return false;
+                }
+
+                var instructionManagerAccessLayer = Type.GetType(IBRConfiguration.InstructionManagerAccessLayer);
+                if (accountManagerAccessLayer != null)
+                    InstructionManager = (IInstructionManagerAccessLayer)Activator.CreateInstance(instructionManagerAccessLayer, IBRConfiguration.InstructionsAccessLayerConnectionString, AccountManager);
+                else
+                {
+                    DoLog("assembly not found: " + IBRConfiguration.InstructionManagerAccessLayer, Main.Common.Util.Constants.MessageType.Error);
+                    return false;
+                }
+
 
                 var accountReferenceHandler = Type.GetType(IBRConfiguration.AccoutReferenceHandler);
                 if (accountReferenceHandler != null)
-                    AccountReferenceHandler = (IAccountReferenceHandler)Activator.CreateInstance(accountReferenceHandler, OnLogMsg);
+                    AccountReferenceHandler = (IAccountReferenceHandler)Activator.CreateInstance(accountReferenceHandler, OnLogMsg, IBRConfiguration.AccountManagerConfig);
                 else
                 {
                     DoLog("assembly not found: " + IBRConfiguration.AccoutReferenceHandler, Main.Common.Util.Constants.MessageType.Error);

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 
 namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
@@ -14,7 +15,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         #region Constructors
 
-        public PrimaryAccountManager(OnLogMessage OnLogMsg)
+        public PrimaryAccountManager(OnLogMessage OnLogMsg, List<ConfigKey> pConfigParameters)
         {
             Logger = OnLogMsg;
             Account = new Account() { IBName = "Primary Account Manager Test" };
@@ -61,7 +62,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
             return Account;
         }
 
-        public List<AccountPosition> GetPositions()
+        public List<AccountPosition> GetActivePositions()
         {
             return new List<AccountPosition>();
         }

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.DataAccess;
 
 namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 {
-    public class AccountManager : MappingEnabledAbstract
+    public class AccountManager : MappingEnabledAbstract, IAccountManagerAccessLayer
     {
         #region Constructors
         public AccountManager(AutPortfolioEntities context) : base(context) { }

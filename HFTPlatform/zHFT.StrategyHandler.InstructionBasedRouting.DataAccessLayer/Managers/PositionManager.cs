@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.DataAccess;
 
 namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 {
-    public class PositionManager : MappingEnabledAbstract
+    public class PositionManager : MappingEnabledAbstract, IPositionManagerAccessLayer
     {
         #region Constructors
         public PositionManager(AutPortfolioEntities context) : base(context) { }
@@ -30,7 +32,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             posDB.market_price = pos.MarketPrice;
             posDB.status = pos.PositionStatus.Code.ToString();
             posDB.shares = pos.Shares;
-            posDB.symbol = pos.Stock.Symbol;
+            posDB.symbol = pos.Security.Symbol;
             posDB.weight = pos.Weight;
         }
 
@@ -43,7 +45,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             pos.MarketPrice = posDB.market_price;
             pos.PositionStatus = new PositionStatus() { Code = Convert.ToChar(posDB.status) };
             pos.Shares = posDB.shares;
-            pos.Stock = new Stock() { Symbol = posDB.symbol };
+            pos.Security = new Security() { Symbol = posDB.symbol };
             pos.Weight = posDB.weight;
         }
 
@@ -91,7 +93,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         }
 
-        protected void DeleteAllOnline(int accountId)
+        public void DeleteAllOnline(int accountId)
         {
             List<account_positions> positionsDB = ctx.account_positions.Where(x => x.account_id == accountId && x.status == PositionStatus._S_EXECUTED).ToList();
             positionsDB.ForEach(x => ctx.account_positions.DeleteObject(x));

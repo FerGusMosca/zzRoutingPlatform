@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 
 
@@ -69,20 +71,21 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             return AccountToSync;
         }
 
-        public List<AccountPosition> GetPositions()
+        public List<AccountPosition> GetActivePositions()
         {
-            return Positions;
+            return Positions.Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
         }
 
         #endregion
 
         #region Constructors
 
-        public IBAccountManager(OnLogMessage OnLogMsg)
+        public IBAccountManager(OnLogMessage OnLogMsg,List<ConfigKey> pConfigParameters)
         {
             ReqAccountSummary = false;
             ReqAccountPositions = false;
             Logger = OnLogMsg;
+            //We dont need config Parameters for interactive brokers
 
         }
 
@@ -188,7 +191,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
                     AccountPosition accPos = new AccountPosition();
                     accPos.Account = AccountToSync;
                     accPos.Active = true;
-                    accPos.Stock = new Stock() { Symbol = contract.Symbol };
+                    accPos.Security = new Security() { Symbol = contract.Symbol };
                     accPos.Shares = pos;
                     accPos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
                     accPos.MarketPrice = Convert.ToDecimal(avgCost);
@@ -196,7 +199,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
                     if (accPos.MarketPrice.HasValue && accPos.Shares.HasValue)
                         accPos.Ammount = accPos.MarketPrice.Value * accPos.Shares.Value;
 
-                    if(!Positions.Any(x=>x.Stock.Symbol==contract.Symbol))
+                    if(!Positions.Any(x=>x.Security.Symbol==contract.Symbol))
                         Positions.Add(accPos);
                 }
             }

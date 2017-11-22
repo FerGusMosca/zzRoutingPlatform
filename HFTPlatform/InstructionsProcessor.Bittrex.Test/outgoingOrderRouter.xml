@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Outgoing Primary</Name>
+  
+  <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
+  <ProxyConfigFile>.\outgoingOrderRouter.Bittrex.xml</ProxyConfigFile>
+  
+
+  <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
+  <!--<OrderIdStart>00</OrderIdStart>-->
+
+</Configuration>

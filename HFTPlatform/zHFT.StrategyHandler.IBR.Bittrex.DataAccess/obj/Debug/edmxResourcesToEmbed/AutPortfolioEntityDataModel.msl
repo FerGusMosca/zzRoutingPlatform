@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MomentumBackTestsModelStoreContainer" CdmEntityContainer="AutPortfolioEntities">
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_COMBOS_FILTERS_BUNDLE" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_COMBOS_FILTERS_BUNDLE" />
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="QRY_UI_USER_SCREEN_STATE" FunctionName="MomentumBackTestsModel.Store.QRY_UI_USER_SCREEN_STATE" />
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_CUSTOMERS_ENTITY_FULL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_CUSTOMERS_ENTITY_FULL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_CUSTOMERS_ENTITY_FULL_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MomentumBackTestsModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MomentumBackTestsModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MomentumBackTestsModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MomentumBackTestsModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MomentumBackTestsModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MomentumBackTestsModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MomentumBackTestsModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_ACCOUNTPOSITIONS_ENTITY_FULL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_ACCOUNTPOSITIONS_ENTITY_FULL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_ENTITY_FULL_Result">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="FullDesc" ColumnName="FullDesc" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL_Result">
+          <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Shares" ColumnName="Shares" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_ACCOUNTS_ENTITY_FULL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_ACCOUNTS_ENTITY_FULL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_ACCOUNTS_ENTITY_FULL_Result">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="IBAccount" ColumnName="IBAccount" />
+          <ScalarProperty Name="IBURL" ColumnName="IBURL" />
+          <ScalarProperty Name="IBPort" ColumnName="IBPort" />
+          <ScalarProperty Name="IBBalance" ColumnName="IBBalance" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_ACCOUNTS_GRID_MAIN_ALL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_ACCOUNTS_GRID_MAIN_ALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_ACCOUNTS_GRID_MAIN_ALL_Result">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="BrokerName" ColumnName="BrokerName" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL" FunctionName="MomentumBackTestsModel.Store.QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL_Result">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="FullDesc" ColumnName="FullDesc" />
+          <ScalarProperty Name="StockId" ColumnName="StockId" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="StockDesc" ColumnName="StockDesc" />
+          <ScalarProperty Name="Shares" ColumnName="Shares" />
+          <ScalarProperty Name="Ammount" ColumnName="Ammount" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -18,6 +18,14 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
 
         public Broker Broker { get; set; }
 
+        public string Name { get; set; }
+
+        public string GenericAccountNumber { get; set; }
+
+        public decimal? Balance { get; set; }
+
+        #region Interactive Brokers
+
         public string IBAccount { get; set; }
 
         public string IBURL { get; set; }
@@ -36,6 +44,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
             {
                 if (IBName != null && IBAccount != null)
                     return IBAccount + " - " + IBName;
+                else if (Name != null)
+                    return Name;
                 else if (IBName != null)
                     return IBName;
                 else
@@ -44,6 +54,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
             }
 
         }
+
+        #endregion
 
         #endregion
 
