@@ -1,0 +1,410 @@
+2017-11-23 15:53:35  :: 11/23/2017 3:53:35 PMMomentumStrategyBase.LoadConfig
+2017-11-23 15:53:35  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 15:53:35  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 15:53:35  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 15:53:35  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 15:53:35  :: 11/23/2017 3:53:35 PMOrderRouterBase.LoadConfig
+2017-11-23 15:53:35  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 15:53:35  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 15:53:35  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 15:53:35  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 15:53:35  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 15:56:54  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 15:57:58  :: 11/23/2017 3:57:58 PMMomentumStrategyBase.LoadConfig
+2017-11-23 15:57:58  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 15:57:58  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 15:57:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 15:57:58  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 15:57:58  :: 11/23/2017 3:57:58 PMOrderRouterBase.LoadConfig
+2017-11-23 15:57:58  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 15:57:58  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 15:57:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 15:57:58  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 15:57:58  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:01:41  :: 11/23/2017 4:01:41 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:01:41  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:01:41  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:01:41  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:01:41  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:01:41  :: 11/23/2017 4:01:41 PMOrderRouterBase.LoadConfig
+2017-11-23 16:01:41  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:01:41  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:01:41  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:01:41  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:01:41  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:02:26  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 16:02:26  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol BTC-ETH
+2017-11-23 16:15:46  :: 11/23/2017 4:15:46 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:15:46  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:15:46  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:15:46  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:15:46  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:15:46  :: 11/23/2017 4:15:46 PMOrderRouterBase.LoadConfig
+2017-11-23 16:15:46  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:15:46  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:15:46  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:15:46  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:15:46  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:16:18  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 16:16:18  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol BTC-USDT
+2017-11-23 16:17:29  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol BTC-USDT 
+2017-11-23 16:17:29  :: Canceling order for symbol BTC-USDT
+2017-11-23 16:17:29  :: Error processing message on order router for action CANCEL_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:17:48  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 16:17:48  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol BTC-LTC
+2017-11-23 16:25:12  :: 11/23/2017 4:25:12 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:25:12  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:25:12  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:25:12  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:25:12  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:25:12  :: 11/23/2017 4:25:12 PMOrderRouterBase.LoadConfig
+2017-11-23 16:25:12  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:25:12  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:25:12  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:25:12  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:25:12  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:26:28  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 16:26:28  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol BTC-LTC
+2017-11-23 16:27:04  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:04  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:04  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:12  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:12  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:12  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:19  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:19  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:19  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:24  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:24  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:24  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:31  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:31  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:31  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:36  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:36  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:36  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:43  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:43  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:43  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:48  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:48  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:48  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:53  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:53  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:53  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:27:59  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:27:59  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:27:59  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:28:04  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:28:04  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:28:04  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:28:11  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:28:11  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:28:11  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:28:17  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:28:17  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:28:18  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:28:24  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:28:24  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:28:24  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:28:29  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:29:04  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:29:32  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:29:54  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:29:54  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:30:03  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:31:45  :: 11/23/2017 4:31:45 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:31:45  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:31:45  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:31:45  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:31:45  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:31:45  :: 11/23/2017 4:31:45 PMOrderRouterBase.LoadConfig
+2017-11-23 16:31:45  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:31:45  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:31:45  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:31:45  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:31:45  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:31:53  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:31:58  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:04  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:05  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 16:32:05  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol BTC-LTC
+2017-11-23 16:32:05  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:32:05  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:32:13  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:13  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:32:13  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:32:18  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:18  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:32:18  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:32:23  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:23  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:32:23  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:32:29  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:29  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:32:29  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:32:34  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:32:34  :: Error processing message on order router for action NEW_POSITION. Error: El valor no puede ser nulo.
+Nombre del parámetro: source
+2017-11-23 16:32:34  :: Error processing market data @Strategy Handler - Instruction Based Router for Bittrex:Referencia a objeto no establecida como instancia de un objeto.
+2017-11-23 16:32:40  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:33:41  :: 11/23/2017 4:33:41 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:33:41  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:33:41  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:33:41  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:33:41  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:33:43  :: 11/23/2017 4:33:43 PMOrderRouterBase.LoadConfig
+2017-11-23 16:33:43  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:33:43  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:33:44  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:33:46  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:38:02  :: 11/23/2017 4:38:02 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:38:02  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:38:02  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:38:02  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:38:02  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:38:02  :: 11/23/2017 4:38:02 PMOrderRouterBase.LoadConfig
+2017-11-23 16:38:02  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:38:02  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:38:02  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:38:02  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:38:02  :: Mock Order Router Initializing... 
+2017-11-23 16:38:32  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-11-23 16:38:32  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol BTC-LTC
+2017-11-23 16:38:36  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:38:36  :: Routing to market position for symbol BTC-LTC
+2017-11-23 16:39:29  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:39:30  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:39:41  :: Creating buy order for symbol BTC-LTC.Quantity=53372 Price=.01
+2017-11-23 16:39:42  :: Mock processing of order routing... 
+2017-11-23 16:39:55  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:39:55  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:39:55  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.0093681 Old Bid Price:0.009367
+2017-11-23 16:40:00  :: @Order Router: Updating order for symbol BTC-LTC: qty=53378 price=0.009367
+2017-11-23 16:40:00  :: Mock processing of order routing... 
+2017-11-23 16:40:00  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:00  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:05  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:05  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:14  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:14  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:19  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:19  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:19  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009367 Old Bid Price:0.009378
+2017-11-23 16:40:19  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.009369 Old Ask Price:0.00938
+2017-11-23 16:40:20  :: @Order Router: Updating order for symbol BTC-LTC: qty=53316 price=0.009378
+2017-11-23 16:40:20  :: Mock processing of order routing... 
+2017-11-23 16:40:25  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:25  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:30  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:30  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:36  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:36  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:41  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:41  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:46  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:46  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:51  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:51  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:56  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:56  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:40:56  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009378 Old Bid Price:0.00938
+2017-11-23 16:40:56  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938 Old Ask Price:0.00938125
+2017-11-23 16:41:00  :: @Order Router: Updating order for symbol BTC-LTC: qty=53304 price=0.00938
+2017-11-23 16:41:00  :: Mock processing of order routing... 
+2017-11-23 16:41:05  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:05  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:10  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:10  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:10  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938125 Old Ask Price:0.00938199
+2017-11-23 16:41:15  :: @Order Router: Updating order for symbol BTC-LTC: qty=53304 price=0.00938
+2017-11-23 16:41:15  :: Mock processing of order routing... 
+2017-11-23 16:41:17  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:17  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:17  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.00938 Old Bid Price:0.009378
+2017-11-23 16:41:17  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938199 Old Ask Price:0.00938
+2017-11-23 16:41:20  :: @Order Router: Updating order for symbol BTC-LTC: qty=53316 price=0.009378
+2017-11-23 16:41:20  :: Mock processing of order routing... 
+2017-11-23 16:41:22  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:22  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:31  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:31  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:38  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:38  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:38  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009378 Old Bid Price:0.00938
+2017-11-23 16:41:38  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938 Old Ask Price:0.009382
+2017-11-23 16:41:40  :: @Order Router: Updating order for symbol BTC-LTC: qty=53304 price=0.00938
+2017-11-23 16:41:40  :: Mock processing of order routing... 
+2017-11-23 16:41:44  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:44  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:50  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:50  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:56  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:56  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:41:56  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.009382 Old Ask Price:0.00938608
+2017-11-23 16:42:00  :: @Order Router: Updating order for symbol BTC-LTC: qty=53304 price=0.00938
+2017-11-23 16:42:00  :: Mock processing of order routing... 
+2017-11-23 16:42:01  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:01  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:06  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:06  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:11  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:11  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:11  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938608 Old Ask Price:0.009383
+2017-11-23 16:42:15  :: @Order Router: Updating order for symbol BTC-LTC: qty=53304 price=0.00938
+2017-11-23 16:42:15  :: Mock processing of order routing... 
+2017-11-23 16:42:16  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:16  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:21  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:21  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:21  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.00938 Old Bid Price:0.009387
+2017-11-23 16:42:21  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.009383 Old Ask Price:0.00939
+2017-11-23 16:42:25  :: @Order Router: Updating order for symbol BTC-LTC: qty=53265 price=0.009387
+2017-11-23 16:42:25  :: Mock processing of order routing... 
+2017-11-23 16:42:26  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:26  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:32  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:32  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:37  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:37  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:37  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009387 Old Bid Price:0.00938
+2017-11-23 16:42:40  :: @Order Router: Updating order for symbol BTC-LTC: qty=53304 price=0.00938
+2017-11-23 16:42:40  :: Mock processing of order routing... 
+2017-11-23 16:42:44  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:44  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:44  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.00938 Old Bid Price:0.009378
+2017-11-23 16:42:45  :: @Order Router: Updating order for symbol BTC-LTC: qty=53316 price=0.009378
+2017-11-23 16:42:45  :: Mock processing of order routing... 
+2017-11-23 16:42:53  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:42:53  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:04  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:04  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:16  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:16  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:16  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009378 Old Bid Price:0.009356
+2017-11-23 16:43:16  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00939 Old Ask Price:0.00938998
+2017-11-23 16:43:21  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:43:21  :: Mock processing of order routing... 
+2017-11-23 16:43:26  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:26  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:26  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009356 Old Bid Price:0.009378
+2017-11-23 16:43:26  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938998 Old Ask Price:0.00938
+2017-11-23 16:43:26  :: @Order Router: Updating order for symbol BTC-LTC: qty=53316 price=0.009378
+2017-11-23 16:43:26  :: Mock processing of order routing... 
+2017-11-23 16:43:40  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:40  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:56  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:56  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:43:56  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009378 Old Bid Price:0.009356
+2017-11-23 16:43:56  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938 Old Ask Price:0.00937799
+2017-11-23 16:44:01  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:44:01  :: Mock processing of order routing... 
+2017-11-23 16:44:02  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:02  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:02  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00937799 Old Ask Price:0.009378
+2017-11-23 16:44:06  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:44:06  :: Mock processing of order routing... 
+2017-11-23 16:44:07  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:07  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:13  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:13  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:13  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009356 Old Bid Price:0.00937799
+2017-11-23 16:44:13  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.009378 Old Ask Price:0.00938998
+2017-11-23 16:44:16  :: @Order Router: Updating order for symbol BTC-LTC: qty=53316 price=0.00937799
+2017-11-23 16:44:16  :: Mock processing of order routing... 
+2017-11-23 16:44:18  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:18  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:18  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.00937799 Old Bid Price:0.009356
+2017-11-23 16:44:18  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00938998 Old Ask Price:0.00937799
+2017-11-23 16:44:21  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:44:21  :: Mock processing of order routing... 
+2017-11-23 16:44:33  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:33  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:38  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:38  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:38  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00937799 Old Ask Price:0.00937797
+2017-11-23 16:44:41  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:44:41  :: Mock processing of order routing... 
+2017-11-23 16:44:44  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:44  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:44  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00937797 Old Ask Price:0.00937794
+2017-11-23 16:44:46  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:44:46  :: Mock processing of order routing... 
+2017-11-23 16:44:50  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:50  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:50  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00937794 Old Ask Price:0.00936998
+2017-11-23 16:44:51  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:44:51  :: Mock processing of order routing... 
+2017-11-23 16:44:58  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:58  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:44:58  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009356 Old Bid Price:0.0093561
+2017-11-23 16:44:58  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00936998 Old Ask Price:0.00936994
+2017-11-23 16:45:01  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.0093561
+2017-11-23 16:45:01  :: Mock processing of order routing... 
+2017-11-23 16:45:06  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:06  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:06  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.0093561 Old Bid Price:0.009356
+2017-11-23 16:45:06  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00936994 Old Ask Price:0.0093561
+2017-11-23 16:45:06  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:45:06  :: Mock processing of order routing... 
+2017-11-23 16:45:11  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:11  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:11  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.0093561 Old Ask Price:0.00936987
+2017-11-23 16:45:11  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:45:11  :: Mock processing of order routing... 
+2017-11-23 16:45:18  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:18  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:18  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00936987 Old Ask Price:0.00936985
+2017-11-23 16:45:21  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:45:21  :: Mock processing of order routing... 
+2017-11-23 16:45:41  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:41  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:41  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00936985 Old Ask Price:0.00935699
+2017-11-23 16:45:41  :: @Order Router: Updating order for symbol BTC-LTC: qty=53441 price=0.009356
+2017-11-23 16:45:41  :: Mock processing of order routing... 
+2017-11-23 16:45:46  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:46  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:46  :: Updating DOM price on BID. Symbol: BTC-LTC - New Bid Price:0.009356 Old Bid Price:0.00933551
+2017-11-23 16:45:46  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00935699 Old Ask Price:0.00935599
+2017-11-23 16:45:46  :: @Order Router: Updating order for symbol BTC-LTC: qty=53558 price=0.00933551
+2017-11-23 16:45:46  :: Mock processing of order routing... 
+2017-11-23 16:45:52  :: Processing Market Data:Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:52  :: Receiving Market Data on order router: Symbol=BTC-LTC Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=.01 LastTradeSize=no data BestBidPrice=.01 BestBidSize=no data BestBidExch=no data BestAskPrice=.01 BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2017-11-23 16:45:52  :: Updating DOM price on ASK. Symbol: BTC-LTC - New Ask Price:0.00935599 Old Ask Price:0.00935597
+2017-11-23 16:45:54  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol BTC-LTC 
+2017-11-23 16:45:54  :: Canceling order for symbol BTC-LTC
+2017-11-23 16:45:54  :: Mock processing of order routing... 
+2017-11-23 16:53:20  :: 11/23/2017 4:53:20 PMMomentumStrategyBase.LoadConfig
+2017-11-23 16:53:20  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:53:20  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:53:20  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-11-23 16:53:20  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2017-11-23 16:53:20  :: 11/23/2017 4:53:20 PMOrderRouterBase.LoadConfig
+2017-11-23 16:53:20  :: Loading config:.\outgoingOrderRouter.xml
+2017-11-23 16:53:20  :: Processing config:.\outgoingOrderRouter.xml
+2017-11-23 16:53:21  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-11-23 16:53:21  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2017-11-23 16:53:21  :: Mock Order Router Initializing... 

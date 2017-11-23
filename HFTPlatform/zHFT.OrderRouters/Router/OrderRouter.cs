@@ -499,6 +499,11 @@ namespace zHFT.OrderRouters.Router
                 {
                     tLockCalculus = new object();
 
+                    Positions = new List<Position>();
+                    PositionConverter = new PositionConverter();
+                    MarketDataConverter = new MarketDataConverter();
+                    ExecutionReportConverter = new ExecutionReportConverter();
+
 
                     DoLog("Initializing Order Router Proxy " + ORConfiguration.Proxy, Constants.MessageType.Information);
                     if (!string.IsNullOrEmpty(ORConfiguration.Proxy))
@@ -514,11 +519,6 @@ namespace zHFT.OrderRouters.Router
                     }
                     else
                         DoLog("Order Router proxy not found. It will not be initialized", Constants.MessageType.Error);
-
-                    Positions = new List<Position>();
-                    PositionConverter = new PositionConverter();
-                    MarketDataConverter = new MarketDataConverter();
-                    ExecutionReportConverter = new ExecutionReportConverter();
 
                     return true;
                 }

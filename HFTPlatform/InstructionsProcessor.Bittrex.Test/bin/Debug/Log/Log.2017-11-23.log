@@ -1,0 +1,99 @@
+2017-11-23 15:53:34  :: 23/11/2017 15:53:34MainApp.LoadConfig
+2017-11-23 15:53:34  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:53:34  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:53:35  :: Fin GetConfiguracion
+2017-11-23 15:53:35  :: Assembly not found: zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex
+2017-11-23 15:53:35  :: Initializing Log
+2017-11-23 15:53:35  :: Initializing Incoming Module
+2017-11-23 15:53:35  :: Incoming module could not be initialized because it was not instantiated
+2017-11-23 15:53:35  :: Initializing Outgoing Module
+2017-11-23 15:53:37  :: Outgoing Module successfully initialized
+2017-11-23 15:57:58  :: 23/11/2017 15:57:58MainApp.LoadConfig
+2017-11-23 15:57:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:57:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:57:58  :: Fin GetConfiguracion
+2017-11-23 15:57:58  :: Assembly not found: zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex
+2017-11-23 15:57:58  :: Initializing Log
+2017-11-23 15:57:58  :: Initializing Incoming Module
+2017-11-23 15:57:58  :: Incoming module could not be initialized because it was not instantiated
+2017-11-23 15:57:58  :: Initializing Outgoing Module
+2017-11-23 15:57:59  :: Outgoing Module successfully initialized
+2017-11-23 15:58:23  :: 23/11/2017 15:58:23MainApp.LoadConfig
+2017-11-23 15:58:23  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:58:23  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:58:23  :: Fin GetConfiguracion
+2017-11-23 15:58:23  :: Assembly not found: zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex
+2017-11-23 15:58:23  :: Initializing Log
+2017-11-23 15:58:23  :: Initializing Incoming Module
+2017-11-23 15:59:08  :: 23/11/2017 15:59:08MainApp.LoadConfig
+2017-11-23 15:59:08  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:59:08  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 15:59:09  :: Fin GetConfiguracion
+2017-11-23 16:00:14  :: 23/11/2017 16:00:14MainApp.LoadConfig
+2017-11-23 16:00:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:00:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:00:14  :: Fin GetConfiguracion
+2017-11-23 16:00:15  :: Initializing Log
+2017-11-23 16:00:15  :: Initializing Incoming Module
+2017-11-23 16:01:21  :: 23/11/2017 16:01:21MainApp.LoadConfig
+2017-11-23 16:01:21  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:01:21  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:01:21  :: Fin GetConfiguracion
+2017-11-23 16:01:22  :: Initializing Log
+2017-11-23 16:01:22  :: Initializing Incoming Module
+2017-11-23 16:01:41  :: Incoming Module successfully initialized
+2017-11-23 16:01:41  :: Initializing Outgoing Module
+2017-11-23 16:01:42  :: Outgoing Module successfully initialized
+2017-11-23 16:15:45  :: 23/11/2017 16:15:45MainApp.LoadConfig
+2017-11-23 16:15:45  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:15:45  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:15:45  :: Fin GetConfiguracion
+2017-11-23 16:15:45  :: Initializing Log
+2017-11-23 16:15:45  :: Initializing Incoming Module
+2017-11-23 16:15:46  :: Incoming Module successfully initialized
+2017-11-23 16:15:46  :: Initializing Outgoing Module
+2017-11-23 16:15:47  :: Outgoing Module successfully initialized
+2017-11-23 16:25:11  :: 23/11/2017 16:25:11MainApp.LoadConfig
+2017-11-23 16:25:11  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:25:11  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:25:11  :: Fin GetConfiguracion
+2017-11-23 16:25:11  :: Initializing Log
+2017-11-23 16:25:11  :: Initializing Incoming Module
+2017-11-23 16:25:11  :: Incoming Module successfully initialized
+2017-11-23 16:25:12  :: Initializing Outgoing Module
+2017-11-23 16:25:12  :: Outgoing Module successfully initialized
+2017-11-23 16:31:45  :: 23/11/2017 16:31:44MainApp.LoadConfig
+2017-11-23 16:31:45  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:31:45  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:31:45  :: Fin GetConfiguracion
+2017-11-23 16:31:45  :: Initializing Log
+2017-11-23 16:31:45  :: Initializing Incoming Module
+2017-11-23 16:31:45  :: Incoming Module successfully initialized
+2017-11-23 16:31:45  :: Initializing Outgoing Module
+2017-11-23 16:31:46  :: Outgoing Module successfully initialized
+2017-11-23 16:33:41  :: 23/11/2017 16:33:41MainApp.LoadConfig
+2017-11-23 16:33:41  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:33:41  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:33:41  :: Fin GetConfiguracion
+2017-11-23 16:33:41  :: Initializing Log
+2017-11-23 16:33:41  :: Initializing Incoming Module
+2017-11-23 16:33:41  :: Incoming Module successfully initialized
+2017-11-23 16:33:41  :: Initializing Outgoing Module
+2017-11-23 16:38:01  :: 23/11/2017 16:38:01MainApp.LoadConfig
+2017-11-23 16:38:01  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:38:01  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:38:02  :: Fin GetConfiguracion
+2017-11-23 16:38:02  :: Initializing Log
+2017-11-23 16:38:02  :: Initializing Incoming Module
+2017-11-23 16:38:02  :: Incoming Module successfully initialized
+2017-11-23 16:38:02  :: Initializing Outgoing Module
+2017-11-23 16:38:03  :: Outgoing Module successfully initialized
+2017-11-23 16:53:20  :: 23/11/2017 16:53:20MainApp.LoadConfig
+2017-11-23 16:53:20  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:53:20  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-23 16:53:20  :: Fin GetConfiguracion
+2017-11-23 16:53:20  :: Initializing Log
+2017-11-23 16:53:20  :: Initializing Incoming Module
+2017-11-23 16:53:20  :: Incoming Module successfully initialized
+2017-11-23 16:53:20  :: Initializing Outgoing Module
+2017-11-23 16:53:21  :: Outgoing Module successfully initialized

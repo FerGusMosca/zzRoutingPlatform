@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0E6F84D-FAE3-40E4-91C1-C20E2C880A24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zHFT.InstructionBasedMarketClient.Bittrex</RootNamespace>
+    <AssemblyName>zHFT.InstructionBasedMarketClient.Bittrex</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bittrex">
+      <HintPath>..\..\Librerias\Bittrex.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Librerias\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\BittrexInstructionBasedMarketClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex.Common\zHFT.InstructionBasedMarketClient.Bittrex.Common.csproj">
+      <Project>{f0394a63-38e0-402b-8e6d-0d020088b136}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Bittrex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.csproj">
+      <Project>{6b00564a-87d1-4cbe-b3a3-61005d05b639}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
+      <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Common\zHFT.InstructionBasedMarketClient.Common.csproj">
+      <Project>{2b6248b2-af75-4687-9faf-f9ea29d9335f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

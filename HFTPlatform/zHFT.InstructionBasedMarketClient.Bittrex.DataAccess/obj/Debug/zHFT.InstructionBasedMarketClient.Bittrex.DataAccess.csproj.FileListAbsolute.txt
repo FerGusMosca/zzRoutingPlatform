@@ -1,0 +1,5 @@
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.pdb

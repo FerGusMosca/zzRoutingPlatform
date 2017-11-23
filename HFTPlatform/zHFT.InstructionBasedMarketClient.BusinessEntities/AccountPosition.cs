@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Securities;
 
 namespace zHFT.InstructionBasedMarketClient.BusinessEntities
 {
@@ -14,7 +15,7 @@ namespace zHFT.InstructionBasedMarketClient.BusinessEntities
 
         public Account Account { get; set; }
 
-        public Stock Stock { get; set; }
+        public Security Security { get; set; }
 
         public decimal? Weight { get; set; }
 
