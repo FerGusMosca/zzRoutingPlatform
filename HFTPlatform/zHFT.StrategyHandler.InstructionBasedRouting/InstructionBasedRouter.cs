@@ -506,7 +506,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return true;
         }
 
-        private bool EvalMarketData(ExecutionSummary summary)
+        protected virtual bool EvalMarketData(ExecutionSummary summary)
         {
             if (summary.Position.Security.MarketData != null && summary.Position.Security.MarketData.Trade.HasValue)
             {
@@ -535,7 +535,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
-        private bool ProcessUnwindPosition(Instruction instr)
+        protected virtual bool ProcessUnwindPosition(Instruction instr)
         {
 
             DoLog(string.Format("{0}: Unwinding position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);

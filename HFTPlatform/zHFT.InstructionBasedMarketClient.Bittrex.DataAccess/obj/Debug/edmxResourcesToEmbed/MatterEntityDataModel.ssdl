@@ -84,11 +84,12 @@
     </Key>
     <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="account_id" Type="int" Nullable="false" />
+    <Property Name="original_symbol" Type="varchar" MaxLength="10" />
     <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="weight" Type="decimal" Scale="4" />
     <Property Name="shares" Type="int" />
-    <Property Name="market_price" Type="decimal" Scale="4" />
-    <Property Name="ammount" Type="decimal" Scale="4" />
+    <Property Name="market_price" Type="decimal" Scale="8" />
+    <Property Name="ammount" Type="decimal" Scale="8" />
     <Property Name="status" Type="char" MaxLength="1" />
     <Property Name="active" Type="bit" Nullable="false" />
   </EntityType>
@@ -145,7 +146,7 @@
     <Property Name="symbol" Type="varchar" MaxLength="10" />
     <Property Name="sec_type" Type="varchar" MaxLength="10" />
     <Property Name="shares" Type="int" />
-    <Property Name="ammount" Type="decimal" Scale="4" />
+    <Property Name="ammount" Type="decimal" Scale="8" />
     <Property Name="side" Type="varchar" MaxLength="1" />
     <Property Name="account_id" Type="int" Nullable="false" />
     <Property Name="related_instruction_id" Type="int" />

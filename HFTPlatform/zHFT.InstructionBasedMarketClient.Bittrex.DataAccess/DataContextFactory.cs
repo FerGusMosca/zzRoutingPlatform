@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 using MomentumBackTests.DataAccess;
-using zHFT.StrategyHandler.IBR.Bittrex.DataAccess;
+using zHFT.InstructionBasedMarketClient.Bittrex.DataAccess;
 
 namespace MomentumBackTests.DataAccess
 {

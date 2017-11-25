@@ -67,6 +67,10 @@
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Bittrex\zHFT.OrderRouters.Bittrex.csproj">
+      <Project>{b927643d-b884-4755-ab63-d4c78e262c9b}</Project>
+      <Name>zHFT.OrderRouters.Bittrex</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters.Mock\zHFT.OrderRouters.Mock.csproj">
       <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>
       <Name>zHFT.OrderRouters.Mock</Name>

@@ -44,6 +44,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMa
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.pdb

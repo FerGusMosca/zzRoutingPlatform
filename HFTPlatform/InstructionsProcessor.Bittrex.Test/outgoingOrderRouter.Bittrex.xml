@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-  <Name>Outgoing Bittrex</Name>
+  <Name>Outgoing Order Routing Bittrex</Name>
+
+  <ApiKey>f1cf7fe940224b4cbfc08f716749d983</ApiKey>
+  <Secret>772305fdeeb542cebb990c47d66829b8</Secret>
+  <QuoteCurrency>BTC</QuoteCurrency>
+  <Simulate>false</Simulate>
+
+  <RefreshExecutionReportsInMilisec>5000</RefreshExecutionReportsInMilisec>
   
 </Configuration>

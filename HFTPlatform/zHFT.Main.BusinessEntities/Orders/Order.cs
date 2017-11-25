@@ -82,6 +82,8 @@ namespace zHFT.Main.BusinessEntities.Orders
         
         }
 
+        public string RejReason { get; set; }
+
         #endregion
 
         #region Public Metods
@@ -118,6 +120,17 @@ namespace zHFT.Main.BusinessEntities.Orders
         }
 
 
+
+        #endregion
+
+        #region Public Static Methods
+
+        public static bool FinalStatus(OrdStatus status)
+        { 
+            return (status==OrdStatus.Filled || status==OrdStatus.Canceled || status==OrdStatus.DoneForDay
+                    || status == OrdStatus.Rejected || status==OrdStatus.Stopped || status==OrdStatus.Suspended);
+        
+        }
 
         #endregion
     }

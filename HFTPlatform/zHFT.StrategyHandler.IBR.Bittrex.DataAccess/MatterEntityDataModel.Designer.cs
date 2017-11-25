@@ -22,16 +22,16 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_portfolios_portfolios", "model_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.model_portfolios), "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_portfolios), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_positions_position_status", "position_status", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.position_status), "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_positions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_portfolio_positions_portfolios", "model_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.model_portfolios), "portfolio_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.portfolio_positions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_portfolios), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_positions), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instruction_types), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instructions", "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), "instructions1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_portfolios_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_portfolios), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_positions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_positions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_brokers", "brokers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.brokers), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_customers", "customers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.customers), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_sessions_users", "users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.users), "sessions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.sessions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_portfolios), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.account_positions), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instruction_types), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instructions", "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), "instructions1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
 
 #endregion
 
@@ -246,22 +246,6 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<instructions> instructions
-        {
-            get
-            {
-                if ((_instructions == null))
-                {
-                    _instructions = base.CreateObjectSet<instructions>("instructions");
-                }
-                return _instructions;
-            }
-        }
-        private ObjectSet<instructions> _instructions;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<accounts> accounts
         {
             get
@@ -306,6 +290,22 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
             }
         }
         private ObjectSet<users> _users;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<instructions> instructions
+        {
+            get
+            {
+                if ((_instructions == null))
+                {
+                    _instructions = base.CreateObjectSet<instructions>("instructions");
+                }
+                return _instructions;
+            }
+        }
+        private ObjectSet<instructions> _instructions;
 
         #endregion
 
@@ -392,14 +392,6 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the instructions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToinstructions(instructions instructions)
-        {
-            base.AddObject("instructions", instructions);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the accounts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToaccounts(accounts accounts)
@@ -421,6 +413,14 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         public void AddTousers(users users)
         {
             base.AddObject("users", users);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the instructions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToinstructions(instructions instructions)
+        {
+            base.AddObject("instructions", instructions);
         }
 
         #endregion
@@ -1141,28 +1141,6 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "instructions")]
-        public EntityCollection<instructions> instructions
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_portfolios", "instructions");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_portfolios", "instructions", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_portfolios_accounts", "accounts")]
         public accounts accounts
         {
@@ -1191,6 +1169,28 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_account_portfolios_accounts", "accounts", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "instructions")]
+        public EntityCollection<instructions> instructions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_portfolios", "instructions");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_portfolios", "instructions", value);
                 }
             }
         }
@@ -1448,6 +1448,30 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         private global::System.Boolean _active;
         partial void OnactiveChanging(global::System.Boolean value);
         partial void OnactiveChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String original_symbol
+        {
+            get
+            {
+                return _original_symbol;
+            }
+            set
+            {
+                Onoriginal_symbolChanging(value);
+                ReportPropertyChanging("original_symbol");
+                _original_symbol = StructuralObject.SetValidValue(value, true, "original_symbol");
+                ReportPropertyChanged("original_symbol");
+                Onoriginal_symbolChanged();
+            }
+        }
+        private global::System.String _original_symbol;
+        partial void Onoriginal_symbolChanging(global::System.String value);
+        partial void Onoriginal_symbolChanged();
 
         #endregion
 
@@ -1497,28 +1521,6 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "instructions")]
-        public EntityCollection<instructions> instructions
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_positions", "instructions");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_positions", "instructions", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_positions_accounts", "accounts")]
         public accounts accounts
         {
@@ -1547,6 +1549,28 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_account_positions_accounts", "accounts", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "instructions")]
+        public EntityCollection<instructions> instructions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_positions", "instructions");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_positions", "instructions", value);
                 }
             }
         }
@@ -2917,6 +2941,44 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts")]
+        public accounts accounts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<accounts> accountsReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types")]
         public instruction_types instruction_types
         {
@@ -3005,44 +3067,6 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<instructions>("MomentumBackTestsModel.FK_instructions_instructions", "instructions", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts")]
-        public accounts accounts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<accounts> accountsReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts", value);
                 }
             }
         }

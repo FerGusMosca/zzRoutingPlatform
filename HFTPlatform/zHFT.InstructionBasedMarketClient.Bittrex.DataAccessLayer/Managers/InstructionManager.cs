@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.InstructionBasedMarketClient.Bittrex.DataAccess;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
-using zHFT.StrategyHandler.IBR.Bittrex.DataAccess;
-using zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer;
+
 
 
 namespace zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.Managers

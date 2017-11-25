@@ -46,6 +46,8 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
+        private Dictionary<string, bool> ReverseCurrency { get; set; }
+
         protected Thread ProcessInstructionsThread { get; set; }
 
         protected Thread RequestMarketDataThread { get; set; }
@@ -180,14 +182,24 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             }
         }
 
-        protected string GetSingleSymbol(Instruction instrx,int index)
+        private void ReverseRequestMarketData(Instruction instrx)
         {
-            string[] symbols = instrx.Symbol.Split(new string[] { "-" }, StringSplitOptions.RemoveEmptyEntries);
+            Exchange exch = new Exchange();
+            ExchangeContext ctx = GetContext();
+            ctx.QuoteCurrency = instrx.Symbol;
+            exch.Initialise(ctx);
 
-            if (symbols.Length != 2)
-                throw new Exception(string.Format("@{0}: Valor inválido de symbol para crypto moneda {1}", BittrexConfiguration.Name, instrx.Symbol));
+            JObject jMarketData = exch.GetTicker(BittrexConfiguration.QuoteCurrency);
 
-            return symbols[index];
+            Security sec = new Security();
+            sec.Symbol = instrx.Symbol;
+            sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
+            sec.MarketData.BestAskPrice =  (double?)jMarketData["Ask"];
+            sec.MarketData.Trade = (double?)jMarketData["Last"];
+            sec.ReverseMarketData = true;
+            MarketDataWrapper wrapper = new MarketDataWrapper(sec, BittrexConfiguration);
+
+            OnMessageRcv(wrapper);
         }
 
         protected void DoRequestMarketData(Object param)
@@ -195,7 +207,6 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             Instruction instrx = (Instruction)param;
             try
             {
-               
                 DoLog(string.Format("@{0}:Requesting market data por symbol {1}", BittrexConfiguration.Name,instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
 
                 bool activo = true;
@@ -207,21 +218,44 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                     {
                         if (ActiveSecurities.Values.Any(x => x.Symbol == instrx.Symbol))
                         {
-                            Exchange exch = new Exchange();
-                            ExchangeContext ctx = GetContext();
-                            ctx.QuoteCurrency = GetSingleSymbol(instrx, 0);
-                            exch.Initialise(ctx);
+                            try
+                            {
+                                Exchange exch = new Exchange();
+                                ExchangeContext ctx = GetContext();
+                                exch.Initialise(ctx);
 
-                            JObject jMarketData = exch.GetTicker(GetSingleSymbol(instrx,1));
+                                //Probamos la versión derecha del mercado
+                                try
+                                {
+                                    if (!ReverseCurrency.Keys.Contains(instrx.Symbol))
+                                    {
+                                        JObject jMarketData = exch.GetTicker(instrx.Symbol);
 
-                            Security sec = new Security();
-                            sec.Symbol = instrx.Symbol;
-                            sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
-                            sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
-                            sec.MarketData.Trade = (double?)jMarketData["Last"];
-                            MarketDataWrapper wrapper = new MarketDataWrapper(sec, BittrexConfiguration);
+                                        Security sec = new Security();
+                                        sec.Symbol = instrx.Symbol;
+                                        sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
+                                        sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
+                                        sec.MarketData.Trade = (double?)jMarketData["Last"];
+                                        sec.ReverseMarketData = false;
+                                        MarketDataWrapper wrapper = new MarketDataWrapper(sec, BittrexConfiguration);
 
-                            OnMessageRcv(wrapper);
+                                        OnMessageRcv(wrapper);
+                                    }
+                                    else
+                                        ReverseRequestMarketData(instrx);
+                                }
+                                catch (Exception ex)
+                                {
+                                    ReverseCurrency.Add(instrx.Symbol, true);
+                                    ReverseRequestMarketData(instrx);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("@{0}:Error Requesting market data por symbol {1}:{2}",
+                                        BittrexConfiguration.Name, instrx.Symbol,ex.Message), Main.Common.Util.Constants.MessageType.Information);
+                                activo = false;
+                            }
                         }
                         else
                             activo = false;
@@ -311,6 +345,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                     
                     ActiveSecurities = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
+                    ReverseCurrency = new Dictionary<string, bool>();
 
                     AccountManager = new AccountManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);
                     InstructionManager = new InstructionManager(BittrexConfiguration.InstructionsAccessLayerConnectionString,AccountManager);

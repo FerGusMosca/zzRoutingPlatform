@@ -141,10 +141,22 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                         pos.Security = new Security() { Symbol = balance.Currency };
                         pos.Ammount = balance.Available;
 
-                        GetMarketSummaryResponse summary = Exchange.GetMarketSummary(balance.Currency);
+                        if (balance.Currency != ExchangeContext.QuoteCurrency)
+                        {
+                            try
+                            {
+                                GetMarketSummaryResponse summary = Exchange.GetMarketSummary(balance.Currency);
 
-                        if (summary != null)
-                            pos.MarketPrice = summary.Last;
+                                if (summary != null)
+                                    pos.MarketPrice = summary.Last;
+                            }
+                            catch (Exception ex)
+                            {
+                                pos.MarketPrice = 0;//No puedo saber el market price contra dolar (USDT)
+                            }
+                        }
+                        else
+                            pos.MarketPrice = 1;
 
                         Positions.Add(pos);
                     }

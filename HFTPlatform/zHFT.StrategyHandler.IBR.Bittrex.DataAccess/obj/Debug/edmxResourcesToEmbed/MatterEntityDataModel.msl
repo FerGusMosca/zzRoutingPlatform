@@ -137,6 +137,7 @@
     <EntitySetMapping Name="account_positions">
       <EntityTypeMapping TypeName="MomentumBackTestsModel.account_positions">
         <MappingFragment StoreEntitySet="account_positions">
+          <ScalarProperty Name="original_symbol" ColumnName="original_symbol" />
           <ScalarProperty Name="active" ColumnName="active" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="ammount" ColumnName="ammount" />
@@ -230,27 +231,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="instructions">
-      <EntityTypeMapping TypeName="MomentumBackTestsModel.instructions">
-        <MappingFragment StoreEntitySet="instructions">
-          <ScalarProperty Name="text" ColumnName="text" />
-          <ScalarProperty Name="is_merge" ColumnName="is_merge" />
-          <ScalarProperty Name="executed" ColumnName="executed" />
-          <ScalarProperty Name="related_instruction_id" ColumnName="related_instruction_id" />
-          <ScalarProperty Name="account_id" ColumnName="account_id" />
-          <ScalarProperty Name="side" ColumnName="side" />
-          <ScalarProperty Name="ammount" ColumnName="ammount" />
-          <ScalarProperty Name="shares" ColumnName="shares" />
-          <ScalarProperty Name="sec_type" ColumnName="sec_type" />
-          <ScalarProperty Name="symbol" ColumnName="symbol" />
-          <ScalarProperty Name="account_position_id" ColumnName="account_position_id" />
-          <ScalarProperty Name="portfolio_id" ColumnName="portfolio_id" />
-          <ScalarProperty Name="type" ColumnName="type" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="accounts">
       <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts">
         <MappingFragment StoreEntitySet="accounts">
@@ -283,6 +263,27 @@
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="login" ColumnName="login" />
           <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instructions">
+      <EntityTypeMapping TypeName="MomentumBackTestsModel.instructions">
+        <MappingFragment StoreEntitySet="instructions">
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="is_merge" ColumnName="is_merge" />
+          <ScalarProperty Name="executed" ColumnName="executed" />
+          <ScalarProperty Name="related_instruction_id" ColumnName="related_instruction_id" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="side" ColumnName="side" />
+          <ScalarProperty Name="ammount" ColumnName="ammount" />
+          <ScalarProperty Name="shares" ColumnName="shares" />
+          <ScalarProperty Name="sec_type" ColumnName="sec_type" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="account_position_id" ColumnName="account_position_id" />
+          <ScalarProperty Name="portfolio_id" ColumnName="portfolio_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

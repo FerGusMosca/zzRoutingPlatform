@@ -134,6 +134,8 @@ namespace zHFT.MarketClient.Common.Wrappers
                 return Security.MarketData.MDLocalEntryDate;
             else if (mdField == MarketDataFields.MDLocalEntryDate)
                 return Security.MarketData.MDLocalEntryDate;
+            else if (mdField == MarketDataFields.ReverseMarketData)
+                return Security.ReverseMarketData;
 
             return MarketDataFields.NULL;
         }

@@ -97,7 +97,7 @@ namespace zHFT.OrderRouters.Router
 
         }
 
-        private Order BuildOrder(Position pos,Side side,int index)
+        protected virtual Order BuildOrder(Position pos,Side side,int index)
         {
             Order order = new Order()
             {

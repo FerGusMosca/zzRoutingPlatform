@@ -4,7 +4,7 @@
   <IncomingConfigPath>.\incomingBittrex.xml</IncomingConfigPath>
   <IncomingModule>zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex</IncomingModule>
 
-  <OutgoingModule>zHFT.StrategyHandler.InstructionBasedRouting.InstructionBasedRouter, zHFT.StrategyHandler.InstructionBasedRouting</OutgoingModule>
+  <OutgoingModule>zHFT.StrategyHandler.InstructionBasedRouting.CryptosInstructionBasedRouter, zHFT.StrategyHandler.InstructionBasedRouting</OutgoingModule>
   <OutgoingConfigPath>.\outgoingStrategyHandler.InstructionBasedRouting.xml</OutgoingConfigPath>
 
  <LogToConsole>true</LogToConsole>

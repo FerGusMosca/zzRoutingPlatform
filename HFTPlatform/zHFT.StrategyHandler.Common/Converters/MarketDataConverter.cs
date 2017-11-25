@@ -37,7 +37,7 @@ namespace zHFT.StrategyHandler.Common.Converters
             sec.SecType = (ValidateField(wrapper, MarketDataFields.SecurityType) ? (SecurityType)wrapper.GetField(MarketDataFields.SecurityType) : SecurityType.OTH);
             sec.Currency = (ValidateField(wrapper, MarketDataFields.Currency) ? Convert.ToString( wrapper.GetField(MarketDataFields.Currency)) : null);
             sec.Exchange = (ValidateField(wrapper, MarketDataFields.MDMkt) ? Convert.ToString(wrapper.GetField(MarketDataFields.MDMkt)) : null);
-
+            sec.ReverseMarketData = (ValidateField(wrapper, MarketDataFields.ReverseMarketData) ? Convert.ToBoolean(wrapper.GetField(MarketDataFields.ReverseMarketData)) : false);
             return sec;
         }
         #endregion

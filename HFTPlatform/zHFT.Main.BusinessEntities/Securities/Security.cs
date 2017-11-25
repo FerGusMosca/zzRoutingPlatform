@@ -69,6 +69,12 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         #endregion
 
+        #region CryptoCurrency Attributes
+
+        public bool ReverseMarketData { get; set; }
+
+        #endregion
+
         #endregion
 
         #region Constructors
