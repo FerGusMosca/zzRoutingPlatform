@@ -91,6 +91,7 @@
     <Compile Include="Enums\SecurityType.cs" />
     <Compile Include="Enums\SettlType.cs" />
     <Compile Include="Enums\Side.cs" />
+    <Compile Include="Enums\SubscriptionRequestType.cs" />
     <Compile Include="Enums\TickDirection.cs" />
     <Compile Include="Enums\TimeInForce.cs" />
     <Compile Include="Enums\UpdateAction.cs" />

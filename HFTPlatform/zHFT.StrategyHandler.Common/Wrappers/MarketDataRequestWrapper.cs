@@ -15,14 +15,16 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         protected Security Security { get; set; }
 
-        #endregion
+        protected SubscriptionRequestType SubscriptionRequestType { get; set; }
 
+        #endregion
 
         #region Constructors
 
-        public MarketDataRequestWrapper(Security pSecurity)
+        public MarketDataRequestWrapper(Security pSecurity, SubscriptionRequestType pSubscriptionRequestType)
         {
             Security = pSecurity;
+            SubscriptionRequestType = pSubscriptionRequestType;
         }
 
         #endregion
@@ -41,6 +43,10 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Security.Exchange;
             if (mdrField == MarketDataRequestField.SecurityType)
                 return Security.SecType;
+            if (mdrField == MarketDataRequestField.Currency)
+                return Security.Currency;
+            if (mdrField == MarketDataRequestField.SubscriptionRequestType)
+                return SubscriptionRequestType;
             else
                 return MarketDataRequestField.NULL;
         }

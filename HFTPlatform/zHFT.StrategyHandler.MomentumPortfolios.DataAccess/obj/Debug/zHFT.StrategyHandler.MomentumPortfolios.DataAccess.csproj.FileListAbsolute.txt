@@ -20,4 +20,3 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Mo
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.xml
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csprojResolveAssemblyReference.cache

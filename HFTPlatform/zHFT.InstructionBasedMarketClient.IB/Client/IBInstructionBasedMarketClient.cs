@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
+using zHFT.InstructionBasedMarketClient.IB.Common.Converters;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
@@ -26,6 +27,8 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
         private int _SECURITIES_REMOVEL_PERIOD = 60 * 60 * 1000;//Once every hour in milliseconds
 
         private int _MAX_ELAPSED_HOURS_FOR_MARKET_DATA = 12;
+
+        private int _MARKET_DATA_ON_DEMAND_INDEX = 1000000;
 
         #endregion
 
@@ -55,6 +58,8 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
         private PositionManager PositionManager { get; set; }
 
         private Dictionary<int, Security> ActiveSecurities { get; set; }
+
+        private Dictionary<int, Security> ActiveSecuritiesOnDemand { get; set; }
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
@@ -90,6 +95,11 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     {
                         RunPublishSecurity(sec, IBConfiguration);
                     }
+
+                    foreach (Security sec in ActiveSecuritiesOnDemand.Values)
+                    {
+                        RunPublishSecurity(sec, IBConfiguration);
+                    }
                 }
 
             }
@@ -111,15 +121,24 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                             DateTime timeStamp = ContractsTimeStamps[key];
 
                             if ((DateTime.Now - timeStamp).Hours >= _MAX_ELAPSED_HOURS_FOR_MARKET_DATA)
-                            {
                                 keysToRemove.Add(key);
-                            }
                         }
 
                         foreach (int keyToRemove in keysToRemove)
                         {
                             ContractsTimeStamps.Remove(keyToRemove);
-                            ActiveSecurities.Remove(keyToRemove);
+
+                            if (ActiveSecurities.Keys.Contains(keyToRemove))
+                            {
+                                CancelMarketData(ActiveSecurities[keyToRemove]);
+                                ActiveSecurities.Remove(keyToRemove);
+                            }
+
+                            if (ActiveSecuritiesOnDemand.Keys.Contains(keyToRemove))
+                            {
+                                CancelMarketData(ActiveSecuritiesOnDemand[keyToRemove]);
+                                ActiveSecuritiesOnDemand.Remove(keyToRemove);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -154,7 +173,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                             ActiveSecurities.Add(instr.Id, BuildSecurityFromConfig(ctr));
                             ContractsTimeStamps.Add(instr.Id, DateTime.Now);
 
-                            ReqMktData(instr.Id, ctr);
+                            ReqMktData(instr.Id,false, ctr);
 
                         }
                     }
@@ -209,7 +228,15 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
 
                         Security sec = ActiveSecurities[tickerId];
                         sec.MarketData.MDLocalEntryDate = DateTime.Now;
-                        SecurityConverter.AssignValueBasedOnField(sec, field, value);
+                        zHFT.MarketClient.IB.Common.Converters.SecurityConverter.AssignValueBasedOnField(sec, field, value);
+
+                    }
+                    if (ActiveSecuritiesOnDemand.ContainsKey(tickerId))
+                    {
+
+                        Security sec = ActiveSecuritiesOnDemand[tickerId];
+                        sec.MarketData.MDLocalEntryDate = DateTime.Now;
+                        zHFT.MarketClient.IB.Common.Converters.SecurityConverter.AssignValueBasedOnField(sec, field, value);
 
                     }
                     else
@@ -238,7 +265,14 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     {
                         Security sec = ActiveSecurities[tickerId];
                         sec.MarketData.MDLocalEntryDate = DateTime.Now;
-                        SecurityConverter.AssignValueBasedOnField(sec, field, value);
+                        zHFT.MarketClient.IB.Common.Converters.SecurityConverter.AssignValueBasedOnField(sec, field, value);
+
+                    }
+                    if (ActiveSecuritiesOnDemand.ContainsKey(tickerId))
+                    {
+                        Security sec = ActiveSecuritiesOnDemand[tickerId];
+                        sec.MarketData.MDLocalEntryDate = DateTime.Now;
+                        zHFT.MarketClient.IB.Common.Converters.SecurityConverter.AssignValueBasedOnField(sec, field, value);
 
                     }
                     else
@@ -267,7 +301,14 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     {
                         Security sec = ActiveSecurities[tickerId];
                         sec.MarketData.MDLocalEntryDate = DateTime.Now;
-                        SecurityConverter.AssignValueBasedOnField(sec, field, value);
+                        zHFT.MarketClient.IB.Common.Converters.SecurityConverter.AssignValueBasedOnField(sec, field, value);
+
+                    }
+                    if (ActiveSecuritiesOnDemand.ContainsKey(tickerId))
+                    {
+                        Security sec = ActiveSecuritiesOnDemand[tickerId];
+                        sec.MarketData.MDLocalEntryDate = DateTime.Now;
+                        zHFT.MarketClient.IB.Common.Converters.SecurityConverter.AssignValueBasedOnField(sec, field, value);
 
                     }
                     else
@@ -281,9 +322,89 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
             {
                 DoLog(string.Format("Error processing event: event={0} tickerId={1} field={2} error={3} ",
                     ev, tickerId, field, ex.Message), Main.Common.Util.Constants.MessageType.Error);
-
             }
 
+        }
+
+        protected void RequestMarketDataOnDemand(Security sec,bool snapshot,string mode)
+        {
+            zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new MarketClient.IB.Common.Configuration.Contract();
+
+            ctr.Currency = sec.Currency;
+            ctr.Exchange = sec.Exchange;
+            ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
+            ctr.Symbol = sec.Symbol;
+
+            if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
+                && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
+            {
+                DoLog(string.Format("@{0}:Requesting {2} Market Data On Demand for Symbol: {1}", IBConfiguration.Name, sec.Symbol,mode), Main.Common.Util.Constants.MessageType.Information);
+                int tickerId = _MARKET_DATA_ON_DEMAND_INDEX + ActiveSecuritiesOnDemand.Count();
+                ActiveSecuritiesOnDemand.Add(tickerId, sec);
+                ContractsTimeStamps.Add(tickerId, DateTime.Now);
+                ReqMktData(tickerId, snapshot, ctr);
+            }
+            else
+                DoLog(string.Format("@{0}:Market data already subscribed for symbol: {1}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+        }
+
+        protected void CancelMarketData(Security sec)
+        { 
+            if(ActiveSecurities.Values.Any(x=>x.Symbol==sec.Symbol))
+            {
+                lock (tLock)
+                {
+                    int tickerId = ActiveSecurities.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
+                    DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                    ActiveSecurities.Remove(tickerId);
+                    ClientSocket.cancelMktData(tickerId);
+                }
+                    
+            }
+            else if (ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
+            {
+                lock (tLock)
+                {
+                    int tickerId = ActiveSecuritiesOnDemand.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
+                    DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                    ActiveSecuritiesOnDemand.Remove(tickerId);
+                    ClientSocket.cancelMktData(tickerId);
+                }
+            }
+            else
+                throw new Exception(string.Format("@{0}: Could not find active security to unsubscribe for symbol {1}", IBConfiguration.Name, sec.Symbol));
+         
+        }
+
+        protected CMState ProessMarketDataRequest(Wrapper wrapper)
+        {
+            try
+            {
+                MarketDataRequest mdr = MarketDataRequestConverter.GetMarketDataRequest(wrapper);
+
+                if (mdr.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
+                {
+                    throw new Exception(string.Format("@{0}: Market Data snaphsot not implemented for symbol {1}", IBConfiguration.Name,  mdr.Security.Symbol));
+                }
+                else if (mdr.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
+                {
+                 
+                    RequestMarketDataOnDemand(mdr.Security, false, "Snapshot+Updates");
+                    return CMState.BuildSuccess();
+                    
+                }
+                else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
+                {
+                    CancelMarketData(mdr.Security);
+                    return CMState.BuildSuccess();
+                }
+                else
+                    throw new Exception(string.Format("@{0}: Value not recognized for subscription type {1} for symbol {2}", IBConfiguration.Name, mdr.SubscriptionRequestType.ToString(), mdr.Security.Symbol));
+            }
+            catch (Exception ex)
+            { 
+                return CMState.BuildFail(ex);
+            }
         }
 
         #endregion
@@ -300,6 +421,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                 if (LoadConfig(moduleConfigFile))
                 {
                     ActiveSecurities = new Dictionary<int, Security>();
+                    ActiveSecuritiesOnDemand = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
 
                     ClientSocket = new EClientSocket(this);
@@ -340,10 +462,15 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                 if (wrapper != null)
                 {
                     Actions action = wrapper.GetAction();
-                    DoLog("Sending message " + action + " not implemented", Main.Common.Util.Constants.MessageType.Information);
-
-
-                    return CMState.BuildFail(new Exception("Sending message " + action + " not implemented"));
+                    if (Actions.MARKET_DATA_REQUEST == action)
+                    {
+                        return ProessMarketDataRequest(wrapper);
+                    }
+                    else
+                    {
+                        DoLog(string.Format("@{0}:Sending message {1} not implemented",IBConfiguration.Name,action.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return CMState.BuildFail(new Exception(string.Format("@{0}:Sending message {1} not implemented", IBConfiguration.Name, action.ToString())));
+                    }
                 }
                 else
                     throw new Exception("Invalid Wrapper");

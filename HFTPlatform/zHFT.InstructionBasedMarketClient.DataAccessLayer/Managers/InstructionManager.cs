@@ -35,7 +35,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
                 instr.AccountPosition = new AccountPosition()
                                                             {
                                                                 Id = instrxDB.account_position_id.Value,
-                                                                Stock = new Stock() { Symbol = instrxDB.symbol }
+                                                                Security = new Security() { Symbol = instrxDB.symbol }
                                                             };
 
             instr.Account = new Account()

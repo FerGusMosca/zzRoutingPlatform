@@ -92,7 +92,7 @@ namespace zHFT.MarketClient.IB.Common
 
         #region IB Methods
 
-        protected void ReqMktData(int reqId, zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
+        protected void ReqMktData(int reqId,bool snapshot, zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
         {
             Contract ibContract = new Contract();
 
@@ -102,7 +102,7 @@ namespace zHFT.MarketClient.IB.Common
             ibContract.Currency = ctr.Currency;
             ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
 
-            ClientSocket.reqMktData(reqId, ibContract, "", false, null);
+            ClientSocket.reqMktData(reqId, ibContract, "", snapshot, null);
 
         }
 

@@ -179,16 +179,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         {
             if (SessionID != null)
             {
-                string exchange = (string)marketDataRequestWrapper.GetField(MarketDataRequestField.Exchange);
-                string exchangePrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
-                zHFT.Main.Common.Enums.SecurityType secType = (zHFT.Main.Common.Enums.SecurityType)marketDataRequestWrapper.GetField(MarketDataRequestField.SecurityType);
-                string marketClearingID = ExchangeConverter.GetMarketClearingID(secType, exchange);
+                MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper);
 
-
-                MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper, exchangePrefixCode,
-                                                                                        marketClearingID, secType);
-
-                QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Symbol);
+                QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
                 MarketDataRequestId++;
 
                 Session.sendToTarget(msg, SessionID);

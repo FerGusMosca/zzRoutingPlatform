@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
 
 namespace zHFT.Main.BusinessEntities.Market_Data
 {
@@ -10,9 +12,9 @@ namespace zHFT.Main.BusinessEntities.Market_Data
     {
         #region Public Attributes
 
-        public string Symbol { get; set; }
+        public Security Security { get; set; }
 
-        public string Exchange { get; set; }
+        public SubscriptionRequestType SubscriptionRequestType { get; set; }
 
 
         #endregion

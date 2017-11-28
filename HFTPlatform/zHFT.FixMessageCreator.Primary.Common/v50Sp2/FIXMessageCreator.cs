@@ -191,17 +191,28 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
         }
 
+        protected char GetSuscriptionRequestType(zHFT.Main.Common.Enums.SubscriptionRequestType pSubscriptionRequestType)
+        {
+            if (pSubscriptionRequestType == zHFT.Main.Common.Enums.SubscriptionRequestType.Snapshot)
+                return QuickFix.SubscriptionRequestType.SNAPSHOT;
+            else if (pSubscriptionRequestType == zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates)
+                return QuickFix.SubscriptionRequestType.SNAPSHOT_PLUS_UPDATES;
+            if (pSubscriptionRequestType == zHFT.Main.Common.Enums.SubscriptionRequestType.Unsuscribe)
+                return QuickFix.SubscriptionRequestType.DISABLE_PREVIOUS_SNAPSHOT_PLUS_UPDATE_REQUEST;
+            else throw new Exception(string.Format("Could not recognize subscription request type {0}", pSubscriptionRequestType.ToString()));
+        }
+
         #endregion
 
         #region Public Methods
 
-        public QuickFix.Message RequestMarketData(int id,string symbol)
+        public QuickFix.Message RequestMarketData(int id, string symbol, zHFT.Main.Common.Enums.SubscriptionRequestType pSubscriptionRequestType)
         {
               
             QuickFix50Sp2.MarketDataRequest mdRequest = new QuickFix50Sp2.MarketDataRequest();
 
             mdRequest.setString(MDReqID.FIELD,id.ToString());
-            mdRequest.setChar(SubscriptionRequestType.FIELD, SubscriptionRequestType.SNAPSHOT_PLUS_UPDATES);
+            mdRequest.setChar(QuickFix.SubscriptionRequestType.FIELD, GetSuscriptionRequestType(pSubscriptionRequestType));
             mdRequest.setInt(MarketDepth.FIELD, 1);
             mdRequest.setInt(MDUpdateType.FIELD, MDUpdateType.FULL);
             mdRequest.setChar(AggregatedBook.FIELD, AggregatedBook.YES);

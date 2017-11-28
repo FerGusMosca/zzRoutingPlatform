@@ -8,7 +8,7 @@ namespace zHFT.Main.Common.Interfaces
 {
     public interface IFIXMessageCreator
     {
-        QuickFix.Message RequestMarketData(int id, string symbol);
+        QuickFix.Message RequestMarketData(int id, string symbol, zHFT.Main.Common.Enums.SubscriptionRequestType pSubscriptionRequestType);
 
         QuickFix.Message RequestSecurityList(int secType, string security);
 

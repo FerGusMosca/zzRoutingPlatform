@@ -7,7 +7,7 @@ using zHFT.Main.Common.Enums;
 
 namespace zHFT.InstructionBasedMarketClient.IB.Common.Converters
 {
-    public class SecurityConverter
+    public class SecurityConverter 
     {
         #region Private Static Consts
 

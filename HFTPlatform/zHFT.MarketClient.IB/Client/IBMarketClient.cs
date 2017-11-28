@@ -218,7 +218,7 @@ namespace zHFT.MarketClient.IB.Client
                     try
                     {
                         DoLog(string.Format("Subscribing Market Data for symbol {0}", ctr.Symbol), Main.Common.Util.Constants.MessageType.Information);
-                        ReqMktData(i, ctr);
+                        ReqMktData(i,false, ctr);
                         //ReqMarketDepth(i, ctr);
                         ContractRequests.Add(i, BuildSecurityFromConfig(ctr));
                         i++;

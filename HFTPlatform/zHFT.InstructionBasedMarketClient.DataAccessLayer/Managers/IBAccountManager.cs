@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using ToolsShared.Logging;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
@@ -140,7 +141,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
                 AccountPosition accPos = new AccountPosition();
                 accPos.Account = AccountToSync;
                 accPos.Active = true;
-                accPos.Stock = new Stock() { Symbol = contract.Symbol };
+                accPos.Security = new Security() { Symbol = contract.Symbol };
                 accPos.Shares = pos;
                 accPos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
                 accPos.MarketPrice = Convert.ToDecimal(avgCost);

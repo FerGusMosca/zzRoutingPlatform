@@ -664,3 +664,21 @@
 2017-11-25 18:42:49  :: Incoming Module successfully initialized
 2017-11-25 18:42:49  :: Initializing Outgoing Module
 2017-11-25 18:42:50  :: Outgoing Module successfully initialized
+2017-11-25 18:51:59  :: 25/11/2017 18:51:59MainApp.LoadConfig
+2017-11-25 18:51:59  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-25 18:51:59  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-25 18:51:59  :: Fin GetConfiguracion
+2017-11-25 18:51:59  :: Initializing Log
+2017-11-25 18:51:59  :: Initializing Incoming Module
+2017-11-25 18:52:00  :: Incoming Module successfully initialized
+2017-11-25 18:52:00  :: Initializing Outgoing Module
+2017-11-25 18:52:00  :: Outgoing Module successfully initialized
+2017-11-25 19:58:57  :: 25/11/2017 19:58:57MainApp.LoadConfig
+2017-11-25 19:58:57  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-25 19:58:57  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-11-25 19:58:57  :: Fin GetConfiguracion
+2017-11-25 19:58:58  :: Initializing Log
+2017-11-25 19:58:58  :: Initializing Incoming Module
+2017-11-25 19:58:58  :: Incoming Module successfully initialized
+2017-11-25 19:58:58  :: Initializing Outgoing Module
+2017-11-25 19:59:00  :: Outgoing Module successfully initialized

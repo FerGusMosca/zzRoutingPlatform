@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccess;
+using zHFT.Main.BusinessEntities.Securities;
 
 namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
 {
@@ -30,7 +31,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
             posDB.market_price = pos.MarketPrice;
             posDB.status = pos.PositionStatus.Code.ToString();
             posDB.shares = pos.Shares;
-            posDB.symbol = pos.Stock.Symbol;
+            posDB.symbol = pos.Security.Symbol;
             posDB.weight = pos.Weight;
         }
 
@@ -43,7 +44,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
             pos.MarketPrice = posDB.market_price;
             pos.PositionStatus = new PositionStatus() { Code = Convert.ToChar(posDB.status) };
             pos.Shares = posDB.shares;
-            pos.Stock = new Stock() { Symbol = posDB.symbol };
+            pos.Security = new Security() { Symbol = posDB.symbol };
             pos.Weight = posDB.weight;
         }
 

@@ -310,7 +310,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                             if (!PrimaryConfiguration.RequestFullMarketData)//No tenemos todos los securities
                             {
                                 ActiveSecurities.Add(instr.Id, sec);
-                                MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(sec);
+                                MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(sec,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                                 ProcessMarketDataRequest(wrapper);
 
                             }
@@ -381,7 +381,12 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                             if (PrimaryConfiguration.RequestFullMarketData)
                                 SecuritiesToPublish.Remove(keyToRemove);//Solo sacamos los securities que se publican
                             else
+                            {
+                                Security security = ActiveSecurities[keyToRemove];
                                 ActiveSecurities.Remove(keyToRemove);//los que se publican y aquellos de los que se tiene md son lo mismo
+                                MarketDataRequestWrapper mdr = new MarketDataRequestWrapper(security, Main.Common.Enums.SubscriptionRequestType.Unsuscribe);
+                                ProcessMarketDataRequest(mdr);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -445,7 +450,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                         ActiveSecurities.Add(ActiveSecurities.Count() + 1, stockSecToRequest);
 
-                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                         ProcessMarketDataRequest(wrapper);
                     }
                 }
@@ -467,7 +472,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                         ActiveSecurities.Add(ActiveSecurities.Count() + 1, optSecToRequest);
 
-                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(optSecToRequest);
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(optSecToRequest,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                         ProcessMarketDataRequest(wrapper);
                     }
                 }
@@ -604,6 +609,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         DoLog(string.Format("@{0}:Canceling order with Primary  for ClOrdId {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
                         CancelOrder(wrapper);
                         return CMState.BuildSuccess();
+                    }
+                    else if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
+                    {
+                        DoLog(string.Format("Receiving Market Data Request: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return ProcessMarketDataRequest(wrapper);
                     }
                     else
                     {

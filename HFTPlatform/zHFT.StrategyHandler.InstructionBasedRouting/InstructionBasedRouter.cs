@@ -11,6 +11,7 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 using zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers;
@@ -787,6 +788,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
+        protected void UnsuscribeMarketData(Position pos)
+        {
+            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(pos.Security, SubscriptionRequestType.Unsuscribe);
+            OnMessageRcv(wrapper);
+        
+        }
+
         protected override void OnEvalExecutionSummary(object param)
         {
             try
@@ -816,6 +824,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                 PositionInstructions.Remove(summary.Position.Symbol);
                                 ExecutionSummaries.Remove(summary.Position.Symbol);
                                 Positions.Remove(summary.Position.Symbol);
+                                UnsuscribeMarketData(summary.Position);
                             }
                             else
                             {
