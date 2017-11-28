@@ -15,9 +15,11 @@
     <EntitySet Name="options" EntityType="MomentumBackTestsModel.Store.options" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="portfolio_positions" EntityType="MomentumBackTestsModel.Store.portfolio_positions" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="position_status" EntityType="MomentumBackTestsModel.Store.position_status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sessions" EntityType="MomentumBackTestsModel.Store.sessions" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="stocks" EntityType="MomentumBackTestsModel.Store.stocks" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="stocks_parameters" EntityType="MomentumBackTestsModel.Store.stocks_parameters" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="sysdiagrams" EntityType="MomentumBackTestsModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="users" EntityType="MomentumBackTestsModel.Store.users" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_account_portfolios_accounts" Association="MomentumBackTestsModel.Store.FK_account_portfolios_accounts">
       <End Role="accounts" EntitySet="accounts" />
       <End Role="account_portfolios" EntitySet="account_portfolios" />
@@ -70,6 +72,10 @@
       <End Role="model_portfolios" EntitySet="model_portfolios" />
       <End Role="portfolio_positions" EntitySet="portfolio_positions" />
     </AssociationSet>
+    <AssociationSet Name="FK_sessions_users" Association="MomentumBackTestsModel.Store.FK_sessions_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="sessions" EntitySet="sessions" />
+    </AssociationSet>
     <AssociationSet Name="FK_stocks_parameters_stocks" Association="MomentumBackTestsModel.Store.FK_stocks_parameters_stocks">
       <End Role="stocks" EntitySet="stocks" />
       <End Role="stocks_parameters" EntitySet="stocks_parameters" />
@@ -107,13 +113,14 @@
     <Property Name="customer_id" Type="int" Nullable="false" />
     <Property Name="account_number" Type="bigint" Nullable="false" />
     <Property Name="broker_id" Type="int" Nullable="false" />
-    <Property Name="ib_name" Type="varchar" MaxLength="50" />
-    <Property Name="ib_account" Type="varchar" MaxLength="50" />
-    <Property Name="ib_url" Type="varchar" MaxLength="150" />
-    <Property Name="ib_port" Type="bigint" />
-    <Property Name="ib_balance" Type="decimal" Scale="2" />
-    <Property Name="ib_currency" Type="varchar" MaxLength="10" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="account" Type="varchar" MaxLength="50" />
+    <Property Name="url" Type="varchar" MaxLength="150" />
+    <Property Name="port" Type="bigint" />
+    <Property Name="balance" Type="decimal" Scale="2" />
+    <Property Name="currency" Type="varchar" MaxLength="10" />
     <Property Name="spicy_risk_free_percentage" Type="decimal" Scale="4" />
+    <Property Name="generic_s_number" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="brokers">
     <Key>
@@ -145,6 +152,7 @@
     <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
     <Property Name="date" Type="date" Nullable="false" />
     <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="processed" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="instruction_types">
     <Key>
@@ -187,7 +195,7 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="150" />
     <Property Name="date" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="option_bids">
@@ -228,7 +236,7 @@
     <Property Name="portfolio_id" Type="int" Nullable="false" />
     <Property Name="weight" Type="decimal" Nullable="false" Scale="4" />
     <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="10" />
-    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="name" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="position_status">
     <Key>
@@ -236,6 +244,17 @@
     </Key>
     <Property Name="code" Type="char" Nullable="false" MaxLength="1" />
     <Property Name="description" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sessions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="session_id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="start_time" Type="datetime" Nullable="false" />
+    <Property Name="expiration_time" Type="datetime" Nullable="false" />
+    <Property Name="end_time" Type="datetime" />
+    <Property Name="user_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="stocks">
     <Key>
@@ -264,8 +283,20 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="login" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="active" Type="bit" Nullable="false" />
+  </EntityType>
   <Association Name="FK_account_portfolios_accounts">
-    <End Role="accounts" Type="MomentumBackTestsModel.Store.accounts" Multiplicity="1" />
+    <End Role="accounts" Type="MomentumBackTestsModel.Store.accounts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="account_portfolios" Type="MomentumBackTestsModel.Store.account_portfolios" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="accounts">
@@ -277,7 +308,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_account_portfolios_portfolios">
-    <End Role="model_portfolios" Type="MomentumBackTestsModel.Store.model_portfolios" Multiplicity="1" />
+    <End Role="model_portfolios" Type="MomentumBackTestsModel.Store.model_portfolios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="account_portfolios" Type="MomentumBackTestsModel.Store.account_portfolios" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="model_portfolios">
@@ -428,6 +461,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_sessions_users">
+    <End Role="users" Type="MomentumBackTestsModel.Store.users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="sessions" Type="MomentumBackTestsModel.Store.sessions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sessions">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_stocks_parameters_stocks">
     <End Role="stocks" Type="MomentumBackTestsModel.Store.stocks" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -450,11 +497,10 @@
   <Function Name="QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="AccountId" Type="int" Mode="In" />
     <Parameter Name="CustomerId" Type="int" Mode="In" />
+    <Parameter Name="PositionStatus" Type="varchar" Mode="In" />
+    <Parameter Name="StockId" Type="varchar" Mode="In" />
     <Parameter Name="PageNumber" Type="bigint" Mode="In" />
     <Parameter Name="PageSize" Type="bigint" Mode="In" />
-  </Function>
-  <Function Name="QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PositionId" Type="bigint" Mode="In" />
   </Function>
   <Function Name="QRY_SCRN_ACCOUNTS_ENTITY_FULL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="AccountId" Type="bigint" Mode="In" />

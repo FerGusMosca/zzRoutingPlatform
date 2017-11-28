@@ -19,16 +19,11 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_brokers", "brokers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.brokers), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.accounts), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_customers", "customers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.customers), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.accounts), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_portfolios_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.accounts), "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.account_portfolios), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_portfolios_portfolios1", "model_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.model_portfolios), "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.account_portfolios), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_portfolio_positions_portfolios1", "model_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.model_portfolios), "portfolio_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.portfolio_positions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_positions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.accounts), "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.account_positions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_account_positions_position_status", "position_status", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.position_status), "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.account_positions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.account_portfolios), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.account_positions), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.accounts), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instruction_types), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instructions", "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instructions), "instructions1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_option_bids_options", "options", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.options), "option_bids", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.OptionsContractSaver.DataAccess.option_bids), true)]
@@ -114,22 +109,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
             }
         }
         private ObjectSet<brokers> _brokers;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<accounts> accounts
-        {
-            get
-            {
-                if ((_accounts == null))
-                {
-                    _accounts = base.CreateObjectSet<accounts>("accounts");
-                }
-                return _accounts;
-            }
-        }
-        private ObjectSet<accounts> _accounts;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -341,14 +320,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
         public void AddTobrokers(brokers brokers)
         {
             base.AddObject("brokers", brokers);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the accounts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToaccounts(accounts accounts)
-        {
-            base.AddObject("accounts", accounts);
         }
     
         /// <summary>
@@ -1190,44 +1161,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_portfolios_accounts", "accounts")]
-        public accounts accounts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_account_portfolios_accounts", "accounts").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_account_portfolios_accounts", "accounts").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<accounts> accountsReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_account_portfolios_accounts", "accounts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_account_portfolios_accounts", "accounts", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_portfolios_portfolios1", "model_portfolios")]
         public model_portfolios model_portfolios
         {
@@ -1546,44 +1479,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_positions_accounts", "accounts")]
-        public accounts accounts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_account_positions_accounts", "accounts").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_account_positions_accounts", "accounts").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<accounts> accountsReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_account_positions_accounts", "accounts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_account_positions_accounts", "accounts", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_positions_position_status", "position_status")]
         public position_status position_status
         {
@@ -1634,406 +1529,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_account_positions", "instructions", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="MomentumBackTestsModel", Name="accounts")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class accounts : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new accounts object.
-        /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="customer_id">Initial value of the customer_id property.</param>
-        /// <param name="account_number">Initial value of the account_number property.</param>
-        /// <param name="broker_id">Initial value of the broker_id property.</param>
-        public static accounts Createaccounts(global::System.Int32 id, global::System.Int32 customer_id, global::System.Int64 account_number, global::System.Int32 broker_id)
-        {
-            accounts accounts = new accounts();
-            accounts.id = id;
-            accounts.customer_id = customer_id;
-            accounts.account_number = account_number;
-            accounts.broker_id = broker_id;
-            return accounts;
-        }
-
-        #endregion
-
-        #region Simple Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value, "id");
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 customer_id
-        {
-            get
-            {
-                return _customer_id;
-            }
-            set
-            {
-                Oncustomer_idChanging(value);
-                ReportPropertyChanging("customer_id");
-                _customer_id = StructuralObject.SetValidValue(value, "customer_id");
-                ReportPropertyChanged("customer_id");
-                Oncustomer_idChanged();
-            }
-        }
-        private global::System.Int32 _customer_id;
-        partial void Oncustomer_idChanging(global::System.Int32 value);
-        partial void Oncustomer_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int64 account_number
-        {
-            get
-            {
-                return _account_number;
-            }
-            set
-            {
-                Onaccount_numberChanging(value);
-                ReportPropertyChanging("account_number");
-                _account_number = StructuralObject.SetValidValue(value, "account_number");
-                ReportPropertyChanged("account_number");
-                Onaccount_numberChanged();
-            }
-        }
-        private global::System.Int64 _account_number;
-        partial void Onaccount_numberChanging(global::System.Int64 value);
-        partial void Onaccount_numberChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 broker_id
-        {
-            get
-            {
-                return _broker_id;
-            }
-            set
-            {
-                Onbroker_idChanging(value);
-                ReportPropertyChanging("broker_id");
-                _broker_id = StructuralObject.SetValidValue(value, "broker_id");
-                ReportPropertyChanged("broker_id");
-                Onbroker_idChanged();
-            }
-        }
-        private global::System.Int32 _broker_id;
-        partial void Onbroker_idChanging(global::System.Int32 value);
-        partial void Onbroker_idChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ib_account
-        {
-            get
-            {
-                return _ib_account;
-            }
-            set
-            {
-                Onib_accountChanging(value);
-                ReportPropertyChanging("ib_account");
-                _ib_account = StructuralObject.SetValidValue(value, true, "ib_account");
-                ReportPropertyChanged("ib_account");
-                Onib_accountChanged();
-            }
-        }
-        private global::System.String _ib_account;
-        partial void Onib_accountChanging(global::System.String value);
-        partial void Onib_accountChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ib_url
-        {
-            get
-            {
-                return _ib_url;
-            }
-            set
-            {
-                Onib_urlChanging(value);
-                ReportPropertyChanging("ib_url");
-                _ib_url = StructuralObject.SetValidValue(value, true, "ib_url");
-                ReportPropertyChanged("ib_url");
-                Onib_urlChanged();
-            }
-        }
-        private global::System.String _ib_url;
-        partial void Onib_urlChanging(global::System.String value);
-        partial void Onib_urlChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int64> ib_port
-        {
-            get
-            {
-                return _ib_port;
-            }
-            set
-            {
-                Onib_portChanging(value);
-                ReportPropertyChanging("ib_port");
-                _ib_port = StructuralObject.SetValidValue(value, "ib_port");
-                ReportPropertyChanged("ib_port");
-                Onib_portChanged();
-            }
-        }
-        private Nullable<global::System.Int64> _ib_port;
-        partial void Onib_portChanging(Nullable<global::System.Int64> value);
-        partial void Onib_portChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> ib_balance
-        {
-            get
-            {
-                return _ib_balance;
-            }
-            set
-            {
-                Onib_balanceChanging(value);
-                ReportPropertyChanging("ib_balance");
-                _ib_balance = StructuralObject.SetValidValue(value, "ib_balance");
-                ReportPropertyChanged("ib_balance");
-                Onib_balanceChanged();
-            }
-        }
-        private Nullable<global::System.Decimal> _ib_balance;
-        partial void Onib_balanceChanging(Nullable<global::System.Decimal> value);
-        partial void Onib_balanceChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ib_name
-        {
-            get
-            {
-                return _ib_name;
-            }
-            set
-            {
-                Onib_nameChanging(value);
-                ReportPropertyChanging("ib_name");
-                _ib_name = StructuralObject.SetValidValue(value, true, "ib_name");
-                ReportPropertyChanged("ib_name");
-                Onib_nameChanged();
-            }
-        }
-        private global::System.String _ib_name;
-        partial void Onib_nameChanging(global::System.String value);
-        partial void Onib_nameChanged();
-
-        #endregion
-
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_brokers", "brokers")]
-        public brokers brokers
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<brokers>("MomentumBackTestsModel.FK_accounts_brokers", "brokers").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<brokers>("MomentumBackTestsModel.FK_accounts_brokers", "brokers").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<brokers> brokersReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<brokers>("MomentumBackTestsModel.FK_accounts_brokers", "brokers");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<brokers>("MomentumBackTestsModel.FK_accounts_brokers", "brokers", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_customers", "customers")]
-        public customers customers
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_accounts_customers", "customers").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_accounts_customers", "customers").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<customers> customersReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_accounts_customers", "customers");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<customers>("MomentumBackTestsModel.FK_accounts_customers", "customers", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_portfolios_accounts", "account_portfolios")]
-        public EntityCollection<account_portfolios> account_portfolios
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<account_portfolios>("MomentumBackTestsModel.FK_account_portfolios_accounts", "account_portfolios");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<account_portfolios>("MomentumBackTestsModel.FK_account_portfolios_accounts", "account_portfolios", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_account_positions_accounts", "account_positions")]
-        public EntityCollection<account_positions> account_positions
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<account_positions>("MomentumBackTestsModel.FK_account_positions_accounts", "account_positions");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<account_positions>("MomentumBackTestsModel.FK_account_positions_accounts", "account_positions", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "instructions")]
-        public EntityCollection<instructions> instructions
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions", value);
                 }
             }
         }
@@ -2145,32 +1640,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
         private global::System.String _name;
         partial void OnnameChanging(global::System.String value);
         partial void OnnameChanged();
-
-        #endregion
-
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_brokers", "accounts")]
-        public EntityCollection<accounts> accounts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_brokers", "accounts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_brokers", "accounts", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -2427,32 +1896,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
         private global::System.String _email;
         partial void OnemailChanging(global::System.String value);
         partial void OnemailChanged();
-
-        #endregion
-
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_customers", "accounts")]
-        public EntityCollection<accounts> accounts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_customers", "accounts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_customers", "accounts", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -3127,44 +2570,6 @@ namespace zHFT.StrategyHandler.OptionsContractSaver.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<account_positions>("MomentumBackTestsModel.FK_instructions_account_positions", "account_positions", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts")]
-        public accounts accounts
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<accounts> accountsReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_instructions_accounts", "accounts", value);
                 }
             }
         }

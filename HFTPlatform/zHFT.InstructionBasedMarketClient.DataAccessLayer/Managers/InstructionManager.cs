@@ -42,11 +42,11 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
                                         {
                                             Id = instrxDB.account_id,
                                             AccountNumber = instrxDB.accounts.account_number,
-                                            IBAccount = instrxDB.accounts.ib_account,
-                                            IBBalance = instrxDB.accounts.ib_balance,
-                                            IBCurrency=instrxDB.accounts.ib_currency,
-                                            IBPort = instrxDB.accounts.ib_port,
-                                            IBURL = instrxDB.accounts.ib_url,
+                                            AccountDesc = instrxDB.accounts.account,
+                                            Balance = instrxDB.accounts.balance,
+                                            Currency=instrxDB.accounts.currency,
+                                            Port = instrxDB.accounts.port,
+                                            URL = instrxDB.accounts.url,
                                         };
 
             instr.Executed = instrxDB.executed;

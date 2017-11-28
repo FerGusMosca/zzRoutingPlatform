@@ -63,11 +63,18 @@ namespace zHFT.MarketClient.IB.Common
 
         }
 
-        protected void RunPublishSecurity(Security sec, IConfiguration Config)
+        protected void DoRunPublishSecurity(Object param)
+        {
+            Security sec = (Security)param;
+            RunPublishSecurity(sec);
+        }
+
+        protected void RunPublishSecurity(Security sec)
         { 
             try
             {
-                MarketDataWrapper wrapper = new MarketDataWrapper(sec, Config);
+                
+                MarketDataWrapper wrapper = new MarketDataWrapper(sec, GetConfig());
                 CMState state = OnMessageRcv(wrapper);
 
                 if (state.Success)

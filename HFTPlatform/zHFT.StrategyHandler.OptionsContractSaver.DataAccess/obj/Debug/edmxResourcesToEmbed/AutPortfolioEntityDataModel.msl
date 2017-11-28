@@ -57,21 +57,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="accounts">
-      <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts">
-        <MappingFragment StoreEntitySet="accounts">
-          <ScalarProperty Name="ib_name" ColumnName="ib_name" />
-          <ScalarProperty Name="ib_balance" ColumnName="ib_balance" />
-          <ScalarProperty Name="ib_port" ColumnName="ib_port" />
-          <ScalarProperty Name="ib_url" ColumnName="ib_url" />
-          <ScalarProperty Name="ib_account" ColumnName="ib_account" />
-          <ScalarProperty Name="broker_id" ColumnName="broker_id" />
-          <ScalarProperty Name="account_number" ColumnName="account_number" />
-          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MomentumBackTestsModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MomentumBackTestsModel.Store.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MomentumBackTestsModel.Store.sp_dropdiagram" />

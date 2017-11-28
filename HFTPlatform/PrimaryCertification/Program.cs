@@ -121,7 +121,7 @@ namespace PrimaryCertification
 
             Security sec = new Security() { Symbol = symbol, Exchange = exchange, SecType = SecurityType.CS };
 
-            MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(sec);
+            MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(sec, SubscriptionRequestType.SnapshotAndUpdates);
             App.ProcessMessageToIncoming(mdrWrapper);
         }
 

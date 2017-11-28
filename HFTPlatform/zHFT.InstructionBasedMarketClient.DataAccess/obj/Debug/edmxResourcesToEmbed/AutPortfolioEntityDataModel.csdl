@@ -10,11 +10,9 @@
       <Parameter Name="IdUsuario" Mode="In" Type="Int32" />
       <Parameter Name="NombrePantalla" Mode="In" Type="String" />
     </FunctionImport>
-    <EntitySet Name="customers" EntityType="MomentumBackTestsModel.customers" />
     <FunctionImport Name="QRY_SCRN_CUSTOMERS_ENTITY_FULL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_CUSTOMERS_ENTITY_FULL_Result)">
       <Parameter Name="CustomerId" Mode="In" Type="Int64" />
     </FunctionImport>
-    <EntitySet Name="brokers" EntityType="MomentumBackTestsModel.brokers" />
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
@@ -52,6 +50,8 @@
     <FunctionImport Name="QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_GRID_MAIN_ALL_Result)">
       <Parameter Name="AccountId" Mode="In" Type="Int32" />
       <Parameter Name="CustomerId" Mode="In" Type="Int32" />
+      <Parameter Name="PositionStatus" Mode="In" Type="String" />
+      <Parameter Name="StockId" Mode="In" Type="String" />
       <Parameter Name="PageNumber" Mode="In" Type="Int64" />
       <Parameter Name="PageSize" Mode="In" Type="Int64" />
     </FunctionImport>
@@ -63,41 +63,47 @@
       <Parameter Name="PageSize" Mode="In" Type="Int64" />
     </FunctionImport>
     <EntitySet Name="account_portfolios" EntityType="MomentumBackTestsModel.account_portfolios" />
-    <EntitySet Name="portfolio_positions" EntityType="MomentumBackTestsModel.portfolio_positions" />
-    <EntitySet Name="model_portfolios" EntityType="MomentumBackTestsModel.model_portfolios" />
-    <AssociationSet Name="FK_account_portfolios_portfolios1" Association="MomentumBackTestsModel.FK_account_portfolios_portfolios1">
-      <End Role="model_portfolios" EntitySet="model_portfolios" />
-      <End Role="account_portfolios" EntitySet="account_portfolios" />
-    </AssociationSet>
-    <AssociationSet Name="FK_portfolio_positions_portfolios1" Association="MomentumBackTestsModel.FK_portfolio_positions_portfolios1">
-      <End Role="model_portfolios" EntitySet="model_portfolios" />
-      <End Role="portfolio_positions" EntitySet="portfolio_positions" />
-    </AssociationSet>
     <EntitySet Name="account_positions" EntityType="MomentumBackTestsModel.account_positions" />
-    <FunctionImport Name="QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL" ReturnType="Collection(MomentumBackTestsModel.QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL_Result)">
-      <Parameter Name="PositionId" Mode="In" Type="Int64" />
-    </FunctionImport>
-    <EntitySet Name="sysdiagrams" EntityType="MomentumBackTestsModel.sysdiagrams" />
-    <EntitySet Name="instruction_types" EntityType="MomentumBackTestsModel.instruction_types" />
-    <EntitySet Name="position_status" EntityType="MomentumBackTestsModel.position_status" />
-    <AssociationSet Name="FK_account_positions_position_status" Association="MomentumBackTestsModel.FK_account_positions_position_status">
-      <End Role="position_status" EntitySet="position_status" />
-      <End Role="account_positions" EntitySet="account_positions" />
-    </AssociationSet>
     <EntitySet Name="accounts" EntityType="MomentumBackTestsModel.accounts" />
+    <EntitySet Name="brokers" EntityType="MomentumBackTestsModel.brokers" />
+    <EntitySet Name="customers" EntityType="MomentumBackTestsModel.customers" />
     <EntitySet Name="daily_options" EntityType="MomentumBackTestsModel.daily_options" />
+    <EntitySet Name="instruction_types" EntityType="MomentumBackTestsModel.instruction_types" />
+    <EntitySet Name="instructions" EntityType="MomentumBackTestsModel.instructions" />
     <EntitySet Name="lookups" EntityType="MomentumBackTestsModel.lookups" />
+    <EntitySet Name="model_portfolios" EntityType="MomentumBackTestsModel.model_portfolios" />
     <EntitySet Name="option_bids" EntityType="MomentumBackTestsModel.option_bids" />
     <EntitySet Name="options" EntityType="MomentumBackTestsModel.options" />
+    <EntitySet Name="portfolio_positions" EntityType="MomentumBackTestsModel.portfolio_positions" />
+    <EntitySet Name="position_status" EntityType="MomentumBackTestsModel.position_status" />
+    <EntitySet Name="sessions" EntityType="MomentumBackTestsModel.sessions" />
     <EntitySet Name="stocks" EntityType="MomentumBackTestsModel.stocks" />
     <EntitySet Name="stocks_parameters" EntityType="MomentumBackTestsModel.stocks_parameters" />
+    <EntitySet Name="sysdiagrams" EntityType="MomentumBackTestsModel.sysdiagrams" />
+    <EntitySet Name="users" EntityType="MomentumBackTestsModel.users" />
     <AssociationSet Name="FK_account_portfolios_accounts" Association="MomentumBackTestsModel.FK_account_portfolios_accounts">
       <End Role="accounts" EntitySet="accounts" />
       <End Role="account_portfolios" EntitySet="account_portfolios" />
     </AssociationSet>
+    <AssociationSet Name="FK_account_portfolios_portfolios" Association="MomentumBackTestsModel.FK_account_portfolios_portfolios">
+      <End Role="model_portfolios" EntitySet="model_portfolios" />
+      <End Role="account_portfolios" EntitySet="account_portfolios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instructions_account_portfolios" Association="MomentumBackTestsModel.FK_instructions_account_portfolios">
+      <End Role="account_portfolios" EntitySet="account_portfolios" />
+      <End Role="instructions" EntitySet="instructions" />
+    </AssociationSet>
     <AssociationSet Name="FK_account_positions_accounts" Association="MomentumBackTestsModel.FK_account_positions_accounts">
       <End Role="accounts" EntitySet="accounts" />
       <End Role="account_positions" EntitySet="account_positions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_account_positions_position_status" Association="MomentumBackTestsModel.FK_account_positions_position_status">
+      <End Role="position_status" EntitySet="position_status" />
+      <End Role="account_positions" EntitySet="account_positions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instructions_account_positions" Association="MomentumBackTestsModel.FK_instructions_account_positions">
+      <End Role="account_positions" EntitySet="account_positions" />
+      <End Role="instructions" EntitySet="instructions" />
     </AssociationSet>
     <AssociationSet Name="FK_accounts_brokers" Association="MomentumBackTestsModel.FK_accounts_brokers">
       <End Role="brokers" EntitySet="brokers" />
@@ -106,23 +112,6 @@
     <AssociationSet Name="FK_accounts_customers" Association="MomentumBackTestsModel.FK_accounts_customers">
       <End Role="customers" EntitySet="customers" />
       <End Role="accounts" EntitySet="accounts" />
-    </AssociationSet>
-    <AssociationSet Name="FK_option_bids_options" Association="MomentumBackTestsModel.FK_option_bids_options">
-      <End Role="options" EntitySet="options" />
-      <End Role="option_bids" EntitySet="option_bids" />
-    </AssociationSet>
-    <AssociationSet Name="FK_stocks_parameters_stocks" Association="MomentumBackTestsModel.FK_stocks_parameters_stocks">
-      <End Role="stocks" EntitySet="stocks" />
-      <End Role="stocks_parameters" EntitySet="stocks_parameters" />
-    </AssociationSet>
-    <EntitySet Name="instructions" EntityType="MomentumBackTestsModel.instructions" />
-    <AssociationSet Name="FK_instructions_account_portfolios" Association="MomentumBackTestsModel.FK_instructions_account_portfolios">
-      <End Role="account_portfolios" EntitySet="account_portfolios" />
-      <End Role="instructions" EntitySet="instructions" />
-    </AssociationSet>
-    <AssociationSet Name="FK_instructions_account_positions" Association="MomentumBackTestsModel.FK_instructions_account_positions">
-      <End Role="account_positions" EntitySet="account_positions" />
-      <End Role="instructions" EntitySet="instructions" />
     </AssociationSet>
     <AssociationSet Name="FK_instructions_accounts" Association="MomentumBackTestsModel.FK_instructions_accounts">
       <End Role="accounts" EntitySet="accounts" />
@@ -136,6 +125,22 @@
       <End Role="instructions" EntitySet="instructions" />
       <End Role="instructions1" EntitySet="instructions" />
     </AssociationSet>
+    <AssociationSet Name="FK_portfolio_positions_portfolios" Association="MomentumBackTestsModel.FK_portfolio_positions_portfolios">
+      <End Role="model_portfolios" EntitySet="model_portfolios" />
+      <End Role="portfolio_positions" EntitySet="portfolio_positions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_option_bids_options" Association="MomentumBackTestsModel.FK_option_bids_options">
+      <End Role="options" EntitySet="options" />
+      <End Role="option_bids" EntitySet="option_bids" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sessions_users" Association="MomentumBackTestsModel.FK_sessions_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="sessions" EntitySet="sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_stocks_parameters_stocks" Association="MomentumBackTestsModel.FK_stocks_parameters_stocks">
+      <End Role="stocks" EntitySet="stocks" />
+      <End Role="stocks_parameters" EntitySet="stocks_parameters" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL_Result">
     <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
@@ -148,21 +153,6 @@
     <Property Type="String" Name="EMail" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="TotalRows" Nullable="true" />
   </ComplexType>
-  <EntityType Name="customers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="document_type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int64" Name="document_number" Nullable="false" />
-    <Property Type="String" Name="sex" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="birth_date" Precision="3" />
-    <Property Type="String" Name="contact" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_customers" FromRole="customers" ToRole="accounts" />
-  </EntityType>
   <ComplexType Name="QRY_SCRN_CUSTOMERS_ENTITY_FULL_Result">
     <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
@@ -174,15 +164,6 @@
     <Property Type="String" Name="EMail" Nullable="true" MaxLength="50" />
     <Property Type="Int32" Name="TotalRows" Nullable="true" />
   </ComplexType>
-  <EntityType Name="brokers">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="String" Name="code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_brokers" FromRole="brokers" ToRole="accounts" />
-  </EntityType>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
     <Property Type="Binary" Name="definition" Nullable="true" />
@@ -234,62 +215,15 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="account_id" Nullable="false" />
     <Property Type="Int32" Name="portfolio_id" Nullable="false" />
     <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
     <Property Type="Boolean" Name="active" Nullable="false" />
-    <NavigationProperty Name="model_portfolios" Relationship="MomentumBackTestsModel.FK_account_portfolios_portfolios1" FromRole="account_portfolios" ToRole="model_portfolios" />
     <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_account_portfolios_accounts" FromRole="account_portfolios" ToRole="accounts" />
+    <NavigationProperty Name="model_portfolios" Relationship="MomentumBackTestsModel.FK_account_portfolios_portfolios" FromRole="account_portfolios" ToRole="model_portfolios" />
     <NavigationProperty Name="instructions" Relationship="MomentumBackTestsModel.FK_instructions_account_portfolios" FromRole="account_portfolios" ToRole="instructions" />
   </EntityType>
-  <EntityType Name="portfolio_positions">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int32" Name="portfolio_id" Nullable="false" />
-    <Property Type="Decimal" Name="weight" Nullable="false" Precision="18" Scale="4" />
-    <Property Type="String" Name="symbol" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="model_portfolios" Relationship="MomentumBackTestsModel.FK_portfolio_positions_portfolios1" FromRole="portfolio_positions" ToRole="model_portfolios" />
-  </EntityType>
-  <EntityType Name="model_portfolios">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
-    <NavigationProperty Name="account_portfolios" Relationship="MomentumBackTestsModel.FK_account_portfolios_portfolios1" FromRole="model_portfolios" ToRole="account_portfolios" />
-    <NavigationProperty Name="portfolio_positions" Relationship="MomentumBackTestsModel.FK_portfolio_positions_portfolios1" FromRole="model_portfolios" ToRole="portfolio_positions" />
-  </EntityType>
-  <Association Name="FK_account_portfolios_portfolios1">
-    <End Type="MomentumBackTestsModel.model_portfolios" Role="model_portfolios" Multiplicity="1" />
-    <End Type="MomentumBackTestsModel.account_portfolios" Role="account_portfolios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="model_portfolios">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="account_portfolios">
-        <PropertyRef Name="portfolio_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_portfolio_positions_portfolios1">
-    <End Type="MomentumBackTestsModel.model_portfolios" Role="model_portfolios" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="MomentumBackTestsModel.portfolio_positions" Role="portfolio_positions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="model_portfolios">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="portfolio_positions">
-        <PropertyRef Name="portfolio_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="account_positions">
     <Key>
       <PropertyRef Name="id" />
@@ -303,58 +237,10 @@
     <Property Type="Decimal" Name="ammount" Precision="18" Scale="4" />
     <Property Type="String" Name="status" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Type="Boolean" Name="active" Nullable="false" />
-    <NavigationProperty Name="position_status" Relationship="MomentumBackTestsModel.FK_account_positions_position_status" FromRole="account_positions" ToRole="position_status" />
     <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_account_positions_accounts" FromRole="account_positions" ToRole="accounts" />
+    <NavigationProperty Name="position_status" Relationship="MomentumBackTestsModel.FK_account_positions_position_status" FromRole="account_positions" ToRole="position_status" />
     <NavigationProperty Name="instructions" Relationship="MomentumBackTestsModel.FK_instructions_account_positions" FromRole="account_positions" ToRole="instructions" />
   </EntityType>
-  <ComplexType Name="QRY_SCRN_ACCOUNTPOSITIONS_WITH_POS_ENTITY_FULL_Result">
-    <Property Type="Int32" Name="AccountId" Nullable="false" />
-    <Property Type="String" Name="FullDesc" Nullable="true" MaxLength="182" />
-    <Property Type="String" Name="StockId" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="Symbol" Nullable="false" MaxLength="10" />
-    <Property Type="String" Name="StockDesc" Nullable="true" MaxLength="113" />
-    <Property Type="Int32" Name="Shares" Nullable="true" />
-    <Property Type="Decimal" Name="Ammount" Nullable="true" Precision="18" Scale="4" />
-    <Property Type="Int32" Name="TotalRows" Nullable="true" />
-  </ComplexType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="principal_id" Nullable="false" />
-    <Property Type="Int32" Name="diagram_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="Int32" Name="version" />
-    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="instruction_types">
-    <Key>
-      <PropertyRef Name="type" />
-    </Key>
-    <Property Type="String" Name="type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="instructions" Relationship="MomentumBackTestsModel.FK_instructions_instruction_types" FromRole="instruction_types" ToRole="instructions" />
-  </EntityType>
-  <EntityType Name="position_status">
-    <Key>
-      <PropertyRef Name="code" />
-    </Key>
-    <Property Type="String" Name="code" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Type="String" Name="description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="account_positions" Relationship="MomentumBackTestsModel.FK_account_positions_position_status" FromRole="position_status" ToRole="account_positions" />
-  </EntityType>
-  <Association Name="FK_account_positions_position_status">
-    <End Type="MomentumBackTestsModel.position_status" Role="position_status" Multiplicity="0..1" />
-    <End Type="MomentumBackTestsModel.account_positions" Role="account_positions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="position_status">
-        <PropertyRef Name="code" />
-      </Principal>
-      <Dependent Role="account_positions">
-        <PropertyRef Name="status" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="accounts">
     <Key>
       <PropertyRef Name="id" />
@@ -363,18 +249,43 @@
     <Property Type="Int32" Name="customer_id" Nullable="false" />
     <Property Type="Int64" Name="account_number" Nullable="false" />
     <Property Type="Int32" Name="broker_id" Nullable="false" />
-    <Property Type="String" Name="ib_name" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ib_account" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="ib_url" MaxLength="150" FixedLength="false" Unicode="false" />
-    <Property Type="Int64" Name="ib_port" />
-    <Property Type="Decimal" Name="ib_balance" Precision="18" Scale="2" />
-    <Property Type="String" Name="ib_currency" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="account" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="url" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="port" />
+    <Property Type="Decimal" Name="balance" Precision="18" Scale="2" />
+    <Property Type="String" Name="currency" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="Decimal" Name="spicy_risk_free_percentage" Precision="18" Scale="4" />
+    <Property Type="String" Name="generic_s_number" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="account_portfolios" Relationship="MomentumBackTestsModel.FK_account_portfolios_accounts" FromRole="accounts" ToRole="account_portfolios" />
     <NavigationProperty Name="account_positions" Relationship="MomentumBackTestsModel.FK_account_positions_accounts" FromRole="accounts" ToRole="account_positions" />
     <NavigationProperty Name="brokers" Relationship="MomentumBackTestsModel.FK_accounts_brokers" FromRole="accounts" ToRole="brokers" />
     <NavigationProperty Name="customers" Relationship="MomentumBackTestsModel.FK_accounts_customers" FromRole="accounts" ToRole="customers" />
     <NavigationProperty Name="instructions" Relationship="MomentumBackTestsModel.FK_instructions_accounts" FromRole="accounts" ToRole="instructions" />
+  </EntityType>
+  <EntityType Name="brokers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_brokers" FromRole="brokers" ToRole="accounts" />
+  </EntityType>
+  <EntityType Name="customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="first_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="last_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="document_type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int64" Name="document_number" Nullable="false" />
+    <Property Type="String" Name="sex" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="birth_date" Precision="3" />
+    <Property Type="String" Name="contact" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_customers" FromRole="customers" ToRole="accounts" />
   </EntityType>
   <EntityType Name="daily_options">
     <Key>
@@ -384,6 +295,41 @@
     <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
     <Property Type="String" Name="symbol_sfx" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="processed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="instruction_types">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Type="String" Name="type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="instructions" Relationship="MomentumBackTestsModel.FK_instructions_instruction_types" FromRole="instruction_types" ToRole="instructions" />
+  </EntityType>
+  <EntityType Name="instructions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="portfolio_id" />
+    <Property Type="Int64" Name="account_position_id" />
+    <Property Type="String" Name="symbol" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="sec_type" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="shares" />
+    <Property Type="Decimal" Name="ammount" Precision="18" Scale="4" />
+    <Property Type="String" Name="side" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="account_id" Nullable="false" />
+    <Property Type="Int32" Name="related_instruction_id" />
+    <Property Type="Boolean" Name="executed" Nullable="false" />
+    <Property Type="Boolean" Name="is_merge" Nullable="false" />
+    <Property Type="String" Name="text" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="account_portfolios" Relationship="MomentumBackTestsModel.FK_instructions_account_portfolios" FromRole="instructions" ToRole="account_portfolios" />
+    <NavigationProperty Name="account_positions" Relationship="MomentumBackTestsModel.FK_instructions_account_positions" FromRole="instructions" ToRole="account_positions" />
+    <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_instructions_accounts" FromRole="instructions" ToRole="accounts" />
+    <NavigationProperty Name="instruction_types" Relationship="MomentumBackTestsModel.FK_instructions_instruction_types" FromRole="instructions" ToRole="instruction_types" />
+    <NavigationProperty Name="instructions1" Relationship="MomentumBackTestsModel.FK_instructions_instructions" FromRole="instructions" ToRole="instructions1" />
+    <NavigationProperty Name="instructions2" Relationship="MomentumBackTestsModel.FK_instructions_instructions" FromRole="instructions1" ToRole="instructions" />
   </EntityType>
   <EntityType Name="lookups">
     <Key>
@@ -393,6 +339,16 @@
     <Property Type="String" Name="key" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="string_value" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Decimal" Name="decimal_value" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="model_portfolios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
+    <NavigationProperty Name="account_portfolios" Relationship="MomentumBackTestsModel.FK_account_portfolios_portfolios" FromRole="model_portfolios" ToRole="account_portfolios" />
+    <NavigationProperty Name="portfolio_positions" Relationship="MomentumBackTestsModel.FK_portfolio_positions_portfolios" FromRole="model_portfolios" ToRole="portfolio_positions" />
   </EntityType>
   <EntityType Name="option_bids">
     <Key>
@@ -426,6 +382,37 @@
     <Property Type="Boolean" Name="expired" Nullable="false" />
     <NavigationProperty Name="option_bids" Relationship="MomentumBackTestsModel.FK_option_bids_options" FromRole="options" ToRole="option_bids" />
   </EntityType>
+  <EntityType Name="portfolio_positions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="portfolio_id" Nullable="false" />
+    <Property Type="Decimal" Name="weight" Nullable="false" Precision="18" Scale="4" />
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="model_portfolios" Relationship="MomentumBackTestsModel.FK_portfolio_positions_portfolios" FromRole="portfolio_positions" ToRole="model_portfolios" />
+  </EntityType>
+  <EntityType Name="position_status">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Type="String" Name="code" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="account_positions" Relationship="MomentumBackTestsModel.FK_account_positions_position_status" FromRole="position_status" ToRole="account_positions" />
+  </EntityType>
+  <EntityType Name="sessions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="session_id" Nullable="false" />
+    <Property Type="DateTime" Name="start_time" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="expiration_time" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="end_time" Precision="3" />
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="MomentumBackTestsModel.FK_sessions_users" FromRole="sessions" ToRole="users" />
+  </EntityType>
   <EntityType Name="stocks">
     <Key>
       <PropertyRef Name="symbol" />
@@ -445,8 +432,31 @@
     <Property Type="Decimal" Name="daily_expected_return_pct" Nullable="false" Precision="18" Scale="10" />
     <NavigationProperty Name="stocks" Relationship="MomentumBackTestsModel.FK_stocks_parameters_stocks" FromRole="stocks_parameters" ToRole="stocks" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="principal_id" Nullable="false" />
+    <Property Type="Int32" Name="diagram_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="version" />
+    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="login" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="active" Nullable="false" />
+    <NavigationProperty Name="sessions" Relationship="MomentumBackTestsModel.FK_sessions_users" FromRole="users" ToRole="sessions" />
+  </EntityType>
   <Association Name="FK_account_portfolios_accounts">
-    <End Type="MomentumBackTestsModel.accounts" Role="accounts" Multiplicity="1" />
+    <End Type="MomentumBackTestsModel.accounts" Role="accounts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="MomentumBackTestsModel.account_portfolios" Role="account_portfolios" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="accounts">
@@ -454,6 +464,32 @@
       </Principal>
       <Dependent Role="account_portfolios">
         <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_account_portfolios_portfolios">
+    <End Type="MomentumBackTestsModel.model_portfolios" Role="model_portfolios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MomentumBackTestsModel.account_portfolios" Role="account_portfolios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="model_portfolios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="account_portfolios">
+        <PropertyRef Name="portfolio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instructions_account_portfolios">
+    <End Type="MomentumBackTestsModel.account_portfolios" Role="account_portfolios" Multiplicity="0..1" />
+    <End Type="MomentumBackTestsModel.instructions" Role="instructions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account_portfolios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="instructions">
+        <PropertyRef Name="portfolio_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -468,6 +504,30 @@
       </Principal>
       <Dependent Role="account_positions">
         <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_account_positions_position_status">
+    <End Type="MomentumBackTestsModel.position_status" Role="position_status" Multiplicity="0..1" />
+    <End Type="MomentumBackTestsModel.account_positions" Role="account_positions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="position_status">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="account_positions">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instructions_account_positions">
+    <End Type="MomentumBackTestsModel.account_positions" Role="account_positions" Multiplicity="0..1" />
+    <End Type="MomentumBackTestsModel.instructions" Role="instructions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account_positions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="instructions">
+        <PropertyRef Name="account_position_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -494,84 +554,6 @@
       </Principal>
       <Dependent Role="accounts">
         <PropertyRef Name="customer_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_option_bids_options">
-    <End Type="MomentumBackTestsModel.options" Role="options" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="MomentumBackTestsModel.option_bids" Role="option_bids" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="options">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="option_bids">
-        <PropertyRef Name="option_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_stocks_parameters_stocks">
-    <End Type="MomentumBackTestsModel.stocks" Role="stocks" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="MomentumBackTestsModel.stocks_parameters" Role="stocks_parameters" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="stocks">
-        <PropertyRef Name="symbol" />
-      </Principal>
-      <Dependent Role="stocks_parameters">
-        <PropertyRef Name="symbol" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="instructions">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="DateTime" Name="date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="type" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="portfolio_id" />
-    <Property Type="Int64" Name="account_position_id" />
-    <Property Type="String" Name="symbol" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="sec_type" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="shares" />
-    <Property Type="Decimal" Name="ammount" Precision="18" Scale="4" />
-    <Property Type="String" Name="side" MaxLength="1" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="account_id" Nullable="false" />
-    <Property Type="Int32" Name="related_instruction_id" />
-    <Property Type="Boolean" Name="executed" Nullable="false" />
-    <Property Type="Boolean" Name="is_merge" Nullable="false" />
-    <Property Type="String" Name="text" MaxLength="100" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="account_portfolios" Relationship="MomentumBackTestsModel.FK_instructions_account_portfolios" FromRole="instructions" ToRole="account_portfolios" />
-    <NavigationProperty Name="account_positions" Relationship="MomentumBackTestsModel.FK_instructions_account_positions" FromRole="instructions" ToRole="account_positions" />
-    <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_instructions_accounts" FromRole="instructions" ToRole="accounts" />
-    <NavigationProperty Name="instruction_types" Relationship="MomentumBackTestsModel.FK_instructions_instruction_types" FromRole="instructions" ToRole="instruction_types" />
-    <NavigationProperty Name="instructions1" Relationship="MomentumBackTestsModel.FK_instructions_instructions" FromRole="instructions" ToRole="instructions1" />
-    <NavigationProperty Name="instructions2" Relationship="MomentumBackTestsModel.FK_instructions_instructions" FromRole="instructions1" ToRole="instructions" />
-  </EntityType>
-  <Association Name="FK_instructions_account_portfolios">
-    <End Type="MomentumBackTestsModel.account_portfolios" Role="account_portfolios" Multiplicity="0..1" />
-    <End Type="MomentumBackTestsModel.instructions" Role="instructions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="account_portfolios">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="instructions">
-        <PropertyRef Name="portfolio_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_instructions_account_positions">
-    <End Type="MomentumBackTestsModel.account_positions" Role="account_positions" Multiplicity="0..1" />
-    <End Type="MomentumBackTestsModel.instructions" Role="instructions" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="account_positions">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="instructions">
-        <PropertyRef Name="account_position_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -608,6 +590,62 @@
       </Principal>
       <Dependent Role="instructions1">
         <PropertyRef Name="related_instruction_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_portfolio_positions_portfolios">
+    <End Type="MomentumBackTestsModel.model_portfolios" Role="model_portfolios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MomentumBackTestsModel.portfolio_positions" Role="portfolio_positions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="model_portfolios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="portfolio_positions">
+        <PropertyRef Name="portfolio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_option_bids_options">
+    <End Type="MomentumBackTestsModel.options" Role="options" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MomentumBackTestsModel.option_bids" Role="option_bids" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="options">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="option_bids">
+        <PropertyRef Name="option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sessions_users">
+    <End Type="MomentumBackTestsModel.users" Role="users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MomentumBackTestsModel.sessions" Role="sessions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="sessions">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_stocks_parameters_stocks">
+    <End Type="MomentumBackTestsModel.stocks" Role="stocks" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="MomentumBackTestsModel.stocks_parameters" Role="stocks_parameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stocks">
+        <PropertyRef Name="symbol" />
+      </Principal>
+      <Dependent Role="stocks_parameters">
+        <PropertyRef Name="symbol" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

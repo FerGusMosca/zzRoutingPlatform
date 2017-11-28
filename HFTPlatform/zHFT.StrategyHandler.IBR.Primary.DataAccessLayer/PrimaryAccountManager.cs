@@ -18,7 +18,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
         public PrimaryAccountManager(OnLogMessage OnLogMsg, List<ConfigKey> pConfigParameters)
         {
             Logger = OnLogMsg;
-            Account = new Account() { IBName = "Primary Account Manager Test" };
+            Account = new Account() { Name = "Primary Account Manager Test" };
         }
 
         #endregion

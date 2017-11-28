@@ -986,7 +986,7 @@ namespace zHFT.OptionsMarketClient.IB.Client
                                 DoLog(string.Format("@{0}  - Could not find underlying price for security: {1} ",
                                       OMCConfiguration.Name,opt.SymbolSfx ),Main.Common.Util.Constants.MessageType.Information);
 
-                            RunPublishSecurity(opt, Config);
+                            RunPublishSecurity(opt);
                         }
                     }
                 }

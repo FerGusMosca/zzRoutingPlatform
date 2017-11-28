@@ -91,14 +91,27 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
 
                 lock (tLock)
                 {
-                    foreach (Security sec in ActiveSecurities.Values)
+                    try
                     {
-                        RunPublishSecurity(sec, IBConfiguration);
-                    }
+                        foreach (Security sec in ActiveSecurities.Values)
+                        {
+                            //Thread runPublishThread = new Thread(DoRunPublishSecurity);
+                            //runPublishThread.Start(sec);
+                            RunPublishSecurity(sec);
+                        }
 
-                    foreach (Security sec in ActiveSecuritiesOnDemand.Values)
+                        foreach (Security sec in ActiveSecuritiesOnDemand.Values)
+                        {
+                            //Thread runPublishThreadOnDemand = new Thread(DoRunPublishSecurity);
+                            //runPublishThreadOnDemand.Start(sec);
+
+                        }
+                    }
+                    catch (Exception ex)
                     {
-                        RunPublishSecurity(sec, IBConfiguration);
+                        DoLog(string.Format("@{1}:There was an error publishing securities market data from market data flow error={0} ", ex.Message, IBConfiguration.Name),
+                             Main.Common.Util.Constants.MessageType.Error);
+
                     }
                 }
 
@@ -165,7 +178,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                         {
                             zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new MarketClient.IB.Common.Configuration.Contract();
 
-                            ctr.Currency = instr.Account.IBCurrency;
+                            ctr.Currency = instr.Account.Currency;
                             ctr.Exchange = IBConfiguration.Exchange;
                             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(instr.SecurityType);
                             ctr.Symbol = instr.Symbol;
@@ -352,24 +365,16 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
         { 
             if(ActiveSecurities.Values.Any(x=>x.Symbol==sec.Symbol))
             {
-                lock (tLock)
-                {
-                    int tickerId = ActiveSecurities.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
-                    DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
-                    ActiveSecurities.Remove(tickerId);
-                    ClientSocket.cancelMktData(tickerId);
-                }
-                    
+                int tickerId = ActiveSecurities.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
+                DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                ClientSocket.cancelMktData(tickerId);
             }
             else if (ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
             {
-                lock (tLock)
-                {
-                    int tickerId = ActiveSecuritiesOnDemand.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
-                    DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
-                    ActiveSecuritiesOnDemand.Remove(tickerId);
-                    ClientSocket.cancelMktData(tickerId);
-                }
+                int tickerId = ActiveSecuritiesOnDemand.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
+                DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                ClientSocket.cancelMktData(tickerId);
+                
             }
             else
                 throw new Exception(string.Format("@{0}: Could not find active security to unsubscribe for symbol {1}", IBConfiguration.Name, sec.Symbol));

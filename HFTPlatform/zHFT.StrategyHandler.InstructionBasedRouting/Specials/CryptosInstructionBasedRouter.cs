@@ -29,7 +29,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 {
                     Symbol = instr.Symbol,
                     MarketData = null,
-                    Currency = instr.Account.IBCurrency,
+                    Currency = instr.Account.Currency,
                     SecType = instr.SecurityType
                 },
                 Side = zHFT.Main.Common.Enums.Side.Sell,

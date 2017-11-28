@@ -128,8 +128,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             {
                 if (tag == _AVAILABLE_FUNDS)
                 {
-                    AccountToSync.IBBalance = Convert.ToDecimal(value);
-                    AccountToSync.IBCurrency = currency;
+                    AccountToSync.Balance = Convert.ToDecimal(value);
+                    AccountToSync.Currency = currency;
                     ReqAccountSummary = false;
                 }
 
@@ -185,7 +185,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
         {
             try
             {
-                if (account == AccountToSync.IBAccount)
+                if (account == AccountToSync.AccountDesc)
                 {
                     DoLog(string.Format("Synchronizing position for symbol {0}   ", contract.Symbol));
                     AccountPosition accPos = new AccountPosition();
@@ -218,7 +218,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         public bool SyncAccountPositions(Account account)
         {
-            if (account.IBURL == null || !account.IBPort.HasValue)
+            if (account.URL == null || !account.Port.HasValue)
                 throw new Exception("Debe especificar la URl y el puerto de la cuenta de Interactive Brokers para acceder a datos de la misma");
 
 
@@ -227,7 +227,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
                 lock (tLock)
                 {
                     ClientSocket = new EClientSocket(this);
-                    ClientSocket.eConnect(account.IBURL, Convert.ToInt32(account.IBPort), account.Id);
+                    ClientSocket.eConnect(account.URL, Convert.ToInt32(account.Port), account.Id);
                     ReqAccountPositions = true;
                     AbortOnTimeout = false;
                     Positions = new List<AccountPosition>();
@@ -267,14 +267,14 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         public bool SyncAccountBalance(Account account)
         {
-            if (account.IBURL == null || !account.IBPort.HasValue)
+            if (account.URL == null || !account.Port.HasValue)
                 throw new Exception("Debe especificar la URl y el puerto de la cuenta de Interactive Brokers para acceder a datos de la misma");
             try
             {
                 lock (tLock)
                 {
                     ClientSocket = new EClientSocket(this);
-                    ClientSocket.eConnect(account.IBURL, Convert.ToInt32(account.IBPort), account.Id);
+                    ClientSocket.eConnect(account.URL, Convert.ToInt32(account.Port), account.Id);
                     ReqAccountSummary = true;
                     AbortOnTimeout = false;
                     AccountToSync = account;

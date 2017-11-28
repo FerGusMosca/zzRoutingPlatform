@@ -80,8 +80,8 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
             {
                 if (tag == _AVAILABLE_FUNDS)
                 {
-                    AccountToSync.IBBalance = Convert.ToDecimal(value);
-                    AccountToSync.IBCurrency = currency;
+                    AccountToSync.Balance = Convert.ToDecimal(value);
+                    AccountToSync.Currency = currency;
                     ReqAccountSummary = false;
                 }
 
@@ -172,7 +172,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
 
         public bool SyncAccountPositions(Account account)
         {
-            if (account.IBURL == null || !account.IBPort.HasValue)
+            if (account.URL == null || !account.Port.HasValue)
                 throw new Exception("Debe especificar la URl y el puerto de la cuenta de Interactive Brokers para acceder a datos de la misma");
 
 
@@ -181,7 +181,7 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
                 lock (tLock)
                 {
                     ClientSocket = new EClientSocket(this);
-                    ClientSocket.eConnect(account.IBURL, Convert.ToInt32(account.IBPort), account.Id);
+                    ClientSocket.eConnect(account.URL, Convert.ToInt32(account.Port), account.Id);
                     ReqAccountPositions = true;
                     Positions = new List<AccountPosition>();
                     AccountToSync = account;
@@ -218,14 +218,14 @@ namespace zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers
 
         public bool SyncAccountBalance(Account account)
         {
-            if (account.IBURL == null || !account.IBPort.HasValue)
+            if (account.URL == null || !account.Port.HasValue)
                 throw new Exception("Debe especificar la URl y el puerto de la cuenta de Interactive Brokers para acceder a datos de la misma");
             try
             {
                 lock (tLock)
                 {
                     ClientSocket = new EClientSocket(this);
-                    ClientSocket.eConnect(account.IBURL, Convert.ToInt32(account.IBPort), account.Id);
+                    ClientSocket.eConnect(account.URL, Convert.ToInt32(account.Port), account.Id);
                     ReqAccountSummary = true;
                     AccountToSync = account;
                     //ClientSocket.reqAccountSummary(account.Id, _ALL_ACCOUNTS, AccountSummaryTags.GetAllTags());

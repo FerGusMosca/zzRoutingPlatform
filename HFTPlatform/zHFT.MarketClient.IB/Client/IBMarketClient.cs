@@ -114,7 +114,7 @@ namespace zHFT.MarketClient.IB.Client
                 {
                     foreach (Security sec in ContractRequests.Values)
                     {
-                        RunPublishSecurity(sec, Config);
+                        RunPublishSecurity(sec);
                     }
                 }
             

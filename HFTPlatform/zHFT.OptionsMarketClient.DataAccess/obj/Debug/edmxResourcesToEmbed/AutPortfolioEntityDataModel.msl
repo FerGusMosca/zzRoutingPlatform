@@ -281,23 +281,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="accounts">
-      <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts">
-        <MappingFragment StoreEntitySet="accounts">
-          <ScalarProperty Name="spicy_risk_free_percentage" ColumnName="spicy_risk_free_percentage" />
-          <ScalarProperty Name="ib_currency" ColumnName="ib_currency" />
-          <ScalarProperty Name="ib_balance" ColumnName="ib_balance" />
-          <ScalarProperty Name="ib_port" ColumnName="ib_port" />
-          <ScalarProperty Name="ib_url" ColumnName="ib_url" />
-          <ScalarProperty Name="ib_account" ColumnName="ib_account" />
-          <ScalarProperty Name="ib_name" ColumnName="ib_name" />
-          <ScalarProperty Name="broker_id" ColumnName="broker_id" />
-          <ScalarProperty Name="account_number" ColumnName="account_number" />
-          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="lookups">
       <EntityTypeMapping TypeName="MomentumBackTestsModel.lookups">
         <MappingFragment StoreEntitySet="lookups">

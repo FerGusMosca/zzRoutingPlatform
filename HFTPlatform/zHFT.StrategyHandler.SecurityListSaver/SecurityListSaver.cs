@@ -89,7 +89,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                         stockSecToRequest.Exchange = market.Code;
                         stockSecToRequest.SecType = SecurityType.CS;
 
-                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest, SubscriptionRequestType.SnapshotAndUpdates);
                         OnMessageRcv(wrapper);
                     }
                 }
@@ -109,7 +109,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                         stockSecToRequest.Exchange = market.Code;
                         stockSecToRequest.SecType = SecurityType.OPT;
 
-                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest);
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest, SubscriptionRequestType.SnapshotAndUpdates);
                         OnMessageRcv(wrapper);
                     }
                 }
