@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using zHFT.InstructionBasedMarketClient.Bittrex.Common.DTO;
 using zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.Managers;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Converters;
 using zHFT.MarketClient.Common.Wrappers;
 
 
@@ -158,7 +160,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                 if (instr != null)
                 {
                     if (!ActiveSecurities.Keys.Contains(instr.Id)
-                        && !ActiveSecurities.Values.Any(x=>x.Symbol==instr.Symbol))
+                        && !ActiveSecurities.Values.Where(x=>x.Active).Any(x => x.Symbol == instr.Symbol))
                     {
                         instr = InstructionManager.GetById(instr.Id);
 
@@ -216,7 +218,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
                     lock (tLock)
                     {
-                        if (ActiveSecurities.Values.Any(x => x.Symbol == instrx.Symbol))
+                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == instrx.Symbol))
                         {
                             try
                             {
@@ -253,12 +255,16 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                             catch (Exception ex)
                             {
                                 DoLog(string.Format("@{0}:Error Requesting market data por symbol {1}:{2}",
-                                        BittrexConfiguration.Name, instrx.Symbol,ex.Message), Main.Common.Util.Constants.MessageType.Information);
+                                        BittrexConfiguration.Name, instrx.Symbol, ex.Message), Main.Common.Util.Constants.MessageType.Information);
                                 activo = false;
                             }
                         }
                         else
+                        {
+                            DoLog(string.Format("@{0}:Unsubscribing market data por symbol {1}", BittrexConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+
                             activo = false;
+                        }
                     }
                 }
 
@@ -301,6 +307,47 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             }
         }
 
+        protected void CancelMarketData(Security sec)
+        {
+            if (ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol))
+            {
+                Security toUnsubscribe = ActiveSecurities.Values.Where(x => x.Symbol == sec.Symbol).FirstOrDefault();
+                toUnsubscribe.Active = false;
+                DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", BittrexConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+            }
+            else
+                throw new Exception(string.Format("@{0}: Could not find active security to unsubscribe for symbol {1}", BittrexConfiguration.Name, sec.Symbol));
+
+        }
+
+        protected CMState ProessMarketDataRequest(Wrapper wrapper)
+        {
+            try
+            {
+                MarketDataRequest mdr = MarketDataRequestConverter.GetMarketDataRequest(wrapper);
+
+                if (mdr.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
+                {
+                    throw new Exception(string.Format("@{0}: Market Data snaphsot not implemented for symbol {1}", BittrexConfiguration.Name, mdr.Security.Symbol));
+                }
+                else if (mdr.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
+                {
+                    throw new Exception(string.Format("@{0}: Market Data snaphsot+updates not implemented for symbol {1}", BittrexConfiguration.Name, mdr.Security.Symbol));
+                }
+                else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
+                {
+                    CancelMarketData(mdr.Security);
+                    return CMState.BuildSuccess();
+                }
+                else
+                    throw new Exception(string.Format("@{0}: Value not recognized for subscription type {1} for symbol {2}", BittrexConfiguration.Name, mdr.SubscriptionRequestType.ToString(), mdr.Security.Symbol));
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
+        }
+
         #endregion
 
         #region Public Methods
@@ -315,6 +362,10 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                     if (action == Actions.SECURITY_LIST_REQUEST)
                     {
                         return CMState.BuildSuccess();
+                    }
+                    else if (Actions.MARKET_DATA_REQUEST == action)
+                    {
+                        return ProessMarketDataRequest(wrapper);
                     }
                     else
                     {

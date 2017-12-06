@@ -1,0 +1,18 @@
+2017-12-01 9:55:42  :: 1/12/2017 09:55:42MainApp.LoadConfig
+2017-12-01 9:55:42  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-01 9:55:42  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-01 9:55:42  :: Fin GetConfiguracion
+2017-12-01 9:55:42  :: Initializing Log
+2017-12-01 9:55:42  :: Initializing Incoming Module
+2017-12-01 9:55:43  :: Incoming Module successfully initialized
+2017-12-01 9:55:43  :: Initializing Outgoing Module
+2017-12-01 9:55:43  :: Outgoing Module successfully initialized
+2017-12-01 15:06:40  :: 1/12/2017 15:06:40MainApp.LoadConfig
+2017-12-01 15:06:40  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-01 15:06:40  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-01 15:06:40  :: Fin GetConfiguracion
+2017-12-01 15:06:41  :: Initializing Log
+2017-12-01 15:06:41  :: Initializing Incoming Module
+2017-12-01 15:06:41  :: Incoming Module successfully initialized
+2017-12-01 15:06:41  :: Initializing Outgoing Module
+2017-12-01 15:06:42  :: Outgoing Module successfully initialized

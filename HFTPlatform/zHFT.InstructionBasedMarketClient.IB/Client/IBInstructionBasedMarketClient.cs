@@ -14,6 +14,7 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Converters;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.IB.Common;
 using zHFT.MarketClient.IB.Common.Converters;
@@ -93,19 +94,31 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                 {
                     try
                     {
-                        foreach (Security sec in ActiveSecurities.Values)
+                        List<int> keysToRemove = new List<int>();
+                        foreach (int key in ActiveSecurities.Keys)
                         {
-                            //Thread runPublishThread = new Thread(DoRunPublishSecurity);
-                            //runPublishThread.Start(sec);
-                            RunPublishSecurity(sec);
+                            Security sec = ActiveSecurities[key];
+
+                            if (sec.Active)
+                                RunPublishSecurity(sec);
+                            else
+                                keysToRemove.Add(key);
                         }
 
-                        foreach (Security sec in ActiveSecuritiesOnDemand.Values)
+                        keysToRemove.ForEach(x => ActiveSecurities.Remove(x));
+                        keysToRemove.Clear();
+
+                        foreach (int key in ActiveSecuritiesOnDemand.Keys)
                         {
-                            //Thread runPublishThreadOnDemand = new Thread(DoRunPublishSecurity);
-                            //runPublishThreadOnDemand.Start(sec);
+                            Security sec = ActiveSecuritiesOnDemand[key];
+
+                            if (sec.Active)
+                                RunPublishSecurity(sec);
+                            else
+                                keysToRemove.Add(key);
 
                         }
+                        keysToRemove.ForEach(x => ActiveSecuritiesOnDemand.Remove(x));
                     }
                     catch (Exception ex)
                     {
@@ -170,7 +183,9 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
 
                 if (instr != null)
                 {
-                    if (!ActiveSecurities.Keys.Contains(instr.Id))
+                    if (!ActiveSecurities.Keys.Contains(instr.Id) //ya no pedimos la instrx
+                        && !ActiveSecurities.Values.Where(x=>x.Active).Any(x=>x.Symbol==instr.Symbol)//ya no estamos recuperando el market data del symbol
+                        )
                     {
                         instr = InstructionManager.GetById(instr.Id);
 
@@ -366,12 +381,14 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
             if(ActiveSecurities.Values.Any(x=>x.Symbol==sec.Symbol))
             {
                 int tickerId = ActiveSecurities.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
+                ActiveSecurities[tickerId].Active = false;
                 DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
                 ClientSocket.cancelMktData(tickerId);
             }
             else if (ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
             {
                 int tickerId = ActiveSecuritiesOnDemand.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
+                ActiveSecurities[tickerId].Active = false;
                 DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
                 ClientSocket.cancelMktData(tickerId);
                 

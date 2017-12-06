@@ -27,6 +27,8 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public Halted? Halted { get; set; }
 
+        public bool Active { get; set; }
+
         #region Option Attributes
 
         public double? StrikePrice { get; set; }
@@ -82,6 +84,8 @@ namespace zHFT.Main.BusinessEntities.Securities
         public Security() 
         {
             MarketData = new MarketData();
+
+            Active = true;
         }
 
         #endregion
