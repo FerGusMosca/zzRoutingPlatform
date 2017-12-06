@@ -46,6 +46,7 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
         private string _SIMULATE = "Simulate";
 
         private string _USD_CURRENCY = "USDT";
+        private string _BTC_CURRENCY = "BTC";
 
         #endregion
 
@@ -112,6 +113,80 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
             };
         }
 
+        public bool MarketExists(string quoteCurrency, string currency)
+        {
+            Exchange exchange = new Exchange();
+
+            ExchangeContext ctx = new ExchangeContext();
+            ctx.QuoteCurrency = quoteCurrency;
+
+            exchange.Initialise(ctx);
+
+            try
+            {
+                GetMarketSummaryResponse resp = exchange.GetMarketSummary(currency);
+
+                return resp != null;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public decimal GetBitcoinPriceInUSD()
+        {
+            Exchange exch = new Exchange();
+            ExchangeContext ctx = GetContext();
+            ctx.QuoteCurrency = _USD_CURRENCY;
+            exch.Initialise(ctx);
+
+            GetMarketSummaryResponse summary = exch.GetMarketSummary(_BTC_CURRENCY);
+
+            return summary.Last;
+           
+        }
+
+        protected void RecoverMarketPriceForPosition(ref AccountPosition pos)
+        {
+            try
+            {
+                if (MarketExists(ExchangeContext.QuoteCurrency, pos.Security.Symbol))
+                {
+                    GetMarketSummaryResponse summary = Exchange.GetMarketSummary(pos.Security.Symbol);
+                    pos.MarketPrice = summary.Last;
+
+                }
+                else if (MarketExists(_BTC_CURRENCY, pos.Security.Symbol))
+                {
+                    Exchange revExch = new Exchange();
+                    ExchangeContext ctx = GetContext();
+                    ctx.QuoteCurrency = _BTC_CURRENCY;
+                    revExch.Initialise(ctx);
+                    //Pedimos el precio en Bitcoins
+                    GetMarketSummaryResponse summary = revExch.GetMarketSummary(pos.Security.Symbol);
+
+                    pos.MarketPrice = GetBitcoinPriceInUSD() * summary.Last;
+                }
+                else if (MarketExists(pos.Security.Symbol, _BTC_CURRENCY))
+                {
+                    Exchange revExch = new Exchange();
+                    ExchangeContext ctx = GetContext();
+                    ctx.QuoteCurrency = pos.Security.Symbol;
+                    revExch.Initialise(ctx);
+                    //Pedimos el precio en Bitcoins
+                    GetMarketSummaryResponse summary = revExch.GetMarketSummary(_BTC_CURRENCY);
+                    pos.MarketPrice = GetBitcoinPriceInUSD() * (1 / summary.Last);
+                }
+                else
+                    pos.MarketPrice = 0;
+            }
+            catch (Exception)
+            {
+                pos.MarketPrice = 0;//Si no se pudo recuperar, mala suerte
+            }
+        }
+
         #endregion
 
         #region Public Methods
@@ -132,7 +207,6 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
 
                     foreach (AccountBalance balance in resp)
                     {
-
                         AccountPosition pos = new AccountPosition();
 
                         pos.Account = account;
@@ -141,28 +215,12 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                         pos.Security = new Security() { Symbol = balance.Currency };
                         pos.Ammount = balance.Available;
 
-                        if (balance.Currency != ExchangeContext.QuoteCurrency)
-                        {
-                            try
-                            {
-                                GetMarketSummaryResponse summary = Exchange.GetMarketSummary(balance.Currency);
-
-                                if (summary != null)
-                                    pos.MarketPrice = summary.Last;
-                            }
-                            catch (Exception ex)
-                            {
-                                pos.MarketPrice = 0;//No puedo saber el market price contra dolar (USDT)
-                            }
-                        }
-                        else
-                            pos.MarketPrice = 1;
+                        RecoverMarketPriceForPosition(ref pos);
 
                         Positions.Add(pos);
                     }
 
                     ReqAccountPositions = false;
-                   
 
                     return true;
                 }
