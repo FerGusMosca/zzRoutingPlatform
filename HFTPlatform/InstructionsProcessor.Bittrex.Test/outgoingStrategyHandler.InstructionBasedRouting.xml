@@ -26,20 +26,20 @@
 
   <AccountManagerConfig>
     <Config>
-      <Key>ApiKey</Key>
-      <Value>f1cf7fe940224b4cbfc08f716749d983</Value>
-    </Config>
-    <Config>
-      <Key>Secret</Key>
-      <Value>772305fdeeb542cebb990c47d66829b8</Value>
-    </Config>
-    <Config>
       <Key>QuoteCurrency</Key>
       <Value>USDT</Value>
     </Config>
     <Config>
       <Key>Simulate</Key>
       <Value>true</Value>
+    </Config>
+    <Config>
+      <Key>AccountNumber</Key>
+      <Value>1</Value>
+    </Config>
+    <Config>
+      <Key>ConfigConnectionString</Key>
+      <Value>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=Matter;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</Value>
     </Config>
   </AccountManagerConfig>
   

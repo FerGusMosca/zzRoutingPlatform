@@ -58,9 +58,17 @@
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Bittrex.BusinessEntities\zHFT.OrderRouters.Bittrex.BusinessEntities.csproj">
+      <Project>{b0204c14-b660-4c85-b953-43a80192827b}</Project>
+      <Name>zHFT.OrderRouters.Bittrex.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters.Bittrex.Common\zHFT.OrderRouters.Bittrex.Common.csproj">
       <Project>{b8d0d712-dbb0-4fb1-b603-5aa7de283212}</Project>
       <Name>zHFT.OrderRouters.Bittrex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Bittrex.DataAccessLayer\zHFT.OrderRouters.Bittrex.DataAccessLayer.csproj">
+      <Project>{144dce8e-bb40-4815-9275-a2496386fa1c}</Project>
+      <Name>zHFT.OrderRouters.Bittrex.DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
       <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>

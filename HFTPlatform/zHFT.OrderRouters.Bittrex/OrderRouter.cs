@@ -12,7 +12,9 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
+using zHFT.OrderRouters.Bittrex.BusinessEntities;
 using zHFT.OrderRouters.Bittrex.Common.Wrappers;
+using zHFT.OrderRouters.Bittrex.DataAccessLayer.Managers;
 using zHFT.OrderRouters.Common;
 
 namespace zHFT.OrderRouters.Bittrex
@@ -39,6 +41,8 @@ namespace zHFT.OrderRouters.Bittrex
         private Dictionary<string, bool> ReverseCurrency { get; set; }
 
         protected Thread ExecutionReportThread { get; set; }
+
+        protected AccountBittrexDataManager AccountBittrexDataManager { get; set; }
 
         protected List<string> CanceledOrders { get; set; }
 
@@ -486,12 +490,21 @@ namespace zHFT.OrderRouters.Bittrex
                     CanceledOrders = new List<string>();
                     ReverseCurrency = new Dictionary<string, bool>();
 
+                    AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.ConfigConnectionString);
+
                     OrderIdMappers = new Dictionary<string, string>();
 
                     ExecutionReportThread = new Thread(DoEvalExecutionReport);
                     ExecutionReportThread.Start();
 
                     //Todo inicializar mundo Bittrex
+                    AccountBittrexData bittrexData = AccountBittrexDataManager.GetByAccountNumber(BittrexConfiguration.AccountNumber);
+
+                    if (bittrexData == null)
+                        throw new Exception(string.Format("No se encontró ninguna configuración de autenticación contra Bittrex de la cuenta {0}", BittrexConfiguration.AccountNumber));
+
+                    BittrexConfiguration.ApiKey = bittrexData.APIKey;
+                    BittrexConfiguration.Secret = bittrexData.Secret;
 
                     return true;
                 }

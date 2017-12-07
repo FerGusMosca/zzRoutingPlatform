@@ -40,12 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\AccountBittrexDataManager.cs" />
     <Compile Include="Managers\AccountManager.cs" />
     <Compile Include="Managers\InstructionManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities\zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities.csproj">
+      <Project>{623598b1-6d75-4ca2-b0d7-1ef889116f0a}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.csproj">
       <Project>{8213d913-10b7-49e3-9e6f-eb83dc40a40b}</Project>
       <Name>zHFT.InstructionBasedMarketClient.Bittrex.DataAccess</Name>

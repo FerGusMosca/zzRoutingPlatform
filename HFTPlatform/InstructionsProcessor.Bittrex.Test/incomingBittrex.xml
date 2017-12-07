@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>Incoming Bittrex</Name>
-  <ApiKey>f1cf7fe940224b4cbfc08f716749d983</ApiKey>
-  <Secret>772305fdeeb542cebb990c47d66829b8</Secret>
   <QuoteCurrency>BTC</QuoteCurrency>
   <Simulate>false</Simulate>
-
 
   <InstructionsAccessLayerConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=Matter;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 

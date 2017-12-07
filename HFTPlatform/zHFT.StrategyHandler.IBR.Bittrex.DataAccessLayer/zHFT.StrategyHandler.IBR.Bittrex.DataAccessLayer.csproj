@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\AccountBittrexDataManager.cs" />
     <Compile Include="Managers\AccountManager.cs" />
     <Compile Include="BittrexAccountManager.cs" />
     <Compile Include="Managers\InstructionManager.cs" />
@@ -58,6 +59,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csproj">
+      <Project>{704a341a-fa36-4b00-bd9d-5d365475295a}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.csproj">
       <Project>{b6c0c46c-0846-441e-945a-06c16d5b5535}</Project>

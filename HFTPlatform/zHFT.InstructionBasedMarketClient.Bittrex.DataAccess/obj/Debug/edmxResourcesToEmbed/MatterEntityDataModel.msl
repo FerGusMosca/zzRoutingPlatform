@@ -234,6 +234,7 @@
     <EntitySetMapping Name="accounts">
       <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts">
         <MappingFragment StoreEntitySet="accounts">
+          <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
           <ScalarProperty Name="balance" ColumnName="balance" />
           <ScalarProperty Name="generic_s_number" ColumnName="generic_s_number" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -284,6 +285,49 @@
           <ScalarProperty Name="portfolio_id" ColumnName="portfolio_id" />
           <ScalarProperty Name="type" ColumnName="type" />
           <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accounts_bittrex_data">
+      <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts_bittrex_data">
+        <MappingFragment StoreEntitySet="accounts_bittrex_data">
+          <ScalarProperty Name="secret" ColumnName="secret" />
+          <ScalarProperty Name="api_key" ColumnName="api_key" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="balance_movements">
+      <EntityTypeMapping TypeName="MomentumBackTestsModel.balance_movements">
+        <MappingFragment StoreEntitySet="balance_movements">
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="shares" ColumnName="shares" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="net_ammount_btc" ColumnName="net_ammount_btc" />
+          <ScalarProperty Name="net_ammount_usd" ColumnName="net_ammount_usd" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expositions">
+      <EntityTypeMapping TypeName="MomentumBackTestsModel.expositions">
+        <MappingFragment StoreEntitySet="expositions">
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="strategies">
+      <EntityTypeMapping TypeName="MomentumBackTestsModel.strategies">
+        <MappingFragment StoreEntitySet="strategies">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="code" ColumnName="code" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

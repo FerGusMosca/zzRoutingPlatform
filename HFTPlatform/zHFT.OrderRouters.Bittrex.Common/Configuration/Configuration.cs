@@ -16,6 +16,10 @@ namespace zHFT.OrderRouters.Bittrex.Common.Configuration
         public string QuoteCurrency { get; set; }
         public bool Simulate { get; set; }
 
+        public int AccountNumber { get; set; }
+
+        public string ConfigConnectionString { get; set; }
+
         public int RefreshExecutionReportsInMilisec { get; set; }
 
         #endregion
@@ -26,17 +30,6 @@ namespace zHFT.OrderRouters.Bittrex.Common.Configuration
         {
             bool resultado = true;
 
-            if (string.IsNullOrEmpty(ApiKey))
-            {
-                result.Add("ApiKey");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(Secret))
-            {
-                result.Add("Secret");
-                resultado = false;
-            }
 
             if (string.IsNullOrEmpty(QuoteCurrency))
             {
@@ -45,9 +38,22 @@ namespace zHFT.OrderRouters.Bittrex.Common.Configuration
             }
 
 
+            if (string.IsNullOrEmpty(ConfigConnectionString))
+            {
+                result.Add("ConfigConnectionString");
+                resultado = false;
+            }
+
+
             if (RefreshExecutionReportsInMilisec<=0)
             {
                 result.Add("RefreshExecutionReportsInMilisec");
+                resultado = false;
+            }
+
+            if (AccountNumber <= 0)
+            {
+                result.Add("AccountNumber");
                 resultado = false;
             }
 

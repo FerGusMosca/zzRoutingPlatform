@@ -32,6 +32,12 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instruction_types), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instructions", "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), "instructions1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_bittrex_data_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), "accounts_bittrex_data", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts_bittrex_data), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_strategies", "strategies", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.strategies), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.accounts), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_balance_movements_customers", "customers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.customers), "balance_movements", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.balance_movements), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_balance_movements_strategies", "strategies", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.strategies), "balance_movements", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.balance_movements), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_expositions_customers", "customers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.customers), "expositions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.expositions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_expositions_strategies", "strategies", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.strategies), "expositions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Bittrex.DataAccess.expositions), true)]
 
 #endregion
 
@@ -306,6 +312,70 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
             }
         }
         private ObjectSet<instructions> _instructions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<accounts_bittrex_data> accounts_bittrex_data
+        {
+            get
+            {
+                if ((_accounts_bittrex_data == null))
+                {
+                    _accounts_bittrex_data = base.CreateObjectSet<accounts_bittrex_data>("accounts_bittrex_data");
+                }
+                return _accounts_bittrex_data;
+            }
+        }
+        private ObjectSet<accounts_bittrex_data> _accounts_bittrex_data;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<balance_movements> balance_movements
+        {
+            get
+            {
+                if ((_balance_movements == null))
+                {
+                    _balance_movements = base.CreateObjectSet<balance_movements>("balance_movements");
+                }
+                return _balance_movements;
+            }
+        }
+        private ObjectSet<balance_movements> _balance_movements;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<expositions> expositions
+        {
+            get
+            {
+                if ((_expositions == null))
+                {
+                    _expositions = base.CreateObjectSet<expositions>("expositions");
+                }
+                return _expositions;
+            }
+        }
+        private ObjectSet<expositions> _expositions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<strategies> strategies
+        {
+            get
+            {
+                if ((_strategies == null))
+                {
+                    _strategies = base.CreateObjectSet<strategies>("strategies");
+                }
+                return _strategies;
+            }
+        }
+        private ObjectSet<strategies> _strategies;
 
         #endregion
 
@@ -421,6 +491,38 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         public void AddToinstructions(instructions instructions)
         {
             base.AddObject("instructions", instructions);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the accounts_bittrex_data EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToaccounts_bittrex_data(accounts_bittrex_data accounts_bittrex_data)
+        {
+            base.AddObject("accounts_bittrex_data", accounts_bittrex_data);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the balance_movements EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTobalance_movements(balance_movements balance_movements)
+        {
+            base.AddObject("balance_movements", balance_movements);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the expositions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToexpositions(expositions expositions)
+        {
+            base.AddObject("expositions", expositions);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the strategies EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTostrategies(strategies strategies)
+        {
+            base.AddObject("strategies", strategies);
         }
 
         #endregion
@@ -1782,6 +1884,30 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
         private Nullable<global::System.Decimal> _balance;
         partial void OnbalanceChanging(Nullable<global::System.Decimal> value);
         partial void OnbalanceChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> strategy_id
+        {
+            get
+            {
+                return _strategy_id;
+            }
+            set
+            {
+                Onstrategy_idChanging(value);
+                ReportPropertyChanging("strategy_id");
+                _strategy_id = StructuralObject.SetValidValue(value, "strategy_id");
+                ReportPropertyChanged("strategy_id");
+                Onstrategy_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _strategy_id;
+        partial void Onstrategy_idChanging(Nullable<global::System.Int32> value);
+        partial void Onstrategy_idChanged();
 
         #endregion
 
@@ -1925,6 +2051,556 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_bittrex_data_accounts", "accounts_bittrex_data")]
+        public EntityCollection<accounts_bittrex_data> accounts_bittrex_data
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<accounts_bittrex_data>("MomentumBackTestsModel.FK_accounts_bittrex_data_accounts", "accounts_bittrex_data");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<accounts_bittrex_data>("MomentumBackTestsModel.FK_accounts_bittrex_data_accounts", "accounts_bittrex_data", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_strategies", "strategies")]
+        public strategies strategies
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_accounts_strategies", "strategies").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_accounts_strategies", "strategies").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<strategies> strategiesReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_accounts_strategies", "strategies");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<strategies>("MomentumBackTestsModel.FK_accounts_strategies", "strategies", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MomentumBackTestsModel", Name="accounts_bittrex_data")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class accounts_bittrex_data : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new accounts_bittrex_data object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="account_id">Initial value of the account_id property.</param>
+        /// <param name="api_key">Initial value of the api_key property.</param>
+        /// <param name="secret">Initial value of the secret property.</param>
+        public static accounts_bittrex_data Createaccounts_bittrex_data(global::System.Int32 id, global::System.Int32 account_id, global::System.String api_key, global::System.String secret)
+        {
+            accounts_bittrex_data accounts_bittrex_data = new accounts_bittrex_data();
+            accounts_bittrex_data.id = id;
+            accounts_bittrex_data.account_id = account_id;
+            accounts_bittrex_data.api_key = api_key;
+            accounts_bittrex_data.secret = secret;
+            return accounts_bittrex_data;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 account_id
+        {
+            get
+            {
+                return _account_id;
+            }
+            set
+            {
+                Onaccount_idChanging(value);
+                ReportPropertyChanging("account_id");
+                _account_id = StructuralObject.SetValidValue(value, "account_id");
+                ReportPropertyChanged("account_id");
+                Onaccount_idChanged();
+            }
+        }
+        private global::System.Int32 _account_id;
+        partial void Onaccount_idChanging(global::System.Int32 value);
+        partial void Onaccount_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String api_key
+        {
+            get
+            {
+                return _api_key;
+            }
+            set
+            {
+                Onapi_keyChanging(value);
+                ReportPropertyChanging("api_key");
+                _api_key = StructuralObject.SetValidValue(value, false, "api_key");
+                ReportPropertyChanged("api_key");
+                Onapi_keyChanged();
+            }
+        }
+        private global::System.String _api_key;
+        partial void Onapi_keyChanging(global::System.String value);
+        partial void Onapi_keyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String secret
+        {
+            get
+            {
+                return _secret;
+            }
+            set
+            {
+                OnsecretChanging(value);
+                ReportPropertyChanging("secret");
+                _secret = StructuralObject.SetValidValue(value, false, "secret");
+                ReportPropertyChanged("secret");
+                OnsecretChanged();
+            }
+        }
+        private global::System.String _secret;
+        partial void OnsecretChanging(global::System.String value);
+        partial void OnsecretChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_bittrex_data_accounts", "accounts")]
+        public accounts accounts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_accounts_bittrex_data_accounts", "accounts").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_accounts_bittrex_data_accounts", "accounts").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<accounts> accountsReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<accounts>("MomentumBackTestsModel.FK_accounts_bittrex_data_accounts", "accounts");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<accounts>("MomentumBackTestsModel.FK_accounts_bittrex_data_accounts", "accounts", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MomentumBackTestsModel", Name="balance_movements")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class balance_movements : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new balance_movements object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="strategy_id">Initial value of the strategy_id property.</param>
+        /// <param name="date">Initial value of the date property.</param>
+        /// <param name="net_ammount_usd">Initial value of the net_ammount_usd property.</param>
+        /// <param name="net_ammount_btc">Initial value of the net_ammount_btc property.</param>
+        /// <param name="shares">Initial value of the shares property.</param>
+        public static balance_movements Createbalance_movements(global::System.Int64 id, global::System.Int32 strategy_id, global::System.DateTime date, global::System.Decimal net_ammount_usd, global::System.Decimal net_ammount_btc, global::System.Decimal shares)
+        {
+            balance_movements balance_movements = new balance_movements();
+            balance_movements.id = id;
+            balance_movements.strategy_id = strategy_id;
+            balance_movements.date = date;
+            balance_movements.net_ammount_usd = net_ammount_usd;
+            balance_movements.net_ammount_btc = net_ammount_btc;
+            balance_movements.shares = shares;
+            return balance_movements;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int64 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int64 _id;
+        partial void OnidChanging(global::System.Int64 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 strategy_id
+        {
+            get
+            {
+                return _strategy_id;
+            }
+            set
+            {
+                Onstrategy_idChanging(value);
+                ReportPropertyChanging("strategy_id");
+                _strategy_id = StructuralObject.SetValidValue(value, "strategy_id");
+                ReportPropertyChanged("strategy_id");
+                Onstrategy_idChanged();
+            }
+        }
+        private global::System.Int32 _strategy_id;
+        partial void Onstrategy_idChanging(global::System.Int32 value);
+        partial void Onstrategy_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime date
+        {
+            get
+            {
+                return _date;
+            }
+            set
+            {
+                OndateChanging(value);
+                ReportPropertyChanging("date");
+                _date = StructuralObject.SetValidValue(value, "date");
+                ReportPropertyChanged("date");
+                OndateChanged();
+            }
+        }
+        private global::System.DateTime _date;
+        partial void OndateChanging(global::System.DateTime value);
+        partial void OndateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal net_ammount_usd
+        {
+            get
+            {
+                return _net_ammount_usd;
+            }
+            set
+            {
+                Onnet_ammount_usdChanging(value);
+                ReportPropertyChanging("net_ammount_usd");
+                _net_ammount_usd = StructuralObject.SetValidValue(value, "net_ammount_usd");
+                ReportPropertyChanged("net_ammount_usd");
+                Onnet_ammount_usdChanged();
+            }
+        }
+        private global::System.Decimal _net_ammount_usd;
+        partial void Onnet_ammount_usdChanging(global::System.Decimal value);
+        partial void Onnet_ammount_usdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal net_ammount_btc
+        {
+            get
+            {
+                return _net_ammount_btc;
+            }
+            set
+            {
+                Onnet_ammount_btcChanging(value);
+                ReportPropertyChanging("net_ammount_btc");
+                _net_ammount_btc = StructuralObject.SetValidValue(value, "net_ammount_btc");
+                ReportPropertyChanged("net_ammount_btc");
+                Onnet_ammount_btcChanged();
+            }
+        }
+        private global::System.Decimal _net_ammount_btc;
+        partial void Onnet_ammount_btcChanging(global::System.Decimal value);
+        partial void Onnet_ammount_btcChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> customer_id
+        {
+            get
+            {
+                return _customer_id;
+            }
+            set
+            {
+                Oncustomer_idChanging(value);
+                ReportPropertyChanging("customer_id");
+                _customer_id = StructuralObject.SetValidValue(value, "customer_id");
+                ReportPropertyChanged("customer_id");
+                Oncustomer_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _customer_id;
+        partial void Oncustomer_idChanging(Nullable<global::System.Int32> value);
+        partial void Oncustomer_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal shares
+        {
+            get
+            {
+                return _shares;
+            }
+            set
+            {
+                OnsharesChanging(value);
+                ReportPropertyChanging("shares");
+                _shares = StructuralObject.SetValidValue(value, "shares");
+                ReportPropertyChanged("shares");
+                OnsharesChanged();
+            }
+        }
+        private global::System.Decimal _shares;
+        partial void OnsharesChanging(global::System.Decimal value);
+        partial void OnsharesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String text
+        {
+            get
+            {
+                return _text;
+            }
+            set
+            {
+                OntextChanging(value);
+                ReportPropertyChanging("text");
+                _text = StructuralObject.SetValidValue(value, true, "text");
+                ReportPropertyChanged("text");
+                OntextChanged();
+            }
+        }
+        private global::System.String _text;
+        partial void OntextChanging(global::System.String value);
+        partial void OntextChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_balance_movements_customers", "customers")]
+        public customers customers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_balance_movements_customers", "customers").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_balance_movements_customers", "customers").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<customers> customersReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_balance_movements_customers", "customers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<customers>("MomentumBackTestsModel.FK_balance_movements_customers", "customers", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_balance_movements_strategies", "strategies")]
+        public strategies strategies
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_balance_movements_strategies", "strategies").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_balance_movements_strategies", "strategies").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<strategies> strategiesReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_balance_movements_strategies", "strategies");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<strategies>("MomentumBackTestsModel.FK_balance_movements_strategies", "strategies", value);
                 }
             }
         }
@@ -2341,6 +3017,264 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_customers", "accounts", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_balance_movements_customers", "balance_movements")]
+        public EntityCollection<balance_movements> balance_movements
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<balance_movements>("MomentumBackTestsModel.FK_balance_movements_customers", "balance_movements");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<balance_movements>("MomentumBackTestsModel.FK_balance_movements_customers", "balance_movements", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_expositions_customers", "expositions")]
+        public EntityCollection<expositions> expositions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<expositions>("MomentumBackTestsModel.FK_expositions_customers", "expositions");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<expositions>("MomentumBackTestsModel.FK_expositions_customers", "expositions", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MomentumBackTestsModel", Name="expositions")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class expositions : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new expositions object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="customer_id">Initial value of the customer_id property.</param>
+        /// <param name="strategy_id">Initial value of the strategy_id property.</param>
+        /// <param name="weight">Initial value of the weight property.</param>
+        public static expositions Createexpositions(global::System.Int32 id, global::System.Int32 customer_id, global::System.Int32 strategy_id, global::System.Decimal weight)
+        {
+            expositions expositions = new expositions();
+            expositions.id = id;
+            expositions.customer_id = customer_id;
+            expositions.strategy_id = strategy_id;
+            expositions.weight = weight;
+            return expositions;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 customer_id
+        {
+            get
+            {
+                return _customer_id;
+            }
+            set
+            {
+                Oncustomer_idChanging(value);
+                ReportPropertyChanging("customer_id");
+                _customer_id = StructuralObject.SetValidValue(value, "customer_id");
+                ReportPropertyChanged("customer_id");
+                Oncustomer_idChanged();
+            }
+        }
+        private global::System.Int32 _customer_id;
+        partial void Oncustomer_idChanging(global::System.Int32 value);
+        partial void Oncustomer_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 strategy_id
+        {
+            get
+            {
+                return _strategy_id;
+            }
+            set
+            {
+                Onstrategy_idChanging(value);
+                ReportPropertyChanging("strategy_id");
+                _strategy_id = StructuralObject.SetValidValue(value, "strategy_id");
+                ReportPropertyChanged("strategy_id");
+                Onstrategy_idChanged();
+            }
+        }
+        private global::System.Int32 _strategy_id;
+        partial void Onstrategy_idChanging(global::System.Int32 value);
+        partial void Onstrategy_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal weight
+        {
+            get
+            {
+                return _weight;
+            }
+            set
+            {
+                OnweightChanging(value);
+                ReportPropertyChanging("weight");
+                _weight = StructuralObject.SetValidValue(value, "weight");
+                ReportPropertyChanged("weight");
+                OnweightChanged();
+            }
+        }
+        private global::System.Decimal _weight;
+        partial void OnweightChanging(global::System.Decimal value);
+        partial void OnweightChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_expositions_customers", "customers")]
+        public customers customers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_expositions_customers", "customers").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_expositions_customers", "customers").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<customers> customersReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<customers>("MomentumBackTestsModel.FK_expositions_customers", "customers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<customers>("MomentumBackTestsModel.FK_expositions_customers", "customers", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_expositions_strategies", "strategies")]
+        public strategies strategies
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_expositions_strategies", "strategies").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_expositions_strategies", "strategies").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<strategies> strategiesReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<strategies>("MomentumBackTestsModel.FK_expositions_strategies", "strategies");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<strategies>("MomentumBackTestsModel.FK_expositions_strategies", "strategies", value);
                 }
             }
         }
@@ -3887,6 +4821,184 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<users>("MomentumBackTestsModel.FK_sessions_users", "users", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="MomentumBackTestsModel", Name="strategies")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class strategies : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new strategies object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="code">Initial value of the code property.</param>
+        /// <param name="name">Initial value of the name property.</param>
+        public static strategies Createstrategies(global::System.Int32 id, global::System.String code, global::System.String name)
+        {
+            strategies strategies = new strategies();
+            strategies.id = id;
+            strategies.code = code;
+            strategies.name = name;
+            return strategies;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String code
+        {
+            get
+            {
+                return _code;
+            }
+            set
+            {
+                OncodeChanging(value);
+                ReportPropertyChanging("code");
+                _code = StructuralObject.SetValidValue(value, false, "code");
+                ReportPropertyChanged("code");
+                OncodeChanged();
+            }
+        }
+        private global::System.String _code;
+        partial void OncodeChanging(global::System.String value);
+        partial void OncodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String name
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                OnnameChanging(value);
+                ReportPropertyChanging("name");
+                _name = StructuralObject.SetValidValue(value, false, "name");
+                ReportPropertyChanged("name");
+                OnnameChanged();
+            }
+        }
+        private global::System.String _name;
+        partial void OnnameChanging(global::System.String value);
+        partial void OnnameChanged();
+
+        #endregion
+
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_strategies", "accounts")]
+        public EntityCollection<accounts> accounts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_strategies", "accounts");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<accounts>("MomentumBackTestsModel.FK_accounts_strategies", "accounts", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_balance_movements_strategies", "balance_movements")]
+        public EntityCollection<balance_movements> balance_movements
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<balance_movements>("MomentumBackTestsModel.FK_balance_movements_strategies", "balance_movements");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<balance_movements>("MomentumBackTestsModel.FK_balance_movements_strategies", "balance_movements", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_expositions_strategies", "expositions")]
+        public EntityCollection<expositions> expositions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<expositions>("MomentumBackTestsModel.FK_expositions_strategies", "expositions");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<expositions>("MomentumBackTestsModel.FK_expositions_strategies", "expositions", value);
                 }
             }
         }

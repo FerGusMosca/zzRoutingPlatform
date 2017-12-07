@@ -33,18 +33,6 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Common.Configuration
         {
             bool resultado = true;
 
-            if (string.IsNullOrEmpty(ApiKey))
-            {
-                result.Add("ApiKey");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(Secret))
-            {
-                result.Add("Secret");
-                resultado = false;
-            }
-
             if (string.IsNullOrEmpty(QuoteCurrency))
             {
                 result.Add("QuoteCurrency");

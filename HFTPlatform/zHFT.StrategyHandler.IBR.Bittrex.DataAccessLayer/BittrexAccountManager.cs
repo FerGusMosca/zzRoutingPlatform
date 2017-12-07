@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
+using zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities;
+using zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
@@ -36,13 +38,15 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
 
         protected List<ConfigKey> ConfigParameters { get; set; }
 
+        protected AccountBittrexData BittrexData { get; set; }
+
         #endregion
 
         #region Private Consts
 
-        private string _API_KEY = "ApiKey";
+        private string _ACCOUNT_NUMBER = "AccountNumber";
+        private string _CONFIG_CONNECTION_STRING = "ConfigConnectionString";
         private string _QUOTE_CURRENCY = "QuoteCurrency";
-        private string _SECRET = "Secret";
         private string _SIMULATE = "Simulate";
 
         private string _USD_CURRENCY = "USDT";
@@ -59,6 +63,8 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
             Logger = OnLogMsg;
             ConfigParameters = pConfigParameters;
             ValidateDictionary();
+
+            LoadConfig();
 
             Exchange = new Exchange();
 
@@ -77,16 +83,16 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
             if (ConfigParameters == null)
                 throw new Exception("Config not specified for Bittrex Account Manager!");
 
-            if (!ConfigParameters.Any(x=>x.Key==_API_KEY))
-                throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _API_KEY));
+            if (!ConfigParameters.Any(x => x.Key == _ACCOUNT_NUMBER))
+                throw new Exception(string.Format("Config parameter not specified for Account Number!:{0}", _ACCOUNT_NUMBER));
 
 
             if (!ConfigParameters.Any(x => x.Key == _QUOTE_CURRENCY))
                 throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _QUOTE_CURRENCY));
 
 
-            if (!ConfigParameters.Any(x => x.Key == _SECRET))
-                throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _SECRET));
+            if (!ConfigParameters.Any(x => x.Key == _CONFIG_CONNECTION_STRING))
+                throw new Exception(string.Format("Config parameter not specified for Bittrex Data Connection String!:{0}", _CONFIG_CONNECTION_STRING));
 
 
             if (!ConfigParameters.Any(x => x.Key == _SIMULATE))
@@ -102,13 +108,28 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
             }
         }
 
+        protected void LoadConfig()
+        {
+            string bittrexConfigDataBaseCS=ConfigParameters.Where(x => x.Key == _CONFIG_CONNECTION_STRING).FirstOrDefault().Value;
+
+            AccountBittrexDataManager accountBittrexDataManager = new AccountBittrexDataManager(bittrexConfigDataBaseCS);
+            
+            int accountNumber = Convert.ToInt32(ConfigParameters.Where(x => x.Key == _ACCOUNT_NUMBER).FirstOrDefault().Value);
+
+            BittrexData = accountBittrexDataManager.GetByAccountNumber(accountNumber);
+
+            if (BittrexData == null)
+                throw new Exception(string.Format("No se encontró la configuración de acceso al exchange Bittrex para la cuenta número {0}", accountNumber));
+
+        }
+
         protected ExchangeContext GetContext()
         {
             return new ExchangeContext()
             {
-                ApiKey = ConfigParameters.Where(x => x.Key == _API_KEY).FirstOrDefault().Value,
+                ApiKey = BittrexData.APIKey,
                 QuoteCurrency = ConfigParameters.Where(x => x.Key == _QUOTE_CURRENCY).FirstOrDefault().Value,
-                Secret = ConfigParameters.Where(x => x.Key == _SECRET).FirstOrDefault().Value,
+                Secret = BittrexData.Secret,
                 Simulate = Convert.ToBoolean(ConfigParameters.Where(x => x.Key == _SIMULATE).FirstOrDefault().Value)
             };
         }

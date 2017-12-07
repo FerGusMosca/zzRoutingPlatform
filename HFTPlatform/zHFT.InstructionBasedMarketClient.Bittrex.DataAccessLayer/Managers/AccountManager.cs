@@ -79,6 +79,15 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.Managers
             return account;
         }
 
+        public Account GetByAccountNumber(int accountNumber)
+        {
+            accounts accountDB = ctx.accounts.Where(x => x.account_number == accountNumber).FirstOrDefault();
+
+            Account account = Map(accountDB);
+
+            return account;
+        }
+
         public List<Account> GetByFilters(long? accountNumber, long? documentNumber, string name, Int32 pagenumber, Int32 pagesize, ref int totalRecords)
         {
             List<Account> accounts = new List<Account>();

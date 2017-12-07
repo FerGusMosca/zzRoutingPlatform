@@ -9,8 +9,11 @@
           <EntitySet Name="account_portfolios" EntityType="MomentumBackTestsModel.Store.account_portfolios" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="account_positions" EntityType="MomentumBackTestsModel.Store.account_positions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="accounts" EntityType="MomentumBackTestsModel.Store.accounts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="accounts_bittrex_data" EntityType="MomentumBackTestsModel.Store.accounts_bittrex_data" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="balance_movements" EntityType="MomentumBackTestsModel.Store.balance_movements" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="brokers" EntityType="MomentumBackTestsModel.Store.brokers" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="customers" EntityType="MomentumBackTestsModel.Store.customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="expositions" EntityType="MomentumBackTestsModel.Store.expositions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="instruction_types" EntityType="MomentumBackTestsModel.Store.instruction_types" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="instructions" EntityType="MomentumBackTestsModel.Store.instructions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="lookups" EntityType="MomentumBackTestsModel.Store.lookups" store:Type="Tables" Schema="dbo" />
@@ -18,6 +21,7 @@
           <EntitySet Name="portfolio_positions" EntityType="MomentumBackTestsModel.Store.portfolio_positions" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="position_status" EntityType="MomentumBackTestsModel.Store.position_status" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sessions" EntityType="MomentumBackTestsModel.Store.sessions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="strategies" EntityType="MomentumBackTestsModel.Store.strategies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sysdiagrams" EntityType="MomentumBackTestsModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="users" EntityType="MomentumBackTestsModel.Store.users" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_account_portfolios_accounts" Association="MomentumBackTestsModel.Store.FK_account_portfolios_accounts">
@@ -36,6 +40,10 @@
             <End Role="position_status" EntitySet="position_status" />
             <End Role="account_positions" EntitySet="account_positions" />
           </AssociationSet>
+          <AssociationSet Name="FK_accounts_bittrex_data_accounts" Association="MomentumBackTestsModel.Store.FK_accounts_bittrex_data_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="accounts_bittrex_data" EntitySet="accounts_bittrex_data" />
+          </AssociationSet>
           <AssociationSet Name="FK_accounts_brokers" Association="MomentumBackTestsModel.Store.FK_accounts_brokers">
             <End Role="brokers" EntitySet="brokers" />
             <End Role="accounts" EntitySet="accounts" />
@@ -43,6 +51,26 @@
           <AssociationSet Name="FK_accounts_customers" Association="MomentumBackTestsModel.Store.FK_accounts_customers">
             <End Role="customers" EntitySet="customers" />
             <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_accounts_strategies" Association="MomentumBackTestsModel.Store.FK_accounts_strategies">
+            <End Role="strategies" EntitySet="strategies" />
+            <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_balance_movements_customers" Association="MomentumBackTestsModel.Store.FK_balance_movements_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="balance_movements" EntitySet="balance_movements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_balance_movements_strategies" Association="MomentumBackTestsModel.Store.FK_balance_movements_strategies">
+            <End Role="strategies" EntitySet="strategies" />
+            <End Role="balance_movements" EntitySet="balance_movements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_expositions_customers" Association="MomentumBackTestsModel.Store.FK_expositions_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="expositions" EntitySet="expositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_expositions_strategies" Association="MomentumBackTestsModel.Store.FK_expositions_strategies">
+            <End Role="strategies" EntitySet="strategies" />
+            <End Role="expositions" EntitySet="expositions" />
           </AssociationSet>
           <AssociationSet Name="FK_instructions_account_portfolios" Association="MomentumBackTestsModel.Store.FK_instructions_account_portfolios">
             <End Role="account_portfolios" EntitySet="account_portfolios" />
@@ -109,6 +137,29 @@
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="generic_s_number" Type="varchar" MaxLength="50" />
           <Property Name="balance" Type="decimal" Scale="4" />
+          <Property Name="strategy_id" Type="int" />
+        </EntityType>
+        <EntityType Name="accounts_bittrex_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="account_id" Type="int" Nullable="false" />
+          <Property Name="api_key" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="secret" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="balance_movements">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="strategy_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="net_ammount_usd" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="net_ammount_btc" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="customer_id" Type="int" />
+          <Property Name="shares" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="text" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="brokers">
           <Key>
@@ -131,6 +182,15 @@
           <Property Name="birth_date" Type="datetime" />
           <Property Name="contact" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="expositions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="strategy_id" Type="int" Nullable="false" />
+          <Property Name="weight" Type="decimal" Nullable="false" Scale="4" />
         </EntityType>
         <EntityType Name="instruction_types">
           <Key>
@@ -203,6 +263,14 @@
           <Property Name="expiration_time" Type="datetime" Nullable="false" />
           <Property Name="end_time" Type="datetime" />
           <Property Name="user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="strategies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -278,6 +346,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_accounts_bittrex_data_accounts">
+          <End Role="accounts" Type="MomentumBackTestsModel.Store.accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="accounts_bittrex_data" Type="MomentumBackTestsModel.Store.accounts_bittrex_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts_bittrex_data">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_accounts_brokers">
           <End Role="brokers" Type="MomentumBackTestsModel.Store.brokers" Multiplicity="1" />
           <End Role="accounts" Type="MomentumBackTestsModel.Store.accounts" Multiplicity="*" />
@@ -301,6 +383,70 @@
             </Principal>
             <Dependent Role="accounts">
               <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_accounts_strategies">
+          <End Role="strategies" Type="MomentumBackTestsModel.Store.strategies" Multiplicity="0..1" />
+          <End Role="accounts" Type="MomentumBackTestsModel.Store.accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="strategies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts">
+              <PropertyRef Name="strategy_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_balance_movements_customers">
+          <End Role="customers" Type="MomentumBackTestsModel.Store.customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="balance_movements" Type="MomentumBackTestsModel.Store.balance_movements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="balance_movements">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_balance_movements_strategies">
+          <End Role="strategies" Type="MomentumBackTestsModel.Store.strategies" Multiplicity="1" />
+          <End Role="balance_movements" Type="MomentumBackTestsModel.Store.balance_movements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="strategies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="balance_movements">
+              <PropertyRef Name="strategy_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_expositions_customers">
+          <End Role="customers" Type="MomentumBackTestsModel.Store.customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="expositions" Type="MomentumBackTestsModel.Store.expositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="expositions">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_expositions_strategies">
+          <End Role="strategies" Type="MomentumBackTestsModel.Store.strategies" Multiplicity="1" />
+          <End Role="expositions" Type="MomentumBackTestsModel.Store.expositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="strategies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="expositions">
+              <PropertyRef Name="strategy_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -592,6 +738,34 @@
             <End Role="instructions" EntitySet="instructions" />
             <End Role="instructions1" EntitySet="instructions" />
           </AssociationSet>
+          <EntitySet Name="accounts_bittrex_data" EntityType="MomentumBackTestsModel.accounts_bittrex_data" />
+          <EntitySet Name="balance_movements" EntityType="MomentumBackTestsModel.balance_movements" />
+          <EntitySet Name="expositions" EntityType="MomentumBackTestsModel.expositions" />
+          <EntitySet Name="strategies" EntityType="MomentumBackTestsModel.strategies" />
+          <AssociationSet Name="FK_accounts_bittrex_data_accounts" Association="MomentumBackTestsModel.FK_accounts_bittrex_data_accounts">
+            <End Role="accounts" EntitySet="accounts" />
+            <End Role="accounts_bittrex_data" EntitySet="accounts_bittrex_data" />
+          </AssociationSet>
+          <AssociationSet Name="FK_accounts_strategies" Association="MomentumBackTestsModel.FK_accounts_strategies">
+            <End Role="strategies" EntitySet="strategies" />
+            <End Role="accounts" EntitySet="accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_balance_movements_customers" Association="MomentumBackTestsModel.FK_balance_movements_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="balance_movements" EntitySet="balance_movements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_balance_movements_strategies" Association="MomentumBackTestsModel.FK_balance_movements_strategies">
+            <End Role="strategies" EntitySet="strategies" />
+            <End Role="balance_movements" EntitySet="balance_movements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_expositions_customers" Association="MomentumBackTestsModel.FK_expositions_customers">
+            <End Role="customers" EntitySet="customers" />
+            <End Role="expositions" EntitySet="expositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_expositions_strategies" Association="MomentumBackTestsModel.FK_expositions_strategies">
+            <End Role="strategies" EntitySet="strategies" />
+            <End Role="expositions" EntitySet="expositions" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="QRY_SCRN_CUSTOMERS_GRID_MAIN_ALL_Result">
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
@@ -726,6 +900,8 @@
           <Property Type="String" Name="contact" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="email" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_customers" FromRole="customers" ToRole="accounts" />
+          <NavigationProperty Name="balance_movements" Relationship="MomentumBackTestsModel.FK_balance_movements_customers" FromRole="customers" ToRole="balance_movements" />
+          <NavigationProperty Name="expositions" Relationship="MomentumBackTestsModel.FK_expositions_customers" FromRole="customers" ToRole="expositions" />
         </EntityType>
         <EntityType Name="instruction_types">
           <Key>
@@ -837,6 +1013,9 @@
           <NavigationProperty Name="brokers" Relationship="MomentumBackTestsModel.FK_accounts_brokers" FromRole="accounts" ToRole="brokers" />
           <NavigationProperty Name="customers" Relationship="MomentumBackTestsModel.FK_accounts_customers" FromRole="accounts" ToRole="customers" />
           <NavigationProperty Name="instructions" Relationship="MomentumBackTestsModel.FK_instructions_accounts" FromRole="accounts" ToRole="instructions" />
+          <Property Type="Int32" Name="strategy_id" />
+          <NavigationProperty Name="accounts_bittrex_data" Relationship="MomentumBackTestsModel.FK_accounts_bittrex_data_accounts" FromRole="accounts" ToRole="accounts_bittrex_data" />
+          <NavigationProperty Name="strategies" Relationship="MomentumBackTestsModel.FK_accounts_strategies" FromRole="accounts" ToRole="strategies" />
         </EntityType>
         <EntityType Name="sessions">
           <Key>
@@ -1012,6 +1191,131 @@
             </Principal>
             <Dependent Role="instructions1">
               <PropertyRef Name="related_instruction_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="accounts_bittrex_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="account_id" Nullable="false" />
+          <Property Type="String" Name="api_key" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="secret" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_bittrex_data_accounts" FromRole="accounts_bittrex_data" ToRole="accounts" />
+        </EntityType>
+        <EntityType Name="balance_movements">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="strategy_id" Nullable="false" />
+          <Property Type="DateTime" Name="date" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="net_ammount_usd" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="net_ammount_btc" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Int32" Name="customer_id" />
+          <Property Type="Decimal" Name="shares" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="String" Name="text" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="customers" Relationship="MomentumBackTestsModel.FK_balance_movements_customers" FromRole="balance_movements" ToRole="customers" />
+          <NavigationProperty Name="strategies" Relationship="MomentumBackTestsModel.FK_balance_movements_strategies" FromRole="balance_movements" ToRole="strategies" />
+        </EntityType>
+        <EntityType Name="expositions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="customer_id" Nullable="false" />
+          <Property Type="Int32" Name="strategy_id" Nullable="false" />
+          <Property Type="Decimal" Name="weight" Nullable="false" Precision="18" Scale="4" />
+          <NavigationProperty Name="customers" Relationship="MomentumBackTestsModel.FK_expositions_customers" FromRole="expositions" ToRole="customers" />
+          <NavigationProperty Name="strategies" Relationship="MomentumBackTestsModel.FK_expositions_strategies" FromRole="expositions" ToRole="strategies" />
+        </EntityType>
+        <EntityType Name="strategies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="accounts" Relationship="MomentumBackTestsModel.FK_accounts_strategies" FromRole="strategies" ToRole="accounts" />
+          <NavigationProperty Name="balance_movements" Relationship="MomentumBackTestsModel.FK_balance_movements_strategies" FromRole="strategies" ToRole="balance_movements" />
+          <NavigationProperty Name="expositions" Relationship="MomentumBackTestsModel.FK_expositions_strategies" FromRole="strategies" ToRole="expositions" />
+        </EntityType>
+        <Association Name="FK_accounts_bittrex_data_accounts">
+          <End Type="MomentumBackTestsModel.accounts" Role="accounts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumBackTestsModel.accounts_bittrex_data" Role="accounts_bittrex_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="accounts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts_bittrex_data">
+              <PropertyRef Name="account_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_accounts_strategies">
+          <End Type="MomentumBackTestsModel.strategies" Role="strategies" Multiplicity="0..1" />
+          <End Type="MomentumBackTestsModel.accounts" Role="accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="strategies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accounts">
+              <PropertyRef Name="strategy_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_balance_movements_customers">
+          <End Type="MomentumBackTestsModel.customers" Role="customers" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumBackTestsModel.balance_movements" Role="balance_movements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="balance_movements">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_balance_movements_strategies">
+          <End Type="MomentumBackTestsModel.strategies" Role="strategies" Multiplicity="1" />
+          <End Type="MomentumBackTestsModel.balance_movements" Role="balance_movements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="strategies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="balance_movements">
+              <PropertyRef Name="strategy_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_expositions_customers">
+          <End Type="MomentumBackTestsModel.customers" Role="customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MomentumBackTestsModel.expositions" Role="expositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="expositions">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_expositions_strategies">
+          <End Type="MomentumBackTestsModel.strategies" Role="strategies" Multiplicity="1" />
+          <End Type="MomentumBackTestsModel.expositions" Role="expositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="strategies">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="expositions">
+              <PropertyRef Name="strategy_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1254,6 +1558,7 @@
           <EntitySetMapping Name="accounts">
             <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts">
               <MappingFragment StoreEntitySet="accounts">
+                <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
                 <ScalarProperty Name="balance" ColumnName="balance" />
                 <ScalarProperty Name="generic_s_number" ColumnName="generic_s_number" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -1308,6 +1613,49 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="accounts_bittrex_data">
+            <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts_bittrex_data">
+              <MappingFragment StoreEntitySet="accounts_bittrex_data">
+                <ScalarProperty Name="secret" ColumnName="secret" />
+                <ScalarProperty Name="api_key" ColumnName="api_key" />
+                <ScalarProperty Name="account_id" ColumnName="account_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="balance_movements">
+            <EntityTypeMapping TypeName="MomentumBackTestsModel.balance_movements">
+              <MappingFragment StoreEntitySet="balance_movements">
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="shares" ColumnName="shares" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="net_ammount_btc" ColumnName="net_ammount_btc" />
+                <ScalarProperty Name="net_ammount_usd" ColumnName="net_ammount_usd" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="expositions">
+            <EntityTypeMapping TypeName="MomentumBackTestsModel.expositions">
+              <MappingFragment StoreEntitySet="expositions">
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="strategies">
+            <EntityTypeMapping TypeName="MomentumBackTestsModel.strategies">
+              <MappingFragment StoreEntitySet="strategies">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1356,6 +1704,16 @@
         <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_instructions_accounts" />
         <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_instructions_instruction_types" />
         <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_instructions_instructions" />
+        <edmx:EntityTypeShape EntityType="MomentumBackTestsModel.accounts_bittrex_data" Width="1.5" PointX="1.208389325630101" PointY="4.5956456682624509" />
+        <edmx:EntityTypeShape EntityType="MomentumBackTestsModel.balance_movements" Width="1.5" PointX="4.981259674290782" PointY="23.980743627986286" />
+        <edmx:EntityTypeShape EntityType="MomentumBackTestsModel.expositions" Width="1.5" PointX="2.0927336151212144" PointY="10.111139361798363" />
+        <edmx:EntityTypeShape EntityType="MomentumBackTestsModel.strategies" Width="1.5" PointX="6.3294072329669291" PointY="27.041099248007452" />
+        <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_accounts_bittrex_data_accounts" />
+        <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_accounts_strategies" />
+        <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_balance_movements_customers" />
+        <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_balance_movements_strategies" />
+        <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_expositions_customers" />
+        <edmx:AssociationConnector Association="MomentumBackTestsModel.FK_expositions_strategies" />
       </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

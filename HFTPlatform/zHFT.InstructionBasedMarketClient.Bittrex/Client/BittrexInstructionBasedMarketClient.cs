@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Bittrex.Common.DTO;
 using zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.Managers;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
@@ -59,6 +60,8 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
         private InstructionManager InstructionManager { get; set; }
 
         private AccountManager AccountManager { get; set; }
+
+        private AccountBittrexDataManager AccountBittrexDataManager { get; set; }
 
         #endregion
 
@@ -348,6 +351,23 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             }
         }
 
+        protected void ConfigBittrexData()
+        {
+            Account account = AccountManager.GetByAccountNumber(BittrexConfiguration.AccountNumber);
+
+            if (account == null)
+                throw new Exception(string.Format("No se encontró ninguna cuenta para el número {0}", BittrexConfiguration.AccountNumber));
+
+            AccountBittrexData bittrexData = AccountBittrexDataManager.GetByAccountNumber(account);
+
+            if (bittrexData == null)
+                throw new Exception(string.Format("No se encontró ninguna configuración bittrex para la cuenta número {0}", BittrexConfiguration.AccountNumber));
+
+
+            BittrexConfiguration.ApiKey = bittrexData.APIKey;
+            BittrexConfiguration.Secret = bittrexData.Secret;
+        }
+
         #endregion
 
         #region Public Methods
@@ -400,7 +420,9 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
                     AccountManager = new AccountManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);
                     InstructionManager = new InstructionManager(BittrexConfiguration.InstructionsAccessLayerConnectionString,AccountManager);
+                    AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);
 
+                    ConfigBittrexData();
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
