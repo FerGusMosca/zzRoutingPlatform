@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Bittrex.Common.DTO;
+using zHFT.InstructionBasedMarketClient.Bittrex.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.Managers;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -242,7 +243,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                                         sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
                                         sec.MarketData.Trade = (double?)jMarketData["Last"];
                                         sec.ReverseMarketData = false;
-                                        MarketDataWrapper wrapper = new MarketDataWrapper(sec, BittrexConfiguration);
+                                        BittrexMarketDataWrapper wrapper = new BittrexMarketDataWrapper(sec, BittrexConfiguration);
 
                                         OnMessageRcv(wrapper);
                                     }

@@ -132,10 +132,14 @@ namespace zHFT.OrderRouters.Bittrex
                                 OrdStatus status = (OrdStatus) wrapper.GetField(ExecutionReportFields.OrdStatus);
 
                                 if (Order.FinalStatus(status))
+                                {
                                     uuidToRemove.Add(uuid);
+                                    DoLog(string.Format("@{0}:Removing Order For Status:{1}", BittrexConfiguration.Name, status.ToString()), Main.Common.Util.Constants.MessageType.Debug);
+
+                                }
                                 else
-                                { 
-                                
+                                {
+
                                 }
 
                                 wrappersToPublish.Add(wrapper);
@@ -148,6 +152,7 @@ namespace zHFT.OrderRouters.Bittrex
 
                                 wrappersToPublish.Add(wrapper);
                                 uuidToRemove.Add(uuid);
+                                DoLog(string.Format("@{0}:Removing Order Because no order could be found on market for uuid {1}", BittrexConfiguration.Name, uuid), Main.Common.Util.Constants.MessageType.Debug);
                             }
                         }
                         uuidToRemove.ForEach(x => ActiveOrders.Remove(x));
@@ -169,7 +174,7 @@ namespace zHFT.OrderRouters.Bittrex
             GetOrderResponse ordResp = GetTheoreticalResponse(order, "");
             order.OrdStatus = OrdStatus.Rejected;
             ordResp.CancelInitiated = true;
-           
+
 
             if (ex.Message.Contains(_INSUFFICIENT_FUNDS))
             {
@@ -180,7 +185,7 @@ namespace zHFT.OrderRouters.Bittrex
                 order.RejReason = MIN_TRADE_REQUIREMENT_NOT_MET;
             }
             else
-                throw ex;
+                order.RejReason = ex.Message;
 
             ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, ordResp);
             OnMessageRcv(wrapper);
@@ -343,8 +348,9 @@ namespace zHFT.OrderRouters.Bittrex
             if (!update)
                 CanceledOrders.Add(order.OrderId);
             else
+            {
                 ActiveOrders.Remove(order.OrderId);//Ya no actuallizamos mas datos de la vieja orden cancelada
-          
+            }
         }
 
 
@@ -380,9 +386,20 @@ namespace zHFT.OrderRouters.Bittrex
                                 double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
                                 order.Price = newPrice;
                                 order.ClOrdId = clOrderId;
-                                RunNewOrder(order,true);
+                                try
+                                {
+                                    RunNewOrder(order, true);
+                                }
+                                catch (Exception ex)
+                                {
+                                    EvalRouteError(order, ex);
+                                }
                             }
+
                         }
+                        else
+                            DoLog(string.Format("@{0}:Could not find order for origClOrderId  {1}!", BittrexConfiguration.Name, origClOrderId), Main.Common.Util.Constants.MessageType.Error);
+
                     }
 
                     return CMState.BuildSuccess();

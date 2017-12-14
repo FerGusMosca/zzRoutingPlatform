@@ -1,0 +1,27 @@
+2017-12-10 14:23:22  :: 10/12/2017 14:23:22MainApp.LoadConfig
+2017-12-10 14:23:22  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-10 14:23:22  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-10 14:23:22  :: Fin GetConfiguracion
+2017-12-10 14:23:22  :: Initializing Log
+2017-12-10 14:23:22  :: Initializing Incoming Module
+2017-12-10 14:23:23  :: Incoming Module successfully initialized
+2017-12-10 14:23:23  :: Initializing Outgoing Module
+2017-12-10 14:23:33  :: Outgoing Module successfully initialized
+2017-12-10 19:06:53  :: 10/12/2017 19:06:53MainApp.LoadConfig
+2017-12-10 19:06:53  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-10 19:06:53  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-10 19:06:53  :: Fin GetConfiguracion
+2017-12-10 19:06:53  :: Initializing Log
+2017-12-10 19:06:53  :: Initializing Incoming Module
+2017-12-10 19:06:55  :: Incoming Module successfully initialized
+2017-12-10 19:06:55  :: Initializing Outgoing Module
+2017-12-10 19:06:57  :: Outgoing Module successfully initialized
+2017-12-10 22:36:29  :: 10/12/2017 22:36:29MainApp.LoadConfig
+2017-12-10 22:36:29  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-10 22:36:29  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-10 22:36:29  :: Fin GetConfiguracion
+2017-12-10 22:36:29  :: Initializing Log
+2017-12-10 22:36:29  :: Initializing Incoming Module
+2017-12-10 22:36:30  :: Incoming Module successfully initialized
+2017-12-10 22:36:30  :: Initializing Outgoing Module
+2017-12-10 22:36:31  :: Outgoing Module successfully initialized
