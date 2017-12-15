@@ -155,5 +155,70 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="bond_categories">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.bond_categories">
+        <MappingFragment StoreEntitySet="bond_categories">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="currencies">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.currencies">
+        <MappingFragment StoreEntitySet="currencies">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_bonds">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_bonds">
+        <MappingFragment StoreEntitySet="s_bonds">
+          <ScalarProperty Name="issuer" ColumnName="issuer" />
+          <ScalarProperty Name="country_law_desc" ColumnName="country_law_desc" />
+          <ScalarProperty Name="country_law" ColumnName="country_law" />
+          <ScalarProperty Name="payment_currency" ColumnName="payment_currency" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="multiple" ColumnName="multiple" />
+          <ScalarProperty Name="coupon" ColumnName="coupon" />
+          <ScalarProperty Name="maturity_date" ColumnName="maturity_date" />
+          <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+          <ScalarProperty Name="bond_category" ColumnName="bond_category" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="market" ColumnName="market" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_cryptocurrencies">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_cryptocurrencies">
+        <MappingFragment StoreEntitySet="s_cryptocurrencies">
+          <ScalarProperty Name="notice" ColumnName="notice" />
+          <ScalarProperty Name="base_address" ColumnName="base_address" />
+          <ScalarProperty Name="coin_type" ColumnName="coin_type" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s_cryptos_closing_prices">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_cryptos_closing_prices">
+        <MappingFragment StoreEntitySet="s_cryptos_closing_prices">
+          <ScalarProperty Name="open_interest" ColumnName="open_interest" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="adj_close" ColumnName="adj_close" />
+          <ScalarProperty Name="close" ColumnName="close" />
+          <ScalarProperty Name="minimum" ColumnName="minimum" />
+          <ScalarProperty Name="maximum" ColumnName="maximum" />
+          <ScalarProperty Name="open" ColumnName="open" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="quote_symbol" ColumnName="quote_symbol" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

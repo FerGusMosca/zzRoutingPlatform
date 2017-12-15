@@ -19,6 +19,11 @@
     <EntitySet Name="s_stocks" EntityType="StocksHistoricalDataModel.s_stocks" />
     <EntitySet Name="stocks_market_data" EntityType="StocksHistoricalDataModel.stocks_market_data" />
     <EntitySet Name="options_market_data" EntityType="StocksHistoricalDataModel.options_market_data" />
+    <EntitySet Name="bond_categories" EntityType="StocksHistoricalDataModel.bond_categories" />
+    <EntitySet Name="currencies" EntityType="StocksHistoricalDataModel.currencies" />
+    <EntitySet Name="s_bonds" EntityType="StocksHistoricalDataModel.s_bonds" />
+    <EntitySet Name="s_cryptocurrencies" EntityType="StocksHistoricalDataModel.s_cryptocurrencies" />
+    <EntitySet Name="s_cryptos_closing_prices" EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" />
   </EntityContainer>
   <EntityType Name="stocks_prices">
     <Key>
@@ -198,5 +203,65 @@
     <Property Type="String" Name="moneda" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="timestamp" Precision="3" />
+  </EntityType>
+  <EntityType Name="bond_categories">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Type="String" Name="code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="currencies">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Type="String" Name="code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="s_bonds">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="market" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="country" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bond_category" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="issue_date" Precision="3" />
+    <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="3" />
+    <Property Type="Double" Name="coupon" />
+    <Property Type="Int32" Name="multiple" />
+    <Property Type="String" Name="currency" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="payment_currency" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="country_law" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="country_law_desc" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="issuer" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="s_cryptocurrencies">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="active" />
+    <Property Type="String" Name="coin_type" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="base_address" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="notice" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="s_cryptos_closing_prices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="quote_symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
+    <Property Type="Decimal" Name="open" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="maximum" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="minimum" Nullable="false" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="close" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="adj_close" Precision="18" Scale="8" />
+    <Property Type="Decimal" Name="volume" Precision="22" Scale="8" />
+    <Property Type="Decimal" Name="open_interest" Precision="18" Scale="8" />
   </EntityType>
 </Schema>

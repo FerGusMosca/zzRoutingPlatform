@@ -22,6 +22,8 @@ namespace zHFT.SecurityListMarketClient.Primary.Common.Configuration
 
         public int SecurityListRequestType { get; set; }
 
+        public bool RequestSecurityList { get; set; }
+
         #endregion
 
         #region Private Methods

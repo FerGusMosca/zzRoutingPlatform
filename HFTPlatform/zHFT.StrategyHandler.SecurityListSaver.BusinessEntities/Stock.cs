@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Securities;
 
 namespace zHFT.StrategyHandler.SecurityListSaver.BusinessEntities
 {
-    public class Stock
+    public class Stock:Security
     {
         #region Public Attributes
-
-        public string Symbol { get; set; }
 
         public string Name { get; set; }
 
         public Market Market { get; set; }
 
-        public string Category { get; set; }
-
         public string Country { get; set; }
+
+        public string Category { get; set; }
 
         #endregion
 

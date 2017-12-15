@@ -1,6 +1,0 @@
-2017-11-18 19:22:46  :: 11/18/2017 7:22:46 PMBaseCommunicationModule.LoadConfig
-2017-11-18 19:22:46  :: Loading config:.\incomingPrimary.xml
-2017-11-18 19:22:46  :: Processing config:.\incomingPrimary.xml
-2017-11-18 19:22:47  :: Ending GetConfiguracion .\incomingPrimary.xml
-2017-11-18 19:22:47  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5435=534=5549=fmosca52=20171118-22:22:47.60156=ROFX10=024
-2017-11-18 19:22:47  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX

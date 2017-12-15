@@ -8,7 +8,7 @@
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
   <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest><!--Seconds-->
   
-  <SaveNewSecurities>false</SaveNewSecurities>
+  <SaveNewSecurities>true</SaveNewSecurities>
   <SecurityTypes>
     <SecurityType>CS</SecurityType><!--CS= Common Stock-->
     <SecurityType>OPT</SecurityType><!--OPT=Options-->

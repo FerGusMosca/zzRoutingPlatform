@@ -169,16 +169,16 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
             string primarySymbol = message.getField(Symbol.FIELD);
 
+
             if (primarySymbol != null)
             {
                 string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
-                string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol,market);
+                //string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol,market);
                 zHFT.Main.Common.Enums.SecurityType secType;
-                if (SecurityTypes.Keys.Contains(fullSymbol))
-                    secType = SecurityTypes[fullSymbol];
+                if (SecurityTypes.Keys.Contains(primarySymbol))
+                    secType = SecurityTypes[primarySymbol];
                 else
-                    throw new Exception(string.Format("Could not find Security Type for symbol {0}", fullSymbol));
-
+                    throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
 
                 Security sec = new Security()
                 {
@@ -289,9 +289,11 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                     {
                         DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
 
-                        QuickFix.Message rq = FIXMessageCreator.RequestSecurityList(PrimaryConfiguration.SecurityListRequestType, _DUMMY_SECURITY);
-                        Session.sendToTarget(rq, SessionID);
-
+                        if (PrimaryConfiguration.RequestSecurityList)
+                        {
+                            QuickFix.Message rq = FIXMessageCreator.RequestSecurityList(PrimaryConfiguration.SecurityListRequestType, _DUMMY_SECURITY);
+                            Session.sendToTarget(rq, SessionID);
+                        }
                     }
                     else
                     {

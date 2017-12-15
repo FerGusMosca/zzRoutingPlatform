@@ -64,6 +64,7 @@
       <field name='Text' required='N'/>
       <field name='EncodedTextLen' required='N'/>
       <field name='EncodedText' required='N'/>
+      <field name='SessionStatus' required='N'/>
     </message>
     <message msgcat='admin' msgtype='A' name='Logon'>
       <field name='EncryptMethod' required='Y'/>
@@ -76,6 +77,7 @@
       <field name='TestMessageIndicator' required='N'/>
       <field name='Username' required='N'/>
       <field name='Password' required='N'/>
+      <field name='SessionStatus' required='N'/>
       <field name='DefaultApplVerID' required='Y'/>
       <component name='MsgTypeGrp' required='N'/>
     </message>
@@ -309,5 +311,6 @@
     <field name='RefApplVerID' number='1130' type='STRING'/>
     <field name='RefCstmApplVerID' number='1131' type='STRING'/>
     <field name='DefaultApplVerID' number='1137' type='STRING'/>
+    <field name='SessionStatus' number='1409' type='INT'/>
   </fields>
 </fix>

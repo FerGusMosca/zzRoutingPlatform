@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>Security List Processor Primary</Name>
-  <FIXInitiatorPath>.\FIX Sessions\initiator.cfg</FIXInitiatorPath>
+  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
   <User>fmosca</User>
-  <Password>WhYbs5wY</Password>
+  <Password>Baiano.9</Password>
+  <RequestSecurityList>false</RequestSecurityList>
   
   <SecurityListRequestType>4</SecurityListRequestType><!--0=Symbol,
                                                           1=SecurityType and/or CFICode,

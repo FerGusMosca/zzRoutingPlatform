@@ -1,10 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MomentumBackTestsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="MomentumBackTestsModelStoreContainer">
+    <EntitySet Name="bond_categories" EntityType="MomentumBackTestsModel.Store.bond_categories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="categories" EntityType="MomentumBackTestsModel.Store.categories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="countries" EntityType="MomentumBackTestsModel.Store.countries" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="currencies" EntityType="MomentumBackTestsModel.Store.currencies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="markets" EntityType="MomentumBackTestsModel.Store.markets" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="options_market_data" EntityType="MomentumBackTestsModel.Store.options_market_data" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_bonds" EntityType="MomentumBackTestsModel.Store.s_bonds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_cryptos_closing_prices" EntityType="MomentumBackTestsModel.Store.s_cryptos_closing_prices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_option_bids" EntityType="MomentumBackTestsModel.Store.s_option_bids" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_option_closing_prices" EntityType="MomentumBackTestsModel.Store.s_option_closing_prices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_options" EntityType="MomentumBackTestsModel.Store.s_options" store:Type="Tables" Schema="dbo" />
@@ -20,6 +25,13 @@
       <End Role="s_option_closing_prices" EntitySet="s_option_closing_prices" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="bond_categories">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
   <EntityType Name="categories">
     <Key>
       <PropertyRef Name="id" />
@@ -34,6 +46,13 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="code" Type="varchar" Nullable="false" MaxLength="3" />
     <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="currencies">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="description" Type="varchar" Nullable="false" MaxLength="100" />
   </EntityType>
   <EntityType Name="markets">
     <Key>
@@ -70,6 +89,52 @@
     <Property Name="moneda" Type="varchar" MaxLength="10" />
     <Property Name="sesion" Type="varchar" MaxLength="10" />
     <Property Name="timestamp" Type="datetime" />
+  </EntityType>
+  <EntityType Name="s_bonds">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="market" Type="varchar" MaxLength="100" />
+    <Property Name="country" Type="varchar" MaxLength="3" />
+    <Property Name="bond_category" Type="varchar" MaxLength="50" />
+    <Property Name="issue_date" Type="datetime" />
+    <Property Name="maturity_date" Type="datetime" Nullable="false" />
+    <Property Name="coupon" Type="float" />
+    <Property Name="multiple" Type="int" />
+    <Property Name="currency" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="payment_currency" Type="varchar" MaxLength="10" />
+    <Property Name="country_law" Type="varchar" MaxLength="3" />
+    <Property Name="country_law_desc" Type="varchar" MaxLength="50" />
+    <Property Name="issuer" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="s_cryptocurrencies">
+    <Key>
+      <PropertyRef Name="symbol" />
+    </Key>
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="active" Type="bit" />
+    <Property Name="coin_type" Type="varchar" MaxLength="50" />
+    <Property Name="base_address" Type="varchar" MaxLength="200" />
+    <Property Name="notice" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="s_cryptos_closing_prices">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="quote_symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="open" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="maximum" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="minimum" Type="decimal" Nullable="false" Scale="8" />
+    <Property Name="close" Type="decimal" Scale="8" />
+    <Property Name="adj_close" Type="decimal" Scale="8" />
+    <Property Name="volume" Type="decimal" Precision="22" Scale="8" />
+    <Property Name="open_interest" Type="decimal" Scale="8" />
   </EntityType>
   <EntityType Name="s_option_bids">
     <Key>

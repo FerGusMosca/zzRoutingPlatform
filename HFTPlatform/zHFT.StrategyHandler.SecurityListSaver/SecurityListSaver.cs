@@ -254,6 +254,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver
                     List<Security> optionSecurities = securityList.Securities.Where(x => x.SecType == SecurityType.OPT).ToList();
                     ProcessOptionsList(optionSecurities);
                 }
+                //Los bonos deben ser cargados manualmente para tener todos los datos importantes de los mismos
                 else
                 {
                     DoLog(string.Format("@{0}: Security Type not handled {1}:", SecurityListSaverConfiguration.Name, secType),

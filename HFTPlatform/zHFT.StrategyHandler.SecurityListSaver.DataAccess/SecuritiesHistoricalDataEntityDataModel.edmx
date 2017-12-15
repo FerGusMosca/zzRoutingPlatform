@@ -6,10 +6,15 @@
     <edmx:StorageModels>
     <Schema Namespace="MomentumBackTestsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="MomentumBackTestsModelStoreContainer">
+          <EntitySet Name="bond_categories" EntityType="MomentumBackTestsModel.Store.bond_categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="categories" EntityType="MomentumBackTestsModel.Store.categories" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="countries" EntityType="MomentumBackTestsModel.Store.countries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="currencies" EntityType="MomentumBackTestsModel.Store.currencies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="markets" EntityType="MomentumBackTestsModel.Store.markets" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="options_market_data" EntityType="MomentumBackTestsModel.Store.options_market_data" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="s_bonds" EntityType="MomentumBackTestsModel.Store.s_bonds" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="s_cryptos_closing_prices" EntityType="MomentumBackTestsModel.Store.s_cryptos_closing_prices" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_option_bids" EntityType="MomentumBackTestsModel.Store.s_option_bids" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_option_closing_prices" EntityType="MomentumBackTestsModel.Store.s_option_closing_prices" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_options" EntityType="MomentumBackTestsModel.Store.s_options" store:Type="Tables" Schema="dbo" />
@@ -25,6 +30,13 @@
             <End Role="s_option_closing_prices" EntitySet="s_option_closing_prices" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="bond_categories">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
         <EntityType Name="categories">
           <Key>
             <PropertyRef Name="id" />
@@ -39,6 +51,13 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="code" Type="varchar" Nullable="false" MaxLength="3" />
           <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="currencies">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="description" Type="varchar" Nullable="false" MaxLength="100" />
         </EntityType>
         <EntityType Name="markets">
           <Key>
@@ -75,6 +94,52 @@
           <Property Name="moneda" Type="varchar" MaxLength="10" />
           <Property Name="sesion" Type="varchar" MaxLength="10" />
           <Property Name="timestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="s_bonds">
+          <Key>
+            <PropertyRef Name="symbol" />
+          </Key>
+          <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="market" Type="varchar" MaxLength="100" />
+          <Property Name="country" Type="varchar" MaxLength="3" />
+          <Property Name="bond_category" Type="varchar" MaxLength="50" />
+          <Property Name="issue_date" Type="datetime" />
+          <Property Name="maturity_date" Type="datetime" Nullable="false" />
+          <Property Name="coupon" Type="float" />
+          <Property Name="multiple" Type="int" />
+          <Property Name="currency" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="payment_currency" Type="varchar" MaxLength="10" />
+          <Property Name="country_law" Type="varchar" MaxLength="3" />
+          <Property Name="country_law_desc" Type="varchar" MaxLength="50" />
+          <Property Name="issuer" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="s_cryptocurrencies">
+          <Key>
+            <PropertyRef Name="symbol" />
+          </Key>
+          <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="active" Type="bit" />
+          <Property Name="coin_type" Type="varchar" MaxLength="50" />
+          <Property Name="base_address" Type="varchar" MaxLength="200" />
+          <Property Name="notice" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="s_cryptos_closing_prices">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="quote_symbol" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="open" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="maximum" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="minimum" Type="decimal" Nullable="false" Scale="8" />
+          <Property Name="close" Type="decimal" Scale="8" />
+          <Property Name="adj_close" Type="decimal" Scale="8" />
+          <Property Name="volume" Type="decimal" Precision="22" Scale="8" />
+          <Property Name="open_interest" Type="decimal" Scale="8" />
         </EntityType>
         <EntityType Name="s_option_bids">
           <Key>
@@ -223,6 +288,11 @@
           <EntitySet Name="s_stocks" EntityType="StocksHistoricalDataModel.s_stocks" />
           <EntitySet Name="stocks_market_data" EntityType="StocksHistoricalDataModel.stocks_market_data" />
           <EntitySet Name="options_market_data" EntityType="StocksHistoricalDataModel.options_market_data" />
+          <EntitySet Name="bond_categories" EntityType="StocksHistoricalDataModel.bond_categories" />
+          <EntitySet Name="currencies" EntityType="StocksHistoricalDataModel.currencies" />
+          <EntitySet Name="s_bonds" EntityType="StocksHistoricalDataModel.s_bonds" />
+          <EntitySet Name="s_cryptocurrencies" EntityType="StocksHistoricalDataModel.s_cryptocurrencies" />
+          <EntitySet Name="s_cryptos_closing_prices" EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" />
         </EntityContainer>
         <EntityType Name="stocks_prices">
           <Key>
@@ -403,6 +473,66 @@
           <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="timestamp" Precision="3" />
         </EntityType>
+        <EntityType Name="bond_categories">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="currencies">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Type="String" Name="code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="s_bonds">
+          <Key>
+            <PropertyRef Name="symbol" />
+          </Key>
+          <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="market" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="country" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="bond_category" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="issue_date" Precision="3" />
+          <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="3" />
+          <Property Type="Double" Name="coupon" />
+          <Property Type="Int32" Name="multiple" />
+          <Property Type="String" Name="currency" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="payment_currency" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="country_law" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="country_law_desc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="issuer" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="s_cryptocurrencies">
+          <Key>
+            <PropertyRef Name="symbol" />
+          </Key>
+          <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="active" />
+          <Property Type="String" Name="coin_type" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="base_address" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="notice" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="s_cryptos_closing_prices">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="quote_symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="date" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="open" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="maximum" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="minimum" Nullable="false" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="close" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="adj_close" Precision="18" Scale="8" />
+          <Property Type="Decimal" Name="volume" Precision="22" Scale="8" />
+          <Property Type="Decimal" Name="open_interest" Precision="18" Scale="8" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -563,6 +693,71 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="bond_categories">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.bond_categories">
+              <MappingFragment StoreEntitySet="bond_categories">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="currencies">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.currencies">
+              <MappingFragment StoreEntitySet="currencies">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="s_bonds">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_bonds">
+              <MappingFragment StoreEntitySet="s_bonds">
+                <ScalarProperty Name="issuer" ColumnName="issuer" />
+                <ScalarProperty Name="country_law_desc" ColumnName="country_law_desc" />
+                <ScalarProperty Name="country_law" ColumnName="country_law" />
+                <ScalarProperty Name="payment_currency" ColumnName="payment_currency" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="multiple" ColumnName="multiple" />
+                <ScalarProperty Name="coupon" ColumnName="coupon" />
+                <ScalarProperty Name="maturity_date" ColumnName="maturity_date" />
+                <ScalarProperty Name="issue_date" ColumnName="issue_date" />
+                <ScalarProperty Name="bond_category" ColumnName="bond_category" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="market" ColumnName="market" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="symbol" ColumnName="symbol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="s_cryptocurrencies">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_cryptocurrencies">
+              <MappingFragment StoreEntitySet="s_cryptocurrencies">
+                <ScalarProperty Name="notice" ColumnName="notice" />
+                <ScalarProperty Name="base_address" ColumnName="base_address" />
+                <ScalarProperty Name="coin_type" ColumnName="coin_type" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="symbol" ColumnName="symbol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="s_cryptos_closing_prices">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_cryptos_closing_prices">
+              <MappingFragment StoreEntitySet="s_cryptos_closing_prices">
+                <ScalarProperty Name="open_interest" ColumnName="open_interest" />
+                <ScalarProperty Name="volume" ColumnName="volume" />
+                <ScalarProperty Name="adj_close" ColumnName="adj_close" />
+                <ScalarProperty Name="close" ColumnName="close" />
+                <ScalarProperty Name="minimum" ColumnName="minimum" />
+                <ScalarProperty Name="maximum" ColumnName="maximum" />
+                <ScalarProperty Name="open" ColumnName="open" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="quote_symbol" ColumnName="quote_symbol" />
+                <ScalarProperty Name="symbol" ColumnName="symbol" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -596,6 +791,11 @@
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_stocks" Width="1.5" PointX="8.125" PointY="16.375" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.stocks_market_data" Width="1.5" PointX="4.5954942761899407" PointY="31.917411953172373" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.options_market_data" Width="1.5" PointX="7.875" PointY="12.125" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.bond_categories" Width="1.5" PointX="11.679791617989443" PointY="12.659008732372433" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.currencies" Width="1.5" PointX="1.9915559915786405" PointY="18.383113050080421" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_bonds" Width="1.5" PointX="8.1264646147035364" PointY="12.096516614824774" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_cryptocurrencies" Width="1.5" PointX="2.5968013455145065" PointY="18.618445822325743" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" Width="1.5" PointX="11.704684182864002" PointY="2.51674956200493" />
       </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

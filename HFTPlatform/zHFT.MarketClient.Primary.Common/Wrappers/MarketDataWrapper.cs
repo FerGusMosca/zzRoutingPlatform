@@ -34,7 +34,12 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
             MarketDataFields mdField = (MarketDataFields)field;
 
             if (mdField == MarketDataFields.Symbol)
-                return SymbolConverter.GetFullSymbolFromCleanSymbol(base.Security.Symbol, Market);
+            {
+                if (base.Security.SecType == SecurityType.OPT || base.Security.SecType == SecurityType.FUT)
+                    return base.Security.Symbol;
+                else //Todos los demas securities deben tener el postfijo de mercado
+                    return SymbolConverter.GetFullSymbolFromCleanSymbol(base.Security.Symbol, Market);
+            }
             else
                 return base.GetField(field);
         }
