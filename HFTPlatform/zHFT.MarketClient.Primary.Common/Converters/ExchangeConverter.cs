@@ -66,6 +66,32 @@ namespace zHFT.MarketClient.Primary.Common.Converters
         
         }
 
+        public static SettlType GetMarketSettlTypeID(SecurityType secType, string exchange)
+        {
+            if (exchange == _ROFX)
+            {
+                return SettlType.Future;
+
+            }
+            else
+            {
+                if (secType == SecurityType.CS)
+                {
+                    if (exchange == _BYMA)
+                        return SettlType.Tplus2;
+
+                }
+                else if (secType == SecurityType.OPT)
+                {
+                    if (exchange == _BYMA)
+                        return SettlType.NextDay;
+                }
+            }
+
+            throw new Exception(string.Format("There is no clearing ID code set for market {0} and sec type {1}", exchange, secType.ToString()));
+
+        }
+
         public static string GetMarketFromFullSymbol(string fullSymbol)
         {
             if (fullSymbol.StartsWith(_BYMA_PRIMARY_PREFIX_CODE))

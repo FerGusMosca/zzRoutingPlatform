@@ -49,15 +49,16 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                 {
                     double price = entry.getDouble(MDEntryPx.FIELD);
                     double qty = entry.getDouble(MDEntrySize.FIELD);
+                    if (entry.isSetTradeCondition())
+                    {
+                        string cond = entry.getField(TradeCondition.FIELD);
+                        //int trdType = entry.getInt(TrdType.FIELD);
 
-                    string cond = entry.getField(TradeCondition.FIELD);
-                    int trdType = entry.getInt(TrdType.FIELD);
-
-                    if (cond == TradeCondition.EXCHANGE_LAST.ToString()
-                        && trdType == TrdType.REGULAR_TRADE)
-                    {//we want the Trade field to only have the last and regular trade
-                        sec.MarketData.Trade = price;
-                        sec.MarketData.MDTradeSize = qty;
+                        if (cond == TradeCondition.EXCHANGE_LAST.ToString())
+                        {//we want the Trade field to only have the last and regular trade
+                            sec.MarketData.Trade = price;
+                            sec.MarketData.MDTradeSize = qty;
+                        }
                     }
                 }
                 else if (type == MDEntryType.OPENING_PRICE)

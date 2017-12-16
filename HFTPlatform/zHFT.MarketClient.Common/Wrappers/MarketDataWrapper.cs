@@ -104,6 +104,8 @@ namespace zHFT.MarketClient.Common.Wrappers
                 return Security.MarketData.TradeVolume;
             else if (mdField == MarketDataFields.OpenInterest)
                 return Security.MarketData.OpenInterest;
+            else if (mdField == MarketDataFields.SettlType)
+                return Security.MarketData.SettlType;
             else if (mdField == MarketDataFields.CompositeUnderlyingPrice)
                 return Security.MarketData.CompositeUnderlyingPrice;
             else if (mdField == MarketDataFields.MidPrice)
@@ -116,6 +118,8 @@ namespace zHFT.MarketClient.Common.Wrappers
                 return Security.MarketData.EarlyPrices;
             else if (mdField == MarketDataFields.Trade)
                 return Security.MarketData.Trade;
+            else if (mdField == MarketDataFields.MDTradeSize)
+                return Security.MarketData.MDTradeSize;
             else if (mdField == MarketDataFields.BestBidPrice)
                 return Security.MarketData.BestBidPrice;
             else if (mdField == MarketDataFields.BestAskPrice)

@@ -186,7 +186,10 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
                     Exchange = market,
                     SecType = secType
                 };
-                
+                sec.MarketData.BestAskExch = market;
+                sec.MarketData.BestBidExch = market;
+                sec.MarketData.SettlType = ExchangeConverter.GetMarketSettlTypeID(secType, market);
+
                 FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
 
                 zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);

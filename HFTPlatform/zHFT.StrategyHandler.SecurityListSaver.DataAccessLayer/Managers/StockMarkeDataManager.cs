@@ -34,7 +34,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             stockMarketDataDB.volumen_nominal = security.MarketData.NominalVolume;
             stockMarketDataDB.volumen_monetario = security.MarketData.CashVolume;
             stockMarketDataDB.precio_ultima_operacion = security.MarketData.Trade;
-            stockMarketDataDB.volumen_ultima_operacion = security.MarketData.TradeVolume;
+            stockMarketDataDB.volumen_ultima_operacion = security.MarketData.MDTradeSize;
             stockMarketDataDB.mejor_bid_precio = security.MarketData.BestBidPrice;
             stockMarketDataDB.mejor_bid_tamano = security.MarketData.BestBidSize;
             stockMarketDataDB.mejor_bid_exch = security.MarketData.BestBidExch;
