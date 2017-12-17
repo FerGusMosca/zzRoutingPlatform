@@ -1,0 +1,8 @@
+2017-12-14 19:11:39  :: 14/12/2017 19:11:39MainApp.LoadConfig
+2017-12-14 19:11:39  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-14 19:11:39  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2017-12-14 19:11:39  :: Fin GetConfiguracion
+2017-12-14 19:11:40  :: Initializing Log
+2017-12-14 19:11:40  :: Initializing Incoming Module
+2017-12-14 19:11:41  :: Incoming Module successfully initialized
+2017-12-14 19:11:41  :: Initializing Outgoing Module

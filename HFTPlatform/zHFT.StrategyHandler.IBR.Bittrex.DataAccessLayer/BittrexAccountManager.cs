@@ -234,7 +234,7 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                         pos.Active = true;
                         pos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
                         pos.Security = new Security() { Symbol = balance.Currency };
-                        pos.Ammount = balance.Available;
+                        pos.Ammount = balance.Balance;
 
                         RecoverMarketPriceForPosition(ref pos);
 
