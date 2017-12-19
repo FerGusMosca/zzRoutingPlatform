@@ -57,6 +57,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             account.Currency = accountDB.currency;
             account.Id = accountDB.id;
             account.Name = accountDB.name;
+            account.GenericAccountNumber = accountDB.generic_s_number;
         }
 
         private accounts Map(Account account)

@@ -90,6 +90,7 @@ namespace zHFT.OrderRouters.Common.Converters
             pos.Percent = (ValidateField(wrapper, PositionFields.Percent) ? (double?) Convert.ToDouble(wrapper.GetField(PositionFields.Percent)) : null);
             pos.ExecutionReports.AddRange((ValidateField(wrapper, PositionFields.ExecutionReports) ? (IList<ExecutionReport>)wrapper.GetField(PositionFields.ExecutionReports) : new List<ExecutionReport>()));
             pos.Orders.AddRange((ValidateField(wrapper, PositionFields.Orders) ? (IList<Order>)wrapper.GetField(PositionFields.Orders) : new List<Order>()));
+            pos.AccountId = (ValidateField(wrapper, PositionFields.Account) ? (string)wrapper.GetField(PositionFields.Account) : null);
 
             if (wrapper.GetAction() == Actions.NEW_POSITION)
             {

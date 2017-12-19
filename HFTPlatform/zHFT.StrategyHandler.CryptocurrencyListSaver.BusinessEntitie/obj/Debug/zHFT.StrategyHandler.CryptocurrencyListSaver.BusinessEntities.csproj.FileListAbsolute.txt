@@ -2,4 +2,3 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Cr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csprojResolveAssemblyReference.cache

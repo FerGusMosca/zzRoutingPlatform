@@ -23,6 +23,7 @@ using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.MarketClient.Primary.Common.Wrappers;
 using zHFT.OrderRouters.Primary.Common;
+using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
 using zHFT.StrategyHandler.Common.Converters;
@@ -113,6 +114,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected OnMessageReceived OnExecutionReportMessageRcv { get; set; }
 
+        protected Dictionary<string, zHFT.Main.Common.Enums.SecurityType> SecurityTypes { get; set; }
+
         protected DateTime Start { get; set; }
 
         #endregion
@@ -124,18 +127,29 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
             string primarySymbol = message.getField(Symbol.FIELD);
-            string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
+
 
             if (primarySymbol != null)
             {
-                string cleanSymbol = SymbolConverter.GetCleanSymbolFromPrimary(primarySymbol,market);
-                string fulSymbol = SymbolConverter.GetFullSymbolFromCleanSymbol(cleanSymbol, market);
-                if (ActiveSecurities.Values.Any(x => x.Symbol == fulSymbol))
-                {
-                    Security sec = ActiveSecurities.Values.Where(x => x.Symbol == fulSymbol).FirstOrDefault();
+                string market = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
+                string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol,market);
+                zHFT.Main.Common.Enums.SecurityType secType;
+                if (SecurityTypes.Keys.Contains(fullSymbol))
+                    secType = SecurityTypes[fullSymbol];
+                else
+                    throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
 
-                    FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
-                }
+                Security sec = ActiveSecurities.Values.Where(x => x.Symbol == fullSymbol).FirstOrDefault();
+
+                sec.MarketData.BestAskExch = market;
+                sec.MarketData.BestBidExch = market;
+                sec.MarketData.SettlType = ExchangeConverter.GetMarketSettlTypeID(secType, market);
+
+                FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
+
+                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+
+                OnMarketDataMessageRcv(mdWrapper);
             }
             else
             {
@@ -449,11 +463,13 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         stockSecToRequest.SecType = zHFT.Main.Common.Enums.SecurityType.CS;
 
                         ActiveSecurities.Add(ActiveSecurities.Count() + 1, stockSecToRequest);
-
+                        SecurityTypes.Add(stock.Symbol, zHFT.Main.Common.Enums.SecurityType.CS);
                         MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                         ProcessMarketDataRequest(wrapper);
                     }
                 }
+
+                
 
             }
             else if (secType == zHFT.Main.Common.Enums.SecurityType.OPT.ToString())
@@ -471,7 +487,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         optSecToRequest.SecType = zHFT.Main.Common.Enums.SecurityType.OPT;
 
                         ActiveSecurities.Add(ActiveSecurities.Count() + 1, optSecToRequest);
-
+                        SecurityTypes.Add(option.Symbol, zHFT.Main.Common.Enums.SecurityType.OPT);
                         MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(optSecToRequest,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                         ProcessMarketDataRequest(wrapper);
                     }
@@ -563,10 +579,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                     if (elapsed.TotalSeconds > Convert.ToDouble(PrimaryConfiguration.MaxWaitingTimeForMarketDataRequest))
                     {
-
-                        foreach (string secType in PrimaryConfiguration.SecurityTypes)
-                            RequestBulkMarketData(secType);
-
+                        lock (tLock)
+                        {
+                            foreach (string secType in PrimaryConfiguration.SecurityTypes)
+                                RequestBulkMarketData(secType);
+                        }
                         active = false;
                     }
                 }
@@ -690,6 +707,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         }
                     }
 
+                    SecurityTypes = new Dictionary<string, Main.Common.Enums.SecurityType>();
+
                     SessionSettings = new SessionSettings(PrimaryConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
                     ScreenLogFactory = new ScreenLogFactory(SessionSettings);
@@ -757,6 +776,12 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     {
                         SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix50.SecurityList)value, (IConfiguration)Config);
                         ProcessSecurityList(wrapper);
+                    }
+                    else if (value is QuickFix50.ExecutionReport)
+                    {
+                        QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
+                        ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
+                        OnExecutionReportMessageRcv(erWrapper);
                     }
                     else if (value is QuickFix50Sp2.MarketDataRequestReject)
                     {

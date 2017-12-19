@@ -26,7 +26,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly PositionFields Security = new PositionFields(16);
         public static readonly PositionFields Currency = new PositionFields(17);
         public static readonly PositionFields SecurityType = new PositionFields(18);
-
+        public static readonly PositionFields Account = new PositionFields(19);
 
 
         protected PositionFields(int pInternalValue)

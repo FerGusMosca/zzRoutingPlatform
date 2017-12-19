@@ -1,0 +1,459 @@
+2017-12-17 9:56:33  :: 12/17/2017 9:56:33 AMMomentumStrategyBase.LoadConfig
+2017-12-17 9:56:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-12-17 9:56:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-12-17 9:56:33  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-12-17 9:56:33  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2017-12-17 9:56:33  :: 12/17/2017 9:56:33 AMOrderRouterBase.LoadConfig
+2017-12-17 9:56:33  :: Loading config:.\outgoingOrderRouter.xml
+2017-12-17 9:56:33  :: Processing config:.\outgoingOrderRouter.xml
+2017-12-17 9:56:34  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-12-17 9:56:34  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2017-12-17 9:56:37  :: 12/17/2017 9:56:37 AMOrderRouterBase.LoadConfig
+2017-12-17 9:56:37  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2017-12-17 9:56:37  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2017-12-17 9:56:37  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2017-12-17 21:02:04  :: 12/17/2017 9:02:04 PMMomentumStrategyBase.LoadConfig
+2017-12-17 21:02:04  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-12-17 21:02:04  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-12-17 21:02:04  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2017-12-17 21:02:04  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2017-12-17 21:02:04  :: 12/17/2017 9:02:04 PMOrderRouterBase.LoadConfig
+2017-12-17 21:02:04  :: Loading config:.\outgoingOrderRouter.xml
+2017-12-17 21:02:04  :: Processing config:.\outgoingOrderRouter.xml
+2017-12-17 21:02:04  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2017-12-17 21:02:04  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2017-12-17 21:02:04  :: 12/17/2017 9:02:04 PMOrderRouterBase.LoadConfig
+2017-12-17 21:02:04  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2017-12-17 21:02:04  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2017-12-17 21:02:04  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2017-12-17 21:02:16  :: Processing Market Data:Symbol=MAID  LastPrice=0.00003665 BestBidPrice=0.00003665 BestAskPrice=0.00003669
+2017-12-17 21:02:33  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-12-17 21:02:33  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol MAID
+2017-12-17 21:02:33  :: Routing to market position for symbol MAID
+2017-12-17 21:02:34  :: Creating sell order for symbol MAID.Quantity=343.57313223 Price=
+2017-12-17 21:02:34  :: @Outgoing Order Routing Bittrex:Routing with Bittrex to market for symbol MAID
+2017-12-17 21:02:34  :: Processing Market Data:Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:02:34  :: Receiving Market Data on order router: Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:02:34  :: Updating DOM price on BID. Symbol: MAID - New Bid Price:3.665E-05 Old Bid Price:3.68E-05
+2017-12-17 21:02:34  :: Updating DOM price on ASK. Symbol: MAID - New Ask Price:3.669E-05 Old Ask Price:3.687E-05
+2017-12-17 21:02:34  :: @Order Router: Updating order for symbol MAID: qty=343.57313223 price=3.687E-05
+2017-12-17 21:02:34  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol MAID
+2017-12-17 21:02:34  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 2ea846e0-6325-4205-988e-8542b46d4e1d for symbol MAID
+2017-12-17 21:02:34  :: Processing Market Data:Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:02:34  :: Receiving Market Data on order router: Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:02:39  :: @Outgoing Order Routing Bittrex:Error updating order 00100100000!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 2ea846e0-6325-4205-988e-8542b46d4e1d
+2017-12-17 21:02:41  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2017-12-17 21:02:41  :: Processing Market Data:Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:02:41  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:02:41  :: Receiving Market Data on order router: Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:02:41  :: Incoming message from order routing: Wrapper
+2017-12-17 21:02:41  :: Received filled for symbol MAID
+2017-12-17 21:02:41  :: Filled for symbol MAID processed
+2017-12-17 21:02:41  :: Ending RunOnPositionCalculus for symbol MAID. The position is cleared
+2017-12-17 21:02:42  :: ProcessOutgoing: Wrapper
+2017-12-17 21:02:42  :: Processing Market Data:Symbol=MAID  LastPrice=0.0000368 BestBidPrice=0.0000368 BestAskPrice=0.00003687
+2017-12-17 21:03:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019791 BestBidPrice=0.00019791 BestAskPrice=0.000198
+2017-12-17 21:03:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized
+2017-12-17 21:03:58  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol PAY
+2017-12-17 21:03:58  :: Routing to market position for symbol PAY
+2017-12-17 21:03:58  :: Creating buy order for symbol PAY.Quantity=40.2036784396948 Price=
+2017-12-17 21:03:58  :: @Outgoing Order Routing Bittrex:Routing with Bittrex to market for symbol PAY
+2017-12-17 21:03:58  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019792 BestAskPrice=0.000198
+2017-12-17 21:03:58  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019792 BestAskPrice=0.000198
+2017-12-17 21:04:00  :: Updating DOM price on BID. Symbol: PAY - New Bid Price:0.00019791 Old Bid Price:0.00019792
+2017-12-17 21:04:00  :: @Order Router: Updating order for symbol PAY: qty=40 price=0.00019792
+2017-12-17 21:04:00  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol PAY
+2017-12-17 21:04:00  :: @Outgoing Order Routing Bittrex:Cancelling Order Id bdb2f9c1-a704-4666-ab8b-cf832d358ca8 for symbol PAY
+2017-12-17 21:04:01  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:01  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:02  :: Updating DOM price on BID. Symbol: PAY - New Bid Price:0.00019792 Old Bid Price:0.00019799
+2017-12-17 21:04:02  :: @Order Router: Updating order for symbol PAY: qty=40 price=0.00019799
+2017-12-17 21:04:02  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol PAY
+2017-12-17 21:04:02  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:02  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:02  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:02  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 93b18c4d-d2e5-4f7c-9835-5711281b7728 for symbol PAY
+2017-12-17 21:04:03  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:03  :: Received New for symbol PAY
+2017-12-17 21:04:03  :: New for symbol PAY processed
+2017-12-17 21:04:04  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:04  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:05  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:06  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:07  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:08  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:08  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:08  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:08  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:08  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:08  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:09  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:09  :: Received New for symbol PAY
+2017-12-17 21:04:09  :: New for symbol PAY processed
+2017-12-17 21:04:09  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:09  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:10  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:10  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:10  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:10  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:10  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:10  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:11  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:12  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:13  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:13  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:13  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:13  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:13  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:13  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:14  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:15  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:15  :: Received New for symbol PAY
+2017-12-17 21:04:15  :: New for symbol PAY processed
+2017-12-17 21:04:15  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:15  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:16  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:17  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:17  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:17  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:17  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:17  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:17  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:18  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:18  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:18  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:18  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:18  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:18  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:19  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:20  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:20  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:21  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:21  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:22  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:22  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:23  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:23  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:23  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:23  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:23  :: Received New for symbol PAY
+2017-12-17 21:04:23  :: New for symbol PAY processed
+2017-12-17 21:04:23  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:23  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:23  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:23  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:24  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:25  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.00019799 BestAskPrice=0.000198
+2017-12-17 21:04:26  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:26  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:26  :: Updating DOM price on BID. Symbol: PAY - New Bid Price:0.00019799 Old Bid Price:0.000198
+2017-12-17 21:04:26  :: Updating DOM price on ASK. Symbol: PAY - New Ask Price:0.000198 Old Ask Price:0.00019819
+2017-12-17 21:04:26  :: @Order Router: Updating order for symbol PAY: qty=40 price=0.000198
+2017-12-17 21:04:26  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol PAY
+2017-12-17 21:04:26  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 68c40e22-235b-4e91-9ed7-1dc27e721628 for symbol PAY
+2017-12-17 21:04:26  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:26  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:27  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:28  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:28  :: Received New for symbol PAY
+2017-12-17 21:04:28  :: New for symbol PAY processed
+2017-12-17 21:04:28  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:28  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:29  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:30  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:31  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:32  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:33  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:33  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:33  :: Received New for symbol PAY
+2017-12-17 21:04:33  :: New for symbol PAY processed
+2017-12-17 21:04:34  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:34  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:35  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:36  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:37  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Processing Market Data:Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:38  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.000198 BestBidPrice=0.000198 BestAskPrice=0.00019819
+2017-12-17 21:04:39  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:39  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:39  :: Received New for symbol PAY
+2017-12-17 21:04:39  :: New for symbol PAY processed
+2017-12-17 21:04:40  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:40  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:40  :: Updating DOM price on BID. Symbol: PAY - New Bid Price:0.000198 Old Bid Price:0.00019837
+2017-12-17 21:04:40  :: Updating DOM price on ASK. Symbol: PAY - New Ask Price:0.00019819 Old Ask Price:0.00019887
+2017-12-17 21:04:40  :: @Order Router: Updating order for symbol PAY: qty=40 price=0.00019837
+2017-12-17 21:04:40  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol PAY
+2017-12-17 21:04:40  :: @Outgoing Order Routing Bittrex:Cancelling Order Id e779ba9f-0db6-4e4a-9e23-567b8439f57b for symbol PAY
+2017-12-17 21:04:40  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:40  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:40  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:40  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019837 BestBidPrice=0.00019837 BestAskPrice=0.00019887
+2017-12-17 21:04:41  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019818 BestBidPrice=0.00019837 BestAskPrice=0.0001984
+2017-12-17 21:04:41  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019818 BestBidPrice=0.00019837 BestAskPrice=0.0001984
+2017-12-17 21:04:41  :: Updating DOM price on ASK. Symbol: PAY - New Ask Price:0.00019887 Old Ask Price:0.0001984
+2017-12-17 21:04:41  :: @Order Router: Updating order for symbol PAY: qty=40 price=0.00019837
+2017-12-17 21:04:41  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol PAY
+2017-12-17 21:04:41  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 589d4acc-eb10-48c7-80cc-e0bf5d4c60d7 for symbol PAY
+2017-12-17 21:04:43  :: @Outgoing Order Routing Bittrex:Error updating order 00200500004!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 589d4acc-eb10-48c7-80cc-e0bf5d4c60d7
+2017-12-17 21:04:43  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019818 BestBidPrice=0.00019837 BestAskPrice=0.0001984
+2017-12-17 21:04:43  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019818 BestBidPrice=0.00019837 BestAskPrice=0.0001984
+2017-12-17 21:04:44  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:04:44  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:04:44  :: Updating DOM price on BID. Symbol: PAY - New Bid Price:0.00019837 Old Bid Price:0.000198
+2017-12-17 21:04:44  :: Updating DOM price on ASK. Symbol: PAY - New Ask Price:0.0001984 Old Ask Price:0.00019887
+2017-12-17 21:04:44  :: @Order Router: Updating order for symbol PAY: qty=40 price=0.000198
+2017-12-17 21:04:44  :: @Outgoing Order Routing Bittrex:Updating order with Bittrex  for symbol PAY
+2017-12-17 21:04:45  :: @Outgoing Order Routing Bittrex:Could not find order for origClOrderId  00200600005!
+2017-12-17 21:04:45  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:04:45  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:04:45  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:04:45  :: Receiving Market Data on order router: Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:04:47  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2017-12-17 21:04:47  :: Incoming message from order routing proxy: Wrapper
+2017-12-17 21:04:47  :: Incoming message from order routing: Wrapper
+2017-12-17 21:04:47  :: Received filled for symbol PAY
+2017-12-17 21:04:47  :: Filled for symbol PAY processed
+2017-12-17 21:04:47  :: Ending RunOnPositionCalculus for symbol PAY. The position is cleared
+2017-12-17 21:04:47  :: ProcessOutgoing: Wrapper
+2017-12-17 21:04:47  :: Processing Market Data:Symbol=PAY  LastPrice=0.00019887 BestBidPrice=0.000198 BestAskPrice=0.00019887
+2017-12-17 21:05:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_bittrex_test positions succesfully synchronized

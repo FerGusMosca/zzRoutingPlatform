@@ -35,7 +35,6 @@ C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Tes
 C:\Users\zimzum\Desktop\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIXConfig\FIX50SP2.xml
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIXConfig\FIXT11.xml
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator.cfg
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\Config.xml
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\OutgoingSingletonConfig.xml
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\Primary.xml
@@ -118,3 +117,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Pr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_prod.cfg
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test.cfg

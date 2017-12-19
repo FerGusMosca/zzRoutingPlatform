@@ -472,7 +472,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 Side = zHFT.Main.Common.Enums.Side.Buy,//A new positions is always a buy positions
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = instr.Account != null ? instr.Account.GenericAccountNumber : null
             };
 
             if (instr.Shares.HasValue)

@@ -96,6 +96,8 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         }
 
+        public string AccountId { get; set; }
+
         public PositionRejectReason? PositionRejectReason { get; set; }
 
         #region Flags

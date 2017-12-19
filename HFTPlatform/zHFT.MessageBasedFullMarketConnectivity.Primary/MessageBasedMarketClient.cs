@@ -78,7 +78,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
             string primarySymbol = message.getField(Symbol.FIELD);
 
-            string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
+            string market = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
             string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, market);
 
             Security sec = new Security()
@@ -95,49 +95,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
         
         }
 
-        protected void ProcesssExecutionReportMessage(QuickFix.Message message)
-        {
-            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
-            ExecutionReportWrapper erWrapper = new ExecutionReportWrapper((QuickFix50.ExecutionReport )message, Config);
-
-            string clOrdId = (string) erWrapper.GetField(ExecutionReportFields.ClOrdID);
-            string origClOrdId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
-            zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
-
-            if (clOrdId != null)
-            {
-                if (ActiveOrders.Keys.Contains(clOrdId))
-                {
-                    if (execType == zHFT.Main.Common.Enums.ExecType.New)
-                    {
-                        Order order = ActiveOrders[clOrdId];
-                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
-                        order.OrderId = orderId;
-                    }
-                }
-                else if (!string.IsNullOrEmpty(origClOrdId) && ActiveOrders.Keys.Contains(origClOrdId))
-                {
-                    if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
-                    {
-                        Order order = ActiveOrders[origClOrdId];
-                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
-                        order.OrderId = orderId;
-                    }
-                }
-                else
-                {
-                    DoLog(string.Format("@{0} Could not find order for ClOrderId {1} ", PrimaryConfiguration.Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
-                }
-
-            }
-            else
-            {
-                DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-            }
-
-            OnIncomingMessageRcv(erWrapper);
-        }
 
         protected void ProcesssBusinessMessageReject(QuickFix.Message message)
         {
@@ -474,7 +432,8 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     else if (value is QuickFix50.ExecutionReport)
                     {
                         QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
-                        ProcesssExecutionReportMessage(msg);
+                        ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
+                        OnExecutionReportMessageRcv(erWrapper);
                     }
                     else if (value is QuickFix50.OrderCancelReject)
                     {

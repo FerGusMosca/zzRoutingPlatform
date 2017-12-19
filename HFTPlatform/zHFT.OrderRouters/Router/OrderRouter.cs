@@ -110,6 +110,7 @@ namespace zHFT.OrderRouters.Router
                 Currency = pos.Security.Currency,
                 QuantityType = pos.QuantityType,
                 PriceType = PriceType.FixedAmount,
+                Account=pos.AccountId,
                 Index = index
             };
             order.OrigClOrdId = order.ClOrdId;
@@ -400,8 +401,6 @@ namespace zHFT.OrderRouters.Router
                 {
                     try
                     {
-                        Thread.Sleep(ORConfiguration.OrderUpdateInMilliseconds);
-
                         Position posInOrderRouter = Positions.Where(x => x.PosId == currentPos.PosId).FirstOrDefault();
 
                         if (posInOrderRouter!=null && !posInOrderRouter.PositionCleared && !posInOrderRouter.PositionCanceledOrRejected)
@@ -424,6 +423,8 @@ namespace zHFT.OrderRouters.Router
                             DoLog(string.Format("Ending RunOnPositionCalculus for symbol {0}. The position is cleared",
                                 currentPos.Security.Symbol), Constants.MessageType.Error);
                         }
+
+                        Thread.Sleep(ORConfiguration.OrderUpdateInMilliseconds);
                     }
                     catch (Exception ex)
                     {

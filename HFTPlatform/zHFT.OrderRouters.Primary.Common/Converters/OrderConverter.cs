@@ -31,16 +31,15 @@ namespace zHFT.OrderRouters.Primary.Common
             if (!ValidateField(wrapper, OrderFields.Symbol))
                 throw new Exception("Missing symbol for order");
 
-            if (!ValidateField(wrapper, OrderFields.Exchange))
-                throw new Exception("Missing exchange for order");
-
+            //if (!ValidateField(wrapper, OrderFields.Exchange))
+            //    throw new Exception("Missing exchange for order");
 
             if (!ValidateField(wrapper, OrderFields.SecurityType))
                 throw new Exception("Missing Security Type for order");
 
         }
 
-        protected string ProcessSymbol(SecurityType secType,string symbol,string exchange)
+        protected string ProcessSymbol(SecurityType secType,string symbol)
         {
             string cleanSymbol = "";
 
@@ -55,6 +54,7 @@ namespace zHFT.OrderRouters.Primary.Common
             else
                 throw new Exception(string.Format("Security Type translation not yet implemented: {0}", secType.ToString()));
 
+            string exchange = ExchangeConverter.GetMarketFromFullSymbol(symbol);
             string marketPrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
             string marketClearingId = ExchangeConverter.GetMarketClearingID(secType, exchange);
 
@@ -97,10 +97,10 @@ namespace zHFT.OrderRouters.Primary.Common
             double ordQty = (double)wrapper.GetField(OrderFields.OrderQty);
             string account = (string)wrapper.GetField(OrderFields.Account);
             string symbol = (string)wrapper.GetField(OrderFields.Symbol);
-            string exchange = (string)wrapper.GetField(OrderFields.Exchange);
             SecurityType secType = (SecurityType)wrapper.GetField(OrderFields.SecurityType);
+            string exchange = ExchangeConverter.GetMarketFromFullSymbol(symbol);
 
-            symbol = ProcessSymbol(secType, symbol, exchange);
+            symbol = ProcessSymbol(secType, symbol);
 
             Order order = new Order();
             order.OrdType = ordType;

@@ -172,7 +172,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
             if (primarySymbol != null)
             {
-                string market = ExchangeConverter.GetMarketFromFullSymbol(primarySymbol);
+                string market = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
                 //string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol,market);
                 zHFT.Main.Common.Enums.SecurityType secType;
                 if (SecurityTypes.Keys.Contains(primarySymbol))

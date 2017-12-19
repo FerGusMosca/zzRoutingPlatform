@@ -92,14 +92,27 @@ namespace zHFT.MarketClient.Primary.Common.Converters
 
         }
 
-        public static string GetMarketFromFullSymbol(string fullSymbol)
+        public static string GetMarketFromPrimarySymbol(string primarySymbol)
         {
-            if (fullSymbol.StartsWith(_BYMA_PRIMARY_PREFIX_CODE))
+            if (primarySymbol.StartsWith(_BYMA_PRIMARY_PREFIX_CODE))
             {
                 return _BYMA;
             }
             else
                 return _ROFX;
+
+        }
+
+        public static string GetMarketFromFullSymbol(string fullSymbol)
+        {
+            if (fullSymbol.EndsWith(_BYMA))
+            {
+                return _BYMA;
+            }
+            else if (fullSymbol.EndsWith(_ROFX))
+                return _ROFX;
+            else
+                 throw new Exception(string.Format("No se pudo procesar el mercado para el symbol {0}",fullSymbol));
 
         }
 

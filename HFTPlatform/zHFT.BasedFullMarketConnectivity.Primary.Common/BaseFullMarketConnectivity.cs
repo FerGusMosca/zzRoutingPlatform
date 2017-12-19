@@ -15,6 +15,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.OrderRouters.Primary.Common;
+using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Converters;
 
 namespace zHFT.BasedFullMarketConnectivity.Primary.Common
@@ -124,6 +125,50 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         #endregion
 
         #region Protected Methods
+
+        protected ExecutionReportWrapper ProcesssExecutionReportMessage(QuickFix.Message message)
+        {
+            DoLog(string.Format("@{0}:{1} ", GetConfig().Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            ExecutionReportWrapper erWrapper = new ExecutionReportWrapper((QuickFix50.ExecutionReport)message, GetConfig());
+
+            string clOrdId = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
+            string origClOrdId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
+            zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
+
+            if (clOrdId != null)
+            {
+                if (ActiveOrders.Keys.Contains(clOrdId))
+                {
+                    if (execType == zHFT.Main.Common.Enums.ExecType.New)
+                    {
+                        Order order = ActiveOrders[clOrdId];
+                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                        order.OrderId = orderId;
+                    }
+                }
+                else if (!string.IsNullOrEmpty(origClOrdId) && ActiveOrders.Keys.Contains(origClOrdId))
+                {
+                    if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
+                    {
+                        Order order = ActiveOrders[origClOrdId];
+                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                        order.OrderId = orderId;
+                    }
+                }
+                else
+                {
+                    DoLog(string.Format("@{0} Could not find order for ClOrderId {1} ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+                }
+
+            }
+            else
+            {
+                DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
+            }
+
+            return erWrapper;
+        }
 
         protected CMState ProcessSecurityList(Wrapper wrapper)
         {

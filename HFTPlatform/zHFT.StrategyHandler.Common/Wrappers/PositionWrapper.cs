@@ -82,6 +82,8 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Position.Security.Currency;
             else if (pField == PositionFields.SecurityType)
                 return Position.Security.SecType;
+            else if (pField == PositionFields.Account)
+                return Position.AccountId;
 
 
             return ExecutionReportFields.NULL;

@@ -77,7 +77,10 @@ namespace zHFT.MarketClient.Primary.Common.Converters
                 return symbol;
             else
             {
-                return string.Format("{0}{1}{2}", symbol, _INSTR_FIELD_SEPARATOR, market);
+                if (!symbol.Contains(string.Format("{0}{1}", _INSTR_FIELD_SEPARATOR, market)))
+                    return string.Format("{0}{1}{2}", symbol, _INSTR_FIELD_SEPARATOR, market);
+                else
+                    return symbol;
 
             }
 
