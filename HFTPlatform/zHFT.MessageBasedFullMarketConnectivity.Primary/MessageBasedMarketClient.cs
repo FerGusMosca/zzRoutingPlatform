@@ -263,7 +263,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                 if (ConfigLoader.DoLoadConfig(this, configFile))
                 {
                     MarketDataRequestId = 1;
-                    OrderIndexId = 1;
+                    OrderIndexId = GetNextOrderId();
                     OrderConverter = new OrderConverter();
                     ActiveOrders = new Dictionary<string, Order>();
 

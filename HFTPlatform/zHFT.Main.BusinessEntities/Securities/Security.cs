@@ -90,6 +90,21 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         #endregion
 
+        #region Public Methods
+
+        public Security Clone(string newSymbol)
+        {
+            Security cloned = new Security();
+
+            cloned.Symbol = newSymbol;
+            cloned.SecType = SecType;
+            cloned.Exchange = Exchange;
+
+            return cloned;
+        }
+
+        #endregion
+
         #region Public Static Methods
 
 

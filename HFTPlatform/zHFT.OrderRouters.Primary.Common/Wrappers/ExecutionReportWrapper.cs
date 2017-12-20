@@ -9,6 +9,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Primary.Common.Converters;
 
 namespace zHFT.OrderRouters.Primary.Common.Wrappers
 {
@@ -158,7 +159,7 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdStatus)
                 return GetOrdStatus(ExecutionReport.getChar(QuickFix.OrdStatus.FIELD));
             else if (xrField == ExecutionReportFields.OrdRejReason)
-                return ExecutionReport.getField(QuickFix.OrdRejReason.FIELD);
+                return FixHelper.GetNullIntFieldIfSet(ExecutionReport, QuickFix.OrdRejReason.FIELD);
             else if (xrField == ExecutionReportFields.LeavesQty)
                 return ExecutionReport.getInt(LeavesQty.FIELD);
             else if (xrField == ExecutionReportFields.CumQty)
@@ -176,11 +177,15 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.LastPx)
                 return FixHelper.GetNullDoubleFieldIfSet(ExecutionReport, LastPx.FIELD);
             else if (xrField == ExecutionReportFields.LastMkt)
-                return ExecutionReport.getString(LastMkt.FIELD);
+                return FixHelper.GetFieldIfSet(ExecutionReport,LastMkt.FIELD);
 
 
             else if (xrField == ExecutionReportFields.Symbol)
-                return FixHelper.GetFieldIfSet(ExecutionReport, Symbol.FIELD);
+            {
+                string primarySymbol = FixHelper.GetFieldIfSet(ExecutionReport, Symbol.FIELD);
+                string exchange=ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
+                return SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, exchange);
+            }
             else if (xrField == ExecutionReportFields.OrderQty)
                 return FixHelper.GetNullDoubleFieldIfSet(ExecutionReport, OrderQty.FIELD);
             else if (xrField == ExecutionReportFields.CashOrderQty)

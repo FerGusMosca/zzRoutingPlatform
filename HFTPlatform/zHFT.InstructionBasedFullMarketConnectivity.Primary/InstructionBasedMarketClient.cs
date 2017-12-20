@@ -315,12 +315,16 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         {
                             Security sec = new Security()
                             {
-                                Symbol = SymbolConverter.GetCleanSymbolFromFullSymbol(instr.Symbol),
-                                Exchange = "",
+                                Symbol = instr.Symbol,
+                                Exchange = ExchangeConverter.GetMarketFromFullSymbol(instr.Symbol),
                                 SecType = instr.SecurityType
                             };
+
+                            
                             ContractsTimeStamps.Add(instr.Id, DateTime.Now);
                             SecuritiesToPublish.Add(instr.Id, sec);
+                            SecurityTypes.Add(instr.Symbol, instr.SecurityType);
+
                             if (!PrimaryConfiguration.RequestFullMarketData)//No tenemos todos los securities
                             {
                                 ActiveSecurities.Add(instr.Id, sec);
@@ -617,7 +621,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
                         DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        UpdateOrder(wrapper);
+                        //UpdateOrder(wrapper);
                         return CMState.BuildSuccess();
 
                     }
@@ -664,8 +668,10 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     OrderConverter = new OrderConverter();
                     SecurityListConverter = new SecurityListConverter();
                     ActiveOrders = new Dictionary<string, Order>();
+                    ActiveOrderIdMapper = new Dictionary<string, int>();
+                    ReplacingActiveOrderIdMapper = new Dictionary<string, int>();
                     SecuritiesToPublish = new Dictionary<int,Security>();
-                    OrderIndexId = 1;
+                    OrderIndexId = GetNextOrderId();
                     Start = DateTime.Now;
 
                     InstructionManager = new InstructionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);

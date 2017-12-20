@@ -37,11 +37,11 @@ namespace zHFT.OrderRouters.Common.Converters
             if (!ValidateField(wrapper, ExecutionReportFields.CumQty))
                 throw new Exception("Missing cum qty");
 
-            if (!ValidateField(wrapper, ExecutionReportFields.AvgPx))
-                throw new Exception("Missing average price");
+            //if (!ValidateField(wrapper, ExecutionReportFields.AvgPx))
+            //    throw new Exception("Missing average price");
 
-            if (!ValidateField(wrapper, ExecutionReportFields.LastPx))
-                throw new Exception("Missing last price");
+            //if (!ValidateField(wrapper, ExecutionReportFields.LastPx))
+            //    throw new Exception("Missing last price");
 
             if (!ValidateField(wrapper, ExecutionReportFields.OrderID))
                 throw new Exception("Missing Order Id");

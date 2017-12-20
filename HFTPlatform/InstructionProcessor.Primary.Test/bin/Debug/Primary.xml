@@ -38,8 +38,8 @@
 
 
   <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
-  <RequestFullMarketData>true</RequestFullMarketData>
-  <SaveFullMarketData>true</SaveFullMarketData>
+  <RequestFullMarketData>false</RequestFullMarketData>
+  <SaveFullMarketData>false</SaveFullMarketData>
   
   
 </Configuration>

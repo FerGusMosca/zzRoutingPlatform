@@ -58,6 +58,10 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected Dictionary<string, Order> ActiveOrders { get; set; }
 
+        protected Dictionary<string, int> ActiveOrderIdMapper { get; set; }
+
+        protected Dictionary<string, int> ReplacingActiveOrderIdMapper { get; set; }
+
         #endregion
 
         #region abstract Methods
@@ -132,9 +136,12 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
             ExecutionReportWrapper erWrapper = new ExecutionReportWrapper((QuickFix50.ExecutionReport)message, GetConfig());
 
-            string clOrdId = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
-            string origClOrdId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
+            string marketClOrdId = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
+            string marketOrigClOrdId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
             zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
+
+            string clOrdId = marketClOrdId != null ? ActiveOrderIdMapper.Keys.Where(x => ActiveOrderIdMapper[x].ToString() == marketClOrdId).FirstOrDefault() : null;
+            string origClOrdId = marketOrigClOrdId != null ? ReplacingActiveOrderIdMapper.Keys.Where(x => ReplacingActiveOrderIdMapper[x].ToString() == marketOrigClOrdId).FirstOrDefault() : null;
 
             if (clOrdId != null)
             {
@@ -154,6 +161,10 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         Order order = ActiveOrders[origClOrdId];
                         string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
                         order.OrderId = orderId;
+
+                        ActiveOrders.Add(clOrdId, order);
+                        ReplacingActiveOrderIdMapper.Remove(origClOrdId);
+                        ActiveOrderIdMapper.Add(clOrdId, Convert.ToInt32(marketClOrdId));
                     }
                 }
                 else
@@ -241,6 +252,17 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected int GetNextOrderId()
+        {
+
+            DateTime dayStart = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+
+            TimeSpan span = DateTime.Now - dayStart;
+
+            return Convert.ToInt32(span.TotalSeconds );
+        
+        }
+
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
             try
@@ -250,17 +272,27 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     lock (tLock)
                     {
                         Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
+                        newOrder.EffectiveTime = DateTime.Now;
+                        int marketClOrdId = (OrderIndexId * 100);
 
-                        newOrder.ClOrdId = (OrderIndexId * 100).ToString();
                         OrderIndexId++;
 
-                        QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(newOrder.ClOrdId, newOrder.Symbol, newOrder.Side, newOrder.OrdType,
-                                                                                      newOrder.SettlType, newOrder.TimeInForce, newOrder.OrderQty.Value, newOrder.Price,
-                                                                                      newOrder.StopPx, newOrder.Account);
+                        QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(), 
+                                                                                      newOrder.Symbol, 
+                                                                                      newOrder.Side, 
+                                                                                      newOrder.OrdType,
+                                                                                      newOrder.SettlType, 
+                                                                                      newOrder.TimeInForce, 
+                                                                                      newOrder.EffectiveTime.Value,
+                                                                                      newOrder.OrderQty.Value, 
+                                                                                      newOrder.Price,
+                                                                                      newOrder.StopPx, 
+                                                                                      newOrder.Account);
 
                         Session.sendToTarget(msg, SessionID);
 
                         ActiveOrders.Add(newOrder.ClOrdId, newOrder);
+                        ActiveOrderIdMapper.Add(newOrder.ClOrdId,marketClOrdId);
                     }
 
                     return CMState.BuildSuccess();
@@ -285,21 +317,25 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 if (SessionID != null)
                 {
                     string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+                    string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
                     double? ordQty = (double?)wrapper.GetField(OrderFields.OrderQty);
                     double? price = (double?)wrapper.GetField(OrderFields.Price);
 
-                    if (ActiveOrders.Keys.Contains(clOrdId))
+                    if (ActiveOrders.Keys.Contains(origClOrdId))
                     {
-                        Order order = ActiveOrders[clOrdId];
+                        Order order = ActiveOrders[origClOrdId];
+                        int marketOrderId = ActiveOrderIdMapper[origClOrdId];
 
-                        string newClOrderIdRequested = (Convert.ToInt32(clOrdId) + 1).ToString();
+                        int newMarketOrderIdRequested = (marketOrderId + 1);
+                        ReplacingActiveOrderIdMapper.Add(origClOrdId, newMarketOrderIdRequested);
 
-
+                        order.ClOrdId = clOrdId;
+                        order.OrigClOrdId = origClOrdId;
 
                         QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
-                                                                            newClOrderIdRequested,
+                                                                            newMarketOrderIdRequested.ToString(),
                                                                             order.OrderId,
-                                                                            order.ClOrdId,
+                                                                            marketOrderId.ToString(),
                                                                             order.Security.Symbol,
                                                                             order.Side,
                                                                             order.OrdType,
@@ -348,15 +384,20 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     {
                         Order order = ActiveOrders[clOrdId];
 
+                        int marketOrderId = ActiveOrderIdMapper[clOrdId];
+
+                        int newMarketOrderIdRequested = (marketOrderId + 1);
+                        ReplacingActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
+
                         order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
                         order.OrigClOrdId = clOrdId;
 
-
                         QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
-                                                        order.ClOrdId,
-                                                        null,
+                                                        newMarketOrderIdRequested.ToString(),
+                                                        marketOrderId.ToString(),
                                                         order.OrderId,
                                                         order.Security.Symbol, order.Side,
+                                                        order.EffectiveTime.Value,
                                                         order.OrderQty, order.Account
                                                         );
 

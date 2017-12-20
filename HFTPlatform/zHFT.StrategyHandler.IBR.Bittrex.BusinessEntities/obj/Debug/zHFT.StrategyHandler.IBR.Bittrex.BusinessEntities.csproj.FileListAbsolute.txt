@@ -2,4 +2,3 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IB
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csprojResolveAssemblyReference.cache

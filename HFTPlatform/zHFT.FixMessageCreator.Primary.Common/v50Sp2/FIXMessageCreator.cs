@@ -290,6 +290,7 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                                                      zHFT.Main.Common.Enums.OrdType ordType,
                                                      zHFT.Main.Common.Enums.SettlType? settlType,
                                                      zHFT.Main.Common.Enums.TimeInForce? timeInForce,
+                                                     DateTime effectiveTime,
                                                      double ordQty,double? price,double? stopPx,string account)
         {
 
@@ -300,7 +301,7 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             nos.setField(Account.FIELD, account);
             nos.setField(ClOrdID.FIELD, clOrderId);
-            nos.setUtcTimeStamp(TransactTime.FIELD, DateTime.Now);
+            nos.setUtcTimeStamp(TransactTime.FIELD, effectiveTime);
             nos.setField(Symbol.FIELD, symbol);
             nos.setDouble(OrderQty.FIELD, ordQty);
             nos.setChar(QuickFix.OrdType.FIELD, Convert.ToChar(ordType));
@@ -333,6 +334,7 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                                                              zHFT.Main.Common.Enums.OrdType ordType,
                                                              zHFT.Main.Common.Enums.SettlType? settlType,
                                                              zHFT.Main.Common.Enums.TimeInForce? timeInForce,
+                                                            
                                                              double? ordQty, double? price, double? stopPx, string account)
         {
 
@@ -375,29 +377,32 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
         }
 
         public QuickFix.Message CreateOrderCancelRequest(string clOrderId,string origClOrderId, string orderId, string symbol,
-                                                          zHFT.Main.Common.Enums.Side side,
+                                                          zHFT.Main.Common.Enums.Side side, DateTime effectiveTime,
                                                           double? ordQty, string account)
         {
 
             ValidateOrderCancelRequestFields(account, clOrderId, origClOrderId, orderId);
 
-            QuickFix50Sp2.OrderCancelRequest ocr = new QuickFix50Sp2.OrderCancelRequest();
+            QuickFix50.OrderCancelRequest ocr = new QuickFix50.OrderCancelRequest();
 
-            ocr.setField(Account.FIELD, account);
+            //ocr.setField(Account.FIELD, account);
             ocr.setField(ClOrdID.FIELD, clOrderId);
             
-            if(!string.IsNullOrEmpty(origClOrderId))
-                ocr.setField(OrigClOrdID.FIELD, origClOrderId);
-            else
-                ocr.setField(OrderID.FIELD, orderId);
+            //if(!string.IsNullOrEmpty(origClOrderId))
+            //    ocr.setField(OrigClOrdID.FIELD, origClOrderId);
+            //else
+            //    ocr.setField(OrderID.FIELD, orderId);
+
+            ocr.setField(OrigClOrdID.FIELD, origClOrderId);
+            //ocr.setField(OrderID.FIELD, orderId);
 
             ocr.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
             
-            if (ordQty.HasValue)
-                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+            //if (ordQty.HasValue)
+            //    ocr.setDouble(OrderQty.FIELD, ordQty.Value);
 
-            ocr.setUtcTimeStamp(TransactTime.FIELD, DateTime.Now);
-            ocr.setField(Symbol.FIELD, symbol);
+            //ocr.setUtcTimeStamp(TransactTime.FIELD,effectiveTime);
+            //ocr.setField(Symbol.FIELD, symbol);
 
             return ocr;
         }

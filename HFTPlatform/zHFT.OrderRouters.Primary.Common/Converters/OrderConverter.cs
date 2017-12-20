@@ -99,10 +99,15 @@ namespace zHFT.OrderRouters.Primary.Common
             string symbol = (string)wrapper.GetField(OrderFields.Symbol);
             SecurityType secType = (SecurityType)wrapper.GetField(OrderFields.SecurityType);
             string exchange = ExchangeConverter.GetMarketFromFullSymbol(symbol);
+            string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+            string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
+            
 
             symbol = ProcessSymbol(secType, symbol);
 
             Order order = new Order();
+            order.ClOrdId = clOrdId;
+            order.OrigClOrdId = origClOrdId;
             order.OrdType = ordType;
             order.Price = price;
             order.StopPx = stopPx;
