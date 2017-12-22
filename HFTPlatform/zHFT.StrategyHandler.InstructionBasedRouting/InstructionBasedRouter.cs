@@ -303,6 +303,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     if (instr.Account.AccountNumber == IBRConfiguration.AccountNumber)
                     {
                         Account account = AccountManager.GetById(instr.Account.Id);
+                        DoLog(string.Format("@{1} - Starting sync for account {0} ...", instr.Account.AccountNumber, IBRConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                         AccountReferenceHandler.SyncAccountPositions(account);
 
                         while (AccountReferenceHandler.WaitingAccountPositions() && !AccountReferenceHandler.IsAbortOnTimeout())

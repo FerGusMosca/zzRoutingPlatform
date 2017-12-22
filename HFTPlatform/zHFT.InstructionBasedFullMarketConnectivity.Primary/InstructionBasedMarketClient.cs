@@ -621,7 +621,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
                         DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        //UpdateOrder(wrapper);
+                        UpdateOrder(wrapper);
                         return CMState.BuildSuccess();
 
                     }

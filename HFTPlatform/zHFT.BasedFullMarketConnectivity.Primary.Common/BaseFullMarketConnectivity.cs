@@ -30,6 +30,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected string _DUMMY_SECURITY = "kcdlsncslkd";
 
+        protected string _MAIN_EXCHANGE = "ROFX";
+
         #endregion
 
         #region Protected Attributes
@@ -341,6 +343,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                                                                             order.OrdType,
                                                                             order.SettlType,
                                                                             order.TimeInForce,
+                                                                            order.EffectiveTime.Value,
                                                                             ordQty,//qty to update
                                                                             price,//price to update
                                                                             order.StopPx,
@@ -398,9 +401,12 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                                                         order.OrderId,
                                                         order.Security.Symbol, order.Side,
                                                         order.EffectiveTime.Value,
-                                                        order.OrderQty, order.Account
+                                                        order.OrderQty, order.Account,
+                                                        _MAIN_EXCHANGE
                                                         );
 
+
+                        
                         Session.sendToTarget(cancelMessage, SessionID);
 
                         return CMState.BuildSuccess();

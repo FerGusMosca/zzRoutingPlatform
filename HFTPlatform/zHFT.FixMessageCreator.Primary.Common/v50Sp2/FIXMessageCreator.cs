@@ -334,7 +334,7 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                                                              zHFT.Main.Common.Enums.OrdType ordType,
                                                              zHFT.Main.Common.Enums.SettlType? settlType,
                                                              zHFT.Main.Common.Enums.TimeInForce? timeInForce,
-                                                            
+                                                             DateTime effectiveTime,
                                                              double? ordQty, double? price, double? stopPx, string account)
         {
 
@@ -345,32 +345,29 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             ocr.setField(Account.FIELD, account);
             ocr.setField(ClOrdID.FIELD, clOrderId);
-            ocr.setField(OrigClOrdID.FIELD, origClOrdId);
+            ocr.setField(ExecInst.FIELD, "x");
             ocr.setField(OrderID.FIELD, orderId);
-            ocr.setUtcTimeStamp(TransactTime.FIELD, DateTime.Now);
-            ocr.setField(Symbol.FIELD, symbol);
-
-            if(ordQty.HasValue)
-                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
-
             ocr.setChar(QuickFix.OrdType.FIELD, Convert.ToChar(ordType));
+            ocr.setField(OrigClOrdID.FIELD, origClOrdId);
 
             if (ordType == zHFT.Main.Common.Enums.OrdType.Limit || ordType == zHFT.Main.Common.Enums.OrdType.LimitOnClose)
-            {
                 ocr.setDouble(QuickFix.Price.FIELD, price.Value);
-            }
-
             if (ordType == zHFT.Main.Common.Enums.OrdType.StopLimit)
-            {
                 ocr.setDouble(QuickFix.Price.FIELD, stopPx.Value);
-            }
 
             ocr.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
 
-            //TODO: Completar parte de BlockParties si tiene sentido
-
             if (timeInForce.HasValue)
                 ocr.setChar(QuickFix.TimeInForce.FIELD, Convert.ToChar(timeInForce.Value));
+            
+            ocr.setUtcTimeStamp(TransactTime.FIELD, effectiveTime);
+
+            ocr.setField(Symbol.FIELD, symbol);
+
+            if (ordQty.HasValue)
+                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+           
+            ocr.setField(SecurityExchange.FIELD, "ROFX");
 
             return ocr;
 
@@ -378,31 +375,27 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
         public QuickFix.Message CreateOrderCancelRequest(string clOrderId,string origClOrderId, string orderId, string symbol,
                                                           zHFT.Main.Common.Enums.Side side, DateTime effectiveTime,
-                                                          double? ordQty, string account)
+                                                          double? ordQty, string account, string mainExchange)
         {
 
             ValidateOrderCancelRequestFields(account, clOrderId, origClOrderId, orderId);
 
-            QuickFix50.OrderCancelRequest ocr = new QuickFix50.OrderCancelRequest();
+            QuickFix50Sp2.OrderCancelRequest ocr = new QuickFix50Sp2.OrderCancelRequest();
 
-            //ocr.setField(Account.FIELD, account);
+            ocr.setField(Account.FIELD, account);
             ocr.setField(ClOrdID.FIELD, clOrderId);
             
-            //if(!string.IsNullOrEmpty(origClOrderId))
-            //    ocr.setField(OrigClOrdID.FIELD, origClOrderId);
-            //else
-            //    ocr.setField(OrderID.FIELD, orderId);
-
+            ocr.setField(OrderID.FIELD, orderId);
             ocr.setField(OrigClOrdID.FIELD, origClOrderId);
-            //ocr.setField(OrderID.FIELD, orderId);
-
             ocr.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
-            
-            //if (ordQty.HasValue)
-            //    ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+            ocr.setUtcTimeStamp(TransactTime.FIELD, effectiveTime);
 
-            //ocr.setUtcTimeStamp(TransactTime.FIELD,effectiveTime);
-            //ocr.setField(Symbol.FIELD, symbol);
+            if (ordQty.HasValue)
+                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+
+            ocr.setField(Symbol.FIELD, symbol);
+
+            ocr.setField(SecurityExchange.FIELD, mainExchange);
 
             return ocr;
         }
