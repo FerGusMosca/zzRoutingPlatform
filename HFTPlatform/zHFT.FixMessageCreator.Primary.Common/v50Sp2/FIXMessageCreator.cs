@@ -343,11 +343,17 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             QuickFix50Sp2.OrderCancelReplaceRequest ocr = new QuickFix50Sp2.OrderCancelReplaceRequest();
 
+            //ocr.setField(DeliverToCompID.FIELD, "ROFX");
             ocr.setField(Account.FIELD, account);
             ocr.setField(ClOrdID.FIELD, clOrderId);
             ocr.setField(ExecInst.FIELD, "x");
             ocr.setField(OrderID.FIELD, orderId);
+
+            if (ordQty.HasValue)
+                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
+
             ocr.setChar(QuickFix.OrdType.FIELD, Convert.ToChar(ordType));
+
             ocr.setField(OrigClOrdID.FIELD, origClOrdId);
 
             if (ordType == zHFT.Main.Common.Enums.OrdType.Limit || ordType == zHFT.Main.Common.Enums.OrdType.LimitOnClose)
@@ -357,17 +363,21 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             ocr.setChar(QuickFix.Side.FIELD, Convert.ToChar(side));
 
-            if (timeInForce.HasValue)
-                ocr.setChar(QuickFix.TimeInForce.FIELD, Convert.ToChar(timeInForce.Value));
-            
-            ocr.setUtcTimeStamp(TransactTime.FIELD, effectiveTime);
-
             ocr.setField(Symbol.FIELD, symbol);
 
-            if (ordQty.HasValue)
-                ocr.setDouble(OrderQty.FIELD, ordQty.Value);
-           
+            if (timeInForce.HasValue)
+                ocr.setChar(QuickFix.TimeInForce.FIELD, Convert.ToChar(timeInForce.Value));
+
+            ocr.setUtcTimeStamp(TransactTime.FIELD, effectiveTime);
+             
             ocr.setField(SecurityExchange.FIELD, "ROFX");
+
+
+            QuickFix50Sp2.OrderCancelReplaceRequest.NoPartyIDs partiesBlock = new QuickFix50Sp2.OrderCancelReplaceRequest.NoPartyIDs();
+            partiesBlock.set(new PartyRole(PartyRole.INITIATINGTRADER));
+            partiesBlock.set(new PartyID("fmosca"));
+            partiesBlock.set(new PartyIDSource(PartyIDSource.PROPRIETARY_CUSTOM_CODE)); //Valor Fijo obligatorio
+            ocr.addGroup(partiesBlock);
 
             return ocr;
 

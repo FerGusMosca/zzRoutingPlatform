@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
@@ -265,6 +266,24 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         
         }
 
+        protected void RouteNewOrder(Order newOrder, string marketClOrdId)
+        {
+            QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(),
+                                                                                          newOrder.Symbol,
+                                                                                          newOrder.Side,
+                                                                                          newOrder.OrdType,
+                                                                                          newOrder.SettlType,
+                                                                                          newOrder.TimeInForce,
+                                                                                          newOrder.EffectiveTime.Value,
+                                                                                          newOrder.OrderQty.Value,
+                                                                                          newOrder.Price,
+                                                                                          newOrder.StopPx,
+                                                                                          newOrder.Account);
+
+            Session.sendToTarget(msg, SessionID);
+        
+        }
+
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
             try
@@ -312,6 +331,38 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected void CancelOrder(Order order, string marketOrderId, string newMarketOrderIdRequested)
+        {
+            QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
+                                                            newMarketOrderIdRequested.ToString(),
+                                                            marketOrderId.ToString(),
+                                                            order.OrderId,
+                                                            order.Security.Symbol, order.Side,
+                                                            order.EffectiveTime.Value,
+                                                            order.OrderQty, order.Account,
+                                                            _MAIN_EXCHANGE
+                                                            );
+
+
+            Session.sendToTarget(cancelMessage, SessionID);
+        }
+
+        protected void DoUpdateOrder(object param)
+        {
+            QuickFix.Message updMessage = (QuickFix.Message)param;
+            try
+            {
+                Session.sendToTarget(updMessage, SessionID);
+                DoLog(string.Format("@{0}:Update Message Thread: Message succesfully sent: {1}! ", GetConfig().Name, updMessage.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error updating message {1}: {2}! ", GetConfig().Name, updMessage.ToString(),ex.Message), Main.Common.Util.Constants.MessageType.Error);
+
+            }
+        }
+
         protected CMState UpdateOrder(Wrapper wrapper)
         {
             try
@@ -334,7 +385,10 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         order.ClOrdId = clOrdId;
                         order.OrigClOrdId = origClOrdId;
 
-                        QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
+                        //CancelOrder(order, origClOrdId, newMarketOrderIdRequested.ToString());
+                        //RouteNewOrder(order, (newMarketOrderIdRequested + 1).ToString());
+
+                        QuickFix.Message updMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
                                                                             newMarketOrderIdRequested.ToString(),
                                                                             order.OrderId,
                                                                             marketOrderId.ToString(),
@@ -350,8 +404,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                                                                             order.Account
                                                                             );
 
-                        Session.sendToTarget(cancelMessage, SessionID);
-
+                        //Session.sendToTarget(updMessage, SessionID);
+                        Thread updThread = new Thread(DoUpdateOrder);
+                        updThread.Start(updMessage);
                         return CMState.BuildSuccess();
 
                     }

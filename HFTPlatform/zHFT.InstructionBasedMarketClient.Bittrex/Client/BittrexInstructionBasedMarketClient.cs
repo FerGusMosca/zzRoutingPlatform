@@ -315,8 +315,11 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
         {
             if (ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol))
             {
-                Security toUnsubscribe = ActiveSecurities.Values.Where(x => x.Symbol == sec.Symbol).FirstOrDefault();
-                toUnsubscribe.Active = false;
+                List<Security> toUnsubscribeList = ActiveSecurities.Values.Where(x => x.Symbol == sec.Symbol).ToList();
+                foreach (Security toUnsuscribe in toUnsubscribeList)
+                {
+                    toUnsuscribe.Active = false;
+                }
                 DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", BittrexConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
             }
             else

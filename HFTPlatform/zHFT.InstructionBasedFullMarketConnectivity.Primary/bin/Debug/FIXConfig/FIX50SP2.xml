@@ -435,33 +435,18 @@
      
     </message>
     <message name='OrderCancelReplaceRequest' msgcat='app' msgtype='G'>
-      <field name='Account' required='N' />
-      <field name='ClOrdID' required='Y' />
-      <field name='ExecInst' required='N' />
+      <field name='DeliverToCompID' required='N' />
       <field name='OrderID' required='N' />
-      <field name='OrdType' required='Y' />
-      <field name='OrigClOrdID' required='N' />
-      <field name='Price' required='N' />
-      <field name='StopPx' required='N' />
-      <field name='Side' required='Y' />
-      <field name='TimeInForce' required='N' />
-      <field name='TransactTime' required='Y' />
-
-      <component name='Instrument' required='Y' />
-      <component name='OrderQtyData' required='Y' />
-      
-      <field name='PriceType' required='N' />
-      <field name='QtyType' required='N' />
-      
-      <field name='SecurityExchange' required='N'/>
-      
       <component name='Parties' required='N' />
       <field name='TradeOriginationDate' required='N' />
       <field name='TradeDate' required='N' />
+      <field name='OrigClOrdID' required='N' />
+      <field name='ClOrdID' required='Y' />
       <field name='SecondaryClOrdID' required='N' />
       <field name='ClOrdLinkID' required='N' />
       <field name='ListID' required='N' />
       <field name='OrigOrdModTime' required='N' />
+      <field name='Account' required='N' />
       <field name='AcctIDSource' required='N' />
       <field name='AccountType' required='N' />
       <field name='DayBookingInst' required='N' />
@@ -474,13 +459,22 @@
       <field name='CashMargin' required='N' />
       <field name='ClearingFeeIndicator' required='N' />
       <field name='HandlInst' required='N' />
-      
+      <field name='ExecInst' required='N' />
       <field name='MinQty' required='N' />
       <field name='MaxFloor' required='N' />
       <field name='ExDestination' required='N' />
       <component name='TrdgSesGrp' required='N' />
+      <component name='Instrument' required='Y' />
       <component name='FinancingDetails' required='N' />
       <component name='UndInstrmtGrp' required='N' />
+      <field name='Side' required='Y' />
+      <field name='TransactTime' required='Y' />
+      <field name='QtyType' required='N' />
+      <component name='OrderQtyData' required='Y' />
+      <field name='OrdType' required='Y' />
+      <field name='PriceType' required='N' />
+      <field name='Price' required='N' />
+      <field name='StopPx' required='N' />
       <component name='SpreadOrBenchmarkCurveData' required='N' />
       <component name='YieldData' required='N' />
       <component name='PegInstructions' required='N' />
@@ -491,6 +485,7 @@
       <field name='ComplianceID' required='N' />
       <field name='SolicitedFlag' required='N' />
       <field name='Currency' required='N' />
+      <field name='TimeInForce' required='N' />
       <field name='EffectiveTime' required='N' />
       <field name='ExpireDate' required='N' />
       <field name='ExpireTime' required='N' />
@@ -530,6 +525,7 @@
       <component name='TriggeringInstruction' required='N' />
       <field name='PreTradeAnonymity' required='N' />
       <field name='ExDestinationIDSource' required='N' />
+      <field name='SecurityExchange' required='N' />
     </message>
     <message name='OrderStatusRequest' msgcat='app' msgtype='H'>
       <field name='OrderID' required='N' />
