@@ -178,7 +178,26 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
             else
             {
-                DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
+                origClOrdId = marketClOrdId != null ? ActiveOrderIdMapper.Keys.Where(x => ActiveOrderIdMapper[x].ToString() == marketOrigClOrdId).FirstOrDefault() : null;
+                clOrdId = marketOrigClOrdId != null ? ReplacingActiveOrderIdMapper.Keys.Where(x => ReplacingActiveOrderIdMapper[x].ToString() == marketClOrdId).FirstOrDefault() : null;
+
+                if (!string.IsNullOrEmpty(origClOrdId) && ActiveOrders.Keys.Contains(origClOrdId))
+                {
+                    if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
+                    {
+                        Order order = ActiveOrders[origClOrdId];
+                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                        order.OrderId = orderId;
+
+                        ActiveOrders.Add(clOrdId, order);
+                        ReplacingActiveOrderIdMapper.Remove(origClOrdId);
+                        ActiveOrderIdMapper.Add(clOrdId, Convert.ToInt32(marketClOrdId));
+                    }
+                }
+                else
+                {
+                    DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
+                }
             }
 
             return erWrapper;
@@ -398,7 +417,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                                                                             order.SettlType,
                                                                             order.TimeInForce,
                                                                             order.EffectiveTime.Value,
-                                                                            ordQty,//qty to update
+                                                                            ordQty,//qty to update,
                                                                             price,//price to update
                                                                             order.StopPx,
                                                                             order.Account
@@ -428,6 +447,21 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 return CMState.BuildFail(ex);
             }
 
+        }
+
+        protected void DoCancel(object param)
+        {
+            QuickFix.Message cancelMessage = (QuickFix.Message)param;
+            try
+            {
+                Session.sendToTarget(cancelMessage, SessionID);
+                DoLog(string.Format("@{0}:Cancel Message Thread: Message succesfully sent: {1}! ", GetConfig().Name, cancelMessage.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error cancelling message {1}: {2}! ", GetConfig().Name, cancelMessage.ToString(), ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            }
         }
 
         protected CMState CancelOrder(Wrapper wrapper)
@@ -462,7 +496,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
 
                         
-                        Session.sendToTarget(cancelMessage, SessionID);
+                        //Session.sendToTarget(cancelMessage, SessionID);
+                        Thread cancelThread = new Thread(DoCancel);
+                        cancelThread.Start(cancelMessage);
 
                         return CMState.BuildSuccess();
 

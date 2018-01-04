@@ -1,0 +1,18 @@
+2017-12-28 15:11:34  :: 28/12/2017 15:11:34MainApp.LoadConfig
+2017-12-28 15:11:34  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\config.xml
+2017-12-28 15:11:34  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\config.xml
+2017-12-28 15:11:35  :: Fin GetConfiguracion
+2017-12-28 15:11:35  :: Initializing Log
+2017-12-28 15:11:35  :: Initializing Incoming Module
+2017-12-28 15:11:40  :: Incoming Module successfully initialized
+2017-12-28 15:11:40  :: Initializing Outgoing Module
+2017-12-28 15:11:42  :: Outgoing Module successfully initialized
+2017-12-28 15:17:13  :: 28/12/2017 15:17:13MainApp.LoadConfig
+2017-12-28 15:17:13  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\config.xml
+2017-12-28 15:17:13  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\config.xml
+2017-12-28 15:17:14  :: Fin GetConfiguracion
+2017-12-28 15:17:14  :: Initializing Log
+2017-12-28 15:17:14  :: Initializing Incoming Module
+2017-12-28 15:17:15  :: Incoming Module successfully initialized
+2017-12-28 15:17:15  :: Initializing Outgoing Module
+2017-12-28 15:17:16  :: Outgoing Module successfully initialized

@@ -525,6 +525,7 @@
       <component name='TriggeringInstruction' required='N' />
       <field name='PreTradeAnonymity' required='N' />
       <field name='ExDestinationIDSource' required='N' />
+      <field name='LeavesQty' required='N' />
       <field name='SecurityExchange' required='N' />
     </message>
     <message name='OrderStatusRequest' msgcat='app' msgtype='H'>

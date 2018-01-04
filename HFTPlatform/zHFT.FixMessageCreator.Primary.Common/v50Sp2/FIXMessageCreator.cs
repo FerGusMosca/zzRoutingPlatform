@@ -369,7 +369,7 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                 ocr.setChar(QuickFix.TimeInForce.FIELD, Convert.ToChar(timeInForce.Value));
 
             ocr.setUtcTimeStamp(TransactTime.FIELD, effectiveTime);
-             
+
             ocr.setField(SecurityExchange.FIELD, "ROFX");
 
 
