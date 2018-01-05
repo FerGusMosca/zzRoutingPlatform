@@ -157,7 +157,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                         {
                             sum.Position.PosStatus = PositionStatus.Canceled;
                             sum.Position.PositionCanceledOrRejected = true;
-                            sum.Text = "Position canceled on portfolio execution finished";
+                            sum.Text = "Position canceled on massive depuration";
+                            SaveExecutionSummary(sum);
                         }
                     }
                 }
