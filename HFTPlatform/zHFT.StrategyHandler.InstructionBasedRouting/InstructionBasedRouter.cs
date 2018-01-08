@@ -59,6 +59,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 {
                     instr.Executed = true;
                     InstructionManager.Persist(instr);
+                    
                 }
                 PositionInstructions.Clear();
                 ExecutionSummaries.Clear();
@@ -790,7 +791,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
-        protected void UnsuscribeMarketData(Position pos)
+        protected override void UnsuscribeMarketData(Position pos)
         {
             MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(pos.Security, SubscriptionRequestType.Unsuscribe);
             OnMessageRcv(wrapper);

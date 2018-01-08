@@ -68,6 +68,8 @@ namespace zHFT.StrategyHandler.LogicLayer
         protected abstract void OnEvalExecutionSummary(object param);
 
         protected abstract void OnProcessNewPositionCanceled(Position pos);
+
+        protected abstract void UnsuscribeMarketData(Position pos);
        
         #endregion
 
@@ -159,6 +161,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                             sum.Position.PositionCanceledOrRejected = true;
                             sum.Text = "Position canceled on massive depuration";
                             SaveExecutionSummary(sum);
+                            UnsuscribeMarketData(sum.Position);
                         }
                     }
                 }
