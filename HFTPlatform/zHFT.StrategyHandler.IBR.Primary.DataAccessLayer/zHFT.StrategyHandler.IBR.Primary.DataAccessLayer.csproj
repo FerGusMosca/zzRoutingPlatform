@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\ADO\ADOAccountPrimaryDataManager.cs" />
+    <Compile Include="Managers\ADO\ADOBaseManager.cs" />
     <Compile Include="PrimaryAccountManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -46,6 +49,14 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Primary.BusinessEntities\zHFT.StrategyHandler.IBR.Primary.BusinessEntities.csproj">
+      <Project>{7d80543b-cf2b-4561-8f1b-9a106ae90374}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Primary.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Primary.Common\zHFT.StrategyHandler.IBR.Primary.Common.csproj">
+      <Project>{161d754e-fa0e-4eda-9093-b0eebb66993a}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Primary.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj">
       <Project>{aed28ef6-ddf7-40ad-bc25-dec1b9b1c6f2}</Project>

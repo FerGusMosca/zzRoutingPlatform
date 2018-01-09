@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.Interfaces;
+using zHFT.StrategyHandler.IBR.Primary.BusinessEntities;
+using zHFT.StrategyHandler.IBR.Primary.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
@@ -17,17 +21,130 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         public PrimaryAccountManager(OnLogMessage OnLogMsg, List<ConfigKey> pConfigParameters)
         {
+            ReqAccountSummary = false;
+            ReqAccountPositions = false;
             Logger = OnLogMsg;
-            Account = new Account() { Name = "Primary Account Manager Test" };
+            ConfigParameters = pConfigParameters;
+            ValidateDictionary();
+            LoadConfig();
         }
 
         #endregion
+
+        #region Private Consts
+
+        private string _ACCOUNT_NUMBER = "AccountNumber";
+
+        private string _CONFIG_CONNECTION_STRING = "ConfigConnectionString";
+
+        private string _DETAIL_POSITION_URL = "DetailPositionsURL";
+
+        private string _AUTH_URL = "AuthURL";
+
+        #endregion
+
 
         #region Protected Attributes
 
         public Account Account { get; set; }
 
         protected OnLogMessage Logger { get; set; }
+
+        protected Boolean ReqAccountSummary { get; set; }
+
+        protected Boolean ReqAccountPositions { get; set; }
+
+        protected List<ConfigKey> ConfigParameters { get; set; }
+
+        protected AccountPrimaryData AccountPrimaryData { get; set; }
+
+        protected string DetailPositonURL { get; set; }
+
+        protected string AuthURL { get; set; }
+
+        #endregion
+
+        #region Private Methods
+
+        protected void ValidateDictionary()
+        {
+
+            if (ConfigParameters == null)
+                throw new Exception("Config not specified for Primary Account Manager!");
+
+            if (!ConfigParameters.Any(x => x.Key == _ACCOUNT_NUMBER))
+                throw new Exception(string.Format("Config parameter not specified for Account Number!:{0}", _ACCOUNT_NUMBER));
+
+            if (!ConfigParameters.Any(x => x.Key == _CONFIG_CONNECTION_STRING))
+                throw new Exception(string.Format("Config parameter not specified for Primary Data Connection String!:{0}", _CONFIG_CONNECTION_STRING));
+
+            if (!ConfigParameters.Any(x => x.Key == _DETAIL_POSITION_URL))
+                throw new Exception(string.Format("Config parameter not specified :{0}", _DETAIL_POSITION_URL));
+
+            if (!ConfigParameters.Any(x => x.Key == _AUTH_URL))
+                throw new Exception(string.Format("Config parameter not specified :{0}", _AUTH_URL));
+
+
+        }
+
+        protected void LoadConfig()
+        {
+            string primaryConfigDataBaseCS = ConfigParameters.Where(x => x.Key == _CONFIG_CONNECTION_STRING).FirstOrDefault().Value;
+
+            ADOAccountPrimaryDataManager accountPrimaryDataManager = new ADOAccountPrimaryDataManager(primaryConfigDataBaseCS);
+
+            int accountNumber = Convert.ToInt32(ConfigParameters.Where(x => x.Key == _ACCOUNT_NUMBER).FirstOrDefault().Value);
+
+            DetailPositonURL = ConfigParameters.Where(x => x.Key == _DETAIL_POSITION_URL).FirstOrDefault().Value;
+
+            AuthURL = ConfigParameters.Where(x => x.Key == _AUTH_URL).FirstOrDefault().Value;
+
+            AccountPrimaryData = accountPrimaryDataManager.GetAccountPrimaryData(accountNumber);
+
+            if (AccountPrimaryData == null)
+                throw new Exception(string.Format("No se encontró la configuración de acceso al proveedor de datos Primary para la cuenta número {0}", accountNumber));
+
+        }
+
+        protected string DoLogin(string url)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            request.Method = "POST";
+            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
+            request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+            request.Headers["X-Username"] = AccountPrimaryData.User;
+            request.Headers["X-Password"] = AccountPrimaryData.Password;
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            if (response.Headers.AllKeys.Contains("X-Auth-Token"))
+                return response.Headers["X-Auth-Token"];
+            else
+                return null;
+        }
+
+        protected string DoGetJson(string url, string token)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+            request.Method = "GET";
+            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
+            request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+            request.Headers["X-Auth-Token"] = token;
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+            string content = string.Empty;
+            using (Stream stream = response.GetResponseStream())
+            {
+                using (StreamReader sr = new StreamReader(stream))
+                {
+                    content = sr.ReadToEnd();
+                }
+            }
+            return content;
+        }
 
         #endregion
 
@@ -39,6 +156,8 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         public bool SyncAccountBalance(InstructionBasedRouting.BusinessEntities.Account account)
         {
+            string token = DoLogin(AuthURL);
+
             return true;
         }
 

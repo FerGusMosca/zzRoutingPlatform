@@ -119,3 +119,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Pr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_prod.cfg
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test.cfg
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.IBR.Primary.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.IBR.Primary.BusinessEntities.pdb

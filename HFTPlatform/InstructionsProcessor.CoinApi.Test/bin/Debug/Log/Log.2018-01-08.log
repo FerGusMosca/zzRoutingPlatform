@@ -174,3 +174,30 @@
 2018-01-08 23:32:25  :: Incoming Module successfully initialized
 2018-01-08 23:32:25  :: Initializing Outgoing Module
 2018-01-08 23:32:26  :: Outgoing Module successfully initialized
+2018-01-08 23:48:19  :: 8/1/2018 23:48:19MainApp.LoadConfig
+2018-01-08 23:48:19  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.CoinApi.Test\bin\Debug\config.xml
+2018-01-08 23:48:19  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.CoinApi.Test\bin\Debug\config.xml
+2018-01-08 23:48:19  :: Fin GetConfiguracion
+2018-01-08 23:48:19  :: Initializing Log
+2018-01-08 23:48:19  :: Initializing Incoming Module
+2018-01-08 23:48:20  :: Incoming Module successfully initialized
+2018-01-08 23:48:20  :: Initializing Outgoing Module
+2018-01-08 23:48:21  :: Outgoing Module successfully initialized
+2018-01-08 23:51:55  :: 8/1/2018 23:51:55MainApp.LoadConfig
+2018-01-08 23:51:55  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.CoinApi.Test\bin\Debug\config.xml
+2018-01-08 23:51:55  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.CoinApi.Test\bin\Debug\config.xml
+2018-01-08 23:51:55  :: Fin GetConfiguracion
+2018-01-08 23:51:55  :: Initializing Log
+2018-01-08 23:51:55  :: Initializing Incoming Module
+2018-01-08 23:51:56  :: Incoming Module successfully initialized
+2018-01-08 23:51:56  :: Initializing Outgoing Module
+2018-01-08 23:51:56  :: Outgoing Module successfully initialized
+2018-01-08 23:52:57  :: 8/1/2018 23:52:57MainApp.LoadConfig
+2018-01-08 23:52:57  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.CoinApi.Test\bin\Debug\config.xml
+2018-01-08 23:52:57  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.CoinApi.Test\bin\Debug\config.xml
+2018-01-08 23:52:57  :: Fin GetConfiguracion
+2018-01-08 23:52:57  :: Initializing Log
+2018-01-08 23:52:57  :: Initializing Incoming Module
+2018-01-08 23:52:58  :: Incoming Module successfully initialized
+2018-01-08 23:52:58  :: Initializing Outgoing Module
+2018-01-08 23:52:59  :: Outgoing Module successfully initialized

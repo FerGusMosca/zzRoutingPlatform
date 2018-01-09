@@ -12,8 +12,7 @@
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
-  <!--<AccountNumber>5</AccountNumber>--><!--Primary TEST-->
-  <AccountNumber>6</AccountNumber><!--Eco Valores PROD-->
+  <AccountNumber>7</AccountNumber><!--Eco Valores PROD2-->
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
@@ -25,5 +24,23 @@
 
   <PositionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.PositionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</PositionManagerAccessLayer>
 
-  <AccountManagerConfig></AccountManagerConfig>
+  <AccountManagerConfig>
+    <Config>
+      <Key>AccountNumber</Key>
+      <Value>7</Value>
+    </Config>
+    <Config>
+      <Key>ConfigConnectionString</Key>
+      <Value>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</Value>
+    </Config>
+    <Config>
+      <Key>DetailPositionsURL</Key>
+      <Value>http://demo-api.primary.com.ar:8444/ptp-oms-webservices/rest/detailedPosition/</Value>
+    </Config>
+    <Config>
+      <Key>AuthURL</Key>
+      <Value>http://demo-api.primary.com.ar:8081/pbcp/auth/getToken/</Value>
+    </Config>
+    
+  </AccountManagerConfig>
 </Configuration>
