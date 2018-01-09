@@ -17,10 +17,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.Configurati
 
         public string FIXMessageCreator { get; set; }
 
-        public string User { get; set; }
-
-        public string Password { get; set; }
-
         public string InstructionsAccessLayerConnectionString { get; set; }
 
         public string SecuritiesAccessLayerConnectionString { get; set; }
@@ -74,17 +70,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.Configurati
                 resultado = false;
             }
 
-            if (string.IsNullOrEmpty(User))
-            {
-                result.Add("User");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(Password))
-            {
-                result.Add("Password");
-                resultado = false;
-            }
 
             if (SearchForInstructionsInMilliseconds <= 0)
             {

@@ -36,12 +36,17 @@
       <HintPath>..\..\Librerias\MDFShared.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ToolsShared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\ToolsShared.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -51,6 +56,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.FixMessageCreator.CoinApi.Common\zHFT.FixMessageCreator.CoinApi.Common.csproj">
+      <Project>{5ca407e3-87d1-4753-a69b-ffd287c9c70d}</Project>
+      <Name>zHFT.FixMessageCreator.CoinApi.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.csproj">
+      <Project>{cef6faf4-c3d3-4252-8178-3e27675d1b1b}</Project>
+      <Name>zHFT.InstructionBasedFullMarketConnectivity.CoinApi</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
@@ -67,6 +80,10 @@
       <Project>{0ffdf4c8-e294-4760-aad1-e57e63ac93dc}</Project>
       <Name>zHFT.SingletonModulesHandler</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.csproj">
+      <Project>{5bd93d88-7b8f-47bb-9f9c-df8b8d1f9b74}</Project>
+      <Name>zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj">
       <Project>{58324d7e-90c3-46f4-96e2-ea0fe424663b}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</Name>
@@ -75,6 +92,31 @@
       <Project>{17ca0ba8-f7b0-4d4e-bd40-568fe93a345e}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.SecurityListSaver.CoinApi.LogicLayer\zHFT.StrategyHandler.SecurityListSaver.CoinApi.LogicLayer.csproj">
+      <Project>{0af92b05-4b0f-406b-8646-e2cd6d60d625}</Project>
+      <Name>zHFT.StrategyHandler.SecurityListSaver.CoinApi.LogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IncomingSingletonConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OutgoingSingletonConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingStrategyHandler.InstructionBasedRouting.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CoinApi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

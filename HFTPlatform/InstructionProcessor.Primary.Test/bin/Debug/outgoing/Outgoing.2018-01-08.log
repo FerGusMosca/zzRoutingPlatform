@@ -9467,3 +9467,216 @@
 2018-01-08 13:59:12  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=16 LastTradeSize=1650 BestBidPrice=15.85 BestBidSize=8116 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=6000 BestAskExch=BUE CompositeUnderlyingPrice=no data
 2018-01-08 13:59:12  :: Processing Market Data:Symbol=EDN.BUE Exchange=BUE SecType=CS Currency=- Open=47.55 High=48 Low=47.25 Close=47.25 Volume=no data LastPrice=47.9 LastTradeSize=1672 BestBidPrice=47.85 BestBidSize=7000 BestBidExch=BUE BestAskPrice=47.9 BestAskSize=328 BestAskExch=BUE CompositeUnderlyingPrice=no data
 2018-01-08 13:59:12  :: Processing Market Data:Symbol=TRAN.BUE Exchange=BUE SecType=CS Currency=- Open=57.8 High=59.6 Low=56.6 Close=57.9 Volume=no data LastPrice=59 LastTradeSize=250 BestBidPrice=59 BestBidSize=2100 BestBidExch=BUE BestAskPrice=59.35 BestAskSize=221 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:54:48  :: 1/8/2018 2:54:48 PMMomentumStrategyBase.LoadConfig
+2018-01-08 14:54:48  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 14:54:48  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 14:54:48  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 14:54:48  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-08 14:54:48  :: 1/8/2018 2:54:48 PMOrderRouterBase.LoadConfig
+2018-01-08 14:54:48  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-08 14:54:48  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-08 14:54:48  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-08 14:54:48  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-01-08 14:54:48  :: 1/8/2018 2:54:48 PMBaseCommunicationModule.LoadConfig
+2018-01-08 14:54:48  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-08 14:54:48  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-08 14:54:48  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-08 14:55:52  :: @Strategy Handler - Instruction Based Router for Primary - Starting sync for account 6 ...
+2018-01-08 14:55:52  :: @Strategy Handler - Instruction Based Router for Primary - Account Primary Account Manager Test positions succesfully synchronized
+2018-01-08 14:55:52  :: Strategy Handler - Instruction Based Router for Primary: Creating position for symbol ALUA.BUE
+2018-01-08 14:55:55  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2018-01-08 14:55:56  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:55:56  :: Routing to market position for symbol ALUA.BUE
+2018-01-08 14:55:56  :: Creating buy order for symbol ALUA.BUE.Quantity=12 Price=15.85
+2018-01-08 14:55:56  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 14:55:56  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:55:56  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:55:56  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 14:55:56  :: Incoming message from order routing: Wrapper
+2018-01-08 14:55:56  :: Received New for symbol ALUA.BUE
+2018-01-08 14:55:56  :: New for symbol ALUA.BUE processed
+2018-01-08 14:56:01  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:01  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:06  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:06  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:11  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:11  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:15  :: @Strategy Handler - Instruction Based Router for Primary: Cancelling position on symbol ALUA.BUE 
+2018-01-08 14:56:15  :: Canceling order for symbol ALUA.BUE
+2018-01-08 14:56:15  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 14:56:15  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 14:56:15  :: Incoming message from order routing: Wrapper
+2018-01-08 14:56:17  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared
+2018-01-08 14:56:17  :: ProcessOutgoing: Wrapper
+2018-01-08 14:56:17  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3452 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:17  :: Error processing incoming message: La cadena de entrada no tiene el formato correcto.
+2018-01-08 14:56:17  :: Received execution report for no longer processed symbol ALUA.BUE
+2018-01-08 14:56:17  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:22  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:27  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:32  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:37  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:42  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 14:56:47  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=6560 BestBidPrice=15.85 BestBidSize=3440 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:02:34  :: 1/8/2018 3:02:34 PMMomentumStrategyBase.LoadConfig
+2018-01-08 15:02:34  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:02:34  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:02:34  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:02:34  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-08 15:02:34  :: 1/8/2018 3:02:34 PMOrderRouterBase.LoadConfig
+2018-01-08 15:02:34  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-08 15:02:34  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-08 15:02:34  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-08 15:02:34  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-01-08 15:02:34  :: 1/8/2018 3:02:34 PMBaseCommunicationModule.LoadConfig
+2018-01-08 15:02:34  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:02:34  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:02:34  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-08 15:04:31  :: @Strategy Handler - Instruction Based Router for Primary - Starting sync for account 6 ...
+2018-01-08 15:04:31  :: @Strategy Handler - Instruction Based Router for Primary - Account Primary Account Manager Test positions succesfully synchronized
+2018-01-08 15:04:31  :: Strategy Handler - Instruction Based Router for Primary: Creating position for symbol PAM
+2018-01-08 15:04:48  :: 1/8/2018 3:04:48 PMMomentumStrategyBase.LoadConfig
+2018-01-08 15:04:48  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:04:48  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:04:48  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:04:48  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-08 15:04:48  :: 1/8/2018 3:04:48 PMOrderRouterBase.LoadConfig
+2018-01-08 15:04:48  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-08 15:04:48  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-08 15:04:48  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-08 15:04:48  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-01-08 15:04:48  :: 1/8/2018 3:04:48 PMBaseCommunicationModule.LoadConfig
+2018-01-08 15:04:48  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:04:48  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:04:48  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-08 15:05:15  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2018-01-08 15:05:15  :: @Strategy Handler - Instruction Based Router for Primary - Starting sync for account 6 ...
+2018-01-08 15:05:15  :: @Strategy Handler - Instruction Based Router for Primary - Account Primary Account Manager Test positions succesfully synchronized
+2018-01-08 15:05:15  :: Strategy Handler - Instruction Based Router for Primary: Creating position for symbol ALUA.BUE
+2018-01-08 15:05:15  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:15  :: Routing to market position for symbol ALUA.BUE
+2018-01-08 15:05:15  :: Creating buy order for symbol ALUA.BUE.Quantity=12 Price=15.8
+2018-01-08 15:05:15  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:05:15  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 15:05:15  :: Incoming message from order routing: Wrapper
+2018-01-08 15:05:15  :: Received New for symbol ALUA.BUE
+2018-01-08 15:05:15  :: New for symbol ALUA.BUE processed
+2018-01-08 15:05:15  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:16  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:20  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:20  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:23  :: @Strategy Handler - Instruction Based Router for Primary: Cancelling position on symbol ALUA.BUE 
+2018-01-08 15:05:23  :: Canceling order for symbol ALUA.BUE
+2018-01-08 15:05:23  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:05:27  :: ProcessOutgoing: Wrapper
+2018-01-08 15:05:27  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:41  :: Error processing incoming message: La cadena de entrada no tiene el formato correcto.
+2018-01-08 15:05:41  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 15:05:41  :: Incoming message from order routing: Wrapper
+2018-01-08 15:05:41  :: Received execution report for no longer processed symbol ALUA.BUE
+2018-01-08 15:05:41  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=2750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:43  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:46  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared
+2018-01-08 15:05:46  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:51  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:05:56  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:01  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:06  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:11  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:16  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:18  :: @Strategy Handler - Instruction Based Router for Primary - Starting sync for account 6 ...
+2018-01-08 15:06:18  :: @Strategy Handler - Instruction Based Router for Primary - Account Primary Account Manager Test positions succesfully synchronized
+2018-01-08 15:06:18  :: Strategy Handler - Instruction Based Router for Primary: Creating position for symbol ALUA.BUE
+2018-01-08 15:06:21  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9070 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:21  :: Routing to market position for symbol ALUA.BUE
+2018-01-08 15:06:21  :: Creating buy order for symbol ALUA.BUE.Quantity=12 Price=15.8
+2018-01-08 15:06:21  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:06:21  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 15:06:21  :: Incoming message from order routing: Wrapper
+2018-01-08 15:06:21  :: Received New for symbol ALUA.BUE
+2018-01-08 15:06:21  :: New for symbol ALUA.BUE processed
+2018-01-08 15:06:21  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:21  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:26  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:26  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:06:28  :: @Strategy Handler - Instruction Based Router for Primary: Cancelling position on symbol ALUA.BUE 
+2018-01-08 15:06:28  :: Canceling order for symbol ALUA.BUE
+2018-01-08 15:06:28  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:06:28  :: ProcessOutgoing: Wrapper
+2018-01-08 15:06:35  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.85 LastTradeSize=3 BestBidPrice=15.8 BestBidSize=9082 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3750 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:11:37  :: 1/8/2018 3:11:37 PMMomentumStrategyBase.LoadConfig
+2018-01-08 15:11:37  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:11:37  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:11:37  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:11:37  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-08 15:11:37  :: 1/8/2018 3:11:37 PMOrderRouterBase.LoadConfig
+2018-01-08 15:11:37  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-08 15:11:37  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-08 15:11:37  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-08 15:11:37  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-01-08 15:11:37  :: 1/8/2018 3:11:37 PMBaseCommunicationModule.LoadConfig
+2018-01-08 15:11:37  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:11:37  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:11:37  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-08 15:12:05  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2018-01-08 15:12:05  :: @Strategy Handler - Instruction Based Router for Primary - Starting sync for account 6 ...
+2018-01-08 15:12:05  :: @Strategy Handler - Instruction Based Router for Primary - Account Primary Account Manager Test positions succesfully synchronized
+2018-01-08 15:12:05  :: Strategy Handler - Instruction Based Router for Primary: Creating position for symbol ALUA.BUE
+2018-01-08 15:12:05  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8678 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:05  :: Routing to market position for symbol ALUA.BUE
+2018-01-08 15:12:05  :: Creating buy order for symbol ALUA.BUE.Quantity=12 Price=15.8
+2018-01-08 15:12:05  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:12:05  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 15:12:05  :: Incoming message from order routing: Wrapper
+2018-01-08 15:12:05  :: Received New for symbol ALUA.BUE
+2018-01-08 15:12:05  :: New for symbol ALUA.BUE processed
+2018-01-08 15:12:05  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:06  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:10  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:10  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:15  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:15  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:12:17  :: @Strategy Handler - Instruction Based Router for Primary: Cancelling position on symbol ALUA.BUE 
+2018-01-08 15:12:17  :: Canceling order for symbol ALUA.BUE
+2018-01-08 15:12:18  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:12:24  :: ProcessOutgoing: Wrapper
+2018-01-08 15:12:24  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=350 BestBidPrice=15.8 BestBidSize=8690 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3850 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:15:50  :: 1/8/2018 3:15:50 PMMomentumStrategyBase.LoadConfig
+2018-01-08 15:15:50  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:15:50  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:15:50  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-08 15:15:50  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-08 15:15:50  :: 1/8/2018 3:15:50 PMOrderRouterBase.LoadConfig
+2018-01-08 15:15:50  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-08 15:15:50  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-08 15:15:50  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-08 15:15:50  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-01-08 15:15:50  :: 1/8/2018 3:15:50 PMBaseCommunicationModule.LoadConfig
+2018-01-08 15:15:50  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:15:50  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-08 15:15:50  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-08 15:16:08  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10000 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:08  :: @Strategy Handler - Instruction Based Router for Primary - Starting sync for account 6 ...
+2018-01-08 15:16:08  :: @Strategy Handler - Instruction Based Router for Primary - Account Primary Account Manager Test positions succesfully synchronized
+2018-01-08 15:16:08  :: Strategy Handler - Instruction Based Router for Primary: Creating position for symbol ALUA.BUE
+2018-01-08 15:16:08  :: Routing to market position for symbol ALUA.BUE
+2018-01-08 15:16:08  :: Creating buy order for symbol ALUA.BUE.Quantity=12 Price=15.85
+2018-01-08 15:16:08  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:16:08  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 15:16:08  :: Incoming message from order routing: Wrapper
+2018-01-08 15:16:08  :: Received New for symbol ALUA.BUE
+2018-01-08 15:16:08  :: New for symbol ALUA.BUE processed
+2018-01-08 15:16:08  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:09  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:10  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:10  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:15  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:15  :: Receiving Market Data on order router: Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:19  :: @Strategy Handler - Instruction Based Router for Primary: Cancelling position on symbol ALUA.BUE 
+2018-01-08 15:16:19  :: Canceling order for symbol ALUA.BUE
+2018-01-08 15:16:20  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-08 15:16:20  :: Incoming message from order routing proxy: Wrapper
+2018-01-08 15:16:20  :: Incoming message from order routing: Wrapper
+2018-01-08 15:16:20  :: ProcessOutgoing: Wrapper
+2018-01-08 15:16:23  :: Processing Market Data:Symbol=ALUA.BUE Exchange=BUE SecType=CS Currency=- Open=16.15 High=16.15 Low=15.5 Close=16.2 Volume=no data LastPrice=15.9 LastTradeSize=700 BestBidPrice=15.85 BestBidSize=10012 BestBidExch=BUE BestAskPrice=15.9 BestAskSize=3761 BestAskExch=BUE CompositeUnderlyingPrice=no data
+2018-01-08 15:16:24  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared

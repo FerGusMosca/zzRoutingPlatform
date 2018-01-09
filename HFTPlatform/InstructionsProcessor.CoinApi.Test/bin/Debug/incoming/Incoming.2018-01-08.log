@@ -1,0 +1,181 @@
+2018-01-08 19:07:16  :: 1/8/2018 7:07:16 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:07:16  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:07:16  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:07:16  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:07:18  :: Critic error initializing .\IncomingSingletonConfig.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-01-08 19:08:38  :: 1/8/2018 7:08:38 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:08:38  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:08:38  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:08:38  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:08:38  :: Critic error initializing .\IncomingSingletonConfig.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-01-08 19:15:53  :: 1/8/2018 7:15:53 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:15:53  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:15:53  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:15:53  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:15:53  :: Critic error initializing .\IncomingSingletonConfig.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-01-08 19:16:30  :: 1/8/2018 7:16:30 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:16:30  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:16:30  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:16:30  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:16:30  :: Critic error initializing .\IncomingSingletonConfig.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-01-08 19:17:34  :: 1/8/2018 7:17:34 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:17:34  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:17:34  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:17:34  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:17:34  :: Critic error initializing .\IncomingSingletonConfig.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-01-08 19:17:57  :: 1/8/2018 7:17:57 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:17:57  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:17:57  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:17:57  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:19:32  :: 1/8/2018 7:19:32 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:19:32  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:19:32  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:19:32  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:19:32  :: Critic error initializing .\IncomingSingletonConfig.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-01-08 19:20:17  :: 1/8/2018 7:20:17 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:20:17  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:20:17  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:20:17  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:22:05  :: 1/8/2018 7:22:05 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:22:05  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:22:05  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:22:05  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:22:13  :: 1/8/2018 7:22:13 PMConfigLoader.LoadConfig
+2018-01-08 19:22:13  :: Loading config:.\CoinApi.xml
+2018-01-08 19:22:13  :: Processing config:.\CoinApi.xml
+2018-01-08 19:22:13  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:31:00  :: 1/8/2018 7:31:00 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:31:00  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:31:00  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:31:00  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:31:00  :: 1/8/2018 7:31:00 PMConfigLoader.LoadConfig
+2018-01-08 19:31:00  :: Loading config:.\CoinApi.xml
+2018-01-08 19:31:00  :: Processing config:.\CoinApi.xml
+2018-01-08 19:31:00  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:36:36  :: 1/8/2018 7:36:36 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:36:36  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:36:36  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:36:36  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:36:36  :: 1/8/2018 7:36:36 PMConfigLoader.LoadConfig
+2018-01-08 19:36:36  :: Loading config:.\CoinApi.xml
+2018-01-08 19:36:36  :: Processing config:.\CoinApi.xml
+2018-01-08 19:36:36  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:37:40  :: 1/8/2018 7:37:40 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:37:40  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:37:40  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:37:41  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:37:41  :: 1/8/2018 7:37:41 PMConfigLoader.LoadConfig
+2018-01-08 19:37:41  :: Loading config:.\CoinApi.xml
+2018-01-08 19:37:41  :: Processing config:.\CoinApi.xml
+2018-01-08 19:37:41  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:44:36  :: 1/8/2018 7:44:36 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:44:36  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:44:36  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:44:36  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:44:36  :: 1/8/2018 7:44:36 PMConfigLoader.LoadConfig
+2018-01-08 19:44:36  :: Loading config:.\CoinApi.xml
+2018-01-08 19:44:36  :: Processing config:.\CoinApi.xml
+2018-01-08 19:44:36  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:44:43  :: Invocación de onCreate : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:44:50  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:44:50.08056=COINAPI98=0108=1141=Y1137=910=175
+2018-01-08 19:44:51  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:45:21  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:45:21.09056=COINAPI98=0108=1141=Y1137=910=175
+2018-01-08 19:45:22  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:46:01  :: 1/8/2018 7:46:01 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:46:01  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:46:01  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:46:01  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:46:01  :: 1/8/2018 7:46:01 PMConfigLoader.LoadConfig
+2018-01-08 19:46:01  :: Loading config:.\CoinApi.xml
+2018-01-08 19:46:01  :: Processing config:.\CoinApi.xml
+2018-01-08 19:46:01  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:46:01  :: Invocación de onCreate : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:46:10  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:46:01.97056=COINAPI98=0108=1141=Y1137=910=181
+2018-01-08 19:46:11  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:46:16  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:46:11.93856=COINAPI98=0108=1141=Y1137=910=186
+2018-01-08 19:46:16  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:46:42  :: 1/8/2018 7:46:42 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:46:42  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:46:42  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:46:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:46:43  :: 1/8/2018 7:46:43 PMConfigLoader.LoadConfig
+2018-01-08 19:46:43  :: Loading config:.\CoinApi.xml
+2018-01-08 19:46:43  :: Processing config:.\CoinApi.xml
+2018-01-08 19:46:43  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:46:43  :: Invocación de onCreate : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:46:43  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:46:43.68456=COINAPI98=0108=1141=Y1137=910=189
+2018-01-08 19:46:45  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:47:23  :: 1/8/2018 7:47:23 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:47:23  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:47:23  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:47:24  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:47:24  :: 1/8/2018 7:47:24 PMConfigLoader.LoadConfig
+2018-01-08 19:47:24  :: Loading config:.\CoinApi.xml
+2018-01-08 19:47:24  :: Processing config:.\CoinApi.xml
+2018-01-08 19:47:24  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:47:24  :: Invocación de onCreate : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:47:24  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:47:24.73856=COINAPI98=0108=1141=Y1137=910=189
+2018-01-08 19:47:26  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:48:06  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:48:06.91456=COINAPI98=0108=1141=Y1137=910=186
+2018-01-08 19:48:07  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:48:25  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIXT.1.19=11035=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180108-22:48:25.91156=COINAPI98=0108=1141=Y1137=910=184
+2018-01-08 19:48:27  :: Invocación de onLogout : FIXT.1.1:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 19:58:37  :: 1/8/2018 7:58:37 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:58:37  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:58:37  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:58:37  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:58:37  :: 1/8/2018 7:58:37 PMConfigLoader.LoadConfig
+2018-01-08 19:58:37  :: Loading config:.\CoinApi.xml
+2018-01-08 19:58:37  :: Processing config:.\CoinApi.xml
+2018-01-08 19:58:37  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:58:37  :: @InstructionProcessor.CoinApi.Test:Critic error initializing .\CoinApi.xml:Configuration failed: ApplVerID is required for FIXT transport
+2018-01-08 19:59:43  :: 1/8/2018 7:59:43 PMBaseCommunicationModule.LoadConfig
+2018-01-08 19:59:43  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 19:59:43  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 19:59:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 19:59:43  :: 1/8/2018 7:59:43 PMConfigLoader.LoadConfig
+2018-01-08 19:59:43  :: Loading config:.\CoinApi.xml
+2018-01-08 19:59:43  :: Processing config:.\CoinApi.xml
+2018-01-08 19:59:43  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 19:59:44  :: @InstructionProcessor.CoinApi.Test:Critic error initializing .\CoinApi.xml:Configuration failed: ApplVerID is required for FIXT transport
+2018-01-08 20:01:52  :: 1/8/2018 8:01:52 PMBaseCommunicationModule.LoadConfig
+2018-01-08 20:01:52  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 20:01:52  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 20:01:52  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 20:01:53  :: 1/8/2018 8:01:53 PMConfigLoader.LoadConfig
+2018-01-08 20:01:53  :: Loading config:.\CoinApi.xml
+2018-01-08 20:01:53  :: Processing config:.\CoinApi.xml
+2018-01-08 20:01:53  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 20:01:53  :: @InstructionProcessor.CoinApi.Test:Critic error initializing .\CoinApi.xml:Configuration failed: ApplVerID is required for FIXT transport
+2018-01-08 20:02:12  :: 1/8/2018 8:02:12 PMBaseCommunicationModule.LoadConfig
+2018-01-08 20:02:12  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 20:02:12  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 20:02:12  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 20:02:12  :: 1/8/2018 8:02:12 PMConfigLoader.LoadConfig
+2018-01-08 20:02:12  :: Loading config:.\CoinApi.xml
+2018-01-08 20:02:12  :: Processing config:.\CoinApi.xml
+2018-01-08 20:02:12  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 20:02:12  :: @InstructionProcessor.CoinApi.Test:Critic error initializing .\CoinApi.xml:Configuration failed: ApplVerID is required for FIXT transport
+2018-01-08 23:31:50  :: 1/8/2018 11:31:50 PMBaseCommunicationModule.LoadConfig
+2018-01-08 23:31:50  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 23:31:50  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 23:31:50  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 23:31:54  :: 1/8/2018 11:31:54 PMConfigLoader.LoadConfig
+2018-01-08 23:31:54  :: Loading config:.\CoinApi.xml
+2018-01-08 23:31:54  :: Processing config:.\CoinApi.xml
+2018-01-08 23:31:54  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 23:31:55  :: @InstructionProcessor.CoinApi.Test:Critic error initializing .\CoinApi.xml:Configuration failed: ApplVerID is required for FIXT transport
+2018-01-08 23:32:25  :: 1/8/2018 11:32:25 PMBaseCommunicationModule.LoadConfig
+2018-01-08 23:32:25  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-08 23:32:25  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-08 23:32:25  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-08 23:32:25  :: 1/8/2018 11:32:25 PMConfigLoader.LoadConfig
+2018-01-08 23:32:25  :: Loading config:.\CoinApi.xml
+2018-01-08 23:32:25  :: Processing config:.\CoinApi.xml
+2018-01-08 23:32:25  :: Ending GetConfiguracion .\CoinApi.xml
+2018-01-08 23:32:25  :: Invocación de onCreate : FIX.4.4:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 23:32:25  :: Invocación de toAdmin por la sesión FIX.4.4:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIX.4.49=10335=A34=149=F85D8B98-F042-4B17-BF85-D48EA024A2B552=20180109-02:32:25.82856=COINAPI98=0108=1141=Y10=040
+2018-01-08 23:32:31  :: Invocación de fromAdmin por la sesión FIX.4.4:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI: 8=FIX.4.49=9735=A34=149=COINAPI52=20180109-02:32:25.82656=F85D8B98-F042-4B17-BF85-D48EA024A2B598=0108=110=213
+2018-01-08 23:32:35  :: Invocación de onLogon : FIX.4.4:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 23:32:35  :: Logged for SessionId : FIX.4.4:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI
+2018-01-08 23:32:35  :: Invocación de onLogout : FIX.4.4:F85D8B98-F042-4B17-BF85-D48EA024A2B5->COINAPI

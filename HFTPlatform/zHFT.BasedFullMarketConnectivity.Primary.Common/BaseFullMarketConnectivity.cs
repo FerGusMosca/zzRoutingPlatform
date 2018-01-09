@@ -273,10 +273,13 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             {
                 MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper);
 
-                QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
-                MarketDataRequestId++;
+                if (rq.SubscriptionRequestType != zHFT.Main.Common.Enums.SubscriptionRequestType.Unsuscribe)
+                {
+                    QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
+                    MarketDataRequestId++;
 
-                Session.sendToTarget(msg, SessionID);
+                    Session.sendToTarget(msg, SessionID);
+                }
 
                 return CMState.BuildSuccess();
 

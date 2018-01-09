@@ -11,6 +11,12 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 {
     public class MarketDataRequestWrapper:Wrapper
     {
+        #region Private Consts
+
+        private string _EXCHANGE_SEPARATOR_FIELD = ".";
+
+        #endregion
+
         #region Protected Attributes
 
         protected Security Security { get; set; }
@@ -40,7 +46,14 @@ namespace zHFT.StrategyHandler.Common.Wrappers
             if (mdrField == MarketDataRequestField.Symbol)
                 return Security.Symbol;
             if (mdrField == MarketDataRequestField.Exchange)
-                return Security.Exchange;
+            {
+                if (!string.IsNullOrEmpty(Security.Exchange))
+                    return Security.Exchange;
+                else if (Security.Symbol.Contains(_EXCHANGE_SEPARATOR_FIELD))
+                    return Security.Symbol.Split(new string[] { _EXCHANGE_SEPARATOR_FIELD }, StringSplitOptions.RemoveEmptyEntries)[1];
+                else
+                    return null;
+            }
             if (mdrField == MarketDataRequestField.SecurityType)
                 return Security.SecType;
             if (mdrField == MarketDataRequestField.Currency)

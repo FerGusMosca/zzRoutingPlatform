@@ -191,3 +191,4 @@
 2018-01-08 14:28:09  :: ProcessIncoming...Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=68.87 High=69.07 Low=67.89 Close=69.29 Volume=260 LastPrice=68.88 LastTradeSize=1 BestBidPrice=68.69 BestBidSize=2 BestBidExch=WT BestAskPrice=68.86 BestAskSize=7 BestAskExch=XQTM CompositeUnderlyingPrice=no data
 2018-01-08 14:28:09  :: IB Publishing Market Data for Security PAM 
 2018-01-08 14:28:15  :: @Instructions Processor IB:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor IB
+2018-01-08 14:33:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
