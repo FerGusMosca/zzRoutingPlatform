@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.IBR.Primary.BusinessEntities;
+using zHFT.StrategyHandler.IBR.Primary.Common.DTO;
 using zHFT.StrategyHandler.IBR.Primary.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
@@ -39,8 +41,6 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         private string _DETAIL_POSITION_URL = "DetailPositionsURL";
 
-        private string _AUTH_URL = "AuthURL";
-
         #endregion
 
 
@@ -59,8 +59,6 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
         protected AccountPrimaryData AccountPrimaryData { get; set; }
 
         protected string DetailPositonURL { get; set; }
-
-        protected string AuthURL { get; set; }
 
         #endregion
 
@@ -81,10 +79,6 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
             if (!ConfigParameters.Any(x => x.Key == _DETAIL_POSITION_URL))
                 throw new Exception(string.Format("Config parameter not specified :{0}", _DETAIL_POSITION_URL));
 
-            if (!ConfigParameters.Any(x => x.Key == _AUTH_URL))
-                throw new Exception(string.Format("Config parameter not specified :{0}", _AUTH_URL));
-
-
         }
 
         protected void LoadConfig()
@@ -96,8 +90,6 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
             int accountNumber = Convert.ToInt32(ConfigParameters.Where(x => x.Key == _ACCOUNT_NUMBER).FirstOrDefault().Value);
 
             DetailPositonURL = ConfigParameters.Where(x => x.Key == _DETAIL_POSITION_URL).FirstOrDefault().Value;
-
-            AuthURL = ConfigParameters.Where(x => x.Key == _AUTH_URL).FirstOrDefault().Value;
 
             AccountPrimaryData = accountPrimaryDataManager.GetAccountPrimaryData(accountNumber);
 
@@ -124,14 +116,17 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
                 return null;
         }
 
-        protected string DoGetJson(string url, string token)
+        protected string DoGetJson(string url)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
             request.Method = "GET";
             request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
             request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
-            request.Headers["X-Auth-Token"] = token;
+            //request.Headers["X-Username"] = AccountPrimaryData.User;
+            //request.Headers["X-Password"] = AccountPrimaryData.Password;
+            request.Headers["Authorization"] = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(string.Format("{0}:{1}", AccountPrimaryData.User, AccountPrimaryData.Password)));
+
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
@@ -156,7 +151,13 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         public bool SyncAccountBalance(InstructionBasedRouting.BusinessEntities.Account account)
         {
-            string token = DoLogin(AuthURL);
+            //string token = DoLogin(AuthURL);
+            string url = string.Format("{0}{1}", DetailPositonURL, account.GenericAccountNumber);
+
+            string resp = DoGetJson(url);
+
+            DetailedPositionResponse detailedPositionResp = JsonConvert.DeserializeObject<DetailedPositionResponse>(resp);
+
 
             return true;
         }

@@ -154,7 +154,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                     if (!sum.Position.PositionCleared && !sum.Position.PositionCanceledOrRejected)
                     {
                         DoLog(string.Format("@{0}: Cancelling position on symbol {1} ", StrategyConfiguration.Name, sum.Symbol), Constants.MessageType.Information);
-                        CancelPositionWrapper cancelWrapper = new CancelPositionWrapper(sum.Position, Config);
+                        //CancelPositionWrapper cancelWrapper = new CancelPositionWrapper(sum.Position, Config);
+                        CancelAllPositionsWrapper cancelWrapper = new CancelAllPositionsWrapper(Config);
                         if (OrderRouter.ProcessMessage(cancelWrapper).Success)
                         {
                             sum.Position.PosStatus = PositionStatus.Canceled;

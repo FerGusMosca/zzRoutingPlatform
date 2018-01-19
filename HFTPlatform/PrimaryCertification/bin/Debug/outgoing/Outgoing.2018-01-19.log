@@ -1,0 +1,45 @@
+2018-01-19 13:11:08  :: 1/19/2018 1:11:08 PMBaseCommunicationModule.LoadConfig
+2018-01-19 13:11:08  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-19 13:11:08  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-19 13:11:08  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-19 13:12:58  :: 1/19/2018 1:12:58 PMBaseCommunicationModule.LoadConfig
+2018-01-19 13:12:58  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-01-19 13:12:58  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-01-19 13:12:58  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-01-19 13:14:24  :: @No se pudo procesar el mercado para el symbol GGAL:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:14:51  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:15:43  :: @No se pudo procesar el mercado para el symbol SENE18:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:15:51  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:15:59  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:16:38  :: @Outgoing Singleton FIX:Publishing Wrapper 
+2018-01-19 13:17:26  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:20:09  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:20:19  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:21:00  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:21:50  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:22:03  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:22:16  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:22:25  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:22:48  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:22:55  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:24:40  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:24:48  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:26:28  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 
+2018-01-19 13:27:25  :: @El valor no puede ser nulo.
+Nombre del parámetro: key:Error Publishing Wrapper. Error=Outgoing Singleton FIX 

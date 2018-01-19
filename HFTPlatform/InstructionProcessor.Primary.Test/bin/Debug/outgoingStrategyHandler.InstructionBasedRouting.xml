@@ -37,10 +37,5 @@
       <Key>DetailPositionsURL</Key>
       <Value>http://demo-api.primary.com.ar:8444/ptp-oms-webservices/rest/detailedPosition/</Value>
     </Config>
-    <Config>
-      <Key>AuthURL</Key>
-      <Value>http://demo-api.primary.com.ar:8081/pbcp/auth/getToken/</Value>
-    </Config>
-    
   </AccountManagerConfig>
 </Configuration>

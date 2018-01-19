@@ -475,6 +475,12 @@ namespace zHFT.OrderRouters.Router
                     CancelOrder(wrapper);
                     return CMState.BuildSuccess();
                 }
+                else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
+                {
+                    DoLog(string.Format("Canceling all active orders"), Constants.MessageType.Information);
+                    OrderProxy.ProcessMessage(wrapper);
+                    return CMState.BuildSuccess();
+                }
                 else
                 {
                     DoLog(string.Format("Routing to market: Order Router not prepared for routing message {0}", wrapper.GetAction().ToString()), Constants.MessageType.Information);

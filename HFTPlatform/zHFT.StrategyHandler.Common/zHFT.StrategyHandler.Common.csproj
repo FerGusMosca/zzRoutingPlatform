@@ -52,6 +52,7 @@
     <Compile Include="Converters\SecurityConverter.cs" />
     <Compile Include="Converters\SecurityListConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\CancelAllPositionsWrapper.cs" />
     <Compile Include="Wrappers\CancelOrderWrapper.cs" />
     <Compile Include="Wrappers\CancelPositionWrapper.cs" />
     <Compile Include="Wrappers\MarketDataRequestWrapper.cs" />

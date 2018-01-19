@@ -169,7 +169,7 @@ namespace zHFT.OrderRouters.Bittrex
             }
         }
 
-        private void EvalRouteError(Order order, Exception ex)
+        protected void EvalRouteError(Order order, Exception ex)
         {
             GetOrderResponse ordResp = GetTheoreticalResponse(order, "");
             order.OrdStatus = OrdStatus.Rejected;
@@ -191,7 +191,7 @@ namespace zHFT.OrderRouters.Bittrex
             OnMessageRcv(wrapper);
         }
 
-        protected CMState RouteNewOrder(Wrapper wrapper)
+        protected virtual CMState RouteNewOrder(Wrapper wrapper)
         {
             try
             {
@@ -263,7 +263,7 @@ namespace zHFT.OrderRouters.Bittrex
 
         }
 
-        private void EvalReverse(ref string symbol, ref double ordQty, ref Side side, double price, 
+        protected void EvalReverse(ref string symbol, ref double ordQty, ref Side side, double price, 
                                 Exchange exchange, ExchangeContext ctx)
         {
             if (!ReverseCurrency.Keys.Contains(symbol))
@@ -382,6 +382,8 @@ namespace zHFT.OrderRouters.Bittrex
                                 //Cancelamos
                                 RunCancelOrder(order,true);
 
+                                Thread.Sleep(100);
+
                                 //Damos el alta
                                 double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
                                 order.Price = newPrice;
@@ -409,6 +411,31 @@ namespace zHFT.OrderRouters.Bittrex
                     DoLog(string.Format("@{0}:Error updating order {1}!:{2}", BittrexConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
                     return CMState.BuildFail(ex);
                 }
+        }
+
+        protected CMState CancelAllActiveOrders()
+        {
+            try
+            {
+                lock (tLock)
+                {
+                    foreach (string uuid in ActiveOrders.Keys)
+                    {
+                        Order order = ActiveOrders[uuid];
+                        DoLog(string.Format("@{0}:Cancelling active order for symbol {1}", BittrexConfiguration.Name,order.Security.Symbol), Main.Common.Util.Constants.MessageType.Information);
+
+                        RunCancelOrder(order, false);
+                    }
+
+                    return CMState.BuildSuccess();
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error cancelling all active orders!:{1}", BittrexConfiguration.Name,  ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+        
         }
 
         protected CMState CancelOrder(Wrapper wrapper)
@@ -473,8 +500,13 @@ namespace zHFT.OrderRouters.Bittrex
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                 {
-                    DoLog(string.Format("@{1}:Canceling order with Bittrex  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("@{1}:Cancelling order with Bittrex  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                     return CancelOrder(wrapper);
+                }
+                else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
+                {
+                    DoLog(string.Format("@{0}:Cancelling all active orders @ Bittrex", BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                    return CancelAllActiveOrders();
                 }
                 else
                 {

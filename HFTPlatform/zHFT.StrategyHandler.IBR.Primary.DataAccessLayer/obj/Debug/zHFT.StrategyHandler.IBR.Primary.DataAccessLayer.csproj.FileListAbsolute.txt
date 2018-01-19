@@ -23,3 +23,4 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IB
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.IBR.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.IBR.Primary.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.IBR.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
