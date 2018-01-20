@@ -47,7 +47,7 @@ namespace zHFT.OrderRouters.Router
 
         #region Private Methods
 
-        private void EvalUpdatingPositionOnDOM(Position pos)
+        protected virtual void EvalUpdatingPositionOnDOM(Position pos)
         {
             if (pos.NewDomFlag && !pos.NewPosition && !pos.PositionCanceledOrRejected && !pos.PositionCleared)
             {
@@ -214,7 +214,7 @@ namespace zHFT.OrderRouters.Router
             }
         }
 
-        private void ProcessMarketData(Wrapper wrapper)
+        protected virtual void ProcessMarketData(Wrapper wrapper)
         {
 
             lock (tLockCalculus)
@@ -465,7 +465,7 @@ namespace zHFT.OrderRouters.Router
                 }
                 else if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
-                    DoLog(string.Format("Receiving Market Data on order router: {0}",wrapper.ToString()), Constants.MessageType.Information);
+                    //DoLog(string.Format("Receiving Market Data on order router: {0}",wrapper.ToString()), Constants.MessageType.Information);
                     ProcessMarketData(wrapper);
                     return CMState.BuildSuccess();
                 }

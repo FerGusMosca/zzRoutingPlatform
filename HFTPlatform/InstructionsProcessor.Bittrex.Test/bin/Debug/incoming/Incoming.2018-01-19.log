@@ -963,3 +963,123 @@
 2018-01-19 15:33:49  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
 2018-01-19 15:33:59  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00008169 BestBidPrice=0.00008169 BestAskPrice=0.00008183
 2018-01-19 15:34:00  :: @Incoming Bittrex:Unsubscribing market data por symbol FAIR
+2018-01-19 20:32:46  :: 1/19/2018 8:32:46 PMBaseCommunicationModule.LoadConfig
+2018-01-19 20:32:46  :: Loading config:.\incomingBittrex.xml
+2018-01-19 20:32:46  :: Processing config:.\incomingBittrex.xml
+2018-01-19 20:32:47  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-19 20:34:24  :: @Incoming Bittrex:Requesting market data por symbol FAIR
+2018-01-19 20:34:29  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007693
+2018-01-19 20:36:46  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007693
+2018-01-19 20:36:47  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007714
+2018-01-19 20:36:47  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007714
+2018-01-19 20:36:48  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007714
+2018-01-19 20:36:48  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007714
+2018-01-19 20:36:48  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007714
+2018-01-19 20:36:59  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:36:59  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:00  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:00  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:00  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:00  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:00  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:01  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:01  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:01  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:01  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:01  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:01  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:02  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:03  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:03  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:03  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:03  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:03  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:04  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:05  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:05  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:05  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:05  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:06  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:07  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:07  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:07  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:07  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:08  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:09  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:09  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:09  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:09  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:09  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:10  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:11  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:11  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007713
+2018-01-19 20:37:21  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:22  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:27  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:28  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:28  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:33  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:33  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:33  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:33  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:33  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:33  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:34  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:35  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:35  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:37:36  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-19 20:37:40  :: ProcessIncoming...Symbol=FAIR  LastPrice=0.00007764 BestBidPrice=0.00007636 BestAskPrice=0.00007712
+2018-01-19 20:40:01  :: @Incoming Bittrex:Unsubscribing market data por symbol FAIR
+2018-01-19 20:42:18  :: 1/19/2018 8:42:18 PMBaseCommunicationModule.LoadConfig
+2018-01-19 20:42:18  :: Loading config:.\incomingBittrex.xml
+2018-01-19 20:42:18  :: Processing config:.\incomingBittrex.xml
+2018-01-19 20:42:18  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-19 20:44:28  :: @Incoming Bittrex:Requesting market data por symbol FAIR
+2018-01-19 20:47:15  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-19 20:49:08  :: 1/19/2018 8:49:08 PMBaseCommunicationModule.LoadConfig
+2018-01-19 20:49:08  :: Loading config:.\incomingBittrex.xml
+2018-01-19 20:49:08  :: Processing config:.\incomingBittrex.xml
+2018-01-19 20:49:08  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-19 20:49:26  :: @Incoming Bittrex:Requesting market data por symbol FAIR
+2018-01-19 20:51:50  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-19 20:53:02  :: @Incoming Bittrex:Unsubscribing market data por symbol FAIR
+2018-01-19 20:55:01  :: @Incoming Bittrex:Requesting market data por symbol FAIR
+2018-01-19 21:01:59  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-19 21:01:59  :: @Incoming Bittrex:Unsubscribing market data por symbol FAIR

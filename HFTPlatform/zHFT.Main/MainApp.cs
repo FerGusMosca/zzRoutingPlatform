@@ -118,7 +118,7 @@ namespace zHFT.Main
 
         protected override CMState ProcessOutgoing(Wrapper wrapper)
         {
-            StrongLogOutgoing("ProcessOutgoing: " + wrapper.ToString(), Constants.MessageType.Information);
+            //StrongLogOutgoing("ProcessOutgoing: " + wrapper.ToString(), Constants.MessageType.Information);
             Console.WriteLine("ProcessOutgoing: " + wrapper.ToString());
             try
             {
@@ -136,7 +136,7 @@ namespace zHFT.Main
 
         protected override CMState ProcessIncoming(Wrapper wrapper)
         {
-            StrongLogIncoming("ProcessIncoming..." + wrapper.ToString(), Constants.MessageType.Information);
+            //StrongLogIncoming("ProcessIncoming..." + wrapper.ToString(), Constants.MessageType.Information);
             
             try
             {

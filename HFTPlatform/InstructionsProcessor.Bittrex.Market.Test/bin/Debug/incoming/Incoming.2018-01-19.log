@@ -1,0 +1,7 @@
+2018-01-19 21:32:03  :: 1/19/2018 9:32:03 PMBaseCommunicationModule.LoadConfig
+2018-01-19 21:32:03  :: Loading config:.\incomingBittrex.xml
+2018-01-19 21:32:03  :: Processing config:.\incomingBittrex.xml
+2018-01-19 21:32:03  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-19 21:37:55  :: @Incoming Bittrex:Requesting market data por symbol FAIR
+2018-01-19 21:39:24  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-19 21:40:39  :: @Incoming Bittrex:Unsubscribing market data por symbol FAIR

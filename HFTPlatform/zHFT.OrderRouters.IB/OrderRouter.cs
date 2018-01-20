@@ -145,6 +145,19 @@ namespace zHFT.OrderRouters.IB
             ContractList.Add(order.OrderId, contract);
         }
 
+        protected void CancelAllOrders()
+        {
+            lock (tLock)
+            {
+                foreach (int orderId in OrderIdsMapper.Values)
+                {
+                    DoLog(string.Format("Cancelling Order Id {0}", orderId), Main.Common.Util.Constants.MessageType.Information);
+                    ClientSocket.cancelOrder(orderId);
+                }
+            }
+        
+        }
+
         protected void UpdateOrder(Wrapper wrapper,bool cancel)
         {
             Contract contract = GetContract(wrapper);
@@ -286,6 +299,11 @@ namespace zHFT.OrderRouters.IB
                 {
                     DoLog(string.Format("Canceling order with IB  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
                     UpdateOrder(wrapper, true);
+                }
+                else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
+                {
+                    DoLog(string.Format("@{0}:Cancelling all active orders @ IB", IBConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                    CancelAllOrders();
                 }
                 else
                 {
