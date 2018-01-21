@@ -49,13 +49,9 @@
       <Project>{b0204c14-b660-4c85-b953-43a80192827b}</Project>
       <Name>zHFT.OrderRouters.Bittrex.BusinessEntities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.OrderRouters.Bittrex.DataAccess\zHFT.OrderRouters.Bittrex.DataAccess.csproj">
-      <Project>{ce3848bd-581d-4f8f-b612-24fcffd98f9b}</Project>
-      <Name>zHFT.OrderRouters.Bittrex.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csproj">
-      <Project>{704a341a-fa36-4b00-bd9d-5d365475295a}</Project>
-      <Name>zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities</Name>
+    <ProjectReference Include="..\zHFT.OrderRouters.Cryptos.DataAccess\zHFT.OrderRouters.Cryptos.DataAccess.csproj">
+      <Project>{9d191952-3d4b-47cc-b3c2-ac803a237424}</Project>
+      <Name>zHFT.OrderRouters.Cryptos.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

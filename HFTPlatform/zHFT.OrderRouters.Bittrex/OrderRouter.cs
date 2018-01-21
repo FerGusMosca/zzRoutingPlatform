@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Orders;
+using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
@@ -16,10 +17,11 @@ using zHFT.OrderRouters.Bittrex.BusinessEntities;
 using zHFT.OrderRouters.Bittrex.Common.Wrappers;
 using zHFT.OrderRouters.Bittrex.DataAccessLayer.Managers;
 using zHFT.OrderRouters.Common;
+using zHFT.OrderRouters.Cryptos;
 
 namespace zHFT.OrderRouters.Bittrex
 {
-    public class OrderRouter : OrderRouterBase,ICommunicationModule
+    public class OrderRouter : BaseOrderRouter
     {
 
         #region Private Static Const
@@ -30,45 +32,36 @@ namespace zHFT.OrderRouters.Bittrex
 
         #endregion
 
-        #region Public Attributes
+        #region Protected Attributes
 
         protected Common.Configuration.Configuration BittrexConfiguration { get; set; }
 
-        protected Dictionary<string, Order> ActiveOrders { get; set; }
-
-        protected Dictionary<string, string> OrderIdMappers { get; set; }
-
         private Dictionary<string, bool> ReverseCurrency { get; set; }
-
-        protected Thread ExecutionReportThread { get; set; }
 
         protected AccountBittrexDataManager AccountBittrexDataManager { get; set; }
 
-        protected List<string> CanceledOrders { get; set; }
-
-        protected object tLock { get; set; }
-
         #endregion
 
-        #region Protected OrderRouterBase Methods
+        #region Overriden Methods
+
+        protected override BaseConfiguration GetConfig()
+        {
+            return BittrexConfiguration;
+        }
+
+        protected override string GetQuoteCurrency()
+        {
+            return BittrexConfiguration.QuoteCurrency;
+        }
 
         protected override void DoLoadConfig(string configFile, List<string> noValueFields)
         {
             BittrexConfiguration = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
-        protected override CMState ProcessIncoming(Wrapper wrapper)
-        {
+        #endregion
 
-            //Este Communication Module no tiene modulos de Incoming o Outgoing
-            return CMState.BuildFail(new Exception("No incoming module set for Bittrex order router!"));
-        }
-
-        protected override CMState ProcessOutgoing(Wrapper wrapper)
-        {
-            //Este Communication Module no tiene modulos de Incoming o Outgoing
-            return CMState.BuildFail(new Exception("No outgoing module set for Bittrex order router!"));
-        }
+        #region Protected OrderRouterBase Methods
 
         protected ExchangeContext GetContext()
         {
@@ -79,32 +72,6 @@ namespace zHFT.OrderRouters.Bittrex
                 Secret = BittrexConfiguration.Secret,
                 Simulate = BittrexConfiguration.Simulate
             };
-        }
-
-        protected Order GetOrder(Wrapper wrapper)
-        {
-            string symbol = (string)wrapper.GetField(OrderFields.Symbol);
-            double? price = (double?)wrapper.GetField(OrderFields.Price);
-            Side side = (Side)wrapper.GetField(OrderFields.Side);
-            double orderQty = (double)wrapper.GetField(OrderFields.OrderQty);
-            string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
-
-            if (!price.HasValue)
-                throw new Exception(string.Format("Las ordenes deben tener un precio asignado. No se puede rutear orden para moneda {0}", symbol));
-
-
-            Order order = new Order()
-            {
-                Symbol = symbol,
-                Price = price,
-                Side = side,
-                OrderQty = orderQty,
-                Currency = GetContext().QuoteCurrency,
-                OrdType = OrdType.Limit,
-                ClOrdId=clOrderId,
-            };
-
-            return order;
         }
 
         protected void DoEvalExecutionReport()
@@ -191,7 +158,7 @@ namespace zHFT.OrderRouters.Bittrex
             OnMessageRcv(wrapper);
         }
 
-        protected virtual CMState RouteNewOrder(Wrapper wrapper)
+        protected override CMState RouteNewOrder(Wrapper wrapper)
         {
             try
             {
@@ -336,7 +303,7 @@ namespace zHFT.OrderRouters.Bittrex
                 throw new Exception(string.Format("Invalid value for side:{0}", order.Side.ToString()));
         }
 
-        private void RunCancelOrder(Order order,bool update)
+        protected override void RunCancelOrder(Order order,bool update)
         {
             Exchange exchange = new Exchange();
             ExchangeContext ctx = GetContext();
@@ -353,8 +320,7 @@ namespace zHFT.OrderRouters.Bittrex
             }
         }
 
-
-        protected CMState UpdateOrder(Wrapper wrapper)
+        protected override CMState UpdateOrder(Wrapper wrapper)
         {
           
                 string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
@@ -413,32 +379,7 @@ namespace zHFT.OrderRouters.Bittrex
                 }
         }
 
-        protected CMState CancelAllActiveOrders()
-        {
-            try
-            {
-                lock (tLock)
-                {
-                    foreach (string uuid in ActiveOrders.Keys)
-                    {
-                        Order order = ActiveOrders[uuid];
-                        DoLog(string.Format("@{0}:Cancelling active order for symbol {1}", BittrexConfiguration.Name,order.Security.Symbol), Main.Common.Util.Constants.MessageType.Information);
-
-                        RunCancelOrder(order, false);
-                    }
-
-                    return CMState.BuildSuccess();
-                }
-            }
-            catch (Exception ex)
-            {
-                DoLog(string.Format("@{0}:Error cancelling all active orders!:{1}", BittrexConfiguration.Name,  ex.Message), Main.Common.Util.Constants.MessageType.Error);
-                return CMState.BuildFail(ex);
-            }
-        
-        }
-
-        protected CMState CancelOrder(Wrapper wrapper)
+        protected override CMState CancelOrder(Wrapper wrapper)
         {
             string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
             try
@@ -482,48 +423,7 @@ namespace zHFT.OrderRouters.Bittrex
 
         #region Public Methods
 
-        public CMState ProcessMessage(Wrapper wrapper)
-        {
-            try
-            {
-
-                if (wrapper.GetAction() == Actions.NEW_ORDER)
-                {
-                    DoLog(string.Format("@{1}:Routing with Bittrex to market for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                    return RouteNewOrder(wrapper);
-                }
-                else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
-                {
-                    DoLog(string.Format("@{1}:Updating order with Bittrex  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                    return UpdateOrder(wrapper);
-                    //return CMState.BuildSuccess();
-                }
-                else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
-                {
-                    DoLog(string.Format("@{1}:Cancelling order with Bittrex  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                    return CancelOrder(wrapper);
-                }
-                else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
-                {
-                    DoLog(string.Format("@{0}:Cancelling all active orders @ Bittrex", BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                    return CancelAllActiveOrders();
-                }
-                else
-                {
-                    DoLog(string.Format("@{1}:Could not process order routing for action {0} with Bittrex:", wrapper.GetAction().ToString(), BittrexConfiguration.Name),
-                          Main.Common.Util.Constants.MessageType.Error);
-                    return CMState.BuildFail(new Exception(string.Format("@{1}:Could not process order routing for action {0} with Bittrex:", wrapper.GetAction().ToString(), BittrexConfiguration.Name)));
-                }
-            }
-            catch (Exception ex)
-            {
-                DoLog(string.Format("@{0}:Error routing order to market using Bittrex:" + ex.Message, BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                return CMState.BuildFail(ex);
-            }
-
-        }
-
-        public bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
+        public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {
             try
             {

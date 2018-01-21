@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F93BBF1F-9111-48B2-9610-ECBBD9F8AA9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zHFT.OrderRouters.Binance</RootNamespace>
+    <AssemblyName>zHFT.OrderRouters.Binance</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Binance.API.Csharp.Client">
+      <HintPath>..\..\Librerias\Binance.API.Csharp.Client.1.3.0\lib\net46\Binance.API.Csharp.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Binance.API.Csharp.Client.Domain">
+      <HintPath>..\..\Librerias\Binance.API.Csharp.Client.1.3.0\lib\net46\Binance.API.Csharp.Client.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Binance.API.Csharp.Client.Models">
+      <HintPath>..\..\Librerias\Binance.API.Csharp.Client.1.3.0\lib\net46\Binance.API.Csharp.Client.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.5.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\Librerias\WebSocketSharp-NonPreRelease.1.0.0\lib\net35\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OrderRouter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Binance.BusinessEntities\zHFT.OrderRouters.Binance.BusinessEntities.csproj">
+      <Project>{c6425ba7-f3e0-4b9c-8630-12b4a219ccaf}</Project>
+      <Name>zHFT.OrderRouters.Binance.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Binance.Common\zHFT.OrderRouters.Binance.Common.csproj">
+      <Project>{fd65e6f9-ab60-414b-84df-af5dc0aa20a5}</Project>
+      <Name>zHFT.OrderRouters.Binance.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Binance.DataAccessLayer\zHFT.OrderRouters.Binance.DataAccessLayer.csproj">
+      <Project>{9999ef79-5b80-489d-adc1-e847173b9ae2}</Project>
+      <Name>zHFT.OrderRouters.Binance.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
+      <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
+      <Name>zHFT.OrderRouters.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Cryptos\zHFT.OrderRouters.Cryptos.csproj">
+      <Project>{151b37b7-7e1c-4bc5-b530-d0a66a13a3f7}</Project>
+      <Name>zHFT.OrderRouters.Cryptos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

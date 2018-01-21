@@ -74,6 +74,10 @@
       <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
       <Name>zHFT.OrderRouters.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Cryptos\zHFT.OrderRouters.Cryptos.csproj">
+      <Project>{151b37b7-7e1c-4bc5-b530-d0a66a13a3f7}</Project>
+      <Name>zHFT.OrderRouters.Cryptos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

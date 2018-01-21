@@ -19,7 +19,9 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
