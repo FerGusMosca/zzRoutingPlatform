@@ -69,6 +69,14 @@
       <Project>{2b6248b2-af75-4687-9faf-f9ea29d9335f}</Project>
       <Name>zHFT.InstructionBasedMarketClient.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.csproj">
+      <Project>{2d4a56cb-b881-4189-b360-db0b2ab27c9f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Cryptos\zHFT.InstructionBasedMarketClient.Cryptos.csproj">
+      <Project>{6f6b09b8-01f9-48bf-85c5-af34498fb070}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Cryptos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

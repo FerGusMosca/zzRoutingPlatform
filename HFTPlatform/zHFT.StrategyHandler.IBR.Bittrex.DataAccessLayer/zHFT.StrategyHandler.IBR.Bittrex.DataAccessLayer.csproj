@@ -44,10 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\AccountBittrexDataManager.cs" />
-    <Compile Include="Managers\AccountManager.cs" />
     <Compile Include="BittrexAccountManager.cs" />
-    <Compile Include="Managers\InstructionManager.cs" />
-    <Compile Include="Managers\PositionManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,9 +61,9 @@
       <Project>{704a341a-fa36-4b00-bd9d-5d365475295a}</Project>
       <Name>zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.csproj">
-      <Project>{b6c0c46c-0846-441e-945a-06c16d5b5535}</Project>
-      <Name>zHFT.StrategyHandler.IBR.Bittrex.DataAccess</Name>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csproj">
+      <Project>{d74a8a08-4952-45e0-812e-0d365b6a48e9}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Cryptos.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj">
       <Project>{aed28ef6-ddf7-40ad-bc25-dec1b9b1c6f2}</Project>

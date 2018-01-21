@@ -1,0 +1,301 @@
+2018-01-21 14:28:18  :: 21/1/2018 14:28:18MainApp.LoadConfig
+2018-01-21 14:28:18  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:28:18  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:28:18  :: Fin GetConfiguracion
+2018-01-21 14:28:18  :: Assembly not found: zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance
+2018-01-21 14:28:18  :: Initializing Log
+2018-01-21 14:28:18  :: Initializing Incoming Module
+2018-01-21 14:28:18  :: Incoming module could not be initialized because it was not instantiated
+2018-01-21 14:28:18  :: Initializing Outgoing Module
+2018-01-21 14:28:22  :: Error initializing Outgoing Module
+2018-01-21 14:29:16  :: 21/1/2018 14:29:16MainApp.LoadConfig
+2018-01-21 14:29:16  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:29:16  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:29:16  :: Fin GetConfiguracion
+2018-01-21 14:29:16  :: Assembly not found: zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance
+2018-01-21 14:29:16  :: Initializing Log
+2018-01-21 14:29:18  :: Initializing Incoming Module
+2018-01-21 14:36:14  :: 21/1/2018 14:36:14MainApp.LoadConfig
+2018-01-21 14:36:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:36:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:36:15  :: Fin GetConfiguracion
+2018-01-21 14:36:15  :: Initializing Log
+2018-01-21 14:36:19  :: Initializing Incoming Module
+2018-01-21 14:36:24  :: Incoming Module successfully initialized
+2018-01-21 14:36:24  :: Initializing Outgoing Module
+2018-01-21 14:36:24  :: Error initializing Outgoing Module
+2018-01-21 14:42:02  :: 21/1/2018 14:42:02MainApp.LoadConfig
+2018-01-21 14:42:02  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:42:02  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:42:02  :: Fin GetConfiguracion
+2018-01-21 14:42:02  :: Initializing Log
+2018-01-21 14:42:02  :: Initializing Incoming Module
+2018-01-21 14:42:03  :: Incoming Module successfully initialized
+2018-01-21 14:42:03  :: Initializing Outgoing Module
+2018-01-21 14:42:03  :: Error initializing Outgoing Module
+2018-01-21 14:42:28  :: 21/1/2018 14:42:28MainApp.LoadConfig
+2018-01-21 14:42:28  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:42:28  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:42:29  :: Fin GetConfiguracion
+2018-01-21 14:42:29  :: Initializing Log
+2018-01-21 14:42:29  :: Initializing Incoming Module
+2018-01-21 14:44:01  :: 21/1/2018 14:44:01MainApp.LoadConfig
+2018-01-21 14:44:01  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:44:01  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 14:44:01  :: Fin GetConfiguracion
+2018-01-21 14:44:02  :: Initializing Log
+2018-01-21 14:44:02  :: Initializing Incoming Module
+2018-01-21 14:44:03  :: Incoming Module successfully initialized
+2018-01-21 14:44:03  :: Initializing Outgoing Module
+2018-01-21 14:44:04  :: Error initializing Outgoing Module
+2018-01-21 15:20:02  :: 21/1/2018 15:20:02MainApp.LoadConfig
+2018-01-21 15:20:02  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:20:02  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:20:02  :: Fin GetConfiguracion
+2018-01-21 15:20:05  :: Initializing Log
+2018-01-21 15:20:05  :: Initializing Incoming Module
+2018-01-21 15:20:06  :: Incoming Module successfully initialized
+2018-01-21 15:20:06  :: Initializing Outgoing Module
+2018-01-21 15:20:07  :: Error initializing Outgoing Module
+2018-01-21 15:25:08  :: 21/1/2018 15:25:08MainApp.LoadConfig
+2018-01-21 15:25:08  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:25:08  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:25:08  :: Fin GetConfiguracion
+2018-01-21 15:25:08  :: Initializing Log
+2018-01-21 15:25:08  :: Initializing Incoming Module
+2018-01-21 15:25:10  :: Incoming Module successfully initialized
+2018-01-21 15:25:10  :: Initializing Outgoing Module
+2018-01-21 15:25:11  :: Error initializing Outgoing Module
+2018-01-21 15:27:44  :: 21/1/2018 15:27:44MainApp.LoadConfig
+2018-01-21 15:27:44  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:27:44  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:27:45  :: Fin GetConfiguracion
+2018-01-21 15:27:45  :: Initializing Log
+2018-01-21 15:27:45  :: Initializing Incoming Module
+2018-01-21 15:27:46  :: Incoming Module successfully initialized
+2018-01-21 15:27:46  :: Initializing Outgoing Module
+2018-01-21 15:27:47  :: Error initializing Outgoing Module
+2018-01-21 15:30:39  :: 21/1/2018 15:30:39MainApp.LoadConfig
+2018-01-21 15:30:39  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:30:39  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:30:39  :: Fin GetConfiguracion
+2018-01-21 15:30:39  :: Initializing Log
+2018-01-21 15:30:39  :: Initializing Incoming Module
+2018-01-21 15:30:41  :: Incoming Module successfully initialized
+2018-01-21 15:30:41  :: Initializing Outgoing Module
+2018-01-21 15:30:42  :: Error initializing Outgoing Module
+2018-01-21 15:31:37  :: 21/1/2018 15:31:37MainApp.LoadConfig
+2018-01-21 15:31:37  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:31:37  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:31:37  :: Fin GetConfiguracion
+2018-01-21 15:31:37  :: Initializing Log
+2018-01-21 15:31:37  :: Initializing Incoming Module
+2018-01-21 15:31:39  :: Incoming Module successfully initialized
+2018-01-21 15:31:39  :: Initializing Outgoing Module
+2018-01-21 15:31:39  :: Error initializing Outgoing Module
+2018-01-21 15:34:34  :: 21/1/2018 15:34:34MainApp.LoadConfig
+2018-01-21 15:34:34  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:34:34  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 15:34:34  :: Fin GetConfiguracion
+2018-01-21 15:34:34  :: Initializing Log
+2018-01-21 15:34:34  :: Initializing Incoming Module
+2018-01-21 15:34:35  :: Incoming Module successfully initialized
+2018-01-21 15:34:35  :: Initializing Outgoing Module
+2018-01-21 15:34:36  :: Error initializing Outgoing Module
+2018-01-21 16:31:38  :: 21/1/2018 16:31:38MainApp.LoadConfig
+2018-01-21 16:31:38  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:31:38  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:31:38  :: Fin GetConfiguracion
+2018-01-21 16:31:38  :: Initializing Log
+2018-01-21 16:31:38  :: Initializing Incoming Module
+2018-01-21 16:31:39  :: Incoming Module successfully initialized
+2018-01-21 16:31:39  :: Initializing Outgoing Module
+2018-01-21 16:31:39  :: Error initializing Outgoing Module
+2018-01-21 16:33:14  :: 21/1/2018 16:33:14MainApp.LoadConfig
+2018-01-21 16:33:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:33:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:33:14  :: Fin GetConfiguracion
+2018-01-21 16:33:14  :: Initializing Log
+2018-01-21 16:33:14  :: Initializing Incoming Module
+2018-01-21 16:33:15  :: Incoming Module successfully initialized
+2018-01-21 16:33:15  :: Initializing Outgoing Module
+2018-01-21 16:33:15  :: Error initializing Outgoing Module
+2018-01-21 16:42:25  :: 21/1/2018 16:42:25MainApp.LoadConfig
+2018-01-21 16:42:25  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:42:25  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:42:26  :: Fin GetConfiguracion
+2018-01-21 16:42:26  :: Initializing Log
+2018-01-21 16:42:26  :: Initializing Incoming Module
+2018-01-21 16:42:26  :: Incoming Module successfully initialized
+2018-01-21 16:42:26  :: Initializing Outgoing Module
+2018-01-21 16:42:27  :: Error initializing Outgoing Module
+2018-01-21 16:53:19  :: 21/1/2018 16:53:19MainApp.LoadConfig
+2018-01-21 16:53:19  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:53:19  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:53:20  :: Fin GetConfiguracion
+2018-01-21 16:53:20  :: Initializing Log
+2018-01-21 16:53:20  :: Initializing Incoming Module
+2018-01-21 16:53:21  :: Incoming Module successfully initialized
+2018-01-21 16:53:21  :: Initializing Outgoing Module
+2018-01-21 16:56:54  :: 21/1/2018 16:56:54MainApp.LoadConfig
+2018-01-21 16:56:54  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:56:54  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:56:54  :: Fin GetConfiguracion
+2018-01-21 16:56:55  :: Initializing Log
+2018-01-21 16:56:55  :: Initializing Incoming Module
+2018-01-21 16:56:56  :: Incoming Module successfully initialized
+2018-01-21 16:56:56  :: Initializing Outgoing Module
+2018-01-21 16:57:20  :: Outgoing Module successfully initialized
+2018-01-21 16:59:05  :: 21/1/2018 16:59:05MainApp.LoadConfig
+2018-01-21 16:59:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:59:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 16:59:05  :: Fin GetConfiguracion
+2018-01-21 16:59:05  :: Initializing Log
+2018-01-21 16:59:05  :: Initializing Incoming Module
+2018-01-21 16:59:06  :: Incoming Module successfully initialized
+2018-01-21 16:59:06  :: Initializing Outgoing Module
+2018-01-21 16:59:07  :: Outgoing Module successfully initialized
+2018-01-21 17:10:58  :: 21/1/2018 17:10:57MainApp.LoadConfig
+2018-01-21 17:10:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:10:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:10:58  :: Fin GetConfiguracion
+2018-01-21 17:10:58  :: Initializing Log
+2018-01-21 17:10:58  :: Initializing Incoming Module
+2018-01-21 17:10:59  :: Incoming Module successfully initialized
+2018-01-21 17:10:59  :: Initializing Outgoing Module
+2018-01-21 17:11:01  :: Outgoing Module successfully initialized
+2018-01-21 17:17:57  :: 21/1/2018 17:17:57MainApp.LoadConfig
+2018-01-21 17:17:57  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:17:57  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:17:57  :: Fin GetConfiguracion
+2018-01-21 17:17:58  :: Initializing Log
+2018-01-21 17:17:58  :: Initializing Incoming Module
+2018-01-21 17:17:59  :: Incoming Module successfully initialized
+2018-01-21 17:18:00  :: Initializing Outgoing Module
+2018-01-21 17:18:03  :: Outgoing Module successfully initialized
+2018-01-21 17:18:51  :: 21/1/2018 17:18:51MainApp.LoadConfig
+2018-01-21 17:18:51  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:18:51  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:18:52  :: Fin GetConfiguracion
+2018-01-21 17:18:52  :: Initializing Log
+2018-01-21 17:18:52  :: Initializing Incoming Module
+2018-01-21 17:18:53  :: Incoming Module successfully initialized
+2018-01-21 17:18:53  :: Initializing Outgoing Module
+2018-01-21 17:18:54  :: Outgoing Module successfully initialized
+2018-01-21 17:19:58  :: 21/1/2018 17:19:58MainApp.LoadConfig
+2018-01-21 17:19:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:19:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:19:58  :: Fin GetConfiguracion
+2018-01-21 17:19:58  :: Initializing Log
+2018-01-21 17:19:58  :: Initializing Incoming Module
+2018-01-21 17:19:59  :: Incoming Module successfully initialized
+2018-01-21 17:19:59  :: Initializing Outgoing Module
+2018-01-21 17:20:00  :: Outgoing Module successfully initialized
+2018-01-21 17:20:52  :: 21/1/2018 17:20:52MainApp.LoadConfig
+2018-01-21 17:20:52  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:20:52  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:20:52  :: Fin GetConfiguracion
+2018-01-21 17:20:52  :: Initializing Log
+2018-01-21 17:20:52  :: Initializing Incoming Module
+2018-01-21 17:20:53  :: Incoming Module successfully initialized
+2018-01-21 17:20:54  :: Initializing Outgoing Module
+2018-01-21 17:20:57  :: Outgoing Module successfully initialized
+2018-01-21 17:22:40  :: 21/1/2018 17:22:40MainApp.LoadConfig
+2018-01-21 17:22:40  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:22:40  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:22:41  :: Fin GetConfiguracion
+2018-01-21 17:22:41  :: Initializing Log
+2018-01-21 17:22:41  :: Initializing Incoming Module
+2018-01-21 17:22:42  :: Incoming Module successfully initialized
+2018-01-21 17:22:42  :: Initializing Outgoing Module
+2018-01-21 17:22:44  :: Outgoing Module successfully initialized
+2018-01-21 17:24:25  :: 21/1/2018 17:24:25MainApp.LoadConfig
+2018-01-21 17:24:25  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:24:25  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:24:25  :: Fin GetConfiguracion
+2018-01-21 17:24:25  :: Initializing Log
+2018-01-21 17:24:25  :: Initializing Incoming Module
+2018-01-21 17:24:25  :: Incoming Module successfully initialized
+2018-01-21 17:24:26  :: Initializing Outgoing Module
+2018-01-21 17:24:26  :: Outgoing Module successfully initialized
+2018-01-21 17:25:50  :: 21/1/2018 17:25:50MainApp.LoadConfig
+2018-01-21 17:25:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:25:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:25:50  :: Fin GetConfiguracion
+2018-01-21 17:25:50  :: Initializing Log
+2018-01-21 17:25:50  :: Initializing Incoming Module
+2018-01-21 17:25:51  :: Incoming Module successfully initialized
+2018-01-21 17:25:51  :: Initializing Outgoing Module
+2018-01-21 17:25:52  :: Outgoing Module successfully initialized
+2018-01-21 17:26:37  :: 21/1/2018 17:26:37MainApp.LoadConfig
+2018-01-21 17:26:37  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:26:37  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:26:37  :: Fin GetConfiguracion
+2018-01-21 17:26:37  :: Initializing Log
+2018-01-21 17:26:37  :: Initializing Incoming Module
+2018-01-21 17:26:38  :: Incoming Module successfully initialized
+2018-01-21 17:26:38  :: Initializing Outgoing Module
+2018-01-21 17:26:39  :: Outgoing Module successfully initialized
+2018-01-21 17:27:56  :: 21/1/2018 17:27:56MainApp.LoadConfig
+2018-01-21 17:27:56  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:27:56  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:27:57  :: Fin GetConfiguracion
+2018-01-21 17:27:57  :: Initializing Log
+2018-01-21 17:27:57  :: Initializing Incoming Module
+2018-01-21 17:27:57  :: Incoming Module successfully initialized
+2018-01-21 17:27:57  :: Initializing Outgoing Module
+2018-01-21 17:27:58  :: Outgoing Module successfully initialized
+2018-01-21 17:29:09  :: 21/1/2018 17:29:09MainApp.LoadConfig
+2018-01-21 17:29:09  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:29:09  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:29:10  :: Fin GetConfiguracion
+2018-01-21 17:29:10  :: Initializing Log
+2018-01-21 17:29:10  :: Initializing Incoming Module
+2018-01-21 17:29:11  :: Incoming Module successfully initialized
+2018-01-21 17:29:11  :: Initializing Outgoing Module
+2018-01-21 17:29:12  :: Outgoing Module successfully initialized
+2018-01-21 17:30:34  :: 21/1/2018 17:30:34MainApp.LoadConfig
+2018-01-21 17:30:34  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:30:34  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:30:34  :: Fin GetConfiguracion
+2018-01-21 17:30:34  :: Initializing Log
+2018-01-21 17:30:34  :: Initializing Incoming Module
+2018-01-21 17:30:35  :: Incoming Module successfully initialized
+2018-01-21 17:30:35  :: Initializing Outgoing Module
+2018-01-21 17:30:37  :: Outgoing Module successfully initialized
+2018-01-21 17:32:04  :: 21/1/2018 17:32:04MainApp.LoadConfig
+2018-01-21 17:32:04  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:32:04  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:32:05  :: Fin GetConfiguracion
+2018-01-21 17:32:05  :: Initializing Log
+2018-01-21 17:32:05  :: Initializing Incoming Module
+2018-01-21 17:32:05  :: Incoming Module successfully initialized
+2018-01-21 17:32:05  :: Initializing Outgoing Module
+2018-01-21 17:32:06  :: Outgoing Module successfully initialized
+2018-01-21 17:32:53  :: 21/1/2018 17:32:53MainApp.LoadConfig
+2018-01-21 17:32:53  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:32:53  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:32:53  :: Fin GetConfiguracion
+2018-01-21 17:32:53  :: Initializing Log
+2018-01-21 17:32:53  :: Initializing Incoming Module
+2018-01-21 17:32:55  :: Incoming Module successfully initialized
+2018-01-21 17:32:55  :: Initializing Outgoing Module
+2018-01-21 17:32:56  :: Outgoing Module successfully initialized
+2018-01-21 17:34:31  :: 21/1/2018 17:34:31MainApp.LoadConfig
+2018-01-21 17:34:31  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:34:31  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:34:31  :: Fin GetConfiguracion
+2018-01-21 17:34:31  :: Initializing Log
+2018-01-21 17:34:31  :: Initializing Incoming Module
+2018-01-21 17:34:32  :: Incoming Module successfully initialized
+2018-01-21 17:34:32  :: Initializing Outgoing Module
+2018-01-21 17:34:33  :: Outgoing Module successfully initialized
+2018-01-21 17:48:54  :: 21/1/2018 17:48:54MainApp.LoadConfig
+2018-01-21 17:48:54  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:48:54  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-01-21 17:48:55  :: Fin GetConfiguracion
+2018-01-21 17:48:55  :: Initializing Log
+2018-01-21 17:48:55  :: Initializing Incoming Module
+2018-01-21 17:48:56  :: Incoming Module successfully initialized
+2018-01-21 17:48:56  :: Initializing Outgoing Module
+2018-01-21 17:49:05  :: Outgoing Module successfully initialized

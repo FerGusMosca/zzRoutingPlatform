@@ -10,7 +10,6 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMa
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.Main.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.MarketClient.Common.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\MDFShared.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\ToolsShared.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\quickfix_net.dll
@@ -22,8 +21,13 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMa
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.pdb

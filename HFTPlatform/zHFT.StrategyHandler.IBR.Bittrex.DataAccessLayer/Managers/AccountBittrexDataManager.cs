@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities;
-using zHFT.StrategyHandler.IBR.Bittrex.DataAccess;
+using zHFT.StrategyHandler.IBR.Cryptos.DataAccess;
 using zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer;
 
 namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.Managers

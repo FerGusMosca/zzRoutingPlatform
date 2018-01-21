@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace zHFT.StrategyHandler.IBR.Binance.BusinessEntities
+{
+    public class AccountBinanceData
+    {
+        public int AccountId { get; set; }
+
+        public string APIKey { get; set; }
+
+        public string Secret { get; set; }
+    }
+}

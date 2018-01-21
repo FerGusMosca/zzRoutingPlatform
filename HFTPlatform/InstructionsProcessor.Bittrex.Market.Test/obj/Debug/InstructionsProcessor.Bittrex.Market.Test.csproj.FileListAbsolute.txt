@@ -36,7 +36,6 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.B
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.StrategyHandler.LogicLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.StrategyHandler.Common.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.Main.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.Main.DataAccess.dll
@@ -66,10 +65,13 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.B
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.StrategyHandler.LogicLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.StrategyHandler.Common.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.Main.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\obj\Debug\InstructionsProcessor.Bittrex.Market.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\obj\Debug\InstructionsProcessor.Bittrex.Market.Test.exe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\obj\Debug\InstructionsProcessor.Bittrex.Market.Test.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Market.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.pdb

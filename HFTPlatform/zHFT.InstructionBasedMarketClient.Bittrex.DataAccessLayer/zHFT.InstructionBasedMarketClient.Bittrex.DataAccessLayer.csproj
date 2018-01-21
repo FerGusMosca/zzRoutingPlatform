@@ -41,8 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\AccountBittrexDataManager.cs" />
-    <Compile Include="Managers\AccountManager.cs" />
-    <Compile Include="Managers\InstructionManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,13 +49,13 @@
       <Project>{623598b1-6d75-4ca2-b0d7-1ef889116f0a}</Project>
       <Name>zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess\zHFT.InstructionBasedMarketClient.Bittrex.DataAccess.csproj">
-      <Project>{8213d913-10b7-49e3-9e6f-eb83dc40a40b}</Project>
-      <Name>zHFT.InstructionBasedMarketClient.Bittrex.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
       <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
       <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.csproj">
+      <Project>{0413d6e3-0307-437e-af8f-aef6f8f92057}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Cryptos.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>

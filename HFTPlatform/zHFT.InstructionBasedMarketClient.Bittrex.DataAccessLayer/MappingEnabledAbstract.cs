@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zHFT.InstructionBasedMarketClient.Bittrex.DataAccess;
+using zHFT.InstructionBasedMarketClient.Cryptos.DataAccess;
+
 
 
 namespace zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer

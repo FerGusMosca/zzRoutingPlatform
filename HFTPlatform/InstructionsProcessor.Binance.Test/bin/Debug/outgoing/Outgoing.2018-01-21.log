@@ -1,0 +1,402 @@
+2018-01-21 14:28:18  :: 1/21/2018 2:28:18 PMMomentumStrategyBase.LoadConfig
+2018-01-21 14:28:18  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:28:18  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:28:18  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:28:18  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 14:28:21  :: 1/21/2018 2:28:21 PMOrderRouterBase.LoadConfig
+2018-01-21 14:28:21  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 14:28:21  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 14:28:21  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 14:28:21  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:28:21  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:28:22  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 14:36:24  :: 1/21/2018 2:36:24 PMMomentumStrategyBase.LoadConfig
+2018-01-21 14:36:24  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:36:24  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:36:24  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:36:24  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 14:36:24  :: 1/21/2018 2:36:24 PMOrderRouterBase.LoadConfig
+2018-01-21 14:36:24  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 14:36:24  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 14:36:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 14:36:24  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:36:24  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:36:24  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 14:42:03  :: 1/21/2018 2:42:03 PMMomentumStrategyBase.LoadConfig
+2018-01-21 14:42:03  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:42:03  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:42:03  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:42:03  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 14:42:03  :: 1/21/2018 2:42:03 PMOrderRouterBase.LoadConfig
+2018-01-21 14:42:03  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 14:42:03  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 14:42:03  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 14:42:03  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:42:03  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:42:03  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 14:44:04  :: 1/21/2018 2:44:04 PMMomentumStrategyBase.LoadConfig
+2018-01-21 14:44:04  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:44:04  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:44:04  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 14:44:04  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 14:44:04  :: 1/21/2018 2:44:04 PMOrderRouterBase.LoadConfig
+2018-01-21 14:44:04  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 14:44:04  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 14:44:04  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 14:44:04  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:44:04  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 14:44:04  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:20:07  :: 1/21/2018 3:20:06 PMMomentumStrategyBase.LoadConfig
+2018-01-21 15:20:07  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:20:07  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:20:07  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:20:07  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 15:20:07  :: 1/21/2018 3:20:07 PMOrderRouterBase.LoadConfig
+2018-01-21 15:20:07  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 15:20:07  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 15:20:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 15:20:07  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:20:07  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:20:07  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:25:10  :: 1/21/2018 3:25:10 PMMomentumStrategyBase.LoadConfig
+2018-01-21 15:25:10  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:25:10  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:25:10  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:25:10  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 15:25:11  :: 1/21/2018 3:25:11 PMOrderRouterBase.LoadConfig
+2018-01-21 15:25:11  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 15:25:11  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 15:25:11  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 15:25:11  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:25:11  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:25:11  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:27:46  :: 1/21/2018 3:27:46 PMMomentumStrategyBase.LoadConfig
+2018-01-21 15:27:46  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:27:46  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:27:46  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:27:46  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 15:27:46  :: 1/21/2018 3:27:46 PMOrderRouterBase.LoadConfig
+2018-01-21 15:27:46  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 15:27:46  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 15:27:46  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 15:27:46  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:27:46  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:27:47  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:30:41  :: 1/21/2018 3:30:41 PMMomentumStrategyBase.LoadConfig
+2018-01-21 15:30:41  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:30:41  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:30:41  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:30:41  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 15:30:41  :: 1/21/2018 3:30:41 PMOrderRouterBase.LoadConfig
+2018-01-21 15:30:41  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 15:30:41  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 15:30:41  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 15:30:41  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:30:41  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:30:42  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:31:39  :: 1/21/2018 3:31:39 PMMomentumStrategyBase.LoadConfig
+2018-01-21 15:31:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:31:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:31:39  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:31:39  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 15:31:39  :: 1/21/2018 3:31:39 PMOrderRouterBase.LoadConfig
+2018-01-21 15:31:39  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 15:31:39  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 15:31:39  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 15:31:39  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:31:39  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:31:39  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:34:35  :: 1/21/2018 3:34:35 PMMomentumStrategyBase.LoadConfig
+2018-01-21 15:34:35  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:34:35  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:34:36  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 15:34:36  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 15:34:36  :: 1/21/2018 3:34:36 PMOrderRouterBase.LoadConfig
+2018-01-21 15:34:36  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 15:34:36  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 15:34:36  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 15:34:36  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:34:36  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 15:34:36  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 15:34:53  :: Processing Market Data:Symbol=ETH  LastPrice=0,090732 BestBidPrice=0,090722 BestAskPrice=0,090871
+2018-01-21 15:34:56  :: Processing Market Data:Symbol=ETH  LastPrice=0,090735 BestBidPrice=0,090726 BestAskPrice=0,090871
+2018-01-21 15:34:57  :: Processing Market Data:Symbol=ETH  LastPrice=0,090735 BestBidPrice=0,090722 BestAskPrice=0,090844
+2018-01-21 15:34:58  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090722 BestAskPrice=0,090844
+2018-01-21 15:34:59  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090722 BestAskPrice=0,090844
+2018-01-21 15:35:01  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090725 BestAskPrice=0,090844
+2018-01-21 15:35:02  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090726 BestAskPrice=0,090844
+2018-01-21 15:35:03  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090736 BestAskPrice=0,090871
+2018-01-21 15:35:05  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090722 BestAskPrice=0,090871
+2018-01-21 15:35:06  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090722 BestAskPrice=0,09089
+2018-01-21 15:35:07  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090722 BestAskPrice=0,090871
+2018-01-21 15:35:08  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090733 BestAskPrice=0,090871
+2018-01-21 15:35:10  :: Processing Market Data:Symbol=ETH  LastPrice=0,0908 BestBidPrice=0,090734 BestAskPrice=0,09089
+2018-01-21 15:35:11  :: Processing Market Data:Symbol=ETH  LastPrice=0,090737 BestBidPrice=0,090734 BestAskPrice=0,09089
+2018-01-21 16:31:39  :: 1/21/2018 4:31:39 PMMomentumStrategyBase.LoadConfig
+2018-01-21 16:31:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:31:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:31:39  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:31:39  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 16:31:39  :: 1/21/2018 4:31:39 PMOrderRouterBase.LoadConfig
+2018-01-21 16:31:39  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 16:31:39  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 16:31:39  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 16:31:39  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:31:39  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:31:39  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 16:33:15  :: 1/21/2018 4:33:15 PMMomentumStrategyBase.LoadConfig
+2018-01-21 16:33:15  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:33:15  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:33:15  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:33:15  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 16:33:15  :: 1/21/2018 4:33:15 PMOrderRouterBase.LoadConfig
+2018-01-21 16:33:15  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 16:33:15  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 16:33:15  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 16:33:15  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:33:15  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:33:15  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 16:42:26  :: 1/21/2018 4:42:26 PMMomentumStrategyBase.LoadConfig
+2018-01-21 16:42:26  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:42:26  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:42:27  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:42:27  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 16:42:27  :: 1/21/2018 4:42:27 PMOrderRouterBase.LoadConfig
+2018-01-21 16:42:27  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 16:42:27  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 16:42:27  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 16:42:27  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:42:27  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:42:27  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.BinanceAccountManager, zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2018-01-21 16:53:21  :: 1/21/2018 4:53:21 PMMomentumStrategyBase.LoadConfig
+2018-01-21 16:53:21  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:53:21  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:53:21  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:53:21  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 16:53:21  :: 1/21/2018 4:53:21 PMOrderRouterBase.LoadConfig
+2018-01-21 16:53:21  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 16:53:21  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 16:53:21  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 16:53:21  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:53:21  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:56:56  :: 1/21/2018 4:56:56 PMMomentumStrategyBase.LoadConfig
+2018-01-21 16:56:56  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:56:56  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:56:56  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:56:56  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 16:56:56  :: 1/21/2018 4:56:56 PMOrderRouterBase.LoadConfig
+2018-01-21 16:56:56  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 16:56:56  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 16:56:56  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 16:56:56  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:56:56  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:57:33  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 16:59:06  :: 1/21/2018 4:59:06 PMMomentumStrategyBase.LoadConfig
+2018-01-21 16:59:06  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:59:06  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:59:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 16:59:06  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 16:59:06  :: 1/21/2018 4:59:06 PMOrderRouterBase.LoadConfig
+2018-01-21 16:59:06  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 16:59:06  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 16:59:06  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 16:59:06  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:59:06  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 16:59:12  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:11:00  :: 1/21/2018 5:11:00 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:11:00  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:11:00  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:11:00  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:11:00  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:11:00  :: 1/21/2018 5:11:00 PMOrderRouterBase.LoadConfig
+2018-01-21 17:11:00  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:11:00  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:11:00  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:11:00  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:11:00  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:11:07  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:18:00  :: 1/21/2018 5:18:00 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:18:00  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:18:00  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:18:00  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:18:01  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:18:01  :: 1/21/2018 5:18:01 PMOrderRouterBase.LoadConfig
+2018-01-21 17:18:01  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:18:01  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:18:01  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:18:01  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:18:01  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:18:22  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:18:53  :: 1/21/2018 5:18:53 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:18:53  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:18:53  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:18:53  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:18:53  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:18:53  :: 1/21/2018 5:18:53 PMOrderRouterBase.LoadConfig
+2018-01-21 17:18:53  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:18:53  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:18:53  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:18:53  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:18:53  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:18:58  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:19:59  :: 1/21/2018 5:19:59 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:19:59  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:19:59  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:19:59  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:19:59  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:19:59  :: 1/21/2018 5:19:59 PMOrderRouterBase.LoadConfig
+2018-01-21 17:19:59  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:19:59  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:19:59  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:19:59  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:19:59  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:20:08  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:20:54  :: 1/21/2018 5:20:54 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:20:54  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:20:54  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:20:54  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:20:54  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:20:54  :: 1/21/2018 5:20:54 PMOrderRouterBase.LoadConfig
+2018-01-21 17:20:54  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:20:54  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:20:54  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:20:54  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:20:54  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:21:04  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:22:42  :: 1/21/2018 5:22:42 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:22:42  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:22:42  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:22:42  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:22:42  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:22:42  :: 1/21/2018 5:22:42 PMOrderRouterBase.LoadConfig
+2018-01-21 17:22:43  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:22:43  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:22:43  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:22:43  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:22:43  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:22:57  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:24:26  :: 1/21/2018 5:24:26 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:24:26  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:24:26  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:24:26  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:24:26  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:24:26  :: 1/21/2018 5:24:26 PMOrderRouterBase.LoadConfig
+2018-01-21 17:24:26  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:24:26  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:24:26  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:24:26  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:24:26  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:24:41  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:25:51  :: 1/21/2018 5:25:51 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:25:51  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:25:51  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:25:51  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:25:51  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:25:52  :: 1/21/2018 5:25:52 PMOrderRouterBase.LoadConfig
+2018-01-21 17:25:52  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:25:52  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:25:52  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:25:52  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:25:52  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:25:59  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:26:38  :: 1/21/2018 5:26:38 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:26:38  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:26:38  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:26:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:26:38  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:26:38  :: 1/21/2018 5:26:38 PMOrderRouterBase.LoadConfig
+2018-01-21 17:26:38  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:26:38  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:26:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:26:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:26:38  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:26:54  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:27:57  :: 1/21/2018 5:27:57 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:27:57  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:27:57  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:27:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:27:58  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:27:58  :: 1/21/2018 5:27:58 PMOrderRouterBase.LoadConfig
+2018-01-21 17:27:58  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:27:58  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:27:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:27:58  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:27:58  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:28:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:29:11  :: 1/21/2018 5:29:11 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:29:11  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:29:11  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:29:11  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:29:11  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:29:11  :: 1/21/2018 5:29:11 PMOrderRouterBase.LoadConfig
+2018-01-21 17:29:11  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:29:11  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:29:11  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:29:11  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:29:11  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:29:17  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:30:35  :: 1/21/2018 5:30:35 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:30:35  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:30:35  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:30:35  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:30:35  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:30:35  :: 1/21/2018 5:30:35 PMOrderRouterBase.LoadConfig
+2018-01-21 17:30:35  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:30:35  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:30:35  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:30:35  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:30:35  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:30:42  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:32:06  :: 1/21/2018 5:32:06 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:32:06  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:32:06  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:32:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:32:06  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:32:06  :: 1/21/2018 5:32:06 PMOrderRouterBase.LoadConfig
+2018-01-21 17:32:06  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:32:06  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:32:06  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:32:06  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:32:06  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:32:18  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:32:55  :: 1/21/2018 5:32:55 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:32:55  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:32:55  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:32:55  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:32:55  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:32:55  :: 1/21/2018 5:32:55 PMOrderRouterBase.LoadConfig
+2018-01-21 17:32:55  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:32:55  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:32:55  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:32:55  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:32:55  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:33:10  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:34:32  :: 1/21/2018 5:34:32 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:34:32  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:34:32  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:34:33  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:34:33  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:34:33  :: 1/21/2018 5:34:33 PMOrderRouterBase.LoadConfig
+2018-01-21 17:34:33  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:34:33  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:34:33  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:34:33  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:34:33  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:34:50  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:35:28  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-01-21 17:36:12  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:36:48  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-01-21 17:37:32  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:48:56  :: 1/21/2018 5:48:56 PMMomentumStrategyBase.LoadConfig
+2018-01-21 17:48:56  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:48:56  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:48:57  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-21 17:48:57  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-21 17:48:57  :: 1/21/2018 5:48:57 PMOrderRouterBase.LoadConfig
+2018-01-21 17:48:57  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-21 17:48:57  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-21 17:48:57  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-21 17:48:57  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:48:57  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-21 17:49:23  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-21 17:49:44  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized

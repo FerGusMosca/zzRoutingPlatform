@@ -11,6 +11,8 @@ using zHFT.InstructionBasedMarketClient.Bittrex.Common.DTO;
 using zHFT.InstructionBasedMarketClient.Bittrex.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.Managers;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
+using zHFT.InstructionBasedMarketClient.Cryptos.Client;
+using zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.Managers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
@@ -24,16 +26,8 @@ using zHFT.MarketClient.Common.Wrappers;
 
 namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 {
-    public class BittrexInstructionBasedMarketClient : BaseCommunicationModule
+    public class BittrexInstructionBasedMarketClient : BaseInstructionBasedMarketClient
     {
-        #region Private  Consts
-
-        private int _SECURITIES_REMOVEL_PERIOD = 60 * 60 * 1000;//Once every hour in milliseconds
-
-        private int _MAX_ELAPSED_HOURS_FOR_MARKET_DATA = 12;
-
-        #endregion
-
         #region Protected Attributes
 
         public Exchange Exchange { get; set; }
@@ -46,21 +40,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             set { Config = value; }
         }
 
-        private Dictionary<int, Security> ActiveSecurities { get; set; }
-
-        private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
-
         private Dictionary<string, bool> ReverseCurrency { get; set; }
-
-        protected Thread ProcessInstructionsThread { get; set; }
-
-        protected Thread RequestMarketDataThread { get; set; }
-
-        protected Thread CleanOldSecuritiesThread { get; set; }
-
-        private InstructionManager InstructionManager { get; set; }
-
-        private AccountManager AccountManager { get; set; }
 
         private AccountBittrexDataManager AccountBittrexDataManager { get; set; }
 
@@ -86,108 +66,6 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             };
         }
 
-        protected void RemoveSymbol(string symbol)
-        {
-            List<int> keysToRemove = new List<int>();
-
-            foreach (int key in ActiveSecurities.Keys)
-            {
-                Security sec = ActiveSecurities[key];
-
-                if (sec.Symbol==symbol)
-                {
-                    keysToRemove.Add(key);
-                }
-            }
-
-            foreach (int keyToRemove in keysToRemove)
-            {
-                ContractsTimeStamps.Remove(keyToRemove);
-                ActiveSecurities.Remove(keyToRemove);
-            }
-        }
-
-        protected void DoCleanOldSecurities()
-        {
-            while (true)
-            {
-                Thread.Sleep(_SECURITIES_REMOVEL_PERIOD);//Once every hour
-
-                lock (tLock)
-                {
-                    try
-                    {
-                        List<int> keysToRemove = new List<int>();
-                        foreach (int key in ContractsTimeStamps.Keys)
-                        {
-                            DateTime timeStamp = ContractsTimeStamps[key];
-
-                            if ((DateTime.Now - timeStamp).Hours >= _MAX_ELAPSED_HOURS_FOR_MARKET_DATA)
-                            {
-                                keysToRemove.Add(key);
-                            }
-                        }
-
-                        foreach (int keyToRemove in keysToRemove)
-                        {
-                            ContractsTimeStamps.Remove(keyToRemove);
-                            ActiveSecurities.Remove(keyToRemove);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        DoLog(string.Format("@{1}: There was an error cleaning old securities from market data flow error={0} ", ex.Message, BittrexConfiguration.Name),
-                              Main.Common.Util.Constants.MessageType.Error);
-                    }
-                }
-            }
-        }
-
-        protected Security BuildSecurityFromInstruction(Instruction instrx)
-        {
-
-            Security sec = new Security()
-            {
-                Symbol = instrx.Symbol,
-                SecType = SecurityType.CC
-            };
-
-            return sec;
-
-        
-        }
-
-        protected void ProcessPositionInstruction(Instruction instr)
-        {
-            try
-            {
-                if (instr != null)
-                {
-                    if (!ActiveSecurities.Keys.Contains(instr.Id)
-                        && !ActiveSecurities.Values.Where(x=>x.Active).Any(x => x.Symbol == instr.Symbol))
-                    {
-                        instr = InstructionManager.GetById(instr.Id);
-
-                        if (instr.InstructionType.Type == InstructionType._NEW_POSITION || instr.InstructionType.Type == InstructionType._UNWIND_POSITION)
-                        {
-                            ActiveSecurities.Add(instr.Id, BuildSecurityFromInstruction(instr));
-                            RequestMarketDataThread = new Thread(DoRequestMarketData);
-                            RequestMarketDataThread.Start(instr);
-                        }
-                    }
-                }
-                else
-                    throw new Exception(string.Format("Could not find a related instruction for id {0}", instr.Id));
-
-
-            }
-            catch (Exception ex)
-            {
-
-                DoLog(string.Format("Critical error processing related instruction: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : "")), Main.Common.Util.Constants.MessageType.Error);
-            }
-        }
-
         private void ReverseRequestMarketData(Instruction instrx)
         {
             Exchange exch = new Exchange();
@@ -208,7 +86,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             OnMessageRcv(wrapper);
         }
 
-        protected void DoRequestMarketData(Object param)
+        protected override void DoRequestMarketData(Object param)
         {
             Instruction instrx = (Instruction)param;
             try
@@ -285,49 +163,22 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
         
         }
 
-        protected void DoFindInstructions()
+        protected override int GetSearchForInstrInMiliseconds()
         {
-            while (true)
-            {
-                Thread.Sleep(BittrexConfiguration.SearchForInstructionsInMilliseconds);
-
-                lock (tLock)
-                {
-                    List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(BittrexConfiguration.AccountNumber);
-
-                    try
-                    {
-                        foreach (Instruction instr in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._NEW_POSITION || x.InstructionType.Type == InstructionType._UNWIND_POSITION))
-                        {
-                            //We process the account positions sync instructions
-                            ProcessPositionInstruction(instr);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        DoLog(string.Format("@{2}:Critical error processing instructions: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : ""), BittrexConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                    }
-                }
-            }
+            return BittrexConfiguration.SearchForInstructionsInMilliseconds;
         }
 
-        protected void CancelMarketData(Security sec)
+        protected override BaseConfiguration GetConfig()
         {
-            if (ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol))
-            {
-                List<Security> toUnsubscribeList = ActiveSecurities.Values.Where(x => x.Symbol == sec.Symbol).ToList();
-                foreach (Security toUnsuscribe in toUnsubscribeList)
-                {
-                    toUnsuscribe.Active = false;
-                }
-                DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", BittrexConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
-            }
-            else
-                throw new Exception(string.Format("@{0}: Could not find active security to unsubscribe for symbol {1}", BittrexConfiguration.Name, sec.Symbol));
-
+            return BittrexConfiguration;
         }
 
-        protected CMState ProessMarketDataRequest(Wrapper wrapper)
+        protected override int GetAccountNumber()
+        {
+            return BittrexConfiguration.AccountNumber;
+        }
+
+        protected override CMState ProessMarketDataRequest(Wrapper wrapper)
         {
             try
             {
@@ -375,38 +226,6 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
         #endregion
 
         #region Public Methods
-
-        public override CMState ProcessMessage(Wrapper wrapper)
-        {
-            try
-            {
-                if (wrapper != null)
-                {
-                    Actions action = wrapper.GetAction();
-                    if (action == Actions.SECURITY_LIST_REQUEST)
-                    {
-                        return CMState.BuildSuccess();
-                    }
-                    else if (Actions.MARKET_DATA_REQUEST == action)
-                    {
-                        return ProessMarketDataRequest(wrapper);
-                    }
-                    else
-                    {
-                        DoLog("Sending message " + action + " not implemented", Main.Common.Util.Constants.MessageType.Information);
-                        return CMState.BuildFail(new Exception("Sending message " + action + " not implemented"));
-                    }
-                }
-                else
-                    throw new Exception("Invalid Wrapper");
-
-            }
-            catch (Exception ex)
-            {
-                DoLog(ex.Message, Main.Common.Util.Constants.MessageType.Error);
-                throw;
-            }
-        }
 
         public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {
