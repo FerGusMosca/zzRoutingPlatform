@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using Binance.API.Csharp.Client;
+using Binance.API.Csharp.Client.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +10,12 @@ using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Binance.BusinessEntities;
+using zHFT.OrderRouters.Binance.Common.DTO;
+using zHFT.OrderRouters.Binance.Common.Wrappers;
 using zHFT.OrderRouters.Binance.DataAccessLayer.Managers;
 using zHFT.OrderRouters.Cryptos;
 
@@ -46,32 +52,286 @@ namespace zHFT.OrderRouters.Binance
 
         #region Protected OrderRouterBase Methods
 
+        protected ExecutionReportDTO RunGetOrder(Order order)
+        {
+            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
+            var binanceClient = new BinanceClient(apiClient);
+
+            var execReportResp = binanceClient.GetOrder(order.Security.Symbol, Convert.ToInt64(order.OrderId)); ;
+
+            var execReport = execReportResp.Result;
+
+            ExecutionReportDTO execReportDTO = new ExecutionReportDTO()
+            {
+                Order = order,
+                ExecutedQty = execReport.ExecutedQty,
+                LeavesQty = Convert.ToDecimal(order.OrderQty.Value) - execReport.ExecutedQty,
+                OrigQty = execReport.OrigQty,
+                Status = execReport.Status
+            };
+
+            return execReportDTO;
+        }
+
+        private ExecutionReportDTO GetTheoreticalResponseOrderNotFound(Order order)
+        {
+            decimal quantityRemaining = Convert.ToDecimal(order.OrderQty.Value);
+            //evaluamos la orden como ejecutada o cancelada
+            if (CanceledOrders.Contains(order.OrderId))
+            {
+                CanceledOrders.Remove(order.OrderId);
+                quantityRemaining = 0;
+            }
+
+            return new ExecutionReportDTO()
+            {
+                Order = order,
+                OrigQty = Convert.ToDecimal(order.OrderQty.Value),
+                ExecutedQty = Convert.ToDecimal(order.OrderQty.Value) - quantityRemaining,
+                LeavesQty = quantityRemaining,//0=cancelada, xx=ejecutada
+
+            };
+        }
+
+
+
         protected void DoEvalExecutionReport()
         {
-            //TO DO: Impl. evaluación del exec. report
+            try
+            {
+                bool active = true;
+                while (active)
+                {
+                    Thread.Sleep(BinanceConfiguration.RefreshExecutionReportsInMilisec);
+                    List<ExecutionReportWrapper> wrappersToPublish = new List<ExecutionReportWrapper>();
+                    lock (tLock)
+                    {
+                        List<string> orderIdToRemove = new List<string>();
+
+                        foreach (string orderId in ActiveOrders.Keys)
+                        {
+
+                            Order order = ActiveOrders[orderId];
+                            ExecutionReportDTO execReportDTO = RunGetOrder(order);
+
+                            if (execReportDTO != null)
+                            {
+                                ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReportDTO);
+                                OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
+
+                                if (Order.FinalStatus(status))
+                                {
+                                    orderIdToRemove.Add(orderId);
+                                    DoLog(string.Format("@{0}:Removing Order For Status:{1}", BinanceConfiguration.Name, status.ToString()), Main.Common.Util.Constants.MessageType.Debug);
+
+                                }
+
+                                wrappersToPublish.Add(wrapper);
+                            }
+                            else
+                            {
+                                execReportDTO = GetTheoreticalResponseOrderNotFound(order);
+                                ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReportDTO);
+                                OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
+
+                                wrappersToPublish.Add(wrapper);
+                                orderIdToRemove.Add(orderId);
+                                DoLog(string.Format("@{0}:Removing Order Because no order could be found on market for order id {1}", BinanceConfiguration.Name, orderId), Main.Common.Util.Constants.MessageType.Debug);
+                            }
+                        }
+                        orderIdToRemove.ForEach(x => ActiveOrders.Remove(x));
+                    }
+
+
+                    wrappersToPublish.ForEach(x => OnMessageRcv(x));
+                    wrappersToPublish.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BinanceConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
+        protected void RunNewOrder(Order order)
+        {
+            DoLog(string.Format("@{0}:Routing new order for symbol {1}", BinanceConfiguration.Name, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
+
+            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
+            var binanceClient = new BinanceClient(apiClient);
+
+            var resp = binanceClient.PostNewOrder(order.Symbol,
+                                                  Convert.ToDecimal(order.OrderQty.Value),
+                                                  Convert.ToDecimal(order.Price.Value),
+                                                  order.Side == Side.Buy ? OrderSide.BUY : OrderSide.SELL,
+                                                  OrderType.LIMIT);
+
+            var newOrderResp = resp.Result;
+
+            if (newOrderResp != null)
+            {
+                order.OrderId = newOrderResp.OrderId.ToString();
+                ActiveOrders.Add(newOrderResp.OrderId.ToString(), order);
+                OrderIdMappers.Add(order.ClOrdId, newOrderResp.OrderId.ToString());
+            }
+            else
+                throw new Exception(string.Format("Unknown error routing order for currency {0}", order.Symbol));
+        
+        }
+
+        protected void EvalRouteError(Order order, Exception ex)
+        {
+            ExecutionReportDTO execReport = GetTheoreticalResponseOrderNotFound(order);
+            order.OrdStatus = OrdStatus.Rejected;
+            order.RejReason = ex.Message;
+
+            order.OrdStatus = OrdStatus.Rejected;
+            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
+            OnMessageRcv(wrapper);
         }
 
         protected override CMState RouteNewOrder(Wrapper wrapper)
-        { 
-            //TODO: Implementar salida de orden
-            return CMState.BuildSuccess();
+        {
+            try
+            {
+                Order order = GetOrder(wrapper);
+                
+                try
+                {
+                    lock (tLock)
+                    {
+                        RunNewOrder(order);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    EvalRouteError(order, ex);
+                }
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
         }
 
         protected override void RunCancelOrder(Order order, bool update)
         {
-            //TODO: Implementar cancelación de orden
+           
+            DoLog(string.Format("@{0}:Cancelling Order Id {1} for symbol {2}", BinanceConfiguration.Name, order.OrderId, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
+
+            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
+            var binanceClient = new BinanceClient(apiClient);
+
+            binanceClient.CancelOrder(order.Security.Symbol, Convert.ToInt64(order.OrderId));
+            
+            if (!update)
+                CanceledOrders.Add(order.OrderId);
+            else
+            {
+                ActiveOrders.Remove(order.OrderId);//Ya no actuallizamos mas datos de la vieja orden cancelada
+            }
+
         }
 
         protected override CMState UpdateOrder(Wrapper wrapper)
         {
-            //TODO: Implementar update de orden
-            return CMState.BuildSuccess();
+            string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
+
+            string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+            try
+            {
+
+                if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
+                    throw new Exception("Could not find OrigClOrdID for order updated");
+
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
+
+                lock (tLock)
+                {
+
+                    if (OrderIdMappers.ContainsKey(origClOrderId))
+                    {
+                        string origUuid = OrderIdMappers[origClOrderId];
+                        Order order = ActiveOrders[origUuid];
+
+                        if (order != null)
+                        {
+                            //Cancelamos
+                            RunCancelOrder(order, true);
+
+                            Thread.Sleep(100);
+
+                            //Damos el alta
+                            double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+                            order.Price = newPrice;
+                            order.ClOrdId = clOrderId;
+                            try
+                            {
+                                RunNewOrder(order);
+                            }
+                            catch (Exception ex)
+                            {
+                                EvalRouteError(order, ex);
+                            }
+                        }
+
+                    }
+                    else
+                        DoLog(string.Format("@{0}:Could not find order for origClOrderId  {1}!", BinanceConfiguration.Name, origClOrderId), Main.Common.Util.Constants.MessageType.Error);
+
+                }
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error updating order {1}!:{2}", BinanceConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+
         }
 
         protected override CMState CancelOrder(Wrapper wrapper)
         {
-            //TODO: Implementar cancelación de orden
-            return CMState.BuildSuccess();
+            string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
+            try
+            {
+                //New order id
+                string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+
+                lock (tLock)
+                {
+
+                    if (OrderIdMappers.ContainsKey(origClOrderId))
+                    {
+                        string orderId = OrderIdMappers[origClOrderId];
+                        Order order = ActiveOrders[orderId];
+
+                        if (order != null)
+                        {
+                            RunCancelOrder(order, false);
+                        }
+                        OrderIdMappers.Remove(origClOrderId);
+                    }
+
+                    else
+                    {
+                        throw new Exception(string.Format("Could not cancel order for id {0}", origClOrderId));
+                        //TO DO: La orden fue modificada
+                        //buscar con el nuevo clOrderId
+                    }
+                }
+                return CMState.BuildSuccess();
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error cancelig order {1}!:{2}", BinanceConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
         }
 
         #endregion

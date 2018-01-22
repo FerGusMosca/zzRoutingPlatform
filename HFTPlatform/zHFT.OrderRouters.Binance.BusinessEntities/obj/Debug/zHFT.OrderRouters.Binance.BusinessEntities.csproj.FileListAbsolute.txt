@@ -2,3 +2,4 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Binan
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\bin\Debug\zHFT.OrderRouters.Binance.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.csprojResolveAssemblyReference.cache

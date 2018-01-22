@@ -63,10 +63,8 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.B
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.dll
@@ -77,3 +75,7 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.B
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Cryptos.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Cryptos.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb

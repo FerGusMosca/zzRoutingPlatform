@@ -22,6 +22,8 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
 
         #endregion
 
+       
+
         #region Constructors
 
         public ExecutionReportWrapper(Order pOrder, GetOrderResponse pOpenOrder)
