@@ -131,12 +131,15 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
             CultureInfo tempCuture = new CultureInfo("ja-JP");
             CultureInfo prevCulture = Thread.CurrentThread.CurrentCulture;
 
+            LoadAppCulture(tempCuture);
+            LoadAppCulture(tempCuture);
+
+            Thread.Sleep(100);
+
             var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
             var binanceClient = new BinanceClient(apiClient);
 
             string fullSymbol = _BTC_CURRENCY + _USD_CURRENCY;
-
-            LoadAppCulture(tempCuture);
 
             var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null,1);
             Candlestick jMarketData = resp.Result.OrderByDescending(x=>x.CloseTime).FirstOrDefault();

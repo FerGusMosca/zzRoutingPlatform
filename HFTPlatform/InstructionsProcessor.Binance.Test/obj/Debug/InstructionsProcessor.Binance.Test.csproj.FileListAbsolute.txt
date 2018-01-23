@@ -69,3 +69,15 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.B
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Cryptos.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Cryptos.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb

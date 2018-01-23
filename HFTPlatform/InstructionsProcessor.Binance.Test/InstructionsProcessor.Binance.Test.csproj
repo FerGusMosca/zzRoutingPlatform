@@ -87,6 +87,10 @@
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Binance\zHFT.OrderRouters.Binance.csproj">
+      <Project>{f93bbf1f-9111-48b2-9610-ecbbd9f8aa9c}</Project>
+      <Name>zHFT.OrderRouters.Binance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
       <Name>zHFT.OrderRouters</Name>

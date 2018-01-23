@@ -1,0 +1,319 @@
+2018-01-22 14:48:26  :: 1/22/2018 2:48:26 PMBaseCommunicationModule.LoadConfig
+2018-01-22 14:48:26  :: Loading config:.\incomingBinance.xml
+2018-01-22 14:48:26  :: Processing config:.\incomingBinance.xml
+2018-01-22 14:48:26  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:17:11  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:19:58  :: 1/22/2018 3:19:58 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:19:58  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:19:58  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:19:59  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:20:00  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:21:04  :: 1/22/2018 3:21:04 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:21:04  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:21:04  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:21:04  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:21:05  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:24:20  :: 1/22/2018 3:24:20 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:24:20  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:24:20  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:24:20  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:28:27  :: 1/22/2018 3:28:27 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:28:27  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:28:27  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:28:27  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:28:28  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:33:03  :: 1/22/2018 3:33:03 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:33:03  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:33:03  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:33:03  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:33:04  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:34:25  :: 1/22/2018 3:34:25 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:34:25  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:34:25  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:34:25  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:34:50  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:39:25  :: 1/22/2018 3:39:25 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:39:25  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:39:25  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:39:25  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:39:26  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:42:10  :: 1/22/2018 3:42:10 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:42:10  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:42:10  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:42:10  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:42:11  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:42:54  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-22 15:46:05  :: 1/22/2018 3:46:05 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:46:05  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:46:05  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:46:05  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:46:42  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:53:11  :: 1/22/2018 3:53:11 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:53:12  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:53:12  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:53:12  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:53:13  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 15:56:35  :: 1/22/2018 3:56:35 PMBaseCommunicationModule.LoadConfig
+2018-01-22 15:56:35  :: Loading config:.\incomingBinance.xml
+2018-01-22 15:56:35  :: Processing config:.\incomingBinance.xml
+2018-01-22 15:56:35  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 15:56:37  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:07:35  :: 1/22/2018 4:07:35 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:07:35  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:07:35  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:07:35  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:07:41  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:10:54  :: 1/22/2018 4:10:54 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:10:54  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:10:54  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:10:54  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:10:56  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:12:32  :: 1/22/2018 4:12:32 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:12:32  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:12:32  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:12:32  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:12:48  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:13:30  :: 1/22/2018 4:13:30 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:13:30  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:13:30  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:13:30  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:13:31  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:14:04  :: 1/22/2018 4:14:04 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:14:04  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:14:04  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:14:04  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:14:39  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:24:07  :: 1/22/2018 4:24:07 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:24:07  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:24:07  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:24:07  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:24:08  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:27:18  :: 1/22/2018 4:27:18 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:27:18  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:27:18  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:27:18  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:27:19  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:28:03  :: 1/22/2018 4:28:03 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:28:03  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:28:03  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:28:03  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:28:16  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:34:17  :: 1/22/2018 4:34:17 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:34:17  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:34:17  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:34:17  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:34:20  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:37:21  :: 1/22/2018 4:37:21 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:37:21  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:37:21  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:37:21  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:37:22  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:37:50  :: 1/22/2018 4:37:50 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:37:50  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:37:50  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:37:50  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:38:28  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:40:40  :: 1/22/2018 4:40:40 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:40:40  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:40:40  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:40:40  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:40:42  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:55:45  :: 1/22/2018 4:55:45 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:55:45  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:55:45  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:55:45  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:55:46  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:57:04  :: 1/22/2018 4:57:04 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:57:04  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:57:04  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:57:04  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:57:05  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 16:57:27  :: 1/22/2018 4:57:27 PMBaseCommunicationModule.LoadConfig
+2018-01-22 16:57:27  :: Loading config:.\incomingBinance.xml
+2018-01-22 16:57:27  :: Processing config:.\incomingBinance.xml
+2018-01-22 16:57:27  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 16:58:07  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:14:49  :: 1/22/2018 5:14:49 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:14:49  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:14:49  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:14:49  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:14:51  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:16:27  :: 1/22/2018 5:16:27 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:16:27  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:16:27  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:16:27  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:16:28  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:18:06  :: 1/22/2018 5:18:06 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:18:06  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:18:06  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:18:06  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:18:07  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:20:10  :: 1/22/2018 5:20:10 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:20:10  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:20:10  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:20:10  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:20:11  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:32:02  :: 1/22/2018 5:32:02 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:32:02  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:32:02  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:32:02  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:32:04  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:34:11  :: 1/22/2018 5:34:11 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:34:11  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:34:11  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:34:11  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:34:13  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:35:38  :: 1/22/2018 5:35:38 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:35:38  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:35:38  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:35:38  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:35:40  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:40:06  :: 1/22/2018 5:40:06 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:40:06  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:40:06  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:40:06  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:40:10  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:41:21  :: 1/22/2018 5:41:21 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:41:21  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:41:21  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:41:21  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:41:22  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:42:46  :: 1/22/2018 5:42:46 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:42:46  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:42:46  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:42:46  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:42:48  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:43:40  :: 1/22/2018 5:43:40 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:43:40  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:43:40  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:43:40  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:43:41  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 17:43:59  :: 1/22/2018 5:43:59 PMBaseCommunicationModule.LoadConfig
+2018-01-22 17:43:59  :: Loading config:.\incomingBinance.xml
+2018-01-22 17:43:59  :: Processing config:.\incomingBinance.xml
+2018-01-22 17:43:59  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 17:44:17  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:04:48  :: 1/22/2018 6:04:48 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:04:48  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:04:48  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:04:48  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:04:49  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:05:17  :: 1/22/2018 6:05:17 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:05:17  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:05:17  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:05:17  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:05:29  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:08:54  :: 1/22/2018 6:08:54 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:08:54  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:08:54  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:08:54  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:08:55  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:11:26  :: 1/22/2018 6:11:26 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:11:26  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:11:26  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:11:26  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:11:27  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:13:52  :: 1/22/2018 6:13:52 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:13:52  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:13:52  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:13:52  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:13:53  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:14:16  :: 1/22/2018 6:14:16 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:14:16  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:14:16  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:14:16  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:14:31  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:14:57  :: 1/22/2018 6:14:57 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:14:57  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:14:57  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:14:57  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:14:58  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:18:20  :: 1/22/2018 6:18:20 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:18:20  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:18:20  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:18:20  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:18:22  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:20:08  :: 1/22/2018 6:20:08 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:20:08  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:20:08  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:20:08  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:20:09  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:21:28  :: 1/22/2018 6:21:28 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:21:28  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:21:28  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:21:28  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:21:30  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:23:21  :: 1/22/2018 6:23:21 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:23:21  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:23:21  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:23:21  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:23:45  :: 1/22/2018 6:23:45 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:23:45  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:23:45  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:23:45  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:23:46  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:25:07  :: 1/22/2018 6:25:07 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:25:07  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:25:07  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:25:07  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:25:09  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:28:20  :: 1/22/2018 6:28:20 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:28:20  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:28:20  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:28:20  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:28:21  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:29:20  :: 1/22/2018 6:29:20 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:29:20  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:29:20  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:29:20  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:29:21  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:31:00  :: 1/22/2018 6:31:00 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:31:00  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:31:00  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:31:00  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:31:01  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:32:04  :: 1/22/2018 6:32:04 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:32:04  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:32:04  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:32:04  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:32:05  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:39:09  :: 1/22/2018 6:39:09 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:39:09  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:39:09  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:39:09  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:39:11  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:40:31  :: 1/22/2018 6:40:31 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:40:31  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:40:31  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:40:31  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:40:33  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:41:37  :: 1/22/2018 6:41:37 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:41:37  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:41:37  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:41:38  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:41:39  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:46:33  :: 1/22/2018 6:46:33 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:46:33  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:46:33  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:46:33  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:46:40  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:52:11  :: 1/22/2018 6:52:11 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:52:11  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:52:11  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:52:11  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:52:12  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:54:27  :: 1/22/2018 6:54:27 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:54:27  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:54:27  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:54:27  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:54:29  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 18:58:28  :: 1/22/2018 6:58:28 PMBaseCommunicationModule.LoadConfig
+2018-01-22 18:58:28  :: Loading config:.\incomingBinance.xml
+2018-01-22 18:58:28  :: Processing config:.\incomingBinance.xml
+2018-01-22 18:58:28  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 18:58:30  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-22 19:03:40  :: 1/22/2018 7:03:40 PMBaseCommunicationModule.LoadConfig
+2018-01-22 19:03:40  :: Loading config:.\incomingBinance.xml
+2018-01-22 19:03:40  :: Processing config:.\incomingBinance.xml
+2018-01-22 19:03:40  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-22 19:03:41  :: @Incoming Binance:Requesting market data por symbol MTL

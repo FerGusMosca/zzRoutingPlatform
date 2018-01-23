@@ -1,0 +1,48 @@
+2018-01-22 10:55:12  :: 22/1/2018 10:55:12MainApp.LoadConfig
+2018-01-22 10:55:12  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 10:55:12  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 10:55:13  :: Fin GetConfiguracion
+2018-01-22 10:55:13  :: Initializing Log
+2018-01-22 10:55:13  :: Initializing Incoming Module
+2018-01-22 10:55:14  :: Incoming Module successfully initialized
+2018-01-22 10:55:14  :: Initializing Outgoing Module
+2018-01-22 10:55:14  :: Outgoing Module successfully initialized
+2018-01-22 10:56:07  :: ProcessMessageToOutgoing
+2018-01-22 10:57:11  :: 22/1/2018 10:57:11MainApp.LoadConfig
+2018-01-22 10:57:11  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 10:57:11  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 10:57:11  :: Fin GetConfiguracion
+2018-01-22 10:57:12  :: Initializing Log
+2018-01-22 10:57:12  :: Initializing Incoming Module
+2018-01-22 10:57:14  :: Incoming Module successfully initialized
+2018-01-22 10:57:14  :: Initializing Outgoing Module
+2018-01-22 10:57:14  :: Outgoing Module successfully initialized
+2018-01-22 10:57:42  :: ProcessMessageToOutgoing
+2018-01-22 11:00:02  :: ProcessMessageToOutgoing
+2018-01-22 11:00:39  :: 22/1/2018 11:00:39MainApp.LoadConfig
+2018-01-22 11:00:39  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 11:00:39  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 11:00:39  :: Fin GetConfiguracion
+2018-01-22 11:00:39  :: Initializing Log
+2018-01-22 11:00:39  :: Initializing Incoming Module
+2018-01-22 11:00:40  :: Incoming Module successfully initialized
+2018-01-22 11:00:40  :: Initializing Outgoing Module
+2018-01-22 11:00:40  :: Outgoing Module successfully initialized
+2018-01-22 11:00:50  :: ProcessMessageToOutgoing
+2018-01-22 11:04:52  :: ProcessMessageToOutgoing
+2018-01-22 11:05:03  :: ProcessMessageToOutgoing
+2018-01-22 11:05:58  :: ProcessMessageToOutgoing
+2018-01-22 11:06:17  :: ProcessMessageToOutgoing
+2018-01-22 11:07:10  :: ProcessMessageToOutgoing
+2018-01-22 11:07:56  :: 22/1/2018 11:07:56MainApp.LoadConfig
+2018-01-22 11:07:56  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 11:07:56  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-22 11:07:56  :: Fin GetConfiguracion
+2018-01-22 11:07:56  :: Initializing Log
+2018-01-22 11:07:56  :: Initializing Incoming Module
+2018-01-22 11:07:58  :: Incoming Module successfully initialized
+2018-01-22 11:07:58  :: Initializing Outgoing Module
+2018-01-22 11:07:58  :: Outgoing Module successfully initialized
+2018-01-22 11:08:50  :: ProcessMessageToOutgoing
+2018-01-22 11:09:11  :: ProcessMessageToOutgoing
+2018-01-22 11:09:31  :: ProcessMessageToOutgoing

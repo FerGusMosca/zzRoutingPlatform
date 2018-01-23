@@ -1,0 +1,277 @@
+2018-01-23 12:12:29  :: 1/23/2018 12:12:29 PMMomentumStrategyBase.LoadConfig
+2018-01-23 12:12:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:12:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:12:29  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:12:29  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-23 12:12:29  :: 1/23/2018 12:12:29 PMOrderRouterBase.LoadConfig
+2018-01-23 12:12:29  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-23 12:12:29  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-23 12:12:29  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-23 12:12:29  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-23 12:12:33  :: 1/23/2018 12:12:33 PMOrderRouterBase.LoadConfig
+2018-01-23 12:12:33  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:12:33  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:12:33  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-23 12:12:35  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:36  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:38  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:39  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:41  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:42  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:44  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:12:45  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:46  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:48  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:49  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:50  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:52  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:53  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:54  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:56  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:57  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:12:59  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:13:00  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:01  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:03  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:04  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:06  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:07  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:08  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:10  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:11  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:12  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:14  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:15  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:16  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:18  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:19  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:20  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:22  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:23  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:24  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,000482
+2018-01-23 12:13:26  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:27  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:29  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:30  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:31  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:33  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:34  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:36  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:37  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:38  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:40  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:41  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:42  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:44  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:45  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:46  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:48  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:49  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:51  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:52  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:53  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:55  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:56  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,000482
+2018-01-23 12:13:57  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:13:59  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,000482
+2018-01-23 12:14:00  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:14:02  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:14:03  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:14:04  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:14:06  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:14:07  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:08  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:10  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:11  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:12  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:14  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:15  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:16  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:18  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:19  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:20  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:22  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:23  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:25  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:26  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:27  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:29  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:30  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:31  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:33  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:34  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:36  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:37  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:14:39  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:15:08  :: 1/23/2018 12:15:08 PMMomentumStrategyBase.LoadConfig
+2018-01-23 12:15:08  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:15:08  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:15:08  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:15:08  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-23 12:15:08  :: 1/23/2018 12:15:08 PMOrderRouterBase.LoadConfig
+2018-01-23 12:15:08  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-23 12:15:08  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-23 12:15:08  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-23 12:15:08  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-23 12:15:08  :: 1/23/2018 12:15:08 PMOrderRouterBase.LoadConfig
+2018-01-23 12:15:08  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:15:08  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:15:08  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-23 12:16:20  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:22  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:25  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:26  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:29  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:29  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:31  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000465 BestAskPrice=0,00048
+2018-01-23 12:16:33  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:33  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:35  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:38  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:38  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:39  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:42  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:42  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:43  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:46  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:46  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:47  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:50  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:50  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:51  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:16:54  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: An error occurred while updating the entries. See the inner exception for details. - Parameter value '1057293000000.00000000' is out of range.
+2018-01-23 12:16:54  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:16:56  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:14  :: 1/23/2018 12:17:14 PMMomentumStrategyBase.LoadConfig
+2018-01-23 12:17:14  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:17:14  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:17:14  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:17:14  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-23 12:17:14  :: 1/23/2018 12:17:14 PMOrderRouterBase.LoadConfig
+2018-01-23 12:17:14  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-23 12:17:14  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-23 12:17:14  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-23 12:17:14  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-23 12:17:14  :: 1/23/2018 12:17:14 PMOrderRouterBase.LoadConfig
+2018-01-23 12:17:14  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:17:14  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:17:14  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-23 12:17:24  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:17:26  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:38  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-01-23 12:17:38  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol MTL
+2018-01-23 12:17:38  :: Routing to market position for symbol MTL
+2018-01-23 12:17:38  :: Creating buy order for symbol MTL.Quantity=4.11299568965517 Price=
+2018-01-23 12:17:38  :: @Outgoing Order Routing Binance:Routing  to market for symbol MTL
+2018-01-23 12:17:38  :: @Outgoing Order Routing Binance:Routing new order for symbol MTL
+2018-01-23 12:17:43  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:44  :: Incoming message from order routing proxy: Wrapper
+2018-01-23 12:17:44  :: Error processing message from order routing: Wrapper Error:Missing Order Id
+2018-01-23 12:17:45  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:46  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:48  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:49  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:51  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:52  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:54  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:55  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:56  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:58  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:17:59  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:01  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:02  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:03  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:05  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:06  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:08  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:16  :: 1/23/2018 12:18:16 PMMomentumStrategyBase.LoadConfig
+2018-01-23 12:18:16  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:18:16  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:18:16  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:18:16  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-23 12:18:16  :: 1/23/2018 12:18:16 PMOrderRouterBase.LoadConfig
+2018-01-23 12:18:16  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-23 12:18:16  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-23 12:18:16  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-23 12:18:16  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-23 12:18:16  :: 1/23/2018 12:18:16 PMOrderRouterBase.LoadConfig
+2018-01-23 12:18:16  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:18:16  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:18:16  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-23 12:18:18  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:20  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:21  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:22  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:24  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:25  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:27  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:28  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:29  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:31  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:32  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:33  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:35  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:37  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:38  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:40  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:41  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:42  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:44  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:45  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:47  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:48  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:49  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:51  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:52  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:53  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:55  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:56  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:57  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:59  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:18:59  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:19:00  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:19:06  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-01-23 12:19:06  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol MTL
+2018-01-23 12:19:06  :: Routing to market position for symbol MTL
+2018-01-23 12:19:06  :: Creating buy order for symbol MTL.Quantity=4.11299568965517 Price=
+2018-01-23 12:19:06  :: @Outgoing Order Routing Binance:Routing  to market for symbol MTL
+2018-01-23 12:19:06  :: @Outgoing Order Routing Binance:Routing new order for symbol MTL
+2018-01-23 12:19:12  :: Processing Market Data:Symbol=MTL  LastPrice=0,000472 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:19:40  :: 1/23/2018 12:19:40 PMMomentumStrategyBase.LoadConfig
+2018-01-23 12:19:40  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:19:40  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:19:40  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-23 12:19:40  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-23 12:19:40  :: 1/23/2018 12:19:40 PMOrderRouterBase.LoadConfig
+2018-01-23 12:19:40  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-23 12:19:40  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-23 12:19:40  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-23 12:19:40  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-23 12:19:40  :: 1/23/2018 12:19:40 PMOrderRouterBase.LoadConfig
+2018-01-23 12:19:40  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:19:40  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-23 12:19:40  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-23 12:19:42  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000464 BestAskPrice=0,00048
+2018-01-23 12:19:44  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:45  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:46  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:48  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:49  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:51  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:52  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:53  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:55  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:56  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:57  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:19:59  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-23 12:19:59  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:20:05  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-01-23 12:20:05  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol MTL
+2018-01-23 12:20:05  :: Routing to market position for symbol MTL
+2018-01-23 12:20:05  :: Creating buy order for symbol MTL.Quantity=4.12187904967603 Price=
+2018-01-23 12:20:05  :: @Outgoing Order Routing Binance:Routing  to market for symbol MTL
+2018-01-23 12:20:05  :: @Outgoing Order Routing Binance:Routing new order for symbol MTL
+2018-01-23 12:20:08  :: Processing Market Data:Symbol=MTL  LastPrice=0,000469 BestBidPrice=0,000463 BestAskPrice=0,00048
+2018-01-23 12:20:14  :: Incoming message from order routing proxy: Wrapper
+2018-01-23 12:20:14  :: Error processing message from order routing: Wrapper Error:Missing Order Id

@@ -1,0 +1,50 @@
+2018-01-22 11:22:42  :: 1/22/2018 11:22:42 AMBaseCommunicationModule.LoadConfig
+2018-01-22 11:22:43  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-22 11:22:43  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-22 11:22:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-22 11:22:43  :: 1/22/2018 11:22:43 AMConfigLoader.LoadConfig
+2018-01-22 11:22:43  :: Loading config:.\Primary.xml
+2018-01-22 11:22:43  :: Processing config:.\Primary.xml
+2018-01-22 11:22:44  :: Ending GetConfiguracion .\Primary.xml
+2018-01-22 11:22:46  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=534=249=fmosca52=20180122-14:22:46.40856=ROFX10=223
+2018-01-22 11:22:46  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:22:46  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:22:46.55956=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=152
+2018-01-22 11:22:46  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:22:48  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:22:48.02156=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=138
+2018-01-22 11:22:48  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:23:25  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:23:25.08356=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=142
+2018-01-22 11:23:25  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:23:56  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:23:56.06156=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=142
+2018-01-22 11:23:56  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:26:35  :: 1/22/2018 11:26:35 AMBaseCommunicationModule.LoadConfig
+2018-01-22 11:26:35  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-22 11:26:35  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-22 11:26:35  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-22 11:26:35  :: 1/22/2018 11:26:35 AMConfigLoader.LoadConfig
+2018-01-22 11:26:35  :: Loading config:.\Primary.xml
+2018-01-22 11:26:35  :: Processing config:.\Primary.xml
+2018-01-22 11:26:35  :: Ending GetConfiguracion .\Primary.xml
+2018-01-22 11:26:37  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:26:37  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:26:37.14256=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=144
+2018-01-22 11:26:37  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:26:38  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:26:38.13856=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=150
+2018-01-22 11:26:39  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 11:27:26  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-14:27:22.74656=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=149
+2018-01-22 11:27:29  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 14:43:55  :: 1/22/2018 2:43:55 PMBaseCommunicationModule.LoadConfig
+2018-01-22 14:43:55  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-22 14:43:55  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-22 14:43:55  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-22 14:43:56  :: 1/22/2018 2:43:56 PMConfigLoader.LoadConfig
+2018-01-22 14:43:56  :: Loading config:.\Primary.xml
+2018-01-22 14:43:56  :: Processing config:.\Primary.xml
+2018-01-22 14:43:56  :: Ending GetConfiguracion .\Primary.xml
+2018-01-22 14:43:58  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2018-01-22 14:43:58  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-17:43:58.74856=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=161
+2018-01-22 14:43:59  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 14:43:59  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-17:43:59.75356=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=158
+2018-01-22 14:44:05  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 14:44:29  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-17:44:29.33956=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=156
+2018-01-22 14:44:29  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2018-01-22 14:44:59  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10235=A34=149=fmosca52=20180122-17:44:59.40356=ROFX98=0108=30141=Y553=fmosca554=Xqw7L9tS1137=910=151
+2018-01-22 14:44:59  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX

@@ -3,6 +3,7 @@ using Binance.API.Csharp.Client;
 using Binance.API.Csharp.Client.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,6 +18,7 @@ using zHFT.OrderRouters.Binance.BusinessEntities;
 using zHFT.OrderRouters.Binance.Common.DTO;
 using zHFT.OrderRouters.Binance.Common.Wrappers;
 using zHFT.OrderRouters.Binance.DataAccessLayer.Managers;
+using zHFT.OrderRouters.BINANCE.Common.Util;
 using zHFT.OrderRouters.Cryptos;
 
 namespace zHFT.OrderRouters.Binance
@@ -153,20 +155,46 @@ namespace zHFT.OrderRouters.Binance
             }
         }
 
+        protected void LoadAppCulture(CultureInfo culture)
+        {
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+        }
+
         protected void RunNewOrder(Order order)
         {
             DoLog(string.Format("@{0}:Routing new order for symbol {1}", BinanceConfiguration.Name, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
+            //CultureInfo tempCuture = new CultureInfo("ja-JP");
+            //CultureInfo prevCulture = Thread.CurrentThread.CurrentCulture;
+
+            //LoadAppCulture(tempCuture);
+            //LoadAppCulture(tempCuture);
+
+            //Thread.CurrentThread.CurrentCulture = tempCuture;
+            //Thread.CurrentThread.CurrentUICulture = tempCuture;
+            //CultureInfo.DefaultThreadCurrentCulture = tempCuture;
+            //CultureInfo.DefaultThreadCurrentUICulture = tempCuture;
+
+            Thread.Sleep(100);
 
             var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
-            var binanceClient = new BinanceClient(apiClient);
+            var binanceClient = new BinanceClientProxy(apiClient);
 
-            var resp = binanceClient.PostNewOrder(order.Symbol,
+            var buyMarketOrder = binanceClient.PostNewLimitOrder("ETHBTC", 0.001m, 0.092333m, OrderSide.BUY).Result;
+
+            string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
+
+            var resp = binanceClient.PostNewOrder(fullSymbol,
                                                   Convert.ToDecimal(order.OrderQty.Value),
                                                   Convert.ToDecimal(order.Price.Value),
                                                   order.Side == Side.Buy ? OrderSide.BUY : OrderSide.SELL,
                                                   OrderType.LIMIT);
 
             var newOrderResp = resp.Result;
+
+            //LoadAppCulture(prevCulture);
 
             if (newOrderResp != null)
             {
