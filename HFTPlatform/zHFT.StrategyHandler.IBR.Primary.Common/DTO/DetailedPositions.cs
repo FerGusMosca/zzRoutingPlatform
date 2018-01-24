@@ -8,7 +8,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.Common.DTO
 {
     public class DetailedPositions
     {
-        public Dictionary<string, DetailedPositionItem> Items { get; set; }
+        public DetailedPositionItem[] detailedPositions { get; set; }
 
         public decimal? instrumentMarketValue { get; set; }
 

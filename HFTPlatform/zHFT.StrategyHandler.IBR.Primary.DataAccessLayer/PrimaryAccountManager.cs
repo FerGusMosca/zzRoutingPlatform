@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.IBR.Primary.BusinessEntities;
 using zHFT.StrategyHandler.IBR.Primary.Common.DTO;
@@ -41,6 +42,24 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         private string _DETAIL_POSITION_URL = "DetailPositionsURL";
 
+        private string _ARS_CURRENCY = "ARS";
+
+        private string _ST_STOCK = "STOCK";
+
+        private string _ST_BOND = "BOND";
+
+        private string _ST_FUTURE = "FUTURE";
+
+        private string _ST_OPTION_PUT = "OPTION_PUT";
+
+        private string _ST_OPTION_CALL = "OPTION_CALL";
+
+        private string _ST_CEDEAR = "CEDEAR";
+
+        private string _BUE = "BUE";
+
+        private string _ROFX = "ROFX";
+
         #endregion
 
 
@@ -60,9 +79,29 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         protected string DetailPositonURL { get; set; }
 
+        protected List<AccountPosition> Positions { get; set; }
+
         #endregion
 
         #region Private Methods
+
+        protected string GetFullSymbol(string secType, string symbol)
+        {
+            if (secType == _ST_STOCK)
+                return string.Format("{0}.{1}", symbol, _BUE);
+            else if (secType == _ST_BOND)
+                return string.Format("{0}.{1}", symbol, _BUE);
+            else if (secType == _ST_FUTURE)
+                return string.Format("{0}.{1}", symbol, _ROFX);
+            else if (secType == _ST_OPTION_PUT)
+                return symbol;
+            else if (secType == _ST_OPTION_CALL)
+                return symbol;
+            else if (secType == _ST_CEDEAR)
+                return string.Format("{0}.{1}", symbol, _BUE);
+            else
+                return symbol;
+        }
 
         protected void ValidateDictionary()
         {
@@ -146,11 +185,44 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
         #region Public Methods
         public bool SyncAccountPositions(Account account)
         {
+            Account = account;
+            Positions = new List<AccountPosition>();
+
+            string url = string.Format("{0}{1}", DetailPositonURL, account.GenericAccountNumber);
+            string resp = DoGetJson(url);
+
+            DetailedPositionResponse detailedPositionResp = JsonConvert.DeserializeObject<DetailedPositionResponse>(resp);
+
+            foreach (var secType in detailedPositionResp.report.Keys)
+            {
+                Dictionary<string, DetailedPositions> detailsPositionsForSecType = detailedPositionResp.report[secType];
+
+                foreach (string symbol in detailsPositionsForSecType.Keys)
+                {
+                    DetailedPositions pos = detailsPositionsForSecType[symbol];
+
+                    AccountPosition accPos = new AccountPosition();
+                    accPos.Account = Account;
+                    accPos.Active = true;
+                    accPos.Security = new Security() { Symbol = GetFullSymbol(secType, symbol) };
+                    accPos.Shares = pos.instrumentCurrentSize.HasValue ? (int?) Convert.ToInt32(pos.instrumentCurrentSize) : null;
+                    accPos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
+                    accPos.Ammount = pos.instrumentMarketValue;
+
+                    if (accPos.Shares.HasValue && accPos.Ammount.HasValue)
+                        accPos.MarketPrice = accPos.Ammount / accPos.Shares;
+
+                    if (!Positions.Any(x => x.Security.Symbol == symbol))
+                        Positions.Add(accPos);
+                }
+            }
+
             return true;
         }
 
         public bool SyncAccountBalance(InstructionBasedRouting.BusinessEntities.Account account)
         {
+            Account = account;
             //string token = DoLogin(AuthURL);
             string url = string.Format("{0}{1}", DetailPositonURL, account.GenericAccountNumber);
 
@@ -159,12 +231,15 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
             DetailedPositionResponse detailedPositionResp = JsonConvert.DeserializeObject<DetailedPositionResponse>(resp);
 
 
+            Account.Balance = Convert.ToDecimal(detailedPositionResp.totalMarketValue);
+            Account.Currency = _ARS_CURRENCY;
+
             return true;
         }
 
         public bool ReadyAccountSummary()
         {
-            return true;
+            return false;
         }
 
         public bool WaitingAccountPositions()
@@ -184,7 +259,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         public List<AccountPosition> GetActivePositions()
         {
-            return new List<AccountPosition>();
+            return Positions.Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
         }
 
         #endregion

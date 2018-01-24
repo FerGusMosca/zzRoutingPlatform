@@ -1,0 +1,10 @@
+2018-01-23 12:33:02  :: 1/23/2018 12:33:02 PMBaseCommunicationModule.LoadConfig
+2018-01-23 12:33:02  :: Loading config:.\IncomingSingletonConfig.xml
+2018-01-23 12:33:02  :: Processing config:.\IncomingSingletonConfig.xml
+2018-01-23 12:33:02  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2018-01-23 12:33:02  :: 1/23/2018 12:33:02 PMConfigLoader.LoadConfig
+2018-01-23 12:33:02  :: Loading config:.\Primary.xml
+2018-01-23 12:33:02  :: Processing config:.\Primary.xml
+2018-01-23 12:33:03  :: Ending GetConfiguracion .\Primary.xml
+2018-01-23 12:33:04  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5335=534=249=fmosca52=20180123-15:33:04.36656=ROFX10=224
+2018-01-23 12:33:04  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX

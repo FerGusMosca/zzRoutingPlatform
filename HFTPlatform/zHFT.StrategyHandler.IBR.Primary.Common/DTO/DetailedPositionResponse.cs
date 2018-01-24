@@ -16,6 +16,6 @@ namespace zHFT.StrategyHandler.IBR.Primary.Common.DTO
 
         public decimal? totalMarketValue { get; set; }
 
-        public PositionReport report { get; set; }
+        public Dictionary<string, Dictionary<string, DetailedPositions>> report { get; set; }
     }
 }
