@@ -134,6 +134,14 @@ namespace zHFT.Main.BusinessEntities.Orders
         
         }
 
+        public static bool ActiveStatus(OrdStatus status)
+        {
+            return (status == OrdStatus.New || status == OrdStatus.PartiallyFilled || status == OrdStatus.PendingNew
+                    || status == OrdStatus.PendingCancel || status == OrdStatus.Calculated || status == OrdStatus.AcceptedForBidding
+                    || status == OrdStatus.PendingReplace || status == OrdStatus.Replaced);
+
+        }
+
         #endregion
     }
 }

@@ -34,20 +34,34 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
             return decimals;
         }
 
+        private decimal TruncateDecimal(decimal d, int decimals)
+        {
+            if (decimals < 0)
+                throw new ArgumentOutOfRangeException("decimals", "Value must be in range 0-28.");
+            else if (decimals > 28)
+                throw new ArgumentOutOfRangeException("decimals", "Value must be in range 0-28.");
+            else if (decimals == 0)
+                return Math.Truncate(d);
+            else
+            {
+                decimal integerPart = Math.Truncate(d);
+                decimal scalingFactor = d - integerPart;
+                decimal multiplier = Convert.ToDecimal(Math.Pow(10, decimals));
+
+                scalingFactor = Math.Truncate(scalingFactor * multiplier) / multiplier;
+
+                return integerPart + scalingFactor;
+            }
+        }
+
         #endregion
 
         #region Public Methods
 
         public async Task<NewOrder> PostNewLimitOrder(string symbol, decimal quantity, decimal price, OrderSide side,int decimalPrecission)
         {
-            //Validates that the order is valid.
-            //base.ValidateOrderValue(symbol, orderType, price, quantity, icebergQty);
 
-            //var args = $"symbol={symbol.ToUpper()}&side={side}&type={orderType}&quantity={quantity}"
-            //    + (orderType == OrderType.LIMIT ? $"&timeInForce={timeInForce}" : "")
-            //    + (orderType == OrderType.LIMIT ? $"&price={price}" : "")
-            //    + (icebergQty > 0m ? $"&icebergQty={icebergQty}" : "")
-            //    + $"&recvWindow={recvWindow}";
+            quantity = TruncateDecimal(quantity, decimalPrecission);
 
             string qty = quantity.ToString("0." + GetMaxDecimals(decimalPrecission));
             string strPrice = price.ToString("0.########");

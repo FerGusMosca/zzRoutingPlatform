@@ -20,6 +20,7 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
 
         #endregion
 
+
         #region Private Consts
 
         private string _FILLED = "FILLED";
@@ -86,6 +87,28 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
                 return OrdStatus.Suspended;
         }
 
+        protected decimal ProcessLeavesQty()
+        {
+
+            if (ExecutionReport.Status == _FILLED)
+                return 0;
+            else if (ExecutionReport.Status == _PARTIALLY_FILLED)
+                return ExecutionReport.LeavesQty;
+            else if (ExecutionReport.Status == _NEW)
+                return ExecutionReport.LeavesQty;
+            else if (ExecutionReport.Status == _CANCELED)
+                return 0;
+            else if (ExecutionReport.Status == _PENDING_CANCEL)
+                return ExecutionReport.LeavesQty;
+            else if (ExecutionReport.Status == _REJECTED)
+                return 0;
+            else if (ExecutionReport.Status == _EXPIRED)
+                return 0;
+            else
+                return 0;
+        
+        }
+
         #endregion
 
         #region Public Methods
@@ -107,7 +130,7 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return ExecutionReport.LeavesQty;
+                return ProcessLeavesQty();
             else if (xrField == ExecutionReportFields.CumQty)
                 return ExecutionReport.ExecutedQty;
             else if (xrField == ExecutionReportFields.AvgPx)
@@ -115,7 +138,7 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
             else if (xrField == ExecutionReportFields.Commission)
                 return 0;
             else if (xrField == ExecutionReportFields.Text)
-                return Order.RejReason;
+                return ExecutionReport.Text;
             else if (xrField == ExecutionReportFields.TransactTime)
                 return DateTime.Now;
             else if (xrField == ExecutionReportFields.LastQty)

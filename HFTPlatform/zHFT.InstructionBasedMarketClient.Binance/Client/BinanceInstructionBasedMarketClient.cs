@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using zHFT.InstructionBasedMarketClient.Binance.BusinessEntities;
+using zHFT.InstructionBasedMarketClient.Binance.Common.Util;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.Managers;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
@@ -51,14 +52,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
         #region Protected Methods
 
-        protected void LoadAppCulture(CultureInfo culture)
-        {
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-        }
-
+      
 
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
@@ -84,35 +78,39 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
                     lock (tLock)
                     {
-                        LoadAppCulture(tempCulture);
+                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == instrx.Symbol))
+                        {
+                            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
+                            var binanceClient = new BinanceClientProxy(apiClient);
+                            string fullSymbol = instrx.Symbol + BinanceConfiguration.QuoteCurrency;
 
-                        var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
-                        var binanceClient = new BinanceClient(apiClient);
-                        string fullSymbol = instrx.Symbol + BinanceConfiguration.QuoteCurrency;
+                            var respOB = binanceClient.GetOrderBook(fullSymbol);
+                            OrderBook jOrderBook = respOB.Result;
 
-                        var respOB = binanceClient.GetOrderBook(fullSymbol, 5);
-                        OrderBook jOrderBook = respOB.Result;
+                            OrderBookOffer bestSell = jOrderBook.Asks.OrderByDescending(x => x.Price).FirstOrDefault();
+                            OrderBookOffer bestBuy = jOrderBook.Bids.OrderBy(x => x.Price).FirstOrDefault();
 
-                        OrderBookOffer bestSell = jOrderBook.Asks.OrderByDescending(x => x.Price).FirstOrDefault();
-                        OrderBookOffer bestBuy = jOrderBook.Bids.OrderBy(x => x.Price).FirstOrDefault();
+                            var respMD = binanceClient.GetLastMinuteCandleStick(fullSymbol);
+                            Candlestick jMarketData = respMD.Result.OrderByDescending(x => x.CloseTime).FirstOrDefault();
 
-                        var respMD = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1,null, null,1);
-                        Candlestick jMarketData = respMD.Result.OrderByDescending(x=>x.CloseTime).FirstOrDefault();
+                            Security sec = new Security();
+                            sec.Symbol = instrx.Symbol;
+                            sec.MarketData.BestBidPrice = Convert.ToDouble(bestBuy.Price);
+                            sec.MarketData.BestBidCashSize = bestBuy.Quantity;
+                            sec.MarketData.BestAskPrice = Convert.ToDouble(bestSell.Price);
+                            sec.MarketData.BestAskCashSize = bestSell.Quantity;
+                            sec.MarketData.Trade = Convert.ToDouble(jMarketData.Close);
+                            sec.ReverseMarketData = false;
 
-                        Security sec = new Security();
-                        sec.Symbol = instrx.Symbol;
-                        sec.MarketData.BestBidPrice = Convert.ToDouble(bestBuy.Price);
-                        sec.MarketData.BestBidCashSize = bestBuy.Quantity;
-                        sec.MarketData.BestAskPrice = Convert.ToDouble(bestSell.Price);
-                        sec.MarketData.BestAskCashSize = bestSell.Quantity;
-                        sec.MarketData.Trade = Convert.ToDouble(jMarketData.Close);
-                        sec.ReverseMarketData = false;
+                            BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
 
-                        LoadAppCulture(prevCulture);
-
-                        BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
-
-                        OnMessageRcv(wrapper);
+                            OnMessageRcv(wrapper);
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}:Unsubscribing market data por symbol {1}", BinanceConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                            activo = false;
+                        }
                     }
                 }
             }

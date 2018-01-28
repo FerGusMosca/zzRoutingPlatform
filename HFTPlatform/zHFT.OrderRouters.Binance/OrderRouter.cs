@@ -59,7 +59,9 @@ namespace zHFT.OrderRouters.Binance
             var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
             var binanceClient = new BinanceClient(apiClient);
 
-            var execReportResp = binanceClient.GetOrder(order.Security.Symbol, Convert.ToInt64(order.OrderId)); ;
+            string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
+
+            var execReportResp = binanceClient.GetOrder(fullSymbol, Convert.ToInt64(order.OrderId)); ;
 
             var execReport = execReportResp.Result;
 
@@ -90,12 +92,12 @@ namespace zHFT.OrderRouters.Binance
                 Order = order,
                 OrigQty = Convert.ToDecimal(order.OrderQty.Value),
                 ExecutedQty = Convert.ToDecimal(order.OrderQty.Value) - quantityRemaining,
+                Status = ExecutionReportDTO._CANCELED,
+                Text = "Could not find order on exchange. Check on the exchange for possible execution or cancellation",
                 LeavesQty = quantityRemaining,//0=cancelada, xx=ejecutada
 
             };
         }
-
-
 
         protected void DoEvalExecutionReport()
         {
@@ -155,14 +157,6 @@ namespace zHFT.OrderRouters.Binance
             }
         }
 
-        protected void LoadAppCulture(CultureInfo culture)
-        {
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-        }
-
         protected void RunNewOrder(Order order)
         {
             DoLog(string.Format("@{0}:Routing new order for symbol {1}", BinanceConfiguration.Name, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
@@ -202,6 +196,35 @@ namespace zHFT.OrderRouters.Binance
             OnMessageRcv(wrapper);
         }
 
+        protected void EvalNewOrderError(Order order, Exception ex)
+        {
+            order.OrdStatus = OrdStatus.Rejected;
+
+            if (order.Side == Side.Buy)
+            {
+                order.RejReason = "Possible min ammount not enough @Binance. Error: " + ex.Message;
+            }
+            else
+            {
+                order.RejReason = "Possible rounding error for Qty @Binance. Error: " + ex.Message;
+            }
+
+            order.OrderId = "not created";
+
+            ExecutionReportDTO execReport = new ExecutionReportDTO
+                                            {
+                                                Order = order,
+                                                OrigQty = Convert.ToDecimal(order.OrderQty.Value),
+                                                ExecutedQty = 0,
+                                                Status = ExecutionReportDTO._REJECTED,
+                                                Text = order.RejReason,
+                                                LeavesQty = 0,
+                                            };
+
+            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
+            OnMessageRcv(wrapper);
+        }
+
         protected override CMState RouteNewOrder(Wrapper wrapper)
         {
             try
@@ -217,7 +240,7 @@ namespace zHFT.OrderRouters.Binance
                 }
                 catch (Exception ex)
                 {
-                    EvalRouteError(order, ex);
+                    EvalNewOrderError(order, ex);
                 }
 
                 return CMState.BuildSuccess();
@@ -236,7 +259,9 @@ namespace zHFT.OrderRouters.Binance
             var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
             var binanceClient = new BinanceClient(apiClient);
 
-            var resp = binanceClient.CancelOrder(order.Security.Symbol, Convert.ToInt64(order.OrderId));
+            string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
+
+            var resp = binanceClient.CancelOrder(fullSymbol, Convert.ToInt64(order.OrderId));
 
             if (!update)//es cancelación pura
             {
