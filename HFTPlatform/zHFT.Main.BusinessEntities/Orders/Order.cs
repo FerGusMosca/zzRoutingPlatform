@@ -84,6 +84,8 @@ namespace zHFT.Main.BusinessEntities.Orders
 
         public string RejReason { get; set; }
 
+        public int DecimalPrecission { get; set; }
+
         #endregion
 
         #region Public Metods

@@ -1,0 +1,232 @@
+2018-01-25 15:24:06  :: 1/25/2018 3:24:06 PMMomentumStrategyBase.LoadConfig
+2018-01-25 15:24:06  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-25 15:24:06  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-25 15:24:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-25 15:24:06  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-25 15:24:06  :: 1/25/2018 3:24:06 PMOrderRouterBase.LoadConfig
+2018-01-25 15:24:06  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-25 15:24:06  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-25 15:24:06  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-25 15:24:06  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2018-01-25 15:24:11  :: 1/25/2018 3:24:11 PMOrderRouterBase.LoadConfig
+2018-01-25 15:24:11  :: Loading config:.\outgoingOrderRouter.IB.xml
+2018-01-25 15:24:11  :: Processing config:.\outgoingOrderRouter.IB.xml
+2018-01-25 15:24:11  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2018-01-25 15:24:14  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2018-01-25 15:27:49  :: 1/25/2018 3:27:49 PMMomentumStrategyBase.LoadConfig
+2018-01-25 15:27:49  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-25 15:27:49  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-25 15:27:49  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-25 15:27:49  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-01-25 15:27:49  :: 1/25/2018 3:27:49 PMOrderRouterBase.LoadConfig
+2018-01-25 15:27:49  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-25 15:27:49  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-25 15:27:50  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-25 15:27:50  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2018-01-25 15:27:52  :: 1/25/2018 3:27:52 PMOrderRouterBase.LoadConfig
+2018-01-25 15:27:52  :: Loading config:.\outgoingOrderRouter.IB.xml
+2018-01-25 15:27:52  :: Processing config:.\outgoingOrderRouter.IB.xml
+2018-01-25 15:27:52  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2018-01-25 15:27:52  :: managedAccounts: accountsList=DU634652
+2018-01-25 15:27:52  :: nextValidId: orderId=5526
+2018-01-25 15:27:52  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2018-01-25 15:27:52  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.us  
+2018-01-25 15:27:52  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2018-01-25 15:27:52  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ilhmds  
+2018-01-25 15:27:52  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2018-01-25 15:27:52  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2018-01-25 15:27:52  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2018-01-25 15:28:40  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.usfarm.us  
+2018-01-25 15:28:40  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.usfarm.us  
+2018-01-25 15:28:42  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.us  
+2018-01-25 15:28:53  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2018-01-25 15:28:53  :: managedAccounts: =DU634652   
+2018-01-25 15:28:53  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2018-01-25 15:28:53  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.us  
+2018-01-25 15:28:53  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2018-01-25 15:28:53  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ilhmds  
+2018-01-25 15:28:53  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2018-01-25 15:28:53  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2018-01-25 15:28:53  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2018-01-25 15:28:53  :: Synchronizing position for symbol OLED   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CSX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol EL   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ABBV   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ILMN   
+2018-01-25 15:28:53  :: Synchronizing position for symbol BWXT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CGNX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TAL   
+2018-01-25 15:28:53  :: Synchronizing position for symbol LVNTA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol HDB   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ZNH   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ADBE   
+2018-01-25 15:28:53  :: Synchronizing position for symbol IBKR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol IAC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol XPO   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CAT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol FNF   
+2018-01-25 15:28:53  :: Synchronizing position for symbol EXEL   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SINA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol WUBA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol FMC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol IPGP   
+2018-01-25 15:28:53  :: Synchronizing position for symbol PGR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SQ   
+2018-01-25 15:28:53  :: Synchronizing position for symbol FCAU   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TTWO   
+2018-01-25 15:28:53  :: Synchronizing position for symbol YNDX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol AVY   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SQM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol LYV   
+2018-01-25 15:28:53  :: Synchronizing position for symbol RACE   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CAA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol DHI   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MLCO   
+2018-01-25 15:28:53  :: Synchronizing position for symbol BABA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MSCI   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ALNY   
+2018-01-25 15:28:53  :: Synchronizing position for symbol WB   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MELI   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ANTM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MCO   
+2018-01-25 15:28:53  :: Synchronizing position for symbol PHM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol AMAT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol EDU   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol NRG   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TEAM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol W   
+2018-01-25 15:28:53  :: Synchronizing position for symbol APO   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TOL   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CSGP   
+2018-01-25 15:28:53  :: Synchronizing position for symbol COHR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SBAC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol RHT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SPGI   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SHOP   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CPRT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TRU   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MAR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol VRTX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol NVR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol HTHT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol DXC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol BA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol HUN   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ATVI   
+2018-01-25 15:28:53  :: Synchronizing position for symbol YY   
+2018-01-25 15:28:53  :: Synchronizing position for symbol PII   
+2018-01-25 15:28:53  :: Synchronizing position for symbol WYNN   
+2018-01-25 15:28:53  :: Synchronizing position for symbol OC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol STM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol BLUE   
+2018-01-25 15:28:53  :: Synchronizing position for symbol NTAP   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CDNS   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ABMD   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TER   
+2018-01-25 15:28:53  :: Synchronizing position for symbol NBIX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol WLK   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MRVL   
+2018-01-25 15:28:53  :: Synchronizing position for symbol APTV   
+2018-01-25 15:28:53  :: Synchronizing position for symbol LRCX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol AABA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol NVDA   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CZR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TFX   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ACH   
+2018-01-25 15:28:53  :: Synchronizing position for symbol NKTR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CNC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol GRUB   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MSFT   
+2018-01-25 15:28:53  :: Synchronizing position for symbol MTCH   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ANET   
+2018-01-25 15:28:53  :: Synchronizing position for symbol FSLR   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ATHM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol PYPL   
+2018-01-25 15:28:53  :: Synchronizing position for symbol SNE   
+2018-01-25 15:28:53  :: Synchronizing position for symbol YUMC   
+2018-01-25 15:28:53  :: Synchronizing position for symbol TSEM   
+2018-01-25 15:28:53  :: Synchronizing position for symbol CBOE   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ISRG   
+2018-01-25 15:28:53  :: Synchronizing position for symbol ASML   
+2018-01-25 15:28:55  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2018-01-25 15:28:55  :: Strategy Handler - Instruction Based Router: Creating position for symbol PAM
+2018-01-25 15:28:59  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70,2 Low=69,42 Close=69,61 Volume=788 LastPrice=69,6 LastTradeSize=1 BestBidPrice=69,56 BestBidSize=2 BestBidExch=QT BestAskPrice=69,63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:28:59  :: Routing to market position for symbol PAM
+2018-01-25 15:28:59  :: Creating buy order for symbol PAM.Quantity=143 Price=69,56
+2018-01-25 15:28:59  :: Routing with IB to market for symbol PAM
+2018-01-25 15:28:59  :: Routing Order Id 5526
+2018-01-25 15:29:00  :: position: orderId=5526 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2018-01-25 15:29:00  :: orderStatus: orderId=5526 status=Submitted filled=0 remaining=143 avgFillPrice=0 permId=789192974 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2018-01-25 15:29:00  :: Incoming message from order routing proxy: Symbol PAM ExecType New OrdStatus New
+2018-01-25 15:29:00  :: Incoming message from order routing: Symbol PAM ExecType New OrdStatus New
+2018-01-25 15:29:00  :: Received New for symbol PAM
+2018-01-25 15:29:00  :: New for symbol PAM processed
+2018-01-25 15:29:04  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70.2 Low=69.42 Close=69.61 Volume=788 LastPrice=69.6 LastTradeSize=1 BestBidPrice=69.56 BestBidSize=2 BestBidExch=QT BestAskPrice=69.63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:29:09  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70.2 Low=69.42 Close=69.61 Volume=788 LastPrice=69.6 LastTradeSize=1 BestBidPrice=69.56 BestBidSize=2 BestBidExch=QT BestAskPrice=69.63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:29:13  :: Strategy Handler - Instruction Based Router: Creating position for symbol EDN
+2018-01-25 15:29:14  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70.2 Low=69.42 Close=69.61 Volume=788 LastPrice=69.6 LastTradeSize=1 BestBidPrice=69.57 BestBidSize=1 BestBidExch=T BestAskPrice=69.63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:29:14  :: Updating DOM price on BID. Symbol: PAM - New Bid Price:69.56 Old Bid Price:69.57
+2018-01-25 15:29:14  :: @Order Router: Updating order for symbol PAM: qty=143 price=69.57
+2018-01-25 15:29:14  :: Updating order with IB  for symbol PAM
+2018-01-25 15:29:14  :: Updating Order Id 5526
+2018-01-25 15:29:14  :: position: orderId=5526 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2018-01-25 15:29:14  :: orderStatus: orderId=5526 status=Submitted filled=0 remaining=143 avgFillPrice=0 permId=789192974 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2018-01-25 15:29:14  :: Incoming message from order routing proxy: Symbol PAM ExecType New OrdStatus New
+2018-01-25 15:29:14  :: Incoming message from order routing: Symbol PAM ExecType New OrdStatus New
+2018-01-25 15:29:14  :: Received New for symbol PAM
+2018-01-25 15:29:14  :: New for symbol PAM processed
+2018-01-25 15:29:19  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70.2 Low=69.42 Close=69.61 Volume=788 LastPrice=69.6 LastTradeSize=1 BestBidPrice=69.57 BestBidSize=1 BestBidExch=T BestAskPrice=69.63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:29:19  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=60.62 High=62.06 Low=60.62 Close=59.91 Volume=456 LastPrice=61.55 LastTradeSize=1 BestBidPrice=61.53 BestBidSize=2 BestBidExch=CX BestAskPrice=61.7 BestAskSize=2 BestAskExch=CT CompositeUnderlyingPrice=no data
+2018-01-25 15:29:19  :: Routing to market position for symbol EDN
+2018-01-25 15:29:19  :: Creating buy order for symbol EDN.Quantity=81 Price=61,53
+2018-01-25 15:29:19  :: Routing with IB to market for symbol EDN
+2018-01-25 15:29:19  :: Routing Order Id 5527
+2018-01-25 15:29:24  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70.2 Low=69.42 Close=69.61 Volume=788 LastPrice=69.6 LastTradeSize=1 BestBidPrice=69.57 BestBidSize=1 BestBidExch=T BestAskPrice=69.63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:29:24  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=60.62 High=62.06 Low=60.62 Close=59.91 Volume=456 LastPrice=61.55 LastTradeSize=1 BestBidPrice=61.53 BestBidSize=2 BestBidExch=CX BestAskPrice=61.7 BestAskSize=2 BestAskExch=CT CompositeUnderlyingPrice=no data
+2018-01-25 15:29:28  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol PAM 
+2018-01-25 15:29:28  :: Canceling all active orders
+2018-01-25 15:29:28  :: @Outgoing IB:Cancelling all active orders @ IB
+2018-01-25 15:29:32  :: Processing Market Data:Symbol=PAM Exchange=SMART SecType=CS Currency=USD- Open=70 High=70.2 Low=69.42 Close=69.61 Volume=788 LastPrice=69.6 LastTradeSize=1 BestBidPrice=69.57 BestBidSize=1 BestBidExch=T BestAskPrice=69.63 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2018-01-25 15:29:32  :: Cancelling Order Id 5526
+2018-01-25 15:29:32  :: Cancelling Order Id 5526
+2018-01-25 15:29:32  :: Cancelling Order Id 5527
+2018-01-25 15:29:32  :: error: reqId=5526 start=10148 end=OrderId 5526 that needs to be cancelled can not be cancelled, state: PendingCancel.  
+2018-01-25 15:29:32  :: Order error for order Id 5526:10148-OrderId 5526 that needs to be cancelled can not be cancelled, state: PendingCancel.
+2018-01-25 15:29:32  :: Incoming message from order routing proxy: Symbol PAM ExecType Rejected OrdStatus Rejected
+2018-01-25 15:29:32  :: Incoming message from order routing: Symbol PAM ExecType Rejected OrdStatus Rejected
+2018-01-25 15:29:32  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol EDN 
+2018-01-25 15:29:32  :: Canceling all active orders
+2018-01-25 15:29:32  :: @Outgoing IB:Cancelling all active orders @ IB
+2018-01-25 15:29:34  :: Cancelling Order Id 5526
+2018-01-25 15:29:34  :: orderStatus: orderId=5526 status=Cancelled filled=0 remaining=143 avgFillPrice=0 permId=789192974 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2018-01-25 15:29:34  :: Cancelling Order Id 5526
+2018-01-25 15:29:34  :: Cancelling Order Id 5527
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol PAM ExecType Canceled OrdStatus Canceled
+2018-01-25 15:29:34  :: error: reqId=5526 start=202 end=Order Canceled - reason:  
+2018-01-25 15:29:34  :: Order error for order Id 5526:202-Order Canceled - reason:
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol PAM ExecType Canceled OrdStatus Canceled
+2018-01-25 15:29:34  :: position: orderId=5527 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2018-01-25 15:29:34  :: orderStatus: orderId=5527 status=PendingCancel filled=0 remaining=81 avgFillPrice=0 permId=789192975 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol EDN ExecType PendingCancel OrdStatus PendingCancel
+2018-01-25 15:29:34  :: Incoming message from order routing: Symbol EDN ExecType PendingCancel OrdStatus PendingCancel
+2018-01-25 15:29:34  :: orderStatus: orderId=5527 status=Cancelled filled=0 remaining=81 avgFillPrice=0 permId=789192975 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol EDN ExecType Canceled OrdStatus Canceled
+2018-01-25 15:29:34  :: Incoming message from order routing: Symbol EDN ExecType Canceled OrdStatus Canceled
+2018-01-25 15:29:34  :: error: reqId=5527 start=202 end=Order Canceled - reason:  
+2018-01-25 15:29:34  :: Order error for order Id 5527:202-Order Canceled - reason:
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol EDN ExecType Canceled OrdStatus Canceled
+2018-01-25 15:29:34  :: error: reqId=5526 start=10148 end=OrderId 5526 that needs to be cancelled can not be cancelled, state: Cancelled.  
+2018-01-25 15:29:34  :: Order error for order Id 5526:10148-OrderId 5526 that needs to be cancelled can not be cancelled, state: Cancelled.
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol PAM ExecType Rejected OrdStatus Rejected
+2018-01-25 15:29:34  :: error: reqId=5526 start=10148 end=OrderId 5526 that needs to be cancelled can not be cancelled, state: Cancelled.  
+2018-01-25 15:29:34  :: Order error for order Id 5526:10148-OrderId 5526 that needs to be cancelled can not be cancelled, state: Cancelled.
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol PAM ExecType Rejected OrdStatus Rejected
+2018-01-25 15:29:34  :: error: reqId=5527 start=10148 end=OrderId 5527 that needs to be cancelled can not be cancelled, state: Cancelled.  
+2018-01-25 15:29:34  :: Order error for order Id 5527:10148-OrderId 5527 that needs to be cancelled can not be cancelled, state: Cancelled.
+2018-01-25 15:29:34  :: Incoming message from order routing proxy: Symbol EDN ExecType Rejected OrdStatus Rejected
+2018-01-25 15:29:34  :: Received execution report for no longer processed symbol PAM
+2018-01-25 15:29:34  :: Received execution report for no longer processed symbol EDN
+2018-01-25 15:29:34  :: Received execution report for no longer processed symbol EDN
+2018-01-25 15:29:37  :: Ending RunOnPositionCalculus for symbol EDN. The position is cleared
+2018-01-25 15:29:37  :: Ending RunOnPositionCalculus for symbol PAM. The position is cleared

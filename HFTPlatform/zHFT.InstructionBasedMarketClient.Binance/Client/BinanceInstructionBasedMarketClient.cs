@@ -102,9 +102,9 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                         Security sec = new Security();
                         sec.Symbol = instrx.Symbol;
                         sec.MarketData.BestBidPrice = Convert.ToDouble(bestBuy.Price);
-                        //sec.MarketData.BestBidSize = Convert.ToInt64(bestBuy.Quantity);
+                        sec.MarketData.BestBidCashSize = bestBuy.Quantity;
                         sec.MarketData.BestAskPrice = Convert.ToDouble(bestSell.Price);
-                        //sec.MarketData.BestAskSize = Convert.ToInt64(bestSell.Quantity);
+                        sec.MarketData.BestAskCashSize = bestSell.Quantity;
                         sec.MarketData.Trade = Convert.ToDouble(jMarketData.Close);
                         sec.ReverseMarketData = false;
 

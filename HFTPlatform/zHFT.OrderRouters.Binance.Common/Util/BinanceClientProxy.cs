@@ -4,6 +4,7 @@ using Binance.API.Csharp.Client.Models.Enums;
 using Binance.API.Csharp.Client.Utils;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,23 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
 
         #endregion
 
+        #region Private Methods
+
+        private string GetMaxDecimals(int decimalPrecission)
+        {
+            string decimals = "";
+
+            for (int i = 0; i < decimalPrecission; i++)
+                decimals += "#";
+
+            return decimals;
+        }
+
+        #endregion
+
         #region Public Methods
 
-        public async Task<NewOrder> PostNewLimitOrder(string symbol, decimal quantity, decimal price, 
-                                                      OrderSide side)
+        public async Task<NewOrder> PostNewLimitOrder(string symbol, decimal quantity, decimal price, OrderSide side,int decimalPrecission)
         {
             //Validates that the order is valid.
             //base.ValidateOrderValue(symbol, orderType, price, quantity, icebergQty);
@@ -35,8 +49,14 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
             //    + (icebergQty > 0m ? $"&icebergQty={icebergQty}" : "")
             //    + $"&recvWindow={recvWindow}";
 
+            string qty = quantity.ToString("0." + GetMaxDecimals(decimalPrecission));
+            string strPrice = price.ToString("0.########");
+
             var args = string.Format("symbol={0}&side={1}&type={2}&quantity={3}&timeInForce={4}&price={5}&recvWindow=5000",
-                                      symbol, "BUY", "LIMIT", "0.01", "GTC", "0.01");
+                                      symbol, side == OrderSide.BUY ? "BUY" : "SELL", "LIMIT", qty, "GTC", strPrice);
+
+            //var args = string.Format("symbol={0}&side={1}&type={2}&quantity={3}&timeInForce={4}&price={5}&recvWindow=5000",
+            //                          "ETHBTC", "BUY", "LIMIT", "0.017", "GTC", "0.097444");
 
             var result = await _apiClient.CallAsync<NewOrder>(ApiMethod.POST, EndPoints.NewOrder, true, args);
 

@@ -80,6 +80,8 @@ namespace zHFT.OrderRouters.Common.Wrappers
                 return Order.MinQty;
             else if (oField == OrderFields.Account)
                 return Order.Account;
+            else if (oField == OrderFields.DecimalPrecission)
+                return Order.DecimalPrecission;
 
 
 

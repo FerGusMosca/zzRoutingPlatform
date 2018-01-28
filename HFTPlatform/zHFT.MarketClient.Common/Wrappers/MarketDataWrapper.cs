@@ -126,8 +126,12 @@ namespace zHFT.MarketClient.Common.Wrappers
                 return Security.MarketData.BestAskPrice;
             else if (mdField == MarketDataFields.BestBidSize)
                 return Security.MarketData.BestBidSize;
+            else if (mdField == MarketDataFields.BestBidCashSize)
+                return Security.MarketData.BestBidCashSize;
             else if (mdField == MarketDataFields.BestAskSize)
                 return Security.MarketData.BestAskSize;
+            else if (mdField == MarketDataFields.BestAskCashSize)
+                return Security.MarketData.BestAskCashSize;
             else if (mdField == MarketDataFields.BestBidExch)
                 return Security.MarketData.BestBidExch;
             else if (mdField == MarketDataFields.BestAskExch)

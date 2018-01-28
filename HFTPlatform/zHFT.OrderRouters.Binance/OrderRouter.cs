@@ -166,35 +166,20 @@ namespace zHFT.OrderRouters.Binance
         protected void RunNewOrder(Order order)
         {
             DoLog(string.Format("@{0}:Routing new order for symbol {1}", BinanceConfiguration.Name, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
-            //CultureInfo tempCuture = new CultureInfo("ja-JP");
-            //CultureInfo prevCulture = Thread.CurrentThread.CurrentCulture;
-
-            //LoadAppCulture(tempCuture);
-            //LoadAppCulture(tempCuture);
-
-            //Thread.CurrentThread.CurrentCulture = tempCuture;
-            //Thread.CurrentThread.CurrentUICulture = tempCuture;
-            //CultureInfo.DefaultThreadCurrentCulture = tempCuture;
-            //CultureInfo.DefaultThreadCurrentUICulture = tempCuture;
-
-            Thread.Sleep(100);
 
             var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
             var binanceClient = new BinanceClientProxy(apiClient);
 
-            var buyMarketOrder = binanceClient.PostNewLimitOrder("ETHBTC", 0.001m, 0.092333m, OrderSide.BUY).Result;
-
             string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
 
-            var resp = binanceClient.PostNewOrder(fullSymbol,
-                                                  Convert.ToDecimal(order.OrderQty.Value),
-                                                  Convert.ToDecimal(order.Price.Value),
-                                                  order.Side == Side.Buy ? OrderSide.BUY : OrderSide.SELL,
-                                                  OrderType.LIMIT);
+            var resp = binanceClient.PostNewLimitOrder(fullSymbol,
+                                                                 Convert.ToDecimal(order.OrderQty.Value),
+                                                                 Convert.ToDecimal(order.Price.Value),
+                                                                 order.Side == Side.Buy ? OrderSide.BUY : OrderSide.SELL,
+                                                                 order.DecimalPrecission
+                                                                 );
 
             var newOrderResp = resp.Result;
-
-            //LoadAppCulture(prevCulture);
 
             if (newOrderResp != null)
             {
@@ -213,7 +198,6 @@ namespace zHFT.OrderRouters.Binance
             order.OrdStatus = OrdStatus.Rejected;
             order.RejReason = ex.Message;
 
-            order.OrdStatus = OrdStatus.Rejected;
             ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
             OnMessageRcv(wrapper);
         }
@@ -244,7 +228,7 @@ namespace zHFT.OrderRouters.Binance
             }
         }
 
-        protected override void RunCancelOrder(Order order, bool update)
+        protected override bool RunCancelOrder(Order order, bool update)
         {
            
             DoLog(string.Format("@{0}:Cancelling Order Id {1} for symbol {2}", BinanceConfiguration.Name, order.OrderId, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
@@ -252,13 +236,35 @@ namespace zHFT.OrderRouters.Binance
             var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
             var binanceClient = new BinanceClient(apiClient);
 
-            binanceClient.CancelOrder(order.Security.Symbol, Convert.ToInt64(order.OrderId));
-            
-            if (!update)
-                CanceledOrders.Add(order.OrderId);
+            var resp = binanceClient.CancelOrder(order.Security.Symbol, Convert.ToInt64(order.OrderId));
+
+            if (!update)//es cancelación pura
+            {
+                try
+                {
+                    var canceledOrder = resp.Result;
+                    CanceledOrders.Add(order.OrderId);//si llegó hasta aca es porque canceló bien
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;//hubo un error, no hay nada que se pueda cancelar.
+                                 //Lo que haya pasado será analizado por el thread de Execution Report
+                }
+            }
             else
             {
-                ActiveOrders.Remove(order.OrderId);//Ya no actuallizamos mas datos de la vieja orden cancelada
+                try
+                {
+                    var updatedOrder = resp.Result;
+                    ActiveOrders.Remove(order.OrderId);//si llegó hasta aca es porque actualizó bien
+                    //Ya no actuallizamos mas datos de la vieja orden cancelada
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
             }
 
         }
@@ -288,22 +294,27 @@ namespace zHFT.OrderRouters.Binance
                         if (order != null)
                         {
                             //Cancelamos
-                            RunCancelOrder(order, true);
-
-                            Thread.Sleep(100);
-
-                            //Damos el alta
-                            double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
-                            order.Price = newPrice;
-                            order.ClOrdId = clOrderId;
-                            try
+                            if (RunCancelOrder(order, true))
                             {
-                                RunNewOrder(order);
+
+                                Thread.Sleep(100);
+
+                                //Damos el alta
+                                double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+                                order.Price = newPrice;
+                                order.ClOrdId = clOrderId;
+                                try
+                                {
+                                    RunNewOrder(order);
+                                }
+                                catch (Exception ex)
+                                {
+                                    EvalRouteError(order, ex);
+                                }
                             }
-                            catch (Exception ex)
-                            {
-                                EvalRouteError(order, ex);
-                            }
+                            else
+                                DoLog(string.Format("@{0}:Discarding cancelation of order because order could not be found!", BinanceConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+
                         }
 
                     }

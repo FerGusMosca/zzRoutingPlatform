@@ -29,6 +29,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly OrderFields MinQty = new OrderFields(20);
         public static readonly OrderFields OrigClOrdID = new OrderFields(21);
         public static readonly OrderFields Account = new OrderFields(22);
+        public static readonly OrderFields DecimalPrecission = new OrderFields(23);
 
 
         protected OrderFields(int pInternalValue)

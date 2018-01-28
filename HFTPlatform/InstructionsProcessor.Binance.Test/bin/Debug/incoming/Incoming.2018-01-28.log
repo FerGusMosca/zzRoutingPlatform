@@ -1,0 +1,257 @@
+2018-01-28 0:05:02  :: 1/28/2018 12:05:02 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:05:02  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:05:02  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:05:02  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:05:03  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:10:18  :: 1/28/2018 12:10:18 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:10:18  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:10:18  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:10:19  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:10:20  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:11:05  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:14:44  :: 1/28/2018 12:14:44 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:14:44  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:14:44  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:14:44  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:14:45  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:16:58  :: 1/28/2018 12:16:58 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:16:58  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:16:58  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:16:59  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:17:00  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:19:05  :: 1/28/2018 12:19:05 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:19:05  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:19:05  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:19:05  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:19:06  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:20:59  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:22:17  :: 1/28/2018 12:22:17 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:22:17  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:22:17  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:22:17  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:22:18  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:24:17  :: 1/28/2018 12:24:17 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:24:17  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:24:17  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:24:17  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:24:18  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:26:11  :: 1/28/2018 12:26:11 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:26:11  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:26:11  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:26:11  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:26:13  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:27:00  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:27:40  :: 1/28/2018 12:27:40 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:27:40  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:27:40  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:27:40  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:27:41  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:29:11  :: 1/28/2018 12:29:11 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:29:11  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:29:11  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:29:11  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:29:12  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:31:21  :: 1/28/2018 12:31:21 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:31:21  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:31:21  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:31:21  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:31:22  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:33:32  :: 1/28/2018 12:33:32 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:33:32  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:33:32  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:33:32  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:33:34  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 0:34:33  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:35:51  :: 1/28/2018 12:35:51 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:35:51  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:35:51  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:35:51  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:35:52  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:39:41  :: 1/28/2018 12:39:41 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:39:41  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:39:41  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:39:41  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:39:42  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:44:00  :: 1/28/2018 12:44:00 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:44:00  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:44:00  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:44:00  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:44:01  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:47:33  :: 1/28/2018 12:47:33 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:47:33  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:47:33  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:47:33  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:47:34  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:48:42  :: 1/28/2018 12:48:42 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:48:42  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:48:42  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:48:42  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:48:43  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:50:37  :: @Incoming Binance: Error Requesting market data por symbol ETH:One or more errors occurred.
+2018-01-28 0:50:37  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 0:51:23  :: 1/28/2018 12:51:23 AMBaseCommunicationModule.LoadConfig
+2018-01-28 0:51:23  :: Loading config:.\incomingBinance.xml
+2018-01-28 0:51:23  :: Processing config:.\incomingBinance.xml
+2018-01-28 0:51:23  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 0:51:24  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 1:08:38  :: 1/28/2018 1:08:38 AMBaseCommunicationModule.LoadConfig
+2018-01-28 1:08:38  :: Loading config:.\incomingBinance.xml
+2018-01-28 1:08:38  :: Processing config:.\incomingBinance.xml
+2018-01-28 1:08:38  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 1:08:40  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 1:10:07  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 1:11:58  :: 1/28/2018 1:11:58 AMBaseCommunicationModule.LoadConfig
+2018-01-28 1:11:58  :: Loading config:.\incomingBinance.xml
+2018-01-28 1:11:58  :: Processing config:.\incomingBinance.xml
+2018-01-28 1:11:58  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 1:11:59  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 9:58:41  :: 1/28/2018 9:58:41 AMBaseCommunicationModule.LoadConfig
+2018-01-28 9:58:41  :: Loading config:.\incomingBinance.xml
+2018-01-28 9:58:41  :: Processing config:.\incomingBinance.xml
+2018-01-28 9:58:41  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 9:59:23  :: 1/28/2018 9:59:23 AMBaseCommunicationModule.LoadConfig
+2018-01-28 9:59:23  :: Loading config:.\incomingBinance.xml
+2018-01-28 9:59:23  :: Processing config:.\incomingBinance.xml
+2018-01-28 9:59:23  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 9:59:24  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-28 10:00:43  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:00:47  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:00:49  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:00:52  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:00:53  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:00:58  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:01:00  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:01:18  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:01:21  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:01:25  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:01:26  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:01:31  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:01:42  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:01:52  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:02:42  :: 1/28/2018 10:02:42 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:02:43  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:02:43  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:02:43  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:02:44  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:02:46  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:02:51  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:02:52  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:02:52  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:02:55  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:02:58  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:03:00  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:03:00  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:03:01  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:03:02  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:03:03  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:03:03  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:03:54  :: 1/28/2018 10:03:54 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:03:54  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:03:54  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:03:54  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:03:55  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:04:08  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:04:28  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:04:43  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:04:43  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:04:50  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:04:50  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:05:52  :: 1/28/2018 10:05:52 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:05:52  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:05:52  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:05:52  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:05:54  :: @Incoming Binance:Requesting market data por symbol REP
+2018-01-28 10:05:55  :: @Incoming Binance: Error Requesting market data por symbol REP:One or more errors occurred.
+2018-01-28 10:06:25  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:08:15  :: 1/28/2018 10:08:15 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:08:15  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:08:15  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:08:15  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:08:33  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:12:56  :: 1/28/2018 10:12:56 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:12:56  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:12:56  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:12:57  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:12:58  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:14:17  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-28 10:15:10  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-28 10:20:21  :: 1/28/2018 10:20:21 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:20:21  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:20:21  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:20:22  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:20:23  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:21:39  :: 1/28/2018 10:21:39 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:21:39  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:21:39  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:21:39  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:21:48  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:24:51  :: 1/28/2018 10:24:51 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:24:51  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:24:51  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:24:51  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:24:53  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:39:22  :: 1/28/2018 10:39:22 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:39:22  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:39:22  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:39:22  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:39:24  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:41:32  :: 1/28/2018 10:41:32 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:41:32  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:41:32  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:41:32  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:41:45  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:44:20  :: 1/28/2018 10:44:20 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:44:20  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:44:20  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:44:20  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:44:22  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:44:44  :: 1/28/2018 10:44:44 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:44:44  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:44:44  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:44:44  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:45:01  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 10:46:37  :: 1/28/2018 10:46:37 AMBaseCommunicationModule.LoadConfig
+2018-01-28 10:46:37  :: Loading config:.\incomingBinance.xml
+2018-01-28 10:46:37  :: Processing config:.\incomingBinance.xml
+2018-01-28 10:46:37  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 10:46:38  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:03:57  :: 1/28/2018 11:03:57 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:03:57  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:03:57  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:03:57  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:03:58  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:06:31  :: 1/28/2018 11:06:31 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:06:31  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:06:31  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:06:31  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:06:33  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:27:07  :: 1/28/2018 11:27:07 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:27:07  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:27:07  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:27:07  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:27:08  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:28:48  :: 1/28/2018 11:28:48 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:28:48  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:28:48  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:28:48  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:28:49  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:34:21  :: 1/28/2018 11:34:21 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:34:21  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:34:21  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:34:21  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:34:22  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:35:13  :: 1/28/2018 11:35:13 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:35:13  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:35:13  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:35:13  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:35:14  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:37:49  :: 1/28/2018 11:37:49 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:37:49  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:37:49  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:37:49  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:37:50  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-28 11:42:04  :: 1/28/2018 11:42:04 AMBaseCommunicationModule.LoadConfig
+2018-01-28 11:42:04  :: Loading config:.\incomingBinance.xml
+2018-01-28 11:42:04  :: Processing config:.\incomingBinance.xml
+2018-01-28 11:42:04  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-28 11:42:06  :: @Incoming Binance:Requesting market data por symbol WAVES

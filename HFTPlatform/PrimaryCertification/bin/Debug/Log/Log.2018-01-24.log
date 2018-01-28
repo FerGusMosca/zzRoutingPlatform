@@ -18,3 +18,12 @@
 2018-01-24 12:00:19  :: Initializing Outgoing Module
 2018-01-24 12:00:19  :: Outgoing Module successfully initialized
 2018-01-24 12:00:30  :: ProcessMessageToOutgoing
+2018-01-24 15:05:35  :: 24/1/2018 15:05:35MainApp.LoadConfig
+2018-01-24 15:05:35  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-24 15:05:35  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\PrimaryCertification\bin\Debug\config.xml
+2018-01-24 15:05:35  :: Fin GetConfiguracion
+2018-01-24 15:05:35  :: Initializing Log
+2018-01-24 15:05:35  :: Initializing Incoming Module
+2018-01-24 15:05:37  :: Incoming Module successfully initialized
+2018-01-24 15:05:37  :: Initializing Outgoing Module
+2018-01-24 15:05:37  :: Outgoing Module successfully initialized

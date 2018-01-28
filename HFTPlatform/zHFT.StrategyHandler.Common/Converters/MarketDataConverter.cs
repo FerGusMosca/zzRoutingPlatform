@@ -68,6 +68,9 @@ namespace zHFT.StrategyHandler.Common.Converters
             md.MDEntryDate = (ValidateField(wrapper, MarketDataFields.MDEntryDate) ? (DateTime?) wrapper.GetField(MarketDataFields.MDEntryDate) : null);
             md.MDLocalEntryDate = (ValidateField(wrapper, MarketDataFields.MDLocalEntryDate) ? (DateTime?)wrapper.GetField(MarketDataFields.MDLocalEntryDate) : null);
 
+            md.BestBidCashSize = (ValidateField(wrapper, MarketDataFields.BestBidCashSize) ? (decimal?)Convert.ToDecimal(wrapper.GetField(MarketDataFields.BestBidCashSize)) : null);
+            md.BestAskCashSize = (ValidateField(wrapper, MarketDataFields.BestAskCashSize) ? (decimal?)Convert.ToDecimal(wrapper.GetField(MarketDataFields.BestAskCashSize)) : null);
+
 
             return md;
         

@@ -482,6 +482,18 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected CMState CancelAllOrders()
+        {
+            lock (tLock)
+            {
+                QuickFix.Message massiveCancelMsg = FIXMessageCreator.CreateOrderMassCancelRequest();
+                Session.sendToTarget(massiveCancelMsg);
+
+               return CMState.BuildSuccess();
+            }
+
+        }
+
         protected CMState CancelOrder(Wrapper wrapper)
         {
             try

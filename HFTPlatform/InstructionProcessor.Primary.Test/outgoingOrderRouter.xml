@@ -4,7 +4,6 @@
   
   <Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
   <ProxyConfigFile>.\OutgoingSingletonConfig.xml</ProxyConfigFile>
-  
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

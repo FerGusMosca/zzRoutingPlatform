@@ -636,6 +636,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         DoLog(string.Format("Receiving Market Data Request: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
                         return ProcessMarketDataRequest(wrapper);
                     }
+                    else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
+                    {
+                        DoLog(string.Format("@{0}:Cancelling all active orders @ IB", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        return CancelAllOrders();
+                    }
                     else
                     {
 

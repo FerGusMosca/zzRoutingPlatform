@@ -34,7 +34,7 @@ namespace zHFT.OrderRouters.Cryptos
 
         protected abstract BaseConfiguration GetConfig();
 
-        protected abstract void RunCancelOrder(Order order, bool update);
+        protected abstract bool RunCancelOrder(Order order, bool update);
 
         protected abstract string GetQuoteCurrency();
 
@@ -68,6 +68,7 @@ namespace zHFT.OrderRouters.Cryptos
             Side side = (Side)wrapper.GetField(OrderFields.Side);
             double orderQty = (double)wrapper.GetField(OrderFields.OrderQty);
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+            int decimalPrecission = (int)wrapper.GetField(OrderFields.DecimalPrecission);
 
             if (!price.HasValue)
                 throw new Exception(string.Format("Las ordenes deben tener un precio asignado. No se puede rutear orden para moneda {0}", symbol));
@@ -82,6 +83,7 @@ namespace zHFT.OrderRouters.Cryptos
                 Currency = GetQuoteCurrency(),
                 OrdType = OrdType.Limit,
                 ClOrdId = clOrderId,
+                DecimalPrecission=decimalPrecission
             };
 
             return order;

@@ -61,6 +61,9 @@ namespace zHFT.OrderRouters.Common.Converters
             md.BestAskPrice = (ValidateField(wrapper, MarketDataFields.BestAskPrice) ? (double?)Convert.ToDouble(wrapper.GetField(MarketDataFields.BestAskPrice)) : null);
             md.BestBidSize = (ValidateField(wrapper, MarketDataFields.BestBidSize) ? (long?)Convert.ToInt64(wrapper.GetField(MarketDataFields.BestBidSize)) : null);
             md.BestAskSize = (ValidateField(wrapper, MarketDataFields.BestAskSize) ? (long?)Convert.ToInt64(wrapper.GetField(MarketDataFields.BestAskSize)) : null);
+            md.BestBidCashSize = (ValidateField(wrapper, MarketDataFields.BestBidCashSize) ? (decimal?)Convert.ToDecimal(wrapper.GetField(MarketDataFields.BestBidCashSize)) : null);
+            md.BestAskCashSize = (ValidateField(wrapper, MarketDataFields.BestAskCashSize) ? (decimal?)Convert.ToDecimal(wrapper.GetField(MarketDataFields.BestAskCashSize)) : null);
+
             md.TradeVolume = (ValidateField(wrapper, MarketDataFields.TradeVolume) ? (double?)Convert.ToDouble(wrapper.GetField(MarketDataFields.TradeVolume)) : null);
             md.MDTradeSize = (ValidateField(wrapper, MarketDataFields.MDTradeSize) ? (double?)Convert.ToDouble(wrapper.GetField(MarketDataFields.MDTradeSize)) : null);
             md.BestAskExch = (ValidateField(wrapper, MarketDataFields.BestAskExch) ? Convert.ToString(wrapper.GetField(MarketDataFields.BestAskExch)) : null);

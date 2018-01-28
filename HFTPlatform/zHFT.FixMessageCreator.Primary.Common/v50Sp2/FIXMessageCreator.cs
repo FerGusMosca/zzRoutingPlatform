@@ -24,6 +24,12 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
         #region Protected Methods
 
+        protected  string GetUnixTimeStamp(DateTime baseDateTime)
+        {
+            var dtOffset = new DateTimeOffset(baseDateTime);
+            return dtOffset.ToUnixTimeMilliseconds().ToString();
+        }
+
         protected void LoadCurrentEntry(Security sec, QuickFix50.MarketDataSnapshotFullRefresh.NoMDEntries entry)
         {
             char type = ' ';
@@ -325,6 +331,19 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             return nos;
 
+        }
+
+        public QuickFix.Message CreateOrderMassCancelRequest()
+        {
+            QuickFix50Sp2.OrderMassCancelRequest msg = new QuickFix50Sp2.OrderMassCancelRequest();
+
+            msg.setChar(MassCancelRequestType.FIELD, MassCancelRequestType.CANCEL_ALL_ORDERS);
+
+            string clOrdId = GetUnixTimeStamp(DateTime.Now);
+
+            msg.setString(ClOrdID.FIELD, clOrdId);
+
+            return msg;
         }
 
 

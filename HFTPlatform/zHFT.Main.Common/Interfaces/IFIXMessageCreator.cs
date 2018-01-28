@@ -36,6 +36,8 @@ namespace zHFT.Main.Common.Interfaces
 
         void ProcessMarketData(QuickFix.Message snapshot, object security, OnLogMessage pOnLogMsg);
 
+        QuickFix.Message CreateOrderMassCancelRequest();
+
         
     }
 }

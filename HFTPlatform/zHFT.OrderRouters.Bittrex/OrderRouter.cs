@@ -303,7 +303,7 @@ namespace zHFT.OrderRouters.Bittrex
                 throw new Exception(string.Format("Invalid value for side:{0}", order.Side.ToString()));
         }
 
-        protected override void RunCancelOrder(Order order,bool update)
+        protected override bool RunCancelOrder(Order order,bool update)
         {
             Exchange exchange = new Exchange();
             ExchangeContext ctx = GetContext();
@@ -318,6 +318,8 @@ namespace zHFT.OrderRouters.Bittrex
             {
                 ActiveOrders.Remove(order.OrderId);//Ya no actuallizamos mas datos de la vieja orden cancelada
             }
+
+            return true;
         }
 
         protected override CMState UpdateOrder(Wrapper wrapper)
