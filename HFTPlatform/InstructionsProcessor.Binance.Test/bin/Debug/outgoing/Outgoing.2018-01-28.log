@@ -2215,3 +2215,128 @@
 2018-01-28 11:43:17  :: @Outgoing Order Routing Binance:Error processing execution reports!:One or more errors occurred.
 2018-01-28 11:43:20  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007976 BestBidPrice=0,0007924 BestAskPrice=0,0007986
 2018-01-28 11:43:20  :: @Outgoing Order Routing Binance:Cancelling Order Id 2544093 for symbol WAVES
+2018-01-28 12:30:50  :: 1/28/2018 12:30:50 PMMomentumStrategyBase.LoadConfig
+2018-01-28 12:30:50  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:30:50  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:30:50  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:30:50  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-28 12:30:50  :: 1/28/2018 12:30:50 PMOrderRouterBase.LoadConfig
+2018-01-28 12:30:50  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-28 12:30:50  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-28 12:30:51  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-28 12:30:51  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-28 12:30:51  :: 1/28/2018 12:30:51 PMOrderRouterBase.LoadConfig
+2018-01-28 12:30:51  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:30:51  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:30:51  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-28 12:30:56  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007974
+2018-01-28 12:30:57  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007974
+2018-01-28 12:30:59  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007974
+2018-01-28 12:31:00  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007974
+2018-01-28 12:31:01  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007981
+2018-01-28 12:31:02  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:04  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:05  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:06  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:08  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:09  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:10  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:12  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:13  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:14  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:16  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:17  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:18  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:38  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:31:47  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:31:48  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:31:49  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:31:50  :: Processing Market Data:Symbol=WAVES  LastPrice=0,0007909 BestBidPrice=0,0007879 BestAskPrice=0,0007986
+2018-01-28 12:32:25  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:32:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:36:37  :: 1/28/2018 12:36:37 PMMomentumStrategyBase.LoadConfig
+2018-01-28 12:36:37  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:36:37  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:36:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:36:38  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-28 12:36:38  :: 1/28/2018 12:36:38 PMOrderRouterBase.LoadConfig
+2018-01-28 12:36:38  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-28 12:36:38  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-28 12:36:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-28 12:36:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-28 12:36:38  :: 1/28/2018 12:36:38 PMOrderRouterBase.LoadConfig
+2018-01-28 12:36:38  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:36:38  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:36:38  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-28 12:37:31  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:37:44  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:37:44  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:38:13  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:38:13  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:38:26  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:38:26  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:38:45  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:38:46  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:47:56  :: 1/28/2018 12:47:56 PMMomentumStrategyBase.LoadConfig
+2018-01-28 12:47:56  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:47:56  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:47:56  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:47:56  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-28 12:47:56  :: 1/28/2018 12:47:56 PMOrderRouterBase.LoadConfig
+2018-01-28 12:47:56  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-28 12:47:56  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-28 12:47:56  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-28 12:47:56  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-28 12:47:56  :: 1/28/2018 12:47:56 PMOrderRouterBase.LoadConfig
+2018-01-28 12:47:56  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:47:56  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:47:56  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-28 12:48:05  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:48:16  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2018-01-28 12:48:17  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:49:47  :: 1/28/2018 12:49:47 PMMomentumStrategyBase.LoadConfig
+2018-01-28 12:49:47  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:49:47  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:49:47  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:49:47  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-28 12:49:47  :: 1/28/2018 12:49:47 PMOrderRouterBase.LoadConfig
+2018-01-28 12:49:47  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-28 12:49:47  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-28 12:49:47  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-28 12:49:47  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-28 12:49:48  :: 1/28/2018 12:49:48 PMOrderRouterBase.LoadConfig
+2018-01-28 12:49:48  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:49:48  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:49:48  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-28 12:50:01  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:50:44  :: 1/28/2018 12:50:44 PMMomentumStrategyBase.LoadConfig
+2018-01-28 12:50:44  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:50:44  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:50:44  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:50:44  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-28 12:50:44  :: 1/28/2018 12:50:44 PMOrderRouterBase.LoadConfig
+2018-01-28 12:50:44  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-28 12:50:44  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-28 12:50:44  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-28 12:50:44  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-28 12:50:44  :: 1/28/2018 12:50:44 PMOrderRouterBase.LoadConfig
+2018-01-28 12:50:44  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:50:44  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:50:44  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-28 12:50:49  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:52:58  :: 1/28/2018 12:52:58 PMMomentumStrategyBase.LoadConfig
+2018-01-28 12:52:58  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:52:58  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:52:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-28 12:52:58  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-28 12:52:58  :: 1/28/2018 12:52:58 PMOrderRouterBase.LoadConfig
+2018-01-28 12:52:58  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-28 12:52:58  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-28 12:52:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-28 12:52:58  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-28 12:52:58  :: 1/28/2018 12:52:58 PMOrderRouterBase.LoadConfig
+2018-01-28 12:52:58  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:52:58  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-28 12:52:58  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-01-28 12:56:48  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 6 ...
+2018-01-28 12:58:02  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized

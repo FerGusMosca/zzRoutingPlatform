@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.IBR.Binance.BusinessEntities;
+using zHFT.StrategyHandler.IBR.Binance.Common.Util;
 using zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
@@ -93,13 +94,7 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
 
         }
 
-        protected void LoadAppCulture(CultureInfo culture)
-        {
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-        }
+        
 
         protected void LoadConfig()
         {
@@ -128,47 +123,34 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
        
         private decimal GetBitcoinPriceInUSD()
         {
-            CultureInfo tempCuture = new CultureInfo("ja-JP");
-            CultureInfo prevCulture = Thread.CurrentThread.CurrentCulture;
-
-            LoadAppCulture(tempCuture);
-            LoadAppCulture(tempCuture);
-
-            Thread.Sleep(100);
-
             var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-            var binanceClient = new BinanceClient(apiClient);
+            //var binanceClient = new BinanceClient(apiClient);
+            var binanceClientProxy = new BinanceClientProxy(apiClient);
 
             string fullSymbol = _BTC_CURRENCY + _USD_CURRENCY;
 
-            var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null,1);
+            //var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null,1);
+            var resp = binanceClientProxy.GetLastMinuteCandleStick(fullSymbol);
             Candlestick jMarketData = resp.Result.OrderByDescending(x=>x.CloseTime).FirstOrDefault();
-
-            LoadAppCulture(prevCulture);
 
             return jMarketData.Close;
         }
 
         private void RecoverMarketPriceForPosition(ref AccountPosition pos, decimal priceBTCInUSD)
         {
-            CultureInfo tempCuture = new CultureInfo("ja-JP");
-            CultureInfo prevCulture = Thread.CurrentThread.CurrentCulture;
 
             try
             {
-                LoadAppCulture(tempCuture);
 
                 var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-                var binanceClient = new BinanceClient(apiClient);
+                var binanceClient = new BinanceClientProxy(apiClient);
 
                 if (pos.Security.Symbol != QuoteCurrency)
                 {
                     string fullSymbol = pos.Security.Symbol + QuoteCurrency;
 
-                    var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null, 1);
+                    var resp = binanceClient.GetLastMinuteCandleStick(fullSymbol);
                     Candlestick jMarketData = resp.Result.OrderByDescending(x => x.CloseTime).FirstOrDefault();
-
-                    LoadAppCulture(prevCulture);
 
                     pos.MarketPrice = jMarketData.Close * priceBTCInUSD;
                 }

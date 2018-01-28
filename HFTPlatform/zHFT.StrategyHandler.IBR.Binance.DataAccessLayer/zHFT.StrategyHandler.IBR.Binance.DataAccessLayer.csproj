@@ -75,6 +75,10 @@
       <Project>{baf202e5-9cdb-4b0a-bc69-1988bc0bb216}</Project>
       <Name>zHFT.StrategyHandler.IBR.Binance.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Binance.Common\zHFT.StrategyHandler.IBR.Binance.Common.csproj">
+      <Project>{47db6929-7e6f-46da-9eb1-ca563171eecf}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Binance.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj">
       <Project>{d9e755cf-6007-4ab6-9dbd-551ab3bd36ad}</Project>
       <Name>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</Name>
