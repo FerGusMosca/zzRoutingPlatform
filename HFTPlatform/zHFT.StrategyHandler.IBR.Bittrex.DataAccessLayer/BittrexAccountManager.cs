@@ -168,7 +168,7 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
            
         }
 
-        protected void RecoverMarketPriceForPosition(ref AccountPosition pos)
+        protected void RecoverMarketPriceForPosition(ref AccountPosition pos, decimal btcPriceInUSD)
         {
             try
             {
@@ -187,7 +187,7 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                     //Pedimos el precio en Bitcoins
                     GetMarketSummaryResponse summary = revExch.GetMarketSummary(pos.Security.Symbol);
 
-                    pos.MarketPrice = GetBitcoinPriceInUSD() * summary.Last;
+                    pos.MarketPrice = btcPriceInUSD * summary.Last;
                 }
                 else if (MarketExists(pos.Security.Symbol, _BTC_CURRENCY))
                 {
@@ -197,7 +197,7 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                     revExch.Initialise(ctx);
                     //Pedimos el precio en Bitcoins
                     GetMarketSummaryResponse summary = revExch.GetMarketSummary(_BTC_CURRENCY);
-                    pos.MarketPrice = GetBitcoinPriceInUSD() * (1 / summary.Last);
+                    pos.MarketPrice = btcPriceInUSD * (1 / summary.Last);
                 }
                 else
                     pos.MarketPrice = 0;
@@ -226,6 +226,8 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                     //Pedir las posiciones y asignar
                     GetBalancesResponse resp =  Exchange.GetBalances();
 
+                    decimal btcPriceInUSD = GetBitcoinPriceInUSD();
+
                     foreach (AccountBalance balance in resp)
                     {
                         AccountPosition pos = new AccountPosition();
@@ -236,7 +238,7 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
                         pos.Security = new Security() { Symbol = balance.Currency };
                         pos.Ammount = balance.Balance;
 
-                        RecoverMarketPriceForPosition(ref pos);
+                        RecoverMarketPriceForPosition(ref pos, btcPriceInUSD);
 
                         Positions.Add(pos);
                     }
