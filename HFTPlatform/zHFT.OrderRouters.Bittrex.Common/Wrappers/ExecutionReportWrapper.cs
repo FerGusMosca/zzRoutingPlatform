@@ -73,7 +73,6 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
                 return OrdStatus.Suspended;
         }
 
-
         protected OrdType? GetOrdTypeFromBittrexOrdType()
         {
             return Order.OrdType;
@@ -163,6 +162,15 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
         public override Main.Common.Enums.Actions GetAction()
         {
             return Actions.EXECUTION_REPORT;
+        }
+
+        public override string ToString()
+        {
+            OrdStatus ordStatus = GetOrdStatusFromBittrexStatus();
+            ExecType? execType = GetExecTypeFromBittrexStatus();
+
+            return string.Format("Execution Report for symbol {2}: Order Status={0} - Exec Type={1}",
+                                 ordStatus.ToString(), execType.ToString(), Order.Symbol);
         }
 
         #endregion

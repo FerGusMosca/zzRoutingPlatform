@@ -1,0 +1,14 @@
+2018-01-29 10:51:23  :: 1/29/2018 10:51:23 AMMomentumStrategyBase.LoadConfig
+2018-01-29 10:51:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-29 10:51:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-29 10:51:23  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-01-29 10:51:23  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-01-29 10:51:23  :: 1/29/2018 10:51:23 AMOrderRouterBase.LoadConfig
+2018-01-29 10:51:23  :: Loading config:.\outgoingOrderRouter.xml
+2018-01-29 10:51:23  :: Processing config:.\outgoingOrderRouter.xml
+2018-01-29 10:51:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-01-29 10:51:24  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-01-29 10:51:24  :: 1/29/2018 10:51:24 AMOrderRouterBase.LoadConfig
+2018-01-29 10:51:24  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-01-29 10:51:24  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-01-29 10:51:24  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml

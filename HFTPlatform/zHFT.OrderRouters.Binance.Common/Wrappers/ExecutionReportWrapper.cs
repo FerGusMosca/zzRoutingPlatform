@@ -189,6 +189,16 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
             return Actions.EXECUTION_REPORT;
         }
 
+
+        public override string ToString()
+        {
+            OrdStatus ordStatus = GetOrdStatusFromBinanceStatus();
+            ExecType? execType = GetExecTypeFromBinanceStatus();
+
+            return string.Format("Execution Report for symbol {2}: Order Status={0} - Exec Type={1}",
+                                            ordStatus.ToString(), execType.ToString(), Order.Symbol);
+        }
+
         #endregion
     }
 }

@@ -18,11 +18,11 @@
 
   <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.BittrexAccountManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</AccoutReferenceHandler>
 
-  <AccountManagerAccessLayer>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</AccountManagerAccessLayer>
+  <AccountManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</AccountManagerAccessLayer>
 
-  <InstructionManagerAccessLayer>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.Managers.InstructionManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</InstructionManagerAccessLayer>
+  <InstructionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.InstructionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</InstructionManagerAccessLayer>
 
-  <PositionManagerAccessLayer>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.Managers.PositionManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</PositionManagerAccessLayer>
+  <PositionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.PositionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</PositionManagerAccessLayer>
 
   <AccountManagerConfig>
     <Config>

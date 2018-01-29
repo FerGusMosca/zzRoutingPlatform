@@ -81,7 +81,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             sec.MarketData.BestAskPrice =  (double?)jMarketData["Ask"];
             sec.MarketData.Trade = (double?)jMarketData["Last"];
             sec.ReverseMarketData = true;
-            MarketDataWrapper wrapper = new MarketDataWrapper(sec, BittrexConfiguration);
+            BittrexMarketDataWrapper wrapper = new BittrexMarketDataWrapper(sec, BittrexConfiguration);
 
             OnMessageRcv(wrapper);
         }

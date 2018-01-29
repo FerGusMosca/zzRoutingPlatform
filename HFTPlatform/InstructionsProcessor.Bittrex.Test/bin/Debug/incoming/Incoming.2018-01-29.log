@@ -1,0 +1,82 @@
+2018-01-29 10:40:10  :: 1/29/2018 10:40:10 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:40:10  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:40:10  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:40:10  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 10:42:12  :: 1/29/2018 10:42:12 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:42:12  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:42:12  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:42:12  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 10:46:11  :: 1/29/2018 10:46:11 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:46:11  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:46:11  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:46:11  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 10:48:57  :: 1/29/2018 10:48:57 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:48:57  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:48:57  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:48:57  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 10:50:18  :: 1/29/2018 10:50:18 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:50:18  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:50:18  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:50:18  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 10:53:12  :: 1/29/2018 10:53:12 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:53:12  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:53:12  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:53:12  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 10:58:50  :: 1/29/2018 10:58:50 AMBaseCommunicationModule.LoadConfig
+2018-01-29 10:58:50  :: Loading config:.\incomingBittrex.xml
+2018-01-29 10:58:50  :: Processing config:.\incomingBittrex.xml
+2018-01-29 10:58:50  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 11:08:14  :: 1/29/2018 11:08:14 AMBaseCommunicationModule.LoadConfig
+2018-01-29 11:08:14  :: Loading config:.\incomingBittrex.xml
+2018-01-29 11:08:14  :: Processing config:.\incomingBittrex.xml
+2018-01-29 11:08:14  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 11:09:56  :: @Incoming Bittrex:Requesting market data por symbol USDT
+2018-01-29 11:12:04  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 11:12:11  :: @Incoming Bittrex:Unsubscribing market data por symbol USDT
+2018-01-29 11:14:03  :: 1/29/2018 11:14:03 AMBaseCommunicationModule.LoadConfig
+2018-01-29 11:14:03  :: Loading config:.\incomingBittrex.xml
+2018-01-29 11:14:03  :: Processing config:.\incomingBittrex.xml
+2018-01-29 11:14:03  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 11:16:55  :: 1/29/2018 11:16:55 AMBaseCommunicationModule.LoadConfig
+2018-01-29 11:16:55  :: Loading config:.\incomingBittrex.xml
+2018-01-29 11:16:55  :: Processing config:.\incomingBittrex.xml
+2018-01-29 11:16:55  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 11:17:30  :: @Incoming Bittrex:Requesting market data por symbol USDT
+2018-01-29 11:18:18  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 11:18:18  :: @Incoming Bittrex:Unsubscribing market data por symbol USDT
+2018-01-29 11:20:40  :: @Incoming Bittrex:Requesting market data por symbol USDT
+2018-01-29 11:21:23  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 11:21:24  :: @Incoming Bittrex:Unsubscribing market data por symbol USDT
+2018-01-29 11:23:11  :: @Incoming Bittrex:Requesting market data por symbol BNT
+2018-01-29 11:24:38  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 11:24:39  :: @Incoming Bittrex:Unsubscribing market data por symbol BNT
+2018-01-29 11:32:42  :: 1/29/2018 11:32:42 AMBaseCommunicationModule.LoadConfig
+2018-01-29 11:32:42  :: Loading config:.\incomingBittrex.xml
+2018-01-29 11:32:42  :: Processing config:.\incomingBittrex.xml
+2018-01-29 11:32:42  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 11:32:57  :: @Incoming Bittrex:Requesting market data por symbol BNT
+2018-01-29 11:36:38  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 11:36:39  :: @Incoming Bittrex:Unsubscribing market data por symbol BNT
+2018-01-29 11:37:58  :: 1/29/2018 11:37:58 AMBaseCommunicationModule.LoadConfig
+2018-01-29 11:37:58  :: Loading config:.\incomingBittrex.xml
+2018-01-29 11:37:58  :: Processing config:.\incomingBittrex.xml
+2018-01-29 11:37:58  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 11:40:00  :: @Incoming Bittrex:Requesting market data por symbol BNT
+2018-01-29 11:47:09  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 11:48:04  :: @Incoming Bittrex:Unsubscribing market data por symbol BNT
+2018-01-29 11:49:29  :: @Incoming Bittrex:Requesting market data por symbol BNT
+2018-01-29 12:04:17  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 12:04:17  :: @Incoming Bittrex:Unsubscribing market data por symbol BNT
+2018-01-29 12:45:31  :: 1/29/2018 12:45:31 PMBaseCommunicationModule.LoadConfig
+2018-01-29 12:45:31  :: Loading config:.\incomingBittrex.xml
+2018-01-29 12:45:31  :: Processing config:.\incomingBittrex.xml
+2018-01-29 12:45:31  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-01-29 12:47:17  :: @Incoming Bittrex:Requesting market data por symbol USDT
+2018-01-29 12:48:21  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 12:48:21  :: @Incoming Bittrex:Unsubscribing market data por symbol USDT
+2018-01-29 12:54:38  :: @Incoming Bittrex:Requesting market data por symbol USDT
+2018-01-29 12:56:58  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-01-29 12:56:58  :: @Incoming Bittrex:Unsubscribing market data por symbol USDT
+2018-01-29 13:10:58  :: @Incoming Bittrex:Requesting market data por symbol BNT
+2018-01-29 13:19:23  :: @Incoming Bittrex:Error Requesting market data por symbol BNT:INVALID_MARKETCall Details=/api/v1.1/public/getticker, market = BNT-BTC
+2018-01-29 13:20:07  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
