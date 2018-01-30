@@ -16,6 +16,8 @@ namespace zHFT.OrderRouters.Router
 
         private int GetDecimalPlaces(decimal decimalNumber)
         {
+            if (decimalNumber % 1 == 0)
+                return 0;
             
             int decimalPlaces = 1;
             decimal powers = 10.0m;

@@ -12,7 +12,8 @@
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
-  <AccountNumber>7</AccountNumber><!--Eco Valores PROD2-->
+  <!--<AccountNumber>7</AccountNumber>--> <!--Primary Test 9008-->
+  <AccountNumber>6</AccountNumber><!--Eco Valores PROD-->
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
@@ -27,7 +28,8 @@
   <AccountManagerConfig>
     <Config>
       <Key>AccountNumber</Key>
-      <Value>7</Value>
+      <!--<Value>7</Value>--><!--Primary Test 9008-->
+      <Value>6</Value><!--Eco Valores PROD-->
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>

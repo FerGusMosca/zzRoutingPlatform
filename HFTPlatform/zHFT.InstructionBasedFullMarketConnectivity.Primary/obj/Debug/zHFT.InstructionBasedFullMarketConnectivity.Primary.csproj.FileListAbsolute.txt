@@ -28,8 +28,6 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFu
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.FixMessageCreator.Primary.Common.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.FixMessageCreator.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.BasedFullMarketConnectivity.Primary.Common.dll

@@ -216,6 +216,18 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             return ExecutionReportFields.NULL;
         }
 
+        public override string ToString()
+        {
+            zHFT.Main.Common.Enums.OrdStatus ordStatus = GetOrdStatus(ExecutionReport.getChar(QuickFix.OrdStatus.FIELD));
+            zHFT.Main.Common.Enums.ExecType? execType = GetExecType(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.ExecType.FIELD));
+            string primarySymbol = FixHelper.GetFieldIfSet(ExecutionReport, Symbol.FIELD);
+            string exchange = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
+            string fullSymbol =  SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, exchange);
+
+            return string.Format("Execution Report for symbol {2}: Order Status={0} - Exec Type={1}",
+                                               ordStatus.ToString(), execType.ToString(), fullSymbol);
+        }
+
         #endregion
     }
 }

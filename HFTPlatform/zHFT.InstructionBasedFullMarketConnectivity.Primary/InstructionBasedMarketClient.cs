@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using zHFT.BasedFullMarketConnectivity.Primary.Common;
-using zHFT.FixMessageCreator.Primary.Common.v50Sp2;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
 using zHFT.Main.BusinessEntities.Orders;

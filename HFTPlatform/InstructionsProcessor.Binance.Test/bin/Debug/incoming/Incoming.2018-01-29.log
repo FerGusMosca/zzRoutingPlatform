@@ -2,3 +2,338 @@
 2018-01-29 10:51:22  :: Loading config:.\incomingBinance.xml
 2018-01-29 10:51:22  :: Processing config:.\incomingBinance.xml
 2018-01-29 10:51:22  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 17:00:26  :: 1/29/2018 5:00:26 PMBaseCommunicationModule.LoadConfig
+2018-01-29 17:00:26  :: Loading config:.\incomingBinance.xml
+2018-01-29 17:00:26  :: Processing config:.\incomingBinance.xml
+2018-01-29 17:00:26  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 17:01:47  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:48  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:48  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:49  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:50  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:51  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:51  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:52  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:52  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:53  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:53  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:55  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:55  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:56  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:56  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:57  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:01:57  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:01:58  :: @Incoming Binance:Requesting market data por symbol XMR
+2018-01-29 17:01:59  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:02:00  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:02:04  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:02:05  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:02:09  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-29 17:02:11  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:02:12  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:02:41  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:02:42  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-29 17:02:44  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:02:46  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:02:50  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:02:52  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:02:56  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:02:58  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:02  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:05  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:09  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:10  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:14  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:16  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:19  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:21  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:25  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:27  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:31  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:33  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:37  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:37  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:41  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:43  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:48  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:49  :: @Incoming Binance:Requesting market data por symbol ANT
+2018-01-29 17:03:53  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:03:54  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:03:54  :: @Incoming Binance: Error Requesting market data por symbol ANT:Se han producido uno o varios errores.
+2018-01-29 17:03:55  :: @Incoming Binance:Unsubscribing market data por symbol XMR
+2018-01-29 17:06:25  :: @Incoming Binance:Requesting market data por symbol EOS
+2018-01-29 17:06:33  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:06:39  :: @Incoming Binance:Unsubscribing market data por symbol EOS
+2018-01-29 17:06:47  :: @Incoming Binance:Requesting market data por symbol ADA
+2018-01-29 17:06:55  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:07:01  :: @Incoming Binance:Unsubscribing market data por symbol ADA
+2018-01-29 17:07:18  :: @Incoming Binance:Requesting market data por symbol EOS
+2018-01-29 17:07:25  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:07:31  :: @Incoming Binance:Unsubscribing market data por symbol EOS
+2018-01-29 17:08:00  :: @Incoming Binance:Requesting market data por symbol XMR
+2018-01-29 17:08:16  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-29 17:08:26  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:09:18  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:09:18  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:12:56  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:12:56  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:13:51  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-29 17:21:40  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:21:40  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-29 17:21:43  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:21:45  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:21:47  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:21:49  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-29 17:21:52  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:21:53  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:21:57  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:21:58  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:02  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:03  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:07  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:09  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:13  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:14  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:18  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:19  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:23  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:25  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:28  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:29  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:33  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:34  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:38  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:40  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:43  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:45  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:48  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:50  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:54  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:22:55  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:22:59  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:00  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:04  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:06  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:09  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:11  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:15  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:16  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:20  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:22  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:25  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:27  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:31  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:32  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:36  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:37  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:41  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:42  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:47  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:48  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:52  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:53  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:23:57  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:23:58  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:24:02  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:24:04  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:25:38  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:25:39  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:25:43  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:25:45  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:25:49  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:25:50  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:25:54  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:25:56  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:26:43  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:26:44  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:26:48  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:26:49  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:26:53  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:26:54  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:02  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:03  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:07  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:08  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:12  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:13  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:17  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:19  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:23  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:24  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:28  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:30  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:33  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:35  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:39  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:40  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:44  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:46  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:50  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:51  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:27:55  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:27:57  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:01  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:02  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:06  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:07  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:11  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:12  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:16  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:17  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:22  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:23  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:27  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:28  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:32  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:34  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:38  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:39  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:44  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:45  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:49  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:50  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:54  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:28:55  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:28:59  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:01  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:04  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:06  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:10  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:11  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:15  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:16  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:20  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:21  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:25  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:27  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:30  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:32  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:35  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:37  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:41  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:42  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:46  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:48  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:50  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:52  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:29:55  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:29:57  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:01  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:02  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:06  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:07  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:11  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:12  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:16  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:17  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:21  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:23  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:27  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:28  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:32  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:33  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:37  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:38  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:43  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:44  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:30:48  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:30:49  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:14  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:16  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:20  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:22  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:26  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:27  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:31  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:33  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:37  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:38  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:45  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:47  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:51  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:54  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:31:57  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:31:59  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:03  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:05  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:09  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:10  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:15  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:16  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:21  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:22  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:28  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:30  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:37  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:39  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:43  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:44  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:48  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:49  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:53  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:32:54  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:32:58  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:33:00  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:33:03  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:33:05  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:33:09  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:33:10  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:33:38  :: 1/29/2018 5:33:38 PMBaseCommunicationModule.LoadConfig
+2018-01-29 17:33:38  :: Loading config:.\incomingBinance.xml
+2018-01-29 17:33:38  :: Processing config:.\incomingBinance.xml
+2018-01-29 17:33:38  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 17:33:40  :: @Incoming Binance:Requesting market data por symbol DOGE
+2018-01-29 17:33:40  :: @Incoming Binance:Requesting market data por symbol XMR
+2018-01-29 17:33:44  :: @Incoming Binance: Error Requesting market data por symbol DOGE:Se han producido uno o varios errores.
+2018-01-29 17:34:10  :: 1/29/2018 5:34:10 PMBaseCommunicationModule.LoadConfig
+2018-01-29 17:34:10  :: Loading config:.\incomingBinance.xml
+2018-01-29 17:34:10  :: Processing config:.\incomingBinance.xml
+2018-01-29 17:34:10  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 17:35:35  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-29 17:35:43  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:35:50  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-29 17:38:10  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-29 17:38:40  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:38:56  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-29 17:41:23  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-29 17:43:14  :: 1/29/2018 5:43:14 PMBaseCommunicationModule.LoadConfig
+2018-01-29 17:43:14  :: Loading config:.\incomingBinance.xml
+2018-01-29 17:43:14  :: Processing config:.\incomingBinance.xml
+2018-01-29 17:43:14  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 17:43:15  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-29 17:50:53  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:51:04  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-29 17:57:17  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-29 17:58:18  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-29 17:58:18  :: @Incoming Binance:Requesting market data por symbol ETC
+2018-01-29 17:58:18  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:58:20  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-29 17:58:56  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 17:58:57  :: @Incoming Binance:Unsubscribing market data por symbol DASH
+2018-01-29 18:02:36  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 18:03:02  :: @Incoming Binance:Unsubscribing market data por symbol ETC
+2018-01-29 22:01:42  :: 1/29/2018 10:01:42 PMBaseCommunicationModule.LoadConfig
+2018-01-29 22:01:42  :: Loading config:.\incomingBinance.xml
+2018-01-29 22:01:42  :: Processing config:.\incomingBinance.xml
+2018-01-29 22:01:42  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 22:14:54  :: @Incoming Binance:Requesting market data por symbol LSK
+2018-01-29 22:15:23  :: @Incoming Binance:Requesting market data por symbol MTL
+2018-01-29 22:15:55  :: @Incoming Binance:Requesting market data por symbol PIVX
+2018-01-29 22:42:39  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 22:42:46  :: @Incoming Binance:Unsubscribing market data por symbol MTL
+2018-01-29 22:50:52  :: @Incoming Binance: Error Requesting market data por symbol LSK:Se han producido uno o varios errores.
+2018-01-29 22:51:29  :: @Incoming Binance:Requesting market data por symbol LSK
+2018-01-29 22:52:59  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 22:53:01  :: @Incoming Binance:Unsubscribing market data por symbol PIVX
+2018-01-29 23:03:32  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 23:03:57  :: @Incoming Binance:Unsubscribing market data por symbol LSK
+2018-01-29 23:15:34  :: 1/29/2018 11:15:34 PMBaseCommunicationModule.LoadConfig
+2018-01-29 23:15:34  :: Loading config:.\incomingBinance.xml
+2018-01-29 23:15:34  :: Processing config:.\incomingBinance.xml
+2018-01-29 23:15:35  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-29 23:17:45  :: @Incoming Binance:Requesting market data por symbol ETC
+2018-01-29 23:17:56  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-29 23:19:54  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 23:19:55  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-29 23:23:05  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-29 23:24:46  :: @Incoming Binance: Error Requesting market data por symbol ETC:Se han producido uno o varios errores.
