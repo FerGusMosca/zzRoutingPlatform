@@ -99,15 +99,31 @@ namespace zHFT.OrderRouters.Binance
             };
         }
 
+        private ExecutionReportDTO GetTheoreticalResponseOrderUpdatingNotFound(Order order)
+        {
+            return new ExecutionReportDTO()
+            {
+                Order = order,
+                OrigQty = Convert.ToDecimal(order.OrderQty.Value),
+                ExecutedQty = 0,
+                Status = ExecutionReportDTO._CANCELED,
+                Text = "Could insert new order after cancellation for update. Check on the exchange for possible execution or cancellation",
+                LeavesQty = Convert.ToDecimal(order.OrderQty.Value),//0=cancelada, xx=ejecutada
+
+            };
+        }
+
         protected void DoEvalExecutionReport()
         {
-            try
+           
+            bool active = true;
+            while (active)
             {
-                bool active = true;
-                while (active)
+                Thread.Sleep(BinanceConfiguration.RefreshExecutionReportsInMilisec);
+                List<ExecutionReportWrapper> wrappersToPublish = new List<ExecutionReportWrapper>();
+
+                try
                 {
-                    Thread.Sleep(BinanceConfiguration.RefreshExecutionReportsInMilisec);
-                    List<ExecutionReportWrapper> wrappersToPublish = new List<ExecutionReportWrapper>();
                     lock (tLock)
                     {
                         List<string> orderIdToRemove = new List<string>();
@@ -146,14 +162,13 @@ namespace zHFT.OrderRouters.Binance
                         orderIdToRemove.ForEach(x => ActiveOrders.Remove(x));
                     }
 
-
                     wrappersToPublish.ForEach(x => OnMessageRcv(x));
                     wrappersToPublish.Clear();
                 }
-            }
-            catch (Exception ex)
-            {
-                DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BinanceConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BinanceConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                }
             }
         }
 
@@ -189,6 +204,16 @@ namespace zHFT.OrderRouters.Binance
         protected void EvalRouteError(Order order, Exception ex)
         {
             ExecutionReportDTO execReport = GetTheoreticalResponseOrderNotFound(order);
+            order.OrdStatus = OrdStatus.Rejected;
+            order.RejReason = ex.Message;
+
+            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
+            OnMessageRcv(wrapper);
+        }
+
+        protected void EvalErrorOnInsertingUpdate(Order order, Exception ex)
+        {
+            ExecutionReportDTO execReport = GetTheoreticalResponseOrderUpdatingNotFound(order);
             order.OrdStatus = OrdStatus.Rejected;
             order.RejReason = ex.Message;
 
@@ -334,7 +359,7 @@ namespace zHFT.OrderRouters.Binance
                                 }
                                 catch (Exception ex)
                                 {
-                                    EvalRouteError(order, ex);
+                                    EvalErrorOnInsertingUpdate(order, ex);
                                 }
                             }
                             else

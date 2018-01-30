@@ -1,0 +1,173 @@
+2018-01-30 13:54:55  :: 1/30/2018 1:54:55 PMBaseCommunicationModule.LoadConfig
+2018-01-30 13:54:55  :: Loading config:.\incomingBinance.xml
+2018-01-30 13:54:55  :: Processing config:.\incomingBinance.xml
+2018-01-30 13:54:55  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 14:03:30  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 14:03:41  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-30 14:03:41  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 14:03:58  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:04:21  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 14:04:23  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:04:23  :: @Incoming Binance:Unsubscribing market data por symbol WAVES
+2018-01-30 14:04:24  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:04:24  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 14:07:09  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-30 14:07:21  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:07:21  :: @Incoming Binance:Unsubscribing market data por symbol WAVES
+2018-01-30 14:11:48  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 14:11:59  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 14:12:00  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:12:11  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 14:17:46  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 14:17:46  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:17:59  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 14:18:01  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:18:01  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 14:42:19  :: 1/30/2018 2:42:19 PMBaseCommunicationModule.LoadConfig
+2018-01-30 14:42:19  :: Loading config:.\incomingBinance.xml
+2018-01-30 14:42:19  :: Processing config:.\incomingBinance.xml
+2018-01-30 14:42:19  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 14:42:35  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 14:42:47  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 14:45:47  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:45:59  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 14:46:00  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 14:46:00  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 14:56:17  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 15:02:43  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 15:02:43  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 15:07:25  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 15:17:40  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 15:17:41  :: @Incoming Binance:Unsubscribing market data por symbol DASH
+2018-01-30 16:03:36  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-30 16:03:51  :: @Incoming Binance:Requesting market data por symbol ETC
+2018-01-30 16:04:07  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:04:09  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2018-01-30 16:04:30  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 16:05:10  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:05:12  :: @Incoming Binance:Unsubscribing market data por symbol ETC
+2018-01-30 16:06:15  :: 1/30/2018 4:06:15 PMBaseCommunicationModule.LoadConfig
+2018-01-30 16:06:15  :: Loading config:.\incomingBinance.xml
+2018-01-30 16:06:15  :: Processing config:.\incomingBinance.xml
+2018-01-30 16:06:15  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 16:06:19  :: @Incoming Binance:Requesting market data por symbol ETC
+2018-01-30 16:06:19  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 16:06:43  :: 1/30/2018 4:06:43 PMBaseCommunicationModule.LoadConfig
+2018-01-30 16:06:43  :: Loading config:.\incomingBinance.xml
+2018-01-30 16:06:43  :: Processing config:.\incomingBinance.xml
+2018-01-30 16:06:44  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 16:08:14  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 16:09:32  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 16:09:32  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-30 16:10:04  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 16:13:05  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:13:09  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 16:20:29  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:20:32  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:20:34  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:20:34  :: @Incoming Binance:Unsubscribing market data por symbol DASH
+2018-01-30 16:20:34  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 16:20:34  :: @Incoming Binance:Unsubscribing market data por symbol WAVES
+2018-01-30 16:23:50  :: 1/30/2018 4:23:50 PMBaseCommunicationModule.LoadConfig
+2018-01-30 16:23:50  :: Loading config:.\incomingBinance.xml
+2018-01-30 16:23:50  :: Processing config:.\incomingBinance.xml
+2018-01-30 16:23:50  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 16:25:41  :: @Incoming Binance:Requesting market data por symbol DGD
+2018-01-30 16:26:00  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 16:26:15  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-30 16:30:56  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:30:56  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 16:35:26  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 16:35:26  :: @Incoming Binance:Unsubscribing market data por symbol DGD
+2018-01-30 17:00:54  :: 1/30/2018 5:00:54 PMBaseCommunicationModule.LoadConfig
+2018-01-30 17:00:54  :: Loading config:.\incomingBinance.xml
+2018-01-30 17:00:54  :: Processing config:.\incomingBinance.xml
+2018-01-30 17:00:54  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 17:00:55  :: @Incoming Binance:Requesting market data por symbol WAVES
+2018-01-30 17:06:09  :: @Incoming Binance: Error Requesting market data por symbol WAVES:Se han producido uno o varios errores.
+2018-01-30 17:06:46  :: 1/30/2018 5:06:46 PMBaseCommunicationModule.LoadConfig
+2018-01-30 17:06:46  :: Loading config:.\incomingBinance.xml
+2018-01-30 17:06:46  :: Processing config:.\incomingBinance.xml
+2018-01-30 17:06:46  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 17:09:42  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 17:09:58  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 17:09:58  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-30 17:09:58  :: @Incoming Binance:Requesting market data por symbol DGD
+2018-01-30 17:13:47  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:14:21  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 17:14:57  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:14:58  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2018-01-30 17:15:16  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:15:16  :: @Incoming Binance:Unsubscribing market data por symbol DGD
+2018-01-30 17:26:52  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:26:54  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 17:27:44  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 17:28:53  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:28:55  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 17:30:04  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 17:30:58  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-30 17:31:31  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 17:33:08  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 17:33:08  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:33:08  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:33:08  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:33:09  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2018-01-30 17:33:11  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 17:33:12  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 17:34:25  :: 1/30/2018 5:34:25 PMBaseCommunicationModule.LoadConfig
+2018-01-30 17:34:25  :: Loading config:.\incomingBinance.xml
+2018-01-30 17:34:25  :: Processing config:.\incomingBinance.xml
+2018-01-30 17:34:25  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 17:34:26  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 17:34:26  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 17:34:26  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 17:35:33  :: 1/30/2018 5:35:33 PMBaseCommunicationModule.LoadConfig
+2018-01-30 17:35:33  :: Loading config:.\incomingBinance.xml
+2018-01-30 17:35:33  :: Processing config:.\incomingBinance.xml
+2018-01-30 17:35:33  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 17:38:15  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 17:39:00  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 17:39:36  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 17:41:41  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 17:49:23  :: 1/30/2018 5:49:23 PMBaseCommunicationModule.LoadConfig
+2018-01-30 17:49:23  :: Loading config:.\incomingBinance.xml
+2018-01-30 17:49:23  :: Processing config:.\incomingBinance.xml
+2018-01-30 17:49:23  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 17:49:24  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 17:49:24  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 17:49:24  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 17:49:24  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 17:49:36  :: 1/30/2018 5:49:36 PMBaseCommunicationModule.LoadConfig
+2018-01-30 17:49:36  :: Loading config:.\incomingBinance.xml
+2018-01-30 17:49:36  :: Processing config:.\incomingBinance.xml
+2018-01-30 17:49:36  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-01-30 17:50:28  :: @Incoming Binance:Requesting market data por symbol DASH
+2018-01-30 17:50:59  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 17:51:15  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 17:51:25  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 17:54:57  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:55:10  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:55:11  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 17:55:23  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 17:58:44  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 17:58:45  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 18:15:13  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:15:56  :: @Incoming Binance:Unsubscribing market data por symbol DASH
+2018-01-30 18:18:19  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-30 18:18:29  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 18:18:29  :: @Incoming Binance:Requesting market data por symbol NEO
+2018-01-30 18:18:34  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:18:53  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2018-01-30 18:19:24  :: @Incoming Binance:Requesting market data por symbol XRP
+2018-01-30 18:19:33  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-01-30 18:20:42  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:20:42  :: @Incoming Binance:Unsubscribing market data por symbol NEO
+2018-01-30 18:24:46  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:25:06  :: @Incoming Binance:Unsubscribing market data por symbol LTC
+2018-01-30 18:30:18  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:30:37  :: @Incoming Binance:Unsubscribing market data por symbol XRP
+2018-01-30 18:32:14  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:32:14  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2018-01-30 18:45:28  :: @Incoming Binance:Requesting market data por symbol LTC
+2018-01-30 18:54:36  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-01-30 18:54:36  :: @Incoming Binance:Unsubscribing market data por symbol LTC
