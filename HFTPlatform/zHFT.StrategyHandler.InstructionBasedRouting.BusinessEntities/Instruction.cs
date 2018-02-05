@@ -16,6 +16,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
 
     public class Instruction
     {
+
+        #region Public Static Consts
+
+        public static int _DEFAULT_STEPS = 1;
+
+        #endregion
+
         #region Public Methods
 
         public int Id { get; set; }
@@ -48,11 +55,23 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
 
         public bool IsFromUnwindAll { get; set; }
 
+        public int? Steps { get; set; }
+
         #region Flag Attributes
 
         public bool IsOnlinePosition { get; set; }
 
         public bool IsMerge { get; set; }
+
+        #endregion
+
+        #region Public Attributes
+
+        public double GetSteps()
+        {
+            return Convert.ToDouble(Steps.HasValue ? Steps.Value : _DEFAULT_STEPS);
+
+        }
 
         #endregion
 

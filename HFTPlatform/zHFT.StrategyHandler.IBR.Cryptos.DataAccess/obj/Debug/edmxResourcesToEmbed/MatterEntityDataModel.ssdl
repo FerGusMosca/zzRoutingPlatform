@@ -83,6 +83,10 @@
       <End Role="account_positions" EntitySet="account_positions" />
       <End Role="instructions" EntitySet="instructions" />
     </AssociationSet>
+    <AssociationSet Name="FK_instructions_accounts" Association="MomentumBackTestsModel.Store.FK_instructions_accounts">
+      <End Role="accounts" EntitySet="accounts" />
+      <End Role="instructions" EntitySet="instructions" />
+    </AssociationSet>
     <AssociationSet Name="FK_instructions_instruction_types" Association="MomentumBackTestsModel.Store.FK_instructions_instruction_types">
       <End Role="instruction_types" EntitySet="instruction_types" />
       <End Role="instructions" EntitySet="instructions" />
@@ -124,8 +128,8 @@
     </Key>
     <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="account_id" Type="int" Nullable="false" />
-    <Property Name="original_symbol" Type="varchar" MaxLength="10" />
-    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="original_symbol" Type="varchar" MaxLength="50" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="weight" Type="decimal" Scale="4" />
     <Property Name="shares" Type="int" />
     <Property Name="market_price" Type="decimal" Scale="8" />
@@ -234,7 +238,7 @@
     <Property Name="type" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="portfolio_id" Type="int" />
     <Property Name="account_position_id" Type="bigint" />
-    <Property Name="symbol" Type="varchar" MaxLength="10" />
+    <Property Name="symbol" Type="varchar" MaxLength="50" />
     <Property Name="sec_type" Type="varchar" MaxLength="10" />
     <Property Name="shares" Type="int" />
     <Property Name="ammount" Type="decimal" Scale="8" />
@@ -243,7 +247,8 @@
     <Property Name="related_instruction_id" Type="int" />
     <Property Name="executed" Type="bit" Nullable="false" />
     <Property Name="is_merge" Type="bit" Nullable="false" />
-    <Property Name="text" Type="varchar" MaxLength="100" />
+    <Property Name="steps" Type="int" />
+    <Property Name="text" Type="varchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="lookups">
     <Key>
@@ -269,7 +274,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="portfolio_id" Type="int" Nullable="false" />
     <Property Name="weight" Type="decimal" Nullable="false" Scale="4" />
-    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="name" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="position_status">
@@ -533,6 +538,18 @@
       </Principal>
       <Dependent Role="instructions">
         <PropertyRef Name="account_position_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instructions_accounts">
+    <End Role="accounts" Type="MomentumBackTestsModel.Store.accounts" Multiplicity="1" />
+    <End Role="instructions" Type="MomentumBackTestsModel.Store.instructions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accounts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="instructions">
+        <PropertyRef Name="account_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -54,6 +54,7 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers
 
             instr.IsMerge = instrxDB.is_merge;
             instr.Text = instrxDB.text;
+            instr.Steps = instrxDB.steps;
 
             if (instrxDB.side != null)
                 instr.Side = (Side)Convert.ToChar(instrxDB.side);
@@ -74,6 +75,7 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers
 
             instrDB.account_id = instr.Account.Id;
             instrDB.executed = instr.Executed;
+            instrDB.steps = instr.Steps;
 
             if (instr.Side != null)
                 instrDB.side = instr.Side.ToString();

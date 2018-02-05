@@ -457,7 +457,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
-        private bool ProcessNewPosition(Instruction instr)
+        protected virtual void ProcessNewPosition(Instruction instr)
         {
 
             DoLog(string.Format("{0}: Creating position for symbol {1}",IBRConfiguration.Name ,instr.Symbol), Constants.MessageType.Information);
@@ -506,8 +506,6 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             ExecutionSummaries.Add(pos.Security.Symbol, summary);
             PositionInstructions.Add(pos.Security.Symbol, instr);
-
-            return true;
         }
 
         protected virtual bool EvalMarketData(ExecutionSummary summary)
@@ -539,7 +537,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
-        protected virtual bool ProcessUnwindPosition(Instruction instr)
+        protected virtual void ProcessUnwindPosition(Instruction instr)
         {
 
             DoLog(string.Format("{0}: Unwinding position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
@@ -567,7 +565,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             else
             {
                 DoLog(string.Format("{0}: Discarding unwind position because it was not specified a number of shares. Symbol = {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
-                return false;
+                return;
             }
 
             pos.LoadPosId(NextPosId);
@@ -584,8 +582,6 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             ExecutionSummaries.Add(pos.Security.Symbol, summary);
             PositionInstructions.Add(pos.Security.Symbol, instr);
-
-            return true;
         }
 
         #endregion

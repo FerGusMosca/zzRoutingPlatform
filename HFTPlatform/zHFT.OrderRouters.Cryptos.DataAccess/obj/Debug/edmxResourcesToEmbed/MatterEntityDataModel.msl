@@ -268,27 +268,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="instructions">
-      <EntityTypeMapping TypeName="MomentumBackTestsModel.instructions">
-        <MappingFragment StoreEntitySet="instructions">
-          <ScalarProperty Name="text" ColumnName="text" />
-          <ScalarProperty Name="is_merge" ColumnName="is_merge" />
-          <ScalarProperty Name="executed" ColumnName="executed" />
-          <ScalarProperty Name="related_instruction_id" ColumnName="related_instruction_id" />
-          <ScalarProperty Name="account_id" ColumnName="account_id" />
-          <ScalarProperty Name="side" ColumnName="side" />
-          <ScalarProperty Name="ammount" ColumnName="ammount" />
-          <ScalarProperty Name="shares" ColumnName="shares" />
-          <ScalarProperty Name="sec_type" ColumnName="sec_type" />
-          <ScalarProperty Name="symbol" ColumnName="symbol" />
-          <ScalarProperty Name="account_position_id" ColumnName="account_position_id" />
-          <ScalarProperty Name="portfolio_id" ColumnName="portfolio_id" />
-          <ScalarProperty Name="type" ColumnName="type" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="accounts_bittrex_data">
       <EntityTypeMapping TypeName="MomentumBackTestsModel.accounts_bittrex_data">
         <MappingFragment StoreEntitySet="accounts_bittrex_data">
@@ -372,6 +351,28 @@
           <ScalarProperty Name="net_ammount_usdt" ColumnName="net_ammount_usdt" />
           <ScalarProperty Name="datetime" ColumnName="datetime" />
           <ScalarProperty Name="strategy_id" ColumnName="strategy_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instructions">
+      <EntityTypeMapping TypeName="MomentumBackTestsModel.instructions">
+        <MappingFragment StoreEntitySet="instructions">
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="steps" ColumnName="steps" />
+          <ScalarProperty Name="is_merge" ColumnName="is_merge" />
+          <ScalarProperty Name="executed" ColumnName="executed" />
+          <ScalarProperty Name="related_instruction_id" ColumnName="related_instruction_id" />
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="side" ColumnName="side" />
+          <ScalarProperty Name="ammount" ColumnName="ammount" />
+          <ScalarProperty Name="shares" ColumnName="shares" />
+          <ScalarProperty Name="sec_type" ColumnName="sec_type" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="account_position_id" ColumnName="account_position_id" />
+          <ScalarProperty Name="portfolio_id" ColumnName="portfolio_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

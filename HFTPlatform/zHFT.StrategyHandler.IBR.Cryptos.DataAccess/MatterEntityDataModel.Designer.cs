@@ -27,11 +27,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_brokers", "brokers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.brokers), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_customers", "customers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.customers), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_sessions_users", "users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.users), "sessions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.sessions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.account_portfolios), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.account_positions), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instruction_types), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
-[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instructions", "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), "instructions1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_bittrex_data_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), "accounts_bittrex_data", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts_bittrex_data), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_strategies", "strategies", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.strategies), "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_balance_movements_customers", "customers", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.customers), "balance_movements", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.balance_movements), true)]
@@ -41,6 +36,11 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_accounts_binance_data_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), "accounts_binance_data", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts_binance_data), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_strategies_closing_prices_strategies", "strategies", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.strategies), "strategies_closing_prices", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.strategies_closing_prices), true)]
 [assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_strategies_hourly_closing_prices_strategies", "strategies", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.strategies), "strategies_hourly_closing_prices", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.strategies_hourly_closing_prices), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_portfolios", "account_portfolios", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.account_portfolios), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_account_positions", "account_positions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.account_positions), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "accounts", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.accounts), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instruction_types", "instruction_types", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instruction_types), "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
+[assembly: EdmRelationshipAttribute("MomentumBackTestsModel", "FK_instructions_instructions", "instructions", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), "instructions1", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.StrategyHandler.IBR.Cryptos.DataAccess.instructions), true)]
 
 #endregion
 
@@ -303,22 +303,6 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<instructions> instructions
-        {
-            get
-            {
-                if ((_instructions == null))
-                {
-                    _instructions = base.CreateObjectSet<instructions>("instructions");
-                }
-                return _instructions;
-            }
-        }
-        private ObjectSet<instructions> _instructions;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<accounts_bittrex_data> accounts_bittrex_data
         {
             get
@@ -443,6 +427,22 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
             }
         }
         private ObjectSet<strategies_hourly_closing_prices> _strategies_hourly_closing_prices;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<instructions> instructions
+        {
+            get
+            {
+                if ((_instructions == null))
+                {
+                    _instructions = base.CreateObjectSet<instructions>("instructions");
+                }
+                return _instructions;
+            }
+        }
+        private ObjectSet<instructions> _instructions;
 
         #endregion
 
@@ -553,14 +553,6 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the instructions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToinstructions(instructions instructions)
-        {
-            base.AddObject("instructions", instructions);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the accounts_bittrex_data EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToaccounts_bittrex_data(accounts_bittrex_data accounts_bittrex_data)
@@ -622,6 +614,14 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
         public void AddTostrategies_hourly_closing_prices(strategies_hourly_closing_prices strategies_hourly_closing_prices)
         {
             base.AddObject("strategies_hourly_closing_prices", strategies_hourly_closing_prices);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the instructions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToinstructions(instructions instructions)
+        {
+            base.AddObject("instructions", instructions);
         }
 
         #endregion
@@ -2138,28 +2138,6 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "instructions")]
-        public EntityCollection<instructions> instructions
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_accounts_bittrex_data_accounts", "accounts_bittrex_data")]
         public EntityCollection<accounts_bittrex_data> accounts_bittrex_data
         {
@@ -2232,6 +2210,28 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<accounts_binance_data>("MomentumBackTestsModel.FK_accounts_binance_data_accounts", "accounts_binance_data", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("MomentumBackTestsModel", "FK_instructions_accounts", "instructions")]
+        public EntityCollection<instructions> instructions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<instructions>("MomentumBackTestsModel.FK_instructions_accounts", "instructions", value);
                 }
             }
         }
@@ -4219,6 +4219,30 @@ namespace zHFT.StrategyHandler.IBR.Cryptos.DataAccess
         private global::System.Boolean _is_merge;
         partial void Onis_mergeChanging(global::System.Boolean value);
         partial void Onis_mergeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> steps
+        {
+            get
+            {
+                return _steps;
+            }
+            set
+            {
+                OnstepsChanging(value);
+                ReportPropertyChanging("steps");
+                _steps = StructuralObject.SetValidValue(value, "steps");
+                ReportPropertyChanged("steps");
+                OnstepsChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _steps;
+        partial void OnstepsChanging(Nullable<global::System.Int32> value);
+        partial void OnstepsChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

@@ -259,7 +259,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         public List<AccountPosition> GetActivePositions()
         {
-            return Positions.Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
+            return Positions.Where(x => x.Shares.HasValue && x.Shares.Value != 0).ToList();
         }
 
         #endregion
