@@ -1,0 +1,27 @@
+2018-02-17 11:05:05  :: 17/2/2018 11:05:05MainApp.LoadConfig
+2018-02-17 11:05:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-02-17 11:05:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-02-17 11:05:05  :: Fin GetConfiguracion
+2018-02-17 11:05:07  :: Initializing Log
+2018-02-17 11:05:07  :: Initializing Incoming Module
+2018-02-17 11:05:10  :: Incoming Module successfully initialized
+2018-02-17 11:05:10  :: Initializing Outgoing Module
+2018-02-17 11:05:11  :: Outgoing Module successfully initialized
+2018-02-17 11:28:21  :: 17/2/2018 11:28:21MainApp.LoadConfig
+2018-02-17 11:28:21  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-02-17 11:28:21  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-02-17 11:28:21  :: Fin GetConfiguracion
+2018-02-17 11:28:24  :: Initializing Log
+2018-02-17 11:28:24  :: Initializing Incoming Module
+2018-02-17 11:28:25  :: Incoming Module successfully initialized
+2018-02-17 11:28:25  :: Initializing Outgoing Module
+2018-02-17 11:28:27  :: Outgoing Module successfully initialized
+2018-02-17 11:28:51  :: 17/2/2018 11:28:51MainApp.LoadConfig
+2018-02-17 11:28:51  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-02-17 11:28:51  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2018-02-17 11:28:51  :: Fin GetConfiguracion
+2018-02-17 11:28:51  :: Initializing Log
+2018-02-17 11:28:51  :: Initializing Incoming Module
+2018-02-17 11:28:52  :: Incoming Module successfully initialized
+2018-02-17 11:28:52  :: Initializing Outgoing Module
+2018-02-17 11:28:52  :: Outgoing Module successfully initialized

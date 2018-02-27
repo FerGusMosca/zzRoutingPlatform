@@ -1,0 +1,10 @@
+2018-02-18 12:38:26  :: 2/18/2018 12:38:26 PMBaseCommunicationModule.LoadConfig
+2018-02-18 12:38:26  :: Loading config:.\incomingBinance.xml
+2018-02-18 12:38:26  :: Processing config:.\incomingBinance.xml
+2018-02-18 12:38:26  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-18 12:38:28  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-02-18 12:38:59  :: 2/18/2018 12:38:59 PMBaseCommunicationModule.LoadConfig
+2018-02-18 12:38:59  :: Loading config:.\incomingBinance.xml
+2018-02-18 12:38:59  :: Processing config:.\incomingBinance.xml
+2018-02-18 12:38:59  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-18 12:46:42  :: @Incoming Binance:Requesting market data por symbol ETH

@@ -145,7 +145,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 throw new Exception(string.Format("@{0}:Could not find Execution Summary for unknown symbol. Cancelling all orders!", StrategyConfiguration.Name));
         }
 
-        protected  void CancelAllNotCleared()
+        protected virtual  void CancelAllNotCleared()
         {
             try
             {

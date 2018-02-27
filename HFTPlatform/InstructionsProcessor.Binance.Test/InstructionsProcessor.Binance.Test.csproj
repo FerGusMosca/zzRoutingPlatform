@@ -65,6 +65,7 @@
     </Content>
     <Content Include="outgoingOrderRouter.Binance.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="outgoingOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

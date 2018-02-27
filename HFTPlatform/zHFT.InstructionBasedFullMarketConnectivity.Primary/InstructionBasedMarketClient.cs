@@ -123,7 +123,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected void ProcesssMDFullRefreshMessage(QuickFix.Message message)
         {
-            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
             string primarySymbol = message.getField(Symbol.FIELD);
 
@@ -136,19 +135,37 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 if (SecurityTypes.Keys.Contains(fullSymbol))
                     secType = SecurityTypes[fullSymbol];
                 else
-                    throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
+                {
+                    DoLog(string.Format("@{0}:Could not find Security Type for symbol {1} ", PrimaryConfiguration.Name, primarySymbol), Main.Common.Util.Constants.MessageType.Error);
+                    return;
+                    //throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
+                }
 
-                Security sec = ActiveSecurities.Values.Where(x => x.Symbol == fullSymbol).FirstOrDefault();
+                if(ActiveSecurities.Values.Any(x => x.Symbol == fullSymbol && x.Active))
+                {
+                    Security sec = ActiveSecurities.Values.Where(x => x.Symbol == fullSymbol && x.Active).FirstOrDefault();
 
-                sec.MarketData.BestAskExch = market;
-                sec.MarketData.BestBidExch = market;
-                sec.MarketData.SettlType = ExchangeConverter.GetMarketSettlTypeID(secType, market);
+                    if (sec != null)
+                    {
+                        DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
-                FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
+                        sec.MarketData.BestAskExch = market;
+                        sec.MarketData.BestBidExch = market;
+                        sec.MarketData.SettlType = ExchangeConverter.GetMarketSettlTypeID(secType, market);
 
-                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+                        FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
 
-                OnMarketDataMessageRcv(mdWrapper);
+                        zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+
+                        OnMarketDataMessageRcv(mdWrapper);
+                    }
+                    else
+                    { 
+                        //No dejamos nada registrdo para no sobrecargar la consola, pero aca estaríamos recibiendo market data
+                        //de un security del que no nos des-suscribimos
+                
+                    }
+                }
             }
             else
             {
@@ -164,6 +181,30 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         #region Protected Methods
 
         #region SecurityList
+
+        protected override void CancelMarketData(Security sec)
+        {
+            string market = ExchangeConverter.GetMarketFromPrimarySymbol(sec.Symbol);
+            string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(sec.Symbol, market);
+
+            if (ActiveSecurities.Values.Any(x => x.Symbol == fullSymbol))
+            {
+                List<int> toRemove = new List<int>();
+                foreach (int key in ActiveSecurities.Keys)
+                {
+                    Security kSec = ActiveSecurities[key];
+
+                    if (kSec.Symbol == fullSymbol)
+                        kSec.Active = false;
+
+                }
+
+                DoLog(string.Format("@{0}:Unsubscribing Market Data On Demand for Symbol: {0}", GetConfig().Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+            }
+            else
+                throw new Exception(string.Format("@{0}: Could not find active security to unsubscribe for symbol {1}", GetConfig().Name, fullSymbol));
+           
+        }
 
         protected void ProcessStocksList(List<Security> stocksSecurities)
         {
@@ -322,11 +363,15 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                             
                             ContractsTimeStamps.Add(instr.Id, DateTime.Now);
                             SecuritiesToPublish.Add(instr.Id, sec);
-                            SecurityTypes.Add(instr.Symbol, instr.SecurityType);
+                            if(!SecurityTypes.Keys.Contains(instr.Symbol))
+                                SecurityTypes.Add(instr.Symbol, instr.SecurityType);
 
                             if (!PrimaryConfiguration.RequestFullMarketData)//No tenemos todos los securities
                             {
-                                ActiveSecurities.Add(instr.Id, sec);
+                                lock (tLock)
+                                {
+                                    ActiveSecurities.Add(instr.Id, sec);
+                                }
                                 MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(sec,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                                 ProcessMarketDataRequest(wrapper);
 
@@ -350,24 +395,20 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 Thread.Sleep(PrimaryConfiguration.SearchForInstructionsInMilliseconds);
 
-                lock (tLock)
-                {
-                    List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(PrimaryConfiguration.AccountNumber);
+                List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(PrimaryConfiguration.AccountNumber);
 
-                    try
+                try
+                {
+                    foreach (Instruction instr in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._NEW_POSITION || x.InstructionType.Type == InstructionType._UNWIND_POSITION))
                     {
-                        foreach (Instruction instr in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._NEW_POSITION || x.InstructionType.Type == InstructionType._UNWIND_POSITION))
-                        {
-                            //We process the account positions sync instructions
-                            ProcessPositionInstruction(instr);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        DoLog(string.Format("@{2}:Critical error processing instructions: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : ""), PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                        //We process the account positions sync instructions
+                        ProcessPositionInstruction(instr);
                     }
                 }
-
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{2}:Critical error processing instructions: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : ""), PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                }
             }
         }
 
@@ -377,42 +418,45 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 Thread.Sleep(_SECURITIES_REMOVEL_PERIOD);//Once every hour
 
-                lock (tLock)
+                try
                 {
-                    try
+                    List<int> keysToRemove = new List<int>();
+                    foreach (int key in ContractsTimeStamps.Keys)
                     {
-                        List<int> keysToRemove = new List<int>();
-                        foreach (int key in ContractsTimeStamps.Keys)
-                        {
-                            DateTime timeStamp = ContractsTimeStamps[key];
+                        DateTime timeStamp = ContractsTimeStamps[key];
 
-                            if ((DateTime.Now - timeStamp).Hours >= _MAX_ELAPSED_HOURS_FOR_MARKET_DATA)
-                            {
-                                keysToRemove.Add(key);
-                            }
-                        }
-
-                        foreach (int keyToRemove in keysToRemove)
+                        if ((DateTime.Now - timeStamp).Hours >= _MAX_ELAPSED_HOURS_FOR_MARKET_DATA)
                         {
-                            ContractsTimeStamps.Remove(keyToRemove);
-                            if (PrimaryConfiguration.RequestFullMarketData)
-                                SecuritiesToPublish.Remove(keyToRemove);//Solo sacamos los securities que se publican
-                            else
-                            {
-                                Security security = ActiveSecurities[keyToRemove];
-                                ActiveSecurities.Remove(keyToRemove);//los que se publican y aquellos de los que se tiene md son lo mismo
-                                MarketDataRequestWrapper mdr = new MarketDataRequestWrapper(security, Main.Common.Enums.SubscriptionRequestType.Unsuscribe);
-                                ProcessMarketDataRequest(mdr);
-                            }
+                            keysToRemove.Add(key);
                         }
                     }
-                    catch (Exception ex)
+
+                    foreach (int keyToRemove in keysToRemove)
                     {
-                        DoLog(string.Format("@{1}:There was an error cleaning old securities from market data flow error={0} ",
-                              ex.Message, PrimaryConfiguration.Name),
-                              Main.Common.Util.Constants.MessageType.Error);
+                        ContractsTimeStamps.Remove(keyToRemove);
+                        if (PrimaryConfiguration.RequestFullMarketData)
+                            SecuritiesToPublish.Remove(keyToRemove);//Solo sacamos los securities que se publican
+                        else
+                        {
+                            Security security = ActiveSecurities[keyToRemove];
+
+                            lock (tLock)
+                            {
+                                ActiveSecurities.Remove(keyToRemove);//los que se publican y aquellos de los que se tiene md son lo mismo
+                            }
+                            
+                            MarketDataRequestWrapper mdr = new MarketDataRequestWrapper(security, Main.Common.Enums.SubscriptionRequestType.Unsuscribe);
+                            ProcessMarketDataRequest(mdr);
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{1}:There was an error cleaning old securities from market data flow error={0} ",
+                            ex.Message, PrimaryConfiguration.Name),
+                            Main.Common.Util.Constants.MessageType.Error);
+                }
+                
             }
         }
 
@@ -465,8 +509,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         stockSecToRequest.Exchange = market.Code;
                         stockSecToRequest.SecType = zHFT.Main.Common.Enums.SecurityType.CS;
 
-                        ActiveSecurities.Add(ActiveSecurities.Count() + 1, stockSecToRequest);
-                        SecurityTypes.Add(stock.Symbol, zHFT.Main.Common.Enums.SecurityType.CS);
+                        lock (tLock)
+                        {
+                            ActiveSecurities.Add(ActiveSecurities.Count() + 1, stockSecToRequest);
+                            SecurityTypes.Add(stock.Symbol, zHFT.Main.Common.Enums.SecurityType.CS);
+                        }
                         MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(stockSecToRequest,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                         ProcessMarketDataRequest(wrapper);
                     }
@@ -489,8 +536,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         optSecToRequest.Exchange = market.Code;
                         optSecToRequest.SecType = zHFT.Main.Common.Enums.SecurityType.OPT;
 
-                        ActiveSecurities.Add(ActiveSecurities.Count() + 1, optSecToRequest);
-                        SecurityTypes.Add(option.Symbol, zHFT.Main.Common.Enums.SecurityType.OPT);
+                        lock (tLock)
+                        {
+                            ActiveSecurities.Add(ActiveSecurities.Count() + 1, optSecToRequest);
+                            SecurityTypes.Add(option.Symbol, zHFT.Main.Common.Enums.SecurityType.OPT);
+                        }
                         MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(optSecToRequest,zHFT.Main.Common.Enums.SubscriptionRequestType.SnapshotAndUpdates);
                         ProcessMarketDataRequest(wrapper);
                     }
@@ -550,19 +600,39 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 Thread.Sleep(PrimaryConfiguration.PublishUpdateInMilliseconds);
 
-                lock (tLock)
+                try
                 {
-                    foreach (Security sec in ActiveSecurities.Values)
-                    {
-                        if (SecuritiesToPublish.Values.Any(x => x.Symbol == sec.Symbol))
-                            RunPublishSecurity(sec, PrimaryConfiguration);
 
-                        if (PrimaryConfiguration.SaveFullMarketData)
+                    lock (tLock)
+                    {
+                        foreach (Security sec in ActiveSecurities.Values.Where(x => x.Active))
                         {
-                            SaveMarketData = new Thread(RunSaveMarketData);
-                            SaveMarketData.Start(sec);
+                            if (SecuritiesToPublish.Values.Any(x => x.Symbol == sec.Symbol))
+                                RunPublishSecurity(sec, PrimaryConfiguration);
+
+                            if (PrimaryConfiguration.SaveFullMarketData)
+                            {
+                                SaveMarketData = new Thread(RunSaveMarketData);
+                                SaveMarketData.Start(sec);
+                            }
                         }
+
+                        //Removemos los que no están mas activos
+                        List<int> toRemove = new List<int>();
+                        foreach (int key in ActiveSecurities.Keys)
+                        {
+                            if (!ActiveSecurities[key].Active)
+                                toRemove.Add(key);
+                        }
+
+                        toRemove.ForEach(x => ActiveSecurities.Remove(x));
+
                     }
+                }
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{0}:Critic error publishing market data :{1}", PrimaryConfiguration.Name,
+                                             ex.Message), Main.Common.Util.Constants.MessageType.Error);
                 }
             }
         }
@@ -582,11 +652,9 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                     if (elapsed.TotalSeconds > Convert.ToDouble(PrimaryConfiguration.MaxWaitingTimeForMarketDataRequest))
                     {
-                        lock (tLock)
-                        {
-                            foreach (string secType in PrimaryConfiguration.SecurityTypes)
-                                RequestBulkMarketData(secType);
-                        }
+                        foreach (string secType in PrimaryConfiguration.SecurityTypes)
+                            RequestBulkMarketData(secType);
+                        
                         active = false;
                     }
                 }
@@ -767,98 +835,91 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         public override void fromApp(Message value, SessionID sessionId)
         {
-            lock (tLock)
+            try
             {
-                try
-                {
-                    DoLog("Invocación de fromApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                DoLog("Invocación de fromApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
 
-                    if (value is QuickFix50.MarketDataIncrementalRefresh)
-                    {
-                        DoLog(string.Format("{0}: Market Data Incremental Refresh Message received and not processed:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
-                    }
-                    else if (value is QuickFix50.MarketDataSnapshotFullRefresh)
-                    {
-                        QuickFix50.MarketDataSnapshotFullRefresh msg = (QuickFix50.MarketDataSnapshotFullRefresh)value;
-                        ProcesssMDFullRefreshMessage(msg);
-                    }
-                    else if (value is QuickFix50.SecurityList)
-                    {
-                        SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix50.SecurityList)value, (IConfiguration)Config);
-                        ProcessSecurityList(wrapper);
-                    }
-                    else if (value is QuickFix50.ExecutionReport)
-                    {
-                        QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
-                        ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
-                        OnExecutionReportMessageRcv(erWrapper);
-                    }
-                    else if (value is QuickFix50Sp2.MarketDataRequestReject)
-                    {
-                        DoLog(string.Format("{0}: MarketDataRequestReject:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
-                    }
-                    else
-                    {
-                        DoLog(string.Format("{0}: Unknown message:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Information);
-                    }
+                if (value is QuickFix50.MarketDataIncrementalRefresh)
+                {
+                    DoLog(string.Format("{0}: Market Data Incremental Refresh Message received and not processed:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
                 }
-                catch (Exception ex)
+                else if (value is QuickFix50.MarketDataSnapshotFullRefresh)
                 {
-
-                    DoLog(string.Format("{0}: Error processing message @fromApp:{1} ", PrimaryConfiguration.Name, ex.Message), Constants.MessageType.Error);
-
+                    QuickFix50.MarketDataSnapshotFullRefresh msg = (QuickFix50.MarketDataSnapshotFullRefresh)value;
+                    ProcesssMDFullRefreshMessage(msg);
+                }
+                else if (value is QuickFix50.SecurityList)
+                {
+                    SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix50.SecurityList)value, (IConfiguration)Config);
+                    ProcessSecurityList(wrapper);
+                }
+                else if (value is QuickFix50.ExecutionReport)
+                {
+                    QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
+                    ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
+                    OnExecutionReportMessageRcv(erWrapper);
+                }
+                else if (value is QuickFix50Sp2.MarketDataRequestReject)
+                {
+                    DoLog(string.Format("{0}: MarketDataRequestReject:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Error);
+                }
+                else
+                {
+                    DoLog(string.Format("{0}: Unknown message:{1} ", PrimaryConfiguration.Name, value.ToString()), Constants.MessageType.Information);
                 }
             }
+            catch (Exception ex)
+            {
+
+                DoLog(string.Format("{0}: Error processing message @fromApp:{1} ", PrimaryConfiguration.Name, ex.Message), Constants.MessageType.Error);
+
+            }
+            
         }
 
         public override void toAdmin(Message value, SessionID sessionId)
         {
-            lock (tLock)
+            try
             {
-                try
+                if (value is QuickFixT11.Logon)
                 {
-                    if (value is QuickFixT11.Logon)
-                    {
-                        QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
-                        logon.setField(Username.FIELD, PrimaryConfiguration.User);
-                        logon.setField(Password.FIELD, PrimaryConfiguration.Password);
-                        DoLog("Invocación de toAdmin-logon por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-                    }
-                    else if (value is QuickFixT11.Reject)
-                    {
-                        QuickFixT11.Reject reject = (QuickFixT11.Reject)value;
-                        DoLog("Invocación de toAdmin-reject por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-                    }
-                    else
-                        DoLog("Invocación de toAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                    QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
+                    logon.setField(Username.FIELD, PrimaryConfiguration.User);
+                    logon.setField(Password.FIELD, PrimaryConfiguration.Password);
+                    DoLog("Invocación de toAdmin-logon por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
                 }
-                catch (Exception ex)
+                else if (value is QuickFixT11.Reject)
                 {
-                    DoLog(string.Format("{0}: Error processing message @toAdmin:{1} ", PrimaryConfiguration.Name, ex.Message), Constants.MessageType.Error);
+                    QuickFixT11.Reject reject = (QuickFixT11.Reject)value;
+                    DoLog("Invocación de toAdmin-reject por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
                 }
+                else
+                    DoLog("Invocación de toAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
             }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("{0}: Error processing message @toAdmin:{1} ", PrimaryConfiguration.Name, ex.Message), Constants.MessageType.Error);
+            }
+            
         }
 
         public override void onLogon(SessionID value)
         {
-            lock (tLock)
-            {
-                SessionID = value;
-                DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
+            SessionID = value;
+            DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
 
-                if (SessionID != null)
+            if (SessionID != null)
+            {
+                if (PrimaryConfiguration.RequestSecurityList)
                 {
-                    if (PrimaryConfiguration.RequestSecurityList)
-                    {
-                        SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities, null);
-                        ProcessSecurityListRequest(slWrapper);
-                    }
-                    DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                    
+                    SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities, null);
+                    ProcessSecurityListRequest(slWrapper);
                 }
-                else
-                    DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
+                DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
+                    
             }
+            else
+                DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
         }
 
         #endregion

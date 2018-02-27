@@ -1,0 +1,32 @@
+2018-02-05 15:55:28  :: 2/5/2018 3:55:28 PMBaseCommunicationModule.LoadConfig
+2018-02-05 15:55:28  :: Loading config:.\incomingBinance.xml
+2018-02-05 15:55:28  :: Processing config:.\incomingBinance.xml
+2018-02-05 15:55:28  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-05 15:55:30  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-02-05 15:56:03  :: 2/5/2018 3:56:03 PMBaseCommunicationModule.LoadConfig
+2018-02-05 15:56:03  :: Loading config:.\incomingBinance.xml
+2018-02-05 15:56:03  :: Processing config:.\incomingBinance.xml
+2018-02-05 15:56:03  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-05 15:58:07  :: @Incoming Binance:Requesting market data por symbol ETC
+2018-02-05 15:59:55  :: 2/5/2018 3:59:55 PMBaseCommunicationModule.LoadConfig
+2018-02-05 15:59:55  :: Loading config:.\incomingBinance.xml
+2018-02-05 15:59:55  :: Processing config:.\incomingBinance.xml
+2018-02-05 15:59:55  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-05 16:00:31  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-02-05 16:02:21  :: 2/5/2018 4:02:21 PMBaseCommunicationModule.LoadConfig
+2018-02-05 16:02:21  :: Loading config:.\incomingBinance.xml
+2018-02-05 16:02:21  :: Processing config:.\incomingBinance.xml
+2018-02-05 16:02:21  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-05 16:04:38  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-02-05 16:05:12  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2018-02-05 16:05:12  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2018-02-05 16:12:52  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-02-05 16:56:28  :: 2/5/2018 4:56:28 PMBaseCommunicationModule.LoadConfig
+2018-02-05 16:56:28  :: Loading config:.\incomingBinance.xml
+2018-02-05 16:56:28  :: Processing config:.\incomingBinance.xml
+2018-02-05 16:56:28  :: Ending GetConfiguracion .\incomingBinance.xml
+2018-02-05 16:56:30  :: @Incoming Binance:Requesting market data por symbol ETH
+2018-02-05 17:04:32  :: 2/5/2018 5:04:32 PMBaseCommunicationModule.LoadConfig
+2018-02-05 17:04:32  :: Loading config:.\incomingBinance.xml
+2018-02-05 17:04:32  :: Processing config:.\incomingBinance.xml
+2018-02-05 17:04:32  :: Ending GetConfiguracion .\incomingBinance.xml

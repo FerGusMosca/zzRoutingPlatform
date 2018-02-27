@@ -19,11 +19,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
         protected Dictionary<string, IcebergPositionDTO> IcebergPositionInstructions { get; set; }
 
+        protected bool AbortRerouting { get; set; }
+
         #endregion
 
         #region Private Methods
 
-        protected Position CreateNextPosition(Instruction instr,zHFT.Main.Common.Enums.Side side, double qty)
+        private Position CreateNextPosition(Instruction instr,zHFT.Main.Common.Enums.Side side, double qty)
         {
             Position pos = new Position()
             {
@@ -47,7 +49,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return pos;
         }
 
-        protected ExecutionSummary CreateInitialExecutionSummary(Position pos)
+        private ExecutionSummary CreateInitialExecutionSummary(Position pos)
         {
             ExecutionSummary summary = new ExecutionSummary()
             {
@@ -61,7 +63,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return summary;
         }
 
-        protected IcebergPositionDTO CreateInitialIcebergPositionDTO(Instruction instr,zHFT.Main.Common.Enums.Side side, Position pos)
+        private IcebergPositionDTO CreateInitialIcebergPositionDTO(Instruction instr, zHFT.Main.Common.Enums.Side side, Position pos)
         {
             IcebergPositionDTO newIcebergPosition = new IcebergPositionDTO()
             {
@@ -81,7 +83,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return newIcebergPosition;
         }
 
-        protected void UpdateIcebergPositionDTO(IcebergPositionDTO icebergPosition,double newQty,ExecutionSummary prevSummary,
+        private void UpdateIcebergPositionDTO(IcebergPositionDTO icebergPosition, double newQty, ExecutionSummary prevSummary,
                                                 Position newPos,Instruction instr)
         { 
             icebergPosition.CurrentStepAmmount = newQty;
@@ -93,6 +95,15 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 icebergPosition.PositionStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew;
             else
                 icebergPosition.PositionStatus = zHFT.Main.Common.Enums.PositionStatus.Filled;
+        }
+
+        private void CleanPosition(ExecutionSummary summary)
+        {
+            PositionInstructions.Remove(summary.Position.Symbol);
+            IcebergPositionInstructions.Remove(summary.Position.Symbol);
+            ExecutionSummaries.Remove(summary.Position.Symbol);
+            Positions.Remove(summary.Position.Symbol);
+            UnsuscribeMarketData(summary.Position);
         }
 
 
@@ -214,6 +225,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             IcebergPositionInstructions = new Dictionary<string, IcebergPositionDTO>();
 
+            AbortRerouting = false;
+
             return base.OnInitialize();
         
         }
@@ -319,6 +332,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
            
         }
 
+        protected override void CancelAllNotCleared()
+        {
+            AbortRerouting = true;
+
+            base.CancelAllNotCleared();
+        }
+
         protected override void OnEvalExecutionSummary(object param)
         {
             try
@@ -347,10 +367,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
                                     if (instr.Steps == icebergDTO.CurrentStep)//Estabamos en el último step
                                     {
-                                        PositionInstructions.Remove(summary.Position.Symbol);
-                                        ExecutionSummaries.Remove(summary.Position.Symbol);
-                                        Positions.Remove(summary.Position.Symbol);
-                                        UnsuscribeMarketData(summary.Position);
+                                        CleanPosition(summary);
                                     }
                                     else
                                     { 
@@ -363,7 +380,16 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                     if (summary.Position.PositionCanceledOrRejected)
                                     {
                                         //Re Ruteamos el current step
-                                        ReRouteCurrentStep(instr, summary, icebergDTO);
+                                        if (!AbortRerouting)
+                                            ReRouteCurrentStep(instr, summary, icebergDTO);
+                                        else
+                                        {
+                                            CleanPosition(summary);
+
+                                            if (IcebergPositionInstructions.Count == 0)
+                                                AbortRerouting = false;
+                                        
+                                        }
                                     }
                                 }
 

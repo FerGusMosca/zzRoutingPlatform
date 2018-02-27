@@ -492,5 +492,10 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
         }
 
         #endregion
+
+        protected override void CancelMarketData(Security sec)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

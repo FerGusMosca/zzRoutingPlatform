@@ -1,0 +1,53 @@
+2018-02-18 12:38:27  :: 2/18/2018 12:38:27 PMMomentumStrategyBase.LoadConfig
+2018-02-18 12:38:27  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-18 12:38:27  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-18 12:38:28  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-18 12:38:28  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-18 12:38:28  :: 2/18/2018 12:38:28 PMOrderRouterBase.LoadConfig
+2018-02-18 12:38:28  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-18 12:38:28  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-18 12:38:28  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-18 12:38:28  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-18 12:38:28  :: 2/18/2018 12:38:28 PMOrderRouterBase.LoadConfig
+2018-02-18 12:38:28  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-18 12:38:28  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-18 12:38:29  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-18 12:38:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.087425 BestBidPrice=0.087385 BestAskPrice=0.087499
+2018-02-18 12:38:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.087425 BestBidPrice=0.087385 BestAskPrice=0.087469
+2018-02-18 12:38:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.087425 BestBidPrice=0.087372 BestAskPrice=0.087467
+2018-02-18 12:38:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.087425 BestBidPrice=0.087372 BestAskPrice=0.087467
+2018-02-18 12:38:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.087425 BestBidPrice=0.087386 BestAskPrice=0.087458
+2018-02-18 12:38:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.0874 BestBidPrice=0.087384 BestAskPrice=0.087467
+2018-02-18 12:38:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.0874 BestBidPrice=0.087386 BestAskPrice=0.087457
+2018-02-18 12:38:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.087403 BestBidPrice=0.087395 BestAskPrice=0.087467
+2018-02-18 12:38:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.087405 BestBidPrice=0.087395 BestAskPrice=0.087456
+2018-02-18 12:38:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.087456 BestBidPrice=0.087386 BestAskPrice=0.08749
+2018-02-18 12:38:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.087409 BestBidPrice=0.087395 BestAskPrice=0.08749
+2018-02-18 12:38:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.087453 BestBidPrice=0.087387 BestAskPrice=0.087467
+2018-02-18 12:38:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.087453 BestBidPrice=0.087395 BestAskPrice=0.087458
+2018-02-18 12:38:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.08743 BestBidPrice=0.087395 BestAskPrice=0.087489
+2018-02-18 12:38:59  :: 2/18/2018 12:38:59 PMMomentumStrategyBase.LoadConfig
+2018-02-18 12:38:59  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-18 12:38:59  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-18 12:38:59  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-18 12:38:59  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-18 12:38:59  :: 2/18/2018 12:38:59 PMOrderRouterBase.LoadConfig
+2018-02-18 12:38:59  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-18 12:38:59  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-18 12:38:59  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-18 12:38:59  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-18 12:38:59  :: 2/18/2018 12:38:59 PMOrderRouterBase.LoadConfig
+2018-02-18 12:38:59  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-18 12:38:59  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-18 12:38:59  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-18 12:41:58  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-18 12:42:05  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-18 12:46:42  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-18 12:46:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.087768 BestBidPrice=0.08773 BestAskPrice=0.08778
+2018-02-18 12:46:55  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-18 12:46:55  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2018-02-18 12:46:55  :: Routing to market position for symbol ETH
+2018-02-18 12:46:55  :: Creating buy order for symbol ETH.Quantity=0.00374908 Price=.09
+2018-02-18 12:46:55  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETH
+2018-02-18 12:46:55  :: @Outgoing Order Routing Binance:Routing new order for symbol ETH
+2018-02-18 12:47:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.087772 BestBidPrice=0.087736 BestAskPrice=0.087808

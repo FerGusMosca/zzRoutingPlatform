@@ -12,8 +12,8 @@
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
-  <AccountNumber>7</AccountNumber> <!--Primary Test 9008-->
-  <!--<AccountNumber>6</AccountNumber>--><!--Eco Valores PROD-->
+  <!--<AccountNumber>7</AccountNumber>--> <!--Primary Test 9008-->
+  <AccountNumber>6</AccountNumber><!--Eco Valores PROD-->
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
@@ -28,8 +28,8 @@
   <AccountManagerConfig>
     <Config>
       <Key>AccountNumber</Key>
-      <Value>7</Value><!--Primary Test 9008-->
-      <!--<Value>6</Value>--><!--Eco Valores PROD-->
+      <!--<Value>7</Value>--><!--Primary Test 9008-->
+      <Value>6</Value><!--Eco Valores PROD-->
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>
@@ -37,7 +37,8 @@
     </Config>
     <Config>
       <Key>DetailPositionsURL</Key>
-      <Value>http://demo-api.primary.com.ar:8444/ptp-oms-webservices/rest/detailedPosition/</Value>
+      <!--<Value>http://demo-api.primary.com.ar:8444/ptp-oms-webservices/rest/detailedPosition/</Value>--><!--Primary Test-->
+      <Value>https://api-risk.ptp.primary.com.ar/rest/detailedPosition/</Value><!--Primary PROD-->
     </Config>
   </AccountManagerConfig>
 </Configuration>

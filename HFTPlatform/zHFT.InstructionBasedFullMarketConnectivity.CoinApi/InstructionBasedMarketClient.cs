@@ -119,48 +119,47 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi
 
         public override void fromApp(QuickFix.Message value, QuickFix.SessionID sessionId)
         {
-            lock (tLock)
+            
+            try
             {
-                try
-                {
-                    DoLog("Invocación de fromApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                DoLog("Invocación de fromApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
 
-                    if (value is QuickFix44.MarketDataIncrementalRefresh)
-                    {
-                        DoLog(string.Format("{0}: Market Data Incremental Refresh Message received and not processed:{1} ", CoinApiConfiguration.Name, value.ToString()), Constants.MessageType.Error);
-                    }
-                    else if (value is QuickFix44.MarketDataSnapshotFullRefresh)
-                    {
-                        QuickFix44.MarketDataSnapshotFullRefresh msg = (QuickFix44.MarketDataSnapshotFullRefresh)value;
-                        ProcesssMDFullRefreshMessage(msg);
-                    }
-                    else if (value is QuickFix44.SecurityList)
-                    {
-                        //SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix44.SecurityList)value, (IConfiguration)Config);
-                        //ProcessSecurityList(wrapper);
-                    }
-                    else if (value is QuickFix44.ExecutionReport)
-                    {
-                        QuickFix44.ExecutionReport msg = (QuickFix44.ExecutionReport)value;
-                        ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
-                        OnExecutionReportMessageRcv(erWrapper);
-                    }
-                    else if (value is QuickFix44.MarketDataRequestReject)
-                    {
-                        DoLog(string.Format("{0}: MarketDataRequestReject:{1} ", CoinApiConfiguration.Name, value.ToString()), Constants.MessageType.Error);
-                    }
-                    else
-                    {
-                        DoLog(string.Format("{0}: Unknown message:{1} ", CoinApiConfiguration.Name, value.ToString()), Constants.MessageType.Information);
-                    }
+                if (value is QuickFix44.MarketDataIncrementalRefresh)
+                {
+                    DoLog(string.Format("{0}: Market Data Incremental Refresh Message received and not processed:{1} ", CoinApiConfiguration.Name, value.ToString()), Constants.MessageType.Error);
                 }
-                catch (Exception ex)
+                else if (value is QuickFix44.MarketDataSnapshotFullRefresh)
                 {
-
-                    DoLog(string.Format("{0}: Error processing message @fromApp:{1} ", CoinApiConfiguration.Name, ex.Message), Constants.MessageType.Error);
-
+                    QuickFix44.MarketDataSnapshotFullRefresh msg = (QuickFix44.MarketDataSnapshotFullRefresh)value;
+                    ProcesssMDFullRefreshMessage(msg);
+                }
+                else if (value is QuickFix44.SecurityList)
+                {
+                    //SecurityListWrapper wrapper = new SecurityListWrapper((QuickFix44.SecurityList)value, (IConfiguration)Config);
+                    //ProcessSecurityList(wrapper);
+                }
+                else if (value is QuickFix44.ExecutionReport)
+                {
+                    QuickFix44.ExecutionReport msg = (QuickFix44.ExecutionReport)value;
+                    ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
+                    OnExecutionReportMessageRcv(erWrapper);
+                }
+                else if (value is QuickFix44.MarketDataRequestReject)
+                {
+                    DoLog(string.Format("{0}: MarketDataRequestReject:{1} ", CoinApiConfiguration.Name, value.ToString()), Constants.MessageType.Error);
+                }
+                else
+                {
+                    DoLog(string.Format("{0}: Unknown message:{1} ", CoinApiConfiguration.Name, value.ToString()), Constants.MessageType.Information);
                 }
             }
+            catch (Exception ex)
+            {
+
+                DoLog(string.Format("{0}: Error processing message @fromApp:{1} ", CoinApiConfiguration.Name, ex.Message), Constants.MessageType.Error);
+
+            }
+           
         }
 
         public override void toAdmin(QuickFix.Message value, QuickFix.SessionID sessionId)

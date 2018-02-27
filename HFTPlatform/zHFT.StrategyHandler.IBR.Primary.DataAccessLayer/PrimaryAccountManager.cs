@@ -209,11 +209,14 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
                     accPos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
                     accPos.Ammount = pos.instrumentMarketValue;
 
-                    if (accPos.Shares.HasValue && accPos.Ammount.HasValue)
-                        accPos.MarketPrice = accPos.Ammount / accPos.Shares;
+                    if (accPos.Shares > 0)
+                    {
+                        if (accPos.Shares.HasValue && accPos.Ammount.HasValue)
+                            accPos.MarketPrice = accPos.Ammount / accPos.Shares;
 
-                    if (!Positions.Any(x => x.Security.Symbol == symbol))
-                        Positions.Add(accPos);
+                        if (!Positions.Any(x => x.Security.Symbol == symbol))
+                            Positions.Add(accPos);
+                    }
                 }
             }
 

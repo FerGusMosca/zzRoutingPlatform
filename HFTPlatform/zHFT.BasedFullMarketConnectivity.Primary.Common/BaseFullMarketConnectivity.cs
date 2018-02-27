@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.BusinessEntities.Security_List;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
@@ -73,6 +74,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected abstract void ProcessSecurities(SecurityList securityList);
 
+        protected abstract void CancelMarketData(Security sec);
+
         #endregion
 
         #region abstract QuickFix Methods
@@ -84,49 +87,36 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         public virtual void fromAdmin(Message value, SessionID sessionId)
         {
-            lock (tLock)
-            {
-                DoLog("Invocación de fromAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-            }
+            DoLog("Invocación de fromAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
         }
 
         public virtual void onCreate(SessionID value)
         {
-            lock (tLock)
-            {
-                DoLog("Invocación de onCreate : " + value.ToString(), Constants.MessageType.Information);
-            }
+            DoLog("Invocación de onCreate : " + value.ToString(), Constants.MessageType.Information);
         }
 
         public virtual void onLogon(SessionID value)
         {
-            lock (tLock)
-            {
-                SessionID = value;
-                DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
+          
+            SessionID = value;
+            DoLog("Invocación de onLogon : " + value.ToString(), Constants.MessageType.Information);
 
-                if (SessionID != null)
-                    DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                else
-                    DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
-            }
+            if (SessionID != null)
+                DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
+            else
+                DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
+            
         }
 
         public virtual void onLogout(SessionID value)
         {
-            lock (tLock)
-            {
-                SessionID = null;
-                DoLog("Invocación de onLogout : " + value.ToString(), Constants.MessageType.Information);
-            }
+            SessionID = null;
+            DoLog("Invocación de onLogout : " + value.ToString(), Constants.MessageType.Information);
         }
 
         public virtual void toApp(Message value, SessionID sessionId)
         {
-            lock (tLock)
-            {
-                DoLog("Invocación de toApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-            }
+            DoLog("Invocación de toApp por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
         }
 
         #endregion
@@ -151,7 +141,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             {
                 if (ActiveOrders.Keys.Contains(clOrdId))
                 {
-                    if (execType == zHFT.Main.Common.Enums.ExecType.New)
+                    if (execType == zHFT.Main.Common.Enums.ExecType.New)//New-> Guardamos el OrderId de mercado
                     {
                         Order order = ActiveOrders[clOrdId];
                         string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
@@ -238,6 +228,22 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected void DoProcessSecurityListRequest(object param)
+        {
+            try
+            {
+                QuickFix.Message rq = (QuickFix.Message)param;
+                Session.sendToTarget(rq, SessionID);
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error Processing Security List Reuqest. Error={1} ",
+                                    GetConfig().Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            
+            }
+        
+        }
+
         protected CMState ProcessSecurityListRequest(Wrapper wrapper)
         {
             if (SessionID != null)
@@ -249,7 +255,10 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     if (type == zHFT.Main.Common.Enums.SecurityListRequestType.AllSecurities)
                     {
                         QuickFix.Message rq = FIXMessageCreator.RequestSecurityList((int)type, _DUMMY_SECURITY);
-                        Session.sendToTarget(rq, SessionID);
+
+                        Thread secListReqThrad = new Thread(DoProcessSecurityListRequest);
+                        secListReqThrad.Start(rq);
+
                         return CMState.BuildSuccess();
                     }
                     else
@@ -267,18 +276,52 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected void DoRunMarketDataRequest(object param)
+        {
+            QuickFix.Message msg = (QuickFix.Message)param;
+
+            try
+            {
+                DoLog(string.Format("@{0}:Sending Market Data Request:{1} ", GetConfig().Name, msg.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                Session.sendToTarget(msg, SessionID);
+                DoLog(string.Format("@{0}:Market Data Request Successfully Sent ", GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
+
+            }
+            catch (Exception ex)
+            {
+
+                DoLog(string.Format("@{0}:Error sending market data request: {1}! ", GetConfig().Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+
+            }
+
+        }
+
+        
+
         protected CMState ProcessMarketDataRequest(Wrapper marketDataRequestWrapper)
         {
             if (SessionID != null)
             {
                 MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(marketDataRequestWrapper);
 
-                if (rq.SubscriptionRequestType != zHFT.Main.Common.Enums.SubscriptionRequestType.Unsuscribe)
+                if (rq.SubscriptionRequestType == zHFT.Main.Common.Enums.SubscriptionRequestType.Unsuscribe)
+                {
+                    CancelMarketData(rq.Security);
+
+                    //Obs: No anda bien el unsubscribe de Primary así que simplemente nos limitamos a sacar el activo de la
+                    //list de ActiveSecurities
+                    //QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
+                    //Session.sendToTarget(msg, SessionID);
+
+                    return CMState.BuildSuccess();
+                }
+                else
                 {
                     QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
                     MarketDataRequestId++;
 
-                    Session.sendToTarget(msg, SessionID);
+                    Thread mdRqThrad = new Thread(DoRunMarketDataRequest);
+                    mdRqThrad.Start(msg);
                 }
 
                 return CMState.BuildSuccess();
@@ -302,23 +345,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         
         }
 
-        protected void RouteNewOrder(Order newOrder, string marketClOrdId)
-        {
-            QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(),
-                                                                                          newOrder.Symbol,
-                                                                                          newOrder.Side,
-                                                                                          newOrder.OrdType,
-                                                                                          newOrder.SettlType,
-                                                                                          newOrder.TimeInForce,
-                                                                                          newOrder.EffectiveTime.Value,
-                                                                                          newOrder.OrderQty.Value,
-                                                                                          newOrder.Price,
-                                                                                          newOrder.StopPx,
-                                                                                          newOrder.Account);
-
-            Session.sendToTarget(msg, SessionID);
-        
-        }
+     
 
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
@@ -326,31 +353,36 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             {
                 if (SessionID != null)
                 {
+                    
+                    Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
+                    newOrder.EffectiveTime = DateTime.Now;
+
+                    int marketClOrdId = 0;
+
                     lock (tLock)
                     {
-                        Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
-                        newOrder.EffectiveTime = DateTime.Now;
-                        int marketClOrdId = (OrderIndexId * 100);
-
+                        marketClOrdId = (OrderIndexId * 100);
                         OrderIndexId++;
-
-                        QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(), 
-                                                                                      newOrder.Symbol, 
-                                                                                      newOrder.Side, 
-                                                                                      newOrder.OrdType,
-                                                                                      newOrder.SettlType, 
-                                                                                      newOrder.TimeInForce, 
-                                                                                      newOrder.EffectiveTime.Value,
-                                                                                      newOrder.OrderQty.Value, 
-                                                                                      newOrder.Price,
-                                                                                      newOrder.StopPx, 
-                                                                                      newOrder.Account);
-
-                        Session.sendToTarget(msg, SessionID);
-
-                        ActiveOrders.Add(newOrder.ClOrdId, newOrder);
-                        ActiveOrderIdMapper.Add(newOrder.ClOrdId,marketClOrdId);
                     }
+
+                    QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(), 
+                                                                                    newOrder.Symbol, 
+                                                                                    newOrder.Side, 
+                                                                                    newOrder.OrdType,
+                                                                                    newOrder.SettlType, 
+                                                                                    newOrder.TimeInForce, 
+                                                                                    newOrder.EffectiveTime.Value,
+                                                                                    newOrder.OrderQty.Value, 
+                                                                                    newOrder.Price,
+                                                                                    newOrder.StopPx, 
+                                                                                    newOrder.Account);
+
+                    Thread newOrdThread = new Thread(DoRunNewOrder);
+                    newOrdThread.Start(msg);
+
+                    ActiveOrders.Add(newOrder.ClOrdId, newOrder);
+                    ActiveOrderIdMapper.Add(newOrder.ClOrdId,marketClOrdId);
+                   
 
                     return CMState.BuildSuccess();
                 }
@@ -365,22 +397,6 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             {
                 return CMState.BuildFail(ex);
             }
-        }
-
-        protected void CancelOrder(Order order, string marketOrderId, string newMarketOrderIdRequested)
-        {
-            QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
-                                                            newMarketOrderIdRequested.ToString(),
-                                                            marketOrderId.ToString(),
-                                                            order.OrderId,
-                                                            order.Security.Symbol, order.Side,
-                                                            order.EffectiveTime.Value,
-                                                            order.OrderQty, order.Account,
-                                                            _MAIN_EXCHANGE
-                                                            );
-
-
-            Session.sendToTarget(cancelMessage, SessionID);
         }
 
         protected void DoUpdateOrder(object param)
@@ -467,6 +483,23 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         }
 
+        protected void DoRunNewOrder(object param)
+        {
+            QuickFix.Message nosMessage = (QuickFix.Message)param;
+
+            try
+            {
+                DoLog(string.Format("@{0}:Sending New Order Message Thread: {1}! ", GetConfig().Name, nosMessage.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                Session.sendToTarget(nosMessage, SessionID);
+                DoLog(string.Format("@{0}:New Order Message Thread: Message succesfully sent: {1}! ", GetConfig().Name, nosMessage.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error sending new order message {1}: {2}! ", GetConfig().Name, nosMessage.ToString(), ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
         protected void DoCancel(object param)
         {
             QuickFix.Message cancelMessage = (QuickFix.Message)param;
@@ -482,15 +515,29 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
-        protected CMState CancelAllOrders()
+        protected void DoCancelAllOrders(object param)
         {
-            lock (tLock)
+            try
             {
-                QuickFix.Message massiveCancelMsg = FIXMessageCreator.CreateOrderMassCancelRequest();
+                QuickFix.Message massiveCancelMsg = (QuickFix.Message)param;
                 Session.sendToTarget(massiveCancelMsg);
 
-               return CMState.BuildSuccess();
             }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error cancelling all orders: {1}! ", GetConfig().Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            }
+        
+        }
+
+        protected CMState CancelAllOrders()
+        {
+            QuickFix.Message massiveCancelMsg = FIXMessageCreator.CreateOrderMassCancelRequest();
+
+            Thread cancelThread = new Thread(DoCancelAllOrders);
+            cancelThread.Start(massiveCancelMsg);
+
+            return CMState.BuildSuccess();
 
         }
 

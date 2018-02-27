@@ -1,0 +1,521 @@
+2018-02-05 15:55:29  :: 2/5/2018 3:55:29 PMMomentumStrategyBase.LoadConfig
+2018-02-05 15:55:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:55:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:55:29  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:55:29  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-05 15:55:30  :: 2/5/2018 3:55:30 PMOrderRouterBase.LoadConfig
+2018-02-05 15:55:30  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-05 15:55:30  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-05 15:55:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-05 15:55:30  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-05 15:55:30  :: 2/5/2018 3:55:30 PMOrderRouterBase.LoadConfig
+2018-02-05 15:55:30  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 15:55:30  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 15:55:30  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-05 15:55:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.097944 BestBidPrice=0.097877 BestAskPrice=0.098093
+2018-02-05 15:55:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.098061 BestBidPrice=0.097845 BestAskPrice=0.098093
+2018-02-05 15:55:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.098061 BestBidPrice=0.097845 BestAskPrice=0.098111
+2018-02-05 15:55:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.098047 BestBidPrice=0.097845 BestAskPrice=0.098061
+2018-02-05 15:55:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.097947 BestBidPrice=0.09785 BestAskPrice=0.09806
+2018-02-05 15:55:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.097893 BestBidPrice=0.09785 BestAskPrice=0.098048
+2018-02-05 15:55:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.097893 BestBidPrice=0.09785 BestAskPrice=0.098046
+2018-02-05 15:55:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.098028 BestBidPrice=0.097875 BestAskPrice=0.09804
+2018-02-05 15:55:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.097945 BestBidPrice=0.09784 BestAskPrice=0.098032
+2018-02-05 15:55:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.097946 BestBidPrice=0.097842 BestAskPrice=0.098
+2018-02-05 15:55:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.097945 BestBidPrice=0.097843 BestAskPrice=0.098068
+2018-02-05 15:56:05  :: 2/5/2018 3:56:05 PMMomentumStrategyBase.LoadConfig
+2018-02-05 15:56:05  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:56:05  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:56:05  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:56:05  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-05 15:56:05  :: 2/5/2018 3:56:05 PMOrderRouterBase.LoadConfig
+2018-02-05 15:56:05  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-05 15:56:05  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-05 15:56:05  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-05 15:56:05  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-05 15:56:05  :: 2/5/2018 3:56:05 PMOrderRouterBase.LoadConfig
+2018-02-05 15:56:05  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 15:56:05  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 15:56:05  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-05 15:56:50  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-05 15:57:03  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-05 15:58:07  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-05 15:58:09  :: Processing Market Data:Symbol=ETC  LastPrice=0.002397 BestBidPrice=0.002383 BestAskPrice=0.002414
+2018-02-05 15:58:17  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-05 15:58:17  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETC
+2018-02-05 15:58:17  :: Routing to market position for symbol ETC
+2018-02-05 15:58:17  :: Creating buy order for symbol ETC.Quantity=0.00428021 Price=
+2018-02-05 15:58:17  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETC
+2018-02-05 15:58:17  :: @Outgoing Order Routing Binance:Routing new order for symbol ETC
+2018-02-05 15:58:31  :: Processing Market Data:Symbol=ETC  LastPrice=0.002398 BestBidPrice=0.002383 BestAskPrice=0.00241
+2018-02-05 15:58:34  :: Incoming message from order routing proxy: Execution Report for symbol ETC: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 15:58:34  :: Incoming message from order routing: Execution Report for symbol ETC: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 15:58:34  :: Received Rejected for symbol ETC
+2018-02-05 15:58:34  :: Rejected for symbol ETC processed
+2018-02-05 15:58:43  :: Ending RunOnPositionCalculus for symbol ETC. The position is cleared
+2018-02-05 15:58:46  :: Strategy Handler - Instruction Based Router for Binance: Rerouting step 1 position for symbol ETC
+2018-02-05 15:58:47  :: Processing Market Data:Symbol=ETC  LastPrice=0.002397 BestBidPrice=0.002383 BestAskPrice=0.002405
+2018-02-05 15:58:47  :: Routing to market position for symbol ETC
+2018-02-05 15:58:47  :: Creating buy order for symbol ETC.Quantity=0.00428021 Price=
+2018-02-05 15:58:47  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETC
+2018-02-05 15:58:47  :: @Outgoing Order Routing Binance:Routing new order for symbol ETC
+2018-02-05 15:58:54  :: Processing Market Data:Symbol=ETC  LastPrice=0.002397 BestBidPrice=0.002382 BestAskPrice=0.002404
+2018-02-05 15:59:17  :: Incoming message from order routing proxy: Execution Report for symbol ETC: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 15:59:17  :: Incoming message from order routing: Execution Report for symbol ETC: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 15:59:17  :: Received Rejected for symbol ETC
+2018-02-05 15:59:17  :: Rejected for symbol ETC processed
+2018-02-05 15:59:56  :: 2/5/2018 3:59:56 PMMomentumStrategyBase.LoadConfig
+2018-02-05 15:59:56  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:59:56  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:59:56  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 15:59:56  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-05 15:59:56  :: 2/5/2018 3:59:56 PMOrderRouterBase.LoadConfig
+2018-02-05 15:59:56  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-05 15:59:56  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-05 15:59:56  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-05 15:59:56  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-05 15:59:56  :: 2/5/2018 3:59:56 PMOrderRouterBase.LoadConfig
+2018-02-05 15:59:57  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 15:59:57  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 15:59:57  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-05 16:00:31  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-05 16:00:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.097959 BestBidPrice=0.097792 BestAskPrice=0.097981
+2018-02-05 16:00:42  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-05 16:00:42  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2018-02-05 16:00:42  :: Routing to market position for symbol ETH
+2018-02-05 16:00:42  :: Creating buy order for symbol ETH.Quantity=0.00427960666666667 Price=.1
+2018-02-05 16:00:42  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETH
+2018-02-05 16:00:42  :: @Outgoing Order Routing Binance:Routing new order for symbol ETH
+2018-02-05 16:00:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.097994 BestBidPrice=0.097817 BestAskPrice=0.098017
+2018-02-05 16:01:12  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 16:01:12  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 16:01:12  :: Received Rejected for symbol ETH
+2018-02-05 16:01:12  :: Rejected for symbol ETH processed
+2018-02-05 16:01:12  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-02-05 16:01:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.097888 BestBidPrice=0.097817 BestAskPrice=0.098
+2018-02-05 16:01:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.097878 BestBidPrice=0.097817 BestAskPrice=0.097999
+2018-02-05 16:01:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.097869 BestBidPrice=0.097809 BestAskPrice=0.097999
+2018-02-05 16:01:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.097878 BestBidPrice=0.097817 BestAskPrice=0.097999
+2018-02-05 16:01:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.097873 BestBidPrice=0.097798 BestAskPrice=0.097992
+2018-02-05 16:01:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.097967 BestBidPrice=0.097803 BestAskPrice=0.097999
+2018-02-05 16:01:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.097841 BestBidPrice=0.097793 BestAskPrice=0.097974
+2018-02-05 16:01:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.097959 BestBidPrice=0.09775 BestAskPrice=0.097964
+2018-02-05 16:01:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.09783 BestBidPrice=0.097791 BestAskPrice=0.097962
+2018-02-05 16:01:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.097842 BestBidPrice=0.097791 BestAskPrice=0.097987
+2018-02-05 16:01:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.097944 BestBidPrice=0.097791 BestAskPrice=0.097949
+2018-02-05 16:01:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.097868 BestBidPrice=0.097742 BestAskPrice=0.097983
+2018-02-05 16:01:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.097792 BestBidPrice=0.097742 BestAskPrice=0.097983
+2018-02-05 16:01:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.09794 BestBidPrice=0.097791 BestAskPrice=0.097953
+2018-02-05 16:01:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.097946 BestBidPrice=0.09782 BestAskPrice=0.097992
+2018-02-05 16:01:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.097843 BestBidPrice=0.097791 BestAskPrice=0.098
+2018-02-05 16:01:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.097847 BestBidPrice=0.097785 BestAskPrice=0.097999
+2018-02-05 16:01:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.097849 BestBidPrice=0.097791 BestAskPrice=0.097992
+2018-02-05 16:01:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.097976 BestBidPrice=0.097791 BestAskPrice=0.097999
+2018-02-05 16:01:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.097895 BestBidPrice=0.097785 BestAskPrice=0.097992
+2018-02-05 16:01:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.097852 BestBidPrice=0.097785 BestAskPrice=0.097974
+2018-02-05 16:01:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.097853 BestBidPrice=0.097791 BestAskPrice=0.097974
+2018-02-05 16:01:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.097853 BestBidPrice=0.097791 BestAskPrice=0.097987
+2018-02-05 16:01:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.097941 BestBidPrice=0.097791 BestAskPrice=0.097987
+2018-02-05 16:01:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.097964 BestBidPrice=0.097845 BestAskPrice=0.097977
+2018-02-05 16:01:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.097963 BestBidPrice=0.097844 BestAskPrice=0.097987
+2018-02-05 16:01:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.097959 BestBidPrice=0.097844 BestAskPrice=0.097987
+2018-02-05 16:01:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.097856 BestBidPrice=0.097785 BestAskPrice=0.097977
+2018-02-05 16:01:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.097845 BestBidPrice=0.09775 BestAskPrice=0.097987
+2018-02-05 16:02:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.097952 BestBidPrice=0.09775 BestAskPrice=0.097987
+2018-02-05 16:02:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.097845 BestBidPrice=0.09775 BestAskPrice=0.097987
+2018-02-05 16:02:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.097802 BestBidPrice=0.09775 BestAskPrice=0.097987
+2018-02-05 16:02:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.097944 BestBidPrice=0.097785 BestAskPrice=0.097987
+2018-02-05 16:02:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.09781 BestBidPrice=0.097785 BestAskPrice=0.097948
+2018-02-05 16:02:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.097811 BestBidPrice=0.097785 BestAskPrice=0.097949
+2018-02-05 16:02:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.097935 BestBidPrice=0.09775 BestAskPrice=0.09794
+2018-02-05 16:02:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.097935 BestBidPrice=0.097747 BestAskPrice=0.097937
+2018-02-05 16:02:22  :: 2/5/2018 4:02:22 PMMomentumStrategyBase.LoadConfig
+2018-02-05 16:02:22  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 16:02:22  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 16:02:22  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 16:02:22  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-05 16:02:22  :: 2/5/2018 4:02:22 PMOrderRouterBase.LoadConfig
+2018-02-05 16:02:22  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-05 16:02:22  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-05 16:02:22  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-05 16:02:22  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-05 16:02:22  :: 2/5/2018 4:02:22 PMOrderRouterBase.LoadConfig
+2018-02-05 16:02:22  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 16:02:22  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 16:02:22  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-05 16:04:38  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-05 16:04:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.09773 BestBidPrice=0.097702 BestAskPrice=0.09785
+2018-02-05 16:04:49  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-05 16:04:49  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2018-02-05 16:04:49  :: Routing to market position for symbol ETH
+2018-02-05 16:04:49  :: Creating buy order for symbol ETH.Quantity=0.00432651 Price=.1
+2018-02-05 16:04:49  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETH
+2018-02-05 16:04:49  :: @Outgoing Order Routing Binance:Routing new order for symbol ETH
+2018-02-05 16:05:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.097725 BestBidPrice=0.097675 BestAskPrice=0.097827
+2018-02-05 16:05:12  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 16:05:12  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2018-02-05 16:05:12  :: Received Rejected for symbol ETH
+2018-02-05 16:05:12  :: Rejected for symbol ETH processed
+2018-02-05 16:05:12  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-02-05 16:05:12  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-05 16:05:22  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-05 16:12:52  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 7 ...
+2018-02-05 16:12:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.097511 BestBidPrice=0.097449 BestAskPrice=0.097697
+2018-02-05 16:13:02  :: @Strategy Handler - Instruction Based Router for Binance - Account matter_fund_6 positions succesfully synchronized
+2018-02-05 16:13:02  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2018-02-05 16:56:30  :: 2/5/2018 4:56:30 PMMomentumStrategyBase.LoadConfig
+2018-02-05 16:56:30  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 16:56:30  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 16:56:30  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 16:56:30  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-05 16:56:30  :: 2/5/2018 4:56:30 PMOrderRouterBase.LoadConfig
+2018-02-05 16:56:30  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-05 16:56:30  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-05 16:56:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-05 16:56:30  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-05 16:56:31  :: 2/5/2018 4:56:31 PMOrderRouterBase.LoadConfig
+2018-02-05 16:56:31  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 16:56:31  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 16:56:31  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2018-02-05 16:56:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.096311 BestBidPrice=0.0963 BestAskPrice=0.096454
+2018-02-05 16:56:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096341 BestBidPrice=0.096294 BestAskPrice=0.096468
+2018-02-05 16:56:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.096341 BestBidPrice=0.096294 BestAskPrice=0.096488
+2018-02-05 16:56:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.096343 BestBidPrice=0.09629 BestAskPrice=0.096444
+2018-02-05 16:56:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.096344 BestBidPrice=0.096267 BestAskPrice=0.096488
+2018-02-05 16:56:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.096294 BestAskPrice=0.096488
+2018-02-05 16:56:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.09629 BestAskPrice=0.096512
+2018-02-05 16:56:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.096385 BestBidPrice=0.096267 BestAskPrice=0.096446
+2018-02-05 16:56:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.096397 BestBidPrice=0.09629 BestAskPrice=0.096436
+2018-02-05 16:56:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.0964 BestBidPrice=0.096292 BestAskPrice=0.096512
+2018-02-05 16:56:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.096294 BestAskPrice=0.096586
+2018-02-05 16:56:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.096304 BestBidPrice=0.096294 BestAskPrice=0.096512
+2018-02-05 16:56:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.096292 BestAskPrice=0.096512
+2018-02-05 16:56:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.09629 BestAskPrice=0.09656
+2018-02-05 16:56:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.09626 BestBidPrice=0.09629 BestAskPrice=0.096586
+2018-02-05 16:56:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.096359 BestBidPrice=0.096238 BestAskPrice=0.096487
+2018-02-05 16:56:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.096357 BestBidPrice=0.096246 BestAskPrice=0.09636
+2018-02-05 16:56:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.09626 BestBidPrice=0.096251 BestAskPrice=0.09636
+2018-02-05 16:57:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.096353 BestBidPrice=0.096247 BestAskPrice=0.096357
+2018-02-05 16:57:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.09633 BestBidPrice=0.096251 BestAskPrice=0.096381
+2018-02-05 16:57:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.096356 BestBidPrice=0.096254 BestAskPrice=0.096399
+2018-02-05 16:57:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.096355 BestBidPrice=0.096254 BestAskPrice=0.096399
+2018-02-05 16:57:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.09626 BestBidPrice=0.096238 BestAskPrice=0.096426
+2018-02-05 16:57:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.09635 BestBidPrice=0.096247 BestAskPrice=0.0964
+2018-02-05 16:57:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.09626 BestBidPrice=0.096238 BestAskPrice=0.096394
+2018-02-05 16:57:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.09635 BestBidPrice=0.096247 BestAskPrice=0.096381
+2018-02-05 16:57:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.096374 BestBidPrice=0.096247 BestAskPrice=0.096396
+2018-02-05 16:57:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.096371 BestBidPrice=0.096247 BestAskPrice=0.096396
+2018-02-05 16:57:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.096381 BestBidPrice=0.096247 BestAskPrice=0.096396
+2018-02-05 16:57:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096247 BestAskPrice=0.096426
+2018-02-05 16:57:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.096394 BestBidPrice=0.096247 BestAskPrice=0.096426
+2018-02-05 16:57:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.096381 BestBidPrice=0.096247 BestAskPrice=0.0964
+2018-02-05 16:57:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.096378 BestBidPrice=0.096247 BestAskPrice=0.096381
+2018-02-05 16:57:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.096374 BestBidPrice=0.096246 BestAskPrice=0.096396
+2018-02-05 16:57:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096246 BestAskPrice=0.096381
+2018-02-05 16:57:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096246 BestAskPrice=0.096381
+2018-02-05 16:57:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096246 BestAskPrice=0.096381
+2018-02-05 16:57:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096238 BestAskPrice=0.096381
+2018-02-05 16:57:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.09625 BestBidPrice=0.096238 BestAskPrice=0.096381
+2018-02-05 16:57:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096233 BestAskPrice=0.096376
+2018-02-05 16:57:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.096238 BestBidPrice=0.096231 BestAskPrice=0.096376
+2018-02-05 16:57:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.096235 BestBidPrice=0.096223 BestAskPrice=0.096376
+2018-02-05 16:57:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096206 BestBidPrice=0.096206 BestAskPrice=0.096376
+2018-02-05 16:57:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.0962 BestBidPrice=0.096188 BestAskPrice=0.0963
+2018-02-05 16:57:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096188 BestBidPrice=0.096186 BestAskPrice=0.096372
+2018-02-05 16:57:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.0962 BestBidPrice=0.096183 BestAskPrice=0.096373
+2018-02-05 16:57:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.096198 BestBidPrice=0.096183 BestAskPrice=0.096373
+2018-02-05 16:57:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.096181 BestBidPrice=0.096157 BestAskPrice=0.096291
+2018-02-05 16:57:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.096197 BestBidPrice=0.096153 BestAskPrice=0.096197
+2018-02-05 16:57:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.096175 BestBidPrice=0.096162 BestAskPrice=0.0963
+2018-02-05 16:57:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.096179 BestBidPrice=0.096158 BestAskPrice=0.09629
+2018-02-05 16:57:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.096284 BestBidPrice=0.09617 BestAskPrice=0.0963
+2018-02-05 16:57:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.096184 BestBidPrice=0.096175 BestAskPrice=0.096322
+2018-02-05 16:57:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.096283 BestBidPrice=0.096179 BestAskPrice=0.096322
+2018-02-05 16:57:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.096284 BestBidPrice=0.096181 BestAskPrice=0.096374
+2018-02-05 16:57:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.09619 BestBidPrice=0.096157 BestAskPrice=0.096332
+2018-02-05 16:57:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.096195 BestBidPrice=0.096157 BestAskPrice=0.096359
+2018-02-05 16:57:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.096197 BestBidPrice=0.096158 BestAskPrice=0.096332
+2018-02-05 16:57:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.096201 BestBidPrice=0.096158 BestAskPrice=0.096334
+2018-02-05 16:57:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.096202 BestBidPrice=0.096158 BestAskPrice=0.096332
+2018-02-05 16:57:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.096156 BestBidPrice=0.096144 BestAskPrice=0.096298
+2018-02-05 16:57:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.096214 BestBidPrice=0.096145 BestAskPrice=0.096298
+2018-02-05 16:58:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.096279 BestBidPrice=0.096144 BestAskPrice=0.096298
+2018-02-05 16:58:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.096264 BestBidPrice=0.096146 BestAskPrice=0.09628
+2018-02-05 16:58:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096149 BestAskPrice=0.096381
+2018-02-05 16:58:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.096279 BestBidPrice=0.096175 BestAskPrice=0.096332
+2018-02-05 16:58:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.096182 BestBidPrice=0.096175 BestAskPrice=0.096373
+2018-02-05 16:58:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.096297 BestBidPrice=0.096149 BestAskPrice=0.096373
+2018-02-05 16:58:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.09618 BestBidPrice=0.096136 BestAskPrice=0.096336
+2018-02-05 16:58:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.096151 BestBidPrice=0.096144 BestAskPrice=0.096299
+2018-02-05 16:58:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.096182 BestBidPrice=0.096145 BestAskPrice=0.09629
+2018-02-05 16:58:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.096136 BestBidPrice=0.096136 BestAskPrice=0.096332
+2018-02-05 16:58:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.096274 BestBidPrice=0.096113 BestAskPrice=0.096278
+2018-02-05 16:58:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.09624 BestBidPrice=0.096102 BestAskPrice=0.096316
+2018-02-05 16:58:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.096147 BestBidPrice=0.096106 BestAskPrice=0.0963
+2018-02-05 16:58:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.096267 BestBidPrice=0.096106 BestAskPrice=0.096298
+2018-02-05 16:58:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.096229 BestBidPrice=0.096146 BestAskPrice=0.096298
+2018-02-05 16:58:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.096228 BestBidPrice=0.09611 BestAskPrice=0.09629
+2018-02-05 16:58:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.09615 BestBidPrice=0.096106 BestAskPrice=0.09629
+2018-02-05 16:58:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.09615 BestBidPrice=0.096105 BestAskPrice=0.096298
+2018-02-05 16:58:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.096151 BestBidPrice=0.09611 BestAskPrice=0.0963
+2018-02-05 16:58:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.096268 BestBidPrice=0.09611 BestAskPrice=0.09629
+2018-02-05 16:58:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.096153 BestBidPrice=0.096149 BestAskPrice=0.096278
+2018-02-05 16:58:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.096155 BestBidPrice=0.09611 BestAskPrice=0.0963
+2018-02-05 16:58:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.09626 BestBidPrice=0.096153 BestAskPrice=0.09629
+2018-02-05 16:58:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096162 BestBidPrice=0.096106 BestAskPrice=0.09629
+2018-02-05 16:58:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.096276 BestBidPrice=0.09611 BestAskPrice=0.096332
+2018-02-05 16:58:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096166 BestBidPrice=0.096147 BestAskPrice=0.096274
+2018-02-05 16:58:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.096262 BestBidPrice=0.096147 BestAskPrice=0.0963
+2018-02-05 16:58:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.096257 BestBidPrice=0.096155 BestAskPrice=0.0963
+2018-02-05 16:58:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.096257 BestBidPrice=0.09615 BestAskPrice=0.0963
+2018-02-05 16:58:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.096263 BestBidPrice=0.09615 BestAskPrice=0.0963
+2018-02-05 16:58:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.096169 BestBidPrice=0.096147 BestAskPrice=0.096324
+2018-02-05 16:58:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.096266 BestBidPrice=0.096146 BestAskPrice=0.096277
+2018-02-05 16:58:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.096266 BestBidPrice=0.096147 BestAskPrice=0.0963
+2018-02-05 16:58:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.096171 BestBidPrice=0.096146 BestAskPrice=0.096324
+2018-02-05 16:58:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.096172 BestBidPrice=0.096147 BestAskPrice=0.096332
+2018-02-05 16:58:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.096173 BestBidPrice=0.09611 BestAskPrice=0.0963
+2018-02-05 16:58:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.096173 BestBidPrice=0.096106 BestAskPrice=0.096277
+2018-02-05 16:58:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.096151 BestBidPrice=0.096106 BestAskPrice=0.096275
+2018-02-05 16:58:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.096266 BestBidPrice=0.096105 BestAskPrice=0.096271
+2018-02-05 16:58:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.09626 BestBidPrice=0.09611 BestAskPrice=0.096266
+2018-02-05 16:58:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.096255 BestBidPrice=0.09611 BestAskPrice=0.096266
+2018-02-05 16:58:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.096269 BestBidPrice=0.096106 BestAskPrice=0.096373
+2018-02-05 16:58:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.096297 BestBidPrice=0.09615 BestAskPrice=0.0963
+2018-02-05 16:59:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.096295 BestBidPrice=0.09611 BestAskPrice=0.096332
+2018-02-05 16:59:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.096191 BestBidPrice=0.09611 BestAskPrice=0.096316
+2018-02-05 16:59:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.096191 BestBidPrice=0.09611 BestAskPrice=0.0963
+2018-02-05 16:59:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.09625 BestBidPrice=0.096103 BestAskPrice=0.096295
+2018-02-05 16:59:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.096247 BestBidPrice=0.096106 BestAskPrice=0.096294
+2018-02-05 16:59:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.096244 BestBidPrice=0.096106 BestAskPrice=0.096255
+2018-02-05 16:59:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.096245 BestBidPrice=0.096106 BestAskPrice=0.096287
+2018-02-05 16:59:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.096255 BestBidPrice=0.09611 BestAskPrice=0.096324
+2018-02-05 16:59:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.096214 BestBidPrice=0.09611 BestAskPrice=0.096316
+2018-02-05 16:59:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.096255 BestBidPrice=0.096105 BestAskPrice=0.0963
+2018-02-05 16:59:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.096143 BestBidPrice=0.096126 BestAskPrice=0.096324
+2018-02-05 16:59:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.096191 BestBidPrice=0.096105 BestAskPrice=0.096297
+2018-02-05 16:59:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.096113 BestBidPrice=0.096102 BestAskPrice=0.096293
+2018-02-05 16:59:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.096191 BestBidPrice=0.096101 BestAskPrice=0.096299
+2018-02-05 16:59:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.096191 BestBidPrice=0.096101 BestAskPrice=0.096299
+2018-02-05 16:59:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.09611 BestBidPrice=0.096094 BestAskPrice=0.096299
+2018-02-05 16:59:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.09616 BestBidPrice=0.096094 BestAskPrice=0.096251
+2018-02-05 16:59:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.096251 BestBidPrice=0.096095 BestAskPrice=0.096324
+2018-02-05 16:59:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.096285 BestBidPrice=0.096095 BestAskPrice=0.096316
+2018-02-05 16:59:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.09625 BestBidPrice=0.096095 BestAskPrice=0.0963
+2018-02-05 16:59:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.096282 BestBidPrice=0.096095 BestAskPrice=0.096316
+2018-02-05 16:59:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.09628 BestBidPrice=0.096097 BestAskPrice=0.0963
+2018-02-05 16:59:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096097 BestAskPrice=0.096373
+2018-02-05 16:59:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096299 BestBidPrice=0.09618 BestAskPrice=0.096332
+2018-02-05 16:59:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.096297 BestBidPrice=0.09618 BestAskPrice=0.096316
+2018-02-05 16:59:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.096295 BestBidPrice=0.096185 BestAskPrice=0.096324
+2018-02-05 16:59:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096172 BestAskPrice=0.096332
+2018-02-05 16:59:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.096371 BestBidPrice=0.096193 BestAskPrice=0.096381
+2018-02-05 16:59:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.096208 BestBidPrice=0.096172 BestAskPrice=0.096381
+2018-02-05 16:59:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.096263 BestBidPrice=0.096201 BestAskPrice=0.096374
+2018-02-05 16:59:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.096212 BestBidPrice=0.096208 BestAskPrice=0.096374
+2018-02-05 16:59:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.096217 BestBidPrice=0.096203 BestAskPrice=0.096364
+2018-02-05 16:59:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.096352 BestBidPrice=0.096172 BestAskPrice=0.096373
+2018-02-05 16:59:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.09635 BestBidPrice=0.096191 BestAskPrice=0.096374
+2018-02-05 16:59:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.09635 BestBidPrice=0.096218 BestAskPrice=0.096371
+2018-02-05 16:59:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.096233 BestBidPrice=0.096226 BestAskPrice=0.096399
+2018-02-05 16:59:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.096348 BestBidPrice=0.096228 BestAskPrice=0.096381
+2018-02-05 16:59:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.09628 BestBidPrice=0.096191 BestAskPrice=0.096381
+2018-02-05 16:59:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.09625 BestBidPrice=0.096185 BestAskPrice=0.096396
+2018-02-05 16:59:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.096374 BestBidPrice=0.096223 BestAskPrice=0.0964
+2018-02-05 16:59:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.096274 BestBidPrice=0.096233 BestAskPrice=0.096399
+2018-02-05 16:59:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.096369 BestBidPrice=0.096233 BestAskPrice=0.096374
+2018-02-05 16:59:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.096275 BestBidPrice=0.096105 BestAskPrice=0.096399
+2018-02-05 17:00:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.096313 BestBidPrice=0.09616 BestAskPrice=0.096369
+2018-02-05 17:00:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.09617 BestAskPrice=0.096413
+2018-02-05 17:00:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.09618 BestAskPrice=0.096421
+2018-02-05 17:00:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.096398 BestBidPrice=0.09616 BestAskPrice=0.096408
+2018-02-05 17:00:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.096426 BestBidPrice=0.096236 BestAskPrice=0.096466
+2018-02-05 17:00:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.096395 BestBidPrice=0.096246 BestAskPrice=0.096444
+2018-02-05 17:00:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.096466 BestBidPrice=0.096254 BestAskPrice=0.096498
+2018-02-05 17:00:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.096273 BestBidPrice=0.096265 BestAskPrice=0.096496
+2018-02-05 17:00:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.096283 BestBidPrice=0.096265 BestAskPrice=0.096498
+2018-02-05 17:00:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.0964 BestBidPrice=0.096274 BestAskPrice=0.096496
+2018-02-05 17:00:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.096292 BestBidPrice=0.096283 BestAskPrice=0.096498
+2018-02-05 17:00:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.096399 BestBidPrice=0.096283 BestAskPrice=0.096496
+2018-02-05 17:00:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.096293 BestBidPrice=0.096265 BestAskPrice=0.096489
+2018-02-05 17:00:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.096295 BestBidPrice=0.096273 BestAskPrice=0.096496
+2018-02-05 17:00:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.096396 BestBidPrice=0.096265 BestAskPrice=0.096488
+2018-02-05 17:00:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.096297 BestBidPrice=0.096273 BestAskPrice=0.096488
+2018-02-05 17:00:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.096298 BestBidPrice=0.096171 BestAskPrice=0.096488
+2018-02-05 17:00:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.096298 BestBidPrice=0.096171 BestAskPrice=0.0964
+2018-02-05 17:00:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.096284 BestBidPrice=0.096161 BestAskPrice=0.096396
+2018-02-05 17:00:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.096387 BestBidPrice=0.096184 BestAskPrice=0.096394
+2018-02-05 17:00:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.096367 BestBidPrice=0.096171 BestAskPrice=0.096396
+2018-02-05 17:00:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.096367 BestBidPrice=0.096171 BestAskPrice=0.096396
+2018-02-05 17:00:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.096287 BestBidPrice=0.096171 BestAskPrice=0.096396
+2018-02-05 17:00:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.09639 BestBidPrice=0.096171 BestAskPrice=0.096399
+2018-02-05 17:00:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096365 BestBidPrice=0.096161 BestAskPrice=0.096399
+2018-02-05 17:00:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.096362 BestBidPrice=0.09619 BestAskPrice=0.096379
+2018-02-05 17:00:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096283 BestBidPrice=0.096184 BestAskPrice=0.096366
+2018-02-05 17:00:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.09636 BestBidPrice=0.096211 BestAskPrice=0.096379
+2018-02-05 17:00:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.09623 BestBidPrice=0.096187 BestAskPrice=0.096363
+2018-02-05 17:00:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.096355 BestBidPrice=0.096226 BestAskPrice=0.096363
+2018-02-05 17:00:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.096349 BestBidPrice=0.096189 BestAskPrice=0.096356
+2018-02-05 17:00:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.096348 BestBidPrice=0.096187 BestAskPrice=0.096366
+2018-02-05 17:00:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.096347 BestBidPrice=0.096189 BestAskPrice=0.096366
+2018-02-05 17:00:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.096346 BestBidPrice=0.096187 BestAskPrice=0.096366
+2018-02-05 17:00:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.096345 BestBidPrice=0.096189 BestAskPrice=0.096396
+2018-02-05 17:00:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.096252 BestBidPrice=0.096203 BestAskPrice=0.096383
+2018-02-05 17:00:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.096344 BestBidPrice=0.096203 BestAskPrice=0.096366
+2018-02-05 17:00:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.09635 BestBidPrice=0.096203 BestAskPrice=0.0964
+2018-02-05 17:00:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.096349 BestBidPrice=0.096203 BestAskPrice=0.096366
+2018-02-05 17:00:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.096349 BestBidPrice=0.096244 BestAskPrice=0.096366
+2018-02-05 17:00:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.096352 BestBidPrice=0.0962 BestAskPrice=0.0964
+2018-02-05 17:00:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.096355 BestBidPrice=0.096203 BestAskPrice=0.0964
+2018-02-05 17:01:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.096347 BestBidPrice=0.09625 BestAskPrice=0.096396
+2018-02-05 17:01:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.096362 BestBidPrice=0.096251 BestAskPrice=0.0964
+2018-02-05 17:01:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.096261 BestBidPrice=0.096203 BestAskPrice=0.096498
+2018-02-05 17:01:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.096261 BestBidPrice=0.096241 BestAskPrice=0.096488
+2018-02-05 17:01:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.096262 BestBidPrice=0.0962 BestAskPrice=0.09639
+2018-02-05 17:01:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.096263 BestBidPrice=0.0962 BestAskPrice=0.096489
+2018-02-05 17:01:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.096262 BestBidPrice=0.0962 BestAskPrice=0.096388
+2018-02-05 17:01:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.096355 BestBidPrice=0.096199 BestAskPrice=0.096488
+2018-02-05 17:01:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.096343 BestBidPrice=0.0962 BestAskPrice=0.096354
+2018-02-05 17:01:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.096225 BestBidPrice=0.0962 BestAskPrice=0.096343
+2018-02-05 17:01:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.096226 BestBidPrice=0.096203 BestAskPrice=0.096354
+2018-02-05 17:01:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.096385 BestBidPrice=0.096107 BestAskPrice=0.09635
+2018-02-05 17:01:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.09634 BestBidPrice=0.096154 BestAskPrice=0.096473
+2018-02-05 17:01:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.096234 BestBidPrice=0.096231 BestAskPrice=0.09639
+2018-02-05 17:01:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.096334 BestBidPrice=0.096231 BestAskPrice=0.09639
+2018-02-05 17:01:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.096238 BestBidPrice=0.096154 BestAskPrice=0.096383
+2018-02-05 17:01:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.096218 BestBidPrice=0.096154 BestAskPrice=0.09634
+2018-02-05 17:01:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.0963 BestBidPrice=0.096147 BestAskPrice=0.096338
+2018-02-05 17:01:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.096193 BestBidPrice=0.096147 BestAskPrice=0.0963
+2018-02-05 17:01:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.096184 BestBidPrice=0.096145 BestAskPrice=0.096299
+2018-02-05 17:01:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.096185 BestBidPrice=0.096145 BestAskPrice=0.096299
+2018-02-05 17:01:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.096184 BestBidPrice=0.096147 BestAskPrice=0.096297
+2018-02-05 17:01:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.096185 BestBidPrice=0.096145 BestAskPrice=0.096295
+2018-02-05 17:01:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096294 BestBidPrice=0.096145 BestAskPrice=0.09631
+2018-02-05 17:01:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.096191 BestBidPrice=0.096154 BestAskPrice=0.0963
+2018-02-05 17:01:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096289 BestBidPrice=0.096184 BestAskPrice=0.096292
+2018-02-05 17:01:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.096286 BestBidPrice=0.096095 BestAskPrice=0.096296
+2018-02-05 17:01:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.096193 BestBidPrice=0.096097 BestAskPrice=0.096291
+2018-02-05 17:01:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.0962 BestBidPrice=0.096095 BestAskPrice=0.096295
+2018-02-05 17:01:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.096292 BestBidPrice=0.096097 BestAskPrice=0.09631
+2018-02-05 17:01:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.096291 BestBidPrice=0.096097 BestAskPrice=0.09631
+2018-02-05 17:01:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.096123 BestBidPrice=0.096105 BestAskPrice=0.0963
+2018-02-05 17:01:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.096277 BestBidPrice=0.096105 BestAskPrice=0.096289
+2018-02-05 17:01:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.096136 BestBidPrice=0.096126 BestAskPrice=0.09631
+2018-02-05 17:01:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.096278 BestBidPrice=0.096105 BestAskPrice=0.096291
+2018-02-05 17:01:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.096144 BestBidPrice=0.096095 BestAskPrice=0.096289
+2018-02-05 17:01:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.096144 BestBidPrice=0.096095 BestAskPrice=0.096271
+2018-02-05 17:01:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.096252 BestBidPrice=0.096105 BestAskPrice=0.096264
+2018-02-05 17:01:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.09625 BestBidPrice=0.096097 BestAskPrice=0.096281
+2018-02-05 17:01:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.096152 BestBidPrice=0.096131 BestAskPrice=0.096281
+2018-02-05 17:01:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.09628 BestBidPrice=0.096105 BestAskPrice=0.096291
+2018-02-05 17:01:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.096151 BestBidPrice=0.096105 BestAskPrice=0.096284
+2018-02-05 17:01:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.09609 BestBidPrice=0.096085 BestAskPrice=0.096291
+2018-02-05 17:02:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.096132 BestBidPrice=0.09609 BestAskPrice=0.09625
+2018-02-05 17:02:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.09609 BestBidPrice=0.096081 BestAskPrice=0.096238
+2018-02-05 17:02:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.096204 BestBidPrice=0.096081 BestAskPrice=0.096217
+2018-02-05 17:02:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.096202 BestBidPrice=0.096085 BestAskPrice=0.09621
+2018-02-05 17:02:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.096199 BestBidPrice=0.096085 BestAskPrice=0.096217
+2018-02-05 17:02:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.096103 BestBidPrice=0.096086 BestAskPrice=0.096208
+2018-02-05 17:02:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.096104 BestBidPrice=0.096085 BestAskPrice=0.09621
+2018-02-05 17:02:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.096196 BestBidPrice=0.096085 BestAskPrice=0.096207
+2018-02-05 17:02:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.096104 BestBidPrice=0.096086 BestAskPrice=0.096201
+2018-02-05 17:02:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.096103 BestBidPrice=0.096086 BestAskPrice=0.0962
+2018-02-05 17:02:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.096104 BestBidPrice=0.096081 BestAskPrice=0.096331
+2018-02-05 17:02:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.09609 BestBidPrice=0.096072 BestAskPrice=0.096291
+2018-02-05 17:02:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.09609 BestBidPrice=0.096072 BestAskPrice=0.096291
+2018-02-05 17:02:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.096028 BestBidPrice=0.096011 BestAskPrice=0.096196
+2018-02-05 17:02:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.096086 BestBidPrice=0.096 BestAskPrice=0.096291
+2018-02-05 17:02:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.096 BestBidPrice=0.095747 BestAskPrice=0.09609
+2018-02-05 17:02:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.096 BestBidPrice=0.095786 BestAskPrice=0.096086
+2018-02-05 17:02:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.095713 BestBidPrice=0.095882 BestAskPrice=0.096082
+2018-02-05 17:02:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.096079 BestBidPrice=0.095798 BestAskPrice=0.0961
+2018-02-05 17:02:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.096073 BestBidPrice=0.095798 BestAskPrice=0.096086
+2018-02-05 17:02:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.096036 BestBidPrice=0.095797 BestAskPrice=0.0961
+2018-02-05 17:02:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.096019 BestBidPrice=0.095882 BestAskPrice=0.096029
+2018-02-05 17:02:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.096017 BestBidPrice=0.095882 BestAskPrice=0.0961
+2018-02-05 17:02:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096016 BestBidPrice=0.095847 BestAskPrice=0.0961
+2018-02-05 17:02:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.096195 BestBidPrice=0.096015 BestAskPrice=0.096247
+2018-02-05 17:02:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096056 BestBidPrice=0.096015 BestAskPrice=0.096196
+2018-02-05 17:02:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.096015 BestBidPrice=0.095967 BestAskPrice=0.096336
+2018-02-05 17:02:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.09628 BestBidPrice=0.095941 BestAskPrice=0.09629
+2018-02-05 17:02:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.096278 BestBidPrice=0.095926 BestAskPrice=0.096291
+2018-02-05 17:02:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.09627 BestBidPrice=0.095926 BestAskPrice=0.096307
+2018-02-05 17:02:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.096264 BestBidPrice=0.096055 BestAskPrice=0.096283
+2018-02-05 17:02:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.096087 BestBidPrice=0.096061 BestAskPrice=0.096291
+2018-02-05 17:02:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.096082 BestBidPrice=0.096067 BestAskPrice=0.09625
+2018-02-05 17:02:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.096087 BestBidPrice=0.09606 BestAskPrice=0.096278
+2018-02-05 17:02:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.096219 BestBidPrice=0.096052 BestAskPrice=0.096278
+2018-02-05 17:02:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.096088 BestBidPrice=0.095941 BestAskPrice=0.096245
+2018-02-05 17:02:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.096078 BestBidPrice=0.095941 BestAskPrice=0.096245
+2018-02-05 17:02:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.09609 BestBidPrice=0.095941 BestAskPrice=0.096278
+2018-02-05 17:02:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.09607 BestBidPrice=0.095978 BestAskPrice=0.096278
+2018-02-05 17:02:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.096166 BestBidPrice=0.095941 BestAskPrice=0.09621
+2018-02-05 17:02:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.096028 BestBidPrice=0.095977 BestAskPrice=0.096209
+2018-02-05 17:02:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.096162 BestBidPrice=0.09594 BestAskPrice=0.0962
+2018-02-05 17:03:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.09611 BestBidPrice=0.09594 BestAskPrice=0.096163
+2018-02-05 17:03:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.096001 BestBidPrice=0.095882 BestAskPrice=0.096117
+2018-02-05 17:03:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.096033 BestBidPrice=0.095843 BestAskPrice=0.09609
+2018-02-05 17:03:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.09602 BestBidPrice=0.095881 BestAskPrice=0.096117
+2018-02-05 17:03:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.09603 BestBidPrice=0.095881 BestAskPrice=0.096209
+2018-02-05 17:03:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.096061 BestBidPrice=0.095881 BestAskPrice=0.096161
+2018-02-05 17:03:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.096 BestBidPrice=0.0959 BestAskPrice=0.096091
+2018-02-05 17:03:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.096 BestBidPrice=0.095908 BestAskPrice=0.096091
+2018-02-05 17:03:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.09601 BestBidPrice=0.0959 BestAskPrice=0.096117
+2018-02-05 17:03:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.096 BestBidPrice=0.095884 BestAskPrice=0.096117
+2018-02-05 17:03:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.095913 BestBidPrice=0.0959 BestAskPrice=0.096091
+2018-02-05 17:03:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.096245 BestBidPrice=0.095914 BestAskPrice=0.096262
+2018-02-05 17:03:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.096095 BestBidPrice=0.095921 BestAskPrice=0.096199
+2018-02-05 17:03:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.09608 BestBidPrice=0.09593 BestAskPrice=0.0962
+2018-02-05 17:03:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.09608 BestBidPrice=0.095912 BestAskPrice=0.0962
+2018-02-05 17:03:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.096089 BestBidPrice=0.095909 BestAskPrice=0.096164
+2018-02-05 17:03:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.095947 BestBidPrice=0.095933 BestAskPrice=0.096199
+2018-02-05 17:03:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.09595 BestBidPrice=0.095915 BestAskPrice=0.0962
+2018-02-05 17:03:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.096088 BestBidPrice=0.095949 BestAskPrice=0.0962
+2018-02-05 17:03:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.095955 BestBidPrice=0.095948 BestAskPrice=0.096088
+2018-02-05 17:03:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.09607 BestBidPrice=0.095954 BestAskPrice=0.096088
+2018-02-05 17:03:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.096067 BestBidPrice=0.095948 BestAskPrice=0.09608
+2018-02-05 17:03:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.096066 BestBidPrice=0.095959 BestAskPrice=0.096087
+2018-02-05 17:03:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.09606 BestBidPrice=0.09596 BestAskPrice=0.096156
+2018-02-05 17:03:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.096098 BestBidPrice=0.095964 BestAskPrice=0.096199
+2018-02-05 17:03:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.096097 BestBidPrice=0.095961 BestAskPrice=0.096199
+2018-02-05 17:03:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.096086 BestBidPrice=0.095961 BestAskPrice=0.096199
+2018-02-05 17:03:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.096085 BestBidPrice=0.095963 BestAskPrice=0.096244
+2018-02-05 17:03:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.09608 BestBidPrice=0.095971 BestAskPrice=0.096164
+2018-02-05 17:03:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.09607 BestBidPrice=0.095977 BestAskPrice=0.096199
+2018-02-05 17:03:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.09607 BestBidPrice=0.095971 BestAskPrice=0.096199
+2018-02-05 17:03:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.095996 BestBidPrice=0.095979 BestAskPrice=0.096245
+2018-02-05 17:03:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.095998 BestBidPrice=0.095975 BestAskPrice=0.09616
+2018-02-05 17:03:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.096157 BestBidPrice=0.095997 BestAskPrice=0.096262
+2018-02-05 17:03:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.095974 BestBidPrice=0.095951 BestAskPrice=0.096149
+2018-02-05 17:03:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.09609 BestBidPrice=0.095951 BestAskPrice=0.096199
+2018-02-05 17:03:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.096086 BestBidPrice=0.0959 BestAskPrice=0.096106
+2018-02-05 17:03:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.096003 BestBidPrice=0.095931 BestAskPrice=0.096128
+2018-02-05 17:03:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.096104 BestBidPrice=0.096003 BestAskPrice=0.096245
+2018-02-05 17:03:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.09607 BestBidPrice=0.095951 BestAskPrice=0.096242
+2018-02-05 17:03:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.09607 BestBidPrice=0.096003 BestAskPrice=0.096196
+2018-02-05 17:04:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.096007 BestBidPrice=0.095993 BestAskPrice=0.096199
+2018-02-05 17:04:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.096139 BestBidPrice=0.096004 BestAskPrice=0.096149
+2018-02-05 17:04:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.096136 BestBidPrice=0.096004 BestAskPrice=0.096149
+2018-02-05 17:04:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.096128 BestBidPrice=0.096003 BestAskPrice=0.096191
+2018-02-05 17:04:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.096118 BestBidPrice=0.096003 BestAskPrice=0.09613
+2018-02-05 17:04:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.09611 BestBidPrice=0.095956 BestAskPrice=0.096149
+2018-02-05 17:04:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.096108 BestBidPrice=0.09595 BestAskPrice=0.096149
+2018-02-05 17:04:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.096083 BestBidPrice=0.095956 BestAskPrice=0.09611
+2018-02-05 17:04:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.096108 BestBidPrice=0.095956 BestAskPrice=0.096198
+2018-02-05 17:04:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.096116 BestBidPrice=0.095993 BestAskPrice=0.096133
+2018-02-05 17:04:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.096211 BestBidPrice=0.096 BestAskPrice=0.096149
+2018-02-05 17:04:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.096273 BestBidPrice=0.096003 BestAskPrice=0.09628
+2018-02-05 17:04:33  :: 2/5/2018 5:04:33 PMMomentumStrategyBase.LoadConfig
+2018-02-05 17:04:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 17:04:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 17:04:34  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-02-05 17:04:34  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-02-05 17:04:34  :: 2/5/2018 5:04:34 PMOrderRouterBase.LoadConfig
+2018-02-05 17:04:34  :: Loading config:.\outgoingOrderRouter.xml
+2018-02-05 17:04:34  :: Processing config:.\outgoingOrderRouter.xml
+2018-02-05 17:04:34  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-02-05 17:04:34  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2018-02-05 17:04:34  :: 2/5/2018 5:04:34 PMOrderRouterBase.LoadConfig
+2018-02-05 17:04:34  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 17:04:34  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2018-02-05 17:04:34  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml

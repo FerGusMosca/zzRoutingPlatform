@@ -225,8 +225,21 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     }
                     else if (instr.RelatedInstruction.InstructionType.Type == InstructionType._UNWIND_POSITION)
                     {
-                        //No abrimos unwinds sin sincronizar la cuenta para evitar crear posiciones cortas
-                        //Que aguarde el resto de las sincronizaciones
+                        IList<AccountPosition> onlinePositions = GetCurrentPositionsInMarket(instr.Account);
+
+                        if (onlinePositions != null 
+                            && onlinePositions.Any(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol)//La posición esta online
+                            && !PositionInstructions.Keys.Any(x=>x==instr.RelatedInstruction.AccountPosition.Security.Symbol))//no esta siendo procesada por ningún otra instrucción
+                        {
+                            AccountPosition prevPos = onlinePositions.Where(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol).FirstOrDefault();
+                            instr.Executed = true;
+                            instr.Text = "No ejecutada por existencia de otras sincronizaciones";
+                            instr.RelatedInstruction.IsOnlinePosition = prevPos.PositionStatus.IsOnline();
+                            ProcessUnwindPosition(instr.RelatedInstruction);
+                            InstructionManager.Persist(instr);
+                            InstructionManager.Persist(instr.RelatedInstruction);
+                        
+                        }
                     }
                     else
                     {
@@ -293,6 +306,28 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     InstructionManager.Persist(unwindInstr);
                 }
             }
+        }
+
+        protected List<AccountPosition> GetCurrentPositionsInMarket(Account account)
+        {
+            AccountReferenceHandler.SyncAccountPositions(account);
+
+
+            while (AccountReferenceHandler.WaitingAccountPositions() && !AccountReferenceHandler.IsAbortOnTimeout())
+                Thread.Sleep(100);
+
+            bool reqAccountPosition = AccountReferenceHandler.WaitingAccountPositions();
+            bool abortOnTimeout = AccountReferenceHandler.IsAbortOnTimeout();
+
+            if (!reqAccountPosition && !abortOnTimeout)
+            {
+                List<AccountPosition> onlinePositions = AccountReferenceHandler.GetActivePositions();
+
+                return onlinePositions;
+
+            }
+            else
+                return new List<AccountPosition>();
         }
 
         protected void ProcessAccounPositionsSync(List<Instruction> instructionsPositionsSync)
@@ -554,7 +589,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 Side = zHFT.Main.Common.Enums.Side.Sell,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = instr.Account != null ? instr.Account.GenericAccountNumber : null
             };
 
             if (instr.Shares.HasValue)

@@ -401,15 +401,23 @@ namespace zHFT.OrderRouters.Router
             try
             {
                 bool run = true;
-
-                Position currentPos = PositionConverter.GetPosition(positionWrapper, Config);
-                Positions.Add(currentPos);
+                Position currentPos = null;
+                lock (tLockCalculus)
+                {
+                    currentPos = PositionConverter.GetPosition(positionWrapper, Config);
+                    Positions.Add(currentPos);
+                }
 
                 while (run)
                 {
                     try
                     {
-                        Position posInOrderRouter = Positions.Where(x => x.PosId == currentPos.PosId).FirstOrDefault();
+                        Position posInOrderRouter = null;
+
+                        lock (tLockCalculus)
+                        {
+                            posInOrderRouter = Positions.Where(x => x.PosId == currentPos.PosId).FirstOrDefault();
+                        }
 
                         if (posInOrderRouter!=null && !posInOrderRouter.PositionCleared && !posInOrderRouter.PositionCanceledOrRejected)
                         {
