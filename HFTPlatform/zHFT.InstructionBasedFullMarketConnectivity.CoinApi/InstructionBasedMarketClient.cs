@@ -164,30 +164,29 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi
 
         public override void toAdmin(QuickFix.Message value, QuickFix.SessionID sessionId)
         {
-            lock (tLock)
+          
+            try
             {
-                try
+                if (value is QuickFixT11.Logon)
                 {
-                    if (value is QuickFixT11.Logon)
-                    {
-                        QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
-                        //logon.setField(Username.FIELD, PrimaryConfiguration.User);
-                        //logon.setField(Password.FIELD, PrimaryConfiguration.Password);
-                        DoLog("Invocación de toAdmin-logon por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-                    }
-                    else if (value is QuickFixT11.Reject)
-                    {
-                        QuickFixT11.Reject reject = (QuickFixT11.Reject)value;
-                        DoLog("Invocación de toAdmin-reject por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
-                    }
-                    else
-                        DoLog("Invocación de toAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
+                    QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
+                    //logon.setField(Username.FIELD, PrimaryConfiguration.User);
+                    //logon.setField(Password.FIELD, PrimaryConfiguration.Password);
+                    DoLog("Invocación de toAdmin-logon por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
                 }
-                catch (Exception ex)
+                else if (value is QuickFixT11.Reject)
                 {
-                    DoLog(string.Format("{0}: Error processing message @toAdmin:{1} ", CoinApiConfiguration.Name, ex.Message), Constants.MessageType.Error);
+                    QuickFixT11.Reject reject = (QuickFixT11.Reject)value;
+                    DoLog("Invocación de toAdmin-reject por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
                 }
+                else
+                    DoLog("Invocación de toAdmin por la sesión " + sessionId.ToString() + ": " + value.ToString(), Constants.MessageType.Information);
             }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("{0}: Error processing message @toAdmin:{1} ", CoinApiConfiguration.Name, ex.Message), Constants.MessageType.Error);
+            }
+          
         }
 
         public CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)

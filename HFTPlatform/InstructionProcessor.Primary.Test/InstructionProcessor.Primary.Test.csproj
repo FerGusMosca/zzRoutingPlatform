@@ -107,6 +107,7 @@
     </Content>
     <Content Include="Primary.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="IncomingSingletonConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

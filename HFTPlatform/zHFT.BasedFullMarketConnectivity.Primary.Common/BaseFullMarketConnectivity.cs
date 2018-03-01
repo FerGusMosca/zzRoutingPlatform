@@ -520,7 +520,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             try
             {
                 QuickFix.Message massiveCancelMsg = (QuickFix.Message)param;
-                Session.sendToTarget(massiveCancelMsg);
+                Session.sendToTarget(massiveCancelMsg, SessionID);
 
             }
             catch (Exception ex)

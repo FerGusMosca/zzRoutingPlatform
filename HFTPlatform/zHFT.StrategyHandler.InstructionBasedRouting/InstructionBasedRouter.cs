@@ -164,6 +164,17 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
         
         }
 
+        private void MarkAsUnwindingInProgress(ref Instruction relInstr)
+        {
+            relInstr.Executed = true;
+            relInstr.Text = "La posición que desea descargar ya se siendo descargada";
+
+            InstructionManager.Persist(relInstr);
+
+            DoLog(string.Format("@{1} - The position for symbol {0} was already being unwindeds",
+                          relInstr.Symbol, IBRConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+        }
+
         protected void ProcessNewPositionSync(ref Instruction relInstr,IList<AccountPosition> positions,bool unwindAll)
         {
             relInstr.AccountPosition = PositionManager.GetActivePositionBySymbol(relInstr.Symbol,relInstr.Account.Id);
@@ -227,9 +238,9 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     {
                         IList<AccountPosition> onlinePositions = GetCurrentPositionsInMarket(instr.Account);
 
-                        if (onlinePositions != null 
+                        if (onlinePositions != null
                             && onlinePositions.Any(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol)//La posición esta online
-                            && !PositionInstructions.Keys.Any(x=>x==instr.RelatedInstruction.AccountPosition.Security.Symbol))//no esta siendo procesada por ningún otra instrucción
+                            && !PositionInstructions.Keys.Any(x => x == instr.RelatedInstruction.AccountPosition.Security.Symbol))//no esta siendo procesada por ningún otra instrucción
                         {
                             AccountPosition prevPos = onlinePositions.Where(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol).FirstOrDefault();
                             instr.Executed = true;
@@ -238,7 +249,19 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                             ProcessUnwindPosition(instr.RelatedInstruction);
                             InstructionManager.Persist(instr);
                             InstructionManager.Persist(instr.RelatedInstruction);
-                        
+
+                        }
+                        else
+                        {//Se intenta descargar una posición que no existe
+                            instr.Executed = true;
+                            instr.Text = "No ejecutada por existencia de otras sincronizaciones";
+                            Instruction relInstr = instr.RelatedInstruction;
+                            InstructionManager.Persist(instr);
+
+                            if (onlinePositions!=null && !onlinePositions.Any(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol))
+                                MarkAsAlreadyUnwinded(ref relInstr);
+                            else if (PositionInstructions.Keys.Any(x => x == instr.RelatedInstruction.AccountPosition.Security.Symbol))
+                                MarkAsUnwindingInProgress(ref relInstr);
                         }
                     }
                     else

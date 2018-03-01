@@ -157,7 +157,9 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                         zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
 
-                        OnMarketDataMessageRcv(mdWrapper);
+                        Thread publishMarketDataThread = new Thread(DoRunPublishSecurity);
+                        publishMarketDataThread.Start(mdWrapper);
+
                     }
                     else
                     { 
@@ -464,22 +466,31 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         #region Market Data
 
+        protected void DoRunPublishSecurity(object param)
+        {
+            zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = (zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper)param;
+
+            try
+            {
+                OnMarketDataMessageRcv(wrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error on Publishing Market Data Thread. Error={1} ",PrimaryConfiguration.Name, ex.Message),
+                      Main.Common.Util.Constants.MessageType.Error);
+            
+            }
+        
+        }
+
         protected void RunPublishSecurity(Security sec, IConfiguration Config)
         {
             try
             {
                 zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, sec.Exchange, Config);
-                CMState state = OnMarketDataMessageRcv(wrapper);
 
-                if (state.Success)
-                    DoLog(string.Format("@{1}:Publishing Market Data for Security {0} ", sec.Symbol, PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                else
-                    DoLog(string.Format("@{2}:Error Publishing Market Data for Security {0}. Error={1} ",
-                                        sec.Symbol,
-                                        state.Exception != null ? state.Exception.Message : "",
-                                        PrimaryConfiguration.Name),
-                                        Main.Common.Util.Constants.MessageType.Error);
-
+                Thread publishMarketDataThread = new Thread(DoRunPublishSecurity);
+                publishMarketDataThread.Start(wrapper);
             }
             catch (Exception ex)
             {
@@ -561,26 +572,23 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 return;
             try
             {
-                lock (tLockSavingMarketData)
+                DoLog(string.Format("@{1}:Saving Market Data For Symbol={0} ", sec.Symbol, PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+
+                if (sec.SecType == zHFT.Main.Common.Enums.SecurityType.CS)
                 {
-
-                    DoLog(string.Format("@{1}:Saving Market Data For Symbol={0} ", sec.Symbol, PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-
-                    if (sec.SecType == zHFT.Main.Common.Enums.SecurityType.CS)
-                    {
-                        StockMarketDataManager.Persist(sec);
-                    }
-                    else if (sec.SecType == zHFT.Main.Common.Enums.SecurityType.OPT)
-                    {
-                        Option opt = OptionManager.GetBySymbol(sec.Symbol, sec.Exchange);
-
-                        opt.MarketData = sec.MarketData;
-
-                        OptionMarketDataManager.Persist(opt);
-                    }
-                    else
-                        DoLog(string.Format("Market Data not implemented for security type {0} in symbol {1}", sec.SecType.ToString(), sec.Symbol), Main.Common.Util.Constants.MessageType.Error);
+                    StockMarketDataManager.Persist(sec);
                 }
+                else if (sec.SecType == zHFT.Main.Common.Enums.SecurityType.OPT)
+                {
+                    Option opt = OptionManager.GetBySymbol(sec.Symbol, sec.Exchange);
+
+                    opt.MarketData = sec.MarketData;
+
+                    OptionMarketDataManager.Persist(opt);
+                }
+                else
+                    DoLog(string.Format("Market Data not implemented for security type {0} in symbol {1}", sec.SecType.ToString(), sec.Symbol), Main.Common.Util.Constants.MessageType.Error);
+               
 
             }
             catch (Exception ex)
