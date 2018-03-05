@@ -76,18 +76,19 @@ namespace zHFT.OrderRouters.Bittrex
 
         protected void DoEvalExecutionReport()
         {
-            try
+            bool active=true;
+            while(active)
             {
-                bool active=true;
-                while(active)
+                Thread.Sleep(BittrexConfiguration.RefreshExecutionReportsInMilisec);
+                List<ExecutionReportWrapper> wrappersToPublish = new List<ExecutionReportWrapper>();
+
+                try
                 {
-                    Thread.Sleep(BittrexConfiguration.RefreshExecutionReportsInMilisec);
-                    List<ExecutionReportWrapper> wrappersToPublish = new List<ExecutionReportWrapper>();
                     lock (tLock)
                     {
                         List<string> uuidToRemove = new List<string>();
 
-                        foreach(string uuid in ActiveOrders.Keys)
+                        foreach (string uuid in ActiveOrders.Keys)
                         {
 
                             Order order = ActiveOrders[uuid];
@@ -96,7 +97,7 @@ namespace zHFT.OrderRouters.Bittrex
                             if (ordResp != null)
                             {
                                 ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, ordResp);
-                                OrdStatus status = (OrdStatus) wrapper.GetField(ExecutionReportFields.OrdStatus);
+                                OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
 
                                 if (Order.FinalStatus(status))
                                 {
@@ -125,14 +126,13 @@ namespace zHFT.OrderRouters.Bittrex
                         uuidToRemove.ForEach(x => ActiveOrders.Remove(x));
                     }
 
-                    
                     wrappersToPublish.ForEach(x => OnMessageRcv(x));
                     wrappersToPublish.Clear();
                 }
-            }
-            catch (Exception ex)
-            { 
-                DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BittrexConfiguration.Name,ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BittrexConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                }
             }
         }
 

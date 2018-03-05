@@ -209,6 +209,8 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
                     ConfigBinanceData();
 
+                    CleanPrevInstructions();
+
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
 

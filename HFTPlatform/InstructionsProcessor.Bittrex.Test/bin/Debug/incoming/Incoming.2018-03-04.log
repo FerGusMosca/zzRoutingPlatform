@@ -1,0 +1,60 @@
+2018-03-04 10:55:43  :: 3/4/2018 10:55:43 AMBaseCommunicationModule.LoadConfig
+2018-03-04 10:55:43  :: Loading config:.\incomingBittrex.xml
+2018-03-04 10:55:43  :: Processing config:.\incomingBittrex.xml
+2018-03-04 10:55:43  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 11:05:27  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 11:07:41  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 11:07:41  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 11:14:49  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 11:19:08  :: 3/4/2018 11:19:08 AMBaseCommunicationModule.LoadConfig
+2018-03-04 11:19:08  :: Loading config:.\incomingBittrex.xml
+2018-03-04 11:19:08  :: Processing config:.\incomingBittrex.xml
+2018-03-04 11:19:09  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 11:21:07  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 11:21:47  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 11:21:47  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 11:30:25  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 11:31:59  :: 3/4/2018 11:31:59 AMBaseCommunicationModule.LoadConfig
+2018-03-04 11:31:59  :: Loading config:.\incomingBittrex.xml
+2018-03-04 11:31:59  :: Processing config:.\incomingBittrex.xml
+2018-03-04 11:31:59  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 11:32:41  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 11:33:46  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 11:33:46  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 11:41:02  :: 3/4/2018 11:41:02 AMBaseCommunicationModule.LoadConfig
+2018-03-04 11:41:02  :: Loading config:.\incomingBittrex.xml
+2018-03-04 11:41:02  :: Processing config:.\incomingBittrex.xml
+2018-03-04 11:41:03  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 11:41:24  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 11:41:43  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 11:41:43  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 11:47:39  :: 3/4/2018 11:47:39 AMBaseCommunicationModule.LoadConfig
+2018-03-04 11:47:39  :: Loading config:.\incomingBittrex.xml
+2018-03-04 11:47:39  :: Processing config:.\incomingBittrex.xml
+2018-03-04 11:47:39  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 12:19:15  :: 3/4/2018 12:19:15 PMBaseCommunicationModule.LoadConfig
+2018-03-04 12:19:15  :: Loading config:.\incomingBittrex.xml
+2018-03-04 12:19:15  :: Processing config:.\incomingBittrex.xml
+2018-03-04 12:19:15  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 12:20:33  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 12:24:25  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 12:24:38  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 12:25:16  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 12:26:02  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 12:26:03  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 12:31:28  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 12:32:36  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 12:32:39  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 12:35:39  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 12:35:58  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 12:35:59  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 12:48:34  :: 3/4/2018 12:48:34 PMBaseCommunicationModule.LoadConfig
+2018-03-04 12:48:34  :: Loading config:.\incomingBittrex.xml
+2018-03-04 12:48:34  :: Processing config:.\incomingBittrex.xml
+2018-03-04 12:48:34  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-04 12:49:42  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 12:52:36  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 12:52:37  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH
+2018-03-04 12:53:28  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2018-03-04 12:56:20  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2018-03-04 12:56:20  :: @Incoming Bittrex:Unsubscribing market data por symbol ETH

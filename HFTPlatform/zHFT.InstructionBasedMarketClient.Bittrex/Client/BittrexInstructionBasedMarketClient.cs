@@ -48,6 +48,8 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
         #region Protected Methods
 
+        
+
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             List<string> noValueFields = new List<string>();
@@ -246,6 +248,8 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                     AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);
 
                     ConfigBittrexData();
+
+                    CleanPrevInstructions();
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();

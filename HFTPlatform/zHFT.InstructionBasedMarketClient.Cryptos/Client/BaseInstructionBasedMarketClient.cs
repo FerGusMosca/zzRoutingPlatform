@@ -60,6 +60,18 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
         #region Protected Methods
 
+        protected void CleanPrevInstructions()
+        {
+            List<Instruction> prevInstrx = InstructionManager.GetPendingInstructions(GetAccountNumber());
+
+            foreach (Instruction prevInstr in prevInstrx)
+            {
+                prevInstr.Executed = true;
+                prevInstr.AccountPosition = null;
+                InstructionManager.Persist(prevInstr);
+            }
+        }
+
         protected void RemoveSymbol(string symbol)
         {
             List<int> keysToRemove = new List<int>();

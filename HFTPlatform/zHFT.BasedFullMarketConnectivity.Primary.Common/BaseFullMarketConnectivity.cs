@@ -519,8 +519,18 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         {
             try
             {
-                QuickFix.Message massiveCancelMsg = (QuickFix.Message)param;
-                Session.sendToTarget(massiveCancelMsg, SessionID);
+
+                lock (tLock)
+                {
+                    foreach (Order order in ActiveOrders.Values.Where(x => x.Security.Active))
+                    {
+                        ExecCancel(order);
+
+                    }
+                }
+
+                //QuickFix.Message massiveCancelMsg = (QuickFix.Message)param;
+                //Session.sendToTarget(massiveCancelMsg, SessionID);
 
             }
             catch (Exception ex)
@@ -541,6 +551,47 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         }
 
+        protected void ExecCancel(Order order)
+        {
+
+            string clOrdId = order.ClOrdId;
+
+            if (ActiveOrderIdMapper.Keys.Contains(clOrdId))
+            {
+
+                int marketOrderId = ActiveOrderIdMapper[clOrdId];
+
+                int newMarketOrderIdRequested = (marketOrderId + 1);
+                ReplacingActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
+
+                order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
+                order.OrigClOrdId = clOrdId;
+
+                QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
+                                                newMarketOrderIdRequested.ToString(),
+                                                marketOrderId.ToString(),
+                                                order.OrderId,
+                                                order.Security.Symbol, order.Side,
+                                                order.EffectiveTime.Value,
+                                                order.OrderQty, order.Account,
+                                                _MAIN_EXCHANGE
+                                                );
+
+
+
+                //Session.sendToTarget(cancelMessage, SessionID);
+                Thread cancelThread = new Thread(DoCancel);
+                cancelThread.Start(cancelMessage);
+            }
+            else
+            {
+                DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! @ActiveOrderIdMapper ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+                throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!  @ActiveOrderIdMapper", GetConfig().Name, clOrdId));
+
+            }
+        
+        }
+
         protected CMState CancelOrder(Wrapper wrapper)
         {
             try
@@ -548,42 +599,21 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 if (SessionID != null)
                 {
                     string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+                    DoLog(string.Format("@{0}:Cancelling all orders @Primary ", GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
 
                     if (ActiveOrders.Keys.Contains(clOrdId))
                     {
                         Order order = ActiveOrders[clOrdId];
 
-                        int marketOrderId = ActiveOrderIdMapper[clOrdId];
-
-                        int newMarketOrderIdRequested = (marketOrderId + 1);
-                        ReplacingActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
-
-                        order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
-                        order.OrigClOrdId = clOrdId;
-
-                        QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
-                                                        newMarketOrderIdRequested.ToString(),
-                                                        marketOrderId.ToString(),
-                                                        order.OrderId,
-                                                        order.Security.Symbol, order.Side,
-                                                        order.EffectiveTime.Value,
-                                                        order.OrderQty, order.Account,
-                                                        _MAIN_EXCHANGE
-                                                        );
-
-
-                        
-                        //Session.sendToTarget(cancelMessage, SessionID);
-                        Thread cancelThread = new Thread(DoCancel);
-                        cancelThread.Start(cancelMessage);
+                        ExecCancel(order);
 
                         return CMState.BuildSuccess();
 
                     }
                     else
                     {
-                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
-                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", GetConfig().Name, clOrdId));
+                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! @ActiveOrders ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!  @ActiveOrders", GetConfig().Name, clOrdId));
                     }
                 }
                 else

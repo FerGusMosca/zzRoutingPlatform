@@ -41,8 +41,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 NewPosition = true,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = instr.Account != null ? instr.Account.GenericAccountNumber : null,
-                Qty = qty,
-                QuantityType = QuantityType.CRYPTOCURRENCY
+                CashQty = qty,
+                QuantityType = QuantityType.CURRENCY
 
             };
 
@@ -110,6 +110,14 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
         #endregion
 
         #region Protected Methods
+
+        protected override void DoClear()
+        {
+            PositionInstructions.Clear();
+            ExecutionSummaries.Clear();
+            Positions.Clear();
+            IcebergPositionInstructions.Clear();
+        }
 
         protected override bool EvalMarketData(ExecutionSummary summary)
         {

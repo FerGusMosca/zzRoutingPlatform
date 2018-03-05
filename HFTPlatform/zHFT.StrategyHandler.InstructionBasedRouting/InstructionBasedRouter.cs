@@ -49,6 +49,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
         #region Protected Methods
 
+        protected virtual void DoClear()
+        {
+            PositionInstructions.Clear();
+            ExecutionSummaries.Clear();
+            Positions.Clear();
+        }
+
         protected void ProcessPositionsCleaningSync(List<Instruction> instructionsToCleanPositions)
         {
             //If we have at least one instructionToCleanPosition
@@ -61,9 +68,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     InstructionManager.Persist(instr);
                     
                 }
-                PositionInstructions.Clear();
-                ExecutionSummaries.Clear();
-                Positions.Clear();
+
+                DoClear();
             }
         }
 
