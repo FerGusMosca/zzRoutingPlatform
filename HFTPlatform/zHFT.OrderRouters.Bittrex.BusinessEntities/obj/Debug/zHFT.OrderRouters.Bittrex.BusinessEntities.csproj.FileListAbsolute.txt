@@ -2,4 +2,3 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.csprojResolveAssemblyReference.cache

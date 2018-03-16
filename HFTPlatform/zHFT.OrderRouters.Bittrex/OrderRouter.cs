@@ -347,6 +347,9 @@ namespace zHFT.OrderRouters.Bittrex
 
                             if (order != null)
                             {
+                                //Recuperamos la orden
+                                GetOrderResponse ordResp = RunGetOrder(order.OrderId);
+
                                 //Cancelamos
                                 RunCancelOrder(order,true);
 
@@ -356,6 +359,7 @@ namespace zHFT.OrderRouters.Bittrex
                                 double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
                                 order.Price = newPrice;
                                 order.ClOrdId = clOrderId;
+                                order.OrderQty = ordResp != null ? Convert.ToDouble(ordResp.QuantityRemaining) : order.OrderQty;//Nos aseguramos de solo rutear la nueva cantidad
                                 try
                                 {
                                     RunNewOrder(order, true);

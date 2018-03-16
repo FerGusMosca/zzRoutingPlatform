@@ -1,0 +1,10 @@
+2018-03-16 8:42:51  :: 3/16/2018 8:42:51 AMBaseCommunicationModule.LoadConfig
+2018-03-16 8:42:51  :: Loading config:.\incomingBittrex.xml
+2018-03-16 8:42:51  :: Processing config:.\incomingBittrex.xml
+2018-03-16 8:42:51  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-16 8:42:53  :: Critic error initializing .\incomingBittrex.xml:Referencia a objeto no establecida como instancia de un objeto.
+2018-03-16 9:27:46  :: 3/16/2018 9:27:46 AMBaseCommunicationModule.LoadConfig
+2018-03-16 9:27:46  :: Loading config:.\incomingBittrex.xml
+2018-03-16 9:27:46  :: Processing config:.\incomingBittrex.xml
+2018-03-16 9:27:46  :: Ending GetConfiguracion .\incomingBittrex.xml
+2018-03-16 9:27:47  :: Critic error initializing .\incomingBittrex.xml:Referencia a objeto no establecida como instancia de un objeto.

@@ -1,0 +1,31 @@
+2018-03-16 8:42:54  :: 3/16/2018 8:42:54 AMMomentumStrategyBase.LoadConfig
+2018-03-16 8:42:54  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-16 8:42:54  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-16 8:42:54  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-16 8:42:54  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-16 8:42:54  :: 3/16/2018 8:42:54 AMOrderRouterBase.LoadConfig
+2018-03-16 8:42:54  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-16 8:42:54  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-16 8:43:00  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-16 8:43:00  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-16 8:43:00  :: 3/16/2018 8:43:00 AMOrderRouterBase.LoadConfig
+2018-03-16 8:43:00  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-16 8:43:00  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-16 8:43:00  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-16 8:43:00  :: @Outgoing Order Routing Bittrex:Critic error initializing .\outgoingOrderRouter.Bittrex.xml:No se encontró ninguna configuración de autenticación contra Bittrex de la cuenta 9
+2018-03-16 9:27:47  :: 3/16/2018 9:27:47 AMMomentumStrategyBase.LoadConfig
+2018-03-16 9:27:47  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-16 9:27:47  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-16 9:27:47  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-16 9:27:47  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-16 9:27:48  :: 3/16/2018 9:27:48 AMOrderRouterBase.LoadConfig
+2018-03-16 9:27:48  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-16 9:27:48  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-16 9:27:48  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-16 9:27:48  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-16 9:27:48  :: 3/16/2018 9:27:48 AMOrderRouterBase.LoadConfig
+2018-03-16 9:27:48  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-16 9:27:48  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-16 9:27:48  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-16 9:27:48  :: @Outgoing Order Routing Bittrex:Critic error initializing .\outgoingOrderRouter.Bittrex.xml:No se encontró ninguna configuración de autenticación contra Bittrex de la cuenta 9
+2018-03-16 9:27:48  :: Critic error initializing Strategy Handler - Instruction Based Router for Bittrex:Se produjo una excepción en el destino de la invocación.

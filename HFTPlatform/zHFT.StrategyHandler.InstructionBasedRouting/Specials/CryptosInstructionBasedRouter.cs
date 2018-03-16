@@ -41,8 +41,9 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 NewPosition = true,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = instr.Account != null ? instr.Account.GenericAccountNumber : null,
-                CashQty = qty,
-                QuantityType = QuantityType.CURRENCY
+                CashQty = side == zHFT.Main.Common.Enums.Side.Buy ? (double?) qty : null,//En una compra la cantidad esta en Bitcoins <QuoteCurrency>
+                Qty = side == zHFT.Main.Common.Enums.Side.Sell ? (double?)qty : null,//En una venta la cantidad esta en unidades de la moneda siendo vendida
+                QuantityType = side==zHFT.Main.Common.Enums.Side.Buy?QuantityType.CRYPTOCURRENCY: QuantityType.SHARES,//CRYPTOCURRENCY: expresado en BTC <quoteCurrency> , SHARES: Expresado en la moneda siendo vendida
 
             };
 

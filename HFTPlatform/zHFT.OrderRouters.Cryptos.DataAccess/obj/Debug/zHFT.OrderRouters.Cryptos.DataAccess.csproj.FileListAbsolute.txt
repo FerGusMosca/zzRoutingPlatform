@@ -3,4 +3,3 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Crypt
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.csprojResolveAssemblyReference.cache
