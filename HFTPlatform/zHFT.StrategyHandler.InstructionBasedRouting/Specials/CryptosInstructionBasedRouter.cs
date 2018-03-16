@@ -41,9 +41,9 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 NewPosition = true,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = instr.Account != null ? instr.Account.GenericAccountNumber : null,
-                CashQty = side == zHFT.Main.Common.Enums.Side.Buy ? (double?) qty : null,//En una compra la cantidad esta en Bitcoins <QuoteCurrency>
-                Qty = side == zHFT.Main.Common.Enums.Side.Sell ? (double?)qty : null,//En una venta la cantidad esta en unidades de la moneda siendo vendida
-                QuantityType = side==zHFT.Main.Common.Enums.Side.Buy?QuantityType.CRYPTOCURRENCY: QuantityType.SHARES,//CRYPTOCURRENCY: expresado en BTC <quoteCurrency> , SHARES: Expresado en la moneda siendo vendida
+                CashQty = side == zHFT.Main.Common.Enums.Side.Buy ? qty : (double?)null,//En las compras tenemos el monto en BTC <quote currency>, en las ventas en unidades de la moneda vendida
+                Qty = side == zHFT.Main.Common.Enums.Side.Buy ? (double?)null : qty,//En las compras tenemos el monto en BTC <quote currency>, en las ventas en unidades de la moneda vendida
+                QuantityType = side == zHFT.Main.Common.Enums.Side.Buy ? QuantityType.CURRENCY : QuantityType.CRYPTOCURRENCY,
 
             };
 
@@ -131,6 +131,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             double stepAmmount = Convert.ToDouble(instr.Ammount) / instr.GetSteps();
 
+            AbortRerouting = false;
+
             Position pos = CreateNextPosition(instr, zHFT.Main.Common.Enums.Side.Buy, stepAmmount);
 
             pos.LoadPosId(NextPosId);
@@ -211,6 +213,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             double nextStepQty = Convert.ToDouble(instr.Ammount.Value) / instr.GetSteps();
 
+            AbortRerouting = false;
+
             Position pos = CreateNextPosition(instr, zHFT.Main.Common.Enums.Side.Sell, nextStepQty);
 
             pos.LoadPosId(NextPosId);
@@ -253,15 +257,15 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 instr.Executed = true;
                 instr.AccountPosition.PositionStatus = InstructionBasedRouting.BusinessEntities.PositionStatus.GetNewPositionStatus(true);
-                return true;
-
             }
             else
             {
                 instr.Executed = false;
                 //El status queda igual
-                return false;
+                
             }
+
+            return true;
 
         }
 
@@ -280,13 +284,12 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 instr.AccountPosition.PositionStatus = InstructionBasedRouting.BusinessEntities.PositionStatus.GetOfflineUnwindedStatus();
                 instr.AccountPosition.Active = false;
-                return true;
             }
             else if (instr.Steps == icebergDTO.CurrentStep)//Estamos en el último paso
             {
                 instr.AccountPosition.PositionStatus = InstructionBasedRouting.BusinessEntities.PositionStatus.GetOfflineUnwindedStatus();
                 instr.AccountPosition.Active = false;
-                return true;
+                
 
             }
             else //currentStep < Steps
@@ -295,8 +298,9 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 instr.AccountPosition.PositionStatus = InstructionBasedRouting.BusinessEntities.PositionStatus.GetNewPositionStatus(true);
                 instr.AccountPosition.Ammount -= instr.Ammount;
                 instr.AccountPosition.Active = true;
-                return false;
             }
+
+            return true;
         }
 
         protected bool ProcessUnwindIcebergPositionCanceledOrRejected(Instruction instr, ExecutionSummary summary, IcebergPositionDTO icebergDTO)
@@ -377,6 +381,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                     if (instr.Steps == icebergDTO.CurrentStep)//Estabamos en el último step
                                     {
                                         CleanPosition(summary);
+                                        InstructionManager.Persist(instr);
+                                        SaveExecutionSummary(summary);
                                     }
                                     else
                                     { 
@@ -392,18 +398,19 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                         if (!AbortRerouting)
                                             ReRouteCurrentStep(instr, summary, icebergDTO);
                                         else
-                                        {
+                                        {   //Aca si se canceló todo 
                                             CleanPosition(summary);
 
                                             if (IcebergPositionInstructions.Count == 0)
                                                 AbortRerouting = false;
-                                        
+
+                                            InstructionManager.Persist(instr);
+                                            SaveExecutionSummary(summary);
                                         }
+
+                                       
                                     }
                                 }
-
-                                InstructionManager.Persist(instr);
-                                SaveExecutionSummary(summary);
                             }
                             else
                             {

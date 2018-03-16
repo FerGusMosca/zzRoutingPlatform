@@ -6,7 +6,7 @@
   <ProxyConfigFile>.\outgoingOrderRouter.Bittrex.xml</ProxyConfigFile>
   
 
-  <OrderUpdateInMilliseconds>100</OrderUpdateInMilliseconds>
+  <OrderUpdateInMilliseconds>1500</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->
 
 </Configuration>
