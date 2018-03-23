@@ -18,6 +18,8 @@
 
   <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.BittrexAccountManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</AccoutReferenceHandler>
 
+  <MarketDataReferenceHandler>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.BittrexMarketDataManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</MarketDataReferenceHandler>
+
   <AccountManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</AccountManagerAccessLayer>
 
   <InstructionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.InstructionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</InstructionManagerAccessLayer>
@@ -28,6 +30,10 @@
     <Config>
       <Key>QuoteCurrency</Key>
       <Value>USDT</Value>
+    </Config>
+    <Config>
+      <Key>MarketDataQuoteCurrency</Key>
+      <Value>BTC</Value>
     </Config>
     <Config>
       <Key>Simulate</Key>

@@ -44,6 +44,7 @@
     <Compile Include="Interfaces\IAccountManagerAccessLayer.cs" />
     <Compile Include="Interfaces\IAccountReferenceHandler.cs" />
     <Compile Include="Interfaces\IInstructionManagerAccessLayer.cs" />
+    <Compile Include="Interfaces\IMarketDataReferenceHandler.cs" />
     <Compile Include="Interfaces\IPositionManagerAccessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,1786 @@
+2018-03-22 10:12:29  :: 3/22/2018 10:12:29 AMMomentumStrategyBase.LoadConfig
+2018-03-22 10:12:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:12:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:12:29  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:12:29  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 10:12:29  :: 3/22/2018 10:12:29 AMOrderRouterBase.LoadConfig
+2018-03-22 10:12:29  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 10:12:29  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 10:12:29  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 10:12:29  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 10:12:29  :: 3/22/2018 10:12:29 AMOrderRouterBase.LoadConfig
+2018-03-22 10:12:29  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:12:29  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:12:29  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:14:09  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:14:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:16:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:16:21  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:17:53  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:17:56  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:17:56  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 10:18:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209995 BestBidPrice=0.06209995 BestAskPrice=0.06209996
+2018-03-22 10:18:01  :: Routing to market position for symbol ETH
+2018-03-22 10:18:01  :: Creating buy order for symbol ETH.Quantity=0,157437405344127 Price=,06
+2018-03-22 10:18:01  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:18:04  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:04  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:04  :: Received New for symbol ETH
+2018-03-22 10:18:04  :: New for symbol ETH processed
+2018-03-22 10:18:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209995 BestBidPrice=0.06209995 BestAskPrice=0.06209996
+2018-03-22 10:18:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209997 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:09  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:09  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:09  :: Received New for symbol ETH
+2018-03-22 10:18:09  :: New for symbol ETH processed
+2018-03-22 10:18:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209997 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209997 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:15  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:15  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:15  :: Received New for symbol ETH
+2018-03-22 10:18:15  :: New for symbol ETH processed
+2018-03-22 10:18:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209997 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:20  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:20  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:20  :: Received New for symbol ETH
+2018-03-22 10:18:20  :: New for symbol ETH processed
+2018-03-22 10:18:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209997 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209995 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:30  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 10:18:30  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:18:30  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:18:30  :: Received Canceled for symbol ETH
+2018-03-22 10:18:30  :: Canceled for symbol ETH processed
+2018-03-22 10:18:33  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:18:33  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:18:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209995 BestBidPrice=0.06209995 BestAskPrice=0.06209997
+2018-03-22 10:18:33  :: Routing to market position for symbol ETH
+2018-03-22 10:18:34  :: Creating buy order for symbol ETH.Quantity=0,157437405344127 Price=,06
+2018-03-22 10:18:34  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:18:35  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:35  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:18:35  :: Received New for symbol ETH
+2018-03-22 10:18:35  :: New for symbol ETH processed
+2018-03-22 10:18:42  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:18:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209995 BestAskPrice=0.06209998
+2018-03-22 10:18:42  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:18:47  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 10:18:47  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 10:18:47  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 10:18:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:18:47  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:18:48  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:18:48  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:18:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:18:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:18:57  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:47  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:19:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:20:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:22:24  :: 3/22/2018 10:22:24 AMMomentumStrategyBase.LoadConfig
+2018-03-22 10:22:24  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:22:24  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:22:24  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:22:24  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 10:22:24  :: 3/22/2018 10:22:24 AMOrderRouterBase.LoadConfig
+2018-03-22 10:22:24  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 10:22:24  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 10:22:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 10:22:24  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 10:22:24  :: 3/22/2018 10:22:24 AMOrderRouterBase.LoadConfig
+2018-03-22 10:22:24  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:22:24  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:22:24  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:22:35  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:22:38  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:22:54  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:22:56  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:22:56  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ETH
+2018-03-22 10:22:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:22:58  :: Routing to market position for symbol ETH
+2018-03-22 10:22:58  :: Creating sell order for symbol ETH.Quantity=0,1574374 Price=,06
+2018-03-22 10:22:58  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:23:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.062058 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:07  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:07  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:07  :: Received New for symbol ETH
+2018-03-22 10:23:07  :: New for symbol ETH processed
+2018-03-22 10:23:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.062058 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.062058 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:15  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:15  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:15  :: Received New for symbol ETH
+2018-03-22 10:23:15  :: New for symbol ETH processed
+2018-03-22 10:23:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.062058 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:21  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:21  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:21  :: Received New for symbol ETH
+2018-03-22 10:23:21  :: New for symbol ETH processed
+2018-03-22 10:23:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:26  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:26  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:26  :: Received New for symbol ETH
+2018-03-22 10:23:26  :: New for symbol ETH processed
+2018-03-22 10:23:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:31  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:31  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:23:31  :: Received New for symbol ETH
+2018-03-22 10:23:31  :: New for symbol ETH processed
+2018-03-22 10:23:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.062058 BestBidPrice=0.062058 BestAskPrice=0.06209998
+2018-03-22 10:23:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.0621
+2018-03-22 10:23:35  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06209998 Old Ask Price:0.0621
+2018-03-22 10:23:36  :: @Order Router: Updating order for symbol ETH: qty=0.1574374 price=0.0621
+2018-03-22 10:23:36  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 10:23:36  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 8fc30dd4-d0e8-44d9-be06-b830eb872132 for symbol ETH
+2018-03-22 10:23:36  :: @Outgoing Order Routing Bittrex:Error updating order 00100100000!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 8fc30dd4-d0e8-44d9-be06-b830eb872132
+2018-03-22 10:23:44  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 10:23:44  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 10:23:44  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 10:23:44  :: Received filled for symbol ETH
+2018-03-22 10:23:44  :: Filled for symbol ETH processed
+2018-03-22 10:23:46  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:23:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.0621
+2018-03-22 10:23:55  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:24:01  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:24:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:25:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:25:00  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 10:25:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:03  :: Routing to market position for symbol ETH
+2018-03-22 10:25:03  :: Creating buy order for symbol ETH.Quantity=0,315346105530774 Price=,06
+2018-03-22 10:25:03  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:25:07  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:07  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:07  :: Received New for symbol ETH
+2018-03-22 10:25:07  :: New for symbol ETH processed
+2018-03-22 10:25:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:14  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 10:25:14  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:25:14  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:25:14  :: Received Canceled for symbol ETH
+2018-03-22 10:25:14  :: Canceled for symbol ETH processed
+2018-03-22 10:25:15  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:25:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:15  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:25:15  :: Routing to market position for symbol ETH
+2018-03-22 10:25:15  :: Creating buy order for symbol ETH.Quantity=0,315346105530774 Price=,06
+2018-03-22 10:25:15  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:25:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:19  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:19  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:19  :: Received New for symbol ETH
+2018-03-22 10:25:19  :: New for symbol ETH processed
+2018-03-22 10:25:36  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:25:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:37  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:38  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:43  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:25:43  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:25:44  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:44  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:44  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:25:44  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:25:49  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:49  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:49  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:25:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:54  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:54  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:25:54  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:25:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:25:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:01  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 10:26:01  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:26:01  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:26:01  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:26:02  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:26:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:26:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.0621 BestAskPrice=0.06215
+2018-03-22 10:27:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:27:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.0621 BestBidPrice=0.06209999 BestAskPrice=0.0621
+2018-03-22 10:27:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:14  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:27:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:27:17  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 10:27:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Critical error processing position sync instruction: Ya se agregó un elemento con la misma clave. - 
+2018-03-22 10:27:17  :: Routing to market position for symbol ETH
+2018-03-22 10:27:17  :: Creating buy order for symbol ETH.Quantity=0,315346156311161 Price=,06
+2018-03-22 10:27:17  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:27:18  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 10:27:18  :: @Strategy Handler - Instruction Based Router for Bittrex - Critical error processing instructions: Ya se agregó un elemento con la misma clave. - 
+2018-03-22 10:27:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:21  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:27:21  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:27:21  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:27:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:28  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 10:27:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:28  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:27:28  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:27:28  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:27:30  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:27:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209998 BestAskPrice=0.06209999
+2018-03-22 10:27:49  :: 3/22/2018 10:27:49 AMMomentumStrategyBase.LoadConfig
+2018-03-22 10:27:49  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:27:49  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:27:49  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:27:49  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 10:27:49  :: 3/22/2018 10:27:49 AMOrderRouterBase.LoadConfig
+2018-03-22 10:27:49  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 10:27:49  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 10:27:49  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 10:27:49  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 10:27:49  :: 3/22/2018 10:27:49 AMOrderRouterBase.LoadConfig
+2018-03-22 10:27:49  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:27:49  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:27:50  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:28:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:28:20  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:28:20  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 10:28:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209997
+2018-03-22 10:28:23  :: Routing to market position for symbol ETH
+2018-03-22 10:28:23  :: Creating buy order for symbol ETH.Quantity=0,157927847313301 Price=,06
+2018-03-22 10:28:23  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:28:25  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:25  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:25  :: Received New for symbol ETH
+2018-03-22 10:28:27  :: New for symbol ETH processed
+2018-03-22 10:28:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209997
+2018-03-22 10:28:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209997
+2018-03-22 10:28:31  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:31  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:31  :: Received New for symbol ETH
+2018-03-22 10:28:38  :: New for symbol ETH processed
+2018-03-22 10:28:39  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:39  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:39  :: Received New for symbol ETH
+2018-03-22 10:28:39  :: New for symbol ETH processed
+2018-03-22 10:28:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209997
+2018-03-22 10:28:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.06205701 BestBidPrice=0.06205701 BestAskPrice=0.06209997
+2018-03-22 10:28:44  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:44  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:44  :: Received New for symbol ETH
+2018-03-22 10:28:44  :: New for symbol ETH processed
+2018-03-22 10:28:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06209997 BestAskPrice=0.06209998
+2018-03-22 10:28:45  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06205701 Old Bid Price:0.06209997
+2018-03-22 10:28:46  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06209997
+2018-03-22 10:28:46  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 10:28:47  :: @Outgoing Order Routing Bittrex:Cancelling Order Id b62d88ca-98ef-4d82-940d-77d7194431ee for symbol ETH
+2018-03-22 10:28:54  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:28:54  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06209997 Old Bid Price:0.06205701
+2018-03-22 10:28:55  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:55  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:28:55  :: Received New for symbol ETH
+2018-03-22 10:28:55  :: New for symbol ETH processed
+2018-03-22 10:28:56  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06205701
+2018-03-22 10:28:56  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 10:28:56  :: @Outgoing Order Routing Bittrex:Cancelling Order Id f3adf20c-1b9e-4358-b345-bc9abadc5587 for symbol ETH
+2018-03-22 10:28:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:29:00  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:00  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:00  :: Received New for symbol ETH
+2018-03-22 10:29:00  :: New for symbol ETH processed
+2018-03-22 10:29:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:29:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:29:05  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:05  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:05  :: Received New for symbol ETH
+2018-03-22 10:29:05  :: New for symbol ETH processed
+2018-03-22 10:29:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209998 BestBidPrice=0.06205701 BestAskPrice=0.06209998
+2018-03-22 10:29:13  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 10:29:13  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:29:13  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:29:13  :: Received Canceled for symbol ETH
+2018-03-22 10:29:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06205701 BestAskPrice=0.06209999
+2018-03-22 10:29:15  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:29:15  :: Canceled for symbol ETH processed
+2018-03-22 10:29:16  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:29:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06205701 BestAskPrice=0.06209999
+2018-03-22 10:29:18  :: Routing to market position for symbol ETH
+2018-03-22 10:29:18  :: Creating buy order for symbol ETH.Quantity=0,157927847313301 Price=,06
+2018-03-22 10:29:18  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:29:21  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:21  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:21  :: Received New for symbol ETH
+2018-03-22 10:29:21  :: New for symbol ETH processed
+2018-03-22 10:29:42  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:29:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06205701 BestAskPrice=0.06209999
+2018-03-22 10:29:42  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:29:42  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:42  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:44  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:29:44  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:29:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209999 BestBidPrice=0.06205701 BestAskPrice=0.06209999
+2018-03-22 10:29:47  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:47  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:29:47  :: Received execution report for no longer processed symbol ETH
+2018-03-22 10:34:39  :: 3/22/2018 10:34:39 AMMomentumStrategyBase.LoadConfig
+2018-03-22 10:34:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:34:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:34:40  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 10:34:40  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 10:34:40  :: 3/22/2018 10:34:40 AMOrderRouterBase.LoadConfig
+2018-03-22 10:34:40  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 10:34:40  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 10:34:40  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 10:34:40  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 10:34:40  :: 3/22/2018 10:34:40 AMOrderRouterBase.LoadConfig
+2018-03-22 10:34:40  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:34:40  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:34:40  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 10:35:07  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 10:35:09  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 10:35:09  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 10:35:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209498 BestBidPrice=0.06174621 BestAskPrice=0.06185483
+2018-03-22 10:35:13  :: Routing to market position for symbol ETH
+2018-03-22 10:35:13  :: Creating buy order for symbol ETH.Quantity=0,316897020885978 Price=,06
+2018-03-22 10:35:13  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:35:16  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:35:16  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:35:16  :: Received New for symbol ETH
+2018-03-22 10:35:16  :: New for symbol ETH processed
+2018-03-22 10:35:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.06175 BestBidPrice=0.0618 BestAskPrice=0.06185483
+2018-03-22 10:35:16  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06174621 Old Bid Price:0.0618
+2018-03-22 10:35:17  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.0618
+2018-03-22 10:35:17  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 10:35:18  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7abbb93f-9991-4adc-b864-9c20e91c5681 for symbol ETH
+2018-03-22 10:35:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06185483 BestBidPrice=0.0618 BestAskPrice=0.06185483
+2018-03-22 10:35:23  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:35:23  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:35:23  :: Received New for symbol ETH
+2018-03-22 10:35:23  :: New for symbol ETH processed
+2018-03-22 10:35:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06185483 BestBidPrice=0.0618 BestAskPrice=0.06185483
+2018-03-22 10:35:30  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 10:35:30  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:35:30  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 10:35:30  :: Received Canceled for symbol ETH
+2018-03-22 10:35:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.06185483 BestBidPrice=0.0618 BestAskPrice=0.06185483
+2018-03-22 10:35:33  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 10:35:33  :: Canceled for symbol ETH processed
+2018-03-22 10:35:35  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 10:35:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209498 BestBidPrice=0.0618 BestAskPrice=0.06209498
+2018-03-22 10:35:36  :: Routing to market position for symbol ETH
+2018-03-22 10:35:36  :: Creating buy order for symbol ETH.Quantity=0,316621197411003 Price=,06
+2018-03-22 10:35:36  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 10:35:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.06209498 BestBidPrice=0.0618 BestAskPrice=0.06209498
+2018-03-22 10:35:49  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:35:49  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 10:35:49  :: Received New for symbol ETH
+2018-03-22 10:35:49  :: New for symbol ETH processed
+2018-03-22 12:27:58  :: 3/22/2018 12:27:58 PMMomentumStrategyBase.LoadConfig
+2018-03-22 12:27:58  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:27:58  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:27:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:27:58  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 12:27:58  :: 3/22/2018 12:27:58 PMOrderRouterBase.LoadConfig
+2018-03-22 12:27:58  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 12:27:58  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 12:27:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 12:27:58  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 12:27:58  :: 3/22/2018 12:27:58 PMOrderRouterBase.LoadConfig
+2018-03-22 12:27:58  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:27:58  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:27:58  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:28:36  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:28:42  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:29:23  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:29:24  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:29:24  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ETH
+2018-03-22 12:29:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139741 BestBidPrice=0.06139741 BestAskPrice=0.06158999
+2018-03-22 12:29:28  :: Routing to market position for symbol ETH
+2018-03-22 12:29:28  :: Creating sell order for symbol ETH.Quantity=0,24457305 Price=,06
+2018-03-22 12:29:28  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:29:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139741 BestBidPrice=0.06139841 BestAskPrice=0.06158999
+2018-03-22 12:29:33  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:33  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:33  :: Received New for symbol ETH
+2018-03-22 12:29:33  :: New for symbol ETH processed
+2018-03-22 12:29:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139741 BestBidPrice=0.06139841 BestAskPrice=0.06158998
+2018-03-22 12:29:35  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06158999 Old Ask Price:0.06158998
+2018-03-22 12:29:36  :: @Order Router: Updating order for symbol ETH: qty=0.24457305 price=0.06158998
+2018-03-22 12:29:36  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:29:36  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 2563779f-5fde-4829-9520-4078748b62fe for symbol ETH
+2018-03-22 12:29:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158998 BestBidPrice=0.06140838 BestAskPrice=0.06158998
+2018-03-22 12:29:39  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:39  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:39  :: Received New for symbol ETH
+2018-03-22 12:29:39  :: New for symbol ETH processed
+2018-03-22 12:29:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158998 BestBidPrice=0.06140838 BestAskPrice=0.06158998
+2018-03-22 12:29:44  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:44  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:44  :: Received New for symbol ETH
+2018-03-22 12:29:44  :: New for symbol ETH processed
+2018-03-22 12:29:49  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:49  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:49  :: Received New for symbol ETH
+2018-03-22 12:29:49  :: New for symbol ETH processed
+2018-03-22 12:29:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158998 BestBidPrice=0.06140938 BestAskPrice=0.06158997
+2018-03-22 12:29:53  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06158998 Old Ask Price:0.06158997
+2018-03-22 12:29:53  :: @Order Router: Updating order for symbol ETH: qty=0.24457305 price=0.06158997
+2018-03-22 12:29:53  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:29:53  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 9e376ae0-2780-4c59-bd74-2ed93addf588 for symbol ETH
+2018-03-22 12:29:55  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:55  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:29:55  :: Received New for symbol ETH
+2018-03-22 12:29:55  :: New for symbol ETH processed
+2018-03-22 12:29:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158998 BestBidPrice=0.06140838 BestAskPrice=0.06158997
+2018-03-22 12:30:01  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:01  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:01  :: Received New for symbol ETH
+2018-03-22 12:30:01  :: New for symbol ETH processed
+2018-03-22 12:30:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158998 BestBidPrice=0.06140838 BestAskPrice=0.06155
+2018-03-22 12:30:01  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06158997 Old Ask Price:0.06155
+2018-03-22 12:30:02  :: @Order Router: Updating order for symbol ETH: qty=0.24457305 price=0.06155
+2018-03-22 12:30:02  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:30:02  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 1a834921-5f74-48f0-a87c-e9b14658a467 for symbol ETH
+2018-03-22 12:30:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158998 BestBidPrice=0.06140838 BestAskPrice=0.06155
+2018-03-22 12:30:06  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:06  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:06  :: Received New for symbol ETH
+2018-03-22 12:30:06  :: New for symbol ETH processed
+2018-03-22 12:30:11  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:11  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:11  :: Received New for symbol ETH
+2018-03-22 12:30:11  :: New for symbol ETH processed
+2018-03-22 12:30:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139841 BestAskPrice=0.06155
+2018-03-22 12:30:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:15  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06155 Old Ask Price:0.06139841
+2018-03-22 12:30:15  :: @Order Router: Updating order for symbol ETH: qty=0.24457305 price=0.06139841
+2018-03-22 12:30:15  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:30:15  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 8e8c6704-7d66-47f8-bf78-2a504f41ca05 for symbol ETH
+2018-03-22 12:30:16  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:16  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:16  :: Received New for symbol ETH
+2018-03-22 12:30:16  :: New for symbol ETH processed
+2018-03-22 12:30:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:21  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:21  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:21  :: Received New for symbol ETH
+2018-03-22 12:30:21  :: New for symbol ETH processed
+2018-03-22 12:30:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:27  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:27  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:27  :: Received New for symbol ETH
+2018-03-22 12:30:27  :: New for symbol ETH processed
+2018-03-22 12:30:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:32  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:32  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:32  :: Received New for symbol ETH
+2018-03-22 12:30:32  :: New for symbol ETH processed
+2018-03-22 12:30:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:37  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:37  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:37  :: Received New for symbol ETH
+2018-03-22 12:30:37  :: New for symbol ETH processed
+2018-03-22 12:30:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:43  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:43  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:30:43  :: Received New for symbol ETH
+2018-03-22 12:30:43  :: New for symbol ETH processed
+2018-03-22 12:30:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:48  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 12:30:48  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 12:30:48  :: Received partially filled for symbol ETH
+2018-03-22 12:30:48  :: Partially filled for symbol ETH processed
+2018-03-22 12:30:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:54  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 12:30:54  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 12:30:54  :: Received partially filled for symbol ETH
+2018-03-22 12:30:54  :: Partially filled for symbol ETH processed
+2018-03-22 12:30:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139841 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139441 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:30:59  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 12:30:59  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 12:30:59  :: Received partially filled for symbol ETH
+2018-03-22 12:30:59  :: Partially filled for symbol ETH processed
+2018-03-22 12:31:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139441 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:31:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.06139441 BestBidPrice=0.06139441 BestAskPrice=0.06139841
+2018-03-22 12:31:04  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 12:31:04  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:31:04  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:31:04  :: Received filled for symbol ETH
+2018-03-22 12:31:04  :: Filled for symbol ETH processed
+2018-03-22 12:31:05  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:31:24  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:31:25  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:32:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:32:02  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:32:02  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 12:32:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06122675 BestAskPrice=0.06158987
+2018-03-22 12:32:05  :: Routing to market position for symbol ETH
+2018-03-22 12:32:05  :: Creating buy order for symbol ETH.Quantity=0,322497437802921 Price=,06
+2018-03-22 12:32:05  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:32:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06123 BestAskPrice=0.06158987
+2018-03-22 12:32:08  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06122675 Old Bid Price:0.06123
+2018-03-22 12:32:08  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06123
+2018-03-22 12:32:08  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:32:09  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c70b4b06-4eef-478e-ab5f-0daa98c3beb9 for symbol ETH
+2018-03-22 12:32:13  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:13  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:13  :: Received New for symbol ETH
+2018-03-22 12:32:13  :: New for symbol ETH processed
+2018-03-22 12:32:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.061225 BestAskPrice=0.06158987
+2018-03-22 12:32:17  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06123 Old Bid Price:0.061225
+2018-03-22 12:32:17  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.061225
+2018-03-22 12:32:17  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:32:17  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7c5ef4a3-f7d3-4d43-86c9-918fbde4212c for symbol ETH
+2018-03-22 12:32:18  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:18  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:18  :: Received New for symbol ETH
+2018-03-22 12:32:18  :: New for symbol ETH processed
+2018-03-22 12:32:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06143458 BestAskPrice=0.06158987
+2018-03-22 12:32:20  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.061225 Old Bid Price:0.06143458
+2018-03-22 12:32:21  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06143458
+2018-03-22 12:32:21  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:32:21  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 3c3f8784-db91-4c5d-81e1-0c5e35ddd483 for symbol ETH
+2018-03-22 12:32:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06143458 BestAskPrice=0.06158987
+2018-03-22 12:32:24  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:24  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:24  :: Received New for symbol ETH
+2018-03-22 12:32:24  :: New for symbol ETH processed
+2018-03-22 12:32:29  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:29  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:29  :: Received New for symbol ETH
+2018-03-22 12:32:29  :: New for symbol ETH processed
+2018-03-22 12:32:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06144458 BestAskPrice=0.06158987
+2018-03-22 12:32:31  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06143458 Old Bid Price:0.06144458
+2018-03-22 12:32:33  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06144458
+2018-03-22 12:32:33  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:32:33  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7ae79110-c712-457f-9a25-80e7746b7b32 for symbol ETH
+2018-03-22 12:32:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06144458 BestAskPrice=0.06158987
+2018-03-22 12:32:35  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:35  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:35  :: Received New for symbol ETH
+2018-03-22 12:32:35  :: New for symbol ETH processed
+2018-03-22 12:32:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06144458 BestAskPrice=0.06158987
+2018-03-22 12:32:41  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:41  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:41  :: Received New for symbol ETH
+2018-03-22 12:32:41  :: New for symbol ETH processed
+2018-03-22 12:32:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06145458 BestAskPrice=0.06158987
+2018-03-22 12:32:41  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06144458 Old Bid Price:0.06145458
+2018-03-22 12:32:42  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06145458
+2018-03-22 12:32:42  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:32:43  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 71ce01de-31fe-4121-a4f5-d7f2da33da04 for symbol ETH
+2018-03-22 12:32:44  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06145458 BestAskPrice=0.06158987
+2018-03-22 12:32:46  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:46  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:32:46  :: Received New for symbol ETH
+2018-03-22 12:32:46  :: New for symbol ETH processed
+2018-03-22 12:32:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158987 BestBidPrice=0.06145458 BestAskPrice=0.06158987
+2018-03-22 12:32:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.06145458 BestBidPrice=0.06142458 BestAskPrice=0.06144458
+2018-03-22 12:32:51  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06145458 Old Bid Price:0.06142458
+2018-03-22 12:32:51  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 12:32:51  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:32:51  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:32:51  :: Received filled for symbol ETH
+2018-03-22 12:32:51  :: Filled for symbol ETH processed
+2018-03-22 12:32:51  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:32:52  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:32:53  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:41:02  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:41:04  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:41:04  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ETH
+2018-03-22 12:41:07  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.061365 BestAskPrice=0.06158887
+2018-03-22 12:41:07  :: Routing to market position for symbol ETH
+2018-03-22 12:41:07  :: Creating sell order for symbol ETH.Quantity=0,32249743 Price=,06
+2018-03-22 12:41:07  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:41:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136501 BestAskPrice=0.06158887
+2018-03-22 12:41:11  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:11  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:11  :: Received New for symbol ETH
+2018-03-22 12:41:11  :: New for symbol ETH processed
+2018-03-22 12:41:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136501 BestAskPrice=0.06158887
+2018-03-22 12:41:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136502 BestAskPrice=0.06158887
+2018-03-22 12:41:17  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:17  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:17  :: Received New for symbol ETH
+2018-03-22 12:41:17  :: New for symbol ETH processed
+2018-03-22 12:41:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136502 BestAskPrice=0.06158887
+2018-03-22 12:41:23  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:23  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:23  :: Received New for symbol ETH
+2018-03-22 12:41:23  :: New for symbol ETH processed
+2018-03-22 12:41:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136513 BestAskPrice=0.06158887
+2018-03-22 12:41:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136515 BestAskPrice=0.06158887
+2018-03-22 12:41:28  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:28  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:28  :: Received New for symbol ETH
+2018-03-22 12:41:28  :: New for symbol ETH processed
+2018-03-22 12:41:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06137 BestAskPrice=0.06158887
+2018-03-22 12:41:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06137002 BestAskPrice=0.06158887
+2018-03-22 12:41:33  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:33  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:33  :: Received New for symbol ETH
+2018-03-22 12:41:33  :: New for symbol ETH processed
+2018-03-22 12:41:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06137003 BestAskPrice=0.06158887
+2018-03-22 12:41:38  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:38  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:38  :: Received New for symbol ETH
+2018-03-22 12:41:38  :: New for symbol ETH processed
+2018-03-22 12:41:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06137501 BestAskPrice=0.06158887
+2018-03-22 12:41:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06137501 BestAskPrice=0.06158887
+2018-03-22 12:41:45  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:45  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:45  :: Received New for symbol ETH
+2018-03-22 12:41:45  :: New for symbol ETH processed
+2018-03-22 12:41:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06137501 BestAskPrice=0.06158887
+2018-03-22 12:41:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.06137501 BestBidPrice=0.06138 BestAskPrice=0.06158887
+2018-03-22 12:41:51  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:51  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:51  :: Received New for symbol ETH
+2018-03-22 12:41:51  :: New for symbol ETH processed
+2018-03-22 12:41:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06138001 BestAskPrice=0.06158887
+2018-03-22 12:41:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.061385 BestAskPrice=0.06158887
+2018-03-22 12:41:56  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:56  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:41:56  :: Received New for symbol ETH
+2018-03-22 12:41:56  :: New for symbol ETH processed
+2018-03-22 12:42:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.061385 BestAskPrice=0.06158887
+2018-03-22 12:42:01  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:01  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:01  :: Received New for symbol ETH
+2018-03-22 12:42:01  :: New for symbol ETH processed
+2018-03-22 12:42:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.061385 BestAskPrice=0.06158887
+2018-03-22 12:42:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.061385 BestAskPrice=0.06158887
+2018-03-22 12:42:07  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:07  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:07  :: Received New for symbol ETH
+2018-03-22 12:42:07  :: New for symbol ETH processed
+2018-03-22 12:42:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136103 BestAskPrice=0.06158887
+2018-03-22 12:42:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136132 BestAskPrice=0.06158887
+2018-03-22 12:42:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06136103 BestAskPrice=0.06158887
+2018-03-22 12:42:16  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:16  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:16  :: Received New for symbol ETH
+2018-03-22 12:42:16  :: New for symbol ETH processed
+2018-03-22 12:42:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.0612451 BestBidPrice=0.06124513 BestAskPrice=0.06136132
+2018-03-22 12:42:19  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06158887 Old Ask Price:0.06136132
+2018-03-22 12:42:19  :: @Order Router: Updating order for symbol ETH: qty=0.32249743 price=0.06136132
+2018-03-22 12:42:19  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:42:19  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 42612cdf-dec5-47be-99da-38a9da212405 for symbol ETH
+2018-03-22 12:42:21  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:21  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:42:21  :: Received New for symbol ETH
+2018-03-22 12:42:21  :: New for symbol ETH processed
+2018-03-22 12:42:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.0612451 BestBidPrice=0.06125139 BestAskPrice=0.06136132
+2018-03-22 12:42:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06136132 BestBidPrice=0.06125139 BestAskPrice=0.06136132
+2018-03-22 12:42:26  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 12:42:26  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:42:26  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:42:26  :: Received filled for symbol ETH
+2018-03-22 12:42:26  :: Filled for symbol ETH processed
+2018-03-22 12:42:26  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:42:36  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:42:38  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:43:03  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:43:04  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:43:04  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 12:43:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158187 BestBidPrice=0.06130594 BestAskPrice=0.06158187
+2018-03-22 12:43:08  :: Routing to market position for symbol ETH
+2018-03-22 12:43:08  :: Creating buy order for symbol ETH.Quantity=0,304690051241364 Price=,06
+2018-03-22 12:43:08  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:43:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158187 BestBidPrice=0.06131594 BestAskPrice=0.06158187
+2018-03-22 12:43:11  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06130594 Old Bid Price:0.06131594
+2018-03-22 12:43:11  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:43:11  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:43:11  :: Received New for symbol ETH
+2018-03-22 12:43:11  :: New for symbol ETH processed
+2018-03-22 12:43:12  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06131594
+2018-03-22 12:43:12  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:43:12  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 6c37ae98-5f0f-4559-ac5c-a2ce01d0f252 for symbol ETH
+2018-03-22 12:43:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158187 BestBidPrice=0.06131594 BestAskPrice=0.06158187
+2018-03-22 12:43:17  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:43:17  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:43:17  :: Received New for symbol ETH
+2018-03-22 12:43:17  :: New for symbol ETH processed
+2018-03-22 12:43:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158187 BestBidPrice=0.06131594 BestAskPrice=0.06158187
+2018-03-22 12:43:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158187 BestBidPrice=0.06132594 BestAskPrice=0.06158187
+2018-03-22 12:43:21  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06131594 Old Bid Price:0.06132594
+2018-03-22 12:43:22  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06132594
+2018-03-22 12:43:22  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:43:24  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:43:24  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:43:25  :: @Outgoing Order Routing Bittrex:Error updating order 00400200001!:La clave proporcionada no se encontró en el diccionario.
+2018-03-22 12:43:25  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:43:25  :: Received Canceled for symbol ETH
+2018-03-22 12:43:27  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:43:27  :: Canceled for symbol ETH processed
+2018-03-22 12:43:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158187 BestBidPrice=0.06132594 BestAskPrice=0.06158187
+2018-03-22 12:43:32  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 12:44:05  :: Routing to market position for symbol ETH
+2018-03-22 12:44:05  :: Creating buy order for symbol ETH.Quantity=0,304590683811777 Price=,06
+2018-03-22 12:44:05  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:44:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158087 BestBidPrice=0.06132594 BestAskPrice=0.06158087
+2018-03-22 12:44:10  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:44:10  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:44:10  :: Received New for symbol ETH
+2018-03-22 12:44:10  :: New for symbol ETH processed
+2018-03-22 12:44:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158087 BestBidPrice=0.06132594 BestAskPrice=0.06142302
+2018-03-22 12:44:15  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol ETH 
+2018-03-22 12:44:15  :: Canceling all active orders
+2018-03-22 12:44:15  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2018-03-22 12:44:15  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol ETH
+2018-03-22 12:44:15  :: @Outgoing Order Routing Bittrex:Cancelling Order Id d2c8c121-6d32-410a-8982-bfc7aa94ef45 for symbol ETH
+2018-03-22 12:44:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158087 BestBidPrice=0.06132594 BestAskPrice=0.06142302
+2018-03-22 12:44:16  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:44:16  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:44:16  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:44:16  :: Received execution report for no longer processed symbol ETH
+2018-03-22 12:44:16  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:44:43  :: 3/22/2018 12:44:43 PMMomentumStrategyBase.LoadConfig
+2018-03-22 12:44:43  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:44:43  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:44:43  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:44:43  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 12:44:43  :: 3/22/2018 12:44:43 PMOrderRouterBase.LoadConfig
+2018-03-22 12:44:43  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 12:44:43  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 12:44:44  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 12:44:44  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 12:44:44  :: 3/22/2018 12:44:44 PMOrderRouterBase.LoadConfig
+2018-03-22 12:44:44  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:44:44  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:44:44  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:45:05  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:45:07  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:45:07  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 12:45:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06124902 BestAskPrice=0.06158787
+2018-03-22 12:45:11  :: Routing to market position for symbol ETH
+2018-03-22 12:45:11  :: Creating buy order for symbol ETH.Quantity=0,152486603050955 Price=,06
+2018-03-22 12:45:11  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:45:14  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:45:14  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:45:14  :: Received New for symbol ETH
+2018-03-22 12:45:14  :: New for symbol ETH processed
+2018-03-22 12:45:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06124904 BestAskPrice=0.06158787
+2018-03-22 12:45:18  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06124902 Old Bid Price:0.06124904
+2018-03-22 12:45:19  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06124904
+2018-03-22 12:45:19  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:45:19  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 0b68c0cf-2bde-4414-91ea-896d75e28798 for symbol ETH
+2018-03-22 12:45:21  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:45:21  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:45:21  :: Received New for symbol ETH
+2018-03-22 12:45:21  :: New for symbol ETH processed
+2018-03-22 12:45:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06124906 BestAskPrice=0.06158787
+2018-03-22 12:45:22  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06124904 Old Bid Price:0.06124906
+2018-03-22 12:45:23  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06124906
+2018-03-22 12:45:23  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:45:23  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c97d079c-9be8-429d-88c9-5ba148e311f5 for symbol ETH
+2018-03-22 12:45:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06124906 BestAskPrice=0.06158787
+2018-03-22 12:45:26  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:45:26  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:45:26  :: Received New for symbol ETH
+2018-03-22 12:45:26  :: New for symbol ETH processed
+2018-03-22 12:45:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06124906 BestAskPrice=0.06158787
+2018-03-22 12:45:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06124906 BestAskPrice=0.06158787
+2018-03-22 12:45:31  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:45:31  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:45:31  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:45:31  :: Received Canceled for symbol ETH
+2018-03-22 12:45:31  :: Canceled for symbol ETH processed
+2018-03-22 12:45:33  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:45:36  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 12:45:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06126906 BestAskPrice=0.06158687
+2018-03-22 12:46:17  :: Routing to market position for symbol ETH
+2018-03-22 12:46:17  :: Creating buy order for symbol ETH.Quantity=0,152436727444488 Price=,06
+2018-03-22 12:46:17  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:46:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06130906 BestAskPrice=0.06158687
+2018-03-22 12:46:21  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06126906 Old Bid Price:0.06130906
+2018-03-22 12:46:21  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06130906
+2018-03-22 12:46:21  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:46:21  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 21a0a388-a7d7-4109-97de-d458e1587ea7 for symbol ETH
+2018-03-22 12:46:22  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:22  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:23  :: Received New for symbol ETH
+2018-03-22 12:46:23  :: New for symbol ETH processed
+2018-03-22 12:46:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.06130906 BestBidPrice=0.06130906 BestAskPrice=0.06158687
+2018-03-22 12:46:28  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:28  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:28  :: Received New for symbol ETH
+2018-03-22 12:46:28  :: New for symbol ETH processed
+2018-03-22 12:46:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06130906 BestAskPrice=0.06158687
+2018-03-22 12:46:33  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:33  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:33  :: Received New for symbol ETH
+2018-03-22 12:46:33  :: New for symbol ETH processed
+2018-03-22 12:46:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06130906 BestAskPrice=0.06158687
+2018-03-22 12:46:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06130906 BestAskPrice=0.06158687
+2018-03-22 12:46:38  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:38  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:38  :: Received New for symbol ETH
+2018-03-22 12:46:38  :: New for symbol ETH processed
+2018-03-22 12:46:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06131906 BestAskPrice=0.06158686
+2018-03-22 12:46:41  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06130906 Old Bid Price:0.06131906
+2018-03-22 12:46:41  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06131906
+2018-03-22 12:46:41  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:46:42  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 2cda51b7-3fa1-4458-bf39-341ba218a38d for symbol ETH
+2018-03-22 12:46:43  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:43  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:43  :: Received New for symbol ETH
+2018-03-22 12:46:43  :: New for symbol ETH processed
+2018-03-22 12:46:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06131906 BestAskPrice=0.06158686
+2018-03-22 12:46:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06131906 BestAskPrice=0.06158686
+2018-03-22 12:46:49  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:49  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:49  :: Received New for symbol ETH
+2018-03-22 12:46:49  :: New for symbol ETH processed
+2018-03-22 12:46:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06132906 BestAskPrice=0.06158686
+2018-03-22 12:46:52  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06131906 Old Bid Price:0.06132906
+2018-03-22 12:46:53  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06132906
+2018-03-22 12:46:53  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:46:53  :: @Outgoing Order Routing Bittrex:Cancelling Order Id b9518bcb-70f3-4541-94d4-853acccd43e1 for symbol ETH
+2018-03-22 12:46:54  :: @Outgoing Order Routing Bittrex:Error updating order 00200300002!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = b9518bcb-70f3-4541-94d4-853acccd43e1
+2018-03-22 12:46:54  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:46:54  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:46:54  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:46:54  :: Received Canceled for symbol ETH
+2018-03-22 12:46:54  :: Canceled for symbol ETH processed
+2018-03-22 12:46:55  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:46:55  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 12:46:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06132906 BestAskPrice=0.06158687
+2018-03-22 12:46:56  :: Routing to market position for symbol ETH
+2018-03-22 12:46:56  :: Creating buy order for symbol ETH.Quantity=0,152287594168246 Price=,06
+2018-03-22 12:46:56  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:46:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06132906 BestAskPrice=0.06158687
+2018-03-22 12:46:59  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:59  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:46:59  :: Received New for symbol ETH
+2018-03-22 12:46:59  :: New for symbol ETH processed
+2018-03-22 12:47:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06133906 BestAskPrice=0.06158687
+2018-03-22 12:47:02  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06132906 Old Bid Price:0.06133906
+2018-03-22 12:47:04  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06133906
+2018-03-22 12:47:04  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:47:04  :: @Outgoing Order Routing Bittrex:Cancelling Order Id fe207f7f-6a66-4f7d-aa7c-ebe21e205994 for symbol ETH
+2018-03-22 12:47:05  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:47:05  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:47:05  :: Received New for symbol ETH
+2018-03-22 12:47:05  :: New for symbol ETH processed
+2018-03-22 12:47:10  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:47:10  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:47:10  :: Received New for symbol ETH
+2018-03-22 12:47:10  :: New for symbol ETH processed
+2018-03-22 12:47:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06133906 BestAskPrice=0.06158687
+2018-03-22 12:47:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158687 BestBidPrice=0.06133906 BestAskPrice=0.06158687
+2018-03-22 12:47:15  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:47:15  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:47:15  :: Received New for symbol ETH
+2018-03-22 12:47:15  :: New for symbol ETH processed
+2018-03-22 12:47:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06133906 BestBidPrice=0.06126909 BestAskPrice=0.06133906
+2018-03-22 12:47:17  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06133906 Old Bid Price:0.06126909
+2018-03-22 12:47:18  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06126909
+2018-03-22 12:47:18  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:47:18  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 5548f466-e46f-48d3-b741-4013090bd16f for symbol ETH
+2018-03-22 12:47:18  :: @Outgoing Order Routing Bittrex:Error updating order 00300200001!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 5548f466-e46f-48d3-b741-4013090bd16f
+2018-03-22 12:47:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06133906 BestBidPrice=0.06127909 BestAskPrice=0.06133906
+2018-03-22 12:47:20  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06126909 Old Bid Price:0.06127909
+2018-03-22 12:47:20  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 12:47:20  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:47:20  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:47:20  :: Received filled for symbol ETH
+2018-03-22 12:47:22  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:47:22  :: Filled for symbol ETH processed
+2018-03-22 12:48:09  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:48:10  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:50:55  :: 3/22/2018 12:50:55 PMMomentumStrategyBase.LoadConfig
+2018-03-22 12:50:55  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:50:55  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:50:55  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 12:50:55  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 12:50:55  :: 3/22/2018 12:50:55 PMOrderRouterBase.LoadConfig
+2018-03-22 12:50:55  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 12:50:55  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 12:50:55  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 12:50:55  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 12:50:55  :: 3/22/2018 12:50:55 PMOrderRouterBase.LoadConfig
+2018-03-22 12:50:55  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:50:55  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:50:55  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 12:51:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:51:02  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:51:03  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ETH
+2018-03-22 12:51:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06158 BestAskPrice=0.06158787
+2018-03-22 12:51:04  :: Routing to market position for symbol ETH
+2018-03-22 12:51:04  :: Creating sell order for symbol ETH.Quantity=0,15228759 Price=,06
+2018-03-22 12:51:04  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:51:06  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:06  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:06  :: Received New for symbol ETH
+2018-03-22 12:51:06  :: New for symbol ETH processed
+2018-03-22 12:51:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:12  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:12  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:12  :: Received New for symbol ETH
+2018-03-22 12:51:12  :: New for symbol ETH processed
+2018-03-22 12:51:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:17  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:17  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:17  :: Received New for symbol ETH
+2018-03-22 12:51:17  :: New for symbol ETH processed
+2018-03-22 12:51:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:22  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:22  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:22  :: Received New for symbol ETH
+2018-03-22 12:51:22  :: New for symbol ETH processed
+2018-03-22 12:51:23  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06156 BestAskPrice=0.06158787
+2018-03-22 12:51:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06156 BestAskPrice=0.06158787
+2018-03-22 12:51:27  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:27  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:27  :: Received New for symbol ETH
+2018-03-22 12:51:27  :: New for symbol ETH processed
+2018-03-22 12:51:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:33  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:33  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:33  :: Received New for symbol ETH
+2018-03-22 12:51:33  :: New for symbol ETH processed
+2018-03-22 12:51:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06157 BestAskPrice=0.06158787
+2018-03-22 12:51:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06157 BestAskPrice=0.06158787
+2018-03-22 12:51:38  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:38  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:38  :: Received New for symbol ETH
+2018-03-22 12:51:38  :: New for symbol ETH processed
+2018-03-22 12:51:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:43  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:43  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:43  :: Received New for symbol ETH
+2018-03-22 12:51:43  :: New for symbol ETH processed
+2018-03-22 12:51:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06158 BestAskPrice=0.06158786
+2018-03-22 12:51:43  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06158787 Old Ask Price:0.06158786
+2018-03-22 12:51:45  :: @Order Router: Updating order for symbol ETH: qty=0.15228759 price=0.06158786
+2018-03-22 12:51:45  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:51:45  :: @Outgoing Order Routing Bittrex:Cancelling Order Id becbd9ce-7ad5-4e7b-9112-86cc5feff9f3 for symbol ETH
+2018-03-22 12:51:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06158 BestAskPrice=0.06158786
+2018-03-22 12:51:48  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:48  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:51:48  :: Received New for symbol ETH
+2018-03-22 12:51:48  :: New for symbol ETH processed
+2018-03-22 12:51:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:50  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06158786 Old Ask Price:0.06158787
+2018-03-22 12:51:50  :: @Order Router: Updating order for symbol ETH: qty=0.15228759 price=0.06158787
+2018-03-22 12:51:50  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:51:50  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 72730af6-2995-4bb4-b05a-a8fa644ee907 for symbol ETH
+2018-03-22 12:51:50  :: @Outgoing Order Routing Bittrex:Error updating order 00100200001!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 72730af6-2995-4bb4-b05a-a8fa644ee907
+2018-03-22 12:51:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158787 BestBidPrice=0.06155 BestAskPrice=0.06158787
+2018-03-22 12:51:59  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 12:51:59  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:51:59  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 12:51:59  :: Received filled for symbol ETH
+2018-03-22 12:51:59  :: Filled for symbol ETH processed
+2018-03-22 12:52:01  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:52:16  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:52:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:52:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 12:52:59  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 12:52:59  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 12:53:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06140006 BestAskPrice=0.06158887
+2018-03-22 12:53:01  :: Routing to market position for symbol ETH
+2018-03-22 12:53:01  :: Creating buy order for symbol ETH.Quantity=0,161067025015936 Price=,06
+2018-03-22 12:53:01  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:53:04  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:04  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:04  :: Received New for symbol ETH
+2018-03-22 12:53:04  :: New for symbol ETH processed
+2018-03-22 12:53:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06140106 BestAskPrice=0.06158887
+2018-03-22 12:53:05  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06140006 Old Bid Price:0.06140106
+2018-03-22 12:53:05  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06140106
+2018-03-22 12:53:05  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:05  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 651e1ed3-7981-4179-956c-2d025b913722 for symbol ETH
+2018-03-22 12:53:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06140206 BestAskPrice=0.06158887
+2018-03-22 12:53:08  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06140106 Old Bid Price:0.06140206
+2018-03-22 12:53:09  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06140206
+2018-03-22 12:53:09  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:09  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c19823ac-038e-4f44-bf20-74351a0f2970 for symbol ETH
+2018-03-22 12:53:10  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:10  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:10  :: Received New for symbol ETH
+2018-03-22 12:53:10  :: New for symbol ETH processed
+2018-03-22 12:53:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06141 BestAskPrice=0.06158887
+2018-03-22 12:53:11  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06140206 Old Bid Price:0.06141
+2018-03-22 12:53:12  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06141
+2018-03-22 12:53:12  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:13  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 1b03b256-f764-4910-b50e-eaa5745fa60d for symbol ETH
+2018-03-22 12:53:13  :: @Outgoing Order Routing Bittrex:Error updating order 00200300002!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 1b03b256-f764-4910-b50e-eaa5745fa60d
+2018-03-22 12:53:15  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:53:15  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:53:15  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:53:15  :: Received Canceled for symbol ETH
+2018-03-22 12:53:15  :: Canceled for symbol ETH processed
+2018-03-22 12:53:17  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:53:17  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 12:53:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06141001 BestAskPrice=0.06158887
+2018-03-22 12:53:18  :: Routing to market position for symbol ETH
+2018-03-22 12:53:18  :: Creating buy order for symbol ETH.Quantity=0,161040928018087 Price=,06
+2018-03-22 12:53:18  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:53:20  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:20  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:20  :: Received New for symbol ETH
+2018-03-22 12:53:20  :: New for symbol ETH processed
+2018-03-22 12:53:21  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06145 BestAskPrice=0.06158887
+2018-03-22 12:53:21  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06141001 Old Bid Price:0.06145
+2018-03-22 12:53:21  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06145
+2018-03-22 12:53:21  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:22  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 541421b7-99ff-44f6-87e1-017bafab6841 for symbol ETH
+2018-03-22 12:53:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06145 BestAskPrice=0.06158887
+2018-03-22 12:53:25  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:25  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:25  :: Received New for symbol ETH
+2018-03-22 12:53:25  :: New for symbol ETH processed
+2018-03-22 12:53:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06145001 BestAskPrice=0.06158887
+2018-03-22 12:53:27  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06145 Old Bid Price:0.06145001
+2018-03-22 12:53:28  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06145001
+2018-03-22 12:53:28  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:28  :: @Outgoing Order Routing Bittrex:Cancelling Order Id cc70276e-310b-4751-aae3-3beece5ee5c6 for symbol ETH
+2018-03-22 12:53:30  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:30  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:30  :: Received New for symbol ETH
+2018-03-22 12:53:30  :: New for symbol ETH processed
+2018-03-22 12:53:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06146001 BestAskPrice=0.06158887
+2018-03-22 12:53:31  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06145001 Old Bid Price:0.06146001
+2018-03-22 12:53:32  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06146001
+2018-03-22 12:53:32  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:32  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c87f2338-cf46-4c3a-8107-e38e2261db2a for symbol ETH
+2018-03-22 12:53:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06146001 BestAskPrice=0.06158887
+2018-03-22 12:53:36  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:36  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:36  :: Received New for symbol ETH
+2018-03-22 12:53:37  :: New for symbol ETH processed
+2018-03-22 12:53:38  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06146001 BestAskPrice=0.06158887
+2018-03-22 12:53:41  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06147001 BestAskPrice=0.06158887
+2018-03-22 12:53:41  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06146001 Old Bid Price:0.06147001
+2018-03-22 12:53:41  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06147001
+2018-03-22 12:53:41  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:42  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 6c8141a5-16f7-49c2-8b98-fac110c61c75 for symbol ETH
+2018-03-22 12:53:42  :: @Outgoing Order Routing Bittrex:Error updating order 00300400003!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 6c8141a5-16f7-49c2-8b98-fac110c61c75
+2018-03-22 12:53:42  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:53:42  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:53:42  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:53:42  :: Received Canceled for symbol ETH
+2018-03-22 12:53:42  :: Canceled for symbol ETH processed
+2018-03-22 12:53:46  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 12:53:46  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 12:53:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06147001 BestAskPrice=0.06158887
+2018-03-22 12:53:46  :: Routing to market position for symbol ETH
+2018-03-22 12:53:46  :: Creating buy order for symbol ETH.Quantity=0,160883738265213 Price=,06
+2018-03-22 12:53:46  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 12:53:47  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:47  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:47  :: Received New for symbol ETH
+2018-03-22 12:53:47  :: New for symbol ETH processed
+2018-03-22 12:53:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06147001 BestAskPrice=0.06158887
+2018-03-22 12:53:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06148001 BestAskPrice=0.06158887
+2018-03-22 12:53:52  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06147001 Old Bid Price:0.06148001
+2018-03-22 12:53:53  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:53  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:53  :: Received New for symbol ETH
+2018-03-22 12:53:53  :: New for symbol ETH processed
+2018-03-22 12:53:54  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06148001
+2018-03-22 12:53:54  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:53:54  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 39300f03-e753-4cfb-a86a-70cbaaa79bc1 for symbol ETH
+2018-03-22 12:53:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06148001 BestAskPrice=0.06158887
+2018-03-22 12:53:58  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:58  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:53:58  :: Received New for symbol ETH
+2018-03-22 12:53:58  :: New for symbol ETH processed
+2018-03-22 12:53:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06148001 BestAskPrice=0.06158887
+2018-03-22 12:54:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06149001 BestAskPrice=0.06158887
+2018-03-22 12:54:02  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06148001 Old Bid Price:0.06149001
+2018-03-22 12:54:03  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06149001
+2018-03-22 12:54:03  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:54:03  :: @Outgoing Order Routing Bittrex:Cancelling Order Id cefb16ed-1f49-4da0-b120-2cd44e7c5f3a for symbol ETH
+2018-03-22 12:54:04  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:04  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:04  :: Received New for symbol ETH
+2018-03-22 12:54:04  :: New for symbol ETH processed
+2018-03-22 12:54:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06149001 BestAskPrice=0.06158887
+2018-03-22 12:54:09  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:09  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:09  :: Received New for symbol ETH
+2018-03-22 12:54:09  :: New for symbol ETH processed
+2018-03-22 12:54:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06149001 BestAskPrice=0.06158887
+2018-03-22 12:54:14  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:14  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:14  :: Received New for symbol ETH
+2018-03-22 12:54:14  :: New for symbol ETH processed
+2018-03-22 12:54:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06150001 BestAskPrice=0.06158887
+2018-03-22 12:54:17  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06149001 Old Bid Price:0.06150001
+2018-03-22 12:54:17  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06150001
+2018-03-22 12:54:17  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:54:17  :: @Outgoing Order Routing Bittrex:Cancelling Order Id a13ba2e1-05d7-4de1-ac29-51b3cd3941e1 for symbol ETH
+2018-03-22 12:54:20  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:20  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:20  :: Received New for symbol ETH
+2018-03-22 12:54:20  :: New for symbol ETH processed
+2018-03-22 12:54:20  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06151001 BestAskPrice=0.06158887
+2018-03-22 12:54:20  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06150001 Old Bid Price:0.06151001
+2018-03-22 12:54:21  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06151001
+2018-03-22 12:54:21  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:54:21  :: @Outgoing Order Routing Bittrex:Cancelling Order Id e99af174-75db-4f8c-8659-bfd3c6525c03 for symbol ETH
+2018-03-22 12:54:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06150001 BestAskPrice=0.06158887
+2018-03-22 12:54:24  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06151001 Old Bid Price:0.06150001
+2018-03-22 12:54:25  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:25  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 12:54:25  :: Received New for symbol ETH
+2018-03-22 12:54:25  :: New for symbol ETH processed
+2018-03-22 12:54:25  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06150001
+2018-03-22 12:54:25  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:54:25  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 042eda73-884a-4b86-ac52-d6b8913fe2de for symbol ETH
+2018-03-22 12:54:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06151001 BestAskPrice=0.06158887
+2018-03-22 12:54:27  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06150001 Old Bid Price:0.06151001
+2018-03-22 12:54:27  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06151001
+2018-03-22 12:54:27  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 12:54:28  :: @Outgoing Order Routing Bittrex:Cancelling Order Id a7152863-09e9-49fe-99e7-c25c7d7f40d4 for symbol ETH
+2018-03-22 12:54:29  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol ETH 
+2018-03-22 12:54:29  :: Canceling all active orders
+2018-03-22 12:54:29  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2018-03-22 12:54:29  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol ETH
+2018-03-22 12:54:29  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 00f6b1b9-686e-4be1-b6e1-a1f368d82c7d for symbol ETH
+2018-03-22 12:54:30  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 12:54:30  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:54:30  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 12:54:30  :: Received execution report for no longer processed symbol ETH
+2018-03-22 12:54:30  :: Processing Market Data:Symbol=ETH  LastPrice=0.06158887 BestBidPrice=0.06152001 BestAskPrice=0.06158887
+2018-03-22 12:54:30  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 13:00:01  :: 3/22/2018 1:00:01 PMMomentumStrategyBase.LoadConfig
+2018-03-22 13:00:01  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 13:00:01  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 13:00:02  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 13:00:02  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 13:00:02  :: 3/22/2018 1:00:02 PMOrderRouterBase.LoadConfig
+2018-03-22 13:00:02  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 13:00:02  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 13:00:02  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 13:00:02  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 13:00:02  :: 3/22/2018 1:00:02 PMOrderRouterBase.LoadConfig
+2018-03-22 13:00:02  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 13:00:02  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 13:00:02  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 13:00:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 13:00:08  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 13:00:24  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 13:00:26  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 13:00:26  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 13:00:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.061466 BestAskPrice=0.0616
+2018-03-22 13:00:29  :: Routing to market position for symbol ETH
+2018-03-22 13:00:29  :: Creating buy order for symbol ETH.Quantity=0,150902287443465 Price=,06
+2018-03-22 13:00:29  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 13:00:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.061475 BestAskPrice=0.0616
+2018-03-22 13:00:32  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.061466 Old Bid Price:0.061475
+2018-03-22 13:00:32  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:32  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:32  :: Received New for symbol ETH
+2018-03-22 13:00:32  :: New for symbol ETH processed
+2018-03-22 13:00:33  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.061475
+2018-03-22 13:00:33  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:00:33  :: @Outgoing Order Routing Bittrex:Cancelling Order Id f67129d1-63fe-4138-b2f3-b1f9bedfd0a9 for symbol ETH
+2018-03-22 13:00:35  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.06147504 BestAskPrice=0.0616
+2018-03-22 13:00:35  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.061475 Old Bid Price:0.06147504
+2018-03-22 13:00:37  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06147504
+2018-03-22 13:00:37  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:00:37  :: @Outgoing Order Routing Bittrex:Cancelling Order Id f3702606-9fe7-4e43-874c-300714c81872 for symbol ETH
+2018-03-22 13:00:38  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:38  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:38  :: Received New for symbol ETH
+2018-03-22 13:00:38  :: New for symbol ETH processed
+2018-03-22 13:00:39  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.0616 BestAskPrice=0.06163928
+2018-03-22 13:00:39  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06147504 Old Bid Price:0.0616
+2018-03-22 13:00:39  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.0616
+2018-03-22 13:00:39  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:00:39  :: @Outgoing Order Routing Bittrex:Cancelling Order Id e742946b-20db-4e05-b18c-0e6e0b01f18a for symbol ETH
+2018-03-22 13:00:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.0616 BestAskPrice=0.06163928
+2018-03-22 13:00:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166691 BestBidPrice=0.0616 BestAskPrice=0.06166691
+2018-03-22 13:00:46  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:46  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:46  :: Received New for symbol ETH
+2018-03-22 13:00:46  :: New for symbol ETH processed
+2018-03-22 13:00:50  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166691 BestBidPrice=0.0616 BestAskPrice=0.06166691
+2018-03-22 13:00:52  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:52  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:52  :: Received New for symbol ETH
+2018-03-22 13:00:52  :: New for symbol ETH processed
+2018-03-22 13:00:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166691 BestBidPrice=0.0616 BestAskPrice=0.06166691
+2018-03-22 13:00:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166691 BestBidPrice=0.0616 BestAskPrice=0.06166691
+2018-03-22 13:00:57  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:57  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:00:57  :: Received New for symbol ETH
+2018-03-22 13:00:57  :: New for symbol ETH processed
+2018-03-22 13:01:00  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166691 BestBidPrice=0.0616 BestAskPrice=0.06166691
+2018-03-22 13:01:02  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:02  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:02  :: Received New for symbol ETH
+2018-03-22 13:01:02  :: New for symbol ETH processed
+2018-03-22 13:01:03  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:07  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:07  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:07  :: Received New for symbol ETH
+2018-03-22 13:01:07  :: New for symbol ETH processed
+2018-03-22 13:01:09  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:13  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:13  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:13  :: Received New for symbol ETH
+2018-03-22 13:01:13  :: New for symbol ETH processed
+2018-03-22 13:01:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:18  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:18  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:18  :: Received New for symbol ETH
+2018-03-22 13:01:18  :: New for symbol ETH processed
+2018-03-22 13:01:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:22  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:23  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:23  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:23  :: Received New for symbol ETH
+2018-03-22 13:01:23  :: New for symbol ETH processed
+2018-03-22 13:01:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166692 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:33  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:33  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:33  :: Received New for symbol ETH
+2018-03-22 13:01:33  :: New for symbol ETH processed
+2018-03-22 13:01:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:38  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:38  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:38  :: Received New for symbol ETH
+2018-03-22 13:01:38  :: New for symbol ETH processed
+2018-03-22 13:01:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.0616 BestAskPrice=0.06166692
+2018-03-22 13:01:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.06176262 BestBidPrice=0.06166692 BestAskPrice=0.06176262
+2018-03-22 13:01:43  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.0616 Old Bid Price:0.06166692
+2018-03-22 13:01:43  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06166692
+2018-03-22 13:01:43  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:01:43  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 4fc335d1-12d7-41a4-b700-d5bf1725d851 for symbol ETH
+2018-03-22 13:01:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.06176939 BestBidPrice=0.06166692 BestAskPrice=0.06182436
+2018-03-22 13:01:46  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:46  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:46  :: Received New for symbol ETH
+2018-03-22 13:01:46  :: New for symbol ETH processed
+2018-03-22 13:01:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.06176939 BestBidPrice=0.06166692 BestAskPrice=0.06182436
+2018-03-22 13:01:51  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:51  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:51  :: Received New for symbol ETH
+2018-03-22 13:01:51  :: New for symbol ETH processed
+2018-03-22 13:01:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.06176939 BestBidPrice=0.061675 BestAskPrice=0.06182436
+2018-03-22 13:01:52  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06166692 Old Bid Price:0.061675
+2018-03-22 13:01:53  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.061675
+2018-03-22 13:01:53  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:01:54  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 787ec90e-0704-4aeb-9e1a-f4f2c3d04349 for symbol ETH
+2018-03-22 13:01:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.061675 BestBidPrice=0.06167501 BestAskPrice=0.06182436
+2018-03-22 13:01:55  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.061675 Old Bid Price:0.06167501
+2018-03-22 13:01:56  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06167501
+2018-03-22 13:01:56  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:01:56  :: @Outgoing Order Routing Bittrex:Cancelling Order Id ffa80aac-02cf-48b6-8f72-89918450a460 for symbol ETH
+2018-03-22 13:01:57  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:57  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:01:57  :: Received New for symbol ETH
+2018-03-22 13:01:57  :: New for symbol ETH processed
+2018-03-22 13:01:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.061675 BestBidPrice=0.06167505 BestAskPrice=0.06182436
+2018-03-22 13:01:59  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06167501 Old Bid Price:0.06167505
+2018-03-22 13:02:00  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06167505
+2018-03-22 13:02:00  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:02:00  :: @Outgoing Order Routing Bittrex:Cancelling Order Id ca5d573d-d20c-43f4-b280-db9067ee7455 for symbol ETH
+2018-03-22 13:02:02  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:02  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:02  :: Received New for symbol ETH
+2018-03-22 13:02:02  :: New for symbol ETH processed
+2018-03-22 13:02:07  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:07  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:07  :: Received New for symbol ETH
+2018-03-22 13:02:07  :: New for symbol ETH processed
+2018-03-22 13:02:08  :: Processing Market Data:Symbol=ETH  LastPrice=0.061675 BestBidPrice=0.06168 BestAskPrice=0.06182436
+2018-03-22 13:02:08  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06167505 Old Bid Price:0.06168
+2018-03-22 13:02:08  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06168
+2018-03-22 13:02:08  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:02:08  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7a864626-5196-4e8f-84ab-760082947f16 for symbol ETH
+2018-03-22 13:02:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.06183971 BestBidPrice=0.061685 BestAskPrice=0.06183971
+2018-03-22 13:02:11  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06168 Old Bid Price:0.061685
+2018-03-22 13:02:12  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.061685
+2018-03-22 13:02:12  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:02:12  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 51bf1d1c-5705-4d0b-97d2-477a741146e7 for symbol ETH
+2018-03-22 13:02:13  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:13  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:13  :: Received New for symbol ETH
+2018-03-22 13:02:13  :: New for symbol ETH processed
+2018-03-22 13:02:14  :: Processing Market Data:Symbol=ETH  LastPrice=0.06183971 BestBidPrice=0.061685 BestAskPrice=0.06183971
+2018-03-22 13:02:17  :: Processing Market Data:Symbol=ETH  LastPrice=0.06183971 BestBidPrice=0.061685 BestAskPrice=0.06183971
+2018-03-22 13:02:18  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:18  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:18  :: Received New for symbol ETH
+2018-03-22 13:02:18  :: New for symbol ETH processed
+2018-03-22 13:02:23  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:23  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 13:02:23  :: Received New for symbol ETH
+2018-03-22 13:02:23  :: New for symbol ETH processed
+2018-03-22 13:02:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06183971 BestBidPrice=0.061685 BestAskPrice=0.06183971
+2018-03-22 13:02:29  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 13:02:29  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=PartiallyFilled - Exec Type=Trade
+2018-03-22 13:02:29  :: Received partially filled for symbol ETH
+2018-03-22 13:02:29  :: Partially filled for symbol ETH processed
+2018-03-22 13:02:29  :: Processing Market Data:Symbol=ETH  LastPrice=0.061685 BestBidPrice=0.061685 BestAskPrice=0.06183971
+2018-03-22 13:02:32  :: Processing Market Data:Symbol=ETH  LastPrice=0.0616 BestBidPrice=0.0616 BestAskPrice=0.06183971
+2018-03-22 13:02:32  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.061685 Old Bid Price:0.0616
+2018-03-22 13:02:34  :: @Order Router: Cancelling order for symbol ETH
+2018-03-22 13:02:34  :: @Outgoing Order Routing Bittrex:Cancelling order  for symbol ETH
+2018-03-22 13:02:34  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 13:02:34  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 13:02:34  :: @Outgoing Order Routing Bittrex:Error cancelig order 00101000009!:La clave proporcionada no se encontró en el diccionario.
+2018-03-22 13:02:34  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 13:02:34  :: Received filled for symbol ETH
+2018-03-22 13:02:34  :: Filled for symbol ETH processed
+2018-03-22 13:02:48  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 13:03:12  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 13:03:12  :: Processing Market Data:Symbol=ETH  LastPrice=0.061882 BestBidPrice=0.06183971 BestAskPrice=0.061882
+2018-03-22 13:03:14  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 13:05:10  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 13:05:11  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 13:05:11  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ETH
+2018-03-22 13:05:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06199952 BestBidPrice=0.06183971 BestAskPrice=0.06199952
+2018-03-22 13:05:15  :: Routing to market position for symbol ETH
+2018-03-22 13:05:15  :: Creating sell order for symbol ETH.Quantity=0,15090228 Price=,06
+2018-03-22 13:05:15  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 13:05:18  :: Processing Market Data:Symbol=ETH  LastPrice=0.062 BestBidPrice=0.06199952 BestAskPrice=0.062
+2018-03-22 13:05:18  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:0.06199952 Old Ask Price:0.062
+2018-03-22 13:05:18  :: @Order Router: Updating order for symbol ETH: qty=0.15090228 price=0.062
+2018-03-22 13:05:18  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 13:05:19  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 1a80c5a2-0ff2-4aa3-9236-e7876b8a8164 for symbol ETH
+2018-03-22 13:05:19  :: @Outgoing Order Routing Bittrex:Error updating order 00200100000!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 1a80c5a2-0ff2-4aa3-9236-e7876b8a8164
+2018-03-22 13:05:20  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 13:05:20  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 13:05:20  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 13:05:20  :: Received filled for symbol ETH
+2018-03-22 13:05:20  :: Filled for symbol ETH processed
+2018-03-22 13:05:20  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 13:05:46  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 13:05:47  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:09:15  :: 3/22/2018 3:09:15 PMMomentumStrategyBase.LoadConfig
+2018-03-22 15:09:15  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:09:15  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:09:15  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:09:15  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 15:09:15  :: 3/22/2018 3:09:15 PMOrderRouterBase.LoadConfig
+2018-03-22 15:09:15  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 15:09:15  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 15:09:15  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 15:09:15  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 15:09:15  :: 3/22/2018 3:09:15 PMOrderRouterBase.LoadConfig
+2018-03-22 15:09:15  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:09:15  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:09:15  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:10:19  :: 3/22/2018 3:10:19 PMMomentumStrategyBase.LoadConfig
+2018-03-22 15:10:19  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:10:19  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:10:19  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:10:19  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 15:10:19  :: 3/22/2018 3:10:19 PMOrderRouterBase.LoadConfig
+2018-03-22 15:10:19  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 15:10:19  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 15:10:19  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 15:10:19  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 15:10:19  :: 3/22/2018 3:10:19 PMOrderRouterBase.LoadConfig
+2018-03-22 15:10:19  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:10:19  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:10:19  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:10:40  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:10:50  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:11:20  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:11:24  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:11:27  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:14:55  :: 3/22/2018 3:14:55 PMMomentumStrategyBase.LoadConfig
+2018-03-22 15:14:55  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:14:55  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:14:55  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:14:55  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 15:14:55  :: 3/22/2018 3:14:55 PMOrderRouterBase.LoadConfig
+2018-03-22 15:14:55  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 15:14:55  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 15:14:55  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 15:14:55  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 15:14:55  :: 3/22/2018 3:14:55 PMOrderRouterBase.LoadConfig
+2018-03-22 15:14:55  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:14:55  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:14:55  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:15:20  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:15:26  :: Processing Market Data:Symbol=ETH  LastPrice=0.06197877 BestBidPrice=0.06197877 BestAskPrice=0.06208999
+2018-03-22 15:15:30  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:15:33  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:15:55  :: @Strategy Handler - Instruction Based Router for Bittrex - Critical error processing position sync instruction: Could not find market for pair ETH-USDT - 
+2018-03-22 15:15:55  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:15:57  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:19:25  :: 3/22/2018 3:19:25 PMMomentumStrategyBase.LoadConfig
+2018-03-22 15:19:25  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:19:25  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:19:25  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:19:25  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 15:19:25  :: 3/22/2018 3:19:25 PMOrderRouterBase.LoadConfig
+2018-03-22 15:19:25  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 15:19:25  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 15:19:25  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 15:19:25  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 15:19:25  :: 3/22/2018 3:19:25 PMOrderRouterBase.LoadConfig
+2018-03-22 15:19:25  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:19:25  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:19:25  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:20:07  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:20:11  :: Processing Market Data:Symbol=ETH  LastPrice=0.0618 BestBidPrice=0.0618 BestAskPrice=0.06196497
+2018-03-22 15:20:13  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:20:15  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:20:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Critical error processing position sync instruction: Could not find market for pair ETH-BTC - 
+2018-03-22 15:20:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:20:59  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:20:59  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:21:11  :: @Strategy Handler - Instruction Based Router for Bittrex - Critical error processing position sync instruction: Could not find market for pair ETH-BTC - 
+2018-03-22 15:21:12  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:21:13  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:21:13  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:21:15  :: Processing Market Data:Symbol=ETH  LastPrice=0.06183 BestBidPrice=0.06183 BestAskPrice=0.06195074
+2018-03-22 15:22:37  :: 3/22/2018 3:22:37 PMMomentumStrategyBase.LoadConfig
+2018-03-22 15:22:37  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:22:37  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:22:37  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:22:37  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 15:22:37  :: 3/22/2018 3:22:37 PMOrderRouterBase.LoadConfig
+2018-03-22 15:22:37  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 15:22:37  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 15:22:37  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 15:22:37  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 15:22:37  :: 3/22/2018 3:22:37 PMOrderRouterBase.LoadConfig
+2018-03-22 15:22:37  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:22:37  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:22:37  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:23:28  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:23:30  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:23:30  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:24:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:25  :: Routing to market position for symbol ETH
+2018-03-22 15:24:25  :: Creating buy order for symbol ETH.Quantity=0,299766631553359 Price=,06
+2018-03-22 15:24:25  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:24:26  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:26  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:26  :: Received New for symbol ETH
+2018-03-22 15:24:26  :: New for symbol ETH processed
+2018-03-22 15:24:28  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:32  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:32  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:32  :: Received New for symbol ETH
+2018-03-22 15:24:32  :: New for symbol ETH processed
+2018-03-22 15:24:41  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:41  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:41  :: Received New for symbol ETH
+2018-03-22 15:24:41  :: New for symbol ETH processed
+2018-03-22 15:24:42  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:45  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:47  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:47  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:47  :: Received New for symbol ETH
+2018-03-22 15:24:47  :: New for symbol ETH processed
+2018-03-22 15:24:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:51  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:53  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:53  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:53  :: Received New for symbol ETH
+2018-03-22 15:24:53  :: New for symbol ETH processed
+2018-03-22 15:24:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:24:58  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:58  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:24:58  :: Received New for symbol ETH
+2018-03-22 15:24:58  :: New for symbol ETH processed
+2018-03-22 15:24:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:25:01  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:25:03  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:25:03  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:25:03  :: Received New for symbol ETH
+2018-03-22 15:25:03  :: New for symbol ETH processed
+2018-03-22 15:25:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.06190956 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:25:08  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:25:08  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:25:08  :: Received New for symbol ETH
+2018-03-22 15:25:08  :: New for symbol ETH processed
+2018-03-22 15:25:13  :: Processing Market Data:Symbol=ETH  LastPrice=0.061705 BestBidPrice=0.061705 BestAskPrice=0.06190956
+2018-03-22 15:25:14  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:25:14  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:25:14  :: Received New for symbol ETH
+2018-03-22 15:25:14  :: New for symbol ETH processed
+2018-03-22 15:25:16  :: Processing Market Data:Symbol=ETH  LastPrice=0.06164336 BestBidPrice=0.06163501 BestAskPrice=0.06164336
+2018-03-22 15:25:16  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.061705 Old Bid Price:0.06163501
+2018-03-22 15:25:17  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06163501
+2018-03-22 15:25:17  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 15:25:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.06164336 BestBidPrice=0.06163501 BestAskPrice=0.06164336
+2018-03-22 15:25:24  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c2d3df74-2891-4ddb-9228-75622e86c128 for symbol ETH
+2018-03-22 15:25:30  :: @Outgoing Order Routing Bittrex:Error updating order 00100100000!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = c2d3df74-2891-4ddb-9228-75622e86c128
+2018-03-22 15:25:30  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol ETH 
+2018-03-22 15:25:30  :: Canceling all active orders
+2018-03-22 15:25:30  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2018-03-22 15:25:30  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2018-03-22 15:25:30  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 15:25:31  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade
+2018-03-22 15:25:31  :: Received execution report for no longer processed symbol ETH
+2018-03-22 15:25:31  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:27:59  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:28:04  :: Processing Market Data:Symbol=ETH  LastPrice=0.06188888 BestBidPrice=0.06159389 BestAskPrice=0.06182682
+2018-03-22 15:28:12  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:28:12  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:28:12  :: Routing to market position for symbol ETH
+2018-03-22 15:28:12  :: Creating buy order for symbol ETH.Quantity=0,300272803032898 Price=,06
+2018-03-22 15:28:12  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:28:13  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:13  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:13  :: Received Canceled for symbol ETH
+2018-03-22 15:28:13  :: Canceled for symbol ETH processed
+2018-03-22 15:28:24  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:28:24  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 2 position for symbol ETH
+2018-03-22 15:28:25  :: Processing Market Data:Symbol=ETH  LastPrice=0.06182682 BestBidPrice=0.06182682 BestAskPrice=0.06200559
+2018-03-22 15:28:25  :: Routing to market position for symbol ETH
+2018-03-22 15:28:25  :: Creating buy order for symbol ETH.Quantity=4,85671888558981 Price=,06
+2018-03-22 15:28:25  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:28:25  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:25  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:26  :: Received Canceled for symbol ETH
+2018-03-22 15:28:26  :: Canceled for symbol ETH processed
+2018-03-22 15:28:31  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:28:33  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 3 position for symbol ETH
+2018-03-22 15:28:33  :: Processing Market Data:Symbol=ETH  LastPrice=0.06182682 BestBidPrice=0.06182682 BestAskPrice=0.06200559
+2018-03-22 15:28:33  :: Routing to market position for symbol ETH
+2018-03-22 15:28:33  :: Creating buy order for symbol ETH.Quantity=4,85671888558981 Price=,06
+2018-03-22 15:28:33  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:28:33  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:33  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:33  :: Received Canceled for symbol ETH
+2018-03-22 15:28:33  :: Canceled for symbol ETH processed
+2018-03-22 15:28:34  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 4 position for symbol ETH
+2018-03-22 15:28:35  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:28:36  :: Processing Market Data:Symbol=ETH  LastPrice=0.06182682 BestBidPrice=0.06161 BestAskPrice=0.06182659
+2018-03-22 15:28:37  :: Routing to market position for symbol ETH
+2018-03-22 15:28:37  :: Creating buy order for symbol ETH.Quantity=4,8738108152891 Price=,06
+2018-03-22 15:28:37  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:28:37  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:37  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:28:37  :: Received Canceled for symbol ETH
+2018-03-22 15:28:37  :: Canceled for symbol ETH processed
+2018-03-22 15:34:49  :: 3/22/2018 3:34:49 PMMomentumStrategyBase.LoadConfig
+2018-03-22 15:34:49  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:34:49  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:34:49  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-03-22 15:34:49  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2018-03-22 15:34:49  :: 3/22/2018 3:34:49 PMOrderRouterBase.LoadConfig
+2018-03-22 15:34:49  :: Loading config:.\outgoingOrderRouter.xml
+2018-03-22 15:34:49  :: Processing config:.\outgoingOrderRouter.xml
+2018-03-22 15:34:49  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-03-22 15:34:49  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2018-03-22 15:34:53  :: 3/22/2018 3:34:53 PMOrderRouterBase.LoadConfig
+2018-03-22 15:34:53  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:34:53  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:34:53  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2018-03-22 15:36:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:36:23  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:37:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:37:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:38:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 9 ...
+2018-03-22 15:38:01  :: @Strategy Handler - Instruction Based Router for Bittrex - Account matter_test positions succesfully synchronized
+2018-03-22 15:38:01  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol ETH
+2018-03-22 15:38:06  :: Processing Market Data:Symbol=ETH  LastPrice=0.06167997 BestBidPrice=0.06158486 BestAskPrice=0.06167997
+2018-03-22 15:38:06  :: Routing to market position for symbol ETH
+2018-03-22 15:38:06  :: Creating buy order for symbol ETH.Quantity=0,299485945084555 Price=,06
+2018-03-22 15:38:06  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:38:19  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166997 BestBidPrice=0.06166997 BestAskPrice=0.0617
+2018-03-22 15:38:20  :: Updating DOM price on BID. Symbol: ETH - New Bid Price:0.06158486 Old Bid Price:0.06166997
+2018-03-22 15:38:20  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:20  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:20  :: Received New for symbol ETH
+2018-03-22 15:38:20  :: New for symbol ETH processed
+2018-03-22 15:38:21  :: @Order Router: Updating order for symbol ETH: qty=0 price=0.06166997
+2018-03-22 15:38:21  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2018-03-22 15:38:21  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 53704de7-7194-4f33-b40b-e130683199c6 for symbol ETH
+2018-03-22 15:38:24  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166997 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:38:26  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:26  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:26  :: Received New for symbol ETH
+2018-03-22 15:38:26  :: New for symbol ETH processed
+2018-03-22 15:38:27  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166997 BestBidPrice=0.06166997 BestAskPrice=0.0616899
+2018-03-22 15:38:31  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:31  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:31  :: Received New for symbol ETH
+2018-03-22 15:38:31  :: New for symbol ETH processed
+2018-03-22 15:38:31  :: Processing Market Data:Symbol=ETH  LastPrice=0.06169991 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:38:34  :: Processing Market Data:Symbol=ETH  LastPrice=0.06169991 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:38:36  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:36  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:36  :: Received New for symbol ETH
+2018-03-22 15:38:36  :: New for symbol ETH processed
+2018-03-22 15:38:37  :: Processing Market Data:Symbol=ETH  LastPrice=0.06169991 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:38:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.06169991 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:38:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.06169991 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:38:44  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:44  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:44  :: Received New for symbol ETH
+2018-03-22 15:38:44  :: New for symbol ETH processed
+2018-03-22 15:38:48  :: Processing Market Data:Symbol=ETH  LastPrice=0.06167989 BestBidPrice=0.06166997 BestAskPrice=0.06167989
+2018-03-22 15:38:49  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:49  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:49  :: Received New for symbol ETH
+2018-03-22 15:38:49  :: New for symbol ETH processed
+2018-03-22 15:38:52  :: Processing Market Data:Symbol=ETH  LastPrice=0.06167989 BestBidPrice=0.06166997 BestAskPrice=0.06167989
+2018-03-22 15:38:55  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:55  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New
+2018-03-22 15:38:55  :: Received New for symbol ETH
+2018-03-22 15:38:55  :: New for symbol ETH processed
+2018-03-22 15:38:55  :: Processing Market Data:Symbol=ETH  LastPrice=0.06167989 BestBidPrice=0.06166997 BestAskPrice=0.06167989
+2018-03-22 15:38:58  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166997 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:39:00  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2018-03-22 15:39:00  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:00  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:00  :: Received Canceled for symbol ETH
+2018-03-22 15:39:00  :: Canceled for symbol ETH processed
+2018-03-22 15:39:03  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:05  :: Strategy Handler - Instruction Based Router for Bittrex: Rerouting step 1 position for symbol ETH
+2018-03-22 15:39:10  :: Processing Market Data:Symbol=ETH  LastPrice=0.06169991 BestBidPrice=0.06166997 BestAskPrice=0.06169991
+2018-03-22 15:39:36  :: Routing to market position for symbol ETH
+2018-03-22 15:39:36  :: Creating buy order for symbol ETH.Quantity=4,85626870070725 Price=,06
+2018-03-22 15:39:36  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:37  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:37  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:37  :: Received Canceled for symbol ETH
+2018-03-22 15:39:37  :: Canceled for symbol ETH processed
+2018-03-22 15:39:37  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 2 position for symbol ETH
+2018-03-22 15:39:38  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:40  :: Processing Market Data:Symbol=ETH  LastPrice=0.06166997 BestBidPrice=0.0615924 BestAskPrice=0.06169991
+2018-03-22 15:39:40  :: Routing to market position for symbol ETH
+2018-03-22 15:39:40  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:40  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:40  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:40  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:40  :: Received Canceled for symbol ETH
+2018-03-22 15:39:40  :: Canceled for symbol ETH processed
+2018-03-22 15:39:40  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 3 position for symbol ETH
+2018-03-22 15:39:41  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:43  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.06169991
+2018-03-22 15:39:43  :: Routing to market position for symbol ETH
+2018-03-22 15:39:43  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:43  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:43  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:43  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:43  :: Received Canceled for symbol ETH
+2018-03-22 15:39:43  :: Canceled for symbol ETH processed
+2018-03-22 15:39:43  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 4 position for symbol ETH
+2018-03-22 15:39:45  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:46  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.06169991
+2018-03-22 15:39:46  :: Routing to market position for symbol ETH
+2018-03-22 15:39:46  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:46  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:47  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:47  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:47  :: Received Canceled for symbol ETH
+2018-03-22 15:39:47  :: Canceled for symbol ETH processed
+2018-03-22 15:39:47  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 5 position for symbol ETH
+2018-03-22 15:39:48  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:49  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.0616899
+2018-03-22 15:39:49  :: Routing to market position for symbol ETH
+2018-03-22 15:39:49  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:49  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:50  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:50  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:50  :: Received Canceled for symbol ETH
+2018-03-22 15:39:50  :: Canceled for symbol ETH processed
+2018-03-22 15:39:50  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 6 position for symbol ETH
+2018-03-22 15:39:51  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:53  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.0616899
+2018-03-22 15:39:53  :: Routing to market position for symbol ETH
+2018-03-22 15:39:53  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:53  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:53  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:53  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:53  :: Received Canceled for symbol ETH
+2018-03-22 15:39:53  :: Canceled for symbol ETH processed
+2018-03-22 15:39:53  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 7 position for symbol ETH
+2018-03-22 15:39:54  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:56  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.0616899
+2018-03-22 15:39:56  :: Routing to market position for symbol ETH
+2018-03-22 15:39:56  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:56  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:56  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:56  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:56  :: Received Canceled for symbol ETH
+2018-03-22 15:39:56  :: Canceled for symbol ETH processed
+2018-03-22 15:39:56  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 8 position for symbol ETH
+2018-03-22 15:39:58  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:39:59  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.06167989
+2018-03-22 15:39:59  :: Routing to market position for symbol ETH
+2018-03-22 15:39:59  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:39:59  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:39:59  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:59  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:39:59  :: Received Canceled for symbol ETH
+2018-03-22 15:39:59  :: Canceled for symbol ETH processed
+2018-03-22 15:39:59  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 9 position for symbol ETH
+2018-03-22 15:40:01  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:40:02  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.06167989
+2018-03-22 15:40:02  :: Routing to market position for symbol ETH
+2018-03-22 15:40:02  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:40:02  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:40:03  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:40:03  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:40:03  :: Received Canceled for symbol ETH
+2018-03-22 15:40:03  :: Canceled for symbol ETH processed
+2018-03-22 15:40:03  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 10 position for symbol ETH
+2018-03-22 15:40:04  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2018-03-22 15:40:05  :: Processing Market Data:Symbol=ETH  LastPrice=0.0615924 BestBidPrice=0.0615924 BestAskPrice=0.06167989
+2018-03-22 15:40:05  :: Routing to market position for symbol ETH
+2018-03-22 15:40:05  :: Creating buy order for symbol ETH.Quantity=4,86238472741044 Price=,06
+2018-03-22 15:40:06  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2018-03-22 15:40:06  :: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:40:06  :: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Canceled - Exec Type=Canceled
+2018-03-22 15:40:06  :: Received Canceled for symbol ETH
+2018-03-22 15:40:06  :: Canceled for symbol ETH processed
+2018-03-22 15:40:06  :: Strategy Handler - Instruction Based Router for Bittrex: Creating step 11 position for symbol ETH
+2018-03-22 15:40:07  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared

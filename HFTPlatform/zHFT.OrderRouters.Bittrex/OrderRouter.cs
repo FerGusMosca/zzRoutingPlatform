@@ -126,7 +126,11 @@ namespace zHFT.OrderRouters.Bittrex
                         uuidToRemove.ForEach(x => ActiveOrders.Remove(x));
                     }
 
-                    wrappersToPublish.ForEach(x => OnMessageRcv(x));
+                    foreach (ExecutionReportWrapper erWrapper in wrappersToPublish)
+                    {
+                        OnMessageRcv(erWrapper);
+                    }
+
                     wrappersToPublish.Clear();
                 }
                 catch (Exception ex)

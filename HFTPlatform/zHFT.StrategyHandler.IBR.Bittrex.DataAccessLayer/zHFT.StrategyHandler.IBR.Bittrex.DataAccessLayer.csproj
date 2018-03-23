@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BittrexMarketDataManager.cs" />
     <Compile Include="Managers\AccountBittrexDataManager.cs" />
     <Compile Include="BittrexAccountManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />

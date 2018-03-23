@@ -35,6 +35,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
 
         public string AccoutReferenceHandler { get; set; }
 
+        public string MarketDataReferenceHandler { get; set; }
+
         public string AccountManagerAccessLayer { get; set; }
 
         public string InstructionManagerAccessLayer { get; set; }

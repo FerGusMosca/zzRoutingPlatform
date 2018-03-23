@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.DTO;
+using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 
 namespace zHFT.StrategyHandler.InstructionBasedRouting
 {
@@ -21,9 +23,36 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
         protected bool AbortRerouting { get; set; }
 
+        protected IMarketDataReferenceHandler MarketDataReferenceHandler { get; set; }
+
         #endregion
 
         #region Private Methods
+
+        private Position CreateNextPosition(Position prevPos, double qty)
+        {
+            Position pos = new Position()
+            {
+                Security = new Security()
+                {
+                    Symbol = prevPos.Symbol,
+                    MarketData = null,
+                    Currency = prevPos.Security.Currency,
+                    SecType = prevPos.Security.SecType
+                },
+                Side = prevPos.Side,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = prevPos.AccountId,
+                CashQty = prevPos.Side == zHFT.Main.Common.Enums.Side.Buy ? qty : (double?)null,//En las compras tenemos el monto en BTC <quote currency>, en las ventas en unidades de la moneda vendida
+                Qty = prevPos.Side == zHFT.Main.Common.Enums.Side.Buy ? (double?)null : qty,//En las compras tenemos el monto en BTC <quote currency>, en las ventas en unidades de la moneda vendida
+                QuantityType = prevPos.Side == zHFT.Main.Common.Enums.Side.Buy ? QuantityType.CURRENCY : QuantityType.CRYPTOCURRENCY,
+
+            };
+
+            return pos;
+        }
 
         private Position CreateNextPosition(Instruction instr,zHFT.Main.Common.Enums.Side side, double qty)
         {
@@ -52,6 +81,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
         private ExecutionSummary CreateInitialExecutionSummary(Position pos)
         {
+
             ExecutionSummary summary = new ExecutionSummary()
             {
                 Date = DateTime.Now,
@@ -64,19 +94,28 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return summary;
         }
 
-        private IcebergPositionDTO CreateInitialIcebergPositionDTO(Instruction instr, zHFT.Main.Common.Enums.Side side, Position pos)
+        private IcebergPositionDTO CreateInitialIcebergPositionDTO(Instruction instr, zHFT.Main.Common.Enums.Side side, Position pos,
+                                                                   double stepAmmountQuoteCurrency)
         {
+            double totalAmmountInSummaryCurrency = GetInstrAmmountInSummaryCurrency(instr);
+            double stepAmmountInSummaryCurrency = totalAmmountInSummaryCurrency / instr.GetSteps();
+
             IcebergPositionDTO newIcebergPosition = new IcebergPositionDTO()
             {
                 Instruction = instr,
                 CumAmmount = 0,
-                LeavesAmmount = Convert.ToDouble(instr.Ammount.Value),
-                TotalAmmount = Convert.ToDouble(instr.Ammount.Value),
+                LeavesAmmount = totalAmmountInSummaryCurrency,
+                TotalAmmount = totalAmmountInSummaryCurrency,
+                QuoteCurrencyLeavesAmmount = Convert.ToDouble(instr.Ammount.Value),
+                QuoteCurrencyTotalAmmount = Convert.ToDouble(instr.Ammount.Value),
                 Positions = new List<Position>(),
                 PositionStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 Side = side,
                 CurrentStep = 1,
-                CurrentStepAmmount = Convert.ToDouble(instr.Ammount.Value) / instr.GetSteps(),
+                CurrentStepAmmount = stepAmmountInSummaryCurrency,
+                StepAmmount = stepAmmountInSummaryCurrency,
+                QuoteCurrencyCurrentStepAmmount = stepAmmountQuoteCurrency,
+                QuoteCurrencyStepAmmount = stepAmmountQuoteCurrency,
             };
 
             newIcebergPosition.Positions.Add(pos);
@@ -84,18 +123,18 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return newIcebergPosition;
         }
 
+        private void UpdateIcebergPositionDTO(IcebergPositionDTO icebergPosition, ExecutionSummary prevSummary)
+        {
+            icebergPosition.CumAmmount += prevSummary.CumQty;//Algo se llegó a ejecutar? -> lo cargamos
+            icebergPosition.LeavesAmmount = icebergPosition.TotalAmmount - icebergPosition.CumAmmount;
+        }
+
         private void UpdateIcebergPositionDTO(IcebergPositionDTO icebergPosition, double newQty, ExecutionSummary prevSummary,
                                                 Position newPos,Instruction instr)
         { 
             icebergPosition.CurrentStepAmmount = newQty;
-            icebergPosition.CumAmmount += prevSummary.CumQty;
-            icebergPosition.LeavesAmmount = icebergPosition.TotalAmmount - icebergPosition.CumAmmount;
             icebergPosition.Positions.Add(newPos);
-
-            if (icebergPosition.CurrentStep < instr.Steps)
-                icebergPosition.PositionStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew;
-            else
-                icebergPosition.PositionStatus = zHFT.Main.Common.Enums.PositionStatus.Filled;
+            icebergPosition.PositionStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew;
         }
 
         private void CleanPosition(ExecutionSummary summary)
@@ -125,6 +164,34 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return true;
         }
 
+        protected double GetInstrAmmountInSummaryCurrency(Instruction instr)
+        {
+            if (instr.InstructionType.Type == InstructionType.GetNewPosInstr().Type)
+            {
+                MarketData md = MarketDataReferenceHandler.GetMarketData(instr.Symbol);
+
+                if (!instr.Ammount.HasValue)
+                    throw new Exception("Missing instruction ammount on processing new buy position");
+
+                if (!md.Trade.HasValue)
+                    throw new Exception(string.Format("There is not a market data last trade for symbol {0} and quote currency", instr.Symbol));
+
+                double ammountInSummaryCurrency = Convert.ToDouble(instr.Ammount.Value) / md.Trade.Value;
+
+                return ammountInSummaryCurrency;
+
+            }
+            else if (instr.InstructionType.Type == InstructionType.GetUnwindPos().Type)
+            {
+                if (!instr.Ammount.HasValue)
+                    throw new Exception("Missing instruction ammount on processing new sell position");
+
+                return Convert.ToDouble(instr.Ammount.Value);
+            }
+            else
+                throw new Exception(string.Format("Instruction type not valid: {0}", instr.InstructionType.Type));
+        }
+
         protected override void ProcessNewPosition(Instruction instr)
         {
             DoLog(string.Format("{0}: Creating position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
@@ -142,7 +209,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 ExecutionSummary summary =  CreateInitialExecutionSummary(pos);
 
-                IcebergPositionDTO newIcebergPosition = CreateInitialIcebergPositionDTO(instr, zHFT.Main.Common.Enums.Side.Buy, pos);
+                IcebergPositionDTO newIcebergPosition = CreateInitialIcebergPositionDTO(instr, zHFT.Main.Common.Enums.Side.Buy, pos,
+                                                                                        stepAmmount);
 
                 newIcebergPosition.Positions.Add(pos);
                 ExecutionSummaries.Add(pos.Security.Symbol, summary);
@@ -160,8 +228,19 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             if (currentPos != null)
             {
+                UpdateIcebergPositionDTO(icebergPosition, prevSummary);
 
-                ExecutionSummary nextSummary = CreateInitialExecutionSummary(currentPos);
+                double nextStepAmmount = icebergPosition.CalculateNextStepAmmountInQuoteCurrency();
+                icebergPosition.CurrentStepAmmount = nextStepAmmount;
+
+                Position nextPos = CreateNextPosition(currentPos, nextStepAmmount);
+                icebergPosition.Positions.Add(nextPos);
+                icebergPosition.PositionStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew;
+
+                nextPos.LoadPosId(NextPosId);
+                NextPosId++;
+
+                ExecutionSummary nextSummary = CreateInitialExecutionSummary(nextPos);
 
                 ExecutionSummaries.Remove(currentPos.Security.Symbol);
                 ExecutionSummaries.Add(currentPos.Security.Symbol, nextSummary);
@@ -174,36 +253,30 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
         
         }
 
+
         protected void ProcessNextNewPosition(Instruction instr,ExecutionSummary prevSummary, IcebergPositionDTO icebergPosition)
         {
             icebergPosition.CurrentStep++;
 
             DoLog(string.Format("{0}: Creating step {2} position for symbol {1}", IBRConfiguration.Name, instr.Symbol,icebergPosition.CurrentStep), Constants.MessageType.Information);
 
-            double nextStepQty=0;
+            UpdateIcebergPositionDTO(icebergPosition, prevSummary);//Lo necesito para que el icebergDTO tenga lo última de la última ejecución --> luego calculo el nextStepAmmount
 
-            if (icebergPosition.CurrentStep < instr.Steps)
-                nextStepQty = Convert.ToDouble(instr.Ammount.Value) / instr.GetSteps();
-            else
-                nextStepQty = icebergPosition.TotalAmmount - icebergPosition.CumAmmount;
+            double nextStepQty = icebergPosition.CalculateNextStepAmmountInSummaryCurrency();
 
             Position pos = CreateNextPosition(instr, zHFT.Main.Common.Enums.Side.Buy, nextStepQty);
 
             pos.LoadPosId(NextPosId);
             NextPosId++;
 
-            if (pos != null)
-            {
-                ExecutionSummary nextSummary = CreateInitialExecutionSummary(pos);
+            ExecutionSummary nextSummary = CreateInitialExecutionSummary(pos);
 
-                UpdateIcebergPositionDTO(icebergPosition, nextStepQty, prevSummary, pos, instr);
+            UpdateIcebergPositionDTO(icebergPosition, nextStepQty, prevSummary, pos, instr);
 
-                ExecutionSummaries.Remove(pos.Security.Symbol);
-                ExecutionSummaries.Add(pos.Security.Symbol, nextSummary);
+            ExecutionSummaries.Remove(pos.Security.Symbol);
+            ExecutionSummaries.Add(pos.Security.Symbol, nextSummary);
 
-                Positions.Remove(instr.Symbol);//Con esto me aseguro que se pueda abrir la próxima posición del step n+1
-            }
-
+            Positions.Remove(instr.Symbol);//Con esto me aseguro que se pueda abrir la próxima posición del step n+1
         }
 
         protected override void ProcessUnwindPosition(Instruction instr)
@@ -224,7 +297,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 ExecutionSummary summary = CreateInitialExecutionSummary(pos);
 
-                IcebergPositionDTO newIcebergPosition = CreateInitialIcebergPositionDTO(instr, zHFT.Main.Common.Enums.Side.Sell, pos);
+                IcebergPositionDTO newIcebergPosition = CreateInitialIcebergPositionDTO(instr, zHFT.Main.Common.Enums.Side.Sell, pos,
+                                                                                        nextStepQty);
 
                 newIcebergPosition.Positions.Add(pos);
                 ExecutionSummaries.Add(pos.Security.Symbol, summary);
@@ -239,6 +313,15 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             IcebergPositionInstructions = new Dictionary<string, IcebergPositionDTO>();
 
             AbortRerouting = false;
+
+            var marketDataReferenceHandler = Type.GetType(IBRConfiguration.MarketDataReferenceHandler);
+            if (marketDataReferenceHandler != null)
+                MarketDataReferenceHandler = (IMarketDataReferenceHandler)Activator.CreateInstance(marketDataReferenceHandler, OnLogMsg, IBRConfiguration.AccountManagerConfig);
+            else
+            {
+                DoLog("assembly not found: " + IBRConfiguration.MarketDataReferenceHandler, Main.Common.Util.Constants.MessageType.Error);
+                return false;
+            }
 
             return base.OnInitialize();
         
@@ -352,6 +435,21 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             base.CancelAllNotCleared();
         }
 
+        protected bool IsFinalStep(ExecutionSummary summary, IcebergPositionDTO icebergDTO, Instruction instr)
+        {
+            if (summary.Position.PositionCanceledOrRejected)
+                return false;
+            else
+            {
+                if (summary.IsFilledPosition() && summary.CumQty <= icebergDTO.StepAmmount)//Si se ejecutó algo menor o igual al monto del step y fue filled, no hay nada mas que descargar
+                    return true;
+                else if (summary.IsFilledPosition() && instr.Steps == 1)//Cuando tenemos un solo step, resolvemos por la fácil
+                    return true;
+                else
+                    return false;
+            }
+        }
+
         protected override void OnEvalExecutionSummary(object param)
         {
             try
@@ -378,7 +476,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                 if (ProcessIcebergInstructionExecuted(instr, summary, icebergDTO))
                                 {//Se terminó la posición completa
 
-                                    if (instr.Steps == icebergDTO.CurrentStep)//Estabamos en el último step
+                                    if (IsFinalStep(summary,icebergDTO,instr))//Estabamos en el último step
                                     {
                                         CleanPosition(summary);
                                         InstructionManager.Persist(instr);
@@ -396,7 +494,10 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                     {
                                         //Re Ruteamos el current step
                                         if (!AbortRerouting)
+                                        {
                                             ReRouteCurrentStep(instr, summary, icebergDTO);
+                                            SaveExecutionSummary(summary);
+                                        }
                                         else
                                         {   //Aca si se canceló todo 
                                             CleanPosition(summary);
