@@ -15,6 +15,7 @@
           <EntitySet Name="s_bonds" EntityType="MomentumBackTestsModel.Store.s_bonds" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_cryptos_closing_prices" EntityType="MomentumBackTestsModel.Store.s_cryptos_closing_prices" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="s_futures" EntityType="MomentumBackTestsModel.Store.s_futures" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_option_bids" EntityType="MomentumBackTestsModel.Store.s_option_bids" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_option_closing_prices" EntityType="MomentumBackTestsModel.Store.s_option_closing_prices" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_options" EntityType="MomentumBackTestsModel.Store.s_options" store:Type="Tables" Schema="dbo" />
@@ -28,6 +29,10 @@
           <AssociationSet Name="FK_option_closing_prices_options" Association="MomentumBackTestsModel.Store.FK_option_closing_prices_options">
             <End Role="s_options" EntitySet="s_options" />
             <End Role="s_option_closing_prices" EntitySet="s_option_closing_prices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_options_market_data_s_options" Association="MomentumBackTestsModel.Store.FK_options_market_data_s_options">
+            <End Role="s_options" EntitySet="s_options" />
+            <End Role="options_market_data" EntitySet="options_market_data" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="bond_categories">
@@ -141,6 +146,22 @@
           <Property Name="volume" Type="decimal" Precision="22" Scale="8" />
           <Property Name="open_interest" Type="decimal" Scale="8" />
         </EntityType>
+        <EntityType Name="s_futures">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="underlying_symbol" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="security_desc" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="maturity_month_year" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="maturity_date" Type="date" Nullable="false" />
+          <Property Name="factor" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="contract_multiplier" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="currency" Type="varchar" MaxLength="10" />
+          <Property Name="security_exchange" Type="varchar" MaxLength="50" />
+          <Property Name="expired" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="s_option_bids">
           <Key>
             <PropertyRef Name="id" />
@@ -177,7 +198,7 @@
           </Key>
           <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="strike_multiplier" Type="int" Nullable="false" />
           <Property Name="put_or_call" Type="char" Nullable="false" MaxLength="1" />
           <Property Name="strike_price" Type="decimal" Nullable="false" Scale="4" />
@@ -265,6 +286,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_options_market_data_s_options">
+          <End Role="s_options" Type="MomentumBackTestsModel.Store.s_options" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="options_market_data" Type="MomentumBackTestsModel.Store.options_market_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s_options">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="options_market_data">
+              <PropertyRef Name="option_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -293,6 +328,11 @@
           <EntitySet Name="s_bonds" EntityType="StocksHistoricalDataModel.s_bonds" />
           <EntitySet Name="s_cryptocurrencies" EntityType="StocksHistoricalDataModel.s_cryptocurrencies" />
           <EntitySet Name="s_cryptos_closing_prices" EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" />
+          <AssociationSet Name="FK_options_market_data_s_options" Association="StocksHistoricalDataModel.FK_options_market_data_s_options">
+            <End Role="s_options" EntitySet="s_options" />
+            <End Role="options_market_data" EntitySet="options_market_data" />
+          </AssociationSet>
+          <EntitySet Name="s_futures" EntityType="StocksHistoricalDataModel.s_futures" />
         </EntityContainer>
         <EntityType Name="stocks_prices">
           <Key>
@@ -338,7 +378,7 @@
           </Key>
           <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="symbol_sfx" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="symbol_sfx" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="strike_multiplier" Nullable="false" />
           <Property Type="String" Name="put_or_call" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Type="Decimal" Name="strike_price" Nullable="false" Precision="18" Scale="4" />
@@ -350,6 +390,7 @@
           <Property Type="Boolean" Name="expired" Nullable="false" />
           <NavigationProperty Name="s_option_bids" Relationship="StocksHistoricalDataModel.FK_option_bids_options" FromRole="s_options" ToRole="s_option_bids" />
           <NavigationProperty Name="s_option_closing_prices" Relationship="StocksHistoricalDataModel.FK_option_closing_prices_options" FromRole="s_options" ToRole="s_option_closing_prices" />
+          <NavigationProperty Name="options_market_data" Relationship="StocksHistoricalDataModel.FK_options_market_data_s_options" FromRole="s_options" ToRole="options_market_data" />
         </EntityType>
         <EntityType Name="s_option_bids">
           <Key>
@@ -472,6 +513,7 @@
           <Property Type="String" Name="moneda" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="timestamp" Precision="3" />
+          <NavigationProperty Name="s_options" Relationship="StocksHistoricalDataModel.FK_options_market_data_s_options" FromRole="options_market_data" ToRole="s_options" />
         </EntityType>
         <EntityType Name="bond_categories">
           <Key>
@@ -532,6 +574,36 @@
           <Property Type="Decimal" Name="adj_close" Precision="18" Scale="8" />
           <Property Type="Decimal" Name="volume" Precision="22" Scale="8" />
           <Property Type="Decimal" Name="open_interest" Precision="18" Scale="8" />
+        </EntityType>
+        <Association Name="FK_options_market_data_s_options">
+          <End Type="StocksHistoricalDataModel.s_options" Role="s_options" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="StocksHistoricalDataModel.options_market_data" Role="options_market_data" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="s_options">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="options_market_data">
+              <PropertyRef Name="option_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="s_futures">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="underlying_symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="security_desc" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="maturity_month_year" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="factor" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="contract_multiplier" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="String" Name="currency" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="security_exchange" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="expired" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -758,6 +830,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="s_futures">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_futures">
+              <MappingFragment StoreEntitySet="s_futures">
+                <ScalarProperty Name="expired" ColumnName="expired" />
+                <ScalarProperty Name="security_exchange" ColumnName="security_exchange" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="contract_multiplier" ColumnName="contract_multiplier" />
+                <ScalarProperty Name="factor" ColumnName="factor" />
+                <ScalarProperty Name="maturity_date" ColumnName="maturity_date" />
+                <ScalarProperty Name="maturity_month_year" ColumnName="maturity_month_year" />
+                <ScalarProperty Name="security_desc" ColumnName="security_desc" />
+                <ScalarProperty Name="underlying_symbol" ColumnName="underlying_symbol" />
+                <ScalarProperty Name="symbol" ColumnName="symbol" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -778,7 +867,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <edmx:Diagram Name="MomentumBackTestsEntityDataModel" ZoomLevel="82">
+      <edmx:Diagram Name="MomentumBackTestsEntityDataModel" ZoomLevel="88">
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.stocks_prices" Width="1.5" PointX="13.5" PointY="16.375" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.categories" Width="1.5" PointX="10.875" PointY="16.625" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.countries" Width="1.5" PointX="18.75" PointY="17.375" />
@@ -796,6 +885,8 @@
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_bonds" Width="1.5" PointX="8.1264646147035364" PointY="12.096516614824774" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_cryptocurrencies" Width="1.5" PointX="2.5968013455145065" PointY="18.618445822325743" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" Width="1.5" PointX="11.704684182864002" PointY="2.51674956200493" />
+        <edmx:AssociationConnector Association="StocksHistoricalDataModel.FK_options_market_data_s_options" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_futures" Width="1.5" PointX="2.2033884442427141" PointY="25.318998959529679" />
       </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

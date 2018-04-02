@@ -220,5 +220,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="s_futures">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_futures">
+        <MappingFragment StoreEntitySet="s_futures">
+          <ScalarProperty Name="expired" ColumnName="expired" />
+          <ScalarProperty Name="security_exchange" ColumnName="security_exchange" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="contract_multiplier" ColumnName="contract_multiplier" />
+          <ScalarProperty Name="factor" ColumnName="factor" />
+          <ScalarProperty Name="maturity_date" ColumnName="maturity_date" />
+          <ScalarProperty Name="maturity_month_year" ColumnName="maturity_month_year" />
+          <ScalarProperty Name="security_desc" ColumnName="security_desc" />
+          <ScalarProperty Name="underlying_symbol" ColumnName="underlying_symbol" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -66,10 +66,10 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.DTO
 
         public double CalculateNextStepAmmountInQuoteCurrency()
         {
-            if (LeavesAmmount > StepAmmount)
-                return StepAmmount;
+            if (QuoteCurrencyLeavesAmmount > QuoteCurrencyStepAmmount)
+                return QuoteCurrencyStepAmmount;
             else
-                return TotalAmmount - CumAmmount;
+                return QuoteCurrencyTotalAmmount - QuoteCurrencyCumAmmount;
         }
 
 

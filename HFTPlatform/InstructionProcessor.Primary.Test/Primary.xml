@@ -32,15 +32,18 @@
     <!--CS= Common Stock-->
     <SecurityType>OPT</SecurityType>
     <!--OPT=Options-->
+  <SecurityType>FUT</SecurityType>
+    <!--FUT=Futures-->
   </SecurityTypes>
 
   <Markets>
+    <Market>ROFX</Market>
     <Market>BUE</Market>
-    <!--BUE=BYMA,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
+    <!--BUE=BYMA,ROFX=Rofex,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
   </Markets>
 
 
-  <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
+  <RequestSecurityList>true</RequestSecurityList> <!--Pide y guarda la securityList-->
   <RequestFullMarketData>false</RequestFullMarketData>
   <SaveFullMarketData>false</SaveFullMarketData>
   

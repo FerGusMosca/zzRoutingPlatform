@@ -28,15 +28,18 @@
   <!--Seconds-->
 
   <SecurityTypes>
-    <!--<SecurityType>CS</SecurityType>-->
+    <SecurityType>CS</SecurityType>
     <!--CS= Common Stock-->
     <SecurityType>OPT</SecurityType>
     <!--OPT=Options-->
+  <SecurityType>FUT</SecurityType>
+    <!--FUT=Futures-->
   </SecurityTypes>
 
   <Markets>
+    <Market>ROFX</Market>
     <Market>BUE</Market>
-    <!--BUE=BYMA,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
+    <!--BUE=BYMA,ROFX=Rofex,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
   </Markets>
 
 

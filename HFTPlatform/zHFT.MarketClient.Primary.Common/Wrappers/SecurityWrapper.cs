@@ -22,6 +22,8 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
 
         private static string _FUTURES_PREFIX = "F";
         private static string _OPTIONS_PREFIX = "O";
+        private static string _CALL_OPTION_PREFIX = "OCXXXS";
+        private static string _PUT_OPTION_PREFIX = "OPXXXS";
         private static string _STOCK_PREFIX = "ES";
         private static string _BOND_PREFIX = "DB";
         private static string _SWAP_PREFIX = "XXW";
@@ -60,17 +62,24 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
 
         private string GetCleanSymbol(string symbol)
         {
+            SecurityType secType =  GetSecurityTypeByCFICode(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.CFICode.FIELD));
 
-            if (string.IsNullOrEmpty(symbol))
-                throw new Exception(string.Format("No se especificó el Symbol para el security y el mismo es un campo obligatorio"));
+            if (secType == SecurityType.CS || secType == SecurityType.OPT)
+            {
+
+                if (string.IsNullOrEmpty(symbol))
+                    throw new Exception(string.Format("No se especificó el Symbol para el security y el mismo es un campo obligatorio"));
 
 
-            string[] fields = symbol.Split(new string[] { _FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
+                string[] fields = symbol.Split(new string[] { _FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (fields.Length <= _SYMBOL_INDEX)
-                throw new Exception(string.Format("No se puede encontrar el nombre del campo Symbol para el Symbol {0}", symbol));
+                if (fields.Length <= _SYMBOL_INDEX)
+                    throw new Exception(string.Format("No se puede encontrar el nombre del campo Symbol para el Symbol {0}", symbol));
 
-            return fields[_SYMBOL_INDEX];
+                return fields[_SYMBOL_INDEX];
+            }
+            else
+                return symbol;//Todos los demás security types por (ej: futuros) consideramos que no hay códigos olcultos
         }
 
         private string GetCleanMarket(string securityDesc)
@@ -96,7 +105,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
 
             if (CFICode.StartsWith(_FUTURES_PREFIX))
                 return SecurityType.FUT;
-            else if (CFICode.StartsWith(_OPTIONS_PREFIX))
+            else if (CFICode.StartsWith(_CALL_OPTION_PREFIX) || CFICode.StartsWith(_PUT_OPTION_PREFIX))
                 return SecurityType.OPT;
             else if (CFICode.StartsWith(_STOCK_PREFIX))
                 return SecurityType.CS;
@@ -137,6 +146,37 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
                 return SecurityType.OTH;
         }
 
+        private string GetUnderlyingSymbol()
+        {
+            SecurityType secType = GetSecurityTypeByCFICode(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.CFICode.FIELD));
+
+            //QuickFix50.SecurityList.NoRelatedSym pSecurity
+
+            if (secType == SecurityType.FUT)
+            {
+                if (Security.isSetNoUnderlyings())
+                {
+                    QuickFix50.SecurityList.NoRelatedSym.NoUnderlyings entry = new QuickFix50.SecurityList.NoRelatedSym.NoUnderlyings();
+                    int noEntries = Security.getInt(QuickFix.NoUnderlyings.FIELD);
+
+                    string underlyingSymbol = null;
+
+                    for (uint i = 1; i <= noEntries; i++)
+                    {
+                        Security.getGroup(i, entry);
+                        underlyingSymbol = entry.getString(QuickFix.UnderlyingSymbol.FIELD);
+                    }
+
+                    return underlyingSymbol;
+                }
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+
         #endregion
 
         #region Public Methods
@@ -163,7 +203,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
             else if (sField == SecurityFields.Currency)
                 return FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.Currency.FIELD);
             else if (sField == SecurityFields.Exchange)
-                return GetCleanMarket(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.SecurityDesc.FIELD));
+                return GetCleanMarket(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.SecurityExchange.FIELD));
             else if (sField == SecurityFields.StrikePrice)
                 return FixHelperExtended.GetNullDoubleFieldIfSet(Security, QuickFix.StrikePrice.FIELD);
             else if (sField == SecurityFields.MaturityDate)
@@ -172,6 +212,8 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
                 return FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.MaturityMonthYear.FIELD);
             else if (sField == SecurityFields.SymbolSfx)
                 return FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.SymbolSfx.FIELD);
+            else if (sField == SecurityFields.UnderlyingSymbol)
+                return GetUnderlyingSymbol();
             else if (sField == SecurityFields.StrikeCurrency)
                 return FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.StrikeCurrency.FIELD);
             else if (sField == SecurityFields.MinPriceIncrement)

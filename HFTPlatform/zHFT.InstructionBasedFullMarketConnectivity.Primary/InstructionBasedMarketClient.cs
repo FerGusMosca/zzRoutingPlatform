@@ -85,6 +85,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected StockManager StockManager { get; set; }
 
+        protected FutureManager FutureManager { get; set; }
+
         protected OptionManager OptionManager { get; set; }
 
         protected StockMarkeDataManager StockMarketDataManager { get; set; }
@@ -309,7 +311,46 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     }
                     else
                     {
-                        DoLog(string.Format("Stock {0} already existed", prevOption.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("Option {0} already existed", prevOption.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                    }
+                }
+            }
+        }
+
+        protected void ProcessFutureList(List<Security> futureSecurities)
+        {
+            foreach (Market market in Markets)
+            {
+                foreach (Security future in futureSecurities.Where(x => x.Exchange == market.Code))
+                {
+                    Future prevFuture = FutureManager.GetBySymbol(future.Symbol.Trim(), market.Code);
+
+                    if (prevFuture == null)
+                    {
+                        if (PrimaryConfiguration.RequestSecurityList)
+                        {
+                            try
+                            {
+                                FutureManager.Insert(future);
+                                DoLog(string.Format("Inserting new future contract from market: {0}", future.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Error trying to save future for symbol {0} : {1}", future.Symbol, ex.Message),
+                                    Main.Common.Util.Constants.MessageType.Error);
+
+                            }
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", future.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                        }
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("Future {0} already existed", prevFuture.Symbol), Main.Common.Util.Constants.MessageType.Information);
                     }
                 }
             }
@@ -330,6 +371,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     List<Security> optionSecurities = securityList.Securities.Where(x => x.SecType == zHFT.Main.Common.Enums.SecurityType.OPT).ToList();
                     ProcessOptionsList(optionSecurities);
+                }
+                else if (secType == zHFT.Main.Common.Enums.SecurityType.FUT.ToString())
+                {
+                    List<Security> futureSecurities = securityList.Securities.Where(x => x.SecType == zHFT.Main.Common.Enums.SecurityType.FUT).ToList();
+                    ProcessFutureList(futureSecurities);
                 }
                 else
                 {
@@ -760,6 +806,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     MarketManager = new MarketManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     StockManager = new StockManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     OptionManager = new OptionManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    FutureManager = new FutureManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     StockMarketDataManager = new StockMarkeDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     OptionMarketDataManager = new OptionMarketDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
 

@@ -44,6 +44,7 @@ namespace zHFT.StrategyHandler.Common.Converters
             s.MaturityDate = (DateTime?)(ValidateField(wrapper, SecurityFields.MaturityDate) ? wrapper.GetField(SecurityFields.MaturityDate) : null);
             s.MaturityMonthYear = (string)(ValidateField(wrapper, SecurityFields.MaturityMonthYear) ? wrapper.GetField(SecurityFields.MaturityMonthYear) : null);
             s.SymbolSfx = (string)(ValidateField(wrapper, SecurityFields.SymbolSfx) ? wrapper.GetField(SecurityFields.SymbolSfx) : null);
+            s.UnderlyingSymbol = (string)(ValidateField(wrapper, SecurityFields.UnderlyingSymbol) ? wrapper.GetField(SecurityFields.UnderlyingSymbol) : null);
             s.StrikeCurrency = (string)(ValidateField(wrapper, SecurityFields.StrikeCurrency) ? wrapper.GetField(SecurityFields.StrikeCurrency) : null);
             s.MinPriceIncrement = (double?)(ValidateField(wrapper, SecurityFields.MinPriceIncrement) ? wrapper.GetField(SecurityFields.MinPriceIncrement) : null);
             s.TickSize = (double?)(ValidateField(wrapper, SecurityFields.TickSize) ? wrapper.GetField(SecurityFields.TickSize) : null);

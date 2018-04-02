@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\CountryManager.cs" />
+    <Compile Include="Managers\FutureManager.cs" />
     <Compile Include="Managers\MarketManager.cs" />
     <Compile Include="Managers\OptionManager.cs" />
     <Compile Include="Managers\OptionMarketDataManager.cs" />

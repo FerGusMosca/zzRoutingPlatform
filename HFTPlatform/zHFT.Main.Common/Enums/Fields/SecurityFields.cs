@@ -23,6 +23,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly SecurityFields MaturityMonthYear = new SecurityFields(11);
         public static readonly SecurityFields SymbolSfx = new SecurityFields(12);
         public static readonly SecurityFields StrikeCurrency = new SecurityFields(13);
+        public static readonly SecurityFields UnderlyingSymbol = new SecurityFields(14);
 
         #endregion
 

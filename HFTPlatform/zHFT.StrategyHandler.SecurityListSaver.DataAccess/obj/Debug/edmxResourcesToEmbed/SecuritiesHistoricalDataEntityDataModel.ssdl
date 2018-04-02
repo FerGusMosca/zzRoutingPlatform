@@ -10,6 +10,7 @@
     <EntitySet Name="s_bonds" EntityType="MomentumBackTestsModel.Store.s_bonds" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_cryptos_closing_prices" EntityType="MomentumBackTestsModel.Store.s_cryptos_closing_prices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="s_futures" EntityType="MomentumBackTestsModel.Store.s_futures" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_option_bids" EntityType="MomentumBackTestsModel.Store.s_option_bids" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_option_closing_prices" EntityType="MomentumBackTestsModel.Store.s_option_closing_prices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="s_options" EntityType="MomentumBackTestsModel.Store.s_options" store:Type="Tables" Schema="dbo" />
@@ -23,6 +24,10 @@
     <AssociationSet Name="FK_option_closing_prices_options" Association="MomentumBackTestsModel.Store.FK_option_closing_prices_options">
       <End Role="s_options" EntitySet="s_options" />
       <End Role="s_option_closing_prices" EntitySet="s_option_closing_prices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_options_market_data_s_options" Association="MomentumBackTestsModel.Store.FK_options_market_data_s_options">
+      <End Role="s_options" EntitySet="s_options" />
+      <End Role="options_market_data" EntitySet="options_market_data" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="bond_categories">
@@ -136,6 +141,22 @@
     <Property Name="volume" Type="decimal" Precision="22" Scale="8" />
     <Property Name="open_interest" Type="decimal" Scale="8" />
   </EntityType>
+  <EntityType Name="s_futures">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="underlying_symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="security_desc" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="maturity_month_year" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="maturity_date" Type="date" Nullable="false" />
+    <Property Name="factor" Type="decimal" Nullable="false" Scale="4" />
+    <Property Name="contract_multiplier" Type="decimal" Nullable="false" Scale="4" />
+    <Property Name="currency" Type="varchar" MaxLength="10" />
+    <Property Name="security_exchange" Type="varchar" MaxLength="50" />
+    <Property Name="expired" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="s_option_bids">
     <Key>
       <PropertyRef Name="id" />
@@ -172,7 +193,7 @@
     </Key>
     <Property Name="id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
-    <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="symbol_sfx" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="strike_multiplier" Type="int" Nullable="false" />
     <Property Name="put_or_call" Type="char" Nullable="false" MaxLength="1" />
     <Property Name="strike_price" Type="decimal" Nullable="false" Scale="4" />
@@ -256,6 +277,20 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="s_option_closing_prices">
+        <PropertyRef Name="option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_options_market_data_s_options">
+    <End Role="s_options" Type="MomentumBackTestsModel.Store.s_options" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="options_market_data" Type="MomentumBackTestsModel.Store.options_market_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_options">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="options_market_data">
         <PropertyRef Name="option_id" />
       </Dependent>
     </ReferentialConstraint>

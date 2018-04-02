@@ -3663,6 +3663,7 @@
     <component name='Instrument'>
       <field name='Symbol' required='N' />
       <field name='SymbolSfx' required='N' />
+      <field name='UnderlyingSymbol' required='N' />
       <field name='SecurityID' required='N' />
       <field name='SecurityIDSource' required='N' />
       <component name='SecAltIDGrp' required='N' />

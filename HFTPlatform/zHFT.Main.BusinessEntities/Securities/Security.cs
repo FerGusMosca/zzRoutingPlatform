@@ -49,6 +49,8 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         #region Contract Attributes
 
+        public string UnderlyingSymbol { get; set; }
+
         public double? Factor { get; set; }
 
         public string CFICode { get; set; }

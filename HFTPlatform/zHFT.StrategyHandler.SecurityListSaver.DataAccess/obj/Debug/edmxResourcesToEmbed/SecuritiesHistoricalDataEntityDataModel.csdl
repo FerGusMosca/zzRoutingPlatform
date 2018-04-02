@@ -24,6 +24,11 @@
     <EntitySet Name="s_bonds" EntityType="StocksHistoricalDataModel.s_bonds" />
     <EntitySet Name="s_cryptocurrencies" EntityType="StocksHistoricalDataModel.s_cryptocurrencies" />
     <EntitySet Name="s_cryptos_closing_prices" EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" />
+    <AssociationSet Name="FK_options_market_data_s_options" Association="StocksHistoricalDataModel.FK_options_market_data_s_options">
+      <End Role="s_options" EntitySet="s_options" />
+      <End Role="options_market_data" EntitySet="options_market_data" />
+    </AssociationSet>
+    <EntitySet Name="s_futures" EntityType="StocksHistoricalDataModel.s_futures" />
   </EntityContainer>
   <EntityType Name="stocks_prices">
     <Key>
@@ -69,7 +74,7 @@
     </Key>
     <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="symbol_sfx" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="symbol_sfx" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Int32" Name="strike_multiplier" Nullable="false" />
     <Property Type="String" Name="put_or_call" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Type="Decimal" Name="strike_price" Nullable="false" Precision="18" Scale="4" />
@@ -81,6 +86,7 @@
     <Property Type="Boolean" Name="expired" Nullable="false" />
     <NavigationProperty Name="s_option_bids" Relationship="StocksHistoricalDataModel.FK_option_bids_options" FromRole="s_options" ToRole="s_option_bids" />
     <NavigationProperty Name="s_option_closing_prices" Relationship="StocksHistoricalDataModel.FK_option_closing_prices_options" FromRole="s_options" ToRole="s_option_closing_prices" />
+    <NavigationProperty Name="options_market_data" Relationship="StocksHistoricalDataModel.FK_options_market_data_s_options" FromRole="s_options" ToRole="options_market_data" />
   </EntityType>
   <EntityType Name="s_option_bids">
     <Key>
@@ -203,6 +209,7 @@
     <Property Type="String" Name="moneda" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="timestamp" Precision="3" />
+    <NavigationProperty Name="s_options" Relationship="StocksHistoricalDataModel.FK_options_market_data_s_options" FromRole="options_market_data" ToRole="s_options" />
   </EntityType>
   <EntityType Name="bond_categories">
     <Key>
@@ -263,5 +270,35 @@
     <Property Type="Decimal" Name="adj_close" Precision="18" Scale="8" />
     <Property Type="Decimal" Name="volume" Precision="22" Scale="8" />
     <Property Type="Decimal" Name="open_interest" Precision="18" Scale="8" />
+  </EntityType>
+  <Association Name="FK_options_market_data_s_options">
+    <End Type="StocksHistoricalDataModel.s_options" Role="s_options" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="StocksHistoricalDataModel.options_market_data" Role="options_market_data" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="s_options">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="options_market_data">
+        <PropertyRef Name="option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="s_futures">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="underlying_symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="security_desc" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="maturity_month_year" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="0" />
+    <Property Type="Decimal" Name="factor" Nullable="false" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="contract_multiplier" Nullable="false" Precision="18" Scale="4" />
+    <Property Type="String" Name="currency" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="security_exchange" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="expired" Nullable="false" />
   </EntityType>
 </Schema>
