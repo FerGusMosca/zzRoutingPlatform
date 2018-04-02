@@ -47,6 +47,10 @@
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.SecurityListSaver.Common\zHFT.StrategyHandler.SecurityListSaver.Common.csproj">
       <Project>{29b4d20c-132a-4068-adb1-067f35f20a2a}</Project>
       <Name>zHFT.StrategyHandler.SecurityListSaver.Common</Name>
