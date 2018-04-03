@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\BillManager.cs" />
     <Compile Include="Managers\CountryManager.cs" />
     <Compile Include="Managers\FutureManager.cs" />
     <Compile Include="Managers\MarketManager.cs" />

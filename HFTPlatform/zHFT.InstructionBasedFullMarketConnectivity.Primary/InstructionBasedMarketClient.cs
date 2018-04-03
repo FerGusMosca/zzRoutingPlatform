@@ -87,6 +87,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected FutureManager FutureManager { get; set; }
 
+        protected BillManager BillManager { get; set; }
+
         protected OptionManager OptionManager { get; set; }
 
         protected StockMarkeDataManager StockMarketDataManager { get; set; }
@@ -317,6 +319,46 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
+        protected void ProcessBillsList(List<Security> billsSecurities)
+        {
+            foreach (Market market in Markets)
+            {
+                foreach (Security bill in billsSecurities.Where(x => x.Exchange == market.Code))
+                {
+                    Bill prevBill = BillManager.GetBySymbol(bill.Symbol.Trim(), market.Code);
+
+                    if (prevBill == null)
+                    {
+                        if (PrimaryConfiguration.RequestSecurityList)
+                        {
+                            try
+                            {
+                                BillManager.Insert(bill);
+                                DoLog(string.Format("Inserting new bill from market: {0}", bill.Symbol),
+                                      Main.Common.Util.Constants.MessageType.Information);
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Error trying to save bill for symbol {0} : {1}", bill.Symbol, ex.Message),
+                                    Main.Common.Util.Constants.MessageType.Error);
+
+                            }
+                        }
+                        else
+                        {
+                            DoLog(string.Format("@{0}: New symbol {0} not saved because of configuration", bill.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                        }
+
+                    }
+                    else
+                    {
+                        DoLog(string.Format("Bill {0} already existed", prevBill.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                    }
+                }
+            }
+        
+        }
+
         protected void ProcessFutureList(List<Security> futureSecurities)
         {
             foreach (Market market in Markets)
@@ -376,6 +418,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     List<Security> futureSecurities = securityList.Securities.Where(x => x.SecType == zHFT.Main.Common.Enums.SecurityType.FUT).ToList();
                     ProcessFutureList(futureSecurities);
+                }
+                else if (secType == zHFT.Main.Common.Enums.SecurityType.TB.ToString())
+                {
+                    List<Security> billsSecurities = securityList.Securities.Where(x => x.SecType == zHFT.Main.Common.Enums.SecurityType.TB).ToList();
+                    ProcessBillsList(billsSecurities);
                 }
                 else
                 {
@@ -807,6 +854,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     StockManager = new StockManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     OptionManager = new OptionManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     FutureManager = new FutureManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    BillManager = new BillManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     StockMarketDataManager = new StockMarkeDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
                     OptionMarketDataManager = new OptionMarketDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
 

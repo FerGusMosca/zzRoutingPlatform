@@ -29,6 +29,7 @@
       <End Role="options_market_data" EntitySet="options_market_data" />
     </AssociationSet>
     <EntitySet Name="s_futures" EntityType="StocksHistoricalDataModel.s_futures" />
+    <EntitySet Name="s_bills" EntityType="StocksHistoricalDataModel.s_bills" />
   </EntityContainer>
   <EntityType Name="stocks_prices">
     <Key>
@@ -291,13 +292,28 @@
     </Key>
     <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="underlying_symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="underlying_symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="security_desc" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="maturity_month_year" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="0" />
     <Property Type="Decimal" Name="factor" Nullable="false" Precision="18" Scale="4" />
     <Property Type="Decimal" Name="contract_multiplier" Nullable="false" Precision="18" Scale="4" />
     <Property Type="String" Name="currency" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="security_exchange" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="expired" Nullable="false" />
+  </EntityType>
+  <EntityType Name="s_bills">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="security_desc" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="maturity_month_year" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="0" />
+    <Property Type="Decimal" Name="factor" Nullable="false" Precision="18" Scale="4" />
+    <Property Type="Decimal" Name="contract_multiplier" Nullable="false" Precision="18" Scale="4" />
+    <Property Type="String" Name="currency" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="security_exchange" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="Boolean" Name="expired" Nullable="false" />
   </EntityType>

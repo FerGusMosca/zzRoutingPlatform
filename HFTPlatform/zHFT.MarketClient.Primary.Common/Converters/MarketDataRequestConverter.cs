@@ -24,7 +24,7 @@ namespace zHFT.MarketClient.Primary.Common.Converters
             MarketDataRequest mdr = new MarketDataRequest();
             mdr.Security = new Security();
 
-            if (secType == SecurityType.CS || secType == SecurityType.TB)
+            if (secType == SecurityType.CS || secType == SecurityType.TBOND || secType == SecurityType.TB)
             {
                 mdr.Security.Symbol = SymbolConverter.GetCleanSymbolFromFullSymbol((string)wrapper.GetField(MarketDataRequestField.Symbol));
             }

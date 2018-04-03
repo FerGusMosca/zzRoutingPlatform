@@ -43,7 +43,7 @@ namespace zHFT.OrderRouters.Primary.Common
         {
             string cleanSymbol = "";
 
-            if (secType == SecurityType.CS || secType == SecurityType.TB)
+            if (secType == SecurityType.CS || secType == SecurityType.TBOND || secType == SecurityType.TB)
             {
                 cleanSymbol = SymbolConverter.GetCleanSymbolFromFullSymbol(symbol);
             }

@@ -13,6 +13,7 @@ namespace zHFT.Main.Common.Enums
         OPT,//Options
         IND,//INDEX
         CASH,//Cash,
+        TBOND,//Treasury Bond - non US
         TB,//Treasury Bill - non US
         IRS,// Interest Rate Swap
         REPO,//Repurchase,

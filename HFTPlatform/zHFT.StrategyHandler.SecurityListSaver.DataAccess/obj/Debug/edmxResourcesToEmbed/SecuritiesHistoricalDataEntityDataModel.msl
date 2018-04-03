@@ -237,5 +237,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="s_bills">
+      <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_bills">
+        <MappingFragment StoreEntitySet="s_bills">
+          <ScalarProperty Name="expired" ColumnName="expired" />
+          <ScalarProperty Name="security_exchange" ColumnName="security_exchange" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="contract_multiplier" ColumnName="contract_multiplier" />
+          <ScalarProperty Name="factor" ColumnName="factor" />
+          <ScalarProperty Name="maturity_date" ColumnName="maturity_date" />
+          <ScalarProperty Name="maturity_month_year" ColumnName="maturity_month_year" />
+          <ScalarProperty Name="security_desc" ColumnName="security_desc" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

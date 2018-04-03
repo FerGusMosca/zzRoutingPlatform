@@ -328,6 +328,22 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccess
             }
         }
         private ObjectSet<s_futures> _s_futures;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<s_bills> s_bills
+        {
+            get
+            {
+                if ((_s_bills == null))
+                {
+                    _s_bills = base.CreateObjectSet<s_bills>("s_bills");
+                }
+                return _s_bills;
+            }
+        }
+        private ObjectSet<s_bills> _s_bills;
 
         #endregion
 
@@ -459,6 +475,14 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccess
         public void AddTos_futures(s_futures s_futures)
         {
             base.AddObject("s_futures", s_futures);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the s_bills EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddTos_bills(s_bills s_bills)
+        {
+            base.AddObject("s_bills", s_bills);
         }
 
         #endregion
@@ -1539,6 +1563,294 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccess
                 }
             }
         }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="StocksHistoricalDataModel", Name="s_bills")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class s_bills : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new s_bills object.
+        /// </summary>
+        /// <param name="id">Initial value of the id property.</param>
+        /// <param name="symbol">Initial value of the symbol property.</param>
+        /// <param name="security_desc">Initial value of the security_desc property.</param>
+        /// <param name="maturity_month_year">Initial value of the maturity_month_year property.</param>
+        /// <param name="maturity_date">Initial value of the maturity_date property.</param>
+        /// <param name="factor">Initial value of the factor property.</param>
+        /// <param name="contract_multiplier">Initial value of the contract_multiplier property.</param>
+        /// <param name="currency">Initial value of the currency property.</param>
+        /// <param name="expired">Initial value of the expired property.</param>
+        public static s_bills Creates_bills(global::System.Int32 id, global::System.String symbol, global::System.String security_desc, global::System.String maturity_month_year, global::System.DateTime maturity_date, global::System.Decimal factor, global::System.Decimal contract_multiplier, global::System.String currency, global::System.Boolean expired)
+        {
+            s_bills s_bills = new s_bills();
+            s_bills.id = id;
+            s_bills.symbol = symbol;
+            s_bills.security_desc = security_desc;
+            s_bills.maturity_month_year = maturity_month_year;
+            s_bills.maturity_date = maturity_date;
+            s_bills.factor = factor;
+            s_bills.contract_multiplier = contract_multiplier;
+            s_bills.currency = currency;
+            s_bills.expired = expired;
+            return s_bills;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value, "id");
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String symbol
+        {
+            get
+            {
+                return _symbol;
+            }
+            set
+            {
+                OnsymbolChanging(value);
+                ReportPropertyChanging("symbol");
+                _symbol = StructuralObject.SetValidValue(value, false, "symbol");
+                ReportPropertyChanged("symbol");
+                OnsymbolChanged();
+            }
+        }
+        private global::System.String _symbol;
+        partial void OnsymbolChanging(global::System.String value);
+        partial void OnsymbolChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String security_desc
+        {
+            get
+            {
+                return _security_desc;
+            }
+            set
+            {
+                Onsecurity_descChanging(value);
+                ReportPropertyChanging("security_desc");
+                _security_desc = StructuralObject.SetValidValue(value, false, "security_desc");
+                ReportPropertyChanged("security_desc");
+                Onsecurity_descChanged();
+            }
+        }
+        private global::System.String _security_desc;
+        partial void Onsecurity_descChanging(global::System.String value);
+        partial void Onsecurity_descChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String maturity_month_year
+        {
+            get
+            {
+                return _maturity_month_year;
+            }
+            set
+            {
+                Onmaturity_month_yearChanging(value);
+                ReportPropertyChanging("maturity_month_year");
+                _maturity_month_year = StructuralObject.SetValidValue(value, false, "maturity_month_year");
+                ReportPropertyChanged("maturity_month_year");
+                Onmaturity_month_yearChanged();
+            }
+        }
+        private global::System.String _maturity_month_year;
+        partial void Onmaturity_month_yearChanging(global::System.String value);
+        partial void Onmaturity_month_yearChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime maturity_date
+        {
+            get
+            {
+                return _maturity_date;
+            }
+            set
+            {
+                Onmaturity_dateChanging(value);
+                ReportPropertyChanging("maturity_date");
+                _maturity_date = StructuralObject.SetValidValue(value, "maturity_date");
+                ReportPropertyChanged("maturity_date");
+                Onmaturity_dateChanged();
+            }
+        }
+        private global::System.DateTime _maturity_date;
+        partial void Onmaturity_dateChanging(global::System.DateTime value);
+        partial void Onmaturity_dateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal factor
+        {
+            get
+            {
+                return _factor;
+            }
+            set
+            {
+                OnfactorChanging(value);
+                ReportPropertyChanging("factor");
+                _factor = StructuralObject.SetValidValue(value, "factor");
+                ReportPropertyChanged("factor");
+                OnfactorChanged();
+            }
+        }
+        private global::System.Decimal _factor;
+        partial void OnfactorChanging(global::System.Decimal value);
+        partial void OnfactorChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Decimal contract_multiplier
+        {
+            get
+            {
+                return _contract_multiplier;
+            }
+            set
+            {
+                Oncontract_multiplierChanging(value);
+                ReportPropertyChanging("contract_multiplier");
+                _contract_multiplier = StructuralObject.SetValidValue(value, "contract_multiplier");
+                ReportPropertyChanged("contract_multiplier");
+                Oncontract_multiplierChanged();
+            }
+        }
+        private global::System.Decimal _contract_multiplier;
+        partial void Oncontract_multiplierChanging(global::System.Decimal value);
+        partial void Oncontract_multiplierChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String currency
+        {
+            get
+            {
+                return _currency;
+            }
+            set
+            {
+                OncurrencyChanging(value);
+                ReportPropertyChanging("currency");
+                _currency = StructuralObject.SetValidValue(value, false, "currency");
+                ReportPropertyChanged("currency");
+                OncurrencyChanged();
+            }
+        }
+        private global::System.String _currency;
+        partial void OncurrencyChanging(global::System.String value);
+        partial void OncurrencyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String security_exchange
+        {
+            get
+            {
+                return _security_exchange;
+            }
+            set
+            {
+                Onsecurity_exchangeChanging(value);
+                ReportPropertyChanging("security_exchange");
+                _security_exchange = StructuralObject.SetValidValue(value, true, "security_exchange");
+                ReportPropertyChanged("security_exchange");
+                Onsecurity_exchangeChanged();
+            }
+        }
+        private global::System.String _security_exchange;
+        partial void Onsecurity_exchangeChanging(global::System.String value);
+        partial void Onsecurity_exchangeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean expired
+        {
+            get
+            {
+                return _expired;
+            }
+            set
+            {
+                OnexpiredChanging(value);
+                ReportPropertyChanging("expired");
+                _expired = StructuralObject.SetValidValue(value, "expired");
+                ReportPropertyChanged("expired");
+                OnexpiredChanged();
+            }
+        }
+        private global::System.Boolean _expired;
+        partial void OnexpiredChanging(global::System.Boolean value);
+        partial void OnexpiredChanged();
 
         #endregion
 

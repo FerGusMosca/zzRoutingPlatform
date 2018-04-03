@@ -32,8 +32,10 @@
     <!--CS= Common Stock-->
     <SecurityType>OPT</SecurityType>
     <!--OPT=Options-->
-  <SecurityType>FUT</SecurityType>
+    <SecurityType>FUT</SecurityType>
     <!--FUT=Futures-->
+    <SecurityType>TB</SecurityType>
+    <!--TB=Treasury Bills-->
   </SecurityTypes>
 
   <Markets>

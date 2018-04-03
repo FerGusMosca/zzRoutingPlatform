@@ -12,6 +12,7 @@
           <EntitySet Name="currencies" EntityType="MomentumBackTestsModel.Store.currencies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="markets" EntityType="MomentumBackTestsModel.Store.markets" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="options_market_data" EntityType="MomentumBackTestsModel.Store.options_market_data" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="s_bills" EntityType="MomentumBackTestsModel.Store.s_bills" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_bonds" EntityType="MomentumBackTestsModel.Store.s_bonds" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_cryptos_closing_prices" EntityType="MomentumBackTestsModel.Store.s_cryptos_closing_prices" store:Type="Tables" Schema="dbo" />
@@ -100,6 +101,21 @@
           <Property Name="sesion" Type="varchar" MaxLength="10" />
           <Property Name="timestamp" Type="datetime" />
         </EntityType>
+        <EntityType Name="s_bills">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="security_desc" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="maturity_month_year" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="maturity_date" Type="date" Nullable="false" />
+          <Property Name="factor" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="contract_multiplier" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="currency" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="security_exchange" Type="varchar" MaxLength="50" />
+          <Property Name="expired" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="s_bonds">
           <Key>
             <PropertyRef Name="symbol" />
@@ -152,7 +168,7 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="underlying_symbol" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="underlying_symbol" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="security_desc" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="maturity_month_year" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="maturity_date" Type="date" Nullable="false" />
@@ -333,6 +349,7 @@
             <End Role="options_market_data" EntitySet="options_market_data" />
           </AssociationSet>
           <EntitySet Name="s_futures" EntityType="StocksHistoricalDataModel.s_futures" />
+          <EntitySet Name="s_bills" EntityType="StocksHistoricalDataModel.s_bills" />
         </EntityContainer>
         <EntityType Name="stocks_prices">
           <Key>
@@ -595,13 +612,28 @@
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
           <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="underlying_symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="underlying_symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="security_desc" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="maturity_month_year" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="0" />
           <Property Type="Decimal" Name="factor" Nullable="false" Precision="18" Scale="4" />
           <Property Type="Decimal" Name="contract_multiplier" Nullable="false" Precision="18" Scale="4" />
           <Property Type="String" Name="currency" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="security_exchange" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="expired" Nullable="false" />
+        </EntityType>
+        <EntityType Name="s_bills">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="symbol" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="security_desc" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="maturity_month_year" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="maturity_date" Nullable="false" Precision="0" />
+          <Property Type="Decimal" Name="factor" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="contract_multiplier" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="String" Name="currency" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="security_exchange" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Boolean" Name="expired" Nullable="false" />
         </EntityType>
@@ -847,6 +879,22 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="s_bills">
+            <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_bills">
+              <MappingFragment StoreEntitySet="s_bills">
+                <ScalarProperty Name="expired" ColumnName="expired" />
+                <ScalarProperty Name="security_exchange" ColumnName="security_exchange" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="contract_multiplier" ColumnName="contract_multiplier" />
+                <ScalarProperty Name="factor" ColumnName="factor" />
+                <ScalarProperty Name="maturity_date" ColumnName="maturity_date" />
+                <ScalarProperty Name="maturity_month_year" ColumnName="maturity_month_year" />
+                <ScalarProperty Name="security_desc" ColumnName="security_desc" />
+                <ScalarProperty Name="symbol" ColumnName="symbol" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -887,6 +935,7 @@
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_cryptos_closing_prices" Width="1.5" PointX="11.704684182864002" PointY="2.51674956200493" />
         <edmx:AssociationConnector Association="StocksHistoricalDataModel.FK_options_market_data_s_options" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_futures" Width="1.5" PointX="2.2033884442427141" PointY="25.318998959529679" />
+        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_bills" Width="1.5" PointX="11.615136818781094" PointY="18.990920984647666" />
       </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

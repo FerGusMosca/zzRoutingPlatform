@@ -24,6 +24,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
         private static string _OPTIONS_PREFIX = "O";
         private static string _CALL_OPTION_PREFIX = "OCXXXS";
         private static string _PUT_OPTION_PREFIX = "OPXXXS";
+        private static string _BILL_PREFIX = "DYXTXR";
         private static string _STOCK_PREFIX = "ES";
         private static string _BOND_PREFIX = "DB";
         private static string _SWAP_PREFIX = "XXW";
@@ -64,7 +65,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
         {
             SecurityType secType =  GetSecurityTypeByCFICode(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.CFICode.FIELD));
 
-            if (secType == SecurityType.CS || secType == SecurityType.OPT)
+            if (secType == SecurityType.CS || secType == SecurityType.OPT || secType == SecurityType.TB)
             {
 
                 if (string.IsNullOrEmpty(symbol))
@@ -82,7 +83,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
                 return symbol;//Todos los demás security types por (ej: futuros) consideramos que no hay códigos olcultos
         }
 
-        private string GetCleanMarket(string securityDesc)
+        private string GetCleanMarket(string securityDesc, string securityExchange)
         {
 
             if (string.IsNullOrEmpty(securityDesc))
@@ -91,10 +92,13 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
 
             string[] fields = securityDesc.Split(new string[] { _FIELD_SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (fields.Length <= _EXCHANGE_INDEX)
-                throw new Exception(string.Format("No se puede encontrar el nombre del campo Exchange para el SecurityDesc {0}", securityDesc));
-
-            return fields[_EXCHANGE_INDEX];
+            if (fields.Length >1)//Hay datos en el formato MERV - XMEV - L2A8D - 48hs
+            {
+                return fields[_EXCHANGE_INDEX].Trim();
+                //throw new Exception(string.Format("No se puede encontrar el nombre del campo Exchange para el SecurityDesc {0}", securityDesc));
+            }
+            else//Al no haber un formato que permita dilucidar el verdadero mercado --> Confiamos en lo que dice en el campo SecurityExchange
+                return securityExchange;
         }
 
         private zHFT.Main.Common.Enums.SecurityType GetSecurityTypeByCFICode(string CFICode)
@@ -109,8 +113,10 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
                 return SecurityType.OPT;
             else if (CFICode.StartsWith(_STOCK_PREFIX))
                 return SecurityType.CS;
-            else if (CFICode.StartsWith(_BOND_PREFIX))
+            else if (CFICode.StartsWith(_BILL_PREFIX))
                 return SecurityType.TB;
+            else if (CFICode.StartsWith(_BOND_PREFIX))
+                return SecurityType.TBOND;
             else if (CFICode.StartsWith(_SWAP_PREFIX))
                 return SecurityType.IRS;
             else if (CFICode.StartsWith(_CEDEAR_PREFIX))
@@ -203,7 +209,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
             else if (sField == SecurityFields.Currency)
                 return FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.Currency.FIELD);
             else if (sField == SecurityFields.Exchange)
-                return GetCleanMarket(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.SecurityExchange.FIELD));
+                return GetCleanMarket(FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.SecurityDesc.FIELD), FixHelperExtended.GetNullFieldIfSet(Security, QuickFix.SecurityExchange.FIELD));
             else if (sField == SecurityFields.StrikePrice)
                 return FixHelperExtended.GetNullDoubleFieldIfSet(Security, QuickFix.StrikePrice.FIELD);
             else if (sField == SecurityFields.MaturityDate)
