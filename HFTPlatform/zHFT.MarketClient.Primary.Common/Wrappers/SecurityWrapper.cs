@@ -80,7 +80,7 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
                 return fields[_SYMBOL_INDEX];
             }
             else
-                return symbol;//Todos los demás security types por (ej: futuros) consideramos que no hay códigos olcultos
+                return symbol;//Todos los demás security types por (ej: futuros) consideramos que no hay códigos ocultos
         }
 
         private string GetCleanMarket(string securityDesc, string securityExchange)

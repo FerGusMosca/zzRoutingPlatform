@@ -39,6 +39,12 @@ namespace zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators
                         sec.Symbol = sec.Symbol + "." + _PRIMARY_ROFX_CODE;
                 }
 
+                if (sec.SecType == SecurityType.TB)
+                {
+                    if (sec.Exchange.Trim() == _SECURITIES_HISTORICAL_DATA_BYMA_CODE)
+                        sec.Symbol = sec.Symbol + "." + _SECURITIES_HISTORICAL_DATA_BYMA_CODE;
+                }
+
                 //Los demas códigos no existen en el mundo SecuritiesHistoricalData así que 
                 // por ahora no lo traducimos
             }

@@ -110,3 +110,17 @@
 2018-04-03 15:49:05  :: Loading config:.\OutgoingSingletonConfig.xml
 2018-04-03 15:49:05  :: Processing config:.\OutgoingSingletonConfig.xml
 2018-04-03 15:49:05  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-04-03 17:05:29  :: 4/3/2018 5:05:29 PMMomentumStrategyBase.LoadConfig
+2018-04-03 17:05:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-04-03 17:05:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-04-03 17:05:29  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-04-03 17:05:29  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-04-03 17:05:29  :: 4/3/2018 5:05:29 PMOrderRouterBase.LoadConfig
+2018-04-03 17:05:29  :: Loading config:.\outgoingOrderRouter.xml
+2018-04-03 17:05:29  :: Processing config:.\outgoingOrderRouter.xml
+2018-04-03 17:05:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-04-03 17:05:30  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-04-03 17:05:30  :: 4/3/2018 5:05:30 PMBaseCommunicationModule.LoadConfig
+2018-04-03 17:05:30  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-04-03 17:05:30  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-04-03 17:05:30  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
