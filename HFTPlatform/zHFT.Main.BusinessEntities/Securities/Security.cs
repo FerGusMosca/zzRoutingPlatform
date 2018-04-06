@@ -125,6 +125,10 @@ namespace zHFT.Main.BusinessEntities.Securities
                 return SecurityType.IND;
             else if (secType.ToUpper() == SecurityType.OPT.ToString())
                 return SecurityType.OPT;
+            else if (secType.ToUpper() == SecurityType.TB.ToString())
+                return SecurityType.TB;
+            else if (secType.ToUpper() == SecurityType.TBOND.ToString())
+                return SecurityType.TBOND;
             else if (secType.ToUpper() == SecurityType.OTH.ToString())
                 return SecurityType.OTH;
             else

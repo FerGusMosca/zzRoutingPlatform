@@ -18,6 +18,8 @@ namespace zHFT.MarketClient.Primary.Common.Converters
 
         private static string _BYMA_CS_CLEARINGID = "48hs";
         private static string _BYMA_OPT_CLEARINGID = "24hs";
+        private static string _BYMA_BOND_CLEARINGID = "48hs";
+        private static string _BYMA_BILL_CLEARINGID = "CI";
         private static string _ROFX_CLEARINGID = "";
 
         #endregion
@@ -60,6 +62,16 @@ namespace zHFT.MarketClient.Primary.Common.Converters
                     if (exchange == _BYMA)
                         return _BYMA_OPT_CLEARINGID;
                 }
+                else if (secType == SecurityType.TBOND)
+                {
+                    if (exchange == _BYMA)
+                        return _BYMA_BOND_CLEARINGID;
+                }
+                else if (secType == SecurityType.TB)
+                {
+                    if (exchange == _BYMA)
+                        return _BYMA_BILL_CLEARINGID;
+                }
             }
 
             throw new Exception(string.Format("There is no clearing ID code set for market {0} and sec type {1}", exchange, secType.ToString()));
@@ -85,6 +97,16 @@ namespace zHFT.MarketClient.Primary.Common.Converters
                 {
                     if (exchange == _BYMA)
                         return SettlType.NextDay;
+                }
+                else if (secType == SecurityType.TBOND)
+                {
+                    if (exchange == _BYMA)
+                        return SettlType.Tplus2;
+                }
+                else if (secType == SecurityType.TB)
+                {
+                    if (exchange == _BYMA)
+                        return SettlType.Tplus2;
                 }
             }
 
