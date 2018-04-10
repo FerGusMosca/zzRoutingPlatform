@@ -46,6 +46,8 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
         private string _ST_STOCK = "STOCK";
 
+        private string _ST_LETTER_NOTE = "LETTER_NOTE";
+
         private string _ST_BOND = "BOND";
 
         private string _ST_FUTURE = "FUTURE";
@@ -88,6 +90,8 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
         protected string GetFullSymbol(string secType, string symbol)
         {
             if (secType == _ST_STOCK)
+                return string.Format("{0}.{1}", symbol, _BUE);
+            if (secType == _ST_LETTER_NOTE)
                 return string.Format("{0}.{1}", symbol, _BUE);
             else if (secType == _ST_BOND)
                 return string.Format("{0}.{1}", symbol, _BUE);

@@ -86,6 +86,7 @@
     </Content>
     <Content Include="outgoingSecurityListSaver.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="incomingPrimary.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
