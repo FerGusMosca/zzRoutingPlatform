@@ -165,6 +165,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                                 CancelMarketData(ActiveSecuritiesOnDemand[keyToRemove]);
                                 ActiveSecuritiesOnDemand.Remove(keyToRemove);
                             }
+
                         }
                     }
                     catch (Exception ex)

@@ -16,6 +16,5 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Se
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb

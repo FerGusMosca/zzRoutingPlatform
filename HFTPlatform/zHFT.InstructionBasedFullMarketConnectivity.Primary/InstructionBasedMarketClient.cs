@@ -145,7 +145,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     //throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
                 }
 
-                if(ActiveSecurities.Values.Any(x => x.Symbol == fullSymbol && x.Active))
+                if(ActiveSecurities.Values.Any(x => x.Symbol == fullSymbol && x.Active)
+                    && ExchangeConverter.IsValidClearingId(primarySymbol,secType))
                 {
                     Security sec = ActiveSecurities.Values.Where(x => x.Symbol == fullSymbol && x.Active).FirstOrDefault();
 
@@ -543,6 +544,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                             MarketDataRequestWrapper mdr = new MarketDataRequestWrapper(security, Main.Common.Enums.SubscriptionRequestType.Unsuscribe);
                             ProcessMarketDataRequest(mdr);
                         }
+
                     }
                 }
                 catch (Exception ex)

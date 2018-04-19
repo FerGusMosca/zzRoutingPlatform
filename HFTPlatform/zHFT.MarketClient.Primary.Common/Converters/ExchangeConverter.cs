@@ -42,6 +42,40 @@ namespace zHFT.MarketClient.Primary.Common.Converters
         
         }
 
+        public static bool IsValidClearingId(string primarySymbol, SecurityType secType)
+        {
+            string exchange = GetMarketFromPrimarySymbol(primarySymbol);
+
+            if (exchange == _ROFX)
+            {
+                return true;
+
+            }
+            else
+            {
+                if (secType == SecurityType.CS)
+                {
+                    return primarySymbol.EndsWith(_BYMA_CS_CLEARINGID);
+
+                }
+                else if (secType == SecurityType.OPT)
+                {
+                    return primarySymbol.EndsWith(_BYMA_OPT_CLEARINGID);
+                }
+                else if (secType == SecurityType.TBOND)
+                {
+                    return primarySymbol.EndsWith(_BYMA_BOND_CLEARINGID);
+                }
+                else if (secType == SecurityType.TB)
+                {
+                    return primarySymbol.EndsWith(_BYMA_BILL_CLEARINGID);
+                }
+                else
+                    return false;
+            }
+
+        }
+
         public static string GetMarketClearingID(SecurityType secType,string exchange)
         {
             if (exchange == _ROFX)
