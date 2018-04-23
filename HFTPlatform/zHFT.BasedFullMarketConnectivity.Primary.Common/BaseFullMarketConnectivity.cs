@@ -365,6 +365,13 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         OrderIndexId++;
                     }
 
+                    double orderQty = newOrder.OrderQty.Value;
+                    //Procesamientos especiales de la cantidad de las ordenes
+                    if (newOrder.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
+                    {
+                        orderQty *= 1000;
+                    }
+
                     QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(), 
                                                                                     newOrder.Symbol, 
                                                                                     newOrder.Side, 
@@ -372,7 +379,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                                                                                     newOrder.SettlType, 
                                                                                     newOrder.TimeInForce, 
                                                                                     newOrder.EffectiveTime.Value,
-                                                                                    newOrder.OrderQty.Value, 
+                                                                                    orderQty, 
                                                                                     newOrder.Price,
                                                                                     newOrder.StopPx, 
                                                                                     newOrder.Account);
@@ -439,6 +446,13 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
                         //CancelOrder(order, origClOrdId, newMarketOrderIdRequested.ToString());
                         //RouteNewOrder(order, (newMarketOrderIdRequested + 1).ToString());
+
+                       
+                        //Procesamientos especiales de la cantidad de las ordenes
+                        if (order.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
+                        {
+                            ordQty *= 1000;
+                        }
 
                         
                         QuickFix.Message updMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
@@ -567,13 +581,20 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
                 order.OrigClOrdId = clOrdId;
 
+                double orderQty = order.OrderQty.Value;
+                //Procesamientos especiales de la cantidad de las ordenes
+                if (order.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
+                {
+                    orderQty *= 1000;
+                }
+
                 QuickFix.Message cancelMessage = FIXMessageCreator.CreateOrderCancelRequest(
                                                 newMarketOrderIdRequested.ToString(),
                                                 marketOrderId.ToString(),
                                                 order.OrderId,
                                                 order.Security.Symbol, order.Side,
                                                 order.EffectiveTime.Value,
-                                                order.OrderQty, order.Account,
+                                                orderQty, order.Account,
                                                 _MAIN_EXCHANGE
                                                 );
 
