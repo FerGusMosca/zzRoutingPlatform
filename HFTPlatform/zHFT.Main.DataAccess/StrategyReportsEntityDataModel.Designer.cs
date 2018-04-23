@@ -20,8 +20,8 @@ using System.Xml.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("StrategyReportsModel", "FK_execution_reports_positions", "positions", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.Main.DataAccess.positions), "execution_reports", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.Main.DataAccess.execution_reports), true)]
-[assembly: EdmRelationshipAttribute("StrategyReportsModel", "FK_execution_summaries_positions1", "positions", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.Main.DataAccess.positions), "execution_summaries", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.Main.DataAccess.execution_summaries), true)]
 [assembly: EdmRelationshipAttribute("StrategyReportsModel", "FK_orders_positions", "positions", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.Main.DataAccess.positions), "orders", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.Main.DataAccess.orders), true)]
+[assembly: EdmRelationshipAttribute("StrategyReportsModel", "FK_execution_summaries_positions1", "positions", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(zHFT.Main.DataAccess.positions), "execution_summaries", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(zHFT.Main.DataAccess.execution_summaries), true)]
 
 #endregion
 
@@ -92,22 +92,6 @@ namespace zHFT.Main.DataAccess
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<execution_summaries> execution_summaries
-        {
-            get
-            {
-                if ((_execution_summaries == null))
-                {
-                    _execution_summaries = base.CreateObjectSet<execution_summaries>("execution_summaries");
-                }
-                return _execution_summaries;
-            }
-        }
-        private ObjectSet<execution_summaries> _execution_summaries;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<sysdiagrams> sysdiagrams
         {
             get
@@ -152,6 +136,22 @@ namespace zHFT.Main.DataAccess
             }
         }
         private ObjectSet<positions> _positions;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<execution_summaries> execution_summaries
+        {
+            get
+            {
+                if ((_execution_summaries == null))
+                {
+                    _execution_summaries = base.CreateObjectSet<execution_summaries>("execution_summaries");
+                }
+                return _execution_summaries;
+            }
+        }
+        private ObjectSet<execution_summaries> _execution_summaries;
 
         #endregion
 
@@ -163,14 +163,6 @@ namespace zHFT.Main.DataAccess
         public void AddToexecution_reports(execution_reports execution_reports)
         {
             base.AddObject("execution_reports", execution_reports);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the execution_summaries EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToexecution_summaries(execution_summaries execution_summaries)
-        {
-            base.AddObject("execution_summaries", execution_summaries);
         }
     
         /// <summary>
@@ -195,6 +187,14 @@ namespace zHFT.Main.DataAccess
         public void AddTopositions(positions positions)
         {
             base.AddObject("positions", positions);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the execution_summaries EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToexecution_summaries(execution_summaries execution_summaries)
+        {
+            base.AddObject("execution_summaries", execution_summaries);
         }
 
         #endregion
@@ -1145,6 +1145,54 @@ namespace zHFT.Main.DataAccess
         private global::System.Int32 _pos_id;
         partial void Onpos_idChanging(global::System.Int32 value);
         partial void Onpos_idChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String console
+        {
+            get
+            {
+                return _console;
+            }
+            set
+            {
+                OnconsoleChanging(value);
+                ReportPropertyChanging("console");
+                _console = StructuralObject.SetValidValue(value, true, "console");
+                ReportPropertyChanged("console");
+                OnconsoleChanged();
+            }
+        }
+        private global::System.String _console;
+        partial void OnconsoleChanging(global::System.String value);
+        partial void OnconsoleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> account_number
+        {
+            get
+            {
+                return _account_number;
+            }
+            set
+            {
+                Onaccount_numberChanging(value);
+                ReportPropertyChanging("account_number");
+                _account_number = StructuralObject.SetValidValue(value, "account_number");
+                ReportPropertyChanged("account_number");
+                Onaccount_numberChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _account_number;
+        partial void Onaccount_numberChanging(Nullable<global::System.Int32> value);
+        partial void Onaccount_numberChanged();
 
         #endregion
 
@@ -2288,28 +2336,6 @@ namespace zHFT.Main.DataAccess
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("StrategyReportsModel", "FK_execution_summaries_positions1", "execution_summaries")]
-        public EntityCollection<execution_summaries> execution_summaries
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<execution_summaries>("StrategyReportsModel.FK_execution_summaries_positions1", "execution_summaries");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<execution_summaries>("StrategyReportsModel.FK_execution_summaries_positions1", "execution_summaries", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("StrategyReportsModel", "FK_orders_positions", "orders")]
         public EntityCollection<orders> orders
         {
@@ -2322,6 +2348,28 @@ namespace zHFT.Main.DataAccess
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<orders>("StrategyReportsModel.FK_orders_positions", "orders", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("StrategyReportsModel", "FK_execution_summaries_positions1", "execution_summaries")]
+        public EntityCollection<execution_summaries> execution_summaries
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<execution_summaries>("StrategyReportsModel.FK_execution_summaries_positions1", "execution_summaries");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<execution_summaries>("StrategyReportsModel.FK_execution_summaries_positions1", "execution_summaries", value);
                 }
             }
         }

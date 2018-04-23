@@ -98,6 +98,7 @@
     </Content>
     <Content Include="incomingBittrex.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="outgoingOrderRouter.Bittrex.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

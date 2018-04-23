@@ -46,21 +46,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="execution_summaries">
-      <EntityTypeMapping TypeName="StrategyReportsModel.execution_summaries">
-        <MappingFragment StoreEntitySet="execution_summaries">
-          <ScalarProperty Name="pos_id" ColumnName="pos_id" />
-          <ScalarProperty Name="text" ColumnName="text" />
-          <ScalarProperty Name="commission" ColumnName="commission" />
-          <ScalarProperty Name="leaves_qty" ColumnName="leaves_qty" />
-          <ScalarProperty Name="cum_qty" ColumnName="cum_qty" />
-          <ScalarProperty Name="avg_px" ColumnName="avg_px" />
-          <ScalarProperty Name="symbol" ColumnName="symbol" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="StrategyReportsModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -119,6 +104,23 @@
           <ScalarProperty Name="pos_status" ColumnName="pos_status" />
           <ScalarProperty Name="symbol" ColumnName="symbol" />
           <ScalarProperty Name="pos_id" ColumnName="pos_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="execution_summaries">
+      <EntityTypeMapping TypeName="StrategyReportsModel.execution_summaries">
+        <MappingFragment StoreEntitySet="execution_summaries">
+          <ScalarProperty Name="account_number" ColumnName="account_number" />
+          <ScalarProperty Name="console" ColumnName="console" />
+          <ScalarProperty Name="pos_id" ColumnName="pos_id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="commission" ColumnName="commission" />
+          <ScalarProperty Name="leaves_qty" ColumnName="leaves_qty" />
+          <ScalarProperty Name="cum_qty" ColumnName="cum_qty" />
+          <ScalarProperty Name="avg_px" ColumnName="avg_px" />
+          <ScalarProperty Name="symbol" ColumnName="symbol" />
+          <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

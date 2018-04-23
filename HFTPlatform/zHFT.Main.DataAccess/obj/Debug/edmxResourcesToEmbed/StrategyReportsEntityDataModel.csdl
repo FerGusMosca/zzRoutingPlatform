@@ -32,7 +32,6 @@
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
     <EntitySet Name="execution_reports" EntityType="StrategyReportsModel.execution_reports" />
-    <EntitySet Name="execution_summaries" EntityType="StrategyReportsModel.execution_summaries" />
     <EntitySet Name="sysdiagrams" EntityType="StrategyReportsModel.sysdiagrams" />
     <EntitySet Name="orders" EntityType="StrategyReportsModel.orders" />
     <EntitySet Name="positions" EntityType="StrategyReportsModel.positions" />
@@ -40,13 +39,14 @@
       <End Role="positions" EntitySet="positions" />
       <End Role="execution_reports" EntitySet="execution_reports" />
     </AssociationSet>
-    <AssociationSet Name="FK_execution_summaries_positions1" Association="StrategyReportsModel.FK_execution_summaries_positions1">
-      <End Role="positions" EntitySet="positions" />
-      <End Role="execution_summaries" EntitySet="execution_summaries" />
-    </AssociationSet>
     <AssociationSet Name="FK_orders_positions" Association="StrategyReportsModel.FK_orders_positions">
       <End Role="positions" EntitySet="positions" />
       <End Role="orders" EntitySet="orders" />
+    </AssociationSet>
+    <EntitySet Name="execution_summaries" EntityType="StrategyReportsModel.execution_summaries" />
+    <AssociationSet Name="FK_execution_summaries_positions1" Association="StrategyReportsModel.FK_execution_summaries_positions1">
+      <End Role="positions" EntitySet="positions" />
+      <End Role="execution_summaries" EntitySet="execution_summaries" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -80,21 +80,6 @@
     <Property Type="String" Name="text" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Type="Int32" Name="pos_id" Nullable="false" />
     <NavigationProperty Name="positions" Relationship="StrategyReportsModel.FK_execution_reports_positions" FromRole="execution_reports" ToRole="positions" />
-  </EntityType>
-  <EntityType Name="execution_summaries">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-    <Property Type="DateTime" Name="date" Nullable="false" Precision="3" />
-    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Double" Name="avg_px" />
-    <Property Type="Double" Name="cum_qty" Nullable="false" />
-    <Property Type="Double" Name="leaves_qty" Nullable="false" />
-    <Property Type="Double" Name="commission" />
-    <Property Type="String" Name="text" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="pos_id" Nullable="false" />
-    <NavigationProperty Name="positions" Relationship="StrategyReportsModel.FK_execution_summaries_positions1" FromRole="execution_summaries" ToRole="positions" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -156,8 +141,8 @@
     <Property Type="Double" Name="last_qty" />
     <Property Type="String" Name="last_mkt" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="execution_reports" Relationship="StrategyReportsModel.FK_execution_reports_positions" FromRole="positions" ToRole="execution_reports" />
-    <NavigationProperty Name="execution_summaries" Relationship="StrategyReportsModel.FK_execution_summaries_positions1" FromRole="positions" ToRole="execution_summaries" />
     <NavigationProperty Name="orders" Relationship="StrategyReportsModel.FK_orders_positions" FromRole="positions" ToRole="orders" />
+    <NavigationProperty Name="execution_summaries" Relationship="StrategyReportsModel.FK_execution_summaries_positions1" FromRole="positions" ToRole="execution_summaries" />
   </EntityType>
   <Association Name="FK_execution_reports_positions">
     <End Type="StrategyReportsModel.positions" Role="positions" Multiplicity="1">
@@ -173,20 +158,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_execution_summaries_positions1">
-    <End Type="StrategyReportsModel.positions" Role="positions" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="StrategyReportsModel.execution_summaries" Role="execution_summaries" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="positions">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="execution_summaries">
-        <PropertyRef Name="pos_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_orders_positions">
     <End Type="StrategyReportsModel.positions" Role="positions" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -197,6 +168,37 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="orders">
+        <PropertyRef Name="pos_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="execution_summaries">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="avg_px" />
+    <Property Type="Double" Name="cum_qty" Nullable="false" />
+    <Property Type="Double" Name="leaves_qty" Nullable="false" />
+    <Property Type="Double" Name="commission" />
+    <Property Type="String" Name="text" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="pos_id" Nullable="false" />
+    <Property Type="String" Name="console" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="account_number" />
+    <NavigationProperty Name="positions" Relationship="StrategyReportsModel.FK_execution_summaries_positions1" FromRole="execution_summaries" ToRole="positions" />
+  </EntityType>
+  <Association Name="FK_execution_summaries_positions1">
+    <End Type="StrategyReportsModel.positions" Role="positions" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="StrategyReportsModel.execution_summaries" Role="execution_summaries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="positions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="execution_summaries">
         <PropertyRef Name="pos_id" />
       </Dependent>
     </ReferentialConstraint>

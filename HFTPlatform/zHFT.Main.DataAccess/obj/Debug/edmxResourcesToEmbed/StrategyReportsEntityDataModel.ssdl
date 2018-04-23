@@ -52,6 +52,8 @@
     <Property Name="commission" Type="float" />
     <Property Name="text" Type="varchar" MaxLength="200" />
     <Property Name="pos_id" Type="int" Nullable="false" />
+    <Property Name="console" Type="varchar" MaxLength="100" />
+    <Property Name="account_number" Type="int" />
   </EntityType>
   <EntityType Name="orders">
     <Key>

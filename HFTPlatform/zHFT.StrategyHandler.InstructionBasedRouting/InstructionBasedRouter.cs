@@ -61,7 +61,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             //If we have at least one instructionToCleanPosition
             if (instructionsToCleanPositions.Count > 0)
             {
-                CancelAllNotCleared();
+                CancelAllNotCleared((int?)IBRConfiguration.AccountNumber);
                 foreach (Instruction instr in instructionsToCleanPositions)
                 {
                     instr.Executed = true;
@@ -741,7 +741,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             if (instr != null)
             {
                 ProcessInstructionExecuted(instr, summary);
-                SaveExecutionSummary(summary);
+                SaveExecutionSummary(summary,(int?)IBRConfiguration.AccountNumber);
                 PositionInstructions.Remove(summary.Position.Symbol);
                 ExecutionSummaries.Remove(summary.Position.Symbol);
             }
@@ -884,7 +884,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                     throw new Exception(string.Format("@OnEvalExecutionSummary Could not find an instruction for symbol {0}", summary.Position.Symbol));
 
                                 ProcessInstructionExecuted(instr, summary);
-                                SaveExecutionSummary(summary);
+                                SaveExecutionSummary(summary, (int?)IBRConfiguration.AccountNumber);
                                 PositionInstructions.Remove(summary.Position.Symbol);
                                 ExecutionSummaries.Remove(summary.Position.Symbol);
                                 Positions.Remove(summary.Position.Symbol);
@@ -901,14 +901,14 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                             }
                         }
                         else
-                            SaveExecutionSummary(summary);
+                            SaveExecutionSummary(summary, (int?)IBRConfiguration.AccountNumber);
                     }
                 }
             }
             catch (Exception ex)
             {
                 DoLog(string.Format("@{0} OnEvalExecutionSummary: Critical error processing execution summary: {1}", IBRConfiguration.Name, ex.Message), Constants.MessageType.Error);
-                CancelAllNotCleared();
+                CancelAllNotCleared((int?)IBRConfiguration.AccountNumber);
             }
         }
 

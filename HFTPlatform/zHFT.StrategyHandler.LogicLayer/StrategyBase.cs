@@ -145,7 +145,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 throw new Exception(string.Format("@{0}:Could not find Execution Summary for unknown symbol. Cancelling all orders!", StrategyConfiguration.Name));
         }
 
-        protected virtual  void CancelAllNotCleared()
+        protected virtual  void CancelAllNotCleared(int? accountNumber= null)
         {
             try
             {
@@ -161,6 +161,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                             sum.Position.PosStatus = PositionStatus.Canceled;
                             sum.Position.PositionCanceledOrRejected = true;
                             sum.Text = "Position canceled on massive depuration";
+                            sum.Console = StrategyConfiguration.Name;
+                            sum.AccountNumber = accountNumber;
                             SaveExecutionSummary(sum);
                             UnsuscribeMarketData(sum.Position);
                         }
@@ -399,12 +401,15 @@ namespace zHFT.StrategyHandler.LogicLayer
             Positions.Clear();
         }
 
-        protected void SaveExecutionSummary(ExecutionSummary summary)
+        protected void SaveExecutionSummary(ExecutionSummary summary,int? accountNumber= null)
         {
             try
             {
                 try
                 {
+                    summary.Console = StrategyConfiguration.Name;
+                    summary.AccountNumber = accountNumber;
+
                     if (StrategyConfiguration.ReportSavingBD())
                         SaveExecutionSummaryOnDB(summary);
                     else if (StrategyConfiguration.ReportSavingExcel())

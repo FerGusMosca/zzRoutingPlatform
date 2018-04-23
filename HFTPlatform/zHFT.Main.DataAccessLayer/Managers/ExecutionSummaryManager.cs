@@ -33,6 +33,8 @@ namespace zHFT.Main.DataAccessLayer.Managers
             summaryDB.leaves_qty = summary.LeavesQty;
             summaryDB.commission = summary.Commission;
             summaryDB.text = summary.Text;
+            summaryDB.console = summary.Console;
+            summaryDB.account_number = summary.AccountNumber;
         }
 
         protected void Map(Position position, positions positionsDB)

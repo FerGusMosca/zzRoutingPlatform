@@ -30,6 +30,10 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         public string Text { get; set; }
 
+        public string Console { get; set; }
+
+        public int? AccountNumber{ get; set; }
+
         #endregion
 
         #region Public Methods
