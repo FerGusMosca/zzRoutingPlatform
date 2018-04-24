@@ -252,6 +252,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                             instr.Executed = true;
                             instr.Text = "No ejecutada por existencia de otras sincronizaciones";
                             instr.RelatedInstruction.IsOnlinePosition = prevPos.PositionStatus.IsOnline();
+                            instr.RelatedInstruction.AccountPosition.PositionStatus = zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.PositionStatus.GetUnwindSentToMarket();
                             ProcessUnwindPosition(instr.RelatedInstruction);
                             InstructionManager.Persist(instr);
                             InstructionManager.Persist(instr.RelatedInstruction);
@@ -492,13 +493,45 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
-        private void PersistSyncPositions(Instruction instr,ref Instruction relInstr,List<AccountPosition> positions)
+        private List<AccountPosition> GetPositionsToPersist(string relSymbol, List<AccountPosition> positions)
+        {
+            List<AccountPosition> positionsToPersist = new List<AccountPosition>();
+
+            List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(IBRConfiguration.AccountNumber);
+
+            foreach (AccountPosition pos in positions)
+            {
+                bool found = false;
+
+                foreach (Instruction instrx in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._SYNC_POSITIONS))
+                {
+                    if (!instrx.Executed && instrx.RelatedInstruction != null)
+                    {
+                        if (instrx.RelatedInstruction.Symbol == pos.Security.Symbol)
+                            found = true;
+                    }
+                
+                }
+
+
+                if (!found  && relSymbol != pos.Security.Symbol)
+                    positionsToPersist.Add(pos);
+            
+            }
+
+            return positionsToPersist;
+        
+        }
+
+        private void PersistSyncPositions(Instruction instr, ref Instruction relInstr, List<AccountPosition> positions)
         {
             if (instr.RelatedInstruction != null)//Tenemos una instrx individual
             {
                 relInstr = instr.RelatedInstruction;
                 string relSymbol = relInstr.Symbol;
-                PositionManager.PersistAndReplace(positions.Where(x => x.Security.Symbol != relSymbol ).ToList(),instr.Account.Id);
+                //PositionManager.PersistAndReplace(positions.Where(x => x.Security.Symbol != relSymbol ).ToList(),instr.Account.Id);
+
+                PositionManager.PersistAndReplace(GetPositionsToPersist(relSymbol, positions), instr.Account.Id);
             }
             else // Tenemos una instrx con alta/baja de posiciones masiva
             {
