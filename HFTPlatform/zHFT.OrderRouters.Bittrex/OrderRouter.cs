@@ -370,6 +370,8 @@ namespace zHFT.OrderRouters.Bittrex
                                 }
                                 catch (Exception ex)
                                 {
+                                    if (ActiveOrders.ContainsKey(order.OrderId))
+                                        ActiveOrders.Remove(order.OrderId);
                                     EvalRouteError(order, ex);
                                 }
                             }

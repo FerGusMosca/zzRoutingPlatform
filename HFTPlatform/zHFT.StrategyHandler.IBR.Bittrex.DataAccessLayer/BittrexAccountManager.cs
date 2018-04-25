@@ -230,17 +230,20 @@ namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
 
                     foreach (AccountBalance balance in resp)
                     {
-                        AccountPosition pos = new AccountPosition();
+                        if (balance.Balance > 0)
+                        {
+                            AccountPosition pos = new AccountPosition();
 
-                        pos.Account = account;
-                        pos.Active = true;
-                        pos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
-                        pos.Security = new Security() { Symbol = balance.Currency };
-                        pos.Ammount = balance.Balance;
+                            pos.Account = account;
+                            pos.Active = true;
+                            pos.PositionStatus = PositionStatus.GetNewPositionStatus(true);
+                            pos.Security = new Security() { Symbol = balance.Currency };
+                            pos.Ammount = balance.Balance;
 
-                        RecoverMarketPriceForPosition(ref pos, btcPriceInUSD);
+                            RecoverMarketPriceForPosition(ref pos, btcPriceInUSD);
 
-                        Positions.Add(pos);
+                            Positions.Add(pos);
+                        }
                     }
 
                     ReqAccountPositions = false;
