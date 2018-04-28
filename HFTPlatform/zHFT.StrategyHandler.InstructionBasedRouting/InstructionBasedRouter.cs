@@ -478,6 +478,9 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                             ProcessNewPositionsNoSync(instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._SYNC_POSITIONS).ToList());
                         }
 
+                        //We process the cancelation of a specific position
+                        ProcessAccountPositionCancel(instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._CANCEL_POSITIONS).ToList());
+
                         //We process the cleaning of all opened positions
                         ProcessPositionsCleaningSync(instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._CLEAN_ALL_POS).ToList());
 
@@ -490,6 +493,47 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                             Main.Common.Util.Constants.MessageType.Error);
                     }
                 }
+            }
+        }
+
+        private void ProcessAccountPositionCancel(List<Instruction> cancelInstrxs)
+        {
+            foreach (Instruction cancelInstrx in cancelInstrxs)
+            {
+                if (cancelInstrx.Account.AccountNumber == IBRConfiguration.AccountNumber)
+                {
+                    try
+                    {
+                        ExecutionSummary summary = ExecutionSummaries.Values.Where(x => x.Symbol == cancelInstrx.Symbol).FirstOrDefault();
+
+                        if (summary != null)
+                        {
+                            CancelPositionWrapper cancelPositionWrapper = new CancelPositionWrapper(summary.Position, IBRConfiguration);
+                            OrderRouter.ProcessMessage(cancelPositionWrapper);
+                            cancelInstrx.Executed = true;
+                            InstructionManager.Persist(cancelInstrx);
+                        }
+                        else
+                        {
+                            cancelInstrx.Executed = true;
+                            cancelInstrx.Text = string.Format("Descartada porque no se encontró una posición abierta para el código de especie {0}", cancelInstrx.Symbol);
+                            InstructionManager.Persist(cancelInstrx);
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        DoLog(string.Format("@{2} - Critical error processing cancel instruction: {0} - {1}",
+                               ex.Message, ex.InnerException != null ? ex.InnerException.Message : "", IBRConfiguration.Name),
+                               Main.Common.Util.Constants.MessageType.Error);
+                    }
+                
+                }
+                else
+                    DoLog(string.Format("@{1} - Discarding cancel instructions account number: {0}",
+                                         cancelInstrx.Account.AccountNumber, IBRConfiguration.Name),
+                                         Main.Common.Util.Constants.MessageType.Information);
+            
             }
         }
 

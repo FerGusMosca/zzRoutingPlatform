@@ -14,6 +14,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
         public static string _UNWIND_POSITION = "UWND_POS";
         public static string _SYNC_BALANCE = "SYNC_BAL";
         public static string _SYNC_POSITIONS = "SYNC_POS";
+        public static string _CANCEL_POSITIONS = "CANCEL_POS";
         public static string _POST_SYNC_POSITIONS = "P_SYNC_POS";
         public static string _CLEAN_ALL_POS = "CL_ALL_POS";
 
