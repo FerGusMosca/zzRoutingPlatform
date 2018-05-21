@@ -1,0 +1,178 @@
+2018-05-18 15:12:00  :: 18/5/2018 15:12:00MainApp.LoadConfig
+2018-05-18 15:12:00  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:12:00  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:12:03  :: Fin GetConfiguracion
+2018-05-18 15:12:03  :: Initializing Log
+2018-05-18 15:12:03  :: Initializing Incoming Module
+2018-05-18 15:12:08  :: Incoming Module successfully initialized
+2018-05-18 15:12:08  :: Initializing Outgoing Module
+2018-05-18 15:12:10  :: Outgoing Module successfully initialized
+2018-05-18 15:12:33  :: 18/5/2018 15:12:33MainApp.LoadConfig
+2018-05-18 15:12:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:12:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:12:34  :: Fin GetConfiguracion
+2018-05-18 15:12:34  :: Initializing Log
+2018-05-18 15:12:34  :: Initializing Incoming Module
+2018-05-18 15:12:34  :: Incoming Module successfully initialized
+2018-05-18 15:12:34  :: Initializing Outgoing Module
+2018-05-18 15:12:49  :: Outgoing Module successfully initialized
+2018-05-18 15:19:10  :: 18/5/2018 15:19:10MainApp.LoadConfig
+2018-05-18 15:19:10  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:19:10  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:19:10  :: Fin GetConfiguracion
+2018-05-18 15:19:10  :: Initializing Log
+2018-05-18 15:19:10  :: Initializing Incoming Module
+2018-05-18 15:19:10  :: Incoming Module successfully initialized
+2018-05-18 15:19:10  :: Initializing Outgoing Module
+2018-05-18 15:20:11  :: 18/5/2018 15:20:11MainApp.LoadConfig
+2018-05-18 15:20:11  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:20:11  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:20:11  :: Fin GetConfiguracion
+2018-05-18 15:20:11  :: Initializing Log
+2018-05-18 15:20:11  :: Initializing Incoming Module
+2018-05-18 15:20:11  :: Incoming Module successfully initialized
+2018-05-18 15:20:12  :: Initializing Outgoing Module
+2018-05-18 15:20:22  :: Outgoing Module successfully initialized
+2018-05-18 15:22:18  :: 18/5/2018 15:22:18MainApp.LoadConfig
+2018-05-18 15:22:18  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:22:18  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:22:18  :: Fin GetConfiguracion
+2018-05-18 15:22:18  :: Initializing Log
+2018-05-18 15:22:18  :: Initializing Incoming Module
+2018-05-18 15:22:18  :: Incoming Module successfully initialized
+2018-05-18 15:22:18  :: Initializing Outgoing Module
+2018-05-18 15:22:21  :: Outgoing Module successfully initialized
+2018-05-18 15:54:39  :: 18/5/2018 15:54:39MainApp.LoadConfig
+2018-05-18 15:54:39  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:54:39  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:54:39  :: Fin GetConfiguracion
+2018-05-18 15:54:39  :: Initializing Log
+2018-05-18 15:54:39  :: Initializing Incoming Module
+2018-05-18 15:54:40  :: Incoming Module successfully initialized
+2018-05-18 15:54:40  :: Initializing Outgoing Module
+2018-05-18 15:54:46  :: Error initializing Outgoing Module
+2018-05-18 15:56:50  :: 18/5/2018 15:56:50MainApp.LoadConfig
+2018-05-18 15:56:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:56:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:56:50  :: Fin GetConfiguracion
+2018-05-18 15:56:50  :: Initializing Log
+2018-05-18 15:56:50  :: Initializing Incoming Module
+2018-05-18 15:56:51  :: Incoming Module successfully initialized
+2018-05-18 15:56:51  :: Initializing Outgoing Module
+2018-05-18 15:56:52  :: Error initializing Outgoing Module
+2018-05-18 15:58:04  :: 18/5/2018 15:58:04MainApp.LoadConfig
+2018-05-18 15:58:04  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:58:04  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 15:58:04  :: Fin GetConfiguracion
+2018-05-18 15:58:04  :: Initializing Log
+2018-05-18 15:58:04  :: Initializing Incoming Module
+2018-05-18 15:58:05  :: Incoming Module successfully initialized
+2018-05-18 15:58:05  :: Initializing Outgoing Module
+2018-05-18 15:58:07  :: Error initializing Outgoing Module
+2018-05-18 16:00:17  :: 18/5/2018 16:00:17MainApp.LoadConfig
+2018-05-18 16:00:17  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:00:17  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:00:17  :: Fin GetConfiguracion
+2018-05-18 16:00:20  :: Initializing Log
+2018-05-18 16:00:20  :: Initializing Incoming Module
+2018-05-18 16:00:20  :: Incoming Module successfully initialized
+2018-05-18 16:00:20  :: Initializing Outgoing Module
+2018-05-18 16:00:23  :: Outgoing Module successfully initialized
+2018-05-18 16:02:12  :: 18/5/2018 16:02:12MainApp.LoadConfig
+2018-05-18 16:02:12  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:02:12  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:02:12  :: Fin GetConfiguracion
+2018-05-18 16:02:12  :: Initializing Log
+2018-05-18 16:02:12  :: Initializing Incoming Module
+2018-05-18 16:02:12  :: Incoming Module successfully initialized
+2018-05-18 16:02:12  :: Initializing Outgoing Module
+2018-05-18 16:02:15  :: Outgoing Module successfully initialized
+2018-05-18 16:04:33  :: 18/5/2018 16:04:33MainApp.LoadConfig
+2018-05-18 16:04:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:04:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:04:33  :: Fin GetConfiguracion
+2018-05-18 16:04:33  :: Initializing Log
+2018-05-18 16:04:33  :: Initializing Incoming Module
+2018-05-18 16:04:33  :: Incoming Module successfully initialized
+2018-05-18 16:04:33  :: Initializing Outgoing Module
+2018-05-18 16:04:37  :: Outgoing Module successfully initialized
+2018-05-18 16:14:50  :: 18/5/2018 16:14:50MainApp.LoadConfig
+2018-05-18 16:14:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:14:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:14:50  :: Fin GetConfiguracion
+2018-05-18 16:14:50  :: Initializing Log
+2018-05-18 16:14:50  :: Initializing Incoming Module
+2018-05-18 16:14:50  :: Incoming Module successfully initialized
+2018-05-18 16:14:50  :: Initializing Outgoing Module
+2018-05-18 16:14:53  :: Outgoing Module successfully initialized
+2018-05-18 16:41:55  :: 18/5/2018 16:41:55MainApp.LoadConfig
+2018-05-18 16:41:55  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:41:55  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:41:55  :: Fin GetConfiguracion
+2018-05-18 16:41:56  :: Initializing Log
+2018-05-18 16:41:56  :: Initializing Incoming Module
+2018-05-18 16:41:56  :: Incoming Module successfully initialized
+2018-05-18 16:41:56  :: Initializing Outgoing Module
+2018-05-18 16:42:04  :: Outgoing Module successfully initialized
+2018-05-18 16:49:36  :: 18/5/2018 16:49:36MainApp.LoadConfig
+2018-05-18 16:49:36  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:49:36  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:49:37  :: Fin GetConfiguracion
+2018-05-18 16:49:37  :: Initializing Log
+2018-05-18 16:49:37  :: Initializing Incoming Module
+2018-05-18 16:49:37  :: Incoming Module successfully initialized
+2018-05-18 16:49:37  :: Initializing Outgoing Module
+2018-05-18 16:49:41  :: Outgoing Module successfully initialized
+2018-05-18 16:51:43  :: 18/5/2018 16:51:43MainApp.LoadConfig
+2018-05-18 16:51:43  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:51:43  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:51:43  :: Fin GetConfiguracion
+2018-05-18 16:51:44  :: Initializing Log
+2018-05-18 16:51:44  :: Initializing Incoming Module
+2018-05-18 16:51:44  :: Incoming Module successfully initialized
+2018-05-18 16:51:44  :: Initializing Outgoing Module
+2018-05-18 16:51:47  :: Outgoing Module successfully initialized
+2018-05-18 16:52:55  :: 18/5/2018 16:52:55MainApp.LoadConfig
+2018-05-18 16:52:55  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:52:55  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 16:52:55  :: Fin GetConfiguracion
+2018-05-18 16:52:55  :: Initializing Log
+2018-05-18 16:52:55  :: Initializing Incoming Module
+2018-05-18 16:52:56  :: Incoming Module successfully initialized
+2018-05-18 16:52:56  :: Initializing Outgoing Module
+2018-05-18 17:12:44  :: 18/5/2018 17:12:44MainApp.LoadConfig
+2018-05-18 17:12:44  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:12:44  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:12:44  :: Fin GetConfiguracion
+2018-05-18 17:12:44  :: Initializing Log
+2018-05-18 17:12:44  :: Initializing Incoming Module
+2018-05-18 17:12:44  :: Incoming Module successfully initialized
+2018-05-18 17:12:44  :: Initializing Outgoing Module
+2018-05-18 17:12:47  :: Outgoing Module successfully initialized
+2018-05-18 17:16:25  :: 18/5/2018 17:16:25MainApp.LoadConfig
+2018-05-18 17:16:25  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:16:25  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:16:25  :: Fin GetConfiguracion
+2018-05-18 17:16:25  :: Initializing Log
+2018-05-18 17:16:25  :: Initializing Incoming Module
+2018-05-18 17:16:25  :: Incoming Module successfully initialized
+2018-05-18 17:16:25  :: Initializing Outgoing Module
+2018-05-18 17:16:27  :: Outgoing Module successfully initialized
+2018-05-18 17:26:03  :: 18/5/2018 17:26:03MainApp.LoadConfig
+2018-05-18 17:26:03  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:26:03  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:26:03  :: Fin GetConfiguracion
+2018-05-18 17:26:03  :: Initializing Log
+2018-05-18 17:26:03  :: Initializing Incoming Module
+2018-05-18 17:26:04  :: Incoming Module successfully initialized
+2018-05-18 17:26:04  :: Initializing Outgoing Module
+2018-05-18 17:26:10  :: Outgoing Module successfully initialized
+2018-05-18 17:27:33  :: 18/5/2018 17:27:33MainApp.LoadConfig
+2018-05-18 17:27:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:27:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-18 17:27:34  :: Fin GetConfiguracion
+2018-05-18 17:27:34  :: Initializing Log
+2018-05-18 17:27:34  :: Initializing Incoming Module
+2018-05-18 17:27:34  :: Incoming Module successfully initialized
+2018-05-18 17:27:34  :: Initializing Outgoing Module
+2018-05-18 17:27:37  :: Outgoing Module successfully initialized

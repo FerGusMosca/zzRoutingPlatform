@@ -6,7 +6,7 @@
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
   <User>fmosca</User>
   <!--<Password>WhYbs5wY</Password>--><!--TEST-->
-  <Password>Baiano.6</Password><!--PROD-->
+  <Password>Baiano.7</Password><!--PROD-->
   <!--<Password>Xqw7L9tS</Password>--> <!--TEST2-->
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >

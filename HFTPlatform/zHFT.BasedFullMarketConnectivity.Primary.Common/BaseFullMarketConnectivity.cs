@@ -367,10 +367,10 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
                     double orderQty = newOrder.OrderQty.Value;
                     //Procesamientos especiales de la cantidad de las ordenes
-                    if (newOrder.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
-                    {
-                        orderQty *= 1000;
-                    }
+                    //if (newOrder.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
+                    //{
+                    //    orderQty *= 1000;
+                    //}
 
                     QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(), 
                                                                                     newOrder.Symbol, 
