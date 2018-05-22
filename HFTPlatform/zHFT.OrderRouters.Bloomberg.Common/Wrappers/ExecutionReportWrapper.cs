@@ -54,7 +54,6 @@ namespace zHFT.OrderRouters.Bloomberg.Common.Wrappers
             if (Order == null)
                 return ExecutionReportFields.NULL;
 
-
             if (xrField == ExecutionReportFields.ExecType)
                 return ExecType;
             if (xrField == ExecutionReportFields.ExecID)
@@ -64,7 +63,7 @@ namespace zHFT.OrderRouters.Bloomberg.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return 0;
+                return Order.OrderQty;//Poner el valor correcto cuando tengamos alguna punta del verdadero Execution Report
             else if (xrField == ExecutionReportFields.CumQty)
                 return 0;
             else if (xrField == ExecutionReportFields.AvgPx)

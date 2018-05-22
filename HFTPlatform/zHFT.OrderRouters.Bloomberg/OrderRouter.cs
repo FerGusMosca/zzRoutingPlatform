@@ -17,6 +17,20 @@ namespace zHFT.OrderRouters.Bloomberg
     public class OrderRouter : OrderRouterBase
     {
 
+        #region Private Static Consts
+
+        private int _MAX_NEW_ORDER_QUEUE_EVAL_MESSAGE = 20;
+
+        private int _SUBSCRIPTION_MESSAGES_REFRESH_PERIOD = 1000;//miliseconds
+
+        private string _ORD_STATUS_INIT_PAINT = "4";
+        private string _ORD_STATUS_NEW_ORDER = "6";
+        private string _ORD_STATUS_UPD_ORDER = "7";
+        private string _ORD_STATUS_DELETE_ORDER = "8";
+
+
+        #endregion
+
         #region Protected Attributes
 
         protected Common.Configuration.Configuration BloombergConfiguration
@@ -25,13 +39,26 @@ namespace zHFT.OrderRouters.Bloomberg
             set { Config = value; }
         }
 
-        //protected Dictionary<int, Order> OrderList { get; set; }
+        protected Dictionary<string, OrderDTO> OrderList { get; set; }
 
-        protected Dictionary<string, int> OrderIdsMapper { get; set; }
+        protected Dictionary<string, string> OrderIdsMapper { get; set; }
+
+        protected Dictionary<long, List<Message>> ResponseMessages { get; set; }
+
+        protected Dictionary<long, List<Message>> SuscriptionMessages { get; set; }
 
         //protected Dictionary<int, Contract> ContractList { get; set; }
 
-        public static object tLock { get; set; }
+        public static object tMessageDictionariesLock { get; set; }
+
+        public static object tOrderDictionariesLock { get; set; }
+
+
+        protected Thread EventsThread { get; set; }
+
+        protected Thread SubscriptionThread { get; set; }
+
+        protected Thread HandleSubscriptionThread { get; set; }
 
 
         #endregion
@@ -56,30 +83,6 @@ namespace zHFT.OrderRouters.Bloomberg
                 DoLog(string.Format("Conectado exitosamente con Bloomberg on host {0}:{1}", BloombergConfiguration.IP, BloombergConfiguration.Port),Main.Common.Util.Constants.MessageType.Information);
         }
 
-        private OrderDTO LoadOrder(Wrapper wrapper)
-        {
-            OrderDTO order = new OrderDTO();
-
-            order.ClOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
-
-            order.Ticker = (string)wrapper.GetField(OrderFields.Symbol); 
-            order.OrderQty=Convert.ToInt32(wrapper.GetField(OrderFields.OrderQty));
-            order.Price = Convert.ToDouble(wrapper.GetField(OrderFields.Price));
-            order.OrdType=OrdType.Limit;
-            order.TimeInForce=TimeInForce.Day;
-            order.Side=(Side)wrapper.GetField(OrderFields.Side);
-            order.OrderId=NextOrderId;
-            order.Exchange=BloombergConfiguration.Exchange;
-            order.Broker = BloombergConfiguration.Broker;
-
-             SecurityType type = (SecurityType) wrapper.GetField(OrderFields.SecurityType);
-             order.SecurityType = type;
-
-            NextOrderId++;
-
-            return order;
-        }
-
         private void DoRejectOrder(object param)
         {
 
@@ -101,125 +104,671 @@ namespace zHFT.OrderRouters.Bloomberg
             }
         }
 
+        private void DoSendExecutionReport(object param)
+        {
+            try
+            {
+                ExecutionReportWrapper wrapper = (ExecutionReportWrapper)param;
+                OnMessageRcv(wrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog("Critic error sending execution report :" + ex.Message, Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
         private void RejectOrder(OrderDTO order, string errorMsg)
         {
             Thread rejectOrderThread = new Thread(DoRejectOrder);
             rejectOrderThread.Start(new object[] { order, errorMsg });
         }
 
-        private CMState HandleResponseEvent(OrderDTO order,Event nevent, CorrelationID correlationId)
+        private void SendExecutionReport(Wrapper wrapper)
         {
-            DoLog("EventType =" + nevent.Type,Main.Common.Util.Constants.MessageType.Information);
+            Thread executionReportThread = new Thread(DoSendExecutionReport);
+            executionReportThread.Start(wrapper);
+        }
+
+        private void UpdateDictionary(Event nevent,Dictionary<long, List<Message>> dictionary)
+        {
             IEnumerable<Message> messages = nevent.GetMessages();
 
             foreach (Message message in messages)
             {
-                if (message.CorrelationID == correlationId)
+                lock (tMessageDictionariesLock)
                 {
-                    DoLog(string.Format("CorrelationID {0}", message.CorrelationID), Main.Common.Util.Constants.MessageType.Information);
-                    DoLog(string.Format("Type {0}", message.MessageType), Main.Common.Util.Constants.MessageType.Information);
-
-                    Element element = message.AsElement;
-
-                    if (element.HasElement("ERROR_CODE"))
+                    if (dictionary.ContainsKey(message.CorrelationID.Value))
                     {
-                        RejectOrder(order, element.GetElementAsString("ERROR_MESSAGE"));
-                        return CMState.BuildFail(new Exception(element.GetElementAsString("ERROR_MESSAGE")));
+                        List<Message> reqMessages = dictionary[message.CorrelationID.Value];
+                        reqMessages.Add(message);
                     }
-
-                    DoLog(message.AsElement.ToString(), Main.Common.Util.Constants.MessageType.Information);
-                    return CMState.BuildSuccess();
+                    else
+                    {
+                        List<Message> reqMessages = new List<Message>();
+                        reqMessages.Add(message);
+                        dictionary.Add(message.CorrelationID.Value, reqMessages);
+                    }
                 }
             }
-            return CMState.BuildSuccess();
         }
 
-        private CMState HandleResponse(OrderDTO order ,CorrelationID correlationID)
+        private void CleanDictionaries(string EMSX_SEQUENCE)
         {
-
-            CMState state = null;
             try
             {
-                bool continueToLoop = true;
-                while (continueToLoop)
-                {
+                OrderList.Remove(EMSX_SEQUENCE);
 
+                List<string> keysToRemove = new List<string>();
+                foreach (string key in OrderIdsMapper.Keys)
+                {
+                    string localEMSX_SEQUENCE = OrderIdsMapper[key];
+                    if (localEMSX_SEQUENCE == EMSX_SEQUENCE)
+                        keysToRemove.Add(key);
+                }
+
+                keysToRemove.ForEach(x => OrderIdsMapper.Remove(x));
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Critica Error Cleaning Dictioaries!:{1}", BloombergConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
+        private void DoHandleSubscriptions(object param)
+        {
+            bool continueToLoop = true;
+
+            while (continueToLoop)
+            {
+               List<Message> toRemove = new List<Message>();
+                lock (tMessageDictionariesLock)
+                {
+                    foreach (List<Message> messages in SuscriptionMessages.Values)
+                    {
+                        try
+                        {
+                            
+                            foreach (Message message in messages)
+                            {
+                                if (message.MessageType.ToString() == "OrderRouteFields")
+                                {
+                                    //Este tiene que ser un mensaje de suscripción
+                                    string status = message.AsElement.GetElementAsString("EVENT_STATUS");
+                                    string EMSX_SEQUENCE = message.GetElementAsString("EMSX_SEQUENCE");
+
+
+                                    if (OrderList.Keys.Contains(EMSX_SEQUENCE))
+                                    {
+                                        if (status == _ORD_STATUS_INIT_PAINT)//Mensaje Inicial
+                                        {
+                                       
+                                        }
+                                        else if (status == _ORD_STATUS_NEW_ORDER)//New Order
+                                        {
+                                            OrderDTO order = OrderList[EMSX_SEQUENCE];
+                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order,
+                                                                                                        OrdStatus.New,
+                                                                                                        ExecType.New,
+                                                                                                        null,
+                                                                                                        BloombergConfiguration);
+                                            SendExecutionReport(wrapper);//Publicamos la novedad
+                                            //TODO: En realidad estamos publicando una orden OFFLINE como si ya estuviera en el mercado
+                                            //En la versión final hay que corregir esto
+                                        }
+                                        else if (status == _ORD_STATUS_UPD_ORDER)//Update Order
+                                        {
+                                            //TODO: Desarrollar por algún tipo de concertación parcial o total
+                                        }
+                                        else if (status == _ORD_STATUS_DELETE_ORDER)//Delete Order
+                                        {
+
+                                            OrderDTO order = OrderList[EMSX_SEQUENCE];
+                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order,
+                                                                                                        OrdStatus.Canceled,
+                                                                                                        ExecType.Canceled,
+                                                                                                        "Cancelled by user",
+                                                                                                        BloombergConfiguration);
+                                            SendExecutionReport(wrapper);//Publicamos la novedad
+                                            //TODO: En realidad estamos publicando una cancelación cuando tenemos una eliminación
+                                            //En la versión final hay que corregir esto
+
+                                            lock (tOrderDictionariesLock)
+                                            {
+                                                CleanDictionaries(EMSX_SEQUENCE);
+                                            }
+                                        }
+                                    }
+                                    //Aca recibimos datos de una orden que no estamos procesando
+
+                                    toRemove.Add(message);//Los procesamos una vez y listo
+                                }
+                                else
+                                    toRemove.Add(message);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DoLog(string.Format("@{0}:Critica Error processing Bloomberg Subscription Message!:{1}", BloombergConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                        }
+                        finally
+                        {
+                            toRemove.ForEach(x => messages.Remove(x));
+                            toRemove.Clear();
+                        }
+                    }
+                }
+
+                Thread.Sleep(_SUBSCRIPTION_MESSAGES_REFRESH_PERIOD);
+            }
+        }
+
+        private void DoHandleEvents(object param)
+        {
+          
+            bool active=true;
+            while (active)
+            {
+                try
+                {
                     Event nevent = session.NextEvent();
+
                     switch (nevent.Type)
                     {
 
                         case Event.EventType.RESPONSE: // final event
-                            state=HandleResponseEvent(order,nevent,correlationID);
-                            continueToLoop = false; // fall through
+                            UpdateDictionary(nevent,ResponseMessages);
                             break;
                         case Event.EventType.PARTIAL_RESPONSE:
-                            state = HandleResponseEvent(order,nevent,correlationID);
+                            UpdateDictionary(nevent, ResponseMessages);
+                            break;
+                        case Event.EventType.SUBSCRIPTION_DATA:
+                            UpdateDictionary(nevent, SuscriptionMessages);
+                            break;
+                        case Event.EventType.SUBSCRIPTION_STATUS:
+                            UpdateDictionary(nevent, SuscriptionMessages);
                             break;
                         default:
-                            //Console.WriteLine(string.Format("Evento no reconocido {0}", nevent.Type));
-                            IEnumerable<Message> messages = nevent.GetMessages();
+                                
                             break;
+                        
                     }
                 }
+                catch (Exception ex)
+                {
+                    DoLog(string.Format("@{0}:Error processing Bloomberg Events!:{1}", BloombergConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                }
+            }
+        }
+
+        private void DoSubscribe(object param)
+        {
+            try
+            {
+                List<Subscription> subscriptions = new List<Subscription>();
+                //Nos suscribimos a todos los eventos y los atributos especificados abajo
+                string strSubscriptionFields = "//blp/emapisvc_beta/order?fields=";
+                strSubscriptionFields += "API_SEQ_NUM,";
+                strSubscriptionFields += "EMSX_AMOUNT,";
+                strSubscriptionFields += "EMSX_AVG_PRICE,";
+                strSubscriptionFields += "EMSX_BROKER,";
+                strSubscriptionFields += "EMSX_ASSET_CLASS,";
+                strSubscriptionFields += "EMSX_DATE,";
+                strSubscriptionFields += "EMSX_SEQUENCE,";
+                strSubscriptionFields += "EMSX_SIDE,";
+                strSubscriptionFields += "EMSX_TIF,";
+                strSubscriptionFields += "EMSX_STATUS,";
+                strSubscriptionFields += "EMSX_LIMIT_PRICE,";
+                strSubscriptionFields += "EMSX_SEC_NAME,";
+                strSubscriptionFields += "EMSX_ORDER_TYPE";
+
+                Subscription subscription = new Subscription(strSubscriptionFields);
+
+                subscriptions.Add(subscription);
+
+                session.Subscribe(subscriptions);
+
             }
             catch (Exception ex)
             {
-               RejectOrder(order, ex.Message);
-               return CMState.BuildFail( ex);
+                DoLog(string.Format("@{0}: Critical Error subscribing to Bloomberg!:{1}", BloombergConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                return;
             }
-            return state;
         }
 
+        #region New Order Methods
 
+        private CMState ProcessNewOrderMessage(OrderDTO order,Message message, ref string EMSX_SEQUENCE)
+        {
+            Element element = message.AsElement;
+            CMState state = null;
+
+            if (element.HasElement("ERROR_CODE"))
+            {
+                RejectOrder(order, element.GetElementAsString("ERROR_MESSAGE"));
+                state = CMState.BuildFail(new Exception(element.GetElementAsString("ERROR_MESSAGE")));
+            }
+            else
+            {
+                EMSX_SEQUENCE = message.AsElement.GetElementAsString("EMSX_SEQUENCE");
+
+                if (EMSX_SEQUENCE != null)
+                {
+                    state = CMState.BuildSuccess();
+                }
+                else
+                {
+                    string error = string.Format("Error desconocido recuperando el número de secuencia EMSX para la orden del activo {0}", order.Ticker);
+                    RejectOrder(order, error);
+                    state = CMState.BuildFail(new Exception(error));
+                }
+            }
+
+            return state;
+        
+        }
+
+        private CMState HandleNewOrderResponseEvent(OrderDTO order, CorrelationID correlationId, ref string EMSX_SEQUENCE)
+        {
+            bool continueToLoop = true;
+
+            int i = 0;
+
+            while (continueToLoop)
+            {
+                lock (tMessageDictionariesLock)
+                {
+                    if (ResponseMessages.ContainsKey(correlationId.Value))
+                    {
+                        List<Message> messages = ResponseMessages[correlationId.Value];
+                        List<Message> toRemove = new List<Message>();
+
+                        bool processed = false;
+                        CMState state = null;
+
+                        if (messages == null)
+                            continue;
+
+                        foreach (Message message in messages)
+                        {
+                            //De todos los mensajes si encontramos uno de CrateOrder de la orden búscada
+                            if (message.CorrelationID==correlationId && message.MessageType.ToString() == "CreateOrder")
+                            {
+                                try
+                                {
+                                    state = ProcessNewOrderMessage(order, message, ref EMSX_SEQUENCE);
+                                    processed = true;
+                                    toRemove.Add(message);//Ya lo procesamos, lo marcamos para eliminar
+                                }
+                                catch (Exception ex)
+                                {
+                                    RejectOrder(order, ex.Message);
+                                    state = CMState.BuildFail(ex);
+                                    processed = true;
+                                    toRemove.Add(message);//Ya lo procesamos, lo marcamos para eliminar
+                                }
+                            }
+                        }
+
+                        if (processed)
+                        {
+                            toRemove.ForEach(x => messages.Remove(x));//Eliminamos los mensajes ya procesados de creación de ordenes
+                            return state;
+                        }
+                    }
+                }
+
+                i++;
+
+                if (i >= _MAX_NEW_ORDER_QUEUE_EVAL_MESSAGE)
+                {
+                    string error = string.Format("Timeout requesting for new order EMSX_SEQUENCE", order.Ticker);
+                    RejectOrder(order, error);
+                    return CMState.BuildFail(new Exception(error));
+                }
+                Thread.Sleep(500);
+            }
+            
+            return CMState.BuildSuccess();
+        }
+
+        private OrderDTO LoadOrder(Wrapper wrapper)
+        {
+            OrderDTO order = new OrderDTO();
+
+            order.ClOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+
+            order.Ticker = (string)wrapper.GetField(OrderFields.Symbol);
+            order.OrderQty = Convert.ToInt32(wrapper.GetField(OrderFields.OrderQty));
+            order.Price = Convert.ToDouble(wrapper.GetField(OrderFields.Price));
+            order.OrdType = OrdType.Limit;
+            order.TimeInForce = TimeInForce.Day;
+            order.Side = (Side)wrapper.GetField(OrderFields.Side);
+            order.OrderId = NextOrderId;
+            order.Exchange = BloombergConfiguration.Exchange;
+            order.Broker = BloombergConfiguration.Broker;
+
+            SecurityType type = (SecurityType)wrapper.GetField(OrderFields.SecurityType);
+            order.SecurityType = type;
+
+            NextOrderId++;
+
+            return order;
+        }
+
+        private Request BuildNewOrderRequest(Service service,OrderDTO order)
+        {
+            Request request = service.CreateRequest("CreateOrder");
+
+            //The fields below are mandatory
+            request.Set("EMSX_TICKER", order.GetFullBloombergSymbol());
+            request.Set("EMSX_AMOUNT", order.OrderQty);
+            request.Set("EMSX_LIMIT_PRICE", order.Price);
+            request.Set("EMSX_ORDER_TYPE", order.GetOrdType());//ORDENES FIJO DE TIPO LIMIT
+            request.Set("EMSX_TIF", order.GetTimeInForce());
+            request.Set("EMSX_HAND_INSTRUCTION", "ANY");
+            request.Set("EMSX_SIDE", order.GetSide());
+            request.Set("EMSX_BROKER", order.Broker);
+
+            //request.Set("EMSX_TICKER", "IBM US Equity");
+            //request.Set("EMSX_AMOUNT", 1000);
+            //request.Set("EMSX_ORDER_TYPE", "MKT");
+            //request.Set("EMSX_TIF", "DAY");
+            //request.Set("EMSX_HAND_INSTRUCTION", "ANY");
+            //request.Set("EMSX_SIDE", "BUY");
+
+            return request;
+        }
+
+        #endregion
+
+        #region Delete/Cancel Order Methods
+
+        private CMState ProcessDeletedOrderMessage(OrderDTO order, Message message,  string EMSX_SEQUENCE)
+        {
+            Element element = message.AsElement;
+            CMState state = null;
+
+            if (element.HasElement("ERROR_CODE"))
+            {
+                //RejectOrder(order, element.GetElementAsString("ERROR_MESSAGE"));
+                state = CMState.BuildFail(new Exception(element.GetElementAsString("ERROR_MESSAGE")));
+            }
+            else
+            {
+                //No hacemos nada porque la cancelación tendrá que ser confirmada por el mercado con uno de sus 
+                //mensajes de suscripción (Execution Report)
+                state = CMState.BuildSuccess();
+            }
+
+            return state;
+
+        }
+
+        private CMState HandleDeleteOrderResponseEvent(OrderDTO order, CorrelationID correlationId, string EMSX_SEQUENCE)
+        {
+            bool continueToLoop = true;
+
+            int i = 0;
+
+            while (continueToLoop)
+            {
+                lock (tMessageDictionariesLock)
+                {
+                    if (ResponseMessages.ContainsKey(correlationId.Value))
+                    {
+                        List<Message> messages = ResponseMessages[correlationId.Value];
+                        List<Message> toRemove = new List<Message>();
+
+                        bool processed = false;
+                        CMState state = null;
+
+                        if (messages == null)
+                            continue;
+
+                        foreach (Message message in messages)
+                        {
+                            //De todos los mensajes si encontramos uno de CrateOrder de la orden búscada
+                            if (message.CorrelationID == correlationId && message.MessageType.ToString() == "DeleteOrder")
+                            {
+                                try
+                                {
+                                    state = ProcessDeletedOrderMessage(order, message,  EMSX_SEQUENCE);
+                                    processed = true;
+                                    toRemove.Add(message);//Ya lo procesamos, lo marcamos para eliminar
+                                }
+                                catch (Exception ex)
+                                {
+                                    RejectOrder(order, ex.Message);
+                                    state = CMState.BuildFail(ex);
+                                    processed = true;
+                                    toRemove.Add(message);//Ya lo procesamos, lo marcamos para eliminar
+                                }
+                            }
+                        }
+
+                        if (processed)
+                        {
+                            toRemove.ForEach(x => messages.Remove(x));//Eliminamos los mensajes ya procesados de creación de ordenes
+                            return state;
+                        }
+                    }
+                }
+
+                i++;
+
+                if (i >= _MAX_NEW_ORDER_QUEUE_EVAL_MESSAGE)
+                {
+                    string error = string.Format("Timeout requesting for new order EMSX_SEQUENCE", order.Ticker);
+                    RejectOrder(order, error);
+                    return CMState.BuildFail(new Exception(error));
+                }
+                Thread.Sleep(500);
+            }
+
+            return CMState.BuildSuccess();
+        }
+
+        private CMState DoDeleteOrder(string EMSX_SEQUENCE)
+        {
+            OrderDTO order = OrderList[EMSX_SEQUENCE];
+
+            Service service = session.GetService("//blp/emapisvc_beta");
+            Request request = service.CreateRequest("DeleteOrder");
+
+            request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
+
+            CorrelationID requestID = new CorrelationID(order.OrderId);
+            session.SendRequest(request, requestID);
+
+            //CMState state = HandleDeleteOrderResponseEvent(order, requestID, EMSX_SEQUENCE);
+            CMState state = CMState.BuildSuccess();
+
+            return state;
+        
+        }
+
+        #endregion
+
+        #region UpdateOrder Methods
+
+        private Request BuildUpdateOrderRequest(Service service, OrderDTO order)
+        {
+            Request request = service.CreateRequest("ModifyOrder");
+
+            //The fields below are mandatory
+            request.Set("EMSX_TICKER", order.GetFullBloombergSymbol());
+            request.Set("EMSX_SEQUENCE", order.MarketOrderId);
+            request.Set("EMSX_AMOUNT", order.OrderQty);
+            request.Set("EMSX_ORDER_TYPE", order.GetOrdType());//ORDENES FIJO DE TIPO LIMIT
+            request.Set("EMSX_LIMIT_PRICE", order.Price);
+            request.Set("EMSX_TIF", order.GetTimeInForce());
+            request.Set("EMSX_HAND_INSTRUCTION", "ANY");
+            //request.Set("EMSX_BROKER", order.Broker); Activar cuando este apuntando al mercado
+
+            return request;
+        }
+
+        private CMState DoUpdateOrder(OrderDTO order)
+        {
+            Service service = session.GetService("//blp/emapisvc_beta");
+            Request request = BuildUpdateOrderRequest(service, order);
+
+            CorrelationID requestID = new CorrelationID(order.OrderId);
+            session.SendRequest(request, requestID);
+
+            //TO DO : Eval la respuesta de la actualización
+            CMState state = CMState.BuildSuccess();
+
+            return state;
+
+        }
+
+        #endregion
 
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
             session.OpenService(BloombergConfiguration.EMSX_Environment);
             Service service = session.GetService(BloombergConfiguration.EMSX_Environment);
-            Request request = service.CreateRequest("CreateOrder");
 
             OrderDTO order=null;
+            Request request = null;
             CorrelationID requestID = null;
+            string EMSX_SEQUENCE = null;
 
-            lock (tLock)
+            order = LoadOrder(wrapper);
+
+            request = BuildNewOrderRequest(service, order);
+
+            requestID = new CorrelationID(order.OrderId);
+
+            CorrelationID resp = session.SendRequest(request, requestID);
+
+            CMState state = HandleNewOrderResponseEvent(order, requestID, ref EMSX_SEQUENCE);
+
+            if(state.Success)
             {
-                order = LoadOrder(wrapper);
-
-                //Extraemos los campos
-                Side side = (Side)wrapper.GetField(OrderFields.Side);
-
-                //The fields below are mandatory
-                request.Set("EMSX_TICKER", order.GetFullBloombergSymbol());
-                request.Set("EMSX_AMOUNT", order.OrderQty);
-                request.Set("EMSX_LIMIT_PRICE", order.Price);
-                request.Set("EMSX_ORDER_TYPE", order.GetOrdType());//ORDENES FIJO DE TIPO LIMIT
-                request.Set("EMSX_TIF", order.GetTimeInForce());
-                request.Set("EMSX_HAND_INSTRUCTION", "ANY");
-                request.Set("EMSX_SIDE", order.GetSide());
-                request.Set("EMSX_BROKER", order.Broker);
-                
-                //request.Set("EMSX_TICKER", "IBM US Equity");
-                //request.Set("EMSX_AMOUNT", 1000);
-                //request.Set("EMSX_ORDER_TYPE", "MKT");
-                //request.Set("EMSX_TIF", "DAY");
-                //request.Set("EMSX_HAND_INSTRUCTION", "ANY");
-                //request.Set("EMSX_SIDE", "BUY");
-                requestID = new CorrelationID(order.OrderId);
-
-                CorrelationID resp = session.SendRequest(request, requestID);
-
-                OrderIdsMapper.Add(order.ClOrderId, order.OrderId);
+                lock (tOrderDictionariesLock)
+                {
+                    order.MarketOrderId = EMSX_SEQUENCE;
+                    OrderList.Add(EMSX_SEQUENCE, order);
+                    OrderIdsMapper.Add(order.ClOrderId, EMSX_SEQUENCE);
+                }
+            
+                DoLog(string.Format("Routing Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
             }
-            
-            DoLog(string.Format("Routing Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
-            if (wrapper.GetField(OrderFields.ClOrdID) == null)
-                throw new Exception("Could not find ClOrdId for new order");
 
-            
-            //OrderList.Add(order.OrderId, order);
-            //ContractList.Add(order.OrderId, contract);
+            return state;
+        }
 
-            return HandleResponse(order,requestID);
+        protected CMState RouteUpdateOrder(Wrapper wrapper)
+        {
+            try
+            {
+
+                if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
+                    throw new Exception("Could not find OrigClOrdID for order updated");
+
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
+
+                string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
+                //New order id
+                string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+
+                lock (tOrderDictionariesLock)
+                {
+                    if (OrderIdsMapper.ContainsKey(origClOrderId))
+                    {
+                        string EMSX_SEQUENCE = OrderIdsMapper[origClOrderId];
+
+                        OrderDTO order =  OrderList[EMSX_SEQUENCE];
+
+                        order.Price = (double)wrapper.GetField(OrderFields.Price);
+
+                        OrderIdsMapper.Add(clOrderId, EMSX_SEQUENCE);
+
+                        return DoUpdateOrder(order);
+
+                    }
+                    else
+                    {
+                        string error = string.Format("@{0}:Could not find an order for ClOrdId {1}", BloombergConfiguration.Name, clOrderId);
+                        DoLog(error, Main.Common.Util.Constants.MessageType.Error);
+                        return CMState.BuildFail(new Exception(string.Format("Could not find an order for ClOrdId {0}", clOrderId)));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = string.Format("@{0}:Critical error updating order:{1}", BloombergConfiguration.Name,ex.Message);
+                DoLog(error, Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(error));
+            }
+        }
+
+        protected CMState CancelAllActiveOrders()
+        {
+            try
+            {
+                lock (tOrderDictionariesLock)
+                {
+                    foreach (string EMSX_SEQUENCE in OrderList.Keys)
+                    {
+                        DoDeleteOrder(EMSX_SEQUENCE);
+                        Thread.Sleep(100);
+                    }
+                }
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                string error = string.Format("@{0}:Critical error cancelling orders:{1}", BloombergConfiguration.Name,ex.Message);
+                DoLog(error, Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(error));
+            }
+        }
+
+        protected CMState CancelOrder(Wrapper wrapper)
+        {
+            try
+            {
+
+                if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
+                    throw new Exception("Could not find OrigClOrdID for order updated");
+
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
+
+                string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
+                //New order id
+                string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+
+                lock (tOrderDictionariesLock)
+                {
+                    if (OrderIdsMapper.ContainsKey(origClOrderId))
+                    {
+                        string EMSX_SEQUENCE = OrderIdsMapper[origClOrderId];
+
+                        return DoDeleteOrder(EMSX_SEQUENCE);
+
+                    }
+                    else
+                    {
+                        string error = string.Format("@{0}:Could not find an order for ClOrdId {1}", BloombergConfiguration.Name, clOrderId);
+                        DoLog(error, Main.Common.Util.Constants.MessageType.Error);
+                        return CMState.BuildFail(new Exception(string.Format("Could not find an order for ClOrdId {0}", clOrderId)));
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                string error = string.Format("@{0}:Critical error cancelling order: {1}",BloombergConfiguration.Name,ex.Message);
+                DoLog(error,Main.Common.Util.Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(error));
+            }
         }
 
         #endregion
@@ -240,18 +789,18 @@ namespace zHFT.OrderRouters.Bloomberg
                 else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                 {
                     DoLog(string.Format("Updating order with Bloomberg  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                    //UpdateOrder(wrapper, false);
+                    return RouteUpdateOrder(wrapper);
 
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                 {
                     DoLog(string.Format("Canceling order with Bloomberg  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                    //UpdateOrder(wrapper, true);
+                    return CancelOrder(wrapper);
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                 {
                     DoLog(string.Format("@{0}:Cancelling all active orders @ Bloomberg", BloombergConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                    //CancelAllOrders();
+                    return CancelAllActiveOrders();
                 }
                 else
                 {
@@ -279,15 +828,27 @@ namespace zHFT.OrderRouters.Bloomberg
 
                 if (LoadConfig(configFile))
                 {
-                    tLock = new object();
+                    tMessageDictionariesLock = new object();
+                    tOrderDictionariesLock = new object();
 
                     LoadSession();
 
                     NextOrderId = BloombergConfiguration.InitialOrderId;
-                    
-                    //OrderList = new Dictionary<int, Order>();
-                    OrderIdsMapper = new Dictionary<string, int>();
-                    //ContractList = new Dictionary<int, Contract>();
+
+                    ResponseMessages = new Dictionary<long, List<Message>>();
+                    SuscriptionMessages = new Dictionary<long, List<Message>>();
+
+                    OrderList = new Dictionary<string, OrderDTO>();
+                    OrderIdsMapper = new Dictionary<string, string>();
+
+                    EventsThread = new Thread(DoHandleEvents);
+                    EventsThread.Start();
+
+                    SubscriptionThread = new Thread(DoSubscribe);
+                    SubscriptionThread.Start();
+
+                    HandleSubscriptionThread = new Thread(DoHandleSubscriptions);
+                    HandleSubscriptionThread.Start();
 
                     return true;
                 }

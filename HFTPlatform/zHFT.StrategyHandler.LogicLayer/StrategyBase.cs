@@ -149,21 +149,21 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             try
             {
-                foreach (ExecutionSummary sum in ExecutionSummaries.Values)
+                CancelAllPositionsWrapper cancelWrapper = new CancelAllPositionsWrapper(Config);
+
+                if (OrderRouter.ProcessMessage(cancelWrapper).Success)
                 {
-                    if (!sum.Position.PositionCleared && !sum.Position.PositionCanceledOrRejected)
+                    foreach (ExecutionSummary sum in ExecutionSummaries.Values)
                     {
-                        DoLog(string.Format("@{0}: Cancelling position on symbol {1} ", StrategyConfiguration.Name, sum.Symbol), Constants.MessageType.Information);
-                        //CancelPositionWrapper cancelWrapper = new CancelPositionWrapper(sum.Position, Config);
-                        CancelAllPositionsWrapper cancelWrapper = new CancelAllPositionsWrapper(Config);
-                        if (OrderRouter.ProcessMessage(cancelWrapper).Success)
+                        if (!sum.Position.PositionCleared && !sum.Position.PositionCanceledOrRejected)
                         {
+                            DoLog(string.Format("@{0}: Cancelling position on symbol {1} ", StrategyConfiguration.Name, sum.Symbol), Constants.MessageType.Information);
                             sum.Position.PosStatus = PositionStatus.Canceled;
                             sum.Position.PositionCanceledOrRejected = true;
                             sum.Text = "Position canceled on massive depuration";
                             sum.Console = StrategyConfiguration.Name;
                             sum.AccountNumber = accountNumber;
-                            SaveExecutionSummary(sum);
+                            SaveExecutionSummary(sum, accountNumber);
                             UnsuscribeMarketData(sum.Position);
                         }
                     }

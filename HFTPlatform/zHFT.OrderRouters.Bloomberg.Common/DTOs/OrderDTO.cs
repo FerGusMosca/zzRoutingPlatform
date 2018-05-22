@@ -15,6 +15,8 @@ namespace zHFT.OrderRouters.Bloomberg.Common.DTOs
 
         public int OrderId { get; set; }
 
+        public string MarketOrderId { get; set; }
+
         public string Ticker { get; set; }
 
         public int OrderQty { get; set; }
