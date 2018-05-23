@@ -39,26 +39,34 @@ namespace HelloWorld.Bloomberg.Test
 
                 string MSG_SUB_TYPE = message.AsElement.GetElementAsString("MSG_SUB_TYPE");
                 string EVENT_STATUS = message.AsElement.GetElementAsString("EVENT_STATUS");
+                string EMSX_STATUS = message.AsElement.GetElementAsString("EMSX_STATUS");
                 string EMSX_SEQUENCE = message.AsElement.GetElementAsString("EMSX_SEQUENCE");
+                
+                string EMSX_TICKER = message.AsElement.GetElementAsString("EMSX_TICKER");
 
-                if (EMSX_SEQUENCE != null)
+                if (EVENT_STATUS == "7")
                 {
-                    DeleteLight(session, EMSX_SEQUENCE, Sequence);
-                    Sequence++;
+                }
+                else if (EVENT_STATUS == "8")
+                {
+                }
+                else if (EVENT_STATUS == "9")
+                {
+                }
+                else if (EVENT_STATUS == "4")
+                {
                 }
 
-                //if (EVENT_STATUS == "4")
-                //{
-                //    DeleteLight(session, EMSX_SEQUENCE, Sequence);
+               
 
-                //    Sequence++;
-                //}
-                //else
-                //{ 
-                
-                
-                
-                //}
+                if (EMSX_STATUS == "WORKING" && EMSX_SEQUENCE != null)
+                {
+                    string EMSX_ROUTE_ID = message.AsElement.GetElementAsString("EMSX_ROUTE_ID");
+                    CancelOrder(session, EMSX_SEQUENCE,"1", Sequence);
+                    Sequence++;
+                    DeleteOrder(session, EMSX_SEQUENCE, Sequence);
+                    Sequence++;
+                }
 
                 Console.WriteLine(string.Format("Eliminando orden de EMSX_SEQUENCE {0}", EMSX_SEQUENCE));
             }
@@ -146,9 +154,10 @@ namespace HelloWorld.Bloomberg.Test
             Request request = service.CreateRequest("CreateOrderAndRouteEx");
 
              //The fields below are mandatory
-            request.Set("EMSX_TICKER", "UNH US Equity");
+            request.Set("EMSX_TICKER", "JPM US Equity");
             request.Set("EMSX_AMOUNT", 1000);
-            request.Set("EMSX_ORDER_TYPE", "MKT");
+            request.Set("EMSX_ORDER_TYPE", "LMT");
+            request.Set("EMSX_LIMIT_PRICE", 110);
             request.Set("EMSX_TIF", "DAY");
             request.Set("EMSX_HAND_INSTRUCTION", "ANY");
             request.Set("EMSX_SIDE", "BUY");
@@ -209,62 +218,46 @@ namespace HelloWorld.Bloomberg.Test
         
         }
 
-        protected static void DeleteLight(Session session, string EMSX_SEQUENCE,int correlationID)
+        protected static void CancelOrder(Session session, string EMSX_SEQUENCE, string EMSX_ROUTE_ID, int correlationID)
         {
             Service service = session.GetService("//blp/emapisvc_beta");
+
+            Request request = service.CreateRequest("CancelRoute");
+
+            //request.set("EMSX_REQUEST_SEQ", 1);
+            //request.set("EMSX_TRADER_UUID", 1234567);
+
+            Element routes = request.GetElement("ROUTES"); //Note, the case is important.
+            Element route = routes.AppendElement(); // Multiple routes can be cancelled in a single request
+            route.GetElement("EMSX_SEQUENCE").SetValue(EMSX_SEQUENCE);
+            route.GetElement("EMSX_ROUTE_ID").SetValue(EMSX_ROUTE_ID);
+
+            //request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
+
+            CorrelationID requestID = new CorrelationID(correlationID);
+            session.SendRequest(request, requestID);
+
+            Event nevent = session.NextEvent();
+
+            IEnumerable<Message> messages = nevent.GetMessages();
+
+            foreach (Message message in messages)
+            {
+
+
+            }
+        }
+
+        protected static void DeleteOrder(Session session, string EMSX_SEQUENCE, int correlationID)
+        {
+            Service service = session.GetService("//blp/emapisvc_beta");
+
             Request request = service.CreateRequest("DeleteOrder");
 
             request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
 
             CorrelationID requestID = new CorrelationID(correlationID);
             session.SendRequest(request, requestID);
-        }
-
-        protected static void DeleteOrder(Session session,string EMSX_SEQUENCE)
-        {
-
-            Service service = session.GetService("//blp/emapisvc_beta");
-            Request request = service.CreateRequest("DeleteOrder");
-
-            request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
-
-            CorrelationID requestID = new CorrelationID(Sequence);
-            Sequence++;
-
-            session.SendRequest(request, requestID);
-
-            try
-            {
-
-               bool continueToLoop = true;
-               while (continueToLoop)
-               {
-
-                   Event nevent = session.NextEvent();
-                   switch (nevent.Type)
-                   {
-
-                       case Event.EventType.RESPONSE: // final event
-                           handleResponseEvent(nevent);
-                           //continueToLoop = false; // fall through
-                           break;
-                       case Event.EventType.PARTIAL_RESPONSE:
-                           handleResponseEvent(nevent);
-                           break;
-                       default:
-                           Console.WriteLine(string.Format("Evento no reconocido {0}", nevent.Type));
-                           IEnumerable<Message> messages = nevent.GetMessages();
-
-
-                           break;
-                   }
-               }
-            }
-            catch (Exception ex)
-            {
-                System.Console.WriteLine("Failed to send the request: " + ex.Message);
-            }
-        
         }
 
         protected static void SubscribeOrder(Session session, string EMSX_SEQUENCE)
@@ -336,6 +329,9 @@ namespace HelloWorld.Bloomberg.Test
 
             List<Subscription> subscriptions = new List<Subscription>();
             string strSubscriptionFields = "//blp/emapisvc_beta/order?fields=";
+            strSubscriptionFields += "EMSX_TICKER,";
+            strSubscriptionFields += "EMSX_STATUS,";
+            strSubscriptionFields += "EMSX_ROUTE_ID,";
             strSubscriptionFields += "EMSX_SEQUENCE";
         
             Subscription subscription = new Subscription(strSubscriptionFields);

@@ -12,7 +12,7 @@
 
   <Exchange>US</Exchange>
 
-  <Broker>BB</Broker>
+  <Broker>EFIX</Broker>
 
   <EMSX_Environment>//blp/emapisvc_beta</EMSX_Environment><!--DEV-->
  

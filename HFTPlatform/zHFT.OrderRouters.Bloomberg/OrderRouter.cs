@@ -91,7 +91,7 @@ namespace zHFT.OrderRouters.Bloomberg
                 OrderDTO order = (OrderDTO)((object[])param)[0];
                 string errorMsg = (string)((object[])param)[1];
 
-                ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order,
+                ManualExecutionReportWrapper wrapper = new ManualExecutionReportWrapper(order,
                                                                             OrdStatus.Rejected,
                                                                             ExecType.Rejected,
                                                                             errorMsg,
@@ -108,7 +108,7 @@ namespace zHFT.OrderRouters.Bloomberg
         {
             try
             {
-                ExecutionReportWrapper wrapper = (ExecutionReportWrapper)param;
+                Wrapper wrapper = (Wrapper)param;
                 OnMessageRcv(wrapper);
             }
             catch (Exception ex)
@@ -199,38 +199,28 @@ namespace zHFT.OrderRouters.Bloomberg
 
                                     if (OrderList.Keys.Contains(EMSX_SEQUENCE))
                                     {
+                                        OrderDTO order = OrderList[EMSX_SEQUENCE];
+
                                         if (status == _ORD_STATUS_INIT_PAINT)//Mensaje Inicial
                                         {
-                                       
+                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, message, BloombergConfiguration);
+                                            SendExecutionReport(wrapper);//Publicamos la novedad
                                         }
                                         else if (status == _ORD_STATUS_NEW_ORDER)//New Order
                                         {
-                                            OrderDTO order = OrderList[EMSX_SEQUENCE];
-                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order,
-                                                                                                        OrdStatus.New,
-                                                                                                        ExecType.New,
-                                                                                                        null,
-                                                                                                        BloombergConfiguration);
+                                            
+                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, message, BloombergConfiguration);
                                             SendExecutionReport(wrapper);//Publicamos la novedad
-                                            //TODO: En realidad estamos publicando una orden OFFLINE como si ya estuviera en el mercado
-                                            //En la versión final hay que corregir esto
                                         }
                                         else if (status == _ORD_STATUS_UPD_ORDER)//Update Order
                                         {
-                                            //TODO: Desarrollar por algún tipo de concertación parcial o total
+                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, message, BloombergConfiguration);
+                                            SendExecutionReport(wrapper);//Publicamos la novedad
                                         }
                                         else if (status == _ORD_STATUS_DELETE_ORDER)//Delete Order
                                         {
-
-                                            OrderDTO order = OrderList[EMSX_SEQUENCE];
-                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order,
-                                                                                                        OrdStatus.Canceled,
-                                                                                                        ExecType.Canceled,
-                                                                                                        "Cancelled by user",
-                                                                                                        BloombergConfiguration);
+                                            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, message, BloombergConfiguration);
                                             SendExecutionReport(wrapper);//Publicamos la novedad
-                                            //TODO: En realidad estamos publicando una cancelación cuando tenemos una eliminación
-                                            //En la versión final hay que corregir esto
 
                                             lock (tOrderDictionariesLock)
                                             {
@@ -300,30 +290,70 @@ namespace zHFT.OrderRouters.Bloomberg
             }
         }
 
+        private string GetOrderSuscriptionFields()
+        {
+            string strOrderSubscriptionFields = "//blp/emapisvc_beta/order?fields=";
+            strOrderSubscriptionFields += "API_SEQ_NUM,";
+            strOrderSubscriptionFields += "EMSX_ACCOUNT,";
+            strOrderSubscriptionFields += "EMSX_AMOUNT,";
+            strOrderSubscriptionFields += "EMSX_ARRIVAL_PRICE,";
+            strOrderSubscriptionFields += "EMSX_ASSET_CLASS,";
+            strOrderSubscriptionFields += "EMSX_ASSIGNED_TRADER,";
+            strOrderSubscriptionFields += "EMSX_AVG_PRICE,";
+            strOrderSubscriptionFields += "EMSX_BASKET_NAME,";
+            strOrderSubscriptionFields += "EMSX_BASKET_NUM,";
+            strOrderSubscriptionFields += "EMSX_BROKER,";
+            strOrderSubscriptionFields += "EMSX_BROKER_COMM,";
+            strOrderSubscriptionFields += "EMSX_BSE_AVG_PRICE,";
+            strOrderSubscriptionFields += "EMSX_BSE_FILLED,";
+            strOrderSubscriptionFields += "EMSX_CFD_FLAG,";
+            strOrderSubscriptionFields += "EMSX_COMM_DIFF_FLAG,";
+            strOrderSubscriptionFields += "EMSX_COMM_RATE,";
+            strOrderSubscriptionFields += "EMSX_STATUS,"; 
+            strOrderSubscriptionFields += "EMSX_DATE,";
+            strOrderSubscriptionFields += "EMSX_FILLED,";
+            strOrderSubscriptionFields += "EMSX_DAY_AVG_PRICE";
+
+            return strOrderSubscriptionFields;
+        
+        }
+
+        private string GetRouteSuscriptionFields()
+        {
+            string strRouteSubscriptionFields = "//blp/emapisvc_beta/route?fields=";
+            strRouteSubscriptionFields += "API_SEQ_NUM,";
+            strRouteSubscriptionFields += "EMSX_AMOUNT,";
+            strRouteSubscriptionFields += "EMSX_AVG_PRICE,";
+            strRouteSubscriptionFields += "EMSX_LAST_SHARES,";
+            strRouteSubscriptionFields += "EMSX_LAST_PRICE,";
+            strRouteSubscriptionFields += "EMSX_BROKER,";
+            strRouteSubscriptionFields += "EMSX_BROKER_COMM,";
+            strRouteSubscriptionFields += "EMSX_BSE_AVG_PRICE,";
+            strRouteSubscriptionFields += "EMSX_AMOUNT,";
+            strRouteSubscriptionFields += "EMSX_BSE_FILLED,";
+            strRouteSubscriptionFields += "EMSX_FILLED,";
+            strRouteSubscriptionFields += "EMSX_CLEARING_ACCOUNT,";
+            strRouteSubscriptionFields += "EMSX_STATUS,"; 
+            strRouteSubscriptionFields += "EMSX_CLEARING_FIRM";
+
+            return strRouteSubscriptionFields;
+        }
+
         private void DoSubscribe(object param)
         {
             try
             {
                 List<Subscription> subscriptions = new List<Subscription>();
-                //Nos suscribimos a todos los eventos y los atributos especificados abajo
-                string strSubscriptionFields = "//blp/emapisvc_beta/order?fields=";
-                strSubscriptionFields += "API_SEQ_NUM,";
-                strSubscriptionFields += "EMSX_AMOUNT,";
-                strSubscriptionFields += "EMSX_AVG_PRICE,";
-                strSubscriptionFields += "EMSX_BROKER,";
-                strSubscriptionFields += "EMSX_ASSET_CLASS,";
-                strSubscriptionFields += "EMSX_DATE,";
-                strSubscriptionFields += "EMSX_SEQUENCE,";
-                strSubscriptionFields += "EMSX_SIDE,";
-                strSubscriptionFields += "EMSX_TIF,";
-                strSubscriptionFields += "EMSX_STATUS,";
-                strSubscriptionFields += "EMSX_LIMIT_PRICE,";
-                strSubscriptionFields += "EMSX_SEC_NAME,";
-                strSubscriptionFields += "EMSX_ORDER_TYPE";
 
-                Subscription subscription = new Subscription(strSubscriptionFields);
+                //Nos suscribimos a todos los eventos de ORDERS y los atributos especificados abajo
+                string strOrderSubscriptionFields = GetOrderSuscriptionFields();
+                string strRouteSubscriptionFields = GetRouteSuscriptionFields();
 
-                subscriptions.Add(subscription);
+                Subscription orderSubscription = new Subscription(strOrderSubscriptionFields);
+                Subscription routeSubscription = new Subscription(strRouteSubscriptionFields);
+
+                subscriptions.Add(orderSubscription);
+                subscriptions.Add(routeSubscription);
 
                 session.Subscribe(subscriptions);
 
@@ -391,7 +421,9 @@ namespace zHFT.OrderRouters.Bloomberg
                         foreach (Message message in messages)
                         {
                             //De todos los mensajes si encontramos uno de CrateOrder de la orden búscada
-                            if (message.CorrelationID==correlationId && message.MessageType.ToString() == "CreateOrder")
+                            
+                            if (message.CorrelationID == correlationId && message.MessageType.ToString() == "CreateOrderAndRouteEx")
+                            //if (message.CorrelationID==correlationId && message.MessageType.ToString() == "CreateOrder")
                             {
                                 try
                                 {
@@ -457,7 +489,8 @@ namespace zHFT.OrderRouters.Bloomberg
 
         private Request BuildNewOrderRequest(Service service,OrderDTO order)
         {
-            Request request = service.CreateRequest("CreateOrder");
+            //Request request = service.CreateRequest("CreateOrder");
+            Request request = service.CreateRequest("CreateOrderAndRouteEx");
 
             //The fields below are mandatory
             request.Set("EMSX_TICKER", order.GetFullBloombergSymbol());
@@ -528,7 +561,7 @@ namespace zHFT.OrderRouters.Bloomberg
                         foreach (Message message in messages)
                         {
                             //De todos los mensajes si encontramos uno de CrateOrder de la orden búscada
-                            if (message.CorrelationID == correlationId && message.MessageType.ToString() == "DeleteOrder")
+                            if (message.CorrelationID == correlationId && message.MessageType.ToString() == "CancelRoute")
                             {
                                 try
                                 {
@@ -568,14 +601,36 @@ namespace zHFT.OrderRouters.Bloomberg
             return CMState.BuildSuccess();
         }
 
-        private CMState DoDeleteOrder(string EMSX_SEQUENCE)
+        //private CMState DoDeleteOrder(string EMSX_SEQUENCE)
+        //{
+        //    OrderDTO order = OrderList[EMSX_SEQUENCE];
+
+        //    Service service = session.GetService("//blp/emapisvc_beta");
+        //    Request request = service.CreateRequest("DeleteOrder");
+
+        //    request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
+
+        //    CorrelationID requestID = new CorrelationID(order.OrderId);
+        //    session.SendRequest(request, requestID);
+
+        //    //CMState state = HandleDeleteOrderResponseEvent(order, requestID, EMSX_SEQUENCE);
+        //    CMState state = CMState.BuildSuccess();
+
+        //    return state;
+        
+        //}
+
+        private CMState DoCancelOrder(string EMSX_SEQUENCE)
         {
             OrderDTO order = OrderList[EMSX_SEQUENCE];
 
             Service service = session.GetService("//blp/emapisvc_beta");
-            Request request = service.CreateRequest("DeleteOrder");
+            Request request = service.CreateRequest("CancelRoute");
 
-            request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
+            Element routes = request.GetElement("ROUTES"); //Note, the case is important.
+            Element route = routes.AppendElement(); // Multiple routes can be cancelled in a single request
+            route.GetElement("EMSX_SEQUENCE").SetValue(EMSX_SEQUENCE);
+            route.GetElement("EMSX_ROUTE_ID").SetValue(1);
 
             CorrelationID requestID = new CorrelationID(order.OrderId);
             session.SendRequest(request, requestID);
@@ -584,7 +639,7 @@ namespace zHFT.OrderRouters.Bloomberg
             CMState state = CMState.BuildSuccess();
 
             return state;
-        
+
         }
 
         #endregion
@@ -593,7 +648,8 @@ namespace zHFT.OrderRouters.Bloomberg
 
         private Request BuildUpdateOrderRequest(Service service, OrderDTO order)
         {
-            Request request = service.CreateRequest("ModifyOrder");
+            //Request request = service.CreateRequest("ModifyOrder");
+            Request request = service.CreateRequest("ModifyOrderEx");
 
             //The fields below are mandatory
             request.Set("EMSX_TICKER", order.GetFullBloombergSymbol());
@@ -716,7 +772,7 @@ namespace zHFT.OrderRouters.Bloomberg
                 {
                     foreach (string EMSX_SEQUENCE in OrderList.Keys)
                     {
-                        DoDeleteOrder(EMSX_SEQUENCE);
+                        DoCancelOrder(EMSX_SEQUENCE);
                         Thread.Sleep(100);
                     }
                 }
@@ -752,7 +808,7 @@ namespace zHFT.OrderRouters.Bloomberg
                     {
                         string EMSX_SEQUENCE = OrderIdsMapper[origClOrderId];
 
-                        return DoDeleteOrder(EMSX_SEQUENCE);
+                        return DoCancelOrder(EMSX_SEQUENCE);
 
                     }
                     else
