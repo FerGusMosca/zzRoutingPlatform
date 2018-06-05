@@ -1,0 +1,9 @@
+2018-05-31 12:16:19  :: 31/5/2018 12:16:19MainApp.LoadConfig
+2018-05-31 12:16:19  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-31 12:16:19  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.Bloomberg.Test\bin\Debug\config.xml
+2018-05-31 12:16:20  :: Fin GetConfiguracion
+2018-05-31 12:16:21  :: Initializing Log
+2018-05-31 12:16:21  :: Initializing Incoming Module
+2018-05-31 12:16:24  :: Incoming Module successfully initialized
+2018-05-31 12:16:24  :: Initializing Outgoing Module
+2018-05-31 12:16:34  :: Outgoing Module successfully initialized

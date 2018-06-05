@@ -81,6 +81,13 @@ namespace zHFT.OrderRouters.Bloomberg
             }
             else
                 DoLog(string.Format("Conectado exitosamente con Bloomberg on host {0}:{1}", BloombergConfiguration.IP, BloombergConfiguration.Port),Main.Common.Util.Constants.MessageType.Information);
+
+            if (!session.OpenService(BloombergConfiguration.EMSX_Environment))
+            {
+                string error = string.Format("Could not open service {0}:", BloombergConfiguration.EMSX_Environment);
+                DoLog(error, Main.Common.Util.Constants.MessageType.Error);
+                throw new Exception(error);
+            }
         }
 
         private void DoRejectOrder(object param)
@@ -516,110 +523,6 @@ namespace zHFT.OrderRouters.Bloomberg
 
         #region Delete/Cancel Order Methods
 
-        private CMState ProcessDeletedOrderMessage(OrderDTO order, Message message,  string EMSX_SEQUENCE)
-        {
-            Element element = message.AsElement;
-            CMState state = null;
-
-            if (element.HasElement("ERROR_CODE"))
-            {
-                //RejectOrder(order, element.GetElementAsString("ERROR_MESSAGE"));
-                state = CMState.BuildFail(new Exception(element.GetElementAsString("ERROR_MESSAGE")));
-            }
-            else
-            {
-                //No hacemos nada porque la cancelación tendrá que ser confirmada por el mercado con uno de sus 
-                //mensajes de suscripción (Execution Report)
-                state = CMState.BuildSuccess();
-            }
-
-            return state;
-
-        }
-
-        private CMState HandleDeleteOrderResponseEvent(OrderDTO order, CorrelationID correlationId, string EMSX_SEQUENCE)
-        {
-            bool continueToLoop = true;
-
-            int i = 0;
-
-            while (continueToLoop)
-            {
-                lock (tMessageDictionariesLock)
-                {
-                    if (ResponseMessages.ContainsKey(correlationId.Value))
-                    {
-                        List<Message> messages = ResponseMessages[correlationId.Value];
-                        List<Message> toRemove = new List<Message>();
-
-                        bool processed = false;
-                        CMState state = null;
-
-                        if (messages == null)
-                            continue;
-
-                        foreach (Message message in messages)
-                        {
-                            //De todos los mensajes si encontramos uno de CrateOrder de la orden búscada
-                            if (message.CorrelationID == correlationId && message.MessageType.ToString() == "CancelRoute")
-                            {
-                                try
-                                {
-                                    state = ProcessDeletedOrderMessage(order, message,  EMSX_SEQUENCE);
-                                    processed = true;
-                                    toRemove.Add(message);//Ya lo procesamos, lo marcamos para eliminar
-                                }
-                                catch (Exception ex)
-                                {
-                                    RejectOrder(order, ex.Message);
-                                    state = CMState.BuildFail(ex);
-                                    processed = true;
-                                    toRemove.Add(message);//Ya lo procesamos, lo marcamos para eliminar
-                                }
-                            }
-                        }
-
-                        if (processed)
-                        {
-                            toRemove.ForEach(x => messages.Remove(x));//Eliminamos los mensajes ya procesados de creación de ordenes
-                            return state;
-                        }
-                    }
-                }
-
-                i++;
-
-                if (i >= _MAX_NEW_ORDER_QUEUE_EVAL_MESSAGE)
-                {
-                    string error = string.Format("Timeout requesting for new order EMSX_SEQUENCE", order.Ticker);
-                    RejectOrder(order, error);
-                    return CMState.BuildFail(new Exception(error));
-                }
-                Thread.Sleep(500);
-            }
-
-            return CMState.BuildSuccess();
-        }
-
-        //private CMState DoDeleteOrder(string EMSX_SEQUENCE)
-        //{
-        //    OrderDTO order = OrderList[EMSX_SEQUENCE];
-
-        //    Service service = session.GetService("//blp/emapisvc_beta");
-        //    Request request = service.CreateRequest("DeleteOrder");
-
-        //    request.GetElement("EMSX_SEQUENCE").AppendValue(EMSX_SEQUENCE);
-
-        //    CorrelationID requestID = new CorrelationID(order.OrderId);
-        //    session.SendRequest(request, requestID);
-
-        //    //CMState state = HandleDeleteOrderResponseEvent(order, requestID, EMSX_SEQUENCE);
-        //    CMState state = CMState.BuildSuccess();
-
-        //    return state;
-        
-        //}
-
         private CMState DoCancelOrder(string EMSX_SEQUENCE)
         {
             OrderDTO order = OrderList[EMSX_SEQUENCE];
@@ -681,9 +584,10 @@ namespace zHFT.OrderRouters.Bloomberg
 
         #endregion
 
+        #region Action Methods
+
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
-            session.OpenService(BloombergConfiguration.EMSX_Environment);
             Service service = session.GetService(BloombergConfiguration.EMSX_Environment);
 
             OrderDTO order=null;
@@ -826,6 +730,8 @@ namespace zHFT.OrderRouters.Bloomberg
                 return CMState.BuildFail(new Exception(error));
             }
         }
+
+        #endregion
 
         #endregion
 

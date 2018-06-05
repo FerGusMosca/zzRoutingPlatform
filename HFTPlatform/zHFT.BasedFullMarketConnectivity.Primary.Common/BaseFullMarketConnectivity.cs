@@ -296,8 +296,6 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         }
 
-        
-
         protected CMState ProcessMarketDataRequest(Wrapper marketDataRequestWrapper)
         {
             if (SessionID != null)
@@ -344,8 +342,6 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             return Convert.ToInt32(span.TotalSeconds );
         
         }
-
-     
 
         protected CMState RouteNewOrder(Wrapper wrapper)
         {

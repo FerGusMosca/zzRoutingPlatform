@@ -351,7 +351,7 @@ namespace HelloWorld.Bloomberg.Test
 
                         case Event.EventType.SUBSCRIPTION_DATA: // final event
                             DeleteActiveOrder(nevent,session);
-                            //continueToLoop = false; // fall through
+                            continueToLoop = false; // fall through
                             break;
                         case Event.EventType.SUBSCRIPTION_STATUS: // final event
                             handleResponseEvent(nevent);
