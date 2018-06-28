@@ -53,7 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.FixMessageCreator.CoinApi.Common\zHFT.FixMessageCreator.CoinApi.Common.csproj">

@@ -1,0 +1,93 @@
+2018-06-28 12:02:33  :: 6/28/2018 12:02:33 PMMomentumStrategyBase.LoadConfig
+2018-06-28 12:02:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 12:02:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 12:02:33  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 12:02:33  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-06-28 12:02:33  :: 6/28/2018 12:02:33 PMOrderRouterBase.LoadConfig
+2018-06-28 12:02:33  :: Loading config:.\outgoingOrderRouter.xml
+2018-06-28 12:02:33  :: Processing config:.\outgoingOrderRouter.xml
+2018-06-28 12:02:33  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-06-28 12:02:33  :: Initializing Order Router Proxy zHFT.OrderRouters.IOL.OrderRouter, zHFT.OrderRouters.IOL
+2018-06-28 12:02:33  :: Critic error initializing .\outgoingOrderRouter.xml:assembly not found: zHFT.OrderRouters.IOL.OrderRouter, zHFT.OrderRouters.IOL
+2018-06-28 12:02:33  :: assembly not found: zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.IOLAccountManager, zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
+2018-06-28 12:03:46  :: 6/28/2018 12:03:46 PMMomentumStrategyBase.LoadConfig
+2018-06-28 12:03:46  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 12:03:46  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 12:03:46  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 12:03:46  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-06-28 12:03:46  :: 6/28/2018 12:03:46 PMOrderRouterBase.LoadConfig
+2018-06-28 12:03:46  :: Loading config:.\outgoingOrderRouter.xml
+2018-06-28 12:03:46  :: Processing config:.\outgoingOrderRouter.xml
+2018-06-28 12:03:46  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-06-28 12:03:46  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-06-28 12:03:51  :: 6/28/2018 12:03:51 PMOrderRouterBase.LoadConfig
+2018-06-28 12:03:51  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 12:03:51  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 12:03:51  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-06-28 13:07:23  :: 6/28/2018 1:07:23 PMMomentumStrategyBase.LoadConfig
+2018-06-28 13:07:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:07:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:07:23  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:07:23  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-06-28 13:07:23  :: 6/28/2018 1:07:23 PMOrderRouterBase.LoadConfig
+2018-06-28 13:07:23  :: Loading config:.\outgoingOrderRouter.xml
+2018-06-28 13:07:23  :: Processing config:.\outgoingOrderRouter.xml
+2018-06-28 13:07:23  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-06-28 13:07:23  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-06-28 13:07:23  :: 6/28/2018 1:07:23 PMOrderRouterBase.LoadConfig
+2018-06-28 13:07:23  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:07:23  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:07:23  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-06-28 13:07:24  :: assembly not found: zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.IOLAccountManager, zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
+2018-06-28 13:11:43  :: 6/28/2018 1:11:43 PMMomentumStrategyBase.LoadConfig
+2018-06-28 13:11:43  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:11:43  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:11:43  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:11:43  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-06-28 13:11:43  :: 6/28/2018 1:11:43 PMOrderRouterBase.LoadConfig
+2018-06-28 13:11:43  :: Loading config:.\outgoingOrderRouter.xml
+2018-06-28 13:11:43  :: Processing config:.\outgoingOrderRouter.xml
+2018-06-28 13:11:43  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-06-28 13:11:43  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-06-28 13:11:43  :: 6/28/2018 1:11:43 PMOrderRouterBase.LoadConfig
+2018-06-28 13:11:43  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:11:43  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:11:43  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-06-28 13:11:43  :: assembly not found: zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.IOLAccountManager, zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
+2018-06-28 13:13:39  :: 6/28/2018 1:13:39 PMMomentumStrategyBase.LoadConfig
+2018-06-28 13:13:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:13:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:13:39  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:13:39  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-06-28 13:13:39  :: 6/28/2018 1:13:39 PMOrderRouterBase.LoadConfig
+2018-06-28 13:13:39  :: Loading config:.\outgoingOrderRouter.xml
+2018-06-28 13:13:39  :: Processing config:.\outgoingOrderRouter.xml
+2018-06-28 13:13:39  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-06-28 13:13:39  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-06-28 13:13:39  :: 6/28/2018 1:13:39 PMOrderRouterBase.LoadConfig
+2018-06-28 13:13:39  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:13:39  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:13:39  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-06-28 13:13:39  :: assembly not found: zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.IOLAccountManager, zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
+2018-06-28 13:37:21  :: 6/28/2018 1:37:21 PMMomentumStrategyBase.LoadConfig
+2018-06-28 13:37:21  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:37:21  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:37:21  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-06-28 13:37:21  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-06-28 13:37:21  :: 6/28/2018 1:37:21 PMOrderRouterBase.LoadConfig
+2018-06-28 13:37:21  :: Loading config:.\outgoingOrderRouter.xml
+2018-06-28 13:37:21  :: Processing config:.\outgoingOrderRouter.xml
+2018-06-28 13:37:21  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-06-28 13:37:21  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-06-28 13:37:22  :: 6/28/2018 1:37:22 PMOrderRouterBase.LoadConfig
+2018-06-28 13:37:22  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:37:22  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-06-28 13:37:22  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-06-28 13:37:22  :: assembly not found: zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.IOLAccountManager, zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
+2018-06-28 13:39:31  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=18.95 BestBidPrice=18.95 BestAskPrice=19
+2018-06-28 13:39:37  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=19 BestBidPrice=18.95 BestAskPrice=19
+2018-06-28 13:39:38  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=19 BestBidPrice=18.95 BestAskPrice=19
+2018-06-28 13:39:39  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=19 BestBidPrice=18.95 BestAskPrice=19
+2018-06-28 13:39:41  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=19 BestBidPrice=18.95 BestAskPrice=19
+2018-06-28 13:39:42  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=19 BestBidPrice=18.95 BestAskPrice=19
+2018-06-28 13:39:43  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=19 BestBidPrice=18.95 BestAskPrice=19

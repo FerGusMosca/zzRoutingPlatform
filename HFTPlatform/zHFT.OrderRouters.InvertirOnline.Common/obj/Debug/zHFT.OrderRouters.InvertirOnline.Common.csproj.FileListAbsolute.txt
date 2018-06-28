@@ -1,0 +1,13 @@
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.OrderRouters.InvertirOnline.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.OrderRouters.InvertirOnline.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.pdb

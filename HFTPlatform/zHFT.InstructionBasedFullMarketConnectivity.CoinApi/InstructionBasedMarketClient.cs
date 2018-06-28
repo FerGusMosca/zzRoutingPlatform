@@ -267,22 +267,22 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi
                     //OptionMarketDataManager = new OptionMarketDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
 
 
-                    var fixMessageCreator = Type.GetType(CoinApiConfiguration.FIXMessageCreator);
-                    if (fixMessageCreator != null)
-                    {
-                        FIXMessageCreator = (IFIXMessageCreator)Activator.CreateInstance(fixMessageCreator);
-                    }
-                    else
-                        throw new Exception(string.Format("@{0}:Assembly not found: " + CoinApiConfiguration.FIXMessageCreator));
+                    //var fixMessageCreator = Type.GetType(CoinApiConfiguration.FIXMessageCreator);
+                    //if (fixMessageCreator != null)
+                    //{
+                    //    FIXMessageCreator = (IFIXMessageCreator)Activator.CreateInstance(fixMessageCreator);
+                    //}
+                    //else
+                    //    throw new Exception(string.Format("@{0}:Assembly not found: " + CoinApiConfiguration.FIXMessageCreator));
 
-                    var typeMarketTranslator = Type.GetType(CoinApiConfiguration.SecuritiesMarketTranslator);
-                    if (typeMarketTranslator != null)
-                        SecurityTranslator = (ISecurityTranslator)Activator.CreateInstance(typeMarketTranslator);
-                    else
-                    {
-                        DoLog("assembly not found: " + CoinApiConfiguration.SecuritiesMarketTranslator, Main.Common.Util.Constants.MessageType.Error);
-                        return false;
-                    }
+                    //var typeMarketTranslator = Type.GetType(CoinApiConfiguration.SecuritiesMarketTranslator);
+                    //if (typeMarketTranslator != null)
+                    //    SecurityTranslator = (ISecurityTranslator)Activator.CreateInstance(typeMarketTranslator);
+                    //else
+                    //{
+                    //    DoLog("assembly not found: " + CoinApiConfiguration.SecuritiesMarketTranslator, Main.Common.Util.Constants.MessageType.Error);
+                    //    return false;
+                    //}
 
                     SessionSettings = new SessionSettings(CoinApiConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
@@ -474,6 +474,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi
 
         #endregion
 
-        
+
+
+        protected override void CancelMarketData(Security sec)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
