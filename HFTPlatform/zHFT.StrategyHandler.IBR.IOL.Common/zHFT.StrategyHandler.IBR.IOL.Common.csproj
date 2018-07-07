@@ -40,6 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\AuthenticationToken.cs" />
+    <Compile Include="DTO\PortfolioResponse.cs" />
+    <Compile Include="DTO\Posicion.cs" />
+    <Compile Include="DTO\Titulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

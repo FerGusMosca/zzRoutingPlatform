@@ -16,6 +16,8 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Configuration
 
         public string ConfigConnectionString { get; set; }
 
+        public string MainURL { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -33,6 +35,12 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Configuration
             if (AccountNumber < 0)
             {
                 result.Add("AccountNumber");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(MainURL))
+            {
+                result.Add("MainURL");
                 resultado = false;
             }
 

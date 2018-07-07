@@ -39,10 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\ExchangeConverter.cs" />
-    <Compile Include="Converters\SecurityConverter.cs" />
-    <Compile Include="Converters\SymbolConverter.cs" />
-    <Compile Include="DTO\AuthenticationToken.cs" />
     <Compile Include="DTO\MarketData.cs" />
     <Compile Include="DTO\OrderBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

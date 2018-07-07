@@ -8,8 +8,8 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMa
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IOL.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IOL.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IOL.Common.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\bin\Debug\zHFT.MarketClient.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IOL.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IOL.Common.csprojResolveAssemblyReference.cache

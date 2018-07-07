@@ -48,6 +48,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csproj">
+      <Project>{887c5bf2-a6df-48d1-bfc2-0667af33d61b}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.Common\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj">
+      <Project>{599f2026-666f-492c-b41f-3704881f32a1}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.csproj">
+      <Project>{7a43e37d-d6ac-4090-ba4b-d42801f3ed08}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
@@ -55,10 +67,6 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.IOL.BusinessEntities\zHFT.StrategyHandler.IBR.IOL.BusinessEntities.csproj">
-      <Project>{a2e659aa-d026-46f9-9eb4-342c9a5ff5bd}</Project>
-      <Name>zHFT.StrategyHandler.IBR.IOL.BusinessEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.IBR.IOL.Common\zHFT.StrategyHandler.IBR.IOL.Common.csproj">
       <Project>{446b1956-c6ae-4f45-95f8-4bd992cffb0c}</Project>

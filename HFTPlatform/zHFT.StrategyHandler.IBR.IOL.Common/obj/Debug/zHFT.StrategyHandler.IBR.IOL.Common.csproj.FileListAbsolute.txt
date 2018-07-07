@@ -1,5 +1,4 @@
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\bin\Debug\zHFT.StrategyHandler.IBR.IOL.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\bin\Debug\zHFT.StrategyHandler.IBR.IOL.Common.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.pdb

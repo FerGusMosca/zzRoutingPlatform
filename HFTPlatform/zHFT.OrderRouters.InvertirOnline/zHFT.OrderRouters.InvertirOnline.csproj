@@ -43,6 +43,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.csproj">
+      <Project>{7a43e37d-d6ac-4090-ba4b-d42801f3ed08}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
@@ -54,6 +58,10 @@
     <ProjectReference Include="..\zHFT.OrderRouters.InvertirOnline.Common\zHFT.OrderRouters.InvertirOnline.Common.csproj">
       <Project>{e0069d0c-ba82-464a-b917-5619851f2772}</Project>
       <Name>zHFT.OrderRouters.InvertirOnline.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.csproj">
+      <Project>{7f7a3676-c1ec-458f-a8f7-1145034b5ac4}</Project>
+      <Name>zHFT.OrderRouters.InvertirOnline.DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

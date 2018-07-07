@@ -174,7 +174,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Bitstamp
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                     {
-                        DoLog(string.Format("@{0}:Cancelling all active orders @ IB", BitstampConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("@{0}:Cancelling all active orders @ Bitstamp", BitstampConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                         //return CancelAllOrders();
                         return CMState.BuildSuccess();
                     }

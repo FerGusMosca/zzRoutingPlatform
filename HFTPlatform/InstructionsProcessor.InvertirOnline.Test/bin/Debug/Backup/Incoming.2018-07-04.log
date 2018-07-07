@@ -1,0 +1,132 @@
+2018-07-04 10:06:27  :: 7/4/2018 10:06:27 AMMarketClientBase.LoadConfig
+2018-07-04 10:06:27  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:06:27  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:06:28  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:07:38  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:14:55  :: 7/4/2018 10:14:55 AMMarketClientBase.LoadConfig
+2018-07-04 10:14:55  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:14:55  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:14:55  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:14:56  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:15:18  :: Market Data Client authenticated On Invertir Online. Token:BwZICY6r6AuL9WT6MxXQJzcHFhFcXf2CDOMxSArHwqRvUow6QFsyxrrAfszG3YX9qkBYJR5Gunw6POBijcfK53hdkm_a4Zo4TSFxaQBlxtfyY5fZtlarke4Q6TL81iNydPxg5RnKPwPSjCohrrY_SYzYUr4Ih6ClOify55y7dYUtDZpUyuxr6DhhhSPHbnjn0S18FWfvHF8M3H893FQrPEkfTdg4iEyDZbeXQhhoOIcmnA78v1UuH6Fv2RUlZiNfCm3YLblhZqSdOfp3nKtKAAVN2T-LId1I6Ov7fyDwmGo
+2018-07-04 10:15:19  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:15:21  :: @Instructions Processor Invertir Online:Error Requesting market data for symbol ALUA.BUE:Se produjo un error accediendo al market data para el activo ALUA:Error en el servidor remoto: (404) No se encontró.
+2018-07-04 10:16:53  :: 7/4/2018 10:16:53 AMMarketClientBase.LoadConfig
+2018-07-04 10:16:53  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:16:53  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:16:53  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:16:53  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:16:54  :: Market Data Client authenticated On Invertir Online. Token:8dOWNc7_ZBHgEOqGHT0g-Wl8BKJzVp5YsScxZGahizioGu5UgS9C20BJzpxWN285dJFUlivMKHXg7_9LnxxnnmWH0h_gwv9zFdBDwHoh8U3CSoutgs2QMVNVircOBCdcELkgR3sMZwZOuZd-1dFjNom9W9kqqmCFwJT4EqylwFiyiB5Uj061kLCPzpSF04P3wjHMl4TX0cjwnAXgl_DOQjtMz-cOxxEg7Zudx2aU2fcyS4X2hedAZKFsN4dDgQ4D4vp0aVI8naSmKqiWwMSc6G2QqzgYdZlcF_hx1baDXnZsJmqVdxpgBT99MpA98ulN
+2018-07-04 10:16:56  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:32:08  :: 7/4/2018 10:32:08 AMMarketClientBase.LoadConfig
+2018-07-04 10:32:08  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:32:08  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:32:08  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:32:09  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:32:10  :: Market Data Client authenticated On Invertir Online. Token:9NdiBRyLI_WAK9A1P8mzr9uLZAWLsD3uCbUcJe6-FEYhXy9NSivZrTcVxVfZ0iSW3xRlxO_4vffzZ4uAoboUycHdo2ZUe3j0Kms97n0baAQ-ptbWRz5fng6HMvxRQtsCuG4zZuhdScg5zAVXpNBcq6gNuZkyeTiyveNTHiUGHnIjf55jv7gBoCmYnSVVNMbxL2HJYtZWsh-CrlH-6FzccQGkUFbQveunZxvoTVrtgDS3R63uFyi8qk8UeeYE5SvmZzZbdBxxQfeJ8Y9mBlzONjZVeYyVVFBfQW8_NBIgZKD_4S9NRvO5v_FDFL2nJEPd
+2018-07-04 10:33:05  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:40:07  :: 7/4/2018 10:40:07 AMMarketClientBase.LoadConfig
+2018-07-04 10:40:07  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:40:07  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:40:07  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:40:07  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:40:08  :: Market Data Client authenticated On Invertir Online. Token:nbxMRdBlz6zGiX75ZmYGqHvnxWcqoDZDWz_bBfPPR329uzYI8K3EIZe68YoNkvGxvekVqjvV-sycqY8Ak4d82LvUbvGn5PKdNgGmUDdVc4aIJpeaoHS756fySo32nwl25zb0xCPbrG8uPRWD-HQNMHDBczHc-5NUkG7Gski3V41agYTPtSbokyJpdiPP2B6Ovxe7VODjHiG5sQTdUCSZBsSwraf5nFy2Fe6gdurBHdXZUm8hZPTSA07ulW8V4Ql-f-WyPlCcCMuR9OheaQaqXlzLJo-YaFDxaYZtgPOY-mNtfKLZDi8gMbeHHMAMe3UF
+2018-07-04 10:40:09  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:42:19  :: 7/4/2018 10:42:19 AMMarketClientBase.LoadConfig
+2018-07-04 10:42:19  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:42:19  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:42:19  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:42:19  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:42:20  :: Market Data Client authenticated On Invertir Online. Token:mKEynTlW9BBFfqZ0VRszZsgh2q95XIlv9R3HFJWvQdSVSqXQCdursYztHKlMvGp5Tm8D-8gXxWgwKzAZz-Vw90Poq4cuWXY1DxR8Sh0Guxcv5rKuQ9pqywDe3B7f30ToI53ZawZB8UWrjR_-Si6487MTvGXKhSFEWLRcuXC_Ze0OwKEDcrUUu9PQxQamouwZaMrz0foDl7L9QWynM4MMSCY9UxfhWis-Jy3V52oBFNrukKbxvtVNrb-OGHJEzs0tVoHFq5A-7yhphnM6-bSKrpUZ7kY2phORGAP1J_eceNE6PDbuTd1jmSatVauQe0lW
+2018-07-04 10:42:44  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:46:07  :: 7/4/2018 10:46:07 AMMarketClientBase.LoadConfig
+2018-07-04 10:46:07  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:46:07  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:46:07  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:46:07  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:46:08  :: Market Data Client authenticated On Invertir Online. Token:cyBa16Esd4y8HsrrzaBkmmIeVWA7W_FHsNfoVHT2ScYNOFEYu6V1HjckiMW75hG18zM2aMUmJzMX0fNU3mUasHvWoGXvE9bY3-rSyGhXhSzuA-4VJ992msD1p3nkoc7UB5mjv2dFXjPKZShWSpbVjUtISd75rbCyMEQxuyhNK5y11hwXbc91T97WyWDEchLHbYMyDDnjpeNvnYqzhd6ZgnE4OwM8DsgWwXp5R8mDObQu01qNva8irFFluL_sBdD36wG3UDkvN3Gmx8g1OgALZ8F3ydoy9TQCJMKMtW8GIq0bRwGeIgwWK6YwZFT2uujl
+2018-07-04 10:46:55  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 10:56:15  :: 7/4/2018 10:56:15 AMMarketClientBase.LoadConfig
+2018-07-04 10:56:15  :: Loading config:.\incomingIOL.xml
+2018-07-04 10:56:15  :: Processing config:.\incomingIOL.xml
+2018-07-04 10:56:15  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 10:56:15  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 10:56:16  :: Market Data Client authenticated On Invertir Online. Token:w5_S2Kk43DeO5aUV6qSh1YpTWfYHR82xQmtakjsJtBYCHEoo-0e5QKV8VjOPm5pCZtK9jFjTWTbuxbRVuL43O0aMSp0Vhz-XODE4gmtgvPrSpr9ToSm9t-qzqy-ZnHxrJP6GAQfZC7Ommyk9QQzvC5qGyGgUSL53XehFHKiH0_CX6JbnFO6XEklp2FroGys49E6MxigrCO7lfq5oqH6zXZoHVM7DYDGUuQFFWie1zktX5TRVAWCHXhzUcldKzUjJFXY4frAx2eXpv0asyv-ECjnceThCaq6xJiGJpDOxS9AxpQW9DxtG70ZFMmT2OAhz
+2018-07-04 10:56:24  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:28:10  :: 7/4/2018 11:28:10 AMMarketClientBase.LoadConfig
+2018-07-04 11:28:10  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:28:10  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:28:10  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:28:11  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:28:12  :: Market Data Client authenticated On Invertir Online. Token:5SnHB7mlpzZUp6ieoTTfHS66gAIuXhJ6I6wuLGjSEg0JnFdhJU8XyTtfELiURSaYbYpr2a0jmdLqBMUQDnQmzx6Dipv3vroNuzey1-26H1KmdXHCv50TouQQ5tmDe-I9NgoJFVmmH2Q7cUIn62cKFz0nPOj_wqQoKsk43lpDFVp5y8nI7v5s11Gyvw9G0f0NBveObbycvS6sEu_4rwHr5ghhR-woSSDACSVbV4qm0dc0Bd1b-J4R4l2HwG1SMMi8JD-retS7-3TAigfWdlr7lnk1eUS76-mVhQnFcl8gJZSncxuhVn47_I47W_UwbGWU
+2018-07-04 11:28:14  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:29:26  :: 7/4/2018 11:29:26 AMMarketClientBase.LoadConfig
+2018-07-04 11:29:26  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:29:26  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:29:26  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:29:26  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:29:29  :: Market Data Client authenticated On Invertir Online. Token:vqGIfQusysjwly0siFvoP-pgyysj_asJY3WhtrMpGAOxs0qiJtnTON-MfRBAGu-8m73kHGYi-Tl8uYA-_41OJ27AtraVbwSAJTpju8szml7G3l-ruCGUgUAu2QpY4HMsid7WlRfJ-mDeOEcH1U6W3J1USLfn23GJ_I44n2vBQXtyOtv58LL336M68bVSvK3OTE4q6hi4yWkrKfbus7oQFDNRsw2GfEGBWbgosIr-ec9iK0S9TpDJdM0RMuMw_OMA0nye6YvwqXyrswP6qtf_n7UYGGoYvQW7-ZN4SSw8fQCjZm4c0zmDeh8Sx2cYwqj9
+2018-07-04 11:29:57  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:34:09  :: 7/4/2018 11:34:09 AMMarketClientBase.LoadConfig
+2018-07-04 11:34:09  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:34:09  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:34:09  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:34:09  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:34:10  :: Market Data Client authenticated On Invertir Online. Token:0Vtnwj_KKO8JViLMwV-IIAaYmrNo4bg2j_A716rDjRAbQmHTgq2uCfF35EWghDM_p9A0A-NGVFza7-Ks97DLVT3xwlcwRoV676-0WEOSafhr5iw4IWb8uT-TBxYwo7-MI5Ionxk3YO4TlBpjlCO2c5CCNCOO4FbNJnZaA1iqrBMmy_VsDe1WfQ2H6fegn5U0geosyFYAno8Q0pRMyg0gvWQ1qEArJ42TeGemootuzst4zg7aNr-WGXjFlMO68lEQ5aqFMXJC3DE64Ms5-tL_j2YL3Ku3UF6ie2sUTLwsF1HOFIRd3Oc7q0L-zwwdJH87
+2018-07-04 11:34:46  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:39:52  :: 7/4/2018 11:39:52 AMMarketClientBase.LoadConfig
+2018-07-04 11:39:52  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:39:52  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:39:52  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:39:52  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:39:53  :: Market Data Client authenticated On Invertir Online. Token:9EECePw36LLLg_hRLfkwMvYx6_tKSsL-hMw4Rx3RuMwUBkzXmLKwLF2-6Uy9R8nR-rqx49sG956D3i-yVJDZvl6l1MIXhzJiXppzCWTTo7bySpdGronlWp0GB5ouz2_mNG1YXRaPGNEdmoTGiTVyGOstTwiSUqIYk3RLHToIjH8Na6ptlHo-A5pbTz1W2aiHOJfpWgDnI-XY7YmlBK1sun4PNgg1XdUrnTTesSN-fg38D2HEOJkAJdtaCbWB_b55hsfJi2vKKyZdSgwPN_CRnEnT2GFMfXAOA0Q7QnbqmMbFaWRH6YE4XBfIf-mgwk3X
+2018-07-04 11:39:56  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:43:29  :: 7/4/2018 11:43:29 AMMarketClientBase.LoadConfig
+2018-07-04 11:43:29  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:43:29  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:43:29  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:43:29  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:43:31  :: Market Data Client authenticated On Invertir Online. Token:IDLJnIfFrBAoUX3uI8Rf0W4AN_IscxpNUR5rX0XJI4M-5oqKBQ3d15dsy5EwadDz2AQmZSgKRM2bjnISx4-p7msmfAloNf2quE3ZSjrQMcSuJp4yyiRMbD-TR5oKCNtx7QlbyCTvnvfiJYvr2aDiQkyIerz8ayCV2gO8To1Pa_RPn0YmnySWsSn4FSy90kbiHf9ODuYzcI8NjP8Pu9NGvN9iODylmqdY332OKpO0qmm0sSE6xvHaWMp9r9M-DLV_ajuYl5MXna-g4k00qt6qzdQWNWk3QjUn2u5b-58Qso5FfvLNUqDSkmeQ4CJR8cP5
+2018-07-04 11:43:41  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:44:00  :: 7/4/2018 11:44:00 AMMarketClientBase.LoadConfig
+2018-07-04 11:44:00  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:44:00  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:44:00  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:44:01  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:44:02  :: Market Data Client authenticated On Invertir Online. Token:m6yu-XI3F5JrAyrQcp8tfy1rOepLMX4gq9nFdjL0ibEMXsCzLkp13nbC2NEfyZZtaWaeg3-VMwQpqjiRXMl9_5p_xCwhHeabXbv2aZZSioUEIZr73eVHBzdr5nBbQyG4h8xWPqYc8UtIyTOnoRZxqAjzjYZ1lMSF3daeFuPtKY1TTgLkUpAMtb-QA6qFgcGLpwmllq2dAvSEIirGeLae4pAHcQbF69WdnDNmoQkhjmOWpHUJcKZw_Q9nncLY8goXsrMo3cxvULYmy-JD5LoVcC2FqffaVkXWa5H1-zmCQ8Kvjch_NVmjANw2kNVZmcmr
+2018-07-04 11:44:28  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:53:28  :: 7/4/2018 11:53:28 AMMarketClientBase.LoadConfig
+2018-07-04 11:53:28  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:53:28  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:53:28  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:53:28  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:53:29  :: Market Data Client authenticated On Invertir Online. Token:QjYC89U58sb-9HvLU7srulgeVVj3BrfYaeweUIIdoYp9GNKU0YPMqsWMmzqKD1zqG-gWAPCNT2G1ewVmDHqYoXhMgH9_Kbi1rvQnRPIvkO-_CYAaI5kjUj_PwKn_oW-7mEuMKTgQK0YtwQOGYRW3hiX5HkCEQJ2m6qGVD8bYON01gF2IOhZSXXDDdhID7JxndspP7F8jTX2rv_wDQyiG5DLP7P5zbV0foyJmK841UYl9lLGGpem71tW0FShvE7DGV0S0zmbVKRdsNMn6Tkov-M2cspBTKaAlkGiaphKERaTg8H2fTVfyKGMgZlRPaife
+2018-07-04 11:53:30  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:53:49  :: 7/4/2018 11:53:49 AMMarketClientBase.LoadConfig
+2018-07-04 11:53:49  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:53:49  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:53:49  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:53:50  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:53:51  :: Market Data Client authenticated On Invertir Online. Token:B4TwQjh_FRLcNEge-VVjzyUfJQKz2N4m3tIoukRZtPLRyjOFziS_hPCjijKuW7mywRNRPeLv1XKVy5W5VsTZs8AnBJ59k--d7tKt1-OLdfHnunZUT7YLWtstKmcGCh-gmbaDDmYhob4v0gG23ETcBE1UK0yZqKjLcWR4dAmkGftoJp3dgAWcE9GKlyDF6Ynvefyo-c8RPel9TqXfm21hkX3AwcX4iwBZ_tCsFjEvJ7fUh8Lday-gT3SoSFwlDgcQj7_Hj0n7oOJEpPiYJrhe9s3chPz0DmiwZim5J5Q-piH44ndK7NfLhdcXeEslPy3d
+2018-07-04 11:54:39  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:57:57  :: 7/4/2018 11:57:57 AMMarketClientBase.LoadConfig
+2018-07-04 11:57:57  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:57:57  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:57:57  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:57:57  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:57:58  :: Market Data Client authenticated On Invertir Online. Token:A97kRB84jtt_o8Dr9zB0CT-7ZBmsnm6mT9legsKnefHBHdIskoFGhygqlKxRV-BakUxBCRveA6WL8gkfa0h5Hx2EkTV8fz2ieppbZfCaeZKln7q_mnZ1KO7y04D4LNt2rds9D62OXVL1hE5HuV27SbmL-008MxmpZzXNH1ANmMwk1kAUsVLSZRM84_kT10E5F2AIc1P-k9upnMB1CvEGNFpjZ3iNGFXLXenkG4ECZBLc2N969Z7HbJETzEDG9f1wklbcTeWh-jUKzbgxGloFCXCDu_EkSh481K1Gk3u88A73Y1vVaYgWtCBAc3hkd0GG
+2018-07-04 11:58:10  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:58:32  :: 7/4/2018 11:58:32 AMMarketClientBase.LoadConfig
+2018-07-04 11:58:32  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:58:32  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:58:32  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:58:33  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:58:34  :: Market Data Client authenticated On Invertir Online. Token:E9OjyfxGADjhD8b5tYcJxlLHTgrAhwHZQbxT8Gw_F9aknllZDIu4xoV6l52wUXKK_uMRVGI73_DZ6I61OahTUxurytFLImIx5AIE4OzQ5EzFVsokjtHiXunIKCCpak6prdxrKNxdlxs48w4XzCdW0BApWX8G0pCa4Vdjev_DN3580tv7xoDO936MUh0iJLmZl4_6saVryfslNOvnA6L4SRzsVAE92zkuEjeo66VRYumX_LNXmc6XgkiiJbKacrogY6Ezbqzy3HykCBfZngJe2laaN8k06vHwmCmp7tC5LzbsR74E-2zrWTVOcIfWRTmd
+2018-07-04 11:58:39  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-04 11:59:03  :: 7/4/2018 11:59:03 AMMarketClientBase.LoadConfig
+2018-07-04 11:59:03  :: Loading config:.\incomingIOL.xml
+2018-07-04 11:59:03  :: Processing config:.\incomingIOL.xml
+2018-07-04 11:59:03  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-04 11:59:03  :: Authenticating Market Data Client On Invertir Online
+2018-07-04 11:59:04  :: Market Data Client authenticated On Invertir Online. Token:Zikz-xpohNzGI0HCQJ3Grr4zhtcqGMCZLIf3eLZIEqAXWaZSEE2i2sMA-hKH0cHMRbmlgOwKIpbTcpibjlPSmZK74uvOehOVuEB-gGjQ9ByizaOowJVvFIqVddwM1hsRsT1u9hg-UBYbNxRM3h7WobXjk5rJnT4_G7lyK6g73CVmesuJK6NdDn3gMNWdnJEbXFXp4d5xKuiDwgc6xWlFqDmM_Tz0323sx2HCld5b4FSu4kX__7V32AJH5b_H1bXr6NB2Qt0mGt3PObFD66DX-O-zAJm2qte5La0OPgKpa6ft7Xi0kDtYQ2ftxi5lJw02
+2018-07-04 11:59:21  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE

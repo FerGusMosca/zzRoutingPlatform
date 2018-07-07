@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
@@ -9,6 +10,10 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common;
 using zHFT.OrderRouters.InvertirOnline.Common.Converters;
+using zHFT.OrderRouters.InvertirOnline.Common.DTO;
+using zHFT.OrderRouters.InvertirOnline.Common.Responses;
+using zHFT.OrderRouters.InvertirOnline.Common.Wrappers;
+using zHFT.OrderRouters.InvertirOnline.DataAccessLayer;
 
 namespace zHFT.OrderRouters.InvertirOnline
 {
@@ -24,11 +29,11 @@ namespace zHFT.OrderRouters.InvertirOnline
 
         protected OrderConverter OrderConverter { get; set; }
 
-        //protected Dictionary<int, Order> OrderList { get; set; }
+        protected Dictionary<int, Order> OrderList { get; set; }
 
         protected Dictionary<string, int> OrderIdsMapper { get; set; }
 
-        //protected Dictionary<int, Contract> ContractList { get; set; }
+        protected IOLOrderRouterManager IOLOrderRouterManager { get; set; }
 
         public static object tLock { get; set; }
 
@@ -43,24 +48,52 @@ namespace zHFT.OrderRouters.InvertirOnline
             Config = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
+        protected void ProcessExecutionReport(object param)
+        {
+            try
+            {
+                ExecutionReportWrapper wrapper = (ExecutionReportWrapper)param;
+                OnMessageRcv(wrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error publishing execution report for new order: {0}",ex.Message), Main.Common.Util.Constants.MessageType.Error);
+
+            }
+        
+        }
+
         protected void RouteNewOrder(Wrapper wrapper)
         {
-            //Contract contract = GetContract(wrapper);
+            Order order = null;
+            NewOrderResponse resp = null;
 
-            //Order order = GetNewOrder(wrapper);
+            lock (tLock)
+            {
+                order = OrderConverter.GetNewOrder(wrapper, NextOrderId);
+                NextOrderId++;
+            }
 
-            //ClientSocket.placeOrder(order.OrderId, contract, order);
-            //DoLog(string.Format("Routing Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
-            //if (wrapper.GetField(OrderFields.ClOrdID) == null)
-            //    throw new Exception("Could not find ClOrdId for new order");
+            DoLog(string.Format("Routing Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
 
-            //string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+            if (order.side == Side.Buy)
+                resp = IOLOrderRouterManager.Buy(order);
+            else if (order.side == Side.Sell)
+                resp = IOLOrderRouterManager.Sell(order);
+            else
+                throw new Exception(string.Format("Side no soportado para nueva orden:{0}", order.side));
 
-            //OrderIdsMapper.Add(clOrderId, order.OrderId);
-            //OrderList.Add(order.OrderId, order);
-            //ContractList.Add(order.OrderId, contract);
+            if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                throw new Exception("Could not find ClOrdId for new order");
 
-            //TODO: DEV Ruteo de ordenes
+            OrderIdsMapper.Add(order.ClOrdId, order.OrderId);
+            OrderList.Add(order.OrderId, order);
+
+            ExecutionReportWrapper wapper = new ExecutionReportWrapper(resp, order, IOLConfiguration);
+
+            Thread publishExecReportThread = new Thread(ProcessExecutionReport);
+            publishExecReportThread.Start(wapper);
+            
         }
 
         protected void CancelAllOrders()
@@ -71,8 +104,12 @@ namespace zHFT.OrderRouters.InvertirOnline
 
         protected void UpdateOrder(Wrapper wrapper, bool cancel)
         {
-            //TODO: DEV UpdateOrder
-        
+            //TODO: DEV UpdateOrder--> Cuando se puedan emitir ordenes limit
+        }
+
+        protected void CancelOrder(Wrapper wrapper, bool cancel)
+        {
+            //TODO: DEV CancelOrder--> Cuando se puedan emitir ordenes limit
         }
 
 
@@ -100,11 +137,11 @@ namespace zHFT.OrderRouters.InvertirOnline
                 else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                 {
                     DoLog(string.Format("Canceling order with Invertir Online  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                    UpdateOrder(wrapper, true);
+                    CancelOrder(wrapper, true);
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                 {
-                    DoLog(string.Format("@{0}:Cancelling all active orders @ IB", IOLConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("@{0}:Cancelling all active orders @ Invertir Online", IOLConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                     CancelAllOrders();
                 }
                 else
@@ -135,12 +172,13 @@ namespace zHFT.OrderRouters.InvertirOnline
                 {
                     tLock = new object();
 
-
                     OrderConverter = new OrderConverter();
 
-                    //OrderList = new Dictionary<int, Order>();
+                    OrderList = new Dictionary<int, Order>();
                     OrderIdsMapper = new Dictionary<string, int>();
-                    //ContractList = new Dictionary<int, Contract>();
+                    
+                    IOLOrderRouterManager = new IOLOrderRouterManager(pOnLogMsg,IOLConfiguration.AccountNumber,IOLConfiguration.ConfigConnectionString,
+                                                                      IOLConfiguration.MainURL);
 
                     return true;
                 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using zHFT.InstrFullMarketConnectivity.IOL.Common;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
-using zHFT.InstructionBasedMarketClient.IOL.Common.Converters;
 using zHFT.InstructionBasedMarketClient.IOL.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -324,6 +324,18 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
             }
         }
 
+        protected void CleanPrevInstructions()
+        {
+            List<Instruction> prevInstrx = InstructionManager.GetPendingInstructions(IOLConfiguration.AccountNumber);
+
+            foreach (Instruction prevInstr in prevInstrx)
+            {
+                prevInstr.Executed = true;
+                prevInstr.AccountPosition = null;
+                InstructionManager.Persist(prevInstr);
+            }
+
+        }
 
         #endregion
 
@@ -338,17 +350,21 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
                 if (LoadConfig(moduleConfigFile))
                 {
+                    
+
                     ActiveSecurities = new Dictionary<int, Security>();
                     ActiveSecuritiesOnDemand = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
-
-                    //TODO: Implementar el Access Layer
 
                     InstructionManager = new InstructionManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
                     PositionManager = new PositionManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
                     AccountManager = new AccountManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
 
-                    IOLMarketDataManager = new IOLMarketDataManager(this.OnLogMsg, IOLConfiguration.AccountNumber, IOLConfiguration.ConfigConnectionString);
+                    CleanPrevInstructions();
+
+                    IOLMarketDataManager = new IOLMarketDataManager(this.OnLogMsg, IOLConfiguration.CredentialsAccountNumber,
+                                                                    IOLConfiguration.ConfigConnectionString,
+                                                                    IOLConfiguration.MainURL);
 
                   
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);

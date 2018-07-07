@@ -15,3 +15,12 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Inver
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb

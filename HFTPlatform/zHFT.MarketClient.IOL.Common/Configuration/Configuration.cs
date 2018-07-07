@@ -15,9 +15,13 @@ namespace zHFT.MarketClient.IOL.Common.Configuration
 
         public int AccountNumber { get; set; }
 
+        public int CredentialsAccountNumber { get; set; }
+
         public string InstructionsAccessLayerConnectionString { get; set; }
 
         public string ConfigConnectionString { get; set; }
+
+        public string MainURL { get; set; }
 
         public int PublishUpdateInMilliseconds { get; set; }
 
@@ -43,6 +47,12 @@ namespace zHFT.MarketClient.IOL.Common.Configuration
                 resultado = false;
             }
 
+            if (string.IsNullOrEmpty(MainURL))
+            {
+                result.Add("MainURL");
+                resultado = false;
+            }
+
             if (PublishUpdateInMilliseconds <= 0)
             {
                 result.Add("PublishUpdateInMilliseconds");
@@ -58,6 +68,12 @@ namespace zHFT.MarketClient.IOL.Common.Configuration
             if (AccountNumber <= 0)
             {
                 result.Add("AccountNumber");
+                resultado = false;
+            }
+
+            if (CredentialsAccountNumber <= 0)
+            {
+                result.Add("CredentialsAccountNumber");
                 resultado = false;
             }
 

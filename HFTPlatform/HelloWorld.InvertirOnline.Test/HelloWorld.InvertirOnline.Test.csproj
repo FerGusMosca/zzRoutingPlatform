@@ -63,10 +63,6 @@
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.IOL.BusinessEntities\zHFT.StrategyHandler.IBR.IOL.BusinessEntities.csproj">
-      <Project>{a2e659aa-d026-46f9-9eb4-342c9a5ff5bd}</Project>
-      <Name>zHFT.StrategyHandler.IBR.IOL.BusinessEntities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.IBR.IOL.Common\zHFT.StrategyHandler.IBR.IOL.Common.csproj">
       <Project>{446b1956-c6ae-4f45-95f8-4bd992cffb0c}</Project>
       <Name>zHFT.StrategyHandler.IBR.IOL.Common</Name>

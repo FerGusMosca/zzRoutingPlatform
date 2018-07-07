@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zHFT.StrategyHandler.IBR.IOL.BusinessEntities;
+using zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities;
 
 namespace zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.ADO
 {
@@ -24,7 +24,7 @@ namespace zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.ADO
 
         #region Public Methods
 
-        public AccountInvertirOnlineData GetAccountPrimaryData(int accountNumber)
+        public AccountInvertirOnlineData GetAccountIolData(int accountNumber)
         {
             SqlCommand cmd = new SqlCommand("get_account_iol_data", Conn);
 

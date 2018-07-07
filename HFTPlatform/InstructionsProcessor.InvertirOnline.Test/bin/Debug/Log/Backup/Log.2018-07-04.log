@@ -1,0 +1,164 @@
+2018-07-04 10:06:23  :: 4/7/2018 10:06:23MainApp.LoadConfig
+2018-07-04 10:06:23  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:06:23  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:06:23  :: Fin GetConfiguracion
+2018-07-04 10:06:23  :: Initializing Log
+2018-07-04 10:06:23  :: Initializing Incoming Module
+2018-07-04 10:06:28  :: Incoming Module successfully initialized
+2018-07-04 10:06:28  :: Initializing Outgoing Module
+2018-07-04 10:06:32  :: Outgoing Module successfully initialized
+2018-07-04 10:14:55  :: 4/7/2018 10:14:55MainApp.LoadConfig
+2018-07-04 10:14:55  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:14:55  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:14:55  :: Fin GetConfiguracion
+2018-07-04 10:14:55  :: Initializing Log
+2018-07-04 10:14:55  :: Initializing Incoming Module
+2018-07-04 10:15:18  :: Incoming Module successfully initialized
+2018-07-04 10:15:18  :: Initializing Outgoing Module
+2018-07-04 10:15:21  :: Outgoing Module successfully initialized
+2018-07-04 10:16:52  :: 4/7/2018 10:16:52MainApp.LoadConfig
+2018-07-04 10:16:52  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:16:52  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:16:53  :: Fin GetConfiguracion
+2018-07-04 10:16:53  :: Initializing Log
+2018-07-04 10:16:53  :: Initializing Incoming Module
+2018-07-04 10:16:54  :: Incoming Module successfully initialized
+2018-07-04 10:16:54  :: Initializing Outgoing Module
+2018-07-04 10:32:08  :: 4/7/2018 10:32:08MainApp.LoadConfig
+2018-07-04 10:32:08  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:32:08  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:32:08  :: Fin GetConfiguracion
+2018-07-04 10:32:08  :: Initializing Log
+2018-07-04 10:32:08  :: Initializing Incoming Module
+2018-07-04 10:32:10  :: Incoming Module successfully initialized
+2018-07-04 10:32:10  :: Initializing Outgoing Module
+2018-07-04 10:32:37  :: Error initializing Outgoing Module
+2018-07-04 10:40:06  :: 4/7/2018 10:40:06MainApp.LoadConfig
+2018-07-04 10:40:06  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:40:06  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:40:06  :: Fin GetConfiguracion
+2018-07-04 10:40:07  :: Initializing Log
+2018-07-04 10:40:07  :: Initializing Incoming Module
+2018-07-04 10:40:08  :: Incoming Module successfully initialized
+2018-07-04 10:40:08  :: Initializing Outgoing Module
+2018-07-04 10:40:32  :: Outgoing Module successfully initialized
+2018-07-04 10:42:19  :: 4/7/2018 10:42:19MainApp.LoadConfig
+2018-07-04 10:42:19  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:42:19  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:42:19  :: Fin GetConfiguracion
+2018-07-04 10:42:19  :: Initializing Log
+2018-07-04 10:42:19  :: Initializing Incoming Module
+2018-07-04 10:42:20  :: Incoming Module successfully initialized
+2018-07-04 10:42:20  :: Initializing Outgoing Module
+2018-07-04 10:42:45  :: Outgoing Module successfully initialized
+2018-07-04 10:46:06  :: 4/7/2018 10:46:06MainApp.LoadConfig
+2018-07-04 10:46:06  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:46:06  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:46:07  :: Fin GetConfiguracion
+2018-07-04 10:46:07  :: Initializing Log
+2018-07-04 10:46:07  :: Initializing Incoming Module
+2018-07-04 10:46:08  :: Incoming Module successfully initialized
+2018-07-04 10:46:08  :: Initializing Outgoing Module
+2018-07-04 10:46:32  :: Outgoing Module successfully initialized
+2018-07-04 10:56:13  :: 4/7/2018 10:56:13MainApp.LoadConfig
+2018-07-04 10:56:13  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:56:13  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 10:56:14  :: Fin GetConfiguracion
+2018-07-04 10:56:14  :: Initializing Log
+2018-07-04 10:56:14  :: Initializing Incoming Module
+2018-07-04 10:56:16  :: Incoming Module successfully initialized
+2018-07-04 10:56:16  :: Initializing Outgoing Module
+2018-07-04 11:28:07  :: 4/7/2018 11:28:07MainApp.LoadConfig
+2018-07-04 11:28:07  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:28:07  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:28:07  :: Fin GetConfiguracion
+2018-07-04 11:28:07  :: Initializing Log
+2018-07-04 11:28:07  :: Initializing Incoming Module
+2018-07-04 11:28:12  :: Incoming Module successfully initialized
+2018-07-04 11:28:12  :: Initializing Outgoing Module
+2018-07-04 11:29:26  :: 4/7/2018 11:29:26MainApp.LoadConfig
+2018-07-04 11:29:26  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:29:26  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:29:26  :: Fin GetConfiguracion
+2018-07-04 11:29:26  :: Initializing Log
+2018-07-04 11:29:26  :: Initializing Incoming Module
+2018-07-04 11:29:29  :: Incoming Module successfully initialized
+2018-07-04 11:29:29  :: Initializing Outgoing Module
+2018-07-04 11:29:54  :: Outgoing Module successfully initialized
+2018-07-04 11:34:08  :: 4/7/2018 11:34:08MainApp.LoadConfig
+2018-07-04 11:34:08  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:34:08  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:34:09  :: Fin GetConfiguracion
+2018-07-04 11:34:09  :: Initializing Log
+2018-07-04 11:34:09  :: Initializing Incoming Module
+2018-07-04 11:34:10  :: Incoming Module successfully initialized
+2018-07-04 11:34:10  :: Initializing Outgoing Module
+2018-07-04 11:34:34  :: Outgoing Module successfully initialized
+2018-07-04 11:39:51  :: 4/7/2018 11:39:51MainApp.LoadConfig
+2018-07-04 11:39:51  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:39:51  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:39:52  :: Fin GetConfiguracion
+2018-07-04 11:39:52  :: Initializing Log
+2018-07-04 11:39:52  :: Initializing Incoming Module
+2018-07-04 11:39:53  :: Incoming Module successfully initialized
+2018-07-04 11:39:53  :: Initializing Outgoing Module
+2018-07-04 11:39:57  :: Outgoing Module successfully initialized
+2018-07-04 11:43:29  :: 4/7/2018 11:43:29MainApp.LoadConfig
+2018-07-04 11:43:29  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:43:29  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:43:29  :: Fin GetConfiguracion
+2018-07-04 11:43:29  :: Initializing Log
+2018-07-04 11:43:29  :: Initializing Incoming Module
+2018-07-04 11:43:31  :: Incoming Module successfully initialized
+2018-07-04 11:43:31  :: Initializing Outgoing Module
+2018-07-04 11:44:00  :: 4/7/2018 11:44:00MainApp.LoadConfig
+2018-07-04 11:44:00  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:44:00  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:44:00  :: Fin GetConfiguracion
+2018-07-04 11:44:00  :: Initializing Log
+2018-07-04 11:44:00  :: Initializing Incoming Module
+2018-07-04 11:44:02  :: Incoming Module successfully initialized
+2018-07-04 11:44:02  :: Initializing Outgoing Module
+2018-07-04 11:44:26  :: Outgoing Module successfully initialized
+2018-07-04 11:53:27  :: 4/7/2018 11:53:27MainApp.LoadConfig
+2018-07-04 11:53:27  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:53:27  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:53:27  :: Fin GetConfiguracion
+2018-07-04 11:53:27  :: Initializing Log
+2018-07-04 11:53:27  :: Initializing Incoming Module
+2018-07-04 11:53:29  :: Incoming Module successfully initialized
+2018-07-04 11:53:29  :: Initializing Outgoing Module
+2018-07-04 11:53:49  :: 4/7/2018 11:53:49MainApp.LoadConfig
+2018-07-04 11:53:49  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:53:49  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:53:49  :: Fin GetConfiguracion
+2018-07-04 11:53:49  :: Initializing Log
+2018-07-04 11:53:49  :: Initializing Incoming Module
+2018-07-04 11:53:51  :: Incoming Module successfully initialized
+2018-07-04 11:53:51  :: Initializing Outgoing Module
+2018-07-04 11:54:15  :: Outgoing Module successfully initialized
+2018-07-04 11:57:56  :: 4/7/2018 11:57:56MainApp.LoadConfig
+2018-07-04 11:57:56  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:57:56  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:57:57  :: Fin GetConfiguracion
+2018-07-04 11:57:57  :: Initializing Log
+2018-07-04 11:57:57  :: Initializing Incoming Module
+2018-07-04 11:57:58  :: Incoming Module successfully initialized
+2018-07-04 11:57:58  :: Initializing Outgoing Module
+2018-07-04 11:58:32  :: 4/7/2018 11:58:32MainApp.LoadConfig
+2018-07-04 11:58:32  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:58:32  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:58:32  :: Fin GetConfiguracion
+2018-07-04 11:58:32  :: Initializing Log
+2018-07-04 11:58:32  :: Initializing Incoming Module
+2018-07-04 11:58:34  :: Incoming Module successfully initialized
+2018-07-04 11:58:34  :: Initializing Outgoing Module
+2018-07-04 11:59:02  :: 4/7/2018 11:59:02MainApp.LoadConfig
+2018-07-04 11:59:02  :: Loading config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:59:02  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2018-07-04 11:59:03  :: Fin GetConfiguracion
+2018-07-04 11:59:03  :: Initializing Log
+2018-07-04 11:59:03  :: Initializing Incoming Module
+2018-07-04 11:59:04  :: Incoming Module successfully initialized
+2018-07-04 11:59:04  :: Initializing Outgoing Module
+2018-07-04 11:59:08  :: Outgoing Module successfully initialized

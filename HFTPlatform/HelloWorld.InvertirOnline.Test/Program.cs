@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using ToolsShared.Logging;
@@ -39,13 +40,18 @@ namespace HelloWorld.InvertirOnline.Test
 
             //app.Run();
 
+            //You will have to make something in C++ so that you can skip ahead the certificate validation
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+
             List<ConfigKey> configs = new List<ConfigKey>();
 
             configs.Add(new ConfigKey() { Key = "AccountNumber", Value = ConfigurationManager.AppSettings["AccountNumber"] });
             configs.Add(new ConfigKey() { Key = "ConfigConnectionString", Value = ConfigurationManager.AppSettings["ConfigConnectionString"] });
+            configs.Add(new ConfigKey() { Key = "LoginTokenURL", Value = ConfigurationManager.AppSettings["LoginTokenURL"] });
 
             IOLAccountManager IOLAccountManager = new IOLAccountManager(onLog, configs);
-
 
             Console.WriteLine("Press Enter to quit.");
             Console.ReadLine();

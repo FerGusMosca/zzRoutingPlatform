@@ -1,0 +1,92 @@
+2018-06-28 11:29:14  :: 6/28/2018 11:29:14 AMMarketClientBase.LoadConfig
+2018-06-28 11:29:14  :: Loading config:.\incomingIOL.xml
+2018-06-28 11:29:14  :: Processing config:.\incomingIOL.xml
+2018-06-28 11:29:14  :: Error recovering config .\incomingIOL.xml: Invalid XML configuration file  Missing config parameter  IP
+2018-06-28 11:29:24  :: 6/28/2018 11:29:24 AMMarketClientBase.LoadConfig
+2018-06-28 11:29:25  :: Loading config:.\incomingIOL.xml
+2018-06-28 11:29:27  :: Processing config:.\incomingIOL.xml
+2018-06-28 11:32:28  :: 6/28/2018 11:32:28 AMMarketClientBase.LoadConfig
+2018-06-28 11:32:28  :: Loading config:.\incomingIOL.xml
+2018-06-28 11:32:28  :: Processing config:.\incomingIOL.xml
+2018-06-28 11:32:28  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 11:33:47  :: 6/28/2018 11:33:47 AMMarketClientBase.LoadConfig
+2018-06-28 11:33:47  :: Loading config:.\incomingIOL.xml
+2018-06-28 11:33:47  :: Processing config:.\incomingIOL.xml
+2018-06-28 11:33:47  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 12:02:27  :: 6/28/2018 12:02:27 PMMarketClientBase.LoadConfig
+2018-06-28 12:02:27  :: Loading config:.\incomingIOL.xml
+2018-06-28 12:02:27  :: Processing config:.\incomingIOL.xml
+2018-06-28 12:02:27  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 12:03:46  :: 6/28/2018 12:03:46 PMMarketClientBase.LoadConfig
+2018-06-28 12:03:46  :: Loading config:.\incomingIOL.xml
+2018-06-28 12:03:46  :: Processing config:.\incomingIOL.xml
+2018-06-28 12:03:46  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 12:22:13  :: 6/28/2018 12:22:13 PMMarketClientBase.LoadConfig
+2018-06-28 12:22:13  :: Loading config:.\incomingIOL.xml
+2018-06-28 12:22:13  :: Processing config:.\incomingIOL.xml
+2018-06-28 12:22:13  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 12:24:24  :: 6/28/2018 12:24:24 PMMarketClientBase.LoadConfig
+2018-06-28 12:24:24  :: Loading config:.\incomingIOL.xml
+2018-06-28 12:24:24  :: Processing config:.\incomingIOL.xml
+2018-06-28 12:24:24  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 12:25:03  :: 6/28/2018 12:25:03 PMMarketClientBase.LoadConfig
+2018-06-28 12:25:03  :: Loading config:.\incomingIOL.xml
+2018-06-28 12:25:03  :: Processing config:.\incomingIOL.xml
+2018-06-28 12:25:03  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 13:07:12  :: 6/28/2018 1:07:12 PMMarketClientBase.LoadConfig
+2018-06-28 13:07:12  :: Loading config:.\incomingIOL.xml
+2018-06-28 13:07:12  :: Processing config:.\incomingIOL.xml
+2018-06-28 13:07:12  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 13:08:10  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-06-28 13:11:41  :: 6/28/2018 1:11:41 PMMarketClientBase.LoadConfig
+2018-06-28 13:11:41  :: Loading config:.\incomingIOL.xml
+2018-06-28 13:11:41  :: Processing config:.\incomingIOL.xml
+2018-06-28 13:11:41  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 13:12:18  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-06-28 13:13:37  :: 6/28/2018 1:13:37 PMMarketClientBase.LoadConfig
+2018-06-28 13:13:37  :: Loading config:.\incomingIOL.xml
+2018-06-28 13:13:37  :: Processing config:.\incomingIOL.xml
+2018-06-28 13:13:37  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 13:14:06  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-06-28 13:37:19  :: 6/28/2018 1:37:19 PMMarketClientBase.LoadConfig
+2018-06-28 13:37:19  :: Loading config:.\incomingIOL.xml
+2018-06-28 13:37:19  :: Processing config:.\incomingIOL.xml
+2018-06-28 13:37:19  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 13:37:49  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-06-28 13:53:34  :: 6/28/2018 1:53:34 PMMarketClientBase.LoadConfig
+2018-06-28 13:53:34  :: Loading config:.\incomingIOL.xml
+2018-06-28 13:53:34  :: Processing config:.\incomingIOL.xml
+2018-06-28 13:53:34  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 13:53:37  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-06-28 14:00:00  :: 6/28/2018 2:00:00 PMMarketClientBase.LoadConfig
+2018-06-28 14:00:00  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:00:00  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:00:00  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 14:00:01  :: Critic error initializing .\incomingIOL.xml:Could not authenticate user fermoscatest2 on Invertir Online
+2018-06-28 14:03:03  :: 6/28/2018 2:03:03 PMMarketClientBase.LoadConfig
+2018-06-28 14:03:03  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:03:03  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:03:03  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 14:03:04  :: Critic error initializing .\incomingIOL.xml:Could not authenticate user fermoscatest2 on Invertir Online
+2018-06-28 14:03:23  :: 6/28/2018 2:03:23 PMMarketClientBase.LoadConfig
+2018-06-28 14:03:23  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:03:23  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:03:23  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 14:03:24  :: Critic error initializing .\incomingIOL.xml:Could not authenticate user fermoscatest2 on Invertir Online
+2018-06-28 14:05:43  :: 6/28/2018 2:05:43 PMMarketClientBase.LoadConfig
+2018-06-28 14:05:43  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:05:43  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:05:43  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 14:13:04  :: 6/28/2018 2:13:04 PMMarketClientBase.LoadConfig
+2018-06-28 14:13:04  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:13:04  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:13:04  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 14:13:35  :: Critic error initializing .\incomingIOL.xml:Se ha terminado la conexión: Error inesperado de envío.
+2018-06-28 14:13:46  :: 6/28/2018 2:13:46 PMMarketClientBase.LoadConfig
+2018-06-28 14:13:46  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:13:46  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:13:46  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-06-28 14:15:23  :: 6/28/2018 2:15:23 PMMarketClientBase.LoadConfig
+2018-06-28 14:15:23  :: Loading config:.\incomingIOL.xml
+2018-06-28 14:15:23  :: Processing config:.\incomingIOL.xml
+2018-06-28 14:15:23  :: Ending GetConfiguracion .\incomingIOL.xml

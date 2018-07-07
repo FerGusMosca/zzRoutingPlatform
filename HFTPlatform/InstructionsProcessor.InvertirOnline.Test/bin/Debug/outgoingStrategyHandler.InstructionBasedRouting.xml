@@ -25,6 +25,20 @@
 
   <PositionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.PositionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</PositionManagerAccessLayer>
 
-  <AccountManagerConfig></AccountManagerConfig>
-  
+  <AccountManagerConfig>
+    <Config>
+      <Key>AccountNumber</Key>
+      <Value>9</Value><!--IOL Test-->
+    </Config>
+    <Config>
+      <Key>ConfigConnectionString</Key>
+      <Value>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</Value>
+    </Config>
+    <Config>
+      <Key>MainURL</Key>
+      <Value>https://api-sandbox.invertironline.com/</Value><!--Invertir Online Test-->
+      <!--<Value>https://api.invertironline.com/</Value>--> <!--Invertir Online PROD-->
+    </Config>
+  </AccountManagerConfig>
+
 </Configuration>

@@ -44,6 +44,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.Common\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj">
+      <Project>{599f2026-666f-492c-b41f-3704881f32a1}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.csproj">
+      <Project>{7a43e37d-d6ac-4090-ba4b-d42801f3ed08}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
       <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
       <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>

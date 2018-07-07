@@ -1,0 +1,1160 @@
+2018-07-07 13:56:33  :: 7/7/2018 1:56:33 PMMomentumStrategyBase.LoadConfig
+2018-07-07 13:56:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 13:56:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 13:56:33  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 13:56:33  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 13:56:33  :: 7/7/2018 1:56:33 PMOrderRouterBase.LoadConfig
+2018-07-07 13:56:33  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 13:56:33  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 13:56:33  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 13:56:33  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 13:56:33  :: 7/7/2018 1:56:33 PMOrderRouterBase.LoadConfig
+2018-07-07 13:56:33  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 13:56:33  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 13:56:33  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 13:56:33  :: Authenticating Order Routing On Invertir Online
+2018-07-07 13:56:39  :: Order Routing authenticated On Invertir Online. Token:qabkIIQ1ey-0_MWWhoIqH4MvaOzeZ3IFwMQWnWkFVgBWb_NKABaIb2hbfpXPZEpd5GBPzYn6rcwsy5QerFxQL-RmNDTP5xXcV1Ty_jMxKljePtfzDp2e31j6i7tELFT2SvDH-ToW97DIcg96k8PWPk3z--1yGgP1iYLS2j94OfQgclA2f5VYpPLBuTnTHnSv340PoXk_qIdEkXGZSVh7zXZ3HZD-Mq7-mSbf487-4AAF2cRryaaQsuj637o68LVmgh7FmmKB1odDNgLbLym487K5e113PRy6x4cwfPoFJQJ0xtDBITQ-VL2sgg-RWE8R
+2018-07-07 13:56:40  :: Authenticating Account Manager On Invertir Online
+2018-07-07 13:56:40  :: Account Manageauthenticated On Invertir Online. Token:eNBJDjStlPqR8UHTFwxfzUbIk6QY0e4oXHQdVdadC_TyX5x3oGe2aeaqLO-BOmLhbeLPE8pNTn4r1xKze_pdnbV5Fy0yOGmvDTteatVLr9OMdEpexsZ-T8dWXRe4LEIU3cfL9RAToQoiBa-c1CLMvN32_rKsocOaTwzN9XTYMyi__PBRpzvKLk8FeqzYzlDf2xXn91JhnAv_a4Uy0WmfBshff261KBjdBV6nIXwReE2Ergj_prlSRa6e62Q1IZNRl2UCjb5ehUlzsOfrn-wX5oupPEq5U3Lq2z70lncIMfKUF_BpHaPeJsHQ5Qpsmuy8
+2018-07-07 13:57:35  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 13:58:20  :: 7/7/2018 1:58:20 PMMomentumStrategyBase.LoadConfig
+2018-07-07 13:58:20  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 13:58:20  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 13:58:21  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 13:58:21  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 13:58:21  :: 7/7/2018 1:58:21 PMOrderRouterBase.LoadConfig
+2018-07-07 13:58:21  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 13:58:21  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 13:58:21  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 13:58:21  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 13:58:21  :: 7/7/2018 1:58:21 PMOrderRouterBase.LoadConfig
+2018-07-07 13:58:21  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 13:58:21  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 13:58:21  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 13:58:21  :: Authenticating Order Routing On Invertir Online
+2018-07-07 13:58:43  :: Order Routing authenticated On Invertir Online. Token:49Kxd48hi20w6OZm-5BIXd-AZ2ll5hCwM9Syi2V2PhUq7zCBYpebVbBJHEnkOwMg7RUKTq1nQwxVgEeNe5SzeJEt0yHRfCMiWFF6NucduNeejIXDa0F6lA9uhs68vfgsJX8syfSuyUGtHlxduW7BU-rteurTGfUilN-0osUIm8WkTRchTI2O8qNA1ju2Wjbg_36zJVvSNIuK6Y4uXtif9rjzRn_hPx0_Zzkn5YmbhZjDS9H5UqDRpU3PTPRTdlNDTw39R0pCYNC793mcECUc1AVMfpxyjlzd3--Xz-TcXU8hpUKV5p41PPCVavjZO_dX
+2018-07-07 13:58:43  :: Authenticating Account Manager On Invertir Online
+2018-07-07 13:58:43  :: Account Manageauthenticated On Invertir Online. Token:mCrfSph-sOmGpZELh3kbCNptRFmQ58S8HC5iN5BS4ksM1ba7Mtr9U_YPL1YV4M0covkWYo8RDW8EdvSBHmvf_6tYWsgWu666A-OTW2gQJT3sMb37nPMTwDV2EoSRTyEEbk84wQz4-zvMVDTvJ47hTNff6c6TlOAY3K5T8VTUibxAluQnsHh9DzKTclLJUCevo0mp45duhcqIam68E4aXxGNh_jGSq0GTYbRwmfWQ-7gcZ_QfMUqfvO39COhUSNOk_c8FaGOs0HTOCmX5YFlhFBT6TYbg_ftLst29V52gUnMLK5cY-47YcvF_NdD-73BD
+2018-07-07 13:58:50  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:04:51  :: 7/7/2018 2:04:51 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:04:51  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:04:51  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:04:51  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:04:51  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:04:51  :: 7/7/2018 2:04:51 PMOrderRouterBase.LoadConfig
+2018-07-07 14:04:51  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:04:51  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:04:51  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:04:51  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:04:51  :: 7/7/2018 2:04:51 PMOrderRouterBase.LoadConfig
+2018-07-07 14:04:51  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:04:51  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:04:52  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:04:52  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:05:14  :: Order Routing authenticated On Invertir Online. Token:JZhGIsmxw8MVi82SzE9fsUsXTTENpt86B0SlwjmR__Vfx1UDC4DrFMYLXFdTWHUro7pkrl36C5884aDUYVWZ3P0lVPPxMNzC4YyUhqmKNZlyKatn5jwu1jvfo7WUl9PoPCO4F_Ja58LfGE5UsazP8tb_JytYaWIM20f6fj7AbLKW67bgF-_DiJ062gnmuD_2H1WaPu2DOSHC83JIfhAtYBzV-cTYH6m7xiJ5I1vWFFdGH2SFnWb-jXEsch4ySSgW94uinnoc7jhrTGSIjrDHmk0Ny_CxeqYkGcu_0xQoenOQ84EoE18Wz8DKlAE5xmox
+2018-07-07 14:05:14  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:05:14  :: Account Manageauthenticated On Invertir Online. Token:RijH6j_AWzn3cG_dKzgZRzC5KER4L9KSI2v_25CDMIKqADJVKA60dIF1YD5FPGCJfPdHfWCT7R1pCXLXDv_j2ZAUdhEpU3muH0JTZqAUZcHs4yNO0IXF7Dit5b1Ts1GhNn1TIThU3sDW4zGsPAsYOt3BqxRanlfZVt07MfD8aTcEhOhgmgU4C5TDxBRTgG1wk8Cu5kE_8KPO7qKKYj_wLWMuSNa-CJyl0ok56BR3N9RmHMQpU5WFIVsgKfU4Cr5LM_hM_4I4FBwj_hXIdyYmVIR6AQ6PBaozz7xcBVKv4nLGQFyncfynWJRGGTi6254G
+2018-07-07 14:05:36  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:05:47  :: @Strategy Handler - Instruction Based Router - Account  positions succesfully synchronized
+2018-07-07 14:06:21  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:07:14  :: @Strategy Handler - Instruction Based Router - Account  positions succesfully synchronized
+2018-07-07 14:07:28  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:09:36  :: 7/7/2018 2:09:36 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:09:36  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:09:36  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:09:36  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:09:36  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:09:36  :: 7/7/2018 2:09:36 PMOrderRouterBase.LoadConfig
+2018-07-07 14:09:36  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:09:36  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:09:36  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:09:36  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:09:36  :: 7/7/2018 2:09:36 PMOrderRouterBase.LoadConfig
+2018-07-07 14:09:36  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:09:36  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:09:36  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:09:36  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:09:58  :: Order Routing authenticated On Invertir Online. Token:Pwfgs7x3bU4bRgM_PIMHwgKYBDyl8eGkKWo-GCEOrRkpaStb2XWVTcSAIwMcjTJgA_tS1OpJ8QYcAcLJ1LKTi1EfdXezMyLOHMWBqC8bn9z_jAg3r4K3v9po4B59SaomOngMzOMhuOllJLMhCBueiQh5uJopEXtjuFgM4xabqD0FjpvcpgXjIEDoere-EmBwhLkHU6kMaWl8yldnIHZE76J_dYPoku6pfnQfqxt-0a_v2Arl_5OGxhRKebTilS3d8vllbcECh3T3ZBx4dah-BBgttDGlAdKoidDf5aOov6ZdNp2xx63rmSmLByckBlGQ
+2018-07-07 14:09:59  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:09:59  :: Account Manageauthenticated On Invertir Online. Token:D3S0pKKpLxaRez35FvDlfANigoMCaikqnD3rlgkWm9a2U0jkcC1FJ55h0BLiu3Xx6m4T-GHlImCW8czmuBF1vWziGmQT76a-UZUetQj9JznounYRGps6ErWe9kFHU-BsVwSOrslao1L710PEhuQ-4wmnwy4pz6eopkL273TNts-Urn_Zu7iPPLU2SFQ0fsfCIGdQENGcNc3l9b-IZMBZXuKDyc8LWLWGfEx5R9eJC2_ov6ODlp39cZshoC_hWrvOFQaHpKNjsCGOnHdiEMrskHq7iabsyqlmdwMmOs-zQMatyLlFDYQefDNsbkG__oyR
+2018-07-07 14:10:23  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:13:00  :: 7/7/2018 2:13:00 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:13:00  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:13:00  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:13:00  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:13:00  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:13:00  :: 7/7/2018 2:13:00 PMOrderRouterBase.LoadConfig
+2018-07-07 14:13:00  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:13:00  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:13:00  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:13:00  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:13:00  :: 7/7/2018 2:13:00 PMOrderRouterBase.LoadConfig
+2018-07-07 14:13:00  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:13:00  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:13:00  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:13:00  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:13:01  :: Order Routing authenticated On Invertir Online. Token:Jd0jr6Dz1EuQ2IrVeZZ4ppI220S6-cgATj6sbI3ysT7ZQsWYqApW4g8VqVhmuAQ8RMUmlJQNZ627F-rbOXQOi2zvzcpJfgmQQRu9Q02a9LI-_BgjyYm_Lw8_6cEhoxv8AFCefjoqClfoiNpymZcN7Hz1eGj6YHczEQghZc5YhebsQSCNKiRpnbX65VG3oknVfeFFxa12upiwk0UgYHXhfAd-gnANnCqfoRSHhNoFkJQyQR-B8dLv1Lwh5VwPnubefZT-88otnvq1oGfTOueoAiX9cnN75RDG2Xwn07-juvrlCzh-l9D5_hntWv4VAb45
+2018-07-07 14:13:01  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:13:02  :: Account Manageauthenticated On Invertir Online. Token:lCINrKgJp6jw3QjJSpnzyRafA0NStGuWcoGqQTHy2TwEdSGovt3KeTES32M97m011PeXBZrJ6ahpIs78FYG3u5dnmJCNpxa7Jollkz9RchUQlX66UdSc75PmrDgTz9KwZFVN6-zCfLPquqQELy5acbxRTtehOqoF0Vr-3omFKWkAM2JqTO2g-GjSqciANoTJeocIoGlXTFztCjVoRmUqDm00rTUs3rINFB0nqlbOS9xhXx_waMj-tbEfQ5e1CHihM1PTHY-lcpRFOLnPb9T9woxTN1HpZRUPB-1EME0-I-Y
+2018-07-07 14:13:35  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:13:36  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 14:23:23  :: 7/7/2018 2:23:23 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:23:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:23:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:23:24  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:23:24  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:23:24  :: 7/7/2018 2:23:24 PMOrderRouterBase.LoadConfig
+2018-07-07 14:23:24  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:23:24  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:23:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:23:24  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:23:24  :: 7/7/2018 2:23:24 PMOrderRouterBase.LoadConfig
+2018-07-07 14:23:24  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:23:24  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:23:24  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:23:24  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:23:25  :: Order Routing authenticated On Invertir Online. Token:t_uV3PqIClOFRZOa1hLv1LddgTTdFJe00zSgBzO1pKIMvz1S-HykOXvMWK_HZNGOF1shX6f7XJYu7dOidV0t7A9xAzPCgJ9mvL1ZQzWiwd9Q67mqxWfmw325d4k2b4f4VljAyk2z__SEpiuhaSiZlJw7wS7Ucl7nndQvVLrUykchfEcU5XM4zQbXRZsX-2FFGzejBnkdagZGKRvAZZB-0FpeJ1CxC3jZ3XlxGU9QkcpKR9xFNrL6AM-qprOQAvmeJ4iUgFTqu0m2Fq7v2cO8j3ck3Oh4wmuTSZ8eBxu6xoOYMngYxE0ONb2t1p9RSzNN
+2018-07-07 14:23:25  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:23:25  :: Account Manageauthenticated On Invertir Online. Token:7Z_jyIQJOUQzAgrPRFLKbkmd4RESjcEnOdMn1hBzwQffOzN1ypIblI4mSDC1xV_ClB94qXjhDFnj36Rjn5GE-fCo7vj4ZvpQAC3zhwb97tPYAFDU8yhwLv7hODnXjk2_lnIg88iiPttNxKMsY0_XNj-JX6l3Z5By0MDyqCArfMYruZptOyX2LRBi1QvVWWWDKTCX_c--UmAqR31K6XR56y7iPmgObDcH1V81f3va1apr9r6-W-WEWJh_zPan4xlEYnt3tdAhZGgWI63uEk-oMIvVZw4aAD_EBQ_nnPk23UQ
+2018-07-07 14:23:28  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:28  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:29  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:29  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:31  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:31  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:32  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:32  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:33  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:33  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:34  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:34  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:35  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:23:36  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: No se pudo procesar el mercado BCBA - 
+2018-07-07 14:23:37  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:24:23  :: 7/7/2018 2:24:23 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:24:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:24:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:24:23  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:24:23  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:24:23  :: 7/7/2018 2:24:23 PMOrderRouterBase.LoadConfig
+2018-07-07 14:24:23  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:24:23  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:24:23  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:24:23  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:24:23  :: 7/7/2018 2:24:23 PMOrderRouterBase.LoadConfig
+2018-07-07 14:24:23  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:24:23  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:24:23  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:24:23  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:24:24  :: Order Routing authenticated On Invertir Online. Token:ePsS9Bnm8MeEH3X0i8j8PcKOVGIKNd2iXJd_XnT6LEz78foiIQmukNNZsXt4CAU-weNi56D-85TeHKO21KFEyDWcFb1b5UAFrsV2KaHddYUv2_AukZkOrbIgDbFj-SDmy0B6hiW_1qvwnJF4NUxOtyxODV6s5u2wIvtLXMrA43F9gj82RNIXT6mh514B2JM91xKYOJTozLK2O8mJTKqcM3hpN0YIuAeOmSCn92moxsEnpKJC26si4nz6AonV_vu0Qlz7hl0gUx_bK51DL-5N8j2dWW8eI2g1X4oAjiexDF8
+2018-07-07 14:24:24  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:24:25  :: Account Manageauthenticated On Invertir Online. Token:XBkYv4wbIbOyCj_RqqiOvscBY5wjA6kfc1y8z5miLf0eln93MUcgD2IxYVX6wzZ-NcD6tOugS8pvV-1ClwnO6bTUJbQplrH9wHjas4tmQISmW_4FY4jx34WPpfknwtUVvmjrjH9ceRvx3POQVLfI-ot9jSAQhUffCPDz07_uh_28NkwR69GEREO-xUzojckobV2l8bkzXXW6WE_6ES7Nodel3HJv9sC15ji94oHQqc9E0PKokIToZ-ik-rnokjIhXGbsfkhlu1yGAE1Ts8AhUGm2Bse83cDbnhnluDDz5HE
+2018-07-07 14:24:32  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:24:32  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 14:25:55  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:29:16  :: 7/7/2018 2:29:16 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:29:16  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:29:16  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:29:16  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:29:16  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:29:16  :: 7/7/2018 2:29:16 PMOrderRouterBase.LoadConfig
+2018-07-07 14:29:16  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:29:16  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:29:16  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:29:16  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:29:16  :: 7/7/2018 2:29:16 PMOrderRouterBase.LoadConfig
+2018-07-07 14:29:16  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:29:16  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:29:16  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:29:16  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:29:17  :: Order Routing authenticated On Invertir Online. Token:lIsXI9-CvRtnhDXLSH2Tr-sIVuVTI-msRWrlNJXLyJ4QZ_Qiuta7YFzXtiAclEXTlN_I8Uotz5CtuhkF_0CGRQwy5IOROpEj0u5taxdjHfGkdSmgjBkGjGInKjlOr6h4j5k8kMDDK-LyFhwDwgoN-C5CHAcYHxHB8jMxFdAhG77BlytjrFCD0FenWhi4Ig8D04Aegvg6hePH69TTraY3JjVvUmVA-ps-c2_JVJfsaToz1iofha6USrsclL8IteEnaD0hAaVDkI-53sLUNPx-HmeZB2HtKMgwFov2i1d-F-5l5QHQRHSM_QtyHoK5tMVA
+2018-07-07 14:29:17  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:29:18  :: Account Manageauthenticated On Invertir Online. Token:NpaJMuUwPGMPLCH1362NUrIv_DFI-68KvBezzJZB3UDyOs1991CHpoNwQp-wOJ9SH83IYYOmE-_1RB7vYNQ1HR41OIS8eQsJqrQHAEKeDEBbFrsZ1VcwgF0P_jnWfLKpL5M2p5IKqyBWoZ2IFRO-Zg0fcWSO7B_3BFOFnzk0EAWcV7cSHVZASej-6hHWBiRAgOnCBl0c_VNXTC1A4w6JkhoWjdD05tjSBzyduujSsrmAUbQTy32T3wLQkpSpTOEKWj--1vcddSGlayEQYwYIHEOvdCtj9VT8hlHymhz9GEU
+2018-07-07 14:29:22  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 14:29:22  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 14:42:07  :: 7/7/2018 2:42:07 PMMomentumStrategyBase.LoadConfig
+2018-07-07 14:42:07  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:42:07  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:42:07  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 14:42:07  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 14:42:07  :: 7/7/2018 2:42:07 PMOrderRouterBase.LoadConfig
+2018-07-07 14:42:07  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 14:42:07  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 14:42:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 14:42:07  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 14:42:07  :: 7/7/2018 2:42:07 PMOrderRouterBase.LoadConfig
+2018-07-07 14:42:07  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:42:07  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 14:42:07  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 14:42:07  :: Authenticating Order Routing On Invertir Online
+2018-07-07 14:42:29  :: Order Routing authenticated On Invertir Online. Token:9PCurSNWyZsvU0w9MGRCbS6kR2ZrV95FFozDYtTTK-FPgymHDHmWIq73FMBwb8iINqAvA5bT3C33iVJcbp4bjkaHXGd9syKzEoce98oUBAgajnnJ1SLT9FJY59_sADUPl2q2LCB3HQoT7UPJeQUl0Wn4I9hSW1F6MpLTG_l83Wxvnv3pfmhAVIHaOol0dElG6bEoOt-7oiwEuXADGwoAYdmtvQj0sttZOsIXq35HPuPfaH2f3y-QzjygMgDaU52yZ_0rgS7HIsE-L525BCAQLxIqL7QruEcWTU7uvFpPgbkiRUwTyiJGjE56njafkIJ3
+2018-07-07 14:42:29  :: Authenticating Account Manager On Invertir Online
+2018-07-07 14:42:29  :: Account Manageauthenticated On Invertir Online. Token:4D3G-P-Vy1By6eo46yLtsGsFD_i4UlXZ2cXPFcNDDH8B8WnuuErXZ6-yOz5uShfXnHtL5n_7zA8vLtiMbaTVCB5gf9uZfy-l9eKVG-BxMj-8pKDTB2T1Lw8zhS6M-ucdquw6s4EbqJYmOAqbWouudRj5js-fLTskuArdsx9J72vq3I75zSX3iYSk26QJetLdGqKJcJTxlYiV_eC7nV2vcwlivztzkv7xzfplx3DWU8vpp9YnK1ckqflm0zXNqaJMpI-Vytgc4Zas-TJauKllF7eHSgCn9_Qvypiww0VC3E3DvwWhQUbco8a4cyJSuhji
+2018-07-07 14:43:21  :: Account IOL_TEST balance succesfully synchronized
+2018-07-07 15:13:10  :: 7/7/2018 3:13:10 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:13:10  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:13:10  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:13:10  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:13:10  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:13:10  :: 7/7/2018 3:13:10 PMOrderRouterBase.LoadConfig
+2018-07-07 15:13:10  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:13:10  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:13:10  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:13:10  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:13:10  :: 7/7/2018 3:13:10 PMOrderRouterBase.LoadConfig
+2018-07-07 15:13:10  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:13:10  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:13:14  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:13:14  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:13:37  :: Order Routing authenticated On Invertir Online. Token:YgPJa71RxYhnRHeV13tk8n35JM9eXV5f9aqt5dzT2WIdBU7N9Afo14YhvoWpK-rnH1SA4NRIBjEI2e-o8H3eqDz3lT32NZPlWvQqZKob1gaS_axXrlC-5u4GQzVqPb_FawsDTTRllFC4k7bATZZ58zNTuyE7dCqLzV784cGw8KmyDK_ez3eiScruODN7dgpDCsQpiV8E7z5At76iFgTZFk9wLOIPJ8YJCvtzw8H5E_RCr2jmN_q1F4EN5iwe2uBmS4wOIK5CxrAXokuiF008nFlyqbgQojaE8zpdR7eRj-A
+2018-07-07 15:13:37  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:13:37  :: Account Manageauthenticated On Invertir Online. Token:wBeBMs-MXf3j2sqf86mSm_JAL2vBvR53bicGFqImDCo2f3Y51vzlnTE4z8HiSgCmif7JMYrACEvkrTMrd1byPuPUPGFi0zNmGh2niheC39wMdgC4BYJqWyo61pPOs7Quo3f2p8NO2PMa1rxd4kS61w3daCMDRMXm9meb6BgI4n74-tO3SvJSCymYC_FWR4giR9s1C9EyjjmfUpvOBetiEdELAgnk4WqMzc9NJQs-6soMEFwk4bA3gAe-h7sY47ZkUaQSsTn3YZWy0ADHo-XHRQHqPm7dNCmYplLhKGLBID-si7JWo48_FchZRzRrMHFt
+2018-07-07 15:13:42  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 15:13:44  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:13:44  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 15:13:44  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-07-07 15:13:45  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 15:13:45  :: Creating buy order for symbol GGAL.BUE.Quantity=10 Price=96
+2018-07-07 15:13:45  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 15:13:45  :: Routing Order Id 0
+2018-07-07 15:16:43  :: 7/7/2018 3:16:43 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:16:43  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:16:43  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:16:44  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:16:44  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:16:44  :: 7/7/2018 3:16:44 PMOrderRouterBase.LoadConfig
+2018-07-07 15:16:44  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:16:44  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:16:44  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:16:44  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:16:44  :: 7/7/2018 3:16:44 PMOrderRouterBase.LoadConfig
+2018-07-07 15:16:44  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:16:44  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:16:44  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:16:44  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:16:45  :: Order Routing authenticated On Invertir Online. Token:VCrLjG1NuPJeud_oM1mj2gqwd6fTucuKtDgK8wyx2c6u5g9yRPtshpABW-dDUEj3djFJUA8ZyPHPe4HI1RU3qI-HeweZwgkjrX0am3_2MRJnTs14RRrvDStnu5Q-HBmLyQgomcbzMg8fnocF6gf6EP2pWfp5si-FMaJaE72LVu7K8G7Z9N7Ja4lBEkhCB65rAj-mTJB8eYJdLcGyAwmGr2H-bKCy9K_HL6HBBI6XE-DK0KRZD3mgHNx4hkX3yjrD9rGWGiV7ez5LI7y3h3_GnmLjDYpr5XTWjUi2J-0ZdbM
+2018-07-07 15:16:45  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:16:45  :: Account Manageauthenticated On Invertir Online. Token:WZ_uErfdj9qBfo9x4JPbENztZ3QXTbalAb4ph6HGRcpo9pcJaKb4t1DgT2AdpXHzMwhq201CPQPqk9_QFULN488RQJBYfwwMIqs7ieAdGnKAQEyuIkPX9M3CFwsGzi7Qx52UcA5y-AaTdIDWRoq1XX1op-IF1Zs-ah7ICigr3o3dD0bq_oordsq4wa1-bCZheZcTWkTBFya4lh1kuw_crJSX9h21HPUswK-PTvgda-t9fR9FpxAcbFX5Pmh-Qf3AT6lxEN1Ud4GWCr2g9toVtmMnuCRiJdEhywIR0D2-FMcWNHLrxKmJqqamCczm2HYT
+2018-07-07 15:16:46  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:16:47  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:16:48  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:16:50  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:17:25  :: 7/7/2018 3:17:25 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:17:25  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:17:25  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:17:25  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:17:25  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:17:25  :: 7/7/2018 3:17:25 PMOrderRouterBase.LoadConfig
+2018-07-07 15:17:25  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:17:25  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:17:26  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:17:26  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:17:26  :: 7/7/2018 3:17:26 PMOrderRouterBase.LoadConfig
+2018-07-07 15:17:26  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:17:26  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:17:26  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:17:26  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:17:27  :: Order Routing authenticated On Invertir Online. Token:3qk3R--t6ftFtWDwfoD7v5Z-HdMmt2ocVdPq6CtOXaJsx1oI6bE2Itq0Z-ltBUp1n95nwCIYXAkUaAI-04lm9mMYqwhGEY-gFvRju2UG5LW7mw67nq7lwHZ0Qky3J4THSZv12v63SIUX6EG5jcBUDeYI0_zi0bH_2-rl1kB96awmvg19_IuKSiQQ7pD_nqW51qNLeodZCrHpZUJ5EtLvPP3gZ1GfQKputjR6Uw5S1v3cZdzGdvgIqDE9AsOAfnIh5hrpqu29JxzKJ6XTKMxY9qU1i337Zr3S4VR-Mhs92-JkBLD1BCFW69-Vku0MOSwl
+2018-07-07 15:17:27  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:17:27  :: Account Manageauthenticated On Invertir Online. Token:jExsME52rmguw7Y6sE_5ZmdOTxm3_oA_FY8j89xTr7RbIIMwkJJ4ZYIU8LCbGIDLw3VjP9YuBGripiIMfc5lwx77ICszISZ1PRoQjtjwo4d1cqxwN6DmecgpvKoLyftyZUlurHL3tqreQ6rBZikB_K9rt6VCPYqRPtaz7yo-SPWLdvzSsGHO7lCjK-If5z4yBk-Q2FBvw3ae4z1x1xIPFPc9AMrUuNOkOgkLnQRA8gRBv7zvlTGkMpA9EI7cEI-PgWJ6FmQzGJlSw7QubgNBl04ruq2chgm-LuyEl28Sidh5XcZ8juDKIe5rlrsS-xOb
+2018-07-07 15:17:32  :: Canceling all active orders
+2018-07-07 15:17:32  :: @Outgoing IOL:Cancelling all active orders @ IB
+2018-07-07 15:17:42  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 15:17:42  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 15:17:42  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-07-07 15:17:43  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:17:43  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 15:17:43  :: Creating buy order for symbol GGAL.BUE.Quantity=10 Price=96
+2018-07-07 15:17:43  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 15:17:43  :: Routing Order Id 0
+2018-07-07 15:17:47  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:19  :: 7/7/2018 3:20:19 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:20:19  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:20:19  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:20:19  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:20:19  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:20:19  :: 7/7/2018 3:20:19 PMOrderRouterBase.LoadConfig
+2018-07-07 15:20:19  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:20:19  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:20:19  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:20:19  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:20:19  :: 7/7/2018 3:20:19 PMOrderRouterBase.LoadConfig
+2018-07-07 15:20:19  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:20:19  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:20:20  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:20:20  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:20:22  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:22  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:23  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:23  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:24  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:24  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:26  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:26  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:27  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:27  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:28  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:28  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:29  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:29  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:31  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:31  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:32  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:32  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:33  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:33  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:34  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:34  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:36  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:36  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:37  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:48  :: 7/7/2018 3:20:48 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:20:48  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:20:48  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:20:48  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:20:48  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:20:48  :: 7/7/2018 3:20:48 PMOrderRouterBase.LoadConfig
+2018-07-07 15:20:48  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:20:48  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:20:48  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:20:48  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:20:48  :: 7/7/2018 3:20:48 PMOrderRouterBase.LoadConfig
+2018-07-07 15:20:48  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:20:48  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:20:48  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:20:48  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:20:58  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:58  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:20:59  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:20:59  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:21:00  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:21:00  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-07 15:21:02  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:21:10  :: Order Routing authenticated On Invertir Online. Token:fpShvbSWPUCjSzGXA6nn-EdG8UaegeoFFuE3cbMxyL2akz-TOp8xSOeluGcbbTp6gmlJgccN2nCEbmZQHuSCqYO4IKO7S9tCQMSc_a-NkJZGCvOjdZAQsi2k6grUW8tqYDt9VyIFh_GaiO_S5UGRCeWsBmjwrx8QVC_UdlGdfqOMMGOFDmldO7Vma4w-BV3hy_e3RIKbTOutyzhY9DARywsXTiB9j94iN7lqX2viuOM1ODUcFrRtTHX2_doGea6bbkQ85G3Y0X-VMeuqIk1cML9duU5JKqX91jcSRo_g6pJaTYjJAVM9ACnafQ5kWlsn
+2018-07-07 15:22:05  :: 7/7/2018 3:22:05 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:22:05  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:22:05  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:22:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:22:06  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:22:06  :: 7/7/2018 3:22:06 PMOrderRouterBase.LoadConfig
+2018-07-07 15:22:06  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:22:06  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:22:06  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:22:06  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:22:06  :: 7/7/2018 3:22:06 PMOrderRouterBase.LoadConfig
+2018-07-07 15:22:06  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:22:06  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:22:06  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:22:06  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:22:07  :: Order Routing authenticated On Invertir Online. Token:pBdIIuzZofC-sM21zRXEsTidggeqtjXh4QCtqQeJCLP_wti10sK8OfOxIdYFweccBjSHAWYFCUSzOa-1GpqeAssgFHJbnJMLLDZRvhRevVvHKozb-1p5HAVWGthubSUJKhYWSF6XwmwOP9KAmsmKcDjyafmFFyAoLnScg0IYGE1AXCszgoVartxW_QCFiCKGx64x02fVX_PIu-YYFMp1JP9QpM-aEDL7KRbYYASE-IBoqtFxQcT6QObu2kP9RjrEGu288EG6EmH_ECXPAa1cDptiCrobXRIoCoAHIHrmJaE
+2018-07-07 15:22:07  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:22:07  :: Account Manageauthenticated On Invertir Online. Token:lhTgCWa4MbqVeaLaBbeIAlR9H9pt7fuRh1_LLwggMm0vq4Ngaz2ROoYUL_aXP-WH1Q7geLzsQ0GjHhqNXqrbWpJQW-OXJc_yurABle2fUUqLuAvGyeiTFWHWHAZ3uToAYNW7Q7rGlF7S0w0Sls5t7W3tj2FT3E7qDsktABTGBQ3K6QwFFs7n4PAI1VEqPJmNhEjYnAirycm591u5K1uz7ueMEePduROAekWCtKmE7Uqz5Jr7ZuCS6-U3vzoqiaZKHWr8snrPMhuUjtbyp4g-zjdaWw33qzGicQwdVxCiY3U
+2018-07-07 15:22:14  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 15:22:14  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 15:22:14  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-07-07 15:22:15  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:15  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 15:22:15  :: Creating buy order for symbol GGAL.BUE.Quantity=10 Price=96
+2018-07-07 15:22:15  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 15:22:15  :: Routing Order Id 0
+2018-07-07 15:22:18  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:41  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:42  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:43  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:44  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:46  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:47  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:48  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:49  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:51  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:52  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:22:53  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:23:05  :: 7/7/2018 3:23:05 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:23:05  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:23:05  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:23:05  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:23:05  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:23:05  :: 7/7/2018 3:23:05 PMOrderRouterBase.LoadConfig
+2018-07-07 15:23:05  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:23:05  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:23:05  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:23:05  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:23:05  :: 7/7/2018 3:23:05 PMOrderRouterBase.LoadConfig
+2018-07-07 15:23:05  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:23:05  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:23:05  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:23:05  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:23:06  :: Order Routing authenticated On Invertir Online. Token:Vs2bX6tJFW3MGVEW5bN6WP5zwMHqsPSXRm-hOTRtlJOuoOQKz_H4MMxoD3DxWIMY9wjXsCa-DqBbtEaRP7iqgZIpTjSKegn0AQ_XUSP2vy6v10YuRpOF_e5kd9KUtOWSVtPoS3KsI-cq_W1xXd2ldKx4EmLC50gW5-nKT20zt8SzJc6pbEaA0Xh4-ecNjOeVWKmvdXcqLTXHiDa8xUBYbRWHIVd_9jWRgFgOxDDFclyn-xbRKtmh7z0m7nnsXBBe4fgI9_MwmeefxAYei_yytTmZHacmH8UxntGb8yR7d0E4ddMXXPQhsE2M0mNKCpZM
+2018-07-07 15:23:06  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:23:06  :: Account Manageauthenticated On Invertir Online. Token:CSZBsT5vkHQyLCp5DDTb8GOPsrVBAfQwLafp64SEPvO-xdv0qoGgwTjHj-spTiJQhUMPNhLlMtMDQVqn3uARjO7Gm1y5HRBXTxyc3BwJJvwm3raN_tT4pPPINU3Wqi0ghyOfcMt7Wu3Wz1QRktL3xZh9OXo4hAeQYeTTrmKdpGG5D2a9Iq_22FWCAgyqn-emWGM8tUjTo4Sp8f9gvlw1Z5oc_k0V4wikIIOia97KbU6OQVXBCFCppXnZtzn8ptAnMDx6wcE5x5PYPsYOIWQWXvhdy8Gn5FHMU7vQtxsJboM
+2018-07-07 15:23:07  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:23:09  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:23:10  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 15:23:19  :: 7/7/2018 3:23:19 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:23:19  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:23:19  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:23:19  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:23:19  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:23:19  :: 7/7/2018 3:23:19 PMOrderRouterBase.LoadConfig
+2018-07-07 15:23:19  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:23:19  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:23:19  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:23:19  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:23:19  :: 7/7/2018 3:23:19 PMOrderRouterBase.LoadConfig
+2018-07-07 15:23:19  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:23:19  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:23:19  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:23:19  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:23:41  :: Order Routing authenticated On Invertir Online. Token:lne4zpvftrRGQKrUSAveCGBpuw2dImR_EgVHMqa6nAfjq-mR7McINor-etB1loRe-OrT5kr7_K_d-uNwYOQF2ohPnlShVe5ccmm9SXZMOPQXTW8EJRsHbkOx0hRuV6LwETunfHw3EcwawDo62rhdMtvKNreHMlf5nv-Xo_MdXPa3tW8a5xv28CLIItVxDz517rzf_6ZhNeXYF8Sr-6ueJlInHGj5WNEcGoc9apnVeEeftMvxAUWZWcuXpwxrkNzCCBgu0-VRFyIqsOenIuCb60EtMANKJ0UMiOpDkMzCvu4WgcjjLHPZnYjFflHk_M4p
+2018-07-07 15:23:41  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:23:42  :: Account Manageauthenticated On Invertir Online. Token:ml21KeyJUGa20L__OfN9ChVuoIkJJ-ZPE_bKWHsy_n9ShRShoTUA-64qHM1fH3T3U7ykr88c0YynruiYhEsBar5QWqDxjjP4wlzhHW8OSuFTTIvBCHsuN_VFWhSsOEaSF3zYCW3LOxxcyyl_exnn7_M-GfDDZkv-cSJRm-cNsJfA77M_HOYmUXDKwB-UHS1YFNo72Sfu9BfxlDyUNTKoiSG-Llypy7sUyrD886WTMId2AGejfiR-8ZE-3mYxrjJdRUYMfqxvcpe8B73zHrh3Kw2-lSvvB5AbFVJA2r6igyL8rF99EN0cho9WXb7c9JH1
+2018-07-07 15:24:45  :: Canceling all active orders
+2018-07-07 15:24:45  :: @Outgoing IOL:Cancelling all active orders @ IB
+2018-07-07 15:24:52  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 15:24:53  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 15:26:49  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 15:26:50  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 15:34:02  :: 7/7/2018 3:34:02 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:34:02  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:34:02  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:34:02  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:34:02  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:34:02  :: 7/7/2018 3:34:02 PMOrderRouterBase.LoadConfig
+2018-07-07 15:34:02  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:34:02  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:34:02  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:34:02  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:34:02  :: 7/7/2018 3:34:02 PMOrderRouterBase.LoadConfig
+2018-07-07 15:34:02  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:34:02  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:34:02  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:34:02  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:34:23  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:35:07  :: 7/7/2018 3:35:07 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:35:07  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:35:07  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:35:07  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:35:07  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:35:07  :: 7/7/2018 3:35:07 PMOrderRouterBase.LoadConfig
+2018-07-07 15:35:07  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:35:07  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:35:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:35:07  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:35:07  :: 7/7/2018 3:35:07 PMOrderRouterBase.LoadConfig
+2018-07-07 15:35:07  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:35:07  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:35:07  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:35:07  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:35:08  :: Order Routing authenticated On Invertir Online. Token:T9qZQAHn7O7lMUvAH_fzgbzm6qdp6ZQoiX0dCjGNe19sa_VIKT0mID5dcy8GfU02y6-trISLXBJEewEEZYduxaG3O1t6EmqqWeI3DNjry5z07swNVlfh5mIFtBCboSuYXb-qLPmQhk2o_v2_c1DWQR7KmCguHALdDxZMoHaRss0aA2WqrtCKnzk9L1-ld8HH2upozSqy9CAN5TYz0w2DTUNrxmot5YxzAT9hlIApj-uDf4PE5nqgRseIKVFA7M-_NlxRoXVvXkmhEdhPD4eUx65w_dNe2tcGb2fJMYuQVSNGpxrX7vzRLOs4eLtkUSeV
+2018-07-07 15:35:08  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:35:09  :: Account Manageauthenticated On Invertir Online. Token:UPuIUOGBtsBu1qO3hqNZxVXJVtw8BxL_o9WcWr-z0nxfzNZsL8U1hTp0GK6LaynAXfeQxaw6Kc6mIxIBIlld0va-M_FEYAeTtquamIpW6NEx_IPTlJY6fphAoN615IsN8j6UmResJb9bWucwUuR9HzvfWHIGnM3xIpxdlS2WbdHC-CT2yja9HlXcnr2xg8fcOg41ZykwghTzbvguRS2WTOi9upVxZuOLLlgyQ2xbXOo7VUfSg95krwbt3ik8li0FxJleOItJ7vToJNZOIp1DUjUL_EL0tOBAOh4nv-j999s
+2018-07-07 15:35:14  :: Canceling all active orders
+2018-07-07 15:35:14  :: @Outgoing IOL:Cancelling all active orders @ IB
+2018-07-07 15:36:38  :: 7/7/2018 3:36:38 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:36:38  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:36:38  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:36:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:36:38  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:36:38  :: 7/7/2018 3:36:38 PMOrderRouterBase.LoadConfig
+2018-07-07 15:36:38  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:36:38  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:36:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:36:38  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:36:38  :: 7/7/2018 3:36:38 PMOrderRouterBase.LoadConfig
+2018-07-07 15:36:38  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:36:38  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:36:38  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:36:38  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:36:39  :: Order Routing authenticated On Invertir Online. Token:4asKzhoLi1jE5w9_I6zrcHjBNT7TlPIvK3U0y89O8gCZM72Cxp53XfMrTpEsyFV8RZdgsvAMi63FImYtyZIF3ZKRFGylW0Wu9TeOB00eqKaWv3fSs-gxPRjkf8gWRMXU8PVpBHG2kTjI8at61wn3YjsH4KbK16Mu2e_b4WGYewmSTUGGEli6L1doWjmUwp81qk3WL2XvdBti7j3COJoVfi6UWuhkdl037d1-GbD9LOiRn3q7hsG8JhCRXmBtWGmP79_-lfm8Vs0v_7n5-yDJ002tfI9LAKH84yL7NbUdvpSF5hvasUpXohgbJuQ6f-Zc
+2018-07-07 15:36:39  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:36:39  :: Account Manageauthenticated On Invertir Online. Token:wcKvfwBkcT7DRBkq-Av2Fe0lwRQDpuY3sTh6zSnxFcx-0pjgyRnjokO7e3ftstmUtWWBRPcex_rdq-5W1SW0_pIAz7wDfDHobRybfPkQOpbuYieuIqUtMJ5YyjjzwsFAHFS5gZzJwvUgvoNFWv2FdLZ2VwZhsF0OhOw9xe2nXTq1Yg_kKT1rBWJVM5XepWWPkj9p0FI72XUlx_GXZj_GLYjpa3hoycMvFlcMmN-IVTXDIsdpw2ESDsWTHIPSoyyMMMuVy2GpaDC4UMAXUxJMH3uAPGYYaxGuMG1cKzWtcebqT7waGmRu_T7cbsze-erg
+2018-07-07 15:36:46  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 15:36:46  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 15:36:46  :: Strategy Handler - Instruction Based Router: Creating position for symbol EDN.BUE
+2018-07-07 15:36:47  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:47  :: Routing to market position for symbol EDN.BUE
+2018-07-07 15:36:47  :: Creating buy order for symbol EDN.BUE.Quantity=24 Price=40.1
+2018-07-07 15:36:47  :: Routing with Invertir Online to market for symbol EDN.BUE
+2018-07-07 15:36:47  :: Routing Order Id 0
+2018-07-07 15:36:48  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:49  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:51  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:52  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:53  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:54  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:55  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:56  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:58  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:36:59  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:00  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:01  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:02  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:04  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:05  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:06  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:07  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:08  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:09  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:11  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:12  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:13  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:14  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:15  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:16  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:18  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:19  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:20  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:21  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:22  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:24  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:25  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:26  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:27  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:28  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:29  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:31  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:32  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:33  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:34  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:35  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:37  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:38  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:39  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:40  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:41  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:42  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:44  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:45  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:46  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:47  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:48  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:50  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:51  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:52  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:53  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:54  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:55  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:57  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:58  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:37:59  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 15:38:45  :: 7/7/2018 3:38:45 PMMomentumStrategyBase.LoadConfig
+2018-07-07 15:38:45  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:38:45  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:38:45  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 15:38:45  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 15:38:45  :: 7/7/2018 3:38:45 PMOrderRouterBase.LoadConfig
+2018-07-07 15:38:45  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 15:38:45  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 15:38:45  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 15:38:45  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 15:38:45  :: 7/7/2018 3:38:45 PMOrderRouterBase.LoadConfig
+2018-07-07 15:38:45  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:38:45  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 15:38:45  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 15:38:45  :: Authenticating Order Routing On Invertir Online
+2018-07-07 15:39:07  :: Order Routing authenticated On Invertir Online. Token:8sGwWO6ksgPM21Q5EEPy2N3FrU_oRvfYpDXH0dpUSGuTI-uFPDQm7HVCEuPa9C8orIVd-mP_KSWyj3z75_-cprauqy7N5JwKxll9OfpRKJVO3G_g9zXQFD-vl3klnc0bDDq_H5_MIOaAR7N9xeGnPPEHbUJYjk8OEjJidls5EQt1HVyVT83vI66XoNH-VxclPHEhpczzXZ4gsZQiLklJYw9HgLjouIJ1dbIcwI9gJVGEIBDEXFcev4FdHEK3umN2zuP5EGBR6mQliayoCuFoFlxw0r_sq9Vx7KwEOVBs57FkTOHzPJiugxmYygg6Wc_-
+2018-07-07 15:39:07  :: Authenticating Account Manager On Invertir Online
+2018-07-07 15:39:08  :: Account Manageauthenticated On Invertir Online. Token:9-JNKwzJ78fCWNZnNKaHnA2n9VbMjhMllFcSTzHMx8T45ZRWJx-M316TJGhDeQug_Hf8h4EldOr0iOMazb2PwxYHOZRg_JbKij6ITbtF9b5HJEV-w7tiii9YMzzerD2myGokkjjypBdwJAaWWv3sONOg5jH7Sp2aieFeuE_5L-BBJJSXFvUvOOVv-Yz0o10x871NM18nMxf0MqgjDhF7BzS5lg3xEPfvy5A6BsZD19cWjrJUedFHF_NQ6suOzLyRHkhFOYR_OYFMZLRuD4a2OaR30B38h-gzZ9KzefwfE-lP5x9LtXVuoNEfwvcGP9yb
+2018-07-07 16:19:46  :: 7/7/2018 4:19:46 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:19:46  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:19:46  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:19:46  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:19:46  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:19:47  :: 7/7/2018 4:19:47 PMOrderRouterBase.LoadConfig
+2018-07-07 16:19:47  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:19:47  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:19:47  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:19:47  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:19:47  :: 7/7/2018 4:19:47 PMOrderRouterBase.LoadConfig
+2018-07-07 16:19:47  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:19:47  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:19:49  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:19:49  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:19:51  :: Order Routing authenticated On Invertir Online. Token:Vi1U84f1AV7y7KHTSG0ScnaHIaEH1oDDQDd52htaUSsTyYZklMLz1xEnwSgcbTesQOSDDkGbWWEQrl5l5rzMgzHCmZdRxqMe-ME2dzCdg73ItGWrtIdtpjodo-llo2pRPOLfFrnc0tDF703v_uB8tX5J9JP9KCA7ilmksB3dMitWMpqtYVrvmaBbaHY82ejIy09UW75sp-gFq1vmnD_ZKp6EIDjcbFbIQpdTPdNwZASIwOafVcLnJG7A2pAWIJzJxBPcNWJDmPif8XI3wjgiKx1woR0GB4ShAErQNEZ0k_o
+2018-07-07 16:19:51  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:19:52  :: Account Manageauthenticated On Invertir Online. Token:Gx22S0hn5WfSASFce3da4zh37e6HqDs-4T16ZvRAPWx2rN07-N0DdECOSu06_SMySLYIrRX11CmfgDRgiAy9yK_pLoowkbHsWN2gd1-o7SnBZuitNI9AVi851_VL22Ev9h7ObztaBK4d1Q-mo5rqJFHnCkFLkqUXcfqmNgLL7eG6JI6LP0oqwaiVVDClDk5qH8GU_74gRRx1wAPWw7CgEFWeRy9g9VNNR0H6QfCujd6sZ8au5iT1EAjHRF2xhqjWoR0Ap6FAqapw80Nkx4K3Gr2g7l_nHPdPr51UCkUi1IwlQW6F7gaMHy_NIz98IFjt
+2018-07-07 16:20:30  :: Canceling all active orders
+2018-07-07 16:20:30  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:21:09  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:21:11  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:21:27  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:21:27  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:21:27  :: Strategy Handler - Instruction Based Router: Creating position for symbol BMA.BUE
+2018-07-07 16:21:28  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:28  :: Routing to market position for symbol BMA.BUE
+2018-07-07 16:21:28  :: Creating buy order for symbol BMA.BUE.Quantity=11 Price=181
+2018-07-07 16:21:28  :: Routing with Invertir Online to market for symbol BMA.BUE
+2018-07-07 16:21:28  :: Routing Order Id 0
+2018-07-07 16:21:30  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:36  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:37  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:38  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:40  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:41  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:42  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:43  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:44  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:21:46  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:24:23  :: 7/7/2018 4:24:23 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:24:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:24:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:24:23  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:24:23  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:24:23  :: 7/7/2018 4:24:23 PMOrderRouterBase.LoadConfig
+2018-07-07 16:24:23  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:24:23  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:24:23  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:24:23  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:24:23  :: 7/7/2018 4:24:23 PMOrderRouterBase.LoadConfig
+2018-07-07 16:24:23  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:24:23  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:24:24  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:24:24  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:24:46  :: Order Routing authenticated On Invertir Online. Token:YV0utQ9LvaYCQq1qg7g6R7ACIVCdNENbm8NnRsaQMRJJacg2goG4TCtK399RXtt76Aqlqh293Ytk4-JEGFfGMmRYf6ntCw2KuzpLJrk_A-A5heSb0D0hSi0_uHYWC37WDHu_X4nmZUN6yulu-M4A2D33Nd23vz_NvjTB-w3o9hVnBin8uj3qYdQIJjDShfHrbbcNjuk_pEhIpdlgTXq83_VnoVVg505-ft8S40Ae2aPreDKTX9kGahSnaRhqBBthARhrxYFgO23heN1OTXqRPQVle76lAGgDtehYKl2NdYfUjNIAPjCv8PVTqFnK7RyP
+2018-07-07 16:24:46  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:24:46  :: Account Manageauthenticated On Invertir Online. Token:LnUetLg1669P-uHhcL5yIUjaSlYV-7LM99pRU8wV1_Uev2z2PhHpUgYedUQchkkrIqVxCosiwtr8IH4mO81shukFypXCevXBk9VR_Pn4jqjbpUd1zMrciTyQfY15RQm8iqDrVLYCEEscfQoW944dIZ9g1SgGiJkwv04LQ2VHuhPyV2agBCfIYMiM2EnTuudrm8DhGb9KpRC9IIGEvu8Pk5sbLN-gbhj1oBkad7cuvPUV6Co453EmbWJC5aR0-K9PaDvgJjeRWnzpJYcvogrbq-W1SGQUftmL2PVndq1dIJI
+2018-07-07 16:24:53  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:24:54  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:25:18  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:25:18  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:25:18  :: Strategy Handler - Instruction Based Router: Creating position for symbol COME.BUE
+2018-07-07 16:25:19  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:19  :: Routing to market position for symbol COME.BUE
+2018-07-07 16:25:19  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:20  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:22  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:23  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:24  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:24  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:25  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:26  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:28  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:29  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:29  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:30  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:31  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:32  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:33  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:34  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:35  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:36  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:37  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:38  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:39  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:39  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:41  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:42  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:43  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:44  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:44  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:45  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:46  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:49  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:53  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:54  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:55  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:56  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:56  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:25:57  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:25:58  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:00  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:01  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:01  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:02  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:03  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:05  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:06  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:06  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:07  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:08  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:09  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:10  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:11  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:12  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:13  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:14  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:15  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:16  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:16  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:18  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:19  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:20  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:21  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:21  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:22  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:23  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:25  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:26  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:26  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:27  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:28  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:29  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:31  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:31  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:32  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:33  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:34  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:35  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:36  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:36  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:38  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:39  :: Canceling all active orders
+2018-07-07 16:26:39  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:26:39  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol COME.BUE 
+2018-07-07 16:26:39  :: Processing Market Data:Symbol=COME.BUE  LastPrice=3.74 BestBidPrice=no data BestAskPrice=3.95
+2018-07-07 16:26:41  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:26:46  :: Could not create order por symbol COME.BUE because there was not best bid price as a reference
+2018-07-07 16:27:01  :: 7/7/2018 4:27:01 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:27:01  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:27:01  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:27:01  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:27:01  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:27:01  :: 7/7/2018 4:27:01 PMOrderRouterBase.LoadConfig
+2018-07-07 16:27:01  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:27:01  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:27:01  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:27:01  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:27:01  :: 7/7/2018 4:27:01 PMOrderRouterBase.LoadConfig
+2018-07-07 16:27:01  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:27:01  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:27:01  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:27:01  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:27:23  :: Order Routing authenticated On Invertir Online. Token:L689RVPfRRtFCKkuoDrJ7obIfQieXD5zqbNY8PwQg8V76WwU-Vo7l0JP2JeW_CvO-R520ECYFiDHf0L2olB6r3VKKAXT8dzmpkgbDtFZxJNN0cXUBltcQdwFkTv-w3BswJH33M8VXPlZOr3-00sMqBKd1hzcqgMqv9BWwzR5F_mE-xWTEAsd2hCii_GQYuPwVcczjWbHS6Q7QMyEmmi12PMMZCz_oCxCw-UHMgEZkt75VVStxOK18BVivMQkPpcfP-gagToomPgRuR0KBBc-p23lgLcpK6r0tW8x6bNJQPTy654B5UDJZPtueqdTh1qc
+2018-07-07 16:27:23  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:27:23  :: Account Manageauthenticated On Invertir Online. Token:DUEpHPvuTvglPPE_HRW81Ok6zYctZ8JvSmuthNP5pv5OOpv72KyHHORlKcnHL87p_6QZhvZFILHZnnEW-ivKZlKr2n0QNtAvFTX26qGY2QYyfaS2413S-oon58G44hEdhqKM38TTZKr04ojtE5IITBtVbVrbpgK4cJaGpO0q8qurHlNTRxrzG7CZNRYEMN_flReuWgIjwgcic3I45CMXC_zhU3ZPIztKWK782pnYcw4S9FA6rilOaZ-HATnrx4FwIcjx6ouDQmSiXNMjYwpZaq5yin8bFSlr3WS2tfAkmd8
+2018-07-07 16:28:03  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:28:04  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:28:04  :: Strategy Handler - Instruction Based Router: Creating position for symbol TECO2.BUE
+2018-07-07 16:28:05  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:05  :: Routing to market position for symbol TECO2.BUE
+2018-07-07 16:28:05  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:06  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:08  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:09  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:10  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:10  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:11  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:12  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:14  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:15  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:15  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:16  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:17  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:19  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:20  :: Processing Market Data:Symbol=TECO2.BUE  LastPrice=101.2 BestBidPrice=no data BestAskPrice=143.9
+2018-07-07 16:28:20  :: Canceling all active orders
+2018-07-07 16:28:20  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:28:20  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol TECO2.BUE 
+2018-07-07 16:28:20  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:25  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:30  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:35  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:40  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:45  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:50  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:28:55  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:29:00  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:29:05  :: Could not create order por symbol TECO2.BUE because there was not best bid price as a reference
+2018-07-07 16:29:14  :: 7/7/2018 4:29:14 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:29:14  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:29:14  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:29:15  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:29:15  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:29:15  :: 7/7/2018 4:29:15 PMOrderRouterBase.LoadConfig
+2018-07-07 16:29:15  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:29:15  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:29:15  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:29:15  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:29:15  :: 7/7/2018 4:29:15 PMOrderRouterBase.LoadConfig
+2018-07-07 16:29:15  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:29:15  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:29:15  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:29:15  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:29:37  :: Order Routing authenticated On Invertir Online. Token:bmOffUP_KRI4BoSpKy5nO5kMyJVpIxhk8PYunEBttaUHDrh9zt6PCBtIxtYAlET_5ArRBqmn3WuwAaBc9BRuEr_Ll-pvdb17YQFCSHNzON69GS8E3AlVBwsHPkguSGwx5YGs2QXlJzSrIW5lOfblISL7Gq9iJZDqDTyf7hGYsw0Eh4lmlfxO3Tp1J-Dp0SX5uLCMuRE-7IDUMQWbwXvxtsJinIPMH5ArAaGQTzT6BZKQQtvzvtfJxXfIo1_2jbRanhjvuB9bDqJMCXGaMIZQduoir0-GxXD4SH1-g3-mYDo
+2018-07-07 16:29:37  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:29:37  :: Account Manageauthenticated On Invertir Online. Token:a9OPgcgG27s7dx_Ck4EoGzE1tIN2bqLL-GqOG0xXNV139pqmGc82wfojheycHEWS2kOXKebiUVwXG5ZaTnVRx6_2XkxW5XzL9jRxtqJybCMtr7cFOktiSrAdorsLgw5miGM52AOVWB-l1eIzsZDQ_9SjwgSlgqDjiD8aDEfQr-9KwBiH7x_XvoPLQxaBqznjrhwNSHNWUNYlPEMWC1IUSwe1KvlM6_2eFHfrAAO3fOh0GEzES8UiyMYcQIA5spil5PyvEFdT6hMIS4H4it4rhqzrq0WmkodPrYxhCDkxKv-rbfW0qlc9x-DJFi1XJL5l
+2018-07-07 16:29:59  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:29:59  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:29:59  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-07-07 16:29:59  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:00  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 16:30:00  :: Creating buy order for symbol GGAL.BUE.Quantity=20 Price=96
+2018-07-07 16:30:00  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 16:30:02  :: Routing Order Id 0
+2018-07-07 16:30:03  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:09  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:10  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:11  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:13  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:14  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:15  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:16  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:18  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:19  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:20  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:21  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:30:22  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:31:38  :: 7/7/2018 4:31:38 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:31:38  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:31:38  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:31:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:31:38  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:31:38  :: 7/7/2018 4:31:38 PMOrderRouterBase.LoadConfig
+2018-07-07 16:31:38  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:31:38  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:31:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:31:38  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:31:38  :: 7/7/2018 4:31:38 PMOrderRouterBase.LoadConfig
+2018-07-07 16:31:38  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:31:38  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:31:39  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:31:39  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:31:40  :: Order Routing authenticated On Invertir Online. Token:l6XeHRbcTmKx8gLGNOfdiuMPd4UBFfnHI8Cb_r90KBZ1BAa0Qczp4KcRQi6rQ4tfgqCCo14rG0xudVryVY457LoxHIjoEdHRxNsIZM5mvqEc_8DgB-knUPfbbJ0EvU9qzQUruPkd-lROSe9bwim6MtgKpxOnboTVC5N_6JfVDrdCkGFIpws8qG6yEfj6vD_3j06gRLY-yWOqluOjvODBi-c2DzdieQh2V7SuBeQDnNXzerra-0WeB63wtzroeUEh5RreTV5Q3XeWbFxpnN-YLUGF9c62fA2A1THfkTEqyzQ
+2018-07-07 16:31:40  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:31:40  :: Account Manageauthenticated On Invertir Online. Token:FhdvemLpPa6J2HeNFj7IEaDnsatZgXBG1_4J9BvSeqDRoJA6HJU3mHXu3HL5KJa-FVuRI93b20eN7aOcoBp_xrnm7NDLwvCdA5wED-CUob1AGkbeFD9RrgXMLSBMFXz0axuR368FaW80poWUeW9IGeYmsRJ6DCqa-EBM4Ci7Nf2lAIBokFRlrXX2oiqrWzb47zLymwx-v4HWaaoh91t3MkP91hAb99vQcTuH3w2IlJ6Q5lLw_BIZ1XcOFLUXYbdawHFwUvz5qHJe13eBYQkf0OdyDBHa817KX-YLBKsZHeY
+2018-07-07 16:31:48  :: Canceling all active orders
+2018-07-07 16:31:48  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:31:53  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:31:53  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:32:18  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:32:18  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:32:18  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-07-07 16:32:18  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:32:18  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 16:32:18  :: Creating buy order for symbol GGAL.BUE.Quantity=20 Price=96
+2018-07-07 16:32:18  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 16:32:18  :: Routing Order Id 0
+2018-07-07 16:32:24  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 16:33:34  :: 7/7/2018 4:33:34 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:33:34  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:33:34  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:33:34  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:33:34  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:33:34  :: 7/7/2018 4:33:34 PMOrderRouterBase.LoadConfig
+2018-07-07 16:33:34  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:33:34  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:33:35  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:33:35  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:33:35  :: 7/7/2018 4:33:35 PMOrderRouterBase.LoadConfig
+2018-07-07 16:33:35  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:33:35  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:33:35  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:33:35  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:33:36  :: Order Routing authenticated On Invertir Online. Token:lKpLFEvZogDrwc1kLcPMW8_7BcZ5UR_myGk6aHmqMM4OGZuHiGeMvDW5izy2EAF85BqLXLbVyDVAiG3bwVPTcBYEKOIKwwdJ8FFYi1O0QUVDjhdqWljR38Sz1t5mQaqxR6nYw9urIEcp2StrNzusfNrJQI0joBVwBjCdVSEC72NxLmTo2NczSAg_9Ut6UcbSJxvORzzX0I3AqPRBFx7UXoMC5pUXoYK7D7CBpgO8FNPBWlZTxI-dCMDBkkkyvmhJcRQUDKjhyJi6uf4FlsNBcJ5VF4RkmKdAlh3kbw3m6v0
+2018-07-07 16:33:36  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:33:36  :: Account Manageauthenticated On Invertir Online. Token:AnHhxMkGhMpKoR1D-wXGMTY5oxiDnE935QOUUGiu7I_BRCDome_dsNoelzlDHqH56rvFCqk4gfBfcCn_8Vs3hH6Rn6CESI8U5ufWoHCxFQ_N30HxiBJsnpqr1sBNG_nil4m_IyZT7Ng21szpJtsFlZv_hLZVqnTGtLAJXPkEedY1FjVl01eiQkbfJWSWDjHsUZMTjfNEv9LzZWfmtKhL34OigGl0ISIiXy5SgA2-57KybU_OfblVlBy-Y7G6bI-yN4-ErldA9kmc1iVvoW8W-eiAk0VHUY_DxygbMp8od950z3hhJY4KE5PUtme_czOx
+2018-07-07 16:33:53  :: Canceling all active orders
+2018-07-07 16:33:53  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:34:04  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:34:04  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:34:19  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:34:20  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:34:20  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-07-07 16:34:20  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:20  :: Routing to market position for symbol ALUA.BUE
+2018-07-07 16:34:20  :: Creating buy order for symbol ALUA.BUE.Quantity=109 Price=18.2
+2018-07-07 16:34:20  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-07-07 16:34:20  :: Routing Order Id 0
+2018-07-07 16:34:22  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:34:22  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:24  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:25  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:26  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:27  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:29  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:30  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:31  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:32  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:34  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:35  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:36  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:37  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:34:38  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:35:32  :: 7/7/2018 4:35:32 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:35:32  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:35:32  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:35:32  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:35:32  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:35:32  :: 7/7/2018 4:35:32 PMOrderRouterBase.LoadConfig
+2018-07-07 16:35:32  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:35:32  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:35:32  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:35:32  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:35:32  :: 7/7/2018 4:35:32 PMOrderRouterBase.LoadConfig
+2018-07-07 16:35:32  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:35:32  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:35:32  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:35:32  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:35:54  :: Order Routing authenticated On Invertir Online. Token:kStdv-sWQ5x1eqnZclZO15Q0SbZd1-ZmClmV9HyWBHghCZwBtttADpGeYHx9a509UaTDAVlNHSw1CxR-42dhzZvdjrxtlxdunb2z27sdNmarS6SJtU6F7oXGiGf8Hwj8pq5l7D3ry9LMYWtkfNGCmDA8_n28IKJ97ZQ-GYamwbr65PZGZaJWq97ZFj2frUBAtd1cEj7aFxrKr2HNCYBGf5Jdm0GoyHdrlh2ZZnEPhjuhdb1dDsjk1UXK-QPevUF33N65l0MzKpJE3-yNhVgYWbC3Zb8TB5D8IuTEuCUZqnR3K2Qp4v6LFQjWPXWY-o58
+2018-07-07 16:35:54  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:35:55  :: Account Manageauthenticated On Invertir Online. Token:bErkfYSzWU7VqNkQIMnuzDb_dZk0shAel3yqWgMo3cWwwHAzNPyiJvbLGYLjkYQKfi9m7jslaQaDKnn0j8iY6w-HTaKt8ZCGxDBUr1-ncukzYE-2shn76O9StLbAAQ2sWBVmrKDFam1p7U_DLBZd0Tc94Z6jqAV3qjFkyxdUkiHwyb9ND_J8izv05aNlAsNADOlibMU7pwQ9BxhgKArGKHOiwc5lpsxd-E-8EhRjJt4YZa_v0l7p747UdsR0hvpP7WxnHr_u3qx_73u6PMh8NjgpCko1daV86bXbIA5appDiwoiq_UQa0mrRUTYFkNgN
+2018-07-07 16:36:39  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:36:39  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:36:39  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-07-07 16:36:40  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:36:40  :: Routing to market position for symbol ALUA.BUE
+2018-07-07 16:36:40  :: Creating buy order for symbol ALUA.BUE.Quantity=109 Price=18.2
+2018-07-07 16:36:40  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-07-07 16:36:40  :: Routing Order Id 0
+2018-07-07 16:36:44  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:36:46  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:36:52  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:38:35  :: 7/7/2018 4:38:35 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:38:35  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:38:35  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:38:35  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:38:35  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:38:35  :: 7/7/2018 4:38:35 PMOrderRouterBase.LoadConfig
+2018-07-07 16:38:35  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:38:35  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:38:35  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:38:35  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:38:35  :: 7/7/2018 4:38:35 PMOrderRouterBase.LoadConfig
+2018-07-07 16:38:35  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:38:35  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:38:35  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:38:35  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:38:57  :: Order Routing authenticated On Invertir Online. Token:17PisqXF2G-Np8L6oMRhlVc9pFWIVQwgwRSCpygsAwU6B2w5xwb_Ba03l2a114l4Oy29erPo1tj2SAZTshSn8UZEmFy1U1ZwD08RZMhtGbZsmMBiQsu741_AkX-8FpHtRY8Plj-rPqTE62gSufV1CcJHfAiQeer9Nl5NmQPgcJlvXbCP0MyFWZ09HT1zgAggKjRHnyP0ugiSysFW96QSetwlg_G2f-rNKEJIL57H36lgF7peSPBRNCLIxfotcGiqlJeyznrhvIYxFgPc38Tkg98KNWSfE1D1FB-CrknaZZg
+2018-07-07 16:38:57  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:38:57  :: Account Manageauthenticated On Invertir Online. Token:Z4ZzY7_G_Httuog5zUM4ybYVF0SM3XXVo-nEcN_j6eLT0I4wo3MWnKFlFKJVC-0_PeSpv1vu7nuF3lWB-i9EzaMEbGYdz55Dm3zGqbGe9F0uT5FV2L-BIk752_vq4qL37eI_UrUDe9Dk9ZE9quulcGKYKQeNjY4L2vpVJWGFING_gmKFxBqzHaBV-y64oDDZyD-vAmvaYEvk2ok-v1ZMxkipFogDKj45BcIySKt28eI5yfqeVNR1OotPiIYiiOGenTiOcs5RwQuQHkDXHIXPCpaVlsWywfKHtIEjhiqqI_lMADEymrI27u2qPK5_FOIz
+2018-07-07 16:39:33  :: Canceling all active orders
+2018-07-07 16:39:33  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:39:41  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:39:42  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:39:56  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:39:57  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:39:57  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-07-07 16:39:57  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:39:57  :: Routing to market position for symbol ALUA.BUE
+2018-07-07 16:39:57  :: Creating buy order for symbol ALUA.BUE.Quantity=109 Price=18.2
+2018-07-07 16:39:57  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-07-07 16:39:57  :: Routing Order Id 0
+2018-07-07 16:39:59  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:39:59  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:40:01  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:40:02  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:40:03  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:40:04  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:40:06  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:41:58  :: 7/7/2018 4:41:58 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:41:58  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:41:58  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:41:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:41:58  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:41:58  :: 7/7/2018 4:41:58 PMOrderRouterBase.LoadConfig
+2018-07-07 16:41:58  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:41:58  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:41:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:41:58  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:41:58  :: 7/7/2018 4:41:58 PMOrderRouterBase.LoadConfig
+2018-07-07 16:41:58  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:41:58  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:41:58  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:41:58  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:41:59  :: Order Routing authenticated On Invertir Online. Token:9LobQnYSMs5-kYNXxOuGznQwjt52MtReDZRnY6e1dK1YtlEDLFU1zeasSHyZJosBl_RVQPm_KfXR4UnUgTIVqsjrnkGo151zsJmTgETrO_N71H3jUI36fbrr0g2VG54FLzi56tIjj6fL6shz4eRXvxB3pYJbzvcIx6-_rj-ftKs8Qj3WV0wD5jmGD00y3sqzoxE5yPyVdfbTFlUzjnxyTUa7wL5C0lN_wwUqWs5QHH2UhU4jsA0VaaQIcpu4OG2TiK6bSOa51Pujdri6gdEpPVgj69oN6_d5lHkEe99bq4d08y04F2sHitw8nzTMZIp6
+2018-07-07 16:41:59  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:42:00  :: Account Manageauthenticated On Invertir Online. Token:GcXfNGJepKpp5mNyzovFZuOHbVVfjo040IvK0Prz0tPXRBnJsewNvTlen6bt1bPxNl09OO9W0LFsK9yyVyVp3Z411ZPsP_11W7IbGS9J-pcB9Z5bckBym1gqWZZkwGcjxVyMWVe-QfhQDFplcGWaaiayJsAvEOW_pwAOrWuKL_x7wZ67fSpQM-EqVj3essTLd9eV8Lhof9gzV0NkLPGXbDNW3F9sFBviUsIUUkcp3oSrhxfCiZrBHyDv_a0rGo-_L5IfPwzIKGrpUFQ6qkYS38LQ7OjBOuhUnNTChZjLHEy4xJ1fLJ1xril3oKts25jk
+2018-07-07 16:42:55  :: Canceling all active orders
+2018-07-07 16:42:55  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:42:59  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:42:59  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:43:08  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:43:09  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:43:09  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-07-07 16:43:11  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:43:11  :: Routing to market position for symbol ALUA.BUE
+2018-07-07 16:43:11  :: Creating buy order for symbol ALUA.BUE.Quantity=109 Price=18.2
+2018-07-07 16:43:11  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-07-07 16:43:11  :: Routing Order Id 0
+2018-07-07 16:43:13  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:43:17  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:43:27  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:44:23  :: 7/7/2018 4:44:23 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:44:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:44:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:44:23  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:44:23  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:44:23  :: 7/7/2018 4:44:23 PMOrderRouterBase.LoadConfig
+2018-07-07 16:44:23  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:44:23  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:44:23  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:44:23  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:44:23  :: 7/7/2018 4:44:23 PMOrderRouterBase.LoadConfig
+2018-07-07 16:44:23  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:44:23  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:44:24  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:44:24  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:44:46  :: Order Routing authenticated On Invertir Online. Token:4VxrSk4SQARni26Mw9aRKKDOC2amHVJp-mTbzLCSZNDJhzK_22MJ3-_pM4Yb6cRdro-kiEEYxfAaJWbx4RltgEu4IvzibcndIRZpDP9sVzg90kHgQ6KlfZPEVc1WlpdC6zBAuuUhcEy12an7sKIqGiPs85fvxHSk_4i1Q0ZnGuJk4qYM_oqzfzavD67EkEH-yvdfYG3IWj3UwstdDdGYZi2EN80JKtJS3SwLNSXSYV6zUr15Qy8kVy2kgu0LiMb3JpT5RFAPyh-E3PKOYioRYR0lkS6Bm0b4zKa9SFAOUNYDPGxIVbhCfyKnjCFnLEPN
+2018-07-07 16:44:46  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:44:46  :: Account Manageauthenticated On Invertir Online. Token:K_Vaty9TRaV06L8h61LSHM3ptRSbGe7jwh66_jwLeQ-n2pcUY_JrlkJMWfKnZf3SulMH7xXp1Gt7ssTtQw8gd7UxxXrEHxLq34OSOXZv8Sl776Vr_eLUkaOTC_JrLsAzUtzbKh9-SmRS7HWv3fiNOM8J_wGFNT-0KV0-3pQl1MmPKzad6wa1IPwwJgrZljW7-zeiL0zmUJE7plQzZ3uy0Cfgudlcn2sUqS2kEm0gpRmgJ3AH61FxSRIl04ObxHq0R1fmru7P58RVxfm3TnrEfw3VzG_D4oJvehtoip3fYNC5fFu2qVyYJOCrKEPeJjBb
+2018-07-07 16:45:01  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:45:01  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:45:24  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:45:24  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:45:24  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-07-07 16:45:25  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:45:25  :: Routing to market position for symbol ALUA.BUE
+2018-07-07 16:45:25  :: Creating buy order for symbol ALUA.BUE.Quantity=109 Price=18.2
+2018-07-07 16:45:25  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-07-07 16:45:25  :: Routing Order Id 0
+2018-07-07 16:45:28  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:45:29  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.65 BestBidPrice=18.2 BestAskPrice=no data
+2018-07-07 16:45:36  :: Incoming message from order routing: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-07-07 16:45:36  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared
+2018-07-07 16:45:36  :: Received filled for symbol ALUA.BUE
+2018-07-07 16:45:36  :: Filled for symbol ALUA.BUE processed
+2018-07-07 16:45:37  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:45:38  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:46:37  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:46:37  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:46:58  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:46:58  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:46:58  :: Strategy Handler - Instruction Based Router: Creating position for symbol BMA.BUE
+2018-07-07 16:47:00  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:47:00  :: Routing to market position for symbol BMA.BUE
+2018-07-07 16:47:00  :: Creating buy order for symbol BMA.BUE.Quantity=11 Price=181
+2018-07-07 16:47:00  :: Routing with Invertir Online to market for symbol BMA.BUE
+2018-07-07 16:47:00  :: Routing Order Id 1
+2018-07-07 16:47:03  :: Incoming message from order routing proxy: Symbol BMA ExecType Trade OrdStatus Filled
+2018-07-07 16:47:03  :: Incoming message from order routing: Symbol BMA ExecType Trade OrdStatus Filled
+2018-07-07 16:47:03  :: Received filled for symbol BMA.BUE
+2018-07-07 16:47:03  :: Filled for symbol BMA.BUE processed
+2018-07-07 16:47:03  :: Processing Market Data:Symbol=BMA.BUE  LastPrice=185.85 BestBidPrice=181 BestAskPrice=203.5
+2018-07-07 16:47:04  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:47:04  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:47:05  :: Ending RunOnPositionCalculus for symbol BMA.BUE. The position is cleared
+2018-07-07 16:47:50  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:47:51  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:55:08  :: 7/7/2018 4:55:08 PMMomentumStrategyBase.LoadConfig
+2018-07-07 16:55:08  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:55:08  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:55:08  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 16:55:08  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 16:55:08  :: 7/7/2018 4:55:08 PMOrderRouterBase.LoadConfig
+2018-07-07 16:55:08  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 16:55:08  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 16:55:09  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 16:55:09  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 16:55:09  :: 7/7/2018 4:55:09 PMOrderRouterBase.LoadConfig
+2018-07-07 16:55:09  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:55:09  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 16:55:09  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 16:55:09  :: Authenticating Order Routing On Invertir Online
+2018-07-07 16:55:10  :: Order Routing authenticated On Invertir Online. Token:gfUic3DlE5GiSxgEGa_VWB85nYfI1hZDfmBUs-tnU6GNi63G3CscvkdGeFjoDOApn1nPzw4CjHZj0JPTioF9sToGlOizK1cSmaUMUtC7POlXW6MxdrNwnLQFX2PVbuADHPa-v9UWbhRyhxGF-oG3ZNYHUcKSihttn_wd-yxUXCusjXttMW6cQt1EuA0noTgUSZHY-e5r_eE1muKD26GjyF6YIPJS_5sHo3lIWRJK4UXU2coJmEBxEr2R9yPBkQEZfJBBblPrBnR6kPgVZ9y1vibOJr3u9hHfzhginfpxn3XqmDuOYgvWmUQIRlaP8vmB
+2018-07-07 16:55:10  :: Authenticating Account Manager On Invertir Online
+2018-07-07 16:55:10  :: Account Manageauthenticated On Invertir Online. Token:1WbVjJgPCbiKzxw0tpwVXqmtY9ZYnnKScKQyJQjHfr9Vem0yizu9FcOn9SCUcDwcLeBbdML-NFAZkufZy4h-qy1Ld4lqr96gknadJrrk_ythGGi3S7k6EfQTwDtOXf9woC47uG2_pmEYVCmytqyB4O4Y3o0VKEerl-bnsP8OO_wZi3rXvPrHfd0j81zq7aJ2OZzp_67f2xoiOAF27d3LtGZWaDKa6vAJ7rF9d76WMUNC_fDIjAHdRcpbs0WOapiPKz1tXXGQ_U3XGpjJhVUKtJ2uD0bHZ6x-pRsPsqmmsP5_OyXIQQpNEiXM3hPHgHA3
+2018-07-07 16:55:39  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 16:55:39  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 16:55:39  :: Strategy Handler - Instruction Based Router: Creating position for symbol PAMP.BUE
+2018-07-07 16:55:40  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:41  :: Routing to market position for symbol PAMP.BUE
+2018-07-07 16:55:41  :: Could not create order por symbol PAMP.BUE because there was not best bid price as a reference
+2018-07-07 16:55:42  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:43  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:44  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:46  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:46  :: Could not create order por symbol PAMP.BUE because there was not best bid price as a reference
+2018-07-07 16:55:47  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:48  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:49  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:51  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:51  :: Could not create order por symbol PAMP.BUE because there was not best bid price as a reference
+2018-07-07 16:55:52  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=41.85 BestBidPrice=no data BestAskPrice=49
+2018-07-07 16:55:52  :: Canceling all active orders
+2018-07-07 16:55:52  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-07-07 16:55:52  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol PAMP.BUE 
+2018-07-07 16:55:56  :: Could not create order por symbol PAMP.BUE because there was not best bid price as a reference
+2018-07-07 16:56:01  :: Could not create order por symbol PAMP.BUE because there was not best bid price as a reference
+2018-07-07 17:00:34  :: 7/7/2018 5:00:34 PMMomentumStrategyBase.LoadConfig
+2018-07-07 17:00:34  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:00:34  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:00:34  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:00:34  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 17:00:34  :: 7/7/2018 5:00:34 PMOrderRouterBase.LoadConfig
+2018-07-07 17:00:34  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 17:00:34  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 17:00:34  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 17:00:34  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 17:00:34  :: 7/7/2018 5:00:34 PMOrderRouterBase.LoadConfig
+2018-07-07 17:00:34  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 17:00:34  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 17:00:34  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 17:00:34  :: Authenticating Order Routing On Invertir Online
+2018-07-07 17:00:35  :: Order Routing authenticated On Invertir Online. Token:elgWXcGWirHmr26kW7jjLtiauTkC6PUaJ8DxHbvwhjRSp5ZnIlNNmn23tN2z1Iz8gO-pNcLa5T4crzKEXeFATNzdGpwZj_iVHMRUqpBCufTOMmSoopSIyI9XFp4QQF79mcwn-iuepIEJCkpkpJYncMEynACV0C5PCq7-IWumPJSwTVkwTI7qufIOTr2eFrdiVwChidd0HnslmkU6vQr4CIsh0lgIl-kU4qpxfl_lT4k6DKPii2BIxGa6k3aDxf3WaREusnFWW27OEaZoWhJ12yePNqjZrOMxyTyxDsWno1F8DC8iXeSOCHqFzCIlIzDV
+2018-07-07 17:00:35  :: Authenticating Account Manager On Invertir Online
+2018-07-07 17:00:35  :: Account Manageauthenticated On Invertir Online. Token:7e5o89Z9kW-7x1MOmdaGfFJuQLlhSx2GMAVNDvKbYKHbWHTBVEwdw3ABKiWh1n9unYV1GdN1ckQ5hUJosYC1B2uGuhHU_iT8fMqS5VFE3rt54AmzYmHiiwbfjYfWUT1VFpSXRQ2-9PHToOV1LBW6ekDL_vMFutSjU_kWcjk2yOX2lxMUNMdwj-0uEDPR7Z_krrFQDx81uugBPEaC6lqmB1oI9fBrTiheodC7CvY9TVuXlcH--GZOSrsYo9wy4DxqjuVYHEtyeIS8PP_8J7JcYuTwdoElGaO4pANWvgc-B74
+2018-07-07 17:53:34  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 17:53:59  :: 7/7/2018 5:53:59 PMMomentumStrategyBase.LoadConfig
+2018-07-07 17:53:59  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:53:59  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:53:59  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:53:59  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 17:53:59  :: 7/7/2018 5:53:59 PMOrderRouterBase.LoadConfig
+2018-07-07 17:54:00  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 17:54:00  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 17:54:00  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 17:54:00  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 17:54:00  :: 7/7/2018 5:54:00 PMOrderRouterBase.LoadConfig
+2018-07-07 17:54:00  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 17:54:00  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 17:54:00  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 17:54:00  :: Authenticating Order Routing On Invertir Online
+2018-07-07 17:54:23  :: Order Routing authenticated On Invertir Online. Token:YeW_CpPNZYUY84gMvWIrHoK1GN7QxmgaKJ114OK36hrQ1Wij2kCEiAFvoHetj_wZYrmfeZUiF-A9plXCDYjx4p2-mDEkR1bHwvrMymy5qUGl3kmZqTNPLR3GDWoTGvdADPI1EilQKJDRaYq_1QW9j5qfV-jIB4rI0l0iOQiP6pk1cXuqYqxSRdBm9D43Y2iCEHuy_7atYrLvav_XL2A4QpMAXC6JAiCbXcM0JAbJuEjwMvDGxMFlZQej_4dH6ubptIB9UBlo4Dzym6b8PZTHZUUR5MxoWF75iTRQG42e1Qk
+2018-07-07 17:54:23  :: Authenticating Account Manager On Invertir Online
+2018-07-07 17:54:23  :: Account Manageauthenticated On Invertir Online. Token:-0HCgvHVTvDoxexElZ7ImElimb4W3MFcqnu9pJVdbrCosPKGU2jEhtCZxrcMi06zSbHWYxM3S72XACNswW2Jc5-HPLxp-tK-rXU6GKW140O2e8QlFQDUtbUVMGMobKHDLtDrPfWIGRrF-66x1lg_jUFFrkWq2qbRLVM2kaRiJSn0GjW1OnzgGkjUWjWu7W-TfnNns09ZyZ-2sQInjUT8mTj2kG7JhvG0RhKk778io_ZjOTBMq8Wbs1WYxxgvaPTDNmOkXEtQ4U6FagFTtqupRelZldTRaFUuhkHqvXKBySM
+2018-07-07 17:55:00  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 17:55:01  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 17:55:02  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 17:55:02  :: Strategy Handler - Instruction Based Router: Unwinding position for symbol GGAL.BUE
+2018-07-07 17:55:03  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 17:55:03  :: Creating sell order for symbol GGAL.BUE.Quantity=72 Price=120
+2018-07-07 17:55:03  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 17:55:03  :: Routing Order Id 0
+2018-07-07 17:55:04  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 17:55:06  :: Incoming message from order routing proxy: Symbol GGAL ExecType Rejected OrdStatus Rejected
+2018-07-07 17:55:06  :: Incoming message from order routing: Symbol GGAL ExecType Rejected OrdStatus Rejected
+2018-07-07 17:55:06  :: Received Rejected for symbol GGAL.BUE
+2018-07-07 17:55:06  :: Rejected for symbol GGAL.BUE processed
+2018-07-07 17:55:11  :: Ending RunOnPositionCalculus for symbol GGAL.BUE. The position is cleared
+2018-07-07 17:55:45  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 17:55:46  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 17:55:56  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 17:55:57  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 17:55:57  :: Strategy Handler - Instruction Based Router: Unwinding position for symbol GGAL.BUE
+2018-07-07 17:55:58  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=101.3 BestBidPrice=96 BestAskPrice=120
+2018-07-07 17:55:58  :: Routing to market position for symbol GGAL.BUE
+2018-07-07 17:55:58  :: Creating sell order for symbol GGAL.BUE.Quantity=72 Price=120
+2018-07-07 17:55:58  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-07 17:55:58  :: Routing Order Id 1
+2018-07-07 17:57:45  :: 7/7/2018 5:57:45 PMMomentumStrategyBase.LoadConfig
+2018-07-07 17:57:45  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:57:45  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:57:45  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-07 17:57:45  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-07 17:57:45  :: 7/7/2018 5:57:45 PMOrderRouterBase.LoadConfig
+2018-07-07 17:57:45  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-07 17:57:45  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-07 17:57:45  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-07 17:57:45  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-07 17:57:45  :: 7/7/2018 5:57:45 PMOrderRouterBase.LoadConfig
+2018-07-07 17:57:45  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 17:57:45  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-07 17:57:45  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-07 17:57:45  :: Authenticating Order Routing On Invertir Online
+2018-07-07 17:57:46  :: Order Routing authenticated On Invertir Online. Token:7m1Z2bzBB54NfArheOItlm8H74B6kFZafSF80kspq9d5-6WCI26IU0uASTIUv0hqSLzvLbjAlBxz3l_rrQU7ZUAo-VVPq7DPJeVWrNfcp1QwiMh_oBKcvnBSIJn-p-d-C0dCujq10WwZbu8fyMfHcsGE1GRI1WVhgrbuAw5fqowoNGvK_ImS6C2atF0NQDr-DoCOQmLK_Zt2IWZNfZ0MLIpdD84JjpCOsR1so7jSPe6vAwMt4bnuKvxF5EnEoESaZK953qPHgHXoWkzipX7xIr_-QXguOlBJ2L3l76W6ZUs1IY52MxETGIES7c_nSA05
+2018-07-07 17:57:47  :: Authenticating Account Manager On Invertir Online
+2018-07-07 17:57:47  :: Account Manageauthenticated On Invertir Online. Token:2-S6T8fEU0W1rRuhhL9Eas-HRH7UZW7f_HaL2VR9UKb8eigvZ7pHFfpZ6hRRTtFWEQz7pJdQh7UXrCFzYXuETdjgLJ8A1nc-fv4BxJ4GC8vcUh_GrpFXYLQ4hyo3_jDPvWC3obp7h8gSfkxJO4aFIOq_CRvqh7A-uSlD62k-EnnghgV-QPqCIbXgFx16EE-IAO52gnbVTYBXQ0ZfoduaF8wHva-kJpH7OxyLNLx08zPdqZ_QOaw9Qt3Uqw87aKF3r-LfJLgJhbZjvKflYLi-DdFJf_nrw2Af-u0620mc6E10T2bbVXkyIpiM4WjIe5Tb
+2018-07-07 17:58:11  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-07 17:58:11  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-07 17:58:11  :: Strategy Handler - Instruction Based Router: Unwinding position for symbol EDN.BUE
+2018-07-07 17:58:12  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 17:58:12  :: Routing to market position for symbol EDN.BUE
+2018-07-07 17:58:12  :: Creating sell order for symbol EDN.BUE.Quantity=36 Price=52
+2018-07-07 17:58:12  :: Routing with Invertir Online to market for symbol EDN.BUE
+2018-07-07 17:58:12  :: Routing Order Id 0
+2018-07-07 17:58:19  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.55 BestBidPrice=40.1 BestAskPrice=52
+2018-07-07 17:58:24  :: Incoming message from order routing proxy: Symbol EDN ExecType Trade OrdStatus Filled
+2018-07-07 17:58:24  :: Incoming message from order routing: Symbol EDN ExecType Trade OrdStatus Filled
+2018-07-07 17:58:24  :: Received filled for symbol EDN.BUE
+2018-07-07 17:58:24  :: Filled for symbol EDN.BUE processed
+2018-07-07 17:58:29  :: Ending RunOnPositionCalculus for symbol EDN.BUE. The position is cleared

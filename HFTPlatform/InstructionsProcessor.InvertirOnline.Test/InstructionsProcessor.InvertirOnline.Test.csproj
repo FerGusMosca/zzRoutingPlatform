@@ -55,6 +55,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.Common\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj">
+      <Project>{599f2026-666f-492c-b41f-3704881f32a1}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL\zHFT.InstructionBasedMarketClient.IOL.csproj">
       <Project>{c4247863-54f4-44aa-8888-5523dd1b92ed}</Project>
       <Name>zHFT.InstructionBasedMarketClient.IOL</Name>
@@ -74,6 +78,10 @@
     <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
       <Name>zHFT.OrderRouters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csproj">
+      <Project>{1277a7bc-0b9c-4416-a325-455f50baea96}</Project>
+      <Name>zHFT.StrategyHandler.IBR.IOL.DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj">
       <Project>{58324d7e-90c3-46f4-96e2-ea0fe424663b}</Project>

@@ -42,13 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADO\ADOAccountIOLDataManager.cs" />
-    <Compile Include="ADO\ADOBaseManager.cs" />
-    <Compile Include="ConfigKey.cs" />
     <Compile Include="IOLMarketDataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csproj">
+      <Project>{887c5bf2-a6df-48d1-bfc2-0667af33d61b}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.Common\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj">
+      <Project>{599f2026-666f-492c-b41f-3704881f32a1}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.csproj">
+      <Project>{7a43e37d-d6ac-4090-ba4b-d42801f3ed08}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL.BusinessEntities\zHFT.InstructionBasedMarketClient.IOL.BusinessEntities.csproj">
       <Project>{68a83f35-6673-49b3-8670-0184cd3434a0}</Project>
       <Name>zHFT.InstructionBasedMarketClient.IOL.BusinessEntities</Name>

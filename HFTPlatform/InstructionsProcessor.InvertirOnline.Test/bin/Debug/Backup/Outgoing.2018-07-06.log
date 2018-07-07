@@ -1,0 +1,248 @@
+2018-07-06 12:59:05  :: 7/6/2018 12:59:05 PMMomentumStrategyBase.LoadConfig
+2018-07-06 12:59:05  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 12:59:05  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 12:59:05  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 12:59:05  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-06 12:59:05  :: 7/6/2018 12:59:05 PMOrderRouterBase.LoadConfig
+2018-07-06 12:59:05  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-06 12:59:05  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-06 12:59:06  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-06 12:59:06  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-06 12:59:06  :: 7/6/2018 12:59:06 PMOrderRouterBase.LoadConfig
+2018-07-06 12:59:06  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-06 12:59:06  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-06 12:59:06  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-06 12:59:06  :: Authenticating Order Routing On Invertir Online
+2018-07-06 12:59:12  :: Order Routing authenticated On Invertir Online. Token:JWCaTENVEVlBbiJ3nu9K4BHbU9UYbB4GHZFY8ukdA2MFG6POiKDj8KVnDgR9TlRKNzxJITNQ6EiVqChkF_XFNvcl0bWbzt-jmL8mZtzfrpm-gSN3CwjlmnBhikXNdhesDjbcyMo5zoCQ-x72FXIVe1dpT08A9XN-jEoVaAMEjLU8KFY7TXWDrFHh9Ni565LrelWQyGxdPyWGdLbJPN6_d2e07bmIPgzs38IJXyTRO5SOHp23GKdyitl3I-8qg8cNE35heh38vBax759mCWsmMdnAvgGtP-ukOEzolAHLxoEVdSdtQtCuEpW_6QzyO5QW
+2018-07-06 12:59:12  :: Authenticating Account Manager On Invertir Online
+2018-07-06 12:59:12  :: Account Manageauthenticated On Invertir Online. Token:TuqpbFvKT2ZcOmzNBvJp2fEnXbb6M1Y0wtM3X7D6n220QOs8iSq6xb4nCnYBZqEoNL0vnnghJRiodnFwm3lGmcIZ950hGyB6LjkUyb6X3IhpLImv42hHpFUequlDuc4i_ZsEbp6zC4n0_f9SCiHlHX-88qrqoEwTt_LpWuRMN4yKnA0nXXzQKGh42IhpfsAH-70Het_JKpDzJCdLwBMl3ahOwyI_uEwboSuJUhMYIB2vtSM4YJLW_PrGXT6ls1lONbS7dG6ttHaUmCdaHBmUJL-Qw-pJtRT1858nOwGItLMHa2eknNZIqrlgDjbDaF8a
+2018-07-06 12:59:14  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:15  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:16  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:18  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:19  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:20  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:21  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:22  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:23  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:25  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:26  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:27  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:28  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:29  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:31  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:32  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:33  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:34  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:36  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:37  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:38  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:39  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:40  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:42  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:43  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:44  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:45  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:47  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:48  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:49  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:51  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:52  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:53  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:54  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:55  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:57  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:58  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 12:59:59  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:00  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:02  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:05  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:07  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:08  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:09  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:11  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:12  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:13  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:14  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:15  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:17  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:18  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:18  :: Canceling all active orders
+2018-07-06 13:00:18  :: @Outgoing IOL:Cancelling all active orders @ IB
+2018-07-06 13:00:19  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:20  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:21  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:23  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:24  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:25  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:26  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:27  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:28  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:30  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:31  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:32  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:33  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:34  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:36  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:37  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:38  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:39  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:40  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:42  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:43  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:44  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:45  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:46  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:47  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:00:49  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.8 BestAskPrice=20.9
+2018-07-06 13:05:07  :: 7/6/2018 1:05:07 PMMomentumStrategyBase.LoadConfig
+2018-07-06 13:05:07  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 13:05:07  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 13:05:07  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 13:05:07  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-06 13:05:07  :: 7/6/2018 1:05:07 PMOrderRouterBase.LoadConfig
+2018-07-06 13:05:07  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-06 13:05:07  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-06 13:05:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-06 13:05:07  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-06 13:05:07  :: 7/6/2018 1:05:07 PMOrderRouterBase.LoadConfig
+2018-07-06 13:05:07  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-06 13:05:07  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-06 13:05:11  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-06 13:05:13  :: Authenticating Order Routing On Invertir Online
+2018-07-06 13:05:35  :: Order Routing authenticated On Invertir Online. Token:NGxEAyG9X2ldFx_GoCUD3Mrs5CtcU34U7WUpeLCNRAFzX_jUmLVz4WOjh2dvFxVRUA5fWixohMASKEXUXEdvO9S3I2eAIaT_2Ipg6gE0kzdf3czmWJ71b3yX17fY-XT5CvLfs0E0LhYzrgqOPG-eeIWaqQZV9UAYum_Gs8zzvr7X8ZTNDHO42BbNHr74lkjd_ayDwII6KB5nejDgZMBmaT2c_6qzCOwYMpnLhpusHBcpXRMv8W0v-PdfB06WUet3qIR2AEfGwuPNyp4zRHewJLj_wlNlYGcLQl6jFEUmcBAJnEohljUaVLhp7Bu-5e3m
+2018-07-06 13:05:36  :: Authenticating Account Manager On Invertir Online
+2018-07-06 13:05:37  :: Account Manageauthenticated On Invertir Online. Token:Sf7MHWxJi9UsV_S4v_o8zAdckQCcbNzcMF95Bt7zANxaFr1scy8qhbyN4mlFImwycS3EMOxJL9X-piDDWLVkbV3_LZm0eySkI2d1TSKx1KndEAHyMppgVmpFv24ocRV1B3ECmffw8cmqDjdFW6UeB_RzUmSGyN1IQVApzloQho6qGSbAqV09HFWSCDPEMtESkjhTqERK7ZbRiU905EWiqIJIPAHLGZYF1w2BtRS95V9I9nea6s5A6pG-U0U1cClSS1HN3Qmq3krnOgwYiqSBEGW--C1RVvkj_xXlGhvu1BA
+2018-07-06 13:34:29  :: 7/6/2018 1:34:29 PMMomentumStrategyBase.LoadConfig
+2018-07-06 13:34:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 13:34:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 13:34:29  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-06 13:34:29  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-06 13:34:30  :: 7/6/2018 1:34:30 PMOrderRouterBase.LoadConfig
+2018-07-06 13:34:30  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-06 13:34:30  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-06 13:34:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-06 13:34:30  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-06 13:34:30  :: 7/6/2018 1:34:30 PMOrderRouterBase.LoadConfig
+2018-07-06 13:34:30  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-06 13:34:30  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-06 13:34:33  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-06 13:34:33  :: Authenticating Order Routing On Invertir Online
+2018-07-06 13:34:35  :: Order Routing authenticated On Invertir Online. Token:vwi8nr1FrZPgLUn3uHunHHzoFAE4j5t-fwk2HrnBKFLm6_7Qsn12uv8y6RR1unEiqCLdAipj9_RKhFGQjrO1lZf4vSbb3PZu1ONMZ6cgLxarE0eL857cwNQgJlFcsq_UxIcL5PlKg57n4Z-hIB4FmU7_cYlH5_Hz-oGgIwosSnq8kd-1fFg-uUtN5cftRPCLXplfDLTnSlPVF1OWR1ZSNFstJrk6XJu1lS1XxU9Y-Tb9LbBWdzhbipWnjg2ORX-cRstFP6dm5jIIzRiiuzTcYwR4wY8CMTAqerwShBpevu-UMdcCO4TBoTTwt06GqlWs
+2018-07-06 13:34:35  :: Authenticating Account Manager On Invertir Online
+2018-07-06 13:34:36  :: Account Manageauthenticated On Invertir Online. Token:POx1B84xWPCLaQkAqgCU4UpuaQ3gTHoL9Ugzp9mTnDFPrZut3O2PRLJuNoXO08dbimiH_80NSdnUyqk9netrb5rnoij5G4yeVnq7EGtfcPMy8b6JgwjlIHSFLBQZi4U4bfEdOSbkmjXSH-hFO_MfHZYcgFoVv226skeLnF6D9siiarItL5blrZYH0MsGwpVIXikkZQR9XKX-FGXp47eUtCWmHvEuFQm4dm5quHMjQuwelCLDg_ynOyNTGMRJ_OYDYnLy7PHqLCQA8OvfimDZoTpH_Tl-lJRcI_6Zvn9h8N0
+2018-07-06 13:35:31  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-06 13:35:31  :: @Strategy Handler - Instruction Based Router - Account  positions succesfully synchronized
+2018-07-06 13:35:31  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-07-06 13:35:33  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:35:33  :: Routing to market position for symbol ALUA.BUE
+2018-07-06 13:35:33  :: Creating buy order for symbol ALUA.BUE.Quantity=48 Price=20.7
+2018-07-06 13:35:33  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-07-06 13:35:33  :: Routing Order Id 0
+2018-07-06 13:35:36  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:17  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:18  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:19  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:21  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:22  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:23  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:24  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:25  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.9 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:26  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:28  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:29  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:30  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:31  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:32  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:33  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:35  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:36  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:37  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:38  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:39  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:41  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:42  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:43  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:44  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:45  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:47  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:48  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:49  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:50  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:51  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:53  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:54  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:55  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:56  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:57  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:37:58  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:00  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:01  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:02  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:03  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:04  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:05  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:07  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:08  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:09  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:10  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:11  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:12  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:14  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:15  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:16  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:17  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:19  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:20  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:21  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:22  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:23  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:25  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:26  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:27  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:28  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:29  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:31  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:32  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:33  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:34  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:35  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:37  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:38  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:39  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:40  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:41  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:42  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:44  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:45  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:46  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:47  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:48  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:50  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:51  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:52  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:53  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:54  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:56  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:57  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:58  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:38:59  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:00  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:01  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:03  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:04  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:05  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:06  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:07  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:08  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:10  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:11  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:12  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:13  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:14  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:16  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.8 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:17  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.7 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:18  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.7 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:19  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.7 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:20  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.7 BestBidPrice=20.7 BestAskPrice=20.8
+2018-07-06 13:39:21  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=20.7 BestBidPrice=20.7 BestAskPrice=20.8

@@ -5,5 +5,7 @@
 
   <AccountNumber>9</AccountNumber>
   <ConfigConnectionString>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</ConfigConnectionString>
+  <MainURL>https://api-sandbox.invertironline.com/</MainURL> <!--DEV-->
+  <!--<MainURL>https://api.invertironline.com/</MainURL>--> <!--PROD-->
   
 </Configuration>

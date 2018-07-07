@@ -808,7 +808,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                     {
-                        DoLog(string.Format("@{0}:Cancelling all active orders @ IB", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("@{0}:Cancelling all active orders @ Primary", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                         return CancelAllOrders();
                     }
                     else
