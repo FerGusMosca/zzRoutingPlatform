@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities;
 using zHFT.InstrFullMarketConnectivity.IOL.Common.DTO;
@@ -35,6 +36,8 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         #region Protected Attributes
 
+        protected string Name { get; set; }
+
         protected OnLogMessage Logger { get; set; }
 
         protected string CredentialsConnectionString { get; set; }
@@ -46,6 +49,10 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
         protected AccountInvertirOnlineData AccountInvertirOnlineData { get; set; }
 
         protected AuthenticationToken AuthenticationToken { get; set; }
+
+        protected object tAuthLock = new object();
+
+        protected Thread RefreshTokenThread { get; set; }
 
 
         #endregion
@@ -80,6 +87,9 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
                 AuthenticationToken = JsonConvert.DeserializeObject<AuthenticationToken>(resp);
 
+                RefreshTokenThread = new Thread(RefreshToken);
+                RefreshTokenThread.Start();
+
             }
             catch (Exception ex)
             {
@@ -101,26 +111,29 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         protected string DoGetJson(string url)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-
-            request.Method = "GET";
-            request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
-            request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
-            //request.Headers["X-Username"] = AccountPrimaryData.User;
-            //request.Headers["X-Password"] = AccountPrimaryData.Password;
-            //request.Headers["Authorization"] = "Bearer " + Convert.ToBase64String(Encoding.Default.GetBytes(string.Format("{0}:{1}", AccountPrimaryData.User, AccountPrimaryData.Password)));
-
-            if (AuthenticationToken != null)
-                request.Headers["Authorization"] = "Bearer " + AuthenticationToken.access_token;
-
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
             string content = string.Empty;
-            using (Stream stream = response.GetResponseStream())
+            lock (tAuthLock)
             {
-                using (StreamReader sr = new StreamReader(stream))
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+                request.Method = "GET";
+                request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36";
+                request.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
+                //request.Headers["X-Username"] = AccountPrimaryData.User;
+                //request.Headers["X-Password"] = AccountPrimaryData.Password;
+                //request.Headers["Authorization"] = "Bearer " + Convert.ToBase64String(Encoding.Default.GetBytes(string.Format("{0}:{1}", AccountPrimaryData.User, AccountPrimaryData.Password)));
+
+                if (AuthenticationToken != null)
+                    request.Headers["Authorization"] = "Bearer " + AuthenticationToken.access_token;
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                using (Stream stream = response.GetResponseStream())
                 {
-                    content = sr.ReadToEnd();
+                    using (StreamReader sr = new StreamReader(stream))
+                    {
+                        content = sr.ReadToEnd();
+                    }
                 }
             }
             return content;
@@ -128,41 +141,92 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         protected string DoPostJson(string url, Dictionary<string, string> queryStrings)
         {
-            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-
-            string postData = "";
-            foreach (string key in queryStrings.Keys)
-            {
-                postData += key + "=" + queryStrings[key] + "&";
-            }
-            var data = Encoding.ASCII.GetBytes(postData);
-
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
-
-            if (AuthenticationToken != null)
-                request.Headers["Authorization"] = "Bearer " + AuthenticationToken.access_token;
-
-            using (var stream = request.GetRequestStream())
-            {
-                stream.Write(data, 0, data.Length);
-            }
-
-
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
             string content = string.Empty;
-            using (Stream stream = response.GetResponseStream())
+
+            lock (tAuthLock)
             {
-                using (StreamReader sr = new StreamReader(stream))
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                string postData = "";
+                foreach (string key in queryStrings.Keys)
                 {
-                    content = sr.ReadToEnd();
+                    postData += key + "=" + queryStrings[key] + "&";
+                }
+                var data = Encoding.ASCII.GetBytes(postData);
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = data.Length;
+
+                if (AuthenticationToken != null)
+                    request.Headers["Authorization"] = "Bearer " + AuthenticationToken.access_token;
+
+                using (var stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader sr = new StreamReader(stream))
+                    {
+                        content = sr.ReadToEnd();
+                    }
                 }
             }
             return content;
+        }
+
+        protected void RefreshToken(object param)
+        {
+
+            while (true)
+            {
+                lock (tAuthLock)
+                {
+                    try
+                    {
+                        string url = MainURL + _LOGIN_TOKEN_URL;
+                        string postData = string.Format("refresh_token={0}&grant_type=refresh_token", AuthenticationToken.refresh_token);
+                        var data = Encoding.ASCII.GetBytes(postData);
+
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                        request.Method = "POST";
+                        request.ContentType = "application/x-www-form-urlencoded";
+                        request.ContentLength = data.Length;
+
+                        using (var stream = request.GetRequestStream())
+                        {
+                            stream.Write(data, 0, data.Length);
+                        }
+
+                        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                        string content = "";
+                        using (Stream stream = response.GetResponseStream())
+                        {
+                            using (StreamReader sr = new StreamReader(stream))
+                            {
+                                content = sr.ReadToEnd();
+                            }
+                        }
+
+                        AuthenticationToken = JsonConvert.DeserializeObject<AuthenticationToken>(content);
+
+                        Logger(string.Format("Actualización del refresh token @{0}:{1}", Name, AuthenticationToken.refresh_token), zHFT.Main.Common.Util.Constants.MessageType.Information);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Logger(string.Format("Error invocando el servicio de refresh token:{0}", ex.Message),zHFT.Main.Common.Util.Constants.MessageType.Error);
+                    }
+                }
+                Thread.Sleep(1000 * 60);//Once per minute
+            }
+        
         }
 
         #endregion

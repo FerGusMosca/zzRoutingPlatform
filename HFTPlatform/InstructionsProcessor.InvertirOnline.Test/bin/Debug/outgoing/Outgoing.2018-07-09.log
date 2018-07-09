@@ -1,0 +1,116 @@
+2018-07-09 12:57:43  :: 7/9/2018 12:57:43 PMMomentumStrategyBase.LoadConfig
+2018-07-09 12:57:43  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 12:57:43  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 12:57:43  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 12:57:43  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-09 12:57:43  :: 7/9/2018 12:57:43 PMOrderRouterBase.LoadConfig
+2018-07-09 12:57:43  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-09 12:57:43  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-09 12:57:43  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-09 12:57:43  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-09 12:57:44  :: 7/9/2018 12:57:44 PMOrderRouterBase.LoadConfig
+2018-07-09 12:57:44  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 12:57:44  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 12:57:44  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-09 12:57:44  :: Authenticating Order Routing On Invertir Online
+2018-07-09 12:58:08  :: Order Routing authenticated On Invertir Online. Token:ilKp7pl1I3FVn9GBPLLrpNqyVSJGx7bGapFnNtv7oW7y_ixqmVmaNq0W0ZKznaqz3M619sEY42LLD7Zeuqid3BiV9TZEsKbABU6CFPRVct2eJy0hVFi1T9c8VOC0ZFq5q0TzsiHwT52EXE8inGsboH2Va5lFP5H0T4v6HhClYqqEr_3AfU52cTZAIQ1QhjK5ORi2BhshnFOiswuRSQg0wxZQBTw64q2EemWemvPuYcoE7eZKYD-SflyTZYsaCyR8mKKPN4_qg8jT1pMyqr83oZ1jS0FrLo7FXmEfOBYcz19QDtvxVQxB8CbBzF6e5m-Y
+2018-07-09 12:58:08  :: Authenticating Account Manager On Invertir Online
+2018-07-09 12:58:09  :: Account Manageauthenticated On Invertir Online. Token:o82hDeyJ8wv1B52ZAVZN8lbtDn7cJt3-QJ8ychOPf3hfr5bRU7QxUCdfrnHcMMvHlMgN1ok7X2JvJc4svk4EpqLU83gxjF3YzjgZ1Py1OFnVzDpDKJzDxtL24EtetStCozpt5cpquzsBFy5wkhc2hZQCKJkMXnzYd7JqkaYq-vYyDXinqNuFbdxvMNQ4hfCBfXA3lfUJ45w2ZNAymEWBwD_lausqDUnAspNU6RyZOpQWOB3Ur6P0rbaWqTjiME03ekD8YsiG6F_YALcK-6mnxf423Tq86cfD4ccjNDhUH_imAIS_whuDBVeloTm1l9ct
+2018-07-09 13:01:57  :: 7/9/2018 1:01:57 PMMomentumStrategyBase.LoadConfig
+2018-07-09 13:01:57  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:01:57  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:01:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:01:58  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-09 13:01:58  :: 7/9/2018 1:01:58 PMOrderRouterBase.LoadConfig
+2018-07-09 13:01:58  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-09 13:01:58  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-09 13:01:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-09 13:01:58  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-09 13:01:58  :: 7/9/2018 1:01:58 PMOrderRouterBase.LoadConfig
+2018-07-09 13:01:58  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:01:58  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:01:58  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-09 13:01:58  :: Authenticating Order Routing On Invertir Online
+2018-07-09 13:02:20  :: Order Routing authenticated On Invertir Online. Token:pHxmVdEi5bz34md-p22OKfL6jy900iwEqHSLCGai9OltzEwbN0YUOJbR_UPdPwFahz64VJbkuHjNwubcow9gv7iOZB8AJYzh4yhSZUekK9Pl77eITD-t1d9RpsAhso5N48Yd0VyqjYa-W-mUdEpcRRnB_yHRH9U-e2PIoFdLVEW1-23frV7Jr2wWQfynBydHsymXvfXzQSWJavRt37D603nf4O02ZmtcP_NCTCQu48sJHfT4bxlhYwg49EXb2UMXxm7baMoTQZZ2ecRVzQfauYYpzZ1xUOoXwHt232g94jA
+2018-07-09 13:02:21  :: Authenticating Account Manager On Invertir Online
+2018-07-09 13:02:21  :: Actualización del refresh token @Invertir Online Order Router:B8um9giwisOAqI_SgP-syhVe9MqXzDtpRm5TsXRdouPU4hCaT00lg6fLv1xzxCaLnW-9zCjdOA7MednxOSfOdwCTz424D0jyvygaqAjDZGqvkw7LCk7IV4yfEssQtcpF6d7lrRm9NORbkAtOaUPh4TNKGsOjixN15R5zMDvCmEjiQF_58MgU21itiJhjQ9MnXqhWlJ8JFbsQ4ajJ5P49nQl_ORptNvB2TmMewu6ew4vUIS1ZHNbJZtHfgaiW9j7K-6SKbvTRBQojP2g-ZS-tnNelbmVISby_7f0Jd3i-YtM
+2018-07-09 13:02:21  :: Account Manageauthenticated On Invertir Online. Token:WMAbAakE_4-5RA4IMKAA5inQDRuVmaYe2vDXGjKCvPwW9USshEJK13VfKAQJ8pXbhnMGXw-vOpDkmCMTrMDGHRZyCVd0AjwTPJH8hU9Vt8GDb1WqTZikzE0HQwjgNvxSfE-wog_1tEGm5LPLRDBOpvHtpzXdpjjApr9cSp4-PnoE54or7AFv9t5iDqEjJcwWumvRULOonBs82Ob3MxzjHY7DPPsj4M1HWnYxDk7eAsF_4APWBHE0cfT5pgryUHR_vVgdlLHYwIjqrPOXLc1PMmV5PCnAhIos2J2_GzNp4bAAB0U-mJsxzWbpxYspF9zR
+2018-07-09 13:03:24  :: 7/9/2018 1:03:24 PMMomentumStrategyBase.LoadConfig
+2018-07-09 13:03:24  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:03:24  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:03:24  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:03:24  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-09 13:03:24  :: 7/9/2018 1:03:24 PMOrderRouterBase.LoadConfig
+2018-07-09 13:03:24  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-09 13:03:24  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-09 13:03:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-09 13:03:24  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-09 13:03:24  :: 7/9/2018 1:03:24 PMOrderRouterBase.LoadConfig
+2018-07-09 13:03:24  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:03:24  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:03:24  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-09 13:03:24  :: Authenticating Order Routing On Invertir Online
+2018-07-09 13:03:25  :: Order Routing authenticated On Invertir Online. Token:QkddTh-KqBbESxbmfHh4-aJO610YPe2JTboF5OGu5zAKtpKMRRMEXQNxuI6uzp4d9kpgZU9zDpQ3VshWD6GhZdxXRLCV0ZqkvZt0Q-y4d6jqY3bdMqupqm7rUPS3k3k7BJd4W3_H3NmmhVW7rl_t3xTrB1qJOk1rlGxV5pQn6oSZHSkbMEbNYpllCkNhiPZn9LliDDryz9IPcIRqI0O97WzsSskFJom-hHmWhNombgewHJ_QMtdx8l1S2F1E0M5fnaxnGa7tHi4979OQT3Ctawu27wpeKrVtGCqc6f426Lo
+2018-07-09 13:03:25  :: Authenticating Account Manager On Invertir Online
+2018-07-09 13:03:26  :: Actualización del refresh token @Invertir Online Order Router:bWNhGm6O0Ujo0MsmtYw0UtDtD3R-7B7tF7UZtYMjwLzQB7eRMPOhFp6RK_I3gA64yd6HWsQ9EF8HueF1boTZznHmdahceufZw6CnaaSG5ZT5CZgO-EbjKDuYl14PHP1H-G3jZvQttPhAw97UWC9YP8kSm-gMoCSplLU1Rzk13Au2acJ_dqn8Z1N-RPK_XYxBPus5wB1UxLGFPSim9bgVZK7gBCl5dASvPLzR6anA6q16KsYJsoNEetV9CtCH5UFXnQ5eDCtuX9smEDWE3y-6IdqMjsByqs_M-zOtT_aUiH4
+2018-07-09 13:03:26  :: Account Manageauthenticated On Invertir Online. Token:6O5Srn5WfzNhnO5ycWOEtZcoN7W4fSU1RYYZiNQmDQauU_9iikKdjkbzjK23xiuTYHkjAW0_QnqSQ8GNPTU2KITxKXcPiaISh1_ofy29td9AmxyJ9gCtknQiMaLAVlusXkvAh7PHYuAnqpqHZgAbecuj2LQRokM5og2EkRlvEurEuJ9bMQ1ldy9J6OjX_gEFd2j1bdYxGoyBbcGnb_Wn93B_a0SadRK84IjzXhRoYeDwdXMovMkz5bq2r0nRKuYOFz6TGXi2aJFfhzWFmn0NI0n0po1RtwQ4f16YU8kwR2k
+2018-07-09 13:04:23  :: 7/9/2018 1:04:23 PMMomentumStrategyBase.LoadConfig
+2018-07-09 13:04:23  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:04:23  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:04:24  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:04:24  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-09 13:04:24  :: 7/9/2018 1:04:24 PMOrderRouterBase.LoadConfig
+2018-07-09 13:04:24  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-09 13:04:24  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-09 13:04:24  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-09 13:04:24  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-09 13:04:24  :: 7/9/2018 1:04:24 PMOrderRouterBase.LoadConfig
+2018-07-09 13:04:24  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:04:24  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:04:24  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-09 13:04:33  :: Authenticating Order Routing On Invertir Online
+2018-07-09 13:04:55  :: Order Routing authenticated On Invertir Online. Token:aPHDTFweNVxpXhtD97MJn74MBXkXkBxVEV4CqpsZqlrE8ljgpxcrLDu3JX7oyUkotckbECfKEXVu1pQq22rBJ4ilRyEYlfDIHfd2K7vHY9HFH_xswViLOvxEQdkD2p9TZQqy634X68fuLeh-KhCkWh3eMXPMrwn1sRNJXepmMOvCWv0M5cYU231RkjdrwY48lqDEbzdE0hYaq70hib_sCvj01w-jNhp8pbcgHNQlVj0XOzDluU88b_ZfmgtOcdDde4_ttd81Ka6lE3HRfxgcCrk7PgKT9jpaiVnTrp_bZmw
+2018-07-09 13:05:00  :: Authenticating Account Manager On Invertir Online
+2018-07-09 13:05:00  :: Actualización del refresh token @Invertir Online Order Router:3w-Lp3elvFmdWHq6tYIi1CifmAfOigYwz1_fi_R2ZRR-ZriMC80LmOjGKH8vIpDbMxLbCBNVyJ3hy5QCm1jVl6NvI-6swpski_OwjYME3ig6BSul1qCohZf68tuxE1sY7qsw-pL3eodGgX1qUJGjmYE5TWHqcSufMuZFyeekdDnVHIjRptc0B-3pKNsnxn29rz9o4yepOwaFNWBB5YVeOUkz-bEIPoThuUMPUD7frF3AEAL7qCTV4Q5njDCICGqJ9Qm6ZKU4aqHfFp0LYqx_vrtAZXwhvhgV4pYX5hFfApquTbcVovbvvfN8vynO3fJY
+2018-07-09 13:05:01  :: Account Manageauthenticated On Invertir Online. Token:fhai8TPefhKKx8ZTejP5rOkcRFnQqnpTYAj9-dgRoqdWrCCZ1IRAczghrXZNpkwlJsV_8YcGCYawHyxeZfP7jUp5qz9GUbbN01l2AFhuO-8BFBtCeYIJ2IhdfHGL5m3VDYcGaB7yOVVsxFYzTi1eWwedFkaiiGXI5QTG1ETsaMoZztwhk3fE8U6q38mIzNqCf9m9OFDz74bWG8kJfwOy17u31wrAZ2iiHZ0cPpRHnOmveWZX4dz8yKlACN6R7g1adP5bEp6qlB4WmbuanUfYwWdyxDt2h0HiXa0DR_etyOyfBLVGm8L0p5mNkKO8x4Lf
+2018-07-09 13:06:17  :: 7/9/2018 1:06:17 PMMomentumStrategyBase.LoadConfig
+2018-07-09 13:06:17  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:06:17  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:06:17  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:06:17  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-09 13:06:17  :: 7/9/2018 1:06:17 PMOrderRouterBase.LoadConfig
+2018-07-09 13:06:17  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-09 13:06:17  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-09 13:06:17  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-09 13:06:17  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-09 13:06:17  :: 7/9/2018 1:06:17 PMOrderRouterBase.LoadConfig
+2018-07-09 13:06:17  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:06:17  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:06:17  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-09 13:06:20  :: Authenticating Order Routing On Invertir Online
+2018-07-09 13:06:21  :: Order Routing authenticated On Invertir Online. Token:x6eIxkp1pqXMPZzI-q04HOc5lV5NZpYHdQwbnOB5ZXy5MpOhLSyqfoMk_-P-7Ravbadn_KwgeKVoQzyVoys7F40rUe3lLhmQRnsZ9zb-wfYztXR14fLIYj7w67URWm67YbqHoEVVlZb29FoNlFpvxKhlJ7EQCvsxWJHeU1Ddvjdia8nfQUBF48-OS5xwFmjX5WVAXSJYmnhPPGhWfhZFFMfwePQFVgx1AwzP6oZqoQtSedp1hMdyCB-kGmv1eBb_rEKG63hTUYc_6KhiEJjRoC9KSSBUU-uqnw21VuMr4QlKclgHVP-6N-GKOJNQCNhH
+2018-07-09 13:06:26  :: Authenticating Account Manager On Invertir Online
+2018-07-09 13:06:27  :: Actualización del refresh token @Invertir Online Order Router:NvfksOs7K6haY7mql6u4-eF-lc5R9P7NDolOyb8dFELc4n398A6kORSfPnNGeTen5r-Fm003-KDADvQksljdsTsbMcV0uYajLLWgtvRg1Y0zQbn6v3x-KCp66CPc2Qsdloh_D7x9bB1x3xLdTbwLLBcaG6adSNYUnpj3LYX17Vqbe5Q2aiLVtPa7OcXgBCH8yJ8_F-Q6d7p6YBJOdrBFBCyf8P9oeflIK37XzoQcb8ftZnyJ-4zrkLEcsrydZTvpd4MndiEXvXReHvKQ6IWSe9gNFNrvKJ1XimBMsljmDshFAEi1EjHAj3zOn9nFh2_W
+2018-07-09 13:06:27  :: Account Manageauthenticated On Invertir Online. Token:PvFWfUSk2ROhN81IThr1NbCvyFpJ-J4q34zfBnss2hCLPvEVBaOYHWmO6vAk1pkQxPIdatNcccRFj4SMCnM4k0rwYQj6Iwwm3yIt1tna-A5pqlHU2PFTb_7tqe0smHMBm2G0QjTmIzJLuTl1kdON7d-lso5fHCURVEoVScIZZrSotazxCdCWcd3kWVLfZq2Rav6iuNSyCgtWbsAenTdaf5oRseLVVn3DNph6aBXJtJjfw2c_M7gAaNf1ya92-lvM4r4GSUYS5beZ8-a20tIlzXWwfEZQ0OjyYhPlmRX9cZs
+2018-07-09 13:07:39  :: 7/9/2018 1:07:39 PMMomentumStrategyBase.LoadConfig
+2018-07-09 13:07:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:07:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:07:39  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-09 13:07:39  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-09 13:07:39  :: 7/9/2018 1:07:39 PMOrderRouterBase.LoadConfig
+2018-07-09 13:07:39  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-09 13:07:39  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-09 13:07:39  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-09 13:07:39  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-09 13:07:39  :: 7/9/2018 1:07:39 PMOrderRouterBase.LoadConfig
+2018-07-09 13:07:39  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:07:39  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-09 13:07:39  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-09 13:07:39  :: Authenticating Order Routing On Invertir Online
+2018-07-09 13:08:01  :: Order Routing authenticated On Invertir Online. Token:PpTbb7lcs4vitAz0qkH6Dg1CMk3ukj70VdubfQy0z9LNE_saV5OwdQoXLPrLt_hgRVJRNr9I3iqFcLv6TZ-3PY7Pzh5_9cP6c-XvNg5hCOxy_0qGpUIQudRQPCFOKMdBn9KFzz-GzEXcbMAUIvb8R2v4YXOdYyOfppM4wiDXF4agXjXslEU8EhLYC_F9mTjuyTMF9rAVNz_-ZE5RZYDe3aG9DhkSrpvMo0y0ztar5DZd7Pcf8M23e8t9GBx0A3bYxsrXJkJ0EmY7wbN54v6hhAj1lwjd4VtLRrURjdo8_2UnD6T1JSYCfajk6vvPlugt
+2018-07-09 13:08:02  :: Authenticating Account Manager On Invertir Online
+2018-07-09 13:08:02  :: Actualización del refresh token @Invertir Online Order Router:CnM-6JXnTScnVZ3I5GpLQXg8R9ipfsgI98crVrG0XBFGaokM3LEXWnhlY_Up6AZaEtOIyAPzhoot-22cJUxUNiUZ8sHSueLbguHcinyTRjt7KkzilPnQD5tZfB8b7jud-ZhX-pkBjAjACtgWMAeawbWFCOAr-iMyleGpUEiEcNo8qpOOiteiAu4U4wDRcRlykiyCXhaj1KuzYveC5MjY0Wow2dHdjBX8UVlnzoz9D5_v5UrQlLnpvx-4qkHy0v0yCKiN3c6FIaOWK7L2Wfq9DoArCA_MWpX4LC04PCColWPv5R6u7LaKxPdZs0usvaFA
+2018-07-09 13:08:02  :: Account Manageauthenticated On Invertir Online. Token:_kVR0sV0lNroLYQARkyZG1P7OkCVTf9BMRzXiRNdAkvbjenHZrQD1HyavUSKnedKLFJj_dRq7hZ9TEKr6tS2k6Pn7rT7MEiEh1sBGUv5957x76f6pQZLIPiwH551A9UQGzooOPhYVzMtFMulX57nmaUa7B1Ntdf_87nCBSQ-XXZryMVavNyzw7TElTLe-dZNV5GMEfHJ0BPHigWD01UTdJ3-o_Xr7FsEWihMvXTKhiCiATsfIdM4Y1zQBcE4nAxO5UMDzsRc6Y-iXY7uyIRLG1G_yW-0yoMaEmWNusbfPS8
+2018-07-09 13:08:03  :: Actualización del refresh token @Invertir Online Account Reference Handler:q29ivM7OGvnX-fHXJ1FxlHS3UFZCHvBznAR3IF5vM-Q6tJJOAbnn4QY0zalbgTHmloz8lpCgKaIIRA4PHBFRdBBxQVKwt6XIGwpIHdPqzQwxiUlPUJIUe94BWml7SpR4w99inTp9N7Ht3CNmsq4tqD_X8TJt4x_H7ONa8-2WLPiUAWLzevfW8SnU7JXJ1qIN7TWUmc222cRLhXUh-jafHSg-DF_lKp-izNLD9Q21PNybyFE5UjdZ-yBqm2XPW9lW8ANYMw8UmNO1A0ZY19aZDxOfiwQoNxzQXhY8KIZQx7I
+2018-07-09 13:09:05  :: Actualización del refresh token @Invertir Online Order Router:V4iXyUsveI7EJ2bN0Z775CE8-xo6owfJ0BlzLgwWEU0DL-d0xV4lifHrzt8Ov1ilT4EDYAfMPt48W_pqaqpCfGquf2nPuNgQG4UyDy2Pu6prZjZr2aYELYKS3-R3bmBGSfxP9T87aNnAQQt_DUQvhzMjidj02NLcWb-9J1UM7yHiKcYWIzyV2ic1zcML9I9wlcWwArpYAjoYrBmlKmynQwPWiTgq0LtX0c0BTPLBZXsYEmZ47bhclxn0_0RKRhAF5nM4lJ9lma0Kb5XTuubH5FgK8G71fZaqkt8BOkufAQrf9tn2ehLQ_bUu2YyhaDoX
+2018-07-09 13:09:05  :: Actualización del refresh token @Invertir Online Account Reference Handler:1RR9HSe7e4pah_Y9dVWhtz1L_Fbv7Qtq7pJXSdf-h4W4vMkhhgcE1jaHztDoaeWwG2aT00S_1i7BJSUEmiREcYvpLx0za5-YwMiuiGY_Gn1liY1qJRzqxqwbnl0RNpqAVb_Qk0107u-MvgDvPsgXBSoRZSS2XtUra907sxt9vegMOUSCHj7bsMK1rIGQ_h-vgAzLsacheErRoK0BW8_MuaaK27-VJTyCN66XAG-YEFaihNrGfNFUfhLspwpAv5Fw8dxoH94GwiLu9AHXA0JNKAZN3N4FCoFvXGCRnoB98mE2i-QRgrrKtNBIxIgFFewR

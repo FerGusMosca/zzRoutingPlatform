@@ -25,12 +25,14 @@ namespace zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
 
         public IOLAccountManager(OnLogMessage OnLogMsg, List<ConfigKey> pConfigParameters)
         {
+            Name = "Invertir Online Account Reference Handler";
+            Logger = OnLogMsg;
             ReqAccountSummary = false;
             ReqAccountPositions = false;
             AbortOnTimeout = false;
             AccountToSync = new Account();
             Positions = new List<AccountPosition>();
-            Logger = OnLogMsg;
+            
             ConfigParameters = pConfigParameters;
             //ValidateDictionary();
             LoadConfig();
@@ -110,8 +112,6 @@ namespace zHFT.StrategyHandler.IBR.IOL.DataAccessLayer
         protected Boolean ReqAccountSummary { get; set; }
 
         protected Boolean ReqAccountPositions { get; set; }
-
-        protected OnLogMessage Logger { get; set; }
 
         protected List<ConfigKey> ConfigParameters { get; set; }
 

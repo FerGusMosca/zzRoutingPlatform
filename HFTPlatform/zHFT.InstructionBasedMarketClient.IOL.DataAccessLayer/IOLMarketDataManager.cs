@@ -20,7 +20,8 @@ namespace zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer
         public IOLMarketDataManager(OnLogMessage OnLogMsg, int pAccountNumber, 
                                     string pCredentialsConnectionString,string pMainURL)
         {
-          
+
+            Name = "Invertir Online Market Data Client";
             Logger = OnLogMsg;
             CredentialsConnectionString = pCredentialsConnectionString;
             AccountNumber = pAccountNumber;

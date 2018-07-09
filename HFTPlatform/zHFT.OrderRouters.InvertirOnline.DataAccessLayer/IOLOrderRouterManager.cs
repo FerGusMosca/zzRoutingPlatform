@@ -18,7 +18,7 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
         public IOLOrderRouterManager(OnLogMessage OnLogMsg, int pAccountNumber, 
                                     string pCredentialsConnectionString,string pMainURL)
         {
-          
+            Name = "Invertir Online Order Router";
             Logger = OnLogMsg;
             CredentialsConnectionString = pCredentialsConnectionString;
             AccountNumber = pAccountNumber;
