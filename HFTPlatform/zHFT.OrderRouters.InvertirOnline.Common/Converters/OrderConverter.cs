@@ -15,18 +15,18 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Converters
     {
         #region Private Static Consts
 
-        //private static string _SETTL_T_PLUS_0 = "t0";
-        //private static string _SETTL_T_PLUS_1 = "t1";
-        //private static string _SETTL_T_PLUS_2 = "t2";
-        //private static string _SETTL_T_PLUS_3 = "t3";
+        private static string _SETTL_T_PLUS_0 = "t0";
+        private static string _SETTL_T_PLUS_1 = "t1";
+        private static string _SETTL_T_PLUS_2 = "t2";
+        private static string _SETTL_T_PLUS_3 = "t3";
 
-        private static string _SETTL_T_PLUS_0 = "a0horas";
-        private static string _SETTL_T_PLUS_1 = "a24horas";
-        private static string _SETTL_T_PLUS_2 = "a48horas";
-        private static string _SETTL_T_PLUS_3 = "a72horas";
+        //private static string _SETTL_T_PLUS_0 = "a0horas";
+        //private static string _SETTL_T_PLUS_1 = "a24horas";
+        //private static string _SETTL_T_PLUS_2 = "a48horas";
+        //private static string _SETTL_T_PLUS_3 = "a72horas";
 
-        private static string _ORD_TYPE_LIMIT = "preciolimite";
-        private static string _ORD_TYPE_MARKET = "preciomercado";
+        private static string _ORD_TYPE_LIMIT = "PrecioLimite";
+        private static string _ORD_TYPE_MARKET = "PrecioMercado";
 
 
         #endregion

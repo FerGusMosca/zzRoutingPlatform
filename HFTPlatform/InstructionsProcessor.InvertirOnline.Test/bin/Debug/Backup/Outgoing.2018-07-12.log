@@ -1,0 +1,193 @@
+2018-07-12 21:57:22  :: 7/12/2018 9:57:22 PMMomentumStrategyBase.LoadConfig
+2018-07-12 21:57:22  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 21:57:22  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 21:57:22  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 21:57:22  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-12 21:57:22  :: 7/12/2018 9:57:22 PMOrderRouterBase.LoadConfig
+2018-07-12 21:57:22  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-12 21:57:22  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-12 21:57:22  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-12 21:57:22  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-12 21:57:23  :: 7/12/2018 9:57:23 PMOrderRouterBase.LoadConfig
+2018-07-12 21:57:23  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-12 21:57:23  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-12 21:57:23  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-12 21:57:23  :: Authenticating Order Routing On Invertir Online
+2018-07-12 21:57:38  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:38  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:39  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:39  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:40  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:40  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:41  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:41  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:43  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:43  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:44  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:44  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:45  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:45  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:46  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:46  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:48  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:48  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:49  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:49  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:50  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:50  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:51  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:51  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:53  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:53  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:54  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:54  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:55  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:55  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:56  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:56  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:58  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:58  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:57:59  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:57:59  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:00  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:00  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:01  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:01  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:03  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:03  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:04  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:04  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:05  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:05  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:06  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:06  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:07  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:07  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:09  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:09  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:10  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:10  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:11  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:11  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:12  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:12  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:14  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:14  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:15  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:15  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:16  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:16  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:17  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:17  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:19  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:19  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:20  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:20  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:21  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:21  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:22  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:22  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:24  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:24  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:25  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:25  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:26  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:26  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:27  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:27  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:29  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:29  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:30  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:30  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:31  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:31  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:32  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:32  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:34  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:34  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:35  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:35  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:36  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:36  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:37  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:45  :: Critic error initializing .\outgoingOrderRouter.IOL.xml:Could not authenticate user fermoscatest2 on Invertir Online
+2018-07-12 21:58:48  :: Error processing market data @Strategy Handler - Instruction Based Router:El valor no puede ser nulo.
+2018-07-12 21:58:48  :: Authenticating Account Manager On Invertir Online
+2018-07-12 21:58:49  :: Account Manageauthenticated On Invertir Online. Token:SkM0N_aMSOpt7a_Qzkv64vDxQqnYa0BuW5-9q4LcMS1quxVIsjfkWUUGxg3vabB5ylJEWMjw3FiRUU4ed8tTXSrbWQx02Ah_LGb10uEj-qZC4B5lQAYWFk2A1I1_Kxwg8MJd2D1rFSgvX6CJYXeHos0j9mLAZk09n9grFTi2dtaSlcnqM70qKwUEgu9_sUV9NOYm9Ru8Z8mfsZHA5kXa7gXYigi47uKyHIm7gnIQybGCuAPjM1uVOb5rAaZyzT3LUsBaC4GAIZWa6rwUWBieRI_2aFhcraHkwhWaXZQnyq9EWu4lUB6cJJtiGRrpE56O
+2018-07-12 21:58:49  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:49  :: Actualización del refresh token @Invertir Online Account Reference Handler:nGSTgDtZrK9Md-BJlOq8xn1HJRQZfyHwePrdLmc4KaMtMgaBzLE_M9IJ4Gy5ldalaPOSnQY3_swQwrbDStXLkw7yKEcwHP0R70mL2DLoqJHaGz11cZSz7OheQAw8_EteQDIkHysKdRyHkXk6_jPPApnh9nX8t5h0yhO5ErTroOD_SgQ91s_AEtuhCOiz0KqPLzNBwwuiqRV1GlKrwoaL7ZhSMw27y1mlc9Au7YeGMrJ3FPFnq2arQ68twhICRuflXLy8Iv4yOls8mWzo5IGvhNMbrfMhXb3ECaOTbHET380XtfeQJsr_DTs6DxC7uN6z
+2018-07-12 21:58:50  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:51  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:58:53  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:03  :: 7/12/2018 9:59:03 PMMomentumStrategyBase.LoadConfig
+2018-07-12 21:59:03  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 21:59:03  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 21:59:03  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 21:59:03  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-12 21:59:03  :: 7/12/2018 9:59:03 PMOrderRouterBase.LoadConfig
+2018-07-12 21:59:03  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-12 21:59:03  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-12 21:59:03  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-12 21:59:03  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-12 21:59:03  :: 7/12/2018 9:59:03 PMOrderRouterBase.LoadConfig
+2018-07-12 21:59:03  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-12 21:59:03  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-12 21:59:03  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-12 21:59:03  :: Authenticating Order Routing On Invertir Online
+2018-07-12 21:59:25  :: Order Routing authenticated On Invertir Online. Token:3R5JTi6roSzTKUIQ0mlIj62FbAGkrAyt-Bq2hvvgtk7-gQdnBtjhf6sTuRlf_3-AZatwGwD0hZ-814-3I1KYSLm9P9IayR6dKfgyyqTWmyAA0PZ-KWEkEdkknXGLO9n_0Mfz1Hray4YLUMZjJWkt_GhFs3IgnMq3X3FF4dsSJZ35LYkg3t2JVRtt6QgbILQAbq9x_KofpL0m4400b-AZh4TiHG_S4ZLueQFnZmKkM2GaZOVaQmyskFfxySeYaV0W2M9ZFsUYp35xTSWb2HZiy-U9CdfpQSaR4icEaxDyDwYKqA9AsewUNuI40xo9YV6m
+2018-07-12 21:59:25  :: Authenticating Account Manager On Invertir Online
+2018-07-12 21:59:25  :: Actualización del refresh token @Invertir Online Order Router:QmvDFEeC7xwLLkzyzZnOm1iuASx_K_Ce1iR4G-00JvXMooEDAXrmtWhhmyzHG0spnOSBqo_-eYJojG2zIV9-AzbK8gYMXHrv5lmBqY2YHZsc_wDV-ENu7YEOOIQun7d6lhDRZen_JnR-wa56t08URs1hfEIRnoPVynX6yxGoiEmyf0ziBCABDQN4iuecI7RvAlXT3xDDaOkPws-vKVpGDFpWnatKdICpxiGuWjSH1VUeri7MDWue6EI9dvA-atCe8TsCFaGRYKGIHGlSR-fxZQMvsaaBhMdi4crQVH8fPT0
+2018-07-12 21:59:26  :: Account Manageauthenticated On Invertir Online. Token:cLnSRPph3S4rYEQoErKnSboOMJ3oaAUMmfHXdsHoxWblIIQNMkDVuhZ2hC6qTuFeQQRCGr23O_-EVVePqLT6DLY73_MlQ9aTZRTwEGqujCPtP6IClgYUU2YR02kpc5GiJUPbUntSa5Zx96Er9_GOjWaL43J0ntSWDCpnRvRnmsWZ00o5EXfaLLfnxZb6EyrnGLVjy4ir9xv3JAiA5vDYg6GlSeukP1qgvNjssiGyPUo01ckA_S03Sze6uwi0R4tXykI2V_Ygbj-1YJvxhvvhc2oV4nPkd0nUYnUubC_Qzj-N2Y0zuf2lr4e1r3zOhkAy
+2018-07-12 21:59:26  :: Actualización del refresh token @Invertir Online Account Reference Handler:ff2sgUUvFgKkYUSrU-yeGBlaYS06FjhPPAzd55YHobvNaiMTMpuq64yDDCW4Aao9OSV0NPl8vJHTZaTiI5Yvh0jwPqhPN1P-0fujB1M5ZJxIfsuPoBTt-u-hJCfGHRtp_qjwy-RLTLBPcoIC-2cEZPL2kS1dKsWNKzLsxy3yXV8_idFr1iZe5hfwyjzZG_tbPvdro650GQfK0z2TPSi-Q91v6latOwkOZrye-CqRTHFRHeYxJeVvEm3RaShVmTl7PHVA7jr6gq9925KdP3Plr9hnE3_at0TCAaOBQhdD-2yp1XBhQrbs7W4Q32zHXgu_
+2018-07-12 21:59:27  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-12 21:59:30  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-12 21:59:39  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-12 21:59:39  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-12 21:59:39  :: Strategy Handler - Instruction Based Router: Unwinding position for symbol GGAL.BUE
+2018-07-12 21:59:40  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:40  :: Routing to market position for symbol GGAL.BUE
+2018-07-12 21:59:40  :: Creating sell order for symbol GGAL.BUE.Quantity=72 Price=97.95
+2018-07-12 21:59:40  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-12 21:59:40  :: Routing Order Id 0
+2018-07-12 21:59:41  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:44  :: Error routing order to market using Invertir Online:Se produjo un error enviando una orden de venta del activo GGAL:Error en el servidor remoto: (500) Error interno del servidor.
+2018-07-12 21:59:45  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:46  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:48  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:49  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:49  :: Creating sell order for symbol GGAL.BUE.Quantity=72 Price=97.95
+2018-07-12 21:59:49  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-12 21:59:49  :: Routing Order Id 1
+2018-07-12 21:59:49  :: Error routing order to market using Invertir Online:Se produjo un error enviando una orden de venta del activo GGAL:Error en el servidor remoto: (500) Error interno del servidor.
+2018-07-12 21:59:50  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:51  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:53  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 21:59:54  :: Creating sell order for symbol GGAL.BUE.Quantity=72 Price=97.95
+2018-07-12 21:59:57  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-07-12 21:59:57  :: Routing Order Id 2
+2018-07-12 21:59:57  :: Error routing order to market using Invertir Online:Se produjo un error enviando una orden de venta del activo GGAL:Error en el servidor remoto: (500) Error interno del servidor.
+2018-07-12 21:59:59  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 22:00:00  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=96 BestBidPrice=93 BestAskPrice=97.95
+2018-07-12 22:01:08  :: 7/12/2018 10:01:08 PMMomentumStrategyBase.LoadConfig
+2018-07-12 22:01:08  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 22:01:08  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 22:01:08  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-07-12 22:01:08  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-07-12 22:01:08  :: 7/12/2018 10:01:08 PMOrderRouterBase.LoadConfig
+2018-07-12 22:01:08  :: Loading config:.\outgoingOrderRouter.xml
+2018-07-12 22:01:08  :: Processing config:.\outgoingOrderRouter.xml
+2018-07-12 22:01:08  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-07-12 22:01:08  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-07-12 22:01:08  :: 7/12/2018 10:01:08 PMOrderRouterBase.LoadConfig
+2018-07-12 22:01:08  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-07-12 22:01:08  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-07-12 22:01:08  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-07-12 22:01:08  :: Authenticating Order Routing On Invertir Online
+2018-07-12 22:01:09  :: Order Routing authenticated On Invertir Online. Token:afykCWIoamm375Eb_YpaP-S1roJC6udKQlXEFpeqstUFuSAE_pcN9fv4ViGFN4mHrUSWF3RWUDr5D4jRo-RyYC33pZIScCfR-YJbGTeT2SIL63wO2tr84W_ok3wFBJbsBgDCIf-2hnTzwW4oIRdY-bx9QY6qGDlMzoVQGhBGVoxjGJILdk_zXrJbCLyyZoHr2m-Hp1vz35CZ2rNIilhk_ZguvkQo4e6k40Gprsk26IcyrJs-5yIQn1AH1E5-UfvkOButbd4Hp0XDM26xUWLDwa6_Hrs4Oru7gV1fKo5Cu0M
+2018-07-12 22:01:09  :: Authenticating Account Manager On Invertir Online
+2018-07-12 22:01:09  :: Actualización del refresh token @Invertir Online Order Router:A3mMInm4g-I1P2QKXq-aiH4ElMNk15E1bjvnWas4SPN07uF21DlnQCoc6_zHKkfVL_E7vHDzFxBLDMNU-zoTEH4jRF7FyPvmQ2OkCwPHvmq95LHMf1pOTFKm1m8y5bu0VkpEXyXXgUImno2VMmJOAqdUQmM0TncBTFl0Rer_vvvJqohwhfRwucqNUw6WkYKP4ZfA9y7BwPk1gNAscg8_Thy3GXwEa4306HiDkqO-mrjuM1KhVOZn3-GTeqpQr0tkgcUGAXPTCdhDgiY0qACMCODElR_0bXgJa-PiOW6bA6g
+2018-07-12 22:01:10  :: Account Manageauthenticated On Invertir Online. Token:djfDRHNtXalFcfrW6BENluLk6JcB5PSEJVmtpiq3VskNFfWDyaduflfRDNXuChtM9U6zD2ZNSdIW9hKsZrbWPJcZm1zbnPXQThMyvtoXCYxNPXvyxVaS-haQNReTkdO_s8w5sUa9Fs_tIjcofRsu2sn3CQSD-LehEFVTW_gblW4cdtoWp-JyZ52AE_NHRLQqNO0jeAKnfVR98I_Ncw7OicvISJlv0GZBBf3sfEOzumfiPaZNO9ywJqYVG2n2pCEo4lscTDi4QVfgwVVyp5F-a89l6EGdQ6OsHq16nWWV2mY
+2018-07-12 22:01:10  :: Actualización del refresh token @Invertir Online Account Reference Handler:uR60xh8t6lahDIDtFJ0ZOt8d6Xt-n59h5F9POuoJuNdSVBj80RgSsFklg3iXcc4FqrlUsbJ_FJQtPhmrTobGQR5y6NGJjw5-9_hwFeXlxldHB2Cv94iFrQUGafeG2qMo9AD5B2fIQZNW2Zk4wfVLvBAq9zAn_QAC7eTiSOfWi-paZOwo89XI9YhaQ6nruyJtlBCGkOf9LShI8fMzzF3ODgEF0vOil1U0OK_HR4EGOzlIlQuDI6KeMnQy6iG5AOM4ZeITclydF0refi9ZcxjX7OLRYmEyzsle5GlGPkANHYk
+2018-07-12 22:01:15  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-07-12 22:01:16  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-07-12 22:01:16  :: Strategy Handler - Instruction Based Router: Creating position for symbol ERAR.BUE

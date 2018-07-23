@@ -45,7 +45,7 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
         private static string _TIF_FIELD = "validez";
         private static string _SETTL_TYPE_FIELD = "plazo";
         private static string _ORD_TYPE_FIELD = "modalidad";
-        private static string _PRICE_FIELD = "preciolimite";
+        private static string _PRICE_FIELD = "precio";
 
         #endregion
 
@@ -64,11 +64,11 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
                 parameters.Add(_MARKET_FIELD, order.mercado);
                 parameters.Add(_SYMBOL_FIELD, order.simbolo);
                 parameters.Add(_AMMOUNT_FIELD, (order.cantidad * order.precio).ToString("00.##"));
-                //parameters.Add(_QTY_FIELD, order.cantidad.ToString());
+                parameters.Add(_QTY_FIELD, order.cantidad.ToString());
                 parameters.Add(_TIF_FIELD, order.validez.ToString());
                 parameters.Add(_SETTL_TYPE_FIELD, order.plazo);
                 parameters.Add(_ORD_TYPE_FIELD, order.modalidad);
-                //parameters.Add(_PRICE_FIELD, order.precio.ToString("00.##")); Hasta que no haya execution reports, usamos ordenes market
+                parameters.Add(_PRICE_FIELD, order.precio.ToString("00.##"));// Hasta que no haya execution reports, usamos ordenes market
 
                 string resp = DoPostJson(url, parameters);
 

@@ -28,7 +28,7 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         protected string _MAIN_BYMA_EXCHANGE = "BUE";
 
-        protected string _IOL_BYMA_EXCHANGE = "bCBA";
+        protected string _IOL_BYMA_EXCHANGE = "BCBA";
 
         protected string _IOL_CLEAR_TPLUS2 = "t2";
 

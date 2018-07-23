@@ -13,8 +13,10 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.Common
         private static string _BYMA = "BUE";
         private static string _ROFX = "ROFX";
 
-        private static string _IOL_BYMA = "bCBA";
-        private static string _IOL_ROFX = "rOFX";
+        private static string _IOL_BYMA = "BCBA";
+        private static string _IOL_ROFX = "ROFX";
+
+        private static string _IOL_BYMA_INT = "1";
 
         #endregion
 
@@ -50,6 +52,10 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.Common
         public static string GetInstrMarketFromIolMarket(string exchange)
         {
             if (exchange.ToUpper().Equals(_IOL_BYMA.ToUpper()))
+            {
+                return _BYMA;
+            }
+            else if (exchange.ToUpper().Equals(_IOL_BYMA_INT.ToUpper()))
             {
                 return _BYMA;
             }

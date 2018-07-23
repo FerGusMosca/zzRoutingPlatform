@@ -1,0 +1,282 @@
+2018-07-23 14:10:26  :: 7/23/2018 2:10:26 PMMarketClientBase.LoadConfig
+2018-07-23 14:10:26  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:10:26  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:10:26  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:10:30  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:10:31  :: Market Data Client authenticated On Invertir Online. Token:qjWmcY-V429_FQ2ruPtjzxVOInn28N9BbeofwmRN7nRDC5_8LBraGkz6k2zPBS2zzRg9y10uLWpyfkkZJj6uCOme4RQnZz_vRfeUCpuej7XbF9aWGZ-lclJ91Z3rbGvvmnO6OHx2VtnlVNzwdbXY_i0xwWa2LmKcLyMta5U37Vv5xHAPq_TEYDMOzvlKrrTeUvj87zZ2wLiUrezLA43z0a1kzQSSAkrcf4TK69Jh1FrGiM0l7JA893lT-Nh_wdVCiibGbZlU9-9zxARRwa37UNrQAOTEJ9LivAEc0dWi0eOaWA3EuKGgk01iIiOF_vfM
+2018-07-23 14:10:31  :: Actualización del refresh token @Invertir Online Market Data Client:36sfoxLpw7OLY0DKQXcdJ66AWB4hXYgRwJurnvEhglDZte3aN4XF0HEKKfXUDtZHYZOeq3pJg8LiFnFlu055dy2RHCDatwbvRMA235F_ggrhe7faShdEIGriQ5KRJ9EOZfAbJZlr78mKWmiEDDJhbm3XRV_XbIGzX8KDDcUQbTGYdHFFy3rzjA-Kc99MzqovvRpQ7-CbTADui4xg1SsYXupVIx3s1StCGBWH2QNiQIkIX9IwZI_J9tM0ck6XYeSpSm9EDGEEgQnvypVyLyoTDJwssx8PPRCegpADYwfhx-d8XOFDUQYJVo0el_upaLU8
+2018-07-23 14:11:32  :: Actualización del refresh token @Invertir Online Market Data Client:cgZAR6Fo3jGa8qT3PJRE82mziVvWHovs5Sa7b1SBtRE8vfup4uLj5gGZ9PqwOP-g2JOJlmTnnZU3NnpCNt6NKupYnhMHc4051JURm3LADd2-qKoXGykCUEj2U_IDLrwb_2jYBZpjhfcZcQtp_SjVRoAdWlXt6FHwLwm8W9N4KCXcqM8NrHkZSkETU1tzh2acGyVl1-dExsMsih1OgETdGkDAPqJhIQ8saFHPprkNny0PDikzcqo5AukTAZZO_mUv7Q0VKhVWtWRaZJC64GJFmmHEX3lh3-4qKcH_9nnMDgao9-qR_b0RBYlA-LopYQFI
+2018-07-23 14:12:31  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:12:32  :: Actualización del refresh token @Invertir Online Market Data Client:1uwzzaszUBwmCSxee5rKco9SsskczVVFs3A1IbrX_cDcrAGYtPc9Tij7AM-PAHkdVNJfl0nl6WnlRS3WAxNqNVKYF5OwAJcbyDsDPxRZvES7HT41coxZHe8BH4AeaLcemOkgBXF2SoaqDScQhWzYJq1wXcmOVe9f8eviGkvR5vfHG6NCzUepwi5Ux0qIARXWMdJrIHLteUUQlYYJfmxv694MPTSJp5sZ_irF7naZ_gfzDay6vTsPICojIE7mMJxA7ryoWJYP9hN3QrxupKTZ0zLqLm6wXS8QMBmwIXC4lCBQBy4qYUjF0iZrE0TXQ9j2
+2018-07-23 14:13:40  :: Actualización del refresh token @Invertir Online Market Data Client:N9PYfdqJiD7MLK10GZO6XjtdKGNsgRYCXjwbq2wwwcELPhmGiYHMTjIrYfweO4uUfOLRmrvDVIBeToaQUZhLJVPvlBycvP2XjCooxQHSrf3UdbqVXo_PBXgyW8scpRSOTQ00bdk57SbhGuZ3L_MNoCpVkcTDJcCUkyrsGBZsN1dzKku_wrTjuq1WuQccy6r5xcTQiS88IglcZX8YN3XuHUPmyB5oCithWn8I6zwklse2hZ73ex9bDkVkzj3t38y1dgVpi8QnUnP-jeeY5aOBwNQxX4CzT2qbCBlGVhRSd95w4adxF-9KcW6fdV6yB1hk
+2018-07-23 14:14:51  :: 7/23/2018 2:14:51 PMMarketClientBase.LoadConfig
+2018-07-23 14:14:51  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:14:51  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:14:57  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:14:59  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:15:00  :: Market Data Client authenticated On Invertir Online. Token:-6vrO-gbxAu6qGgT3SWrzdlZqrTMAAu0vj3vcR4XfJQDZALKwJUUfG5BaA_hAAsImoFryENTmrosIXnQ3xD4i3WZayV787MU_8UJMOevU4rVMCX7t3D-omTBA8GpzNoTJ9kVCNdXMWqpqIteNLmEvfEgrv58GVU1HyayTmDvYcI9tZDxAwRAbJmMGYLqym6yBDV-UHagmFM8zm-u0qQ3AgSsm5qE2D-xoxhal0zSft8Z1ZMQcmoBbqMNJGQ46GwF-TDFj9Ugr11oHpijDWmIat9KMaEm55XKS9j5gqOU1Q95bTIsbix0efutkAGKjAfY
+2018-07-23 14:15:01  :: Actualización del refresh token @Invertir Online Market Data Client:PSL_TgL6meuMLpgnCP8_Lujd4MwemuNLpOtatid7w-cqrUesqqtkWlhCMAy1PkaozgzEESL3r10JZZz8eKk1n_rQ-oo9ndzW897g5b8TcZFjhtLl7DK-fisTNABfdECxlDwWy6MOh1_-njJ8HtWTxpyn6xvcTU6TZPfUPqfx0d6KoiWk1TxIuKEHB6jVAPYNnXUfA-CLqk644OYHGs60-zGtR5zJeYt0asZ6jvYPBvU5Yav7sK9LFKxGhsm3y4-VHfmvT1lbpo6Tfw0C3_6c7hPbOhhu5uq3nxsOrLnP-p6msummUkpIEXyDDMz5sNfE
+2018-07-23 14:15:10  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:19:22  :: 7/23/2018 2:19:22 PMMarketClientBase.LoadConfig
+2018-07-23 14:19:22  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:19:22  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:19:22  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:19:24  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:19:25  :: Market Data Client authenticated On Invertir Online. Token:YDo2ir9p9oTDI6RO9zJH-b50RWqss7ylBmCRVkbTuzvZZfUXTH-pm3YMUOun3B-ThYnrPZcZPQ3sQhTwdDKdWvyY1SMg58AMOSWMkhuYcFCyj4YTZiwkN5cjHUa4UCIDI1IB4SpprWnUKderJeu8yc04TxLTt8Hvn94Dx_1qadSo34AEgWZiNVbo2LSja1f4W2jxupNEIGGcQQLJnC-WeVct6AqwYOQNmjLJhWDwiwQ5VpdIgvEx4Zj9-pDDqpAjmfYClFbLzo6MomOeFZJJOA0qFHEbTZajGXHwR5XtEfd8KjsHXjg9bYyWu42ql2RR
+2018-07-23 14:19:25  :: Actualización del refresh token @Invertir Online Market Data Client:61lpAxTEr-sNI5OEgmTkgVyPdtGdSapaZoQh0KywUuPf0_1FSvXnUdai_MIybmOFh8EikcjB3pz1QMY31GVYe0_19_HZ0pw2jzSKfiqgrWJmX-HIqGV-eRkyJSpj9kYzf_S4wB-YTa3DddzJ9jw7dfh9I1onH2BcknGqdetdbits8h4KlbS1z-7ICgdu-PB-bN0DOe0zzspc4eZHpvyksezTOz-ghOKPwOckKsssi55c7WcMWfyUjS_-1R7X1Ae_Lz2cSWaGv2EmHa_GLQC6MeXlGG8hlb0pjsVsZ7l20qn5IS3JSnlSTNpUlMSJW5a3
+2018-07-23 14:19:55  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:21:10  :: 7/23/2018 2:21:10 PMMarketClientBase.LoadConfig
+2018-07-23 14:21:10  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:21:10  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:21:10  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:21:13  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:21:14  :: Market Data Client authenticated On Invertir Online. Token:vBMYIBLCBmno43jTiz5HSukoDF4KO5x-ys6Bf6srRrfklhzL6w47tAh30EM6JEZTwa0ZxMZNcCTse8kmstPfXdoR31rC9x_XmImhFW9tHSo8eisB2X_3cYkGDY3EwIi9l0OPkwolohIKJxe20Kg8HQ5ZX2NusoZTXXkqWrmHax0tjDIayfpPUOtsSaKS8hUEnZSfeyd814C4g24vmMszMEumFWjSFvLrO0LfCKeGbNubrARIgLAGf4k9XJmR35zdeq-e6_PpS6dgvX5fxULQ1Sfh5i7J19CPJ9B5M1QhuDVJNjvWS8IMs6mNC0bimdLn
+2018-07-23 14:21:14  :: Actualización del refresh token @Invertir Online Market Data Client:0IhuAAwyXAuHM8dcvShsPMoiO70uJVd2biQMbnslYDf_JmXa66SmdN5rCCHhXRBsAbnqZHkHoLbwUP-sfwiKXmoSt3MXyvhDapAeL4eq5Rb7kCfUSIVFXxxaFNPPWvZTDDgN0JLag56-lZzWbOHC-1eoEwiL8yEOl5SiojNZSTfZAt-SB6xY88bzgTiFQyPBa4zYZvwhDB3q-0QyBbFqQ1MH7aXwN3z_wHeQ6a8-nNrSgympeHSi1YzslZyx30wQ4OulVdYFgSBN-JgRt2kc3xwoqjhCS-jVm_r3q3fV55qOmDp7YAZS71pfCbGtLvt2
+2018-07-23 14:21:20  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:23:06  :: 7/23/2018 2:23:06 PMMarketClientBase.LoadConfig
+2018-07-23 14:23:06  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:23:06  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:23:06  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:23:09  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:23:10  :: Market Data Client authenticated On Invertir Online. Token:uk3arDCSLtb0wvHuI0xEcdjW0OVZyTKxoUG8raht97PH3ZegeUYPLWHVAYfBH7GaFuq2wMegA6fuLRNVYm4idfdf2DQyUfayYHZo3FkgGKRDxbktIizgl4BNaKQBEocdzVpneh_uLoasY6crm203TBsHPB8TRBbLtX1jPcRgwWmKs1pC6xxMJXU_SDuhnJxOf-rbq4ld-9uTAcuskrxuYUWZBj3d_zwTkle2MAKV2Yr0nHAINMEIbqoD3En7zN3Jn02jp8MmX9jwVgh3g6hg8uIdBP7Gkcy6QdYsEyHYd1h_xvDvc9s-Y3Wb97rp0vla
+2018-07-23 14:23:10  :: Actualización del refresh token @Invertir Online Market Data Client:EvRQABn2hNpDG6jPUcaVZxvOJStynGkcic06uP-CsBThMXvna7-NXdsOKFsn2w-QJmp1OyCAt-JXO_qUU240lPQ3bPJz2LPmMRe6Rv9Lcxi5Hq_G9LNROgkZZPe2zxXYUzqM9p34kqfs7RnActqBy3dFnsirBMwsYaw7RsGX_FGBwgndttpnzBa0TKpMOSGI21Ch_TQDTvLH9Oxnzm_Byy-V2llqsHrtptEblQZlgFxaHjZMuTSI4vyzhI57MKVvKtmqaRnKp_v2rdkFGWtFdFMJrnkCxYp73ztIucqLLBIyrrXbJUZI5H8Z9YKtfoUX
+2018-07-23 14:23:11  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:23:37  :: 7/23/2018 2:23:37 PMMarketClientBase.LoadConfig
+2018-07-23 14:23:37  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:23:37  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:23:37  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:23:39  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:23:40  :: Market Data Client authenticated On Invertir Online. Token:Hvl2en9UemcTpcYBF6bxGKhEpxQlM6QFtwvPhwpzY4mD9HMpF7CmEEXmJGqRqtkOtxw0H9cQSErqNkbiYVMjvt54UgAgkDhvlvnL1lkIEDzhIPIWu1pqmh1AACjqO3ON14Z4l9RCYWCop4i3DPkQjxcXxnX_qW-FMh9-k14tp2ahCIuVR_t7y7iVQcDjB__LzjzlIjSAe1Dnpjf9ZRTv9VPFesql0AhsPX5RATWeXyIvGJlN1lneNXvriVtZACT5t3u-LBKN5ZfoBeiHdbKHOlb4tl_eaBjPhHA2_y0Rnltlp6plekusPurQJYC1YP0o
+2018-07-23 14:23:40  :: Actualización del refresh token @Invertir Online Market Data Client:fwyC0ZLxZ7dAFyjsHLyK1FdbRbrGzXgZrlC6I2VVea8lOdIPql8e6jj6ll51WhP79XF5pV6_coCarGdJMWgDiJRkrXnHbge09INgD0orvsCe2yfS4dDW3KEFHOjrcxLM9MlMF-CvIVqQbJkY7kOWgHxUqU7uz6eBL3XRQxllI3ue5FQdYUevUhRN2NtSnEoad_I4XweihMUtg_Io9QR4DP9mapTIxn84fIsen969LtuI7pwL5G4Ogdvs6QgxG4O2FP5Fi4EMJM6cg1Y9zuM8ZXZyC3cLlGEDV9lb0iblzD5pMc8uEheYCy_9YBGidij8
+2018-07-23 14:24:23  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:28:16  :: 7/23/2018 2:28:16 PMMarketClientBase.LoadConfig
+2018-07-23 14:28:16  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:28:16  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:28:16  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:28:17  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:28:18  :: Market Data Client authenticated On Invertir Online. Token:biwyGFuCsl57OiyYHHCxIqe8KQYyiQg5DKX4gCeovLLefOYMoht2ktxImKS-j_pYD2i6TvSo9dlgc6fwAaYOibm7VTd8cMvceIsQ_OJk-NvLHJAE-v20gjQs_aq0gcCFMZEvPxRanee74TF_eGUYsBuW2YYys9Q9BgR9Vqrf2IOi7y7IC6tKMg4GIYKd0eqC9UY8DD6iJ2CeoWFsZc2GiOIGi5eD0GoIH21Zaob5J75bxTrz8FkWeAyX_Vx8YpFlZ2MY_43HMd65-xOEjz3uKmZMPc6kPO0cxh6z0H77y-vvchixvczJuLu0xxhgEnHv
+2018-07-23 14:28:18  :: Actualización del refresh token @Invertir Online Market Data Client:U1Q8bIyCVmZRwBWuE1I_aWe_HhL2FpZzOPbqMObbFH2acITv2cb6fWcMvMApZK3WaXkKcpzwTDUqXTkPDYnvLp2M3SLC0HdAssRTDTMj-SPu1110WlAi47Wf-HgJkt_s3t6JotdY1d52mZ7vKLT125-mqP9NammlBRiwdW_zTp6MeFzgjf0Cn5PKjEG1KVt_OXDQBovNZ7Voh8Jb044Ml2hotBMbJrNVkdjX8tv0HbYGsU0dcWqnYhkXBXSINrlBaocvtg7fjf8EsVkz3-7dvWuvcBtyxHP2kzUHYYjRDuFOPr33dPQwTxSLc8Zq5EJZ
+2018-07-23 14:29:19  :: Actualización del refresh token @Invertir Online Market Data Client:X1dmzUaHO7XjmTpFYLrjJ-gZBqh8ssJTiVC4gF97eBkaFZS0eR_8MyEm6gFW_3NUFmQwEFhBj1AJTwhfHKMlrYxTEnPNznltl8SQhM29xfTJH-p0prhdFv8RXaRjF-tROPa5iahrcfaXUM5zZdVKmB5Wz9wBoIO1w_IpauQCcivj_dJcE7rCe8fLxDqUNFjYAP7cxlXpOZS14zlG1CGd_bLt21eJ4q9fRLidEIJ5U7ylFz5212-LkzbtW0UX341T_0s0A2BzoWtVb_OhiMcAftIdvLlql9Oo887cW-J5h3oD7JBP148ENpdMEI8aQCrT
+2018-07-23 14:29:55  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:32:12  :: 7/23/2018 2:32:12 PMMarketClientBase.LoadConfig
+2018-07-23 14:32:12  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:32:12  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:32:12  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:32:14  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:32:15  :: Market Data Client authenticated On Invertir Online. Token:uidnFFLJzuxzejVEolTay4GRWwNmivoKZ0U8XIM4c9wVGH-zywh-uczHEmQsr1tqAkTei3k-LbAe3KmBzGzf5xk_ovZiuAKbxew1qAb_bzRKSKFvilJdj64PXOep7jGlQfgmehMDib4u-kSzcC8lXghKTB6NyTFlDVWMl3AE6pA56NH2oDufqrNZZKSUBe7e5BkD6MRqx9v5FhSN1WANnPvwG60xpXtE4va_ZF8380URqQ5IkVRwbD3h2MiiqUnWTvxZN1zwRNbAfAoCo97hdNbfvL7OiowxxggBjaYMwCjAWv_Pwi5N6pJ_Un0NHuQ7
+2018-07-23 14:32:15  :: Actualización del refresh token @Invertir Online Market Data Client:TAXyHhbKVg1UmzgiTiQCLJdfC1ZU180MvvooRq_qFmGAElko2CZxYt7-Msle-aDf47DiBlRKekV8RZxWPKXgRpDjuQgw7pTPOH0WVB7UrLvcA2ZBTJFrRKq9h6ElVcHNCJgC9RKoeekrlkmjZSu2uruAp3C5Uu7QjDn_l39S2nY7WyxJ6DtqEipkFDvvVla7YODAS33lgLgFQMoX-IoCXrc_JY4rbMdsiuyRGDK-vXQUWAIRn_Y_lT5arYcYOdAQPC_4MFaCAd9AjvFHDiuKha1O6lDmcb0RJx4njp2UFTSEiI1OO_JA8TY1OVmXSKYi
+2018-07-23 14:32:23  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-23 14:35:25  :: 7/23/2018 2:35:25 PMMarketClientBase.LoadConfig
+2018-07-23 14:35:25  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:35:25  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:35:25  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:35:26  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:35:27  :: Market Data Client authenticated On Invertir Online. Token:B2GlNKQTLRlzshAY8Tkufnlm7ICa3y8gR0deIHKw_vBZ9KhCqRt96jZfbZRsolgodYh97JmFCIJ-veJQu4fkzBvn8xZCYncdYw4DF3yLYNPqk5PRopwZNJP9gxl_J-WxcLoXLdSw9iziCwrnGs3X6rCfqL0B6v9Amb8_Z2qoSxcZw3X51tjTfriU0aWLvidf_sE0VehgkeujhJCY9bsoQqG91mKGW3BB0nETRhVIBS8V_C1UoHL091r0Lv1Wya7XQyCyr_itFJfISTqMCx5gkhUGWnX6PfR2YM9DqezPRiPDLnXO2Jqs_gkgm59h_FPJ
+2018-07-23 14:35:28  :: Actualización del refresh token @Invertir Online Market Data Client:k6gq95_Ik0troAmYis7aHiSp52hRHpen2unZML3UCbc7MdSASSqSyiYJt7UzMlTVHFZ-3VFSpcnXH1AvRZgtxlqYnyIGc5ihNHljG7gGPktsOdhD3wVVgn5OvO9B0vxUN72zwbbN0QGCcAMnR3LU8Rhg6V03dFh2CCrLuS7GyzVJnRJWNvNpRbDTZgQlJ8eO8qqXRvMocKk6QxC8tUExgeFawNww-Q1U-RPeg-d8lYKldKRQOTe8XtKtIDqG65MjrMJUKMkQl7mr8OM9PxKzFKU41O7JuGT0Uxe-itK17x6hbHzDlV36rV9d7Hvie-_u
+2018-07-23 14:35:51  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:35:53  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:35:55  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 14:36:28  :: Actualización del refresh token @Invertir Online Market Data Client:RmngGF_GCVP2DycMt8YvKhtkXL-OUhV4E948fssk3OD06R_BdPVBvkVSIlf3oPw5fvUKSsmfobv2O5zWml3NYAj866F8Lvy0vPpXIUxwtg4RBxyz2YnARiZt77Yw78fKCsKaFgyqIqP1N2is9b09dJo5o_mhcvOSEeeT_F000ly9N5LLMJB-b4ZqdJ1u-oMn4Nat085opoB70e86ZB4FaThCFp_SMr62gGoLNUrHQC6msYFnU9Fl7NiqWadSyJN2oYvk0cOnYBGxzkf6Yr46h8gGdetsPvanfbHPh77iNk8M9BJIlg0f1ExIXSrZJwV8
+2018-07-23 14:37:28  :: Actualización del refresh token @Invertir Online Market Data Client:YIWR7SwPLvD4fvEC2sw0K11dvgvhJx8UeC_XZrHNEWGknDlTizWH24LUaEZWH-BUMFcKmvsnmcHtEuCyQOoIDRHpeeLyxd9VFI3jqhAhNkUKIBoG-AMnS4RVdELLOA8XFUpS81I7nqaSA1OFBuoKu_hPY2YHQHeTHtr9kcKmLEWt9R87Qowcg6CL_Mk81pdN3FpnQhIuHYGXX23dFIafkq6QyKDCvCYN3wgq7mGONdfz2NP0ipXtZ3m2Cb1Lx81kI_ZbNI1lCisaQ8HKn0hk-5VzhBfkEIuU1gkYBIrKdhG0716cXJjPNCWhJjr7UWIU
+2018-07-23 14:37:34  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 14:37:36  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:37:36  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 14:38:13  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 14:38:14  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:38:15  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol EDN.BUE
+2018-07-23 14:38:29  :: Actualización del refresh token @Invertir Online Market Data Client:2UkvhInlLvJzCOZ2af7gvnoI_hRv9noJw1RjLH6gqT2je3eh87Q-KM7LQO-0021-eRHLeCAK_fuiqSIpWT4u96DUXT1Tq7PqggwB2RDWtW6Tzh3lERtQN4qtzAFbfPpD1P9niImJj5W2lq5tPW3AzHSLXYc1xzf8ER2XLi8xT9Hw_9LE9K25F8eTNjA6bz118b_yzqs8RGsuwg8prJaJXabtr3ctokCclzdyYrIaA3J_ssxmUn_4xoLrvn2SY-oUT0ZQrG0HI0Qrv1jdK-AKfUxtVGnjg3VeM3ndC6YKB0CaQX4ZsN4lrN6A6pX2PDbl
+2018-07-23 14:39:11  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAMP.BUE
+2018-07-23 14:39:13  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:39:14  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol PAMP.BUE
+2018-07-23 14:39:29  :: Actualización del refresh token @Invertir Online Market Data Client:G-0QFMFz47_PAnjEkmK6mrRlZ6uAW8jWxDycd4tQe-DnqrS5aLVPW3VjoR0jMcwLd1kYrWZqZjHcKTTs6jkWoVdomhLaA0jkYH5EbZh2vyOoW0c_rbhMVXCobQbaeoYZyw3JHdZ27urTH1Inmiu2ohcRnpPrr6FPPSOwLR-UmQohQKYHuZvJn3RBV4EHY72U7WroGNcdhi6roKF-DR3FuVYgkpWiwVTse1l1ALZRgtGQoXWdj5aWGbRHVU_zhxxOINQ-_7w2xl9ob1kNkZYO-DfBJIy6ulvRILDwzA_2arP7Bbh3KqsVEi9alSUV6YdQ
+2018-07-23 14:40:29  :: Actualización del refresh token @Invertir Online Market Data Client:ykPSCSY-r2KCloHmhdKYn0ojI-AdRpCKEEHAU28mUfNehiYKJNh3tUo3SDs8SRr60mw74F9JkuypWi_97v96YvSzMynvE1wqY7NXU8ZKP5qXSYc6kIC-dJxY4LffLvpj_d89fEHsKw4Mg_ODbLpxNUhsyGQ8Sw7pOU1QrYPjTPJL5FJ1--yR_zLVGzyZPdZHIB320OvXnCrwwyeZe2Rg5LZzbyQhoOeNr6hrkJz1tpMhbsC5g5JITbA2vvi5pkkRegHpeL7Ei1fxH_bn-iOAQW5JheApTf0YGBxZKAd96hrERuR_SD28EKP-gRUQAMXf
+2018-07-23 14:40:46  :: @Instructions Processor Invertir Online:Requesting market data por symbol TECO2.BUE
+2018-07-23 14:40:48  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:40:48  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol TECO2.BUE
+2018-07-23 14:41:30  :: Actualización del refresh token @Invertir Online Market Data Client:LwKXZx8uhoRHkMbQ34C5fYGnFA8PPA7gIWEiDsSyeD_0LSqh_KWPhpmLz49PF1uOmdEnCdDAgDtcXkAD_0n0CwL1ix1eG9Tg5vb5hEs24fQk5rko_C8tdNffAdjsIBYNJXKMm7GWyob4SRqO6iY8LKF4IyanBM3NDaM12nLfuoO_Jvprj-yTxtrFEcpu4nC72zkhUWOfH0N2qtjMMrZb8vPmVR9wB-abxttZqk4VvIV-4LyNc4QXPa6CV7wF-isxsRAou7m_oEbfBzrGMcwerta8veydyo5pMHUICk6IuzDLfQ1iQPZUaETxZp-VxB1E
+2018-07-23 14:41:42  :: @Instructions Processor Invertir Online:Requesting market data por symbol TECO2.BUE
+2018-07-23 14:43:45  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:43:46  :: Actualización del refresh token @Invertir Online Market Data Client:igV5c-H-_M3MyYXNjlux8_PuYtlVVfPTA_tR-ERmF92tP-ztb3ADRGNNb8zfXJxea-f0ffrV3C2Im7Oba1_btLin4-gyda2Py8O_31zpkYvTpWK38wagzkqUkDheJ2UXZl9EoEnMckYAVppvzoHrSuJ-UXYgKSIkhaU355P6to_leBlU7ySYdFw4JF3vwyFVJhRNx9ZZ9hlPr197uLxxv9AdW7C6zgT8nFbEWsOMrJKZurcHRuUvWmrvV2M7iofILKfFOusbgukXqS4DjY9E-OEoK9LJ0tG9XftaxSLkyoT7nkxr3H5b_6aGAfBSWeqs
+2018-07-23 14:44:20  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-23 14:44:23  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:44:24  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol ALUA.BUE
+2018-07-23 14:44:41  :: 7/23/2018 2:44:41 PMMarketClientBase.LoadConfig
+2018-07-23 14:44:41  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:44:41  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:44:41  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:44:41  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:44:42  :: Market Data Client authenticated On Invertir Online. Token:ZpsssUtZEIFFr4lEn3puChAM-K6R-Z18Sl08BaTzDBvQIVQKdNrMjMuRsGTUBW06tNHAJLPMV44JxYNHm8H5TIrBIPd6Hq8FI26ls_4OeSCpkuKx4wNRL4IdD7Lvck5Kbn4cgBxR3dtAu8FxDK0VG_ZOkuBGNk2esjIsDh02qZsVpsCm7dqF77IlEJGgfIv_O_Klkz1388M8_j1rXRGDoC13AYIix8OHju_7-4VwLTA3JfSL63EuN2qspFeciuCxqcujreQO_GsMUK5XuOgl31_ao1vvwhSUsp5G_PJ4owoeLVp19UY8sAFa9N5LzXd4
+2018-07-23 14:44:43  :: Actualización del refresh token @Invertir Online Market Data Client:XrpFp60gz9xIUPe8p4s7w9Qns9nrQnZXJfqAbLAMy4jheYOzta74yirl42yEfVXDpjgbpXKE-QwFqfHoE8YdFTwJH-c7Rx12ulys3oCeGyi7sWR0uN-EhCostVVjBIgCZiKhUZ3SBWG8s2348nlCv9eXGj44sz_0H2DZHEt6Sk6kZRzSqKM63aSZ5SMdgGsfMNTRuJZpoG7KjrkkYaDjXD-27Zde0XwSMySL9DaUElmQ3sB659kjcszDcWCNr58ChumqQwOKOmJ0cOu63GEfedN8qtuffQFvrO09UBm1oy3TUQpeG2v3CtCxU8I2qDzl
+2018-07-23 14:45:18  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 14:45:26  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:45:26  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 14:45:43  :: Actualización del refresh token @Invertir Online Market Data Client:MIbWf598GTyqw-An6IxmtYJIppAs8XLgkxr1hoiujlNnSJkJk5pXQxf-GKcys3h5MNcM3UNGDjz1O9fBH5EaDgM-hfGfQ1gmKwCBCuKNc1-KCBwAOBCCXpDSh_Q_L8k51njOr6rjdJeBZR3ACL_pKaN3oaSl_uBFWnCGqJvbBEXasA8EwQT8p-pxCQnF_M0Kjk2rWaEetkWTKyPyP09yp_LEKhKus50rDq25semR88fPs_msLug9Ax60WK0VRDmp5ukTkw4KKLutkVBpEisNNr5vPWGbxviUq83PPr88FI3mAgUJJdlrC4504kUW4nHK
+2018-07-23 14:46:44  :: Actualización del refresh token @Invertir Online Market Data Client:ylTh_NmitnJf1a-zAWslxW0R9TD4WQ2YWThl0X8m3_wuy6wwPTJEn8OZMwqV7k3dfQ4JVhMvwgkhRBMk8pvUCH0W85-MJdyAwmdIZHPeqO1Qmy1G4Tvv92-y8OULBCh-le72MQ_kUmxp02tQfoDKIcr4ttlnhBy-O5hEHYU4NfHYIaLQeurrJ83YRmoeiB9YVhJc1B9gInVR5UVRRKSPIcr9rLmv9gH64OutywweINjA266IUZeWIGqvmS3vRMXG-eJWocSznMdbJlc0febXi2Uz8z33pWHeEtIJtX-uQAZX3WuQmUtT49PxKo9JuAmF
+2018-07-23 14:47:00  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:47:15  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:47:15  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 14:47:44  :: Actualización del refresh token @Invertir Online Market Data Client:YzxizHtya34XfMznZBcGJjgWGeltg-lWfcCcj0MsUv32lF7VUmPi03PVrmtnvx81xh7UUn7YdfKzZETgHXiZFsm9ZfWooKbZuhVxAzLUZiUyCG7hCbOA_wvPSGtSk55ZbADOgSMAS-9nL4edB74qLEyP1PmBdVvOewYhXiOanQ-62ZEIr2HT47utl7OSZv_eQVf7LiqcQMdVwlevWH_sMgzpFJ1Fty1axgdvQ9rHck_-s8HuRY9EKXfI25eUFaA1buTopHPQ2khRJjSfL_fEzEhyE2rDwdZabOkQ5D5Tzbh-mLAIZZis8Qvos7nlSH16
+2018-07-23 14:48:55  :: 7/23/2018 2:48:55 PMMarketClientBase.LoadConfig
+2018-07-23 14:48:55  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:48:55  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:48:55  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:48:56  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:48:57  :: Market Data Client authenticated On Invertir Online. Token:5sLPA56TSyCFGpJ2ec4yV7JSsMLmJMZwcFhTwIomjkW43Git5F6a0Pt8wH22D-UvnROQpVEFeR7AnHB7Bouuiy4xAIveN8Axb6Ghhxc6ahxdds7ad1E3WNheP7BPCODfxJQ-OuV5G-OwCAkhaH6prpZhooujj1YZJB6M_3y9uX_77BfwkhwBjyAoyASJlxdDoEVW5He0ednDPAbK0kqzY3Z406Ycoyr7pRVBLAe42A0_Dfxd3s7h1DPGu9zfLg_t01nZfwOKw3KOwiGl1GzPcn2Nt8etDm98iJnsUTCE9Jeu62VwM7QIv44ZOZDrf2Ta
+2018-07-23 14:48:58  :: Actualización del refresh token @Invertir Online Market Data Client:WgvA617S6_h4EkJ8XsV9ZDa1f1htVae5aHuuv21i7rsO6LSkXbMOTLojyPpzBpzRaMZA9Yq8ClEzzVXt8Zy6q4mEOooBv0-U9qQ-HmuHQpIvIgpkl-QEwfstkD5GHdkcjMZIcJZYmA8vn3oUAsypblT_Xm0VgKstWDTUTFij3_vhBSiofzCyx3NPRocu7_x-wmPSuoyU2u-2PRaNB1S86qnH0ntknfDYSSqN4KXegOI2bnAn8fyMBu9jmTC8O0M6JYXfTylotUSH6G5glMeJ-JerSscfKgEcm0yLqgSKJyi5XMi5CuDLVW52bXbr6pg3
+2018-07-23 14:49:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAMP.BUE
+2018-07-23 14:49:36  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:49:36  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol PAMP.BUE
+2018-07-23 14:49:58  :: Actualización del refresh token @Invertir Online Market Data Client:27b-IH2ZXra45XMNNmblz2xRsP4Y74o689juLOx3aDUTaXi5vKn3ZO3pEHXXh38n7AhhD7QFNFyMELz8KxJJxsoMTbzuzbCnI6Dlq7ZFV9_zQ3z6LdF1kTZt96lIwvqJ9KuPQslOVto9WIjJTE59KBEJv1-4RDwK-HWINP2CmoIW6YiXQ9CffUBg6LLTv4tQbqWSoVxZkYtXnbyLpC2oUVSpO57Xd--iEtdekJrJNImkGE_eFgh4OSQd-PgmqTZnrRNqyJeQoqlaSQzvQpjyEfhWGKK50xjhNazBdiQ5pByZTt6TiYwKjKNfcqvZStl5
+2018-07-23 14:50:58  :: Actualización del refresh token @Invertir Online Market Data Client:30DxS7tgzIesL2hVal4aa6gxGMgf9Jb9XGyfk63g18vOowSUKGdGlrj-tgLPwVWRHrKufiumf-cmuhmcLPeDHvytPdluiOMdIh9tXzKlipoeK9WyVN4pnUhjGlb7uQ-naEaekrNUFb65VzN5-As7XBART3BDevXJlEAXPfNW72a1_bacreruqkGO0rgSOsZsnCeIz0Us9aHUnI09j_u8qEpE3ylszbUbP_GoMGdhWO-GXK7D27_73tY2zQ1MfVjheinLJvzNKqUXFZbw9IbJEsdqQZQ1g_vcboels2fG6QdDHL0CZ4iLEJ3J3LPlGLVi
+2018-07-23 14:51:05  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 14:54:12  :: 7/23/2018 2:54:12 PMMarketClientBase.LoadConfig
+2018-07-23 14:54:12  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:54:12  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:54:13  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:54:15  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:54:16  :: Market Data Client authenticated On Invertir Online. Token:2sbKAwYZRiYnbi_5Fjt0-jC6Cl2whM7XslNJOhBdbQ-s0dy13r7OhroLYB-bA1wMaYhR4bLxrlOo3mpNtWUu0jkldNsCxiaWaFwhf6IN0wP2R6_oQXVnPshN-mOsswpAi5HHDrlnQskeR_EDsPsBwJ-bdN5mMnjvh56cQuqu4CFTlJtACTGQjnLDGKKtGLoSKnoXekYUrsXSfbFfIuOPHB63L5f5AWNPNmmfueGd-I10bVAcw-WC2AjG1QvL8WLo0Kfmfmx1H31uA7I2RNPFqSsaYZS557BVpPxDsZueFsUbiHGDFWj92kSghkYhhYtb
+2018-07-23 14:54:16  :: Actualización del refresh token @Invertir Online Market Data Client:_hvbyTgtMjBO7iq7FFiVvGC-hbcSU-qW_ErOCihCOKAUbreEj40cN5NRxXZqdNyURNgvZbPkRM2qgzrrrce2K93ZndjNatx9reUDqvOu_PgrEM7jn087y5g8L29s8lcuK28laYWPil7rGyk3x4l7EMLA_GF83Uca2ooX1I9Bg8u5E4v9fS1321QJp0zfXd7fQe4X0TqD-jBTy_NYgfCPJlyaTY4bqChmYh6utUJY2Od4UK_Fr1y8fUizOgdHbY8Rp_MHSMC9Jpy9vazZbQMUkFGfxNo-3RZ94Id1HQkUbSGgKDsquENTOv7s0cNV0J9y
+2018-07-23 14:54:36  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 14:55:23  :: 7/23/2018 2:55:23 PMMarketClientBase.LoadConfig
+2018-07-23 14:55:23  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:55:23  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:55:23  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:55:27  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:55:29  :: Market Data Client authenticated On Invertir Online. Token:qLYTdZXIP3FPyShweN0V4U-lS-uRoCaUAEmD54Bac2MjEymA82GJ6XXyZ7fLTOVa43f8Y8XgmbDLn5rAZQGMl5n8r--SY1HBQIvpL_O2BPlsS6OcQjmgW8gvm0hQ3pkoM5LnEzSyKJv_cVG-lRfTs8lqiV6OldpHqKomJi_CIMWyaJZkDZ8nOXXmLibFz7zWGJbeyEqJ7c0TGlm2qa7xej-N3vTB0f51-8VUEIgtOXFDFz_ZFCzEFwpvOz6x-s5Co8INeEoWpIfYhaE5aHZEVViC27wA4Hv49g-21BOh1g2nFUoNw4G80yCf9GfPTVJ6
+2018-07-23 14:55:29  :: Actualización del refresh token @Invertir Online Market Data Client:mimGoeC2X-KDre2YhJFxwCZd_XuPPcrSQqaB-m_i35zTm4SkoF2VZD5Sl0oWmsfn_9k5_0k3WHo0cFD-MQPIdcsknLdNbILzzaEDozoR4WTkB3espnfdRYU9L6K48h6rYlXu2nv8pgja_scZ0DYObTfF1IuyTi7fqD8FMy5tgb5KrueTHfVw7Ap6_aUk9ub0y6u8FdN4l9Is5wHYpu5-My3hiPukmAFmKGIWMWbnXdVSpiDAGY1Lb19HRA9J1hAcDqliks0CIFpWKVi-NTSvY8G_4xl4Jo7-zYtSHc_dH4Iu-3tBS-UAjUmTD9ONsVbR
+2018-07-23 14:55:48  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:55:55  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:55:55  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 14:56:29  :: Actualización del refresh token @Invertir Online Market Data Client:DGeRH3i04s77qboT3J11P4gA2F0R_m3VdimR5iBKSob4RYJafKa0_m7PoJNY6LM1jQp9GTTt0ZarI-nuygd0pEuDPVU_g4ilOzveIwtUSxkZFMQHTmx6a7Vqp25m4MSW_JoElxQ4raWCHz1w8VZR29i5PCt3KKZ2-pFCLGdE7IVUoEszmvDgf5mDBbzFUYkNVs4S8zGbLGQNy3yFEBd1dNH8uEZsZw4yxLDq3Zkea8FVFaoHPm5tObqsbARPPgaIUFyX4l-dHAX3aOyP6W_usFezbkd3CXhHF_Kay83UB_3sy79PXwl8YP6u4O8gVxow
+2018-07-23 14:57:05  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 14:57:05  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAMP.BUE
+2018-07-23 14:57:05  :: @Instructions Processor Invertir Online:Requesting market data por symbol TECO2.BUE
+2018-07-23 14:57:09  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:57:09  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:57:09  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 14:57:10  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol TECO2.BUE
+2018-07-23 14:57:10  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol PAMP.BUE
+2018-07-23 14:57:30  :: Actualización del refresh token @Invertir Online Market Data Client:QCOjXkEz2jVEp9mjly7zRfmaJPFKFj1qQkJmnJyYT7q1AY1x0nducP2bL_PTQX90Nf8hj6td-bRGig6IGpuYfEa76RWj0-h7zLQK5-2TsLx6_4pBwvWf4gD20SVeVUiokcaGSuhVEI-K8pImRr-juwEcZcWedHVvZRIjeU7c5qG3tqXDCaG58rQ8CKOThXafmUsTigTCVoyUy92zAg5_jojrAQRdNM-uSZ0Q99g8osO1JR45QaKOG5e4XY90rFUkXjWlWtdGchpSV1PO-zW2qoxWKXxan5ATQUFwgeBj3NszLC0TIm5XZgerjygOlQ66
+2018-07-23 14:58:30  :: Actualización del refresh token @Invertir Online Market Data Client:GReh6JjFcQ8y3uoV5_UjqEmzc9C8KKwFna9ro4Mi88CWRX2GKcMiB8ZePUPa6SVe6qurE8OfdDeO3z-SKxLaD_M9ehrFIoHxb4YamOqM7800Go9gJolWjhGCpTUx08MSpTV6FmKvh0mdoQEBr43yyK6XZ6c7A6WlogNQUC8RWK7_aCBRIUWvCnNY6xdcmeDEgGaLOqaDde5yn2HT-LiZLRmkxQnd04QBhhCaCg77tjYSyiWmpdBuoC9CsEsmFLCCK-WpJTnEDDpMyflmGvNsMojrpvurkrTo-6baS8uo1YMml0uqh1lJ6_N8YBFbkS3D
+2018-07-23 14:59:14  :: 7/23/2018 2:59:14 PMMarketClientBase.LoadConfig
+2018-07-23 14:59:14  :: Loading config:.\incomingIOL.xml
+2018-07-23 14:59:14  :: Processing config:.\incomingIOL.xml
+2018-07-23 14:59:14  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 14:59:15  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 14:59:16  :: Market Data Client authenticated On Invertir Online. Token:YtJz4ZfeHhDCsrk4TW2HJUbY35a1_yyONYZGErfqnk1CB5dXMK_M_dwqgkODTWJ6x6M11Mxg4bpC5TzfVA28LN03m9MrHz25mEvcCPsuPd06az7tIGeOcgiy8ANexMxn_SCMgVmkVvFVcPF2iHaPMPsZlZKwFr7eF7bL6UaB1Zgx2HvKWk80m03mN03QdDFJ_b9AQ8Qp5ho-FQvoWCYgMjzahZ5O_49fbFXZPToI4qLDdD-CbSMF8jSlIO1FBpg4UQKKgEwIfnzNmiWTBAejARP8IhhK4s-N5Ovi1xb88qweVay5B2CG3-f3K38p9tH1
+2018-07-23 14:59:16  :: Actualización del refresh token @Invertir Online Market Data Client:INOfunKYEh6h10qZwiOJ48lsx4jaGwMNCu_e_rn5AYEvhwv6Clg1-NmoSzqmeoiO8cOZUinKPY_57bA-DGalPA90Yp2nQUhMMm61LQfFmMUKycCaVf4ioK9ihcZtx_6VDwKDNskiObM_gEXDmksGVAiEMgmwmFLgd9uzIn-_r1Z2mFIjjFEvuFaTYQ6KMZYb-PfnbUxiCbfuXEFVUUK7soXpklHL7M_4Vkn527DanLCkmbq4PEUpqlIzk_4AlfYxWvmocWIA7bBRbBbu6za7j-lSAScfoX7dUkLaPIL0Yr7Rd1MpagFoL51dEDfqPjl5
+2018-07-23 15:00:17  :: Actualización del refresh token @Invertir Online Market Data Client:uPWGWM0-0uhDP9ze6hK1ttK1403YY6A7pdz57iDqy-cf5Tel6DADt86eUfrwaZPdxyKsH5mRPY32gCGcgk9U7BAJv_ucgqLtDY2zgw6RG8HUqWuoy0OonR14I2Wy6AxXwzPc_vy_yp2wIGkmBDH-gZPIdT66Lm1_cMbkWQ3MyBdMFeToHj4oNlmJSiSj6s8g9lVPUY4Xrhn9FtvdAYGeP66ZJ72bfiOKzv4SBXHQOnMLkSyl8JBgGUWPbMHPUvhDQjfVjeyWrL-CsZQ296yjlZwEeB1VWDpCVoD_-kyy-tvo_Qb9X3u9HRtbw2o_CFmj
+2018-07-23 15:00:39  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 15:00:39  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-23 15:00:39  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:00:39  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 15:00:42  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:00:42  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:00:43  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:00:43  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:00:43  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol EDN.BUE
+2018-07-23 15:00:43  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol ALUA.BUE
+2018-07-23 15:00:44  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 15:00:44  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 15:01:17  :: Actualización del refresh token @Invertir Online Market Data Client:DH5A55Wa0eWo3GiLyGpqGkYx7cPd92vrRnVjzovvF0McaC-4aAKGgL2BuCzVDAAxTpmEw7Jtb7TtYE6pghS5SlAOpWEB6mR0grOk63zdatOmLKOAFLVfYvdVrOOW1nTnH2NwERNAmsOVrsHo91TuowLLaA1iw1BAc6iB5XVZ8YmpM2aOzZzl2HaO_xaetTxnNWcp-DiGDB__r-5-8kTKjW_6MmsTFYwVA5zeZnyV_XpxhZO8JBK7HbuCmRviHmtTjfUZmJNvK0PAWo5_ywQbzVBQiglKDlPx4CYhXGewV81QL5jDx0WDIoNNTOw12Sna
+2018-07-23 15:02:17  :: Actualización del refresh token @Invertir Online Market Data Client:EJtAwjEtlvU3aGSfbcx_oe9-Emuu_WgVMv18EmqiUvTrtmaOyg73Rufbg19BGq2RjhVZhh-0eV43t6OiLqAiqQ25RoGPWOvwkriaXYWXR7QM2Er84JqP6izTH_yVRRQ50GmiUtlIfK60vld0767hQtqOJ6ljqUx09DwaVZDRnnC1BGZL4PvlFUUQrFeENIO9WRUeuDVEUHCQiGTOwRnjklrHGRpy4Ys5YUGMK9S9iPv1Qa2crll_s8QKchLQFlCsUSsDt_cSYmODlkQrElbsaNbR3Su5XfpXGsx8xgbrj3bBFaEkjC4ge-ZQx2vEpmq8
+2018-07-23 15:02:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-23 15:02:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 15:02:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 15:02:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:02:28  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:02:28  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:02:29  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:02:29  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:03:18  :: Actualización del refresh token @Invertir Online Market Data Client:FprELgKnjFIoSUn0_DoxZeUjBWlfYgpIj73729l1NW_K5ajVPDaa1OZ7urIyKMckqDZp2tkU0IMuoOBKnaP4-O1YZ42LqSPmbiImQMuqIS5E21IO8c7K6Vd4KSD9CAh_yH15JTpRhnklphhmdDnR0FY1blhroV885yUfPHIEhPD9BWSFlRE8jQ3C7gPLoi4pyU0-u_q-npJfkBQNl-sXrV_x4IXcrLNMt8R8Pps5J-uGQb2t1MBpLsIZmnXWOLiS6z9H9Mn-FGbNyZ2Hv1pbDzXSmVUDkHHhIb3djY_6oKgxXoZSOYwMkMYJRY71gXtx
+2018-07-23 15:04:18  :: Actualización del refresh token @Invertir Online Market Data Client:X0kUqT1xGgHt7XMRXfy8esO2PI8ON_oXRqx5xnl_L-13K2EN2PZZyFG9J6l_zyhPIK-T_G0c7if0arDxWsK64VmHv5ash3Q8Or_oABdKmbBY-jHlcmKBqu_0n5HlT1lQqfebwc3V0WWJ5ShRarvsPlfJckrOQ53hBJ7xkwn1Z0uMqkU1NDKx3wgAC2jKTMHu36FmjotepzYrnlapZAMDHNgVagD4QzcB6L0aZYagGObRzPWkuC0z4-Qx2PVLA1soELWi8qUcvIaxH1GRlIee8ovDJLOXkO1MyXOC-g2OgZAF764lUfmpyIQXD1zr2vP9
+2018-07-23 15:05:19  :: Actualización del refresh token @Invertir Online Market Data Client:F9DwJezfYVRWtvC65srrQII3mK2bvM-si8lRaew2Vlzkldb7L5swOXhxLqxZogJv3rU699Xpqg0pOI3hQfnMELixYTKuPdtJSLuAH4v9JcH3meaJT0wUvSH4JxFkVHstr9QfhWjRNpi8j_JFngY6sja9DJ5UbiMBttC9w4hE31gZuIX-0d-mS7BZRDXSD_9hgRMq_QKCL3O9dprFUjoP37CRfaL8l7L3m4BSuxAy9IXSJbV6u3oQa5iix71UW2IJgKxAAC2_IKOvt-YWJaOolP1kFBDIf5JBPMF3FXnrPgoM4wfvDvKDC6Sa_JtBH5JV
+2018-07-23 15:06:19  :: Actualización del refresh token @Invertir Online Market Data Client:esWl91VSZjFN6fzRsMYFfPuPIX8KWSlTT2V6L0LLrAFl0cSbfN0p0oDM1hKixAr94tGN04PTHGFQMrYMZ9pDLQo3C7tqbOC0mag18FZIy9_q5rubF-sqp0mSE-GKZTJv817l48c1K1KqYn6CI8VLyItL9KOygPyw6avIJhUR1Ubq7UDXRFWD86WT3urVjoud1VC-YgzwAF9C0-gRq1wr4pAcnIYxkLxkoCq5dMNDw8RUSKIuRMWdQj02aFNI98J23aMTFAyLYfqK6cwLm1O68S_3nKfjlu6rbkqm3mzQwo59pZWwnC6tHXZn4cWilK-s
+2018-07-23 15:07:20  :: Actualización del refresh token @Invertir Online Market Data Client:1D8mIaumiGPRSb4lL4zDF1cy_gWYtk0Yop4qfknRM3RjoWZD8YyCAyC85MQdVeX7CHtuyB-ro-5ja83pm7fEJazFPT9bqF1E2N-Cj-x-8LEb9ijxGR3aimeGu1XqnibjMeIjVFAQDjDSLtEXhZQiY1dJa36T772fnIEVY6f9nxpNz2Yi0XcbxcYqOuS1tTR91fPP1-uxKmxZDM-d4E2pRRR-CKe8UA6dQIFSDe5Y5F5YXRGrOYHdzAw3NwXHANkrIX3EOlZl2v_45C1kzJxsa8MC7T_hgHLhfQfpXC6WbjAeYBjv7JnTngWWTQrRNjdA
+2018-07-23 15:08:20  :: Actualización del refresh token @Invertir Online Market Data Client:9GkYxuexGWnrwRsKnKKrgWBRpy8IcnC4aUvlwMKbbpUBz5GfAZm7maJimj3SJOWWsLwbAAmGfexgplGnkUYrwNHQ93H4kTiJIxbJI7x8VI5hScRxhBmvUW1c7OyEsxCcvve2Xz6hP_K5V-MP4EEW-i78wwzTBWb88nHPaLo6lcZ5y7DWhysDHwjF_V30mBB5qjktX2QvDebMy1NKqujheUl4-sjsECZx4QWK34k2uhypftom32IcaRF96CuY1LYuSl_BoP8PpUHfu8OKbacKubpytFBmzFXfaAeBGMOPuQEUxYvomPaZYpxNOLGGpX6J
+2018-07-23 15:08:57  :: 7/23/2018 3:08:57 PMMarketClientBase.LoadConfig
+2018-07-23 15:08:57  :: Loading config:.\incomingIOL.xml
+2018-07-23 15:08:57  :: Processing config:.\incomingIOL.xml
+2018-07-23 15:08:57  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 15:08:57  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 15:08:58  :: Market Data Client authenticated On Invertir Online. Token:2pEcdJEfjyO3PiwGnnxY6pxwmEZ3bmLlJ33cxKUciniSgp3aRRtd-TpJJv6LcvZFneuGsn7NY5Dd1jfnyQXbY-7kIF8Pxx2WzG6Hd4es2PwyAg0GkzhV7ItD0unfqAX5ztf4ezX8R56qxBUbPDeuoZG2tvC8mGrIvN7f1a6gUz0ojBqhCQ-UcR06leHWVLHxNEIderutyf9k2H09SHejis1bZCtklAWeSy_stq_jHBSL0oVM78v0klQdeidCVl6CEO2nXsTV_DrvuEMr74g5R9Ruhe9IPxC0QpM04I_lEayTOFK8LhyTI7NI16g9sIJ-
+2018-07-23 15:08:59  :: Actualización del refresh token @Invertir Online Market Data Client:IhncxrDvOfQUOO3nZ-Oh_EDUJSWjb_djb7__XDRaBC0UP715tRBhMvL8_0r98jqyEvF0gn00r5MgjQv-uMMnmysi5wW14BZrMRGpXSDrWoYuk3BHPB5PbrsaEqw4Tb_2t1XPumrr-nyODRVZ5KAEB12XDLLcEcZ0KzrH3YL3Y5i2RLohPUSpr3XBuQvIUXvKjsqnF60OBi0vSAKtU5igq5KZqufexxe0Fzc5T278TfBvouQMFOiscHKjWRX4L4l4EtwoV0h4e8ylyTaYj_eZsLlkXBdm3Tw7cIWVKPrpvYbm39PlXQrSvyyoecPGkK7o
+2018-07-23 15:09:12  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:09:22  :: 7/23/2018 3:09:22 PMMarketClientBase.LoadConfig
+2018-07-23 15:09:22  :: Loading config:.\incomingIOL.xml
+2018-07-23 15:09:22  :: Processing config:.\incomingIOL.xml
+2018-07-23 15:09:22  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 15:09:24  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 15:09:25  :: Market Data Client authenticated On Invertir Online. Token:N5Udc8zfXEgFBFfhQrCLKrOy_CzUcM4b_5SdEaxbJFaMeqlCmd9LuJUazTrOIt7DT3PEX0XxrhZhcKrhOM6tT1SraiYnLX4tmoB_1zphYmuXsp7hMHYcx9MhYJD-D8nimGnZ5wkLT7tRl27iIAaj_ukuUmr72qPAI_R0QulmLTFsCuaO1oAxvLucjbDf7u4BUuASaaq_V_JJUg-c5ZhQRrgShChtdHuyZeABECWfyYZAhaQjyigcmTXKOol_nHxgH5lEv7md563ZcoNFnfwdiyEE-ry1YPbZg74z9vbdG2zLSIZeP691jhUW49VUL0tQ
+2018-07-23 15:09:26  :: Actualización del refresh token @Invertir Online Market Data Client:kwxvq64KnKGazPwANBcIqfMMqZZBQiOBbhZ-Mj5tp4CQx53B0W7bYCfs3aD25mrNqPg8m0tszq6T5MINrAAn4u4tIiq7WbkxmL3qMEQZt-g-UtRC63U0dW3oDsXjhqPCH0_p-uHe1HVzpqeNicgnSg1uHFVl1e8INXxweKd5lN3zx-pBEV_OvggSaqbbwEnj7XQ8j5eaBeuH1StgZKkXpKaAWefJq3LT__4w-MLdrU_bDdiZzXL1NDS30dlA42XRgVgieBF47PRgH9dAwK8od6ACWEfS2UhYhR3jX7hEWvWVk1jV8iaFOEFpka7C5OvH
+2018-07-23 15:09:38  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:10:00  :: 7/23/2018 3:10:00 PMMarketClientBase.LoadConfig
+2018-07-23 15:10:01  :: Loading config:.\incomingIOL.xml
+2018-07-23 15:10:01  :: Processing config:.\incomingIOL.xml
+2018-07-23 15:10:01  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 15:10:02  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 15:10:03  :: Market Data Client authenticated On Invertir Online. Token:xbq9mqfQCJH9E0in50PVUz2IyJL4jqhL5-C_0qYiFuVeoZIbCbuDi-cRLBFMQyJxccKEUO0iCrpeBidPsNsavPhvVN_qq1p2iH5v_pXHRRhkID8xjl3hpZIBHDT2OSV55WaZkYdG0S1UubLp_-uQ1NHat1XMoZjVnm8fdpDTVa_qS4D4vjzEOon0iQMfO8shv5x2V-Jg87bnpGdLYIoDgNhCCStCtK8R3TBozlBiULbpDsHG6hiWuhxIApIrZxZyM2iD_TZf0iFcygqIHN-VTnMhJ9pXjCEz4L5hn9iZEuC-VlkBQU2aXSlBlaFi3AmP
+2018-07-23 15:10:03  :: Actualización del refresh token @Invertir Online Market Data Client:_bByobwrhIcKEH2WmPY1JjCZyGwjeCRP0wyY1U6pk9OOuj-7ikLj32YJjknq7TCSUTURqnSRz9YoEiYzhnJHFr65vkh6aEfMbBwIlQHsi2DGrYTg9iUYaVtECSfa0ZECp1mrtR5kOSLMoRp32SWyaGedvqpTN7IB4OG9Tj7sOkZNeY5hvzSkxvjuWLF29K3nOAUpySrudhz1tJwhQBTFo4A94eQn33TWsmgyKpEWh3PU6NnUBs2YkboNAmxq0E1hzbJtrCGIk4xxmLWZD0vz7MY1SrVoXGVgDnchc1ucu5GNxqRcYZ5ih1GlIPwf8agO
+2018-07-23 15:10:11  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:11:15  :: 7/23/2018 3:11:15 PMMarketClientBase.LoadConfig
+2018-07-23 15:11:15  :: Loading config:.\incomingIOL.xml
+2018-07-23 15:11:15  :: Processing config:.\incomingIOL.xml
+2018-07-23 15:11:15  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 15:11:16  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 15:11:17  :: Market Data Client authenticated On Invertir Online. Token:Be0ypasMYK5EVxklWWQmBglIWxZEJvMhLKvz9holLJ_LgZ_yzRqgnqqCUJV7jdOAceEyGTqmzS2XSxwmtLkvDXLRfvq7unWa5kpSaAWdIMzbMNQZ1U6VyfmEf7kbYSbP2YGbZvdksE3k_eElPcbqjLwnqdxspNmCCnCg9M4TePgZEe9IRa3qiA_CMBjCzMdKkE9rgSi3MkEgM44z0WVo77Sq9pXtDiPh3CALviHd1RdGxMBYyq-Y8ZSvzZINJOkzI8qRmxqpris8p2CZBuDYkctaPMiXxWtCjFUCEAhQY5Oy6V12YB7EUzghe1JZvi-9
+2018-07-23 15:11:20  :: Actualización del refresh token @Invertir Online Market Data Client:Cw6K9I8vJzYYQXjQTrflrIdzBZrojPSaZrhS59W5T6fRIz0kxkuzaBKFL4naWpAJ-hL4yUln_QUZPmXnnpkp6vW2CiZLFvmkiJWx5oZ3zIs1efl8X_MaAPLVSUQtwUaNtLQEOPEneO_F5U9Vcp-S4eZzvRNEbEfMpdzkUb3NzIpSZ6a2-33yqke4n4YF6Grfeon72ZTZEbgeh5l6Q31pTmK_YcQ-c0uWAZqKmhaQWi9CWQGTBvB8eA1IHFyw2n5XoYK7Y7CpiMruKFKTcCaI9cJ0G5295JQwj3YonPlTE3PY361SwDIkmVNO93CNQSTk
+2018-07-23 15:11:55  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:12:03  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:12:05  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 15:12:20  :: Actualización del refresh token @Invertir Online Market Data Client:aJalr4NEkm83UJzxjhFKRKAMhB7jSuSsZ6EZ5y4tXMzvBS7fbtzSqVFk2x8gdX7A744wLtuMeyUA0rd4FepqwUJuHwHDfoSevTSwtJUNTx-edKvdbUXaHAwKCKrw4LCsZwQ8NVMjpq4nEuppY5xICMN0y7kCOnQRVTldYZ112d1BwDy_aDqOfYHbd_Ow4JmHINspR_Cl7eeVY84ZMiqNVT5GtaYebnRNsgiikeNb4K6h0AIf8CXojixTvt_H7gRTJnQ-yCSO24exg-o07quvECOEetS7Fwt0i156RePGl9qE3nrdkhbX6fT2DcUJvOj1
+2018-07-23 15:13:21  :: Actualización del refresh token @Invertir Online Market Data Client:MaY7B8t5U3AZSIQXr2kVK7gzJcDaos7dg3t1hzJtqW4Ek46rViZ5hAIXuKWQS3s94QhmHbk1U_3wiYHD5c3RC0OhmeziNhMdRFQd43vsaQ5nDXS-G-9oca7aoTvsRIvWFsAzhDBEW6zEBtWDX_MsYLN9lg48TOn2hxn6-QcWT4O8HRrTFseOc-dHTAw8IiXRDLOFvg_pnvI28IvnwJImP2mwPIkH8NUk4a3259N0WbSNB2Rnaymkg42Rf4GoqKeL6PP0o2VposXdM_p8KKD7BUmRht8ugJq1d3EQh_0TVdf7dsowF-wIN_nGVGzpbIyY
+2018-07-23 15:13:24  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:13:34  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:14:21  :: Actualización del refresh token @Invertir Online Market Data Client:kgvwV5vY3xSxAw7TJ44ppq4XtU6EQUHV6itJCVTAehC5ogk0z8T6mJfU89hbUq_cTG34VYh369CZSbc4fNXE-Of-m0KPZZBUb8kuzYe-LylKnvJ9E76n2kLF9N9ygDcwZFzlRgSfExj7taD7FJ0vceoXMr_8gMvt2jrVKeq5C3kxg02XK1xL2DofTkJaTz5Vm4ZUt65LGss_BJTe7lQI6qEh1Ucj7wh7sIymlWgB0_5RJPdV4XaQJoCqBiGawfXj43jP26vlIV2t1GyhKezwS6TqFE1RH-58hJIXwHWhC0NBXegiPWP8hVTquMkQW8j8
+2018-07-23 15:17:44  :: 7/23/2018 3:17:44 PMMarketClientBase.LoadConfig
+2018-07-23 15:17:44  :: Loading config:.\incomingIOL.xml
+2018-07-23 15:17:44  :: Processing config:.\incomingIOL.xml
+2018-07-23 15:17:44  :: Ending GetConfiguracion .\incomingIOL.xml
+2018-07-23 15:17:45  :: Authenticating Market Data Client On Invertir Online
+2018-07-23 15:17:46  :: Market Data Client authenticated On Invertir Online. Token:rQ82_p0cKsG46M39Iabxxm8kL3w0451p9Xm-6fFTn-u8590oUUVOfr-J746bT_hnitNzbar3CG4GbSfI0ud11UCfn05uzFBHSwUxcpjRPuWjh3davxtEsPeOLYrkY0JxEWeqI2E6twIi3iKqBbWUydJPXCDLbjYuBbP8mD5h7MP0OK0xL8MpFU41edVx7NbVrQIBmtxo8WcbcWx7NqoSGVBzm9poWdxwzK_w5z5CEQ1eKT-v5p8rlxAJ2BSfoqSiprYqh05rahNpTqfA82glpW9rDNLJZ91-eygOxbpyFH3x4WQAW919Q39jtFz0RFCc
+2018-07-23 15:17:47  :: Actualización del refresh token @Invertir Online Market Data Client:bjf2eZwlrKghlNsASOT26UF11CSjhIpnwrMtDciMqLsPTpsWYId-gA-LLl2Xa-tAsr6xitvZZv8MirZuQdWLZ13L8hP0HjGlPqzzJ1vlACpJIB3wa4BV8qM8wCgUfSiH76_7UxFjDeE6tS4RkXWdKxe0oXg_5wGQZUC75XMRnjoH3QOOvoBwEHS0iMUk5RNkAFtyQ9VATHSmDkkSSKlPwXL8kTKOMlbWJTearxh5A8hfUbTEOl5cB0FewIBQ00hqYP2QsmKjraYDC8F2ZIJ50pHkopdTG3WP17Jgro0XNigoQTBBVqoAeOUHFbWJUukE
+2018-07-23 15:18:14  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 15:18:22  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:18:23  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 15:18:47  :: Actualización del refresh token @Invertir Online Market Data Client:t2-jgJiKU4pBB6by0tEjkRaVeCebRBvlgw961Jk2uN1eZeqKQToV4afSOtObYSn8p4ISfUVxaDbXV04a3tvxex0Wx__JU5M0jrFcvql6AgfoGEPFgxKn4L_a3YQUwmcCsQmq1scpjAWq8PaKnKGe8lEaQ7O4QiRM16MiSxF0qncF95D35vqHkWYPafxGQxnpwR1glE0zWNltACO-RjISBgzonDHG7_19gEjBJ8b6FGpWY0SHltCrG7P2NhLG9r_KnQuqbyGfeK3hh-pnb9KZZquH83NGAyOjRVIqhfr4-ddNKZvsOgz3KFq49S4OKgaX
+2018-07-23 15:19:47  :: Actualización del refresh token @Invertir Online Market Data Client:DKQfikrzPIYtVasSWZ9L7t62W0whtR9tgOI9Lr3sdLBVvWSjp5riizzdTdfAlVDkHkDQTFTG_BL376IADFc-b1qzmq-Uw_qQU-WG9oX2ovt4k78OxgLAT_R4fzEMCnWcbL61UGQp656mLQiFTuXkns9GdGUYN6FZ7Q4GbMpEIEI1dnPyDpyHoLmzVNP70F8jf_g0cVTB_8CGkmp643KgOoHVoYj-QUHrSC37IkYv8exfGbneHJBDagat9M-NJp32w3koXt10QsRCIHYMBgxk5ROcljrCJx0M2QMvazjd2_N8xiZTqUYmgAM3nSu_JnCM
+2018-07-23 15:20:48  :: Actualización del refresh token @Invertir Online Market Data Client:vdJks0S_lDReJVSYW-G3bVePW7juwVNigWbPmCv3u_t3FWn7kDAquABDBgUEvjBVkK65uYqb_KWRcVMa0PMyLdoxMS8VWPSLEfCFI9rf-HKxLrFGnPAlcCIVKUDrWnTvurLXbegr8XTHKTH6kyAaIzeYCCOY3eJIBQx88TClo5m4oxEAuT32SBlS4LPKDuxxDv-j1ro0fO8yj8WLxnqr7hYnJOzMlu14D_AoTLKAT8mEIloO8vgj4lRw8o0JdPYkfqaVvndAde7yNTy0pTteR9g1f2CUcKbf5QW8EmdHWQJn45prsyOBqrOc4BsoziRz
+2018-07-23 15:20:54  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 15:20:56  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:20:56  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 15:21:49  :: Actualización del refresh token @Invertir Online Market Data Client:AchkFJwcnpijTqclsO88UPKQgDcocw1sgFFO1wTkUUnTZGa6wAEpiTx1JUzj_fntLSL6PqVJs7KoWMHMfUc8lj6VobWgKnTx_GVpEq-JfDRnAH7gg5aU7dfz25x1VBRD2uLV6Zp-W6iLbZuU4DxI0RK_7mmZJhHybns4dv-h66qgNAXYJsssfV3Fb2rFF4vARVhu28NmUfaN35zEuQkmDOR-yNcYKFIkEM24BltjDOQrjHOLgCmmTptiYFODE6GVt_h7_X4rC2xQlD2Qy744tLAHpNqdX79hLkYwXvuY0DpEJUMWCAsyodCFyWKdEFUs
+2018-07-23 15:21:53  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-23 15:21:53  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:21:53  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 15:21:53  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 15:21:55  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:21:56  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:21:56  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:21:57  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:21:57  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol ALUA.BUE
+2018-07-23 15:21:57  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 15:21:57  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol EDN.BUE
+2018-07-23 15:21:58  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 15:22:49  :: Actualización del refresh token @Invertir Online Market Data Client:sc_fnRjCHCNvhzD1e22f_WYpv8X5OQ7cEGGv2KInyJjzA_oXuJkhpxrZelZu_z8OqWDn0-cepDvijsPJ7m7oWCFMyJCdmlR1KcN1AehMV7ukzmojBnpE1zs-zRkphZ3LA7iN9aFPYUurzmknDK4z6spMtqVc1V6pIhVV-G7M5orZh-vkGeOUVbS7PQU0ZJt8IBhP1EOenfCmKB-1zMMcNHL2FKR3czah0mICKDdCoW-5DncwzjXZb7yq-NIedH5NojsWBlKSGfsUZeb73nCj4CXytaiXuUomlSZvBa-8tURY3Qwa5mBKF4EhHGv2I1Aj
+2018-07-23 15:23:24  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2018-07-23 15:23:26  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:23:26  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol ALUA.BUE
+2018-07-23 15:23:49  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2018-07-23 15:23:49  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2018-07-23 15:23:49  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2018-07-23 15:23:49  :: Actualización del refresh token @Invertir Online Market Data Client:jJavXD0u1XTfRzdalF4Ek8OGs_8nqLGOPcut-dBaAEAiOWJ97yB4zsPZgQnx3-D9QaL2TWsJuqF0DxGNCSK3rwJSXfTtNQ8-mdbaTKWbRxejgnIHaEvTzRwQ4zrTcN9DcCzTUzBF_V2oPvBUEX1OdxRjsYrFxrWPeGYsB4OE3UpOt0Sp8E77td5XI9tJHCMSmJTJgZ88ENWeAeJyCYcpTagN95EePDMexKROZ3b1iDkX7U_WcwAc1cxKegmL4OZZHa7nI44y8Q1_12bkq3IzsU_SvNhZ0-5NjGmJ9BpXX89P07Rc8rDIjz0G-8xq2mHb
+2018-07-23 15:23:52  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:23:52  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:23:52  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol GGAL.BUE
+2018-07-23 15:23:52  :: @Instructions Processor Invertir Online:Requesting Unsubscribe Market Data On Demand for Symbol: Instructions Processor Invertir Online
+2018-07-23 15:23:53  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol BMA.BUE
+2018-07-23 15:23:53  :: @Instructions Processor Invertir Online:Unsubscribing market data for symbol EDN.BUE
+2018-07-23 15:24:50  :: Actualización del refresh token @Invertir Online Market Data Client:ZItz91rjdVC5UBXmqaR1xs_l19yqIp-TJmK0m0zqEuj2w0fnazRBAmnlN1lSZmJgH2JIrD2z960_eB5JamlQ_1-1Dogdc-adomObpsKOi5HgrRJGhFTM1ym7COXfi4qyR1uKVWtpxb2L3be3CNUZKhBgNv6CY7l11wYiolE_Suv64nt_6K4iOJnfM1Gp9hKTPB0a9DF9ryBXkns5ur-e4LMH6uGpe0JLagxFTbz3JzWpW6u2vTXAEzcZbdN_ZCnI6duZECuqcqDP3J8ZHV5z_EOcjI7SNcy6hnhm9N3RhJbrEzgxq6DVEfn5s1KgQUW6
+2018-07-23 15:25:50  :: Actualización del refresh token @Invertir Online Market Data Client:WfqRc2-UehwpKTs5v_WoILH4DxLynlxB7n15RQdd4fsxB7TO_0igHtfNBHBGgYhnftkuGcz3qRgzyeA8YUKIxxbmvG3ZmoWt2X89OQJMlWBFLk-x-iSZRZsGNogl6dY2YCccqp6KK4BjK8gppN6lXsKsCrJFDTqtZEjTf8HTikvjH26kg8q8lROGABrIPOcDS6pUIgQHPSYJCwa9sQex00RcxNkDYX-4FI7NL5-20BGBinX4vCSa2N_Hyf4shq1Gklln1a6hVdg9QYHMbWbqDSd3LHUjaqFKDOUyh_-g9hLQZ13RebJlUpZBIN5rjPjD
+2018-07-23 15:26:50  :: Actualización del refresh token @Invertir Online Market Data Client:FAxUdQXajh6ZEVHfoGxhCuEYfh7L-E3MECFLArNiMkgrkGolJT7EAVXros3ijTNBiN1yZUURqTdUaXHQNMLHu2cxsQZe4D9KOoCQRqyZr9mTKzzJZ3_Pq9e4jLrl9hOOe4Q8CuI7tla5HSEEPXWvrX2Wwg4WAAhhHl-8h8pkqVfGzwCZDOkhSZeUotEjpRMvGzECEPhYUJNLNylVFeoSH1wCoImBb2VFaMvHX6VIv3dKlra_uuWGMNbBwFgT61AR7kQ7v9fRf6iCJycjdbzaYPsism4QJJPPYO_x_ZNoZRJhinPhvCvrFpKSjcQI7yn8
+2018-07-23 15:27:51  :: Actualización del refresh token @Invertir Online Market Data Client:0GU7onVJtnRrYqjqAXYd_UVAmwF_LXmjolrmrQmWgWJYJvg6xcE3_j5E4t7sev41IB4sg3c9ilRzOvqtJGTJi_hKBsV-BxUYy3uxcB7TnxTUXYrgP7BlCjwZ0CbxK2PB4HyQ2NHZ2M-iKplQnfkYL5eIv7q-4WVGNn23BrfH9MgVay0C1E8mDKUI2o0I3V7w3X_kUA8FvI4qvxoTri6Nf4iw6bf8tIEvvBr_8P3vDQTANZ-BKjPNowi5-4Is9NJ6uD_z81aN4EYv-mOgp-rVOnWRx0nVIShUeXcpZNPvfMNk2hEmujWLFW80hk4Z2Sm2

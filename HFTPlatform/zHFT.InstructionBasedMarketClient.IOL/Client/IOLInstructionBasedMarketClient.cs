@@ -276,15 +276,24 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         {
             if (ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol))
             {
-                int tickerId = ActiveSecurities.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
-                ActiveSecurities[tickerId].Active = false;
+                foreach (Security s in ActiveSecurities.Values)
+                {
+                    if (sec.Symbol == s.Symbol)
+                        s.Active = false;
+                }
+              
                 DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IOLConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
                 //TODO DEV: Cancel Market Data
             }
             else if (ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
             {
-                int tickerId = ActiveSecuritiesOnDemand.Where(x => x.Value.Symbol == sec.Symbol).FirstOrDefault().Key;
-                ActiveSecurities[tickerId].Active = false;
+
+                foreach (Security s in ActiveSecuritiesOnDemand.Values)
+                {
+                    if (sec.Symbol == s.Symbol)
+                        s.Active = false;
+                }
+
                 DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IOLConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
                 //TODO DEV: Cancel Market Data
             }

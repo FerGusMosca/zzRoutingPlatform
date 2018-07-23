@@ -56,7 +56,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         protected ExecType GetExecTypeFromIBStatus()
         {
-            if (NewOrderResponse.ok)
+            if (NewOrderResponse.IsOk)
                 return ExecType.Trade;
             else
                 return ExecType.Rejected;
@@ -65,7 +65,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
         protected OrdStatus GetOrdStatusFromIBStatus()
         {
 
-            if (NewOrderResponse.ok)
+            if (NewOrderResponse.IsOk)
                 return OrdStatus.Filled;
             else
                 return OrdStatus.Rejected;
