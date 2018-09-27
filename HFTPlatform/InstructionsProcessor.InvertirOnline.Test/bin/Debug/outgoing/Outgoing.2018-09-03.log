@@ -1,0 +1,193 @@
+2018-09-03 12:51:35  :: 9/3/2018 12:51:35 PMMomentumStrategyBase.LoadConfig
+2018-09-03 12:51:35  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 12:51:35  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 12:51:35  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 12:51:35  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-09-03 12:51:35  :: 9/3/2018 12:51:35 PMOrderRouterBase.LoadConfig
+2018-09-03 12:51:35  :: Loading config:.\outgoingOrderRouter.xml
+2018-09-03 12:51:35  :: Processing config:.\outgoingOrderRouter.xml
+2018-09-03 12:51:35  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-09-03 12:51:35  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-09-03 12:51:35  :: 9/3/2018 12:51:35 PMOrderRouterBase.LoadConfig
+2018-09-03 12:51:35  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 12:51:35  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 12:51:35  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-09-03 12:51:35  :: Authenticating Order Routing On Invertir Online
+2018-09-03 12:51:36  :: Order Routing authenticated On Invertir Online. Token:5ifjPPEjv9VmZfBs5z6vd-k2HgPyDYvQYyaKxMOYqMPF43EWCgxJDDQ8WFYqzHCIn6Kt8Lnmzripp0uKt_nUnLpFXbN_rhVyVxXOSzAKXtwrIjd55YdZUD8-Sh2unD0wJtF_gHwH6LaQhdqka593dsdUhhDqTcGkxKM51_sNetKJogxBzmT1llenBUO3dDa30GooVWgMHiSPJk4u8OGEcF6L9TiBcWJIsNIx7fo5RtVESYtby5sj0Pdy8g4g9fM9vHO06BcvzMO6Lf9Y3DlqZ_rRshhJstVuKbla7kkaMYNCdKAZJ5oUHoHobj-Osy5l
+2018-09-03 12:51:36  :: Actualización del refresh token @Invertir Online Order Router:630sthM16geDH3-4z02VekLHDkEpsJl5Me93MSSiSSWoCwE7IdjisQD2QKxYx17Pc2EAIc9UHdSdAsSM_HpvcVE_sVjqSRqRkwpTBofkQjBp9EK1FHDMtzzWx6yaKNMX3pJeRrxe6T7DXwArZCNUcWwwf8hQsPGPl8_dN_svff4QKXqrHBJt9axvVDteHc0jq5ekUcJY96BbHK_0O70O3mMcfI4_Hf3aIZAzxhT0jebl6EnUBUxHAcHHTWEnJBAhQTNvKYoWQ3ljXUIgnsQrcUlfmwDSBqE5lgVdSqn5h4J6uzu2WrzFXKzM_gpkng5o
+2018-09-03 12:51:37  :: Authenticating Account Manager On Invertir Online
+2018-09-03 12:51:38  :: Account Manageauthenticated On Invertir Online. Token:j9WtkrKz5sIK8stUj9KWwf1klVZTLaSM-_6k9v39MYXIVVg1zMMGpVdJRgdq0uqJdX0nbNUs7iFsbZX4u7rMQX8yjZUg7WBZEdbFO-PcEuGtkm44WEOSOH-gtEIWeem1qgnNLYh3tASz9wQbJoGZg3YmDJxa918i91Yokb-_NovMOiFWV35KZxsfirtntJnaTv2NiiJ6ufEgaVW0hjwblwMgab_hC6J6TQm1ltPRdErYbNqkHJkzPQ-u9kXlRlD0HXdorEW77lakDgdFfabJFljpZt1s2XyjB668h2_STN9YXt6mH6yLd3RDOZBcOSRj
+2018-09-03 12:51:38  :: Actualización del refresh token @Invertir Online Account Reference Handler:f2DuuVf1VFEQeUKNkMl8zc9Q0POuUd-lx6tFqlTx9s9tV4s26wunpt4QqZI_GGT7pPbwIiEHz72VjTnDxQLv0NP17iyA6Q7yCw9h0xRn-vmsQSpLpsG6hr5ABbx5J631Tz-kjIBhgGq7jUSRn4sriH94WfP6hNH1-h7y9WWjbPMXnUpYzlQPIK00pYU4UXUN2R_XW-oiS8M-u76Bf-YIDjy4LweNDpg5K9sBMvuCxjqHWPZCcJRYb5zwUiFf-2qYLUcSORuNU9MyApWXEbxcgGCdYzZZbDjRiOigbmN1T6pOeA1JNawpMBDuNUg2SgRI
+2018-09-03 12:52:14  :: Canceling all active orders
+2018-09-03 12:52:14  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-09-03 12:52:19  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 13:42:10  :: 9/3/2018 1:42:10 PMMomentumStrategyBase.LoadConfig
+2018-09-03 13:42:10  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 13:42:10  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 13:42:10  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 13:42:10  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-09-03 13:42:10  :: 9/3/2018 1:42:10 PMOrderRouterBase.LoadConfig
+2018-09-03 13:42:10  :: Loading config:.\outgoingOrderRouter.xml
+2018-09-03 13:42:10  :: Processing config:.\outgoingOrderRouter.xml
+2018-09-03 13:42:10  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-09-03 13:42:10  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-09-03 13:42:11  :: 9/3/2018 1:42:11 PMOrderRouterBase.LoadConfig
+2018-09-03 13:42:11  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 13:42:11  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 13:42:11  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-09-03 13:42:11  :: Authenticating Order Routing On Invertir Online
+2018-09-03 13:42:33  :: Order Routing authenticated On Invertir Online. Token:VWxEhJAG5-yJLpQmwc66xg8W18GwiDJGPEEqR7c5_fDk-KFBy4Hjb42j-5JNZEwo9vCaEnhjwRrnQPR4z8Yvc1wiyI9VUuvrBWyyGtGe5WQor_Z-ycXdS3myIbWo5JgH8RAvqY-ODMKg2fYu48UHxfIfvj8EuDwvfpWXG4mgFHNSOsceXqKuRRkj1zHl2MD470YdR1OTYrcZTCAuL2SVqMSx8LmzNw8ANvRn2yxxPayiI6AH_Czk83Irl18N0mQduuNU8mHf7kU0wCmzA5QH6vdEZ9lUC5twuCpi2fsjMZoA-VJ_eohvSTbCLQsK-7Jx
+2018-09-03 13:42:34  :: Actualización del refresh token @Invertir Online Order Router:gQyigKSNMIxQvfi7PNhur65YFDzre77hME1oQP6betyz9y3fpvsIZIL5PE3S2nYAiAimZ2xP5NiPn3CthYsEjLjB2qXAq8bX8T43o32NyGyHcjYbdabq35kuVpd7L4E5FtjEDsUlsZAfratj1gDLi9g60NfqNiitB-_J59Z9y7mTALkxahm51ofeBReYji1IWNV3Amy-JyDstNw_SQbuYZ0NNywy_4pvfDzuye0NK1zYh8SEWwv3-CpljdByzEcf30EmR38M0Jy8qMjKvZS3iyRgi9kRUtTFynP0Ht_Vow1OJ6QdwDt9Or-UQuVE1Gzs
+2018-09-03 13:42:34  :: Authenticating Account Manager On Invertir Online
+2018-09-03 13:42:34  :: Account Manageauthenticated On Invertir Online. Token:2_NFHisRkiBNrJV09yMrrh5CeNXj_FVKFlMu-OxAIISSxU0-LUinjqzsEkOvoigZUucBFgAeYkrTnf8bmRDveJqr-BMgvnc4O0p0JmfBEPekUL0CyL6ke5x6mZNfquIHLYNaRQZj783dNnIhLfa9XpzUz2_cGZt-50aQGjD8q0Ecm--GJYvXseJQQg8_i_eJ__QX8lIsK5T48AIwV9rVlYhjZGWTpltlp4IgMptX4UB83N60LT3U98XDIKhg_FNBZEHO96ZqQuB8Fj-8jJOsLi1H1-NF1tBg6UWuhfPk1lU0cr7PJXZOyE9yHMp9Rtcp
+2018-09-03 13:42:34  :: Actualización del refresh token @Invertir Online Account Reference Handler:3pluCfc7JlMeNrvIPoMoB10tCvNJM4TRuXg18rmtCWpPkdHpsL9XjilXGZfe84FZnI2v8iVaNeFCw9AP9mC0eGcK8djwBxodG6ODGiMY4x1dgzDKwmbTbE1XvkGBa4BLfnxDhh74HNFI-uIhQcpnvcGmydbq4b_rdCw6iupMIhHMHZfgXTGieVaL4Uja5cDE1_CLI7aeTOyn_F555wnZpxFlUATiJ8evjN7KSGR6d_JnI7f8wio0hsYAJ7WUG_8sDYVkrnfthObAtd5gGiPe8bKFUOgyl9ueAEb8fcFjNDI
+2018-09-03 13:42:41  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 13:58:26  :: 9/3/2018 1:58:26 PMMomentumStrategyBase.LoadConfig
+2018-09-03 13:58:26  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 13:58:26  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 13:58:26  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 13:58:26  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-09-03 13:58:26  :: 9/3/2018 1:58:26 PMOrderRouterBase.LoadConfig
+2018-09-03 13:58:26  :: Loading config:.\outgoingOrderRouter.xml
+2018-09-03 13:58:26  :: Processing config:.\outgoingOrderRouter.xml
+2018-09-03 13:58:26  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-09-03 13:58:26  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-09-03 13:58:26  :: 9/3/2018 1:58:26 PMOrderRouterBase.LoadConfig
+2018-09-03 13:58:26  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 13:58:26  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 13:58:26  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-09-03 13:58:26  :: Authenticating Order Routing On Invertir Online
+2018-09-03 13:58:27  :: Order Routing authenticated On Invertir Online. Token:k1ncANX7qa9c_0Nk6wzEf0dRGNXidQHOAYB4Q83H_D-nSJGYSE-KRWWbT9O8qLCNFMxjk2YFud10xmd39y0NUhsNoPgC_q0jVfMpmGWkusQsJqJ47hTi0fXTov7eJMrhOaKiUMUuR3b0MX4aK2ocEZlnZS8q4BbM6pG0qJMW8RdclIRabiQtXeapv5F4zzyB1PlHwHrJFfztlfpH_nmEJq_ZUE0pNjoHdW8XYJXZmoRH9Y-zcPkzd3Pt-OaeY5P5duTwTQIV8gXVS5WERw8HFpPCAngE2cL5ch5u9qSyhhnk3252yJAqgmNCOFsDdY29
+2018-09-03 13:58:28  :: Authenticating Account Manager On Invertir Online
+2018-09-03 13:58:28  :: Actualización del refresh token @Invertir Online Order Router:1QznztgpX1d6kICLxuu7pdseLPVCSbMXeugG0bHGnnoKjLU6eGreaODbHRby7MLcLtZh8U3fU2XnvxouK-sw_G9Fgp8BjCkA2WsjWCFYgG96h2OYu7oXpj_ksPqlIdLDKM83ySNu5dllcL_qKZz4vFZNnWFQV066dXmUYIWOrII_ghFrL5oSEU4kvMkd9-jwccqrsN0hwe2uRIu1A5qoAIwSSNfy_JzC5RhfCREr5TLZyfF7EVBl6PamDN748EJugmnYaE-NkoliveRQvLhEdwTZFCDiUYEDonPx8F9bZ4wl8l8I3DKgzxX7bCA2X05P
+2018-09-03 13:58:28  :: Account Manageauthenticated On Invertir Online. Token:nB6ZKxZgaC3oBn0Cetv1OeHxl6CBIcS-JI6HXxphoifmDYPIuNt9esztlyXbf7Su12eo0dmgV9NzMBGukMIFoBpeKCeHSpgc1Wtko4bGR-zoOlqKnZ4eoWnhqWRf8P_xRWbykgl_ykc5zfHMaAkULZNzH8h9dHrgI3_-KIHT-JkT3V84xWuPrHcSyyi_wf3UnjfnRCdePDg4ifoH3Kv7U8jhivExke7Y0CGZnqgc4uFSSTmRlVr0zOd9_gR4HskiMkILlq74-I7HBdvkyI2DCf0e51q4ivloUnM7xJnkjbgkJpr48HNKNNb2M-0ktN9E
+2018-09-03 13:58:29  :: Actualización del refresh token @Invertir Online Account Reference Handler:xt8HPA2O73rT8IwldU9MsPJse8r-xVDOofnF5ziQfPZl205PY-njH0gLS5GIMCteCecfVCefJgIn8sDDAsHxSpawISNT5tKJXbukrJhqIyZ1GHFYLRut6xxwiiGY-BMOsBtB-i0FJ8N1FglHuqV1f0tHaYwbutuSLEVXNmFBSOiwYa5Axm3R289wjGGQjBCBsySot2TUaPXzYX-ePUF5k-HhM7Yme7I0uNT4_qqplq14RUAF310D1ITGHxZ8tTX8n89h5pHPnDkdwX7aUuzuxH-YFLGSij1DiTGJdR_KSW96GB-CdlvySrraJIX8NTfM
+2018-09-03 13:58:35  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:01:07  :: 9/3/2018 2:01:07 PMMomentumStrategyBase.LoadConfig
+2018-09-03 14:01:07  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 14:01:07  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 14:01:07  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-09-03 14:01:07  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-09-03 14:01:07  :: 9/3/2018 2:01:07 PMOrderRouterBase.LoadConfig
+2018-09-03 14:01:07  :: Loading config:.\outgoingOrderRouter.xml
+2018-09-03 14:01:07  :: Processing config:.\outgoingOrderRouter.xml
+2018-09-03 14:01:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-09-03 14:01:07  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-09-03 14:01:07  :: 9/3/2018 2:01:07 PMOrderRouterBase.LoadConfig
+2018-09-03 14:01:07  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 14:01:07  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-09-03 14:01:07  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-09-03 14:01:07  :: Authenticating Order Routing On Invertir Online
+2018-09-03 14:01:08  :: Order Routing authenticated On Invertir Online. Token:6VQdU2IVd-f4Qb0HTRgGE2W761ML9cSELXRTnJAqzjG1rRKNIv-_KixuzUrvyuEDMDRCTRD_XrjkPrk-HNow0MF-ZyS21uL3uHp0UrFWiZ1Qbr37gqV86W7DkZJrB0fuwsr-eMLckJtdv7ho8P4jYZJr8lDxCRF897RaOnVs_C8b-1UoLn578rL55T9e697m5UCeLDC7RP9WtEhO28DN9GkyvtjLr9gho7LN4sFxlEIaY__u-5r9fmLzX-ZzHdfNs_w0HY8h8CxMhEb_Y0ssYZlLz3mUNyS_uMWXLy_gV5pvo5w7aj_yIHHxOerXon5s
+2018-09-03 14:01:08  :: Authenticating Account Manager On Invertir Online
+2018-09-03 14:01:08  :: Actualización del refresh token @Invertir Online Order Router:mbgPs54TnYgf-o2UlvOp-a_YpQYqZRGXnTUlTJx0nefz6YnXvMvLKBYOQ3h-WSrfiYI1imQc2DHmQPWRzdEyirLcmzEZYv3COt7QZmjFKDv1kuUn3fYiah--zWXafZ2HweHv5_oIl-xy8xzcaaFJRdK0nJrwFPkK3HeF81I1w0pZEiz6RjZ0MAcE00dPBi-bG-QKOkMVXSy7vEeZnBSha3TrGF5mQ7W_W7IR4_E4zEjDH9xPPPipWWZh-WBb7XdegO15DoRLhn1VkXz9Ily2JmEyJmjBJZAVNuQbKzf3WAKbFaEmFCICZ7896BQ8sion
+2018-09-03 14:01:09  :: Account Manageauthenticated On Invertir Online. Token:IcxGt6akEjJddTLi27RMWOqYjsw3z8yCpnYlGdW400B3rx8S2ipHOv8SRefhkofAmdgWRwSqt09Ava6MLgZqGN51HhBdXkRH3ZdA3CekRvOAc-aGOlI7ZfdlJ6K7UA4gjinNREnrtdWmX6oWxz31DzdTgwBlyC1LQaglv8UZdW3lUSm1vJOeiswdcTbiptzoqhzcHOqzriBNfAZJK08OKM7-6xbxAYc7WHHRI6Qnvey3RS4HI-NSIcnxs2OG59yvA_2g0CNPEecREr2ZCypw7MiS7lDfE9GEpvpYTB8F3qBVzqaFexUFnNRRrnvctZdq
+2018-09-03 14:01:09  :: Actualización del refresh token @Invertir Online Account Reference Handler:aJn6YcOre0ZEgkaDy3CF4siQuFuSAE0C5DFi2bW0El-OwTvMQItIVldco1g3Fev6Rq_ebiO3GXtKDTdire3Vd4WU76-LwAh5-vwr0572Z60Twb6Rlgh2SSn3hsmApOFISuqii63aHtAsf3KdPGXsljifqDeuumNYNITMSUYzkyvDBkXDuJUW-AI8TB5m2yJ1qpC7bEr0YWgjUQnJ2lhDoE8v_pAECYITZGWp11E8ajpJTUzXGHLSiAohJr777g4l6u1xrEitECk9PMhQxbEQw_Fy_zm50ZL-knVMb83gbGPoimK7BcWPYFiTz-P6zP8J
+2018-09-03 14:01:19  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:01:20  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-09-03 14:01:20  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-09-03 14:01:21  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.85 BestBidPrice=21.7 BestAskPrice=21.85
+2018-09-03 14:01:21  :: Routing to market position for symbol ALUA.BUE
+2018-09-03 14:01:21  :: Creating buy order for symbol ALUA.BUE.Quantity=46 Price=21.7
+2018-09-03 14:01:21  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-09-03 14:01:21  :: Routing Order Id 0
+2018-09-03 14:01:22  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-09-03 14:01:22  :: Incoming message from order routing: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-09-03 14:01:22  :: Received filled for symbol ALUA.BUE
+2018-09-03 14:01:22  :: Filled for symbol ALUA.BUE processed
+2018-09-03 14:01:22  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:01:23  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-09-03 14:01:27  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared
+2018-09-03 14:02:09  :: Actualización del refresh token @Invertir Online Order Router:TmIY7elRWbx5_SKNANeOzgedJQWr-vIkGgZ8yRH570ULkRg8SS4Frt6YpOeH41Qo2oNFh4_DP3amQpfp8sLwNVQ908pnr3ohwqzWCjjbR1QMYWv69QsJSgSLCPQTUvznxbucBSCy4LMQeigA0IlmJZwqMsDQ2y12Vi8FdUN_31zLNXCOzuvD3u2WIBKYssFE3JSY4K_6-aHjbx3VjpCBHG2r9fap8CEbxn-RjgxGkfHtjYTjgKI2s6T29JMgPWRqNaPNQz0i0K9y7MyizotVQfYLmaqRHEcePDYo1A4yscuaDSLzUTIubfVSNPJzIfIo
+2018-09-03 14:02:10  :: Actualización del refresh token @Invertir Online Account Reference Handler:JtS604_mQwmolFgYGiRE47HDadWXWh9tXd641B_skJMswKlU0QFbCbabncJAM8kmJpsunSIkNXEL1AfdcduLha8T060NsX__ifi05EPU-OrHMtwnJbNBfKx1jbO3DFl290GFHN3FhMH4F1QUj_zP0WwFPYUoOIw862nU9tRsmzrrUkRQI7FJHBvNRJewkOKtF-ZjgLUhMIMTB9EFsJZbbrgUblEO2S3-7kqxvhnSdOVc5kc9yE_yHFEUZyLXlrg1Cw5gIV-mYGp3IkI0beIT782xRsAYAElw3DputFaFSYSHJtbYcP00UrhIOoEoR6u9
+2018-09-03 14:03:09  :: Actualización del refresh token @Invertir Online Order Router:oiw1eajOe-UsoFxivnLwExH8rAffR8p0invTs6j4Y_mfvQhixt3rgYuOOabcY603mva4AhypoIH7v_A1JoV4H8W7djcS2H525SbRbQO4KROH84Qoo1SDWJvlX8rF4zC1LbosfJC6d8trN9EIvMXDf5ES07htk5_5jflXw7mJjLzu6hwqePEvlDeOVna9HeK3SY_kN6wg0gj7RDsxsgUm2vsIP9Lcanu6iPRTDcFybY_A94ELwThmQU_lGOABNgOiODXSPunFeD9g-h1YWMsTrXD4waKmQ9qfujVTZgJeOek
+2018-09-03 14:03:10  :: Actualización del refresh token @Invertir Online Account Reference Handler:OheKJ-mQyUzs5jYkekO6LA35DV7Z7653qTaB2O2pVVM18QLKsnQdm9IKOQei2cwyjf-Cbh-I8hxO2ZEqGA65drqsQJg-Uwob0febPOKhVgbExeXlKos_3mK2eDTOn2RWBVnyAx27N27B97LF68hNiAKDDNMD4rFhuqKP_Sm-875BkahzmA2-P93k948RVV88uV1WXZyudVjlS1XbautEyLm2hhHLZfZp-VeY8vLWQEeVK2mK96DWX2HP8N0nphs2sutWHyl8Bf-Y3xmhx14hhzSqWdOKcZv5oPKcFXVnS9ySXusW-L9uBtyfYI9HXKO-
+2018-09-03 14:04:10  :: Actualización del refresh token @Invertir Online Order Router:YvVyc9W-rCmqGfUGVUK9JCYBdxL9YXH10dY9IreonBlwOKDg9w5PnIZolb63IuPRxtkX-KAuNe-emxIZxbTwxaIEgPjnIZg86bn6G_OvBj8n1ZbOLhgkEDzXnWyEYnqsI0ctTNBJjR-NwPeyqB4sXtGS1dFtQ6O7kq2RJzPbmeu8T48spKN8D0iZ8gqZnbKBrj8Wmf83PuxOMvP4jGK7gLWvBHAII9SDcoyMArh1-yEDy3ocHsOPo2pFikc3wMPc8VQcBRZ1uh5LYtcibuseWJbaAbAOWXu40GnuOUmHm_5mrW7noUKJ4C-IV1OD8F84
+2018-09-03 14:04:10  :: Actualización del refresh token @Invertir Online Account Reference Handler:UUxjRmIXP1v8VAuTcvqt7AwNWOPSD3duquVR0okao62uILmeYM7NVW7SYD0PTDnViX7FaA30qtrxKoGxtSDai1r66PH3eR3D8p3zLBiSt626Pka3w6B5aIHe0cE2jqOPLM1LvT5KLEPkgNLk2Aa-dv1bxgjIWZOo2K2bwnrgBSy3ePxbiKoxR6VCLl6I00Q31KDenEgZjT6o3VboOmDK_mFl25nyjzApZJ1-Mtb-PmgeEbH2Iij9Covver4hCvyK1WSVoRU1hkT0bbYp5x_5KgTm9vPyKXGvCRyF0SKXSIEKQ_N-FPs1XRxZYKyLJhCJ
+2018-09-03 14:05:10  :: Actualización del refresh token @Invertir Online Order Router:6ZgxeejW4fPiupVMVqdkaliMrutAYEhyeE25r3pTpPyH2MmYK0azrViX8QorLf00NmNajicPTZytztSLpokwaS3N6LeQpFq8SOTWsco9WHsY_YuXmvEgW_HdYm3hS8cnkfo3dk6TQNYP4ailA-wBhiIZYDBFRRujcevHrb0vsBBIUfTBYL8hwrCz_DorMD5zLV16M_Xy-xFDrZ4ARsz2EXc5K7_Lf1zCt4jBJms05LJI2_SF_8Vhsq3PhvpljgxgeWu4xFHmZ5O79cs47DvsBqpqxjASvqYRetGGGRbv1B73n86eTGZZOFCJ11kQ1eML
+2018-09-03 14:05:11  :: Actualización del refresh token @Invertir Online Account Reference Handler:UP4VIMT3TNrWO47kJ8zlitH-uJIDnHTs-JIvMAiO5YwDzL8UJzuKn6cm8qeeYqeGIzVwYEnmXYyeZpR_gRHeZu7tS-hwRp93yODtfgqVB-_4nhWcFSUt1ucxIKAc9wpSpCB4RaQVF7PMiBpP29Oo57VEpgWFRsiR1YxU2rxU69LG40eRcJQUzPS9P9xdeOhVeBmARiEIMQfvD_UTSr9M8HkqhCgdTa6HtN3b95yCVR0r3EWGbNQdZZwJ4Tu5fjvJJzXXtn1XGTgKWHFaoD5d9hQEcPvfUA1yxFDuz2dlqq9iMNSdYsMb205aapNR_SNb
+2018-09-03 14:06:10  :: Actualización del refresh token @Invertir Online Order Router:7p6xNMvnf53CVP_FBxPUp9igz7EX4ZBEoCJ1zhC2U2cwlSJWVenUt34abqPtaGURFXP6j5u3yGDKHY2qzMq58bWHQ21q0XmkInwKQ1bIkHIjpLQKWyQlK9WTrSHWk_muZ2oV-AbKBAHjQkhTAUn5xHTkJ4piD7AzP0gLdcxcC8jrNRuyZR21LKye_LflbkcJIrf0qElfGEmjwxgWQzZPPN-JYz6LeU22jrb9WgLqSYEEjJDzIXEWZ1A8ngw0Y_W1_qybRGzlbPHTtxxr2h92NS3YH22NM-1Z4fOfbfvJods
+2018-09-03 14:06:11  :: Actualización del refresh token @Invertir Online Account Reference Handler:seB2fVJ0TGWMINg7vHRyuwOSmpYeaGycypZ44TZtar4SahbS4N6YEDgrSllj0aRABsYN5BLqSSU7y9srE-9Cmj98W1cs2xnta8pbZ_xxd3NltZU2YK3Zpn9-L0z2FPTfIANYcCQqP24aBXNtQXVxhrzo6-VW-PWdM7cv8Hb3KXKLDOJcL2r6VSngJradLjcsY1w_JzviUAzgQXA3umIDhKYRlgdyQc_Qx5VrstxPXWi_--GozpseW9Sqg_TgHG00dAWrdpOdQTwesMlOkUu2MBgoZZ3FvQmVNqqPMtuXszCobERTQzR6RpDuUBJ-Zgj_
+2018-09-03 14:07:11  :: Actualización del refresh token @Invertir Online Order Router:250-q5va-eoPQ1reuhbCjCpvKXuzysvsvlJFIpBR6ONCQunhhVpu2u2ty_ODpr1iVG7s1dkd4rUgbZyywlnRN6f7a6cFGELie23pgTSY_I7AFEYVnIem7zfRYxjxv1RREj-JvKOu26vFp5LN2C--GyWbtE7eKMjVwR0g58rGlaLipIYCU4JCfWl0bDJK5m_3dz95E5At1cD1mbMjCCC43_fYKOTlrjigvxt-o3T3_Mn4_bluC4XsTeDQmQg3BrBc_Zsy1UKEYKR8JuDyvKzwJkQZfbxjdYOD6tnBc8gFcyI
+2018-09-03 14:07:11  :: Actualización del refresh token @Invertir Online Account Reference Handler:tgSfu2EUR6Jio3pEHtrCvqwqOCe_XKsjnr-8qIKws94Gj27ayyJ82owb93wPObRzH15hJySYsMEo7hIgzolsmyHFVuW1smSYrlO3Aw-mQT5vT7jFCGbwZ3Ghr0_pSwGg6zLLP6xITAXWV6ULDe22MDx7a5xDt8ApFkwdjLDvjf3qbmhHtPEIE-rnDvL90PFuYnbV5IEivoTBf1vbPegTH_w1iRB-JtMU1rSMgUJx5x3M9kNMNtsq3uCVDf7E_C_ocCOpmtOGTtBMr14K8YMaMoIqdr1i3kXvSpwPJYtm6FE
+2018-09-03 14:07:32  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:07:32  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-09-03 14:07:32  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-09-03 14:07:33  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.85 BestBidPrice=21.75 BestAskPrice=21.85
+2018-09-03 14:07:33  :: Routing to market position for symbol ALUA.BUE
+2018-09-03 14:07:33  :: Creating buy order for symbol ALUA.BUE.Quantity=45 Price=21.75
+2018-09-03 14:07:33  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-09-03 14:07:33  :: Routing Order Id 1
+2018-09-03 14:07:33  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-09-03 14:07:33  :: Incoming message from order routing: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-09-03 14:07:33  :: Received filled for symbol ALUA.BUE
+2018-09-03 14:07:33  :: Filled for symbol ALUA.BUE processed
+2018-09-03 14:07:34  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:07:35  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-09-03 14:07:38  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared
+2018-09-03 14:08:11  :: Actualización del refresh token @Invertir Online Order Router:ORzacZjLQMKZW_i_p7Hxel2IXHeiYYLm0GSPYV0kP7ysjRS5va7f7YJwBBwq1ga7p7gFG8_RgcJ6z7y2369JpCeAqwnzeEeHhFTOAJXpcfC3Ak30iK_PR7UA_ebC8nKyPx9qezNV0N-GfcCVUunJCE5bXXHN_obsXjKSGGfrAeRod03NpMU-kjUdOAaz6i-5EsExGalNlrOnntvktF5rP2LBkWVe4ndaqUH2tyxlicUaV7JDVJ_jdFriUZzMUyOO7RrVKn651pJIZ3sKwmbidag3ZkSjiELAPT_lhA7BAvA
+2018-09-03 14:08:12  :: Actualización del refresh token @Invertir Online Account Reference Handler:NAYtoJqYGMHVEdAmWEW5M836sLEjg1lajfv0IMO516yZDJWwjgt8NWvnzRNQ1q7459G4jFLgVvvXf2MPekmQp_6iEDjBYxrGPPf4nisQ930DA2-irlo_pq7nLIp6p-VOTOp42ODQgRxT8ofHU34yQ3ff2z4wiRCUhqFfmmsytWs_J8vt5XwnswDRhCND-h1z3Jg8l91zJ-P8grfAPdCf8QvBb50flUELG_Xmtbq9u6lXPEbaoEeUILEwufYx3VtrXnwO5G0akp3vd6s7NK21eYL3nVdAAojHX5cdTGbz74s
+2018-09-03 14:09:41  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:09:43  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=43.75 BestBidPrice=43.7 BestAskPrice=43.75
+2018-09-03 14:10:03  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-09-03 14:10:03  :: Strategy Handler - Instruction Based Router: Creating position for symbol PAMP.BUE
+2018-09-03 14:10:03  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-09-03 14:10:03  :: Strategy Handler - Instruction Based Router: Creating position for symbol ALUA.BUE
+2018-09-03 14:10:03  :: Strategy Handler - Instruction Based Router: Creating position for symbol EDN.BUE
+2018-09-03 14:10:03  :: Strategy Handler - Instruction Based Router: Creating position for symbol TRAN.BUE
+2018-09-03 14:10:04  :: Routing to market position for symbol PAMP.BUE
+2018-09-03 14:10:04  :: Creating buy order for symbol PAMP.BUE.Quantity=22 Price=43.7
+2018-09-03 14:10:04  :: Routing with Invertir Online to market for symbol PAMP.BUE
+2018-09-03 14:10:04  :: Routing Order Id 2
+2018-09-03 14:10:04  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=83.55 BestBidPrice=83.35 BestAskPrice=83.55
+2018-09-03 14:10:04  :: Routing to market position for symbol GGAL.BUE
+2018-09-03 14:10:04  :: Creating buy order for symbol GGAL.BUE.Quantity=11 Price=83.35
+2018-09-03 14:10:04  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-09-03 14:10:04  :: Incoming message from order routing proxy: Symbol PAMP ExecType Trade OrdStatus Filled
+2018-09-03 14:10:04  :: Routing Order Id 3
+2018-09-03 14:10:05  :: Incoming message from order routing: Symbol PAMP ExecType Trade OrdStatus Filled
+2018-09-03 14:10:05  :: Incoming message from order routing proxy: Symbol GGAL ExecType Trade OrdStatus Filled
+2018-09-03 14:10:05  :: Incoming message from order routing: Symbol GGAL ExecType Trade OrdStatus Filled
+2018-09-03 14:10:05  :: Received filled for symbol PAMP.BUE
+2018-09-03 14:10:05  :: Filled for symbol PAMP.BUE processed
+2018-09-03 14:10:05  :: Received filled for symbol GGAL.BUE
+2018-09-03 14:10:05  :: Filled for symbol GGAL.BUE processed
+2018-09-03 14:10:05  :: Processing Market Data:Symbol=ALUA.BUE  LastPrice=21.85 BestBidPrice=21.75 BestAskPrice=21.85
+2018-09-03 14:10:05  :: Routing to market position for symbol ALUA.BUE
+2018-09-03 14:10:05  :: Creating buy order for symbol ALUA.BUE.Quantity=45 Price=21.75
+2018-09-03 14:10:05  :: Routing with Invertir Online to market for symbol ALUA.BUE
+2018-09-03 14:10:05  :: Routing Order Id 4
+2018-09-03 14:10:06  :: Incoming message from order routing proxy: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-09-03 14:10:06  :: Incoming message from order routing: Symbol ALUA ExecType Trade OrdStatus Filled
+2018-09-03 14:10:06  :: Received filled for symbol ALUA.BUE
+2018-09-03 14:10:06  :: Filled for symbol ALUA.BUE processed
+2018-09-03 14:10:07  :: Processing Market Data:Symbol=PAMP.BUE  LastPrice=43.75 BestBidPrice=43.7 BestAskPrice=43.75
+2018-09-03 14:10:07  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.9 BestBidPrice=44.3 BestAskPrice=44.9
+2018-09-03 14:10:07  :: Routing to market position for symbol EDN.BUE
+2018-09-03 14:10:07  :: Creating buy order for symbol EDN.BUE.Quantity=22 Price=44.3
+2018-09-03 14:10:07  :: Routing with Invertir Online to market for symbol EDN.BUE
+2018-09-03 14:10:07  :: Routing Order Id 5
+2018-09-03 14:10:07  :: Processing Market Data:Symbol=TRAN.BUE  LastPrice=42.7 BestBidPrice=42.6 BestAskPrice=42.7
+2018-09-03 14:10:07  :: Routing to market position for symbol TRAN.BUE
+2018-09-03 14:10:08  :: Creating buy order for symbol TRAN.BUE.Quantity=23 Price=42.6
+2018-09-03 14:10:08  :: Routing with Invertir Online to market for symbol TRAN.BUE
+2018-09-03 14:10:08  :: Incoming message from order routing proxy: Symbol EDN ExecType Trade OrdStatus Filled
+2018-09-03 14:10:08  :: Routing Order Id 6
+2018-09-03 14:10:08  :: Processing Market Data:Symbol=EDN.BUE  LastPrice=44.9 BestBidPrice=44.3 BestAskPrice=44.9
+2018-09-03 14:10:08  :: Incoming message from order routing: Symbol EDN ExecType Trade OrdStatus Filled
+2018-09-03 14:10:08  :: Incoming message from order routing proxy: Symbol TRAN ExecType Rejected OrdStatus Rejected
+2018-09-03 14:10:08  :: Incoming message from order routing: Symbol TRAN ExecType Rejected OrdStatus Rejected
+2018-09-03 14:10:08  :: Received filled for symbol EDN.BUE
+2018-09-03 14:10:08  :: Filled for symbol EDN.BUE processed
+2018-09-03 14:10:08  :: Received Rejected for symbol TRAN.BUE
+2018-09-03 14:10:08  :: Rejected for symbol TRAN.BUE processed
+2018-09-03 14:10:09  :: Processing Market Data:Symbol=TRAN.BUE  LastPrice=42.7 BestBidPrice=42.6 BestAskPrice=42.7
+2018-09-03 14:10:09  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-09-03 14:10:09  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-09-03 14:10:09  :: Ending RunOnPositionCalculus for symbol PAMP.BUE. The position is cleared
+2018-09-03 14:10:10  :: Ending RunOnPositionCalculus for symbol GGAL.BUE. The position is cleared
+2018-09-03 14:10:10  :: Ending RunOnPositionCalculus for symbol ALUA.BUE. The position is cleared
+2018-09-03 14:10:13  :: Ending RunOnPositionCalculus for symbol EDN.BUE. The position is cleared
+2018-09-03 14:10:13  :: Ending RunOnPositionCalculus for symbol TRAN.BUE. The position is cleared
+2018-09-03 14:10:37  :: Actualización del refresh token @Invertir Online Order Router:02zequRnW0tJTVAwBKuCqTn32uD94hv-AM-JlpzrK8zP5kc9UvhYh1KCdF6WtT8OfQTnPFlMsAuzN3emOoqnWawJ8wNR4X6C3qA_Huqdht7Ty-R3m-dgJkBD6E_J4YIJUnvGsoL14Vs4bAxF1eMk0g2HVwlDDdhPoBeoQDua-d5UO6w98xG0omj1XG-f6K-1ONuBbfPB4O_pMBoHMwxR4Y6Resf8PmY1QaxgPiMy9yMqEFhlKJintlLE7bgwrZNrzw9pvVOZftEUr7YfijajrvlO_r_a5joeS5ivF-weTmU
+2018-09-03 14:10:38  :: Actualización del refresh token @Invertir Online Account Reference Handler:nPSQLEUgaOIEm2pxdwz0cuNufR8JGjLiFzxvvFd4MzL6RE-IUAnS3bNxKXtsCsIuzpQ6HNWiPEe4A-X39W5ngYdKICT2g1oA_l0jqyG4wvrDHGbZ9doIyzYfwt9mjOw6_10gPPChwjYItELc8VV7OBPv8dY072s3viIZLWVIHDq4p46Lvi_G_nLDsHJn_Z06kLvmpchmpcjVfyeZqQ5oEpeyETDqtvXWqo1xgzLnZpCV0pIGmGwbnsItboTrimvnaJW8IzKWPc4FdimFfmpacEvXNDcGMUUTrJmVUCW8iFYAb86gCJ3Gbxt_iRYlMBXD

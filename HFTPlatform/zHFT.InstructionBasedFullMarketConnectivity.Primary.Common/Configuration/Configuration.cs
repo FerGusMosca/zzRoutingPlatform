@@ -31,6 +31,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configurati
 
         public int PublishUpdateInMilliseconds { get; set; }
 
+        public int? WaitingTimeForOrderRoutingInMiliseconds { get; set; }
+
         public long AccountNumber { get; set; }
 
         public int MaxWaitingTimeForMarketDataRequest { get; set; }

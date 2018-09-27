@@ -121,6 +121,10 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected DateTime Start { get; set; }
 
+        public DateTime? LastRoutingTimestamp { get; set; }
+
+        protected object tLockRoutingFrequency { get; set; }
+
         #endregion
 
         #region Quickfix Objects Methods
@@ -770,6 +774,41 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
+        protected override void DoRunNewOrder(object param)
+        {
+            QuickFix.Message nosMessage = (QuickFix.Message)param;
+
+            try
+            {
+
+                lock (tLockRoutingFrequency)
+                {
+
+                    if (PrimaryConfiguration.WaitingTimeForOrderRoutingInMiliseconds.HasValue)
+                    {
+
+                        while((DateTime.Now - LastRoutingTimestamp.Value).TotalMilliseconds<PrimaryConfiguration.WaitingTimeForOrderRoutingInMiliseconds.Value)
+                        {
+
+                            Thread.Sleep(PrimaryConfiguration.WaitingTimeForOrderRoutingInMiliseconds.Value);
+                        }
+                    }
+
+
+                    DoLog(string.Format("@{0}:Sending New Order Message Thread: {1}! ", GetConfig().Name, nosMessage.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                    Session.sendToTarget(nosMessage, SessionID);
+                    LastRoutingTimestamp = DateTime.Now;
+                    DoLog(string.Format("@{0}:New Order Message Thread: Message succesfully sent: {1}! ", GetConfig().Name, nosMessage.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error sending new order message {1}: {2}! ", GetConfig().Name, nosMessage.ToString(), ex.Message), Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
         #endregion
 
         #endregion
@@ -912,6 +951,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                     MarketDataRequestThread = new Thread(DoRequestMarketData);
                     MarketDataRequestThread.Start();
+
+                    tLockRoutingFrequency = new object();
+
+                    if (PrimaryConfiguration.WaitingTimeForOrderRoutingInMiliseconds.HasValue)
+                        LastRoutingTimestamp = DateTime.Now;
 
                     return true;
 

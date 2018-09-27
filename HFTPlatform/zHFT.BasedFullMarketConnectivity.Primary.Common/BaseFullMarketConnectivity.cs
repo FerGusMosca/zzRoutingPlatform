@@ -493,7 +493,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         }
 
-        protected void DoRunNewOrder(object param)
+        protected virtual void DoRunNewOrder(object param)
         {
             QuickFix.Message nosMessage = (QuickFix.Message)param;
 

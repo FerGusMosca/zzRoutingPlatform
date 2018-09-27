@@ -6377,7 +6377,8 @@
       <value enum='BRIDGE' description='BRIDGE_LOAN' />
       <value enum='BUYSELL' description='BUY_SELLBACK' />
       <value enum='CB' description='CONVERTIBLE_BOND' />
-      <value enum='CD' description='CERTIFICATE_OF_DEPOSIT' />
+      <value enum='CL' description='CALL_LOANS' />
+      <value enum='CCURR' description='CRYPTO_CYRRENCY' />
       <value enum='CL' description='CALL_LOANS' />
       <value enum='CMBS' description='CORP_MORTGAGE_BACKED_SECURITIES' />
       <value enum='CMO' description='COLLATERALIZED_MORTGAGE_OBLIGATION' />

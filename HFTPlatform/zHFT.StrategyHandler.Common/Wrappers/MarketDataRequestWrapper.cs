@@ -34,6 +34,7 @@ namespace zHFT.StrategyHandler.Common.Wrappers
         }
 
         #endregion
+
         #region Public Methods
 
         public override object GetField(Main.Common.Enums.Fields field)

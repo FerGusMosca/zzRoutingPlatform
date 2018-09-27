@@ -1,0 +1,52 @@
+2018-08-17 17:47:36  :: 8/17/2018 5:47:36 PMMomentumStrategyBase.LoadConfig
+2018-08-17 17:47:36  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-08-17 17:47:37  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-08-17 17:47:37  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-08-17 17:47:37  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2018-08-17 17:47:37  :: 8/17/2018 5:47:37 PMOrderRouterBase.LoadConfig
+2018-08-17 17:47:37  :: Loading config:.\outgoingOrderRouter.xml
+2018-08-17 17:47:37  :: Processing config:.\outgoingOrderRouter.xml
+2018-08-17 17:47:37  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-08-17 17:47:37  :: Initializing Order Router Proxy zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline
+2018-08-17 17:47:37  :: 8/17/2018 5:47:37 PMOrderRouterBase.LoadConfig
+2018-08-17 17:47:37  :: Loading config:.\outgoingOrderRouter.IOL.xml
+2018-08-17 17:47:37  :: Processing config:.\outgoingOrderRouter.IOL.xml
+2018-08-17 17:47:43  :: Ending GetConfiguracion .\outgoingOrderRouter.IOL.xml
+2018-08-17 17:47:43  :: Authenticating Order Routing On Invertir Online
+2018-08-17 17:47:44  :: Order Routing authenticated On Invertir Online. Token:CiR6XKB2mc0HtxctsfQZd11zwp35h-ZuVp5mrDygdqdxKya_KyTR2XVyTEH2hpbSZKorkyIOAiR6TKJlEhgKZqmVFMBTFs4tPA2rWES19B47b7lI8-4HJyCNr12jGRzZAYqM-wxo3GwvKG7xQiIF0TLlcZIF0FWsxNtFB0OwcAOj-SxuQtgN-6aCeJ19t5JAtiDkoqhq0PfKBTaa5dtdNF_AybFNXYrTFAlX20QzEIcqpF_dGP9h18-ngxQGxUtcxoKNX6u3buuANWLtUEV5CypKyQyn5GtiDl3MMCDd_vMBVAGndwt4-2qLRqHPrR1R
+2018-08-17 17:47:44  :: Actualización del refresh token @Invertir Online Order Router:-ILGkF4x2Gf0n8Qll5WrBwv_Pbsz6OzCrzBrBcnu0hs2OFebZsUl3d-D_xenimzIm0jQlYxIOpshl_8sJ7x2TSqk70S7-RivgDO96lwTBYAgdPa4jGBTRRLmPsrUEUyBAO-78DBp0imaYfxbh-68rSFR3WfU0V6h7HON9pKNkXD9OALdEfum25ldQQ04t4-ztHR6gr_Usza3ZExzQpFM3TXRnamUT9yEZLXZM-V5X5CdMbTB2NzkSHyJHHQapauKA9dsGsNkGkqa4oC6WMsyWAz8b9y5tu4uE700wqQcJxg
+2018-08-17 17:47:45  :: Authenticating Account Manager On Invertir Online
+2018-08-17 17:47:45  :: Account Manageauthenticated On Invertir Online. Token:XYRVihAzK0fVId4Beo_9G7gp7SHpRbgcAWdL6vs05LWBWaot4nQmK-xHDYpYtNgoAxwO3uqVKJvqBb65NRnkIHdChdlW4IaiXDhs8CJZbfw5CWKEFZ64uX8ESorFkIHbGDjOc27gIUSQK6smpskhhjL4thc2pYvxNBg1RLWMQusuLaHZRB7EGtHbastxBMp4-MWL89XsWAyG0ywg5tDYZij92JQ49QxZ7WeMA7OM-YsrZkcTGx0nnCk8Y1Mh96kkkdjJkbXF6PWupXkE4-6gLUv9o7YyQul4PHTEuvb2tLJGP2K0lDbdsYwH-2hbiPEb
+2018-08-17 17:47:45  :: Actualización del refresh token @Invertir Online Account Reference Handler:lC_XTmwf1aAFpuHo2L-8GECTzHH3OXC8kUCpxfbeYXaotIlW_nO0jR5kXKkOt7aOQFKKer1IznndZLgWsqbSH7iSXxiNKoZzoo4GEFleNgEk2Pcxp-IYG1PIphT8LlbrrfupvM8GeX01nAk624vMozVpqDYR4PwANlgxMEmq0BQp4CPs3spV-uJmxCtjVSM8JhXWpq8ZzXUE7F0dD2UKSXhCB-BtBBNNMoF3Esu6epmD7lhY2YI4jnc8AKUcACJMv50fE5uz7TkCU4eA1RfBfeXGJYyBJQCXyiC02v2E-q8
+2018-08-17 17:48:45  :: Actualización del refresh token @Invertir Online Order Router:WozRz7EDM1Mp7QewUIAYY2AdB7jxT0hf6k4lxqS5IvrPOVbgYDf9FBE1RekPi9x2d6r7cxwwJTehlHI9fJszxkhfqsbyiLGUqRpMQBH19M_ji4O6d0_I1bjFnyeOCqVGlknfkhNw1V9128Vw0DUncjiBnItEu1aLgNiKArH0efdXaXiMxL08k4ap2UEen87k2VI14DC7IC4uv4j_Kr2eNlLkDVFNab3sXg_sWC54nX8rIGwc5LiyO_OMVITK5Yk525bspzQLA5Xq7BSkCnUwvEPPHZ7XxAOy1-056T5hOa4
+2018-08-17 17:48:46  :: Actualización del refresh token @Invertir Online Account Reference Handler:qn_kx6Q4DGN_F2Qn3Nk8MokKDTqhXXqGvArGbXOXN4rA13WyXAXDu4ZWryzVrvjFZ7rLgJtN4Z9nb8Y7xTYDSUffozRe2N6UVt-3TPaBdPTo8yaCUyKIoXyeGG9rNU5UqM7z6Gxe8DtwVU05l2sdIEumyWiXAaBLMYQ_mqTG19_nu0OnnU2X4naiorVBhgsszE3WbCIxxq1U9Y7LSclnBRWI_M66rsZ-sVI0S717hhUdUg2SKz_PugA7msyWGEbN5uS-8oAk_eAolMIGr4EHdppBVXtOLW26ilgNVErgai8srC7kPoi4SkbJTiWf9w8k
+2018-08-17 17:49:45  :: Actualización del refresh token @Invertir Online Order Router:lc3LPSjbcAUK6HxUjTEKoUHO_nqnf2E8_gXQKwt8FAdayHpJvR5Lum-r6vnp5FKxPFmbxmj7u1QK_TtlV-uhwkyVyW6El_uftzmp1icGuLe0EiHUv9-Qo9adXnYdZygPG8zwfzk5moGP7akpGUPUFX1-_s2hziPVUWayfwknNMmpmrNPAP--bq5J0vy5JmLnId1WGPaziigQAlEcxr6wFXIIonDgeP9fd7pisw-juW4d281pDUTrrCitKPN9y0HFX3fMl3RqTv074IkOkm8lRWS9lzy6OK2Hi1hAF2JuWdYkrNY7zxvypSb6YGvVbLPQ
+2018-08-17 17:49:46  :: Actualización del refresh token @Invertir Online Account Reference Handler:qEu5UX8I9W_4K35I_XJXiOEeNl7dHSvoGI3ojZUmI_y1dZ9dpoxvHfLgufcs7bDvECwPVu-nmp90thkfdIi4A4pCPUOqJgfRGyNg_vTSURtfHIEKDrkmeH3OtRrH8p9exiJqVx4iJsAmgSZ2VAYfkplLGiqMg_zqnQhhQoqHKM9E9gWl3QpjN5neBZM4En_wwTp77mTAxvAeUTeEi6nyjilZPTFXx-xPt57fc1RO3twZVrNe7ZbFkYx7USfMU2ZpTpEA5tb01nDYAWLS9mTTJcDJP4GYmKSAqvx4IrMSU9PJmy9U33k5tWdD7ceb_WoH
+2018-08-17 17:50:45  :: Actualización del refresh token @Invertir Online Order Router:bTQoJZpC37nGEgQXUiplzWaGqY8suGF5ZrNDpvPqvJy0DNiHt0bQAizyqPbH-zI78mqz-IV6shI8id0eG2Kxv2HDu6tiIZBsLqwhDzwzoU8zwvowr24fGlV6-RtfKkItfrzPL0vV11AeEefqvEgniBKbmgYbNXtEmVbkl2Z88vptb42I2VqMZ04bFBYhkCtJmxCWfCsLk7L6LekJwfmw951vLU6qq8bWhZUnznm2ougECSGuPGgknxJj2ZzdNMXbc-qJyoF3DYsdauovzMclm0rNJDZIJSh87WSa6XX_YEI
+2018-08-17 17:50:46  :: Actualización del refresh token @Invertir Online Account Reference Handler:7A_50tX1d4qcqbSlUf2fvfYX7qfKN69pi3h8EbZGJHLjB7RSBSRGfHgoIJwRjse3BG10aH4QWv0SXFdEr2HuKKVdZAPrOFD5hr8-VP6WeqUs17LUMT58wahPSI1o9ocMeDxvgjcM5P1_ihed1x_A3f0nXnEkypj2q3DQMehlKZk1Pg_RE1n-szCMy9aTn8kK_w2Jnc8TuxZ3LoaMpY-mHY94sx4hylvq6_oF9unVbSDSlYXqFiV9rtZCpWvzs7Tq9gNjaXa2dGMcIZLW-osruvmq2WFlvkLhKYYA2JqG7uJpHasm18TnPoLllQyaQwFv
+2018-08-17 17:51:46  :: Actualización del refresh token @Invertir Online Order Router:_qmh3Kd89odbVhRS3oQXT7CSauQFhzkbmr4D5C0tfnqOlOPPQbhb794uAM8bKQRQuVpLEd_iSNpcDbJky8zCN9CXTQLWJFBJUpruClnag3LWbbD52rECcNfXAmoDyUxqDJqvWvE7-_EkVLc4-O7oNeXyncvKZBnKp3ylI_KwxReVit7jRcX7BUvrSTkaOiAgitQAa8C0xnC2MWyipES12wilGfra75K--z4VBZ3-3rJg4tJ09mozNXcTbp3E50TEtN3bh3W6yo9iIQGdHAUzgMfqCpIHpbhNH0kHMCRPl18
+2018-08-17 17:51:47  :: Actualización del refresh token @Invertir Online Account Reference Handler:msIF0o7F6Xxe02sM0nhZ6cy9-2dZ3EVlxroteN91RGfUBgpz7AU0pKSiHwu_pohUsZfQw-orqU8lgXZ1sVSlIpJhX8I74FpJza0BP7iM6Sq64JS1U8KCIUltl--1qWapNnIIZYa5B3Iwm0mt7i9xXE1E3gvumS75iOA37cHoNtAIDfXcKT2DTaLKTBixfKSxBZ33CbGpssKMXMxcAgo4UCfS4QikKIERfT2Tna5bYWBKqW8K2j9oPhinjg6q8dr4wbyYGFp-3uLE0VcJQJG-tNKixVoU8ZfP9BhTl2ymxPPjfbJ5h3Iaaf08_JPmwyz3
+2018-08-17 17:52:46  :: Actualización del refresh token @Invertir Online Order Router:_5teRYjPYwV2ba5WnJmUZNuZb583E5lyLFsnGS8WOrURzJJS2RP6Vy0YjpBwpYvjC-YUqZhxvy0uo79ojQh0Mx2MZ6HLhvMAfFHRVrtiZdYz7c0tCLyLtbl9ucy65uONzfBklClV6UsU1WTpMYPCvw-ikwcIN6N_vRgq5CSnjLByqXdbbD-7RhfUH72DgDpcyGBUPCyHDRHYJCe6kSq5coQU68NriDoFE_fa3TZDPJGAUXccqK-ArK12uQMc3k_xNUjtRd5OYfVazs2QyeI5qqesXhqNNS4tJoZiROkv5T8
+2018-08-17 17:52:47  :: Actualización del refresh token @Invertir Online Account Reference Handler:MgwC7Bta17e_5dDte6H7NGBLcoA-u_Qq2yB2I_4UcRpwg_AI39i3wPPEj_-V-nDdQwQyxwoWFbA62d6YwJtJI13SBiaTKuiU-x5NdrKuXZWDiCc5S-RTzPe0jKpfyvesLXe3y-Ax2fSSwHvqztNFoahvAZAsSSYS1iVk03-TTlgNTzQoDyUz4hbUjU_LmvONDT3LMW1hbFyZyDHpt8liN1OJEZsbbC7JJYVphgwh7pEyujAvcJb5jnlunCDwr6_L2BzLR0bfk8J_sZWXUowMZwquFi4TusmAu54f1XYJE9Vk0Lphz-ZXcdCsn82XrXKQ
+2018-08-17 17:53:47  :: Actualización del refresh token @Invertir Online Order Router:-48GfPIGDCoLFiHnhugs8lRiIM7_ayYKEghNnHGe27YXJ8Ckwh4zfbj8zs-T1MAliGZUH-Y30QPzGaOO_zWkDpdHmXwrbtxHE36uhyENNkacgEjCN7xucqfb1w6ykXXrk4rmijGteRxNOoyYnwC7gn4XKJzm5W84hnMExopKz1ALABt_rqKYJfu3_KSZFHtROlcSCAfmDXc_FgFeLTHhwH76l7Ncz5HJGg9ytISKpws_3VjgELYuTMK6QRwff2fTgzSUwFMHFHb65MECh2HDedCaBscXBDtKQG3C5QYwSwc
+2018-08-17 17:53:47  :: Actualización del refresh token @Invertir Online Account Reference Handler:8qJezXlwMOvG6B4KdOsJM93bBFdx47H91Ja3L36qxx6iu2PsAcM9B1pQgHAR7VWTr91JlQEcEkPPFfD-QNm_Sy2uqfEBjby_YEX_blLlv2VuWeSKsRygSVmi8RUZ2wjifSJeV8f9SANiAOBl93KU2paGKM3ng5iFvnadh_ezqBJE4DgCOycxxx8UgsDJhQ1Uq2R6h4K6uwc6gTyG5FwnLOpKwRfUst1E2NcRRm1Vv2nrojDhZHWWfxkKavM3AlB6Ytc7nZ8AR92JmVSUlZ-CpK1HE_rrmtGCYX5-VFUtAW_e4GcJt4fROuEhPUvdFqD7
+2018-08-17 17:54:38  :: Canceling all active orders
+2018-08-17 17:54:38  :: @Outgoing IOL:Cancelling all active orders @ Invertir Online
+2018-08-17 17:54:47  :: Actualización del refresh token @Invertir Online Order Router:1LkuU3d3xJmNJ1sNtX0opaj2pOmNTEFgsGXQ5RisYF8ygQTd95SWvyHLEDcnt80anai3nANWsEFCFtieonuG7iHPhJVj65wdr7N4dnRDrwME5KwhIXHI3g2yA2alvJtCN5wdL0aSE3TVF4GSgD0GMEJjGVUGRfZDYRO-EzqV2s5N56b3MXGFG13rOd0U98vnSPA3_m5CD3ZtpWD634bkGNDjyV--RzU5_TLjtuuq_9TOKWgLvix33WKzKRQ2oWPlWSCWwW4dev-P9NFmmiJUqnlZTpgW4q9waJJNFThUblo
+2018-08-17 17:54:48  :: Actualización del refresh token @Invertir Online Account Reference Handler:-6aaPyU8ogm5hse1GT1h1-mhydUyN8FmQfxcXaiLHEV9HGovcIHY2AmxREz44vm0aNJ3YGY92yp_cTYp8Qo0GZUowfsvJetGArL12QHsveTqJIc2vDwjqVBBRvyry7gU6NyYEPAwXeieRqnXj0Ci6HGZ0-FBDrZq5X3UqUu4qe6HgiBTg6sPrTvectuo4-RNHOlXgYokJ2OnwAcyIlhoxAlk9ziNf2MOLFBSLJLWhzFlJbyZ8auJIJB6pLxkMLoE35jkT6Om-TeC8uZ89ow_CrAB5TLXaFNN1QfK2dy0yDfWWwd7Tz1biYK7FJIK9UMm
+2018-08-17 17:54:52  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-08-17 17:54:54  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-08-17 17:54:54  :: Strategy Handler - Instruction Based Router: Creating position for symbol GGAL.BUE
+2018-08-17 17:54:54  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=88 BestBidPrice=86 BestAskPrice=91
+2018-08-17 17:54:54  :: Routing to market position for symbol GGAL.BUE
+2018-08-17 17:54:54  :: Creating buy order for symbol GGAL.BUE.Quantity=58 Price=86
+2018-08-17 17:54:54  :: Routing with Invertir Online to market for symbol GGAL.BUE
+2018-08-17 17:54:54  :: Routing Order Id 0
+2018-08-17 17:54:57  :: Processing Market Data:Symbol=GGAL.BUE  LastPrice=88 BestBidPrice=86 BestAskPrice=91
+2018-08-17 17:55:02  :: Incoming message from order routing proxy: Symbol GGAL ExecType Trade OrdStatus Filled
+2018-08-17 17:55:02  :: Incoming message from order routing: Symbol GGAL ExecType Trade OrdStatus Filled
+2018-08-17 17:55:02  :: Received filled for symbol GGAL.BUE
+2018-08-17 17:55:02  :: Filled for symbol GGAL.BUE processed
+2018-08-17 17:55:03  :: @Strategy Handler - Instruction Based Router - Starting sync for account 9 ...
+2018-08-17 17:55:04  :: @Strategy Handler - Instruction Based Router - Account IOL_TEST positions succesfully synchronized
+2018-08-17 17:55:07  :: Ending RunOnPositionCalculus for symbol GGAL.BUE. The position is cleared
