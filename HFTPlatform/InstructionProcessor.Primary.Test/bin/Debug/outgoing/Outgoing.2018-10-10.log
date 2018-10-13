@@ -1,0 +1,70 @@
+2018-10-10 9:50:15  :: 10/10/2018 9:50:15 AMMomentumStrategyBase.LoadConfig
+2018-10-10 9:50:15  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 9:50:15  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 9:50:15  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 9:50:15  :: Initializing Order Router zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters
+2018-10-10 9:50:15  :: 10/10/2018 9:50:15 AMOrderRouterBase.LoadConfig
+2018-10-10 9:50:15  :: Loading config:.\outgoingOrderRouter.xml
+2018-10-10 9:50:15  :: Processing config:.\outgoingOrderRouter.xml
+2018-10-10 9:50:15  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-10-10 9:50:15  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-10-10 9:50:15  :: 10/10/2018 9:50:15 AMBaseCommunicationModule.LoadConfig
+2018-10-10 9:50:15  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-10-10 9:50:15  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-10-10 9:50:15  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-10-10 11:24:40  :: 10/10/2018 11:24:40 AMMomentumStrategyBase.LoadConfig
+2018-10-10 11:24:40  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:24:40  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:24:40  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:24:40  :: Initializing Order Router zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters
+2018-10-10 11:24:40  :: 10/10/2018 11:24:40 AMOrderRouterBase.LoadConfig
+2018-10-10 11:24:40  :: Loading config:.\outgoingOrderRouter.xml
+2018-10-10 11:24:40  :: Processing config:.\outgoingOrderRouter.xml
+2018-10-10 11:24:40  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-10-10 11:24:40  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-10-10 11:24:40  :: 10/10/2018 11:24:40 AMBaseCommunicationModule.LoadConfig
+2018-10-10 11:24:40  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:24:40  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:24:40  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-10-10 11:32:06  :: 10/10/2018 11:32:06 AMMomentumStrategyBase.LoadConfig
+2018-10-10 11:32:06  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:32:06  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:32:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:32:06  :: Initializing Order Router zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters
+2018-10-10 11:32:07  :: 10/10/2018 11:32:07 AMOrderRouterBase.LoadConfig
+2018-10-10 11:32:07  :: Loading config:.\outgoingOrderRouter.xml
+2018-10-10 11:32:07  :: Processing config:.\outgoingOrderRouter.xml
+2018-10-10 11:32:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-10-10 11:32:07  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-10-10 11:32:07  :: 10/10/2018 11:32:07 AMBaseCommunicationModule.LoadConfig
+2018-10-10 11:32:07  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:32:07  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:32:07  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-10-10 11:37:26  :: 10/10/2018 11:37:26 AMMomentumStrategyBase.LoadConfig
+2018-10-10 11:37:26  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:37:26  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:37:26  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:37:26  :: Initializing Order Router zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters
+2018-10-10 11:37:26  :: 10/10/2018 11:37:26 AMOrderRouterBase.LoadConfig
+2018-10-10 11:37:26  :: Loading config:.\outgoingOrderRouter.xml
+2018-10-10 11:37:26  :: Processing config:.\outgoingOrderRouter.xml
+2018-10-10 11:37:26  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-10-10 11:37:26  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-10-10 11:37:26  :: 10/10/2018 11:37:26 AMBaseCommunicationModule.LoadConfig
+2018-10-10 11:37:26  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:37:26  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:37:26  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml
+2018-10-10 11:42:32  :: 10/10/2018 11:42:32 AMMomentumStrategyBase.LoadConfig
+2018-10-10 11:42:32  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:42:32  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:42:32  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2018-10-10 11:42:32  :: Initializing Order Router zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters
+2018-10-10 11:42:32  :: 10/10/2018 11:42:32 AMOrderRouterBase.LoadConfig
+2018-10-10 11:42:32  :: Loading config:.\outgoingOrderRouter.xml
+2018-10-10 11:42:32  :: Processing config:.\outgoingOrderRouter.xml
+2018-10-10 11:42:33  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2018-10-10 11:42:33  :: Initializing Order Router Proxy zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler
+2018-10-10 11:42:33  :: 10/10/2018 11:42:33 AMBaseCommunicationModule.LoadConfig
+2018-10-10 11:42:33  :: Loading config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:42:33  :: Processing config:.\OutgoingSingletonConfig.xml
+2018-10-10 11:42:33  :: Ending GetConfiguracion .\OutgoingSingletonConfig.xml

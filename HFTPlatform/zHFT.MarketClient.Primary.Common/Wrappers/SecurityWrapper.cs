@@ -22,8 +22,10 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
 
         private static string _FUTURES_PREFIX = "F";
         private static string _OPTIONS_PREFIX = "O";
-        private static string _CALL_OPTION_PREFIX = "OCXXXS";
-        private static string _PUT_OPTION_PREFIX = "OPXXXS";
+        //private static string _CALL_OPTION_PREFIX = "OCXXXS";
+        //private static string _PUT_OPTION_PREFIX = "OPXXXS";
+        private static string _CALL_OPTION_PREFIX = "OC";
+        private static string _PUT_OPTION_PREFIX = "OP";
         private static string _BILL_PREFIX = "DYXTXR";
         private static string _STOCK_PREFIX = "ES";
         private static string _BOND_PREFIX = "DB";
