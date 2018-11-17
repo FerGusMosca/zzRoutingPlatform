@@ -50,3 +50,57 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFu
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\FIXConfig\FIX50SP2.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\FIXConfig\FIXT11.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\FIX Sessions\initiator_prod.cfg
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\FIX Sessions\initiator_test.cfg
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.BasedFullMarketConnectivity.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.FixMessageCreator.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.OrderRouters.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.SingletonModulesHandler.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\TWSLib.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.BasedFullMarketConnectivity.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.FixMessageCreator.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.OrderRouters.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.SingletonModulesHandler.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.pdb

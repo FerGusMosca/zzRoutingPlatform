@@ -18,3 +18,23 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Inver
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\obj\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\obj\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\obj\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.OrderRouters.InvertirOnline.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\bin\Debug\zHFT.OrderRouters.InvertirOnline.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\obj\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\obj\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.DataAccessLayer\obj\Debug\zHFT.OrderRouters.InvertirOnline.DataAccessLayer.pdb

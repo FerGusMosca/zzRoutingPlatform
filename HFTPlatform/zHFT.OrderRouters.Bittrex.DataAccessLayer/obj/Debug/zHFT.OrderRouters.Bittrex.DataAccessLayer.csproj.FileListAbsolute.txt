@@ -7,3 +7,12 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Bittrex.DataAccessLayer.pdb

@@ -30,13 +30,13 @@
   <WaitingTimeForOrderRoutingInMiliseconds>1000</WaitingTimeForOrderRoutingInMiliseconds><!--No más de una orden por segundo-->
 
   <SecurityTypes>
-    <!--<SecurityType>CS</SecurityType>-->
+    <SecurityType>CS</SecurityType>
     <!--CS= Common Stock-->
     <SecurityType>OPT</SecurityType>
     <!--OPT=Options-->
-    <!--<SecurityType>FUT</SecurityType>-->
+    <SecurityType>FUT</SecurityType>
     <!--FUT=Futures-->
-    <!--<SecurityType>TB</SecurityType>-->
+    <SecurityType>TB</SecurityType>
     <!--TB=Treasury Bills-->
   </SecurityTypes>
 
@@ -47,7 +47,7 @@
   </Markets>
 
 
-  <RequestSecurityList>true</RequestSecurityList> <!--Pide y guarda la securityList-->
+  <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
   <RequestFullMarketData>false</RequestFullMarketData>
   <SaveFullMarketData>false</SaveFullMarketData>
   

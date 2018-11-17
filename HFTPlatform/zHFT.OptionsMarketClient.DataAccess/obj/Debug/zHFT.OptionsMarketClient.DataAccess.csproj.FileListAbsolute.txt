@@ -27,3 +27,16 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClien
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\mscorlib.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\es\mscorlib.resources.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\normidna.nlp
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\normnfc.nlp
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\normnfd.nlp
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\normnfkc.nlp
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\normnfkd.nlp
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csprojResolveAssemblyReference.cache

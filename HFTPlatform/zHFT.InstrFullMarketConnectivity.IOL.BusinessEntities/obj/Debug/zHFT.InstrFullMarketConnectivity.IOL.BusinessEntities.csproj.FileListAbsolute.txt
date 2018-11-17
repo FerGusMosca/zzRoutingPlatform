@@ -3,3 +3,8 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstrFullMarketCon
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.pdb
