@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Pair Trading Demo</Name>
+
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
+
+  <PairTradingRequestURL>http://localhost:3038</PairTradingRequestURL>
+
+  <Currency>USD</Currency>
+
+  <Exchange>SMART</Exchange>
+
+</Configuration>

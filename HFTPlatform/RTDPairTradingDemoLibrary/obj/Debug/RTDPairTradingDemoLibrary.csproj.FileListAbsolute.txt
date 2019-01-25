@@ -1,0 +1,7 @@
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\bin\Debug\RTDPairTradingDemoLibrary.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\bin\Debug\RTDPairTradingDemoLibrary.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\bin\Debug\RTDPairTradingDemoLibrary.tlb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\obj\Debug\RTDPairTradingDemoLibrary.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\obj\Debug\RTDPairTradingDemoLibrary.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\RTDPairTradingDemoLibrary\obj\Debug\RTDPairTradingDemoLibrary.pdb

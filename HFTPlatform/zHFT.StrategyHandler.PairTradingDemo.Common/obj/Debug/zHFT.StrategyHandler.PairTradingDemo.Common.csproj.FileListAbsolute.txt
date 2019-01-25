@@ -1,0 +1,13 @@
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.Common.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\zHFT.StrategyHandler.PairTradingDemo.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\zHFT.StrategyHandler.PairTradingDemo.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo.Common\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.Common.pdb
