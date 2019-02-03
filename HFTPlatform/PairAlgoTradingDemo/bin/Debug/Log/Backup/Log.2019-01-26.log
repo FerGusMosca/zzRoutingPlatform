@@ -1,0 +1,27 @@
+2019-01-26 12:53:52  :: 26/1/2019 12:53:52MainApp.LoadConfig
+2019-01-26 12:53:52  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\PairAlgoTradingDemo\bin\Debug\config.xml
+2019-01-26 12:53:52  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\PairAlgoTradingDemo\bin\Debug\config.xml
+2019-01-26 12:53:52  :: Fin GetConfiguracion
+2019-01-26 12:54:00  :: Initializing Log
+2019-01-26 12:54:00  :: Initializing Incoming Module
+2019-01-26 12:54:01  :: Incoming Module successfully initialized
+2019-01-26 12:54:01  :: Initializing Outgoing Module
+2019-01-26 12:54:04  :: Outgoing Module successfully initialized
+2019-01-26 12:54:43  :: 26/1/2019 12:54:43MainApp.LoadConfig
+2019-01-26 12:54:43  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\PairAlgoTradingDemo\bin\Debug\config.xml
+2019-01-26 12:54:43  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\PairAlgoTradingDemo\bin\Debug\config.xml
+2019-01-26 12:54:43  :: Fin GetConfiguracion
+2019-01-26 12:54:43  :: Initializing Log
+2019-01-26 12:54:43  :: Initializing Incoming Module
+2019-01-26 12:54:43  :: Incoming Module successfully initialized
+2019-01-26 12:54:43  :: Initializing Outgoing Module
+2019-01-26 12:54:46  :: Outgoing Module successfully initialized
+2019-01-26 17:10:10  :: 26/1/2019 17:10:10MainApp.LoadConfig
+2019-01-26 17:10:10  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\PairAlgoTradingDemo\bin\Debug\config.xml
+2019-01-26 17:10:10  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\PairAlgoTradingDemo\bin\Debug\config.xml
+2019-01-26 17:10:10  :: Fin GetConfiguracion
+2019-01-26 17:10:14  :: Initializing Log
+2019-01-26 17:10:14  :: Initializing Incoming Module
+2019-01-26 17:10:22  :: Incoming Module successfully initialized
+2019-01-26 17:10:22  :: Initializing Outgoing Module
+2019-01-26 17:10:25  :: Outgoing Module successfully initialized

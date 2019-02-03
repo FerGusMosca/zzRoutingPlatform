@@ -1,0 +1,18 @@
+2019-01-27 14:02:13  :: 1/27/2019 2:02:13 PMMomentumStrategyBase.LoadConfig
+2019-01-27 14:02:13  :: Loading config:.\outgoingStrategyHandler.PairTradingDemo.xml
+2019-01-27 14:02:13  :: Processing config:.\outgoingStrategyHandler.PairTradingDemo.xml
+2019-01-27 14:02:13  :: Ending GetConfiguracion .\outgoingStrategyHandler.PairTradingDemo.xml
+2019-01-27 14:02:13  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-01-27 14:02:13  :: 1/27/2019 2:02:13 PMOrderRouterBase.LoadConfig
+2019-01-27 14:02:13  :: Loading config:.\outgoingOrderRouter.xml
+2019-01-27 14:02:13  :: Processing config:.\outgoingOrderRouter.xml
+2019-01-27 14:02:13  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-01-27 14:02:13  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2019-01-27 14:02:13  :: 1/27/2019 2:02:13 PMOrderRouterBase.LoadConfig
+2019-01-27 14:02:13  :: Loading config:.\outgoingOrderRouter.IB.xml
+2019-01-27 14:02:13  :: Processing config:.\outgoingOrderRouter.IB.xml
+2019-01-27 14:02:13  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2019-01-27 14:02:15  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7497   
+2019-01-27 14:02:15  :: Creating pair trading demo service for controller PairTradingDemoController on URL http://localhost:3038
+2019-01-27 14:02:17  :: @PairTradingDemoController:Received RequestPairTradingPosition for symbols: LONG AMZN- SHORT AAPL
+2019-01-27 14:02:17  :: @PairTradingDemoController:Received RequestPairTradingPosition for symbols: LONG XOM- SHORT CVX

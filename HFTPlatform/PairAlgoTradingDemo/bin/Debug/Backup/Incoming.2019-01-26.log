@@ -1,0 +1,47 @@
+2019-01-26 12:54:01  :: 1/26/2019 12:54:01 PMMarketClientBase.LoadConfig
+2019-01-26 12:54:01  :: Loading config:.\incomingIB.xml
+2019-01-26 12:54:01  :: Processing config:.\incomingIB.xml
+2019-01-26 12:54:01  :: Ending GetConfiguracion .\incomingIB.xml
+2019-01-26 12:54:01  :: managedAccounts: accountsList=U1504022,U2089626,
+2019-01-26 12:54:01  :: nextValidId: orderId=1
+2019-01-26 12:54:01  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2019-01-26 12:54:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2019-01-26 12:54:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:cashhmds  
+2019-01-26 12:54:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2019-01-26 12:54:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2019-01-26 12:54:06  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: XOM
+2019-01-26 12:54:06  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: AMZN
+2019-01-26 12:54:06  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: AAPL
+2019-01-26 12:54:06  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: CVX
+2019-01-26 12:54:06  :: marketDataType: reqId=1000001 marketDataType=1 
+2019-01-26 12:54:06  :: tickPrice: tickerId=1000001 field=close price=1654.93 canAutoExecute=0
+2019-01-26 12:54:43  :: 1/26/2019 12:54:43 PMMarketClientBase.LoadConfig
+2019-01-26 12:54:43  :: Loading config:.\incomingIB.xml
+2019-01-26 12:54:43  :: Processing config:.\incomingIB.xml
+2019-01-26 12:54:43  :: Ending GetConfiguracion .\incomingIB.xml
+2019-01-26 12:54:43  :: managedAccounts: accountsList=U1504022,U2089626,
+2019-01-26 12:54:43  :: nextValidId: orderId=1
+2019-01-26 12:54:43  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2019-01-26 12:54:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2019-01-26 12:54:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:cashhmds  
+2019-01-26 12:54:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2019-01-26 12:54:43  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2019-01-26 12:54:47  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: AMZN
+2019-01-26 12:54:47  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: XOM
+2019-01-26 17:10:14  :: 1/26/2019 5:10:14 PMMarketClientBase.LoadConfig
+2019-01-26 17:10:14  :: Loading config:.\incomingIB.xml
+2019-01-26 17:10:14  :: Processing config:.\incomingIB.xml
+2019-01-26 17:10:14  :: Ending GetConfiguracion .\incomingIB.xml
+2019-01-26 17:10:14  :: managedAccounts: accountsList=U1504022,U2089626,
+2019-01-26 17:10:14  :: nextValidId: orderId=1
+2019-01-26 17:10:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2019-01-26 17:10:19  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2019-01-26 17:10:20  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:cashhmds  
+2019-01-26 17:10:21  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2019-01-26 17:10:21  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2019-01-26 17:10:25  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: XOMXX
+2019-01-26 17:10:25  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: AMZNXX
+2019-01-26 17:10:25  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: XOMXX
+2019-01-26 17:10:25  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: AMZN
+2019-01-26 17:10:27  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: CVXXX
+2019-01-26 17:10:29  :: @Instructions Processor IB:Requesting Snapshot+Updates Market Data On Demand for Symbol: AAPL
