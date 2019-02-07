@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Order Imbalance Calculator</Name>
+
+  <Currency>ARS</Currency>
+
+  <Exchange>BUE</Exchange>
+
+  <OrderRouter>zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
+
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=BOBIntFigMetrics;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+  <ResetOnPersistance>true</ResetOnPersistance>
+
+  <SaveEvery>HOUR</SaveEvery>
+  <!--HOUR,_10MIN,_30MIN-->
+  
+  <StocksToMonitor>
+    <Symbol>GGAL.BUE</Symbol>
+    <Symbol>BMA.BUE</Symbol>
+   
+  </StocksToMonitor>
+</Configuration>

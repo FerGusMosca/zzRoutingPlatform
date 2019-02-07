@@ -15,6 +15,8 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public string Symbol { get; set; }
 
+        public string AltIntSymbol { get; set; }
+
         public string SecurityDesc { get; set; }
 
         public SecurityType SecType { get; set; }

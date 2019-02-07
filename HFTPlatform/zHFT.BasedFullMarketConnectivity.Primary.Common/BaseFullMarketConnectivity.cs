@@ -66,6 +66,10 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected Dictionary<string, int> ReplacingActiveOrderIdMapper { get; set; }
 
+        protected Dictionary<string, zHFT.Main.Common.Enums.SecurityType> SecurityTypes { get; set; }
+
+        protected Dictionary<int, Security> ActiveSecurities { get; set; }
+
         #endregion
 
         #region abstract Methods
@@ -318,6 +322,12 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
                     MarketDataRequestId++;
 
+                    if (!SecurityTypes.ContainsKey(rq.Security.AltIntSymbol))
+                    {
+                        SecurityTypes.Add(rq.Security.AltIntSymbol, rq.Security.SecType);
+                        ActiveSecurities.Add(rq.ReqId, new Security() { Symbol = rq.Security.AltIntSymbol, Active = true });
+                        
+                    }
                     Thread mdRqThrad = new Thread(DoRunMarketDataRequest);
                     mdRqThrad.Start(msg);
                 }

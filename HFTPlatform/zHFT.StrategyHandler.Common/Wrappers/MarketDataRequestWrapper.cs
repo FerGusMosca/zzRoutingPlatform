@@ -19,6 +19,8 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         #region Protected Attributes
 
+        protected int MdReqId { get; set; }
+
         protected Security Security { get; set; }
 
         protected SubscriptionRequestType SubscriptionRequestType { get; set; }
@@ -29,6 +31,14 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         public MarketDataRequestWrapper(Security pSecurity, SubscriptionRequestType pSubscriptionRequestType)
         {
+            MdReqId = 0;
+            Security = pSecurity;
+            SubscriptionRequestType = pSubscriptionRequestType;
+        }
+
+        public MarketDataRequestWrapper(int pMdReqId,Security pSecurity, SubscriptionRequestType pSubscriptionRequestType)
+        {
+            MdReqId = pMdReqId;
             Security = pSecurity;
             SubscriptionRequestType = pSubscriptionRequestType;
         }
@@ -59,6 +69,8 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Security.SecType;
             if (mdrField == MarketDataRequestField.Currency)
                 return Security.Currency;
+            if (mdrField == MarketDataRequestField.MDReqId)
+                return MdReqId;
             if (mdrField == MarketDataRequestField.SubscriptionRequestType)
                 return SubscriptionRequestType;
             else

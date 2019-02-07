@@ -13,6 +13,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly MarketDataRequestField SecurityType = new MarketDataRequestField(4);
         public static readonly MarketDataRequestField SubscriptionRequestType = new MarketDataRequestField(5);
         public static readonly MarketDataRequestField Currency = new MarketDataRequestField(6);
+        public static readonly MarketDataRequestField MDReqId = new MarketDataRequestField(7);
 
 
 

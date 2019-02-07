@@ -23,14 +23,17 @@ namespace zHFT.MarketClient.Primary.Common.Converters
 
             MarketDataRequest mdr = new MarketDataRequest();
             mdr.Security = new Security();
+            mdr.ReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
 
             if (secType == SecurityType.CS || secType == SecurityType.TBOND || secType == SecurityType.TB)
             {
                 mdr.Security.Symbol = SymbolConverter.GetCleanSymbolFromFullSymbol((string)wrapper.GetField(MarketDataRequestField.Symbol));
+                mdr.Security.AltIntSymbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
             }
             else if (secType == SecurityType.OPT)
             {
                 mdr.Security.Symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
+                mdr.Security.AltIntSymbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
             }
             else
                 throw new Exception(string.Format("Security Type translation not yet implemented: {0}", secType.ToString()));

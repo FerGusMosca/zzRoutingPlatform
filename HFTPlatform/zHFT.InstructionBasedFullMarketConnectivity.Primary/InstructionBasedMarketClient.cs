@@ -97,8 +97,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected List<Market> Markets { get; set; }
 
-        private Dictionary<int, Security> ActiveSecurities { get; set; }
-
+        
         private Dictionary<int, Security> SecuritiesToPublish { get; set; }
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
@@ -117,7 +116,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected OnMessageReceived OnExecutionReportMessageRcv { get; set; }
 
-        protected Dictionary<string, zHFT.Main.Common.Enums.SecurityType> SecurityTypes { get; set; }
+        
 
         protected DateTime Start { get; set; }
 

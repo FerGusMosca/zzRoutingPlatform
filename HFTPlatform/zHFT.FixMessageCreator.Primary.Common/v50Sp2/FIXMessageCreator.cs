@@ -66,6 +66,18 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
                             sec.MarketData.MDTradeSize = qty;
                         }
                     }
+
+                    if (entry.isSetMDEntryDate())
+                    {
+                        MDEntryDate mdDate = entry.getMDEntryDate();
+                        MDEntryTime mdTime = entry.getMDEntryTime();
+                        DateTime time = mdTime.getValue();
+                        DateTime date = mdDate.getValue();
+                        DateTime datetime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second, time.Millisecond);
+
+                        sec.MarketData.LastTradeDateTime = datetime;
+                    
+                    }
                 }
                 else if (type == MDEntryType.OPENING_PRICE)
                 {

@@ -58,6 +58,8 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         public SettlType SettlType { get; set; }
         public DateTime? SettlDate { get; set; }
 
+        public DateTime? LastTradeDateTime { get; set; }
+
         public Security Security { get; set; }
 
         #endregion

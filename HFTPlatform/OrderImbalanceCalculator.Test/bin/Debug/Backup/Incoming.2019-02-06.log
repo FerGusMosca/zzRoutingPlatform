@@ -1,0 +1,367 @@
+2019-02-06 18:29:38  :: 2/6/2019 6:29:38 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:29:38  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:29:38  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:29:38  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:29:38  :: assembly not found: zHFT.InstructionBasedFullMarketConnectivity.Primary.InstructionBasedMarketClient, zHFT.InstructionBasedFullMarketConnectivity.Primary
+2019-02-06 18:30:40  :: 2/6/2019 6:30:40 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:30:40  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:30:40  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:30:40  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:30:41  :: 2/6/2019 6:30:41 PMConfigLoader.LoadConfig
+2019-02-06 18:30:41  :: Loading config:.\Primary.xml
+2019-02-06 18:30:41  :: Processing config:.\Primary.xml
+2019-02-06 18:30:41  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:30:41  :: @InstructionProcessor.Primary.Test:Critic error initializing .\Primary.xml:El índice (basado en cero) debe ser mayor o igual a cero y menor que el tamaño de la lista de argumentos.
+2019-02-06 18:33:47  :: 2/6/2019 6:33:47 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:33:47  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:33:47  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:33:47  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:33:47  :: 2/6/2019 6:33:47 PMConfigLoader.LoadConfig
+2019-02-06 18:33:47  :: Loading config:.\Primary.xml
+2019-02-06 18:33:47  :: Processing config:.\Primary.xml
+2019-02-06 18:33:47  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:33:47  :: assembly not found: zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer
+2019-02-06 18:37:04  :: 2/6/2019 6:37:04 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:37:04  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:37:04  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:37:04  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:37:04  :: 2/6/2019 6:37:04 PMConfigLoader.LoadConfig
+2019-02-06 18:37:04  :: Loading config:.\Primary.xml
+2019-02-06 18:37:04  :: Processing config:.\Primary.xml
+2019-02-06 18:37:04  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:37:05  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:37:09  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:37:09.28656=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=183
+2019-02-06 18:37:22  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:37:24  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:37:24  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:37:24  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:37:25  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:37:25  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:37:25  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:38:46  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:38:46.42556=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=180
+2019-02-06 18:38:46  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:38:47  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:38:47.43456=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=181
+2019-02-06 18:38:47  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:39:08  :: 2/6/2019 6:39:08 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:39:08  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:39:08  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:39:08  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:39:08  :: 2/6/2019 6:39:08 PMConfigLoader.LoadConfig
+2019-02-06 18:39:08  :: Loading config:.\Primary.xml
+2019-02-06 18:39:08  :: Processing config:.\Primary.xml
+2019-02-06 18:39:08  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:39:09  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:39:09  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:39:09.49456=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=186
+2019-02-06 18:43:12  :: Invocación de onLogout : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:43:14  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:43:14.17356=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=171
+2019-02-06 18:43:18  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20190206-21:43:15.73656=fmosca98=0108=30141=Y1137=910=127
+2019-02-06 18:43:18  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:43:18  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:43:20  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=249=fmosca52=20190206-21:43:19.78356=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=206
+2019-02-06 18:43:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=349=fmosca52=20190206-21:43:23.32956=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=199
+2019-02-06 18:43:24  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:43:24  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=449=fmosca52=20190206-21:43:24.96156=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=204
+2019-02-06 18:43:31  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=549=fmosca52=20190206-21:43:31.14656=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=199
+2019-02-06 18:43:41  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:44:06  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:44:43  :: 2/6/2019 6:44:43 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:44:43  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:44:43  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:44:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:44:43  :: 2/6/2019 6:44:43 PMConfigLoader.LoadConfig
+2019-02-06 18:44:43  :: Loading config:.\Primary.xml
+2019-02-06 18:44:43  :: Processing config:.\Primary.xml
+2019-02-06 18:44:44  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:44:44  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:44:45  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:44:45.01156=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=167
+2019-02-06 18:44:46  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:44:46  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:44:46  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:44:47  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:44:47  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:44:47  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:44:47  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20190206-21:44:45.22456=fmosca98=0108=30141=Y1137=910=123
+2019-02-06 18:44:47  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:44:47  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:44:47  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=249=fmosca52=20190206-21:44:47.70056=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=197
+2019-02-06 18:44:47  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=349=fmosca52=20190206-21:44:47.73056=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=202
+2019-02-06 18:44:47  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=449=fmosca52=20190206-21:44:47.75356=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=209
+2019-02-06 18:44:47  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=549=fmosca52=20190206-21:44:47.77556=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=215
+2019-02-06 18:44:47  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:44:46.26156=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=092
+2019-02-06 18:44:47  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:44:46.26156=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=092 
+2019-02-06 18:44:47  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:44:46.27156=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=095
+2019-02-06 18:44:47  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:44:46.27156=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=095 
+2019-02-06 18:44:47  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:44:46.27956=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=105
+2019-02-06 18:44:47  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:44:46.27956=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=105 
+2019-02-06 18:44:47  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:44:46.28756=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=106
+2019-02-06 18:44:47  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:44:46.28756=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=106 
+2019-02-06 18:44:47  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:44:46.29556=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=144
+2019-02-06 18:44:47  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:44:46.29556=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=144 
+2019-02-06 18:44:47  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:44:46.30156=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=137
+2019-02-06 18:44:47  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:44:46.30156=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=137 
+2019-02-06 18:44:47  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=649=fmosca52=20190206-21:44:47.95956=ROFX45=1258=Value is incorrect (out of range) for this tag371=336372=h373=510=011
+2019-02-06 18:44:47  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=749=fmosca52=20190206-21:44:47.98256=ROFX45=1358=Value is incorrect (out of range) for this tag371=336372=h373=510=009
+2019-02-06 18:44:48  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=849=fmosca52=20190206-21:44:48.00456=ROFX45=1458=Value is incorrect (out of range) for this tag371=336372=h373=510=253
+2019-02-06 18:44:48  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=949=fmosca52=20190206-21:44:48.02456=ROFX45=1558=Value is incorrect (out of range) for this tag371=336372=h373=510=001
+2019-02-06 18:44:48  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1049=fmosca52=20190206-21:44:48.04356=ROFX45=1658=Value is incorrect (out of range) for this tag371=336372=h373=510=035
+2019-02-06 18:44:48  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1149=fmosca52=20190206-21:44:48.06256=ROFX45=1758=Value is incorrect (out of range) for this tag371=336372=h373=510=038
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:44:50.24656=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=248
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:44:50.24656=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=248 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:44:50.24756=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=252
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:44:50.24756=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=252 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:44:50.24756=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=184
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:44:50.24756=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=184 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:44:50.24856=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=136
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:44:50.24856=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=136 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:44:50.24856=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=229
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:44:50.24856=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=229 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:44:50.24856=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=171
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:44:50.24856=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=171 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:44:50.24956=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=059
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:44:50.24956=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=059 
+2019-02-06 18:44:51  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:44:50.25056=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=208
+2019-02-06 18:44:51  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:44:50.25056=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=208 
+2019-02-06 18:45:05  :: 2/6/2019 6:45:04 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:45:05  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:45:05  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:45:05  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:45:05  :: 2/6/2019 6:45:05 PMConfigLoader.LoadConfig
+2019-02-06 18:45:05  :: Loading config:.\Primary.xml
+2019-02-06 18:45:05  :: Processing config:.\Primary.xml
+2019-02-06 18:45:05  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:45:05  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:45:05  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:45:05.93556=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=179
+2019-02-06 18:45:06  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:45:06  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:45:06  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:45:06  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:45:06  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:45:06  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:45:06  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20190206-21:45:04.50256=fmosca98=0108=30141=Y1137=910=118
+2019-02-06 18:45:06  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:45:06  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:45:06  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=249=fmosca52=20190206-21:45:06.58156=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=200
+2019-02-06 18:45:06  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=349=fmosca52=20190206-21:45:06.60756=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=201
+2019-02-06 18:45:06  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=449=fmosca52=20190206-21:45:06.63356=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=202
+2019-02-06 18:45:06  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=549=fmosca52=20190206-21:45:06.66256=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=206
+2019-02-06 18:45:07  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:45:05.53456=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=091
+2019-02-06 18:45:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:45:05.53456=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=091 
+2019-02-06 18:45:07  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:45:05.54556=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=095
+2019-02-06 18:45:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:45:05.54556=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=095 
+2019-02-06 18:45:07  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:45:05.55256=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=095
+2019-02-06 18:45:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:45:05.55256=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=095 
+2019-02-06 18:45:07  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:45:05.56056=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=096
+2019-02-06 18:45:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:45:05.56056=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=096 
+2019-02-06 18:45:07  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:45:05.56756=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=142
+2019-02-06 18:45:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:45:05.56756=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=142 
+2019-02-06 18:45:07  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:45:05.57456=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=145
+2019-02-06 18:45:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:45:05.57456=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=145 
+2019-02-06 18:45:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=649=fmosca52=20190206-21:45:07.29456=ROFX45=1258=Value is incorrect (out of range) for this tag371=336372=h373=510=000
+2019-02-06 18:45:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=749=fmosca52=20190206-21:45:07.33056=ROFX45=1358=Value is incorrect (out of range) for this tag371=336372=h373=510=249
+2019-02-06 18:45:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=849=fmosca52=20190206-21:45:07.35856=ROFX45=1458=Value is incorrect (out of range) for this tag371=336372=h373=510=005
+2019-02-06 18:45:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=949=fmosca52=20190206-21:45:07.37956=ROFX45=1558=Value is incorrect (out of range) for this tag371=336372=h373=510=010
+2019-02-06 18:45:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1049=fmosca52=20190206-21:45:07.40556=ROFX45=1658=Value is incorrect (out of range) for this tag371=336372=h373=510=033
+2019-02-06 18:45:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1149=fmosca52=20190206-21:45:07.42756=ROFX45=1758=Value is incorrect (out of range) for this tag371=336372=h373=510=039
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:45:09.52156=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=249
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:45:09.52156=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=249 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:45:09.52256=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=253
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:45:09.52256=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=253 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:45:09.52356=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=186
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:45:09.52356=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=186 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:45:09.52356=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=137
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:45:09.52356=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=137 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:45:09.52356=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=230
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:45:09.52356=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=230 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:45:09.52456=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=173
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:45:09.52456=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=173 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:45:09.52456=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=060
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:45:09.52456=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=060 
+2019-02-06 18:45:11  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:45:09.52456=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=217
+2019-02-06 18:45:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:45:09.52456=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=217 
+2019-02-06 18:45:38  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5435=034=1249=fmosca52=20190206-21:45:38.95256=ROFX10=024
+2019-02-06 18:45:49  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5435=034=2649=ROFX52=20190206-21:45:39.52556=fmosca10=026
+2019-02-06 18:46:11  :: 2/6/2019 6:46:11 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:46:11  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:46:11  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:46:11  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:46:11  :: 2/6/2019 6:46:11 PMConfigLoader.LoadConfig
+2019-02-06 18:46:11  :: Loading config:.\Primary.xml
+2019-02-06 18:46:11  :: Processing config:.\Primary.xml
+2019-02-06 18:46:11  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:46:12  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:46:12  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:46:12.59056=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=175
+2019-02-06 18:46:12  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:46:19  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:46:19  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:46:19  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20190206-21:46:11.17256=fmosca98=0108=30141=Y1137=910=120
+2019-02-06 18:46:19  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:46:23  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-02-06 18:46:23  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:46:23  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:46:23  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=249=fmosca52=20190206-21:46:23.34756=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=200
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=349=fmosca52=20190206-21:46:23.37356=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=201
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=449=fmosca52=20190206-21:46:23.42056=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=196
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=549=fmosca52=20190206-21:46:23.44656=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=206
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:46:12.21056=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=081
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:46:12.21056=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=081 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:46:12.22156=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=085
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:46:12.22156=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=085 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:46:12.23056=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=087
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:46:12.23056=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=087 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:46:12.23856=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=097
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:46:12.23856=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=097 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:46:12.24656=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=135
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:46:12.24656=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=135 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:46:12.25256=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=137
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:46:12.25256=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=137 
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=649=fmosca52=20190206-21:46:23.56556=ROFX45=1258=Value is incorrect (out of range) for this tag371=336372=h373=510=000
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=749=fmosca52=20190206-21:46:23.59256=ROFX45=1358=Value is incorrect (out of range) for this tag371=336372=h373=510=002
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=849=fmosca52=20190206-21:46:23.62256=ROFX45=1458=Value is incorrect (out of range) for this tag371=336372=h373=510=254
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=949=fmosca52=20190206-21:46:23.65956=ROFX45=1558=Value is incorrect (out of range) for this tag371=336372=h373=510=010
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1049=fmosca52=20190206-21:46:23.68856=ROFX45=1658=Value is incorrect (out of range) for this tag371=336372=h373=510=045
+2019-02-06 18:46:23  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1149=fmosca52=20190206-21:46:23.71356=ROFX45=1758=Value is incorrect (out of range) for this tag371=336372=h373=510=036
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:46:16.19256=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=252
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:46:16.19256=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=252 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:46:16.19256=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=255
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:46:16.19256=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=255 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:46:16.19256=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=187
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:46:16.19256=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=187 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:46:16.19356=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=139
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:46:16.19356=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=139 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:46:16.19356=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=232
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:46:16.19356=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=232 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:46:16.19356=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=174
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:46:16.19356=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=174 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:46:16.19356=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=061
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:46:16.19356=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=061 
+2019-02-06 18:46:23  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:46:16.19456=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=219
+2019-02-06 18:46:23  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:46:16.19456=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=219 
+2019-02-06 18:47:12  :: 2/6/2019 6:47:12 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:47:12  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:47:12  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:47:12  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:47:12  :: 2/6/2019 6:47:12 PMConfigLoader.LoadConfig
+2019-02-06 18:47:12  :: Loading config:.\Primary.xml
+2019-02-06 18:47:12  :: Processing config:.\Primary.xml
+2019-02-06 18:47:13  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:47:13  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:47:13  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:47:13.87256=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=180
+2019-02-06 18:47:13  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20190206-21:47:12.42656=fmosca98=0108=30141=Y1137=910=124
+2019-02-06 18:47:14  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:47:14  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:47:14  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=249=fmosca52=20190206-21:47:14.50256=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=194
+2019-02-06 18:47:14  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=349=fmosca52=20190206-21:47:14.52556=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=201
+2019-02-06 18:47:14  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=449=fmosca52=20190206-21:47:14.54956=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=209
+2019-02-06 18:47:14  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=549=fmosca52=20190206-21:47:14.57356=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=208
+2019-02-06 18:47:15  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:47:13.45756=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=096
+2019-02-06 18:47:15  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:47:13.45756=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=096 
+2019-02-06 18:47:15  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:47:13.46856=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=100
+2019-02-06 18:47:15  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:47:13.46856=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=100 
+2019-02-06 18:47:15  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:47:13.47656=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=101
+2019-02-06 18:47:15  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:47:13.47656=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=101 
+2019-02-06 18:47:15  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:47:13.48356=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=101
+2019-02-06 18:47:15  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:47:13.48356=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=101 
+2019-02-06 18:47:15  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:47:13.49056=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=138
+2019-02-06 18:47:15  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:47:13.49056=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=138 
+2019-02-06 18:47:15  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:47:13.49756=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=150
+2019-02-06 18:47:15  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:47:13.49756=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=150 
+2019-02-06 18:47:15  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=649=fmosca52=20190206-21:47:15.14356=ROFX45=1258=Value is incorrect (out of range) for this tag371=336372=h373=510=250
+2019-02-06 18:47:15  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=749=fmosca52=20190206-21:47:15.16656=ROFX45=1358=Value is incorrect (out of range) for this tag371=336372=h373=510=001
+2019-02-06 18:47:15  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=849=fmosca52=20190206-21:47:15.19056=ROFX45=1458=Value is incorrect (out of range) for this tag371=336372=h373=510=000
+2019-02-06 18:47:15  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=949=fmosca52=20190206-21:47:15.21356=ROFX45=1558=Value is incorrect (out of range) for this tag371=336372=h373=510=254
+2019-02-06 18:47:15  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1049=fmosca52=20190206-21:47:15.23456=ROFX45=1658=Value is incorrect (out of range) for this tag371=336372=h373=510=034
+2019-02-06 18:47:15  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1149=fmosca52=20190206-21:47:15.25456=ROFX45=1758=Value is incorrect (out of range) for this tag371=336372=h373=510=038
+2019-02-06 18:47:18  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:47:24  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:47:17.44756=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=001
+2019-02-06 18:47:24  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:47:17.44756=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=001 
+2019-02-06 18:47:25  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:47:17.44756=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=004
+2019-02-06 18:47:25  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:47:17.44756=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=004 
+2019-02-06 18:47:27  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:47:17.44856=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=193
+2019-02-06 18:47:27  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:47:17.44856=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=193 
+2019-02-06 18:47:27  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:47:17.44856=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=144
+2019-02-06 18:47:27  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:47:17.44856=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=144 
+2019-02-06 18:47:28  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:47:17.44856=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=237
+2019-02-06 18:47:28  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:47:17.44856=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=237 
+2019-02-06 18:47:29  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:47:17.44956=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=180
+2019-02-06 18:47:30  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:47:17.44956=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=180 
+2019-02-06 18:47:30  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:47:30  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=13035=V146=155=MERV - XMEV - GGAL - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=120 
+2019-02-06 18:47:30  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:47:30  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:47:30  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:47:17.44956=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=067
+2019-02-06 18:47:30  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:47:17.44956=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=067 
+2019-02-06 18:47:30  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 48hs262=1263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=054 
+2019-02-06 18:47:30  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=17935=V34=1249=fmosca52=20190206-21:47:30.20656=ROFX146=155=MERV - XMEV - GGAL - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=106
+2019-02-06 18:47:30  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:47:17.44956=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=224
+2019-02-06 18:47:30  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-02-06 18:47:30  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=17835=V34=1349=fmosca52=20190206-21:47:30.23056=ROFX146=155=MERV - XMEV - BMA - 48hs262=1263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=029
+2019-02-06 18:47:30  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:47:17.44956=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=224 
+2019-02-06 18:47:30  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-02-06 18:47:30  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=30635=W34=2649=ROFX52=20190206-21:47:28.69556=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=0264=1268=8269=0270=126271=206290=1269=1270=141271=74290=1269=2270=134.95271=100272=20190206273=19:59:43.000277=U269=4270=139.9269=5270=139269=6270=134.95269=7270=139.95269=8270=134.510=091
+2019-02-06 18:47:30  :: @InstructionProcessor.Primary.Test:Could not find Security Type for symbol MERV - XMEV - GGAL - 48hs 
+2019-02-06 18:47:30  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=30535=W34=2749=ROFX52=20190206-21:47:28.74856=fmosca55=MERV - XMEV - BMA - 48hs207=ROFX262=1264=1268=8269=0270=215.15271=110290=1269=1270=225271=150290=1269=2270=215.15271=6272=20190206273=19:59:46.000277=U269=4270=224269=5270=223.6269=6270=215.15269=7270=224269=8270=215.1510=229
+2019-02-06 18:47:30  :: @InstructionProcessor.Primary.Test:Could not find Security Type for symbol MERV - XMEV - BMA - 48hs 
+2019-02-06 18:48:00  :: Invocación de toAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=5435=034=1449=fmosca52=20190206-21:48:00.26856=ROFX10=018
+2019-02-06 18:48:43  :: 2/6/2019 6:48:43 PMBaseCommunicationModule.LoadConfig
+2019-02-06 18:48:43  :: Loading config:.\IncomingSingletonConfig.xml
+2019-02-06 18:48:43  :: Processing config:.\IncomingSingletonConfig.xml
+2019-02-06 18:48:43  :: Ending GetConfiguracion .\IncomingSingletonConfig.xml
+2019-02-06 18:48:43  :: 2/6/2019 6:48:43 PMConfigLoader.LoadConfig
+2019-02-06 18:48:43  :: Loading config:.\Primary.xml
+2019-02-06 18:48:43  :: Processing config:.\Primary.xml
+2019-02-06 18:48:43  :: Ending GetConfiguracion .\Primary.xml
+2019-02-06 18:48:44  :: Invocación de onCreate : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:48:44  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10335=A34=149=fmosca52=20190206-21:48:44.29756=ROFX98=0108=30141=Y553=fmosca554=Baiano.141137=910=186
+2019-02-06 18:48:44  :: Invocación de fromAdmin por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=7835=A34=149=ROFX52=20190206-21:48:43.07156=fmosca98=0108=30141=Y1137=910=125
+2019-02-06 18:48:44  :: Invocación de onLogon : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:48:44  :: Logged for SessionId : FIXT.1.1:fmosca->ROFX
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=249=fmosca52=20190206-21:48:45.15056=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=198
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=349=fmosca52=20190206-21:48:45.17356=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=205
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=449=fmosca52=20190206-21:48:45.20356=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=201
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12835=334=549=fmosca52=20190206-21:48:45.22956=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=211
+2019-02-06 18:48:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:48:44.11456=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=091
+2019-02-06 18:48:45  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=649=ROFX52=20190206-21:48:44.11456=fmosca325=Y335=NONE336=1340=0625=41300=[N/A]1301=ROFX10=091 
+2019-02-06 18:48:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:48:44.12556=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=095
+2019-02-06 18:48:45  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=749=ROFX52=20190206-21:48:44.12556=fmosca325=Y335=NONE336=2340=0625=41300=[N/A]1301=ROFX10=095 
+2019-02-06 18:48:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:48:44.13356=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=096
+2019-02-06 18:48:45  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=849=ROFX52=20190206-21:48:44.13356=fmosca325=Y335=NONE336=3340=0625=41300=[N/A]1301=ROFX10=096 
+2019-02-06 18:48:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:48:44.14056=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=096
+2019-02-06 18:48:45  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10735=h34=949=ROFX52=20190206-21:48:44.14056=fmosca325=Y335=NONE336=4340=0625=41300=[N/A]1301=ROFX10=096 
+2019-02-06 18:48:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:48:44.14756=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=142
+2019-02-06 18:48:45  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1049=ROFX52=20190206-21:48:44.14756=fmosca325=Y335=NONE336=5340=0625=11300=[N/A]1301=ROFX10=142 
+2019-02-06 18:48:45  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:48:44.15456=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=145
+2019-02-06 18:48:45  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10835=h34=1149=ROFX52=20190206-21:48:44.15456=fmosca325=Y335=NONE336=6340=0625=41300=[N/A]1301=ROFX10=145 
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=649=fmosca52=20190206-21:48:45.75956=ROFX45=1258=Value is incorrect (out of range) for this tag371=336372=h373=510=011
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=749=fmosca52=20190206-21:48:45.78256=ROFX45=1358=Value is incorrect (out of range) for this tag371=336372=h373=510=009
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=849=fmosca52=20190206-21:48:45.80356=ROFX45=1458=Value is incorrect (out of range) for this tag371=336372=h373=510=005
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=12935=334=949=fmosca52=20190206-21:48:45.82256=ROFX45=1558=Value is incorrect (out of range) for this tag371=336372=h373=510=008
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1049=fmosca52=20190206-21:48:45.84156=ROFX45=1658=Value is incorrect (out of range) for this tag371=336372=h373=510=042
+2019-02-06 18:48:45  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13035=334=1149=fmosca52=20190206-21:48:45.86156=ROFX45=1758=Value is incorrect (out of range) for this tag371=336372=h373=510=046
+2019-02-06 18:48:49  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:48:49  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:48:49  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=13035=V146=155=MERV - XMEV - GGAL - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=120 
+2019-02-06 18:48:49  :: Receiving Market Data Request: Wrapper
+2019-02-06 18:48:49  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=17935=V34=1249=fmosca52=20190206-21:48:49.63256=ROFX146=155=MERV - XMEV - GGAL - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=120
+2019-02-06 18:48:49  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:48:48.09256=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=002
+2019-02-06 18:48:49  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 48hs262=1263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=054 
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1849=ROFX52=20190206-21:48:48.09256=fmosca33=158=La password expira en 94 dias.42=20190206-12:00:45.000148=PE01149= 1300=MERV10=002 
+2019-02-06 18:48:49  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-02-06 18:48:49  :: Invocación de toApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=17835=V34=1349=fmosca52=20190206-21:48:49.68756=ROFX146=155=MERV - XMEV - BMA - 48hs262=1263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=056
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:48:48.09356=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=006
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14335=B34=1949=ROFX52=20190206-21:48:48.09356=fmosca33=158=La password expira en 94 dias.42=20190206-12:16:04.000148=PE01149= 1300=MERV10=006 
+2019-02-06 18:48:49  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:48:48.09356=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=194
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13335=B34=2049=ROFX52=20190206-21:48:48.09356=fmosca33=158=154945536481742=20190206-12:16:04.000148=SERVER_TIME149= 1300=MERV10=194 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:48:48.09356=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=145
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18635=B34=2149=ROFX52=20190206-21:48:48.09356=fmosca33=158=<MILLENNIUM>: Se ha establecido la conexion.42=20190206-12:16:06.000148=Mensaje importante149=www.rofex.com.ar1300=MERV10=145 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:48:48.09356=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=238
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=14535=B34=2249=ROFX52=20190206-21:48:48.09356=fmosca33=158= 42=20190206-13:34:39.000148=Operación Anulada DOMay19 7 x 42.750149= 1300=DDF10=238 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:48:48.09456=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=181
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=18735=B34=2349=ROFX52=20190206-21:48:48.09456=fmosca33=158=Ingreso de información relevante - CADO - APBR: información relevante. - 42=20190206-14:13:06.000148=59791149= 1300=MERV10=181 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:48:48.09456=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=068
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15335=B34=2449=ROFX52=20190206-21:48:48.09456=fmosca33=158= 42=20190206-15:52:25.000148=EN REVISIÓN: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=068 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:48:48.09456=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=225
+2019-02-06 18:48:49  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15935=B34=2549=ROFX52=20190206-21:48:48.09456=fmosca33=158= 42=20190206-15:53:17.000148=OPERACIÓN ANULADA: 12:52:04 DOFeb19A 1000 x 38.500149= 1300=DDF10=225 
+2019-02-06 18:48:49  :: Invocación de fromApp por la sesión FIXT.1.1:fmosca->ROFX: 8=FIXT.1.19=30635=W34=2649=ROFX52=20190206-21:48:48.14056=fmosca55=MERV - XMEV - GGAL - 48hs207=ROFX262=0264=1268=8269=0270=126271=206290=1269=1270=141271=74290=1269=2270=134.95271=100272=20190206273=19:59:43.000277=U269=4270=139.9269=5270=139269=6270=134.95269=7270=139.95269=8270=134.510=079

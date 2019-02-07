@@ -12,6 +12,8 @@ namespace zHFT.Main.BusinessEntities.Market_Data
     {
         #region Public Attributes
 
+        public int ReqId { get; set; }
+
         public Security Security { get; set; }
 
         public SubscriptionRequestType SubscriptionRequestType { get; set; }
