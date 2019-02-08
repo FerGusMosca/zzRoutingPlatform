@@ -2,8 +2,12 @@
 <Configuration>
   <Name>Outgoing Primary</Name>
   
-  <Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
-  <ProxyConfigFile>.\OutgoingSingletonConfig.xml</ProxyConfigFile>
+  <!--<Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
+  <ProxyConfigFile>.\OutgoingSingletonConfig.xml</ProxyConfigFile>-->
+
+  <Proxy>zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB</Proxy>
+  <ProxyConfigFile>.\outgoingOrderRouter.IB.xml</ProxyConfigFile>
+
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

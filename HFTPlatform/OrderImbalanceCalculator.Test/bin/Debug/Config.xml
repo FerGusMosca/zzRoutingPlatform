@@ -2,8 +2,14 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Order Imbalance Calculator</Name>
 
-  <IncomingConfigPath>.\IncomingSingletonConfig.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+  <!--Primary-->
+  <!--<IncomingConfigPath>.\IncomingSingletonConfig.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>-->
+
+  <!--IB-->
+  <IncomingConfigPath>.\incomingIB.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.IB.Client.IBInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IB</IncomingModule>
+
 
   <OutgoingModule>zHFT.StrategyHandler.OrderImbSimpleCalculator.OrderImbalanceCalculator, zHFT.StrategyHandler.OrderImbSimpleCalculator</OutgoingModule>
   <OutgoingConfigPath>.\outgoingStrategyHandler.OrderImbalanceCalculator.xml</OutgoingConfigPath>

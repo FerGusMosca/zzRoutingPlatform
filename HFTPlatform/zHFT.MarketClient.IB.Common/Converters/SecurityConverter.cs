@@ -107,6 +107,11 @@ namespace zHFT.MarketClient.IB.Common.Converters
                 security.MarketData.BestBidExch = value;
             else if (field == TickType.ASK_EXCH)
                 security.MarketData.BestAskExch = value;
+            else if (field == TickType.LAST_TIMESTAMP)
+            {
+                DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+                security.MarketData.LastTradeDateTime = epoch.AddSeconds(Convert.ToDouble(value));
+            }
 
         }
 

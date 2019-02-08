@@ -63,6 +63,10 @@
       <Project>{f6a7d207-af0a-48a8-b69c-f067d63e8f6b}</Project>
       <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IB\zHFT.InstructionBasedMarketClient.IB.csproj">
+      <Project>{2ab16060-3c26-456d-a02d-8aa025bdab08}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.IB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
@@ -70,6 +74,10 @@
     <ProjectReference Include="..\zHFT.Main\zHFT.Main.csproj">
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.IB\zHFT.OrderRouters.IB.csproj">
+      <Project>{ae6ca067-5460-4957-93e4-3031b74f45e7}</Project>
+      <Name>zHFT.OrderRouters.IB</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
@@ -96,7 +104,14 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="incomingIB.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="IncomingSingletonConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.IB.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="outgoingOrderRouter.xml">

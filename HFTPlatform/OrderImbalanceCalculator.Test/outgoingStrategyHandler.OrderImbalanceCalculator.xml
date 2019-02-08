@@ -2,11 +2,19 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - Order Imbalance Calculator</Name>
 
-  <Currency>ARS</Currency>
+  <!--<Currency>ARS</Currency>
 
-  <Exchange>BUE</Exchange>
+  <Exchange>BUE</Exchange>-->
 
-  <OrderRouter>zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters</OrderRouter>
+  <Currency>USD</Currency>
+
+  <Exchange>SMART</Exchange>
+
+  <!--<OrderRouter>zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>-->
+
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
 
@@ -18,8 +26,34 @@
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
-    <Symbol>GGAL.BUE</Symbol>
+    <!--<Symbol>GGAL.BUE</Symbol>
     <Symbol>BMA.BUE</Symbol>
-   
+    <Symbol>BYMA.BUE</Symbol>
+    <Symbol>CEPU.BUE</Symbol>
+    <Symbol>PAMP.BUE</Symbol>
+    <Symbol>SUPV.BUE</Symbol>
+    <Symbol>VALO.BUE</Symbol>
+    <Symbol>YPFD.BUE</Symbol>
+    <Symbol>ALUA.BUE</Symbol>-->
+
+
+    <Symbol>AAPL</Symbol>
+    <Symbol>MSFT</Symbol>
+    <Symbol>PG</Symbol>
+    <Symbol>AMZN</Symbol>
+    <Symbol>GE</Symbol>
+    <Symbol>XOM</Symbol>
+    
+
+    <Symbol>GGAL</Symbol>
+    <Symbol>BMA</Symbol>
+    <Symbol>PAM</Symbol>
+    <Symbol>YPF</Symbol>
+    <Symbol>EDN</Symbol>
+    <Symbol>TEO</Symbol>
+    <Symbol>TS</Symbol>
+    <Symbol>PBR</Symbol>
+    <Symbol>CRESY</Symbol>
+    
   </StocksToMonitor>
 </Configuration>

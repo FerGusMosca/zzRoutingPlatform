@@ -14,3 +14,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.csprojResolveAssemblyReference.cache

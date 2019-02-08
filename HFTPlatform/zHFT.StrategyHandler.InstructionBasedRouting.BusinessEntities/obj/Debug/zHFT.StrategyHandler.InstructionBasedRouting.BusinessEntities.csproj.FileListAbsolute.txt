@@ -53,3 +53,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csprojResolveAssemblyReference.cache

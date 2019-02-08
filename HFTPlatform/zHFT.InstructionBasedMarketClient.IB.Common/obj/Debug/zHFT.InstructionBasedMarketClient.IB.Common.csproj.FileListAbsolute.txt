@@ -43,6 +43,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IB.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IB.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IB.Common.pdb

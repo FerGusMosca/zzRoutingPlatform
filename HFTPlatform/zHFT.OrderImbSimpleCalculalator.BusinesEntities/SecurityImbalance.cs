@@ -27,7 +27,10 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             get {
 
-                return CountTradeOnBid / (CountTradeOnAsk + CountTradeOnAsk);
+                if ((CountTradeOnAsk + CountTradeOnBid) > 0)
+                    return CountTradeOnBid / (CountTradeOnAsk + CountTradeOnBid);
+                else
+                    return 0;
             
             }
         
@@ -38,8 +41,10 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             get
             {
-
-                return SizeTradeOnBid / (SizeTradeOnBid + SizeTradeOnAsk);
+                if (SizeTradeOnBid > 0 || SizeTradeOnAsk > 0)
+                    return SizeTradeOnBid / (SizeTradeOnBid + SizeTradeOnAsk);
+                else
+                    return 0;
 
             }
 
@@ -50,7 +55,10 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             get
             {
-                return CountTradeOnAsk / (CountTradeOnAsk + CountTradeOnAsk);
+                if ((CountTradeOnAsk + CountTradeOnBid) > 0)
+                    return CountTradeOnAsk / (CountTradeOnAsk + CountTradeOnBid);
+                else
+                    return 0;
             }
         }
 
@@ -58,7 +66,10 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             get
             {
-                return SizeTradeOnAsk / (SizeTradeOnBid + SizeTradeOnAsk);
+                if ((SizeTradeOnBid + SizeTradeOnAsk) > 0)
+                    return SizeTradeOnAsk / (SizeTradeOnBid + SizeTradeOnAsk);
+                else
+                    return 0;
             }
         }
 
@@ -75,6 +86,15 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public double? LastAskPrice { get; set; }
 
         public double? LastAskSize { get; set; }
+
+        public string ImbalanceSummary {
+
+            get {
+
+                return string.Format("{0} - Imbalance Bid:{1} Imbalance Ask {2}", Security.Symbol, BidSizeImbalance, AskSizeImbalance);
+            }
+        
+        }
 
         #endregion
 
@@ -94,6 +114,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                     {
                         CountTradeOnBid++;
                         SizeTradeOnBid += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
+                        LastTradeProcessed = Security.MarketData.LastTradeDateTime;
 
                     }
 
@@ -101,13 +122,11 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                     {
                         CountTradeOnAsk++;
                         SizeTradeOnAsk += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
-
+                        LastTradeProcessed = Security.MarketData.LastTradeDateTime;
                     }
-
                 }
             }
 
-            LastTradeProcessed = Security.MarketData.LastTradeDateTime;
             LastBidPrice = Security.MarketData.BestBidPrice;
             LastAskPrice = Security.MarketData.BestAskPrice;
             LastBidSize = Security.MarketData.BestBidSize;
