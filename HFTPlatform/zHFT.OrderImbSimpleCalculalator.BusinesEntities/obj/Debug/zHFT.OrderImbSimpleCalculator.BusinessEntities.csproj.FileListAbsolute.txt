@@ -10,3 +10,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb

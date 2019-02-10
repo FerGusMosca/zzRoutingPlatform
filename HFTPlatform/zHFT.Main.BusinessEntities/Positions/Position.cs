@@ -100,6 +100,12 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         public PositionRejectReason? PositionRejectReason { get; set; }
 
+        #region Trading Atts
+
+        public double StopLossPct { get; set; }
+
+        #endregion
+
         #region Flags
 
         public bool NewDomFlag { get; set; }

@@ -24,7 +24,7 @@ using zHFT.StrategyHandlers.Common.Converters;
 
 namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 {
-    public class OrderImbalanceCalculator : ICommunicationModule
+    public class OrderImbalanceCalculator : ICommunicationModule,ILogger
     {
         #region Protected Attributes
 
@@ -32,7 +32,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         protected ICommunicationModule OrderRouter { get; set; }
 
-        protected Dictionary<string, Position> Positions { get; set; }
+        protected Dictionary<string, ImbalancePosition> ImbalancePositions { get; set; }
 
         protected ExecutionReportConverter ExecutionReportConverter { get; set; }
 
@@ -72,48 +72,19 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         #region Load Methods
 
-        protected void DoLog(string msg, Constants.MessageType type)
+        public void DoLog(string msg, Constants.MessageType type)
         {
             if (OnLogMsg != null)
-                OnLogMsg(msg, type);
+                OnLogMsg(string.Format("{0}:{1}", Configuration.Name, msg), type);
         }
 
-        protected  void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
+        public  void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             List<string> noValueFields = new List<string>();
             Config = new zHFT.OrderImbSimpleCalculator.Common.Configuration.Configuration().GetConfiguration<zHFT.OrderImbSimpleCalculator.Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
-        protected bool LoadConfig(string configFile)
-        {
-            DoLog(DateTime.Now.ToString() + "MomentumStrategyBase.LoadConfig", Constants.MessageType.Information);
-
-            DoLog("Loading config:" + configFile, Constants.MessageType.Information);
-            if (!File.Exists(configFile))
-            {
-                DoLog(configFile + " does not exists", Constants.MessageType.Error);
-                return false;
-            }
-
-            List<string> noValueFields = new List<string>();
-            DoLog("Processing config:" + configFile, Constants.MessageType.Information);
-            try
-            {
-                DoLoadConfig(configFile, noValueFields);
-                DoLog("Ending GetConfiguracion " + configFile, Constants.MessageType.Information);
-            }
-            catch (Exception e)
-            {
-                DoLog("Error recovering config " + configFile + ": " + e.Message, Constants.MessageType.Error);
-                return false;
-            }
-
-            if (noValueFields.Count > 0)
-                noValueFields.ForEach(s => DoLog(string.Format(Constants.FieldMissing, s), Constants.MessageType.Error));
-
-            return true;
-        }
-
+       
         #endregion
 
         #region Private Methods
@@ -223,7 +194,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        private Position LoadNewPos(SecurityImbalance secImb, Side side)
+        private ImbalancePosition LoadNewPos(SecurityImbalance secImb, Side side)
         {
 
             Position pos = new Position()
@@ -238,20 +209,28 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                CashQty = 5000d,
+                CashQty = Configuration.PositionSizeInCash,
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
-                AccountId = null
+                StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
+                AccountId = null,
             };
 
             pos.LoadPosId(NextPosId);
             NextPosId++;
 
-            return pos;
+            return new ImbalancePosition()
+            {
+                OpeningDate = DateTime.Now,
+                OpeningPosition = pos,
+                OpeningImbalance = secImb,
+                FeeTypePerTrade = Configuration.FeeTypePerTrade,
+                FeeValuePerTrade = Configuration.FeeValuePerTrade
+            };
         
         }
 
-        private Position LoadClosePos(Position openPos)
+        private void LoadClosePos(Position openPos,SecurityImbalance secImb,ImbalancePosition imbPos)
         {
 
             Position pos = new Position()
@@ -277,7 +256,20 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             pos.LoadPosId(NextPosId);
             NextPosId++;
 
-            return pos;
+            imbPos.ClosingPosition = pos;
+            imbPos.ClosingDate = DateTime.Now;
+            imbPos.ClosingImbalance = secImb;
+        }
+
+        private bool EvalClosingPositionOnStopLossHit(SecurityImbalance secImb)
+        {
+            if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+            {
+                ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
+                return imbPos.EvalStopLossHit(secImb);
+            }
+
+            return false;
         }
 
         private void EvalOpeningClosingPositions(SecurityImbalance secImb)
@@ -285,45 +277,60 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
             TimeSpan elapsed = DateTime.Now - StartTime;
 
-            if (elapsed.TotalMinutes > 5)
+            if (   elapsed.TotalMinutes > Configuration.WaitingTimeBeforeOpeningPositions )
             {
-                if (secImb.AskSizeImbalance > 0.7m && !Positions.ContainsKey(secImb.Security.Symbol))
+                //Evaluamos no abrir mas posiciones de las deseadas @Configuration.MaxOpenedPositions
+                if (ImbalancePositions.Keys.Count < Configuration.MaxOpenedPositions)
                 {
-                    Position pos = LoadNewPos(secImb, Side.Buy);
-                    PositionWrapper posWrapper = new PositionWrapper(pos, Config);
-                    Positions.Add(pos.Security.Symbol, pos);
-                    CMState state = OrderRouter.ProcessMessage(posWrapper);
-                
-                
-                }
-                else if (secImb.BidSizeImbalance > 0.7m && !Positions.ContainsKey(secImb.Security.Symbol))
-                {
-                    Position pos = LoadNewPos(secImb, Side.Sell);
-                    PositionWrapper posWrapper = new PositionWrapper(pos, Config);
-                    Positions.Add(pos.Security.Symbol, pos);
-                    CMState state = OrderRouter.ProcessMessage(posWrapper);
-                
-                }
-                else if (secImb.BidSizeImbalance > 0.45m && secImb.BidSizeImbalance < 0.55m && Positions.ContainsKey(secImb.Security.Symbol))
-                {
-                    Position openPos = Positions[secImb.Security.Symbol];
-                    if (openPos.PosStatus == PositionStatus.New || openPos.PosStatus == PositionStatus.Filled)
+                    if (secImb.AskSizeImbalance > Configuration.PositionOpeningImbalanceThreshold && !ImbalancePositions.ContainsKey(secImb.Security.Symbol))
                     {
-                        Position closePos = LoadClosePos(openPos);
-                        PositionWrapper posWrapper = new PositionWrapper(closePos, Config);
-                        Positions[secImb.Security.Symbol] = closePos;
+                        ImbalancePosition imbPos = LoadNewPos(secImb, Side.Buy);
+                        PositionWrapper posWrapper = new PositionWrapper(imbPos.OpeningPosition, Config);
+                        ImbalancePositions.Add(imbPos.OpeningPosition.Security.Symbol, imbPos);
                         CMState state = OrderRouter.ProcessMessage(posWrapper);
+                        DoLog(string.Format("{0} Position Opened to market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty),Constants.MessageType.Information);
+
+
+
+                    }
+                    else if (secImb.BidSizeImbalance > Configuration.PositionOpeningImbalanceThreshold && !ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+                    {
+                        ImbalancePosition imbPos = LoadNewPos(secImb, Side.Sell);
+                        PositionWrapper posWrapper = new PositionWrapper(imbPos.OpeningPosition, Config);
+                        ImbalancePositions.Add(imbPos.OpeningPosition.Security.Symbol, imbPos);
+                        CMState state = OrderRouter.ProcessMessage(posWrapper);
+                        DoLog(string.Format("{0} Position Opened to market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
                     }
                 }
-                else if (secImb.AskSizeImbalance > 0.45m && secImb.AskSizeImbalance < 0.55m && Positions.ContainsKey(secImb.Security.Symbol))
+                
+                if (secImb.BidSizeImbalance > Configuration.PositionOpeningImbalanceMinThreshold
+                         && secImb.BidSizeImbalance < Configuration.PositionOpeningImbalanceMaxThreshold
+                         && ImbalancePositions.ContainsKey(secImb.Security.Symbol))
                 {
-                    Position openPos = Positions[secImb.Security.Symbol];
-                    if (openPos.PosStatus == PositionStatus.New || openPos.PosStatus == PositionStatus.Filled)
+                    ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
+                    //TODO: falta evaluar como operar con los demas estados
+                    if (imbPos.OpeningPosition.PosStatus == PositionStatus.Filled)
                     {
-                        Position closePos = LoadClosePos(openPos);
-                        PositionWrapper posWrapper = new PositionWrapper(closePos, Config);
-                        Positions[secImb.Security.Symbol] = closePos;
+                        LoadClosePos(imbPos.OpeningPosition, secImb, imbPos);
+                        PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
                         CMState state = OrderRouter.ProcessMessage(posWrapper);
+                        DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+
+                    }
+                }
+                else if (secImb.AskSizeImbalance > Configuration.PositionOpeningImbalanceMinThreshold
+                         && secImb.AskSizeImbalance < Configuration.PositionOpeningImbalanceMaxThreshold
+                         && ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+                {
+                    ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
+                    //TODO: falta evaluar como operar con los demas estados
+                    if (imbPos.OpeningPosition.PosStatus == PositionStatus.Filled)
+                    {
+                        LoadClosePos(imbPos.OpeningPosition, secImb, imbPos);
+                        PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
+                        CMState state = OrderRouter.ProcessMessage(posWrapper);
+                        DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+
                     }
                 }
             }
@@ -337,10 +344,13 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             {
                 if (SecurityImbalancesToMonitor.ContainsKey(md.Security.Symbol))
                 {
+                    
                     SecurityImbalance secImb = SecurityImbalancesToMonitor[md.Security.Symbol];
+                    DoLog(string.Format("Processing MD for imbalance summary: {0}",secImb.ImbalanceSummary),Constants.MessageType.Information);
                     secImb.Security.MarketData = md;
                     secImb.ProcessCounters();
                     EvalOpeningClosingPositions(secImb);
+                    EvalClosingPositionOnStopLossHit(secImb);
                 }
             }
 
@@ -356,46 +366,64 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
              {
                  ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
-                 if (Positions.ContainsKey(report.Order.Symbol))
+                 if (ImbalancePositions.ContainsKey(report.Order.Symbol))
                  {
-                     Position openPos = Positions[report.Order.Symbol];
+                     ImbalancePosition imbPos = ImbalancePositions[report.Order.Symbol];
 
                      if (report.ExecType == ExecType.Trade && report.OrdStatus == OrdStatus.PartiallyFilled)
                      {
-                         openPos.CumQty = report.CumQty;
-                         openPos.LeavesQty = report.LeavesQty;
-                         openPos.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
-                         openPos.SetPositionStatusFromExecution(report.ExecType);
+                         imbPos.CurrentPos().CumQty = report.CumQty;
+                         imbPos.CurrentPos().LeavesQty = report.LeavesQty;
+                         imbPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
+                         imbPos.CurrentPos().SetPositionStatusFromExecution(report.ExecType);
+                         DoLog(string.Format("{0} Position Partially Filled ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx-{5} First Leg={6}",
+                                                imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, imbPos.CurrentPos().CumQty, imbPos.CurrentPos().LeavesQty,
+                                                imbPos.CurrentPos().AvgPx,imbPos.IsFirstLeg()), Constants.MessageType.Information);
+
                      }
                      else if (report.ExecType == ExecType.Trade && report.OrdStatus == OrdStatus.Filled)
                      {
 
-                         openPos.CumQty = report.CumQty;
-                         openPos.LeavesQty = report.LeavesQty;
-                         openPos.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
-                         openPos.SetPositionStatusFromExecution(report.ExecType);
-                         openPos.PositionCanceledOrRejected = false;
+                         imbPos.CurrentPos().CumQty = report.CumQty;
+                         imbPos.CurrentPos().LeavesQty = report.LeavesQty;
+                         imbPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
+                         imbPos.CurrentPos().SetPositionStatusFromExecution(report.ExecType);
 
-                         if (openPos.PositionCleared)
-                             Positions.Remove(openPos.Symbol);
+                         if (imbPos.ClosingPosition != null)//Estamos cerrando todo el trade
+                         {
+                             ImbalancePositions.Remove(report.Order.Symbol);
+                             SecurityImbalanceManager.PersistSecurityImbalanceTrade(imbPos);
+                         }
+
+                         DoLog(string.Format("{0} Position Filled ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx-{5} First Leg={6}",
+                                                imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, imbPos.CurrentPos().CumQty, imbPos.CurrentPos().LeavesQty,
+                                                imbPos.CurrentPos().AvgPx, imbPos.IsFirstLeg()), Constants.MessageType.Information);
                      }
                      else if (report.ExecType == ExecType.DoneForDay || report.ExecType == ExecType.Stopped
                                      || report.ExecType == ExecType.Suspended || report.ExecType == ExecType.Rejected
                                      || report.ExecType == ExecType.Expired || report.ExecType == ExecType.Canceled)
                      {
 
-                         openPos.PositionCanceledOrRejected = true;
-                         openPos.PositionCleared = false;
-                         openPos.SetPositionStatusFromExecution(report.ExecType);
+                         imbPos.CurrentPos().PositionCanceledOrRejected = true;
+                         imbPos.CurrentPos().PositionCleared = false;
+                         imbPos.CurrentPos().SetPositionStatusFromExecution(report.ExecType);
+
+                         DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx-{5} First Leg={6}",
+                                                imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, imbPos.CurrentPos().CumQty, imbPos.CurrentPos().LeavesQty,
+                                                imbPos.CurrentPos().AvgPx, imbPos.IsFirstLeg(), report.ExecType), Constants.MessageType.Information);
 
                      }
                      else
                      {
-                         openPos.CumQty = report.CumQty;
-                         openPos.LeavesQty = report.LeavesQty;
-                         openPos.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
-                         openPos.SetPositionStatusFromExecution(report.ExecType);
-                         openPos.ExecutionReports.Add(report);
+                         imbPos.CurrentPos().CumQty = report.CumQty;
+                         imbPos.CurrentPos().LeavesQty = report.LeavesQty;
+                         imbPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
+                         imbPos.CurrentPos().SetPositionStatusFromExecution(report.ExecType);
+                         imbPos.CurrentPos().ExecutionReports.Add(report);
+
+                         DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx-{5} First Leg={6}",
+                                               imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, imbPos.CurrentPos().CumQty, imbPos.CurrentPos().LeavesQty,
+                                               imbPos.CurrentPos().AvgPx, imbPos.IsFirstLeg(), report.ExecType), Constants.MessageType.Information);
                      }
                  }
              }
@@ -464,12 +492,12 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 this.OnLogMsg += pOnLogMsg;
                 StartTime = DateTime.Now;
 
-                if (LoadConfig(configFile))
+                if (ConfigLoader.LoadConfig(this, configFile))
                 {
                     tLock = new object();
                     SecurityImbalanceManager = new SecurityImbalanceManager(Configuration.ConnectionString);
                     SecurityImbalancesToMonitor = new Dictionary<string, SecurityImbalance>();
-                    Positions = new Dictionary<string, Position>();
+                    ImbalancePositions = new Dictionary<string, ImbalancePosition>();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
 

@@ -874,7 +874,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 this.OnLogMsg += pOnLogMsg;
 
-                if (ConfigLoader.DoLoadConfig(this,configFile))
+                if (zHFT.SingletonModulesHandler.Common.Util.ConfigLoader.DoLoadConfig(this,configFile))
                 {
                     ActiveSecurities = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();

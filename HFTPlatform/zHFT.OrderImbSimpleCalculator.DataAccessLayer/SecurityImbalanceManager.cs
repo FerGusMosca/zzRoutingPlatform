@@ -55,6 +55,36 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
         
         }
 
+        public void PersistSecurityImbalanceTrade(ImbalancePosition pos)
+        {
+            using (var connection = new SqlConnection(ADOConnectionString))
+            {
+                using (SqlCommand cmd = connection.CreateCommand())
+                {
+                    connection.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "PersistSimpleImbalanceTrades";
+                    cmd.Parameters.Add(new SqlParameter("@OpeningDate", pos.OpeningDate));
+                    cmd.Parameters.Add(new SqlParameter("@ClosingDate", pos.ClosingDate));
+                    cmd.Parameters.Add(new SqlParameter("@Symbol",pos.OpeningPosition.Security.Symbol ));
+                    cmd.Parameters.Add(new SqlParameter("@Qty", pos.Qty));
+                    cmd.Parameters.Add(new SqlParameter("@TradeDirection", pos.TradeDirection));
+                    cmd.Parameters.Add(new SqlParameter("@OpeningPrice", pos.OpeningPrice));
+                    cmd.Parameters.Add(new SqlParameter("@ClosingPrice", pos.ClosingPrice));
+                    cmd.Parameters.Add(new SqlParameter("@TotalFee", pos.TotalFee));
+                    cmd.Parameters.Add(new SqlParameter("@InitialCap", pos.InitialCap));
+                    cmd.Parameters.Add(new SqlParameter("@FinalCap", pos.FinalCap));
+                    cmd.Parameters.Add(new SqlParameter("@Profit", pos.Profit));
+                    cmd.Parameters.Add(new SqlParameter("@OpeningImbalanceSummary", pos.OpeningImbalanceSummary));
+                    cmd.Parameters.Add(new SqlParameter("@ClosingImbalanceSummary", pos.ClosingImbalanceSummary));
+
+                    cmd.ExecuteNonQuery();
+                }
+                connection.Dispose();
+            }
+
+        }
+
 
         #endregion
     }

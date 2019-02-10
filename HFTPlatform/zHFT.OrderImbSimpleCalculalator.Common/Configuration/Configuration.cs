@@ -32,6 +32,25 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public string SaveEvery { get; set; }
 
+        public double PositionSizeInCash { get; set; }
+
+        public int MaxOpenedPositions { get; set; }
+
+        public int WaitingTimeBeforeOpeningPositions { get; set; }
+
+        public decimal PositionOpeningImbalanceThreshold { get; set; }
+
+        public decimal PositionOpeningImbalanceMinThreshold { get; set; }
+
+        public decimal PositionOpeningImbalanceMaxThreshold { get; set; }
+
+        public decimal StopLossForOpenPositionPct { get; set; }
+
+        public string FeeTypePerTrade { get; set; }
+
+        public double FeeValuePerTrade { get; set; }
+
+
         #endregion
 
         #region Public Methods
@@ -79,6 +98,12 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
             if (string.IsNullOrEmpty(Exchange))
             {
                 result.Add("Exchange");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(FeeTypePerTrade))
+            {
+                result.Add("FeeTypePerTrade");
                 resultado = false;
             }
 

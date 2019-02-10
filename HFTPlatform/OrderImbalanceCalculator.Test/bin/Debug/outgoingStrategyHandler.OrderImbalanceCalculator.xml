@@ -2,6 +2,16 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - Order Imbalance Calculator</Name>
 
+  <PositionSizeInCash>5000</PositionSizeInCash>
+  <MaxOpenedPositions>10</MaxOpenedPositions>
+  <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
+  <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
+  <PositionOpeningImbalanceMinThreshold>0.45</PositionOpeningImbalanceMinThreshold>
+  <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
+  <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
+  <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
+  <FeeValuePerTrade>1</FeeValuePerTrade>
+
   <!--<Currency>ARS</Currency>
 
   <Exchange>BUE</Exchange>-->
@@ -56,4 +66,5 @@
     <Symbol>CRESY</Symbol>
     
   </StocksToMonitor>
+
 </Configuration>

@@ -28,7 +28,7 @@ namespace zHFT.OrderRouter.Mock.Common
 
         #region Protected Methods
 
-        protected void DoLog(string msg, Main.Common.Util.Constants.MessageType type)
+        public void DoLog(string msg, Main.Common.Util.Constants.MessageType type)
         {
             if (OnLogMsg != null)
                 OnLogMsg(msg, type);

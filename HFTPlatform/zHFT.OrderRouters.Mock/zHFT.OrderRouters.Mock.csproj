@@ -44,6 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
@@ -51,6 +55,14 @@
     <ProjectReference Include="..\zHFT.OrderRouter.Mock.Common\zHFT.OrderRouter.Mock.Common.csproj">
       <Project>{feecceff-0284-48cf-b73b-57aeaf46dc97}</Project>
       <Name>zHFT.OrderRouter.Mock.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Primary.Common\zHFT.OrderRouters.Primary.Common.csproj">
+      <Project>{52efba55-18ee-472d-8613-063d172b6705}</Project>
+      <Name>zHFT.OrderRouters.Primary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.SingletonModulesHandler.Common\zHFT.SingletonModulesHandler.Common.csproj">
+      <Project>{89dcba08-faf9-47df-8cd1-8d076ce75c9c}</Project>
+      <Name>zHFT.SingletonModulesHandler.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

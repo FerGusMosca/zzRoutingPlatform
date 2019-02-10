@@ -16,14 +16,30 @@ namespace OrderImbalanceCalculator.Test
     {
         private static bool ToConsole { get; set; }
 
+        private static bool OnlyLogImbalanceInfo { get; set; }
+
+        private static string ImbalanceInfoPrefix { get; set; }
+
         public static void DoLog(string msg, Constants.MessageType type)
         {
             if (ToConsole)
                 Console.WriteLine(msg);
             else if (msg.StartsWith("toConsole->"))
             {
-                Console.WriteLine(msg.Replace("toConsole->", ""));
-                Console.WriteLine("");
+                if (OnlyLogImbalanceInfo)
+                {
+                    if (msg.StartsWith(ImbalanceInfoPrefix))
+                    {
+                        Console.WriteLine(msg.Replace("toConsole->", ""));
+                        Console.WriteLine("");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine(msg.Replace("toConsole->", ""));
+                    Console.WriteLine("");
+                }
             }
 
 
@@ -35,6 +51,8 @@ namespace OrderImbalanceCalculator.Test
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             archivoConfig = Directory.GetCurrentDirectory() + "\\" + archivoConfig;
             ToConsole = Convert.ToBoolean(ConfigurationManager.AppSettings["allwaysToConsole"]);
+            OnlyLogImbalanceInfo = Convert.ToBoolean(ConfigurationManager.AppSettings["OnlyLogImbalanceInfo"]);
+            ImbalanceInfoPrefix = ConfigurationManager.AppSettings["ImbalanceInfoPrefix"];
             ILogSource appLogger;
             ILogSource incommingLogger;
             ILogSource outgoingLogger;
