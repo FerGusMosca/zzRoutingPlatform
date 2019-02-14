@@ -52,5 +52,17 @@ namespace zHFT.Main.BusinessEntities.Orders
         
         }
         #endregion
+
+        #region Public Methods
+
+        public bool IsCancelationExecutionReport()
+        {
+            return ExecType == ExecType.DoneForDay || ExecType == ExecType.Stopped
+                                     || ExecType == ExecType.Suspended || ExecType == ExecType.Rejected
+                                     || ExecType == ExecType.Expired || ExecType == ExecType.Canceled;
+        
+        }
+
+        #endregion
     }
 }

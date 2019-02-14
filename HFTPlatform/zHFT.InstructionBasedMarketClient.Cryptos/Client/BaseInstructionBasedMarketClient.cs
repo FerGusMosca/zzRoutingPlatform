@@ -156,7 +156,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                         {
                             ActiveSecurities.Add(instr.Id, BuildSecurityFromInstruction(instr));
                             RequestMarketDataThread = new Thread(DoRequestMarketData);
-                            RequestMarketDataThread.Start(instr);
+                            RequestMarketDataThread.Start(instr.Symbol);
                         }
                     }
                 }
@@ -170,6 +170,21 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
                 DoLog(string.Format("Critical error processing related instruction: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : "")), Main.Common.Util.Constants.MessageType.Error);
             }
+        }
+
+        protected CMState ProcessMarketDataRequest(Wrapper wrapper)
+        {
+            string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
+            int mdReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
+
+            Security sec = new Security() { Symbol = symbol };
+
+            ActiveSecurities.Add(mdReqId, sec);
+
+            RequestMarketDataThread = new Thread(DoRequestMarketData);
+            RequestMarketDataThread.Start(symbol);
+
+            return CMState.BuildSuccess();
         }
 
         protected void DoFindInstructions()

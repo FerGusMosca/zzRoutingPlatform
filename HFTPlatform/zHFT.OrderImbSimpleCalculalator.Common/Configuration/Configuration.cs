@@ -50,6 +50,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public double FeeValuePerTrade { get; set; }
 
+        public int DecimalRounding{ get; set; }
+
 
         #endregion
 

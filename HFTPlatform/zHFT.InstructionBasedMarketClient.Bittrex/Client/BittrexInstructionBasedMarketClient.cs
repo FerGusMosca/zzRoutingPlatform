@@ -68,17 +68,17 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             };
         }
 
-        private void ReverseRequestMarketData(Instruction instrx)
+        private void ReverseRequestMarketData(string symbol)
         {
             Exchange exch = new Exchange();
             ExchangeContext ctx = GetContext();
-            ctx.QuoteCurrency = instrx.Symbol;
+            ctx.QuoteCurrency = symbol;
             exch.Initialise(ctx);
 
             JObject jMarketData = exch.GetTicker(BittrexConfiguration.QuoteCurrency);
 
             Security sec = new Security();
-            sec.Symbol = instrx.Symbol;
+            sec.Symbol = symbol;
             sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
             sec.MarketData.BestAskPrice =  (double?)jMarketData["Ask"];
             sec.MarketData.Trade = (double?)jMarketData["Last"];
@@ -90,10 +90,10 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
         protected override void DoRequestMarketData(Object param)
         {
-            Instruction instrx = (Instruction)param;
+            string symbol = (string)param;
             try
             {
-                DoLog(string.Format("@{0}:Requesting market data por symbol {1}", BittrexConfiguration.Name,instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                DoLog(string.Format("@{0}:Requesting market data por symbol {1}", BittrexConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
 
                 bool activo = true;
                 while (activo)
@@ -102,7 +102,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
                     lock (tLock)
                     {
-                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == instrx.Symbol))
+                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == symbol))
                         {
                             try
                             {
@@ -113,40 +113,50 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                                 //Probamos la versión derecha del mercado
                                 try
                                 {
-                                    if (!ReverseCurrency.Keys.Contains(instrx.Symbol))
+                                    if (!ReverseCurrency.Keys.Contains(symbol))
                                     {
-                                        JObject jMarketData = exch.GetTicker(instrx.Symbol);
+                                        JObject jMarketData = exch.GetTicker(symbol);
 
                                         Security sec = new Security();
-                                        sec.Symbol = instrx.Symbol;
+                                        sec.Symbol = symbol;
                                         sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
                                         sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
-                                        sec.MarketData.Trade = (double?)jMarketData["Last"];
+                                        //sec.MarketData.Trade = (double?)jMarketData["Last"];
                                         sec.ReverseMarketData = false;
+
+
+                                        GetMarketHistoryResponse resp = exch.GetMarketHistory(symbol);
+
+                                        MarketTrade trade = resp.OrderByDescending(x => x.TimeStamp).FirstOrDefault();
+                                        sec.MarketData.Trade = Convert.ToDouble(trade.Price);
+                                        sec.MarketData.MDTradeSize = Convert.ToDouble(trade.Quantity);
+                                    
+                                        sec.MarketData.LastTradeDateTime = trade.TimeStamp;
+
                                         BittrexMarketDataWrapper wrapper = new BittrexMarketDataWrapper(sec, BittrexConfiguration);
 
                                         OnMessageRcv(wrapper);
                                     }
                                     else
-                                        ReverseRequestMarketData(instrx);
+                                        ReverseRequestMarketData(symbol);
                                 }
                                 catch (Exception ex)
                                 {
-                                    if(!ReverseCurrency.Keys.Contains(instrx.Symbol))
-                                        ReverseCurrency.Add(instrx.Symbol, true);
-                                    ReverseRequestMarketData(instrx);
+                                    if (!ReverseCurrency.Keys.Contains(symbol))
+                                        ReverseCurrency.Add(symbol, true);
+                                    ReverseRequestMarketData(symbol);
                                 }
                             }
                             catch (Exception ex)
                             {
                                 DoLog(string.Format("@{0}:Error Requesting market data for symbol {1}:{2}",
-                                        BittrexConfiguration.Name, instrx.Symbol, ex.Message), Main.Common.Util.Constants.MessageType.Information);
+                                        BittrexConfiguration.Name, symbol, ex.Message), Main.Common.Util.Constants.MessageType.Information);
                                 activo = false;
                             }
                         }
                         else
                         {
-                            DoLog(string.Format("@{0}:Unsubscribing market data for symbol {1}", BittrexConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                            DoLog(string.Format("@{0}:Unsubscribing market data for symbol {1}", BittrexConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
 
                             activo = false;
                         }
@@ -158,10 +168,10 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             {
                 lock (tLock)
                 {
-                    RemoveSymbol(instrx.Symbol);
+                    RemoveSymbol(symbol);
                 }
 
-                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", BittrexConfiguration.Name, instrx.Symbol, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", BittrexConfiguration.Name, symbol, ex.Message), Main.Common.Util.Constants.MessageType.Error);
             }
         
         }
@@ -193,7 +203,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
                 {
-                    throw new Exception(string.Format("@{0}: Market Data snaphsot+updates not implemented for symbol {1}", BittrexConfiguration.Name, mdr.Security.Symbol));
+                    return ProcessMarketDataRequest(wrapper);
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
                 {

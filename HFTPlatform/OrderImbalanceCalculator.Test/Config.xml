@@ -3,12 +3,17 @@
   <Name>Order Imbalance Calculator</Name>
 
   <!--Primary-->
-  <!--<IncomingConfigPath>.\IncomingSingletonConfig.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>-->
+  <IncomingConfigPath>.\Primary\IncomingSingletonConfig.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
 
   <!--IB-->
-  <IncomingConfigPath>.\incomingIB.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.InstructionBasedMarketClient.IB.Client.IBInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IB</IncomingModule>
+  <!--<IncomingConfigPath>.\IB\incomingIB.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.IB.Client.IBInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IB</IncomingModule>-->
+
+  
+  <!--Bittrex-->
+  <!--<IncomingConfigPath>.\Bittrex\incomingBittrex.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex</IncomingModule>-->
 
 
   <OutgoingModule>zHFT.StrategyHandler.OrderImbSimpleCalculator.OrderImbalanceCalculator, zHFT.StrategyHandler.OrderImbSimpleCalculator</OutgoingModule>

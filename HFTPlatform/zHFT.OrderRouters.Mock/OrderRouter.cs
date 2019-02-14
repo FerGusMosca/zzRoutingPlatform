@@ -12,8 +12,8 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouter.Mock.Common;
 using zHFT.OrderRouter.Mock.Common.Configuration;
+using zHFT.OrderRouter.Mock.Common.Converters;
 using zHFT.OrderRouter.Mock.Common.Wrappers;
-using zHFT.OrderRouters.Primary.Common;
 
 
 namespace zHFT.OrderRouters.Mock
@@ -21,6 +21,8 @@ namespace zHFT.OrderRouters.Mock
     public class OrderRouter : OrderRouterBase, ILogger
     {
         #region Protected Attributes
+
+        protected int InternalOrderId { get; set; }
 
         protected IConfiguration Config { get; set; }
 
@@ -52,6 +54,7 @@ namespace zHFT.OrderRouters.Mock
                         if (elapsed.TotalSeconds > Configuration.OrdeExecutionEveryNSeconds)
                         {
                             //We send the executed ER
+                            order.OrderId = InternalOrderId.ToString();
                             ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Trade, OrdStatus.Filled,
                                                                                            0, order.OrderQty.Value, order.Price, order.Price, order);
                             toRemove.Add(order);
@@ -240,6 +243,8 @@ namespace zHFT.OrderRouters.Mock
             {
                 OrderConverter = new OrderConverter();
                 PendingToExecuteOrders = new List<Order>();
+
+                InternalOrderId = 1;
 
                 Thread RouteOrdersThread = new Thread(new ParameterizedThreadStart(FillOrders));
                 RouteOrdersThread.Start();

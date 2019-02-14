@@ -465,11 +465,6 @@ namespace zHFT.StrategyHandler.PairTradingDemo
                     DoLog("ProcessOutgoing - Execution Report: " + wrapper.ToString(), Constants.MessageType.Information);
                     ProcessExecutionReport(wrapper);
                 }
-                else if (wrapper.GetAction() == Actions.NEW_POSITION_CANCELED)
-                {
-                    DoLog("ProcessOutgoing - New Position Canceled: " + wrapper.ToString(), Constants.MessageType.Information);
-                }
-
 
                 return CMState.BuildSuccess();
             }

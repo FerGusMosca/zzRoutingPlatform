@@ -1,0 +1,248 @@
+2019-02-10 9:46:46  :: 2/10/2019 9:46:46 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:46:46  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:46:46  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:46:46  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:46:57  :: Critic error initializing .\incomingBittrex.xml:Error del proveedor subyacente en Open.
+2019-02-10 9:48:00  :: 2/10/2019 9:48:00 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:48:00  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:48:00  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:48:00  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:48:11  :: Critic error initializing .\incomingBittrex.xml:Error del proveedor subyacente en Open.
+2019-02-10 9:49:06  :: 2/10/2019 9:49:06 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:49:06  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:49:06  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:49:06  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:49:16  :: Critic error initializing .\incomingBittrex.xml:Error del proveedor subyacente en Open.
+2019-02-10 9:49:39  :: 2/10/2019 9:49:39 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:49:39  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:49:39  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:49:39  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:49:55  :: Critic error initializing .\incomingBittrex.xml:Error del proveedor subyacente en Open.
+2019-02-10 9:50:15  :: 2/10/2019 9:50:15 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:50:15  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:50:15  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:50:15  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:51:14  :: 2/10/2019 9:51:14 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:51:14  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:51:14  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:51:14  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:53:21  :: 2/10/2019 9:53:21 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:53:21  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:53:21  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:53:21  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:54:12  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 9:54:12  :: @Incoming Bittrex:Requesting market data por symbol XBT
+2019-02-10 9:54:12  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 9:54:20  :: @Incoming Bittrex:Unsubscribing market data for symbol XBT
+2019-02-10 9:54:20  :: @Incoming Bittrex:Unsubscribing market data for symbol ETH
+2019-02-10 9:56:30  :: 2/10/2019 9:56:30 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:56:31  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:56:31  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:56:32  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:56:37  :: @Incoming Bittrex:Requesting market data por symbol XBT
+2019-02-10 9:56:37  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 9:56:37  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 9:58:40  :: @Incoming Bittrex:Error Requesting market data for symbol XBT:INVALID_MARKETCall Details=/api/v1.1/public/getticker, market = XBT-BTC
+2019-02-10 9:59:48  :: 2/10/2019 9:59:48 AMBaseCommunicationModule.LoadConfig
+2019-02-10 9:59:48  :: Loading config:.\incomingBittrex.xml
+2019-02-10 9:59:48  :: Processing config:.\incomingBittrex.xml
+2019-02-10 9:59:48  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 9:59:53  :: @Incoming Bittrex:Requesting market data por symbol XBT
+2019-02-10 9:59:53  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 9:59:53  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:00:10  :: @Incoming Bittrex:Error Requesting market data for symbol XBT:INVALID_MARKETCall Details=/api/v1.1/public/getticker, market = XBT-USDT
+2019-02-10 10:00:42  :: 2/10/2019 10:00:42 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:00:42  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:00:42  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:00:42  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:00:47  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:00:47  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:00:47  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:12:42  :: 2/10/2019 10:12:42 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:12:42  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:12:42  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:12:42  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:12:48  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:12:48  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:12:48  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:13:32  :: 2/10/2019 10:13:32 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:13:32  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:13:32  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:13:32  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:13:38  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:13:38  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:13:38  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:17:44  :: 2/10/2019 10:17:44 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:17:44  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:17:44  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:17:44  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:17:50  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:17:50  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:17:50  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:23:28  :: 2/10/2019 10:23:28 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:23:29  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:23:29  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:23:29  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:23:36  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:23:36  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:23:36  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:25:47  :: 2/10/2019 10:25:47 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:25:47  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:25:47  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:25:47  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:25:53  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:25:53  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:25:53  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:28:58  :: 2/10/2019 10:28:58 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:28:58  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:28:58  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:28:58  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:29:04  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:29:04  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:29:04  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:35:42  :: 2/10/2019 10:35:42 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:35:42  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:35:42  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:35:42  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:35:47  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:35:47  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:35:47  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 10:49:38  :: 2/10/2019 10:49:38 AMBaseCommunicationModule.LoadConfig
+2019-02-10 10:49:38  :: Loading config:.\incomingBittrex.xml
+2019-02-10 10:49:38  :: Processing config:.\incomingBittrex.xml
+2019-02-10 10:49:38  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 10:49:44  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 10:49:44  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 10:49:44  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:07:09  :: 2/10/2019 11:07:09 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:07:09  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:07:09  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:07:09  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:07:16  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:07:16  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:07:16  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:16:20  :: 2/10/2019 11:16:20 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:16:20  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:16:20  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:16:21  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:16:26  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:16:26  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:16:26  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:19:39  :: 2/10/2019 11:19:39 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:19:39  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:19:39  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:19:39  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:19:45  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:19:45  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:19:45  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:20:57  :: 2/10/2019 11:20:57 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:20:57  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:20:57  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:20:57  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:21:03  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:21:03  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:21:03  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:24:27  :: 2/10/2019 11:24:27 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:24:27  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:24:27  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:24:27  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:24:33  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:24:33  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:24:33  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:27:22  :: 2/10/2019 11:27:22 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:27:22  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:27:22  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:27:22  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:27:28  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:27:28  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:27:28  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:29:11  :: 2/10/2019 11:29:11 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:29:11  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:29:11  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:29:11  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:29:16  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:29:16  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:29:16  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:30:16  :: 2/10/2019 11:30:16 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:30:16  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:30:16  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:30:16  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:30:22  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:30:22  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:30:22  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:32:17  :: 2/10/2019 11:32:17 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:32:17  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:32:17  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:32:18  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:32:24  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:32:24  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:32:24  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:34:24  :: 2/10/2019 11:34:24 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:34:24  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:34:24  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:34:24  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:34:30  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:34:30  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:34:30  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 11:51:50  :: 2/10/2019 11:51:50 AMBaseCommunicationModule.LoadConfig
+2019-02-10 11:51:50  :: Loading config:.\incomingBittrex.xml
+2019-02-10 11:51:50  :: Processing config:.\incomingBittrex.xml
+2019-02-10 11:51:50  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 11:51:56  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 11:51:56  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 11:51:56  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 17:23:19  :: 2/10/2019 5:23:19 PMBaseCommunicationModule.LoadConfig
+2019-02-10 17:23:19  :: Loading config:.\incomingBittrex.xml
+2019-02-10 17:23:19  :: Processing config:.\incomingBittrex.xml
+2019-02-10 17:23:19  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 17:23:26  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 17:23:26  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 17:23:26  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 18:05:39  :: 2/10/2019 6:05:39 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:05:39  :: Loading config:.\incomingBittrex.xml
+2019-02-10 18:05:39  :: Processing config:.\incomingBittrex.xml
+2019-02-10 18:05:39  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-02-10 18:05:46  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 18:05:46  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 18:05:46  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 18:17:47  :: 2/10/2019 6:17:47 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:17:47  :: Loading config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:17:47  :: Processing config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:17:47  :: Ending GetConfiguracion .\Bittrex\incomingBittrex.xml
+2019-02-10 18:17:53  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 18:17:53  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 18:17:53  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 18:23:42  :: 2/10/2019 6:23:42 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:23:42  :: Loading config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:23:42  :: Processing config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:23:42  :: Ending GetConfiguracion .\Bittrex\incomingBittrex.xml
+2019-02-10 18:23:48  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 18:23:48  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 18:23:48  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 18:26:22  :: 2/10/2019 6:26:22 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:26:22  :: Loading config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:26:22  :: Processing config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:26:22  :: Ending GetConfiguracion .\Bittrex\incomingBittrex.xml
+2019-02-10 18:26:28  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 18:26:28  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 18:26:28  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 18:28:40  :: 2/10/2019 6:28:40 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:28:40  :: Loading config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:28:40  :: Processing config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:28:40  :: Ending GetConfiguracion .\Bittrex\incomingBittrex.xml
+2019-02-10 18:28:46  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 18:28:46  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 18:28:46  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 18:32:20  :: 2/10/2019 6:32:20 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:32:20  :: Loading config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:32:20  :: Processing config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:32:20  :: Ending GetConfiguracion .\Bittrex\incomingBittrex.xml
+2019-02-10 18:32:33  :: 2/10/2019 6:32:33 PMBaseCommunicationModule.LoadConfig
+2019-02-10 18:32:33  :: Loading config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:32:33  :: Processing config:.\Bittrex\incomingBittrex.xml
+2019-02-10 18:32:33  :: Ending GetConfiguracion .\Bittrex\incomingBittrex.xml
+2019-02-10 18:32:39  :: @Incoming Bittrex:Requesting market data por symbol ETH
+2019-02-10 18:32:39  :: @Incoming Bittrex:Requesting market data por symbol BTC
+2019-02-10 18:32:39  :: @Incoming Bittrex:Requesting market data por symbol XRP
+2019-02-10 21:26:38  :: @Incoming Bittrex:Error Requesting market data for symbol XRP:No se puede resolver el nombre remoto: 'bittrex.com'
+2019-02-10 21:26:39  :: @Incoming Bittrex:Error Requesting market data for symbol BTC:No se puede resolver el nombre remoto: 'bittrex.com'

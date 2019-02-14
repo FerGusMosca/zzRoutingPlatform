@@ -75,6 +75,12 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         #endregion
 
+        #region Config Data
+
+        public int DecimalRounding { get; set; }
+
+        #endregion
+
         #region Statistical Data
 
         public DateTime? LastTradeProcessed { get; set; }
@@ -110,7 +116,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                     DateTime.Compare(LastTradeProcessed.Value, Security.MarketData.LastTradeDateTime.Value) != 0)
                 {
 
-                    if (Security.MarketData.Trade.HasValue && Security.MarketData.MDTradeSize.HasValue && LastBidPrice.HasValue && Security.MarketData.Trade.Value == LastBidPrice.Value)
+                    if (Security.MarketData.Trade.HasValue && Security.MarketData.MDTradeSize.HasValue && LastBidPrice.HasValue
+                        && Math.Round(Security.MarketData.Trade.Value, DecimalRounding) == Math.Round(LastBidPrice.Value, DecimalRounding))
                     {
                         CountTradeOnBid++;
                         SizeTradeOnBid += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
@@ -118,7 +125,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
                     }
 
-                    if (Security.MarketData.Trade.HasValue && Security.MarketData.MDTradeSize.HasValue && LastAskPrice.HasValue && Security.MarketData.Trade.Value == LastAskPrice.Value)
+                    if (Security.MarketData.Trade.HasValue && Security.MarketData.MDTradeSize.HasValue && LastAskPrice.HasValue
+                        && Math.Round(Security.MarketData.Trade.Value, DecimalRounding) == Math.Round(LastAskPrice.Value, DecimalRounding))
                     {
                         CountTradeOnAsk++;
                         SizeTradeOnAsk += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
@@ -141,6 +149,20 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             CountTradeOnAsk = 0;
             SizeTradeOnAsk = 0;
         }
+
+        public bool LongPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
+        {
+            return AskSizeImbalance > positionOpeningImbalanceThreshold;
+        
+        }
+
+        public bool ShortPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
+        {
+            return BidSizeImbalance > positionOpeningImbalanceThreshold;
+
+        }
+
+      
 
         #endregion
     }

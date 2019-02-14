@@ -10,6 +10,15 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 {
     public class ImbalancePosition
     {
+
+        #region Public Static COnsts
+
+        public static string _LONG = "LONG";
+
+        public static string _SHORT = "SHORT";
+
+        #endregion
+
         #region Public Attribute
 
         public DateTime OpeningDate { get; set; }
@@ -33,7 +42,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public double Qty { 
             get 
             {
-                if (OpeningPosition.QuantityType == QuantityType.SHARES)
+                if (OpeningPosition.QuantityType == QuantityType.SHARES || OpeningPosition.QuantityType == QuantityType.CURRENCY)
                     return OpeningPosition.CumQty;
                 else
                     throw new Exception (string.Format("Qty not available for Qty type {0}",OpeningPosition.QuantityType));
@@ -42,7 +51,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public string TradeDirection
         {
-            get { return OpeningPosition.Side == Side.Buy ? "LONG" : "SHORT"; }
+            get { return OpeningPosition.Side == Side.Buy ? _LONG : _SHORT; }
         }
 
         public double OpeningPrice
@@ -57,7 +66,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             }
         }
 
-        public double ClosingPrice
+        public double? ClosingPrice
         {
             get
             {
@@ -65,7 +74,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (ClosingPosition != null && ClosingPosition.AvgPx.HasValue)
                     return ClosingPosition.AvgPx.Value;
                 else
-                    throw new Exception(string.Format("Closing price not available for trade on symbol {0}", OpeningPosition.Security.Symbol));
+                    return null;
 
             }
         }
@@ -98,8 +107,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 {
                     double fee = FeeValuePerTrade * InitialCap;
 
-                    if (ClosingPosition != null)
-                        fee += FeeValuePerTrade * FinalCap;
+                    if (ClosingPosition != null && ClosingPosition.AvgPx.HasValue)
+                        fee += FeeValuePerTrade * ClosingPosition.CumQty * ClosingPosition.AvgPx.Value ;
 
                     return fee;
                 }
@@ -112,21 +121,14 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             get
             {
+                if (!OpeningPosition.AvgPx.HasValue)
+                    throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
 
-                if (OpeningPosition.QuantityType == QuantityType.SHARES)
-                {
-                    if (!OpeningPosition.AvgPx.HasValue)
-                        throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
-
-                    return OpeningPosition.CumQty * OpeningPosition.AvgPx.Value;
-                }
-                else
-                    throw new Exception(string.Format("Qty not available for Qty type {0}", OpeningPosition.QuantityType));
-
+                return OpeningPosition.CumQty * OpeningPosition.AvgPx.Value;
             }
         }
 
-        public double FinalCap
+        public double? FinalCap
         {
             get
             {
@@ -140,19 +142,34 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                         return (OpeningPosition.CumQty * ClosingPosition.AvgPx.Value) - TotalFee;
                     }
                     else
-                        throw new Exception(string.Format("Qty not available for Qty type {0}", OpeningPosition.QuantityType));
+                        return null;
                 }
                 else
                     return InitialCap;
             }
         }
 
-        public double Profit
+        public double? Profit
         {
 
             get 
             {
-                return ((FinalCap - TotalFee) / InitialCap) - 1;
+                if (TradeDirection == _LONG)
+                {
+                    if (FinalCap.HasValue && InitialCap!=0)
+                        return ((FinalCap - TotalFee) / InitialCap) - 1;
+                    else
+                        return null;
+                }
+                else if (TradeDirection == _SHORT)
+                {
+                    if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value!=0)
+                        return ((InitialCap - TotalFee) / FinalCap ) - 1;
+                    else
+                        return null;
+                }
+                else
+                    return null;
             }
         
         }
@@ -166,10 +183,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 else
                     throw new Exception(string.Format("Missing Opening Imbalance for security {0}", OpeningImbalance.Security.Symbol));
             
-            
             }
         }
-
 
         public string ClosingImbalanceSummary
         {
@@ -178,10 +193,9 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (ClosingImbalance != null)
                     return ClosingImbalance.ImbalanceSummary;
                 else
-                    throw new Exception(string.Format("Missing Closing Imbalance for security {0}", ClosingImbalance.Security.Symbol));
+                    return "";
             }
         }
-
 
         #endregion
 
@@ -215,13 +229,63 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (OpeningPosition.Side == Side.Sell && (OpeningPosition.PosStatus == PositionStatus.PartiallyFilled || OpeningPosition.PosStatus == PositionStatus.Filled))
                 {
                     return OpeningPosition.AvgPx.HasValue && secImb.Security.MarketData.Trade.HasValue ?
-                           ((OpeningPosition.AvgPx.Value * (1 - OpeningPosition.StopLossPct)) < secImb.Security.MarketData.Trade.Value) : false;
+                           ((OpeningPosition.AvgPx.Value * (1 + OpeningPosition.StopLossPct)) < secImb.Security.MarketData.Trade.Value) : false;
                 }
                 return false;
             }
 
             return false;
         }
+
+
+        public bool EvalClosingShortPosition(SecurityImbalance secImb,decimal positionOpeningImbalanceMaxThreshold)
+        {
+            return (TradeDirection == ImbalancePosition._SHORT
+                   && secImb.BidSizeImbalance < positionOpeningImbalanceMaxThreshold
+                   && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
+        }
+
+       
+
+        public bool EvalClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        {
+            return (TradeDirection == ImbalancePosition._LONG
+                   && secImb.AskSizeImbalance < positionOpeningImbalanceMaxThreshold
+                   && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
+        }
+
+        public bool EvalAbortingNewLongPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
+        {
+            return (TradeDirection == ImbalancePosition._LONG
+                   && secImb.AskSizeImbalance < PositionOpeningImbalanceThreshold
+                   && OpeningPosition.PosStatus != PositionStatus.Filled);
+        }
+
+        public bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
+        {
+            return (TradeDirection == ImbalancePosition._SHORT
+                   && secImb.BidSizeImbalance < PositionOpeningImbalanceThreshold
+                   && OpeningPosition.PosStatus != PositionStatus.Filled);
+        }
+
+        public bool EvalAbortingClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        {
+            return (TradeDirection == ImbalancePosition._LONG
+                   && ClosingPosition!=null
+                   && secImb.AskSizeImbalance > positionOpeningImbalanceMaxThreshold
+                   && ClosingPosition.PosStatus != PositionStatus.Filled);
+        }
+
+        public bool EvalAbortingClosingShortPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        {
+            return (TradeDirection == ImbalancePosition._SHORT
+                   && ClosingPosition != null
+                   && secImb.BidSizeImbalance > positionOpeningImbalanceMaxThreshold
+                   && ClosingPosition.PosStatus != PositionStatus.Filled);
+        }
+
+
+
 
         #endregion
     }

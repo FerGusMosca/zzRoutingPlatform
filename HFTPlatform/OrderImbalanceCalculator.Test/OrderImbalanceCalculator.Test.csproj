@@ -63,6 +63,10 @@
       <Project>{f6a7d207-af0a-48a8-b69c-f067d63e8f6b}</Project>
       <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex\zHFT.InstructionBasedMarketClient.Bittrex.csproj">
+      <Project>{d0e6f84d-fae3-40e4-91c1-c20e2c880a24}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Bittrex</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IB\zHFT.InstructionBasedMarketClient.IB.csproj">
       <Project>{2ab16060-3c26-456d-a02d-8aa025bdab08}</Project>
       <Name>zHFT.InstructionBasedMarketClient.IB</Name>
@@ -78,6 +82,10 @@
     <ProjectReference Include="..\zHFT.OrderRouters.IB\zHFT.OrderRouters.IB.csproj">
       <Project>{ae6ca067-5460-4957-93e4-3031b74f45e7}</Project>
       <Name>zHFT.OrderRouters.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Mock\zHFT.OrderRouters.Mock.csproj">
+      <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>
+      <Name>zHFT.OrderRouters.Mock</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
@@ -104,30 +112,34 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="outgoingOrderRouter.Mock.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="incomingIB.xml">
+    <Content Include="Bittrex\incomingBittrex.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="IncomingSingletonConfig.xml">
+    <Content Include="Mock\outgoingOrderRouter.Mock.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="outgoingOrderRouter.IB.xml">
+    <Content Include="IB\incomingIB.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Primary\IncomingSingletonConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IB\outgoingOrderRouter.IB.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="outgoingOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="OutgoingSingletonConfig.xml">
+    <Content Include="Primary\OutgoingSingletonConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="outgoingStrategyHandler.OrderImbalanceCalculator.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Primary.xml">
+    <Content Include="Primary\Primary.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

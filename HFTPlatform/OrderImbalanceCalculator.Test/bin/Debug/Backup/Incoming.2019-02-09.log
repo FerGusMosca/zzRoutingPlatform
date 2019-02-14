@@ -1,0 +1,10 @@
+2019-02-09 16:50:29  :: 2/9/2019 4:50:29 PMMarketClientBase.LoadConfig
+2019-02-09 16:50:29  :: Loading config:.\incomingIB.xml
+2019-02-09 16:50:29  :: Processing config:.\incomingIB.xml
+2019-02-09 16:50:29  :: Ending GetConfiguracion .\incomingIB.xml
+2019-02-09 16:50:31  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7496   
+2019-02-09 16:51:03  :: 2/9/2019 4:51:03 PMMarketClientBase.LoadConfig
+2019-02-09 16:51:03  :: Loading config:.\incomingIB.xml
+2019-02-09 16:51:03  :: Processing config:.\incomingIB.xml
+2019-02-09 16:51:03  :: Ending GetConfiguracion .\incomingIB.xml
+2019-02-09 16:51:05  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:7496   

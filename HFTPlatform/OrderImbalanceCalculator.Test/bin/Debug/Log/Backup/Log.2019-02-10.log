@@ -1,0 +1,320 @@
+2019-02-10 9:46:46  :: 10/2/2019 09:46:46MainApp.LoadConfig
+2019-02-10 9:46:46  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:46:46  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:46:46  :: Fin GetConfiguracion
+2019-02-10 9:46:46  :: Initializing Log
+2019-02-10 9:46:46  :: Initializing Incoming Module
+2019-02-10 9:46:57  :: Error initializing Incoming Module
+2019-02-10 9:46:57  :: Initializing Outgoing Module
+2019-02-10 9:48:00  :: 10/2/2019 09:48:00MainApp.LoadConfig
+2019-02-10 9:48:00  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:48:00  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:48:00  :: Fin GetConfiguracion
+2019-02-10 9:48:00  :: Initializing Log
+2019-02-10 9:48:00  :: Initializing Incoming Module
+2019-02-10 9:48:11  :: Error initializing Incoming Module
+2019-02-10 9:48:11  :: Initializing Outgoing Module
+2019-02-10 9:49:03  :: 10/2/2019 09:49:03MainApp.LoadConfig
+2019-02-10 9:49:03  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:49:03  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:49:03  :: Fin GetConfiguracion
+2019-02-10 9:49:03  :: Initializing Log
+2019-02-10 9:49:04  :: Initializing Incoming Module
+2019-02-10 9:49:31  :: 10/2/2019 09:49:31MainApp.LoadConfig
+2019-02-10 9:49:31  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:49:31  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:49:32  :: Fin GetConfiguracion
+2019-02-10 9:49:32  :: Initializing Log
+2019-02-10 9:49:34  :: Initializing Incoming Module
+2019-02-10 9:49:55  :: Error initializing Incoming Module
+2019-02-10 9:49:55  :: Initializing Outgoing Module
+2019-02-10 9:50:05  :: 10/2/2019 09:50:05MainApp.LoadConfig
+2019-02-10 9:50:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:50:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:50:05  :: Fin GetConfiguracion
+2019-02-10 9:50:05  :: Initializing Log
+2019-02-10 9:50:11  :: Initializing Incoming Module
+2019-02-10 9:51:14  :: 10/2/2019 09:51:14MainApp.LoadConfig
+2019-02-10 9:51:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:51:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:51:14  :: Fin GetConfiguracion
+2019-02-10 9:51:14  :: Initializing Log
+2019-02-10 9:51:14  :: Initializing Incoming Module
+2019-02-10 9:51:24  :: Incoming Module successfully initialized
+2019-02-10 9:51:25  :: Initializing Outgoing Module
+2019-02-10 9:53:21  :: 10/2/2019 09:53:21MainApp.LoadConfig
+2019-02-10 9:53:21  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:53:21  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:53:21  :: Fin GetConfiguracion
+2019-02-10 9:53:21  :: Initializing Log
+2019-02-10 9:53:21  :: Initializing Incoming Module
+2019-02-10 9:53:21  :: Incoming Module successfully initialized
+2019-02-10 9:53:21  :: Initializing Outgoing Module
+2019-02-10 9:54:19  :: Outgoing Module successfully initialized
+2019-02-10 9:56:30  :: 10/2/2019 09:56:30MainApp.LoadConfig
+2019-02-10 9:56:30  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:56:30  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:56:30  :: Fin GetConfiguracion
+2019-02-10 9:56:30  :: Initializing Log
+2019-02-10 9:56:30  :: Initializing Incoming Module
+2019-02-10 9:56:32  :: Incoming Module successfully initialized
+2019-02-10 9:56:32  :: Initializing Outgoing Module
+2019-02-10 9:56:37  :: Outgoing Module successfully initialized
+2019-02-10 9:59:47  :: 10/2/2019 09:59:47MainApp.LoadConfig
+2019-02-10 9:59:47  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:59:47  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 9:59:47  :: Fin GetConfiguracion
+2019-02-10 9:59:47  :: Initializing Log
+2019-02-10 9:59:47  :: Initializing Incoming Module
+2019-02-10 9:59:48  :: Incoming Module successfully initialized
+2019-02-10 9:59:48  :: Initializing Outgoing Module
+2019-02-10 9:59:53  :: Outgoing Module successfully initialized
+2019-02-10 10:00:41  :: 10/2/2019 10:00:41MainApp.LoadConfig
+2019-02-10 10:00:41  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:00:41  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:00:42  :: Fin GetConfiguracion
+2019-02-10 10:00:42  :: Initializing Log
+2019-02-10 10:00:42  :: Initializing Incoming Module
+2019-02-10 10:00:42  :: Incoming Module successfully initialized
+2019-02-10 10:00:42  :: Initializing Outgoing Module
+2019-02-10 10:00:48  :: Outgoing Module successfully initialized
+2019-02-10 10:12:42  :: 10/2/2019 10:12:42MainApp.LoadConfig
+2019-02-10 10:12:42  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:12:42  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:12:42  :: Fin GetConfiguracion
+2019-02-10 10:12:42  :: Initializing Log
+2019-02-10 10:12:42  :: Initializing Incoming Module
+2019-02-10 10:12:43  :: Incoming Module successfully initialized
+2019-02-10 10:12:43  :: Initializing Outgoing Module
+2019-02-10 10:12:49  :: Outgoing Module successfully initialized
+2019-02-10 10:13:31  :: 10/2/2019 10:13:31MainApp.LoadConfig
+2019-02-10 10:13:31  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:13:31  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:13:31  :: Fin GetConfiguracion
+2019-02-10 10:13:32  :: Initializing Log
+2019-02-10 10:13:32  :: Initializing Incoming Module
+2019-02-10 10:13:32  :: Incoming Module successfully initialized
+2019-02-10 10:13:32  :: Initializing Outgoing Module
+2019-02-10 10:13:38  :: Outgoing Module successfully initialized
+2019-02-10 10:17:44  :: 10/2/2019 10:17:44MainApp.LoadConfig
+2019-02-10 10:17:44  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:17:44  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:17:44  :: Fin GetConfiguracion
+2019-02-10 10:17:44  :: Initializing Log
+2019-02-10 10:17:44  :: Initializing Incoming Module
+2019-02-10 10:17:45  :: Incoming Module successfully initialized
+2019-02-10 10:17:45  :: Initializing Outgoing Module
+2019-02-10 10:17:50  :: Outgoing Module successfully initialized
+2019-02-10 10:23:28  :: 10/2/2019 10:23:28MainApp.LoadConfig
+2019-02-10 10:23:28  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:23:28  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:23:28  :: Fin GetConfiguracion
+2019-02-10 10:23:28  :: Initializing Log
+2019-02-10 10:23:28  :: Initializing Incoming Module
+2019-02-10 10:23:30  :: Incoming Module successfully initialized
+2019-02-10 10:23:30  :: Initializing Outgoing Module
+2019-02-10 10:23:36  :: Outgoing Module successfully initialized
+2019-02-10 10:25:47  :: 10/2/2019 10:25:47MainApp.LoadConfig
+2019-02-10 10:25:47  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:25:47  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:25:47  :: Fin GetConfiguracion
+2019-02-10 10:25:47  :: Initializing Log
+2019-02-10 10:25:47  :: Initializing Incoming Module
+2019-02-10 10:25:48  :: Incoming Module successfully initialized
+2019-02-10 10:25:48  :: Initializing Outgoing Module
+2019-02-10 10:25:53  :: Outgoing Module successfully initialized
+2019-02-10 10:28:58  :: 10/2/2019 10:28:58MainApp.LoadConfig
+2019-02-10 10:28:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:28:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:28:58  :: Fin GetConfiguracion
+2019-02-10 10:28:58  :: Initializing Log
+2019-02-10 10:28:58  :: Initializing Incoming Module
+2019-02-10 10:28:59  :: Incoming Module successfully initialized
+2019-02-10 10:28:59  :: Initializing Outgoing Module
+2019-02-10 10:29:04  :: Outgoing Module successfully initialized
+2019-02-10 10:35:37  :: 10/2/2019 10:35:37MainApp.LoadConfig
+2019-02-10 10:35:37  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:35:37  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:35:38  :: Fin GetConfiguracion
+2019-02-10 10:35:42  :: Initializing Log
+2019-02-10 10:35:42  :: Initializing Incoming Module
+2019-02-10 10:35:42  :: Incoming Module successfully initialized
+2019-02-10 10:35:42  :: Initializing Outgoing Module
+2019-02-10 10:35:48  :: Outgoing Module successfully initialized
+2019-02-10 10:49:38  :: 10/2/2019 10:49:38MainApp.LoadConfig
+2019-02-10 10:49:38  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:49:38  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 10:49:38  :: Fin GetConfiguracion
+2019-02-10 10:49:38  :: Initializing Log
+2019-02-10 10:49:38  :: Initializing Incoming Module
+2019-02-10 10:49:38  :: Incoming Module successfully initialized
+2019-02-10 10:49:38  :: Initializing Outgoing Module
+2019-02-10 10:49:49  :: Outgoing Module successfully initialized
+2019-02-10 11:07:03  :: 10/2/2019 11:07:03MainApp.LoadConfig
+2019-02-10 11:07:03  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:07:03  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:07:03  :: Fin GetConfiguracion
+2019-02-10 11:07:09  :: Initializing Log
+2019-02-10 11:07:09  :: Initializing Incoming Module
+2019-02-10 11:07:10  :: Incoming Module successfully initialized
+2019-02-10 11:07:10  :: Initializing Outgoing Module
+2019-02-10 11:07:16  :: Outgoing Module successfully initialized
+2019-02-10 11:16:20  :: 10/2/2019 11:16:20MainApp.LoadConfig
+2019-02-10 11:16:20  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:16:20  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:16:20  :: Fin GetConfiguracion
+2019-02-10 11:16:20  :: Initializing Log
+2019-02-10 11:16:20  :: Initializing Incoming Module
+2019-02-10 11:16:21  :: Incoming Module successfully initialized
+2019-02-10 11:16:21  :: Initializing Outgoing Module
+2019-02-10 11:16:26  :: Outgoing Module successfully initialized
+2019-02-10 11:19:39  :: 10/2/2019 11:19:39MainApp.LoadConfig
+2019-02-10 11:19:39  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:19:39  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:19:39  :: Fin GetConfiguracion
+2019-02-10 11:19:39  :: Initializing Log
+2019-02-10 11:19:39  :: Initializing Incoming Module
+2019-02-10 11:19:39  :: Incoming Module successfully initialized
+2019-02-10 11:19:39  :: Initializing Outgoing Module
+2019-02-10 11:19:45  :: Outgoing Module successfully initialized
+2019-02-10 11:20:57  :: 10/2/2019 11:20:57MainApp.LoadConfig
+2019-02-10 11:20:57  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:20:57  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:20:57  :: Fin GetConfiguracion
+2019-02-10 11:20:57  :: Initializing Log
+2019-02-10 11:20:57  :: Initializing Incoming Module
+2019-02-10 11:20:58  :: Incoming Module successfully initialized
+2019-02-10 11:20:58  :: Initializing Outgoing Module
+2019-02-10 11:21:03  :: Outgoing Module successfully initialized
+2019-02-10 11:24:26  :: 10/2/2019 11:24:26MainApp.LoadConfig
+2019-02-10 11:24:26  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:24:26  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:24:27  :: Fin GetConfiguracion
+2019-02-10 11:24:27  :: Initializing Log
+2019-02-10 11:24:27  :: Initializing Incoming Module
+2019-02-10 11:24:27  :: Incoming Module successfully initialized
+2019-02-10 11:24:27  :: Initializing Outgoing Module
+2019-02-10 11:24:33  :: Outgoing Module successfully initialized
+2019-02-10 11:27:21  :: 10/2/2019 11:27:21MainApp.LoadConfig
+2019-02-10 11:27:21  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:27:21  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:27:21  :: Fin GetConfiguracion
+2019-02-10 11:27:21  :: Initializing Log
+2019-02-10 11:27:21  :: Initializing Incoming Module
+2019-02-10 11:27:22  :: Incoming Module successfully initialized
+2019-02-10 11:27:22  :: Initializing Outgoing Module
+2019-02-10 11:27:28  :: Outgoing Module successfully initialized
+2019-02-10 11:29:10  :: 10/2/2019 11:29:10MainApp.LoadConfig
+2019-02-10 11:29:10  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:29:10  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:29:11  :: Fin GetConfiguracion
+2019-02-10 11:29:11  :: Initializing Log
+2019-02-10 11:29:11  :: Initializing Incoming Module
+2019-02-10 11:29:11  :: Incoming Module successfully initialized
+2019-02-10 11:29:11  :: Initializing Outgoing Module
+2019-02-10 11:29:16  :: Outgoing Module successfully initialized
+2019-02-10 11:30:16  :: 10/2/2019 11:30:16MainApp.LoadConfig
+2019-02-10 11:30:16  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:30:16  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:30:16  :: Fin GetConfiguracion
+2019-02-10 11:30:16  :: Initializing Log
+2019-02-10 11:30:16  :: Initializing Incoming Module
+2019-02-10 11:30:17  :: Incoming Module successfully initialized
+2019-02-10 11:30:17  :: Initializing Outgoing Module
+2019-02-10 11:30:22  :: Outgoing Module successfully initialized
+2019-02-10 11:32:17  :: 10/2/2019 11:32:17MainApp.LoadConfig
+2019-02-10 11:32:17  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:32:17  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:32:17  :: Fin GetConfiguracion
+2019-02-10 11:32:17  :: Initializing Log
+2019-02-10 11:32:17  :: Initializing Incoming Module
+2019-02-10 11:32:19  :: Incoming Module successfully initialized
+2019-02-10 11:32:19  :: Initializing Outgoing Module
+2019-02-10 11:32:24  :: Outgoing Module successfully initialized
+2019-02-10 11:34:24  :: 10/2/2019 11:34:24MainApp.LoadConfig
+2019-02-10 11:34:24  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:34:24  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:34:24  :: Fin GetConfiguracion
+2019-02-10 11:34:24  :: Initializing Log
+2019-02-10 11:34:24  :: Initializing Incoming Module
+2019-02-10 11:34:24  :: Incoming Module successfully initialized
+2019-02-10 11:34:24  :: Initializing Outgoing Module
+2019-02-10 11:34:30  :: Outgoing Module successfully initialized
+2019-02-10 11:51:44  :: 10/2/2019 11:51:44MainApp.LoadConfig
+2019-02-10 11:51:44  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:51:44  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 11:51:44  :: Fin GetConfiguracion
+2019-02-10 11:51:44  :: Initializing Log
+2019-02-10 11:51:44  :: Initializing Incoming Module
+2019-02-10 11:51:50  :: Incoming Module successfully initialized
+2019-02-10 11:51:50  :: Initializing Outgoing Module
+2019-02-10 11:51:56  :: Outgoing Module successfully initialized
+2019-02-10 17:23:12  :: 10/2/2019 17:23:12MainApp.LoadConfig
+2019-02-10 17:23:12  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 17:23:12  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 17:23:12  :: Fin GetConfiguracion
+2019-02-10 17:23:19  :: Initializing Log
+2019-02-10 17:23:19  :: Initializing Incoming Module
+2019-02-10 17:23:20  :: Incoming Module successfully initialized
+2019-02-10 17:23:20  :: Initializing Outgoing Module
+2019-02-10 17:23:26  :: Outgoing Module successfully initialized
+2019-02-10 18:05:34  :: 10/2/2019 18:05:34MainApp.LoadConfig
+2019-02-10 18:05:34  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:05:34  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:05:35  :: Fin GetConfiguracion
+2019-02-10 18:05:39  :: Initializing Log
+2019-02-10 18:05:39  :: Initializing Incoming Module
+2019-02-10 18:05:40  :: Incoming Module successfully initialized
+2019-02-10 18:05:40  :: Initializing Outgoing Module
+2019-02-10 18:05:46  :: Outgoing Module successfully initialized
+2019-02-10 18:17:47  :: 10/2/2019 18:17:47MainApp.LoadConfig
+2019-02-10 18:17:47  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:17:47  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:17:47  :: Fin GetConfiguracion
+2019-02-10 18:17:47  :: Initializing Log
+2019-02-10 18:17:47  :: Initializing Incoming Module
+2019-02-10 18:17:48  :: Incoming Module successfully initialized
+2019-02-10 18:17:48  :: Initializing Outgoing Module
+2019-02-10 18:17:53  :: Outgoing Module successfully initialized
+2019-02-10 18:23:40  :: 10/2/2019 18:23:40MainApp.LoadConfig
+2019-02-10 18:23:40  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:23:40  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:23:40  :: Fin GetConfiguracion
+2019-02-10 18:23:42  :: Initializing Log
+2019-02-10 18:23:42  :: Initializing Incoming Module
+2019-02-10 18:23:43  :: Incoming Module successfully initialized
+2019-02-10 18:23:43  :: Initializing Outgoing Module
+2019-02-10 18:23:48  :: Outgoing Module successfully initialized
+2019-02-10 18:26:19  :: 10/2/2019 18:26:19MainApp.LoadConfig
+2019-02-10 18:26:19  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:26:19  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:26:20  :: Fin GetConfiguracion
+2019-02-10 18:26:20  :: Initializing Log
+2019-02-10 18:26:20  :: Initializing Incoming Module
+2019-02-10 18:26:23  :: Incoming Module successfully initialized
+2019-02-10 18:26:23  :: Initializing Outgoing Module
+2019-02-10 18:26:28  :: Outgoing Module successfully initialized
+2019-02-10 18:28:36  :: 10/2/2019 18:28:36MainApp.LoadConfig
+2019-02-10 18:28:36  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:28:36  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:28:36  :: Fin GetConfiguracion
+2019-02-10 18:28:36  :: Initializing Log
+2019-02-10 18:28:36  :: Initializing Incoming Module
+2019-02-10 18:28:41  :: Incoming Module successfully initialized
+2019-02-10 18:28:41  :: Initializing Outgoing Module
+2019-02-10 18:28:46  :: Outgoing Module successfully initialized
+2019-02-10 18:32:20  :: 10/2/2019 18:32:20MainApp.LoadConfig
+2019-02-10 18:32:20  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:32:20  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:32:20  :: Fin GetConfiguracion
+2019-02-10 18:32:20  :: Initializing Log
+2019-02-10 18:32:20  :: Initializing Incoming Module
+2019-02-10 18:32:33  :: 10/2/2019 18:32:33MainApp.LoadConfig
+2019-02-10 18:32:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:32:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
+2019-02-10 18:32:33  :: Fin GetConfiguracion
+2019-02-10 18:32:33  :: Initializing Log
+2019-02-10 18:32:33  :: Initializing Incoming Module
+2019-02-10 18:32:33  :: Incoming Module successfully initialized
+2019-02-10 18:32:33  :: Initializing Outgoing Module
+2019-02-10 18:32:39  :: Outgoing Module successfully initialized
