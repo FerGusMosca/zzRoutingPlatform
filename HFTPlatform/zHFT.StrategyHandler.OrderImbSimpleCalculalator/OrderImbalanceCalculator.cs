@@ -208,7 +208,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     Symbol = secImb.Security.Symbol,
                     MarketData = null,
                     Currency = Configuration.Currency,
-                    SecType = SecurityType.CS
+                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
                 },
                 Side = side,
                 PriceType = PriceType.FixedAmount,
@@ -225,6 +225,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
             return new ImbalancePosition()
             {
+                StrategyName = Configuration.Name,
                 OpeningDate = DateTime.Now,
                 OpeningPosition = pos,
                 OpeningImbalance = secImb,
@@ -274,6 +275,21 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
 
             return false;
+        }
+
+        private void UpdateLastPrice(SecurityImbalance secImb,MarketData md)
+        {
+            if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+            {
+                ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
+                if (imbPos.OpeningPosition.PosStatus == PositionStatus.Filled
+                    || imbPos.OpeningPosition.PosStatus == PositionStatus.PartiallyFilled)
+                {
+                    imbPos.LastPrice = md.Trade;
+                    SecurityImbalanceManager.PersistSecurityImbalanceTrade(imbPos);
+                }
+            }
+        
         }
 
         private void EvalAbortingNewPositions(SecurityImbalance secImb)
@@ -407,6 +423,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     secImb.ProcessCounters();
                     EvalOpeningClosingPositions(secImb);
                     EvalClosingPositionOnStopLossHit(secImb);
+                    UpdateLastPrice(secImb, md);
+                   
                 }
             }
 

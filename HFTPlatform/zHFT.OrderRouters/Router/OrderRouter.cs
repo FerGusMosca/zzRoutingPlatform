@@ -117,9 +117,18 @@ namespace zHFT.OrderRouters.Router
 
             if (pos.IsMonetaryQuantity())
             {
-                double qty = Math.Floor(pos.CashQty.Value / order.Price.Value);
-                order.OrderQty = qty;
-                pos.LeavesQty = qty;//Position Missing to fill in shares
+                if (pos.IsSinlgeUnitSecurity())
+                {
+                    double qty = Math.Floor(pos.CashQty.Value / order.Price.Value);
+                    order.OrderQty = qty;
+                    pos.LeavesQty = qty;//Position Missing to fill in shares
+                }
+                else
+                {
+                    double qty = Math.Round(pos.CashQty.Value / order.Price.Value, 4);
+                    order.OrderQty = qty;
+                    pos.LeavesQty = qty;//Position Missing to fill in shares
+                }
             }
             else if (pos.IsNonMonetaryQuantity())
             {

@@ -52,6 +52,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public int DecimalRounding{ get; set; }
 
+        public string SecurityTypes { get; set; }
+
 
         #endregion
 
@@ -106,6 +108,12 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
             if (string.IsNullOrEmpty(FeeTypePerTrade))
             {
                 result.Add("FeeTypePerTrade");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(SecurityTypes))
+            {
+                result.Add("SecurityTypes");
                 resultado = false;
             }
 

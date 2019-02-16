@@ -15,6 +15,7 @@
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>
+  <SecurityTypes>CS</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
 
   <!--<Currency>USD</Currency>
   <Exchange>SMART</Exchange>-->

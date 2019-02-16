@@ -134,6 +134,14 @@ namespace zHFT.Main.BusinessEntities.Positions
             return QuantityType == QuantityType.CURRENCY;
         }
 
+        public bool IsSinlgeUnitSecurity()
+        {
+
+            return Security.SecType == SecurityType.CS || Security.SecType == SecurityType.FUT || Security.SecType == SecurityType.OPT
+                    || Security.SecType == SecurityType.TB || Security.SecType == SecurityType.TBOND || Security.SecType == SecurityType.REPO;
+        
+        }
+
 
 
         public string GetNextClOrdId(int index)

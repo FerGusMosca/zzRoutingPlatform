@@ -21,6 +21,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         #region Public Attribute
 
+        public string StrategyName { get; set; }
+
         public DateTime OpeningDate { get; set; }
 
         public DateTime? ClosingDate { get; set; }
@@ -36,6 +38,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public string FeeTypePerTrade { get; set; }
 
         public double FeeValuePerTrade { get; set; }
+
+        public double? LastPrice { get; set; }
 
         #region Calculated Attrs
 
@@ -139,7 +143,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                         if (!ClosingPosition.AvgPx.HasValue)
                             throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
 
-                        return (OpeningPosition.CumQty * ClosingPosition.AvgPx.Value) - TotalFee;
+                        return (OpeningPosition.CumQty * ClosingPosition.AvgPx.Value) ;
                     }
                     else
                         return null;
@@ -156,15 +160,15 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             {
                 if (TradeDirection == _LONG)
                 {
-                    if (FinalCap.HasValue && InitialCap!=0)
+                    if (FinalCap.HasValue && InitialCap != 0)
                         return ((FinalCap - TotalFee) / InitialCap) - 1;
                     else
                         return null;
                 }
                 else if (TradeDirection == _SHORT)
                 {
-                    if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value!=0)
-                        return ((InitialCap - TotalFee) / FinalCap ) - 1;
+                    if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
+                        return ((InitialCap) / (FinalCap + TotalFee)) - 1;
                     else
                         return null;
                 }
@@ -172,6 +176,31 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                     return null;
             }
         
+        }
+
+        public double? NominalProfit
+        {
+
+            get
+            {
+                if (TradeDirection == _LONG)
+                {
+                    if (FinalCap.HasValue && InitialCap != 0)
+                        return FinalCap-TotalFee-InitialCap;
+                    else
+                        return null;
+                }
+                else if (TradeDirection == _SHORT)
+                {
+                    if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
+                        return InitialCap - TotalFee - FinalCap;
+                    else
+                        return null;
+                }
+                else
+                    return null;
+            }
+
         }
 
         public string OpeningImbalanceSummary
