@@ -210,7 +210,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (OpeningImbalance != null)
                     return OpeningImbalance.ImbalanceSummary;
                 else
-                    throw new Exception(string.Format("Missing Opening Imbalance for security {0}", OpeningImbalance.Security.Symbol));
+                    return string.Format("Missing Opening Imbalance for security {0}. Recovery?", OpeningPosition.Security.Symbol);
             
             }
         }

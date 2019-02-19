@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.OrderImbSimpleCalculator.BusinesEntities;
 
 namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 {
@@ -102,9 +103,66 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         
         }
 
+
+        public List<TradeImpact> TradeImpacts { get; set; }
+
+        #endregion
+
+        #region Private Methods
+
+        private void UpdateTradeImpact(ImpactSide side)
+        {
+            TradeImpacts.Add(new TradeImpact()
+            {
+                ImpactSide = side,
+                LastTradeDateTime = Security.MarketData.LastTradeDateTime,
+                MarketData = Security.MarketData,
+                MDTradeSize = Security.MarketData.MDTradeSize.Value,
+                Timestamps = DateTime.Now
+            });
+        }
+
         #endregion
 
         #region Public Methods
+
+        public void ResetCounters(int resetEveryNMinutes)
+        {
+            CountTradeOnBid = 0;
+            SizeTradeOnBid = 0;
+            SizeTradeOnAsk = 0;
+            CountTradeOnAsk = 0;
+
+            List<TradeImpact> newTradeImpactList = new List<TradeImpact>();
+
+            foreach (TradeImpact ti in TradeImpacts)
+            {
+                TimeSpan elapsed = DateTime.Now - ti.Timestamps;
+
+                if (elapsed.TotalMinutes < resetEveryNMinutes)
+                    newTradeImpactList.Add(ti);
+            }
+
+            TradeImpacts.Clear();
+            TradeImpacts.AddRange(newTradeImpactList);
+
+            foreach (TradeImpact ti in TradeImpacts.OrderBy(x=>x.Timestamps))
+            {
+                if (ti.ImpactSide == ImpactSide.Bid)
+                {
+                    CountTradeOnBid++;
+                    SizeTradeOnBid += Convert.ToDecimal(ti.MDTradeSize) ;
+                }
+
+                if (ti.ImpactSide == ImpactSide.Ask)
+                {
+                    CountTradeOnAsk++;
+                    SizeTradeOnAsk += Convert.ToDecimal(ti.MDTradeSize);
+                }
+
+                LastTradeProcessed = ti.LastTradeDateTime;
+            }
+        }
 
         public void ProcessCounters()
         {
@@ -122,6 +180,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                         CountTradeOnBid++;
                         SizeTradeOnBid += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
                         LastTradeProcessed = Security.MarketData.LastTradeDateTime;
+                        UpdateTradeImpact(ImpactSide.Bid);
 
                     }
 
@@ -131,6 +190,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                         CountTradeOnAsk++;
                         SizeTradeOnAsk += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
                         LastTradeProcessed = Security.MarketData.LastTradeDateTime;
+                        UpdateTradeImpact(ImpactSide.Ask);
                     }
                 }
             }

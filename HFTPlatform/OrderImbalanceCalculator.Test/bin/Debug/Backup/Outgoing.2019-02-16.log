@@ -1,0 +1,4 @@
+2019-02-16 17:05:16  :: OrderImbalanceCalculator:2/16/2019 5:05:16 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-16 17:05:16  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-16 17:05:16  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-16 17:05:16  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml

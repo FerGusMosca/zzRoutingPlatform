@@ -12,6 +12,7 @@
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0.002</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
+  <ReserEveryNMinutes>60</ReserEveryNMinutes><!--0 counts as no reset-->
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>

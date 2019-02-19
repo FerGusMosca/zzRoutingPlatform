@@ -12,10 +12,11 @@
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0.002</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
+  <ReserEveryNMinutes>60</ReserEveryNMinutes><!--0 counts as no reset-->
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>
-  <SecurityTypes>CS</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
+  <SecurityTypes>FUT</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
 
   <!--<Currency>USD</Currency>
   <Exchange>SMART</Exchange>-->

@@ -1,0 +1,75 @@
+2019-02-17 18:00:24  :: OrderImbalanceCalculator:2/17/2019 6:00:24 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:00:24  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:00:24  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:00:24  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:00:29  :: Strategy Handler - Order Imbalance Calculator:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-02-17 18:00:29  :: 2/17/2019 6:00:29 PMOrderRouterBase.LoadConfig
+2019-02-17 18:00:29  :: Loading config:.\outgoingOrderRouter.xml
+2019-02-17 18:00:29  :: Processing config:.\outgoingOrderRouter.xml
+2019-02-17 18:00:29  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-02-17 18:00:29  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2019-02-17 18:00:29  :: 2/17/2019 6:00:29 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:00:29  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:00:29  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:00:29  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:00:29  :: Mock Order Router Initializing... 
+2019-02-17 18:01:35  :: OrderImbalanceCalculator:2/17/2019 6:01:35 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:01:35  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:01:35  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:01:35  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:01:40  :: Strategy Handler - Order Imbalance Calculator:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-02-17 18:01:40  :: 2/17/2019 6:01:40 PMOrderRouterBase.LoadConfig
+2019-02-17 18:01:40  :: Loading config:.\outgoingOrderRouter.xml
+2019-02-17 18:01:40  :: Processing config:.\outgoingOrderRouter.xml
+2019-02-17 18:01:40  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-02-17 18:01:40  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2019-02-17 18:01:40  :: 2/17/2019 6:01:40 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:01:40  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:01:40  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:01:40  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:01:40  :: Mock Order Router Initializing... 
+2019-02-17 18:03:14  :: OrderImbalanceCalculator:2/17/2019 6:03:14 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:03:14  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:03:14  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:03:14  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:03:19  :: Strategy Handler - Order Imbalance Calculator:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-02-17 18:03:19  :: 2/17/2019 6:03:19 PMOrderRouterBase.LoadConfig
+2019-02-17 18:03:19  :: Loading config:.\outgoingOrderRouter.xml
+2019-02-17 18:03:19  :: Processing config:.\outgoingOrderRouter.xml
+2019-02-17 18:03:19  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-02-17 18:03:19  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2019-02-17 18:03:19  :: 2/17/2019 6:03:19 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:03:19  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:03:19  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:03:19  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:03:19  :: Mock Order Router Initializing... 
+2019-02-17 18:05:33  :: OrderImbalanceCalculator:2/17/2019 6:05:33 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:05:33  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:05:33  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:05:33  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:05:38  :: Strategy Handler - Order Imbalance Calculator:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-02-17 18:05:38  :: 2/17/2019 6:05:38 PMOrderRouterBase.LoadConfig
+2019-02-17 18:05:38  :: Loading config:.\outgoingOrderRouter.xml
+2019-02-17 18:05:38  :: Processing config:.\outgoingOrderRouter.xml
+2019-02-17 18:05:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-02-17 18:05:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2019-02-17 18:05:38  :: 2/17/2019 6:05:38 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:05:38  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:05:38  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:05:38  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:05:38  :: Mock Order Router Initializing... 
+2019-02-17 18:07:44  :: OrderImbalanceCalculator:2/17/2019 6:07:44 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:07:44  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:07:44  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:07:44  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-17 18:07:49  :: Strategy Handler - Order Imbalance Calculator:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-02-17 18:07:49  :: 2/17/2019 6:07:49 PMOrderRouterBase.LoadConfig
+2019-02-17 18:07:49  :: Loading config:.\outgoingOrderRouter.xml
+2019-02-17 18:07:49  :: Processing config:.\outgoingOrderRouter.xml
+2019-02-17 18:07:49  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-02-17 18:07:49  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2019-02-17 18:07:49  :: 2/17/2019 6:07:49 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-17 18:07:49  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:07:49  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:07:49  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2019-02-17 18:07:49  :: Mock Order Router Initializing... 

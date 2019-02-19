@@ -58,11 +58,17 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         protected SecurityImbalanceManager SecurityImbalanceManager { get; set; }
 
+        protected ImbalancePositionManager ImbalancePositionManager { get; set; }
+
         protected DateTime? LastPersistanceTime {get;set;}
 
         protected DateTime StartTime { get; set; }
 
+        protected DateTime LastCounterResetTime { get; set; }
+
         protected Thread SecImbalancePersistanceThread { get; set; }
+
+        protected Thread ResetEveryNMinutesThread { get; set; }
 
         protected int MarketDataRequestCounter { get; set; }
 
@@ -91,6 +97,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         #endregion
 
         #region Private Methods
+
+        private void LoadPreviousImbalancePositions()
+        {
+            List<ImbalancePosition> imbalancePositions = ImbalancePositionManager.GetImbalancePositions(Configuration.Name, true);
+
+            imbalancePositions.ForEach(x => ImbalancePositions.Add(x.OpeningPosition.Security.Symbol, x));
+        
+        }
 
         private bool MustPersistFlag()
         {
@@ -132,6 +146,31 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
             else
                 throw new Exception(string.Format("GetPersistanceTime {0} not implemented", Configuration.SaveEvery));
+        }
+
+        private void ResetEveryNMinutes(object param)
+        {
+            if (Configuration.ReserEveryNMinutes == 0)
+                return;
+
+            while (true)
+            {
+                TimeSpan elapsed = DateTime.Now - LastCounterResetTime;
+
+                if (elapsed.TotalMinutes > Configuration.ReserEveryNMinutes)
+                {
+                    lock (tLock)
+                    {
+                        foreach (SecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
+                        {
+                            secImb.ResetCounters(Configuration.ReserEveryNMinutes);
+                        }
+
+                        LastCounterResetTime = DateTime.Now;
+                    }
+                }
+                Thread.Sleep(1000);
+            }
         }
 
         private void ImbalancePersistanceThread(object param)
@@ -176,7 +215,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 Security sec = new Security()
                 {
                     Symbol = symbol,
-                    SecType = SecurityType.CS,
+                    SecType = Security.GetSecurityType(Configuration.SecurityTypes),
                     Currency = Configuration.Currency,
                     Exchange = Configuration.Exchange
                 };
@@ -184,7 +223,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 SecurityImbalance secImbalance = new SecurityImbalance()
                 {
                     Security = sec,
-                    DecimalRounding = Configuration.DecimalRounding
+                    DecimalRounding = Configuration.DecimalRounding,
+                    TradeImpacts = new List<zHFT.OrderImbSimpleCalculator.BusinesEntities.TradeImpact>()
                 };
 
                 //1- We add the current security to monitor
@@ -285,8 +325,11 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 if (imbPos.OpeningPosition.PosStatus == PositionStatus.Filled
                     || imbPos.OpeningPosition.PosStatus == PositionStatus.PartiallyFilled)
                 {
-                    imbPos.LastPrice = md.Trade;
-                    SecurityImbalanceManager.PersistSecurityImbalanceTrade(imbPos);
+                    if (imbPos.ClosingPosition == null)
+                    {
+                        imbPos.LastPrice = md.Trade;
+                        SecurityImbalanceManager.PersistSecurityImbalanceTrade(imbPos);
+                    }
                 }
             }
         
@@ -550,11 +593,13 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 this.OnMessageRcv += pOnMessageRcv;
                 this.OnLogMsg += pOnLogMsg;
                 StartTime = DateTime.Now;
+                LastCounterResetTime = StartTime;
 
                 if (ConfigLoader.LoadConfig(this, configFile))
                 {
                     tLock = new object();
                     SecurityImbalanceManager = new SecurityImbalanceManager(Configuration.ConnectionString);
+                    ImbalancePositionManager = new ImbalancePositionManager(Configuration.ConnectionString, Configuration);
                     SecurityImbalancesToMonitor = new Dictionary<string, SecurityImbalance>();
                     ImbalancePositions = new Dictionary<string, ImbalancePosition>();
                     MarketDataConverter = new MarketDataConverter();
@@ -580,6 +625,10 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                         DoLog("Order Router not found. It will not be initialized", Constants.MessageType.Error);
 
 
+                    ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
+                    ResetEveryNMinutesThread.Start();
+
+                    LoadPreviousImbalancePositions();
                     //SecImbalancePersistanceThread = new Thread(ImbalancePersistanceThread);
                     //SecImbalancePersistanceThread.Start();
 

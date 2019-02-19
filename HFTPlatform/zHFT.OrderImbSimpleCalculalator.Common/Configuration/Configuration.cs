@@ -54,6 +54,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public string SecurityTypes { get; set; }
 
+        public int ReserEveryNMinutes { get; set; }
+
 
         #endregion
 

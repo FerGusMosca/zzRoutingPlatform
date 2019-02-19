@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Order Imbalance Calculator - BitMex</Name>
+
+  <PositionSizeInCash>100</PositionSizeInCash>
+  <MaxOpenedPositions>3</MaxOpenedPositions>
+  <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
+  <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
+  <PositionOpeningImbalanceMinThreshold>0.45</PositionOpeningImbalanceMinThreshold>
+  <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
+  <StopLossForOpenPositionPct>0.5</StopLossForOpenPositionPct><!--1=1%-->
+  <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
+  <FeeValuePerTrade>0.0002</FeeValuePerTrade>
+  <DecimalRounding>3</DecimalRounding>
+  <ReserEveryNMinutes>10</ReserEveryNMinutes><!--0 counts as no reset-->
+
+  <Currency>USD</Currency>
+  <Exchange>BITMEX</Exchange>
+  <SecurityTypes>CC</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
+
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
+
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=BOBIntFigMetrics;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+  <ResetOnPersistance>true</ResetOnPersistance>
+
+  <SaveEvery>HOUR</SaveEvery>
+  <!--HOUR,_10MIN,_30MIN-->
+  
+  <StocksToMonitor>
+    
+    <Symbol>XBTH19</Symbol>
+    <Symbol>XBTM19</Symbol>
+    <Symbol>ADAH19</Symbol>
+    <Symbol>BCHH19</Symbol>
+    <Symbol>EOSH19</Symbol>
+    <Symbol>ETHH19</Symbol>
+    <Symbol>LTCH19</Symbol>
+    <Symbol>TRXH19</Symbol>
+    <Symbol>XRPH19</Symbol>
+  </StocksToMonitor>
+
+</Configuration>

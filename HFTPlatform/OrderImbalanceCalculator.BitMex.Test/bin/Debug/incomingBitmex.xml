@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Incoming Bitmex</Name>
+  <QuoteCurrency>USDT</QuoteCurrency>
+  <Simulate>false</Simulate>
+  <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds>
+  <!--5 segundos-->
+
+  <URL>https://testnet.bitmex.com</URL>
+  <ApiKey>uMc4eoy_s5EqX-gFRrrg31-C</ApiKey>
+  <Secret>GYQhFg-SKDcBfF-JZzRg7HyuxVVh-O-oSCLjKVxxrThB0zFC</Secret>
+ 
+</Configuration>

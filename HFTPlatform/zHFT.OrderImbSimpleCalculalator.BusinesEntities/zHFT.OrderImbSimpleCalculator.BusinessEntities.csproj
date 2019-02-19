@@ -42,6 +42,7 @@
     <Compile Include="ImbalancePosition.cs" />
     <Compile Include="SecurityImbalance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TradeImpact.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
