@@ -1,0 +1,663 @@
+2019-02-19 21:16:02  :: OrderImbalanceCalculator:2/19/2019 9:16:02 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-19 21:16:02  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-19 21:16:02  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-19 21:16:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-02-19 21:16:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-02-19 21:16:07  :: 2/19/2019 9:16:07 PMOrderRouterBase.LoadConfig
+2019-02-19 21:16:07  :: Loading config:.\outgoingOrderRouter.xml
+2019-02-19 21:16:07  :: Processing config:.\outgoingOrderRouter.xml
+2019-02-19 21:16:08  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-02-19 21:16:08  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2019-02-19 21:16:08  :: 2/19/2019 9:16:08 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-02-19 21:16:08  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-19 21:16:08  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2019-02-19 21:16:08  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2019-02-19 21:16:08  :: Mock Order Router Initializing... 
+2019-02-19 21:16:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: LTCH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: TRXH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:16:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:16:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XRPH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:17:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:17:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: LTCH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: TRXH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:17:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:17:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XRPH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:18:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:12  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:12  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:18:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:18:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: LTCH19 - Imbalance Bid:1 Imbalance Ask 0
+2019-02-19 21:18:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: TRXH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XRPH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:18:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:18:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:19:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:19:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:19:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:19:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: LTCH19 - Imbalance Bid:1 Imbalance Ask 0
+2019-02-19 21:19:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: TRXH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:19:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:19:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:19:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:19:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:19:45  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:45  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:19:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:19:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:19:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:19:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:20:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: LTCH19 - Imbalance Bid:1 Imbalance Ask 0
+2019-02-19 21:20:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:20:14  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:14  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:20:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:20:24  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:24  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:20:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:20:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:20:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:20:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:20:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:20:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:20:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:20:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:21:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:21:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:21:08  :: Routing to market position for symbol XBTM19
+2019-02-19 21:21:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Opened to market. Symbol XBTM19 Qty=0
+2019-02-19 21:21:08  :: Creating buy order for symbol XBTM19.Quantity=0.0254 Price=3930
+2019-02-19 21:21:08  :: @Order Router Mock:Routing with Mock to market for symbol XBTM19
+2019-02-19 21:21:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:21:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:21:18  :: Incoming message from order routing proxy: Wrapper
+2019-02-19 21:21:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Incoming message from order routing: Wrapper
+2019-02-19 21:21:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Trade ER on Position. Symbol XBTM19 Qty=0.0254 CymQty=0.0254 LeavesQty=0 AvgPx-3930 First Leg=True
+2019-02-19 21:21:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:21:23  :: Ending RunOnPositionCalculus for symbol XBTM19. The position is cleared
+2019-02-19 21:21:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:21:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:21:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:21:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:21:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:21:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:21:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:21:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:22:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:22:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:31  :: Routing to market position for symbol ETHH19
+2019-02-19 21:22:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Opened to market. Symbol ETHH19 Qty=0
+2019-02-19 21:22:31  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:22:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:22:36  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:22:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:22:41  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:22:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:46  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:22:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:22:51  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:22:55  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:22:55  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:22:56  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:00  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:00  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:23:01  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:23:06  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:23:11  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:23:16  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:23:21  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:23:26  :: Could not create order por symbol ETHH19 because there was not best bid price as a reference
+2019-02-19 21:23:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.25 Imbalance Ask 0.75
+2019-02-19 21:23:31  :: Creating buy order for symbol ETHH19.Quantity=2670.227 Price=.04
+2019-02-19 21:23:31  :: @Order Router Mock:Routing with Mock to market for symbol ETHH19
+2019-02-19 21:23:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:23:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:23:41  :: Incoming message from order routing proxy: Wrapper
+2019-02-19 21:23:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Incoming message from order routing: Wrapper
+2019-02-19 21:23:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Trade ER on Position. Symbol ETHH19 Qty=2670.227 CymQty=2670.227 LeavesQty=0 AvgPx-0.03745 First Leg=True
+2019-02-19 21:23:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:23:46  :: Ending RunOnPositionCalculus for symbol ETHH19. The position is cleared
+2019-02-19 21:23:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:23:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:23:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:23:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:24:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:24:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:24:14  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:14  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:24:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:24:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:24:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:24:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:24:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:24:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:24:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:24:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:24:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:24:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:25:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.25 Imbalance Ask 0.75
+2019-02-19 21:25:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:25:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:25:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:25:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:25:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:25:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.25 Imbalance Ask 0.75
+2019-02-19 21:25:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:25:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:25:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:25:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:25:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:25:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:26:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.25 Imbalance Ask 0.75
+2019-02-19 21:26:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:26:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:26:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:26:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:26:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:26:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.25 Imbalance Ask 0.75
+2019-02-19 21:26:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:26:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:26:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:26:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:26:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:26:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.25 Imbalance Ask 0.75
+2019-02-19 21:27:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:27:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:27:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.32 Imbalance Ask 0.68
+2019-02-19 21:27:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:27:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:27:45  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:45  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:27:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:27:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.32 Imbalance Ask 0.68
+2019-02-19 21:28:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 0
+2019-02-19 21:28:04  :: Routing to market position for symbol XBTH19
+2019-02-19 21:28:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Opened to market. Symbol XBTH19 Qty=0
+2019-02-19 21:28:04  :: Could not create order por symbol XBTH19 because there was not best bid price as a reference
+2019-02-19 21:28:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:28:09  :: Could not create order por symbol XBTH19 because there was not best bid price as a reference
+2019-02-19 21:28:14  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:14  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:28:14  :: Could not create order por symbol XBTH19 because there was not best bid price as a reference
+2019-02-19 21:28:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:28:19  :: Creating buy order for symbol XBTH19.Quantity=0.0266 Price=3761.5
+2019-02-19 21:28:19  :: @Order Router Mock:Routing with Mock to market for symbol XBTH19
+2019-02-19 21:28:24  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:24  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:28:29  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:29  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:28:30  :: Incoming message from order routing proxy: Wrapper
+2019-02-19 21:28:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Incoming message from order routing: Wrapper
+2019-02-19 21:28:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Trade ER on Position. Symbol XBTH19 Qty=0.0266 CymQty=0.0266 LeavesQty=0 AvgPx-3761.5 First Leg=True
+2019-02-19 21:28:34  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:34  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:28:34  :: Ending RunOnPositionCalculus for symbol XBTH19. The position is cleared
+2019-02-19 21:28:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:28:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:28:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:28:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:28:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:28:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:29:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:29:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.32 Imbalance Ask 0.68
+2019-02-19 21:29:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:29:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:29:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:29:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:29:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:30:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.35 Imbalance Ask 0.65
+2019-02-19 21:30:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:30:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:30:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:30:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:30:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:30:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.38 Imbalance Ask 0.63
+2019-02-19 21:30:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:30:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:30:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:30:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:30:55  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:30:55  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:00  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:00  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.38 Imbalance Ask 0.63
+2019-02-19 21:31:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:31:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:31:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:20  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:25  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:30  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.38 Imbalance Ask 0.63
+2019-02-19 21:31:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:31:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:31:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:31:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:31:59  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.38 Imbalance Ask 0.63
+2019-02-19 21:32:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:04  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:32:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:09  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:32:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:32:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:32:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:32:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:32:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:32:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:32:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:32:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:32:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:32:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:32:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:33:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.39 Imbalance Ask 0.61
+2019-02-19 21:33:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:33:12  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:12  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:33:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:33:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:33:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:33:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:32  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.39 Imbalance Ask 0.61
+2019-02-19 21:33:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:37  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:33:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:42  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:33:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:33:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:33:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:33:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:34:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.4 Imbalance Ask 0.6
+2019-02-19 21:34:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:34:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:11  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:34:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:16  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:34:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:21  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:34:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:34:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.4 Imbalance Ask 0.6
+2019-02-19 21:34:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:35  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:34:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.3 Imbalance Ask 0.7
+2019-02-19 21:34:45  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:45  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:34:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:50  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:34:55  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:34:55  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:35:00  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:00  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.4 Imbalance Ask 0.6
+2019-02-19 21:35:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:05  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:35:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.28 Imbalance Ask 0.72
+2019-02-19 21:35:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:35:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:19  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:35:24  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:24  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:35:29  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:29  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.4 Imbalance Ask 0.6
+2019-02-19 21:35:34  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:34  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:35:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:39  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.28 Imbalance Ask 0.72
+2019-02-19 21:35:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:35:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:35:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:35:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:35:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:36:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:08  :: Routing to market position for symbol XBTM19
+2019-02-19 21:36:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Closed on market. Symbol XBTM19 Qty=0.0254
+2019-02-19 21:36:08  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:13  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:36:18  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:23  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:28  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:33  :: Routing to market position for symbol ETHH19
+2019-02-19 21:36:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Closed on market. Symbol ETHH19 Qty=2670.227
+2019-02-19 21:36:33  :: Could not create order por symbol ETHH19 because there was not best ask price as a reference
+2019-02-19 21:36:33  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:36:38  :: Creating sell order for symbol ETHH19.Quantity=2670.227 Price=.04
+2019-02-19 21:36:38  :: @Order Router Mock:Routing with Mock to market for symbol ETHH19
+2019-02-19 21:36:38  :: Could not create order por symbol XBTM19 because there was not best ask price as a reference
+2019-02-19 21:36:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Closed on market. Symbol XBTM19 Qty=0.0254
+2019-02-19 21:36:43  :: Creating sell order for symbol XBTM19.Quantity=0.0254 Price=3939
+2019-02-19 21:36:43  :: @Order Router Mock:Routing with Mock to market for symbol XBTM19
+2019-02-19 21:36:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:47  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:48  :: Incoming message from order routing proxy: Wrapper
+2019-02-19 21:36:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Incoming message from order routing: Wrapper
+2019-02-19 21:36:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Trade ER on Position. Symbol ETHH19 Qty=2670.227 CymQty=2670.227 LeavesQty=0 AvgPx-0.03714 First Leg=False
+2019-02-19 21:36:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:52  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:36:53  :: Ending RunOnPositionCalculus for symbol ETHH19. The position is cleared
+2019-02-19 21:36:54  :: Incoming message from order routing proxy: Wrapper
+2019-02-19 21:36:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Incoming message from order routing: Wrapper
+2019-02-19 21:36:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:LONG Position Trade ER on Position. Symbol XBTM19 Qty=0.0254 CymQty=0.0254 LeavesQty=0 AvgPx-3939 First Leg=False
+2019-02-19 21:36:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:36:57  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:36:58  :: Ending RunOnPositionCalculus for symbol XBTM19. The position is cleared
+2019-02-19 21:37:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:02  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:07  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:12  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:12  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:37:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:26  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:31  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:36  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:37:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:41  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:51  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:37:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:37:56  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:38:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:01  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:38:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:06  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:38:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:10  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:38:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:15  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:38:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:44  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:38:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:49  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:38:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:54  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:38:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:38:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:39:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:18  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:39:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:23  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:28  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:33  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:38  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:39:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:43  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:48  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:53  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:39:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:39:58  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:40:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:40:03  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ETHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:40:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:40:08  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTH19 - Imbalance Bid:0 Imbalance Ask 1
+2019-02-19 21:40:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:40:13  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: XBTM19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:40:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:40:17  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: ADAH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:40:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:40:22  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: BCHH19 - Imbalance Bid:0.5 Imbalance Ask 0.5
+2019-02-19 21:40:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing Market Data:Wrapper
+2019-02-19 21:40:27  :: Strategy Handler - Order Imbalance Calculator - BitMex:Processing MD for imbalance summary: EOSH19 - Imbalance Bid:0.5 Imbalance Ask 0.5

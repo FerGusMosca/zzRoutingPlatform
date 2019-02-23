@@ -54,6 +54,10 @@
       <Project>{8d165156-834d-4811-b24a-26bb0e41d982}</Project>
       <Name>zHFT.InstructionBasedMarketClient.BitMex.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BitMex.Logic\zHFT.InstructionBasedMarketClient.BitMex.Logic.csproj">
+      <Project>{6853fb4e-9d93-41f0-a4cd-335fe752e1d5}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.BitMex.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
       <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
       <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>

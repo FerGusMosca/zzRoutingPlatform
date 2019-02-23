@@ -1,0 +1,22 @@
+2019-02-19 2:00:03  :: @Incoming Bitmex:Error Requesting market data for symbol ETHH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 2:00:03  :: @Incoming Bitmex:Error Requesting market data for symbol XBTH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 2:00:03  :: @Incoming Bitmex:Error Requesting market data for symbol XBTM19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 2:00:03  :: @Incoming Bitmex:Error Requesting market data for symbol ADAH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 2:00:03  :: @Incoming Bitmex:Error Requesting market data for symbol BCHH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 2:00:04  :: @Incoming Bitmex:Error Requesting market data for symbol EOSH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 9:55:29  :: @Incoming Bitmex:Error Requesting market data for symbol LTCH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 9:55:29  :: @Incoming Bitmex:Error Requesting market data for symbol TRXH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 9:55:29  :: @Incoming Bitmex:Error Requesting market data for symbol XRPH19:No se puede resolver el nombre remoto: 'testnet.bitmex.com'
+2019-02-19 21:16:02  :: 2/19/2019 9:16:02 PMBaseCommunicationModule.LoadConfig
+2019-02-19 21:16:02  :: Loading config:.\incomingBitmex.xml
+2019-02-19 21:16:02  :: Processing config:.\incomingBitmex.xml
+2019-02-19 21:16:02  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol ADAH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol BCHH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol EOSH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol TRXH19
+2019-02-19 21:16:07  :: @Incoming Bitmex:Requesting market data por symbol XRPH19

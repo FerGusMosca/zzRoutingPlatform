@@ -5,11 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using zHFT.Main.Common.Abstract;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.Common.Configuration;
 
 namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 {
+
+    public enum QuantityMode
+    { 
+        Cash,
+        Contracts
+    }
+
     public class Configuration : BaseConfiguration
     {
         #region Public Attributes
@@ -32,7 +40,9 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public string SaveEvery { get; set; }
 
-        public double PositionSizeInCash { get; set; }
+        public double? PositionSizeInCash { get; set; }
+
+        public double? PositionSizeInContracts { get; set; }
 
         public int MaxOpenedPositions { get; set; }
 
@@ -54,8 +64,19 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public string SecurityTypes { get; set; }
 
-        public int ReserEveryNMinutes { get; set; }
+        public int ResetEveryNMinutes { get; set; }
 
+        public string QuantityMode { get; set; }
+
+        #region Futures
+
+        public int? Leverage { get; set; }
+
+        public double? ContractSize { get; set; }
+
+        public double? Margin { get; set; }
+
+        #endregion
 
         #endregion
 
@@ -117,6 +138,51 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
             {
                 result.Add("SecurityTypes");
                 resultado = false;
+            }
+
+
+            if (string.IsNullOrEmpty(QuantityMode))
+            {
+                result.Add("QuantityMode");
+                resultado = false;
+            }
+
+
+            if (SecurityTypes == SecurityType.FUT.ToString())
+            {
+                if (!ContractSize.HasValue)
+                {
+                    result.Add("ContractSize");
+                    resultado = false;
+                }
+
+                if (!Margin.HasValue)
+                {
+                    result.Add("Margin");
+                    resultado = false;
+                }
+
+                if (!Leverage.HasValue)
+                {
+                    result.Add("Leverage");
+                    resultado = false;
+                }
+
+                if (!PositionSizeInContracts.HasValue)
+                {
+                    result.Add("PositionSizeInContracts");
+                    resultado = false;
+                }
+
+            }
+            else
+            {
+
+                if (!PositionSizeInCash.HasValue)
+                {
+                    result.Add("PositionSizeInCash");
+                    resultado = false;
+                }
             }
 
             return resultado;

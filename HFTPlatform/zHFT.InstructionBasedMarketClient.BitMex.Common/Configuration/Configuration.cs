@@ -12,12 +12,6 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.Common.Configuration
     {
         #region Public Attributes
         public string URL { get; set; }
-        public string ApiKey { get; set; }
-        public string Secret { get; set; }
-        public string QuoteCurrency { get; set; }
-        public bool Simulate { get; set; }
-        public int PublishUpdateInMilliseconds { get; set; }
-
      
         #endregion
 
@@ -30,24 +24,6 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.Common.Configuration
             if (string.IsNullOrEmpty(URL))
             {
                 result.Add("URL");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(ApiKey))
-            {
-                result.Add("ApiKey");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(Secret))
-            {
-                result.Add("Secret");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(QuoteCurrency))
-            {
-                result.Add("QuoteCurrency");
                 resultado = false;
             }
 

@@ -43,10 +43,11 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         #region Calculated Attrs
 
-        public double Qty { 
+        public virtual double Qty { 
             get 
             {
-                if (OpeningPosition.QuantityType == QuantityType.SHARES || OpeningPosition.QuantityType == QuantityType.CURRENCY)
+                if (   OpeningPosition.QuantityType == QuantityType.SHARES 
+                    || OpeningPosition.QuantityType == QuantityType.CURRENCY )
                     return OpeningPosition.CumQty;
                 else
                     throw new Exception (string.Format("Qty not available for Qty type {0}",OpeningPosition.QuantityType));
@@ -83,7 +84,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             }
         }
 
-        public double TotalFee
+        public virtual double TotalFee
         {
             get
             {
@@ -121,7 +122,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             }
         }
 
-        public double InitialCap
+        public virtual double InitialCap
         {
             get
             {
@@ -132,7 +133,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             }
         }
 
-        public double? FinalCap
+        public virtual double? FinalCap
         {
             get
             {
@@ -153,7 +154,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             }
         }
 
-        public double? Profit
+        public virtual double? Profit
         {
 
             get 
@@ -161,14 +162,14 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (TradeDirection == _LONG)
                 {
                     if (FinalCap.HasValue && InitialCap != 0)
-                        return ((FinalCap - TotalFee) / InitialCap) - 1;
+                        return (((FinalCap - TotalFee) / InitialCap) - 1) ;
                     else
                         return null;
                 }
                 else if (TradeDirection == _SHORT)
                 {
                     if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
-                        return ((InitialCap) / (FinalCap + TotalFee)) - 1;
+                        return (((InitialCap) / (FinalCap + TotalFee)) - 1) ;
                     else
                         return null;
                 }
@@ -178,7 +179,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         
         }
 
-        public double? NominalProfit
+        public virtual double? NominalProfit
         {
 
             get
@@ -186,14 +187,14 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (TradeDirection == _LONG)
                 {
                     if (FinalCap.HasValue && InitialCap != 0)
-                        return FinalCap-TotalFee-InitialCap;
+                        return (FinalCap - TotalFee - InitialCap);
                     else
                         return null;
                 }
                 else if (TradeDirection == _SHORT)
                 {
                     if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
-                        return InitialCap - TotalFee - FinalCap;
+                        return (InitialCap - TotalFee - FinalCap) ;
                     else
                         return null;
                 }

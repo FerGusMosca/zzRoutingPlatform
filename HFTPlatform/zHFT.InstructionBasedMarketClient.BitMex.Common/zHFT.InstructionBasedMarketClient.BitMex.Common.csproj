@@ -49,10 +49,25 @@
     <Compile Include="DTO\Instrument.cs" />
     <Compile Include="DTO\MarketData.cs" />
     <Compile Include="DTO\Order.cs" />
+    <Compile Include="DTO\OrderBookDictionary.cs" />
     <Compile Include="DTO\OrderBookEntry.cs" />
     <Compile Include="DTO\QueryResponse.cs" />
     <Compile Include="DTO\Quote.cs" />
     <Compile Include="DTO\Trade.cs" />
+    <Compile Include="DTO\Websockets\Auth\AuthenticationResult.cs" />
+    <Compile Include="DTO\Websockets\Auth\UserCredentials.cs" />
+    <Compile Include="DTO\Websockets\Auth\Welcome.cs" />
+    <Compile Include="DTO\Websockets\Auth\WelcomeLimit.cs" />
+    <Compile Include="DTO\Websockets\Events\WebSocketOrderBookL2Event.cs" />
+    <Compile Include="DTO\Websockets\Events\WebSocketTradeEvent.cs" />
+    <Compile Include="DTO\Websockets\Util\Attribute.cs" />
+    <Compile Include="DTO\Websockets\Util\ForeignKey.cs" />
+    <Compile Include="DTO\Websockets\Util\Type.cs" />
+    <Compile Include="DTO\Websockets\WebSocketAuthenticationRequest.cs" />
+    <Compile Include="DTO\Websockets\WebSocketResponseMessage.cs" />
+    <Compile Include="DTO\Websockets\WebSocketSubscriptionEvent.cs" />
+    <Compile Include="DTO\Websockets\WebSocketSubscriptionRequest.cs" />
+    <Compile Include="DTO\Websockets\WebSocketSubscriptionResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappers\BitmexMarketDataWrapper.cs" />
   </ItemGroup>

@@ -8,11 +8,11 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.Common.DTO
 {
     public class OrderBookEntry
     {
-        #region Private Conts
-
-        private static string _SELL = "Sell";
+        #region Protected Static Consts
 
         private static string _BUY = "Buy";
+
+        private static string _SELL = "Sell";
 
         #endregion
 
@@ -30,42 +30,80 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.Common.DTO
 
         #endregion
 
-        public static decimal GetBestBidSize(List<OrderBookEntry> entries)
+        #region Public Methods
+
+        public bool IsBuy()
         {
-
-            decimal bestBidPrice = 0;
-            decimal bestBidSize = 0;
-
-            foreach (OrderBookEntry entry in entries.Where(x => x.side == _BUY).OrderByDescending(x=>x.price))
-            {
-                if (entry.price >= bestBidPrice)
-                {
-                    bestBidPrice = entry.price;
-                    bestBidSize += entry.size;
-                }
-            
-            }
-
-            return bestBidSize;
+            return side == _BUY;
         }
 
-        public static decimal GetBestAskSize(List<OrderBookEntry> entries)
+        public bool IsSell()
         {
-
-            decimal bestAskPrice = decimal.MaxValue;
-            decimal bestAskSize = 0;
-
-            foreach (OrderBookEntry entry in entries.Where(x => x.side == _SELL).OrderBy(x => x.price))
-            {
-                if (entry.price <= bestAskPrice)
-                {
-                    bestAskPrice = entry.price;
-                    bestAskSize += entry.size;
-                }
-
-            }
-
-            return bestAskSize;
+            return side == _SELL;
         }
+
+        #endregion
     }
+    //public class OrderBookEntry
+    //{
+    //    #region Private Conts
+
+    //    private static string _SELL = "Sell";
+
+    //    private static string _BUY = "Buy";
+
+    //    #endregion
+
+    //    #region Public Attributes
+
+    //    public string symbol { get; set; }
+
+    //    public long id { get; set; }
+
+    //    public string side { get; set; }
+
+    //    public decimal size { get; set; }
+
+    //    public decimal price { get; set; }
+
+    //    #endregion
+
+    //    public static decimal GetBestBidSize(List<OrderBookEntry> entries)
+    //    {
+
+    //        decimal bestBidPrice = 0;
+    //        decimal bestBidSize = 0;
+
+    //        foreach (OrderBookEntry entry in entries.Where(x => x.side == _BUY).OrderByDescending(x=>x.price))
+    //        {
+    //            if (entry.price >= bestBidPrice)
+    //            {
+    //                bestBidPrice = entry.price;
+    //                bestBidSize += entry.size;
+    //            }
+            
+    //        }
+
+    //        return bestBidSize;
+    //    }
+
+    //    public static decimal GetBestAskSize(List<OrderBookEntry> entries)
+    //    {
+
+    //        decimal bestAskPrice = decimal.MaxValue;
+    //        decimal bestAskSize = 0;
+
+    //        foreach (OrderBookEntry entry in entries.Where(x => x.side == _SELL).OrderBy(x => x.price))
+    //        {
+    //            if (entry.price <= bestAskPrice)
+    //            {
+    //                bestAskPrice = entry.price;
+    //                bestAskSize += entry.size;
+    //            }
+
+    //        }
+
+    //        return bestAskSize;
+    //    }
+    //}
 }

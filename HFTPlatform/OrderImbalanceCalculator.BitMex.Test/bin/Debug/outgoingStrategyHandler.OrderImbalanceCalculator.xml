@@ -2,7 +2,7 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - Order Imbalance Calculator - BitMex</Name>
 
-  <PositionSizeInCash>100</PositionSizeInCash>
+  <PositionSizeInContracts>200</PositionSizeInContracts>
   <MaxOpenedPositions>3</MaxOpenedPositions>
   <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
   <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
@@ -12,11 +12,17 @@
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0.0002</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
-  <ReserEveryNMinutes>10</ReserEveryNMinutes><!--0 counts as no reset-->
+  <ResetEveryNMinutes>10</ResetEveryNMinutes><!--0 counts as no reset-->
+  <QuantityMode>Contracts</QuantityMode><!--Contracts,Cash-->
+  
+  <!--Futures-->
+  <Leverage>100</Leverage>
+  <ContractSize>1</ContractSize><!--Base Currency-->
+  <Margin>0.01</Margin>
 
   <Currency>USD</Currency>
   <Exchange>BITMEX</Exchange>
-  <SecurityTypes>CC</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
+  <SecurityTypes>FUT</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 

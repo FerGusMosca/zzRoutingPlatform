@@ -15,6 +15,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderImbSimpleCalculator.BusinessEntities;
+using zHFT.OrderImbSimpleCalculator.Common.Configuration;
 using zHFT.OrderImbSimpleCalculator.Common.Enums;
 using zHFT.OrderImbSimpleCalculator.DataAccessLayer;
 using zHFT.StrategyHandler.Common.Converters;
@@ -150,20 +151,20 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         private void ResetEveryNMinutes(object param)
         {
-            if (Configuration.ReserEveryNMinutes == 0)
+            if (Configuration.ResetEveryNMinutes == 0)
                 return;
 
             while (true)
             {
                 TimeSpan elapsed = DateTime.Now - LastCounterResetTime;
 
-                if (elapsed.TotalMinutes > Configuration.ReserEveryNMinutes)
+                if (elapsed.TotalMinutes > Configuration.ResetEveryNMinutes)
                 {
                     lock (tLock)
                     {
                         foreach (SecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
                         {
-                            secImb.ResetCounters(Configuration.ReserEveryNMinutes);
+                            secImb.ResetCounters(Configuration.ResetEveryNMinutes);
                         }
 
                         LastCounterResetTime = DateTime.Now;
@@ -238,7 +239,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        private ImbalancePosition LoadNewPos(SecurityImbalance secImb, Side side)
+        private ImbalancePosition LoadNewRegularPos(SecurityImbalance secImb, Side side)
         {
 
             Position pos = new Position()
@@ -273,6 +274,54 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 FeeValuePerTrade = Configuration.FeeValuePerTrade
             };
         
+        }
+
+        private FutureImbalancePosition LoadNewFuturePos(SecurityImbalance secImb, Side side)
+        {
+            Position pos = new Position()
+            {
+                Security = new Security()
+                {
+                    Symbol = secImb.Security.Symbol,
+                    MarketData = null,
+                    Currency = Configuration.Currency,
+                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
+                },
+                Side = side,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                Qty = Configuration.PositionSizeInContracts.Value,
+                QuantityType = QuantityType.CONTRACTS,
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
+                AccountId = "TEST",
+            };
+
+            pos.LoadPosId(NextPosId);
+            NextPosId++;
+
+            return new FutureImbalancePosition()
+            {
+                StrategyName = Configuration.Name,
+                Leverage = Configuration.Leverage.Value,
+                Margin = Configuration.Margin.Value,
+                ContractSize = Configuration.ContractSize.Value,
+                OpeningDate = DateTime.Now,
+                OpeningPosition = pos,
+                OpeningImbalance = secImb,
+                FeeTypePerTrade = Configuration.FeeTypePerTrade,
+                FeeValuePerTrade = Configuration.FeeValuePerTrade
+            };
+        
+        }
+
+        private ImbalancePosition LoadNewPos(SecurityImbalance secImb, Side side)
+        {
+
+            if (Security.GetSecurityType(Configuration.SecurityTypes) == SecurityType.FUT)
+                return LoadNewFuturePos(secImb, side);
+            else
+                return LoadNewRegularPos(secImb, side);
         }
 
         private void LoadClosePos(Position openPos,SecurityImbalance secImb,ImbalancePosition imbPos)

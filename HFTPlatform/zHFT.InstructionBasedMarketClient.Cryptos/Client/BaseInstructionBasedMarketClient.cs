@@ -181,6 +181,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
             ActiveSecurities.Add(mdReqId, sec);
 
+           
             RequestMarketDataThread = new Thread(DoRequestMarketData);
             RequestMarketDataThread.Start(symbol);
 

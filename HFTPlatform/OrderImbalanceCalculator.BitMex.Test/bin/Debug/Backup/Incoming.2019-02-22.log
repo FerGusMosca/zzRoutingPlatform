@@ -1,0 +1,35 @@
+2019-02-22 9:47:17  :: 2/22/2019 9:47:17 AMBaseCommunicationModule.LoadConfig
+2019-02-22 9:47:18  :: Loading config:.\incomingBitmex.xml
+2019-02-22 9:47:18  :: Processing config:.\incomingBitmex.xml
+2019-02-22 9:47:18  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-22 9:47:23  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-22 9:47:23  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-22 9:47:23  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-22 9:47:23  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-22 9:47:23  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-22 9:53:23  :: 2/22/2019 9:53:23 AMBaseCommunicationModule.LoadConfig
+2019-02-22 9:53:23  :: Loading config:.\incomingBitmex.xml
+2019-02-22 9:53:23  :: Processing config:.\incomingBitmex.xml
+2019-02-22 9:53:23  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-22 9:53:28  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-22 9:53:28  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-22 9:53:28  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-22 9:53:28  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-22 9:53:28  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-22 17:39:09  :: 2/22/2019 5:39:09 PMBaseCommunicationModule.LoadConfig
+2019-02-22 17:39:09  :: Loading config:.\incomingBitmex.xml
+2019-02-22 17:39:09  :: Processing config:.\incomingBitmex.xml
+2019-02-22 17:39:09  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-22 17:39:15  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-22 17:39:15  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-22 17:39:15  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-22 17:39:15  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-22 17:39:15  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-22 18:16:03  :: 2/22/2019 6:16:03 PMBaseCommunicationModule.LoadConfig
+2019-02-22 18:16:03  :: Loading config:.\incomingBitmex.xml
+2019-02-22 18:16:03  :: Processing config:.\incomingBitmex.xml
+2019-02-22 18:16:03  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-22 18:16:25  :: 2/22/2019 6:16:25 PMBaseCommunicationModule.LoadConfig
+2019-02-22 18:16:25  :: Loading config:.\incomingBitmex.xml
+2019-02-22 18:16:25  :: Processing config:.\incomingBitmex.xml
+2019-02-22 18:16:25  :: Ending GetConfiguracion .\incomingBitmex.xml

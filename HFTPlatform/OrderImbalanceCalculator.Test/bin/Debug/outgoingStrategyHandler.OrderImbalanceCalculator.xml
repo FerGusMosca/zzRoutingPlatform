@@ -3,8 +3,11 @@
   <Name>Strategy Handler - Order Imbalance Calculator</Name>
 
   <PositionSizeInCash>10000</PositionSizeInCash>
+
+ 
+
   <MaxOpenedPositions>30</MaxOpenedPositions>
-  <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
+  <WaitingTimeBeforeOpeningPositions>1</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
   <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
   <PositionOpeningImbalanceMinThreshold>0.45</PositionOpeningImbalanceMinThreshold>
   <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
@@ -12,7 +15,8 @@
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0.002</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
-  <ReserEveryNMinutes>60</ReserEveryNMinutes><!--0 counts as no reset-->
+  <ResetEveryNMinutes>60</ResetEveryNMinutes><!--0 counts as no reset-->
+  <QuantityMode>Cash</QuantityMode><!--Contracts,Cash-->
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>
@@ -20,6 +24,8 @@
 
   <!--<Currency>USD</Currency>
   <Exchange>SMART</Exchange>-->
+
+ 
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 

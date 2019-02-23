@@ -7,7 +7,7 @@
     <ProjectGuid>{35622037-81EF-4197-A30C-5F3BAD3C796B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>zHFT.OrderImbSimpleCalculator.BusinesEntities</RootNamespace>
+    <RootNamespace>zHFT.OrderImbSimpleCalculator.BusinessEntities</RootNamespace>
     <AssemblyName>zHFT.OrderImbSimpleCalculator.BusinessEntities</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FutureImbalancePosition.cs" />
     <Compile Include="ImbalancePosition.cs" />
     <Compile Include="SecurityImbalance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
