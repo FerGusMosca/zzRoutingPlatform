@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets;
+using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets.Auth;
+using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.BusinessEntities.Security_List;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Bitmex.BusinessEntities;
+using zHFT.OrderRouters.Bitmex.Common.DTO.Events;
+using zHFT.OrderRouters.Bitmex.Common.Wrappers;
 using zHFT.OrderRouters.Bitmex.DataAccessLayer;
 using zHFT.OrderRouters.Cryptos;
+using zHFT.StrategyHandler.Common.Converters;
 
 namespace zHFT.OrderRouters.Bitmex
 {
@@ -22,7 +29,13 @@ namespace zHFT.OrderRouters.Bitmex
 
         protected OrderManager OrderManager { get; set; }
 
+        protected  zHFT.OrderRouters.Bitmex.DataAccessLayer.Websockets.OrderManager WSOrderManager { get; set; }
+
         protected Dictionary<string, Order> BitMexActiveOrders { get; set; }
+
+        protected List<Security> Securities { get; set; }
+
+        protected SecurityListConverter SecurityListConverter { get; set; }
 
         #endregion
 
@@ -45,12 +58,64 @@ namespace zHFT.OrderRouters.Bitmex
 
         }
 
+        #endregion
+
+      
+        #region Protected Methods
+
+        protected void HandleGenericSubscription(WebSocketResponseMessage WebSocketResponseMessage)
+        {
+            WebSocketSubscriptionResponse resp = (WebSocketSubscriptionResponse)WebSocketResponseMessage;
+
+            if (resp.success)
+                DoLog(string.Format("Successfully subscribed to {0} event ",
+                                            resp.GetSubscriptionEvent()), Main.Common.Util.Constants.MessageType.Information);
+            else
+                Console.WriteLine(string.Format("Error on subscription to {0} event:{!}",
+                                            resp.GetSubscriptionEvent(), resp.error), Main.Common.Util.Constants.MessageType.Error);
+        }
+
+        protected void ExecutionReportSubscriptionResponse(WebSocketResponseMessage WebSocketResponseMessage)
+        {
+            HandleGenericSubscription(WebSocketResponseMessage);
+        }
+
+        protected void ProcessExecutionReports(WebSocketSubscriptionEvent subscrEvent)
+        {
+            WebSocketExecutionReportEvent reports = (WebSocketExecutionReportEvent)subscrEvent;
+            foreach (zHFT.OrderRouters.Bitmex.Common.DTO.ExecutionReport execReportDTO in reports.data)
+            {
+                try
+                {
+                    //TODO: Build Execution Report and publish
+                    //Console.WriteLine(string.Format(@"============Showing Execution Report for action {6}=> Side:{9} orderId:{0} " + Environment.NewLine +
+                    //                                @" pair {1} OrdQty={10} OrdPrice={11}  ExecType={2} OrdStatus={3} CumQty={4} LeavesQty={5} LastPx={7} LastShares={8}" + Environment.NewLine +
+                    //                                @" AvgPx={12}",
+                    //                                execReportDTO.OrderID, execReportDTO.Symbol, execReportDTO.ExecType,
+                    //                                execReportDTO.OrdStatus, execReportDTO.CumQty, execReportDTO.LeavesQty, reports.action,
+                    //                                execReportDTO.LastPx.HasValue ? execReportDTO.LastPx.Value.ToString() : "",
+                    //                                execReportDTO.LastQty.HasValue ? execReportDTO.LastQty.Value.ToString() : "",
+                    //                                execReportDTO.Side,
+                    //                                execReportDTO.OrderQty.HasValue ? execReportDTO.OrderQty.Value.ToString() : "",
+                    //                                execReportDTO.Price.HasValue ? execReportDTO.Price.Value.ToString() : "",
+                    //                                execReportDTO.AvgPx.HasValue ? execReportDTO.AvgPx.Value.ToString() : ""
+                    //                                ));
+
+                    //Console.WriteLine("");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(string.Format("Error on subscription to {0} :{1}", subscrEvent.GetSubscriptionEvent(), ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                }
+            }
+        }
+
         protected Order GetOrder(Wrapper wrapper)
         {
             string symbol = (string)wrapper.GetField(OrderFields.Symbol);
-            decimal? price = (decimal?)wrapper.GetField(OrderFields.Price);
+            double? price = (double?)wrapper.GetField(OrderFields.Price);
             Side side = (Side)wrapper.GetField(OrderFields.Side);
-            decimal orderQty = (decimal)wrapper.GetField(OrderFields.OrderQty);
+            double orderQty = (double)wrapper.GetField(OrderFields.OrderQty);
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
             int decimalPrecission = (int)wrapper.GetField(OrderFields.DecimalPrecission);
 
@@ -61,9 +126,9 @@ namespace zHFT.OrderRouters.Bitmex
             Order order = new Order()
             {
                 SymbolPair=symbol,
-                Price = price,
+                Price = Convert.ToDecimal(price),
                 Side = side,
-                OrderQty = orderQty,
+                OrderQty = Convert.ToDecimal(orderQty),
                 //Currency = GetQuoteCurrency(),
                 OrdType = OrdType.Limit,
                 ClOrdId = clOrderId,
@@ -214,6 +279,20 @@ namespace zHFT.OrderRouters.Bitmex
             }
         }
 
+        protected override CMState ProcessSecurityList(Wrapper wrapper)
+        {
+            try
+            {
+                SecurityList secList = SecurityListConverter.GetSecurityList(wrapper, Config);
+                Securities = secList.Securities;
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
+        }
 
         #endregion
 
@@ -232,12 +311,25 @@ namespace zHFT.OrderRouters.Bitmex
                     tLock = new object();
 
                     BitMexActiveOrders = new Dictionary<string,Order>();
-                    OrderManager = new DataAccessLayer.OrderManager(BitmexConfiguration.URL, BitmexConfiguration.ApiKey, BitmexConfiguration.Secret);
+                    OrderManager = new DataAccessLayer.OrderManager(BitmexConfiguration.RESTURL, BitmexConfiguration.ApiKey, BitmexConfiguration.Secret);
+                    WSOrderManager = new DataAccessLayer.Websockets.OrderManager(BitmexConfiguration.WebsocketURL, new UserCredentials() { BitMexID = BitmexConfiguration.ApiKey, BitMexSecret = BitmexConfiguration.Secret });
+                    SecurityListConverter = new StrategyHandler.Common.Converters.SecurityListConverter();
 
+                    WSOrderManager.SubscribeResponseRequest(
+                                                         DataAccessLayer.Websockets.OrderManager._EXECUTIONS,
+                                                         ExecutionReportSubscriptionResponse,
+                                                         new object[] { });
+
+                    WSOrderManager.SubscribeEvents(DataAccessLayer.Websockets.OrderManager._EXECUTIONS, ProcessExecutionReports);
+
+                    WSOrderManager.SubscribeExecutions();
+
+                    SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);
+                    OnMessageRcv(slWrapper);
+                    
                     CanceledOrders = new List<string>();
                     
-                    //ExecutionReportThread = new Thread(DoEvalExecutionReport);
-                    //ExecutionReportThread.Start();
+                    
                     return true;
                 }
                 else

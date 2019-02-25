@@ -73,6 +73,10 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public long? ContractPositionNumber { get; set; }
 
+        public double? MarginRatio { get; set; }
+
+        public decimal? ContractSize { get; set; }
+
         #endregion
 
         #region CryptoCurrency Attributes

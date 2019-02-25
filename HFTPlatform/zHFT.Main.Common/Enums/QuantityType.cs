@@ -16,6 +16,7 @@ namespace zHFT.Main.Common.Enums
         CONTRACTS = 6,
         OTHER = 7,
         PAR = 8,
-        CRYPTOCURRENCY = 9
+        CRYPTOCURRENCY = 9,
+        
     }
 }

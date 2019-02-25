@@ -42,6 +42,8 @@ namespace zHFT.OrderRouters.Cryptos
         protected abstract CMState UpdateOrder(Wrapper wrapper);
         protected abstract CMState CancelOrder(Wrapper wrapper);
 
+        protected abstract CMState ProcessSecurityList(Wrapper wrapper);
+
         public abstract bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile);
 
         #endregion
@@ -143,6 +145,11 @@ namespace zHFT.OrderRouters.Cryptos
                 {
                     DoLog(string.Format("@{0}:Cancelling all active orders", GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
                     return CancelAllActiveOrders();
+                }
+                else if (wrapper.GetAction() == Actions.SECURITY_LIST)
+                {
+                    DoLog(string.Format("@{0}:Receiving Security List", GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
+                    return ProcessSecurityList(wrapper);
                 }
                 else
                 {

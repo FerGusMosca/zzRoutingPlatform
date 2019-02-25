@@ -60,23 +60,13 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public double FeeValuePerTrade { get; set; }
 
-        public int DecimalRounding{ get; set; }
+        public int? DecimalRounding{ get; set; }
 
         public string SecurityTypes { get; set; }
 
         public int ResetEveryNMinutes { get; set; }
 
-        public string QuantityMode { get; set; }
-
-        #region Futures
-
-        public int? Leverage { get; set; }
-
-        public double? ContractSize { get; set; }
-
-        public double? Margin { get; set; }
-
-        #endregion
+      
 
         #endregion
 
@@ -141,38 +131,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
             }
 
 
-            if (string.IsNullOrEmpty(QuantityMode))
-            {
-                result.Add("QuantityMode");
-                resultado = false;
-            }
-
-
             if (SecurityTypes == SecurityType.FUT.ToString())
             {
-                if (!ContractSize.HasValue)
-                {
-                    result.Add("ContractSize");
-                    resultado = false;
-                }
-
-                if (!Margin.HasValue)
-                {
-                    result.Add("Margin");
-                    resultado = false;
-                }
-
-                if (!Leverage.HasValue)
-                {
-                    result.Add("Leverage");
-                    resultado = false;
-                }
-
-                if (!PositionSizeInContracts.HasValue)
-                {
-                    result.Add("PositionSizeInContracts");
-                    resultado = false;
-                }
 
             }
             else

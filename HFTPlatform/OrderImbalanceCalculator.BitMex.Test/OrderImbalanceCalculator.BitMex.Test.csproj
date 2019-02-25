@@ -58,6 +58,10 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="outgoingOrderRouter.Bitmex.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="incomingBitmex.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -89,6 +93,10 @@
     <ProjectReference Include="..\zHFT.Main\zHFT.Main.csproj">
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Bitmex\zHFT.OrderRouters.Bitmex.csproj">
+      <Project>{30b3a6ec-dab1-42fd-8c65-7c0c8ebdd223}</Project>
+      <Name>zHFT.OrderRouters.Bitmex</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters.Mock\zHFT.OrderRouters.Mock.csproj">
       <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>

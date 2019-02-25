@@ -1,0 +1,5 @@
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.csprojResolveAssemblyReference.cache

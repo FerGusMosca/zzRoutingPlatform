@@ -9,6 +9,7 @@ using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.BusinessEntities.Security_List;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
@@ -72,6 +73,10 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         protected Thread ResetEveryNMinutesThread { get; set; }
 
         protected int MarketDataRequestCounter { get; set; }
+
+        protected SecurityListConverter SecurityListConverter { get; set; }
+
+        protected List<Security> Securities { get; set; }
 
         #endregion
 
@@ -290,8 +295,9 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                Qty = Configuration.PositionSizeInContracts.Value,
-                QuantityType = QuantityType.CONTRACTS,
+                CashQty = Configuration.PositionSizeInCash.HasValue ? (double?)Configuration.PositionSizeInCash.Value : null,
+                Qty = Configuration.PositionSizeInContracts.HasValue ? (double?)Configuration.PositionSizeInContracts.Value : null,
+                QuantityType = Configuration.PositionSizeInContracts.HasValue ? QuantityType.CONTRACTS : QuantityType.OTHER,//Tenemos un monto en dólars, pero es el ruteador de ordenes el que decide a cuantos contratos equivale
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
                 AccountId = "TEST",
@@ -303,9 +309,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             return new FutureImbalancePosition()
             {
                 StrategyName = Configuration.Name,
-                Leverage = Configuration.Leverage.Value,
-                Margin = Configuration.Margin.Value,
-                ContractSize = Configuration.ContractSize.Value,
+                Margin = secImb.Security.MarginRatio.HasValue ? secImb.Security.MarginRatio.Value : 1,
+                ContractSize = secImb.Security.ContractSize.HasValue ? (double)secImb.Security.ContractSize.Value : 1,
                 OpeningDate = DateTime.Now,
                 OpeningPosition = pos,
                 OpeningImbalance = secImb,
@@ -506,7 +511,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
             lock (tLock)
             {
-                if (SecurityImbalancesToMonitor.ContainsKey(md.Security.Symbol))
+                if (SecurityImbalancesToMonitor.ContainsKey(md.Security.Symbol) && Securities!=null)
                 {
                     
                     SecurityImbalance secImb = SecurityImbalancesToMonitor[md.Security.Symbol];
@@ -524,6 +529,18 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
             return CMState.BuildSuccess();
 
+        }
+
+        protected void LoadTradingParameters()
+        {
+            foreach (Security sec in Securities)
+            {
+                if (SecurityImbalancesToMonitor.Values.Any(x => x.Security.Symbol == sec.Symbol))
+                {
+                    SecurityImbalance secImb = SecurityImbalancesToMonitor.Values.Where(x => x.Security.Symbol == sec.Symbol).FirstOrDefault();
+                    secImb.Security = sec;
+                }
+            }
         }
 
         protected void AssignMainERParameters(ImbalancePosition imbPos,ExecutionReport report, bool trade)
@@ -581,6 +598,22 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
              }
         }
 
+        protected void ProcessSecurityList(Wrapper wrapper)
+        {
+            try
+            {
+                SecurityList secList = SecurityListConverter.GetSecurityList(wrapper, Config);
+                Securities = secList.Securities;
+                LoadTradingParameters();
+                DoLog(string.Format("@{0} Saving security list:{1} securities ", Configuration.Name, secList.Securities != null ? secList.Securities.Count : 0), Constants.MessageType.Information);
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0} Error processing security list:{1} ", Configuration.Name, ex.Message), Constants.MessageType.Error);
+            }
+        
+        }
+
         #endregion
 
         #region ICommunicationModule Methods
@@ -598,6 +631,11 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     Thread ProcessExecutionReportThread = new Thread(new ParameterizedThreadStart(ProcessExecutionReport));
                     ProcessExecutionReportThread.Start(wrapper);
                 }
+                else if (wrapper.GetAction() == Actions.SECURITY_LIST_REQUEST)
+                {
+                    OnMessageRcv(wrapper);
+                }
+               
                 //else if (wrapper.GetAction() == Actions.NEW_POSITION_CANCELED)
                 //{
                 //    ProcessNewPositionCanceled(wrapper);
@@ -623,6 +661,11 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
 
                     return ProcessMarketData(wrapper);
+                }
+                else if (wrapper.GetAction() == Actions.SECURITY_LIST)
+                {
+                    ProcessSecurityList(wrapper);
+                    return OrderRouter.ProcessMessage(wrapper);
                 }
                 else
                     return CMState.BuildFail(new Exception(string.Format("Could not process action {0} for strategy {1}", wrapper.GetAction().ToString(), Configuration.Name)));
@@ -653,6 +696,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     ImbalancePositions = new Dictionary<string, ImbalancePosition>();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
+                    SecurityListConverter = new SecurityListConverter();
 
                     NextPosId = 1;
 
@@ -673,6 +717,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     else
                         DoLog("Order Router not found. It will not be initialized", Constants.MessageType.Error);
 
+                    SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);
+                    OnMessageRcv(slWrapper);
 
                     ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
                     ResetEveryNMinutesThread.Start();

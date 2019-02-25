@@ -11,8 +11,6 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
     {
         #region Public Methods
 
-        public int Leverage { get; set; }
-
         public double ContractSize { get; set; }
 
         public double Margin { get; set; }
@@ -90,20 +88,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
             get
             {
-                if (TradeDirection == _LONG)
-                {
-                    if (FinalCap.HasValue && InitialCap != 0)
-                        return (((FinalCap - TotalFee) / InitialCap) - 1) ;
-                    else
-                        return null;
-                }
-                else if (TradeDirection == _SHORT)
-                {
-                    if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
-                        return (((InitialCap) / (FinalCap + TotalFee)) - 1) ;
-                    else
-                        return null;
-                }
+                if (FinalCap.HasValue && InitialCap != 0)
+                    return (((FinalCap - TotalFee) / InitialCap) - 1);
                 else
                     return null;
             }
@@ -118,14 +104,14 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 if (TradeDirection == _LONG)
                 {
                     if (FinalCap.HasValue && InitialCap != 0)
-                        return (FinalCap - TotalFee - InitialCap);
+                        return (FinalCap - TotalFee);
                     else
                         return null;
                 }
                 else if (TradeDirection == _SHORT)
                 {
                     if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
-                        return (InitialCap - TotalFee - FinalCap) ;
+                        return (FinalCap - TotalFee);
                     else
                         return null;
                 }

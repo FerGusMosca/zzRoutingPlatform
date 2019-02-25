@@ -78,7 +78,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         #region Config Data
 
-        public int DecimalRounding { get; set; }
+        public int? DecimalRounding { get; set; }
 
         #endregion
 
@@ -175,7 +175,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 {
 
                     if (Security.MarketData.Trade.HasValue && Security.MarketData.MDTradeSize.HasValue && LastBidPrice.HasValue
-                        && Math.Round(Security.MarketData.Trade.Value, DecimalRounding) == Math.Round(LastBidPrice.Value, DecimalRounding))
+                        && Math.Round(Security.MarketData.Trade.Value, DecimalRounding.HasValue ? DecimalRounding.Value : 2) == Math.Round(LastBidPrice.Value, DecimalRounding.HasValue ? DecimalRounding.Value : 2))
                     {
                         CountTradeOnBid++;
                         SizeTradeOnBid += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);
@@ -185,7 +185,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                     }
 
                     if (Security.MarketData.Trade.HasValue && Security.MarketData.MDTradeSize.HasValue && LastAskPrice.HasValue
-                        && Math.Round(Security.MarketData.Trade.Value, DecimalRounding) == Math.Round(LastAskPrice.Value, DecimalRounding))
+                        && Math.Round(Security.MarketData.Trade.Value, DecimalRounding.HasValue ? DecimalRounding.Value : 2) == Math.Round(LastAskPrice.Value, DecimalRounding.HasValue ? DecimalRounding.Value : 2))
                     {
                         CountTradeOnAsk++;
                         SizeTradeOnAsk += Convert.ToDecimal(Security.MarketData.MDTradeSize.Value);

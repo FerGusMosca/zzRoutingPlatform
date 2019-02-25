@@ -40,6 +40,8 @@ namespace zHFT.Main.Common.Enums
         public static readonly SecurityFields FinancingDetails = new SecurityFields(21);
         public static readonly SecurityFields SecurityTradingRule = new SecurityFields(22);
         public static readonly SecurityFields ContractPositionNumber = new SecurityFields(23);
+        public static readonly SecurityFields MarginRatio = new SecurityFields(24);
+        public static readonly SecurityFields ContractSize = new SecurityFields(25);
        
         #endregion
 

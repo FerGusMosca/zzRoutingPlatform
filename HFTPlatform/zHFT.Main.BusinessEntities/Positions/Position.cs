@@ -125,7 +125,8 @@ namespace zHFT.Main.BusinessEntities.Positions
         public bool IsNonMonetaryQuantity()
         {
             return QuantityType == QuantityType.BONDS || QuantityType == QuantityType.CONTRACTS ||
-                   QuantityType == QuantityType.SHARES || QuantityType==QuantityType.CRYPTOCURRENCY;
+                   QuantityType == QuantityType.SHARES || QuantityType==QuantityType.CRYPTOCURRENCY
+                   || QuantityType == QuantityType.OTHER;
 
         }
 

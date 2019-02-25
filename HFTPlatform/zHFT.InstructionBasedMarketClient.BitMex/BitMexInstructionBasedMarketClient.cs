@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.DTO;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.DTO.Websockets;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.DTO.Websockets.Events;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.Wrappers;
+using zHFT.InstructionBasedMarketClient.BitMex.DAL.REST;
 using zHFT.InstructionBasedMarketClient.BitMex.DAL.Websockets;
 using zHFT.InstructionBasedMarketClient.BitMex.Logic;
 using zHFT.InstructionBasedMarketClient.Common.Configuration;
@@ -30,7 +32,12 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
 
         public  MarketDataManager WSMarketDataManager { get; set; }
 
+        public SecurityListManager SecurityListManager { get; set; }
+
         protected OrderBookHandler OrderBookHandler { get; set; }
+
+
+        protected List<zHFT.InstructionBasedMarketClient.BitMex.BE.Security> Securities { get; set; }
 
         #endregion
 
@@ -76,8 +83,8 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
                 DoLog(string.Format("Successfully subscribed to {0} event on symbol {1}",
                                             resp.GetSubscriptionEvent(), resp.GetSubscriptionAsset()),Main.Common.Util.Constants.MessageType.Information);
             else
-                Console.WriteLine(string.Format("Error on subscription to {0} event on symbol {1}",
-                                            resp.GetSubscriptionEvent(), resp.GetSubscriptionAsset()), Main.Common.Util.Constants.MessageType.Error);
+                Console.WriteLine(string.Format("Error on subscription to {0} event on symbol {1}:{2}",
+                                            resp.GetSubscriptionEvent(), resp.GetSubscriptionAsset(),resp.error), Main.Common.Util.Constants.MessageType.Error);
         }
 
         protected void OrderBookSubscriptionResponse(WebSocketResponseMessage WebSocketResponseMessage)
@@ -204,6 +211,59 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
 
         #region Public Methods
 
+        protected override CMState ProcessSecurityListRequest(Wrapper wrapper)
+        {
+            try
+            {
+                BitmexSecurityListWrapper secListWrapper = new BitmexSecurityListWrapper(Securities, Config);
+
+                OnMessageRcv(secListWrapper);
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                return CMState.BuildFail(ex);
+            }
+        }
+
+        protected void ProcessContractSize(List<BE.Security> Securities)
+        {
+            foreach (BE.Security future in Securities.Where(x => x.SecurityType == zHFT.InstructionBasedMarketClient.BitMex.BE.SecurityType.FUT))
+            {
+
+                if (future.Symbol.ToUpper() != "XBT")
+                {
+                    BE.Security bitcoinFuture = Securities.Where(x => x.SecurityType == zHFT.InstructionBasedMarketClient.BitMex.BE.SecurityType.FUT
+                                                                && x.Symbol == "XBT" && x.MaturityMonthYear == future.MaturityMonthYear).FirstOrDefault();
+
+                    if (bitcoinFuture != null)
+                    {
+
+                        if (!bitcoinFuture.LastTrade.HasValue)
+                            throw new Exception(string.Format("Missing Bitcoin future last trade for symbol {0}", bitcoinFuture.Symbol));
+
+                        if (!future.LastTrade.HasValue)
+                            throw new Exception(string.Format("Missing  future last trade for symbol {0}", future.Symbol));
+
+
+                        if (bitcoinFuture.LastTrade.HasValue && future.LastTrade.HasValue)
+                        {
+                            double cryptoSpotPrice = bitcoinFuture.LastTrade.Value * future.LastTrade.Value;
+                            future.LotSize *= Convert.ToDecimal(cryptoSpotPrice);
+                        }
+
+                    }
+                    else
+                        throw new Exception(string.Format("@{0}: Could not process contract size for symbol {1}. Not bitcoin future found for maturity {2}",
+                                               Config.Name, future.Symbol, future.MaturityMonthYear));
+                }
+            
+            
+            }
+        
+        }
+
         protected override CMState ProessMarketDataRequest(Wrapper wrapper)
         {
             try
@@ -241,23 +301,29 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
 
                 if (LoadConfig(configFile))
                 {
-                    WSMarketDataManager = new MarketDataManager(BitmexConfiguration.URL, true);
+                    WSMarketDataManager = new MarketDataManager(BitmexConfiguration.WebsocketURL, true);
+
+                    SecurityListManager = new DAL.REST.SecurityListManager(BitmexConfiguration.RESTURL);
+
+                    Securities = SecurityListManager.GetActiveSecurityList();
+
+                    ProcessContractSize(Securities);
 
                     OrderBookHandler = new OrderBookHandler();
 
-                    BaseManager.SubscribeResponseRequest(
+                    WSMarketDataManager.SubscribeResponseRequest(
                                                 BaseManager._ORDERBOOK_L2,
                                                 OrderBookSubscriptionResponse,
                                                 new object[] { });
 
 
-                    BaseManager.SubscribeResponseRequest(
+                    WSMarketDataManager.SubscribeResponseRequest(
                                                          BaseManager._TRADE,
                                                          TradeSubscriptionResponse,
                                                          new object[] { });
 
-                    BaseManager.SubscribeEvents(BaseManager._ORDERBOOK_L2, UpdateOrderBook);
-                    BaseManager.SubscribeEvents(BaseManager._TRADE, UpdateTrade);
+                    WSMarketDataManager.SubscribeEvents(BaseManager._ORDERBOOK_L2, UpdateOrderBook);
+                    WSMarketDataManager.SubscribeEvents(BaseManager._TRADE, UpdateTrade);
 
                     ActiveSecurities = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();

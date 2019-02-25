@@ -43,13 +43,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\BitMEXApi.cs" />
-    <Compile Include="BaseManager.cs" />
-    <Compile Include="MarketDataManager.cs" />
+    <Compile Include="REST\BaseManager.cs" />
+    <Compile Include="REST\MarketDataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REST\SecurityListManager.cs" />
     <Compile Include="Websockets\BaseManager.cs" />
     <Compile Include="Websockets\MarketDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.FullMrktConnectivity.BitMex.Common\zHFT.FullMrktConnectivity.BitMex.Common.csproj">
+      <Project>{dc6a2b2d-22cf-4a48-8ea1-b52487bb2a60}</Project>
+      <Name>zHFT.FullMrktConnectivity.BitMex.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.FullMrktConnectivity.BitMex.DAL\zHFT.FullMrktConnectivity.BitMex.DAL.csproj">
+      <Project>{ad6d9d6e-0e3b-46b7-86e3-65a62d751448}</Project>
+      <Name>zHFT.FullMrktConnectivity.BitMex.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BitMex.BE\zHFT.InstructionBasedMarketClient.BitMex.BE.csproj">
+      <Project>{d5d3614f-61b7-4db2-8341-9dbe9989daad}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.BitMex.BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BitMex.Common\zHFT.InstructionBasedMarketClient.BitMex.Common.csproj">
       <Project>{abf1031a-8524-4b4b-959c-6c493610e13c}</Project>
       <Name>zHFT.InstructionBasedMarketClient.BitMex.Common</Name>

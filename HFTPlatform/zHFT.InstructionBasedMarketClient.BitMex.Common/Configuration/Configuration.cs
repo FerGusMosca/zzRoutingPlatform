@@ -11,7 +11,10 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.Common.Configuration
     public class Configuration : BaseConfiguration, IConfiguration
     {
         #region Public Attributes
-        public string URL { get; set; }
+
+        public string RESTURL { get; set; }
+
+        public string WebsocketURL { get; set; }
      
         #endregion
 
@@ -21,9 +24,15 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.Common.Configuration
         {
             bool resultado = true;
 
-            if (string.IsNullOrEmpty(URL))
+            if (string.IsNullOrEmpty(WebsocketURL))
             {
-                result.Add("URL");
+                result.Add("WebsocketURL");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(RESTURL))
+            {
+                result.Add("RESTURL");
                 resultado = false;
             }
 

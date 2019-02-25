@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>Incoming Bitmex</Name>
-  <!--<URL>https://testnet.bitmex.com</URL>-->
-  <URL>wss://testnet.bitmex.com/realtime</URL>
+  <RESTURL>https://testnet.bitmex.com</RESTURL>
+  <WebsocketURL>wss://testnet.bitmex.com/realtime</WebsocketURL>
   <ApiKey>uMc4eoy_s5EqX-gFRrrg31-C</ApiKey>
   <Secret>GYQhFg-SKDcBfF-JZzRg7HyuxVVh-O-oSCLjKVxxrThB0zFC</Secret>
  

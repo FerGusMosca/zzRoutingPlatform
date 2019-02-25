@@ -14,3 +14,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.FullMrktConnectivity.BitMex.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.FullMrktConnectivity.BitMex.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.FullMrktConnectivity.BitMex.DAL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.FullMrktConnectivity.BitMex.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.DAL\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb

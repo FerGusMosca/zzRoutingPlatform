@@ -11,13 +11,12 @@ namespace zHFT.OrderRouters.Bitmex.Common.Configuration
     {        
         #region Public Attributes
 
-        public string URL { get; set; }
+        public string RESTURL { get; set; }
+        public string WebsocketURL { get; set; }
 
         public string ApiKey { get; set; }
         public string Secret { get; set; }
  
-        public int RefreshExecutionReportsInMilisec { get; set; }
-
         #endregion
 
         #region Public Methods
@@ -26,31 +25,30 @@ namespace zHFT.OrderRouters.Bitmex.Common.Configuration
         {
             bool resultado = true;
 
-            if (!string.IsNullOrEmpty(URL))
+            if (string.IsNullOrEmpty(RESTURL))
             {
-                result.Add("URL");
+                result.Add("RESTURL");
                 resultado = false;
             }
 
-            if (!string.IsNullOrEmpty(ApiKey))
+            if (string.IsNullOrEmpty(WebsocketURL))
+            {
+                result.Add("WebsocketURL");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(ApiKey))
             {
                 result.Add("ApiKey");
                 resultado = false;
             }
 
-            if (!string.IsNullOrEmpty(Secret))
+            if (string.IsNullOrEmpty(Secret))
             {
                 result.Add("Secret");
                 resultado = false;
             }
 
-            if (RefreshExecutionReportsInMilisec <= 0)
-            {
-                result.Add("RefreshExecutionReportsInMilisec");
-                resultado = false;
-            }
-
-          
             return resultado;
         }
 

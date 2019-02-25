@@ -18,6 +18,7 @@ namespace zHFT.Main.Common.Enums
         IRS,// Interest Rate Swap
         REPO,//Repurchase,
         CC,//CryptoCurrency
-        OTH//Other
+        OTH,//Other,
+        SWAP
     }
 }

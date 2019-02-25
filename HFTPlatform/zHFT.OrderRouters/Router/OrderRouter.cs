@@ -506,6 +506,12 @@ namespace zHFT.OrderRouters.Router
                     OrderProxy.ProcessMessage(wrapper);
                     return CMState.BuildSuccess();
                 }
+                else if (wrapper.GetAction() == Actions.SECURITY_LIST)
+                {
+                    OrderProxy.ProcessMessage(wrapper);
+                    DoLog(string.Format("Routing security list to order router"), Constants.MessageType.Information);
+                    return CMState.BuildSuccess();
+                }
                 else
                 {
                     DoLog(string.Format("Routing to market: Order Router not prepared for routing message {0}", wrapper.GetAction().ToString()), Constants.MessageType.Information);
@@ -585,6 +591,10 @@ namespace zHFT.OrderRouters.Router
                     if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                     {
                         ProcessExecutionReport(wrapper);
+                    }
+                    else
+                    {
+                        OnMessageRcv(wrapper);
                     }
                 }
 

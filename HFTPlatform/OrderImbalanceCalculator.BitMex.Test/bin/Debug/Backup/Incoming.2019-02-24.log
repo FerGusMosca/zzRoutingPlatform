@@ -1,0 +1,241 @@
+2019-02-24 13:22:28  :: 2/24/2019 1:22:28 PMBaseCommunicationModule.LoadConfig
+2019-02-24 13:22:28  :: Loading config:.\incomingBitmex.xml
+2019-02-24 13:22:28  :: Processing config:.\incomingBitmex.xml
+2019-02-24 13:22:28  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-24 13:30:41  :: 2/24/2019 1:30:41 PMBaseCommunicationModule.LoadConfig
+2019-02-24 13:30:41  :: Loading config:.\incomingBitmex.xml
+2019-02-24 13:30:41  :: Processing config:.\incomingBitmex.xml
+2019-02-24 13:30:41  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol BCHH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol ADAH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol EOSH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol TRXH19
+2019-02-24 13:30:48  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol XBTM19
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol XBTM19
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol XBTH19
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol XBTH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol XBTM19: Side=Sell Size=1 Price=3763 TickDirection=ZeroMinusTick
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol ADAH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol XBTH19: Side=Sell Size=3 Price=3969.5 TickDirection=MinusTick
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol ADAH19
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol BCHH19
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol BCHH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol ADAH19: Side=Sell Size=4 Price=.00001136 TickDirection=MinusTick
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol EOSH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol BCHH19: Side=Sell Size=8 Price=.0351 TickDirection=PlusTick
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol EOSH19
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol ETHH19
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol ETHH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol EOSH19: Side=Sell Size=2 Price=.0009626 TickDirection=MinusTick
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol LTCH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol ETHH19: Side=Buy Size=1 Price=.03717 TickDirection=ZeroPlusTick
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol LTCH19
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol TRXH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol LTCH19: Side=Sell Size=1092 Price=.01189 TickDirection=ZeroMinusTick
+2019-02-24 13:30:53  :: Successfully subscribed to trade event on symbol TRXH19
+2019-02-24 13:30:53  :: Successfully subscribed to orderBookL2 event on symbol XRPH19
+2019-02-24 13:30:53  :: @Incoming Bitmex:NEW TRADE for symbol TRXH19: Side=Sell Size=8882 Price=.00000846 TickDirection=ZeroMinusTick
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=303 Best Bid Price=3763 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTH19: Best Bid Size=301 Best Bid Price=3967 Best Ask Size=5000 Best Ask Price=3970
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=526774 Best Bid Price= Best Ask Size=526778 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=171 Best Bid Price=.04 Best Ask Size=171 Best Ask Price=.04
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2078 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ETHH19: Best Bid Size=135 Best Bid Price=.04 Best Ask Size=135 Best Ask Price=.04
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol TRXH19: Best Bid Size=191118 Best Bid Price= Best Ask Size=90885 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24774 Best Bid Price= Best Ask Size=24774 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=303 Best Bid Price=3763 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=300 Best Bid Price=3763 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=300 Best Bid Price=3763 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2078 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=526774 Best Bid Price= Best Ask Size=526778 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ETHH19: Best Bid Size=1 Best Bid Price=.03 Best Ask Size=20 Best Ask Price=.04
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=290 Best Bid Price= Best Ask Size=1192 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=1 Best Bid Price=.03 Best Ask Size=3 Best Ask Price=.04
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=691 Best Bid Price= Best Ask Size=878651 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=4 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=691 Best Bid Price= Best Ask Size=688 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=691 Best Bid Price= Best Ask Size=688 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=527241 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=571 Best Bid Price=.03 Best Ask Size=3 Best Ask Price=.04
+2019-02-24 13:30:53  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=285 Best Bid Price=.03 Best Ask Size=285 Best Ask Price=.04
+2019-02-24 13:31:00  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:00  :: @Incoming Bitmex:Publishing Order Book  for symbol ETHH19: Best Bid Size=135 Best Bid Price=.04 Best Ask Size=135 Best Ask Price=.04
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24771 Best Bid Price= Best Ask Size=24771 Best Ask Price=
+2019-02-24 13:31:37  :: Successfully subscribed to trade event on symbol XRPH19
+2019-02-24 13:31:37  :: @Incoming Bitmex:NEW TRADE for symbol XRPH19: Side=Sell Size=4 Price=.00008053 TickDirection=MinusTick
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTH19: Best Bid Size=20 Best Bid Price=3489 Best Ask Size=5000 Best Ask Price=3970
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTH19: Best Bid Size=301 Best Bid Price=3966.5 Best Ask Size=5000 Best Ask Price=3970
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24771 Best Bid Price= Best Ask Size=24771 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=285 Best Bid Price=.03 Best Ask Size=285 Best Ask Price=.04
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=527241 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=285 Best Bid Price=.03 Best Ask Size=285 Best Ask Price=.04
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24771 Best Bid Price= Best Ask Size=24771 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=527241 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=527241 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=301 Best Bid Price=3763 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:NEW TRADE for symbol ADAH19: Side=Sell Size=5436 Price=.00001137 TickDirection=PlusTick
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=375 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=527241 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=375 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24771 Best Bid Price= Best Ask Size=24771 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=375 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=375 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24771 Best Bid Price= Best Ask Size=24771 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=285 Best Bid Price=.03 Best Ask Size=285 Best Ask Price=.04
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=285 Best Bid Price=.03 Best Ask Size=285 Best Ask Price=.04
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=375 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=521805 Best Bid Price= Best Ask Size=375 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=859 Best Bid Price=3729 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=285 Best Bid Price=3761 Best Ask Size=55079 Best Ask Price=3764
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTH19: Best Bid Size=20 Best Bid Price=3489 Best Ask Size=5000 Best Ask Price=3970
+2019-02-24 13:31:37  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTH19: Best Bid Size=301 Best Bid Price=3963 Best Ask Size=5000 Best Ask Price=3970
+2019-02-24 13:31:38  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2077 Best Bid Price= Best Ask Size=1 Best Ask Price=
+2019-02-24 13:31:54  :: 2/24/2019 1:31:54 PMBaseCommunicationModule.LoadConfig
+2019-02-24 13:31:54  :: Loading config:.\incomingBitmex.xml
+2019-02-24 13:31:54  :: Processing config:.\incomingBitmex.xml
+2019-02-24 13:31:54  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol ADAH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol BCHH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol EOSH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol TRXH19
+2019-02-24 13:32:01  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-24 13:32:02  :: Successfully subscribed to orderBookL2 event on symbol XBTH19
+2019-02-24 13:32:02  :: Successfully subscribed to trade event on symbol XBTH19
+2019-02-24 13:32:02  :: Successfully subscribed to orderBookL2 event on symbol ADAH19
+2019-02-24 13:32:02  :: @Incoming Bitmex:NEW TRADE for symbol XBTH19: Side=Sell Size=3 Price=3969.5 TickDirection=MinusTick
+2019-02-24 13:32:02  :: Successfully subscribed to trade event on symbol ADAH19
+2019-02-24 13:32:05  :: Successfully subscribed to orderBookL2 event on symbol XBTM19
+2019-02-24 13:32:05  :: @Incoming Bitmex:NEW TRADE for symbol ADAH19: Side=Buy Size=375 Price=.00001141 TickDirection=PlusTick
+2019-02-24 13:32:05  :: Successfully subscribed to trade event on symbol XBTM19
+2019-02-24 13:32:05  :: Successfully subscribed to orderBookL2 event on symbol BCHH19
+2019-02-24 13:32:08  :: @Incoming Bitmex:NEW TRADE for symbol XBTM19: Side=Sell Size=1 Price=3763 TickDirection=ZeroMinusTick
+2019-02-24 13:32:11  :: Successfully subscribed to trade event on symbol BCHH19
+2019-02-24 13:32:13  :: Successfully subscribed to orderBookL2 event on symbol EOSH19
+2019-02-24 13:32:14  :: @Incoming Bitmex:NEW TRADE for symbol BCHH19: Side=Sell Size=8 Price=.0351 TickDirection=PlusTick
+2019-02-24 13:32:18  :: Successfully subscribed to trade event on symbol EOSH19
+2019-02-24 13:32:18  :: @Incoming Bitmex:NEW TRADE for symbol EOSH19: Side=Sell Size=4 Price=.0009592 TickDirection=MinusTick
+2019-02-24 13:34:40  :: 2/24/2019 1:34:40 PMBaseCommunicationModule.LoadConfig
+2019-02-24 13:34:40  :: Loading config:.\incomingBitmex.xml
+2019-02-24 13:34:40  :: Processing config:.\incomingBitmex.xml
+2019-02-24 13:34:40  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-24 13:34:46  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol ADAH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol BCHH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol EOSH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol TRXH19
+2019-02-24 13:34:47  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol XBTH19
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol XBTH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol XBTM19
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol XBTM19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol XBTH19: Side=Sell Size=3 Price=3969.5 TickDirection=MinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol ADAH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol XBTM19: Side=Buy Size=8 Price=3764 TickDirection=PlusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol ADAH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol BCHH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol ADAH19: Side=Sell Size=11 Price=.00001133 TickDirection=MinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol BCHH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol EOSH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol BCHH19: Side=Sell Size=6 Price=.035 TickDirection=MinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol EOSH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol ETHH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol EOSH19: Side=Buy Size=4 Price=.000959 TickDirection=MinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol ETHH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol LTCH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol ETHH19: Side=Sell Size=1 Price=.03699 TickDirection=MinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol LTCH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol TRXH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol LTCH19: Side=Sell Size=9 Price=.0118 TickDirection=MinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol TRXH19
+2019-02-24 13:34:49  :: Successfully subscribed to orderBookL2 event on symbol XRPH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol TRXH19: Side=Sell Size=2 Price=.00000846 TickDirection=ZeroMinusTick
+2019-02-24 13:34:49  :: Successfully subscribed to trade event on symbol XRPH19
+2019-02-24 13:34:49  :: @Incoming Bitmex:NEW TRADE for symbol XRPH19: Side=Sell Size=4 Price=.00008053 TickDirection=MinusTick
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTH19: Best Bid Size=301 Best Bid Price=3963.5 Best Ask Size=5000 Best Ask Price=3970
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol XBTM19: Best Bid Size=285 Best Bid Price=3762.5 Best Ask Size=55071 Best Ask Price=3764
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol ADAH19: Best Bid Size=530124 Best Bid Price= Best Ask Size=530035 Best Ask Price=
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol BCHH19: Best Bid Size=285 Best Bid Price=.03 Best Ask Size=285 Best Ask Price=.04
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol EOSH19: Best Bid Size=2087 Best Bid Price= Best Ask Size=2087 Best Ask Price=
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol ETHH19: Best Bid Size=134 Best Bid Price=.04 Best Ask Size=135 Best Ask Price=.04
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol LTCH19: Best Bid Size=15 Best Bid Price=.01 Best Ask Size=50 Best Ask Price=.01
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol TRXH19: Best Bid Size=191116 Best Bid Price= Best Ask Size=90885 Best Ask Price=
+2019-02-24 13:34:50  :: @Incoming Bitmex:Publishing Order Book  for symbol XRPH19: Best Bid Size=24817 Best Bid Price= Best Ask Size=24817 Best Ask Price=
+2019-02-24 13:38:45  :: 2/24/2019 1:38:45 PMBaseCommunicationModule.LoadConfig
+2019-02-24 13:38:45  :: Loading config:.\incomingBitmex.xml
+2019-02-24 13:38:45  :: Processing config:.\incomingBitmex.xml
+2019-02-24 13:38:45  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol XBTH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol ADAH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol BCHH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol EOSH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol ETHH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol LTCH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol TRXH19
+2019-02-24 13:38:52  :: @Incoming Bitmex:Requesting market data por symbol XRPH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol XBTH19
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol XBTH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol XBTM19
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol XBTM19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol XBTH19: Side=Sell Size=3 Price=3969.5 TickDirection=MinusTick
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol ADAH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol XBTM19: Side=Buy Size=1 Price=3764 TickDirection=PlusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol ADAH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol BCHH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol ADAH19: Side=Sell Size=100 Price=.00001132 TickDirection=ZeroMinusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol BCHH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol EOSH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol BCHH19: Side=Buy Size=6 Price=.0352 TickDirection=PlusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol EOSH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol ETHH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol EOSH19: Side=Sell Size=38 Price=.000955 TickDirection=ZeroMinusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol ETHH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol LTCH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol ETHH19: Side=Sell Size=1 Price=.03699 TickDirection=MinusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol LTCH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol TRXH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol LTCH19: Side=Sell Size=1 Price=.0118 TickDirection=ZeroMinusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol TRXH19
+2019-02-24 13:38:53  :: Successfully subscribed to orderBookL2 event on symbol XRPH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol TRXH19: Side=Sell Size=2 Price=.00000846 TickDirection=MinusTick
+2019-02-24 13:38:53  :: Successfully subscribed to trade event on symbol XRPH19
+2019-02-24 13:38:53  :: @Incoming Bitmex:NEW TRADE for symbol XRPH19: Side=Sell Size=4 Price=.00008079 TickDirection=PlusTick

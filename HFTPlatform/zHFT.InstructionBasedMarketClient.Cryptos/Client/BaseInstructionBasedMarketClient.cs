@@ -230,6 +230,12 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
         }
 
+        protected virtual CMState ProcessSecurityListRequest(Wrapper wrapper)
+        {
+
+            return CMState.BuildSuccess();
+        }
+
         public override CMState ProcessMessage(Wrapper wrapper)
         {
             try
@@ -239,7 +245,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                     Actions action = wrapper.GetAction();
                     if (action == Actions.SECURITY_LIST_REQUEST)
                     {
-                        return CMState.BuildSuccess();
+                        return ProcessSecurityListRequest(wrapper);
                     }
                     else if (Actions.MARKET_DATA_REQUEST == action)
                     {

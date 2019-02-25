@@ -51,6 +51,9 @@ namespace zHFT.StrategyHandler.Common.Converters
             s.InstrumentPricePrecision = (int?)(ValidateField(wrapper, SecurityFields.InstrumentPricePrecision) ? wrapper.GetField(SecurityFields.InstrumentPricePrecision) : null);
             s.InstrumentSizePrecision = (int?)(ValidateField(wrapper, SecurityFields.InstrumentSizePrecision) ? wrapper.GetField(SecurityFields.InstrumentSizePrecision) : null);
             s.ContractPositionNumber = (int?)(ValidateField(wrapper, SecurityFields.ContractPositionNumber) ? wrapper.GetField(SecurityFields.ContractPositionNumber) : null);
+            s.MarginRatio = (double?)(ValidateField(wrapper, SecurityFields.MarginRatio) ? wrapper.GetField(SecurityFields.MarginRatio) : null);
+            s.ContractSize = (decimal?)(ValidateField(wrapper, SecurityFields.ContractSize) ? wrapper.GetField(SecurityFields.ContractSize) : null);
+
 
             return s;
         }
