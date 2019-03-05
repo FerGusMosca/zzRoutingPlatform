@@ -36,6 +36,7 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.DAL.Websockets
             };
 
             InvokeWebSocket(request).Wait();
+            
         }
 
 

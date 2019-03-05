@@ -100,6 +100,7 @@
     <Compile Include="Interfaces\IConfiguration.cs" />
     <Compile Include="Interfaces\IFIXMessageCreator.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\IWebsocketManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ConfigLoader.cs" />
     <Compile Include="Util\Constants.cs" />

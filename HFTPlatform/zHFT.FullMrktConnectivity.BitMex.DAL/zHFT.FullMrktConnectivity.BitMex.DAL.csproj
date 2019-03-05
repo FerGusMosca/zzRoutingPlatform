@@ -50,6 +50,10 @@
       <Project>{dc6a2b2d-22cf-4a48-8ea1-b52487bb2a60}</Project>
       <Name>zHFT.FullMrktConnectivity.BitMex.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

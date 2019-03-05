@@ -19,7 +19,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             get
             {
-                if (OpeningPosition.QuantityType == QuantityType.CONTRACTS)
+                if (OpeningPosition.QuantityType == QuantityType.CONTRACTS || OpeningPosition.QuantityType == QuantityType.OTHER)
                     return OpeningPosition.CumQty;
                 else
                     throw new Exception(string.Format("Future Position: Qty not available for Qty type {0}", OpeningPosition.QuantityType));

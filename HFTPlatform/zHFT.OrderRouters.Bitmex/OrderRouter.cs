@@ -37,6 +37,8 @@ namespace zHFT.OrderRouters.Bitmex
 
         protected SecurityListConverter SecurityListConverter { get; set; }
 
+
+
         #endregion
 
 
@@ -71,7 +73,7 @@ namespace zHFT.OrderRouters.Bitmex
                 DoLog(string.Format("Successfully subscribed to {0} event ",
                                             resp.GetSubscriptionEvent()), Main.Common.Util.Constants.MessageType.Information);
             else
-                Console.WriteLine(string.Format("Error on subscription to {0} event:{!}",
+                DoLog(string.Format("Error on subscription to {0} event:{!}",
                                             resp.GetSubscriptionEvent(), resp.error), Main.Common.Util.Constants.MessageType.Error);
         }
 
@@ -87,25 +89,56 @@ namespace zHFT.OrderRouters.Bitmex
             {
                 try
                 {
-                    //TODO: Build Execution Report and publish
-                    //Console.WriteLine(string.Format(@"============Showing Execution Report for action {6}=> Side:{9} orderId:{0} " + Environment.NewLine +
-                    //                                @" pair {1} OrdQty={10} OrdPrice={11}  ExecType={2} OrdStatus={3} CumQty={4} LeavesQty={5} LastPx={7} LastShares={8}" + Environment.NewLine +
-                    //                                @" AvgPx={12}",
-                    //                                execReportDTO.OrderID, execReportDTO.Symbol, execReportDTO.ExecType,
-                    //                                execReportDTO.OrdStatus, execReportDTO.CumQty, execReportDTO.LeavesQty, reports.action,
-                    //                                execReportDTO.LastPx.HasValue ? execReportDTO.LastPx.Value.ToString() : "",
-                    //                                execReportDTO.LastQty.HasValue ? execReportDTO.LastQty.Value.ToString() : "",
-                    //                                execReportDTO.Side,
-                    //                                execReportDTO.OrderQty.HasValue ? execReportDTO.OrderQty.Value.ToString() : "",
-                    //                                execReportDTO.Price.HasValue ? execReportDTO.Price.Value.ToString() : "",
-                    //                                execReportDTO.AvgPx.HasValue ? execReportDTO.AvgPx.Value.ToString() : ""
-                    //                                ));
 
-                    //Console.WriteLine("");
+                    string clOrdId = "";
+                    if (OrderIdMappers.ContainsKey(execReportDTO.OrderID))
+                    {
+                        clOrdId = OrderIdMappers[execReportDTO.OrderID];
+
+                        if (BitMexActiveOrders.ContainsKey(clOrdId))
+                        {
+                            Order order = BitMexActiveOrders[clOrdId];
+
+                            lock (tLock)
+                            {
+
+                                if (execReportDTO.ExecType == ExecType.New.ToString())
+                                {
+                                    order.OrderId = execReportDTO.OrderID;
+                                }
+
+                                if (execReportDTO.ExecType == ExecType.Replaced.ToString())
+                                {
+                                    BitMexActiveOrders.Remove(clOrdId);
+                                    order.ClOrdId = order.PendingClOrdId;
+                                    order.PendingClOrdId = null;
+                                    BitMexActiveOrders.Add(order.ClOrdId, order);
+                                    OrderIdMappers[execReportDTO.OrderID] = order.ClOrdId;
+                                }
+
+                                if (execReportDTO.ExecType == ExecType.Canceled.ToString() ||
+                                    execReportDTO.ExecType == ExecType.Stopped.ToString() ||
+                                    execReportDTO.ExecType == ExecType.Rejected.ToString() ||
+                                    execReportDTO.ExecType == ExecType.Suspended.ToString() ||
+                                    execReportDTO.ExecType == ExecType.Expired.ToString())
+                                {
+
+                                    BitMexActiveOrders.Remove(order.ClOrdId);
+                                    OrderIdMappers.Remove(order.OrderId);
+                                }
+                            }
+
+                            WSExecutionReportWrapper wrapper = new WSExecutionReportWrapper(execReportDTO, order);
+                            OnMessageRcv(wrapper);
+                        }
+                    }
+                    else
+                        DoLog(string.Format("Unknown order processing execution report for OrderId {0} ", execReportDTO.OrderID), Main.Common.Util.Constants.MessageType.Information);
+
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(string.Format("Error on subscription to {0} :{1}", subscrEvent.GetSubscriptionEvent(), ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                    DoLog(string.Format("Error processing execution report for ClOrdId {0}:{1} ", execReportDTO.ClOrdID, ex.Message), Main.Common.Util.Constants.MessageType.Error);
                 }
             }
         }
@@ -119,22 +152,61 @@ namespace zHFT.OrderRouters.Bitmex
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
             int decimalPrecission = (int)wrapper.GetField(OrderFields.DecimalPrecission);
 
-            if (!price.HasValue)
-                throw new Exception(string.Format("Las ordenes deben tener un precio asignado. No se puede rutear orden para moneda {0}", symbol));
+            //orderQty tiene el valor monetario en USD de la posición
+            //tenemos que obtener la cantidad de contratos a comprar
 
-
-            Order order = new Order()
+            if (Securities.Any(x => x.Symbol == symbol))
             {
-                SymbolPair=symbol,
-                Price = Convert.ToDecimal(price),
-                Side = side,
-                OrderQty = Convert.ToDecimal(orderQty),
-                //Currency = GetQuoteCurrency(),
-                OrdType = OrdType.Limit,
-                ClOrdId = clOrderId,
-            };
+                Security sec = Securities.Where(x => x.Symbol == symbol).FirstOrDefault();
+                double contracts = 0;
+                if (sec.MarginRatio.HasValue && sec.ContractSize.HasValue)
+                    contracts = Math.Floor(orderQty / (sec.MarginRatio.Value * Convert.ToDouble(sec.ContractSize.Value)));
+                else
+                    throw new Exception(string.Format("No margin ratio or contract size found for symbol {0}. Those values are needed @BitMex to calculate order Qty", symbol));
 
-            return order;
+                if (!price.HasValue)
+                    throw new Exception(string.Format("Las ordenes deben tener un precio asignado. No se puede rutear orden para moneda {0}", symbol));
+
+
+                Order order = new Order()
+                {
+                    SymbolPair = symbol,
+                    Price = Convert.ToDecimal(price),
+                    Side = side,
+                    OrderQty = Convert.ToDecimal(contracts),
+                    //Currency = GetQuoteCurrency(),
+                    OrdType = OrdType.Limit,
+                    ClOrdId = clOrderId,
+                };
+
+                return order;
+            }
+            else
+                throw new Exception(string.Format("No securities found in memory for symbol {0}", symbol));
+        }
+
+        protected ExecutionReport GetRejectedExecutionReport(Order order,string error)
+        {
+
+            ExecutionReport rejectedER = new ExecutionReport();
+            rejectedER.OrderID = order.OrderId;
+            rejectedER.ClOrdID = order.ClOrdId;
+            rejectedER.Symbol = order.SymbolPair;
+            rejectedER.Side = order.Side.ToString();
+            rejectedER.OrderQty = order.OrderQty;
+            rejectedER.Price = order.Price.HasValue ? (double?)Convert.ToDouble(order.Price.Value) : null ;
+            rejectedER.StopPx = order.StopPx.HasValue ? (double?)Convert.ToDouble(order.StopPx.Value) : null;
+            rejectedER.Currency = order.Currency;
+            rejectedER.OrdType = order.OrdType.ToString();
+            rejectedER.ExecType = ExecType.Rejected.ToString();
+            rejectedER.OrdStatus = OrdStatus.Rejected.ToString();
+            rejectedER.OrdRejReason = OrdRejReason.Other.ToString();
+            rejectedER.Text = error;
+            rejectedER.Timestamp = DateTime.Now;
+            rejectedER.TransactTime = DateTime.Now;
+            rejectedER.Order = order;
+
+            return rejectedER;
         }
 
         protected override CMState RouteNewOrder(Wrapper wrapper)
@@ -147,12 +219,18 @@ namespace zHFT.OrderRouters.Bitmex
                     lock (tLock)
                     {
                         ExecutionReport exRep = OrderManager.PlaceOrder(order);
-                        //TODO: Publicar el execution report
+                        BitMexActiveOrders.Add(order.ClOrdId, order);
+                        if (exRep.OrdStatus == OrdStatus.New.ToString())
+                            OrderIdMappers.Add(exRep.OrderID, order.ClOrdId);
+                        ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(exRep, order);
+                        OnMessageRcv(erWrapper);
                     }
                 }
                 catch (Exception ex)
                 {
-                    //TODO: Rejected Execution Report
+
+                    ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(GetRejectedExecutionReport(order, ex.Message), order);
+                    OnMessageRcv(erWrapper);
                 }
 
                 return CMState.BuildSuccess();
@@ -169,6 +247,7 @@ namespace zHFT.OrderRouters.Bitmex
 
             string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+            double? price = (double?)wrapper.GetField(OrderFields.Price);
             try
             {
 
@@ -181,38 +260,16 @@ namespace zHFT.OrderRouters.Bitmex
                 lock (tLock)
                 {
 
-                    if (OrderIdMappers.ContainsKey(origClOrderId))
+                    if (BitMexActiveOrders.ContainsKey(origClOrderId) && price.HasValue)
                     {
-                        string origUuid = OrderIdMappers[origClOrderId];
-                        Order order = BitMexActiveOrders[origUuid];
+                        Order order = BitMexActiveOrders[origClOrderId];
+                        order.Price = Convert.ToDecimal(price.Value);
+                        order.PendingClOrdId = clOrderId;
+                        ExecutionReport exRep = OrderManager.UpdateOrder(order);
+                        
 
-                        if (order != null)
-                        {
-                            ////Recuperamos la orden
-                            //GetOrderResponse ordResp = RunGetOrder(order.OrderId);
-
-                            ////Cancelamos
-                            //RunCancelOrder(order, true);
-
-                            //Thread.Sleep(100);
-
-                            ////Damos el alta
-                            //double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
-                            //order.Price = newPrice;
-                            //order.ClOrdId = clOrderId;
-                            //order.OrderQty = ordResp != null ? Convert.ToDouble(ordResp.QuantityRemaining) : order.OrderQty;//Nos aseguramos de solo rutear la nueva cantidad
-                            //try
-                            //{
-                            //    RunNewOrder(order, true);
-                            //}
-                            //catch (Exception ex)
-                            //{
-                            //    if (ActiveOrders.ContainsKey(order.OrderId))
-                            //        ActiveOrders.Remove(order.OrderId);
-                            //    EvalRouteError(order, ex);
-                            //}
-                        }
-
+                        //ExecutionReportWrapper exWrapper = new ExecutionReportWrapper(exRep, order);
+                        //OnMessageRcv(exWrapper);
                     }
                     else
                         DoLog(string.Format("@{0}:Could not find order for origClOrderId  {1}!", BitmexConfiguration.Name, origClOrderId), Main.Common.Util.Constants.MessageType.Error);
@@ -235,8 +292,25 @@ namespace zHFT.OrderRouters.Bitmex
 
         protected bool RunCancelOrder(Order order, bool update)
         {
-            //TODO implementar cancelación --> Ver si vale la pena implementar el CancellAllOrders
-            return true;
+            try
+            {
+                ExecutionReport exReport = null;
+                lock (tLock)
+                {
+                    exReport = OrderManager.CancelOrder(order);
+                   
+                }
+
+                //ExecutionReportWrapper wrapper = new ExecutionReportWrapper(exReport, order);
+                //OnMessageRcv(wrapper);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
         }
 
         protected override CMState CancelOrder(Wrapper wrapper)
@@ -311,6 +385,7 @@ namespace zHFT.OrderRouters.Bitmex
                     tLock = new object();
 
                     BitMexActiveOrders = new Dictionary<string,Order>();
+                    OrderIdMappers = new Dictionary<string, string>();
                     OrderManager = new DataAccessLayer.OrderManager(BitmexConfiguration.RESTURL, BitmexConfiguration.ApiKey, BitmexConfiguration.Secret);
                     WSOrderManager = new DataAccessLayer.Websockets.OrderManager(BitmexConfiguration.WebsocketURL, new UserCredentials() { BitMexID = BitmexConfiguration.ApiKey, BitMexSecret = BitmexConfiguration.Secret });
                     SecurityListConverter = new StrategyHandler.Common.Converters.SecurityListConverter();

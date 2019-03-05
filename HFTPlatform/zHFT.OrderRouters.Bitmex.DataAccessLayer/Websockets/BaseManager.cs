@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets;
 using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets.Auth;
+using zHFT.Main.Common.Interfaces;
 using zHFT.OrderRouters.Bitmex.Common.DTO.Events;
 
 namespace zHFT.OrderRouters.Bitmex.DataAccessLayer.Websockets
 {
-    public class BaseManager : zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets.BaseManager
+    public class BaseManager : zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets.BaseManager, IWebsocketManager
     {
         #region Constructors
 
@@ -62,5 +63,7 @@ namespace zHFT.OrderRouters.Bitmex.DataAccessLayer.Websockets
         }
 
         #endregion
+
+       
     }
 }

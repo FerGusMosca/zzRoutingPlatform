@@ -1,0 +1,27 @@
+2019-03-03 14:01:32  :: 3/3/2019 14:01:31MainApp.LoadConfig
+2019-03-03 14:01:32  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
+2019-03-03 14:01:32  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
+2019-03-03 14:01:32  :: Fin GetConfiguracion
+2019-03-03 14:01:41  :: Initializing Log
+2019-03-03 14:01:41  :: Initializing Incoming Module
+2019-03-03 14:01:45  :: Incoming Module successfully initialized
+2019-03-03 14:01:45  :: Initializing Outgoing Module
+2019-03-03 14:01:52  :: Outgoing Module successfully initialized
+2019-03-03 15:23:15  :: 3/3/2019 15:23:15MainApp.LoadConfig
+2019-03-03 15:23:15  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
+2019-03-03 15:23:15  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
+2019-03-03 15:23:15  :: Fin GetConfiguracion
+2019-03-03 15:23:23  :: Initializing Log
+2019-03-03 15:23:23  :: Initializing Incoming Module
+2019-03-03 15:23:26  :: Incoming Module successfully initialized
+2019-03-03 15:23:26  :: Initializing Outgoing Module
+2019-03-03 15:23:34  :: Outgoing Module successfully initialized
+2019-03-03 15:40:11  :: 3/3/2019 15:40:11MainApp.LoadConfig
+2019-03-03 15:40:11  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
+2019-03-03 15:40:11  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
+2019-03-03 15:40:11  :: Fin GetConfiguracion
+2019-03-03 15:40:17  :: Initializing Log
+2019-03-03 15:40:17  :: Initializing Incoming Module
+2019-03-03 15:40:20  :: Incoming Module successfully initialized
+2019-03-03 15:40:20  :: Initializing Outgoing Module
+2019-03-03 15:40:27  :: Outgoing Module successfully initialized

@@ -11,10 +11,11 @@ using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets;
 using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets.Auth;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.DTO.Websockets;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.DTO.Websockets.Events;
+using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.InstructionBasedMarketClient.BitMex.DAL.Websockets
 {
-    public class BaseManager : zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets.BaseManager
+    public class BaseManager : zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets.BaseManager, IWebsocketManager
     {
 
         #region Constructors

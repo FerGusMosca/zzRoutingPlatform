@@ -205,8 +205,44 @@ namespace zHFT.Main.BusinessEntities.Positions
             else if (execType == ExecType.PendingReplace)
                 PosStatus = PositionStatus.PendingReplace;
             else if (execType == ExecType.Trade)
-                PosStatus = PositionStatus.Filled;
+                PosStatus = LeavesQty == 0 ? PositionStatus.Filled : PositionStatus.PartiallyFilled;
             else if (execType == ExecType.Unknown)
+                PosStatus = PositionStatus.Unknown;
+
+
+        }
+
+        public void SetPositionStatusFromExecutionStatus(OrdStatus ordStatus)
+        {
+            if (ordStatus == OrdStatus.New)
+                PosStatus = PositionStatus.New;
+            else if (ordStatus == OrdStatus.DoneForDay)
+                PosStatus = PositionStatus.DoneForDay;
+            else if (ordStatus == OrdStatus.Canceled)
+                PosStatus = PositionStatus.Canceled;
+            else if (ordStatus == OrdStatus.Replaced)
+                PosStatus = PositionStatus.Replaced;
+            else if (ordStatus == OrdStatus.PendingCancel)
+                PosStatus = PositionStatus.PendingCancel;
+            else if (ordStatus == OrdStatus.Stopped)
+                PosStatus = PositionStatus.Stopped;
+            else if (ordStatus == OrdStatus.Rejected)
+                PosStatus = PositionStatus.Rejected;
+            else if (ordStatus == OrdStatus.Suspended)
+                PosStatus = PositionStatus.Suspended;
+            else if (ordStatus == OrdStatus.PendingNew)
+                PosStatus = PositionStatus.PendingNew;
+            else if (ordStatus == OrdStatus.Calculated)
+                PosStatus = PositionStatus.Calculated;
+            else if (ordStatus == OrdStatus.Expired)
+                PosStatus = PositionStatus.Expired;
+            else if (ordStatus == OrdStatus.PendingReplace)
+                PosStatus = PositionStatus.PendingReplace;
+            else if (ordStatus == OrdStatus.PartiallyFilled)
+                PosStatus = PositionStatus.PartiallyFilled;
+            else if (ordStatus == OrdStatus.Filled)
+                PosStatus = PositionStatus.Filled;
+            else 
                 PosStatus = PositionStatus.Unknown;
 
 

@@ -130,13 +130,22 @@ namespace zHFT.OrderRouters.Router
                     pos.LeavesQty = qty;//Position Missing to fill in shares
                 }
             }
-            else if (pos.IsNonMonetaryQuantity())
+            else 
             {
-                order.OrderQty = pos.Qty;
-                pos.LeavesQty = pos.Qty;//Position Missing to fill in amount of shares
+                if (pos.Qty.HasValue)
+                {
+                    order.OrderQty = pos.Qty;
+                    pos.LeavesQty = pos.Qty;//Position Missing to fill in amount of shares
+                }
+                else if (pos.CashQty.HasValue)
+                {
+                    order.OrderQty = pos.CashQty;
+                    pos.LeavesQty = pos.CashQty;//Position Missing to fill in amount of shares
+                }
+                else
+                    throw new Exception("Could not process position quantity type: " + pos.QuantityType.ToString());
             }
-            else
-                throw new Exception("Could not process position quantity type: " + pos.QuantityType.ToString());
+
 
             return order;
         }

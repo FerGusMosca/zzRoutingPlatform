@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets;
 using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets.Auth;
+using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets
 {
@@ -31,26 +32,27 @@ namespace zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets
 
         //protected static ClientWebSocket SubscriptionWebSocket { get; set; }
 
-        protected static string WebSocketURL { get; set; }
+        protected  string WebSocketURL { get; set; }
 
-        protected static UserCredentials UserCredentials { get; set; }
+        protected  UserCredentials UserCredentials { get; set; }
 
-        protected static bool PendingRequestResponse { get; set; }
+        protected  bool PendingRequestResponse { get; set; }
 
-        protected static bool Initialized = false;
+        protected  bool Initialized = false;
 
-        protected static Dictionary<string, WebSocketSubscriptionResponse> ResponseRequestSubscriptions { get; set; }
+        protected  Dictionary<string, WebSocketSubscriptionResponse> ResponseRequestSubscriptions { get; set; }
 
-        protected static Dictionary<string, WebSocketSubscriptionEvent> EventSubscriptions { get; set; }
+        protected  Dictionary<string, WebSocketSubscriptionEvent> EventSubscriptions { get; set; }
 
-        protected static object tSubscrLock = new object();
+        protected  object tSubscrLock = new object();
 
-        public static AuthenticationResult AuthSubscriptionResult { get; set; }
+        public  AuthenticationResult AuthSubscriptionResult { get; set; }
 
         protected string ID { get; set; }
 
         protected string Secret { get; set; }
 
+     
         #endregion
 
         #region Constructors
@@ -72,6 +74,60 @@ namespace zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets
         #region Abstract Methods
 
         protected  abstract void DoRunLoopSubscriptions(string resp);
+
+        #endregion
+
+        #region Subscription Methods
+
+        public  void OnEvent(string resp)
+        {
+            WebSocketResponseMessage wsResp = wsResp = JsonConvert.DeserializeObject<WebSocketResponseMessage>(resp);
+            lock (tSubscrLock)
+            {
+
+                if (wsResp.IsResponse())//We have the response to a subscription
+                {
+                    WebSocketSubscriptionResponse requestRespSubscr = JsonConvert.DeserializeObject<WebSocketSubscriptionResponse>(resp);
+
+                    if (ResponseRequestSubscriptions.ContainsKey(requestRespSubscr.GetSubscriptionEvent()))
+                    {
+                        WebSocketSubscriptionResponse requestRespEvent = ResponseRequestSubscriptions[requestRespSubscr.GetSubscriptionEvent()];
+
+                        requestRespEvent.RunSubscritionEvent(requestRespSubscr);
+                    }
+
+                }
+                else //We have an event from a subscription
+                {
+                    WebSocketSubscriptionResponse requestRespSubscr = JsonConvert.DeserializeObject<WebSocketSubscriptionResponse>(resp);
+
+                    if (requestRespSubscr.IsAuthentication())
+                    {
+                        if (requestRespSubscr.success)
+                        {
+                            AuthSubscriptionResult.Authenticated = true;
+                            //Good idea to calculate here the expiration of the token
+                            AuthSubscriptionResult.ExpiresIn = Convert.ToInt32(requestRespSubscr.request.args[1]);
+                        }
+                        else
+                        {
+                            AuthSubscriptionResult.Authenticated = false;
+
+                            AuthSubscriptionResult.ErrorMessage = requestRespSubscr.error;
+
+                            //abort = true;//we cannot continue requesting info if there was an authentication problem
+                            //even for public serivces. Unless with this architecture
+                        }
+                    }
+                    else
+                    {
+                        DoRunLoopSubscriptions(resp);
+                    }
+
+                }
+            }
+        }
+
 
         #endregion
 
@@ -156,51 +212,8 @@ namespace zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets
                     }
                     while (!webSocketResp.EndOfMessage);
 
-                    WebSocketResponseMessage wsResp = wsResp = JsonConvert.DeserializeObject<WebSocketResponseMessage>(resp);
-                    lock (tSubscrLock)
-                    {
+                    OnEvent(resp);
 
-                        if (wsResp.IsResponse())//We have the response to a subscription
-                        {
-                            WebSocketSubscriptionResponse requestRespSubscr = JsonConvert.DeserializeObject<WebSocketSubscriptionResponse>(resp);
-
-                            if (ResponseRequestSubscriptions.ContainsKey(requestRespSubscr.GetSubscriptionEvent()))
-                            {
-                                WebSocketSubscriptionResponse requestRespEvent = ResponseRequestSubscriptions[requestRespSubscr.GetSubscriptionEvent()];
-
-                                requestRespEvent.RunSubscritionEvent(requestRespSubscr);
-                            }
-
-                        }
-                        else //We have an event from a subscription
-                        {
-                            WebSocketSubscriptionResponse requestRespSubscr = JsonConvert.DeserializeObject<WebSocketSubscriptionResponse>(resp);
-
-                            if (requestRespSubscr.IsAuthentication())
-                            {
-                                if (requestRespSubscr.success)
-                                {
-                                    AuthSubscriptionResult.Authenticated = true;
-                                    //Good idea to calculate here the expiration of the token
-                                    AuthSubscriptionResult.ExpiresIn = Convert.ToInt32(requestRespSubscr.request.args[1]);
-                                }
-                                else
-                                {
-                                    AuthSubscriptionResult.Authenticated = false;
-
-                                    AuthSubscriptionResult.ErrorMessage = requestRespSubscr.error;
-
-                                    abort = true;//we cannot continue requesting info if there was an authentication problem
-                                    //even for public serivces. Unless with this architecture
-                                }
-                            }
-                            else
-                            {
-                                DoRunLoopSubscriptions(resp);
-                            }
-
-                        }
-                    }
                 }
                 catch (Exception ex)
                 {

@@ -329,9 +329,38 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 return LoadNewRegularPos(secImb, side);
         }
 
-        private void LoadClosePos(Position openPos,SecurityImbalance secImb,ImbalancePosition imbPos)
+        private void LoadCloseFuturePos(Position openPos, SecurityImbalance secImb, ImbalancePosition imbPos)
         {
+            Position pos = new Position()
+            {
+                Security = new Security()
+                {
+                    Symbol = secImb.Security.Symbol,
+                    MarketData = null,
+                    Currency = Configuration.Currency,
+                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
+                },
+                Side = openPos.Side == Side.Buy ? Side.Sell : Side.Buy,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                Qty = openPos.CumQty,
+                QuantityType = QuantityType.CONTRACTS ,//Tenemos un monto en dólars, pero es el ruteador de ordenes el que decide a cuantos contratos equivale
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
+                AccountId = "TEST",
+            };
 
+            pos.LoadPosId(NextPosId);
+            NextPosId++;
+
+            imbPos.ClosingPosition = pos;
+            imbPos.ClosingDate = DateTime.Now;
+            imbPos.ClosingImbalance = secImb;
+        
+        }
+
+        private void LoadCloseRegularPos(Position openPos, SecurityImbalance secImb, ImbalancePosition imbPos)
+        {
             Position pos = new Position()
             {
                 Security = new Security()
@@ -341,7 +370,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     Currency = Configuration.Currency,
                     SecType = SecurityType.CS
                 },
-                Side = openPos.Side==Side.Buy?Side.Sell:Side.Buy,
+                Side = openPos.Side == Side.Buy ? Side.Sell : Side.Buy,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
                 Qty = openPos.CumQty,
@@ -358,6 +387,15 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             imbPos.ClosingPosition = pos;
             imbPos.ClosingDate = DateTime.Now;
             imbPos.ClosingImbalance = secImb;
+        
+        }
+
+        private void LoadClosePos(Position openPos,SecurityImbalance secImb,ImbalancePosition imbPos)
+        {
+            if (Security.GetSecurityType(Configuration.SecurityTypes) == SecurityType.FUT)
+                LoadCloseFuturePos(openPos, secImb, imbPos);
+            else
+                LoadCloseRegularPos(openPos, secImb, imbPos);
         }
 
         private bool EvalClosingPositionOnStopLossHit(SecurityImbalance secImb)
@@ -543,14 +581,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        protected void AssignMainERParameters(ImbalancePosition imbPos,ExecutionReport report, bool trade)
+        protected void AssignMainERParameters(ImbalancePosition imbPos,ExecutionReport report, bool activePos)
         {
-            if (trade)
+            if (activePos)
             {
                 imbPos.CurrentPos().CumQty = report.CumQty;
                 imbPos.CurrentPos().LeavesQty = report.LeavesQty;
                 imbPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
-                imbPos.CurrentPos().SetPositionStatusFromExecution(report.ExecType);
+                imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
                 imbPos.CurrentPos().ExecutionReports.Add(report);
 
                 if (report.OrdStatus == OrdStatus.Filled || report.OrdStatus == OrdStatus.PartiallyFilled)
@@ -565,7 +603,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             {
                 imbPos.CurrentPos().PositionCanceledOrRejected = true;
                 imbPos.CurrentPos().PositionCleared = false;
-                imbPos.CurrentPos().SetPositionStatusFromExecution(report.ExecType);
+                imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
 
 
                 if(imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty==0)

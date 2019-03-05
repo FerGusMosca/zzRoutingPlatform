@@ -15,3 +15,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bitmex.Common\obj\Debug\zHFT.OrderRouters.Bitmex.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bitmex.Common\bin\Debug\zHFT.FullMrktConnectivity.BitMex.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bitmex.Common\bin\Debug\zHFT.FullMrktConnectivity.BitMex.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bitmex.Common\bin\Debug\zHFT.OrderRouters.Bitmex.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bitmex.Common\bin\Debug\zHFT.OrderRouters.Bitmex.BusinessEntities.pdb

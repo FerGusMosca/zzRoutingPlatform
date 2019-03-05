@@ -52,6 +52,8 @@ namespace zHFT.OrderRouters.Bitmex.BusinessEntities
 
         public string ClOrdId { get; set; }
 
+        public string PendingClOrdId { get; set; }
+
         public string SymbolPair { get; set; }
 
         public Side Side { get; set; }
