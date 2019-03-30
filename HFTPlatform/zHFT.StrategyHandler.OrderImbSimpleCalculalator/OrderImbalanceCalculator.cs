@@ -36,6 +36,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         protected Dictionary<string, ImbalancePosition> ImbalancePositions { get; set; }
 
+        protected Dictionary<string, ImbalancePosition> PendingCancelPosClosing { get; set; }
+
         protected ExecutionReportConverter ExecutionReportConverter { get; set; }
 
         public string ModuleConfigFile { get; set; }
@@ -390,12 +392,40 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         
         }
 
-        private void LoadClosePos(Position openPos,SecurityImbalance secImb,ImbalancePosition imbPos)
+        private CMState LoadClosePos(Position openPos, SecurityImbalance secImb, ImbalancePosition imbPos)
         {
-            if (Security.GetSecurityType(Configuration.SecurityTypes) == SecurityType.FUT)
-                LoadCloseFuturePos(openPos, secImb, imbPos);
+            if (openPos.PosStatus == PositionStatus.Filled)
+            {
+                if (Security.GetSecurityType(Configuration.SecurityTypes) == SecurityType.FUT)
+                    LoadCloseFuturePos(openPos, secImb, imbPos);
+                else
+                    LoadCloseRegularPos(openPos, secImb, imbPos);
+
+                PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
+                return OrderRouter.ProcessMessage(posWrapper);
+            }
+            else if (openPos.PositionPendingExecution())
+            {
+                if (!PendingCancelPosClosing.ContainsKey(openPos.Symbol))
+                {
+                    lock (PendingCancelPosClosing)
+                    {
+                        //We have to cancel the position before closing it.
+                        PendingCancelPosClosing.Add(openPos.Symbol, imbPos);
+                    }
+                    CancelPositionWrapper cancelWrapper = new CancelPositionWrapper(openPos, Config);
+                    return OrderRouter.ProcessMessage(cancelWrapper);
+                }
+                else
+                    return CMState.BuildSuccess();
+            }
             else
-                LoadCloseRegularPos(openPos, secImb, imbPos);
+            {
+                DoLog(string.Format("{0} Aborting  position on invalid state. Symbol {1} Qty={2} PosStatus={3}", 
+                    imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,openPos.PosStatus.ToString()), 
+                    Constants.MessageType.Information);
+                return CMState.BuildSuccess();
+            }
         }
 
         private bool EvalClosingPositionOnStopLossHit(SecurityImbalance secImb)
@@ -504,15 +534,11 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 LoadClosePos(imbPos.OpeningPosition, secImb, imbPos);
-                PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
-                CMState state = OrderRouter.ProcessMessage(posWrapper);
                 DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
             }
             else if (imbPos.EvalClosingLongPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 LoadClosePos(imbPos.OpeningPosition, secImb, imbPos);
-                PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
-                CMState state = OrderRouter.ProcessMessage(posWrapper);
                 DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
 
             }
@@ -533,10 +559,6 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 else if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
                 {
                     EvalClosingPosition(secImb);
-                }
-
-                if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
-                {
                     EvalAbortingNewPositions(secImb);
                     EvalAbortingClosingPositions(secImb);
                 }
@@ -601,13 +623,36 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
             else
             {
-                imbPos.CurrentPos().PositionCanceledOrRejected = true;
-                imbPos.CurrentPos().PositionCleared = false;
-                imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
+                if (PendingCancelPosClosing.ContainsKey(report.Order.Symbol))
+                {
+                    lock (PendingCancelPosClosing)
+                    {
+                        //We canceled a position that has to be closed!
+                        ImbalancePosition pendImbPos = PendingCancelPosClosing[report.Order.Symbol];
+
+                        if (report.ExecType == ExecType.Canceled)
+                        {
+                            //Now we can finally close the position
+                            pendImbPos.OpeningPosition.PosStatus = PositionStatus.Filled;//Now it will be processed with the next imbalance
+                            PendingCancelPosClosing.Remove(report.Order.Symbol);
+                        }
+                        else//something happened with the cancelation -> we have to try again and log
+                        {
+                            //as the positions stays as Partially Filled we will try again on and on
+                            PendingCancelPosClosing.Remove(report.Order.Symbol);
+                        }
+                    }
+                }
+                else
+                {
+                    imbPos.CurrentPos().PositionCanceledOrRejected = true;
+                    imbPos.CurrentPos().PositionCleared = false;
+                    imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
 
 
-                if(imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty==0)
-                    ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);//We remove the position so we can try again
+                    if (imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty == 0)
+                        ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);//We remove the position so we can try again
+                }
             }
         }
 
@@ -732,6 +777,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     ImbalancePositionManager = new ImbalancePositionManager(Configuration.ConnectionString, Configuration);
                     SecurityImbalancesToMonitor = new Dictionary<string, SecurityImbalance>();
                     ImbalancePositions = new Dictionary<string, ImbalancePosition>();
+                    PendingCancelPosClosing = new Dictionary<string, ImbalancePosition>();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
                     SecurityListConverter = new SecurityListConverter();

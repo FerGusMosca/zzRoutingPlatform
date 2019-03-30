@@ -288,14 +288,14 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             return (TradeDirection == ImbalancePosition._LONG
                    && secImb.AskSizeImbalance < PositionOpeningImbalanceThreshold
-                   && OpeningPosition.PosStatus != PositionStatus.Filled);
+                   && (OpeningPosition.PosStatus == PositionStatus.New || OpeningPosition.PosStatus == PositionStatus.PendingNew));
         }
 
         public bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT
                    && secImb.BidSizeImbalance < PositionOpeningImbalanceThreshold
-                   && OpeningPosition.PosStatus != PositionStatus.Filled);
+                    && (OpeningPosition.PosStatus == PositionStatus.New || OpeningPosition.PosStatus == PositionStatus.PendingNew));
         }
 
         public bool EvalAbortingClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)

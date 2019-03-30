@@ -212,6 +212,19 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         }
 
+        public bool PositionPendingExecution()
+        {
+
+            return PosStatus == PositionStatus.New ||
+                   PosStatus == PositionStatus.Replaced ||
+                   PosStatus == PositionStatus.PendingCancel ||
+                   PosStatus == PositionStatus.PendingNew ||
+                   PosStatus == PositionStatus.Calculated ||
+                   PosStatus == PositionStatus.PendingReplace ||
+                   PosStatus == PositionStatus.PartiallyFilled;
+        
+        }
+
         public void SetPositionStatusFromExecutionStatus(OrdStatus ordStatus)
         {
             if (ordStatus == OrdStatus.New)

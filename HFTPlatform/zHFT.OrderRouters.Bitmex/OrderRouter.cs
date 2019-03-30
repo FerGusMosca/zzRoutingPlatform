@@ -324,23 +324,14 @@ namespace zHFT.OrderRouters.Bitmex
                 lock (tLock)
                 {
 
-                    if (OrderIdMappers.ContainsKey(origClOrderId))
+                    if (BitMexActiveOrders.ContainsKey(origClOrderId))
                     {
-                        string uuid = OrderIdMappers[origClOrderId];
-                        Order order = BitMexActiveOrders[uuid];
-
-                        if (order != null)
-                        {
-                            RunCancelOrder(order, false);
-                        }
-                        OrderIdMappers.Remove(origClOrderId);
+                        Order order = BitMexActiveOrders[origClOrderId];
+                        RunCancelOrder(order, false);
                     }
-
                     else
                     {
-                        throw new Exception(string.Format("Could not cancel order for id {0}", origClOrderId));
-                        //TO DO: La orden fue modificada
-                        //buscar con el nuevo clOrderId
+                        throw new Exception(string.Format("@{0}: Could not cancel order for OrigClOrdId {1} because it was not found", BitmexConfiguration.Name, origClOrderId));
                     }
                 }
                 return CMState.BuildSuccess();
