@@ -164,8 +164,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Primary.Common.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\quickfix_net_messages.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.MarketClient.Primary.Common.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Primary.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\Bittrex.pdb

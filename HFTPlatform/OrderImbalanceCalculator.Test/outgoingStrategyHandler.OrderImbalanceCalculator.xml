@@ -15,12 +15,12 @@
   <DecimalRounding>3</DecimalRounding>
   <ResetEveryNMinutes>60</ResetEveryNMinutes><!--0 counts as no reset-->
 
-  <Currency>ARS</Currency>
-  <Exchange>BUE</Exchange>
+  <!--<Currency>ARS</Currency>
+  <Exchange>BUE</Exchange>-->
   <SecurityTypes>CS</SecurityTypes><!--CS=Common Stock, CC= Cryptocurrency-->
 
-  <!--<Currency>USD</Currency>
-  <Exchange>SMART</Exchange>-->
+  <Currency>USD</Currency>
+  <Exchange>SMART</Exchange>
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -35,7 +35,7 @@
   
   <StocksToMonitor>
     
-    <Symbol>ALUA.BUE</Symbol>
+    <!--<Symbol>ALUA.BUE</Symbol>
     <Symbol>APBR.BUE</Symbol>
     <Symbol>GGAL.BUE</Symbol>
     <Symbol>BMA.BUE</Symbol>
@@ -54,10 +54,10 @@
     <Symbol>YPFD.BUE</Symbol>
     <Symbol>PAMP.BUE</Symbol>
     <Symbol>SUPV.BUE</Symbol>
-    <Symbol>VALO.BUE</Symbol>
+    <Symbol>VALO.BUE</Symbol>-->
 
 
-    <!--<Symbol>AAPL</Symbol>
+    <Symbol>AAPL</Symbol>
     <Symbol>MSFT</Symbol>
     <Symbol>PG</Symbol>
     <Symbol>AMZN</Symbol>
@@ -71,7 +71,7 @@
     <Symbol>TEO</Symbol>
     <Symbol>TS</Symbol>
     <Symbol>PBR</Symbol>
-    <Symbol>CRESY</Symbol>-->
+    <Symbol>CRESY</Symbol>
 
     <!--<Symbol>BTC</Symbol>
     <Symbol>ETH</Symbol>

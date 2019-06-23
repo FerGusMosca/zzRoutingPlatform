@@ -1,0 +1,13 @@
+2019-04-14 16:09:40  :: OrderImbalanceCalculator:4/14/2019 4:09:40 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-04-14 16:09:40  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-04-14 16:09:40  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-04-14 16:09:40  :: Strategy Handler - Order Imbalance Calculator - BitMex:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2019-04-14 16:09:46  :: Strategy Handler - Order Imbalance Calculator - BitMex:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2019-04-14 16:09:46  :: 4/14/2019 4:09:46 PMOrderRouterBase.LoadConfig
+2019-04-14 16:09:46  :: Loading config:.\outgoingOrderRouter.xml
+2019-04-14 16:09:46  :: Processing config:.\outgoingOrderRouter.xml
+2019-04-14 16:09:46  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2019-04-14 16:09:46  :: Initializing Order Router Proxy zHFT.OrderRouters.Bitmex.OrderRouter, zHFT.OrderRouters.Bitmex
+2019-04-14 16:09:56  :: 4/14/2019 4:09:56 PMOrderRouterBase.LoadConfig
+2019-04-14 16:09:56  :: Loading config:.\outgoingOrderRouter.Bitmex.xml
+2019-04-14 16:09:56  :: Processing config:.\outgoingOrderRouter.Bitmex.xml

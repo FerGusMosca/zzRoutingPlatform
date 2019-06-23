@@ -1,0 +1,121 @@
+2019-06-23 18:54:32  :: 23/6/2019 18:54:32MainApp.LoadConfig
+2019-06-23 18:54:32  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:54:32  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:54:32  :: Fin GetConfiguracion
+2019-06-23 18:54:33  :: Initializing Log
+2019-06-23 18:54:33  :: Initializing Incoming Module
+2019-06-23 18:54:44  :: Error initializing Incoming Module
+2019-06-23 18:54:44  :: Initializing Outgoing Module
+2019-06-23 18:55:04  :: Error initializing Outgoing Module
+2019-06-23 18:56:26  :: 23/6/2019 18:56:26MainApp.LoadConfig
+2019-06-23 18:56:26  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:56:26  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:56:26  :: Fin GetConfiguracion
+2019-06-23 18:56:26  :: Initializing Log
+2019-06-23 18:56:26  :: Initializing Incoming Module
+2019-06-23 18:56:37  :: Error initializing Incoming Module
+2019-06-23 18:56:37  :: Initializing Outgoing Module
+2019-06-23 18:57:58  :: 23/6/2019 18:57:58MainApp.LoadConfig
+2019-06-23 18:57:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:57:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:57:58  :: Fin GetConfiguracion
+2019-06-23 18:57:58  :: Initializing Log
+2019-06-23 18:57:58  :: Initializing Incoming Module
+2019-06-23 18:58:09  :: Error initializing Incoming Module
+2019-06-23 18:58:09  :: Initializing Outgoing Module
+2019-06-23 18:58:33  :: 23/6/2019 18:58:33MainApp.LoadConfig
+2019-06-23 18:58:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:58:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:58:34  :: Fin GetConfiguracion
+2019-06-23 18:58:34  :: Initializing Log
+2019-06-23 18:58:34  :: Initializing Incoming Module
+2019-06-23 18:58:44  :: Error initializing Incoming Module
+2019-06-23 18:58:44  :: Initializing Outgoing Module
+2019-06-23 18:58:45  :: Outgoing Module successfully initialized
+2019-06-23 18:59:27  :: 23/6/2019 18:59:27MainApp.LoadConfig
+2019-06-23 18:59:27  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:59:27  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:59:27  :: Fin GetConfiguracion
+2019-06-23 18:59:27  :: Initializing Log
+2019-06-23 18:59:27  :: Initializing Incoming Module
+2019-06-23 18:59:38  :: Error initializing Incoming Module
+2019-06-23 18:59:38  :: Initializing Outgoing Module
+2019-06-23 18:59:38  :: Outgoing Module successfully initialized
+2019-06-23 18:59:56  :: 23/6/2019 18:59:56MainApp.LoadConfig
+2019-06-23 18:59:56  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:59:56  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 18:59:56  :: Fin GetConfiguracion
+2019-06-23 18:59:56  :: Initializing Log
+2019-06-23 18:59:56  :: Initializing Incoming Module
+2019-06-23 19:00:06  :: Error initializing Incoming Module
+2019-06-23 19:00:06  :: Initializing Outgoing Module
+2019-06-23 19:00:07  :: Outgoing Module successfully initialized
+2019-06-23 19:00:45  :: 23/6/2019 19:00:45MainApp.LoadConfig
+2019-06-23 19:00:45  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:00:45  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:00:45  :: Fin GetConfiguracion
+2019-06-23 19:00:45  :: Initializing Log
+2019-06-23 19:00:45  :: Initializing Incoming Module
+2019-06-23 19:00:56  :: Error initializing Incoming Module
+2019-06-23 19:00:56  :: Initializing Outgoing Module
+2019-06-23 19:00:56  :: Outgoing Module successfully initialized
+2019-06-23 19:11:30  :: 23/6/2019 19:11:30MainApp.LoadConfig
+2019-06-23 19:11:30  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:11:30  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:11:30  :: Fin GetConfiguracion
+2019-06-23 19:11:31  :: Initializing Log
+2019-06-23 19:11:31  :: Initializing Incoming Module
+2019-06-23 19:11:41  :: Error initializing Incoming Module
+2019-06-23 19:11:41  :: Initializing Outgoing Module
+2019-06-23 19:11:42  :: Outgoing Module successfully initialized
+2019-06-23 19:16:11  :: 23/6/2019 19:16:11MainApp.LoadConfig
+2019-06-23 19:16:11  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:16:11  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:16:11  :: Fin GetConfiguracion
+2019-06-23 19:16:11  :: Initializing Log
+2019-06-23 19:16:11  :: Initializing Incoming Module
+2019-06-23 19:16:22  :: Error initializing Incoming Module
+2019-06-23 19:16:22  :: Initializing Outgoing Module
+2019-06-23 19:16:23  :: Outgoing Module successfully initialized
+2019-06-23 19:21:14  :: 23/6/2019 19:21:14MainApp.LoadConfig
+2019-06-23 19:21:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:21:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:21:14  :: Fin GetConfiguracion
+2019-06-23 19:21:14  :: Initializing Log
+2019-06-23 19:21:14  :: Initializing Incoming Module
+2019-06-23 19:21:25  :: Error initializing Incoming Module
+2019-06-23 19:21:25  :: Initializing Outgoing Module
+2019-06-23 19:21:25  :: Outgoing Module successfully initialized
+2019-06-23 19:24:05  :: 23/6/2019 19:24:05MainApp.LoadConfig
+2019-06-23 19:24:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:24:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:24:05  :: Fin GetConfiguracion
+2019-06-23 19:24:05  :: Initializing Log
+2019-06-23 19:24:05  :: Initializing Incoming Module
+2019-06-23 19:24:15  :: Error initializing Incoming Module
+2019-06-23 19:24:15  :: Initializing Outgoing Module
+2019-06-23 19:24:16  :: Outgoing Module successfully initialized
+2019-06-23 19:25:02  :: 23/6/2019 19:25:02MainApp.LoadConfig
+2019-06-23 19:25:02  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:25:02  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:25:02  :: Fin GetConfiguracion
+2019-06-23 19:25:02  :: Initializing Log
+2019-06-23 19:25:02  :: Initializing Incoming Module
+2019-06-23 19:26:01  :: 23/6/2019 19:26:01MainApp.LoadConfig
+2019-06-23 19:26:01  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:26:01  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:26:01  :: Fin GetConfiguracion
+2019-06-23 19:26:01  :: Initializing Log
+2019-06-23 19:26:01  :: Initializing Incoming Module
+2019-06-23 19:26:05  :: Incoming Module successfully initialized
+2019-06-23 19:26:05  :: Initializing Outgoing Module
+2019-06-23 19:26:11  :: Outgoing Module successfully initialized
+2019-06-23 19:28:24  :: 23/6/2019 19:28:24MainApp.LoadConfig
+2019-06-23 19:28:24  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:28:24  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2019-06-23 19:28:24  :: Fin GetConfiguracion
+2019-06-23 19:28:24  :: Initializing Log
+2019-06-23 19:28:24  :: Initializing Incoming Module
+2019-06-23 19:28:25  :: Incoming Module successfully initialized
+2019-06-23 19:28:25  :: Initializing Outgoing Module
+2019-06-23 19:28:25  :: Outgoing Module successfully initialized

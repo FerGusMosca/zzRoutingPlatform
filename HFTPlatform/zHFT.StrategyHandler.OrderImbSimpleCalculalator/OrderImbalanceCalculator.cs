@@ -238,6 +238,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 //1- We add the current security to monitor
                 SecurityImbalancesToMonitor.Add(symbol, secImbalance);
 
+                Securities.Add(sec);//So far, this is all wehave regarding the Securities
+
                 //2- We request market data
 
                 MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter,sec, SubscriptionRequestType.SnapshotAndUpdates);
@@ -518,6 +520,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
             else if (secImb.ShortPositionThresholdTriggered(Configuration.PositionOpeningImbalanceThreshold))
             {
+                
                 ImbalancePosition imbPos = LoadNewPos(secImb, Side.Sell);
                 PositionWrapper posWrapper = new PositionWrapper(imbPos.OpeningPosition, Config);
                 ImbalancePositions.Add(imbPos.OpeningPosition.Security.Symbol, imbPos);
@@ -591,7 +594,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         }
 
-        protected void LoadTradingParameters()
+        private void LoadTradingParameters()
         {
             foreach (Security sec in Securities)
             {
@@ -638,7 +641,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                         }
                         else//something happened with the cancelation -> we have to try again and log
                         {
-                            //as the positions stays as Partially Filled we will try again on and on
+                            //as the positions stays as Partially Filled we will try again, on and on
                             PendingCancelPosClosing.Remove(report.Order.Symbol);
                         }
                     }
@@ -685,10 +688,13 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         {
             try
             {
-                SecurityList secList = SecurityListConverter.GetSecurityList(wrapper, Config);
-                Securities = secList.Securities;
-                LoadTradingParameters();
-                DoLog(string.Format("@{0} Saving security list:{1} securities ", Configuration.Name, secList.Securities != null ? secList.Securities.Count : 0), Constants.MessageType.Information);
+                lock (tLock)
+                {
+                    SecurityList secList = SecurityListConverter.GetSecurityList(wrapper, Config);
+                    Securities = secList.Securities;
+                    LoadTradingParameters();
+                    DoLog(string.Format("@{0} Saving security list:{1} securities ", Configuration.Name, secList.Securities != null ? secList.Securities.Count : 0), Constants.MessageType.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -781,6 +787,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
                     SecurityListConverter = new SecurityListConverter();
+                    Securities = new List<Security>();
 
                     NextPosId = 1;
 

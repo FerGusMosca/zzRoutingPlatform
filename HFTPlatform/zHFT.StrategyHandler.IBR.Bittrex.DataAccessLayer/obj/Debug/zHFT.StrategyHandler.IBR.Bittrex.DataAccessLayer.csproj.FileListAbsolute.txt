@@ -44,7 +44,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\quickfix_net.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.Main.BusinessEntities.pdb
@@ -60,3 +59,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\Bittrex.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll

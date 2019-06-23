@@ -30,15 +30,15 @@
   
   <StocksToMonitor>
     
-    <Symbol>XBTH19</Symbol>
+    <Symbol>XBTU19</Symbol>
     <Symbol>XBTM19</Symbol>
-    <Symbol>ADAH19</Symbol>
-    <Symbol>BCHH19</Symbol>
-    <Symbol>EOSH19</Symbol>
-    <Symbol>ETHH19</Symbol>
-    <Symbol>LTCH19</Symbol>
-    <Symbol>TRXH19</Symbol>
-    <Symbol>XRPH19</Symbol>
+    <Symbol>ADAM19</Symbol>
+    <Symbol>BCHM19</Symbol>
+    <Symbol>EOSM19</Symbol>
+    <Symbol>ETHM19</Symbol>
+    <Symbol>LTCM19</Symbol>
+    <Symbol>TRXM19</Symbol>
+    <Symbol>XRPM19</Symbol>
   </StocksToMonitor>
 
 </Configuration>

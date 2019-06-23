@@ -162,6 +162,11 @@ namespace zHFT.OrderRouters.Bittrex
             OnMessageRcv(wrapper);
         }
 
+        protected override CMState ProcessSecurityList(Wrapper wrapper)
+        {
+            return CMState.BuildSuccess();
+        }
+
         protected override CMState RouteNewOrder(Wrapper wrapper)
         {
             try

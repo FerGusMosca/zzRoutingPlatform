@@ -209,6 +209,16 @@ namespace zHFT.OrderRouters.Bitmex
             return rejectedER;
         }
 
+        private void RunUpperTick(Order order)
+        {
+            if (order.Side == Side.Buy)
+                order.Price += 0.5m;
+            else
+                order.Price -= 0.5m;
+        
+        
+        }
+
         protected override CMState RouteNewOrder(Wrapper wrapper)
         {
             try
@@ -218,6 +228,7 @@ namespace zHFT.OrderRouters.Bitmex
                 {
                     lock (tLock)
                     {
+                        //RunUpperTick(order);
                         ExecutionReport exRep = OrderManager.PlaceOrder(order);
                         BitMexActiveOrders.Add(order.ClOrdId, order);
                         if (exRep.OrdStatus == OrdStatus.New.ToString())

@@ -1,0 +1,15 @@
+2019-04-14 16:09:36  :: 4/14/2019 4:09:36 PMBaseCommunicationModule.LoadConfig
+2019-04-14 16:09:36  :: Loading config:.\incomingBitmex.xml
+2019-04-14 16:09:36  :: Processing config:.\incomingBitmex.xml
+2019-04-14 16:09:36  :: Ending GetConfiguracion .\incomingBitmex.xml
+2019-04-14 16:09:45  :: @Incoming Bitmex:Requesting market data por symbol XBTM19
+2019-04-14 16:09:45  :: @Incoming Bitmex:Requesting market data por symbol XBTU19
+2019-04-14 16:09:45  :: @Incoming Bitmex:Requesting market data por symbol ADAM19
+2019-04-14 16:09:45  :: @Incoming Bitmex:Requesting market data por symbol EOSM19
+2019-04-14 16:09:45  :: @Incoming Bitmex:Requesting market data por symbol BCHM19
+2019-04-14 16:09:46  :: @Incoming Bitmex:Requesting market data por symbol ETHM19
+2019-04-14 16:09:46  :: @Incoming Bitmex: Error Requesting market data por symbol XBTM19:Colección modificada; puede que no se ejecute la operación de enumeración.
+2019-04-14 16:09:46  :: @Incoming Bitmex:Requesting market data por symbol LTCM19
+2019-04-14 16:09:46  :: @Incoming Bitmex:Requesting market data por symbol TRXM19
+2019-04-14 16:09:46  :: @Incoming Bitmex:Requesting market data por symbol XRPM19
+2019-04-14 16:09:56  :: Successfully subscribed to orderBookL2 event on symbol XBTU19
