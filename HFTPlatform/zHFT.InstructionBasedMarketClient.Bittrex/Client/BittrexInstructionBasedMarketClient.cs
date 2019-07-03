@@ -207,6 +207,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
                 {
+                    DoLog(string.Format("@{0}:Cancelling market data for symbol {1}", GetConfig().Name, mdr.Security.Symbol), Main.Common.Util.Constants.MessageType.Information);
                     CancelMarketData(mdr.Security);
                     return CMState.BuildSuccess();
                 }
@@ -215,6 +216,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             }
             catch (Exception ex)
             {
+                DoLog(string.Format("@{0}:Critical error processing market data request : {1}", GetConfig().Name, ex.Message), Main.Common.Util.Constants.MessageType.Information);
                 return CMState.BuildFail(ex);
             }
         }

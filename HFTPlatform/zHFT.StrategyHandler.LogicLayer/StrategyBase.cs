@@ -281,6 +281,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.LeavesQty = report.LeavesQty;
                                 summary.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
                                 summary.Commission = report.Commission.HasValue ? (double?)report.Commission.Value : null;
+                                summary.Position.LeavesQty = report.LeavesQty;
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 UpdateExecutionSummaryData(summary, report);
                                 EvalExecutionSummary(summary);
@@ -295,6 +296,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
                                 summary.Commission = report.Commission.HasValue ? (double?)report.Commission.Value : null;
                                 summary.Position.PositionCleared = true;
+                                summary.Position.LeavesQty = report.LeavesQty;
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 summary.Position.PositionCanceledOrRejected = false;
                                 UpdateExecutionSummaryData(summary, report);
@@ -310,6 +312,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 DoLog(string.Format("Received {0} for symbol {1}",report.ExecType.ToString() ,summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
                                 summary.Position.PositionCanceledOrRejected = true;
                                 summary.Position.PositionCleared = false;
+                                summary.Position.LeavesQty = report.LeavesQty;
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 summary.Text = report.Text;
                                 UpdateExecutionSummaryData(summary, report);
@@ -323,6 +326,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.LeavesQty = report.LeavesQty;
                                 summary.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
                                 summary.Commission = report.Commission.HasValue ? (double?)report.Commission.Value : null;
+                                summary.Position.LeavesQty = report.LeavesQty;
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 summary.Position.ExecutionReports.Add(report);
                                 EvalExecutionSummary(summary);

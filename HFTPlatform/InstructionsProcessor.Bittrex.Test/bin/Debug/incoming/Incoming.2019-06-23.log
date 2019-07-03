@@ -71,3 +71,10 @@
 2019-06-23 19:29:34  :: @Incoming Bittrex:Requesting market data por symbol USDT
 2019-06-23 19:30:21  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
 2019-06-23 19:30:24  :: @Incoming Bittrex:Unsubscribing market data for symbol USDT
+2019-06-23 19:48:26  :: @Incoming Bittrex:Requesting market data por symbol ADA
+2019-06-23 19:48:35  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2019-06-23 19:48:35  :: @Incoming Bittrex:Unsubscribing market data for symbol ADA
+2019-06-23 20:19:58  :: 6/23/2019 8:19:58 PMBaseCommunicationModule.LoadConfig
+2019-06-23 20:19:58  :: Loading config:.\incomingBittrex.xml
+2019-06-23 20:19:58  :: Processing config:.\incomingBittrex.xml
+2019-06-23 20:19:58  :: Ending GetConfiguracion .\incomingBittrex.xml

@@ -306,3 +306,15 @@ Login failed for user 'DESKTOP-LKBJCI2\zimzum'.
 2019-06-23 19:30:21  :: Received Canceled for symbol USDT
 2019-06-23 19:30:21  :: Canceled for symbol USDT processed
 2019-06-23 19:30:22  :: Ending RunOnPositionCalculus for symbol USDT. The position is cleared
+2019-06-23 19:48:26  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2019-06-23 19:48:30  :: Processing Market Data:Symbol=ADA  LastPrice=0.00000888 BestBidPrice=0.00000888 BestAskPrice=0.00000889
+2019-06-23 19:48:32  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2019-06-23 19:48:32  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ADA
+2019-06-23 19:48:32  :: Routing to market position for symbol ADA
+2019-06-23 19:48:32  :: Creating sell order for symbol ADA.Quantity=3108.60232067 Price=
+2019-06-23 19:48:32  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ADA
+2019-06-23 19:48:35  :: Incoming message from order routing proxy: Execution Report for symbol ADA: Order Status=Canceled - Exec Type=Canceled
+2019-06-23 19:48:35  :: Incoming message from order routing: Execution Report for symbol ADA: Order Status=Canceled - Exec Type=Canceled
+2019-06-23 19:48:35  :: Received Canceled for symbol ADA
+2019-06-23 19:48:35  :: Canceled for symbol ADA processed
+2019-06-23 19:48:36  :: Ending RunOnPositionCalculus for symbol ADA. The position is cleared
