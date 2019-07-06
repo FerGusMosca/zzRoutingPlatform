@@ -22,7 +22,6 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.CurrencyListMarket
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.CurrencyListMarketClient.Bittrex.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.CurrencyListMarketClient.Bittrex.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\Bittrex.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\mscorlib.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.CurrencyListMarketClient.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.CurrencyListMarketClient.Bittrex.Common.dll
@@ -38,12 +37,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\es\mscorlib.resources.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\normidna.nlp
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\normnfc.nlp
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\normnfd.nlp
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\normnfkc.nlp
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\normnfkd.nlp
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\obj\Debug\zHFT.CurrencyListMarketClient.Bittrex.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\obj\Debug\zHFT.CurrencyListMarketClient.Bittrex.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\obj\Debug\zHFT.CurrencyListMarketClient.Bittrex.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.CurrencyListMarketClient.Bittrex\bin\Debug\Bittrex.pdb

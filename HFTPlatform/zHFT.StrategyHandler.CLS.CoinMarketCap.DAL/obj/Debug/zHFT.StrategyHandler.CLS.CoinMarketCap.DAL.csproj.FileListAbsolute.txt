@@ -1,0 +1,15 @@
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csprojResolveAssemblyReference.cache

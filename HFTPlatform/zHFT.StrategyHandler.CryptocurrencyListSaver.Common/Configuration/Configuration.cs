@@ -13,9 +13,19 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Configuration
 
         public string SecuritiesAccessLayerConnectionString { get; set; }
 
+        public string CryptosInPortfolioConnectionString { get; set; }
+
         public int MaxWaitingTimeForMarketDataRequest { get; set; }
 
         public bool SaveNewSecurities { get; set; }
+
+        public string MarketCapProvider { get; set; }
+
+        public string MarketCapProviderAPIKey { get; set; }
+
+        public string MarketCapProviderURL { get; set; }
+
+        public string MarketCapCurrency { get; set; }
 
         #endregion
 
@@ -36,6 +46,37 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Configuration
             if (string.IsNullOrEmpty(SecuritiesAccessLayerConnectionString))
             {
                 result.Add("SecuritiesAccessLayerConnectionString");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(CryptosInPortfolioConnectionString))
+            {
+                result.Add("CryptosInPortfolioConnectionString");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(MarketCapProvider))
+            {
+                result.Add("MarketCapProvider");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(MarketCapProviderAPIKey))
+            {
+                result.Add("MarketCapProviderAPIKey");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(MarketCapProviderURL))
+            {
+                result.Add("MarketCapProviderURL");
+                resultado = false;
+            }
+
+
+            if (string.IsNullOrEmpty(MarketCapCurrency))
+            {
+                result.Add("MarketCapCurrency");
                 resultado = false;
             }
 

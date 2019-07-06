@@ -1,0 +1,1751 @@
+2019-07-06 14:38:58  :: 7/6/2019 2:38:58 PMBaseCommunicationModule.LoadConfig
+2019-07-06 14:38:58  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 14:38:58  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 14:38:58  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 14:39:00  :: Processing Security List:Wrapper
+2019-07-06 14:39:16  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency BTC-Bitcoin
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency LTC-Litecoin
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency DOGE-Dogecoin
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency VTC-Vertcoin
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency PPC-Peercoin
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency FTC-Feathercoin
+2019-07-06 14:39:16  :: @Security List Processor:Persisting crypto currency RDD-ReddCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NXT-NXT
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DASH-Dash
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency POT-PotCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BLK-BlackCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EMC2-Einsteinium
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XMY-Myriad
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EFL-ElectronicGulden
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GLC-GoldCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SLR-SolarCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GRS-Groestlcoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NLG-Gulden
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XWC-WhiteCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MONA-MonaCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency THC-HempCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ENRG-EnergyCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency VRC-VeriCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency CURE-CureCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XMR-Monero
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency CLOAK-CloakCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BSD-BitSend
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency KORE-Kore
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XDN-DigitalNote
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NAV-NAVCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XST-Stealth
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency VIA-ViaCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency PINK-PinkCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency IOC-I/OCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency CANN-CannabisCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SYS-SysCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NEOS-NeosCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DGB-DigiByte
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BTS-BitShares
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BURST-BURST
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EXCL-ExclusiveCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BITS-Bitswift
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DOPE-DopeCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BLOCK-Blocknet
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ABY-ArtByte
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XMG-Magi
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BAY-BitBay
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XRP-XRP
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GAME-GameCredits
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NXS-Nexus
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency COVAL-Circuits of Value
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XCP-Counterparty
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BITB-BitBean
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XVG-Verge
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GEO-GeoCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency FLDC-FoldingCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GRC-GridCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency FLO-FLO
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NBT-Nubits
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XEM-NEM
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MUE-MonetaryUnit
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DMD-Diamond
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GAM-Gambit
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SPHR-Sphere
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency OK-OkCash
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency AEON-Aeon
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ETH-Ethereum
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency TX-TransferCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EXP-Expanse
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency OMNI-OmniCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency USDT-Tether
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency AMP-SynereoAmp
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XLM-Lumen
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BITCNY-BitCNY
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency RVR-RevolutionVR
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EMC-EmerCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency FCT-Factom
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MAID-MaidSafeCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EGC-EverGreenCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SLS-SaluS
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency RADS-Radium
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DCR-Decred
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency PIVX-Pivx
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MEME-Memetic
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency STEEM-STEEM
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency 2GIVE-2GIVE
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency LSK-Lisk
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DGD-DigixDAO
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BRK-Breakout
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency WAVES-Waves
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency LBC-LBRY Credits
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SBD-SteemDollars
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BRX-Breakout Stake
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ETC-Ethereum Classic
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency STRAT-Stratis
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SYNX-Syndicate
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EBST-eBoost
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency VRM-Verium
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SEQ-Sequence
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SNGLS-SingularDTV
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency REP-Augur
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SHIFT-Shift
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ARDR-Ardor
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XZC-ZCoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NEO-Neo
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ZEC-ZCash
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ZCL-Zclassic
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency IOP-Internet Of People
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GOLOS-Golos
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GBG-Gbg
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency UBQ-Ubiq
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency KMD-Komodo
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SIB-Sibcoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ION-Ion
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency QWARK-Qwark
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency CRW-Crown
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SWT-Swarm City Token
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MLN-Melon
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency TKS-Tokes
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ARK-Ark
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DYN-Dynamic
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MUSIC-Musicoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DTB-Databits
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency INCNT-Incent
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GBYTE-Bytes
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GNT-Golem
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NXC-Nexium
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency EDG-Edgeless
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MORE-More
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency TRST-Trustcoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency WINGS-Wings DAO
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency RLC-iEx.ec
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GNO-Gnosis
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency GUP-Guppy
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency LUN-Lunyr
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency HMQ-Humaniq
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ANT-Aragon
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ZEN-Horizen
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SC-Siacoin
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BAT-Basic Attention Token
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency 1ST-Firstblood
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency QRL-Quantum Resistant Ledger
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency PTOY-Patientory
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BNT-Bancor
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency NMR-Numeraire
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SNT-Status Network Token
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DCT-DECENT
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency XEL-XEL
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MCO-Crypto.com
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ADT-adToken
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency FUN-FunFair
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency PAY-TenX Pay Token
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MTL-METAL
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency STORJ-STORJ
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ADX-AdEx
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency OMG-OmiseGO
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency CVC-Civic
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency PART-Particl
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency QTUM-Qtum
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency BCH-Bitcoin Cash (ABC)
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency DNT-district0x
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency ADA-Cardano
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency MANA-Decentraland
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency SALT-Salt
+2019-07-06 14:39:17  :: @Security List Processor:Persisting crypto currency TIX-Blocktix
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency RCN-Ripio Credit Network
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency VIB-Viberate
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MER-Mercury
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency POWR-PowerLedger
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ENG-Enigma
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency UKG-UnikoinGold
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency IGNIS-Ignis
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SRN-Sirin Token
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency WAX-Worldwide Asset Exchange
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ZRX-0x Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency VEE-BLOCKv
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BCPT-BlockMason Credit Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency TRX-Tron
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency TUSD-TrueUSD
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency LRC-Loopring
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency UP-UpToken
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency DMT-DMarket
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency POLY-Polymath
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PRO-Propy
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BLT-Bloom
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency STORM-Storm
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency AID-AidCoin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency NGC-Naga
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency GTO-Gifto
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency OCN-Odyssey
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency USD-US Dollar
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency TUBE-BitTube
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency CBC-CashBet
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency CMCT-Crowd Machine
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency NLC2-NoLimitCoin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BKX-Bankex
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MFT-Mainframe
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency LOOM-Loom Network
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency RFR-Refereum
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency RVN-RavenCoin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BFT-BnkToTheFuture
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency GO-GoChain
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency HYDRO-Hydro
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency UPP-Sentinel Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ENJ-Enjin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MET-Metronome
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency DTA-Data
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency EDR-Endor
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BOXX-Blockparty
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency IHT-I-House Token
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency XHV-Haven Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency NPXS-Pundi X
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PMA-PumaPay
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PAL-PAL Network
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PAX-Paxos Standard
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ZIL-Zilliqa
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MOC-Mossland
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency OST-Simple Token
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SPC-SpaceChain
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MEDX-MediBloc
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BSV-Bitcoin SV
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency IOST-IOST
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency XNK-Ink Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency NCASH-Nucleus Vision
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SOLVE-Solve.Care
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency USDS-StableUSD
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency JNT-Jibrel
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency LBA-Cred
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MOBI-Mobius
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency DENT-Dent
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency DRGN-Dragonchain
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency VITE-Vite
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency IOTX-IoTeX
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BTM-Bytom
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ELF-aelf
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency QNT-Quant
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BTU-BTU Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SPND-Spendcoin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BTT-BitTorrent
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency NKN-NKN
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency GRIN-Grin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency CTXC-Cortex
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency HXRO-Hxro
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SERV-Serve
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency META-Metadium
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency FSN-Fusion
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency HST-Decision Token
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ANKR-Ankr
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency TRAC-OriginTrail
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency CRO-Crypto.com Chain
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ONT-Ontology
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ONG-OntologyGas
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency AERGO-Aergo
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency TTC-TTC
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SLT-Smartlands
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PTON-Foresting
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PI-PCHAIN
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PLA-PlayChip
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ART-Maecenas
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency VBK-VeriBlock
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ORBS-Orbs
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BORA-BORA
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency CND-Cindicator
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency TRIO-Tripio
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency FX-Function X
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ATOM-Cosmos
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency OCEAN-Ocean Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency XYO-XYO
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency WIB-Wibson
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency BWX-Blue Whale eXchange
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SNX-Synthetix
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency SUSD-Synthetix sUSD
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency VDX-Vodi X
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency COSM-Cosmo Coin
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency OGO-Origo
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ITM-Intimate
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency STPT-Standard Tokenization Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency LAMB-Lambda
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency FET-Fetch
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency MKR-Maker
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency DAI-Dai
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency CPT-Contents Protocol
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ABT-ArcBlock
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency PROM-Prometeus
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency FTM-Fantom
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency ABYSS-Abyss
+2019-07-06 14:39:18  :: @Security List Processor:Persisting crypto currency EOS-EOS
+2019-07-06 15:15:36  :: 7/6/2019 3:15:36 PMBaseCommunicationModule.LoadConfig
+2019-07-06 15:15:36  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:15:36  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:15:36  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:46:39  :: 7/6/2019 3:46:39 PMBaseCommunicationModule.LoadConfig
+2019-07-06 15:46:39  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:46:39  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:46:39  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:46:41  :: Processing Security List:Wrapper
+2019-07-06 15:46:55  :: 7/6/2019 3:46:55 PMBaseCommunicationModule.LoadConfig
+2019-07-06 15:46:55  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:46:55  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:46:55  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:59:49  :: 7/6/2019 3:59:49 PMBaseCommunicationModule.LoadConfig
+2019-07-06 15:59:49  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:59:49  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:59:49  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 15:59:51  :: Processing Security List:Wrapper
+2019-07-06 15:59:51  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:00:18  :: 7/6/2019 4:00:18 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:00:18  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:00:18  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:00:18  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:00:19  :: Processing Security List:Wrapper
+2019-07-06 16:00:19  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:04:54  :: 7/6/2019 4:04:54 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:04:54  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:04:54  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:04:54  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:04:55  :: Processing Security List:Wrapper
+2019-07-06 16:04:55  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:07:46  :: 7/6/2019 4:07:46 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:07:46  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:07:46  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:07:46  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:07:47  :: Processing Security List:Wrapper
+2019-07-06 16:07:47  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:08:11  :: 7/6/2019 4:08:11 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:08:11  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:08:11  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:08:11  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:08:12  :: Processing Security List:Wrapper
+2019-07-06 16:08:12  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:10:09  :: 7/6/2019 4:10:09 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:10:09  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:10:09  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:10:09  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:10:11  :: Processing Security List:Wrapper
+2019-07-06 16:10:11  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:13:52  :: 7/6/2019 4:13:52 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:13:52  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:13:52  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:13:52  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:13:54  :: Processing Security List:Wrapper
+2019-07-06 16:13:54  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:19:48  :: 7/6/2019 4:19:48 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:19:48  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:19:48  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:19:48  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:19:50  :: Processing Security List:Wrapper
+2019-07-06 16:19:50  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:19:50  :: @Security List Processor:Persisting crypto currency BTC-Bitcoin
+2019-07-06 16:19:50  :: @Security List Processor:Persisting crypto currency LTC-Litecoin
+2019-07-06 16:19:50  :: @Security List Processor:Persisting crypto currency DOGE-Dogecoin
+2019-07-06 16:19:50  :: @Security List Processor:Persisting crypto currency VTC-Vertcoin
+2019-07-06 16:19:50  :: @Security List Processor:Persisting crypto currency PPC-Peercoin
+2019-07-06 16:19:50  :: @Security List Processor:Persisting crypto currency FTC-Feathercoin
+2019-07-06 16:20:48  :: 7/6/2019 4:20:48 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:20:48  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:20:48  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:20:48  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:20:49  :: Processing Security List:Wrapper
+2019-07-06 16:20:49  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:20:49  :: @Security List Processor:Persisting crypto currency BTC-Bitcoin
+2019-07-06 16:20:50  :: @Security List Processor:Persisting crypto currency LTC-Litecoin
+2019-07-06 16:20:50  :: @Security List Processor:Persisting crypto currency DOGE-Dogecoin
+2019-07-06 16:20:50  :: @Security List Processor:Persisting crypto currency VTC-Vertcoin
+2019-07-06 16:20:50  :: @Security List Processor:Persisting crypto currency PPC-Peercoin
+2019-07-06 16:20:50  :: @Security List Processor:Persisting crypto currency FTC-Feathercoin
+2019-07-06 16:21:01  :: RED->Cryptocurrency RDD (market cap 0) not being tracked...
+2019-07-06 16:21:12  :: @Security List Processor:Persisting crypto currency RDD-ReddCoin
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency NXT-NXT
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency DASH-Dash
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency POT-PotCoin
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency BLK-BlackCoin
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency EMC2-Einsteinium
+2019-07-06 16:21:13  :: RED->Cryptocurrency XMY (market cap 0) not being tracked...
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency XMY-Myriad
+2019-07-06 16:21:13  :: RED->Cryptocurrency EFL (market cap 0) not being tracked...
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency EFL-ElectronicGulden
+2019-07-06 16:21:13  :: RED->Cryptocurrency GLC (market cap 0) not being tracked...
+2019-07-06 16:21:13  :: @Security List Processor:Persisting crypto currency GLC-GoldCoin
+2019-07-06 16:21:14  :: RED->Cryptocurrency SLR (market cap 0) not being tracked...
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency SLR-SolarCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency GRS-Groestlcoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency NLG-Gulden
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency XWC-WhiteCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency MONA-MonaCoin
+2019-07-06 16:21:14  :: RED->Cryptocurrency THC (market cap 0) not being tracked...
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency THC-HempCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency ENRG-EnergyCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency VRC-VeriCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency CURE-CureCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency XMR-Monero
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency CLOAK-CloakCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency BSD-BitSend
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency KORE-Kore
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency XDN-DigitalNote
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency NAV-NAVCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency XST-Stealth
+2019-07-06 16:21:14  :: RED->Cryptocurrency VIA (market cap 0) not being tracked...
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency VIA-ViaCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency PINK-PinkCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency IOC-I/OCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency CANN-CannabisCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency SYS-SysCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency NEOS-NeosCoin
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency DGB-DigiByte
+2019-07-06 16:21:14  :: @Security List Processor:Persisting crypto currency BTS-BitShares
+2019-07-06 16:21:15  :: RED->Cryptocurrency BURST (market cap 0) not being tracked...
+2019-07-06 16:21:15  :: @Security List Processor:Persisting crypto currency BURST-BURST
+2019-07-06 16:21:15  :: RED->Cryptocurrency EXCL (market cap 0) not being tracked...
+2019-07-06 16:21:15  :: @Security List Processor:Persisting crypto currency EXCL-ExclusiveCoin
+2019-07-06 16:21:15  :: RED->Cryptocurrency BITS (market cap 0) not being tracked...
+2019-07-06 16:21:15  :: @Security List Processor:Persisting crypto currency BITS-Bitswift
+2019-07-06 16:21:15  :: @Security List Processor:Persisting crypto currency DOPE-DopeCoin
+2019-07-06 16:21:15  :: @Security List Processor:Persisting crypto currency BLOCK-Blocknet
+2019-07-06 16:21:15  :: RED->Cryptocurrency ABY (market cap 0) not being tracked...
+2019-07-06 16:21:15  :: @Security List Processor:Persisting crypto currency ABY-ArtByte
+2019-07-06 16:21:16  :: RED->Cryptocurrency XMG (market cap 0) not being tracked...
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency XMG-Magi
+2019-07-06 16:21:16  :: RED->Cryptocurrency BAY (market cap 0) not being tracked...
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency BAY-BitBay
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency XRP-XRP
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency GAME-GameCredits
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency NXS-Nexus
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency COVAL-Circuits of Value
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency XCP-Counterparty
+2019-07-06 16:21:16  :: @Security List Processor:Persisting crypto currency BITB-BitBean
+2019-07-06 16:21:17  :: RED->Cryptocurrency XVG (market cap 0) not being tracked...
+2019-07-06 16:21:17  :: @Security List Processor:Persisting crypto currency XVG-Verge
+2019-07-06 16:21:17  :: @Security List Processor:Persisting crypto currency GEO-GeoCoin
+2019-07-06 16:21:17  :: @Security List Processor:Persisting crypto currency FLDC-FoldingCoin
+2019-07-06 16:21:17  :: RED->Cryptocurrency GRC (market cap 0) not being tracked...
+2019-07-06 16:21:17  :: @Security List Processor:Persisting crypto currency GRC-GridCoin
+2019-07-06 16:21:17  :: RED->Cryptocurrency FLO (market cap 0) not being tracked...
+2019-07-06 16:21:17  :: @Security List Processor:Persisting crypto currency FLO-FLO
+2019-07-06 16:21:17  :: RED->Cryptocurrency NBT (market cap 0) not being tracked...
+2019-07-06 16:21:17  :: @Security List Processor:Persisting crypto currency NBT-Nubits
+2019-07-06 16:21:18  :: RED->Cryptocurrency XEM (market cap 0) not being tracked...
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency XEM-NEM
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency MUE-MonetaryUnit
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency DMD-Diamond
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency GAM-Gambit
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency SPHR-Sphere
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency OK-OkCash
+2019-07-06 16:21:18  :: RED->Cryptocurrency AEON (market cap 0) not being tracked...
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency AEON-Aeon
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency ETH-Ethereum
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency TX-TransferCoin
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency EXP-Expanse
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency OMNI-OmniCoin
+2019-07-06 16:21:18  :: RED->Cryptocurrency USDT (market cap 0) not being tracked...
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency USDT-Tether
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency AMP-SynereoAmp
+2019-07-06 16:21:18  :: RED->Cryptocurrency XLM (market cap 0) not being tracked...
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency XLM-Lumen
+2019-07-06 16:21:18  :: RED->Cryptocurrency BITCNY (market cap 0) not being tracked...
+2019-07-06 16:21:18  :: @Security List Processor:Persisting crypto currency BITCNY-BitCNY
+2019-07-06 16:21:19  :: RED->Cryptocurrency RVR (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency RVR-RevolutionVR
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency EMC-EmerCoin
+2019-07-06 16:21:19  :: RED->Cryptocurrency FCT (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency FCT-Factom
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency MAID-MaidSafeCoin
+2019-07-06 16:21:19  :: RED->Cryptocurrency EGC (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency EGC-EverGreenCoin
+2019-07-06 16:21:19  :: RED->Cryptocurrency SLS (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency SLS-SaluS
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency RADS-Radium
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency DCR-Decred
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency PIVX-Pivx
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency MEME-Memetic
+2019-07-06 16:21:19  :: RED->Cryptocurrency STEEM (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency STEEM-STEEM
+2019-07-06 16:21:19  :: RED->Cryptocurrency 2GIVE (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency 2GIVE-2GIVE
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency LSK-Lisk
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency DGD-DigixDAO
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency BRK-Breakout
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency WAVES-Waves
+2019-07-06 16:21:19  :: RED->Cryptocurrency LBC (market cap 0) not being tracked...
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency LBC-LBRY Credits
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency SBD-SteemDollars
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency BRX-Breakout Stake
+2019-07-06 16:21:19  :: @Security List Processor:Persisting crypto currency ETC-Ethereum Classic
+2019-07-06 16:21:20  :: RED->Cryptocurrency STRAT (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency STRAT-Stratis
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency SYNX-Syndicate
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency EBST-eBoost
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency VRM-Verium
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency SEQ-Sequence
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency SNGLS-SingularDTV
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency REP-Augur
+2019-07-06 16:21:20  :: RED->Cryptocurrency SHIFT (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency SHIFT-Shift
+2019-07-06 16:21:20  :: RED->Cryptocurrency ARDR (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency ARDR-Ardor
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency XZC-ZCoin
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency NEO-Neo
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency ZEC-ZCash
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency ZCL-Zclassic
+2019-07-06 16:21:20  :: RED->Cryptocurrency IOP (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency IOP-Internet Of People
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency GOLOS-Golos
+2019-07-06 16:21:20  :: RED->Cryptocurrency GBG (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency GBG-Gbg
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency UBQ-Ubiq
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency KMD-Komodo
+2019-07-06 16:21:20  :: RED->Cryptocurrency SIB (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency SIB-Sibcoin
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency ION-Ion
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency QWARK-Qwark
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency CRW-Crown
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency SWT-Swarm City Token
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency MLN-Melon
+2019-07-06 16:21:20  :: RED->Cryptocurrency TKS (market cap 0) not being tracked...
+2019-07-06 16:21:20  :: @Security List Processor:Persisting crypto currency TKS-Tokes
+2019-07-06 16:21:21  :: RED->Cryptocurrency ARK (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency ARK-Ark
+2019-07-06 16:21:21  :: RED->Cryptocurrency DYN (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency DYN-Dynamic
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency MUSIC-Musicoin
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency DTB-Databits
+2019-07-06 16:21:21  :: RED->Cryptocurrency INCNT (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency INCNT-Incent
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency GBYTE-Bytes
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency GNT-Golem
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency NXC-Nexium
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency EDG-Edgeless
+2019-07-06 16:21:21  :: RED->Cryptocurrency MORE (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency MORE-More
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency TRST-Trustcoin
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency WINGS-Wings DAO
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency RLC-iEx.ec
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency GNO-Gnosis
+2019-07-06 16:21:21  :: RED->Cryptocurrency GUP (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency GUP-Guppy
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency LUN-Lunyr
+2019-07-06 16:21:21  :: RED->Cryptocurrency HMQ (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency HMQ-Humaniq
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency ANT-Aragon
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency ZEN-Horizen
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency SC-Siacoin
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency BAT-Basic Attention Token
+2019-07-06 16:21:21  :: RED->Cryptocurrency 1ST (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency 1ST-Firstblood
+2019-07-06 16:21:21  :: RED->Cryptocurrency QRL (market cap 0) not being tracked...
+2019-07-06 16:21:21  :: @Security List Processor:Persisting crypto currency QRL-Quantum Resistant Ledger
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency PTOY-Patientory
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency BNT-Bancor
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency NMR-Numeraire
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency SNT-Status Network Token
+2019-07-06 16:21:22  :: RED->Cryptocurrency DCT (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency DCT-DECENT
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency XEL-XEL
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency MCO-Crypto.com
+2019-07-06 16:21:22  :: RED->Cryptocurrency ADT (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency ADT-adToken
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency FUN-FunFair
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency PAY-TenX Pay Token
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency MTL-METAL
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency STORJ-STORJ
+2019-07-06 16:21:22  :: RED->Cryptocurrency ADX (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency ADX-AdEx
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency OMG-OmiseGO
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency CVC-Civic
+2019-07-06 16:21:22  :: RED->Cryptocurrency PART (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency PART-Particl
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency QTUM-Qtum
+2019-07-06 16:21:22  :: RED->Cryptocurrency BCH (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency BCH-Bitcoin Cash (ABC)
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency DNT-district0x
+2019-07-06 16:21:22  :: RED->Cryptocurrency ADA (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency ADA-Cardano
+2019-07-06 16:21:22  :: RED->Cryptocurrency MANA (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency MANA-Decentraland
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency SALT-Salt
+2019-07-06 16:21:22  :: RED->Cryptocurrency TIX (market cap 0) not being tracked...
+2019-07-06 16:21:22  :: @Security List Processor:Persisting crypto currency TIX-Blocktix
+2019-07-06 16:21:23  :: RED->Cryptocurrency RCN (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency RCN-Ripio Credit Network
+2019-07-06 16:21:23  :: RED->Cryptocurrency VIB (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency VIB-Viberate
+2019-07-06 16:21:23  :: RED->Cryptocurrency MER (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency MER-Mercury
+2019-07-06 16:21:23  :: RED->Cryptocurrency POWR (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency POWR-PowerLedger
+2019-07-06 16:21:23  :: RED->Cryptocurrency ENG (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency ENG-Enigma
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency UKG-UnikoinGold
+2019-07-06 16:21:23  :: RED->Cryptocurrency IGNIS (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency IGNIS-Ignis
+2019-07-06 16:21:23  :: RED->Cryptocurrency SRN (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency SRN-Sirin Token
+2019-07-06 16:21:23  :: RED->Cryptocurrency WAX (market cap 0) not being tracked...
+2019-07-06 16:21:23  :: @Security List Processor:Persisting crypto currency WAX-Worldwide Asset Exchange
+2019-07-06 16:21:24  :: RED->Cryptocurrency ZRX (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency ZRX-0x Protocol
+2019-07-06 16:21:24  :: RED->Cryptocurrency VEE (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency VEE-BLOCKv
+2019-07-06 16:21:24  :: RED->Cryptocurrency BCPT (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency BCPT-BlockMason Credit Protocol
+2019-07-06 16:21:24  :: RED->Cryptocurrency TRX (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency TRX-Tron
+2019-07-06 16:21:24  :: RED->Cryptocurrency TUSD (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency TUSD-TrueUSD
+2019-07-06 16:21:24  :: RED->Cryptocurrency LRC (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency LRC-Loopring
+2019-07-06 16:21:24  :: RED->Cryptocurrency UP (market cap 0) not being tracked...
+2019-07-06 16:21:24  :: @Security List Processor:Persisting crypto currency UP-UpToken
+2019-07-06 16:21:25  :: RED->Cryptocurrency DMT (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency DMT-DMarket
+2019-07-06 16:21:25  :: RED->Cryptocurrency POLY (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency POLY-Polymath
+2019-07-06 16:21:25  :: RED->Cryptocurrency PRO (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency PRO-Propy
+2019-07-06 16:21:25  :: RED->Cryptocurrency BLT (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency BLT-Bloom
+2019-07-06 16:21:25  :: RED->Cryptocurrency STORM (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency STORM-Storm
+2019-07-06 16:21:25  :: RED->Cryptocurrency AID (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency AID-AidCoin
+2019-07-06 16:21:25  :: RED->Cryptocurrency NGC (market cap 0) not being tracked...
+2019-07-06 16:21:25  :: @Security List Processor:Persisting crypto currency NGC-Naga
+2019-07-06 16:21:26  :: RED->Cryptocurrency GTO (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency GTO-Gifto
+2019-07-06 16:21:26  :: RED->Cryptocurrency OCN (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency OCN-Odyssey
+2019-07-06 16:21:26  :: RED->Cryptocurrency USD (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency USD-US Dollar
+2019-07-06 16:21:26  :: RED->Cryptocurrency TUBE (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency TUBE-BitTube
+2019-07-06 16:21:26  :: RED->Cryptocurrency CBC (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency CBC-CashBet
+2019-07-06 16:21:26  :: RED->Cryptocurrency CMCT (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency CMCT-Crowd Machine
+2019-07-06 16:21:26  :: RED->Cryptocurrency NLC2 (market cap 0) not being tracked...
+2019-07-06 16:21:26  :: @Security List Processor:Persisting crypto currency NLC2-NoLimitCoin
+2019-07-06 16:21:27  :: RED->Cryptocurrency BKX (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency BKX-Bankex
+2019-07-06 16:21:27  :: RED->Cryptocurrency MFT (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency MFT-Mainframe
+2019-07-06 16:21:27  :: RED->Cryptocurrency LOOM (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency LOOM-Loom Network
+2019-07-06 16:21:27  :: RED->Cryptocurrency RFR (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency RFR-Refereum
+2019-07-06 16:21:27  :: RED->Cryptocurrency RVN (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency RVN-RavenCoin
+2019-07-06 16:21:27  :: RED->Cryptocurrency BFT (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency BFT-BnkToTheFuture
+2019-07-06 16:21:27  :: RED->Cryptocurrency GO (market cap 0) not being tracked...
+2019-07-06 16:21:27  :: @Security List Processor:Persisting crypto currency GO-GoChain
+2019-07-06 16:21:28  :: RED->Cryptocurrency HYDRO (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency HYDRO-Hydro
+2019-07-06 16:21:28  :: RED->Cryptocurrency UPP (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency UPP-Sentinel Protocol
+2019-07-06 16:21:28  :: RED->Cryptocurrency ENJ (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency ENJ-Enjin
+2019-07-06 16:21:28  :: RED->Cryptocurrency MET (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency MET-Metronome
+2019-07-06 16:21:28  :: RED->Cryptocurrency DTA (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency DTA-Data
+2019-07-06 16:21:28  :: RED->Cryptocurrency EDR (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency EDR-Endor
+2019-07-06 16:21:28  :: RED->Cryptocurrency BOXX (market cap 0) not being tracked...
+2019-07-06 16:21:28  :: @Security List Processor:Persisting crypto currency BOXX-Blockparty
+2019-07-06 16:21:29  :: RED->Cryptocurrency IHT (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency IHT-I-House Token
+2019-07-06 16:21:29  :: RED->Cryptocurrency XHV (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency XHV-Haven Protocol
+2019-07-06 16:21:29  :: RED->Cryptocurrency NPXS (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency NPXS-Pundi X
+2019-07-06 16:21:29  :: RED->Cryptocurrency PMA (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency PMA-PumaPay
+2019-07-06 16:21:29  :: RED->Cryptocurrency PAL (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency PAL-PAL Network
+2019-07-06 16:21:29  :: RED->Cryptocurrency PAX (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency PAX-Paxos Standard
+2019-07-06 16:21:29  :: RED->Cryptocurrency ZIL (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency ZIL-Zilliqa
+2019-07-06 16:21:29  :: RED->Cryptocurrency MOC (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency MOC-Mossland
+2019-07-06 16:21:29  :: RED->Cryptocurrency OST (market cap 0) not being tracked...
+2019-07-06 16:21:29  :: @Security List Processor:Persisting crypto currency OST-Simple Token
+2019-07-06 16:21:30  :: RED->Cryptocurrency SPC (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency SPC-SpaceChain
+2019-07-06 16:21:30  :: RED->Cryptocurrency MEDX (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency MEDX-MediBloc
+2019-07-06 16:21:30  :: RED->Cryptocurrency BSV (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency BSV-Bitcoin SV
+2019-07-06 16:21:30  :: RED->Cryptocurrency IOST (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency IOST-IOST
+2019-07-06 16:21:30  :: RED->Cryptocurrency XNK (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency XNK-Ink Protocol
+2019-07-06 16:21:30  :: RED->Cryptocurrency NCASH (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency NCASH-Nucleus Vision
+2019-07-06 16:21:30  :: RED->Cryptocurrency SOLVE (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency SOLVE-Solve.Care
+2019-07-06 16:21:30  :: RED->Cryptocurrency USDS (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency USDS-StableUSD
+2019-07-06 16:21:30  :: RED->Cryptocurrency JNT (market cap 0) not being tracked...
+2019-07-06 16:21:30  :: @Security List Processor:Persisting crypto currency JNT-Jibrel
+2019-07-06 16:21:31  :: RED->Cryptocurrency LBA (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency LBA-Cred
+2019-07-06 16:21:31  :: RED->Cryptocurrency MOBI (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency MOBI-Mobius
+2019-07-06 16:21:31  :: RED->Cryptocurrency DENT (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency DENT-Dent
+2019-07-06 16:21:31  :: RED->Cryptocurrency DRGN (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency DRGN-Dragonchain
+2019-07-06 16:21:31  :: RED->Cryptocurrency VITE (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency VITE-Vite
+2019-07-06 16:21:31  :: RED->Cryptocurrency IOTX (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency IOTX-IoTeX
+2019-07-06 16:21:31  :: RED->Cryptocurrency BTM (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency BTM-Bytom
+2019-07-06 16:21:31  :: RED->Cryptocurrency ELF (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency ELF-aelf
+2019-07-06 16:21:31  :: RED->Cryptocurrency QNT (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency QNT-Quant
+2019-07-06 16:21:31  :: RED->Cryptocurrency BTU (market cap 0) not being tracked...
+2019-07-06 16:21:31  :: @Security List Processor:Persisting crypto currency BTU-BTU Protocol
+2019-07-06 16:21:32  :: RED->Cryptocurrency SPND (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency SPND-Spendcoin
+2019-07-06 16:21:32  :: RED->Cryptocurrency BTT (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency BTT-BitTorrent
+2019-07-06 16:21:32  :: RED->Cryptocurrency NKN (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency NKN-NKN
+2019-07-06 16:21:32  :: RED->Cryptocurrency GRIN (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency GRIN-Grin
+2019-07-06 16:21:32  :: RED->Cryptocurrency CTXC (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency CTXC-Cortex
+2019-07-06 16:21:32  :: RED->Cryptocurrency HXRO (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency HXRO-Hxro
+2019-07-06 16:21:32  :: RED->Cryptocurrency SERV (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency SERV-Serve
+2019-07-06 16:21:32  :: RED->Cryptocurrency META (market cap 0) not being tracked...
+2019-07-06 16:21:32  :: @Security List Processor:Persisting crypto currency META-Metadium
+2019-07-06 16:21:33  :: RED->Cryptocurrency FSN (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency FSN-Fusion
+2019-07-06 16:21:33  :: RED->Cryptocurrency HST (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency HST-Decision Token
+2019-07-06 16:21:33  :: RED->Cryptocurrency ANKR (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency ANKR-Ankr
+2019-07-06 16:21:33  :: RED->Cryptocurrency TRAC (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency TRAC-OriginTrail
+2019-07-06 16:21:33  :: RED->Cryptocurrency CRO (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency CRO-Crypto.com Chain
+2019-07-06 16:21:33  :: RED->Cryptocurrency ONT (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency ONT-Ontology
+2019-07-06 16:21:33  :: RED->Cryptocurrency ONG (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency ONG-OntologyGas
+2019-07-06 16:21:33  :: RED->Cryptocurrency AERGO (market cap 0) not being tracked...
+2019-07-06 16:21:33  :: @Security List Processor:Persisting crypto currency AERGO-Aergo
+2019-07-06 16:21:34  :: RED->Cryptocurrency TTC (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency TTC-TTC
+2019-07-06 16:21:34  :: RED->Cryptocurrency SLT (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency SLT-Smartlands
+2019-07-06 16:21:34  :: RED->Cryptocurrency PTON (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency PTON-Foresting
+2019-07-06 16:21:34  :: RED->Cryptocurrency PI (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency PI-PCHAIN
+2019-07-06 16:21:34  :: RED->Cryptocurrency PLA (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency PLA-PlayChip
+2019-07-06 16:21:34  :: RED->Cryptocurrency ART (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency ART-Maecenas
+2019-07-06 16:21:34  :: RED->Cryptocurrency VBK (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency VBK-VeriBlock
+2019-07-06 16:21:34  :: RED->Cryptocurrency ORBS (market cap 0) not being tracked...
+2019-07-06 16:21:34  :: @Security List Processor:Persisting crypto currency ORBS-Orbs
+2019-07-06 16:21:35  :: RED->Cryptocurrency BORA (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency BORA-BORA
+2019-07-06 16:21:35  :: RED->Cryptocurrency CND (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency CND-Cindicator
+2019-07-06 16:21:35  :: RED->Cryptocurrency TRIO (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency TRIO-Tripio
+2019-07-06 16:21:35  :: RED->Cryptocurrency FX (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency FX-Function X
+2019-07-06 16:21:35  :: RED->Cryptocurrency ATOM (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency ATOM-Cosmos
+2019-07-06 16:21:35  :: RED->Cryptocurrency OCEAN (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency OCEAN-Ocean Protocol
+2019-07-06 16:21:35  :: RED->Cryptocurrency XYO (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency XYO-XYO
+2019-07-06 16:21:35  :: RED->Cryptocurrency WIB (market cap 0) not being tracked...
+2019-07-06 16:21:35  :: @Security List Processor:Persisting crypto currency WIB-Wibson
+2019-07-06 16:21:36  :: RED->Cryptocurrency BWX (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency BWX-Blue Whale eXchange
+2019-07-06 16:21:36  :: RED->Cryptocurrency SNX (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency SNX-Synthetix
+2019-07-06 16:21:36  :: RED->Cryptocurrency SUSD (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency SUSD-Synthetix sUSD
+2019-07-06 16:21:36  :: RED->Cryptocurrency VDX (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency VDX-Vodi X
+2019-07-06 16:21:36  :: RED->Cryptocurrency COSM (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency COSM-Cosmo Coin
+2019-07-06 16:21:36  :: RED->Cryptocurrency OGO (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency OGO-Origo
+2019-07-06 16:21:36  :: RED->Cryptocurrency ITM (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency ITM-Intimate
+2019-07-06 16:21:36  :: RED->Cryptocurrency STPT (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency STPT-Standard Tokenization Protocol
+2019-07-06 16:21:36  :: RED->Cryptocurrency LAMB (market cap 0) not being tracked...
+2019-07-06 16:21:36  :: @Security List Processor:Persisting crypto currency LAMB-Lambda
+2019-07-06 16:21:37  :: RED->Cryptocurrency FET (market cap 0) not being tracked...
+2019-07-06 16:21:37  :: @Security List Processor:Persisting crypto currency FET-Fetch
+2019-07-06 16:21:37  :: RED->Cryptocurrency MKR (market cap 0) not being tracked...
+2019-07-06 16:21:37  :: @Security List Processor:Persisting crypto currency MKR-Maker
+2019-07-06 16:21:37  :: RED->Cryptocurrency DAI (market cap 0) not being tracked...
+2019-07-06 16:21:37  :: @Security List Processor:Persisting crypto currency DAI-Dai
+2019-07-06 16:21:37  :: RED->Cryptocurrency CPT (market cap 0) not being tracked...
+2019-07-06 16:21:37  :: @Security List Processor:Persisting crypto currency CPT-Contents Protocol
+2019-07-06 16:21:37  :: RED->Cryptocurrency ABT (market cap 0) not being tracked...
+2019-07-06 16:21:37  :: @Security List Processor:Persisting crypto currency ABT-ArcBlock
+2019-07-06 16:21:37  :: RED->Cryptocurrency PROM (market cap 0) not being tracked...
+2019-07-06 16:21:37  :: @Security List Processor:Persisting crypto currency PROM-Prometeus
+2019-07-06 16:21:37  :: RED->Cryptocurrency FTM (market cap 0) not being tracked...
+2019-07-06 16:32:48  :: 7/6/2019 4:32:48 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:32:48  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:32:48  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:32:48  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:32:49  :: Processing Security List:Wrapper
+2019-07-06 16:32:49  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:32:49  :: @Security List Processor:Persisting crypto currency BTC-Bitcoin
+2019-07-06 16:32:49  :: @Security List Processor:Persisting crypto currency LTC-Litecoin
+2019-07-06 16:32:49  :: @Security List Processor:Persisting crypto currency DOGE-Dogecoin
+2019-07-06 16:32:49  :: @Security List Processor:Persisting crypto currency VTC-Vertcoin
+2019-07-06 16:32:49  :: @Security List Processor:Persisting crypto currency PPC-Peercoin
+2019-07-06 16:32:49  :: @Security List Processor:Persisting crypto currency FTC-Feathercoin
+2019-07-06 16:32:50  :: RED->Cryptocurrency RDD (market cap 0) not being tracked...
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency RDD-ReddCoin
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency NXT-NXT
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency DASH-Dash
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency POT-PotCoin
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency BLK-BlackCoin
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency EMC2-Einsteinium
+2019-07-06 16:32:50  :: RED->Cryptocurrency XMY (market cap 0) not being tracked...
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency XMY-Myriad
+2019-07-06 16:32:50  :: RED->Cryptocurrency EFL (market cap 0) not being tracked...
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency EFL-ElectronicGulden
+2019-07-06 16:32:50  :: RED->Cryptocurrency GLC (market cap 0) not being tracked...
+2019-07-06 16:32:50  :: @Security List Processor:Persisting crypto currency GLC-GoldCoin
+2019-07-06 16:32:51  :: RED->Cryptocurrency SLR (market cap 0) not being tracked...
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency SLR-SolarCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency GRS-Groestlcoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency NLG-Gulden
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency XWC-WhiteCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency MONA-MonaCoin
+2019-07-06 16:32:51  :: RED->Cryptocurrency THC (market cap 0) not being tracked...
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency THC-HempCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency ENRG-EnergyCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency VRC-VeriCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency CURE-CureCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency XMR-Monero
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency CLOAK-CloakCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency BSD-BitSend
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency KORE-Kore
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency XDN-DigitalNote
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency NAV-NAVCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency XST-Stealth
+2019-07-06 16:32:51  :: RED->Cryptocurrency VIA (market cap 0) not being tracked...
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency VIA-ViaCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency PINK-PinkCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency IOC-I/OCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency CANN-CannabisCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency SYS-SysCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency NEOS-NeosCoin
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency DGB-DigiByte
+2019-07-06 16:32:51  :: @Security List Processor:Persisting crypto currency BTS-BitShares
+2019-07-06 16:32:52  :: RED->Cryptocurrency BURST (market cap 0) not being tracked...
+2019-07-06 16:32:52  :: @Security List Processor:Persisting crypto currency BURST-BURST
+2019-07-06 16:32:52  :: RED->Cryptocurrency EXCL (market cap 0) not being tracked...
+2019-07-06 16:32:52  :: @Security List Processor:Persisting crypto currency EXCL-ExclusiveCoin
+2019-07-06 16:32:52  :: RED->Cryptocurrency BITS (market cap 0) not being tracked...
+2019-07-06 16:32:52  :: @Security List Processor:Persisting crypto currency BITS-Bitswift
+2019-07-06 16:32:52  :: @Security List Processor:Persisting crypto currency DOPE-DopeCoin
+2019-07-06 16:32:52  :: @Security List Processor:Persisting crypto currency BLOCK-Blocknet
+2019-07-06 16:32:52  :: RED->Cryptocurrency ABY (market cap 0) not being tracked...
+2019-07-06 16:32:52  :: @Security List Processor:Persisting crypto currency ABY-ArtByte
+2019-07-06 16:32:53  :: RED->Cryptocurrency XMG (market cap 0) not being tracked...
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency XMG-Magi
+2019-07-06 16:32:53  :: RED->Cryptocurrency BAY (market cap 0) not being tracked...
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency BAY-BitBay
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency XRP-XRP
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency GAME-GameCredits
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency NXS-Nexus
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency COVAL-Circuits of Value
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency XCP-Counterparty
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency BITB-BitBean
+2019-07-06 16:32:53  :: RED->Cryptocurrency XVG (market cap 0) not being tracked...
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency XVG-Verge
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency GEO-GeoCoin
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency FLDC-FoldingCoin
+2019-07-06 16:32:53  :: RED->Cryptocurrency GRC (market cap 0) not being tracked...
+2019-07-06 16:32:53  :: @Security List Processor:Persisting crypto currency GRC-GridCoin
+2019-07-06 16:32:54  :: RED->Cryptocurrency FLO (market cap 0) not being tracked...
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency FLO-FLO
+2019-07-06 16:32:54  :: RED->Cryptocurrency NBT (market cap 0) not being tracked...
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency NBT-Nubits
+2019-07-06 16:32:54  :: RED->Cryptocurrency XEM (market cap 0) not being tracked...
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency XEM-NEM
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency MUE-MonetaryUnit
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency DMD-Diamond
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency GAM-Gambit
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency SPHR-Sphere
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency OK-OkCash
+2019-07-06 16:32:54  :: RED->Cryptocurrency AEON (market cap 0) not being tracked...
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency AEON-Aeon
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency ETH-Ethereum
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency TX-TransferCoin
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency EXP-Expanse
+2019-07-06 16:32:54  :: @Security List Processor:Persisting crypto currency OMNI-OmniCoin
+2019-07-06 16:32:55  :: RED->Cryptocurrency USDT (market cap 0) not being tracked...
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency USDT-Tether
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency AMP-SynereoAmp
+2019-07-06 16:32:55  :: RED->Cryptocurrency XLM (market cap 0) not being tracked...
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency XLM-Lumen
+2019-07-06 16:32:55  :: RED->Cryptocurrency BITCNY (market cap 0) not being tracked...
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency BITCNY-BitCNY
+2019-07-06 16:32:55  :: RED->Cryptocurrency RVR (market cap 0) not being tracked...
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency RVR-RevolutionVR
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency EMC-EmerCoin
+2019-07-06 16:32:55  :: RED->Cryptocurrency FCT (market cap 0) not being tracked...
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency FCT-Factom
+2019-07-06 16:32:55  :: @Security List Processor:Persisting crypto currency MAID-MaidSafeCoin
+2019-07-06 16:32:56  :: RED->Cryptocurrency EGC (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency EGC-EverGreenCoin
+2019-07-06 16:32:56  :: RED->Cryptocurrency SLS (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SLS-SaluS
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency RADS-Radium
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency DCR-Decred
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency PIVX-Pivx
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency MEME-Memetic
+2019-07-06 16:32:56  :: RED->Cryptocurrency STEEM (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency STEEM-STEEM
+2019-07-06 16:32:56  :: RED->Cryptocurrency 2GIVE (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency 2GIVE-2GIVE
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency LSK-Lisk
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency DGD-DigixDAO
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency BRK-Breakout
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency WAVES-Waves
+2019-07-06 16:32:56  :: RED->Cryptocurrency LBC (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency LBC-LBRY Credits
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SBD-SteemDollars
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency BRX-Breakout Stake
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency ETC-Ethereum Classic
+2019-07-06 16:32:56  :: RED->Cryptocurrency STRAT (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency STRAT-Stratis
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SYNX-Syndicate
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency EBST-eBoost
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency VRM-Verium
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SEQ-Sequence
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SNGLS-SingularDTV
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency REP-Augur
+2019-07-06 16:32:56  :: RED->Cryptocurrency SHIFT (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SHIFT-Shift
+2019-07-06 16:32:56  :: RED->Cryptocurrency ARDR (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency ARDR-Ardor
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency XZC-ZCoin
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency NEO-Neo
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency ZEC-ZCash
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency ZCL-Zclassic
+2019-07-06 16:32:56  :: RED->Cryptocurrency IOP (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency IOP-Internet Of People
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency GOLOS-Golos
+2019-07-06 16:32:56  :: RED->Cryptocurrency GBG (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency GBG-Gbg
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency UBQ-Ubiq
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency KMD-Komodo
+2019-07-06 16:32:56  :: RED->Cryptocurrency SIB (market cap 0) not being tracked...
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SIB-Sibcoin
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency ION-Ion
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency QWARK-Qwark
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency CRW-Crown
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency SWT-Swarm City Token
+2019-07-06 16:32:56  :: @Security List Processor:Persisting crypto currency MLN-Melon
+2019-07-06 16:32:57  :: RED->Cryptocurrency TKS (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency TKS-Tokes
+2019-07-06 16:32:57  :: RED->Cryptocurrency ARK (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency ARK-Ark
+2019-07-06 16:32:57  :: RED->Cryptocurrency DYN (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency DYN-Dynamic
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency MUSIC-Musicoin
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency DTB-Databits
+2019-07-06 16:32:57  :: RED->Cryptocurrency INCNT (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency INCNT-Incent
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency GBYTE-Bytes
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency GNT-Golem
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency NXC-Nexium
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency EDG-Edgeless
+2019-07-06 16:32:57  :: RED->Cryptocurrency MORE (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency MORE-More
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency TRST-Trustcoin
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency WINGS-Wings DAO
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency RLC-iEx.ec
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency GNO-Gnosis
+2019-07-06 16:32:57  :: RED->Cryptocurrency GUP (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency GUP-Guppy
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency LUN-Lunyr
+2019-07-06 16:32:57  :: RED->Cryptocurrency HMQ (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency HMQ-Humaniq
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency ANT-Aragon
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency ZEN-Horizen
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency SC-Siacoin
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency BAT-Basic Attention Token
+2019-07-06 16:32:57  :: RED->Cryptocurrency 1ST (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency 1ST-Firstblood
+2019-07-06 16:32:57  :: RED->Cryptocurrency QRL (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency QRL-Quantum Resistant Ledger
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency PTOY-Patientory
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency BNT-Bancor
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency NMR-Numeraire
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency SNT-Status Network Token
+2019-07-06 16:32:57  :: RED->Cryptocurrency DCT (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency DCT-DECENT
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency XEL-XEL
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency MCO-Crypto.com
+2019-07-06 16:32:57  :: RED->Cryptocurrency ADT (market cap 0) not being tracked...
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency ADT-adToken
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency FUN-FunFair
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency PAY-TenX Pay Token
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency MTL-METAL
+2019-07-06 16:32:57  :: @Security List Processor:Persisting crypto currency STORJ-STORJ
+2019-07-06 16:32:58  :: RED->Cryptocurrency ADX (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency ADX-AdEx
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency OMG-OmiseGO
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency CVC-Civic
+2019-07-06 16:32:58  :: RED->Cryptocurrency PART (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency PART-Particl
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency QTUM-Qtum
+2019-07-06 16:32:58  :: RED->Cryptocurrency BCH (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency BCH-Bitcoin Cash (ABC)
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency DNT-district0x
+2019-07-06 16:32:58  :: RED->Cryptocurrency ADA (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency ADA-Cardano
+2019-07-06 16:32:58  :: RED->Cryptocurrency MANA (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency MANA-Decentraland
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency SALT-Salt
+2019-07-06 16:32:58  :: RED->Cryptocurrency TIX (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency TIX-Blocktix
+2019-07-06 16:32:58  :: RED->Cryptocurrency RCN (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency RCN-Ripio Credit Network
+2019-07-06 16:32:58  :: RED->Cryptocurrency VIB (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency VIB-Viberate
+2019-07-06 16:32:58  :: RED->Cryptocurrency MER (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency MER-Mercury
+2019-07-06 16:32:58  :: RED->Cryptocurrency POWR (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency POWR-PowerLedger
+2019-07-06 16:32:58  :: RED->Cryptocurrency ENG (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency ENG-Enigma
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency UKG-UnikoinGold
+2019-07-06 16:32:58  :: RED->Cryptocurrency IGNIS (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency IGNIS-Ignis
+2019-07-06 16:32:58  :: RED->Cryptocurrency SRN (market cap 0) not being tracked...
+2019-07-06 16:32:58  :: @Security List Processor:Persisting crypto currency SRN-Sirin Token
+2019-07-06 16:32:59  :: RED->Cryptocurrency WAX (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency WAX-Worldwide Asset Exchange
+2019-07-06 16:32:59  :: RED->Cryptocurrency ZRX (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency ZRX-0x Protocol
+2019-07-06 16:32:59  :: RED->Cryptocurrency VEE (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency VEE-BLOCKv
+2019-07-06 16:32:59  :: RED->Cryptocurrency BCPT (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency BCPT-BlockMason Credit Protocol
+2019-07-06 16:32:59  :: RED->Cryptocurrency TRX (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency TRX-Tron
+2019-07-06 16:32:59  :: RED->Cryptocurrency TUSD (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency TUSD-TrueUSD
+2019-07-06 16:32:59  :: RED->Cryptocurrency LRC (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency LRC-Loopring
+2019-07-06 16:32:59  :: RED->Cryptocurrency UP (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency UP-UpToken
+2019-07-06 16:32:59  :: RED->Cryptocurrency DMT (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency DMT-DMarket
+2019-07-06 16:32:59  :: RED->Cryptocurrency POLY (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency POLY-Polymath
+2019-07-06 16:32:59  :: RED->Cryptocurrency PRO (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency PRO-Propy
+2019-07-06 16:32:59  :: RED->Cryptocurrency BLT (market cap 0) not being tracked...
+2019-07-06 16:32:59  :: @Security List Processor:Persisting crypto currency BLT-Bloom
+2019-07-06 16:33:00  :: RED->Cryptocurrency STORM (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency STORM-Storm
+2019-07-06 16:33:00  :: RED->Cryptocurrency AID (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency AID-AidCoin
+2019-07-06 16:33:00  :: RED->Cryptocurrency NGC (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency NGC-Naga
+2019-07-06 16:33:00  :: RED->Cryptocurrency GTO (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency GTO-Gifto
+2019-07-06 16:33:00  :: RED->Cryptocurrency OCN (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency OCN-Odyssey
+2019-07-06 16:33:00  :: RED->Cryptocurrency USD (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency USD-US Dollar
+2019-07-06 16:33:00  :: RED->Cryptocurrency TUBE (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency TUBE-BitTube
+2019-07-06 16:33:00  :: RED->Cryptocurrency CBC (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency CBC-CashBet
+2019-07-06 16:33:00  :: RED->Cryptocurrency CMCT (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency CMCT-Crowd Machine
+2019-07-06 16:33:00  :: RED->Cryptocurrency NLC2 (market cap 0) not being tracked...
+2019-07-06 16:33:00  :: @Security List Processor:Persisting crypto currency NLC2-NoLimitCoin
+2019-07-06 16:33:01  :: RED->Cryptocurrency BKX (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency BKX-Bankex
+2019-07-06 16:33:01  :: RED->Cryptocurrency MFT (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency MFT-Mainframe
+2019-07-06 16:33:01  :: RED->Cryptocurrency LOOM (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency LOOM-Loom Network
+2019-07-06 16:33:01  :: RED->Cryptocurrency RFR (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency RFR-Refereum
+2019-07-06 16:33:01  :: RED->Cryptocurrency RVN (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency RVN-RavenCoin
+2019-07-06 16:33:01  :: RED->Cryptocurrency BFT (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency BFT-BnkToTheFuture
+2019-07-06 16:33:01  :: RED->Cryptocurrency GO (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency GO-GoChain
+2019-07-06 16:33:01  :: RED->Cryptocurrency HYDRO (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency HYDRO-Hydro
+2019-07-06 16:33:01  :: RED->Cryptocurrency UPP (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency UPP-Sentinel Protocol
+2019-07-06 16:33:01  :: RED->Cryptocurrency ENJ (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency ENJ-Enjin
+2019-07-06 16:33:01  :: RED->Cryptocurrency MET (market cap 0) not being tracked...
+2019-07-06 16:33:01  :: @Security List Processor:Persisting crypto currency MET-Metronome
+2019-07-06 16:33:02  :: RED->Cryptocurrency DTA (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency DTA-Data
+2019-07-06 16:33:02  :: RED->Cryptocurrency EDR (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency EDR-Endor
+2019-07-06 16:33:02  :: RED->Cryptocurrency BOXX (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency BOXX-Blockparty
+2019-07-06 16:33:02  :: RED->Cryptocurrency IHT (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency IHT-I-House Token
+2019-07-06 16:33:02  :: RED->Cryptocurrency XHV (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency XHV-Haven Protocol
+2019-07-06 16:33:02  :: RED->Cryptocurrency NPXS (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency NPXS-Pundi X
+2019-07-06 16:33:02  :: RED->Cryptocurrency PMA (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency PMA-PumaPay
+2019-07-06 16:33:02  :: RED->Cryptocurrency PAL (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency PAL-PAL Network
+2019-07-06 16:33:02  :: RED->Cryptocurrency PAX (market cap 0) not being tracked...
+2019-07-06 16:33:02  :: @Security List Processor:Persisting crypto currency PAX-Paxos Standard
+2019-07-06 16:33:03  :: RED->Cryptocurrency ZIL (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency ZIL-Zilliqa
+2019-07-06 16:33:03  :: RED->Cryptocurrency MOC (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency MOC-Mossland
+2019-07-06 16:33:03  :: RED->Cryptocurrency OST (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency OST-Simple Token
+2019-07-06 16:33:03  :: RED->Cryptocurrency SPC (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency SPC-SpaceChain
+2019-07-06 16:33:03  :: RED->Cryptocurrency MEDX (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency MEDX-MediBloc
+2019-07-06 16:33:03  :: RED->Cryptocurrency BSV (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency BSV-Bitcoin SV
+2019-07-06 16:33:03  :: RED->Cryptocurrency IOST (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency IOST-IOST
+2019-07-06 16:33:03  :: RED->Cryptocurrency XNK (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency XNK-Ink Protocol
+2019-07-06 16:33:03  :: RED->Cryptocurrency NCASH (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency NCASH-Nucleus Vision
+2019-07-06 16:33:03  :: RED->Cryptocurrency SOLVE (market cap 0) not being tracked...
+2019-07-06 16:33:03  :: @Security List Processor:Persisting crypto currency SOLVE-Solve.Care
+2019-07-06 16:33:04  :: RED->Cryptocurrency USDS (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency USDS-StableUSD
+2019-07-06 16:33:04  :: RED->Cryptocurrency JNT (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency JNT-Jibrel
+2019-07-06 16:33:04  :: RED->Cryptocurrency LBA (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency LBA-Cred
+2019-07-06 16:33:04  :: RED->Cryptocurrency MOBI (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency MOBI-Mobius
+2019-07-06 16:33:04  :: RED->Cryptocurrency DENT (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency DENT-Dent
+2019-07-06 16:33:04  :: RED->Cryptocurrency DRGN (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency DRGN-Dragonchain
+2019-07-06 16:33:04  :: RED->Cryptocurrency VITE (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency VITE-Vite
+2019-07-06 16:33:04  :: RED->Cryptocurrency IOTX (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency IOTX-IoTeX
+2019-07-06 16:33:04  :: RED->Cryptocurrency BTM (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency BTM-Bytom
+2019-07-06 16:33:04  :: RED->Cryptocurrency ELF (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency ELF-aelf
+2019-07-06 16:33:04  :: RED->Cryptocurrency QNT (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency QNT-Quant
+2019-07-06 16:33:04  :: RED->Cryptocurrency BTU (market cap 0) not being tracked...
+2019-07-06 16:33:04  :: @Security List Processor:Persisting crypto currency BTU-BTU Protocol
+2019-07-06 16:33:05  :: RED->Cryptocurrency SPND (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency SPND-Spendcoin
+2019-07-06 16:33:05  :: RED->Cryptocurrency BTT (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency BTT-BitTorrent
+2019-07-06 16:33:05  :: RED->Cryptocurrency NKN (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency NKN-NKN
+2019-07-06 16:33:05  :: RED->Cryptocurrency GRIN (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency GRIN-Grin
+2019-07-06 16:33:05  :: RED->Cryptocurrency CTXC (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency CTXC-Cortex
+2019-07-06 16:33:05  :: RED->Cryptocurrency HXRO (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency HXRO-Hxro
+2019-07-06 16:33:05  :: RED->Cryptocurrency SERV (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency SERV-Serve
+2019-07-06 16:33:05  :: RED->Cryptocurrency META (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency META-Metadium
+2019-07-06 16:33:05  :: RED->Cryptocurrency FSN (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency FSN-Fusion
+2019-07-06 16:33:05  :: RED->Cryptocurrency HST (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency HST-Decision Token
+2019-07-06 16:33:05  :: RED->Cryptocurrency ANKR (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency ANKR-Ankr
+2019-07-06 16:33:05  :: RED->Cryptocurrency TRAC (market cap 0) not being tracked...
+2019-07-06 16:33:05  :: @Security List Processor:Persisting crypto currency TRAC-OriginTrail
+2019-07-06 16:33:06  :: RED->Cryptocurrency CRO (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency CRO-Crypto.com Chain
+2019-07-06 16:33:06  :: RED->Cryptocurrency ONT (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency ONT-Ontology
+2019-07-06 16:33:06  :: RED->Cryptocurrency ONG (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency ONG-OntologyGas
+2019-07-06 16:33:06  :: RED->Cryptocurrency AERGO (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency AERGO-Aergo
+2019-07-06 16:33:06  :: RED->Cryptocurrency TTC (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency TTC-TTC
+2019-07-06 16:33:06  :: RED->Cryptocurrency SLT (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency SLT-Smartlands
+2019-07-06 16:33:06  :: RED->Cryptocurrency PTON (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency PTON-Foresting
+2019-07-06 16:33:06  :: RED->Cryptocurrency PI (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency PI-PCHAIN
+2019-07-06 16:33:06  :: RED->Cryptocurrency PLA (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency PLA-PlayChip
+2019-07-06 16:33:06  :: RED->Cryptocurrency ART (market cap 0) not being tracked...
+2019-07-06 16:33:06  :: @Security List Processor:Persisting crypto currency ART-Maecenas
+2019-07-06 16:33:07  :: RED->Cryptocurrency VBK (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency VBK-VeriBlock
+2019-07-06 16:33:07  :: RED->Cryptocurrency ORBS (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency ORBS-Orbs
+2019-07-06 16:33:07  :: RED->Cryptocurrency BORA (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency BORA-BORA
+2019-07-06 16:33:07  :: RED->Cryptocurrency CND (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency CND-Cindicator
+2019-07-06 16:33:07  :: RED->Cryptocurrency TRIO (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency TRIO-Tripio
+2019-07-06 16:33:07  :: RED->Cryptocurrency FX (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency FX-Function X
+2019-07-06 16:33:07  :: RED->Cryptocurrency ATOM (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency ATOM-Cosmos
+2019-07-06 16:33:07  :: RED->Cryptocurrency OCEAN (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency OCEAN-Ocean Protocol
+2019-07-06 16:33:07  :: RED->Cryptocurrency XYO (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency XYO-XYO
+2019-07-06 16:33:07  :: RED->Cryptocurrency WIB (market cap 0) not being tracked...
+2019-07-06 16:33:07  :: @Security List Processor:Persisting crypto currency WIB-Wibson
+2019-07-06 16:33:08  :: RED->Cryptocurrency BWX (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency BWX-Blue Whale eXchange
+2019-07-06 16:33:08  :: RED->Cryptocurrency SNX (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency SNX-Synthetix
+2019-07-06 16:33:08  :: RED->Cryptocurrency SUSD (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency SUSD-Synthetix sUSD
+2019-07-06 16:33:08  :: RED->Cryptocurrency VDX (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency VDX-Vodi X
+2019-07-06 16:33:08  :: RED->Cryptocurrency COSM (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency COSM-Cosmo Coin
+2019-07-06 16:33:08  :: RED->Cryptocurrency OGO (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency OGO-Origo
+2019-07-06 16:33:08  :: RED->Cryptocurrency ITM (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency ITM-Intimate
+2019-07-06 16:33:08  :: RED->Cryptocurrency STPT (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency STPT-Standard Tokenization Protocol
+2019-07-06 16:33:08  :: RED->Cryptocurrency LAMB (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency LAMB-Lambda
+2019-07-06 16:33:08  :: RED->Cryptocurrency FET (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency FET-Fetch
+2019-07-06 16:33:08  :: RED->Cryptocurrency MKR (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency MKR-Maker
+2019-07-06 16:33:08  :: RED->Cryptocurrency DAI (market cap 0) not being tracked...
+2019-07-06 16:33:08  :: @Security List Processor:Persisting crypto currency DAI-Dai
+2019-07-06 16:33:09  :: RED->Cryptocurrency CPT (market cap 0) not being tracked...
+2019-07-06 16:33:09  :: @Security List Processor:Persisting crypto currency CPT-Contents Protocol
+2019-07-06 16:33:09  :: RED->Cryptocurrency ABT (market cap 0) not being tracked...
+2019-07-06 16:33:09  :: @Security List Processor:Persisting crypto currency ABT-ArcBlock
+2019-07-06 16:33:09  :: RED->Cryptocurrency PROM (market cap 0) not being tracked...
+2019-07-06 16:33:09  :: @Security List Processor:Persisting crypto currency PROM-Prometeus
+2019-07-06 16:33:09  :: RED->Cryptocurrency FTM (market cap 0) not being tracked...
+2019-07-06 16:33:09  :: @Security List Processor:Persisting crypto currency FTM-Fantom
+2019-07-06 16:33:09  :: RED->Cryptocurrency ABYSS (market cap 0) not being tracked...
+2019-07-06 16:33:09  :: @Security List Processor:Persisting crypto currency ABYSS-Abyss
+2019-07-06 16:33:09  :: @Security List Processor:Persisting crypto currency EOS-EOS
+2019-07-06 16:38:52  :: 7/6/2019 4:38:52 PMBaseCommunicationModule.LoadConfig
+2019-07-06 16:38:52  :: Loading config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:38:52  :: Processing config:.\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:38:52  :: Ending GetConfiguracion .\outgoingCryptocurrencyListSaver.xml
+2019-07-06 16:38:54  :: Processing Security List:Wrapper
+2019-07-06 16:38:54  :: @Security List Processor:Processing Security List: 287 cryptos
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency BTC-Bitcoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency LTC-Litecoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency DOGE-Dogecoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency VTC-Vertcoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency PPC-Peercoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency FTC-Feathercoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency RDD-ReddCoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency NXT-NXT
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency DASH-Dash
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency POT-PotCoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency BLK-BlackCoin
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency EMC2-Einsteinium
+2019-07-06 16:38:54  :: @Security List Processor:Persisting crypto currency XMY-Myriad
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency EFL-ElectronicGulden
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency GLC-GoldCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency SLR-SolarCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency GRS-Groestlcoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency NLG-Gulden
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency XWC-WhiteCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency MONA-MonaCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency THC-HempCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency ENRG-EnergyCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency VRC-VeriCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency CURE-CureCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency XMR-Monero
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency CLOAK-CloakCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency BSD-BitSend
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency KORE-Kore
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency XDN-DigitalNote
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency NAV-NAVCoin
+2019-07-06 16:38:55  :: @Security List Processor:Persisting crypto currency XST-Stealth
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency VIA-ViaCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency PINK-PinkCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency IOC-I/OCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency CANN-CannabisCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency SYS-SysCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency NEOS-NeosCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency DGB-DigiByte
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency BTS-BitShares
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency BURST-BURST
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency EXCL-ExclusiveCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency BITS-Bitswift
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency DOPE-DopeCoin
+2019-07-06 16:38:56  :: @Security List Processor:Persisting crypto currency BLOCK-Blocknet
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency ABY-ArtByte
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency XMG-Magi
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency BAY-BitBay
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency XRP-XRP
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency GAME-GameCredits
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency NXS-Nexus
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency COVAL-Circuits of Value
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency XCP-Counterparty
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency BITB-BitBean
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency XVG-Verge
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency GEO-GeoCoin
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency FLDC-FoldingCoin
+2019-07-06 16:38:57  :: @Security List Processor:Persisting crypto currency GRC-GridCoin
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency FLO-FLO
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency NBT-Nubits
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency XEM-NEM
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency MUE-MonetaryUnit
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency DMD-Diamond
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency GAM-Gambit
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency SPHR-Sphere
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency OK-OkCash
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency AEON-Aeon
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency ETH-Ethereum
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency TX-TransferCoin
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency EXP-Expanse
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency OMNI-OmniCoin
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency USDT-Tether
+2019-07-06 16:38:58  :: @Security List Processor:Persisting crypto currency AMP-SynereoAmp
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency XLM-Lumen
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency BITCNY-BitCNY
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency RVR-RevolutionVR
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency EMC-EmerCoin
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency FCT-Factom
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency MAID-MaidSafeCoin
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency EGC-EverGreenCoin
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency SLS-SaluS
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency RADS-Radium
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency DCR-Decred
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency PIVX-Pivx
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency MEME-Memetic
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency STEEM-STEEM
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency 2GIVE-2GIVE
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency LSK-Lisk
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency DGD-DigixDAO
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency BRK-Breakout
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency WAVES-Waves
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency LBC-LBRY Credits
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency SBD-SteemDollars
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency BRX-Breakout Stake
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency ETC-Ethereum Classic
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency STRAT-Stratis
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency SYNX-Syndicate
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency EBST-eBoost
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency VRM-Verium
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency SEQ-Sequence
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency SNGLS-SingularDTV
+2019-07-06 16:38:59  :: @Security List Processor:Persisting crypto currency REP-Augur
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency SHIFT-Shift
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency ARDR-Ardor
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency XZC-ZCoin
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency NEO-Neo
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency ZEC-ZCash
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency ZCL-Zclassic
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency IOP-Internet Of People
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency GOLOS-Golos
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency GBG-Gbg
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency UBQ-Ubiq
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency KMD-Komodo
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency SIB-Sibcoin
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency ION-Ion
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency QWARK-Qwark
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency CRW-Crown
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency SWT-Swarm City Token
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency MLN-Melon
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency TKS-Tokes
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency ARK-Ark
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency DYN-Dynamic
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency MUSIC-Musicoin
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency DTB-Databits
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency INCNT-Incent
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency GBYTE-Bytes
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency GNT-Golem
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency NXC-Nexium
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency EDG-Edgeless
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency MORE-More
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency TRST-Trustcoin
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency WINGS-Wings DAO
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency RLC-iEx.ec
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency GNO-Gnosis
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency GUP-Guppy
+2019-07-06 16:39:00  :: @Security List Processor:Persisting crypto currency LUN-Lunyr
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency HMQ-Humaniq
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency ANT-Aragon
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency ZEN-Horizen
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency SC-Siacoin
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency BAT-Basic Attention Token
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency 1ST-Firstblood
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency QRL-Quantum Resistant Ledger
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency PTOY-Patientory
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency BNT-Bancor
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency NMR-Numeraire
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency SNT-Status Network Token
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency DCT-DECENT
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency XEL-XEL
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency MCO-Crypto.com
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency ADT-adToken
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency FUN-FunFair
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency PAY-TenX Pay Token
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency MTL-METAL
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency STORJ-STORJ
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency ADX-AdEx
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency OMG-OmiseGO
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency CVC-Civic
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency PART-Particl
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency QTUM-Qtum
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency BCH-Bitcoin Cash (ABC)
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency DNT-district0x
+2019-07-06 16:39:01  :: @Security List Processor:Persisting crypto currency ADA-Cardano
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency MANA-Decentraland
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency SALT-Salt
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency TIX-Blocktix
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency RCN-Ripio Credit Network
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency VIB-Viberate
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency MER-Mercury
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency POWR-PowerLedger
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency ENG-Enigma
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency UKG-UnikoinGold
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency IGNIS-Ignis
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency SRN-Sirin Token
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency WAX-Worldwide Asset Exchange
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency ZRX-0x Protocol
+2019-07-06 16:39:02  :: @Security List Processor:Persisting crypto currency VEE-BLOCKv
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency BCPT-BlockMason Credit Protocol
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency TRX-Tron
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency TUSD-TrueUSD
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency LRC-Loopring
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency UP-UpToken
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency DMT-DMarket
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency POLY-Polymath
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency PRO-Propy
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency BLT-Bloom
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency STORM-Storm
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency AID-AidCoin
+2019-07-06 16:39:03  :: @Security List Processor:Persisting crypto currency NGC-Naga
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency GTO-Gifto
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency OCN-Odyssey
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency USD-US Dollar
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency TUBE-BitTube
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency CBC-CashBet
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency CMCT-Crowd Machine
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency NLC2-NoLimitCoin
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency BKX-Bankex
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency MFT-Mainframe
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency LOOM-Loom Network
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency RFR-Refereum
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency RVN-RavenCoin
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency BFT-BnkToTheFuture
+2019-07-06 16:39:04  :: @Security List Processor:Persisting crypto currency GO-GoChain
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency HYDRO-Hydro
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency UPP-Sentinel Protocol
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency ENJ-Enjin
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency MET-Metronome
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency DTA-Data
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency EDR-Endor
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency BOXX-Blockparty
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency IHT-I-House Token
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency XHV-Haven Protocol
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency NPXS-Pundi X
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency PMA-PumaPay
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency PAL-PAL Network
+2019-07-06 16:39:05  :: @Security List Processor:Persisting crypto currency PAX-Paxos Standard
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency ZIL-Zilliqa
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency MOC-Mossland
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency OST-Simple Token
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency SPC-SpaceChain
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency MEDX-MediBloc
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency BSV-Bitcoin SV
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency IOST-IOST
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency XNK-Ink Protocol
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency NCASH-Nucleus Vision
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency SOLVE-Solve.Care
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency USDS-StableUSD
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency JNT-Jibrel
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency LBA-Cred
+2019-07-06 16:39:06  :: @Security List Processor:Persisting crypto currency MOBI-Mobius
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency DENT-Dent
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency DRGN-Dragonchain
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency VITE-Vite
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency IOTX-IoTeX
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency BTM-Bytom
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency ELF-aelf
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency QNT-Quant
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency BTU-BTU Protocol
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency SPND-Spendcoin
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency BTT-BitTorrent
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency NKN-NKN
+2019-07-06 16:39:07  :: @Security List Processor:Persisting crypto currency GRIN-Grin
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency CTXC-Cortex
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency HXRO-Hxro
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency SERV-Serve
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency META-Metadium
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency FSN-Fusion
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency HST-Decision Token
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency ANKR-Ankr
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency TRAC-OriginTrail
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency CRO-Crypto.com Chain
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency ONT-Ontology
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency ONG-OntologyGas
+2019-07-06 16:39:08  :: @Security List Processor:Persisting crypto currency AERGO-Aergo
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency TTC-TTC
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency SLT-Smartlands
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency PTON-Foresting
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency PI-PCHAIN
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency PLA-PlayChip
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency ART-Maecenas
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency VBK-VeriBlock
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency ORBS-Orbs
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency BORA-BORA
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency CND-Cindicator
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency TRIO-Tripio
+2019-07-06 16:39:09  :: @Security List Processor:Persisting crypto currency FX-Function X
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency ATOM-Cosmos
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency OCEAN-Ocean Protocol
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency XYO-XYO
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency WIB-Wibson
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency BWX-Blue Whale eXchange
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency SNX-Synthetix
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency SUSD-Synthetix sUSD
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency VDX-Vodi X
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency COSM-Cosmo Coin
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency OGO-Origo
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency ITM-Intimate
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency STPT-Standard Tokenization Protocol
+2019-07-06 16:39:10  :: @Security List Processor:Persisting crypto currency LAMB-Lambda
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency FET-Fetch
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency MKR-Maker
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency DAI-Dai
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency CPT-Contents Protocol
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency ABT-ArcBlock
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency PROM-Prometeus
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency FTM-Fantom
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency ABYSS-Abyss
+2019-07-06 16:39:11  :: @Security List Processor:Persisting crypto currency EOS-EOS
+2019-07-06 16:39:11  :: RED->Cryptocurrency RDD (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XMY (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency EFL (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GLC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SLR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency THC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency VIA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BURST (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency EXCL (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BITS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ABY (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XMG (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BAY (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XVG (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GRC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency FLO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency NBT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XEM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency AEON (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency USDT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XLM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BITCNY (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency RVR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency FCT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency EGC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SLS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency STEEM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency 2GIVE (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency LBC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency STRAT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SHIFT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ARDR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency IOP (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GBG (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SIB (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TKS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ARK (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DYN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency INCNT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MORE (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GUP (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency HMQ (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency 1ST (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency QRL (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DCT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ADT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ADX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PART (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BCH (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ADA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MANA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TIX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency RCN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency VIB (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MER (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency POWR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ENG (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency IGNIS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SRN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency WAX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ZRX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency VEE (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BCPT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TRX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TUSD (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency LRC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency UP (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DMT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency POLY (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PRO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BLT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency STORM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency AID (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency NGC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GTO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency OCN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency USD (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TUBE (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency CBC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency CMCT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency NLC2 (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BKX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MFT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency LOOM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency RFR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency RVN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BFT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency HYDRO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency UPP (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ENJ (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MET (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DTA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency EDR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BOXX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency IHT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XHV (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency NPXS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PMA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PAL (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PAX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ZIL (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MOC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency OST (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SPC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MEDX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BSV (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency IOST (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XNK (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency NCASH (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SOLVE (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency USDS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency JNT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency LBA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MOBI (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DENT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DRGN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency VITE (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency IOTX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BTM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ELF (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency QNT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BTU (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SPND (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BTT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency NKN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency GRIN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency CTXC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency HXRO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SERV (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency META (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency FSN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency HST (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ANKR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TRAC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency CRO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ONT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ONG (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency AERGO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TTC (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SLT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PTON (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PI (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PLA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ART (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency VBK (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ORBS (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BORA (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency CND (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency TRIO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency FX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ATOM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency OCEAN (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency XYO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency WIB (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency BWX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SNX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency SUSD (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency VDX (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency COSM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency OGO (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ITM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency STPT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency LAMB (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency FET (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency MKR (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency DAI (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency CPT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ABT (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency PROM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency FTM (market cap 0) not being tracked...
+2019-07-06 16:39:11  :: RED->Cryptocurrency ABYSS (market cap 0) not being tracked...

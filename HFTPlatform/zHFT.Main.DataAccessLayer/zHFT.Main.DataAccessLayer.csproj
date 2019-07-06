@@ -48,6 +48,7 @@
     <Compile Include="Helpers\ExecutionSummaryHelper.cs" />
     <Compile Include="Helpers\OrderHelper.cs" />
     <Compile Include="Helpers\PositionHelper.cs" />
+    <Compile Include="Managers\ADO\ADOBaseManager.cs" />
     <Compile Include="Managers\ExecutionSummaryManager.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Mapping\MappingEnabledAbstract.cs" />
@@ -71,6 +72,7 @@
       <Name>zHFT.Main.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

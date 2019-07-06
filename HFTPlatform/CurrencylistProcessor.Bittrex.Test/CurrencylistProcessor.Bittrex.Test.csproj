@@ -72,6 +72,10 @@
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csproj">
+      <Project>{1ccef7d9-7231-46c3-b34e-75db643d044c}</Project>
+      <Name>zHFT.StrategyHandler.CLS.CoinMarketCap.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj">
       <Project>{ed581d42-c431-44d5-b292-4cf937fc3734}</Project>
       <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.Common</Name>

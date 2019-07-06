@@ -41,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADO\CryptoInPortolioManager.cs" />
     <Compile Include="Managers\CryptoCurrencyManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801e5410-738b-47c9-895f-0ad1b5860a2a}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csproj">
       <Project>{3515b58c-6998-48fe-b794-58989c65ce04}</Project>
       <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities</Name>
@@ -55,6 +60,7 @@
       <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

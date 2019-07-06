@@ -20,6 +20,8 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie
         public string BaseAddress { get; set; }
         public string Notice { get; set; }
 
+        public decimal MarketCap { get; set; }
+
         #endregion
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using ToolsShared.Logging;
@@ -19,7 +20,17 @@ namespace CurrencylistProcessor.Bittrex.Test
         public static void DoLog(string msg, Constants.MessageType type)
         {
             if (ToConsole)
-                Console.WriteLine(msg);
+            {
+                if (msg.StartsWith("RED->"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(msg.Replace("RED->", ""));
+                    Console.WriteLine(msg);
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                else 
+                    Console.WriteLine(msg);
+            }
             else if (msg.StartsWith("toConsole->"))
             {
                 Console.WriteLine(msg.Replace("toConsole->", ""));
@@ -39,6 +50,10 @@ namespace CurrencylistProcessor.Bittrex.Test
             ILogSource appLogger;
             ILogSource incommingLogger;
             ILogSource outgoingLogger;
+
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
 
             appLogger = new PerDayFileLogSource(Directory.GetCurrentDirectory() + "\\Log", Directory.GetCurrentDirectory() + "\\Log\\Backup")
             {

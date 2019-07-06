@@ -10,7 +10,10 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie;
+using zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Converters;
+using zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Interface;
+using zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.Managers;
 
 namespace zHFT.StrategyHandler.CryptocurrencyListSaver
@@ -31,6 +34,12 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
 
         protected CryptoCurrencyManager CryptoCurrencyManager { get; set; }
 
+        protected CryptoInPortolioManager CryptoInPortolioManager { get; set; }
+
+        protected List<CryptoInPortfolio> CryptosInPortfolio { get; set; }
+
+        protected IMarketCapProvider MarketCapProviderManager { get; set; }
+
         #endregion
 
         #region Protected Methods
@@ -49,16 +58,32 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
                 lock (tLock)
                 {
                     List<CryptoCurrency> cryptos = SecurityListConverter.GetSecurityList(wrapper, SecurityListSaverConfiguration, OnLogMsg);
+                    List<CryptoCurrency> notTracked = new List<CryptoCurrency>();
 
                     DoLog(string.Format("@{0}:Processing Security List: {1} cryptos", SecurityListSaverConfiguration.Name, cryptos.Count),
                           Constants.MessageType.Information);
 
                     foreach (CryptoCurrency crypto in cryptos)
                     {
+
+                        if (!CryptosInPortfolio.Any(x => x.Symbol == crypto.Symbol))
+                        {
+                            decimal marketCap = MarketCapProviderManager.GetMarketCap(crypto.Symbol, SecurityListSaverConfiguration.MarketCapCurrency);
+                            crypto.MarketCap = marketCap;
+                            notTracked.Add(crypto);
+                        }
+
                         DoLog(string.Format("@{0}:Persisting crypto currency {1}-{2}", SecurityListSaverConfiguration.Name, crypto.Symbol, crypto.Name),
                               Constants.MessageType.Information);
 
                         CryptoCurrencyManager.Persist(crypto);
+                    }
+
+                    foreach (CryptoCurrency notTrackedCrypto in notTracked.OrderByDescending(x => x.MarketCap))
+                    {
+                        string msg = string.Format("RED->Cryptocurrency {0} (market cap {1}) not being tracked...", notTrackedCrypto.Symbol, notTrackedCrypto.MarketCap);
+                        DoLog(msg, Constants.MessageType.Information);
+
                     }
 
                     return CMState.BuildSuccess();
@@ -107,6 +132,25 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
                     SecurityListConverter = new SecurityListConverter();
 
                     CryptoCurrencyManager = new CryptoCurrencyManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
+
+                    CryptoInPortolioManager = new DataAccessLayer.ADO.CryptoInPortolioManager(SecurityListSaverConfiguration.CryptosInPortfolioConnectionString);
+
+                    CryptosInPortfolio = CryptoInPortolioManager.GetCryptoInPortfolio();
+
+
+                    if (!string.IsNullOrEmpty(SecurityListSaverConfiguration.MarketCapProvider))
+                    {
+                        var marketCapProviderType = Type.GetType(SecurityListSaverConfiguration.MarketCapProvider);
+                        if (marketCapProviderType != null)
+                        {
+                            MarketCapProviderManager = (IMarketCapProvider)Activator.CreateInstance(marketCapProviderType, SecurityListSaverConfiguration.MarketCapProviderAPIKey, SecurityListSaverConfiguration.MarketCapProviderURL);
+                        }
+                        else
+                            throw new Exception("assembly not found: " + SecurityListSaverConfiguration.MarketCapProvider);
+                    }
+                    else
+                        DoLog("Market Cap Provider proxy not found. It will not be initialized", Constants.MessageType.Error);
+
 
                     //Ya arrancamos pidiendo el security list
                     SecurityListRequestWrapper wrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);

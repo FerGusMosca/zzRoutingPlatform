@@ -1,0 +1,13 @@
+2019-07-04 19:36:57  :: 7/4/2019 7:36:57 PMBaseCommunicationModule.LoadConfig
+2019-07-04 19:36:57  :: Loading config:.\incomingBittrex.xml
+2019-07-04 19:36:57  :: Processing config:.\incomingBittrex.xml
+2019-07-04 19:36:57  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-07-04 19:36:59  :: @Curremcy List Processor Bittrex: Error Requesting For Security List:Anulada la solicitud: No se puede crear un canal seguro SSL/TLS.
+2019-07-04 19:38:03  :: 7/4/2019 7:38:03 PMBaseCommunicationModule.LoadConfig
+2019-07-04 19:38:03  :: Loading config:.\incomingBittrex.xml
+2019-07-04 19:38:03  :: Processing config:.\incomingBittrex.xml
+2019-07-04 19:38:03  :: Ending GetConfiguracion .\incomingBittrex.xml
+2019-07-04 19:40:13  :: 7/4/2019 7:40:13 PMBaseCommunicationModule.LoadConfig
+2019-07-04 19:40:13  :: Loading config:.\incomingBittrex.xml
+2019-07-04 19:40:13  :: Processing config:.\incomingBittrex.xml
+2019-07-04 19:40:13  :: Ending GetConfiguracion .\incomingBittrex.xml
