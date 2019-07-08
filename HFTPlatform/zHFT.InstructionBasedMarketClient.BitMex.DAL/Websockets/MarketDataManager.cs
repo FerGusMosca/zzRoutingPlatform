@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.FullMrktConnectivity.BitMex.Common.DTO.Websockets;
 using zHFT.InstructionBasedMarketClient.BitMex.Common.DTO.Websockets;
+using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.InstructionBasedMarketClient.BitMex.DAL.Websockets
 {
@@ -12,9 +13,11 @@ namespace zHFT.InstructionBasedMarketClient.BitMex.DAL.Websockets
     {
         #region Constructors
 
-        public MarketDataManager(string pWebSocketUrl = null, bool connectWebSocket = false)
+        public MarketDataManager(string pWebSocketUrl = null, bool connectWebSocket = false, OnLogMessage pOnLogMsg = null)
         {
             WebSocketURL = pWebSocketUrl;
+
+            OnLogMsg = pOnLogMsg;
 
             if (connectWebSocket)
             {

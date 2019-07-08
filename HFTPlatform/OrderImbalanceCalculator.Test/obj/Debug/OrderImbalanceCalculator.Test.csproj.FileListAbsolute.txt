@@ -119,3 +119,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\IB\outgoingOrderRouter.IB.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\Primary\OutgoingSingletonConfig.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\Primary\Primary.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\Bittrex.pdb

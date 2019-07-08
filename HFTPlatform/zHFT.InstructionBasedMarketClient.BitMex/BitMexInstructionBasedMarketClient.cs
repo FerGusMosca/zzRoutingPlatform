@@ -301,7 +301,7 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
 
                 if (LoadConfig(configFile))
                 {
-                    WSMarketDataManager = new MarketDataManager(BitmexConfiguration.WebsocketURL, true);
+                    WSMarketDataManager = new MarketDataManager(BitmexConfiguration.WebsocketURL, true, OnLogMsg);
 
                     SecurityListManager = new DAL.REST.SecurityListManager(BitmexConfiguration.RESTURL);
 

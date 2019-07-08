@@ -50,8 +50,6 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public decimal PositionOpeningImbalanceThreshold { get; set; }
 
-        public decimal PositionOpeningImbalanceMinThreshold { get; set; }
-
         public decimal PositionOpeningImbalanceMaxThreshold { get; set; }
 
         public decimal StopLossForOpenPositionPct { get; set; }

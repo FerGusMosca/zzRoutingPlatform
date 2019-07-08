@@ -531,7 +531,6 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         private void EvalClosingPosition(SecurityImbalance secImb)
         {
-
             ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
 
             if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))

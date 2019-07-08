@@ -108,7 +108,7 @@ namespace zHFT.OrderRouters.IB.Common.Wrappers
                 return OrdStatus.Filled;
             else if (OrderStatusDTO.Status == OrderStatusDTO._STATUS_INACTIVE)
                 return OrdStatus.PendingNew;
-            if (OrderStatusDTO.Status.Contains(OrderStatusDTO._STATUS_FILLED) && OrderStatusDTO.Remaining>0)
+            if (OrderStatusDTO.Filled>0 && OrderStatusDTO.Remaining > 0)
                 return OrdStatus.PartiallyFilled;
             if (OrderStatusDTO.Status == OrderStatusDTO._STATUS_PENDING_CANCEL)
                 return OrdStatus.PendingCancel;

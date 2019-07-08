@@ -6,7 +6,6 @@
   <MaxOpenedPositions>3</MaxOpenedPositions>
   <WaitingTimeBeforeOpeningPositions>1</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
   <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
-  <PositionOpeningImbalanceMinThreshold>0.45</PositionOpeningImbalanceMinThreshold>
   <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
   <StopLossForOpenPositionPct>0.5</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
@@ -30,7 +29,7 @@
   
   <StocksToMonitor>
     
-    <Symbol>XBTU19</Symbol>
+    <!--<Symbol>XBTU19</Symbol>
     <Symbol>XBTM19</Symbol>
     <Symbol>ADAM19</Symbol>
     <Symbol>BCHM19</Symbol>
@@ -38,7 +37,7 @@
     <Symbol>ETHM19</Symbol>
     <Symbol>LTCM19</Symbol>
     <Symbol>TRXM19</Symbol>
-    <Symbol>XRPM19</Symbol>
+    <Symbol>XRPM19</Symbol>-->
   </StocksToMonitor>
 
 </Configuration>

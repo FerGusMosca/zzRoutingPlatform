@@ -12,8 +12,7 @@
 
   <MarketCapProvider>zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.MarketCapProviderManager,zHFT.StrategyHandler.CLS.CoinMarketCap.DAL</MarketCapProvider>
   <MarketCapProviderAPIKey>2fc2122c-855e-4911-8757-885b18cc8d8a</MarketCapProviderAPIKey>
-  <!--<MarketCapProviderURL>https://pro-api.coinmarketcap.com/</MarketCapProviderURL>-->
-  <MarketCapProviderURL>https://sandbox-api.coinmarketcap.com/</MarketCapProviderURL>
+  <MarketCapProviderURL>https://pro-api.coinmarketcap.com/</MarketCapProviderURL>
   <MarketCapCurrency>USD</MarketCapCurrency>
     
   <SaveNewSecurities>false</SaveNewSecurities>

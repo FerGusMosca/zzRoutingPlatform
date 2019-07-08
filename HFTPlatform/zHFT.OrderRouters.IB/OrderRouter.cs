@@ -257,6 +257,7 @@ namespace zHFT.OrderRouters.IB
                 Contract contract = ContractList[dto.Id];
                 if (order != null)
                 {
+
                     ExecutionReportWrapper wrapper = new ExecutionReportWrapper(dto, order, contract, Config);
                     dto.ClOrdId = GetLatestCLOrdId(dto.Id);
 

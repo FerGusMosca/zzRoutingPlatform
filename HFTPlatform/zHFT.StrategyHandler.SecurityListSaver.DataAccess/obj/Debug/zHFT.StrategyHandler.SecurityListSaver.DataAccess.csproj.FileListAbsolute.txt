@@ -19,4 +19,3 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.csprojResolveAssemblyReference.cache

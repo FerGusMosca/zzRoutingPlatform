@@ -103,7 +103,6 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         
         }
 
-
         public List<TradeImpact> TradeImpacts { get; set; }
 
         #endregion

@@ -52,6 +52,8 @@ namespace zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets
 
         protected string Secret { get; set; }
 
+        protected OnLogMessage OnLogMsg { get; set; }
+
      
         #endregion
 
@@ -217,8 +219,10 @@ namespace zHFT.FullMrktConnectivity.BitMex.DAL.WebSockets
                 }
                 catch (Exception ex)
                 {
-                    //TODO: Log fatal exception receiving data from subscription
-                    abort = true;
+                    if (OnLogMsg != null)
+                        OnLogMsg(string.Format("Error receiving data from BitMex websocket: {0}", ex.Message), zHFT.Main.Common.Util.Constants.MessageType.Error);
+                    else
+                        abort = true;
                 }
             }
         }
