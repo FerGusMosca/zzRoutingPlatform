@@ -19,6 +19,8 @@ namespace zHFT.CurrencyListMarketClient.Bittrex.BusinessEntities
         public string BaseAddress { get; set; }
         public string Notice { get; set; }
 
+        public string Exchange { get; set; }
+
 
     }
 }

@@ -72,6 +72,7 @@ namespace zHFT.CurrencyListMarketClient.Bittrex.Client
                         BaseAddress = (string)x["BaseAddress"],
                         Notice = (string)x["Notice"],
 
+
                     }).ToList();
 
                     SecurityListWrapper wrapper = new SecurityListWrapper(items, BittrexConfiguration);

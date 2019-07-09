@@ -14,7 +14,6 @@ using zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Converters;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Interface;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO;
-using zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.Managers;
 
 namespace zHFT.StrategyHandler.CryptocurrencyListSaver
 {
@@ -32,7 +31,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
 
         protected SecurityListConverter SecurityListConverter { get; set; }
 
-        protected CryptoCurrencyManager CryptoCurrencyManager { get; set; }
+        protected CryptocurrencyManager CryptoCurrencyManager { get; set; }
 
         protected CryptoInPortolioManager CryptoInPortolioManager { get; set; }
 
@@ -51,6 +50,26 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
 
         }
 
+        protected void UpdateCryptoMarketData(CryptoCurrency crypto, List<CryptoCurrency> notTrackedList)
+        {
+            try
+            {
+                if (!CryptosInPortfolio.Any(x => x.Symbol == crypto.Symbol))
+                {
+                    CryptoCurrency cryptoCurrencyData = MarketCapProviderManager.GetCryptoCurrencyData(crypto.Symbol, SecurityListSaverConfiguration.MarketCapCurrency);
+                    crypto.MarketCapDesc = cryptoCurrencyData.MarketCapDesc;
+                    crypto.MarketCap = cryptoCurrencyData.MarketCap;
+                    notTrackedList.Add(crypto);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error retrieving market data Persisting crypto currency {1}: {2}", SecurityListSaverConfiguration.Name, crypto.Symbol, ex.Message),
+                              Constants.MessageType.Error);
+            }
+
+        }
+
         protected CMState ProcessSecurityList(Wrapper wrapper)
         {
             try
@@ -58,30 +77,24 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
                 lock (tLock)
                 {
                     List<CryptoCurrency> cryptos = SecurityListConverter.GetSecurityList(wrapper, SecurityListSaverConfiguration, OnLogMsg);
-                    List<CryptoCurrency> notTracked = new List<CryptoCurrency>();
+                    List<CryptoCurrency> notTrackedList = new List<CryptoCurrency>();
 
                     DoLog(string.Format("@{0}:Processing Security List: {1} cryptos", SecurityListSaverConfiguration.Name, cryptos.Count),
                           Constants.MessageType.Information);
 
                     foreach (CryptoCurrency crypto in cryptos)
                     {
-
-                        if (!CryptosInPortfolio.Any(x => x.Symbol == crypto.Symbol))
-                        {
-                            decimal marketCap = MarketCapProviderManager.GetMarketCap(crypto.Symbol, SecurityListSaverConfiguration.MarketCapCurrency);
-                            crypto.MarketCap = marketCap;
-                            notTracked.Add(crypto);
-                        }
-
+                        UpdateCryptoMarketData(crypto, notTrackedList);
                         DoLog(string.Format("@{0}:Persisting crypto currency {1}-{2}", SecurityListSaverConfiguration.Name, crypto.Symbol, crypto.Name),
-                              Constants.MessageType.Information);
+                                Constants.MessageType.Information);
 
-                        CryptoCurrencyManager.Persist(crypto);
+                        CryptoCurrencyManager.PersistCrypto(crypto);
+                        
                     }
 
-                    foreach (CryptoCurrency notTrackedCrypto in notTracked.OrderByDescending(x => x.MarketCap))
+                    foreach (CryptoCurrency notTrackedCrypto in notTrackedList.OrderByDescending(x => x.MarketCap))
                     {
-                        string msg = string.Format("RED->Cryptocurrency {0} (market cap {1}) not being tracked...", notTrackedCrypto.Symbol, notTrackedCrypto.MarketCap);
+                        string msg = string.Format("RED->Cryptocurrency {0} (market cap {1}) not being tracked...", notTrackedCrypto.Symbol, notTrackedCrypto.MarketCapDesc);
                         DoLog(msg, Constants.MessageType.Information);
 
                     }
@@ -91,7 +104,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Error persisting Persisting crypto currency: {0}", SecurityListSaverConfiguration.Name, ex.Message),
+                DoLog(string.Format("@{0}: Critical Error persisting processing cryptocurrencies: {1}", SecurityListSaverConfiguration.Name, ex.Message),
                               Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
@@ -131,7 +144,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver
 
                     SecurityListConverter = new SecurityListConverter();
 
-                    CryptoCurrencyManager = new CryptoCurrencyManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
+                    CryptoCurrencyManager = new CryptocurrencyManager(SecurityListSaverConfiguration.SecuritiesAccessLayerConnectionString);
 
                     CryptoInPortolioManager = new DataAccessLayer.ADO.CryptoInPortolioManager(SecurityListSaverConfiguration.CryptosInPortfolioConnectionString);
 

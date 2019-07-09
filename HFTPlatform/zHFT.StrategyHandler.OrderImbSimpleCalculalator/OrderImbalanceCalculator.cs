@@ -647,13 +647,22 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 }
                 else
                 {
-                    imbPos.CurrentPos().PositionCanceledOrRejected = true;
-                    imbPos.CurrentPos().PositionCleared = false;
-                    imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
+                    if (report.OrdStatus == OrdStatus.Rejected)
+                    {
+                        //TODO: ANN y TEST en que contexto puede venir el rejected!
+                    }
+                    else
+                    {
+
+                        imbPos.CurrentPos().PositionCanceledOrRejected = true;
+                        imbPos.CurrentPos().PositionCleared = false;
+                        imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
 
 
-                    if (imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty == 0)
-                        ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);//We remove the position so we can try again
+                        if (imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty == 0)
+                            ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);//We remove the position so we can try again
+
+                    }
                 }
             }
         }

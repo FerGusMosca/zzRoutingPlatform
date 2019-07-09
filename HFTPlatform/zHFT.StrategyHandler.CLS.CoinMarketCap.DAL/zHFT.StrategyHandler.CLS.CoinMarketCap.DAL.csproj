@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csproj">
+      <Project>{3515b58c-6998-48fe-b794-58989c65ce04}</Project>
+      <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj">
       <Project>{ed581d42-c431-44d5-b292-4cf937fc3734}</Project>
       <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.Common</Name>

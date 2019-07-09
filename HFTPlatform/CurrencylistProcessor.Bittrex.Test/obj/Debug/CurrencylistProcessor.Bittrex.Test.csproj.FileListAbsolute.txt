@@ -86,3 +86,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\CurrencylistProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.pdb

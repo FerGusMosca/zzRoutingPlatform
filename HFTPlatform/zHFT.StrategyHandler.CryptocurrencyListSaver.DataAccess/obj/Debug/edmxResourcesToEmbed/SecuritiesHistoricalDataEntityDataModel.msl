@@ -155,17 +155,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="s_cryptocurrencies">
-      <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_cryptocurrencies">
-        <MappingFragment StoreEntitySet="s_cryptocurrencies">
-          <ScalarProperty Name="notice" ColumnName="notice" />
-          <ScalarProperty Name="base_address" ColumnName="base_address" />
-          <ScalarProperty Name="coin_type" ColumnName="coin_type" />
-          <ScalarProperty Name="active" ColumnName="active" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="symbol" ColumnName="symbol" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

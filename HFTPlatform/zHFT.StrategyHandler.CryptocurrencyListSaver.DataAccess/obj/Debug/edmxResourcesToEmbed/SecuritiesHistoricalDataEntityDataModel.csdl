@@ -19,7 +19,6 @@
     <EntitySet Name="s_stocks" EntityType="StocksHistoricalDataModel.s_stocks" />
     <EntitySet Name="stocks_market_data" EntityType="StocksHistoricalDataModel.stocks_market_data" />
     <EntitySet Name="options_market_data" EntityType="StocksHistoricalDataModel.options_market_data" />
-    <EntitySet Name="s_cryptocurrencies" EntityType="StocksHistoricalDataModel.s_cryptocurrencies" />
   </EntityContainer>
   <EntityType Name="stocks_prices">
     <Key>
@@ -199,16 +198,5 @@
     <Property Type="String" Name="moneda" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="timestamp" Precision="3" />
-  </EntityType>
-  <EntityType Name="s_cryptocurrencies">
-    <Key>
-      <PropertyRef Name="symbol" />
-    </Key>
-    <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="active" />
-    <Property Type="String" Name="coin_type" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="base_address" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="notice" MaxLength="200" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

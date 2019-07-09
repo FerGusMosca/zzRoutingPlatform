@@ -85,6 +85,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Converters
                         crypto.BaseAddress = (string)currWrapper.GetField(CryptoCurrencyFields.BaseAddress);
                         crypto.CoinType = (string)currWrapper.GetField(CryptoCurrencyFields.CoinType);
                         crypto.Notice = (string)currWrapper.GetField(CryptoCurrencyFields.Notice);
+                        crypto.Exchange = (string)currWrapper.GetField(CryptoCurrencyFields.Exchange);
 
                         cryptoCurrencies.Add(crypto);
                         

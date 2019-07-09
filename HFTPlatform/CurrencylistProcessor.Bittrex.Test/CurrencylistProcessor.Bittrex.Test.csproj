@@ -76,6 +76,10 @@
       <Project>{1ccef7d9-7231-46c3-b34e-75db643d044c}</Project>
       <Name>zHFT.StrategyHandler.CLS.CoinMarketCap.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.csproj">
+      <Project>{73a1e300-21e0-4bff-897c-b439644948f6}</Project>
+      <Name>zHFT.StrategyHandler.CLS.CryptoCompare.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj">
       <Project>{ed581d42-c431-44d5-b292-4cf937fc3734}</Project>
       <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.Common</Name>
@@ -95,6 +99,9 @@
     <Content Include="outgoingCryptocurrencyListSaver.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

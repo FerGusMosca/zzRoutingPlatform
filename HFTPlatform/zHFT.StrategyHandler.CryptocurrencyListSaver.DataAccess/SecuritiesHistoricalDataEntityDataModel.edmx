@@ -10,7 +10,6 @@
           <EntitySet Name="countries" EntityType="MomentumBackTestsModel.Store.countries" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="markets" EntityType="MomentumBackTestsModel.Store.markets" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="options_market_data" EntityType="MomentumBackTestsModel.Store.options_market_data" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="s_cryptocurrencies" EntityType="MomentumBackTestsModel.Store.s_cryptocurrencies" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_option_bids" EntityType="MomentumBackTestsModel.Store.s_option_bids" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_option_closing_prices" EntityType="MomentumBackTestsModel.Store.s_option_closing_prices" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="s_options" EntityType="MomentumBackTestsModel.Store.s_options" store:Type="Tables" Schema="dbo" />
@@ -76,17 +75,6 @@
           <Property Name="moneda" Type="varchar" MaxLength="10" />
           <Property Name="sesion" Type="varchar" MaxLength="10" />
           <Property Name="timestamp" Type="datetime" />
-        </EntityType>
-        <EntityType Name="s_cryptocurrencies">
-          <Key>
-            <PropertyRef Name="symbol" />
-          </Key>
-          <Property Name="symbol" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="active" Type="bit" />
-          <Property Name="coin_type" Type="varchar" MaxLength="50" />
-          <Property Name="base_address" Type="varchar" MaxLength="200" />
-          <Property Name="notice" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="s_option_bids">
           <Key>
@@ -235,7 +223,6 @@
           <EntitySet Name="s_stocks" EntityType="StocksHistoricalDataModel.s_stocks" />
           <EntitySet Name="stocks_market_data" EntityType="StocksHistoricalDataModel.stocks_market_data" />
           <EntitySet Name="options_market_data" EntityType="StocksHistoricalDataModel.options_market_data" />
-          <EntitySet Name="s_cryptocurrencies" EntityType="StocksHistoricalDataModel.s_cryptocurrencies" />
         </EntityContainer>
         <EntityType Name="stocks_prices">
           <Key>
@@ -416,17 +403,6 @@
           <Property Type="String" Name="sesion" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="timestamp" Precision="3" />
         </EntityType>
-        <EntityType Name="s_cryptocurrencies">
-          <Key>
-            <PropertyRef Name="symbol" />
-          </Key>
-          <Property Type="String" Name="symbol" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="Boolean" Name="active" />
-          <Property Type="String" Name="coin_type" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="base_address" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="notice" MaxLength="200" FixedLength="false" Unicode="false" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -587,18 +563,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="s_cryptocurrencies">
-            <EntityTypeMapping TypeName="StocksHistoricalDataModel.s_cryptocurrencies">
-              <MappingFragment StoreEntitySet="s_cryptocurrencies">
-                <ScalarProperty Name="notice" ColumnName="notice" />
-                <ScalarProperty Name="base_address" ColumnName="base_address" />
-                <ScalarProperty Name="coin_type" ColumnName="coin_type" />
-                <ScalarProperty Name="active" ColumnName="active" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="symbol" ColumnName="symbol" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -632,7 +596,6 @@
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_stocks" Width="1.5" PointX="8.125" PointY="16.375" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.stocks_market_data" Width="1.5" PointX="4.5954942761899407" PointY="31.917411953172373" />
         <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.options_market_data" Width="1.5" PointX="7.875" PointY="12.125" />
-        <edmx:EntityTypeShape EntityType="StocksHistoricalDataModel.s_cryptocurrencies" Width="1.5" PointX="8.301040580636375" PointY="15.7410661055432" />
       </edmx:Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

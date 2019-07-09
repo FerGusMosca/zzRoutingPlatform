@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie;
 using zHFT.StrategyHandler.CryptocurrencyListSaver.Common.Interface;
 
 namespace zHFT.StrategyHandler.CLS.CoinMarketCap.DAL
@@ -34,7 +35,7 @@ namespace zHFT.StrategyHandler.CLS.CoinMarketCap.DAL
 
         #region Public Methods
 
-        public decimal GetMarketCap(string symbol, string currency)
+        public CryptoCurrency GetCryptoCurrencyData(string symbol, string currency)
         {
             try
             {
@@ -42,11 +43,21 @@ namespace zHFT.StrategyHandler.CLS.CoinMarketCap.DAL
                 string param = string.Format("{0},{1}", currency, symbol);
 
                 string resp = DoGetJson(url, param);
-                return 0;
+                return new CryptoCurrency()
+                {
+                    Symbol = symbol,
+                    MarketCap = 0,
+                    MarketCapDesc = "0$"
+                };
             }
             catch (Exception ex)
             {
-                return 0;
+                return new CryptoCurrency()
+                {
+                    Symbol = symbol,
+                    MarketCap = 0,
+                    MarketCapDesc = "0$"
+                };
             
             }
         }
