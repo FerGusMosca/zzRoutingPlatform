@@ -212,6 +212,15 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         }
 
+        public bool PositionNoLongerActive()
+        {
+            return PosStatus == PositionStatus.Filled || PosStatus == PositionStatus.Canceled ||
+                   PosStatus == PositionStatus.DoneForDay || PosStatus == PositionStatus.Expired ||
+                   PosStatus == PositionStatus.Rejected || PosStatus == PositionStatus.Stopped ||
+                   PosStatus == PositionStatus.Suspended || PosStatus == PositionStatus.Unknown;
+        
+        }
+
         public bool PositionPendingExecution()
         {
 
@@ -221,6 +230,7 @@ namespace zHFT.Main.BusinessEntities.Positions
                    PosStatus == PositionStatus.PendingNew ||
                    PosStatus == PositionStatus.Calculated ||
                    PosStatus == PositionStatus.PendingReplace ||
+                   PosStatus == PositionStatus.AcceptedForBidding ||
                    PosStatus == PositionStatus.PartiallyFilled;
         
         }

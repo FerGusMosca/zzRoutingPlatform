@@ -605,6 +605,26 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
+        protected void ProcessOrderRejection(ImbalancePosition imbPos, ExecutionReport report)
+        {
+            if (imbPos.CurrentPos().PosStatus == PositionStatus.PendingNew)
+            {
+                //An opening position was rejected, we remove it and Log what happened
+                ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
+                DoLog(string.Format("@{0} Opening on position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
+
+            }
+            else if (imbPos.CurrentPos().PositionPendingExecution())//OPEN:most probably an update failed--> we do nothing
+                DoLog(string.Format("@{0} Action on OPEN position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
+            else if (imbPos.CurrentPos().PositionNoLongerActive())//CLOSED most probably an update failed--> we do nothing
+            {
+                //The action that created the rejection state (Ex: the order was canceled or filled) should be
+                //handled through the proper execution report
+                DoLog(string.Format("@{0} Action on CLOSED position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
+            }
+        
+        }
+
         protected void AssignMainERParameters(ImbalancePosition imbPos,ExecutionReport report, bool activePos)
         {
             if (activePos)
@@ -649,7 +669,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 {
                     if (report.OrdStatus == OrdStatus.Rejected)
                     {
-                        //TODO: ANN y TEST en que contexto puede venir el rejected!
+                        ProcessOrderRejection(imbPos, report);
                     }
                     else
                     {

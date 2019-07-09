@@ -315,7 +315,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         }
 
 
-
+      
 
         #endregion
     }
