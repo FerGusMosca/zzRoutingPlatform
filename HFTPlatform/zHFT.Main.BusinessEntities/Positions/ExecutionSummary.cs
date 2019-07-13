@@ -66,6 +66,17 @@ namespace zHFT.Main.BusinessEntities.Positions
                    && (Position == null || Position.PosStatus == PositionStatus.Filled);
         }
 
+
+        public bool IsCancelledPosition()
+        {
+            return (Position != null && Position.PosStatus == PositionStatus.Canceled);
+        }
+
+        public bool IsRejectedPosition()
+        {
+            return (Position != null && Position.PosStatus == PositionStatus.Rejected);
+        }
+
         #endregion
     }
 }

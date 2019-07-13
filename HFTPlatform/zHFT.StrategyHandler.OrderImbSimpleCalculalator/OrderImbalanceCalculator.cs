@@ -605,22 +605,32 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
+        protected void RemovePosition(ImbalancePosition imbPos, ExecutionReport report)
+        {
+            imbPos.CurrentPos().PositionCanceledOrRejected = true;
+            imbPos.CurrentPos().PositionCleared = false;
+            imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
+            if (imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty == 0)
+                ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
+        
+        }
+
         protected void ProcessOrderRejection(ImbalancePosition imbPos, ExecutionReport report)
         {
             if (imbPos.CurrentPos().PosStatus == PositionStatus.PendingNew)
             {
-                //An opening position was rejected, we remove it and Log what happened
-                ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
+                //An opening position was rejected, we remove it and Log what happened\
+                RemovePosition(imbPos, report);
                 DoLog(string.Format("@{0} Opening on position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
 
             }
             else if (imbPos.CurrentPos().PositionPendingExecution())//OPEN:most probably an update failed--> we do nothing
-                DoLog(string.Format("@{0} Action on OPEN position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
+                DoLog(string.Format("@{0} Action on OPEN position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Error);
             else if (imbPos.CurrentPos().PositionNoLongerActive())//CLOSED most probably an update failed--> we do nothing
             {
                 //The action that created the rejection state (Ex: the order was canceled or filled) should be
                 //handled through the proper execution report
-                DoLog(string.Format("@{0} Action on CLOSED position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
+                DoLog(string.Format("@{0} Action on CLOSED position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Error);
             }
         
         }
@@ -673,15 +683,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     }
                     else
                     {
-
-                        imbPos.CurrentPos().PositionCanceledOrRejected = true;
-                        imbPos.CurrentPos().PositionCleared = false;
-                        imbPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
-
-
-                        if (imbPos.IsFirstLeg() && imbPos.OpeningPosition.CumQty == 0)
-                            ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);//We remove the position so we can try again
-
+                        RemovePosition(imbPos, report);
                     }
                 }
             }

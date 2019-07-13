@@ -2,11 +2,11 @@
 <Configuration>
   <Name>Outgoing BitMex</Name>
 
-  <!--<Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
-  <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
+  <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
+  <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>
 
-  <Proxy>zHFT.OrderRouters.Bitmex.OrderRouter, zHFT.OrderRouters.Bitmex</Proxy>
-  <ProxyConfigFile>.\outgoingOrderRouter.Bitmex.xml</ProxyConfigFile>
+  <!--<Proxy>zHFT.OrderRouters.Bitmex.OrderRouter, zHFT.OrderRouters.Bitmex</Proxy>
+  <ProxyConfigFile>.\outgoingOrderRouter.Bitmex.xml</ProxyConfigFile>-->
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

@@ -1,8 +1,0 @@
-2019-04-04 12:54:36  :: 4/4/2019 12:54:36MainApp.LoadConfig
-2019-04-04 12:54:36  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
-2019-04-04 12:54:36  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.BitMex.Test\bin\Debug\config.xml
-2019-04-04 12:54:36  :: Fin GetConfiguracion
-2019-04-04 12:54:36  :: Initializing Log
-2019-04-04 12:54:36  :: Initializing Incoming Module
-2019-04-04 12:54:39  :: Incoming Module successfully initialized
-2019-04-04 12:54:39  :: Initializing Outgoing Module

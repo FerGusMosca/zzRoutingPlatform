@@ -3,13 +3,13 @@
   <Name>Strategy Handler - Order Imbalance Calculator - BitMex</Name>
 
   <PositionSizeInCash>20</PositionSizeInCash>
-  <MaxOpenedPositions>3</MaxOpenedPositions>
-  <WaitingTimeBeforeOpeningPositions>1</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
+  <MaxOpenedPositions>5</MaxOpenedPositions>
+  <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
   <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
   <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
   <StopLossForOpenPositionPct>0.5</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
-  <FeeValuePerTrade>0.0002</FeeValuePerTrade>
+  <FeeValuePerTrade>0.15</FeeValuePerTrade>
   <ResetEveryNMinutes>10</ResetEveryNMinutes><!--0 counts as no reset-->
 
   <Currency>USD</Currency>
@@ -20,7 +20,7 @@
 
   <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV;initial catalog=BOBIntFigMetrics;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=BOBIntFigCryptoMetrics;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <ResetOnPersistance>true</ResetOnPersistance>
 
@@ -29,15 +29,15 @@
   
   <StocksToMonitor>
     
-    <!--<Symbol>XBTU19</Symbol>
-    <Symbol>XBTM19</Symbol>
-    <Symbol>ADAM19</Symbol>
-    <Symbol>BCHM19</Symbol>
-    <Symbol>EOSM19</Symbol>
-    <Symbol>ETHM19</Symbol>
-    <Symbol>LTCM19</Symbol>
-    <Symbol>TRXM19</Symbol>
-    <Symbol>XRPM19</Symbol>-->
+    <Symbol>XBTU19</Symbol>
+    <Symbol>XBTZ19</Symbol>
+    <Symbol>ADAU19</Symbol>
+    <Symbol>BCHU19</Symbol>
+    <Symbol>EOSU19</Symbol>
+    <Symbol>ETHU19</Symbol>
+    <Symbol>LTCU19</Symbol>
+    <Symbol>TRXU19</Symbol>
+    <Symbol>XRPU19</Symbol>
   </StocksToMonitor>
 
 </Configuration>
