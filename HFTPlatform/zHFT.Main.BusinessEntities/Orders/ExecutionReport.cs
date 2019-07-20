@@ -63,6 +63,23 @@ namespace zHFT.Main.BusinessEntities.Orders
         
         }
 
+        public string GetRejectReason()
+        {
+            if (IsCancelationExecutionReport())
+            {
+                string reason = "";
+
+                if (OrdRejReason != null)
+                    reason = OrdRejReason.Value.ToString() + "-" + Text;
+                else
+                    reason = Text;
+
+                return reason;
+            }
+            else
+                return "-";
+        }
+
         #endregion
     }
 }
