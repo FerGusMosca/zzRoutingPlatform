@@ -10,8 +10,9 @@
   
   <SaveNewSecurities>true</SaveNewSecurities>
   <SecurityTypes>
-    <SecurityType>CS</SecurityType><!--CS= Common Stock-->
-    <SecurityType>OPT</SecurityType><!--OPT=Options-->
+    <!--<SecurityType>CS</SecurityType>--><!--CS= Common Stock--><!--
+    <SecurityType>OPT</SecurityType>--><!--OPT=Options-->
+    <SecurityType>FUT</SecurityType>
   </SecurityTypes>
 
   <Markets>

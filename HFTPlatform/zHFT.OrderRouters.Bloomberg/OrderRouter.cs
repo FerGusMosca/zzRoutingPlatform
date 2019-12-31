@@ -558,11 +558,11 @@ namespace zHFT.OrderRouters.Bloomberg
             request.Set("EMSX_TICKER", order.GetFullBloombergSymbol());
             request.Set("EMSX_SEQUENCE", order.MarketOrderId);
             request.Set("EMSX_AMOUNT", order.OrderQty);
-            request.Set("EMSX_ORDER_TYPE", order.GetOrdType());//ORDENES FIJO DE TIPO LIMIT
+            request.Set("EMSX_ORDER_TYPE", order.GetOrdType());//Limit Orders
             request.Set("EMSX_LIMIT_PRICE", order.Price);
             request.Set("EMSX_TIF", order.GetTimeInForce());
             request.Set("EMSX_HAND_INSTRUCTION", "ANY");
-            //request.Set("EMSX_BROKER", order.Broker); Activar cuando este apuntando al mercado
+            //request.Set("EMSX_BROKER", order.Broker); Turn on when pointing to the exchange
 
             return request;
         }
@@ -575,7 +575,6 @@ namespace zHFT.OrderRouters.Bloomberg
             CorrelationID requestID = new CorrelationID(order.OrderId);
             session.SendRequest(request, requestID);
 
-            //TO DO : Eval la respuesta de la actualización
             CMState state = CMState.BuildSuccess();
 
             return state;

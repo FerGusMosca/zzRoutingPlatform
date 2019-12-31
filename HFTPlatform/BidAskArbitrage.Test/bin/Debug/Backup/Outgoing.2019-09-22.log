@@ -1,0 +1,95 @@
+2019-09-22 19:56:07  :: BidAskArbitrage:9/22/2019 7:56:07 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 19:56:07  :: BidAskArbitrage:Loading config:.\OrderImbalanceCalculator.xml
+2019-09-22 19:56:07  :: BidAskArbitrage:.\OrderImbalanceCalculator.xml does not exists
+2019-09-22 19:56:12  :: BidAskArbitrage:9/22/2019 7:56:12 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 19:56:12  :: BidAskArbitrage:Loading config:.\OrderImbalanceCalculator.xml
+2019-09-22 19:56:33  :: BidAskArbitrage:9/22/2019 7:56:33 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 19:56:33  :: BidAskArbitrage:Loading config:.\OrderImbalanceCalculator.xml
+2019-09-22 19:56:33  :: BidAskArbitrage:.\OrderImbalanceCalculator.xml does not exists
+2019-09-22 19:56:33  :: BidAskArbitrage:Error initializing config file .\OrderImbalanceCalculator.xml
+2019-09-22 19:57:16  :: BidAskArbitrage:9/22/2019 7:57:16 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 19:57:16  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 19:57:16  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 19:57:16  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 19:59:36  :: BidAskArbitrage:9/22/2019 7:59:36 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 19:59:36  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 19:59:36  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 19:59:36  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:00:38  :: BidAskArbitrage:9/22/2019 8:00:38 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:00:38  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:00:38  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:00:38  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:01:06  :: BidAskArbitrage:9/22/2019 8:01:06 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:01:06  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:01:06  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:01:06  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:08:16  :: BidAskArbitrage:9/22/2019 8:08:16 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:08:16  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:08:16  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:08:16  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:08:16  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC,DICAD
+2019-09-22 20:09:20  :: BidAskArbitrage:9/22/2019 8:09:20 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:09:20  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:09:20  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:09:20  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:10:05  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC,DICAD
+2019-09-22 20:10:41  :: BidAskArbitrage:9/22/2019 8:10:41 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:10:41  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:10:41  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:10:41  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:10:41  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC222,DICAD222
+2019-09-22 20:11:34  :: BidAskArbitrage:9/22/2019 8:11:34 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:11:34  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:11:34  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:11:34  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:11:35  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC222,DICAD222
+2019-09-22 20:11:59  :: BidAskArbitrage:9/22/2019 8:11:59 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:11:59  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:11:59  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:11:59  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:12:05  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC222,DICAD222
+2019-09-22 20:12:44  :: BidAskArbitrage:9/22/2019 8:12:44 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:12:44  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:12:44  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:12:44  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:12:44  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC222,DICAD222
+2019-09-22 20:15:26  :: BidAskArbitrage:9/22/2019 8:15:26 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:15:26  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:15:26  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:15:26  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:15:30  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC222,DICAD222
+2019-09-22 20:15:56  :: BidAskArbitrage:9/22/2019 8:15:56 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:15:56  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:15:56  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:15:56  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:16:00  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC,DICAD
+2019-09-22 20:17:51  :: BidAskArbitrage:9/22/2019 8:17:51 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:17:51  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:17:51  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:17:51  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:17:55  :: Error processing incoming message: La cadena de entrada no tiene el formato correcto.
+2019-09-22 20:17:55  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC,DICAD
+2019-09-22 20:18:51  :: BidAskArbitrage:9/22/2019 8:18:51 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:18:51  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:18:51  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:18:51  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:18:55  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAC,DICAD
+2019-09-22 20:19:29  :: BidAskArbitrage:9/22/2019 8:19:29 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:19:29  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:19:29  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:19:29  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:19:44  :: BidAskArbitrage:9/22/2019 8:19:44 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:19:44  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:19:44  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:19:44  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:19:47  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICA,DICA
+2019-09-22 20:30:31  :: BidAskArbitrage:9/22/2019 8:30:31 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:30:31  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:30:31  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:30:31  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:30:36  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICA,DICA
+2019-09-22 20:33:00  :: BidAskArbitrage:9/22/2019 8:33:00 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2019-09-22 20:33:00  :: BidAskArbitrage:Loading config:.\BidAskArbitrage.xml
+2019-09-22 20:33:00  :: BidAskArbitrage:Processing config:.\BidAskArbitrage.xml
+2019-09-22 20:33:00  :: Strategy Handler - BidAskArbitrage:Ending GetConfiguracion .\BidAskArbitrage.xml
+2019-09-22 20:33:06  :: Strategy Handler - BidAskArbitrage:Pidiendo monitorieo de par DICAD,DICAD

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.Enums;
 
+
 namespace zHFT.Main.Common.Wrappers
 {
     public abstract class Wrapper

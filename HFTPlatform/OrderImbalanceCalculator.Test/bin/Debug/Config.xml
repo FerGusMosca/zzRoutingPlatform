@@ -3,12 +3,12 @@
   <Name>Order Imbalance Calculator</Name>
 
   <!--Primary-->
-  <!--<IncomingConfigPath>.\Primary\IncomingSingletonConfig.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>-->
+  <IncomingConfigPath>.\Primary\IncomingSingletonConfig.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
 
   <!--IB-->
-  <IncomingConfigPath>.\IB\incomingIB.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.InstructionBasedMarketClient.IB.Client.IBInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IB</IncomingModule>
+  <!--<IncomingConfigPath>.\IB\incomingIB.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.IB.Client.IBInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IB</IncomingModule>-->
 
   
   <!--Bittrex-->

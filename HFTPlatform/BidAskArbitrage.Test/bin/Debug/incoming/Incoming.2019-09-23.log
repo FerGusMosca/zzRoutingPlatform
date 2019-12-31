@@ -1,0 +1,311 @@
+2019-09-23 11:03:55  :: 9/23/2019 11:03:55 AMBaseCommunicationModule.LoadConfig
+2019-09-23 11:03:55  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:03:55  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:03:55  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:04:03  :: 9/23/2019 11:04:03 AMConfigLoader.LoadConfig
+2019-09-23 11:04:03  :: Loading config:.\Primary\Primary.xml
+2019-09-23 11:04:03  :: Processing config:.\Primary\Primary.xml
+2019-09-23 11:04:03  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 11:04:05  :: Invocación de toAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=6235=534=949=alienzimzum282152=20190923-14:04:05.72256=ROFX10=243
+2019-09-23 11:04:05  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:04:05  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-14:04:05.94356=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=210
+2019-09-23 11:04:07  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-14:04:06.92456=alienzimzum282198=0108=30141=Y1137=910=140
+2019-09-23 11:04:07  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:04:07  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:04:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-14:04:07.73856=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=217
+2019-09-23 11:04:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-14:04:07.77156=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=216
+2019-09-23 11:04:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-14:04:07.81856=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=220
+2019-09-23 11:04:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-14:04:07.85756=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=225
+2019-09-23 11:04:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=649=alienzimzum282152=20190923-14:04:07.89056=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=224
+2019-09-23 11:04:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=749=alienzimzum282152=20190923-14:04:07.92456=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=224
+2019-09-23 11:04:08  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11635=h34=849=ROFX52=20190923-14:04:08.19356=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=106
+2019-09-23 11:04:08  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11635=h34=849=ROFX52=20190923-14:04:08.19356=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=106 
+2019-09-23 11:04:09  :: Receiving Market Data Request: Wrapper
+2019-09-23 11:04:12  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 11:04:12  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=13135=V146=155=MERV - XMEV - DICAD - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=179 
+2019-09-23 11:04:12  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18835=V34=849=alienzimzum282152=20190923-14:04:12.03656=ROFX146=155=MERV - XMEV - DICAD - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=132
+2019-09-23 11:04:12  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 11:04:12  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13635=Y34=949=ROFX52=20190923-14:04:12.21256=alienzimzum282158=El contrato no esta habilitado: MERV - XMEV - DICAD - 48hs262=0281=010=234
+2019-09-23 11:04:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13635=Y34=949=ROFX52=20190923-14:04:12.21256=alienzimzum282158=El contrato no esta habilitado: MERV - XMEV - DICAD - 48hs262=0281=010=234 
+2019-09-23 11:04:41  :: 9/23/2019 11:04:41 AMBaseCommunicationModule.LoadConfig
+2019-09-23 11:04:41  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:04:41  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:04:41  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:04:41  :: 9/23/2019 11:04:41 AMConfigLoader.LoadConfig
+2019-09-23 11:04:41  :: Loading config:.\Primary\Primary.xml
+2019-09-23 11:04:41  :: Processing config:.\Primary\Primary.xml
+2019-09-23 11:04:41  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 11:04:42  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:04:42  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-14:04:42.52856=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=210
+2019-09-23 11:04:43  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-14:04:43.19756=alienzimzum282198=0108=30141=Y1137=910=143
+2019-09-23 11:04:43  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:04:43  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:04:44  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-14:04:44.14056=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=205
+2019-09-23 11:04:44  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-14:04:44.17456=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=214
+2019-09-23 11:04:44  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-14:04:44.20456=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=210
+2019-09-23 11:04:44  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-14:04:44.23856=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 11:04:44  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=649=alienzimzum282152=20190923-14:04:44.26956=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=225
+2019-09-23 11:04:44  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=749=alienzimzum282152=20190923-14:04:44.31556=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 11:04:44  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11635=h34=849=ROFX52=20190923-14:04:44.24656=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=105
+2019-09-23 11:04:44  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11635=h34=849=ROFX52=20190923-14:04:44.24656=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=105 
+2019-09-23 11:04:45  :: Receiving Market Data Request: Wrapper
+2019-09-23 11:04:47  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 11:04:47  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=13035=V146=155=MERV - XMEV - DICY - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=134 
+2019-09-23 11:04:47  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18735=V34=849=alienzimzum282152=20190923-14:04:47.96856=ROFX146=155=MERV - XMEV - DICY - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=109
+2019-09-23 11:04:47  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 11:04:48  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13535=Y34=949=ROFX52=20190923-14:04:48.14156=alienzimzum282158=El contrato no esta habilitado: MERV - XMEV - DICY - 48hs262=0281=010=199
+2019-09-23 11:04:48  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=13535=Y34=949=ROFX52=20190923-14:04:48.14156=alienzimzum282158=El contrato no esta habilitado: MERV - XMEV - DICY - 48hs262=0281=010=199 
+2019-09-23 11:05:24  :: 9/23/2019 11:05:24 AMBaseCommunicationModule.LoadConfig
+2019-09-23 11:05:24  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:05:24  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:05:24  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 11:05:24  :: 9/23/2019 11:05:24 AMConfigLoader.LoadConfig
+2019-09-23 11:05:24  :: Loading config:.\Primary\Primary.xml
+2019-09-23 11:05:24  :: Processing config:.\Primary\Primary.xml
+2019-09-23 11:05:24  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 11:05:25  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:05:25  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-14:05:25.47956=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=217
+2019-09-23 11:05:26  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-14:05:26.21556=alienzimzum282198=0108=30141=Y1137=910=136
+2019-09-23 11:05:26  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:05:26  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 11:05:26  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-14:05:26.80956=ROFX45=258=Value is incorrect (out of range) for this tag371=336372=h373=510=218
+2019-09-23 11:05:26  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-14:05:26.87456=ROFX45=358=Value is incorrect (out of range) for this tag371=336372=h373=510=222
+2019-09-23 11:05:26  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-14:05:26.90556=ROFX45=458=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 11:05:26  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-14:05:26.94556=ROFX45=558=Value is incorrect (out of range) for this tag371=336372=h373=510=225
+2019-09-23 11:05:26  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=649=alienzimzum282152=20190923-14:05:26.99256=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=229
+2019-09-23 11:05:27  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=749=alienzimzum282152=20190923-14:05:27.03356=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=218
+2019-09-23 11:05:27  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11635=h34=849=ROFX52=20190923-14:05:27.26156=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=104
+2019-09-23 11:05:27  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11635=h34=849=ROFX52=20190923-14:05:27.26156=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=104 
+2019-09-23 11:05:28  :: Receiving Market Data Request: Wrapper
+2019-09-23 11:05:28  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 11:05:28  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=053 
+2019-09-23 11:05:28  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18635=V34=849=alienzimzum282152=20190923-14:05:28.63556=ROFX146=155=MERV - XMEV - BMA - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=010
+2019-09-23 11:05:28  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 11:05:28  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15335=W34=949=ROFX52=20190923-14:05:28.78856=alienzimzum282155=MERV - XMEV - BMA - 48hs207=ROFX262=0264=1268=3269=0290=0269=1290=0269=B271=010=108
+2019-09-23 11:05:28  :: @InstructionProcessor.Primary.Test:Could not find Security Type for symbol MERV - XMEV - BMA - 48hs 
+2019-09-23 11:05:58  :: Invocación de toAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=6235=034=949=alienzimzum282152=20190923-14:05:58.47656=ROFX10=253
+2019-09-23 11:05:59  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=6335=034=1049=ROFX52=20190923-14:05:59.22356=alienzimzum282110=029
+2019-09-23 13:20:25  :: 9/23/2019 1:20:25 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:20:25  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:20:25  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:20:25  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:20:34  :: 9/23/2019 1:20:34 PMConfigLoader.LoadConfig
+2019-09-23 13:20:34  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:20:34  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:20:34  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:20:35  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:20:38  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:20:39  :: @InstructionProcessor.Primary.Test:Session not initialized on new market data request 
+2019-09-23 13:20:39  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 13:21:07  :: 9/23/2019 1:21:07 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:21:07  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:21:07  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:21:07  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:21:07  :: 9/23/2019 1:21:07 PMConfigLoader.LoadConfig
+2019-09-23 13:21:07  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:21:07  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:21:07  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:21:08  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:21:08  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-16:21:08.76656=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=217
+2019-09-23 13:21:10  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-16:21:10.09956=alienzimzum282198=0108=30141=Y1137=910=139
+2019-09-23 13:21:10  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:21:10  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:21:10  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:21:10.12656=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=138
+2019-09-23 13:21:10  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:21:10.12656=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=138 
+2019-09-23 13:21:10  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:21:10.12656=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=104
+2019-09-23 13:21:10  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:21:10.12656=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=104 
+2019-09-23 13:21:10  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:21:10.12756=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=085
+2019-09-23 13:21:10  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:21:10.12756=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=085 
+2019-09-23 13:21:10  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:21:10.12956=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=156
+2019-09-23 13:21:10  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:21:10.12956=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=156 
+2019-09-23 13:21:10  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-16:21:10.73456=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=212
+2019-09-23 13:21:10  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-16:21:10.76656=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 13:21:10  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-16:21:10.78956=ROFX45=858=Value is incorrect (out of range) for this tag371=336372=h373=510=226
+2019-09-23 13:21:10  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-16:21:10.82556=ROFX45=958=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 13:21:10  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=649=alienzimzum282152=20190923-16:21:10.94656=ROFX45=1058=Value is incorrect (out of range) for this tag371=336372=h373=510=009
+2019-09-23 13:21:11  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=749=alienzimzum282152=20190923-16:21:11.00556=ROFX45=1158=Value is incorrect (out of range) for this tag371=336372=h373=510=254
+2019-09-23 13:21:11  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:21:11.14356=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=140
+2019-09-23 13:21:11  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:21:11.14356=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=140 
+2019-09-23 13:21:11  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:21:11  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 13:21:11  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=053 
+2019-09-23 13:21:11  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18635=V34=849=alienzimzum282152=20190923-16:21:11.89856=ROFX146=155=MERV - XMEV - BMA - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=013
+2019-09-23 13:21:11  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 13:21:12  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15435=W34=1349=ROFX52=20190923-16:21:12.15956=alienzimzum282155=MERV - XMEV - BMA - 48hs207=ROFX262=0264=1268=3269=0290=0269=1290=0269=B271=010=137
+2019-09-23 13:21:12  :: @InstructionProcessor.Primary.Test:Could not find Security Type for symbol MERV - XMEV - BMA - 48hs 
+2019-09-23 13:21:41  :: Invocación de toAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=6235=034=949=alienzimzum282152=20190923-16:21:41.66456=ROFX10=244
+2019-09-23 13:26:30  :: 9/23/2019 1:26:30 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:26:30  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:26:30  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:26:30  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:26:30  :: 9/23/2019 1:26:30 PMConfigLoader.LoadConfig
+2019-09-23 13:26:30  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:26:30  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:26:30  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:26:31  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:26:31  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-16:26:31.65656=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=216
+2019-09-23 13:26:33  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-16:26:33.38156=alienzimzum282198=0108=30141=Y1137=910=143
+2019-09-23 13:26:33  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:26:33  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:26:33  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:26:33.41056=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=144
+2019-09-23 13:26:33  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:26:33.41056=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=144 
+2019-09-23 13:26:33  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:26:33.41056=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=110
+2019-09-23 13:26:33  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:26:33.41056=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=110 
+2019-09-23 13:26:33  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:26:33.41156=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=091
+2019-09-23 13:26:33  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:26:33.41156=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=091 
+2019-09-23 13:26:33  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:26:33.41256=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=161
+2019-09-23 13:26:33  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:26:33.41256=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=161 
+2019-09-23 13:26:34  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-16:26:34.00856=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=217
+2019-09-23 13:26:34  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-16:26:34.04456=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 13:26:34  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-16:26:34.09256=ROFX45=858=Value is incorrect (out of range) for this tag371=336372=h373=510=224
+2019-09-23 13:26:34  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-16:26:34.13056=ROFX45=958=Value is incorrect (out of range) for this tag371=336372=h373=510=219
+2019-09-23 13:26:34  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=649=alienzimzum282152=20190923-16:26:34.15856=ROFX45=1058=Value is incorrect (out of range) for this tag371=336372=h373=510=015
+2019-09-23 13:26:34  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=749=alienzimzum282152=20190923-16:26:34.18956=ROFX45=1158=Value is incorrect (out of range) for this tag371=336372=h373=510=021
+2019-09-23 13:26:34  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:26:34.42756=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=155
+2019-09-23 13:26:34  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:26:34.42756=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=155 
+2019-09-23 13:26:34  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:26:34  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 13:26:34  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=053 
+2019-09-23 13:26:34  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18635=V34=849=alienzimzum282152=20190923-16:26:34.86956=ROFX146=155=MERV - XMEV - BMA - 48hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=021
+2019-09-23 13:26:34  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 13:26:35  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15435=W34=1349=ROFX52=20190923-16:26:35.12856=alienzimzum282155=MERV - XMEV - BMA - 48hs207=ROFX262=0264=1268=3269=0290=0269=1290=0269=B271=010=143
+2019-09-23 13:26:35  :: @InstructionProcessor.Primary.Test:Could not find Security Type for symbol MERV - XMEV - BMA - 48hs 
+2019-09-23 13:27:14  :: 9/23/2019 1:27:14 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:27:14  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:27:14  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:27:14  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:27:14  :: 9/23/2019 1:27:14 PMConfigLoader.LoadConfig
+2019-09-23 13:27:14  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:27:14  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:27:14  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:27:15  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:27:15  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-16:27:15.68656=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=222
+2019-09-23 13:27:17  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-16:27:16.94656=alienzimzum282198=0108=30141=Y1137=910=152
+2019-09-23 13:27:17  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:27:17  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:27:17  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:27:16.97556=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=162
+2019-09-23 13:27:17  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:27:16.97556=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=162 
+2019-09-23 13:27:17  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:27:16.97556=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=128
+2019-09-23 13:27:17  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:27:16.97556=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=128 
+2019-09-23 13:27:17  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:27:16.97756=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=110
+2019-09-23 13:27:17  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:27:16.97756=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=110 
+2019-09-23 13:27:17  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:27:16.97856=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=180
+2019-09-23 13:27:17  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:27:16.97856=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=180 
+2019-09-23 13:27:17  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-16:27:17.56356=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=225
+2019-09-23 13:27:17  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-16:27:17.59356=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=230
+2019-09-23 13:27:17  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-16:27:17.62156=ROFX45=858=Value is incorrect (out of range) for this tag371=336372=h373=510=224
+2019-09-23 13:27:17  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-16:27:17.64856=ROFX45=958=Value is incorrect (out of range) for this tag371=336372=h373=510=235
+2019-09-23 13:27:17  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=649=alienzimzum282152=20190923-16:27:17.67056=ROFX45=1058=Value is incorrect (out of range) for this tag371=336372=h373=510=016
+2019-09-23 13:27:17  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=749=alienzimzum282152=20190923-16:27:17.70156=ROFX45=1158=Value is incorrect (out of range) for this tag371=336372=h373=510=013
+2019-09-23 13:27:18  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:27:17.98956=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=170
+2019-09-23 13:27:18  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:27:17.98956=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=170 
+2019-09-23 13:27:18  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:28:03  :: 9/23/2019 1:28:03 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:28:03  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:28:03  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:28:03  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:28:04  :: 9/23/2019 1:28:04 PMConfigLoader.LoadConfig
+2019-09-23 13:28:04  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:28:04  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:28:04  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:28:05  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:28:05  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-16:28:05.49856=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=223
+2019-09-23 13:28:07  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-16:28:06.80156=alienzimzum282198=0108=30141=Y1137=910=142
+2019-09-23 13:28:07  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:28:07  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:28:07  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:28:06.82856=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=159
+2019-09-23 13:28:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:28:06.82856=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=159 
+2019-09-23 13:28:07  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:28:06.82956=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=126
+2019-09-23 13:28:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:28:06.82956=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=126 
+2019-09-23 13:28:07  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:28:06.83056=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=098
+2019-09-23 13:28:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:28:06.83056=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=098 
+2019-09-23 13:28:07  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:28:06.83056=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=167
+2019-09-23 13:28:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:28:06.83056=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=167 
+2019-09-23 13:28:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-16:28:07.44956=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=228
+2019-09-23 13:28:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-16:28:07.48356=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=228
+2019-09-23 13:28:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-16:28:07.52256=ROFX45=858=Value is incorrect (out of range) for this tag371=336372=h373=510=224
+2019-09-23 13:28:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-16:28:07.55456=ROFX45=958=Value is incorrect (out of range) for this tag371=336372=h373=510=231
+2019-09-23 13:28:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=649=alienzimzum282152=20190923-16:28:07.59356=ROFX45=1058=Value is incorrect (out of range) for this tag371=336372=h373=510=020
+2019-09-23 13:28:07  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=749=alienzimzum282152=20190923-16:28:07.63156=ROFX45=1158=Value is incorrect (out of range) for this tag371=336372=h373=510=015
+2019-09-23 13:28:07  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:28:07.84556=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=161
+2019-09-23 13:28:07  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:28:07.84556=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=161 
+2019-09-23 13:28:08  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:28:13  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 13:28:13  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 24hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=047 
+2019-09-23 13:28:13  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18635=V34=849=alienzimzum282152=20190923-16:28:13.51956=ROFX146=155=MERV - XMEV - BMA - 24hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=006
+2019-09-23 13:28:13  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 13:28:13  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15435=W34=1349=ROFX52=20190923-16:28:13.78656=alienzimzum282155=MERV - XMEV - BMA - 24hs207=ROFX262=0264=1268=3269=0290=0269=1290=0269=B271=010=145
+2019-09-23 13:28:13  :: @InstructionProcessor.Primary.Test:Could not find Security Type for symbol MERV - XMEV - BMA - 24hs 
+2019-09-23 13:28:43  :: Invocación de toAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=6235=034=949=alienzimzum282152=20190923-16:28:43.48156=ROFX10=250
+2019-09-23 13:29:09  :: 9/23/2019 1:29:09 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:29:09  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:29:09  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:29:09  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:29:09  :: 9/23/2019 1:29:09 PMConfigLoader.LoadConfig
+2019-09-23 13:29:09  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:29:09  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:29:09  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:29:10  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:29:10  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-16:29:10.94456=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=216
+2019-09-23 13:29:12  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-16:29:12.20256=alienzimzum282198=0108=30141=Y1137=910=135
+2019-09-23 13:29:12  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:29:12  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:29:12  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:29:12.24856=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=153
+2019-09-23 13:29:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:29:12.24856=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=153 
+2019-09-23 13:29:12  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:29:12.25456=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=116
+2019-09-23 13:29:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:29:12.25456=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=116 
+2019-09-23 13:29:12  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:29:12.25556=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=097
+2019-09-23 13:29:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:29:12.25556=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=097 
+2019-09-23 13:29:12  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:29:12.25556=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=166
+2019-09-23 13:29:12  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:29:12.25556=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=166 
+2019-09-23 13:29:12  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-16:29:12.93656=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=226
+2019-09-23 13:29:12  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-16:29:12.96256=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=227
+2019-09-23 13:29:12  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-16:29:12.99156=ROFX45=858=Value is incorrect (out of range) for this tag371=336372=h373=510=231
+2019-09-23 13:29:13  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-16:29:13.03656=ROFX45=958=Value is incorrect (out of range) for this tag371=336372=h373=510=224
+2019-09-23 13:29:13  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=649=alienzimzum282152=20190923-16:29:13.06356=ROFX45=1058=Value is incorrect (out of range) for this tag371=336372=h373=510=010
+2019-09-23 13:29:13  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=749=alienzimzum282152=20190923-16:29:13.13156=ROFX45=1158=Value is incorrect (out of range) for this tag371=336372=h373=510=008
+2019-09-23 13:29:13  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:29:13.26256=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=152
+2019-09-23 13:29:13  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:29:13.26256=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=152 
+2019-09-23 13:29:14  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:29:15  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 13:29:15  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=12935=V146=155=MERV - XMEV - BMA - 72hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=050 
+2019-09-23 13:29:15  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=18635=V34=849=alienzimzum282152=20190923-16:29:15.69256=ROFX146=155=MERV - XMEV - BMA - 72hs262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=014
+2019-09-23 13:29:15  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 13:29:16  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12535=Y34=1349=ROFX52=20190923-16:29:15.96856=alienzimzum282158=El contrato MERV - XMEV - BMA - 72hs no existe262=0281=010=035
+2019-09-23 13:29:16  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=12535=Y34=1349=ROFX52=20190923-16:29:15.96856=alienzimzum282158=El contrato MERV - XMEV - BMA - 72hs no existe262=0281=010=035 
+2019-09-23 13:50:26  :: 9/23/2019 1:50:26 PMBaseCommunicationModule.LoadConfig
+2019-09-23 13:50:26  :: Loading config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:50:26  :: Processing config:.\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:50:26  :: Ending GetConfiguracion .\Primary\IncomingSingletonConfig.xml
+2019-09-23 13:50:34  :: 9/23/2019 1:50:34 PMConfigLoader.LoadConfig
+2019-09-23 13:50:34  :: Loading config:.\Primary\Primary.xml
+2019-09-23 13:50:34  :: Processing config:.\Primary\Primary.xml
+2019-09-23 13:50:34  :: Ending GetConfiguracion .\Primary\Primary.xml
+2019-09-23 13:50:35  :: Invocación de onCreate : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:50:35  :: Invocación de toAdmin-logon por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=12035=A34=149=alienzimzum282152=20190923-16:50:35.89156=ROFX98=0108=30141=Y553=alienzimzum2821554=yvfzsJ2+1137=910=218
+2019-09-23 13:50:37  :: Invocación de fromAdmin por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=8735=A34=149=ROFX52=20190923-16:50:37.16556=alienzimzum282198=0108=30141=Y1137=910=144
+2019-09-23 13:50:37  :: Invocación de onLogon : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:50:37  :: Logged for SessionId : FIXT.1.1:alienzimzum2821->ROFX
+2019-09-23 13:50:37  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:50:37.19156=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=151
+2019-09-23 13:50:37  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=249=ROFX52=20190923-16:50:37.19156=alienzimzum282133=158= 42=20190923-15:02:41.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=151 
+2019-09-23 13:50:37  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:50:37.19156=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=117
+2019-09-23 13:50:37  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=349=ROFX52=20190923-16:50:37.19156=alienzimzum282133=158= 42=20190923-15:20:29.000148=Operación Anulada DOSep19 1999 x 57.740149= 1300=DDF10=117 
+2019-09-23 13:50:37  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:50:37.19156=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=097
+2019-09-23 13:50:37  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15635=B34=449=ROFX52=20190923-16:50:37.19156=alienzimzum282133=158= 42=20190923-15:32:12.000148=Operación Anulada DOSep19 1942 x 57.700149= 1300=DDF10=097 
+2019-09-23 13:50:37  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:50:37.19256=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=167
+2019-09-23 13:50:37  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=15735=B34=549=ROFX52=20190923-16:50:37.19256=alienzimzum282133=158= 42=20190923-15:36:28.000148=Operación Anulada DOSep19A 1000 x 57.850149= 1300=DDF10=167 
+2019-09-23 13:50:37  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=249=alienzimzum282152=20190923-16:50:37.78556=ROFX45=658=Value is incorrect (out of range) for this tag371=336372=h373=510=229
+2019-09-23 13:50:37  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=349=alienzimzum282152=20190923-16:50:37.81756=ROFX45=758=Value is incorrect (out of range) for this tag371=336372=h373=510=227
+2019-09-23 13:50:37  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=449=alienzimzum282152=20190923-16:50:37.84356=ROFX45=858=Value is incorrect (out of range) for this tag371=336372=h373=510=228
+2019-09-23 13:50:37  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13735=334=549=alienzimzum282152=20190923-16:50:37.88656=ROFX45=958=Value is incorrect (out of range) for this tag371=336372=h373=510=237
+2019-09-23 13:50:37  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=649=alienzimzum282152=20190923-16:50:37.91956=ROFX45=1058=Value is incorrect (out of range) for this tag371=336372=h373=510=020
+2019-09-23 13:50:37  :: Invocación de toAdmin-reject por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=13835=334=749=alienzimzum282152=20190923-16:50:37.94456=ROFX45=1158=Value is incorrect (out of range) for this tag371=336372=h373=510=020
+2019-09-23 13:50:38  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:50:38.21056=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=146
+2019-09-23 13:50:38  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=11735=h34=1249=ROFX52=20190923-16:50:38.21056=alienzimzum2821325=Y335=NONE336=1340=0625=11300=[N/A]1301=ROFX10=146 
+2019-09-23 13:50:39  :: Receiving Market Data Request: Wrapper
+2019-09-23 13:50:39  :: @Incoming Singleton FIX:Publishing Wrapper 
+2019-09-23 13:50:39  :: @InstructionProcessor.Primary.Test:Sending Market Data Request:8=FIXT.1.19=10835=V146=155=BMA262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=042 
+2019-09-23 13:50:39  :: Invocación de toApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=16535=V34=849=alienzimzum282152=20190923-16:50:39.19956=ROFX146=155=BMA262=0263=1264=1265=0266=Y267=9269=0269=1269=2269=4269=5269=6269=7269=8269=B10=008
+2019-09-23 13:50:39  :: @InstructionProcessor.Primary.Test:Market Data Request Successfully Sent 
+2019-09-23 13:50:39  :: Invocación de fromApp por la sesión FIXT.1.1:alienzimzum2821->ROFX: 8=FIXT.1.19=10435=Y34=1349=ROFX52=20190923-16:50:39.48856=alienzimzum282158=El contrato BMA no existe262=0281=010=024
+2019-09-23 13:50:39  :: InstructionProcessor.Primary.Test: Unknown message:8=FIXT.1.19=10435=Y34=1349=ROFX52=20190923-16:50:39.48856=alienzimzum282158=El contrato BMA no existe262=0281=010=024 

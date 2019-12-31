@@ -124,6 +124,8 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Pr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.exe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\InstructionProcessor.Primary.Test.exe.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIXConfig\FIX50SP2.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIXConfig\FIXT11.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_prod.cfg
@@ -134,7 +136,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\IncomingSingletonConfig.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\outgoingOrderRouter.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\outgoingStrategyHandler.InstructionBasedRouting.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\InstructionProcessor.Primary.Test.exe.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\InstructionProcessor.Primary.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\InstructionProcessor.Primary.Test.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\MDFShared.dll
@@ -212,6 +213,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.Main.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.Main.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.pdb

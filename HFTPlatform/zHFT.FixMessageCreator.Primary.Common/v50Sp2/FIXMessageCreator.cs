@@ -259,6 +259,10 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 
             QuickFix50Sp2.MarketDataRequest.NoRelatedSym symbolBlock = new QuickFix50Sp2.MarketDataRequest.NoRelatedSym();
             symbolBlock.setField(new Symbol(symbol));
+
+            //symbolBlock.setField(new QuickFix.Currency("USD"));
+
+
             mdRequest.addGroup(symbolBlock);
 
             return mdRequest;

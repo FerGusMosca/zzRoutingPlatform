@@ -9,3 +9,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess.csprojResolveAssemblyReference.cache

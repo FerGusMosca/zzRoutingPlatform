@@ -4,10 +4,18 @@
   <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
   <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test.cfg</FIXInitiatorPath>-->
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
-  <User>fmosca</User>
+  <!--<User>fmosca</User>-->
+  <!--<Password>Baiano.17</Password>-->
+
   <!--<Password>WhYbs5wY</Password>--><!--TEST-->
-  <Password>Baiano.14</Password><!--PROD-->
   <!--<Password>Xqw7L9tS</Password>--> <!--TEST2-->
+
+  <!--<User>29435030</User>
+  <Password>Baiano$12</Password>-->
+
+  <User>alienzimzum2821</User>
+  <Password>yvfzsJ2+</Password>
+
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
   <SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >

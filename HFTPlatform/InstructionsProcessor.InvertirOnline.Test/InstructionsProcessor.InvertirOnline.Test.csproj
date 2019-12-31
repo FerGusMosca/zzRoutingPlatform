@@ -106,6 +106,7 @@
     </Content>
     <Content Include="outgoingOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="outgoingStrategyHandler.InstructionBasedRouting.xml">
       <SubType>Designer</SubType>

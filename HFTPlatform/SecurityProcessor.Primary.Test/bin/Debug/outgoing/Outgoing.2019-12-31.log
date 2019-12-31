@@ -1,0 +1,24 @@
+2019-12-31 15:19:55  :: 12/31/2019 3:19:55 PMBaseCommunicationModule.LoadConfig
+2019-12-31 15:19:55  :: Loading config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:19:55  :: Processing config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:19:55  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2019-12-31 15:20:01  :: @Security List Processor: Could not handle market data for asset class FUT:
+2019-12-31 15:21:03  :: 12/31/2019 3:21:03 PMBaseCommunicationModule.LoadConfig
+2019-12-31 15:21:03  :: Loading config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:21:03  :: Processing config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:21:03  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2019-12-31 15:21:08  :: @Security List Processor: Could not handle market data for asset class FUT:
+2019-12-31 15:31:22  :: 12/31/2019 3:31:22 PMBaseCommunicationModule.LoadConfig
+2019-12-31 15:31:22  :: Loading config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:31:22  :: Processing config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:31:23  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2019-12-31 15:31:29  :: @Security List Processor: Could not handle market data for asset class FUT:
+2019-12-31 15:32:04  :: 12/31/2019 3:32:04 PMBaseCommunicationModule.LoadConfig
+2019-12-31 15:32:04  :: Loading config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:32:04  :: Processing config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:32:04  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2019-12-31 15:34:38  :: 12/31/2019 3:34:38 PMBaseCommunicationModule.LoadConfig
+2019-12-31 15:34:38  :: Loading config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:34:38  :: Processing config:.\outgoingSecurityListSaver.xml
+2019-12-31 15:34:38  :: Ending GetConfiguracion .\outgoingSecurityListSaver.xml
+2019-12-31 15:34:48  :: @Security List Processor: Could not handle market data for asset class FUT:

@@ -29,6 +29,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.csprojResolveAssemblyReference.cache

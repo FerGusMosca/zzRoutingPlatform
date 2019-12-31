@@ -1,0 +1,191 @@
+2019-09-22 19:55:57  :: 22/9/2019 19:55:57MainApp.LoadConfig
+2019-09-22 19:55:57  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:55:57  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:55:57  :: Fin GetConfiguracion
+2019-09-22 19:55:57  :: Initializing Log
+2019-09-22 19:55:57  :: Initializing Incoming Module
+2019-09-22 19:56:01  :: Error initializing Incoming Module
+2019-09-22 19:56:01  :: Initializing Outgoing Module
+2019-09-22 19:56:32  :: 22/9/2019 19:56:32MainApp.LoadConfig
+2019-09-22 19:56:32  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:56:32  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:56:33  :: Fin GetConfiguracion
+2019-09-22 19:56:33  :: Initializing Log
+2019-09-22 19:56:33  :: Initializing Incoming Module
+2019-09-22 19:56:33  :: Error initializing Incoming Module
+2019-09-22 19:56:33  :: Initializing Outgoing Module
+2019-09-22 19:56:33  :: Error initializing Outgoing Module
+2019-09-22 19:57:14  :: 22/9/2019 19:57:14MainApp.LoadConfig
+2019-09-22 19:57:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:57:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:57:14  :: Fin GetConfiguracion
+2019-09-22 19:57:14  :: Initializing Log
+2019-09-22 19:57:14  :: Initializing Incoming Module
+2019-09-22 19:57:14  :: Error initializing Incoming Module
+2019-09-22 19:57:14  :: Initializing Outgoing Module
+2019-09-22 19:57:21  :: Outgoing Module successfully initialized
+2019-09-22 19:58:15  :: 22/9/2019 19:58:15MainApp.LoadConfig
+2019-09-22 19:58:15  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:58:15  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:58:15  :: Fin GetConfiguracion
+2019-09-22 19:58:18  :: Initializing Log
+2019-09-22 19:58:19  :: Initializing Incoming Module
+2019-09-22 19:59:33  :: 22/9/2019 19:59:33MainApp.LoadConfig
+2019-09-22 19:59:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:59:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 19:59:33  :: Fin GetConfiguracion
+2019-09-22 19:59:33  :: Initializing Log
+2019-09-22 19:59:33  :: Initializing Incoming Module
+2019-09-22 19:59:34  :: Incoming Module successfully initialized
+2019-09-22 19:59:34  :: Initializing Outgoing Module
+2019-09-22 19:59:36  :: Outgoing Module successfully initialized
+2019-09-22 20:00:37  :: 22/9/2019 20:00:37MainApp.LoadConfig
+2019-09-22 20:00:37  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:00:37  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:00:37  :: Fin GetConfiguracion
+2019-09-22 20:00:37  :: Initializing Log
+2019-09-22 20:00:37  :: Initializing Incoming Module
+2019-09-22 20:00:38  :: Incoming Module successfully initialized
+2019-09-22 20:00:38  :: Initializing Outgoing Module
+2019-09-22 20:00:38  :: Outgoing Module successfully initialized
+2019-09-22 20:01:04  :: 22/9/2019 20:01:04MainApp.LoadConfig
+2019-09-22 20:01:04  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:01:04  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:01:05  :: Fin GetConfiguracion
+2019-09-22 20:01:05  :: Initializing Log
+2019-09-22 20:01:05  :: Initializing Incoming Module
+2019-09-22 20:01:06  :: Incoming Module successfully initialized
+2019-09-22 20:01:06  :: Initializing Outgoing Module
+2019-09-22 20:01:06  :: Outgoing Module successfully initialized
+2019-09-22 20:08:15  :: 22/9/2019 20:08:15MainApp.LoadConfig
+2019-09-22 20:08:15  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:08:15  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:08:15  :: Fin GetConfiguracion
+2019-09-22 20:08:15  :: Initializing Log
+2019-09-22 20:08:15  :: Initializing Incoming Module
+2019-09-22 20:08:16  :: Incoming Module successfully initialized
+2019-09-22 20:08:16  :: Initializing Outgoing Module
+2019-09-22 20:08:16  :: Outgoing Module successfully initialized
+2019-09-22 20:08:59  :: 22/9/2019 20:08:59MainApp.LoadConfig
+2019-09-22 20:08:59  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:08:59  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:09:00  :: Fin GetConfiguracion
+2019-09-22 20:09:00  :: Initializing Log
+2019-09-22 20:09:00  :: Initializing Incoming Module
+2019-09-22 20:09:18  :: 22/9/2019 20:09:18MainApp.LoadConfig
+2019-09-22 20:09:18  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:09:18  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:09:19  :: Fin GetConfiguracion
+2019-09-22 20:09:19  :: Initializing Log
+2019-09-22 20:09:19  :: Initializing Incoming Module
+2019-09-22 20:09:20  :: Incoming Module successfully initialized
+2019-09-22 20:09:20  :: Initializing Outgoing Module
+2019-09-22 20:10:05  :: Outgoing Module successfully initialized
+2019-09-22 20:10:40  :: 22/9/2019 20:10:40MainApp.LoadConfig
+2019-09-22 20:10:40  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:10:40  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:10:40  :: Fin GetConfiguracion
+2019-09-22 20:10:40  :: Initializing Log
+2019-09-22 20:10:40  :: Initializing Incoming Module
+2019-09-22 20:10:41  :: Incoming Module successfully initialized
+2019-09-22 20:10:41  :: Initializing Outgoing Module
+2019-09-22 20:10:41  :: Outgoing Module successfully initialized
+2019-09-22 20:11:33  :: 22/9/2019 20:11:33MainApp.LoadConfig
+2019-09-22 20:11:33  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:11:33  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:11:33  :: Fin GetConfiguracion
+2019-09-22 20:11:33  :: Initializing Log
+2019-09-22 20:11:33  :: Initializing Incoming Module
+2019-09-22 20:11:34  :: Incoming Module successfully initialized
+2019-09-22 20:11:34  :: Initializing Outgoing Module
+2019-09-22 20:11:35  :: Outgoing Module successfully initialized
+2019-09-22 20:11:58  :: 22/9/2019 20:11:58MainApp.LoadConfig
+2019-09-22 20:11:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:11:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:11:58  :: Fin GetConfiguracion
+2019-09-22 20:11:58  :: Initializing Log
+2019-09-22 20:11:58  :: Initializing Incoming Module
+2019-09-22 20:11:59  :: Incoming Module successfully initialized
+2019-09-22 20:11:59  :: Initializing Outgoing Module
+2019-09-22 20:12:05  :: Outgoing Module successfully initialized
+2019-09-22 20:12:43  :: 22/9/2019 20:12:43MainApp.LoadConfig
+2019-09-22 20:12:43  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:12:43  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:12:43  :: Fin GetConfiguracion
+2019-09-22 20:12:43  :: Initializing Log
+2019-09-22 20:12:43  :: Initializing Incoming Module
+2019-09-22 20:12:44  :: Incoming Module successfully initialized
+2019-09-22 20:12:44  :: Initializing Outgoing Module
+2019-09-22 20:12:44  :: Outgoing Module successfully initialized
+2019-09-22 20:15:25  :: 22/9/2019 20:15:25MainApp.LoadConfig
+2019-09-22 20:15:25  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:15:25  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:15:25  :: Fin GetConfiguracion
+2019-09-22 20:15:25  :: Initializing Log
+2019-09-22 20:15:25  :: Initializing Incoming Module
+2019-09-22 20:15:26  :: Incoming Module successfully initialized
+2019-09-22 20:15:26  :: Initializing Outgoing Module
+2019-09-22 20:15:26  :: Outgoing Module successfully initialized
+2019-09-22 20:15:55  :: 22/9/2019 20:15:55MainApp.LoadConfig
+2019-09-22 20:15:55  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:15:55  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:15:55  :: Fin GetConfiguracion
+2019-09-22 20:15:55  :: Initializing Log
+2019-09-22 20:15:55  :: Initializing Incoming Module
+2019-09-22 20:15:56  :: Incoming Module successfully initialized
+2019-09-22 20:15:56  :: Initializing Outgoing Module
+2019-09-22 20:15:56  :: Outgoing Module successfully initialized
+2019-09-22 20:17:50  :: 22/9/2019 20:17:50MainApp.LoadConfig
+2019-09-22 20:17:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:17:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:17:50  :: Fin GetConfiguracion
+2019-09-22 20:17:50  :: Initializing Log
+2019-09-22 20:17:50  :: Initializing Incoming Module
+2019-09-22 20:17:51  :: Incoming Module successfully initialized
+2019-09-22 20:17:51  :: Initializing Outgoing Module
+2019-09-22 20:17:51  :: Outgoing Module successfully initialized
+2019-09-22 20:18:50  :: 22/9/2019 20:18:50MainApp.LoadConfig
+2019-09-22 20:18:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:18:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:18:50  :: Fin GetConfiguracion
+2019-09-22 20:18:50  :: Initializing Log
+2019-09-22 20:18:50  :: Initializing Incoming Module
+2019-09-22 20:18:51  :: Incoming Module successfully initialized
+2019-09-22 20:18:51  :: Initializing Outgoing Module
+2019-09-22 20:18:51  :: Outgoing Module successfully initialized
+2019-09-22 20:19:28  :: 22/9/2019 20:19:28MainApp.LoadConfig
+2019-09-22 20:19:28  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:19:28  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:19:28  :: Fin GetConfiguracion
+2019-09-22 20:19:28  :: Initializing Log
+2019-09-22 20:19:28  :: Initializing Incoming Module
+2019-09-22 20:19:29  :: Incoming Module successfully initialized
+2019-09-22 20:19:29  :: Initializing Outgoing Module
+2019-09-22 20:19:29  :: Outgoing Module successfully initialized
+2019-09-22 20:19:42  :: 22/9/2019 20:19:42MainApp.LoadConfig
+2019-09-22 20:19:42  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:19:42  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:19:42  :: Fin GetConfiguracion
+2019-09-22 20:19:42  :: Initializing Log
+2019-09-22 20:19:42  :: Initializing Incoming Module
+2019-09-22 20:19:44  :: Incoming Module successfully initialized
+2019-09-22 20:19:44  :: Initializing Outgoing Module
+2019-09-22 20:19:44  :: Outgoing Module successfully initialized
+2019-09-22 20:30:29  :: 22/9/2019 20:30:29MainApp.LoadConfig
+2019-09-22 20:30:29  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:30:29  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:30:30  :: Fin GetConfiguracion
+2019-09-22 20:30:30  :: Initializing Log
+2019-09-22 20:30:30  :: Initializing Incoming Module
+2019-09-22 20:30:31  :: Incoming Module successfully initialized
+2019-09-22 20:30:31  :: Initializing Outgoing Module
+2019-09-22 20:30:31  :: Outgoing Module successfully initialized
+2019-09-22 20:32:59  :: 22/9/2019 20:32:59MainApp.LoadConfig
+2019-09-22 20:32:59  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:32:59  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\BidAskArbitrage.Test\bin\Debug\config.xml
+2019-09-22 20:32:59  :: Fin GetConfiguracion
+2019-09-22 20:32:59  :: Initializing Log
+2019-09-22 20:32:59  :: Initializing Incoming Module
+2019-09-22 20:33:00  :: Incoming Module successfully initialized
+2019-09-22 20:33:00  :: Initializing Outgoing Module
+2019-09-22 20:33:00  :: Outgoing Module successfully initialized

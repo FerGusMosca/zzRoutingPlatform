@@ -96,7 +96,6 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
 
         #endregion
 
-
         #region Public Methods
 
         public override object GetField(Fields field)

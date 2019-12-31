@@ -628,8 +628,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     }
                 }
 
-                
-
             }
             else if (secType == zHFT.Main.Common.Enums.SecurityType.OPT.ToString())
             {
