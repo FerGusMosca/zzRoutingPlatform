@@ -1,0 +1,44 @@
+2020-01-19 20:11:38  :: 1/19/2020 8:11:38 PMMarketClientBase.LoadConfig
+2020-01-19 20:11:38  :: Loading config:.\incomingIOL.xml
+2020-01-19 20:11:38  :: Processing config:.\incomingIOL.xml
+2020-01-19 20:11:38  :: Ending GetConfiguracion .\incomingIOL.xml
+2020-01-19 20:11:41  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:11:42  :: Critic error initializing .\incomingIOL.xml:Could not authenticate user fermosca82 on Invertir Online
+2020-01-19 20:16:26  :: 1/19/2020 8:16:26 PMMarketClientBase.LoadConfig
+2020-01-19 20:16:26  :: Loading config:.\incomingIOL.xml
+2020-01-19 20:16:26  :: Processing config:.\incomingIOL.xml
+2020-01-19 20:16:26  :: Ending GetConfiguracion .\incomingIOL.xml
+2020-01-19 20:16:28  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:16:29  :: Market Data Client authenticated On Invertir Online. Token:x0MitUYd72c1pWr8zH6O6EasoFBy0GyOkNQVqTY3B6J8Odgf8oU6cFF_JgbgG8bctxkGNL5E3cthrh1fCzmF7TcvHxduM6z4WNlX4E7uiIoJgKV89UIgMxUpPklrw6bVy7XssWbMAEVf6mPomP4LNqAAZYXuM0FdBsI8Txx9JQ3o_11d9beFFJM-6ra8ZJKtwq8_zPscw9mXRQeVWogrkGH-2NjqgN4qNKi5ldyNLEM_i6uk7IeanUINDj00wYh_8gRhEMpaj5f_4_s-qhBsyPiqvCSGO06cNesjJo64QV_iUtw2OMIli15SlROm0zqF
+2020-01-19 20:16:29  :: Actualización del refresh token @Invertir Online Market Data Client:zGcNW2GQeNU8njpvynrnC4dF7P4eXPwLjnoqjDpy1SFk7vaLxOxp6B5rwmHcjYI9-OfCMhqj6xcaqQXl0skng15aUXJcnhbUQt376eBx4wHcgLNRkGWHMc0rq4-JSpZca4f-Jj5hWK3ljgDUUWCBR8ZId4fVqj4X7dL30It695l1GBjeyOiWYu99p8szynua-_jhFz-z78DdXnyQBUEp7akibor21K2vQ6qZECNqHGAANyPBqvKXis_Y9mpl8xVshcH5FYvgfDkpCA_0SjSfFzezzaCjFKNGU5lkJIc_Lp3hkEKy4UOg27DdlOKWh_rl
+2020-01-19 20:17:30  :: Actualización del refresh token @Invertir Online Market Data Client:F-offxibhx-_PBnT340bnV0V4aVGBRbwLx0310lRIMvBm3fefhMBV93LQkqWfaNHjYhWtfhVy3bFv5PGnT83yZN1W5_8IwTKaCvOmQz4pwJbSX4XiknSeL-_vv9HRJckD_djTDmIpkzb5bBfspS8zpRfF0fcIwuwubtOkf6Xdbez_oVbfHyHUpFNjnXzzLh7-DChKfvraZykzvPwBwsXdhXh2w8deegmqKvuKktQxV1zjmahJ-jJgH0_LJLkRVbNZXlsc2EHdIznBlTDKhhEz1G1RyYcqqx7VESlWdXuBCYRhZV0pvb0yQ1IKL9Zm6vx
+2020-01-19 20:18:30  :: Actualización del refresh token @Invertir Online Market Data Client:OWwk0OcjG6pg8IHGUSSyIZZI8-CWQC0wMm0UgPFo6MnwOy2nzsVcUDbuH4Yv_fsmdQARGoHKWjkLmHgvQOYzpScv4JnoA8TW7WjJnbDvjJfEcCJ0wpSyJjHl4XoodyLRXAYyrCi7TePrzDkQDk45wvlvZKsZ9_ynrPlch1vF0xXYRw83o3rjKbAKAyBwdVMaD0ZtguAmfPFXqUrxdMS7W3bmPooZiCL9eCO8XYyB_2anvTa7HkNeaVy9q46cX-usmZLqmneAvkt8_IPUkAHCo2FUWFQ4vmRUKYBnyY2GWGgRAtcmKRF0Rf_lvV-H_OWC
+2020-01-19 20:20:10  :: 1/19/2020 8:20:10 PMMarketClientBase.LoadConfig
+2020-01-19 20:20:10  :: Loading config:.\incomingIOL.xml
+2020-01-19 20:20:10  :: Processing config:.\incomingIOL.xml
+2020-01-19 20:20:11  :: Ending GetConfiguracion .\incomingIOL.xml
+2020-01-19 20:20:12  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:20:13  :: Market Data Client authenticated On Invertir Online. Token:jCGd4pFlzC0wXqBQYfez3LZwsHburK7nc08yTQjItHjL7eVxleIo5_syXhfT47D7m1fdGk8v3-l1biskA_2urTayqV1K4gPdTUo5uvPYUjUw_n0n8W9YhFueVQ-y0UfK0Nc0_U2zDt9GDLMufuCt9RCYFfaY-pofes4W4yrl_rbqNbhT7LQPqCnsl11zuyFyVewT0RJAyM3pvsl5wln9lGRhG_Va8o872pTf61IBgzyQq-mkWDWoiYa3Xea8yKYKT5nI-WCZoeYzDzwRL2Kj3-7ofNPdN7CCdhIOmbDGPT_jsZMq5sdcAtRs6zbjcUhI
+2020-01-19 20:20:14  :: Actualización del refresh token @Invertir Online Market Data Client:um1a9kMEmegnoJ4FF9zk3mV6qaMaQ8xiRcih2z6BrfPxIEj46pS7vN74xgB1zw9u9wcQ0Sbh8KPA6z5Xu8F1-SAC711We9jRLMigaz-s8E2MiGEoZlMAWWogTjAsznvNvAT0RCChWa_1akLZkH7xOtBylsB3cMY1DUupOWl9q_4J0A6Twsjm-3LeFRvilJc0hS-SIA5kFPinNfekHpJBUpiuh63HKVkYdqaS25U2so1tdjGJLlzlI3G-a_u-xLwskjbjbVSS6HyWBxeMmBLxtngzYfXFcAvxxUOOvkBUM3BpeoySKwTip2G6l4jSDFD8
+2020-01-19 20:21:14  :: Actualización del refresh token @Invertir Online Market Data Client:NLcz908-t8ef0qnCjIYL6soxv4BDz4gTutM07IRRGASHhTCYRpnstQBfZpP_M7b122Bm86gsvG9kWUQ3nmX08JRjFN5YUHAiaKitMHnjtaRPUV-I0COgzM6f5EvrXpUHAQ4v_WYt7_IUN1jA_8RC9Ys9xzshEJbeWvkDdmWV8TjoDFRXpoR059_WTaNasHxkgDknylQDVAzEEoNEuzGTspPqFjck4EjsaNoUZc4oshcBugNOjmfAnNeiljsYfs3vBbIeFhSIgc_6c5txgSnEdiFMK_UDQfQ1EItfPFxyq00Ig1EeJElOCCGcZNa7zbUi
+2020-01-19 20:22:26  :: Actualización del refresh token @Invertir Online Market Data Client:MHGHvBgTBLvOW68g55UhxsUPrhbHqtSJplwSgkweiq8yeqG7zC9PPhUUajUV00Xu4-ZIxxrkprQpyEmLwO_Uqyv-X-pIDAl3BVhzudzZkdb2vRna9Y7WuDVmANjri8xIdX2VonV0bKax3SjTb_Y5J0Dofk-JKnVgR8YegDoeHn2YfoXHC4TRuJrdnUoh-7IPR3yKNw2UqQi2duiCZl7emg2iSa7we9IBxhg1aYJoqQ_X0kDqz1ZGB3Hz2jXgviZtrmvPbbDW3vyJWCWnDseojFGI-ouYJirIbESv0ac49S5Zcnb52oIWpNumc6dIy7H7
+2020-01-19 20:23:01  :: 1/19/2020 8:23:01 PMMarketClientBase.LoadConfig
+2020-01-19 20:23:01  :: Loading config:.\incomingIOL.xml
+2020-01-19 20:23:01  :: Processing config:.\incomingIOL.xml
+2020-01-19 20:23:01  :: Ending GetConfiguracion .\incomingIOL.xml
+2020-01-19 20:23:06  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:23:45  :: 1/19/2020 8:23:45 PMMarketClientBase.LoadConfig
+2020-01-19 20:23:45  :: Loading config:.\incomingIOL.xml
+2020-01-19 20:23:45  :: Processing config:.\incomingIOL.xml
+2020-01-19 20:23:45  :: Ending GetConfiguracion .\incomingIOL.xml
+2020-01-19 20:23:47  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:25:27  :: Critic error initializing .\incomingIOL.xml:Se excedió el tiempo de espera de la operación
+2020-01-19 20:26:53  :: 1/19/2020 8:26:53 PMMarketClientBase.LoadConfig
+2020-01-19 20:26:53  :: Loading config:.\incomingIOL.xml
+2020-01-19 20:26:53  :: Processing config:.\incomingIOL.xml
+2020-01-19 20:26:53  :: Ending GetConfiguracion .\incomingIOL.xml
+2020-01-19 20:27:05  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:27:19  :: Market Data Client authenticated On Invertir Online. Token:4CUh56R5OKbOxzduxx1hInXcUxKdEm1EUEsPJtgrMFtZXAM2dHaxfiuB0q5ozbPCU5KCyE6HU20LAgbNuPFwmctKTUHNSqBgME-_9DPE32kPuJCshYGWX94_O8yfmOPSfIWjjl1OpmJVopZUK9r4wmtJgIcDPPqyvTjstR3YGozjR2aKPhy8HGEqW5JRJgnryECxnLbEo69Q1yuQnaa8tVudl85kfJrZgn87N5qbgjmhDM8ODx6mS6seu5b5ypJb0AM28q3CipI0SKI6-tv1gb6hJ7QKnruxOTqsxt42T5QXjdLhFM3nSK6hFtol8aMj
+2020-01-19 20:27:19  :: Actualización del refresh token @Invertir Online Market Data Client:y8gP4Jd9J8tMqMCwoNrluTDyW6TkBK0-wLO0ObTdo4YajAqlGQYGCBbyCsLGEKOD8mB5TFo7q3yaHNCd1KmPRHU56GHa5QzFIuVFBXGI7e4Evm6LBAjrJN587ued80fwwLCHzwzSFHlmilWbgy1CllwafxFmRNDM67Ea_OYBBT5tlLgR4pNS1kn8_ShkEa8tWmz6EpzPHsJMdnZpM-k-HdpmX8npOuEsy890HFzxvBIeSM6moVyV-LbE9yXDgZXTSQhzmT-xUyCNmtMxd5cXgAqOwNLV_46Xh84ByjjUqHasqwdQDkYF42G-LbSzWgev
+2020-01-19 20:27:52  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2020-01-19 20:28:19  :: Actualización del refresh token @Invertir Online Market Data Client:m_Gcm1HF2YVlJerrKzAbv2fnC5ATaokoN5o13qRPReS5H1immq60ke4u1Hxn4mjuSCHCbhEPMLyIaiAE-BAPYROIRHUgm6Gg7OD7fMD-ImaJUMo6nJPPkd-p4VJawnnhJWcc6RovrlBceTd2gzAiVkNjDZgoCWiQ7drACY2D8ZS9J54EwoIeiTgEgVd53FkM921FANpht9IyOw9CCk9J51Orw4-MMdUxT8r-2Bz2REafaXMj9WArGlv9Hub5u5rwVB_p69Kd0bpvOqKY5omHcZel6EpkbEsrSemmlQqLmcpwYZP1Cne7rMBm4XrzedVRqdHIc2ll-hZN2SqrjQkB8Q

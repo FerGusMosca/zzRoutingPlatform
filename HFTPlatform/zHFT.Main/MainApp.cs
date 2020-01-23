@@ -135,6 +135,21 @@ namespace zHFT.Main
             }
         }
 
+        public bool EvalLogging(zHFT.Main.Common.Util.Constants.MessageType type)
+        {
+
+            if (Config.LogLevel == Configuration._LOG_LEVEL_INFO && type != zHFT.Main.Common.Util.Constants.MessageType.Information)
+                return false;//We only need info messages
+
+            if (Config.LogLevel == Configuration._LOG_LEVEL_ERROR &&
+                (type != zHFT.Main.Common.Util.Constants.MessageType.Information
+                && type != zHFT.Main.Common.Util.Constants.MessageType.Error
+                && type != zHFT.Main.Common.Util.Constants.MessageType.Exception))
+                return false;//We only need info + error messages
+
+            return true;
+        }
+
         protected override CMState ProcessIncoming(Wrapper wrapper)
         {
             //StrongLogIncoming("ProcessIncoming..." + wrapper.ToString(), Constants.MessageType.Information);

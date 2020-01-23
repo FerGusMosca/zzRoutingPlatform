@@ -123,12 +123,18 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         
         }
 
+        protected void DoSendMarketData(Wrapper wrapper)
+        {
+            OnMessageRcv(wrapper);
+        
+        }
+
         protected  void DoRequestMarketData(Object param)
         {
-            Instruction instrx = (Instruction)param;
+            string symbol = (string)param;
             try
             {
-                DoLog(string.Format("@{0}:Requesting market data por symbol {1}", IOLConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                DoLog(string.Format("@{0}:Requesting market data por symbol {1}", IOLConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
 
                 bool activo = true;
                 while (activo)
@@ -137,34 +143,33 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
                     lock (tLock)
                     {
-                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == instrx.Symbol))
+                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == symbol))
                         {
                             //Probamos la versión derecha del mercado
                             try
                             {
-                                string iolSymbol = SymbolConverter.GetCleanSymbolFromFullSymbol(instrx.Symbol);
-                                string iolExchange = ExchangeConverter.GetMarketFromFullSymbol(instrx.Symbol);
+                                string iolSymbol = SymbolConverter.GetCleanSymbolFromFullSymbol(symbol);
+                                string iolExchange = ExchangeConverter.GetMarketFromFullSymbol(symbol);
 
                                 //TODO: Convertir el simbol y el exchange
                                 zHFT.InstructionBasedMarketClient.IOL.Common.DTO.MarketData marketData = IOLMarketDataManager.GetMarketData(iolSymbol, iolExchange);
 
                                 Security sec = BuildSecurity(iolSymbol, iolExchange, marketData);
-                                sec.Symbol = instrx.Symbol;
+                                sec.Symbol = symbol;
                                 InvertirOnlineMarketDataWrapper wrapper = new InvertirOnlineMarketDataWrapper(sec, IOLConfiguration);
 
-                                OnMessageRcv(wrapper);
-                                  
+                                Task.Run(() => DoSendMarketData(wrapper));  
                             }
                             catch (Exception ex)
                             {
                                 DoLog(string.Format("@{0}:Error Requesting market data for symbol {1}:{2}",
-                                    IOLConfiguration.Name, instrx.Symbol, ex.Message), Main.Common.Util.Constants.MessageType.Information);
+                                    IOLConfiguration.Name, symbol, ex.Message), Main.Common.Util.Constants.MessageType.Information);
                                 activo = false;
                             }
                         }
                         else
                         {
-                            DoLog(string.Format("@{0}:Unsubscribing market data for symbol {1}", IOLConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                            DoLog(string.Format("@{0}:Unsubscribing market data for symbol {1}", IOLConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
 
                             activo = false;
                         }
@@ -174,16 +179,16 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", IOLConfiguration.Name, instrx.Symbol, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", IOLConfiguration.Name, symbol, ex.Message), Main.Common.Util.Constants.MessageType.Error);
             }
 
         }
-        protected Security BuildSecurityFromInstruction(Instruction instrx)
+        protected Security BuildSecurityFromInstruction(string symbol)
         {
 
             Security sec = new Security()
             {
-                Symbol = instrx.Symbol,
+                Symbol = symbol,
                 SecType = SecurityType.CS
             };
 
@@ -205,9 +210,9 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
                         if (instr.InstructionType.Type == InstructionType._NEW_POSITION || instr.InstructionType.Type == InstructionType._UNWIND_POSITION)
                         {
-                            ActiveSecurities.Add(instr.Id, BuildSecurityFromInstruction(instr));
+                            ActiveSecurities.Add(instr.Id, BuildSecurityFromInstruction(instr.Symbol));
                             RequestMarketDataThread = new Thread(DoRequestMarketData);
-                            RequestMarketDataThread.Start(instr);
+                            RequestMarketDataThread.Start(instr.Symbol);
 
                         }
                     }
@@ -265,7 +270,9 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                 && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
             {
                 DoLog(string.Format("@{0}:Requesting {2} Market Data On Demand for Symbol: {1}", IOLConfiguration.Name, sec.Symbol, mode), Main.Common.Util.Constants.MessageType.Information);
-               //TODO: DEV Request Market Data On Demand
+                ActiveSecurities.Add(ActiveSecurities.Keys.Count + 1, sec);
+                RequestMarketDataThread = new Thread(DoRequestMarketData);
+                RequestMarketDataThread.Start(sec.Symbol);
 
             }
             else

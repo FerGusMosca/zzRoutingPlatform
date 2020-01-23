@@ -35,9 +35,9 @@
   
   <StocksToMonitor>
 
-    <Symbol>DICA.BUE</Symbol>
+   
     
-    <!--<Symbol>ALUA.BUE</Symbol>
+    <Symbol>ALUA.BUE</Symbol>
     <Symbol>APBR.BUE</Symbol>
     <Symbol>GGAL.BUE</Symbol>
     <Symbol>BMA.BUE</Symbol>
@@ -56,7 +56,7 @@
     <Symbol>YPFD.BUE</Symbol>
     <Symbol>PAMP.BUE</Symbol>
     <Symbol>SUPV.BUE</Symbol>
-    <Symbol>VALO.BUE</Symbol>-->
+    <Symbol>VALO.BUE</Symbol>
 
 
     <!--<Symbol>AAPL</Symbol>

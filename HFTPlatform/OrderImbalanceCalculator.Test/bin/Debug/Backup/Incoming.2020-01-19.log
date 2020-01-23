@@ -1,0 +1,46 @@
+2020-01-19 20:35:40  :: 1/19/2020 8:35:40 PMMarketClientBase.LoadConfig
+2020-01-19 20:35:40  :: Loading config:.\IOL\incomingIOL.xml
+2020-01-19 20:35:40  :: Processing config:.\IOL\incomingIOL.xml
+2020-01-19 20:35:40  :: Ending GetConfiguracion .\IOL\incomingIOL.xml
+2020-01-19 20:35:46  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:35:47  :: Market Data Client authenticated On Invertir Online. Token:dBIisjfSI1BRUfAZgraS4i1KFm3SeZuxAyqr9VGpA0Cpd9z-w1Np4xmU2oTYAo7w9RENUQiY9G48aem5XFjtZae15bDN40xO-pPoEJDdIjlf-P92-ZeCfa1ayyfvquAUMVb6HHPZDyRvj9EuNhilcPj43v8Jt2XIQ-W-R0D9Cve7rQT4-hm27xzQ-pPEvxXmUgIurS08hBbBpbp5xE8M8SQMbzNKALrTYXBobpI-xsyoSz3rDZhY_WbSzsH3mbgE1tt4CroP8US1e8PnT0zP0kopBPQsQESaOT4eXAGXPEw5wjP86tup3DZ3kJKM2k7r
+2020-01-19 20:35:48  :: Actualización del refresh token @Invertir Online Market Data Client:2wp_c0StuwYaFF-Orntp7NEwd_KGwqgPst3XR1wbJgVUMhiPx1bZgftanxja2fUOVrsNLuagUlZoVbhtU7klWrn9WD_gCQTBZCQxYbDnw5TFlPnTn3YpFbJjca1-cdoZ6EP65ttbMazrpYmiED9NeYLh51FVezt9_T6HpgTjJWfAwyctjy974VT6ChYi2jP-ZpTtNG0vBJgCirwJiedGnXptU31t2lHvDCw6dHSaXMDKbBSjeILPXkn-nSmA0F_L9T-mm4kEedBNrq4DepEoHuQn5erBEMrIYCW-b6hnZgDz2vZ06v9QxO_M6orwiFCl
+2020-01-19 20:35:55  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICA.BUE
+2020-01-19 20:35:56  :: @Instructions Processor Invertir Online:Sending message SECURITY_LIST_REQUEST not implemented
+2020-01-19 20:36:36  :: 1/19/2020 8:36:36 PMMarketClientBase.LoadConfig
+2020-01-19 20:36:36  :: Loading config:.\IOL\incomingIOL.xml
+2020-01-19 20:36:36  :: Processing config:.\IOL\incomingIOL.xml
+2020-01-19 20:36:36  :: Ending GetConfiguracion .\IOL\incomingIOL.xml
+2020-01-19 20:36:37  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:36:38  :: Market Data Client authenticated On Invertir Online. Token:hXno_FLlyx0FT0y6S7hE6ESOr2hd-pzoZLLyDpsqXDxa8_UeTdE5hdEGN2vuccUpyP7kp7WunK47q5NxUMWEp8UNiFLX49sX6PuaBuVyUa-4o4Orau8n57jgm2w0t5Ef08D64yazYjd9n9W0GZfkY4rorCcOrVtQOGV4VPJQYiARSkWRhy1a6Bzz2DOhK1Zo3BQxv8ieELQd8y1YHODuGFB4pbSTivNOKCKIp8N3-EwjeO4ntbLhfb5YLLp_9mTnFMzscm3p6yfs1GAMBzUxRGhdT3XdfNAVE9RaEm6KBFYWMIkSbAZ5WVz3WBvHMr1M
+2020-01-19 20:36:39  :: Actualización del refresh token @Invertir Online Market Data Client:OdU9RprZMkyX3wREZeLQzmwNx9Trni-vdz5UIUBSsroTHkfzM8qjA5-2QHJksgVqcwe0ckM4WZXOxAolIYErYU7EvXZdzoHq9yFFLA7Wv2FVhE-5aIRVjbjoOxJ3_llho9cNanqeMbkWxWcdwrcvu-zCiDPkipIMA6R04UQuiN3nLLkSjnuL3VuN9X7NlIxBc9QqG6hKeC0LD2n4U_sCavRRd-PMjUTOrkyNfYsuZjlOa-q7fx31Lc1KX1eJ-TWjMzSr4tjVoAkeBXv12kYNmoIpzTCCVsIvPTBuHz5cyaEHjwVSxr4d0RPpYyFZNcIv
+2020-01-19 20:36:51  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICA.BUE
+2020-01-19 20:36:51  :: @Instructions Processor Invertir Online:Sending message SECURITY_LIST_REQUEST not implemented
+2020-01-19 20:37:26  :: 1/19/2020 8:37:26 PMMarketClientBase.LoadConfig
+2020-01-19 20:37:26  :: Loading config:.\IOL\incomingIOL.xml
+2020-01-19 20:37:26  :: Processing config:.\IOL\incomingIOL.xml
+2020-01-19 20:37:26  :: Ending GetConfiguracion .\IOL\incomingIOL.xml
+2020-01-19 20:37:28  :: Authenticating Market Data Client On Invertir Online
+2020-01-19 20:37:29  :: Market Data Client authenticated On Invertir Online. Token:C-u-XwRrdJJIkplWBN9G1LkdXgg6J2WutxflXCgg4D0i4ivqAkQ6N_892K_KI5f8YFU8vTVMNuR0dNh0Bzlfa5Mlcl6BMhm2MrYJ_AYE3-it6tngB23p3gr1jJfuN2MOSU6QrNLev8EikpNjBaMJCrBDHB70OMXKFET-cuIB_-RND4Z5HxQDENtOnFLEyFJr-vim14TW_SmfDPzz9JBX_Vh1A7PMFa78sORg2dpok6j5RONvgBaukp6vECEGYTBskg9ZKV0JaSeRYwb2Zcy_1gPGhJud3XRMTHRoAoGdZ7EMI9mm29B7aXcscr5fjALX
+2020-01-19 20:37:30  :: Actualización del refresh token @Invertir Online Market Data Client:Iv_ryGmbsr6iVoY0fzQbXltLJTuBy-UTn46700oCN0muBi_DD-X8zbwFbkNjrPIRVE_Z3MqXMrF9Q1FZH66eTiTsrKdAJNnlQgp-b60jobRjdOSM5esMrQLGFDGJWG3Br-09LrEdgKBgzrYldtuJ9TfrFPEX5qxVLyMG_3Ttu4d8p4yF74S8bReASoL0i3k3Uv_qZ254eevJyyZ_Gy6NrW6zZnJDgjk-tH4m0VLkQMWuF4nuUvNwg5jWuKXZ38XQKkcoshVmE9pT-olFnH84UgHbgo1fAkZEt3ShyH1f-DyOETxxe0X9dEy9az4uG29y
+2020-01-19 20:37:36  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: ALUA.BUE
+2020-01-19 20:37:37  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: APBR.BUE
+2020-01-19 20:37:37  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: GGAL.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: BMA.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: BYMA.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: CEPU.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: COME.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: CVH.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: EDN.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: FRAN.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: MIRG.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TGNO4.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TGSU2.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TRAN.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TS.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TXAR.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: YPFD.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PAMP.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: SUPV.BUE
+2020-01-19 20:37:38  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: VALO.BUE
+2020-01-19 20:37:39  :: @Instructions Processor Invertir Online:Sending message SECURITY_LIST_REQUEST not implemented

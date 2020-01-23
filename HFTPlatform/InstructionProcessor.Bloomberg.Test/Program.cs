@@ -81,14 +81,14 @@ namespace HelloWorld.Bloomberg.Test
 
                 DoLog(message.AsElement.ToString());
 
-                Element dvdHisElem=message.GetElement("securityData").GetValueAsElement().GetElement("fieldData").GetElement("DVD_HIST_ALL");
-                for (int i = 0; i < dvdHisElem.NumValues; i++)
-                {
-                    Element elems = (Element) dvdHisElem.GetValue(i);
+                //Element dvdHisElem=message.GetElement("securityData").GetValueAsElement().GetElement("fieldData").GetElement("DVD_HIST_ALL");
+                //for (int i = 0; i < dvdHisElem.NumValues; i++)
+                //{
+                //    Element elems = (Element) dvdHisElem.GetValue(i);
 
-                    Datetime date = elems.GetElementAsDate("Ex-Date");
+                //    Datetime date = elems.GetElementAsDate("Ex-Date");
                    
-                }
+                //}
 
                 //foreach(var elem in elems)
                 //{
@@ -567,10 +567,10 @@ namespace HelloWorld.Bloomberg.Test
             //Service service = session.GetService("//blp/emapisvc_beta");
            // RequestMktDataTest(session);
             //GetStrategyInfo(session);
-            //GetBrokerSpec(session);
+            GetBrokerSpec(session);
             //SubscribeOrder(session,"");
             //RequestFields(session);
-            GetDivHist(session);
+            //GetDivHist(session);
             //RequestCurveList(session);
             //RouteOrder(session);
             //PortfolioDataRequest(session);

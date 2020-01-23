@@ -15,6 +15,18 @@ namespace zHFT.Main.Common.Configuration
     [Serializable]
     public class Configuration : BaseConfiguration,IConfiguration
     {
+        #region Private Static Consts
+
+        public static string _LOG_LEVEL_INFO = "INFO";
+        public static string _LOG_LEVEL_ERROR = "ERROR";
+        public static string _LOG_LEVEL_DEBUG = "DEBUG";
+
+        //INFO: Info
+        //ERROR:  Info + ERROR
+        //DEBUG: All
+
+        #endregion
+
         #region Public Attributes
 
         public string Name { get; set; }
@@ -28,6 +40,8 @@ namespace zHFT.Main.Common.Configuration
         public string OutgoingModule { get; set; }
 
         public bool LogToConsole { get; set; }
+
+        public string LogLevel { get; set; }
 
         #endregion
 
