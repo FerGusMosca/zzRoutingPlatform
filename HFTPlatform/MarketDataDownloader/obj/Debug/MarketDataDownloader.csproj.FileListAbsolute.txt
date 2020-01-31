@@ -60,3 +60,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.StrategyHandler.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.StrategyHandler.Common.pdb

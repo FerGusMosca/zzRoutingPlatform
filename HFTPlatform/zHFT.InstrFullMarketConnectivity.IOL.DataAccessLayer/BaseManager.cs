@@ -112,6 +112,10 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
         protected string DoGetJson(string url)
         {
             string content = string.Empty;
+
+            if (AuthenticationToken == null)
+                return null;
+
             lock (tAuthLock)
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -142,6 +146,9 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
         protected string DoPostJson(string url, Dictionary<string, string> queryStrings)
         {
             string content = string.Empty;
+
+            if (AuthenticationToken == null)
+                return null;
 
             lock (tAuthLock)
             {
@@ -179,6 +186,27 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
                 }
             }
             return content;
+        }
+
+        protected void ReAuthenticateThread()
+        {
+            AuthenticationToken = null;
+
+            while (true)
+            {
+                try
+                {
+                    Authenticate();
+                }
+                catch (Exception ex)
+                {
+                    Logger(string.Format("Error intentando re autenticar ante caida:{0}", ex.Message), zHFT.Main.Common.Util.Constants.MessageType.Error);
+                }
+                finally
+                {
+                    Thread.Sleep(60 * 1000);
+                }
+            }
         }
 
         protected void RefreshToken(object param)
@@ -222,6 +250,7 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
                     catch (Exception ex)
                     {
                         Logger(string.Format("Error invocando el servicio de refresh token:{0}", ex.Message),zHFT.Main.Common.Util.Constants.MessageType.Error);
+                        Task.Run(() => ReAuthenticateThread());
                     }
                 }
                 Thread.Sleep(1000 * 60);//Once per minute

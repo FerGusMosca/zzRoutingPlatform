@@ -493,8 +493,8 @@ namespace HelloWorld.Bloomberg.Test
         private static void RequestFields(Session session)
         {
             Service refDataSvc = OpenService(session, "//blp/apiflds");
-            Request request = refDataSvc.CreateRequest("CategorizedFieldSearchRequest");
-            request.Set("searchSpec", "split");
+            Request request = refDataSvc.CreateRequest("CategorizedFieldSearchRequest");//FieldSearchRequest,CategorizedFieldSearchRequest
+            request.Set("searchSpec", "force");
 
             session.SendRequest(request, CreateCorrelation());
             LoopAndLogResponses(session);
@@ -567,9 +567,9 @@ namespace HelloWorld.Bloomberg.Test
             //Service service = session.GetService("//blp/emapisvc_beta");
            // RequestMktDataTest(session);
             //GetStrategyInfo(session);
-            GetBrokerSpec(session);
+            //GetBrokerSpec(session);
             //SubscribeOrder(session,"");
-            //RequestFields(session);
+            RequestFields(session);
             //GetDivHist(session);
             //RequestCurveList(session);
             //RouteOrder(session);

@@ -1,0 +1,20 @@
+2020-01-26 17:45:24  :: 26/1/2020 17:45:24MainApp.LoadConfig
+2020-01-26 17:45:24  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\config.xml
+2020-01-26 17:45:24  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\config.xml
+2020-01-26 17:45:24  :: Fin GetConfiguracion
+2020-01-26 17:45:24  :: Incoming Module not found. It will not be initialized
+2020-01-26 17:45:24  :: Initializing Log
+2020-01-26 17:45:24  :: Initializing Incoming Module
+2020-01-26 17:45:24  :: Incoming module could not be initialized because it was not instantiated
+2020-01-26 17:45:24  :: Initializing Outgoing Module
+2020-01-26 17:45:32  :: Outgoing Module successfully initialized
+2020-01-26 17:46:39  :: 26/1/2020 17:46:39MainApp.LoadConfig
+2020-01-26 17:46:39  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\config.xml
+2020-01-26 17:46:39  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\config.xml
+2020-01-26 17:46:39  :: Fin GetConfiguracion
+2020-01-26 17:46:39  :: Incoming Module not found. It will not be initialized
+2020-01-26 17:46:39  :: Initializing Log
+2020-01-26 17:46:39  :: Initializing Incoming Module
+2020-01-26 17:46:39  :: Incoming module could not be initialized because it was not instantiated
+2020-01-26 17:46:39  :: Initializing Outgoing Module
+2020-01-26 17:46:41  :: Outgoing Module successfully initialized

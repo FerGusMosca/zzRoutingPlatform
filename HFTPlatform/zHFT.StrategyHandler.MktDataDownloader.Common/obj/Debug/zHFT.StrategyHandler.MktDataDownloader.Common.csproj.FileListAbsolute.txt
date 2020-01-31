@@ -8,6 +8,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.Common\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.Common.csprojResolveAssemblyReference.cache

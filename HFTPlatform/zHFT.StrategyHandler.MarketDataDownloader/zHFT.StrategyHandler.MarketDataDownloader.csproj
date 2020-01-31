@@ -67,6 +67,10 @@
       <Project>{23f19229-4e9f-4bc0-8caa-d45c1867bd96}</Project>
       <Name>zHFT.StrategyHandler.LogicLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.MktDataDownloader.BE\zHFT.StrategyHandler.MktDataDownloader.BE.csproj">
+      <Project>{0517fcf1-fb90-4045-bbc8-959570a26858}</Project>
+      <Name>zHFT.StrategyHandler.MktDataDownloader.BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.MktDataDownloader.Common\zHFT.StrategyHandler.MktDataDownloader.Common.csproj">
       <Project>{1743aa8e-5ba5-4a4e-a8bc-8396f70a3f59}</Project>
       <Name>zHFT.StrategyHandler.MktDataDownloader.Common</Name>

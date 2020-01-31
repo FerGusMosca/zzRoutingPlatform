@@ -1,0 +1,261 @@
+2020-01-26 17:45:30  :: 1/26/2020 5:45:30 PMBaseCommunicationModule.LoadConfig
+2020-01-26 17:45:30  :: Loading config:.\MarketDataDownloader.xml
+2020-01-26 17:45:30  :: Processing config:.\MarketDataDownloader.xml
+2020-01-26 17:45:30  :: Ending GetConfiguracion .\MarketDataDownloader.xml
+2020-01-26 17:45:30  :: Initializing MarketDataDownloader 
+2020-01-26 17:45:30  :: 1/26/2020 5:45:30 PMMarketClientBase.LoadConfig
+2020-01-26 17:45:30  :: Loading config:.\IOL\incomingIOL.xml
+2020-01-26 17:45:30  :: Processing config:.\IOL\incomingIOL.xml
+2020-01-26 17:45:30  :: Ending GetConfiguracion .\IOL\incomingIOL.xml
+2020-01-26 17:45:31  :: Authenticating Market Data Client On Invertir Online
+2020-01-26 17:45:32  :: Market Data Client authenticated On Invertir Online. Token:m7arRO21Kfo2HQGW27vDfuWBTbpoVG1kq7Fy0ytjcLVrQBDVWcnyblAFlNx8yVHrcP8KdxxPn8tbdHMvtX74keyeEAP2j-zpcc1EOqXuSAOE9SbmKFFj1gRFv906lLmX8K1ktf_v3HdKgzGSVxvCty2a9qsaLcs_ad3WGyaXCypb6CsGTs6dPVNGR8yBTM2FoPpdfwcQ-vJ9xOf2KnUi6feoQbM_0elHS2LAqajHjspXAqDO6MvrBQ70raUlktFMpCDhNIYR-XEfE2KVeqCjmQ2-483eKBwiraaO861xsvLMQcVpcZcW9jWPnslu3iSw
+2020-01-26 17:45:39  :: Actualización del refresh token @Invertir Online Market Data Client:OJhnGtnH-D7xi7pOgcv3Cd15FfebEP8P_GKEf_zoHue5rRE3o6hnUclyCTBIko-bVN-4XcvnbCNH3fSTMaKuE7jZR4hGGVFSd3xHuyeT3zBg5m7tTzElmLUmH1lPxp-7IWdYzDfnBs2prsXRGGSQzoE_8ob-Y-8gwkujCbEuKEuE39agf6BQqPQH_dnAfqEHhCPmgGZ5cbkpeOIFnS8K5E6mnHRlr690E9e4jOaIV-X3pNBoLkTFl9LChaES2f8Yjq6YFn7l9UqOE-fQIaTwvuS7n5QQ7ALswOGcbrSMhl8P6UxnyqQ3pb2SOthoCeIG
+2020-01-26 17:46:39  :: 1/26/2020 5:46:39 PMBaseCommunicationModule.LoadConfig
+2020-01-26 17:46:39  :: Loading config:.\MarketDataDownloader.xml
+2020-01-26 17:46:39  :: Processing config:.\MarketDataDownloader.xml
+2020-01-26 17:46:39  :: Ending GetConfiguracion .\MarketDataDownloader.xml
+2020-01-26 17:46:39  :: Initializing MarketDataDownloader 
+2020-01-26 17:46:39  :: 1/26/2020 5:46:39 PMMarketClientBase.LoadConfig
+2020-01-26 17:46:39  :: Loading config:.\IOL\incomingIOL.xml
+2020-01-26 17:46:39  :: Processing config:.\IOL\incomingIOL.xml
+2020-01-26 17:46:39  :: Ending GetConfiguracion .\IOL\incomingIOL.xml
+2020-01-26 17:46:40  :: Authenticating Market Data Client On Invertir Online
+2020-01-26 17:46:41  :: Market Data Client authenticated On Invertir Online. Token:-h1EOQd2YJS51TP_N1_8or5tlevEQwLRKaKA83vcGVWl6Lz7gLw3kYpVigOUl2tZLeEzWdkE_Tu3XQgOQalvEWASVaNcpGm0SSvrwI7f36DsqPuNONwUOHLQS-75x3yt0V9op0yezIjBzrvO1NNB_1BBhFs3N9oBT59dbGlnKAbRDBcRj_4TKcqQJw9KGXwNhC8L8ZUgLcLhxRz1smXxnCXqEw9k40AlFpmcDVy2nheDnfbv6oLRfCYzGXk4iFZtnLvoJeosqZp1aZxVHClbLUHD0N2J_mPYH3USR3XA9Tehe2VOXhsG9I_B6bjoqqxS
+2020-01-26 17:46:45  :: Actualización del refresh token @Invertir Online Market Data Client:OKUXJKDh_0OJeZcmVMRDfh7tRl4HrWw9DiNi0SZEPKStalWW8-P5TmDgK9-00cLpBeEQ7vXBuYmjbCg1EZCTRoyBtAtw6ixvEOyOUYH1Z6lr6O4I6pJ8f95vjyFknWkVJzgBsFN3EqVHRi2dQ_WzyUN7C-COqteciJ0n3oCGqz99BbL0Fu0vq1M1-rZHE0D_Dze8VFoq7inb6G9-Th-1hcbg08gcQlHO7sCzWDxWIsXTlUPd5qh17-y14CZRisoN1KMnm57gsJKX8KLvRuxcyXA6DsTvN9_w3How9B5W5m1wr-6cU6nImQTPxfGuSNaU
+2020-01-26 17:47:10  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: A2E2.BUE
+2020-01-26 17:47:22  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: A2E2D.BUE
+2020-01-26 17:47:22  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: A2E7.BUE
+2020-01-26 17:47:22  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: A2E7D.BUE
+2020-01-26 17:47:22  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: A2E8.BUE
+2020-01-26 17:47:22  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: A2M2.BUE
+2020-01-26 17:47:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol A2E8.BUE
+2020-01-26 17:47:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol A2E7D.BUE
+2020-01-26 17:47:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol A2E2D.BUE
+2020-01-26 17:47:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol A2E2.BUE
+2020-01-26 17:47:25  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA19.BUE
+2020-01-26 17:47:25  :: @Instructions Processor Invertir Online:Requesting market data por symbol A2M2.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA19D.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA19.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting market data por symbol A2E7.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA21.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA19D.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA21D.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA21.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA22.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA21D.BUE
+2020-01-26 17:47:26  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA25.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA22.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA25D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA25.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA26.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA25D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA26D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA26.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA37.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA26D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA37D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA37.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA46.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA37D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AA46D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA46.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AC17.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AA46D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AC17D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AC17.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AE48.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AC17D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AL28.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AE48.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AL28D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AL28.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AL36.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AL28D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AL36D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AL36.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AM20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AL36D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AMX9.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AM20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AN18.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AMX9.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AN18D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AN18.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AO20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AN18D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AO20D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AO20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: ARGENT22.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AO20D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: ARGENT22D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol ARGENT22.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: ARGENT27.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol ARGENT22D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: ARGENT27D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol ARGENT27.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AY24.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol ARGENT27D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: AY24D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AY24.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: CUAP.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol AY24D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DIA0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol CUAP.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DIA0D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DIA0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICA.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DIA0D.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICAD.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DICA.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICE.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DICAD.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICP.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DICE.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DICP.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICY.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DICYD.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DICY.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DIP0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DICYD.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: DIY0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DIP0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: NO20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol DIY0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PAA0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol NO20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PAE0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAA0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PAP0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAE0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PARA.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAP0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PARE.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PARA.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PARP.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PARE.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PARY.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PARP.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PARYD.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PARY.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PAY0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PARYD.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PR13.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAY0.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PR15.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PR13.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TC20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol PR15.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TC21.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TC20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TC23.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TC21.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TJ20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TC23.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TO21.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TJ20.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TO23.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TO21.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TO26.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TO23.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TS18.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TO26.BUE
+2020-01-26 17:47:27  :: @Instructions Processor Invertir Online:Requesting market data por symbol TS18.BUE
+2020-01-26 17:47:27  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:27  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:27  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:27  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:28  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:28  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:29  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:29  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:29  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:37  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:37  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:37  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:37  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:37  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:38  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:38  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:38  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:38  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:39  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:39  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:39  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:39  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:39  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:40  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:40  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:40  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:40  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:40  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:41  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:41  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:41  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:41  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:41  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:42  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:42  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:42  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:42  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:42  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:42  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:43  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:43  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:43  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:44  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:44  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:44  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:44  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:44  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:44  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:45  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:45  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:45  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:45  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:45  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:46  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:46  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:46  :: Actualización del refresh token @Invertir Online Market Data Client:_8H10bvFnWNlmTBYU3oYxqDpkSyH-fCPnW5AUz7i5YHVkNrXypFkbG4qWE8KMon9vu818_NFrXO0_fUd5jc2yYyWysDrgjwniIDdXmjCurSiYkg5GjeGf_tzSvSYST3-8KdqEdycGeM28zN6LO7vfGeCR55kFmpbry902_xLwmlZ-vUyX0TtVQuq7NmFNy8Ql2h2ER7Dm6H8rEqimsCsSjAUVDJZmYq2Ggv8TJJY_E23fHcXzblC0qbMFkOoR_o-vSP2Ah97koIC_DjxN-RdlWBGFBp8QAAcNKrnBO7rrcJ2f04vz_5v2H56JNA3Boro
+2020-01-26 17:47:46  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:46  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:47  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:47  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:47  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:47  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:47  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:48  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:48  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:48  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:48  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:48  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:49  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:49  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:49  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:49  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:49  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:50  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:50  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:50  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:50  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:50  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:51  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:51  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:51  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:51  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:51  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:51  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:52  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:52  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:52  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:52  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:52  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:53  :: Incoming message from Market Data Module: Symbol=A2M2.BUE  LastPrice=202.1 BestBidPrice=202 BestAskPrice=203
+2020-01-26 17:47:53  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45
+2020-01-26 17:47:53  :: Incoming message from Market Data Module: Symbol=AA19.BUE  LastPrice=4230 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:53  :: Incoming message from Market Data Module: Symbol=A2E7.BUE  LastPrice=3800 BestBidPrice=3750 BestAskPrice=3800
+2020-01-26 17:47:53  :: Incoming message from Market Data Module: Symbol=A2E2.BUE  LastPrice=4120 BestBidPrice=no data BestAskPrice=4120
+2020-01-26 17:47:54  :: Incoming message from Market Data Module: Symbol=A2E7D.BUE  LastPrice=45.5 BestBidPrice=45.1 BestAskPrice=45.9
+2020-01-26 17:47:54  :: Incoming message from Market Data Module: Symbol=A2E8.BUE  LastPrice=3324.293 BestBidPrice=no data BestAskPrice=4150
+2020-01-26 17:47:54  :: Incoming message from Market Data Module: Symbol=AA19D.BUE  LastPrice=103.1 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:54  :: Incoming message from Market Data Module: Symbol=AA21.BUE  LastPrice=3695 BestBidPrice=no data BestAskPrice=no data
+2020-01-26 17:47:54  :: Incoming message from Market Data Module: Symbol=A2E2D.BUE  LastPrice=50 BestBidPrice=47.5 BestAskPrice=50.45

@@ -9,11 +9,11 @@ using zHFT.StrategyHandler.MktDataDownloader.BE;
 
 namespace zHFT.StrategyHandler.MktDataDownloader.DAL
 {
-    public class ADOBondMarketData
+    public class ADOBondMarketDataManager
     {
         #region Constructores
 
-        public ADOBondMarketData(string connectionString)
+        public ADOBondMarketDataManager(string connectionString)
         {
             Conn = new SqlConnection(connectionString);
             Conn.Open();

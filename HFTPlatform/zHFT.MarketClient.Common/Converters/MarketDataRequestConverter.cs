@@ -23,6 +23,7 @@ namespace zHFT.MarketClient.Common.Converters
             mdr.Security.Currency = (string)wrapper.GetField(MarketDataRequestField.Currency);
             mdr.Security.SecType = (SecurityType)wrapper.GetField(MarketDataRequestField.SecurityType);
             mdr.SubscriptionRequestType = (SubscriptionRequestType)wrapper.GetField(MarketDataRequestField.SubscriptionRequestType);
+            mdr.SettlType = (SettlType)wrapper.GetField(MarketDataRequestField.SettlType);
 
             return mdr;
 

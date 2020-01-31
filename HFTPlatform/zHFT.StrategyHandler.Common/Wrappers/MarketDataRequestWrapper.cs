@@ -71,6 +71,8 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Security.Currency;
             if (mdrField == MarketDataRequestField.MDReqId)
                 return MdReqId;
+            if (mdrField == MarketDataRequestField.SettlType)
+                return Security.MarketData != null ? Security.MarketData.SettlType : SettlType.Tplus2;
             if (mdrField == MarketDataRequestField.SubscriptionRequestType)
                 return SubscriptionRequestType;
             else

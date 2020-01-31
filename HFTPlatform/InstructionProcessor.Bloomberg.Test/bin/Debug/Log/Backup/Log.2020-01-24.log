@@ -1,0 +1,7 @@
+2020-01-24 17:43:47  :: CorrelationID User: 1
+2020-01-24 17:43:47  :: Type categorizedFieldResponse
+2020-01-24 17:43:47  :: categorizedFieldResponse = {
+    category[] = {
+    }
+}
+

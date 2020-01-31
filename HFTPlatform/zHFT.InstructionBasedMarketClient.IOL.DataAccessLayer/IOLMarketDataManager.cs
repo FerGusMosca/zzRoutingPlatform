@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer;
 using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.ADO;
 using zHFT.InstructionBasedMarketClient.IOL.Common.DTO;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer
@@ -35,11 +36,19 @@ namespace zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer
         
         }
 
+        private string GetIOLSettlType(SettlType settlType)
+        {
+            if (settlType == SettlType.Tplus2)
+                return _IOL_CLEAR_TPLUS2;
+            else
+                throw new Exception(string.Format("Settl Type {0} not implemented for IOL", settlType.ToString()));
+        }
+
         #endregion
 
         #region Public Methods
 
-        public MarketData GetMarketData(string symbol, string exchange)
+        public MarketData GetMarketData(string symbol, string exchange, SettlType settlType)
         {
 
             string iolExchange = "";
@@ -52,14 +61,19 @@ namespace zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer
 
             string url = MainURL + _MARKET_DATA_URL
                          + string.Format("?mercado=BCBA&simbolo={0}&model.simbolo={0}&model.mercado={1}&model.plazo={2}",
-                                        symbol, iolExchange, _IOL_CLEAR_TPLUS2);
+                                        symbol, iolExchange, GetIOLSettlType(settlType));
             try
             {
                 string resp = DoGetJson(url);
 
-                MarketData marketData = JsonConvert.DeserializeObject<MarketData>(resp);
+                if (resp != null)
+                {
+                    MarketData marketData = JsonConvert.DeserializeObject<MarketData>(resp);
 
-                return marketData;
+                    return marketData;
+                }
+                else
+                    return null;
             }
             catch (Exception ex)
             {

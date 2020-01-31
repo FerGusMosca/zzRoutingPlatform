@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ADOBondMarketData.cs" />
+    <Compile Include="ADOBondManager.cs" />
+    <Compile Include="ADOBondMarketDataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

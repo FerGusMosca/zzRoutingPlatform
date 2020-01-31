@@ -17,7 +17,7 @@ namespace zHFT.StrategyHandler.MktDataDownloader.Common.Util
             int min = int.Parse(parsed.ToString("mm"));
             string AMPM = parsed.ToString("tt");
 
-            hour += AMPM == "p. m." ? 12 : 0;
+            hour += AMPM == "p. m." || AMPM == "PM" ? 12 : 0;
 
             return new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, min, 0);
         

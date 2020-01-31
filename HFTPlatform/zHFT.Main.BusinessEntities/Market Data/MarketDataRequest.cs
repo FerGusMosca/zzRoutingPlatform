@@ -18,6 +18,8 @@ namespace zHFT.Main.BusinessEntities.Market_Data
 
         public SubscriptionRequestType SubscriptionRequestType { get; set; }
 
+        public SettlType SettlType { get; set; }
+
 
         #endregion
     }
