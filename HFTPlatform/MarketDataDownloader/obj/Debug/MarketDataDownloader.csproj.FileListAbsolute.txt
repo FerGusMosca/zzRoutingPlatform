@@ -10,7 +10,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.OrderRouters.Mock.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.SingletonModulesHandler.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.MarketClient.Common.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.MarketClient.IOL.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.dll
@@ -33,7 +32,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.OrderRouters.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.SingletonModulesHandler.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.MarketClient.IOL.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\MarketDataDownloader\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.pdb

@@ -10,11 +10,12 @@ using System.Threading.Tasks;
 using zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities;
 using zHFT.InstrFullMarketConnectivity.IOL.Common.DTO;
 using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.ADO;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 {
-    public class BaseManager
+    public abstract class BaseManager
     {
         #region Protected Consts
 
@@ -59,13 +60,13 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         #region Protected Methods
 
-        protected void Authenticate()
+        protected void DoAuthenticate(string user, string password)
         {
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
             string url = MainURL + _LOGIN_TOKEN_URL;
-            string postData = string.Format("username={0}&password={1}&grant_type=password", AccountInvertirOnlineData.User, AccountInvertirOnlineData.Password);
+            string postData = string.Format("username={0}&password={1}&grant_type=password", user, password);
             var data = Encoding.ASCII.GetBytes(postData);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -95,9 +96,15 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
             {
                 throw new Exception(string.Format("Could not authenticate user {0} on Invertir Online", AccountInvertirOnlineData.User));
             }
+        
         }
 
-        protected void LoadConfig()
+        protected virtual void Authenticate()
+        {
+            DoAuthenticate(AccountInvertirOnlineData.User, AccountInvertirOnlineData.Password);
+        }
+
+        protected virtual void LoadConfig()
         {
 
             ADOAccountIOLDataManager accountIOLDataManager = new ADOAccountIOLDataManager(CredentialsConnectionString);
@@ -192,11 +199,15 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
         {
             AuthenticationToken = null;
 
-            while (true)
+            bool reAuthenticate = true;
+            while (reAuthenticate)
             {
                 try
                 {
+                    Logger(string.Format("Re autenticando por error a las :{0}",DateTime.Now), zHFT.Main.Common.Util.Constants.MessageType.Information);
+
                     Authenticate();
+                    reAuthenticate = false;
                 }
                 catch (Exception ex)
                 {
@@ -251,12 +262,19 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
                     {
                         Logger(string.Format("Error invocando el servicio de refresh token:{0}", ex.Message),zHFT.Main.Common.Util.Constants.MessageType.Error);
                         Task.Run(() => ReAuthenticateThread());
+                        return;//we kill this thread
                     }
                 }
                 Thread.Sleep(1000 * 60);//Once per minute
             }
         
         }
+
+        #endregion
+
+        #region Abstract Methods
+
+        public abstract object GetMarketData(string symbol, string exchange, SettlType settlType);
 
         #endregion
     }

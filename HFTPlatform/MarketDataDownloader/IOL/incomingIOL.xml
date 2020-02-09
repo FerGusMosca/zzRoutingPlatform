@@ -1,18 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>Instructions Processor Invertir Online</Name>
-  <!--Para los archivos de logs-->
-  <AccountNumber>10</AccountNumber>
-  <CredentialsAccountNumber>10</CredentialsAccountNumber>
-  <ConfigConnectionString>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</ConfigConnectionString>
+  
   <!--<MainURL>https://api-sandbox.invertironline.com/</MainURL>--><!--DEV-->
   <MainURL>https://api.invertironline.com/</MainURL><!--PROD--><!--La market data debe buscarse en PROD-->
   
-  
-  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <PublishUpdateInMilliseconds>1000</PublishUpdateInMilliseconds><!--1 segundos-->
 
-  <PublishUpdateInMilliseconds>1000</PublishUpdateInMilliseconds><!--5 segundos-->
+  <User>fermosca82</User>
+  <Password>Baiano69</Password>
 
-  <SearchForInstructionsInMilliseconds >1000</SearchForInstructionsInMilliseconds > <!--1 segundos-->
-  
+  <Mode>SINGLE</Mode><!--SINGLE,AUTPORTFOLIO-->
+
+
 </Configuration>

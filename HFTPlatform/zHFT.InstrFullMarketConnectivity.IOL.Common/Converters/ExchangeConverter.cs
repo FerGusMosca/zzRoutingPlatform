@@ -30,6 +30,8 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.Common
             }
             else if (fullSymbol.EndsWith(_ROFX))
                 return _ROFX;
+            else if (!fullSymbol.Contains("."))
+                return fullSymbol;
             else
                 throw new Exception(string.Format("No se pudo procesar el mercado para el symbol {0}", fullSymbol));
 

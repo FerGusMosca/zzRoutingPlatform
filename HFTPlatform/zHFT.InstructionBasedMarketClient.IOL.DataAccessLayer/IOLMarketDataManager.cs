@@ -48,7 +48,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer
 
         #region Public Methods
 
-        public MarketData GetMarketData(string symbol, string exchange, SettlType settlType)
+        public override object GetMarketData(string symbol, string exchange, SettlType settlType)
         {
 
             string iolExchange = "";

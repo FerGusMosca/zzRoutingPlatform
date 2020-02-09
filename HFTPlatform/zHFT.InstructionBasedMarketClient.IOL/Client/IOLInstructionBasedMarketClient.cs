@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using zHFT.InstrFullMarketConnectivity.IOL.Common;
+using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
+using zHFT.InstructionBasedMarketClient.IOL.Common.Configuration;
 using zHFT.InstructionBasedMarketClient.IOL.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -26,9 +28,9 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
         public IConfiguration Config { get; set; }
 
-        protected zHFT.MarketClient.IOL.Common.Configuration.Configuration IOLConfiguration
+        protected Configuration IOLConfiguration
         {
-            get { return (zHFT.MarketClient.IOL.Common.Configuration.Configuration)Config; }
+            get { return (Configuration)Config; }
             set { Config = value; }
         }
 
@@ -40,17 +42,13 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
         private InstructionManager InstructionManager { get; set; }
 
-        private AccountManager AccountManager { get; set; }
-
-        private PositionManager PositionManager { get; set; }
-
         private Dictionary<int, Security> ActiveSecurities { get; set; }
 
         private Dictionary<int, Security> ActiveSecuritiesOnDemand { get; set; }
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
-        private IOLMarketDataManager IOLMarketDataManager { get; set; }
+        private BaseManager IOLMarketDataManager { get; set; }
 
         protected object tLock = new object();
 
@@ -106,7 +104,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             List<string> noValueFields = new List<string>();
-            Config = new zHFT.MarketClient.IOL.Common.Configuration.Configuration().GetConfiguration<zHFT.MarketClient.IOL.Common.Configuration.Configuration>(configFile, noValueFields);
+            Config = new Configuration().GetConfiguration<Configuration>(configFile, noValueFields);
         }
 
         
@@ -122,7 +120,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         
         }
 
-        protected  void DoRequestMarketData(object param)
+        protected  void DoRequestMarketDataThread(object param)
         {
             Security sec = (Security)((object[])param)[0];
             SettlType settlType = (SettlType)((object[])param)[1];
@@ -147,14 +145,16 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
                                 if (IOLMarketDataManager != null)
                                 {
+                                    Common.DTO.MarketData marketData = (Common.DTO.MarketData) IOLMarketDataManager.GetMarketData(iolSymbol, iolExchange, settlType);
+                                    if (marketData != null)
+                                    {
+                                        LoadMarketData(sec, settlType, marketData);
+                                        InvertirOnlineMarketDataWrapper wrapper = new InvertirOnlineMarketDataWrapper(sec, IOLConfiguration);
 
-
-                                    zHFT.InstructionBasedMarketClient.IOL.Common.DTO.MarketData marketData = IOLMarketDataManager.GetMarketData(iolSymbol, iolExchange, settlType);
-
-                                    LoadMarketData(sec, settlType, marketData);
-                                    InvertirOnlineMarketDataWrapper wrapper = new InvertirOnlineMarketDataWrapper(sec, IOLConfiguration);
-
-                                    Task.Run(() => DoSendMarketData(wrapper));
+                                        Task.Run(() => DoSendMarketData(wrapper));
+                                    }
+                                    else
+                                        DoLog(string.Format("No response requesting MD for security {0}", sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
                                 }
                             }
                             catch (Exception ex)
@@ -207,7 +207,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                         if (instr.InstructionType.Type == InstructionType._NEW_POSITION || instr.InstructionType.Type == InstructionType._UNWIND_POSITION)
                         {
                             ActiveSecurities.Add(instr.Id, BuildSecurityFromInstruction(instr.Symbol));
-                            RequestMarketDataThread = new Thread(DoRequestMarketData);
+                            RequestMarketDataThread = new Thread(DoRequestMarketDataThread);
                             RequestMarketDataThread.Start(new object[] { new Security() { Symbol = instr.Symbol, SecType = SecurityType.CS }, SettlType.Tplus2 });
 
                         }
@@ -229,6 +229,10 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         {
             while (true)
             {
+                //We don't want to use Instructions as the input for requests
+                if (InstructionManager == null)
+                    return;
+
                 Thread.Sleep(IOLConfiguration.PublishUpdateInMilliseconds);
 
                 lock (tLock)
@@ -267,7 +271,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
             {
                 DoLog(string.Format("@{0}:Requesting {2} Market Data On Demand for Symbol: {1}", IOLConfiguration.Name, mdr.Security.Symbol, mode), Main.Common.Util.Constants.MessageType.Information);
                 ActiveSecurities.Add(ActiveSecurities.Keys.Count + 1, mdr.Security);
-                RequestMarketDataThread = new Thread(DoRequestMarketData);
+                RequestMarketDataThread = new Thread(DoRequestMarketDataThread);
                 RequestMarketDataThread.Start(new object[] { mdr.Security, mdr.SettlType });
 
             }
@@ -368,15 +372,27 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                     ActiveSecuritiesOnDemand = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
 
-                    InstructionManager = new InstructionManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
-                    PositionManager = new PositionManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
-                    AccountManager = new AccountManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
+                    if (!string.IsNullOrEmpty(IOLConfiguration.InstructionsAccessLayerConnectionString))
+                    {
+                        InstructionManager = new InstructionManager(IOLConfiguration.InstructionsAccessLayerConnectionString);
+                        CleanPrevInstructions();
+                    
+                    }
+                    
 
-                    CleanPrevInstructions();
+                    if (IOLConfiguration.Mode == Configuration._AUTPORTFOLIO)
+                    {
 
-                    IOLMarketDataManager = new IOLMarketDataManager(this.OnLogMsg, IOLConfiguration.CredentialsAccountNumber,
-                                                                    IOLConfiguration.ConfigConnectionString,
-                                                                    IOLConfiguration.MainURL);
+                        IOLMarketDataManager = new IOLMarketDataManager(this.OnLogMsg, IOLConfiguration.CredentialsAccountNumber,
+                                                                        IOLConfiguration.ConfigConnectionString,
+                                                                        IOLConfiguration.MainURL);
+                    }
+                    else if (IOLConfiguration.Mode == Configuration._SINGLE)
+                    {
+                        IOLMarketDataManager = new IOLStandaloneMarketDataManager(this.OnLogMsg, IOLConfiguration.MainURL, IOLConfiguration.User, IOLConfiguration.Password);
+                    }
+                    else
+                        throw new Exception(string.Format("Unknown IOL client mode: {0}", IOLConfiguration.Mode));
 
                   
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
