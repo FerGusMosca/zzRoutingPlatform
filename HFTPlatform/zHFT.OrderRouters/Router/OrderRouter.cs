@@ -296,7 +296,7 @@ namespace zHFT.OrderRouters.Router
             Config = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
-        private void ProcessExecutionReport(Wrapper wrapper)
+        protected virtual void ProcessExecutionReport(Wrapper wrapper)
         {
             lock (tLockCalculus)
             {
@@ -367,7 +367,6 @@ namespace zHFT.OrderRouters.Router
             }
         
         }
-
 
         protected void CancelOrder(Wrapper wrapper)
         {

@@ -18,9 +18,9 @@ namespace zHFT.StrategyHandler.IBR.IOL.Common.DTO
 
         public string mercado { get; set; }
 
-        public int tipo { get; set; }
+        public string tipo { get; set; }
 
-        public int plazo { get; set; }
+        public string plazo { get; set; }
 
         public bool operable { get; set; }
 

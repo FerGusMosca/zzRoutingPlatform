@@ -15,7 +15,7 @@ using zHFT.Main.Common.Interfaces;
 
 namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 {
-    public abstract class BaseManager
+    public  class BaseManager
     {
         #region Protected Consts
 
@@ -272,9 +272,12 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         #endregion
 
-        #region Abstract Methods
+        #region Virtual Methods
 
-        public abstract object GetMarketData(string symbol, string exchange, SettlType settlType);
+        public virtual object GetMarketData(string symbol, string exchange, SettlType settlType)
+        {
+            return null;
+        }
 
         #endregion
     }

@@ -1,0 +1,42 @@
+2020-03-31 18:53:06  :: 3/31/2020 6:53:06 PMMomentumStrategyBase.LoadConfig
+2020-03-31 18:53:06  :: Loading config:.\IBRConfig.xml
+2020-03-31 18:53:06  :: Processing config:.\IBRConfig.xml
+2020-03-31 18:53:07  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-03-31 18:53:07  :: Initializing Order Router zHFT.OrderRouters.Router.SoftMarketOrderRouter, zHFT.OrderRouters
+2020-03-31 18:53:07  :: 3/31/2020 6:53:07 PMOrderRouterBase.LoadConfig
+2020-03-31 18:53:07  :: Loading config:.\outgoingOrderRouter.xml
+2020-03-31 18:53:07  :: .\outgoingOrderRouter.xml does not exists
+2020-03-31 18:53:07  :: Error initializing config file .\outgoingOrderRouter.xml
+2020-03-31 18:54:00  :: 3/31/2020 6:54:00 PMMomentumStrategyBase.LoadConfig
+2020-03-31 18:54:00  :: Loading config:.\IBRConfig.xml
+2020-03-31 18:54:00  :: Processing config:.\IBRConfig.xml
+2020-03-31 18:54:00  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-03-31 18:54:00  :: Initializing Order Router zHFT.OrderRouters.Router.SoftMarketOrderRouter, zHFT.OrderRouters
+2020-03-31 18:54:00  :: 3/31/2020 6:54:00 PMOrderRouterBase.LoadConfig
+2020-03-31 18:54:00  :: Loading config:.\GenericOrderRouter.xml
+2020-03-31 18:54:00  :: Processing config:.\GenericOrderRouter.xml
+2020-03-31 18:54:01  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-03-31 18:54:01  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2020-03-31 18:54:01  :: 3/31/2020 6:54:01 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2020-03-31 18:54:01  :: Loading config:.\OrderRouter.Mock.xml
+2020-03-31 18:54:01  :: Processing config:.\OrderRouter.Mock.xml
+2020-03-31 18:54:01  :: Ending GetConfiguracion .\OrderRouter.Mock.xml
+2020-03-31 18:54:01  :: Mock Order Router Initializing... 
+2020-03-31 18:54:01  :: Authenticating Account Manager On Invertir Online
+2020-03-31 18:54:30  :: Critic error initializing Strategy Handler - Instruction Based Router - Soft Market Routing:Se produjo una excepción en el destino de la invocación.
+2020-03-31 18:54:56  :: 3/31/2020 6:54:56 PMMomentumStrategyBase.LoadConfig
+2020-03-31 18:54:56  :: Loading config:.\IBRConfig.xml
+2020-03-31 18:54:56  :: Processing config:.\IBRConfig.xml
+2020-03-31 18:54:56  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-03-31 18:54:56  :: Initializing Order Router zHFT.OrderRouters.Router.SoftMarketOrderRouter, zHFT.OrderRouters
+2020-03-31 18:54:56  :: 3/31/2020 6:54:56 PMOrderRouterBase.LoadConfig
+2020-03-31 18:54:56  :: Loading config:.\GenericOrderRouter.xml
+2020-03-31 18:54:56  :: Processing config:.\GenericOrderRouter.xml
+2020-03-31 18:54:56  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-03-31 18:54:56  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2020-03-31 18:54:56  :: 3/31/2020 6:54:56 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2020-03-31 18:54:56  :: Loading config:.\OrderRouter.Mock.xml
+2020-03-31 18:54:56  :: Processing config:.\OrderRouter.Mock.xml
+2020-03-31 18:54:56  :: Ending GetConfiguracion .\OrderRouter.Mock.xml
+2020-03-31 18:54:56  :: Mock Order Router Initializing... 
+2020-03-31 18:54:56  :: Authenticating Account Manager On Invertir Online

@@ -3,9 +3,9 @@
   <Name>Outgoing IOL</Name>
   <!--Para los archivos de logs-->
 
-  <AccountNumber>9</AccountNumber>
+  <AccountNumber>10</AccountNumber>
   <ConfigConnectionString>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</ConfigConnectionString>
-  <MainURL>https://api-sandbox.invertironline.com/</MainURL> <!--DEV-->
-  <!--<MainURL>https://api.invertironline.com/</MainURL>--> <!--PROD-->
+  <!--<MainURL>https://api-sandbox.invertironline.com/</MainURL> --><!--DEV-->
+  <MainURL>https://api.invertironline.com/</MainURL> <!--PROD-->
   
 </Configuration>

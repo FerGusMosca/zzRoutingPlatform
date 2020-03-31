@@ -567,9 +567,9 @@ namespace HelloWorld.Bloomberg.Test
             //Service service = session.GetService("//blp/emapisvc_beta");
            // RequestMktDataTest(session);
             //GetStrategyInfo(session);
-            //GetBrokerSpec(session);
+            GetBrokerSpec(session);
             //SubscribeOrder(session,"");
-            RequestFields(session);
+            //RequestFields(session);
             //GetDivHist(session);
             //RequestCurveList(session);
             //RouteOrder(session);

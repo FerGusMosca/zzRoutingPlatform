@@ -97,7 +97,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.MarketClient.Common.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.MarketClient.IOL.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.dll
@@ -131,7 +130,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.MarketClient.IOL.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.pdb
@@ -152,3 +150,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.Main.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\obj\Debug\InstructionsProcessor.InvertirOnline.Test.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\outgoingOrderRouter.Mock.xml

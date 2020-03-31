@@ -8,6 +8,8 @@ namespace zHFT.StrategyHandler.IBR.IOL.Common.DTO
 {
     public class PortfolioResponse
     {
+        public int pais { get; set; }
+
         public Posicion[] activos { get; set; }
     }
 }

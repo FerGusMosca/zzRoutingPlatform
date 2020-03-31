@@ -124,6 +124,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         {
             Security sec = (Security)((object[])param)[0];
             SettlType settlType = (SettlType)((object[])param)[1];
+
             try
             {
                 DoLog(string.Format("@{0}:Requesting market data por symbol {1}", IOLConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);

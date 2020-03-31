@@ -221,7 +221,7 @@ namespace zHFT.Main.BusinessEntities.Positions
         
         }
 
-        public bool PositionPendingExecution()
+        public bool PositionActive()
         {
 
             return PosStatus == PositionStatus.New ||

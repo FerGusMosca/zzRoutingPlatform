@@ -39,7 +39,6 @@ namespace zHFT.OrderRouters.InvertirOnline
 
         #endregion
 
-
         #region Potected Methods
 
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)

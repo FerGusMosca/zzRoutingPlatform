@@ -137,7 +137,7 @@ namespace zHFT.StrategyHandler.MarketDataDownloader
             }
             catch (Exception ex)
             {
-                DoLog("Error Requesting market data " + ex.Message, zHFT.Main.Common.Util.Constants.MessageType.Error);
+                DoLog("Error processing market data " + ex.Message, zHFT.Main.Common.Util.Constants.MessageType.Error);
             }
         }
 

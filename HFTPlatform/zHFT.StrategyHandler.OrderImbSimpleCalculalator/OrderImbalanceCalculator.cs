@@ -406,7 +406,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
                 return OrderRouter.ProcessMessage(posWrapper);
             }
-            else if (openPos.PositionPendingExecution())
+            else if (openPos.PositionActive())
             {
                 if (!PendingCancelPosClosing.ContainsKey(openPos.Symbol))
                 {
@@ -624,7 +624,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 DoLog(string.Format("@{0} Opening on position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Information);
 
             }
-            else if (imbPos.CurrentPos().PositionPendingExecution())//OPEN:most probably an update failed--> we do nothing
+            else if (imbPos.CurrentPos().PositionActive())//OPEN:most probably an update failed--> we do nothing
                 DoLog(string.Format("@{0} Action on OPEN position rejected for symbol{1}:{2} ", Configuration.Name, imbPos.OpeningPosition.Security.Symbol, report.Text), Constants.MessageType.Error);
             else if (imbPos.CurrentPos().PositionNoLongerActive())//CLOSED most probably an update failed--> we do nothing
             {
