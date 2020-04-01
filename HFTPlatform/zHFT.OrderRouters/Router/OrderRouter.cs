@@ -479,7 +479,7 @@ namespace zHFT.OrderRouters.Router
 
         #region Public Methods
 
-        public CMState ProcessMessage(Wrapper wrapper)
+        public virtual CMState ProcessMessage(Wrapper wrapper)
         {
             try
             {
@@ -533,7 +533,7 @@ namespace zHFT.OrderRouters.Router
             }
         }
 
-        public bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
+        public virtual bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {
             try
             {

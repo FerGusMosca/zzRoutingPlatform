@@ -120,10 +120,12 @@ namespace zHFT.OrderRouters.Router
 
         protected virtual Order BuildOrder(Position pos, int index, double qty)
         {
+            string clOrdId = Guid.NewGuid().ToString();
             Order order = new Order()
             {
                 Security = pos.Security,
-                ClOrdId = pos.GetNextClOrdId(index + (ORConfiguration.OrderIdStart.HasValue ? ORConfiguration.OrderIdStart.Value : 0)),
+                ClOrdId = clOrdId,
+                OrigClOrdId = clOrdId,
                 Side = pos.Side,
                 OrdType = OrdType.Market,
                 TimeInForce = TimeInForce.Day,
@@ -134,7 +136,7 @@ namespace zHFT.OrderRouters.Router
                 Index = index,// this index is the order number in the fina order list
                 OrderQty = qty
             };
-            order.OrigClOrdId = order.ClOrdId;
+            
             pos.LeavesQty = qty;
 
             return order;
@@ -173,6 +175,7 @@ namespace zHFT.OrderRouters.Router
                             Order newOrder = BuildOrder(pos, pos.Orders.Count, qty);
                             RejectedExecutionReportWrapper rejWrapper = new RejectedExecutionReportWrapper(newOrder, ex.Message);
                             OnMessageRcv(rejWrapper);
+
                         }
                     }
                 }
@@ -234,6 +237,7 @@ namespace zHFT.OrderRouters.Router
 
                             report.CumQty = posForOrder.CumQty;
                             report.LeavesQty = posForOrder.Qty.Value - report.CumQty;
+                            report.Order.OrderQty = posForOrder.Qty;
                             
                             OnMessageRcv(new GenericExecutionReportWrapper(report));
                         }
@@ -245,8 +249,11 @@ namespace zHFT.OrderRouters.Router
                             {
                                 posForOrder.LeavesQty = 0;
                                 posForOrder.SetPositionStatusFromExecution(ExecType.Trade);
+
                                 report.CumQty = posForOrder.CumQty;
                                 report.LeavesQty = 0;
+                                report.Order.OrderQty = posForOrder.Qty;
+
                                 GenericExecutionReportWrapper genWrapper = new GenericExecutionReportWrapper(report);
                                 OnMessageRcv(genWrapper);
 
@@ -260,6 +267,8 @@ namespace zHFT.OrderRouters.Router
 
                                 report.CumQty = posForOrder.CumQty;
                                 report.LeavesQty = posForOrder.LeavesQty.Value;
+                                report.Order.OrderQty = posForOrder.Qty;
+                                report.OrdStatus = OrdStatus.PartiallyFilled;
 
                                 OnMessageRcv(new GenericExecutionReportWrapper(report));
                             }
@@ -301,7 +310,7 @@ namespace zHFT.OrderRouters.Router
 
         #region Public Methods
 
-        public CMState ProcessMessage(Wrapper wrapper)
+        public override CMState ProcessMessage(Wrapper wrapper)
         {
             try
             {
@@ -328,7 +337,7 @@ namespace zHFT.OrderRouters.Router
             }
         }
 
-        public bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
+        public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {
             try
             {

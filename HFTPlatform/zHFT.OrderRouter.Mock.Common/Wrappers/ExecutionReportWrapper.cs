@@ -14,7 +14,7 @@ namespace zHFT.OrderRouter.Mock.Common.Wrappers
         #region Constructors
 
         public ExecutionReportWrapper(ExecType pExecType, OrdStatus pOrdStatus, double pLeavesQty, double pCumQty,
-                                      double? pAvgPx, double? pLastPx, Order pOrder, string text="")
+                                      double? pAvgPx, double? pLastPx,double? pLastQty, Order pOrder, string text="")
         {
             ExecType = pExecType;
             OrdStatus = pOrdStatus;
@@ -24,6 +24,7 @@ namespace zHFT.OrderRouter.Mock.Common.Wrappers
             LastPx = pLastPx;
             Order = pOrder;
             Text = text;
+            LastQty = pLastQty;
         
         }
 
@@ -42,6 +43,8 @@ namespace zHFT.OrderRouter.Mock.Common.Wrappers
         public double? AvgPx { get; set; }
 
         public double? LastPx { get; set; }
+
+        public double? LastQty { get; set; }
 
         public Order Order { get; set; }
 
@@ -78,7 +81,7 @@ namespace zHFT.OrderRouter.Mock.Common.Wrappers
             else if (xrField == ExecutionReportFields.TransactTime)
                 return DateTime.Now;
             else if (xrField == ExecutionReportFields.LastQty)
-                return ExecutionReportFields.NULL;
+                return LastQty;
             else if (xrField == ExecutionReportFields.LastPx)
                 return LastPx;
             else if (xrField == ExecutionReportFields.LastMkt)

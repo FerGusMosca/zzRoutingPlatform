@@ -56,7 +56,7 @@ namespace zHFT.OrderRouters.Mock
                             //We send the executed ER
                             order.OrderId = InternalOrderId.ToString();
                             ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Trade, OrdStatus.Filled,
-                                                                                           0, order.OrderQty.Value, order.Price, order.Price, order);
+                                                                                           0, order.OrderQty.Value, order.Price, order.Price,order.OrderQty, order);
                             toRemove.Add(order);
                             OnMessageRcv(erWrapper);
                         }
@@ -100,7 +100,7 @@ namespace zHFT.OrderRouters.Mock
                     pendingOrder.ClOrdId = clOrdId;
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Replaced, OrdStatus.Replaced,
-                                                                                  0, pendingOrder.OrderQty.Value, null, null, pendingOrder);
+                                                                                  0, pendingOrder.OrderQty.Value, null, null,null, pendingOrder);
 
                     OnMessageRcv(erWrapper);
                 }
@@ -108,7 +108,7 @@ namespace zHFT.OrderRouters.Mock
                 {
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Rejected, OrdStatus.Rejected,
-                                                                  0, 0, null, null, new Order() { }, string.Format("No such order active for ClOrdId {0}", origClOrdId));
+                                                                  0, 0, null, null,null, new Order() { }, string.Format("No such order active for ClOrdId {0}", origClOrdId));
 
                     OnMessageRcv(erWrapper);
 
@@ -133,7 +133,7 @@ namespace zHFT.OrderRouters.Mock
                 {
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Canceled, OrdStatus.Canceled,
-                                                                                   0, cancelOrder.OrderQty.Value, null, null, cancelOrder);
+                                                                                   0, cancelOrder.OrderQty.Value, null, null,null, cancelOrder);
 
                     OnMessageRcv(erWrapper);
                 
@@ -142,7 +142,7 @@ namespace zHFT.OrderRouters.Mock
                 {
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Rejected, OrdStatus.Rejected,
-                                                                  0, 0, null, null, new Order() { }, string.Format("No such order active for ClOrdId {0}", origClOrdId));
+                                                                  0, 0, null, null,null, new Order() { }, string.Format("No such order active for ClOrdId {0}", origClOrdId));
 
                     OnMessageRcv(erWrapper);
 
@@ -162,7 +162,7 @@ namespace zHFT.OrderRouters.Mock
                 {
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Canceled, OrdStatus.Canceled,
-                                                                                  0, order.OrderQty.Value, null, null, order);
+                                                                                  0, order.OrderQty.Value, null, null,null, order);
 
                     OnMessageRcv(erWrapper);
 

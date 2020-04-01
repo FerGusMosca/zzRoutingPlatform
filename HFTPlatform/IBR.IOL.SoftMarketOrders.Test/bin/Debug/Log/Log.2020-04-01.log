@@ -1,0 +1,142 @@
+2020-04-01 13:26:50  :: 1/4/2020 13:26:50MainApp.LoadConfig
+2020-04-01 13:26:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:26:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:26:50  :: Fin GetConfiguracion
+2020-04-01 13:26:50  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-04-01 13:26:50  :: Initializing Log
+2020-04-01 13:26:50  :: Initializing Incoming Module
+2020-04-01 13:26:50  :: Incoming module could not be initialized because it was not instantiated
+2020-04-01 13:26:50  :: Initializing Outgoing Module
+2020-04-01 13:27:03  :: Outgoing Module successfully initialized
+2020-04-01 13:33:09  :: 1/4/2020 13:33:09MainApp.LoadConfig
+2020-04-01 13:33:09  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:33:09  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:33:09  :: Fin GetConfiguracion
+2020-04-01 13:33:09  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-04-01 13:33:09  :: Initializing Log
+2020-04-01 13:33:09  :: Initializing Incoming Module
+2020-04-01 13:33:09  :: Incoming module could not be initialized because it was not instantiated
+2020-04-01 13:33:09  :: Initializing Outgoing Module
+2020-04-01 13:33:17  :: Outgoing Module successfully initialized
+2020-04-01 13:35:05  :: 1/4/2020 13:35:05MainApp.LoadConfig
+2020-04-01 13:35:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:35:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:35:06  :: Fin GetConfiguracion
+2020-04-01 13:35:06  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-04-01 13:35:06  :: Initializing Log
+2020-04-01 13:35:06  :: Initializing Incoming Module
+2020-04-01 13:35:06  :: Incoming module could not be initialized because it was not instantiated
+2020-04-01 13:35:06  :: Initializing Outgoing Module
+2020-04-01 13:35:12  :: Outgoing Module successfully initialized
+2020-04-01 13:43:03  :: 1/4/2020 13:43:03MainApp.LoadConfig
+2020-04-01 13:43:03  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:43:03  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:43:04  :: Fin GetConfiguracion
+2020-04-01 13:43:04  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-04-01 13:43:04  :: Initializing Log
+2020-04-01 13:43:04  :: Initializing Incoming Module
+2020-04-01 13:43:04  :: Incoming module could not be initialized because it was not instantiated
+2020-04-01 13:43:04  :: Initializing Outgoing Module
+2020-04-01 13:43:09  :: Outgoing Module successfully initialized
+2020-04-01 13:45:01  :: 1/4/2020 13:45:01MainApp.LoadConfig
+2020-04-01 13:45:01  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:45:01  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:45:01  :: Fin GetConfiguracion
+2020-04-01 13:45:02  :: Initializing Log
+2020-04-01 13:45:02  :: Initializing Incoming Module
+2020-04-01 13:45:08  :: Incoming Module successfully initialized
+2020-04-01 13:45:08  :: Initializing Outgoing Module
+2020-04-01 13:45:09  :: Outgoing Module successfully initialized
+2020-04-01 13:49:28  :: 1/4/2020 13:49:28MainApp.LoadConfig
+2020-04-01 13:49:28  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:49:28  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:49:29  :: Fin GetConfiguracion
+2020-04-01 13:49:29  :: Initializing Log
+2020-04-01 13:49:29  :: Initializing Incoming Module
+2020-04-01 13:49:35  :: Incoming Module successfully initialized
+2020-04-01 13:49:35  :: Initializing Outgoing Module
+2020-04-01 13:49:37  :: Outgoing Module successfully initialized
+2020-04-01 13:55:23  :: 1/4/2020 13:55:23MainApp.LoadConfig
+2020-04-01 13:55:23  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:55:23  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:55:24  :: Fin GetConfiguracion
+2020-04-01 13:55:24  :: Initializing Log
+2020-04-01 13:55:24  :: Initializing Incoming Module
+2020-04-01 13:55:30  :: Incoming Module successfully initialized
+2020-04-01 13:55:30  :: Initializing Outgoing Module
+2020-04-01 13:55:31  :: Outgoing Module successfully initialized
+2020-04-01 13:56:58  :: 1/4/2020 13:56:58MainApp.LoadConfig
+2020-04-01 13:56:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:56:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:56:58  :: Fin GetConfiguracion
+2020-04-01 13:56:58  :: Initializing Log
+2020-04-01 13:56:58  :: Initializing Incoming Module
+2020-04-01 13:57:02  :: Incoming Module successfully initialized
+2020-04-01 13:57:02  :: Initializing Outgoing Module
+2020-04-01 13:57:03  :: Outgoing Module successfully initialized
+2020-04-01 13:58:53  :: 1/4/2020 13:58:53MainApp.LoadConfig
+2020-04-01 13:58:53  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:58:53  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 13:58:53  :: Fin GetConfiguracion
+2020-04-01 13:58:53  :: Initializing Log
+2020-04-01 13:58:53  :: Initializing Incoming Module
+2020-04-01 13:58:55  :: Incoming Module successfully initialized
+2020-04-01 13:58:55  :: Initializing Outgoing Module
+2020-04-01 13:58:57  :: Outgoing Module successfully initialized
+2020-04-01 14:03:35  :: 1/4/2020 14:03:35MainApp.LoadConfig
+2020-04-01 14:03:35  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:03:35  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:03:35  :: Fin GetConfiguracion
+2020-04-01 14:03:35  :: Initializing Log
+2020-04-01 14:03:35  :: Initializing Incoming Module
+2020-04-01 14:03:39  :: Incoming Module successfully initialized
+2020-04-01 14:03:39  :: Initializing Outgoing Module
+2020-04-01 14:03:40  :: Outgoing Module successfully initialized
+2020-04-01 14:12:56  :: 1/4/2020 14:12:56MainApp.LoadConfig
+2020-04-01 14:12:56  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:12:56  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:12:56  :: Fin GetConfiguracion
+2020-04-01 14:12:56  :: Initializing Log
+2020-04-01 14:12:56  :: Initializing Incoming Module
+2020-04-01 14:13:00  :: Incoming Module successfully initialized
+2020-04-01 14:13:00  :: Initializing Outgoing Module
+2020-04-01 14:13:02  :: Outgoing Module successfully initialized
+2020-04-01 14:19:04  :: 1/4/2020 14:19:04MainApp.LoadConfig
+2020-04-01 14:19:04  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:19:04  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:19:05  :: Fin GetConfiguracion
+2020-04-01 14:19:05  :: Initializing Log
+2020-04-01 14:19:05  :: Initializing Incoming Module
+2020-04-01 14:19:10  :: Incoming Module successfully initialized
+2020-04-01 14:19:10  :: Initializing Outgoing Module
+2020-04-01 14:19:12  :: Outgoing Module successfully initialized
+2020-04-01 14:25:25  :: 1/4/2020 14:25:25MainApp.LoadConfig
+2020-04-01 14:25:25  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:25:25  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:25:26  :: Fin GetConfiguracion
+2020-04-01 14:25:26  :: Initializing Log
+2020-04-01 14:25:26  :: Initializing Incoming Module
+2020-04-01 14:25:30  :: Incoming Module successfully initialized
+2020-04-01 14:25:30  :: Initializing Outgoing Module
+2020-04-01 14:25:38  :: Outgoing Module successfully initialized
+2020-04-01 14:35:14  :: 1/4/2020 14:35:14MainApp.LoadConfig
+2020-04-01 14:35:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:35:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:35:14  :: Fin GetConfiguracion
+2020-04-01 14:35:23  :: Initializing Log
+2020-04-01 14:35:23  :: Initializing Incoming Module
+2020-04-01 14:35:27  :: Incoming Module successfully initialized
+2020-04-01 14:35:27  :: Initializing Outgoing Module
+2020-04-01 14:35:28  :: Outgoing Module successfully initialized
+2020-04-01 14:43:40  :: 1/4/2020 14:43:40MainApp.LoadConfig
+2020-04-01 14:43:40  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:43:40  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:43:41  :: Fin GetConfiguracion
+2020-04-01 14:43:41  :: Initializing Log
+2020-04-01 14:43:41  :: Initializing Incoming Module
+2020-04-01 14:43:56  :: 1/4/2020 14:43:56MainApp.LoadConfig
+2020-04-01 14:43:56  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:43:56  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-04-01 14:43:57  :: Fin GetConfiguracion
+2020-04-01 14:43:57  :: Initializing Log
+2020-04-01 14:43:57  :: Initializing Incoming Module

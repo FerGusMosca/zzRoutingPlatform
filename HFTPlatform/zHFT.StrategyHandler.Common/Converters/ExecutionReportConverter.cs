@@ -43,8 +43,8 @@ namespace zHFT.StrategyHandlers.Common.Converters
             //if (!ValidateField(wrapper, ExecutionReportFields.LastPx))
             //    throw new Exception("Missing last price");
 
-            if (!ValidateField(wrapper, ExecutionReportFields.OrderID))
-                throw new Exception("Missing Order Id");
+            //if (!ValidateField(wrapper, ExecutionReportFields.OrderID))
+            //    throw new Exception("Missing Order Id");
 
             if (!ValidateField(wrapper, ExecutionReportFields.Symbol))
                 throw new Exception("Missing Symbol");

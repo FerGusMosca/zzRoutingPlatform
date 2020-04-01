@@ -67,3 +67,14 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\obj\Debug\IBR.IOL.SoftMarketOrders.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\obj\Debug\IBR.IOL.SoftMarketOrders.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\obj\Debug\IBR.IOL.SoftMarketOrders.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\TWSLib.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb

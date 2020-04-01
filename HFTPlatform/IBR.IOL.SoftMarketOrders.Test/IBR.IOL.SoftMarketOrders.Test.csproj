@@ -62,9 +62,9 @@
       <Project>{599f2026-666f-492c-b41f-3704881f32a1}</Project>
       <Name>zHFT.InstrFullMarketConnectivity.IOL.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL.Common\zHFT.InstructionBasedMarketClient.IOL.Common.csproj">
-      <Project>{1f39f08c-711b-4878-891d-69e7f435abcb}</Project>
-      <Name>zHFT.InstructionBasedMarketClient.IOL.Common</Name>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL\zHFT.InstructionBasedMarketClient.IOL.csproj">
+      <Project>{c4247863-54f4-44aa-8888-5523dd1b92ed}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.IOL</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>

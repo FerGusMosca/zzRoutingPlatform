@@ -1309,7 +1309,7 @@ namespace zHFT.Main.DataAccess
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String order_id
         {
@@ -1321,7 +1321,7 @@ namespace zHFT.Main.DataAccess
             {
                 Onorder_idChanging(value);
                 ReportPropertyChanging("order_id");
-                _order_id = StructuralObject.SetValidValue(value, false, "order_id");
+                _order_id = StructuralObject.SetValidValue(value, true, "order_id");
                 ReportPropertyChanged("order_id");
                 Onorder_idChanged();
             }
