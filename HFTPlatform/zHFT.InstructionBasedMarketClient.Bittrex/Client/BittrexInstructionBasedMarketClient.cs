@@ -115,12 +115,17 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                                 {
                                     if (!ReverseCurrency.Keys.Contains(symbol))
                                     {
-                                        JObject jMarketData = exch.GetTicker(symbol);
+                                        GetOrderBookResponse jOrderBook = exch.GetOrderBook(symbol, OrderBookType.Both, depth: 5);
+                                        //JObject jMarketData = exch.GetTicker(symbol);
 
                                         Security sec = new Security();
                                         sec.Symbol = symbol;
-                                        sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
-                                        sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
+                                        sec.MarketData.BestBidPrice = Convert.ToDouble(jOrderBook.buy.FirstOrDefault().Rate);
+                                        sec.MarketData.BestBidCashSize = Convert.ToDecimal(jOrderBook.buy.FirstOrDefault().Quantity);
+                                        sec.MarketData.BestAskPrice = Convert.ToDouble(jOrderBook.sell.FirstOrDefault().Rate);
+                                        sec.MarketData.BestAskCashSize = Convert.ToDecimal(jOrderBook.sell.FirstOrDefault().Quantity);
+                                        //sec.MarketData.BestBidPrice = (double?)jMarketData["Bid"];
+                                        //sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
                                         //sec.MarketData.Trade = (double?)jMarketData["Last"];
                                         sec.ReverseMarketData = false;
 

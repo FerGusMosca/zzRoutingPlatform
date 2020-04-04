@@ -40,3 +40,8 @@
 2020-04-04 16:18:51  :: @Incoming Bittrex:Cancelling market data for symbol DGB
 2020-04-04 16:18:51  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
 2020-04-04 16:18:54  :: @Incoming Bittrex:Unsubscribing market data for symbol DGB
+2020-04-04 17:53:20  :: 4/4/2020 5:53:20 PMBaseCommunicationModule.LoadConfig
+2020-04-04 17:53:20  :: Loading config:.\incomingBittrex.xml
+2020-04-04 17:53:20  :: Processing config:.\incomingBittrex.xml
+2020-04-04 17:53:20  :: Ending GetConfiguracion .\incomingBittrex.xml
+2020-04-04 17:53:51  :: @Incoming Bittrex:Requesting market data por symbol BTC

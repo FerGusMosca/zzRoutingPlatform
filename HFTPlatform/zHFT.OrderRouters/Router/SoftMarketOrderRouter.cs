@@ -45,7 +45,7 @@ namespace zHFT.OrderRouters.Router
                                                 Constants.MessageType.Information);
         }
 
-        protected long GetFullOrderQty(Position pos, double price)
+        protected double GetFullOrderQty(Position pos, double price)
         {
             if (!pos.IsSinlgeUnitSecurity())
                 throw new Exception(string.Format("Not implemented quantity conversion for seurity type {0}", pos.Security.SecType.ToString()));
@@ -56,12 +56,12 @@ namespace zHFT.OrderRouters.Router
                 {
                     pos.Qty = Convert.ToInt64(Math.Floor(pos.CashQty.Value / price));
                     pos.CashQty = null;//this doesn't apply anymore
-                    return Convert.ToInt64(pos.Qty);
+                    return Convert.ToDouble(pos.Qty);
                 }
                 else
                 {
                     if (pos.Qty.HasValue)
-                        return Convert.ToInt64(pos.Qty.Value);
+                        return Convert.ToDouble(pos.Qty.Value);
                     else
                         throw new Exception(string.Format("Missing quantity for new order for security {0}", pos.Security.Symbol));
                 }
@@ -69,11 +69,11 @@ namespace zHFT.OrderRouters.Router
             else
             { 
                 //We had some traeds, now we use the LeavesQty
-                return Convert.ToInt64(pos.LeavesQty);
+                return Convert.ToDouble(pos.LeavesQty);
             }
         }
 
-        protected long GetQty(Position pos, MarketData md)
+        protected double GetQty(Position pos, MarketData md)
         {
             
             if (pos.Side == Side.Buy)
@@ -81,13 +81,20 @@ namespace zHFT.OrderRouters.Router
                 if (!md.BestAskPrice.HasValue)
                     throw new Exception(string.Format("There is not an ask price for security {0}", pos.Security.Symbol));
 
-                long fullLvsQty = GetFullOrderQty(pos, md.BestAskPrice.Value);
+                double fullLvsQty = GetFullOrderQty(pos, md.BestAskPrice.Value);
                 if (md.BestAskSize.HasValue)
                 {
                     if (md.BestAskSize.Value > fullLvsQty)
-                        return Convert.ToInt64(fullLvsQty);
+                        return Convert.ToDouble(fullLvsQty);
                     else
                         return md.BestAskSize.Value;
+                }
+                else if (md.BestAskCashSize.HasValue)
+                {
+                    if (md.BestAskCashSize.Value > Convert.ToDecimal(fullLvsQty))
+                        return fullLvsQty;
+                    else
+                        return Convert.ToDouble(md.BestAskCashSize.Value);
                 }
                 else
                     throw new Exception(string.Format("Could not find an ask qty for security {0}", pos.Security.Symbol));
@@ -97,14 +104,21 @@ namespace zHFT.OrderRouters.Router
                 if (!md.BestBidPrice.HasValue)
                     throw new Exception(string.Format("There is not a bid price for security {0}", pos.Security.Symbol));
 
-                long fullLvsQty = GetFullOrderQty(pos, md.BestBidPrice.Value);
+                double fullLvsQty = GetFullOrderQty(pos, md.BestBidPrice.Value);
 
                 if (md.BestBidSize.HasValue)
                 {
                     if (md.BestBidSize.Value > fullLvsQty)
-                        return Convert.ToInt64(fullLvsQty);
+                        return fullLvsQty;
                     else
                         return md.BestBidSize.Value;
+                }
+                else if (md.BestBidCashSize.HasValue)
+                {
+                    if (md.BestBidCashSize.Value > Convert.ToDecimal(fullLvsQty))
+                        return fullLvsQty;
+                    else
+                        return Convert.ToDouble(md.BestBidCashSize.Value);
                 }
                 else
                     throw new Exception(string.Format("Could not find a bid qty for security {0}", pos.Security.Symbol));
@@ -153,7 +167,7 @@ namespace zHFT.OrderRouters.Router
                 {
                     if (!PendingPartialOrderPositionsDict.ContainsKey(pos.PosId))
                     {
-                        long qty = 0;
+                        double qty = 0;
                         try
                         {
                             qty = GetQty(pos, updMarketData);
