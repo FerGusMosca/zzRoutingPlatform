@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>Incoming Bittrex</Name>
-  <QuoteCurrency>USD2</QuoteCurrency>
+  <QuoteCurrency>USD</QuoteCurrency><!--test comment-->
   <Simulate>false</Simulate>
 
   <InstructionsAccessLayerConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
