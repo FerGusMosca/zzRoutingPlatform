@@ -107,7 +107,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="OrderRouter.IOL.xml">
+    <Content Include="routers\OrderRouter.IOL.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="GenericOrderRouter.xml">
@@ -118,7 +118,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="OrderRouter.Mock.xml">
+    <Content Include="routers\OrderRouter.Mock.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

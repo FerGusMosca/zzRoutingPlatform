@@ -2,13 +2,11 @@
 <Configuration>
   <Name>Outgoing Generic</Name>
 
-  <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
-  <ProxyConfigFile>.\OrderRouter.Mock.xml</ProxyConfigFile>
-
-
   <!--<Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
-  <ProxyConfigFile>dummy</ProxyConfigFile>-->
-  
+  <ProxyConfigFile>.\routers\OrderRouter.Mock.xml</ProxyConfigFile>-->
+
+  <Proxy>zHFT.OrderRouters.InvertirOnline.OrderRouter, zHFT.OrderRouters.InvertirOnline</Proxy>
+  <ProxyConfigFile>.\routers\OrderRouter.IOL.xml</ProxyConfigFile>
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

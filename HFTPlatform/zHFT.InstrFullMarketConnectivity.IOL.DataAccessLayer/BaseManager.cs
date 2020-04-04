@@ -23,13 +23,14 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         protected string _MARKET_DATA_URL = "api/{Mercado}/Titulos/{Simbolo}/Cotizacion";
 
-        protected string _BUY_URL = "api/operar/Comprar";
+        protected string _BUY_URL = "api/v2/operar/Comprar";
 
-        protected string _SELL_URL = "api/operar/Vender";
+        protected string _SELL_URL = "api/v2/operar/Vender";
 
         protected string _MAIN_BYMA_EXCHANGE = "BUE";
 
-        protected string _IOL_BYMA_EXCHANGE = "BCBA";
+        //protected string _IOL_BYMA_EXCHANGE = "BCBA";
+        protected string _IOL_BYMA_EXCHANGE = "bCBA";
 
         protected string _IOL_CLEAR_TPLUS2 = "t2";
 

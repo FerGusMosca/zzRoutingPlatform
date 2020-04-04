@@ -1,9 +1,7 @@
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\Config.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\incomingIOL.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\OrderRouter.IOL.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\GenericOrderRouter.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\IBRConfig.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\OrderRouter.Mock.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\IBR.IOL.SoftMarketOrders.Test.exe.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\IBR.IOL.SoftMarketOrders.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\IBR.IOL.SoftMarketOrders.Test.pdb
@@ -78,3 +76,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\routers\OrderRouter.IOL.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.IOL.SoftMarketOrders.Test\bin\Debug\routers\OrderRouter.Mock.xml

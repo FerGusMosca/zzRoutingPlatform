@@ -2,7 +2,7 @@
 <Configuration>
   <Name>Outgoing Order Routing Bittrex</Name>
 
-  <QuoteCurrency>BTC</QuoteCurrency>
+  <QuoteCurrency>USD</QuoteCurrency>
   <Simulate>false</Simulate>
 
   <RefreshExecutionReportsInMilisec>5000</RefreshExecutionReportsInMilisec>

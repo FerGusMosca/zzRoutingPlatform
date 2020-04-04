@@ -16,7 +16,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.DTO
 
         public long cantidad { get; set; }
 
-        public double precio { get; set; }
+        public double? precio { get; set; }
 
         public string modalidad { get; set; }
 

@@ -33,7 +33,7 @@
     </Config>
     <Config>
       <Key>MarketDataQuoteCurrency</Key>
-      <Value>BTC</Value>
+      <Value>USD</Value>
     </Config>
     <Config>
       <Key>Simulate</Key>

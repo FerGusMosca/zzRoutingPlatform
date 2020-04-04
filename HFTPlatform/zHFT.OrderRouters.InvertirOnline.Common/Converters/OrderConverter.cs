@@ -55,8 +55,8 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Converters
 
             OrdType ordType = (OrdType)wrapper.GetField(OrderFields.OrdType);
 
-            if (ordType != OrdType.Limit)
-                throw new Exception(string.Format("Tipo de orden no soportado por el ruteador:{0}", ordType));
+            //if (ordType != OrdType.Limit)
+            //    throw new Exception(string.Format("Tipo de orden no soportado por el ruteador:{0}", ordType));
         
         }
 
@@ -104,7 +104,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Converters
             order.mercado = ExchangeConverter.GetIOLMarketFromInstrMarket(instrExchange);
 
             order.cantidad = Convert.ToInt64(wrapper.GetField(OrderFields.OrderQty)); 
-            order.precio = (double)wrapper.GetField(OrderFields.Price);
+            order.precio = (double?)wrapper.GetField(OrderFields.Price);
             order.side = (Side)wrapper.GetField(OrderFields.Side);
             order.ordtype = (OrdType)wrapper.GetField(OrderFields.OrdType);
             order.modalidad = _ORD_TYPE_MARKET;

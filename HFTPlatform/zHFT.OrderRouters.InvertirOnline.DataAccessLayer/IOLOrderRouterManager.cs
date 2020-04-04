@@ -51,10 +51,10 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
 
         #region Public Methods
 
-        public NewOrderResponse Buy(Order order)
+        private NewOrderResponse SendOrder(Order order,string _SIDE_URL)
         {
 
-            string url = MainURL + _BUY_URL;
+            string url = MainURL + _SIDE_URL;
             try
             {
                 BaseOrder bOrder = BaseOrder.Clone(order);
@@ -63,12 +63,14 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
 
                 parameters.Add(_MARKET_FIELD, order.mercado);
                 parameters.Add(_SYMBOL_FIELD, order.simbolo);
-                parameters.Add(_AMMOUNT_FIELD, (order.cantidad * order.precio).ToString("00.##"));
+                //parameters.Add(_AMMOUNT_FIELD, (order.cantidad * order.precio).ToString("00.##"));
                 parameters.Add(_QTY_FIELD, order.cantidad.ToString());
                 parameters.Add(_TIF_FIELD, order.validez.ToString());
+                //parameters.Add(_TIF_FIELD, "2020-04-02T20:16:55.110Z");
                 parameters.Add(_SETTL_TYPE_FIELD, order.plazo);
-                parameters.Add(_ORD_TYPE_FIELD, order.modalidad);
-                parameters.Add(_PRICE_FIELD, order.precio.ToString("00.##"));// Hasta que no haya execution reports, usamos ordenes market
+                //parameters.Add(_ORD_TYPE_FIELD, order.modalidad);
+                if (order.precio.HasValue)
+                    parameters.Add(_PRICE_FIELD, order.precio.Value.ToString("00.##"));// Hasta que no haya execution reports, usamos ordenes market
 
                 string resp = DoPostJson(url, parameters);
 
@@ -83,35 +85,17 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
             }
         }
 
+
+        public NewOrderResponse Buy(Order order)
+        {
+
+            return SendOrder(order, _BUY_URL);
+        }
+
         public NewOrderResponse Sell(Order order)
         {
 
-            string url = MainURL + _SELL_URL;
-            try
-            {
-                BaseOrder bOrder = BaseOrder.Clone(order);
-
-                Dictionary<string, string> parameters = new Dictionary<string, string>();
-
-                parameters.Add(_MARKET_FIELD, order.mercado);
-                parameters.Add(_SYMBOL_FIELD, order.simbolo);
-                parameters.Add(_QTY_FIELD, order.cantidad.ToString());
-                parameters.Add(_TIF_FIELD, order.validez.ToString());
-                parameters.Add(_SETTL_TYPE_FIELD, order.plazo);
-                parameters.Add(_ORD_TYPE_FIELD, order.modalidad);
-                parameters.Add(_PRICE_FIELD, order.precio.ToString("00.##"));
-
-                string resp = DoPostJson(url, parameters);
-
-                NewOrderResponse noResp = JsonConvert.DeserializeObject<NewOrderResponse>(resp);
-
-                return noResp;
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(string.Format("Se produjo un error enviando una orden de venta del activo {0}:{1}", order.simbolo, ex.Message));
-            }
+            return SendOrder(order, _SELL_URL);
         }
 
         #endregion

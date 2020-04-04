@@ -81,7 +81,7 @@ namespace zHFT.OrderRouters.Router
                 if (!md.BestAskPrice.HasValue)
                     throw new Exception(string.Format("There is not an ask price for security {0}", pos.Security.Symbol));
 
-                long fullLvsQty = GetFullOrderQty(pos, md.BestBidPrice.Value);
+                long fullLvsQty = GetFullOrderQty(pos, md.BestAskPrice.Value);
                 if (md.BestAskSize.HasValue)
                 {
                     if (md.BestAskSize.Value > fullLvsQty)
@@ -97,7 +97,7 @@ namespace zHFT.OrderRouters.Router
                 if (!md.BestBidPrice.HasValue)
                     throw new Exception(string.Format("There is not a bid price for security {0}", pos.Security.Symbol));
 
-                long fullLvsQty = GetFullOrderQty(pos, md.BestAskPrice.Value);
+                long fullLvsQty = GetFullOrderQty(pos, md.BestBidPrice.Value);
 
                 if (md.BestBidSize.HasValue)
                 {
