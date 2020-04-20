@@ -46,8 +46,6 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public int MaxOpenedPositions { get; set; }
 
-        public int WaitingTimeBeforeOpeningPositions { get; set; }
-
         public decimal PositionOpeningImbalanceThreshold { get; set; }
 
         public decimal PositionOpeningImbalanceMaxThreshold { get; set; }
@@ -62,9 +60,9 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public string SecurityTypes { get; set; }
 
-        public int ResetEveryNMinutes { get; set; }
+        public int ActiveBlocks { get; set; }
 
-      
+        public int BlockSizeInMinutes { get; set; }
 
         #endregion
 

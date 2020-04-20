@@ -271,7 +271,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public bool EvalClosingShortPosition(SecurityImbalance secImb,decimal positionOpeningImbalanceMaxThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT
-                   && secImb.BidSizeImbalance < positionOpeningImbalanceMaxThreshold
+                   && secImb.ImbalanceCounter.BidSizeImbalance < positionOpeningImbalanceMaxThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
 
@@ -280,21 +280,21 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public bool EvalClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
         {
             return (TradeDirection == ImbalancePosition._LONG
-                   && secImb.AskSizeImbalance < positionOpeningImbalanceMaxThreshold
+                   && secImb.ImbalanceCounter.AskSizeImbalance < positionOpeningImbalanceMaxThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
 
         public bool EvalAbortingNewLongPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
         {
             return (TradeDirection == ImbalancePosition._LONG
-                   && secImb.AskSizeImbalance < PositionOpeningImbalanceThreshold
+                   && secImb.ImbalanceCounter.AskSizeImbalance < PositionOpeningImbalanceThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.New || OpeningPosition.PosStatus == PositionStatus.PendingNew));
         }
 
         public bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT
-                   && secImb.BidSizeImbalance < PositionOpeningImbalanceThreshold
+                   && secImb.ImbalanceCounter.BidSizeImbalance < PositionOpeningImbalanceThreshold
                     && (OpeningPosition.PosStatus == PositionStatus.New || OpeningPosition.PosStatus == PositionStatus.PendingNew));
         }
 
@@ -302,7 +302,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             return (TradeDirection == ImbalancePosition._LONG
                    && ClosingPosition!=null
-                   && secImb.AskSizeImbalance > positionOpeningImbalanceMaxThreshold
+                   && secImb.ImbalanceCounter.AskSizeImbalance > positionOpeningImbalanceMaxThreshold
                    && ClosingPosition.PosStatus != PositionStatus.Filled);
         }
 
@@ -310,7 +310,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             return (TradeDirection == ImbalancePosition._SHORT
                    && ClosingPosition != null
-                   && secImb.BidSizeImbalance > positionOpeningImbalanceMaxThreshold
+                   && secImb.ImbalanceCounter.BidSizeImbalance > positionOpeningImbalanceMaxThreshold
                    && ClosingPosition.PosStatus != PositionStatus.Filled);
         }
 

@@ -4,13 +4,14 @@
 
   <PositionSizeInCash>20</PositionSizeInCash>
   <MaxOpenedPositions>5</MaxOpenedPositions>
-  <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
   <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
   <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
   <StopLossForOpenPositionPct>0.5</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0.15</FeeValuePerTrade>
-  <ResetEveryNMinutes>10</ResetEveryNMinutes><!--0 counts as no reset-->
+  
+  <ActiveBlocks>3</ActiveBlocks>
+  <BlockSizeInMinutes>10</BlockSizeInMinutes>
 
   <Currency>USD</Currency>
   <Exchange>BITMEX</Exchange>

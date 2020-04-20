@@ -1,0 +1,17 @@
+2020-04-19 16:49:52  :: OrderImbalanceCalculator:4/19/2020 4:49:52 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2020-04-19 16:49:52  :: OrderImbalanceCalculator:Loading config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2020-04-19 16:49:52  :: OrderImbalanceCalculator:Processing config:.\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2020-04-19 16:49:52  :: Strategy Handler - Order Imbalance Calculator:Ending GetConfiguracion .\outgoingStrategyHandler.OrderImbalanceCalculator.xml
+2020-04-19 16:49:58  :: Strategy Handler - Order Imbalance Calculator:Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-04-19 16:49:58  :: 4/19/2020 4:49:58 PMOrderRouterBase.LoadConfig
+2020-04-19 16:49:58  :: Loading config:.\outgoingOrderRouter.xml
+2020-04-19 16:49:58  :: Processing config:.\outgoingOrderRouter.xml
+2020-04-19 16:49:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-04-19 16:49:58  :: Initializing Order Router Proxy zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock
+2020-04-19 16:49:58  :: 4/19/2020 4:49:58 PMzHFT.Main.Common.Util.ConfigLoader.LoadConfig
+2020-04-19 16:49:58  :: Loading config:.\Mock\outgoingOrderRouter.Mock.xml
+2020-04-19 16:49:58  :: Processing config:.\Mock\outgoingOrderRouter.Mock.xml
+2020-04-19 16:49:58  :: Ending GetConfiguracion .\Mock\outgoingOrderRouter.Mock.xml
+2020-04-19 16:49:58  :: Mock Order Router Initializing... 
+2020-04-19 16:49:59  :: Strategy Handler - Order Imbalance Calculator:Processing Market Data:Symbol=ALUA.BUE  LastPrice=25.8 BestBidPrice=25.7 BestAskPrice=25.8
+2020-04-19 16:49:59  :: Strategy Handler - Order Imbalance Calculator:Processing MD for imbalance summary: ALUA.BUE - Imbalance Bid:0 Imbalance Ask 0

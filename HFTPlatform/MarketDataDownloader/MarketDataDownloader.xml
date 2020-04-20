@@ -7,7 +7,7 @@
   <IncomingModule>zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL</IncomingModule>
 
 
-  <ConnectionString>data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <MarketStartTime>11:00 AM</MarketStartTime>
 

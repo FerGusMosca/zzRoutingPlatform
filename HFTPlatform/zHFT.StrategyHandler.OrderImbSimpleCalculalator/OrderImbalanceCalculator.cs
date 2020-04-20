@@ -158,25 +158,31 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         private void ResetEveryNMinutes(object param)
         {
-            if (Configuration.ResetEveryNMinutes == 0)
+            if (Configuration.BlockSizeInMinutes == 0 || Configuration.ActiveBlocks == 0)
                 return;
 
             while (true)
             {
                 TimeSpan elapsed = DateTime.Now - LastCounterResetTime;
 
-                if (elapsed.TotalMinutes > Configuration.ResetEveryNMinutes)
+                //Every BlockSize y save what I had in memory with the counters for every position
+                if (elapsed.TotalMinutes > Configuration.BlockSizeInMinutes)
                 {
                     lock (tLock)
                     {
                         foreach (SecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
                         {
-                            secImb.ResetCounters(Configuration.ResetEveryNMinutes);
+                            secImb.ImbalanceCounter.PersistCounters();
+
+                            //We subscratct the values trades that happened longer than (AcitveBlocks+1)*BlockSizeInMinutes
+                            if (secImb.ImbalanceCounter.ActiveBlocks.Count > Configuration.ActiveBlocks)
+                                secImb.ImbalanceCounter.ResetOldBlocks();
                         }
 
                         LastCounterResetTime = DateTime.Now;
                     }
                 }
+
                 Thread.Sleep(1000);
             }
         }
@@ -220,31 +226,34 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             Thread.Sleep(5000);
             foreach (string symbol in Configuration.StocksToMonitor)
             {
-                Security sec = new Security()
+                if (!SecurityImbalancesToMonitor.ContainsKey(symbol))
                 {
-                    Symbol = symbol,
-                    SecType = Security.GetSecurityType(Configuration.SecurityTypes),
-                    Currency = Configuration.Currency,
-                    Exchange = Configuration.Exchange
-                };
+                    Security sec = new Security()
+                    {
+                        Symbol = symbol,
+                        SecType = Security.GetSecurityType(Configuration.SecurityTypes),
+                        MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+                        Currency = Configuration.Currency,
+                        Exchange = Configuration.Exchange
+                    };
 
-                SecurityImbalance secImbalance = new SecurityImbalance()
-                {
-                    Security = sec,
-                    DecimalRounding = Configuration.DecimalRounding,
-                    TradeImpacts = new List<zHFT.OrderImbSimpleCalculator.BusinesEntities.TradeImpact>()
-                };
+                    SecurityImbalance secImbalance = new SecurityImbalance()
+                    {
+                        Security = sec,
+                        DecimalRounding = Configuration.DecimalRounding,
+                    };
 
-                //1- We add the current security to monitor
-                SecurityImbalancesToMonitor.Add(symbol, secImbalance);
+                    //1- We add the current security to monitor
+                    SecurityImbalancesToMonitor.Add(symbol, secImbalance);
 
-                Securities.Add(sec);//So far, this is all wehave regarding the Securities
+                    Securities.Add(sec);//So far, this is all wehave regarding the Securities
 
-                //2- We request market data
+                    //2- We request market data
 
-                MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter,sec, SubscriptionRequestType.SnapshotAndUpdates);
-                MarketDataRequestCounter++;
-                OnMessageRcv(wrapper);
+                    MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
+                    MarketDataRequestCounter++;
+                    OnMessageRcv(wrapper);
+                }
             }
         }
 
@@ -551,7 +560,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
             TimeSpan elapsed = DateTime.Now - StartTime;
 
-            if (elapsed.TotalMinutes > Configuration.WaitingTimeBeforeOpeningPositions )
+            if (elapsed.TotalMinutes > (Configuration.BlockSizeInMinutes*Configuration.ActiveBlocks) )
             {
                 //Evaluamos no abrir mas posiciones de las deseadas @Configuration.MaxOpenedPositions
                 if (ImbalancePositions.Keys.Count < Configuration.MaxOpenedPositions && !ImbalancePositions.ContainsKey(secImb.Security.Symbol))

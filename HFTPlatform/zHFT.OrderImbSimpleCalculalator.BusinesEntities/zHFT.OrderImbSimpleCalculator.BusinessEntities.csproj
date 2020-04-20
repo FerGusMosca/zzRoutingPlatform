@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FutureImbalancePosition.cs" />
+    <Compile Include="ImbalanceCounter.cs" />
     <Compile Include="ImbalancePosition.cs" />
     <Compile Include="SecurityImbalance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

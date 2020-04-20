@@ -8,7 +8,7 @@
   <!--<MainURL>https://api-sandbox.invertironline.com/</MainURL>--><!--DEV-->
   <MainURL>https://api.invertironline.com/</MainURL><!--PROD--><!--La market data debe buscarse en PROD-->
 
-  <Mode>AUTPORTFOLIO</Mode>
+  <Mode>AUTPORTFOLIO</Mode><!--AUTPORTFOLIO,SINGLE-->
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
   <PublishUpdateInMilliseconds>1000</PublishUpdateInMilliseconds><!--5 segundos-->

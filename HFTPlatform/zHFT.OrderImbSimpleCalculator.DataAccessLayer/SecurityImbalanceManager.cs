@@ -39,14 +39,14 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
                     cmd.CommandText = "PersistSimpleImbalance";
                     cmd.Parameters.Add(new SqlParameter("@Symbol", secImbal.Security.Symbol));
                     cmd.Parameters.Add(new SqlParameter("@DateTime", secImbal.DateTime));
-                    cmd.Parameters.Add(new SqlParameter("@TradesOnBid", secImbal.CountTradeOnBid));
-                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnBid", secImbal.SizeTradeOnBid));
-                    cmd.Parameters.Add(new SqlParameter("@TradesOnAsk", secImbal.CountTradeOnAsk));
-                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnAsk", secImbal.SizeTradeOnAsk));
-                    cmd.Parameters.Add(new SqlParameter("@TradesOnBidImbalance", secImbal.BidCountImbalance));
-                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnBidImbalance", secImbal.BidSizeImbalance));
-                    cmd.Parameters.Add(new SqlParameter("@TradesOnAskImbalance", secImbal.AskCountImbalance));
-                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnAskImbalance", secImbal.AskSizeImbalance));
+                    cmd.Parameters.Add(new SqlParameter("@TradesOnBid", secImbal.ImbalanceCounter.CountTradeOnBid));
+                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnBid", secImbal.ImbalanceCounter.SizeTradeOnBid));
+                    cmd.Parameters.Add(new SqlParameter("@TradesOnAsk", secImbal.ImbalanceCounter.CountTradeOnAsk));
+                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnAsk", secImbal.ImbalanceCounter.SizeTradeOnAsk));
+                    cmd.Parameters.Add(new SqlParameter("@TradesOnBidImbalance", secImbal.ImbalanceCounter.BidCountImbalance));
+                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnBidImbalance", secImbal.ImbalanceCounter.BidSizeImbalance));
+                    cmd.Parameters.Add(new SqlParameter("@TradesOnAskImbalance", secImbal.ImbalanceCounter.AskCountImbalance));
+                    cmd.Parameters.Add(new SqlParameter("@CumSizeOnAskImbalance", secImbal.ImbalanceCounter.AskSizeImbalance));
 
                     cmd.ExecuteNonQuery();
                 }

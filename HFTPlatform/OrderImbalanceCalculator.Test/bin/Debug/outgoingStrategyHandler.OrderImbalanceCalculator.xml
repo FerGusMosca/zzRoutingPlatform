@@ -5,7 +5,6 @@
   <PositionSizeInCash>10000</PositionSizeInCash>
 
   <MaxOpenedPositions>30</MaxOpenedPositions>
-  <WaitingTimeBeforeOpeningPositions>5</WaitingTimeBeforeOpeningPositions><!--IN Minutes-->
   <PositionOpeningImbalanceThreshold>0.7</PositionOpeningImbalanceThreshold>
   <PositionOpeningImbalanceMinThreshold>0.45</PositionOpeningImbalanceMinThreshold>
   <PositionOpeningImbalanceMaxThreshold>0.55</PositionOpeningImbalanceMaxThreshold>
@@ -13,7 +12,9 @@
   <FeeTypePerTrade>Percentage</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0.002</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
-  <ResetEveryNMinutes>60</ResetEveryNMinutes><!--0 counts as no reset-->
+
+  <ActiveBlocks>3</ActiveBlocks>
+  <BlockSizeInMinutes>10</BlockSizeInMinutes>
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>
@@ -46,7 +47,6 @@
     <Symbol>COME.BUE</Symbol>
     <Symbol>CVH.BUE</Symbol>
     <Symbol>EDN.BUE</Symbol>
-    <Symbol>FRAN.BUE</Symbol>
     <Symbol>MIRG.BUE</Symbol>
     <Symbol>TGNO4.BUE</Symbol>
     <Symbol>TGSU2.BUE</Symbol>
@@ -57,7 +57,6 @@
     <Symbol>PAMP.BUE</Symbol>
     <Symbol>SUPV.BUE</Symbol>
     <Symbol>VALO.BUE</Symbol>
-
 
     <!--<Symbol>AAPL</Symbol>
     <Symbol>MSFT</Symbol>

@@ -48,6 +48,8 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
+        private Dictionary<string, zHFT.InstructionBasedMarketClient.IOL.Common.DTO.MarketData> LastMarketDataRecvDict { get; set; }
+
         private BaseManager IOLMarketDataManager { get; set; }
 
         protected object tLock = new object();
@@ -120,6 +122,28 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         
         }
 
+        protected void UpdateLastMarketDataRecvDict(Security sec, Common.DTO.MarketData marketData)
+        {
+            Common.DTO.MarketData prevMarketData = null;
+            if (!LastMarketDataRecvDict.ContainsKey(sec.Symbol))
+                LastMarketDataRecvDict.Add(sec.Symbol, marketData);
+            else
+            {
+                prevMarketData = LastMarketDataRecvDict[sec.Symbol];
+                LastMarketDataRecvDict[sec.Symbol] = marketData;
+            }
+
+            if (prevMarketData != null)
+            {
+               
+                if(marketData.volumenNominal > prevMarketData.volumenNominal)
+                {
+                    sec.MarketData.LastTradeDateTime = marketData.fechaHora;
+                    sec.MarketData.MDTradeSize = marketData.volumenNominal - prevMarketData.volumenNominal;
+                }
+            }
+        }
+
         protected  void DoRequestMarketDataThread(object param)
         {
             Security sec = (Security)((object[])param)[0];
@@ -150,6 +174,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                                     if (marketData != null)
                                     {
                                         LoadMarketData(sec, settlType, marketData);
+                                        UpdateLastMarketDataRecvDict(sec, marketData);
                                         InvertirOnlineMarketDataWrapper wrapper = new InvertirOnlineMarketDataWrapper(sec, IOLConfiguration);
 
                                         Task.Run(() => DoSendMarketData(wrapper));
@@ -372,6 +397,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                     ActiveSecurities = new Dictionary<int, Security>();
                     ActiveSecuritiesOnDemand = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
+                    LastMarketDataRecvDict = new Dictionary<string, Common.DTO.MarketData>();
 
                     if (!string.IsNullOrEmpty(IOLConfiguration.InstructionsAccessLayerConnectionString))
                     {

@@ -250,7 +250,7 @@ namespace zHFT.StrategyHandler.MarketDataDownloader
             }
             catch (Exception ex)
             {
-                DoLog("Critic error initializing " + configFile + ":" + ex.Message, zHFT.Main.Common.Util.Constants.MessageType.Error);
+                DoLog("Critical error initializing " + configFile + ":" + ex.Message, zHFT.Main.Common.Util.Constants.MessageType.Error);
                 return false;
             }
         }

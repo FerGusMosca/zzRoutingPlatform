@@ -1,0 +1,46 @@
+2020-04-19 16:49:51  :: 4/19/2020 4:49:51 PMMarketClientBase.LoadConfig
+2020-04-19 16:49:51  :: Loading config:.\IOL\incomingIOL.xml
+2020-04-19 16:49:51  :: Processing config:.\IOL\incomingIOL.xml
+2020-04-19 16:49:51  :: Ending GetConfiguracion .\IOL\incomingIOL.xml
+2020-04-19 16:49:51  :: Authenticating Market Data Client On Invertir Online
+2020-04-19 16:49:52  :: Market Data Client authenticated On Invertir Online. Token:KqvIZ6HfKlIDwolhEp-Yi6_QwT39K1jnYZOj-A9o_pWRJRiqv83J3rJLC80Y3-QeS9kVMMZ7trN05cJrO6-zOoIWvNFUanoPrd1K6LXptyC-jHzaxzoxTjnkYLq7ziMt_YzuiyZag_JINZRR1XEjsW0SpArhe8BewwxoiQGnt41JlQk_doha9w4ACEpsWBVW1fBwadJcBL3s8GJZhdWomhrFyQa5MacIxKI9B8JeVirYyL5ld6rpuT4XRNtmmBNT9e39ihr_89OhGZn9tW-3TN-YVZFsmWQJDNgAgRb3tjqC8YbeMvO7TQaV2jfcnVk8
+2020-04-19 16:49:53  :: Actualización del refresh token @Invertir Online Market Data Client:VsdzceOYO8kHyF47TMfAJPzNKum5yAvxi9mQNNHNYCbSU1rUHjCpL8ROEwxNdHGbQfvWLgqQG8rlfXEPFm0S4JVnyxGOT4YTBrUOhWK0ReshgAxqqoWqLt2VGz4EdKjysfdybbigGIdcFhCECi5-vNU9EcOt534_2FxDWUgmFnhphyx280y8lRWDeK1bUuEeeVkq2_0DVKePPqIYEw1beTZULAoQI381dThIVfmahTzfgNUXNXbok_mdWpcI-pqimr3AznyTNVuJVUnAX1cZ1jiIhc7vGUdRAL9s3ahfjEJ8a9vngQWR0rCjjXocP2Du
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: ALUA.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: APBR.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol ALUA.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol APBR.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: GGAL.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: BMA.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol GGAL.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol BMA.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: BYMA.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: CEPU.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol BYMA.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol CEPU.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: COME.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: CVH.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol COME.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol CVH.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: EDN.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol EDN.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: MIRG.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TGNO4.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol MIRG.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol TGNO4.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TGSU2.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol TGSU2.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TRAN.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TS.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol TRAN.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol TS.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: TXAR.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol TXAR.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: YPFD.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: PAMP.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol YPFD.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol PAMP.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: SUPV.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol SUPV.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting Snapshot+Updates Market Data On Demand for Symbol: VALO.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Requesting market data por symbol VALO.BUE
+2020-04-19 16:49:58  :: @Instructions Processor Invertir Online:Sending message SECURITY_LIST_REQUEST not implemented

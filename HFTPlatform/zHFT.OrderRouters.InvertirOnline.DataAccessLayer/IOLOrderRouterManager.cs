@@ -65,8 +65,8 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
                 parameters.Add(_SYMBOL_FIELD, order.simbolo);
                 //parameters.Add(_AMMOUNT_FIELD, (order.cantidad * order.precio).ToString("00.##"));
                 parameters.Add(_QTY_FIELD, order.cantidad.ToString());
-                parameters.Add(_TIF_FIELD, order.validez.ToString());
-                //parameters.Add(_TIF_FIELD, "2020-04-02T20:16:55.110Z");
+                //parameters.Add(_TIF_FIELD, order.validez.ToString());
+                parameters.Add(_TIF_FIELD, "2020-04-06T20:16:55.110Z");
                 parameters.Add(_SETTL_TYPE_FIELD, order.plazo);
                 //parameters.Add(_ORD_TYPE_FIELD, order.modalidad);
                 if (order.precio.HasValue)
