@@ -171,6 +171,20 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             ActiveBlocks.Remove(firstDeltaCounter);
         }
 
+        public void ResetCounters()
+        {
+            CountTradeOnAsk = 0;
+            SizeTradeOnAsk = 0;
+            CountTradeOnBid = 0;
+            SizeTradeOnBid = 0;
+            LastTradeProcessed = null;
+            LastBidPrice = null;
+            LastBidSize = null;
+            LastAskPrice = null;
+            LastAskSize = null;
+            ActiveBlocks.Clear();
+        }
+
         public void PersistCounters()
         {
 

@@ -163,7 +163,7 @@ namespace zHFT.OrderRouters.Router
                 MarketData updMarketData = MarketDataConverter.GetMarketData(wrapper, Config);
 
                 foreach (Position pos in PositionsDict.Values.Where(x =>   x.Security.Symbol == updMarketData.Security.Symbol 
-                                                                        && x.PositionActive() ))
+                                                                        && x.PositionRouting() ))
                 {
                     if (!PendingPartialOrderPositionsDict.ContainsKey(pos.PosId))
                     {

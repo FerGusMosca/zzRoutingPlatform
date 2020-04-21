@@ -64,6 +64,10 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public int BlockSizeInMinutes { get; set; }
 
+        public string MarketStartTime { get; set; }
+
+        public string MarketEndTime { get; set; }
+
         #endregion
 
         #region Public Methods

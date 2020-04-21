@@ -20,6 +20,9 @@
   <Exchange>BUE</Exchange>
   <SecurityTypes>TBOND</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
+  <MarketStartTime>11:00 AM</MarketStartTime>
+  <MarketEndTime>05:00 PM</MarketEndTime>
+
   <!--<Currency>USD</Currency>
   <Exchange>SMART</Exchange>-->
 

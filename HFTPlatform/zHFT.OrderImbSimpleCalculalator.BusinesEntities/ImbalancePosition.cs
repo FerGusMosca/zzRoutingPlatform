@@ -288,14 +288,14 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             return (TradeDirection == ImbalancePosition._LONG
                    && secImb.ImbalanceCounter.AskSizeImbalance < PositionOpeningImbalanceThreshold
-                   && (OpeningPosition.PosStatus == PositionStatus.New || OpeningPosition.PosStatus == PositionStatus.PendingNew));
+                   && OpeningPosition.PositionRouting());
         }
 
         public bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT
                    && secImb.ImbalanceCounter.BidSizeImbalance < PositionOpeningImbalanceThreshold
-                    && (OpeningPosition.PosStatus == PositionStatus.New || OpeningPosition.PosStatus == PositionStatus.PendingNew));
+                    && OpeningPosition.PositionRouting());
         }
 
         public bool EvalAbortingClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
@@ -303,7 +303,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return (TradeDirection == ImbalancePosition._LONG
                    && ClosingPosition!=null
                    && secImb.ImbalanceCounter.AskSizeImbalance > positionOpeningImbalanceMaxThreshold
-                   && ClosingPosition.PosStatus != PositionStatus.Filled);
+                   && ClosingPosition.PositionRouting());
         }
 
         public bool EvalAbortingClosingShortPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
@@ -311,7 +311,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return (TradeDirection == ImbalancePosition._SHORT
                    && ClosingPosition != null
                    && secImb.ImbalanceCounter.BidSizeImbalance > positionOpeningImbalanceMaxThreshold
-                   && ClosingPosition.PosStatus != PositionStatus.Filled);
+                   && ClosingPosition.PositionRouting());
         }
 
 
