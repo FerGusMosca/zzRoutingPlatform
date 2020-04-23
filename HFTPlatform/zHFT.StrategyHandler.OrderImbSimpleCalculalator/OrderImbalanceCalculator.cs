@@ -171,6 +171,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     foreach (SecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
                     {
                         secImb.ImbalanceCounter.ResetCounters();
+                        LastCounterResetTime = DateTime.Now;
                     }
                 
                 }
@@ -413,6 +414,21 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         
         }
 
+        private void PendilCancelTimeoutThread(object symbol)
+        {
+            try
+            {
+                Thread.Sleep(60 * 1000);
+                if(PendingCancels.ContainsKey(symbol.ToString()))
+                    PendingCancels.Remove(symbol.ToString());
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("{0} Critical Error removing Pending Cancel for Symbol {1}={2}",
+                       "PendilCancelTimeoutThread", symbol.ToString(), ex.Message),Constants.MessageType.Error);
+            }
+        }
+
         private CMState CancelRoutingPos(Position rPos, ImbalancePosition imbPos)
         {
             if (!PendingCancels.ContainsKey(rPos.Symbol))
@@ -421,6 +437,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 {
                     //We have to cancel the position before closing it.
                     PendingCancels.Add(rPos.Symbol, imbPos);
+                    new Thread(PendilCancelTimeoutThread).Start(rPos.Symbol);
                 }
                 CancelPositionWrapper cancelWrapper = new CancelPositionWrapper(rPos, Config);
                 return OrderRouter.ProcessMessage(cancelWrapper);
