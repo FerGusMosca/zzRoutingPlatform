@@ -19,4 +19,3 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler.Common\obj\Debug\zHFT.SingletonModulesHandler.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler.Common\obj\Debug\zHFT.SingletonModulesHandler.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler.Common\obj\Debug\zHFT.SingletonModulesHandler.Common.csprojResolveAssemblyReference.cache

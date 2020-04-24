@@ -15,6 +15,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public SecurityImbalance()
         {
             ImbalanceCounter = new ImbalanceCounter();
+
+            Closing = false;
         }
 
         #endregion
@@ -26,6 +28,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public DateTime DateTime { get; set; }
 
         public ImbalanceCounter ImbalanceCounter { get; set; }
+
+        public bool Closing { get; set; }
 
         #endregion
 

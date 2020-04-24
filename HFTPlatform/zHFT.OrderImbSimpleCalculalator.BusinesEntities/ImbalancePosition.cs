@@ -246,6 +246,9 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public bool EvalStopLossHit(SecurityImbalance secImb)
         {
+            if (secImb.Closing)
+                return false;
+
             if (IsFirstLeg())
             {
                 //TODO: Eval que pasa si estoy cerrando una posición parcialmente abierta
@@ -270,7 +273,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public bool EvalClosingShortPosition(SecurityImbalance secImb,decimal positionOpeningImbalanceMaxThreshold)
         {
-            return (TradeDirection == ImbalancePosition._SHORT
+            return (TradeDirection == ImbalancePosition._SHORT && !secImb.Closing
                    && secImb.ImbalanceCounter.BidSizeImbalance < positionOpeningImbalanceMaxThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
@@ -279,7 +282,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public bool EvalClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
         {
-            return (TradeDirection == ImbalancePosition._LONG
+            return (TradeDirection == ImbalancePosition._LONG && !secImb.Closing
                    && secImb.ImbalanceCounter.AskSizeImbalance < positionOpeningImbalanceMaxThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }

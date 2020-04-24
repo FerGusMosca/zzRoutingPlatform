@@ -171,8 +171,9 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     foreach (SecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
                     {
                         secImb.ImbalanceCounter.ResetCounters();
-                        LastCounterResetTime = DateTime.Now;
+                        
                     }
+                    LastCounterResetTime = DateTime.Now;
                 
                 }
 
@@ -455,7 +456,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     LoadCloseFuturePos(openPos, secImb, imbPos);
                 else
                     LoadCloseRegularPos(openPos, secImb, imbPos);
-
+                secImb.Closing = true;
                 PositionWrapper posWrapper = new PositionWrapper(imbPos.ClosingPosition, Config);
                 return OrderRouter.ProcessMessage(posWrapper);
             }
@@ -597,6 +598,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 else if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
                 {
                     EvalClosingPosition(secImb);
+                    EvalClosingPositionOnStopLossHit(secImb);
                     EvalAbortingOpeningPositions(secImb);
                     EvalAbortingClosingPositions(secImb);
                 }
@@ -617,7 +619,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     secImb.Security.MarketData = md;
                     secImb.ProcessCounters();
                     EvalOpeningClosingPositions(secImb);
-                    EvalClosingPositionOnStopLossHit(secImb);
+                    
                     UpdateLastPrice(secImb, md);
                    
                 }
@@ -686,7 +688,10 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     SecurityImbalanceManager.PersistSecurityImbalanceTrade(imbPos);//first leg and second leg
 
                     if (!imbPos.IsFirstLeg())
+                    {
+                        SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].Closing = false;
                         ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
+                    }
                 }
             }
             else
@@ -715,7 +720,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                                     ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
                                     //It was not executed. We can remove the ImbalancePosition
                             }
-                            
+
+                            SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].Closing = false;
                             //Now we can finally close the position
                             PendingCancels.Remove(report.Order.Symbol);
                         }
