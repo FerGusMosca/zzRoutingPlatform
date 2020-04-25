@@ -174,6 +174,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                         
                     }
                     LastCounterResetTime = DateTime.Now;
+                    StartTime = DateTime.Now;
                 
                 }
 
