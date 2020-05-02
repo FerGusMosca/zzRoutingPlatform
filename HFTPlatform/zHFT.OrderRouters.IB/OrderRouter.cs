@@ -134,7 +134,8 @@ namespace zHFT.OrderRouters.IB
             Order order = GetNewOrder(wrapper);
 
             ClientSocket.placeOrder(order.OrderId, contract, order);
-            DoLog(string.Format("Routing Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
+            DoLog(string.Format("Routing Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", order.OrderId, contract.Symbol, 
+                                order.TotalQuantity, order.LmtPrice, order.Action), Main.Common.Util.Constants.MessageType.Information);
             if (wrapper.GetField(OrderFields.ClOrdID) == null)
                 throw new Exception("Could not find ClOrdId for new order");
 
@@ -183,14 +184,17 @@ namespace zHFT.OrderRouters.IB
                 {
                     DoLog(string.Format("Updating Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
                     ClientSocket.placeOrder(order.OrderId, contract, order);
+                    OrderIdsMapper.Add(clOrderId, orderId);
                 }
                 else
                 {
-                    DoLog(string.Format("Cancelling Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}}", order.OrderId, contract.Symbol,
+                                order.TotalQuantity, order.LmtPrice, order.Action), Main.Common.Util.Constants.MessageType.Information);
+                    
                     ClientSocket.cancelOrder(order.OrderId);
                 }
                 
-                OrderIdsMapper.Add(clOrderId, orderId);
+                
             }
         
         }
@@ -298,7 +302,7 @@ namespace zHFT.OrderRouters.IB
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                 {
-                    DoLog(string.Format("Canceling order with IB  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("Cancelling order with IB  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
                     UpdateOrder(wrapper, true);
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)

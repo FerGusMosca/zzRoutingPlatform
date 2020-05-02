@@ -421,21 +421,21 @@ namespace zHFT.MarketClient.IB.Common
 
         public void tickPrice(int tickerId, int field, double price, int canAutoExecute)
         {
-            DoLog(string.Format("tickPrice: tickerId={0} field={1} price={2} canAutoExecute={3}",
-                                tickerId,
-                                TickType.getField(field),
-                                price,
-                                canAutoExecute), Main.Common.Util.Constants.MessageType.Information);
+            //DoLog(string.Format("tickPrice: tickerId={0} field={1} price={2} canAutoExecute={3}",
+            //                    tickerId,
+            //                    TickType.getField(field),
+            //                    price,
+            //                    canAutoExecute), Main.Common.Util.Constants.MessageType.Information);
             ProcessField("tickPrice", tickerId, field, price);
         }
 
         public void tickSize(int tickerId, int field, int size)
         {
             
-            DoLog(string.Format("tickSize: tickerId={0} field={1} size={2} ",
-                                 tickerId,
-                                 TickType.getField(field),
-                                 size), Main.Common.Util.Constants.MessageType.Information);
+            //DoLog(string.Format("tickSize: tickerId={0} field={1} size={2} ",
+            //                     tickerId,
+            //                     TickType.getField(field),
+            //                     size), Main.Common.Util.Constants.MessageType.Information);
             ProcessField("tickSize", tickerId, field, size);
             
         }
@@ -448,10 +448,10 @@ namespace zHFT.MarketClient.IB.Common
 
         public void tickString(int tickerId, int field, string value)
         {
-            DoLog(string.Format("tickString: tickerId={0} field={1} value={2} ",
-                                tickerId,
-                                TickType.getField(field),
-                                value), Main.Common.Util.Constants.MessageType.Information);
+            //DoLog(string.Format("tickString: tickerId={0} field={1} value={2} ",
+            //                    tickerId,
+            //                    TickType.getField(field),
+            //                    value), Main.Common.Util.Constants.MessageType.Information);
             ProcessField("tickGeneric", tickerId, field, value);
         }
 

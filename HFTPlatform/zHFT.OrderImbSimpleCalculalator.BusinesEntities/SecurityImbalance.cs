@@ -45,7 +45,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
             get {
 
-                return string.Format("{0} - Imbalance Bid:{1} Imbalance Ask {2}", Security.Symbol, ImbalanceCounter.BidSizeImbalance.ToString("0.##"), ImbalanceCounter.AskSizeImbalance.ToString("0.##"));
+                return string.Format("{0} - Imbalance Bid:{1} Imbalance Ask: {2}", Security.Symbol, ImbalanceCounter.BidSizeImbalance.ToString("0.##"), ImbalanceCounter.AskSizeImbalance.ToString("0.##"));
             }
         
         }

@@ -512,13 +512,15 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 if(imbPos.EvalAbortingNewLongPosition(secImb,Configuration.PositionOpeningImbalanceThreshold))
                 {
                     CancelRoutingPos(imbPos.OpeningPosition, imbPos);
-                    DoLog(string.Format("{0} Aborting opening position to market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                    DoLog(string.Format("{0} Aborting opening position to market. Symbol {1} Qty={2} Imbalance={3}", imbPos.TradeDirection, 
+                         imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,secImb.ImbalanceSummary), Constants.MessageType.Information);
                 }
 
                 if(imbPos.EvalAbortingNewShortPosition(secImb,Configuration.PositionOpeningImbalanceThreshold))
                 {
                     CancelRoutingPos(imbPos.OpeningPosition, imbPos);
-                    DoLog(string.Format("{0} Aborting opening position to market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                    DoLog(string.Format("{0} Aborting opening position to market. Symbol {1} Qty={2} Imbalance={3}", imbPos.TradeDirection, 
+                                        imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,secImb.ImbalanceSummary), Constants.MessageType.Information);
                 }
             }
         }
@@ -532,13 +534,15 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 if(imbPos.EvalAbortingClosingLongPosition(secImb,Configuration.PositionOpeningImbalanceMaxThreshold))
                 {
                     CancelRoutingPos(imbPos.ClosingPosition, imbPos);
-                    DoLog(string.Format("{0} Aborting closing position. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.ClosingPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                    DoLog(string.Format("{0} Aborting closing position. Symbol {1} Qty={2} Imbalance={3}", imbPos.TradeDirection,
+                                        imbPos.ClosingPosition.Security.Symbol, imbPos.Qty,secImb.ImbalanceSummary), Constants.MessageType.Information);
                 }
 
                 if (imbPos.EvalAbortingClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
                 {
                     CancelRoutingPos(imbPos.ClosingPosition, imbPos);
-                    DoLog(string.Format("{0} Aborting closing position. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.ClosingPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                    DoLog(string.Format("{0} Aborting closing position. Symbol {1} Qty={2} Imbalance={3}", imbPos.TradeDirection, 
+                                        imbPos.ClosingPosition.Security.Symbol, imbPos.Qty,secImb.ImbalanceSummary), Constants.MessageType.Information);
                 }
             }
         }
@@ -551,7 +555,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 PositionWrapper posWrapper = new PositionWrapper(imbPos.OpeningPosition, Config);
                 ImbalancePositions.Add(imbPos.OpeningPosition.Security.Symbol, imbPos);
                 CMState state = OrderRouter.ProcessMessage(posWrapper);
-                DoLog(string.Format("{0} Position Opened to market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                DoLog(string.Format("{0} Position Opened to market. Symbol {1} Qty={2} Imbalance={3}", imbPos.TradeDirection,
+                    imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, secImb.ImbalanceSummary), Constants.MessageType.Information);
 
 
 
@@ -574,12 +579,12 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 RunClose(imbPos.OpeningPosition, secImb, imbPos);
-                DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2} Imabalance={3}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, secImb.ImbalanceSummary), Constants.MessageType.Information);
             }
             else if (imbPos.EvalClosingLongPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 RunClose(imbPos.OpeningPosition, secImb, imbPos);
-                DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty), Constants.MessageType.Information);
+                DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}  Imabalance={3}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, secImb.ImbalanceSummary), Constants.MessageType.Information);
 
             }
         }
@@ -604,6 +609,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     EvalAbortingClosingPositions(secImb);
                 }
             }
+            else
+                DoLog(string.Format("Waiting for min recovery data to be over. Elapsed {0} minutes",elapsed.TotalMinutes),Constants.MessageType.Information);
         }
 
         private CMState ProcessMarketData(Wrapper wrapper)
@@ -616,7 +623,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 {
                     
                     SecurityImbalance secImb = SecurityImbalancesToMonitor[md.Security.Symbol];
-                    DoLog(string.Format("Processing MD for imbalance summary: {0}",secImb.ImbalanceSummary),Constants.MessageType.Information);
+                    //DoLog(string.Format("Processing MD for imbalance summary: {0}",secImb.ImbalanceSummary),Constants.MessageType.Information);
                     secImb.Security.MarketData = md;
                     secImb.ProcessCounters();
                     EvalOpeningClosingPositions(secImb);
@@ -703,23 +710,35 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     {
                         //We canceled a position that has to be closed!
                         ImbalancePosition pendImbPos = PendingCancels[report.Order.Symbol];
+                        DoLog(string.Format("Recv ER for Pending Cancel position for symbol{0}", report.Order.Symbol), Main.Common.Util.Constants.MessageType.Information);
 
                         if (report.ExecType == ExecType.Canceled)
                         {
 
                             if (pendImbPos.ClosingPosition != null)//I cancelled a Closing Position
                             {
+
                                 //This is what is net open from the position
                                 pendImbPos.OpeningPosition.CumQty -= pendImbPos.ClosingPosition.CumQty;
                                 pendImbPos.ClosingPosition = null;
+                                DoLog(string.Format("ER Cancelled for Pending Cancel for symbol {0}: We were closing the position position. New Live Qty={1}", report.Order.Symbol, pendImbPos.OpeningPosition.CumQty), Main.Common.Util.Constants.MessageType.Information);
+
                             }
                             else 
                             {
                                 if (pendImbPos.OpeningPosition.CumQty > 0) //I cancelled an opening position --> I will ahve Qty=CumQty --> It will be processed in the next MARKET_DATA event
+                                {
                                     pendImbPos.OpeningPosition.PosStatus = PositionStatus.Filled;
+                                    DoLog(string.Format("ER Cancelled for Pending Cancel for symbol {0}: We were opening the position position. Live Qty={1}", report.Order.Symbol, pendImbPos.OpeningPosition.CumQty), Main.Common.Util.Constants.MessageType.Information);
+
+                                }
                                 else
+                                {
                                     ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
+                                    DoLog(string.Format("ER Cancelled for Pending Cancel for symbol {0}: We were opening the position position. Live Qty<flat>=0", report.Order.Symbol), Main.Common.Util.Constants.MessageType.Information);
+
                                     //It was not executed. We can remove the ImbalancePosition
+                                }
                             }
 
                             SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].Closing = false;
@@ -730,6 +749,10 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                         {
                             //as the positions stays as Partially Filled we will try again, on and on
                             PendingCancels.Remove(report.Order.Symbol);
+                            DoLog(string.Format("Problems with cancellation for Pending Cancel for symbol {0}: ER Status={1} ER ExecType={1} ER Text={3}", 
+                                                report.Order.Symbol,report.OrdStatus,report.ExecType,report.Text), 
+                                                Main.Common.Util.Constants.MessageType.Information);
+
                         }
                     }
                 }
@@ -737,10 +760,16 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 {
                     if (report.OrdStatus == OrdStatus.Rejected)
                     {
+                        DoLog(string.Format("Rejected cancellation for Pending Cancel for symbol {0}: ER Status={1} ER ExecType={1} ER Text={3}",
+                                                report.Order.Symbol, report.OrdStatus, report.ExecType, report.Text),
+                                                Main.Common.Util.Constants.MessageType.Information);
                         ProcessOrderRejection(imbPos, report);
                     }
                     else
                     {
+                        DoLog(string.Format("Recv ER for Pending Cancel for symbol {0}: ER Status={1} ER ExecType={1} ER Text={3}",
+                                                report.Order.Symbol, report.OrdStatus, report.ExecType, report.Text),
+                                                Main.Common.Util.Constants.MessageType.Information);
                         EvalRemoval(imbPos, report);
                     }
                 }
@@ -750,7 +779,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         protected void LogExecutionReport(ImbalancePosition imbPos, ExecutionReport report)
         {
 
-            DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx-{5} First Leg={6}",
+            DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
                           imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, imbPos.CurrentPos().CumQty, imbPos.CurrentPos().LeavesQty,
                           imbPos.CurrentPos().AvgPx, imbPos.IsFirstLeg(), report.ExecType), Constants.MessageType.Information);
 
@@ -835,7 +864,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             {
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
-                    DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
+                    //DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
 
                     return ProcessMarketData(wrapper);
                 }

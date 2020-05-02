@@ -384,6 +384,10 @@ namespace zHFT.OrderRouters.Router
 
                         if (order != null)
                         {
+                            DoLog(string.Format("@GenericOrderRouter: Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}}", 
+                                                order.OrderId, order.Symbol,order.OrderQty, order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>", 
+                                                order.Side), Main.Common.Util.Constants.MessageType.Information);
+
                             CancelOrderWrapper cancelOrderWrapper = new CancelOrderWrapper(order, Config);
 
                             OrderProxy.ProcessMessage(cancelOrderWrapper);
@@ -504,7 +508,7 @@ namespace zHFT.OrderRouters.Router
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_POSITION)
                 {
-                    DoLog(string.Format("Canceling order for symbol {0}",wrapper.GetField(PositionFields.Symbol).ToString()), Constants.MessageType.Information);
+                    DoLog(string.Format("Cancelling order for symbol {0}",wrapper.GetField(PositionFields.Symbol).ToString()), Constants.MessageType.Information);
                     CancelOrder(wrapper);
                     return CMState.BuildSuccess();
                 }
