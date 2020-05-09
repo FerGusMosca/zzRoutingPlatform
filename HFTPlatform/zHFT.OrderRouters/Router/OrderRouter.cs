@@ -598,7 +598,7 @@ namespace zHFT.OrderRouters.Router
             {
                 if (wrapper != null)
                 {
-                    DoLog("Incoming message from order routing proxy: " + wrapper.ToString(), Constants.MessageType.Information);
+                    DoLog("@Generic Order Router: Incoming message from order routing proxy: " + wrapper.ToString(), Constants.MessageType.Debug);
 
                     if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                     {

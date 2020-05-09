@@ -177,7 +177,7 @@ namespace zHFT.OrderRouters.IB.Common
                                 errorCode,
                                 errorMsg), Main.Common.Util.Constants.MessageType.Information);
 
-            ProcessOrderError(id, errorCode, errorMsg);
+            //ProcessOrderError(id, errorCode, errorMsg);
         }
 
         public void error(string str)

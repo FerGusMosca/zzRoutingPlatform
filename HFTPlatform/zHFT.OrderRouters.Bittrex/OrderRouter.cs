@@ -105,10 +105,6 @@ namespace zHFT.OrderRouters.Bittrex
                                     DoLog(string.Format("@{0}:Removing Order For Status:{1}", BittrexConfiguration.Name, status.ToString()), Main.Common.Util.Constants.MessageType.Debug);
 
                                 }
-                                else
-                                {
-
-                                }
 
                                 wrappersToPublish.Add(wrapper);
                             }

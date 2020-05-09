@@ -109,7 +109,7 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             else if (xrField == ExecutionReportFields.CumQty)
                 return OpenOrder.Quantity - OpenOrder.QuantityRemaining;
             else if (xrField == ExecutionReportFields.AvgPx)
-                return 0;
+                return OpenOrder.Price;
             else if (xrField == ExecutionReportFields.Commission)
                 return OpenOrder.CommissionPaid;
             else if (xrField == ExecutionReportFields.Text)
@@ -169,8 +169,13 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             OrdStatus ordStatus = GetOrdStatusFromBittrexStatus();
             ExecType? execType = GetExecTypeFromBittrexStatus();
 
-            return string.Format("Execution Report for symbol {2}: Order Status={0} - Exec Type={1}",
-                                 ordStatus.ToString(), execType.ToString(), Order.Symbol);
+            decimal cumQty = OpenOrder.Quantity - OpenOrder.QuantityRemaining;
+            decimal avgPx = cumQty > 0 ? OpenOrder.Price / cumQty : 0;
+
+
+            return string.Format("Execution Report for symbol {2}: Order Status={0} - Exec Type={1} CumQty={3} LvsQty={4} AvgPx={5}",
+                                 ordStatus.ToString(), execType.ToString(), Order.Symbol, cumQty,
+                                 OpenOrder.QuantityRemaining, avgPx.ToString("0.########"));
         }
 
         #endregion

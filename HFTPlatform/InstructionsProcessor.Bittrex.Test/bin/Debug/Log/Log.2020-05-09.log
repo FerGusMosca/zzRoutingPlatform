@@ -1,0 +1,9 @@
+2020-05-09 12:29:15  :: 9/5/2020 12:29:15MainApp.LoadConfig
+2020-05-09 12:29:15  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2020-05-09 12:29:15  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\config.xml
+2020-05-09 12:29:15  :: Fin GetConfiguracion
+2020-05-09 12:29:16  :: Initializing Log
+2020-05-09 12:29:16  :: Initializing Incoming Module
+2020-05-09 12:29:17  :: Incoming Module successfully initialized
+2020-05-09 12:29:17  :: Initializing Outgoing Module
+2020-05-09 12:29:18  :: Outgoing Module successfully initialized

@@ -132,7 +132,11 @@ namespace zHFT.OrderRouters.IB.Common.Wrappers
         {
             if (OrderStatusDTO != null)
             {
-                return string.Format("Symbol {0} ExecType {1} OrdStatus {2}", Contract.Symbol, GetExecTypeFromIBStatus(), GetOrdStatusFromIBStatus());
+
+
+                return string.Format("Symbol {0} ExecType {1} OrdStatus {2} CumQty={3} LvsQty={4} AvgPx={5}",
+                                    Contract.Symbol, GetExecTypeFromIBStatus(), GetOrdStatusFromIBStatus(),
+                                    OrderStatusDTO.Filled, OrderStatusDTO.Remaining, OrderStatusDTO.AvgFillPrice.ToString("0.##"));
             }
             else
                 return "";

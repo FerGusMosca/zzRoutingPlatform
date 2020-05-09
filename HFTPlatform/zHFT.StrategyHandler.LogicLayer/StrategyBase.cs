@@ -276,7 +276,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                             if (report.ExecType == ExecType.Trade && report.OrdStatus == OrdStatus.PartiallyFilled)
                             {
 
-                                DoLog(string.Format("Received partially filled for symbol {0}",summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("Received partially filled for symbol {0}",summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
                                 summary.CumQty = report.CumQty;
                                 summary.LeavesQty = report.LeavesQty;
                                 summary.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
@@ -285,12 +285,12 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 UpdateExecutionSummaryData(summary, report);
                                 EvalExecutionSummary(summary);
-                                DoLog(string.Format("Partially filled for symbol {0} processed", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("Partially filled for symbol {0} processed", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
 
                             }//Filled
                             else if (report.ExecType == ExecType.Trade && report.OrdStatus == OrdStatus.Filled)
                             {
-                                DoLog(string.Format("Received filled for symbol {0}", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("Received filled for symbol {0}", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
                                 summary.CumQty = report.CumQty;
                                 summary.LeavesQty = report.LeavesQty;
                                 summary.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
@@ -301,7 +301,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.Position.PositionCanceledOrRejected = false;
                                 UpdateExecutionSummaryData(summary, report);
                                 EvalExecutionSummary(summary);
-                                DoLog(string.Format("Filled for symbol {0} processed", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("Filled for symbol {0} processed", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
                                
                             }
                             else if (report.ExecType == ExecType.DoneForDay || report.ExecType == ExecType.Stopped
@@ -309,7 +309,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                      || report.ExecType == ExecType.Expired || report.ExecType == ExecType.Canceled)
                             {
                                 //Position Canceled
-                                DoLog(string.Format("Received {0} for symbol {1}. Reason: {2}", report.ExecType.ToString(), summary.Position.Symbol, report.GetRejectReason()), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("Received {0} for symbol {1}. Reason: {2}", report.ExecType.ToString(), summary.Position.Symbol, report.GetRejectReason()), Main.Common.Util.Constants.MessageType.Debug);
                                 summary.Position.PositionCanceledOrRejected = true;
                                 summary.Position.PositionCleared = false;
                                 summary.Position.LeavesQty = report.LeavesQty;
@@ -317,11 +317,11 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.Text = report.Text;
                                 UpdateExecutionSummaryData(summary, report);
                                 EvalExecutionSummary(summary);
-                                DoLog(string.Format("{0} for symbol {1} processed", report.ExecType.ToString(), summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("{0} for symbol {1} processed", report.ExecType.ToString(), summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
                             }
                             else
                             {
-                                DoLog(string.Format("Received {0} for symbol {1}", report.ExecType.ToString(), summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("Received {0} for symbol {1}", report.ExecType.ToString(), summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
                                 summary.CumQty = report.CumQty;
                                 summary.LeavesQty = report.LeavesQty;
                                 summary.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
@@ -330,14 +330,14 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 summary.Position.ExecutionReports.Add(report);
                                 EvalExecutionSummary(summary);
-                                DoLog(string.Format("{0} for symbol {1} processed", report.ExecType.ToString(), summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                                DoLog(string.Format("{0} for symbol {1} processed", report.ExecType.ToString(), summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
                             }
                         }
                     }
                     else if(report.Order!=null && report.Order.Symbol!=null)
-                        DoLog(string.Format("Received execution report for no longer processed symbol {0}",report.Order.Symbol) , Main.Common.Util.Constants.MessageType.Information);
-                    else 
-                        DoLog(string.Format("Received execution with no order"), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("Received execution report for no longer processed symbol {0}", report.Order.Symbol), Main.Common.Util.Constants.MessageType.Debug);
+                    else
+                        DoLog(string.Format("Received execution with no order"), Main.Common.Util.Constants.MessageType.Debug);
                 }
                 catch (Exception ex)
                 {
@@ -354,7 +354,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             try
             {
                 if (wrapper != null)
-                    DoLog("Incoming message from order routing: " + wrapper.ToString(), Constants.MessageType.Information);
+                    DoLog("@IBR: Incoming message from order routing: " + wrapper.ToString(), Constants.MessageType.Information);
 
                 if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                 {
