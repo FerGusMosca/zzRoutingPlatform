@@ -279,7 +279,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             Positions.Remove(instr.Symbol);//Con esto me aseguro que se pueda abrir la próxima posición del step n+1
         }
 
-        protected override void ProcessUnwindPosition(Instruction instr)
+        protected override void ProcessUnwindPosition(Instruction instr, AccountPosition portfPos)
         {
 
             DoLog(string.Format("{0}: Unwinding position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);

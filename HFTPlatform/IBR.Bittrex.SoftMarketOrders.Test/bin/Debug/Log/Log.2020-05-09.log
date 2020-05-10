@@ -1,0 +1,80 @@
+2020-05-09 20:40:14  :: 9/5/2020 20:40:14MainApp.LoadConfig
+2020-05-09 20:40:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:40:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:40:15  :: Fin GetConfiguracion
+2020-05-09 20:40:19  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:40:19  :: Initializing Log
+2020-05-09 20:40:19  :: Initializing Incoming Module
+2020-05-09 20:40:19  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:40:19  :: Initializing Outgoing Module
+2020-05-09 20:40:20  :: Error initializing Outgoing Module
+2020-05-09 20:44:05  :: 9/5/2020 20:44:05MainApp.LoadConfig
+2020-05-09 20:44:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:44:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:44:05  :: Fin GetConfiguracion
+2020-05-09 20:44:05  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:44:05  :: Initializing Log
+2020-05-09 20:44:05  :: Initializing Incoming Module
+2020-05-09 20:44:05  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:44:05  :: Initializing Outgoing Module
+2020-05-09 20:44:06  :: Error initializing Outgoing Module
+2020-05-09 20:45:05  :: 9/5/2020 20:45:05MainApp.LoadConfig
+2020-05-09 20:45:05  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:45:05  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:45:05  :: Fin GetConfiguracion
+2020-05-09 20:45:05  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:45:05  :: Initializing Log
+2020-05-09 20:45:05  :: Initializing Incoming Module
+2020-05-09 20:45:05  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:45:05  :: Initializing Outgoing Module
+2020-05-09 20:45:05  :: Error initializing Outgoing Module
+2020-05-09 20:46:20  :: 9/5/2020 20:46:20MainApp.LoadConfig
+2020-05-09 20:46:20  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:46:20  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:46:20  :: Fin GetConfiguracion
+2020-05-09 20:46:20  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:46:20  :: Initializing Log
+2020-05-09 20:46:20  :: Initializing Incoming Module
+2020-05-09 20:46:20  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:46:20  :: Initializing Outgoing Module
+2020-05-09 20:46:22  :: Error initializing Outgoing Module
+2020-05-09 20:49:54  :: 9/5/2020 20:49:54MainApp.LoadConfig
+2020-05-09 20:49:54  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:49:54  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:49:55  :: Fin GetConfiguracion
+2020-05-09 20:49:55  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:49:55  :: Initializing Log
+2020-05-09 20:49:55  :: Initializing Incoming Module
+2020-05-09 20:49:55  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:49:55  :: Initializing Outgoing Module
+2020-05-09 20:50:00  :: Error initializing Outgoing Module
+2020-05-09 20:51:35  :: 9/5/2020 20:51:35MainApp.LoadConfig
+2020-05-09 20:51:35  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:51:35  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:51:35  :: Fin GetConfiguracion
+2020-05-09 20:51:35  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:51:35  :: Initializing Log
+2020-05-09 20:51:35  :: Initializing Incoming Module
+2020-05-09 20:51:35  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:51:35  :: Initializing Outgoing Module
+2020-05-09 20:51:37  :: Outgoing Module successfully initialized
+2020-05-09 20:53:12  :: 9/5/2020 20:53:12MainApp.LoadConfig
+2020-05-09 20:53:12  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:53:12  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:53:12  :: Fin GetConfiguracion
+2020-05-09 20:53:13  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:53:13  :: Initializing Log
+2020-05-09 20:53:13  :: Initializing Incoming Module
+2020-05-09 20:53:13  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:53:13  :: Initializing Outgoing Module
+2020-05-09 20:53:14  :: Outgoing Module successfully initialized
+2020-05-09 20:57:08  :: 9/5/2020 20:57:08MainApp.LoadConfig
+2020-05-09 20:57:08  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:57:08  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-09 20:57:08  :: Fin GetConfiguracion
+2020-05-09 20:57:08  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-09 20:57:08  :: Initializing Log
+2020-05-09 20:57:08  :: Initializing Incoming Module
+2020-05-09 20:57:08  :: Incoming module could not be initialized because it was not instantiated
+2020-05-09 20:57:08  :: Initializing Outgoing Module
+2020-05-09 20:57:18  :: Outgoing Module successfully initialized

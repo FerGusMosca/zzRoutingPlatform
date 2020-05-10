@@ -204,9 +204,10 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                     }
                     else
                     {
+                        AccountPosition prevPos = positions.Where(x => x.Security.Symbol == instrSymbol).FirstOrDefault();
                         relInstr.IsOnlinePosition = positions.Any(x => x.Security.Symbol == instrSymbol);
                         relInstr.IsFromUnwindAll = unwindAll;
-                        ProcessUnwindPosition(relInstr);
+                        ProcessUnwindPosition(relInstr, prevPos);
                     }
                 }
                 else
@@ -248,12 +249,12 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                             && onlinePositions.Any(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol)//La posición esta online
                             && !PositionInstructions.Keys.Any(x => x == instr.RelatedInstruction.AccountPosition.Security.Symbol))//no esta siendo procesada por ningún otra instrucción
                         {
-                            AccountPosition prevPos = onlinePositions.Where(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol).FirstOrDefault();
+                            AccountPosition portfPos = onlinePositions.Where(x => x.Security.Symbol == instr.RelatedInstruction.AccountPosition.Security.Symbol).FirstOrDefault();
                             instr.Executed = true;
                             instr.Text = "No ejecutada por existencia de otras sincronizaciones";
-                            instr.RelatedInstruction.IsOnlinePosition = prevPos.PositionStatus.IsOnline();
+                            instr.RelatedInstruction.IsOnlinePosition = portfPos.PositionStatus.IsOnline();
                             instr.RelatedInstruction.AccountPosition.PositionStatus = zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.PositionStatus.GetUnwindSentToMarket();
-                            ProcessUnwindPosition(instr.RelatedInstruction);
+                            ProcessUnwindPosition(instr.RelatedInstruction, portfPos);
                             InstructionManager.Persist(instr);
                             InstructionManager.Persist(instr.RelatedInstruction);
 
@@ -678,10 +679,16 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
-        protected virtual void ProcessUnwindPosition(Instruction instr)
+        protected virtual void ProcessUnwindPosition(Instruction instr, AccountPosition portfPos)
         {
 
             DoLog(string.Format("{0}: Unwinding position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
+
+            zHFT.Main.Common.Enums.Side unwdSide = zHFT.Main.Common.Enums.Side.Sell;
+            if (portfPos != null)
+                unwdSide = portfPos.Shares > 0 ? zHFT.Main.Common.Enums.Side.Sell : zHFT.Main.Common.Enums.Side.Buy;
+            else
+                DoLog(string.Format("Critical ERROR: Could not unwind a position for symbol {0} when there is not that position in the exchange!", instr.Symbol), Constants.MessageType.Error);
 
             Position pos = new Position()
             {
@@ -692,7 +699,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                                             Currency = instr.Account.Currency,
                                             SecType = instr.SecurityType
                                         },
-                Side = zHFT.Main.Common.Enums.Side.Sell,
+                Side = unwdSide,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
@@ -701,12 +708,12 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             if (instr.Shares.HasValue)
             {
-                pos.Qty = Convert.ToDouble(instr.Shares);
+                pos.Qty = Convert.ToDouble(Math.Abs(instr.Shares.Value));
                 pos.QuantityType = QuantityType.SHARES;
             }
             else
             {
-                DoLog(string.Format("{0}: Discarding unwind position because it was not specified a number of shares. Symbol = {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
+                DoLog(string.Format("{0}: Discarding unwind position because it was not specified a number of shares. Symbol = {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Error);
                 return;
             }
 

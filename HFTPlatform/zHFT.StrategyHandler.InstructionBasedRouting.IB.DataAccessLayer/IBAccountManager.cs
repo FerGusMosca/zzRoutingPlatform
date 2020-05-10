@@ -24,6 +24,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         private static string _AVAILABLE_FUNDS = "AvailableFunds";
 
+        private static string _PROCESS_SHORTS_KEY = "ProcessShorts";
+
         private static int _MAX_TIMEOUT_SECONDS = 20;
 
         #endregion
@@ -46,6 +48,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
         protected Account AccountToSync { get; set; }
 
         protected List<AccountPosition> Positions { get; set; }
+
+        protected List<ConfigKey> ConfigParameters { get; set; }
 
         #endregion
 
@@ -73,7 +77,12 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
 
         public List<AccountPosition> GetActivePositions()
         {
-            return Positions.Where(x => x.Shares.HasValue && x.Shares.Value > 0).ToList();
+            bool processShorts = false;
+
+            if (ConfigParameters.Any(x => x.Key == _PROCESS_SHORTS_KEY))
+                processShorts = ConfigParameters.Where(x => x.Key == _PROCESS_SHORTS_KEY).FirstOrDefault().Value == "true";
+            
+            return Positions.Where(x => x.Shares.HasValue && (x.Shares.Value > 0 || processShorts)).ToList();
         }
 
         #endregion
@@ -85,7 +94,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             ReqAccountSummary = false;
             ReqAccountPositions = false;
             Logger = OnLogMsg;
-            //We dont need config Parameters for interactive brokers
+            ConfigParameters = pConfigParameters;
 
         }
 

@@ -14,10 +14,22 @@ namespace InstructionsProcessorTest
 {
     class Program
     {
+        #region Private Static Consts
+        
         private static bool ToConsole { get; set; }
+
+        private static string DebugLevel { get; set; }
+
+        #endregion
+
+        #region Public Static Methods
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
+            if (DebugLevel == "INFO" && type == Constants.MessageType.Debug)
+                return;
+
+
             if (ToConsole)
                 Console.WriteLine(msg);
             else if (msg.StartsWith("toConsole->"))
@@ -29,9 +41,12 @@ namespace InstructionsProcessorTest
 
         }
 
+        #endregion
+
         static void Main(string[] args)
         {
             string archivoConfig = Const.ConfigFileDefault;
+            DebugLevel = !string.IsNullOrEmpty(ConfigurationManager.AppSettings["DebugLevel"]) ? ConfigurationManager.AppSettings["DebugLevel"] : "DEBUG";
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             archivoConfig = Directory.GetCurrentDirectory() + "\\" + archivoConfig;
             ToConsole = Convert.ToBoolean(ConfigurationManager.AppSettings["allwaysToConsole"]);

@@ -21,7 +21,7 @@ namespace InstructionsProcessor.Bittrex.Test
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
-            if (DebugLevel == "INFO" & type != Constants.MessageType.Information)
+            if (DebugLevel == "INFO" && type == Constants.MessageType.Debug)
                 return;
 
             if (ToConsole)

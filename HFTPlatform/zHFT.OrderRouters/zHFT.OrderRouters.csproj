@@ -51,6 +51,7 @@
     <Compile Include="Router\MarketOrderRouter.cs" />
     <Compile Include="Router\OrderRouter.cs" />
     <Compile Include="Router\PrimaryOrderRouter.cs" />
+    <Compile Include="Router\SoftDecimalMarketOrderRouter.cs" />
     <Compile Include="Router\SoftMarketOrderRouter.cs" />
   </ItemGroup>
   <ItemGroup>

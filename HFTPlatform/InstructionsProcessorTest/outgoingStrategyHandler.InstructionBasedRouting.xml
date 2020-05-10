@@ -25,6 +25,14 @@
 
   <PositionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.PositionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</PositionManagerAccessLayer>
 
-  <AccountManagerConfig></AccountManagerConfig>
+  <AccountManagerConfig>
+
+    <Config>
+      <Key>ProcessShorts</Key>
+      <Value>true</Value>
+    </Config>
+   
+    
+  </AccountManagerConfig>
   
 </Configuration>

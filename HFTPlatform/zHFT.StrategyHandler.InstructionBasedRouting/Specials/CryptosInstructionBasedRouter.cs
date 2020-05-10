@@ -31,8 +31,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             return true;
         }
 
-     
-        protected override void ProcessUnwindPosition(Instruction instr)
+
+        protected override void ProcessUnwindPosition(Instruction instr, AccountPosition portfPos)
         {
 
             DoLog(string.Format("{0}: Unwinding position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
