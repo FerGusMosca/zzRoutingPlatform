@@ -19,13 +19,13 @@ namespace zHFT.OrderRouters.Router
             string clOrdId = Guid.NewGuid().ToString();
             Order order = new Order()
             {
-
+                Security = pos.Security,
                 ClOrdId = clOrdId,
                 OrigClOrdId = clOrdId,
                 Side = pos.Side,
 
                 OrdType = OrdType.Limit,
-                Price = pos.Side == Side.Buy ? pos.Security.MarketData.BestBidPrice : pos.Security.MarketData.BestAskPrice,
+                Price = pos.Side == Side.Buy ? pos.Security.MarketData.BestAskPrice : pos.Security.MarketData.BestBidPrice,
 
                 DecimalPrecission = DecimalPrecissionConverter.GetDecimalPrecission(pos),
 

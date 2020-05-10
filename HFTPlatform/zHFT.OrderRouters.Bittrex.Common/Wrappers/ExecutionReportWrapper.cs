@@ -105,7 +105,7 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return  OpenOrder.QuantityRemaining ;
+                return OpenOrder.QuantityRemaining;
             else if (xrField == ExecutionReportFields.CumQty)
                 return OpenOrder.Quantity - OpenOrder.QuantityRemaining;
             else if (xrField == ExecutionReportFields.AvgPx)
@@ -117,7 +117,7 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             else if (xrField == ExecutionReportFields.TransactTime)
                 return DateTime.Now;
             else if (xrField == ExecutionReportFields.LastQty)
-                return ExecutionReportFields.NULL;
+                return OpenOrder.Quantity - OpenOrder.QuantityRemaining;
             else if (xrField == ExecutionReportFields.LastPx)
                 return Order.Price;
             else if (xrField == ExecutionReportFields.LastMkt)

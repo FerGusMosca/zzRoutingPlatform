@@ -10,7 +10,7 @@
 
   <OrderRouterConfigFile>.\GenericOrderRouter.xml</OrderRouterConfigFile>
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.0.7\SQLDEV;initial catalog=SeekingBiasCryptos;User Id=zimzum;Password=fmosca67;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
   <AccountNumber>1</AccountNumber>
 
@@ -45,7 +45,7 @@
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>
-      <Value>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=192.168.0.7\SQLDEV;initial catalog=SeekingBiasCryptos;User Id=zimzum;Password=fmosca67;multipleactiveresultsets=True;App=EntityFramework&quot;</Value>
+      <Value>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</Value>
     </Config>
   </AccountManagerConfig>
   

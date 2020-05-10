@@ -685,8 +685,10 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             DoLog(string.Format("{0}: Unwinding position for symbol {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
 
             zHFT.Main.Common.Enums.Side unwdSide = zHFT.Main.Common.Enums.Side.Sell;
-            if (portfPos != null)
+            if (portfPos != null && portfPos.Shares.HasValue)
                 unwdSide = portfPos.Shares > 0 ? zHFT.Main.Common.Enums.Side.Sell : zHFT.Main.Common.Enums.Side.Buy;
+            else if (portfPos != null && portfPos.Ammount.HasValue)
+                unwdSide = portfPos.Ammount > 0 ? zHFT.Main.Common.Enums.Side.Sell : zHFT.Main.Common.Enums.Side.Buy;
             else
                 DoLog(string.Format("Critical ERROR: Could not unwind a position for symbol {0} when there is not that position in the exchange!", instr.Symbol), Constants.MessageType.Error);
 
@@ -710,6 +712,11 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 pos.Qty = Convert.ToDouble(Math.Abs(instr.Shares.Value));
                 pos.QuantityType = QuantityType.SHARES;
+            }
+            else if (instr.Ammount.HasValue)
+            {
+                pos.Qty = Convert.ToDouble(Math.Abs(instr.Ammount.Value));
+                pos.QuantityType = QuantityType.OTHER;
             }
             else
             {

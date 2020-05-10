@@ -78,6 +78,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex\zHFT.InstructionBasedMarketClient.Bittrex.csproj">
+      <Project>{d0e6f84d-fae3-40e4-91c1-c20e2c880a24}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Bittrex</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>

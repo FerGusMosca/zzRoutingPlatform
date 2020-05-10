@@ -206,11 +206,17 @@ namespace zHFT.OrderRouters.Router
                 posForOrder.CumQty = 0; //---> it will be later pdated
 
                 //It's not ok that there is no LastQty --> WE CANCEL THE ORDER AND WE DO THE BEST WE CAN WITH ExecReports
-                CancelOrderWrapper cxlWrapper = new CancelOrderWrapper(posForOrder.GetCurrentOrder(), Config);
-                OrderProxy.ProcessMessage(cxlWrapper);
 
-                DoLog(string.Format("Cancelling order {0} for symbol {1} because of lack of LastQty on traded exec report. CumQty={2}",
-                                    report.Order.ClOrdId, report.Order.Symbol, report.CumQty), Constants.MessageType.Error);
+                if (posForOrder.Orders != null && posForOrder.Orders.Count > 0)
+                {
+                    CancelOrderWrapper cxlWrapper = new CancelOrderWrapper(posForOrder.Orders != null ? posForOrder.Orders[posForOrder.Orders.Count - 1] : null, Config);
+                    OrderProxy.ProcessMessage(cxlWrapper);
+
+                    DoLog(string.Format("Cancelling order {0} for symbol {1} because of lack of LastQty on traded exec report. CumQty={2}",
+                                        report.Order.ClOrdId, report.Order.Symbol, report.CumQty), Constants.MessageType.Error);
+                }
+                else
+                    throw new Exception(string.Format("Critical error! Missing order for position {0}", posForOrder.PosId));
             }
         }
 

@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>zHFTMain</Name>
-  <IncomingConfigPath>.\incomingIOL.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL</IncomingModule>
+  <IncomingConfigPath>.\incomingBittrex.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex</IncomingModule>
+
   <OutgoingModule>zHFT.StrategyHandler.InstructionBasedRouting.InstructionBasedRouter, zHFT.StrategyHandler.InstructionBasedRouting</OutgoingModule>
   <OutgoingConfigPath>.\IBRConfig.xml</OutgoingConfigPath>
   <LogToConsole>true</LogToConsole>
