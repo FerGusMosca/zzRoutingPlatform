@@ -1,0 +1,525 @@
+2020-05-10 18:58:43  :: 5/10/2020 6:58:43 PMMomentumStrategyBase.LoadConfig
+2020-05-10 18:58:43  :: Loading config:.\IBRConfig.xml
+2020-05-10 18:58:43  :: Processing config:.\IBRConfig.xml
+2020-05-10 18:58:44  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 18:58:44  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 18:58:44  :: 5/10/2020 6:58:44 PMOrderRouterBase.LoadConfig
+2020-05-10 18:58:44  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 18:58:44  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 18:58:44  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 18:58:44  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 18:58:44  :: 5/10/2020 6:58:44 PMOrderRouterBase.LoadConfig
+2020-05-10 18:58:44  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 18:58:44  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 18:58:44  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 18:59:02  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:00:13  :: 5/10/2020 7:00:13 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:00:13  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:00:13  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:00:14  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:00:14  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:00:14  :: 5/10/2020 7:00:14 PMOrderRouterBase.LoadConfig
+2020-05-10 19:00:14  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:00:14  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:00:14  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:00:14  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:00:14  :: 5/10/2020 7:00:14 PMOrderRouterBase.LoadConfig
+2020-05-10 19:00:14  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:00:14  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:00:14  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:00:21  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:00:48  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:01:45  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:02:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:02:06  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:02:06  :: Strategy Handler - Instruction Based Router for Bittrex: Discarding unwind position because it was not specified a number of shares. Symbol = DGB
+2020-05-10 19:04:06  :: Canceling all active orders
+2020-05-10 19:04:06  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:04:22  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:04:42  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:04:48  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:11:15  :: 5/10/2020 7:11:15 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:11:15  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:11:15  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:11:15  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:11:15  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:11:16  :: 5/10/2020 7:11:16 PMOrderRouterBase.LoadConfig
+2020-05-10 19:11:16  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:11:16  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:11:16  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:11:16  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:11:16  :: 5/10/2020 7:11:16 PMOrderRouterBase.LoadConfig
+2020-05-10 19:11:16  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:11:16  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:11:16  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:12:21  :: Canceling all active orders
+2020-05-10 19:12:21  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:13:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:13:41  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:13:41  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:15:09  :: Canceling all active orders
+2020-05-10 19:15:09  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:15:09  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-05-10 19:15:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:15:37  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:15:42  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:17:18  :: Canceling all active orders
+2020-05-10 19:17:18  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:17:18  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-05-10 19:17:30  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:17:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:18:31  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:20:17  :: 5/10/2020 7:20:17 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:20:17  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:20:17  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:20:17  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:20:17  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:20:17  :: 5/10/2020 7:20:17 PMOrderRouterBase.LoadConfig
+2020-05-10 19:20:17  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:20:17  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:20:18  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:20:18  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:20:18  :: 5/10/2020 7:20:18 PMOrderRouterBase.LoadConfig
+2020-05-10 19:20:18  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:20:18  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:20:18  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:20:59  :: Canceling all active orders
+2020-05-10 19:20:59  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:21:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:21:32  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:21:32  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:24:21  :: 5/10/2020 7:24:21 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:24:21  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:24:21  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:24:22  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:24:22  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:24:22  :: 5/10/2020 7:24:22 PMOrderRouterBase.LoadConfig
+2020-05-10 19:24:22  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:24:22  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:24:22  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:24:22  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:24:23  :: 5/10/2020 7:24:23 PMOrderRouterBase.LoadConfig
+2020-05-10 19:24:23  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:24:23  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:24:23  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:24:55  :: Canceling all active orders
+2020-05-10 19:24:55  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:25:04  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:25:08  :: Processing Market Data:Symbol=DGB  LastPrice=0.01875 BestBidPrice=0.01828 BestAskPrice=0.01918
+2020-05-10 19:25:29  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:25:29  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:25:57  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:26:09  :: Processing Market Data:Symbol=DGB  LastPrice=0.01875 BestBidPrice=0.01829 BestAskPrice=0.01905
+2020-05-10 19:26:57  :: Creating buy order for symbol DGB.Quantity=335 Price=.02
+2020-05-10 19:26:57  :: @Outgoing Order Routing Bittrex:Error routing order to market:Referencia a objeto no establecida como instancia de un objeto.
+2020-05-10 19:26:57  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 19:26:57  :: Critical error processing execution report! Canceling all orders. Error:Referencia a objeto no establecida como instancia de un objeto.
+2020-05-10 19:27:00  :: Processing Market Data:Symbol=DGB  LastPrice=0.0184 BestBidPrice=0.0183 BestAskPrice=0.01905
+2020-05-10 19:27:02  :: Processing Market Data:Symbol=DGB  LastPrice=0.0184 BestBidPrice=0.0183 BestAskPrice=0.01905
+2020-05-10 19:27:04  :: Processing Market Data:Symbol=DGB  LastPrice=0.0184 BestBidPrice=0.0183 BestAskPrice=0.01905
+2020-05-10 19:27:06  :: Processing Market Data:Symbol=DGB  LastPrice=0.0184 BestBidPrice=0.0183 BestAskPrice=0.01905
+2020-05-10 19:28:19  :: 5/10/2020 7:28:19 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:28:19  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:28:19  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:28:19  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:28:19  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:28:19  :: 5/10/2020 7:28:19 PMOrderRouterBase.LoadConfig
+2020-05-10 19:28:19  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:28:19  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:28:19  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:28:19  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:28:19  :: 5/10/2020 7:28:19 PMOrderRouterBase.LoadConfig
+2020-05-10 19:28:19  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:28:19  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:28:19  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:29:14  :: Canceling all active orders
+2020-05-10 19:29:14  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:29:27  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:29:30  :: Processing Market Data:Symbol=DGB  LastPrice=0.01895 BestBidPrice=0.01829 BestAskPrice=0.01895
+2020-05-10 19:29:51  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:29:51  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:29:51  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:29:54  :: Processing Market Data:Symbol=DGB  LastPrice=0.01829 BestBidPrice=0.01829 BestAskPrice=0.01895
+2020-05-10 19:30:10  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:32:25  :: 5/10/2020 7:32:25 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:32:25  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:32:25  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:32:25  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:32:25  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:32:26  :: 5/10/2020 7:32:26 PMOrderRouterBase.LoadConfig
+2020-05-10 19:32:26  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:32:26  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:32:26  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:32:26  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:32:26  :: 5/10/2020 7:32:26 PMOrderRouterBase.LoadConfig
+2020-05-10 19:32:26  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:32:26  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:32:26  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:33:10  :: Canceling all active orders
+2020-05-10 19:33:10  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:33:43  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:33:47  :: Processing Market Data:Symbol=DGB  LastPrice=0.01827 BestBidPrice=0.01817 BestAskPrice=0.01876
+2020-05-10 19:34:05  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:34:05  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:34:05  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:34:07  :: Processing Market Data:Symbol=DGB  LastPrice=0.01827 BestBidPrice=0.01815 BestAskPrice=0.01864
+2020-05-10 19:34:20  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:34:31  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:34:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:34:57  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01845
+2020-05-10 19:34:57  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:34:59  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:34:59  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01842
+2020-05-10 19:35:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:01  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.0184
+2020-05-10 19:35:02  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:04  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01837
+2020-05-10 19:35:04  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:06  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01836
+2020-05-10 19:35:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:08  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:09  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01834
+2020-05-10 19:35:09  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:11  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:11  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01833
+2020-05-10 19:35:11  :: Canceling all active orders
+2020-05-10 19:35:11  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:35:11  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DGB
+2020-05-10 19:35:11  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7810339a-5c13-49ab-a826-28a0681ed885 for symbol DGB
+2020-05-10 19:35:12  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-05-10 19:35:13  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2020-05-10 19:35:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:35:13  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 19:35:14  :: Processing Market Data:Symbol=DGB  LastPrice=0.01815 BestBidPrice=0.01815 BestAskPrice=0.01831
+2020-05-10 19:35:16  :: Received execution report for no longer processed symbol DGB
+2020-05-10 19:38:41  :: 5/10/2020 7:38:41 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:38:41  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:38:41  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:38:41  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:38:41  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:38:41  :: 5/10/2020 7:38:41 PMOrderRouterBase.LoadConfig
+2020-05-10 19:38:41  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:38:41  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:38:41  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:38:41  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:38:41  :: 5/10/2020 7:38:41 PMOrderRouterBase.LoadConfig
+2020-05-10 19:38:41  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:38:41  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:38:41  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:39:03  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:39:06  :: Processing Market Data:Symbol=DGB  LastPrice=0.01818 BestBidPrice=0.01818 BestAskPrice=0.01854
+2020-05-10 19:39:30  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:39:30  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:39:30  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:39:33  :: Processing Market Data:Symbol=DGB  LastPrice=0.01818 BestBidPrice=0.01803 BestAskPrice=0.01857
+2020-05-10 19:39:33  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:39:33  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:39:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:39:37  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:39:38  :: Processing Market Data:Symbol=DGB  LastPrice=0.01818 BestBidPrice=0.01803 BestAskPrice=0.01854
+2020-05-10 19:39:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:39:39  :: Processing Market Data:Symbol=DGB  LastPrice=0.01818 BestBidPrice=0.01803 BestAskPrice=0.01852
+2020-05-10 19:39:41  :: Processing Market Data:Symbol=DGB  LastPrice=0.01818 BestBidPrice=0.01803 BestAskPrice=0.01852
+2020-05-10 19:39:41  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:39:43  :: Processing Market Data:Symbol=DGB  LastPrice=0.01818 BestBidPrice=0.01803 BestAskPrice=0.01852
+2020-05-10 19:39:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:06  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:07  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:09  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:09  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:12  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:12  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:14  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:15  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:15  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:18  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01849
+2020-05-10 19:40:18  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:19  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:21  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01846
+2020-05-10 19:40:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:23  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:23  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01846
+2020-05-10 19:40:24  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:25  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:26  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01845
+2020-05-10 19:40:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:28  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:29  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01842
+2020-05-10 19:40:29  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:30  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:31  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.0184
+2020-05-10 19:40:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:33  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:34  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:34  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:36  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:37  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:38  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:40  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:40  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:41  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:41  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:42  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:43  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01839
+2020-05-10 19:40:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:44  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:46  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:46  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01852
+2020-05-10 19:40:47  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:48  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01851
+2020-05-10 19:40:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:49  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01849
+2020-05-10 19:40:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:50  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01849
+2020-05-10 19:40:51  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:52  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:52  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01848
+2020-05-10 19:40:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:40:55  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01832 BestAskPrice=0.01845
+2020-05-10 19:41:32  :: 5/10/2020 7:41:32 PMMomentumStrategyBase.LoadConfig
+2020-05-10 19:41:32  :: Loading config:.\IBRConfig.xml
+2020-05-10 19:41:32  :: Processing config:.\IBRConfig.xml
+2020-05-10 19:41:32  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 19:41:32  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 19:41:32  :: 5/10/2020 7:41:32 PMOrderRouterBase.LoadConfig
+2020-05-10 19:41:32  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 19:41:32  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 19:41:32  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 19:41:32  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 19:41:33  :: 5/10/2020 7:41:33 PMOrderRouterBase.LoadConfig
+2020-05-10 19:41:33  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 19:41:33  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 19:41:33  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 19:41:49  :: Canceling all active orders
+2020-05-10 19:41:49  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:42:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:42:03  :: Processing Market Data:Symbol=DGB  LastPrice=0.01851 BestBidPrice=0.01832 BestAskPrice=0.01848
+2020-05-10 19:42:30  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:42:30  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:42:30  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:42:33  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01808 BestAskPrice=0.01832
+2020-05-10 19:42:33  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:42:33  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:42:34  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:36  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01811 BestAskPrice=0.01832
+2020-05-10 19:42:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:38  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:42:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:40  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:42:41  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:42  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01811 BestAskPrice=0.01832
+2020-05-10 19:42:42  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:43  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01811 BestAskPrice=0.01832
+2020-05-10 19:42:44  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:44  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:42:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:46  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:47  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:42:48  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:49  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:42:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:52  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:42:52  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:43:09  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:09  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01811 BestAskPrice=0.01832
+2020-05-10 19:43:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:12  :: Processing Market Data:Symbol=DGB  LastPrice=0.01832 BestBidPrice=0.01814 BestAskPrice=0.01832
+2020-05-10 19:43:12  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:14  :: Processing Market Data:Symbol=DGB  LastPrice=0.01813 BestBidPrice=0.01814 BestAskPrice=0.01832
+2020-05-10 19:43:14  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:15  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:16  :: Processing Market Data:Symbol=DGB  LastPrice=0.01813 BestBidPrice=0.01813 BestAskPrice=0.01832
+2020-05-10 19:43:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:17  :: Canceling all active orders
+2020-05-10 19:43:17  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:43:17  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DGB
+2020-05-10 19:43:17  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 90b67b75-6db1-48e6-9c62-2ee20866d5e2 for symbol DGB
+2020-05-10 19:43:18  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-05-10 19:43:18  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2020-05-10 19:43:18  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:43:18  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 19:43:19  :: Processing Market Data:Symbol=DGB  LastPrice=0.01813 BestBidPrice=0.01806 BestAskPrice=0.01847
+2020-05-10 19:43:20  :: Received execution report for no longer processed symbol DGB
+2020-05-10 19:44:48  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:44:52  :: Processing Market Data:Symbol=DGB  LastPrice=0.018 BestBidPrice=0.01804 BestAskPrice=0.01845
+2020-05-10 19:45:10  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:45:10  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:45:10  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:45:13  :: Processing Market Data:Symbol=DGB  LastPrice=0.018 BestBidPrice=0.01802 BestAskPrice=0.01842
+2020-05-10 19:45:30  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:45:30  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:45:31  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2020-05-10 19:45:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Filled - Exec Type=Trade CumQty=355.00000000 LvsQty=0.00000000 AvgPx=0.01805
+2020-05-10 19:45:31  :: @Outgoing Order Routing Bittrex:Error routing order to market:Referencia a objeto no establecida como instancia de un objeto.
+2020-05-10 19:45:31  :: Cancelling order 5dd2b549-adfd-4cac-a1e4-6e3ebd9c71ef for symbol DGB because of lack of LastQty on traded exec report. CumQty=355
+2020-05-10 19:45:31  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 19:45:31  :: Received filled for symbol DGB
+2020-05-10 19:45:31  :: Filled for symbol DGB processed
+2020-05-10 19:46:31  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:46:54  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:47:59  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:48:02  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01822 BestAskPrice=0.01841
+2020-05-10 19:48:21  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:48:21  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:48:21  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:48:24  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01814 BestAskPrice=0.01857
+2020-05-10 19:48:47  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:48:47  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:48:48  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:51  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01811 BestAskPrice=0.01822
+2020-05-10 19:48:52  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:53  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01814 BestAskPrice=0.01822
+2020-05-10 19:48:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:56  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01814 BestAskPrice=0.01822
+2020-05-10 19:48:57  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:58  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:48:58  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01814 BestAskPrice=0.01822
+2020-05-10 19:49:00  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01809 BestAskPrice=0.01822
+2020-05-10 19:49:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:02  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.0181 BestAskPrice=0.01822
+2020-05-10 19:49:03  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:05  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01812 BestAskPrice=0.01822
+2020-05-10 19:49:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:08  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01812 BestAskPrice=0.01822
+2020-05-10 19:49:08  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:10  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01813 BestAskPrice=0.01822
+2020-05-10 19:49:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:11  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01813 BestAskPrice=0.01822
+2020-05-10 19:49:12  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:14  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01812 BestAskPrice=0.01822
+2020-05-10 19:49:14  :: Canceling all active orders
+2020-05-10 19:49:14  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 19:49:14  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DGB
+2020-05-10 19:49:14  :: @Outgoing Order Routing Bittrex:Cancelling Order Id eddc8e90-45cc-4525-92df-d85fcb8ffea3 for symbol DGB
+2020-05-10 19:49:15  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-05-10 19:49:15  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:16  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.01813 BestAskPrice=0.01822
+2020-05-10 19:49:17  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Canceled
+2020-05-10 19:49:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=355.00000000 AvgPx=0
+2020-05-10 19:49:17  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 19:49:17  :: Received execution report for no longer processed symbol DGB
+2020-05-10 19:49:32  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:49:58  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:50:18  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:50:20  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.0182 BestAskPrice=0.01858
+2020-05-10 19:50:39  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:50:39  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:50:39  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:50:41  :: Processing Market Data:Symbol=DGB  LastPrice=0.01837 BestBidPrice=0.0182 BestAskPrice=0.01858
+2020-05-10 19:50:41  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:50:41  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:50:41  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2020-05-10 19:50:41  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Filled - Exec Type=Trade CumQty=355.00000000 LvsQty=0.00000000 AvgPx=0.0182
+2020-05-10 19:50:41  :: @Outgoing Order Routing Bittrex:Error routing order to market:Referencia a objeto no establecida como instancia de un objeto.
+2020-05-10 19:50:41  :: Cancelling order b1d083d7-cc1f-4e2e-81ba-8e65788b0bd9 for symbol DGB because of lack of LastQty on traded exec report. CumQty=355
+2020-05-10 19:50:41  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 19:50:41  :: Received filled for symbol DGB
+2020-05-10 19:50:41  :: Filled for symbol DGB processed
+2020-05-10 19:50:59  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:51:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:53:50  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 19:53:53  :: Processing Market Data:Symbol=DGB  LastPrice=0.01817 BestBidPrice=0.01823 BestAskPrice=0.01855
+2020-05-10 19:54:39  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 19:54:39  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 19:54:39  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 19:54:42  :: Processing Market Data:Symbol=DGB  LastPrice=0.01817 BestBidPrice=0.01823 BestAskPrice=0.01855
+2020-05-10 19:54:42  :: Creating buy order for symbol DGB.Quantity=355 Price=.02
+2020-05-10 19:54:42  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 19:54:43  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2020-05-10 19:54:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Filled - Exec Type=Trade CumQty=355.00000000 LvsQty=0.00000000 AvgPx=0.01823
+2020-05-10 20:11:18  :: 5/10/2020 8:11:18 PMMomentumStrategyBase.LoadConfig
+2020-05-10 20:11:18  :: Loading config:.\IBRConfig.xml
+2020-05-10 20:11:18  :: Processing config:.\IBRConfig.xml
+2020-05-10 20:11:18  :: Ending GetConfiguracion .\IBRConfig.xml
+2020-05-10 20:11:18  :: Initializing Order Router zHFT.OrderRouters.Router.SoftDecimalMarketOrderRouter, zHFT.OrderRouters
+2020-05-10 20:11:18  :: 5/10/2020 8:11:18 PMOrderRouterBase.LoadConfig
+2020-05-10 20:11:18  :: Loading config:.\GenericOrderRouter.xml
+2020-05-10 20:11:18  :: Processing config:.\GenericOrderRouter.xml
+2020-05-10 20:11:18  :: Ending GetConfiguracion .\GenericOrderRouter.xml
+2020-05-10 20:11:18  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-05-10 20:11:18  :: 5/10/2020 8:11:18 PMOrderRouterBase.LoadConfig
+2020-05-10 20:11:18  :: Loading config:.\outgoing.Bittrex.xml
+2020-05-10 20:11:18  :: Processing config:.\outgoing.Bittrex.xml
+2020-05-10 20:11:18  :: Ending GetConfiguracion .\outgoing.Bittrex.xml
+2020-05-10 20:11:26  :: Canceling all active orders
+2020-05-10 20:11:26  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-05-10 20:11:41  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:12:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:13:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:13:23  :: Processing Market Data:Symbol=DGB  LastPrice=0.01865 BestBidPrice=0.01851 BestAskPrice=0.01865
+2020-05-10 20:13:42  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:13:42  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 20:13:42  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 20:13:44  :: Processing Market Data:Symbol=DGB  LastPrice=0.01865 BestBidPrice=0.01851 BestAskPrice=0.01865
+2020-05-10 20:13:44  :: Creating buy order for symbol DGB.Quantity=290 Price=.02
+2020-05-10 20:13:44  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 20:13:46  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0 LvsQty=290 AvgPx=0
+2020-05-10 20:13:46  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 20:13:46  :: Received Canceled for symbol DGB. Reason: MIN_TRADE_REQUIREMENT_NOT_MET
+2020-05-10 20:13:46  :: Canceled for symbol DGB processed
+2020-05-10 20:14:16  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:14:37  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:15:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:15:21  :: Processing Market Data:Symbol=DGB  LastPrice=0.01865 BestBidPrice=0.01851 BestAskPrice=0.01865
+2020-05-10 20:15:36  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:15:36  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 20:15:36  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 20:15:38  :: Processing Market Data:Symbol=DGB  LastPrice=0.01865 BestBidPrice=0.01851 BestAskPrice=0.01865
+2020-05-10 20:15:38  :: Creating buy order for symbol DGB.Quantity=290 Price=.02
+2020-05-10 20:15:38  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 20:15:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0 LvsQty=290 AvgPx=0
+2020-05-10 20:15:39  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 20:15:39  :: Received Canceled for symbol DGB. Reason: MIN_TRADE_REQUIREMENT_NOT_MET
+2020-05-10 20:15:39  :: Canceled for symbol DGB processed
+2020-05-10 20:15:47  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:16:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:16:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:16:22  :: Processing Market Data:Symbol=DGB  LastPrice=0.01865 BestBidPrice=0.01854 BestAskPrice=0.01865
+2020-05-10 20:16:38  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:16:38  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 20:16:38  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 20:16:41  :: Processing Market Data:Symbol=DGB  LastPrice=0.01865 BestBidPrice=0.01854 BestAskPrice=0.01865
+2020-05-10 20:16:41  :: Creating buy order for symbol DGB.Quantity=400 Price=.02
+2020-05-10 20:16:41  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 20:16:42  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2020-05-10 20:16:42  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Filled - Exec Type=Trade CumQty=400.00000000 LvsQty=0.00000000 AvgPx=0.01854
+2020-05-10 20:16:42  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 20:16:42  :: Received filled for symbol DGB
+2020-05-10 20:16:42  :: Filled for symbol DGB processed
+2020-05-10 20:16:44  :: Processing Market Data:Symbol=DGB  LastPrice=0.01854 BestBidPrice=0.01854 BestAskPrice=0.01865
+2020-05-10 20:16:55  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:17:11  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:17:35  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-05-10 20:17:37  :: Processing Market Data:Symbol=DGB  LastPrice=0.01871 BestBidPrice=0.01854 BestAskPrice=0.01885
+2020-05-10 20:17:51  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-05-10 20:17:52  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-05-10 20:17:52  :: Routing to market position for symbol DGB @SoftMarket Order Router
+2020-05-10 20:17:53  :: Processing Market Data:Symbol=DGB  LastPrice=0.01871 BestBidPrice=0.01854 BestAskPrice=0.01885
+2020-05-10 20:17:53  :: Creating buy order for symbol DGB.Quantity=410 Price=.02
+2020-05-10 20:17:53  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-05-10 20:17:54  :: @Outgoing Order Routing Bittrex:Removing Order For Status:Filled
+2020-05-10 20:17:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Filled - Exec Type=Trade CumQty=410.00000000 LvsQty=0.00000000 AvgPx=0.01855
+2020-05-10 20:17:54  :: @IBR: Incoming message from order routing: Wrapper
+2020-05-10 20:17:54  :: Received filled for symbol DGB
+2020-05-10 20:17:54  :: Filled for symbol DGB processed

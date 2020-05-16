@@ -63,6 +63,8 @@ namespace zHFT.Main.BusinessEntities.Orders
 
         public OrdStatus OrdStatus { get; set; }
 
+        public decimal? CumQty { get; set; }
+
         public string Symbol
         {
             get 

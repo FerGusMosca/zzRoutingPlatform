@@ -18,6 +18,8 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
         public Order Order { get; set; }
 
         public GetOrderResponse OpenOrder { get; set; }
+
+        public decimal LastQty { get; set; }
        
 
         #endregion
@@ -31,6 +33,8 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             Order = pOrder;
 
             OpenOrder = pOpenOrder;
+
+            UpdateLastQty();
         }
 
         #endregion
@@ -83,6 +87,23 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             return Order.Side;
         }
 
+        protected void UpdateLastQty()
+        {
+            if (!Order.CumQty.HasValue)
+            {
+                LastQty = OpenOrder.Quantity - OpenOrder.QuantityRemaining;
+            }
+            else
+            {
+                decimal cumQty = OpenOrder.Quantity - OpenOrder.QuantityRemaining;
+                decimal lastQty = cumQty - Order.CumQty.Value;
+
+                Order.CumQty = cumQty;
+                LastQty = lastQty;
+            }
+        
+        }
+
         #endregion
 
 
@@ -117,7 +138,7 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             else if (xrField == ExecutionReportFields.TransactTime)
                 return DateTime.Now;
             else if (xrField == ExecutionReportFields.LastQty)
-                return OpenOrder.Quantity - OpenOrder.QuantityRemaining;
+                return LastQty;
             else if (xrField == ExecutionReportFields.LastPx)
                 return Order.Price;
             else if (xrField == ExecutionReportFields.LastMkt)

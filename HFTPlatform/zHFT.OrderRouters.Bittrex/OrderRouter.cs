@@ -74,6 +74,12 @@ namespace zHFT.OrderRouters.Bittrex
             };
         }
 
+        protected void UpdateOrderStatus(Order order, ExecutionReportWrapper wrapper)
+        {
+            OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
+            order.OrdStatus = status;
+        }
+
         protected void DoEvalExecutionReport()
         {
             bool active=true;
@@ -86,40 +92,27 @@ namespace zHFT.OrderRouters.Bittrex
                 {
                     lock (tLock)
                     {
-                        List<string> uuidToRemove = new List<string>();
-
-                        foreach (string uuid in ActiveOrders.Keys)
+                        
+                        foreach(Order order in ActiveOrders.Values.Where(x=>Order.ActiveStatus(x.OrdStatus)))
                         {
-
-                            Order order = ActiveOrders[uuid];
-                            GetOrderResponse ordResp = RunGetOrder(uuid);
+                            GetOrderResponse ordResp = RunGetOrder(order.OrderId);
 
                             if (ordResp != null)
                             {
                                 ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, ordResp);
-                                OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
-
-                                if (Order.FinalStatus(status))
-                                {
-                                    uuidToRemove.Add(uuid);
-                                    DoLog(string.Format("@{0}:Removing Order For Status:{1}", BittrexConfiguration.Name, status.ToString()), Main.Common.Util.Constants.MessageType.Debug);
-
-                                }
-
+                                UpdateOrderStatus(order, wrapper);
                                 wrappersToPublish.Add(wrapper);
                             }
                             else
                             {
-                                ordResp = GetTheoreticalResponse(order, uuid);
+                                ordResp = GetTheoreticalResponse(order, order.OrderId);
                                 ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, ordResp);
-                                OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
-
+                                UpdateOrderStatus(order, wrapper);
                                 wrappersToPublish.Add(wrapper);
-                                uuidToRemove.Add(uuid);
-                                DoLog(string.Format("@{0}:Removing Order Because no order could be found on market for uuid {1}", BittrexConfiguration.Name, uuid), Main.Common.Util.Constants.MessageType.Debug);
+                               
+                                //DoLog(string.Format("@{0}:Removing Order Because no order could be found on market for uuid {1}", BittrexConfiguration.Name, uuid), Main.Common.Util.Constants.MessageType.Debug);
                             }
                         }
-                        uuidToRemove.ForEach(x => ActiveOrders.Remove(x));
                     }
 
                     foreach (ExecutionReportWrapper erWrapper in wrappersToPublish)
@@ -427,7 +420,7 @@ namespace zHFT.OrderRouters.Bittrex
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Error cancelig order {1}!:{2}", BittrexConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}:Error cancelling order {1}!:{2}", BittrexConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }

@@ -270,7 +270,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     }
                     else
                         DoLog(string.Format("Unknown tickerId event: event={0} tickerId={1} field={2} ",
-                                ev, tickerId, field), Main.Common.Util.Constants.MessageType.Error);
+                                ev, tickerId, field), Main.Common.Util.Constants.MessageType.Debug);
 
                 }
 
@@ -306,7 +306,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     }
                     else
                         DoLog(string.Format("Unknown tickerId event: event={0} tickerId={1} field={2} ",
-                                ev, tickerId, field), Main.Common.Util.Constants.MessageType.Error);
+                                ev, tickerId, field), Main.Common.Util.Constants.MessageType.Debug);
 
                 }
 
@@ -342,7 +342,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     }
                     else
                         DoLog(string.Format("Unknown tickerId event: event={0} tickerId={1} field={2} ",
-                                ev, tickerId, field), Main.Common.Util.Constants.MessageType.Error);
+                                ev, tickerId, field), Main.Common.Util.Constants.MessageType.Debug);
 
                 }
 

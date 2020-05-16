@@ -14,6 +14,34 @@ namespace zHFT.OrderRouters.Router
     {
         #region Overriden Methods
 
+        protected override double GetFullOrderQty(Position pos, double price)
+        {
+            //if (!pos.IsSinlgeUnitSecurity())
+            //    throw new Exception(string.Format("Not implemented quantity conversion for security type {0}", pos.Security.SecType.ToString()));
+
+            if (pos.CumQty == 0)
+            {
+                if (pos.IsMonetaryQuantity())
+                {
+                    pos.Qty = Convert.ToDouble(pos.CashQty.Value / price);
+                    pos.CashQty = null;//this doesn't apply anymore
+                    return Convert.ToDouble(pos.Qty);
+                }
+                else
+                {
+                    if (pos.Qty.HasValue)
+                        return Convert.ToDouble(pos.Qty.Value);
+                    else
+                        throw new Exception(string.Format("Missing quantity for new order for security {0}", pos.Security.Symbol));
+                }
+            }
+            else
+            {
+                //We had some traeds, now we use the LeavesQty
+                return Convert.ToDouble(pos.LeavesQty);
+            }
+        }
+
         protected override Order BuildOrder(Position pos, int index, double qty)
         {
             string clOrdId = Guid.NewGuid().ToString();
@@ -41,8 +69,6 @@ namespace zHFT.OrderRouters.Router
             pos.LeavesQty = qty;
 
             return order;
-        
-        
         }
 
         #endregion

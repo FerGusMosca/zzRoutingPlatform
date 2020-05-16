@@ -45,16 +45,16 @@ namespace zHFT.OrderRouters.Router
                                                 Constants.MessageType.Information);
         }
 
-        protected double GetFullOrderQty(Position pos, double price)
+        protected virtual double GetFullOrderQty(Position pos, double price)
         {
-            if (!pos.IsSinlgeUnitSecurity())
-                throw new Exception(string.Format("Not implemented quantity conversion for seurity type {0}", pos.Security.SecType.ToString()));
+            //if (!pos.IsSinlgeUnitSecurity())
+            //    throw new Exception(string.Format("Not implemented quantity conversion for security type {0}", pos.Security.SecType.ToString()));
 
             if (pos.CumQty == 0)
             {
                 if (pos.IsMonetaryQuantity())
                 {
-                    pos.Qty = Convert.ToInt64(Math.Floor(pos.CashQty.Value / price));
+                    pos.Qty = Convert.ToDouble(Math.Floor(pos.CashQty.Value / price));
                     pos.CashQty = null;//this doesn't apply anymore
                     return Convert.ToDouble(pos.Qty);
                 }

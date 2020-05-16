@@ -1,0 +1,94 @@
+2020-05-10 18:58:32  :: 10/5/2020 18:58:32MainApp.LoadConfig
+2020-05-10 18:58:32  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 18:58:32  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 18:58:32  :: Fin GetConfiguracion
+2020-05-10 18:58:43  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-10 18:58:43  :: Initializing Log
+2020-05-10 18:58:43  :: Initializing Incoming Module
+2020-05-10 18:58:43  :: Incoming module could not be initialized because it was not instantiated
+2020-05-10 18:58:43  :: Initializing Outgoing Module
+2020-05-10 18:58:46  :: Outgoing Module successfully initialized
+2020-05-10 19:00:13  :: 10/5/2020 19:00:13MainApp.LoadConfig
+2020-05-10 19:00:13  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:00:13  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:00:13  :: Fin GetConfiguracion
+2020-05-10 19:00:13  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-10 19:00:13  :: Initializing Log
+2020-05-10 19:00:13  :: Initializing Incoming Module
+2020-05-10 19:00:13  :: Incoming module could not be initialized because it was not instantiated
+2020-05-10 19:00:13  :: Initializing Outgoing Module
+2020-05-10 19:00:15  :: Outgoing Module successfully initialized
+2020-05-10 19:11:15  :: 10/5/2020 19:11:15MainApp.LoadConfig
+2020-05-10 19:11:15  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:11:15  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:11:15  :: Fin GetConfiguracion
+2020-05-10 19:11:15  :: Assembly not found: zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL
+2020-05-10 19:11:15  :: Initializing Log
+2020-05-10 19:11:15  :: Initializing Incoming Module
+2020-05-10 19:11:15  :: Incoming module could not be initialized because it was not instantiated
+2020-05-10 19:11:15  :: Initializing Outgoing Module
+2020-05-10 19:11:17  :: Outgoing Module successfully initialized
+2020-05-10 19:20:15  :: 10/5/2020 19:20:15MainApp.LoadConfig
+2020-05-10 19:20:15  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:20:15  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:20:16  :: Fin GetConfiguracion
+2020-05-10 19:20:16  :: Assembly not found: zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex
+2020-05-10 19:20:16  :: Initializing Log
+2020-05-10 19:20:16  :: Initializing Incoming Module
+2020-05-10 19:20:16  :: Incoming module could not be initialized because it was not instantiated
+2020-05-10 19:20:16  :: Initializing Outgoing Module
+2020-05-10 19:20:20  :: Outgoing Module successfully initialized
+2020-05-10 19:24:14  :: 10/5/2020 19:24:14MainApp.LoadConfig
+2020-05-10 19:24:14  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:24:14  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:24:14  :: Fin GetConfiguracion
+2020-05-10 19:24:14  :: Initializing Log
+2020-05-10 19:24:14  :: Initializing Incoming Module
+2020-05-10 19:24:21  :: Incoming Module successfully initialized
+2020-05-10 19:24:21  :: Initializing Outgoing Module
+2020-05-10 19:24:23  :: Outgoing Module successfully initialized
+2020-05-10 19:28:18  :: 10/5/2020 19:28:18MainApp.LoadConfig
+2020-05-10 19:28:18  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:28:18  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:28:18  :: Fin GetConfiguracion
+2020-05-10 19:28:18  :: Initializing Log
+2020-05-10 19:28:18  :: Initializing Incoming Module
+2020-05-10 19:28:19  :: Incoming Module successfully initialized
+2020-05-10 19:28:19  :: Initializing Outgoing Module
+2020-05-10 19:28:19  :: Outgoing Module successfully initialized
+2020-05-10 19:32:24  :: 10/5/2020 19:32:24MainApp.LoadConfig
+2020-05-10 19:32:24  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:32:24  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:32:24  :: Fin GetConfiguracion
+2020-05-10 19:32:25  :: Initializing Log
+2020-05-10 19:32:25  :: Initializing Incoming Module
+2020-05-10 19:32:25  :: Incoming Module successfully initialized
+2020-05-10 19:32:25  :: Initializing Outgoing Module
+2020-05-10 19:32:26  :: Outgoing Module successfully initialized
+2020-05-10 19:38:40  :: 10/5/2020 19:38:40MainApp.LoadConfig
+2020-05-10 19:38:40  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:38:40  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:38:41  :: Fin GetConfiguracion
+2020-05-10 19:38:41  :: Initializing Log
+2020-05-10 19:38:41  :: Initializing Incoming Module
+2020-05-10 19:38:41  :: Incoming Module successfully initialized
+2020-05-10 19:38:41  :: Initializing Outgoing Module
+2020-05-10 19:38:41  :: Outgoing Module successfully initialized
+2020-05-10 19:41:31  :: 10/5/2020 19:41:31MainApp.LoadConfig
+2020-05-10 19:41:31  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:41:31  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 19:41:31  :: Fin GetConfiguracion
+2020-05-10 19:41:31  :: Initializing Log
+2020-05-10 19:41:31  :: Initializing Incoming Module
+2020-05-10 19:41:32  :: Incoming Module successfully initialized
+2020-05-10 19:41:32  :: Initializing Outgoing Module
+2020-05-10 19:41:33  :: Outgoing Module successfully initialized
+2020-05-10 20:11:17  :: 10/5/2020 20:11:17MainApp.LoadConfig
+2020-05-10 20:11:17  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 20:11:17  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\IBR.Bittrex.SoftMarketOrders.Test\bin\Debug\config.xml
+2020-05-10 20:11:17  :: Fin GetConfiguracion
+2020-05-10 20:11:17  :: Initializing Log
+2020-05-10 20:11:17  :: Initializing Incoming Module
+2020-05-10 20:11:18  :: Incoming Module successfully initialized
+2020-05-10 20:11:18  :: Initializing Outgoing Module
+2020-05-10 20:11:18  :: Outgoing Module successfully initialized

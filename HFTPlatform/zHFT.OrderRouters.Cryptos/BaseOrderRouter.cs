@@ -85,7 +85,9 @@ namespace zHFT.OrderRouters.Cryptos
                 Currency = GetQuoteCurrency(),
                 OrdType = OrdType.Limit,
                 ClOrdId = clOrderId,
-                DecimalPrecission=decimalPrecission
+                DecimalPrecission = decimalPrecission,
+                OrdStatus = OrdStatus.PendingNew,
+                CumQty = 0
             };
 
             return order;

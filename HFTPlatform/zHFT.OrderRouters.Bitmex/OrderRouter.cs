@@ -350,7 +350,7 @@ namespace zHFT.OrderRouters.Bitmex
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Error cancelig order {1}!:{2}", BitmexConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}:Error cancelling order {1}!:{2}", BitmexConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }

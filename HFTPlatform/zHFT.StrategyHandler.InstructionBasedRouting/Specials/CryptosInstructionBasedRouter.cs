@@ -59,8 +59,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
             else
             {
-                DoLog(string.Format("{0}: Discarding unwind position because it was not specified an ammount to unload. Symbol = {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Information);
-                return ;
+                MarkAsUnwindRejected(ref instr, string.Format("{0}: Discarding unwind position because it was not specified a number of shares. Symbol = {1}", IBRConfiguration.Name, instr.Symbol));
+                return;
             }
 
             pos.LoadPosId(NextPosId);

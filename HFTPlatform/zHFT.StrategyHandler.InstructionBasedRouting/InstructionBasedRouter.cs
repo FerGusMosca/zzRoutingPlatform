@@ -679,6 +679,20 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
         }
 
+        protected  void MarkAsUnwindRejected(ref Instruction relInstr,string desc)
+        {
+            relInstr.Executed = true;
+            relInstr.Text = desc;
+
+            if (relInstr.AccountPosition != null && relInstr.AccountPosition.PositionStatus != null)
+                relInstr.AccountPosition.PositionStatus = InstructionBasedRouting.BusinessEntities.PositionStatus.GetNewPositionStatus(true);
+
+            InstructionManager.Persist(relInstr);
+
+            DoLog(string.Format("@{0} - {1}",IBRConfiguration.Name,desc), Main.Common.Util.Constants.MessageType.Error);
+
+        }
+
         protected virtual void ProcessUnwindPosition(Instruction instr, AccountPosition portfPos)
         {
 
@@ -690,7 +704,10 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             else if (portfPos != null && portfPos.Ammount.HasValue)
                 unwdSide = portfPos.Ammount > 0 ? zHFT.Main.Common.Enums.Side.Sell : zHFT.Main.Common.Enums.Side.Buy;
             else
-                DoLog(string.Format("Critical ERROR: Could not unwind a position for symbol {0} when there is not that position in the exchange!", instr.Symbol), Constants.MessageType.Error);
+            {
+                MarkAsUnwindRejected(ref instr, string.Format("Critical ERROR: Could not unwind a position for symbol {0} when there is not that position in the exchange!", instr.Symbol));
+                return;
+            }   
 
             Position pos = new Position()
             {
@@ -720,7 +737,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
             else
             {
-                DoLog(string.Format("{0}: Discarding unwind position because it was not specified a number of shares. Symbol = {1}", IBRConfiguration.Name, instr.Symbol), Constants.MessageType.Error);
+                MarkAsUnwindRejected(ref instr, string.Format("{0}: Discarding unwind position because it was not specified a number of shares. Symbol = {1}", IBRConfiguration.Name, instr.Symbol));
                 return;
             }
 

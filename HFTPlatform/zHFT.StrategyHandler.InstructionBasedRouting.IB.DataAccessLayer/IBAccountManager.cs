@@ -82,7 +82,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers
             if (ConfigParameters.Any(x => x.Key == _PROCESS_SHORTS_KEY))
                 processShorts = ConfigParameters.Where(x => x.Key == _PROCESS_SHORTS_KEY).FirstOrDefault().Value == "true";
             
-            return Positions.Where(x => x.Shares.HasValue && (x.Shares.Value > 0 || processShorts)).ToList();
+            return Positions.Where(x => x.Shares.HasValue && (x.Shares.Value > 0 || (processShorts && x.Shares.Value!=0))).ToList();
         }
 
         #endregion
