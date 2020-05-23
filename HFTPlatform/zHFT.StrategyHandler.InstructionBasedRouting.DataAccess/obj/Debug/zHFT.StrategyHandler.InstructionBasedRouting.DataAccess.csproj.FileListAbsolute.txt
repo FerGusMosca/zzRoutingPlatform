@@ -27,3 +27,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.csprojResolveAssemblyReference.cache

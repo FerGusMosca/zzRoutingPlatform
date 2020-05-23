@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Instruction Based Router for Bittrex</Name>
+
+  <ReportSavingMode>BD</ReportSavingMode>
+  <!--BD=SQL Server Data Base, EXCEL=CSV file, NONE=nothing-->
+  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=StrategyReportsCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
+
+  <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\genOrderRouter.xml</OrderRouterConfigFile>
+
+  <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+
+  <AccountNumber>1</AccountNumber>
+
+  <RoutingUpdateInMilliseconds>100</RoutingUpdateInMilliseconds>
+
+  <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Bitfinex.DAL.BitfinexAccountManager,zHFT.StrategyHandler.IBR.Bitfinex.DAL</AccoutReferenceHandler>
+
+  <MarketDataReferenceHandler>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.BittrexMarketDataManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</MarketDataReferenceHandler>
+
+  <AccountManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</AccountManagerAccessLayer>
+
+  <InstructionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.InstructionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</InstructionManagerAccessLayer>
+
+  <PositionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.PositionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</PositionManagerAccessLayer>
+
+  <AccountManagerConfig>
+    <Config>
+      <Key>QuoteCurrency</Key>
+      <Value>USDT</Value>
+    </Config>
+    <Config>
+      <Key>MarketDataQuoteCurrency</Key>
+      <Value>USD</Value>
+    </Config>
+    <Config>
+      <Key>Simulate</Key>
+      <Value>true</Value>
+    </Config>
+    <Config>
+      <Key>AccountNumber</Key>
+      <Value>1</Value>
+    </Config>
+    <Config>
+      <Key>ConfigConnectionString</Key>
+      <Value>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</Value>
+    </Config>
+  </AccountManagerConfig>
+  
+</Configuration>
