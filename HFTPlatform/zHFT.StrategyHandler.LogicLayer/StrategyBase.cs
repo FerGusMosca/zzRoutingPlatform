@@ -309,7 +309,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                      || report.ExecType == ExecType.Expired || report.ExecType == ExecType.Canceled)
                             {
                                 //Position Canceled
-                                DoLog(string.Format("Received {0} for symbol {1}. Reason: {2}", report.ExecType.ToString(), summary.Position.Symbol, report.GetRejectReason()), Main.Common.Util.Constants.MessageType.Debug);
+                                DoLog(string.Format("Received {0} for symbol {1}. Reason: {2}", report.ExecType.ToString(), summary.Position.Symbol, report.GetRejectReason()), Main.Common.Util.Constants.MessageType.Information);
                                 summary.Position.PositionCanceledOrRejected = true;
                                 summary.Position.PositionCleared = false;
                                 summary.Position.LeavesQty = report.LeavesQty;

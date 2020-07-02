@@ -57,25 +57,25 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
 
         }
 
-        protected ExchangeContext GetContext()
+        protected ExchangeContext GetContext(string quoteSymbol)
         {
             return new ExchangeContext()
             {
                 ApiKey = BittrexConfiguration.ApiKey,
-                QuoteCurrency = BittrexConfiguration.QuoteCurrency,
+                QuoteCurrency = GetQuoteCurrency(quoteSymbol),
                 Secret = BittrexConfiguration.Secret,
                 Simulate = BittrexConfiguration.Simulate
             };
         }
 
-        private void ReverseRequestMarketData(string symbol)
+        private void ReverseRequestMarketData(string symbol,string quoteSymbol)
         {
             Exchange exch = new Exchange();
-            ExchangeContext ctx = GetContext();
+            ExchangeContext ctx = GetContext(quoteSymbol);
             ctx.QuoteCurrency = symbol;
             exch.Initialise(ctx);
 
-            JObject jMarketData = exch.GetTicker(BittrexConfiguration.QuoteCurrency);
+            JObject jMarketData = exch.GetTicker(GetQuoteCurrency(quoteSymbol));
 
             Security sec = new Security();
             sec.Symbol = symbol;
@@ -83,14 +83,22 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             sec.MarketData.BestAskPrice =  (double?)jMarketData["Ask"];
             sec.MarketData.Trade = (double?)jMarketData["Last"];
             sec.ReverseMarketData = true;
+            sec.MarketData.Currency = GetQuoteCurrency(quoteSymbol);
             BittrexMarketDataWrapper wrapper = new BittrexMarketDataWrapper(sec, BittrexConfiguration);
 
             OnMessageRcv(wrapper);
         }
 
+        private string GetQuoteCurrency(string quoteSymbol)
+        {
+            return quoteSymbol != null ? quoteSymbol : BittrexConfiguration.QuoteCurrency;
+        }
+
         protected override void DoRequestMarketData(Object param)
         {
-            string symbol = (string)param;
+            object[] parameters = (object[])param;
+            string symbol = (string)parameters[0];
+            string quoteSymbol = (string)parameters[1];
             try
             {
                 DoLog(string.Format("@{0}:Requesting market data por symbol {1}", BittrexConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
@@ -98,7 +106,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                 bool activo = true;
                 while (activo)
                 {
-                    Thread.Sleep(BittrexConfiguration.PublishUpdateInMilliseconds);
+                    
 
                     lock (tLock)
                     {
@@ -107,7 +115,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                             try
                             {
                                 Exchange exch = new Exchange();
-                                ExchangeContext ctx = GetContext();
+                                ExchangeContext ctx = GetContext(quoteSymbol);
                                 exch.Initialise(ctx);
 
                                 //Probamos la versión derecha del mercado
@@ -128,6 +136,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                                         //sec.MarketData.BestAskPrice = (double?)jMarketData["Ask"];
                                         //sec.MarketData.Trade = (double?)jMarketData["Last"];
                                         sec.ReverseMarketData = false;
+                                        sec.MarketData.Currency = GetQuoteCurrency(quoteSymbol);
 
 
                                         GetMarketHistoryResponse resp = exch.GetMarketHistory(symbol);
@@ -143,13 +152,13 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                                         OnMessageRcv(wrapper);
                                     }
                                     else
-                                        ReverseRequestMarketData(symbol);
+                                        ReverseRequestMarketData(symbol,quoteSymbol);
                                 }
                                 catch (Exception ex)
                                 {
                                     if (!ReverseCurrency.Keys.Contains(symbol))
                                         ReverseCurrency.Add(symbol, true);
-                                    ReverseRequestMarketData(symbol);
+                                    ReverseRequestMarketData(symbol, quoteSymbol);
                                 }
                             }
                             catch (Exception ex)
@@ -166,6 +175,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                             activo = false;
                         }
                     }
+                    Thread.Sleep(BittrexConfiguration.PublishUpdateInMilliseconds);
                 }
 
             }
@@ -257,23 +267,17 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                 if (LoadConfig(configFile))
                 {
                     
-                    ActiveSecurities = new Dictionary<int, Security>();
+                    ActiveSecurities = new Dictionary<long, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
                     ReverseCurrency = new Dictionary<string, bool>();
 
                     AccountManager = new AccountManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);
-                    InstructionManager = new InstructionManager(BittrexConfiguration.InstructionsAccessLayerConnectionString,AccountManager);
                     AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);
 
                     ConfigBittrexData();
 
-                    CleanPrevInstructions();
-
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
-
-                    ProcessInstructionsThread = new Thread(DoFindInstructions);
-                    ProcessInstructionsThread.Start();
 
                     return true;
                 }

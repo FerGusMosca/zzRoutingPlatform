@@ -60,9 +60,19 @@ namespace zHFT.OrderRouters.Router
                     order.Index++;
 
                     if (pos.Side == Side.Buy)
-                        order.Price = pos.Security.MarketData.BestBidPrice;
+                    {
+                        if(pos.Security.MarketData.BestBidPrice.HasValue)
+                            order.Price = pos.Security.MarketData.BestBidPrice;
+                        else
+                            DoLog(string.Format("Waiting to send order for security {0} because there is not a bid price as a reference", order.Security.Symbol), Constants.MessageType.Information);
+                    }
                     else if (pos.Side == Side.Sell)
-                        order.Price = pos.Security.MarketData.BestAskPrice;
+                    {
+                        if(pos.Security.MarketData.BestAskPrice.HasValue)
+                            order.Price = pos.Security.MarketData.BestAskPrice;
+                        else
+                            DoLog(string.Format("Waiting to send order for security {0} because there is not an ask price as a reference", order.Security.Symbol), Constants.MessageType.Information);
+                    }
                     else
                         throw new Exception("Invalid position side for Symbol " + pos.Security.Symbol);
 
@@ -107,7 +117,7 @@ namespace zHFT.OrderRouters.Router
                 OrdType = OrdType.Limit,
                 Price = side == Side.Buy ? pos.Security.MarketData.BestBidPrice : pos.Security.MarketData.BestAskPrice,
                 TimeInForce = TimeInForce.Day,
-                Currency = pos.Security.Currency,
+                Currency = pos.Security.MarketData.Currency != null ? pos.Security.MarketData.Currency : pos.Security.Currency,
                 QuantityType = pos.QuantityType,
                 PriceType = PriceType.FixedAmount,
                 Account=pos.AccountId,

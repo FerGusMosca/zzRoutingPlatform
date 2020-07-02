@@ -47,7 +47,7 @@ namespace zHFT.OrderRouters.Common.Converters
             sec.Symbol = (ValidateField(wrapper, PositionFields.Symbol) ? Convert.ToString(wrapper.GetField(PositionFields.Symbol)) : null);
             sec.Currency = (ValidateField(wrapper, PositionFields.Currency) ? Convert.ToString(wrapper.GetField(PositionFields.Currency)) : null);
             sec.SecType = (ValidateField(wrapper, PositionFields.SecurityType) ? (SecurityType)wrapper.GetField(PositionFields.SecurityType) : SecurityType.OTH);
-
+            
             Wrapper securityWrapper = (Wrapper)wrapper.GetField(PositionFields.Security);
 
             if (securityWrapper != null)
@@ -91,7 +91,7 @@ namespace zHFT.OrderRouters.Common.Converters
             pos.ExecutionReports.AddRange((ValidateField(wrapper, PositionFields.ExecutionReports) ? (IList<ExecutionReport>)wrapper.GetField(PositionFields.ExecutionReports) : new List<ExecutionReport>()));
             pos.Orders.AddRange((ValidateField(wrapper, PositionFields.Orders) ? (IList<Order>)wrapper.GetField(PositionFields.Orders) : new List<Order>()));
             pos.AccountId = (ValidateField(wrapper, PositionFields.Account) ? (string)wrapper.GetField(PositionFields.Account) : null);
-
+            
             if (wrapper.GetAction() == Actions.NEW_POSITION)
             {
                 pos.NewDomFlag = false;

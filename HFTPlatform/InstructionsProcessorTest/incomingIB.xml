@@ -2,13 +2,13 @@
 <Configuration>
   <Name>Instructions Processor IB</Name>
   <!--Para los archivos de logs-->
-  <AccountNumber>3</AccountNumber>
+  <!--<AccountNumber>1</AccountNumber>-->
   <Active>true</Active>
   <IP>localhost</IP>
   <Port>4001</Port><!--PROD!-->
   <IdIBClient>3</IdIBClient>
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <!--<InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >-->
 
   <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds><!--5 segundos-->
 

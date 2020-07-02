@@ -1,0 +1,1451 @@
+2020-06-14 11:25:08  :: 6/14/2020 11:25:08 AMMomentumStrategyBase.LoadConfig
+2020-06-14 11:25:08  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 11:25:08  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 11:25:08  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 11:25:08  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2020-06-14 11:25:08  :: 6/14/2020 11:25:08 AMOrderRouterBase.LoadConfig
+2020-06-14 11:25:08  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-14 11:25:08  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-14 11:25:08  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-14 11:25:08  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-06-14 11:25:09  :: 6/14/2020 11:25:09 AMOrderRouterBase.LoadConfig
+2020-06-14 11:25:09  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 11:25:09  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 11:25:09  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2020-06-14 11:25:38  :: Canceling all active orders
+2020-06-14 11:25:38  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 11:25:44  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 11:26:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 11:26:47  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 11:27:08  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 11:27:08  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol ETH
+2020-06-14 11:27:17  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.684 BestAskPrice=234.987
+2020-06-14 11:27:17  :: Routing to market position for symbol ETH
+2020-06-14 11:27:17  :: Creating sell order for symbol ETH.Quantity=0.03886613 Price=234.99
+2020-06-14 11:27:17  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol ETH
+2020-06-14 11:27:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:31  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:31  :: Received New for symbol ETH
+2020-06-14 11:27:31  :: New for symbol ETH processed
+2020-06-14 11:27:32  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.732 BestAskPrice=234.983
+2020-06-14 11:27:32  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.987 Old Ask Price:234.983
+2020-06-14 11:27:33  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.983
+2020-06-14 11:27:33  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:27:33  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 2aa1edb5-4319-485a-a492-8d4b0e8121e7 for symbol ETH
+2020-06-14 11:27:36  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.737 BestAskPrice=235.029
+2020-06-14 11:27:36  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.983 Old Ask Price:235.029
+2020-06-14 11:27:36  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=235.029
+2020-06-14 11:27:36  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:27:37  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:37  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 6d77930c-0632-4c6d-9ae0-38d1d6388e84 for symbol ETH
+2020-06-14 11:27:39  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:39  :: Received New for symbol ETH
+2020-06-14 11:27:39  :: New for symbol ETH processed
+2020-06-14 11:27:41  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.738 BestAskPrice=234.982
+2020-06-14 11:27:41  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:235.029 Old Ask Price:234.982
+2020-06-14 11:27:42  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.982
+2020-06-14 11:27:42  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:27:43  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 72a7f7c8-b928-4cf4-9c29-d22c06c744bc for symbol ETH
+2020-06-14 11:27:44  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:44  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:44  :: Received New for symbol ETH
+2020-06-14 11:27:44  :: New for symbol ETH processed
+2020-06-14 11:27:46  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.741 BestAskPrice=234.982
+2020-06-14 11:27:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:50  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:50  :: Received New for symbol ETH
+2020-06-14 11:27:50  :: New for symbol ETH processed
+2020-06-14 11:27:51  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.779 BestAskPrice=234.982
+2020-06-14 11:27:55  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.785 BestAskPrice=234.982
+2020-06-14 11:27:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:55  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:27:55  :: Received New for symbol ETH
+2020-06-14 11:27:55  :: New for symbol ETH processed
+2020-06-14 11:28:00  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.786 BestAskPrice=234.982
+2020-06-14 11:28:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:01  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:01  :: Received New for symbol ETH
+2020-06-14 11:28:01  :: New for symbol ETH processed
+2020-06-14 11:28:04  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.786 BestAskPrice=234.982
+2020-06-14 11:28:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:07  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:07  :: Received New for symbol ETH
+2020-06-14 11:28:07  :: New for symbol ETH processed
+2020-06-14 11:28:08  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.786 BestAskPrice=234.982
+2020-06-14 11:28:12  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.786 BestAskPrice=234.982
+2020-06-14 11:28:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:13  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:13  :: Received New for symbol ETH
+2020-06-14 11:28:13  :: New for symbol ETH processed
+2020-06-14 11:28:16  :: Processing Market Data:Symbol=ETH  LastPrice=234.899 BestBidPrice=234.791 BestAskPrice=234.982
+2020-06-14 11:28:19  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:19  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:19  :: Received New for symbol ETH
+2020-06-14 11:28:19  :: New for symbol ETH processed
+2020-06-14 11:28:21  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.791 BestAskPrice=234.982
+2020-06-14 11:28:25  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:25  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:25  :: Received New for symbol ETH
+2020-06-14 11:28:25  :: New for symbol ETH processed
+2020-06-14 11:28:25  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.791 BestAskPrice=234.982
+2020-06-14 11:28:30  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.792 BestAskPrice=234.982
+2020-06-14 11:28:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:31  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:31  :: Received New for symbol ETH
+2020-06-14 11:28:31  :: New for symbol ETH processed
+2020-06-14 11:28:34  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.793 BestAskPrice=234.982
+2020-06-14 11:28:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:36  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:36  :: Received New for symbol ETH
+2020-06-14 11:28:36  :: New for symbol ETH processed
+2020-06-14 11:28:37  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.793 BestAskPrice=234.982
+2020-06-14 11:28:41  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.793 BestAskPrice=234.982
+2020-06-14 11:28:41  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:41  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:41  :: Received New for symbol ETH
+2020-06-14 11:28:41  :: New for symbol ETH processed
+2020-06-14 11:28:45  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.793 BestAskPrice=234.982
+2020-06-14 11:28:47  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:47  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:47  :: Received New for symbol ETH
+2020-06-14 11:28:47  :: New for symbol ETH processed
+2020-06-14 11:28:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.796 BestAskPrice=234.982
+2020-06-14 11:28:52  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:52  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:52  :: Received New for symbol ETH
+2020-06-14 11:28:52  :: New for symbol ETH processed
+2020-06-14 11:28:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.798 BestAskPrice=234.982
+2020-06-14 11:28:57  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:57  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:28:57  :: Received New for symbol ETH
+2020-06-14 11:28:57  :: New for symbol ETH processed
+2020-06-14 11:28:57  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.799 BestAskPrice=234.982
+2020-06-14 11:29:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.982
+2020-06-14 11:29:03  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:03  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:03  :: Received New for symbol ETH
+2020-06-14 11:29:03  :: New for symbol ETH processed
+2020-06-14 11:29:06  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.802 BestAskPrice=234.982
+2020-06-14 11:29:09  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:09  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:09  :: Received New for symbol ETH
+2020-06-14 11:29:09  :: New for symbol ETH processed
+2020-06-14 11:29:10  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.804 BestAskPrice=234.982
+2020-06-14 11:29:13  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.843 BestAskPrice=234.982
+2020-06-14 11:29:14  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:14  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:14  :: Received New for symbol ETH
+2020-06-14 11:29:14  :: New for symbol ETH processed
+2020-06-14 11:29:18  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.846 BestAskPrice=234.982
+2020-06-14 11:29:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:20  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:20  :: Received New for symbol ETH
+2020-06-14 11:29:20  :: New for symbol ETH processed
+2020-06-14 11:29:22  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.848 BestAskPrice=234.982
+2020-06-14 11:29:26  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:26  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:26  :: Received New for symbol ETH
+2020-06-14 11:29:26  :: New for symbol ETH processed
+2020-06-14 11:29:26  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.849 BestAskPrice=234.982
+2020-06-14 11:29:31  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.852 BestAskPrice=234.982
+2020-06-14 11:29:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:31  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:31  :: Received New for symbol ETH
+2020-06-14 11:29:31  :: New for symbol ETH processed
+2020-06-14 11:29:35  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.852 BestAskPrice=234.982
+2020-06-14 11:29:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:36  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:36  :: Received New for symbol ETH
+2020-06-14 11:29:36  :: New for symbol ETH processed
+2020-06-14 11:29:40  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.851 BestAskPrice=234.982
+2020-06-14 11:29:42  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:42  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:42  :: Received New for symbol ETH
+2020-06-14 11:29:42  :: New for symbol ETH processed
+2020-06-14 11:29:44  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.853 BestAskPrice=234.982
+2020-06-14 11:29:48  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:48  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:48  :: Received New for symbol ETH
+2020-06-14 11:29:48  :: New for symbol ETH processed
+2020-06-14 11:29:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.855 BestAskPrice=234.981
+2020-06-14 11:29:49  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.982 Old Ask Price:234.981
+2020-06-14 11:29:50  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.981
+2020-06-14 11:29:50  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:29:50  :: @Outgoing Order Routing Bittrex:Cancelling Order Id e19fe5bf-c774-4409-801d-e048253f8a0b for symbol ETH
+2020-06-14 11:29:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.857 BestAskPrice=234.981
+2020-06-14 11:29:53  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:53  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:53  :: Received New for symbol ETH
+2020-06-14 11:29:53  :: New for symbol ETH processed
+2020-06-14 11:29:57  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.86 BestAskPrice=234.98
+2020-06-14 11:29:57  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.981 Old Ask Price:234.98
+2020-06-14 11:29:58  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.98
+2020-06-14 11:29:58  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:29:59  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:29:59  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 8e17f0fc-f55f-4455-8bcc-fdc49dd0fc95 for symbol ETH
+2020-06-14 11:30:00  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:00  :: Received New for symbol ETH
+2020-06-14 11:30:00  :: New for symbol ETH processed
+2020-06-14 11:30:01  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.861 BestAskPrice=234.979
+2020-06-14 11:30:01  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.98 Old Ask Price:234.979
+2020-06-14 11:30:02  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.979
+2020-06-14 11:30:02  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:30:02  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 4d36e719-8772-4b7c-acda-9a52ba86b674 for symbol ETH
+2020-06-14 11:30:06  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.862 BestAskPrice=234.978
+2020-06-14 11:30:06  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.979 Old Ask Price:234.978
+2020-06-14 11:30:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:06  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:06  :: Received New for symbol ETH
+2020-06-14 11:30:06  :: New for symbol ETH processed
+2020-06-14 11:30:07  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.978
+2020-06-14 11:30:07  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:30:07  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c32c6c47-8347-4551-b44a-c86a6f3a6ef7 for symbol ETH
+2020-06-14 11:30:10  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.863 BestAskPrice=234.978
+2020-06-14 11:30:11  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:11  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:11  :: Received New for symbol ETH
+2020-06-14 11:30:11  :: New for symbol ETH processed
+2020-06-14 11:30:14  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.978
+2020-06-14 11:30:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:17  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:17  :: Received New for symbol ETH
+2020-06-14 11:30:17  :: New for symbol ETH processed
+2020-06-14 11:30:18  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.857 BestAskPrice=234.978
+2020-06-14 11:30:23  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:23  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:23  :: Received New for symbol ETH
+2020-06-14 11:30:23  :: New for symbol ETH processed
+2020-06-14 11:30:23  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.978
+2020-06-14 11:30:27  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.978
+2020-06-14 11:30:28  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:28  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:28  :: Received New for symbol ETH
+2020-06-14 11:30:28  :: New for symbol ETH processed
+2020-06-14 11:30:30  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.857 BestAskPrice=234.978
+2020-06-14 11:30:34  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:34  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:34  :: Received New for symbol ETH
+2020-06-14 11:30:34  :: New for symbol ETH processed
+2020-06-14 11:30:34  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.857 BestAskPrice=234.978
+2020-06-14 11:30:38  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.857 BestAskPrice=234.978
+2020-06-14 11:30:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:39  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:39  :: Received New for symbol ETH
+2020-06-14 11:30:39  :: New for symbol ETH processed
+2020-06-14 11:30:43  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.978
+2020-06-14 11:30:44  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:44  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:44  :: Received New for symbol ETH
+2020-06-14 11:30:44  :: New for symbol ETH processed
+2020-06-14 11:30:48  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:30:48  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.978 Old Ask Price:234.977
+2020-06-14 11:30:48  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.977
+2020-06-14 11:30:48  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:30:49  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c44d22ae-2a87-490f-a8aa-2a24c0ff93b9 for symbol ETH
+2020-06-14 11:30:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:50  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:50  :: Received New for symbol ETH
+2020-06-14 11:30:50  :: New for symbol ETH processed
+2020-06-14 11:30:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:30:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:55  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:30:55  :: Received New for symbol ETH
+2020-06-14 11:30:55  :: New for symbol ETH processed
+2020-06-14 11:30:57  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:00  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:01  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:01  :: Received New for symbol ETH
+2020-06-14 11:31:01  :: New for symbol ETH processed
+2020-06-14 11:31:04  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:06  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:06  :: Received New for symbol ETH
+2020-06-14 11:31:06  :: New for symbol ETH processed
+2020-06-14 11:31:09  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:11  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:11  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:11  :: Received New for symbol ETH
+2020-06-14 11:31:11  :: New for symbol ETH processed
+2020-06-14 11:31:13  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:17  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:17  :: Received New for symbol ETH
+2020-06-14 11:31:17  :: New for symbol ETH processed
+2020-06-14 11:31:17  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:20  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:22  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:22  :: Received New for symbol ETH
+2020-06-14 11:31:22  :: New for symbol ETH processed
+2020-06-14 11:31:25  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:27  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:27  :: Received New for symbol ETH
+2020-06-14 11:31:27  :: New for symbol ETH processed
+2020-06-14 11:31:29  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:33  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:33  :: Received New for symbol ETH
+2020-06-14 11:31:33  :: New for symbol ETH processed
+2020-06-14 11:31:33  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:38  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:39  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:39  :: Received New for symbol ETH
+2020-06-14 11:31:39  :: New for symbol ETH processed
+2020-06-14 11:31:42  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.856 BestAskPrice=234.977
+2020-06-14 11:31:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:45  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:45  :: Received New for symbol ETH
+2020-06-14 11:31:45  :: New for symbol ETH processed
+2020-06-14 11:31:46  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.857 BestAskPrice=234.977
+2020-06-14 11:31:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:50  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:50  :: Received New for symbol ETH
+2020-06-14 11:31:50  :: New for symbol ETH processed
+2020-06-14 11:31:51  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.859 BestAskPrice=234.977
+2020-06-14 11:31:54  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.862 BestAskPrice=234.977
+2020-06-14 11:31:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:55  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:31:55  :: Received New for symbol ETH
+2020-06-14 11:31:55  :: New for symbol ETH processed
+2020-06-14 11:31:59  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.864 BestAskPrice=234.977
+2020-06-14 11:32:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:01  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:01  :: Received New for symbol ETH
+2020-06-14 11:32:01  :: New for symbol ETH processed
+2020-06-14 11:32:03  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.866 BestAskPrice=234.977
+2020-06-14 11:32:07  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.865 BestAskPrice=234.977
+2020-06-14 11:32:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:07  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:07  :: Received New for symbol ETH
+2020-06-14 11:32:07  :: New for symbol ETH processed
+2020-06-14 11:32:10  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.866 BestAskPrice=234.977
+2020-06-14 11:32:12  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:12  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:12  :: Received New for symbol ETH
+2020-06-14 11:32:12  :: New for symbol ETH processed
+2020-06-14 11:32:14  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:17  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:18  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:18  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:18  :: Received New for symbol ETH
+2020-06-14 11:32:18  :: New for symbol ETH processed
+2020-06-14 11:32:21  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:24  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:24  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:24  :: Received New for symbol ETH
+2020-06-14 11:32:24  :: New for symbol ETH processed
+2020-06-14 11:32:25  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:29  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:30  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:30  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:30  :: Received New for symbol ETH
+2020-06-14 11:32:30  :: New for symbol ETH processed
+2020-06-14 11:32:33  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:35  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:35  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:35  :: Received New for symbol ETH
+2020-06-14 11:32:35  :: New for symbol ETH processed
+2020-06-14 11:32:37  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:40  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:40  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:40  :: Received New for symbol ETH
+2020-06-14 11:32:40  :: New for symbol ETH processed
+2020-06-14 11:32:42  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.977
+2020-06-14 11:32:45  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.867 BestAskPrice=234.976
+2020-06-14 11:32:45  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.977 Old Ask Price:234.976
+2020-06-14 11:32:46  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:46  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:46  :: Received New for symbol ETH
+2020-06-14 11:32:46  :: New for symbol ETH processed
+2020-06-14 11:32:46  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.976
+2020-06-14 11:32:46  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:32:47  :: @Outgoing Order Routing Bittrex:Cancelling Order Id d0af64a2-83b0-4ae2-91ab-eafd170358eb for symbol ETH
+2020-06-14 11:32:50  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.869 BestAskPrice=234.976
+2020-06-14 11:32:51  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:51  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:51  :: Received New for symbol ETH
+2020-06-14 11:32:51  :: New for symbol ETH processed
+2020-06-14 11:32:55  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.865 BestAskPrice=234.976
+2020-06-14 11:32:56  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:56  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:32:56  :: Received New for symbol ETH
+2020-06-14 11:32:56  :: New for symbol ETH processed
+2020-06-14 11:32:58  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.865 BestAskPrice=234.976
+2020-06-14 11:33:02  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:02  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:02  :: Received New for symbol ETH
+2020-06-14 11:33:02  :: New for symbol ETH processed
+2020-06-14 11:33:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.865 BestAskPrice=234.976
+2020-06-14 11:33:07  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.736 BestAskPrice=234.975
+2020-06-14 11:33:07  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.976 Old Ask Price:234.975
+2020-06-14 11:33:08  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:08  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:08  :: Received New for symbol ETH
+2020-06-14 11:33:08  :: New for symbol ETH processed
+2020-06-14 11:33:08  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.975
+2020-06-14 11:33:08  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:33:08  :: @Outgoing Order Routing Bittrex:Cancelling Order Id b34193b8-4bb7-468e-a5fe-00d4d7f74c68 for symbol ETH
+2020-06-14 11:33:11  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.738 BestAskPrice=234.975
+2020-06-14 11:33:14  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:14  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:14  :: Received New for symbol ETH
+2020-06-14 11:33:14  :: New for symbol ETH processed
+2020-06-14 11:33:15  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.744 BestAskPrice=234.975
+2020-06-14 11:33:19  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.746 BestAskPrice=234.975
+2020-06-14 11:33:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:20  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:20  :: Received New for symbol ETH
+2020-06-14 11:33:20  :: New for symbol ETH processed
+2020-06-14 11:33:24  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.747 BestAskPrice=234.975
+2020-06-14 11:33:25  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:25  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:25  :: Received New for symbol ETH
+2020-06-14 11:33:25  :: New for symbol ETH processed
+2020-06-14 11:33:28  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.748 BestAskPrice=234.975
+2020-06-14 11:33:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:31  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:31  :: Received New for symbol ETH
+2020-06-14 11:33:31  :: New for symbol ETH processed
+2020-06-14 11:33:31  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.748 BestAskPrice=234.975
+2020-06-14 11:33:36  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.748 BestAskPrice=234.975
+2020-06-14 11:33:37  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:37  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:37  :: Received New for symbol ETH
+2020-06-14 11:33:37  :: New for symbol ETH processed
+2020-06-14 11:33:40  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.749 BestAskPrice=234.975
+2020-06-14 11:33:42  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:42  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:42  :: Received New for symbol ETH
+2020-06-14 11:33:42  :: New for symbol ETH processed
+2020-06-14 11:33:44  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.752 BestAskPrice=234.975
+2020-06-14 11:33:47  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:47  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:47  :: Received New for symbol ETH
+2020-06-14 11:33:47  :: New for symbol ETH processed
+2020-06-14 11:33:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.754 BestAskPrice=234.975
+2020-06-14 11:33:52  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:52  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:52  :: Received New for symbol ETH
+2020-06-14 11:33:52  :: New for symbol ETH processed
+2020-06-14 11:33:54  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.755 BestAskPrice=234.975
+2020-06-14 11:33:58  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.755 BestAskPrice=234.975
+2020-06-14 11:33:58  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:58  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:33:58  :: Received New for symbol ETH
+2020-06-14 11:33:58  :: New for symbol ETH processed
+2020-06-14 11:34:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.755 BestAskPrice=234.975
+2020-06-14 11:34:04  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:04  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:04  :: Received New for symbol ETH
+2020-06-14 11:34:04  :: New for symbol ETH processed
+2020-06-14 11:34:07  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.757 BestAskPrice=234.975
+2020-06-14 11:34:09  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:09  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:09  :: Received New for symbol ETH
+2020-06-14 11:34:09  :: New for symbol ETH processed
+2020-06-14 11:34:10  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.757 BestAskPrice=234.975
+2020-06-14 11:34:14  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.757 BestAskPrice=234.975
+2020-06-14 11:34:15  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:15  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:15  :: Received New for symbol ETH
+2020-06-14 11:34:15  :: New for symbol ETH processed
+2020-06-14 11:34:19  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.757 BestAskPrice=234.975
+2020-06-14 11:34:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:20  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:20  :: Received New for symbol ETH
+2020-06-14 11:34:20  :: New for symbol ETH processed
+2020-06-14 11:34:23  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.759 BestAskPrice=234.975
+2020-06-14 11:34:26  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:26  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:26  :: Received New for symbol ETH
+2020-06-14 11:34:26  :: New for symbol ETH processed
+2020-06-14 11:34:27  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.761 BestAskPrice=234.975
+2020-06-14 11:34:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:31  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:31  :: Received New for symbol ETH
+2020-06-14 11:34:31  :: New for symbol ETH processed
+2020-06-14 11:34:31  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.761 BestAskPrice=234.975
+2020-06-14 11:34:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:36  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:36  :: Received New for symbol ETH
+2020-06-14 11:34:36  :: New for symbol ETH processed
+2020-06-14 11:34:36  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.766 BestAskPrice=234.975
+2020-06-14 11:34:41  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.77 BestAskPrice=234.975
+2020-06-14 11:34:42  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:42  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:42  :: Received New for symbol ETH
+2020-06-14 11:34:42  :: New for symbol ETH processed
+2020-06-14 11:34:46  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.773 BestAskPrice=234.975
+2020-06-14 11:34:48  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:48  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:48  :: Received New for symbol ETH
+2020-06-14 11:34:48  :: New for symbol ETH processed
+2020-06-14 11:34:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.775 BestAskPrice=234.975
+2020-06-14 11:34:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.777 BestAskPrice=234.975
+2020-06-14 11:34:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:54  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:54  :: Received New for symbol ETH
+2020-06-14 11:34:54  :: New for symbol ETH processed
+2020-06-14 11:34:57  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.778 BestAskPrice=234.975
+2020-06-14 11:34:59  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:59  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:34:59  :: Received New for symbol ETH
+2020-06-14 11:34:59  :: New for symbol ETH processed
+2020-06-14 11:35:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.79 BestAskPrice=234.975
+2020-06-14 11:35:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:05  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:05  :: Received New for symbol ETH
+2020-06-14 11:35:05  :: New for symbol ETH processed
+2020-06-14 11:35:05  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.792 BestAskPrice=234.975
+2020-06-14 11:35:09  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.794 BestAskPrice=234.975
+2020-06-14 11:35:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:10  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:10  :: Received New for symbol ETH
+2020-06-14 11:35:10  :: New for symbol ETH processed
+2020-06-14 11:35:14  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:16  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:16  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:16  :: Received New for symbol ETH
+2020-06-14 11:35:16  :: New for symbol ETH processed
+2020-06-14 11:35:18  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:22  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:22  :: Received New for symbol ETH
+2020-06-14 11:35:22  :: New for symbol ETH processed
+2020-06-14 11:35:23  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:28  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:28  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:28  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:28  :: Received New for symbol ETH
+2020-06-14 11:35:28  :: New for symbol ETH processed
+2020-06-14 11:35:32  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:33  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:33  :: Received New for symbol ETH
+2020-06-14 11:35:33  :: New for symbol ETH processed
+2020-06-14 11:35:36  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:39  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:39  :: Received New for symbol ETH
+2020-06-14 11:35:39  :: New for symbol ETH processed
+2020-06-14 11:35:40  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.795 BestAskPrice=234.975
+2020-06-14 11:35:45  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.8 BestAskPrice=234.975
+2020-06-14 11:35:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:45  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:45  :: Received New for symbol ETH
+2020-06-14 11:35:45  :: New for symbol ETH processed
+2020-06-14 11:35:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:35:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:50  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:50  :: Received New for symbol ETH
+2020-06-14 11:35:50  :: New for symbol ETH processed
+2020-06-14 11:35:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:35:56  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:56  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:35:56  :: Received New for symbol ETH
+2020-06-14 11:35:56  :: New for symbol ETH processed
+2020-06-14 11:35:58  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:36:02  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:02  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:02  :: Received New for symbol ETH
+2020-06-14 11:36:02  :: New for symbol ETH processed
+2020-06-14 11:36:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:36:06  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:36:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:07  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:07  :: Received New for symbol ETH
+2020-06-14 11:36:07  :: New for symbol ETH processed
+2020-06-14 11:36:10  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:36:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:13  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:13  :: Received New for symbol ETH
+2020-06-14 11:36:13  :: New for symbol ETH processed
+2020-06-14 11:36:14  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:36:18  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:18  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:18  :: Received New for symbol ETH
+2020-06-14 11:36:18  :: New for symbol ETH processed
+2020-06-14 11:36:19  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.975
+2020-06-14 11:36:23  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.974
+2020-06-14 11:36:23  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.975 Old Ask Price:234.974
+2020-06-14 11:36:23  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:23  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:23  :: Received New for symbol ETH
+2020-06-14 11:36:23  :: New for symbol ETH processed
+2020-06-14 11:36:23  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.974
+2020-06-14 11:36:23  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:36:24  :: @Outgoing Order Routing Bittrex:Cancelling Order Id ce398c53-1635-436c-ae3d-83e917b19e69 for symbol ETH
+2020-06-14 11:36:28  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.801 BestAskPrice=234.974
+2020-06-14 11:36:29  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:29  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:29  :: Received New for symbol ETH
+2020-06-14 11:36:29  :: New for symbol ETH processed
+2020-06-14 11:36:32  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:36:34  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:34  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:34  :: Received New for symbol ETH
+2020-06-14 11:36:34  :: New for symbol ETH processed
+2020-06-14 11:36:37  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:36:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:39  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:39  :: Received New for symbol ETH
+2020-06-14 11:36:39  :: New for symbol ETH processed
+2020-06-14 11:36:41  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:36:44  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:36:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:45  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:45  :: Received New for symbol ETH
+2020-06-14 11:36:45  :: New for symbol ETH processed
+2020-06-14 11:36:48  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:36:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:50  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:50  :: Received New for symbol ETH
+2020-06-14 11:36:50  :: New for symbol ETH processed
+2020-06-14 11:36:51  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:36:56  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:56  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:36:56  :: Received New for symbol ETH
+2020-06-14 11:36:56  :: New for symbol ETH processed
+2020-06-14 11:36:56  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:37:01  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:37:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:01  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:01  :: Received New for symbol ETH
+2020-06-14 11:37:01  :: New for symbol ETH processed
+2020-06-14 11:37:05  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:37:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:07  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:07  :: Received New for symbol ETH
+2020-06-14 11:37:07  :: New for symbol ETH processed
+2020-06-14 11:37:09  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:37:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:13  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:13  :: Received New for symbol ETH
+2020-06-14 11:37:13  :: New for symbol ETH processed
+2020-06-14 11:37:13  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:37:17  :: Processing Market Data:Symbol=ETH  LastPrice=234.791 BestBidPrice=234.803 BestAskPrice=234.974
+2020-06-14 11:37:19  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:19  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:19  :: Received New for symbol ETH
+2020-06-14 11:37:19  :: New for symbol ETH processed
+2020-06-14 11:37:21  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.804 BestAskPrice=234.974
+2020-06-14 11:37:24  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:24  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:24  :: Received New for symbol ETH
+2020-06-14 11:37:24  :: New for symbol ETH processed
+2020-06-14 11:37:25  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.694 BestAskPrice=234.926
+2020-06-14 11:37:25  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.974 Old Ask Price:234.926
+2020-06-14 11:37:26  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.926
+2020-06-14 11:37:26  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:37:27  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 82ec0439-be80-4129-b74b-2bc05070aa35 for symbol ETH
+2020-06-14 11:37:29  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.694 BestAskPrice=234.923
+2020-06-14 11:37:29  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.926 Old Ask Price:234.923
+2020-06-14 11:37:29  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:29  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:29  :: Received New for symbol ETH
+2020-06-14 11:37:29  :: New for symbol ETH processed
+2020-06-14 11:37:30  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.923
+2020-06-14 11:37:30  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:37:30  :: @Outgoing Order Routing Bittrex:Cancelling Order Id b257c146-1625-4c65-b9d0-4b3877fadefe for symbol ETH
+2020-06-14 11:37:32  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.694 BestAskPrice=234.923
+2020-06-14 11:37:34  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:34  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:34  :: Received New for symbol ETH
+2020-06-14 11:37:34  :: New for symbol ETH processed
+2020-06-14 11:37:37  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.696 BestAskPrice=234.923
+2020-06-14 11:37:40  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:40  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:40  :: Received New for symbol ETH
+2020-06-14 11:37:40  :: New for symbol ETH processed
+2020-06-14 11:37:41  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.696 BestAskPrice=234.91
+2020-06-14 11:37:41  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.923 Old Ask Price:234.91
+2020-06-14 11:37:42  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.91
+2020-06-14 11:37:42  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:37:42  :: @Outgoing Order Routing Bittrex:Cancelling Order Id e1fda46f-fdef-4314-b57c-cfc65d52f2df for symbol ETH
+2020-06-14 11:37:45  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.698 BestAskPrice=234.91
+2020-06-14 11:37:45  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:45  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:45  :: Received New for symbol ETH
+2020-06-14 11:37:45  :: New for symbol ETH processed
+2020-06-14 11:37:50  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.7 BestAskPrice=234.91
+2020-06-14 11:37:50  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:50  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:50  :: Received New for symbol ETH
+2020-06-14 11:37:50  :: New for symbol ETH processed
+2020-06-14 11:37:54  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.702 BestAskPrice=234.91
+2020-06-14 11:37:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:55  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:37:55  :: Received New for symbol ETH
+2020-06-14 11:37:55  :: New for symbol ETH processed
+2020-06-14 11:37:59  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.702 BestAskPrice=234.891
+2020-06-14 11:37:59  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.91 Old Ask Price:234.891
+2020-06-14 11:37:59  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.891
+2020-06-14 11:37:59  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:00  :: @Outgoing Order Routing Bittrex:Cancelling Order Id cf926a8c-bf9a-4f1e-b5e8-091eeed30900 for symbol ETH
+2020-06-14 11:38:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:01  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:01  :: Received New for symbol ETH
+2020-06-14 11:38:01  :: New for symbol ETH processed
+2020-06-14 11:38:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.702 BestAskPrice=234.889
+2020-06-14 11:38:02  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.891 Old Ask Price:234.889
+2020-06-14 11:38:04  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.889
+2020-06-14 11:38:04  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:04  :: @Outgoing Order Routing Bittrex:Cancelling Order Id ccee2b25-dcd9-48e9-aad7-1d0f66c8aac8 for symbol ETH
+2020-06-14 11:38:06  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.628 BestAskPrice=234.889
+2020-06-14 11:38:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:07  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:07  :: Received New for symbol ETH
+2020-06-14 11:38:07  :: New for symbol ETH processed
+2020-06-14 11:38:11  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.631 BestAskPrice=234.88
+2020-06-14 11:38:11  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.889 Old Ask Price:234.88
+2020-06-14 11:38:12  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.88
+2020-06-14 11:38:12  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:12  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:12  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 83a20414-8dca-4020-92a7-7707606a153e for symbol ETH
+2020-06-14 11:38:13  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:13  :: Received New for symbol ETH
+2020-06-14 11:38:13  :: New for symbol ETH processed
+2020-06-14 11:38:16  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.631 BestAskPrice=234.878
+2020-06-14 11:38:16  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.88 Old Ask Price:234.878
+2020-06-14 11:38:17  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.878
+2020-06-14 11:38:17  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:18  :: @Outgoing Order Routing Bittrex:Cancelling Order Id bdf4ad93-904d-463c-8076-cdd69fb14adf for symbol ETH
+2020-06-14 11:38:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:20  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:20  :: Received New for symbol ETH
+2020-06-14 11:38:20  :: New for symbol ETH processed
+2020-06-14 11:38:21  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.632 BestAskPrice=234.878
+2020-06-14 11:38:25  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.636 BestAskPrice=234.865
+2020-06-14 11:38:25  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.878 Old Ask Price:234.865
+2020-06-14 11:38:25  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.865
+2020-06-14 11:38:25  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:26  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:26  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 39d48cd3-fa2f-4e53-bf14-3fd460456e88 for symbol ETH
+2020-06-14 11:38:26  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:26  :: Received New for symbol ETH
+2020-06-14 11:38:27  :: New for symbol ETH processed
+2020-06-14 11:38:28  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.636 BestAskPrice=234.865
+2020-06-14 11:38:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:32  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:32  :: Received New for symbol ETH
+2020-06-14 11:38:32  :: New for symbol ETH processed
+2020-06-14 11:38:33  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.636 BestAskPrice=234.864
+2020-06-14 11:38:33  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.865 Old Ask Price:234.864
+2020-06-14 11:38:34  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.864
+2020-06-14 11:38:34  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:34  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7164c239-7c04-4770-890c-814c01893247 for symbol ETH
+2020-06-14 11:38:37  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.636 BestAskPrice=234.865
+2020-06-14 11:38:37  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.864 Old Ask Price:234.865
+2020-06-14 11:38:37  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.865
+2020-06-14 11:38:37  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:37  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 3581a3f5-ae37-4ea2-9904-2df64f57e526 for symbol ETH
+2020-06-14 11:38:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:38  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:38  :: Received New for symbol ETH
+2020-06-14 11:38:38  :: New for symbol ETH processed
+2020-06-14 11:38:42  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.591 BestAskPrice=234.863
+2020-06-14 11:38:42  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.865 Old Ask Price:234.863
+2020-06-14 11:38:42  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.863
+2020-06-14 11:38:42  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:43  :: @Outgoing Order Routing Bittrex:Cancelling Order Id dbd975bb-3417-4eba-bfaf-3208aac482ea for symbol ETH
+2020-06-14 11:38:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:43  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:43  :: Received New for symbol ETH
+2020-06-14 11:38:43  :: New for symbol ETH processed
+2020-06-14 11:38:46  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.593 BestAskPrice=234.845
+2020-06-14 11:38:46  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.863 Old Ask Price:234.845
+2020-06-14 11:38:46  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.845
+2020-06-14 11:38:46  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:46  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 6a5fb98a-9bdd-4f34-b318-5c5e50dff55e for symbol ETH
+2020-06-14 11:38:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:49  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:49  :: Received New for symbol ETH
+2020-06-14 11:38:49  :: New for symbol ETH processed
+2020-06-14 11:38:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.593 BestAskPrice=234.843
+2020-06-14 11:38:49  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.845 Old Ask Price:234.843
+2020-06-14 11:38:50  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.843
+2020-06-14 11:38:50  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:50  :: @Outgoing Order Routing Bittrex:Cancelling Order Id a3d974df-e04c-453d-a00b-d5e49bc6fb38 for symbol ETH
+2020-06-14 11:38:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.593 BestAskPrice=234.842
+2020-06-14 11:38:53  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.843 Old Ask Price:234.842
+2020-06-14 11:38:54  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.842
+2020-06-14 11:38:54  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:38:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:54  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 44aa5ddc-c815-4d97-ae4e-abc8f6b016c5 for symbol ETH
+2020-06-14 11:38:55  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:38:55  :: Received New for symbol ETH
+2020-06-14 11:38:55  :: New for symbol ETH processed
+2020-06-14 11:38:57  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.593 BestAskPrice=234.842
+2020-06-14 11:39:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:00  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:00  :: Received New for symbol ETH
+2020-06-14 11:39:00  :: New for symbol ETH processed
+2020-06-14 11:39:02  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.595 BestAskPrice=234.825
+2020-06-14 11:39:02  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.842 Old Ask Price:234.825
+2020-06-14 11:39:02  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.825
+2020-06-14 11:39:02  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:39:03  :: @Outgoing Order Routing Bittrex:Cancelling Order Id d10b4102-d33e-4fc4-b7fd-0c3a09f74077 for symbol ETH
+2020-06-14 11:39:06  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.592 BestAskPrice=234.825
+2020-06-14 11:39:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:06  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:06  :: Received New for symbol ETH
+2020-06-14 11:39:06  :: New for symbol ETH processed
+2020-06-14 11:39:10  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.593 BestAskPrice=234.825
+2020-06-14 11:39:11  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:11  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:11  :: Received New for symbol ETH
+2020-06-14 11:39:11  :: New for symbol ETH processed
+2020-06-14 11:39:14  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.594 BestAskPrice=234.825
+2020-06-14 11:39:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:17  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:17  :: Received New for symbol ETH
+2020-06-14 11:39:17  :: New for symbol ETH processed
+2020-06-14 11:39:18  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.594 BestAskPrice=234.825
+2020-06-14 11:39:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:22  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:22  :: Received New for symbol ETH
+2020-06-14 11:39:22  :: New for symbol ETH processed
+2020-06-14 11:39:23  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.592 BestAskPrice=234.806
+2020-06-14 11:39:23  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.825 Old Ask Price:234.806
+2020-06-14 11:39:23  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.806
+2020-06-14 11:39:23  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:39:23  :: @Outgoing Order Routing Bittrex:Cancelling Order Id fcb878cf-fb87-4c8b-a1f1-a7a4088e7440 for symbol ETH
+2020-06-14 11:39:27  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.593 BestAskPrice=234.804
+2020-06-14 11:39:27  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.806 Old Ask Price:234.804
+2020-06-14 11:39:27  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.804
+2020-06-14 11:39:27  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:39:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:28  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 802b8237-4ce0-427b-9207-591c652c6eaf for symbol ETH
+2020-06-14 11:39:28  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:28  :: Received New for symbol ETH
+2020-06-14 11:39:28  :: New for symbol ETH processed
+2020-06-14 11:39:31  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.596 BestAskPrice=234.804
+2020-06-14 11:39:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:33  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:33  :: Received New for symbol ETH
+2020-06-14 11:39:33  :: New for symbol ETH processed
+2020-06-14 11:39:36  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.597 BestAskPrice=234.804
+2020-06-14 11:39:39  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:39  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:39  :: Received New for symbol ETH
+2020-06-14 11:39:39  :: New for symbol ETH processed
+2020-06-14 11:39:40  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.597 BestAskPrice=234.804
+2020-06-14 11:39:44  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:44  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:44  :: Received New for symbol ETH
+2020-06-14 11:39:44  :: New for symbol ETH processed
+2020-06-14 11:39:45  :: Processing Market Data:Symbol=ETH  LastPrice=234.7 BestBidPrice=234.597 BestAskPrice=234.804
+2020-06-14 11:39:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:49  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:49  :: Received New for symbol ETH
+2020-06-14 11:39:49  :: New for symbol ETH processed
+2020-06-14 11:39:49  :: Processing Market Data:Symbol=ETH  LastPrice=234.597 BestBidPrice=234.598 BestAskPrice=234.804
+2020-06-14 11:39:53  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.597 BestAskPrice=234.804
+2020-06-14 11:39:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:54  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:39:54  :: Received New for symbol ETH
+2020-06-14 11:39:54  :: New for symbol ETH processed
+2020-06-14 11:39:57  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.602 BestAskPrice=234.804
+2020-06-14 11:40:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:00  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:00  :: Received New for symbol ETH
+2020-06-14 11:40:00  :: New for symbol ETH processed
+2020-06-14 11:40:01  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.602 BestAskPrice=234.804
+2020-06-14 11:40:05  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.605 BestAskPrice=234.804
+2020-06-14 11:40:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:05  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:05  :: Received New for symbol ETH
+2020-06-14 11:40:05  :: New for symbol ETH processed
+2020-06-14 11:40:09  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.605 BestAskPrice=234.804
+2020-06-14 11:40:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:10  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:10  :: Received New for symbol ETH
+2020-06-14 11:40:10  :: New for symbol ETH processed
+2020-06-14 11:40:13  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.605 BestAskPrice=234.804
+2020-06-14 11:40:15  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:15  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:15  :: Received New for symbol ETH
+2020-06-14 11:40:15  :: New for symbol ETH processed
+2020-06-14 11:40:18  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.591 BestAskPrice=234.798
+2020-06-14 11:40:18  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.804 Old Ask Price:234.798
+2020-06-14 11:40:19  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.798
+2020-06-14 11:40:19  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:40:19  :: @Outgoing Order Routing Bittrex:Cancelling Order Id a1ba3868-6fc8-433c-bd0d-2e8a82c0946f for symbol ETH
+2020-06-14 11:40:21  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:21  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:21  :: Received New for symbol ETH
+2020-06-14 11:40:21  :: New for symbol ETH processed
+2020-06-14 11:40:22  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.593 BestAskPrice=234.798
+2020-06-14 11:40:26  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.519 BestAskPrice=234.798
+2020-06-14 11:40:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:27  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:27  :: Received New for symbol ETH
+2020-06-14 11:40:27  :: New for symbol ETH processed
+2020-06-14 11:40:30  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.524 BestAskPrice=234.766
+2020-06-14 11:40:30  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.798 Old Ask Price:234.766
+2020-06-14 11:40:31  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.766
+2020-06-14 11:40:31  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:40:31  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 9b40b519-a003-4533-8048-50d3a9c30f64 for symbol ETH
+2020-06-14 11:40:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:32  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:32  :: Received New for symbol ETH
+2020-06-14 11:40:32  :: New for symbol ETH processed
+2020-06-14 11:40:34  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.524 BestAskPrice=234.742
+2020-06-14 11:40:34  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.766 Old Ask Price:234.742
+2020-06-14 11:40:34  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.742
+2020-06-14 11:40:34  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:40:35  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 784042d2-de5e-409f-8ab9-b993646d3c86 for symbol ETH
+2020-06-14 11:40:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:38  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:38  :: Received New for symbol ETH
+2020-06-14 11:40:38  :: New for symbol ETH processed
+2020-06-14 11:40:38  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.527 BestAskPrice=234.742
+2020-06-14 11:40:43  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.528 BestAskPrice=234.742
+2020-06-14 11:40:44  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:44  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:44  :: Received New for symbol ETH
+2020-06-14 11:40:44  :: New for symbol ETH processed
+2020-06-14 11:40:47  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.528 BestAskPrice=234.742
+2020-06-14 11:40:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:49  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:49  :: Received New for symbol ETH
+2020-06-14 11:40:49  :: New for symbol ETH processed
+2020-06-14 11:40:50  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.528 BestAskPrice=234.721
+2020-06-14 11:40:50  :: Updating DOM price on ASK. Symbol: ETH - New Ask Price:234.742 Old Ask Price:234.721
+2020-06-14 11:40:50  :: @Order Router: Updating order for symbol ETH: qty=0.03886613 price=234.721
+2020-06-14 11:40:50  :: @Outgoing Order Routing Bittrex:Updating order  for symbol ETH
+2020-06-14 11:40:51  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 9bca707d-3adf-4b73-ae5d-95b73e565157 for symbol ETH
+2020-06-14 11:40:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:55  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:40:55  :: Received New for symbol ETH
+2020-06-14 11:40:55  :: New for symbol ETH processed
+2020-06-14 11:40:55  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.528 BestAskPrice=234.721
+2020-06-14 11:40:59  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.528 BestAskPrice=234.721
+2020-06-14 11:41:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:00  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:00  :: Received New for symbol ETH
+2020-06-14 11:41:00  :: New for symbol ETH processed
+2020-06-14 11:41:03  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.53 BestAskPrice=234.721
+2020-06-14 11:41:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:05  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:06  :: Received New for symbol ETH
+2020-06-14 11:41:06  :: New for symbol ETH processed
+2020-06-14 11:41:07  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.53 BestAskPrice=234.721
+2020-06-14 11:41:11  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:11  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:11  :: Received New for symbol ETH
+2020-06-14 11:41:11  :: New for symbol ETH processed
+2020-06-14 11:41:12  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.532 BestAskPrice=234.721
+2020-06-14 11:41:16  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.531 BestAskPrice=234.721
+2020-06-14 11:41:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:17  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:17  :: Received New for symbol ETH
+2020-06-14 11:41:17  :: New for symbol ETH processed
+2020-06-14 11:41:19  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.531 BestAskPrice=234.721
+2020-06-14 11:41:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:22  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:22  :: Received New for symbol ETH
+2020-06-14 11:41:22  :: New for symbol ETH processed
+2020-06-14 11:41:24  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.532 BestAskPrice=234.721
+2020-06-14 11:41:28  :: Processing Market Data:Symbol=ETH  LastPrice=234.599 BestBidPrice=234.533 BestAskPrice=234.721
+2020-06-14 11:41:28  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:28  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.03886613 AvgPx=0
+2020-06-14 11:41:28  :: Received New for symbol ETH
+2020-06-14 11:41:28  :: New for symbol ETH processed
+2020-06-14 11:41:32  :: Processing Market Data:Symbol=ETH  LastPrice=234.747 BestBidPrice=234.534 BestAskPrice=234.721
+2020-06-14 11:41:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade CumQty=0.03886613 LvsQty=0.00000000 AvgPx=234.72099975
+2020-06-14 11:41:33  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Filled - Exec Type=Trade CumQty=0.03886613 LvsQty=0.00000000 AvgPx=234.72099975
+2020-06-14 11:41:33  :: Received filled for symbol ETH
+2020-06-14 11:41:33  :: Filled for symbol ETH processed
+2020-06-14 11:41:34  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2020-06-14 11:41:51  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 11:42:09  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 14:32:17  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 14:32:38  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 14:33:19  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 14:33:38  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 14:33:38  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol DCR
+2020-06-14 14:33:40  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.86900421 BestAskPrice=17.49399999
+2020-06-14 14:33:40  :: Routing to market position for symbol DCR
+2020-06-14 14:33:40  :: Creating buy order for symbol DCR.Quantity=0.630159263156437 Price=15.87
+2020-06-14 14:33:40  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DCR
+2020-06-14 14:33:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:33:43  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:33:43  :: Received New for symbol DCR
+2020-06-14 14:33:43  :: New for symbol DCR processed
+2020-06-14 14:33:45  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.87100422 BestAskPrice=17.49399999
+2020-06-14 14:33:45  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.86900421 Old Bid Price:15.87100422
+2020-06-14 14:33:45  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.87100422
+2020-06-14 14:33:45  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:33:46  :: @Outgoing Order Routing Bittrex:Cancelling Order Id f1131113-ce4d-4e14-a8da-da1af1b3cfea for symbol DCR
+2020-06-14 14:33:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:33:49  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:33:49  :: Received New for symbol DCR
+2020-06-14 14:33:49  :: New for symbol DCR processed
+2020-06-14 14:33:50  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.87100422 BestAskPrice=17.49399999
+2020-06-14 14:33:55  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.87100423 BestAskPrice=17.49399999
+2020-06-14 14:33:55  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.87100422 Old Bid Price:15.87100423
+2020-06-14 14:33:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:33:55  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:33:55  :: Received New for symbol DCR
+2020-06-14 14:33:55  :: New for symbol DCR processed
+2020-06-14 14:33:55  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.87100423
+2020-06-14 14:33:55  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:33:56  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 482ba906-622a-420a-beea-810f201d83b7 for symbol DCR
+2020-06-14 14:33:59  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.87300424 BestAskPrice=17.49399999
+2020-06-14 14:33:59  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.87100423 Old Bid Price:15.87300424
+2020-06-14 14:34:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:00  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:00  :: Received New for symbol DCR
+2020-06-14 14:34:00  :: New for symbol DCR processed
+2020-06-14 14:34:00  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.87300424
+2020-06-14 14:34:00  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:34:01  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 606d81be-4f91-491f-b041-e15b26e914c5 for symbol DCR
+2020-06-14 14:34:04  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.87300424 BestAskPrice=17.49399999
+2020-06-14 14:34:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:05  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:05  :: Received New for symbol DCR
+2020-06-14 14:34:05  :: New for symbol DCR processed
+2020-06-14 14:34:06  :: Canceling all active orders
+2020-06-14 14:34:06  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 14:34:06  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol ETH
+2020-06-14 14:34:06  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 8c53dcd5-b0c4-4064-830d-54c10f8b11f7 for symbol ETH
+2020-06-14 14:34:07  :: @Outgoing Order Routing Bittrex:Error cancelling all active orders!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 8c53dcd5-b0c4-4064-830d-54c10f8b11f7
+2020-06-14 14:34:07  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DCR 
+2020-06-14 14:34:08  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.87400425 BestAskPrice=17.488
+2020-06-14 14:34:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:10  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:10  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:16  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:16  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:16  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:22  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:22  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:27  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:27  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:33  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:33  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:38  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:38  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:43  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:43  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:48  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:48  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:48  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:34:54  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:54  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:34:54  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:00  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:00  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:06  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:06  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:11  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:11  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:11  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:16  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:16  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:16  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:22  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:22  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:27  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:27  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:32  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:32  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:37  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:37  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:37  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:43  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:43  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:49  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:53  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:35:59  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:59  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:35:59  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:36:05  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:36:05  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:36:05  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:36:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:36:10  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:41:03  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:41:09  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:41:09  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=0.63015926 AvgPx=0
+2020-06-14 14:51:29  :: 6/14/2020 2:51:29 PMMomentumStrategyBase.LoadConfig
+2020-06-14 14:51:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 14:51:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 14:51:29  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 14:51:29  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2020-06-14 14:51:29  :: 6/14/2020 2:51:29 PMOrderRouterBase.LoadConfig
+2020-06-14 14:51:29  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-14 14:51:29  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-14 14:51:29  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-14 14:51:29  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-06-14 14:51:29  :: 6/14/2020 2:51:29 PMOrderRouterBase.LoadConfig
+2020-06-14 14:51:29  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 14:51:29  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 14:51:29  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2020-06-14 14:51:35  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 14:51:54  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 14:57:01  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 14:57:21  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 14:57:21  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol DCR
+2020-06-14 14:57:23  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.96500126 BestAskPrice=17.48799999
+2020-06-14 14:57:23  :: Routing to market position for symbol DCR
+2020-06-14 14:57:23  :: Creating buy order for symbol DCR.Quantity=0.626370135344418 Price=15.97
+2020-06-14 14:57:23  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DCR
+2020-06-14 14:57:25  :: @Outgoing Order Routing Bittrex:New buy order Order Id 7e492da2-b735-4226-ba94-238155067612 created for symbol DCR
+2020-06-14 14:57:26  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:26  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:26  :: Received New for symbol DCR
+2020-06-14 14:57:26  :: New for symbol DCR processed
+2020-06-14 14:57:28  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.96500126 BestAskPrice=17.48799999
+2020-06-14 14:57:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:32  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:32  :: Received New for symbol DCR
+2020-06-14 14:57:32  :: New for symbol DCR processed
+2020-06-14 14:57:33  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.96700127 BestAskPrice=17.48799999
+2020-06-14 14:57:33  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.96500126 Old Bid Price:15.96700127
+2020-06-14 14:57:34  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.96700127
+2020-06-14 14:57:34  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:57:35  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7e492da2-b735-4226-ba94-238155067612 for symbol DCR
+2020-06-14 14:57:36  :: @Outgoing Order Routing Bittrex:New buy order Order Id abd947ce-56cd-454b-8dfd-09964a93e261 created for symbol DCR
+2020-06-14 14:57:38  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.96700127 BestAskPrice=17.48799999
+2020-06-14 14:57:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:38  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:38  :: Received New for symbol DCR
+2020-06-14 14:57:38  :: New for symbol DCR processed
+2020-06-14 14:57:43  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.96800128 BestAskPrice=17.48799999
+2020-06-14 14:57:43  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.96700127 Old Bid Price:15.96800128
+2020-06-14 14:57:44  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:44  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:44  :: Received New for symbol DCR
+2020-06-14 14:57:44  :: New for symbol DCR processed
+2020-06-14 14:57:44  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.96800128
+2020-06-14 14:57:44  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:57:45  :: @Outgoing Order Routing Bittrex:Cancelling Order Id abd947ce-56cd-454b-8dfd-09964a93e261 for symbol DCR
+2020-06-14 14:57:46  :: @Outgoing Order Routing Bittrex:New buy order Order Id e21c18d7-b08b-4d1e-ac18-a4327e43a772 created for symbol DCR
+2020-06-14 14:57:47  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.96900129 BestAskPrice=17.48799999
+2020-06-14 14:57:47  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.96800128 Old Bid Price:15.96900129
+2020-06-14 14:57:48  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.96900129
+2020-06-14 14:57:48  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:57:48  :: @Outgoing Order Routing Bittrex:Cancelling Order Id e21c18d7-b08b-4d1e-ac18-a4327e43a772 for symbol DCR
+2020-06-14 14:57:49  :: @Outgoing Order Routing Bittrex:New buy order Order Id c01abd32-3382-42bb-8e94-e844de2c4d9d created for symbol DCR
+2020-06-14 14:57:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:49  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:49  :: Received New for symbol DCR
+2020-06-14 14:57:49  :: New for symbol DCR processed
+2020-06-14 14:57:52  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97000129 BestAskPrice=17.48799999
+2020-06-14 14:57:52  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.96900129 Old Bid Price:15.97000129
+2020-06-14 14:57:53  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97000129
+2020-06-14 14:57:53  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:57:53  :: @Outgoing Order Routing Bittrex:Cancelling Order Id c01abd32-3382-42bb-8e94-e844de2c4d9d for symbol DCR
+2020-06-14 14:57:55  :: @Outgoing Order Routing Bittrex:New buy order Order Id 4aba34f1-6095-48a3-9125-702fa4ac769e created for symbol DCR
+2020-06-14 14:57:55  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:55  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:57:55  :: Received New for symbol DCR
+2020-06-14 14:57:55  :: New for symbol DCR processed
+2020-06-14 14:57:56  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97200131 BestAskPrice=17.48799999
+2020-06-14 14:57:56  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97000129 Old Bid Price:15.97200131
+2020-06-14 14:57:58  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97200131
+2020-06-14 14:57:58  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:57:58  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 4aba34f1-6095-48a3-9125-702fa4ac769e for symbol DCR
+2020-06-14 14:57:59  :: @Outgoing Order Routing Bittrex:New buy order Order Id 6344375a-e358-448c-9f10-90a82a6ce027 created for symbol DCR
+2020-06-14 14:58:01  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:01  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:01  :: Received New for symbol DCR
+2020-06-14 14:58:01  :: New for symbol DCR processed
+2020-06-14 14:58:01  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97300133 BestAskPrice=17.48799999
+2020-06-14 14:58:01  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97200131 Old Bid Price:15.97300133
+2020-06-14 14:58:02  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97300133
+2020-06-14 14:58:02  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:03  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 6344375a-e358-448c-9f10-90a82a6ce027 for symbol DCR
+2020-06-14 14:58:04  :: @Outgoing Order Routing Bittrex:New buy order Order Id 9c981032-7434-47ae-bd57-5055d9ae8815 created for symbol DCR
+2020-06-14 14:58:06  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97400135 BestAskPrice=17.48799999
+2020-06-14 14:58:06  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97300133 Old Bid Price:15.97400135
+2020-06-14 14:58:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:07  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:07  :: Received New for symbol DCR
+2020-06-14 14:58:07  :: New for symbol DCR processed
+2020-06-14 14:58:07  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97400135
+2020-06-14 14:58:07  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:08  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 9c981032-7434-47ae-bd57-5055d9ae8815 for symbol DCR
+2020-06-14 14:58:09  :: @Outgoing Order Routing Bittrex:New buy order Order Id bc5bd545-4804-4c71-9f30-de1fe19f823b created for symbol DCR
+2020-06-14 14:58:11  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97500137 BestAskPrice=17.48799999
+2020-06-14 14:58:11  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97400135 Old Bid Price:15.97500137
+2020-06-14 14:58:12  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97500137
+2020-06-14 14:58:12  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:13  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:13  :: @Outgoing Order Routing Bittrex:Cancelling Order Id bc5bd545-4804-4c71-9f30-de1fe19f823b for symbol DCR
+2020-06-14 14:58:14  :: @Outgoing Order Routing Bittrex:New buy order Order Id ca723e39-b397-4517-8c3f-387491a0ca5a created for symbol DCR
+2020-06-14 14:58:14  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:14  :: Received New for symbol DCR
+2020-06-14 14:58:14  :: New for symbol DCR processed
+2020-06-14 14:58:16  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97600138 BestAskPrice=17.48799999
+2020-06-14 14:58:16  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97500137 Old Bid Price:15.97600138
+2020-06-14 14:58:17  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97600138
+2020-06-14 14:58:17  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:17  :: @Outgoing Order Routing Bittrex:Cancelling Order Id ca723e39-b397-4517-8c3f-387491a0ca5a for symbol DCR
+2020-06-14 14:58:18  :: @Outgoing Order Routing Bittrex:New buy order Order Id 852ca8f9-2a02-4d0d-8a55-fbccf1c8c730 created for symbol DCR
+2020-06-14 14:58:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:20  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:20  :: Received New for symbol DCR
+2020-06-14 14:58:20  :: New for symbol DCR processed
+2020-06-14 14:58:21  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.9770014 BestAskPrice=17.48799999
+2020-06-14 14:58:21  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97600138 Old Bid Price:15.9770014
+2020-06-14 14:58:21  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.9770014
+2020-06-14 14:58:21  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:22  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 852ca8f9-2a02-4d0d-8a55-fbccf1c8c730 for symbol DCR
+2020-06-14 14:58:23  :: @Outgoing Order Routing Bittrex:New buy order Order Id cff0044f-b792-4039-9902-d14448344022 created for symbol DCR
+2020-06-14 14:58:26  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.97900141 BestAskPrice=17.48799999
+2020-06-14 14:58:26  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.9770014 Old Bid Price:15.97900141
+2020-06-14 14:58:26  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.97900141
+2020-06-14 14:58:26  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:26  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:26  :: @Outgoing Order Routing Bittrex:Cancelling Order Id cff0044f-b792-4039-9902-d14448344022 for symbol DCR
+2020-06-14 14:58:27  :: @Outgoing Order Routing Bittrex:New buy order Order Id add86088-7438-4d32-9c3a-3f371e12ef5e created for symbol DCR
+2020-06-14 14:58:27  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:27  :: Received New for symbol DCR
+2020-06-14 14:58:27  :: New for symbol DCR processed
+2020-06-14 14:58:30  :: Processing Market Data:Symbol=DCR  LastPrice=16.255 BestBidPrice=15.98000141 BestAskPrice=17.48799999
+2020-06-14 14:58:30  :: Updating DOM price on BID. Symbol: DCR - New Bid Price:15.97900141 Old Bid Price:15.98000141
+2020-06-14 14:58:31  :: @Order Router: Updating order for symbol DCR: qty=0 price=15.98000141
+2020-06-14 14:58:31  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DCR
+2020-06-14 14:58:31  :: Canceling all active orders
+2020-06-14 14:58:31  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 14:58:32  :: @Outgoing Order Routing Bittrex:Cancelling Order Id add86088-7438-4d32-9c3a-3f371e12ef5e for symbol DCR
+2020-06-14 14:58:32  :: @Outgoing Order Routing Bittrex:New buy order Order Id 7b95d8df-849c-4de3-a400-0d3459e062f6 created for symbol DCR
+2020-06-14 14:58:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:32  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DCR
+2020-06-14 14:58:32  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:32  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7b95d8df-849c-4de3-a400-0d3459e062f6 for symbol DCR
+2020-06-14 14:58:33  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DCR 
+2020-06-14 14:58:33  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:58:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DCR: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:38  :: @IBR: Incoming message from order routing: Execution Report for symbol DCR: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=0.62637013 AvgPx=0
+2020-06-14 14:58:38  :: Received execution report for no longer processed symbol DCR
+2020-06-14 14:58:40  :: Ending RunOnPositionCalculus for symbol DCR. The position is cleared
+2020-06-14 15:00:44  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 15:01:04  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 15:01:04  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-06-14 15:01:06  :: Processing Market Data:Symbol=DGB  LastPrice=0.02206 BestBidPrice=0.02183 BestAskPrice=0.02202
+2020-06-14 15:01:06  :: Routing to market position for symbol DGB
+2020-06-14 15:01:06  :: Creating sell order for symbol DGB.Quantity=100 Price=.02
+2020-06-14 15:01:06  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-06-14 15:01:08  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Rejected - Exec Type=Rejected CumQty=0 LvsQty=100 AvgPx=0
+2020-06-14 15:01:08  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=Rejected - Exec Type=Rejected CumQty=0 LvsQty=100 AvgPx=0
+2020-06-14 15:01:08  :: Received Rejected for symbol DGB. Reason: MIN_TRADE_REQUIREMENT_NOT_MET
+2020-06-14 15:01:08  :: Rejected for symbol DGB processed
+2020-06-14 15:01:10  :: Ending RunOnPositionCalculus for symbol DGB. The position is cleared
+2020-06-14 15:01:18  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 15:01:37  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 15:02:39  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 15:02:59  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 15:02:59  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-06-14 15:03:01  :: Processing Market Data:Symbol=DGB  LastPrice=0.02194 BestBidPrice=0.02192 BestAskPrice=0.02205
+2020-06-14 15:03:01  :: Routing to market position for symbol DGB
+2020-06-14 15:03:01  :: Creating sell order for symbol DGB.Quantity=500 Price=.02
+2020-06-14 15:03:01  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-06-14 15:03:02  :: @Outgoing Order Routing Bittrex:New sell order Order Id 6eb5378f-c6c2-4ff8-acc3-7c25661233e3 created for symbol DGB
+2020-06-14 15:03:04  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:04  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:04  :: Received New for symbol DGB
+2020-06-14 15:03:04  :: New for symbol DGB processed
+2020-06-14 15:03:06  :: Processing Market Data:Symbol=DGB  LastPrice=0.02194 BestBidPrice=0.02192 BestAskPrice=0.02205
+2020-06-14 15:03:10  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:10  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:10  :: Received New for symbol DGB
+2020-06-14 15:03:10  :: New for symbol DGB processed
+2020-06-14 15:03:11  :: Processing Market Data:Symbol=DGB  LastPrice=0.02194 BestBidPrice=0.02179 BestAskPrice=0.02205
+2020-06-14 15:03:16  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:16  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:16  :: Received New for symbol DGB
+2020-06-14 15:03:16  :: New for symbol DGB processed
+2020-06-14 15:03:16  :: Processing Market Data:Symbol=DGB  LastPrice=0.02194 BestBidPrice=0.02183 BestAskPrice=0.02205
+2020-06-14 15:03:21  :: Processing Market Data:Symbol=DGB  LastPrice=0.02194 BestBidPrice=0.02181 BestAskPrice=0.02205
+2020-06-14 15:03:21  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:21  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:21  :: Received New for symbol DGB
+2020-06-14 15:03:21  :: New for symbol DGB processed
+2020-06-14 15:03:26  :: Processing Market Data:Symbol=DGB  LastPrice=0.02194 BestBidPrice=0.02187 BestAskPrice=0.02205
+2020-06-14 15:03:27  :: Canceling all active orders
+2020-06-14 15:03:27  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 15:03:27  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:27  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DCR
+2020-06-14 15:03:27  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 7b95d8df-849c-4de3-a400-0d3459e062f6 for symbol DCR
+2020-06-14 15:03:27  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:28  :: @Outgoing Order Routing Bittrex:Error cancelling all active orders!:ORDER_NOT_OPENCall Details=/api/v1.1/market/cancel, uuid = 7b95d8df-849c-4de3-a400-0d3459e062f6
+2020-06-14 15:03:28  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-06-14 15:03:28  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:03:33  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:33  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:33  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:03:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:38  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:38  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:03:43  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:43  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:43  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:03:49  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:03:49  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:05:11  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:05:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:05:17  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:05:17  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:05:22  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:05:22  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:16:38  :: 6/14/2020 3:16:38 PMMomentumStrategyBase.LoadConfig
+2020-06-14 15:16:38  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 15:16:38  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 15:16:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 15:16:38  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2020-06-14 15:16:38  :: 6/14/2020 3:16:38 PMOrderRouterBase.LoadConfig
+2020-06-14 15:16:38  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-14 15:16:38  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-14 15:16:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-14 15:16:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-06-14 15:16:38  :: 6/14/2020 3:16:38 PMOrderRouterBase.LoadConfig
+2020-06-14 15:16:38  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 15:16:38  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 15:16:38  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2020-06-14 15:16:53  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 15:17:13  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 15:17:13  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol DGB
+2020-06-14 15:17:15  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02183 BestAskPrice=0.02203
+2020-06-14 15:17:15  :: Routing to market position for symbol DGB
+2020-06-14 15:17:15  :: Creating buy order for symbol DGB.Quantity=458.085203847916 Price=.02
+2020-06-14 15:17:15  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-06-14 15:17:17  :: @Outgoing Order Routing Bittrex:New buy order Order Id 3d58715c-cf6a-438e-805b-98b8fee189e6 created for symbol DGB
+2020-06-14 15:17:19  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:19  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:19  :: Received New for symbol DGB
+2020-06-14 15:17:19  :: New for symbol DGB processed
+2020-06-14 15:17:20  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02183 BestAskPrice=0.02203
+2020-06-14 15:17:25  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:25  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:25  :: Received New for symbol DGB
+2020-06-14 15:17:25  :: New for symbol DGB processed
+2020-06-14 15:17:25  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02184 BestAskPrice=0.02203
+2020-06-14 15:17:25  :: Updating DOM price on BID. Symbol: DGB - New Bid Price:0.02183 Old Bid Price:0.02184
+2020-06-14 15:17:26  :: @Order Router: Updating order for symbol DGB: qty=457 price=0.02184
+2020-06-14 15:17:26  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DGB
+2020-06-14 15:17:26  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 3d58715c-cf6a-438e-805b-98b8fee189e6 for symbol DGB
+2020-06-14 15:17:28  :: @Outgoing Order Routing Bittrex:New buy order Order Id b9cd92fc-1a6d-46f8-8cb6-392a444856fd created for symbol DGB
+2020-06-14 15:17:30  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02184 BestAskPrice=0.02203
+2020-06-14 15:17:31  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:31  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:31  :: Received New for symbol DGB
+2020-06-14 15:17:31  :: New for symbol DGB processed
+2020-06-14 15:17:32  :: Canceling all active orders
+2020-06-14 15:17:32  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 15:17:32  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DGB
+2020-06-14 15:17:32  :: @Outgoing Order Routing Bittrex:Cancelling Order Id b9cd92fc-1a6d-46f8-8cb6-392a444856fd for symbol DGB
+2020-06-14 15:17:32  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-06-14 15:17:36  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:36  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=458.08520384 AvgPx=0
+2020-06-14 15:17:36  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:17:37  :: Ending RunOnPositionCalculus for symbol DGB. The position is cleared
+2020-06-14 15:18:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 15:18:21  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 15:18:21  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-06-14 15:18:23  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.0218 BestAskPrice=0.02203
+2020-06-14 15:18:23  :: Routing to market position for symbol DGB
+2020-06-14 15:18:23  :: Creating sell order for symbol DGB.Quantity=500 Price=.02
+2020-06-14 15:18:23  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-06-14 15:18:24  :: @Outgoing Order Routing Bittrex:New sell order Order Id 2236abb9-4c89-48a8-832f-a9b0f62079ee created for symbol DGB
+2020-06-14 15:18:26  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:18:26  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:18:26  :: Received New for symbol DGB
+2020-06-14 15:18:26  :: New for symbol DGB processed
+2020-06-14 15:18:28  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.0218 BestAskPrice=0.02203
+2020-06-14 15:18:32  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:18:32  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:18:32  :: Received New for symbol DGB
+2020-06-14 15:18:32  :: New for symbol DGB processed
+2020-06-14 15:18:32  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.0218 BestAskPrice=0.02201
+2020-06-14 15:18:32  :: Updating DOM price on ASK. Symbol: DGB - New Ask Price:0.02203 Old Ask Price:0.02201
+2020-06-14 15:18:33  :: @Order Router: Updating order for symbol DGB: qty=500 price=0.02201
+2020-06-14 15:18:33  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DGB
+2020-06-14 15:18:33  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 2236abb9-4c89-48a8-832f-a9b0f62079ee for symbol DGB
+2020-06-14 15:18:34  :: @Outgoing Order Routing Bittrex:New sell order Order Id a6d73b3d-66ab-4a45-995d-fa3bc37b3d6b created for symbol DGB
+2020-06-14 15:18:36  :: Canceling all active orders
+2020-06-14 15:18:36  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 15:18:36  :: @Outgoing Order Routing Bittrex:Depurating old order b9cd92fc-1a6d-46f8-8cb6-392a444856fd for symbol DGB
+2020-06-14 15:18:36  :: @Outgoing Order Routing Bittrex:Cancelling active order for symbol DGB
+2020-06-14 15:18:36  :: @Outgoing Order Routing Bittrex:Cancelling Order Id a6d73b3d-66ab-4a45-995d-fa3bc37b3d6b for symbol DGB
+2020-06-14 15:18:37  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-06-14 15:18:37  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.0218 BestAskPrice=0.02201
+2020-06-14 15:18:38  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:18:38  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:18:38  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:18:38  :: Ending RunOnPositionCalculus for symbol DGB. The position is cleared
+2020-06-14 15:19:30  :: 6/14/2020 3:19:30 PMMomentumStrategyBase.LoadConfig
+2020-06-14 15:19:30  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 15:19:30  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 15:19:30  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-14 15:19:30  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2020-06-14 15:19:30  :: 6/14/2020 3:19:30 PMOrderRouterBase.LoadConfig
+2020-06-14 15:19:30  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-14 15:19:30  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-14 15:19:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-14 15:19:30  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2020-06-14 15:19:30  :: 6/14/2020 3:19:30 PMOrderRouterBase.LoadConfig
+2020-06-14 15:19:30  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 15:19:30  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2020-06-14 15:19:30  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2020-06-14 15:19:42  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2020-06-14 15:20:01  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2020-06-14 15:20:01  :: Strategy Handler - Instruction Based Router for Bittrex: Unwinding position for symbol DGB
+2020-06-14 15:20:03  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02178 BestAskPrice=0.02201
+2020-06-14 15:20:03  :: Routing to market position for symbol DGB
+2020-06-14 15:20:03  :: Creating sell order for symbol DGB.Quantity=500 Price=.02
+2020-06-14 15:20:03  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol DGB
+2020-06-14 15:20:05  :: @Outgoing Order Routing Bittrex:New sell order Order Id f47bce19-5fe6-41b9-a805-be0732bef777 created for symbol DGB
+2020-06-14 15:20:06  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:06  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:06  :: Received New for symbol DGB
+2020-06-14 15:20:06  :: New for symbol DGB processed
+2020-06-14 15:20:08  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02178 BestAskPrice=0.02201
+2020-06-14 15:20:12  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:12  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:12  :: Received New for symbol DGB
+2020-06-14 15:20:12  :: New for symbol DGB processed
+2020-06-14 15:20:13  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02177 BestAskPrice=0.02199
+2020-06-14 15:20:13  :: Updating DOM price on ASK. Symbol: DGB - New Ask Price:0.02201 Old Ask Price:0.02199
+2020-06-14 15:20:14  :: @Order Router: Updating order for symbol DGB: qty=500 price=0.02199
+2020-06-14 15:20:14  :: @Outgoing Order Routing Bittrex:Updating order  for symbol DGB
+2020-06-14 15:20:15  :: @Outgoing Order Routing Bittrex:Cancelling Order Id f47bce19-5fe6-41b9-a805-be0732bef777 for symbol DGB
+2020-06-14 15:20:16  :: @Outgoing Order Routing Bittrex:New sell order Order Id 0fcc535d-e099-4926-a11e-158cc63cefd4 created for symbol DGB
+2020-06-14 15:20:17  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:17  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:17  :: Received New for symbol DGB
+2020-06-14 15:20:17  :: New for symbol DGB processed
+2020-06-14 15:20:18  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02177 BestAskPrice=0.02199
+2020-06-14 15:20:23  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02177 BestAskPrice=0.02199
+2020-06-14 15:20:23  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:23  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=New - Exec Type=New CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:23  :: Received New for symbol DGB
+2020-06-14 15:20:23  :: New for symbol DGB processed
+2020-06-14 15:20:27  :: Canceling all active orders
+2020-06-14 15:20:27  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2020-06-14 15:20:27  :: @Outgoing Order Routing Bittrex:Cancelling active order 0fcc535d-e099-4926-a11e-158cc63cefd4 for symbol DGB
+2020-06-14 15:20:27  :: @Outgoing Order Routing Bittrex:Cancelling Order Id 0fcc535d-e099-4926-a11e-158cc63cefd4 for symbol DGB
+2020-06-14 15:20:27  :: Processing Market Data:Symbol=DGB  LastPrice=0.02204 BestBidPrice=0.02177 BestAskPrice=0.02199
+2020-06-14 15:20:28  :: @Strategy Handler - Instruction Based Router for Bittrex: Cancelling position on symbol DGB 
+2020-06-14 15:20:29  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:29  :: @IBR: Incoming message from order routing: Execution Report for symbol DGB: Order Status=Canceled - Exec Type=Canceled CumQty=0.00000000 LvsQty=500.00000000 AvgPx=0
+2020-06-14 15:20:29  :: Received execution report for no longer processed symbol DGB
+2020-06-14 15:20:30  :: Ending RunOnPositionCalculus for symbol DGB. The position is cleared

@@ -165,3 +165,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\Bittrex.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\Mock\outgoingOrderRouter.Mock.xml

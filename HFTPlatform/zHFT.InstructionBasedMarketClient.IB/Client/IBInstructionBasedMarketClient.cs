@@ -46,7 +46,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
 
         protected Thread PublishThread { get; set; }
 
-        protected Thread ProcessInstructionsThread { get; set; }
+        //protected Thread ProcessInstructionsThread { get; set; }
 
         protected Thread CleanOldSecuritiesThread { get; set; }
 
@@ -54,9 +54,9 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
 
         private InstructionManager InstructionManager { get; set; }
 
-        private AccountManager AccountManager { get; set; }
+        //private AccountManager AccountManager { get; set; }
 
-        private PositionManager PositionManager { get; set; }
+        //private PositionManager PositionManager { get; set; }
 
         private Dictionary<int, Security> ActiveSecurities { get; set; }
 
@@ -219,32 +219,32 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
             }
         }
 
-        protected void DoFindInstructions()
-        {
-            while (true)
-            {
-                Thread.Sleep(IBConfiguration.PublishUpdateInMilliseconds);
+        //protected void DoFindInstructions()
+        //{
+        //    while (true)
+        //    {
+        //        Thread.Sleep(IBConfiguration.PublishUpdateInMilliseconds);
 
-                lock (tLock)
-                {
-                    List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(IBConfiguration.AccountNumber);
+        //        lock (tLock)
+        //        {
+        //            List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(IBConfiguration.AccountNumber);
 
-                    try
-                    {
-                        foreach (Instruction instr in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._NEW_POSITION || x.InstructionType.Type == InstructionType._UNWIND_POSITION))
-                        {
-                            //We process the account positions sync instructions
-                            ProcessPositionInstruction(instr);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        DoLog(string.Format("Critical error processing instructions: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : "")), Main.Common.Util.Constants.MessageType.Error);
-                    }
-                }
+        //            try
+        //            {
+        //                foreach (Instruction instr in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._NEW_POSITION || x.InstructionType.Type == InstructionType._UNWIND_POSITION))
+        //                {
+        //                    //We process the account positions sync instructions
+        //                    //ProcessPositionInstruction(instr);
+        //                }
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                DoLog(string.Format("Critical error processing instructions: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : "")), Main.Common.Util.Constants.MessageType.Error);
+        //            }
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
         protected override void ProcessField(string ev, int tickerId, int field, double value)
         {
@@ -360,7 +360,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
             zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new MarketClient.IB.Common.Configuration.Contract();
 
             ctr.Currency = sec.Currency;
-            ctr.Exchange = sec.Exchange;
+            ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
             ctr.Symbol = sec.Symbol;
 
@@ -450,9 +450,9 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     ClientSocket = new EClientSocket(this);
                     ClientSocket.eConnect(IBConfiguration.IP, IBConfiguration.Port, IBConfiguration.IdIBClient);
 
-                    InstructionManager = new InstructionManager(IBConfiguration.InstructionsAccessLayerConnectionString);
-                    PositionManager = new PositionManager(IBConfiguration.InstructionsAccessLayerConnectionString);
-                    AccountManager = new AccountManager(IBConfiguration.InstructionsAccessLayerConnectionString);
+                    //InstructionManager = new InstructionManager(IBConfiguration.InstructionsAccessLayerConnectionString);
+                    //PositionManager = new PositionManager(IBConfiguration.InstructionsAccessLayerConnectionString);
+                    //AccountManager = new AccountManager(IBConfiguration.InstructionsAccessLayerConnectionString);
 
                     PublishThread = new Thread(DoPublish);
                     PublishThread.Start();
@@ -460,8 +460,8 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
 
-                    ProcessInstructionsThread = new Thread(DoFindInstructions);
-                    ProcessInstructionsThread.Start();
+                    //ProcessInstructionsThread = new Thread(DoFindInstructions);
+                    //ProcessInstructionsThread.Start();
 
                     return true;
                 }

@@ -19,9 +19,11 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         #region Protected Attributes
 
-        protected int MdReqId { get; set; }
+        protected long MdReqId { get; set; }
 
         protected Security Security { get; set; }
+
+        protected string QuoteSymbol { get; set; }
 
         protected SubscriptionRequestType SubscriptionRequestType { get; set; }
 
@@ -29,11 +31,13 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         #region Constructors
 
-        public MarketDataRequestWrapper(Security pSecurity, SubscriptionRequestType pSubscriptionRequestType)
+        public MarketDataRequestWrapper(Security pSecurity, SubscriptionRequestType pSubscriptionRequestType,string pQuoteSymbol=null)
         {
-            MdReqId = 0;
+            TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+            MdReqId = Convert.ToInt64(elapsed.TotalMilliseconds) ;
             Security = pSecurity;
             SubscriptionRequestType = pSubscriptionRequestType;
+            QuoteSymbol = pQuoteSymbol;
         }
 
         public MarketDataRequestWrapper(int pMdReqId,Security pSecurity, SubscriptionRequestType pSubscriptionRequestType)
@@ -69,6 +73,8 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Security.SecType;
             if (mdrField == MarketDataRequestField.Currency)
                 return Security.Currency;
+            if (mdrField == MarketDataRequestField.QuoteSymbol)
+                return QuoteSymbol;
             if (mdrField == MarketDataRequestField.MDReqId)
                 return MdReqId;
             if (mdrField == MarketDataRequestField.SettlType)

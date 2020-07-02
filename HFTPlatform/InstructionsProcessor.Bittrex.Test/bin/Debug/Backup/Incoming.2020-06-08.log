@@ -1,0 +1,18 @@
+2020-06-08 9:44:28  :: 6/8/2020 9:44:28 AMBaseCommunicationModule.LoadConfig
+2020-06-08 9:44:28  :: Loading config:.\incomingBittrex.xml
+2020-06-08 9:44:28  :: Processing config:.\incomingBittrex.xml
+2020-06-08 9:44:28  :: Ending GetConfiguracion .\incomingBittrex.xml
+2020-06-08 9:46:54  :: @Incoming Bittrex:Requesting market data por symbol ETC
+2020-06-08 10:04:41  :: @Incoming Bittrex:Error Requesting market data for symbol ETC:INVALID_MARKETCall Details=/api/v1.1/public/getticker, market = ETC-USD
+2020-06-08 10:06:49  :: @Incoming Bittrex:Cancelling market data for symbol ETC
+2020-06-08 10:06:49  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2020-06-08 10:07:32  :: @Incoming Bittrex:Requesting market data por symbol ETC
+2020-06-08 10:07:33  :: @Incoming Bittrex:Error Requesting market data for symbol ETC:INVALID_MARKETCall Details=/api/v1.1/public/getticker, market = ETC-USD
+2020-06-08 10:11:02  :: 6/8/2020 10:11:02 AMBaseCommunicationModule.LoadConfig
+2020-06-08 10:11:02  :: Loading config:.\incomingBittrex.xml
+2020-06-08 10:11:02  :: Processing config:.\incomingBittrex.xml
+2020-06-08 10:11:02  :: Ending GetConfiguracion .\incomingBittrex.xml
+2020-06-08 10:12:12  :: @Incoming Bittrex:Requesting market data por symbol ETC
+2020-06-08 10:12:15  :: @Incoming Bittrex:Cancelling market data for symbol ETC
+2020-06-08 10:12:15  :: @Incoming Bittrex:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Bittrex
+2020-06-08 10:12:17  :: @Incoming Bittrex:Unsubscribing market data for symbol ETC

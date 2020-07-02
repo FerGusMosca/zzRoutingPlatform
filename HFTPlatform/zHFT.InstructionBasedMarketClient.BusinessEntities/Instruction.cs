@@ -38,6 +38,8 @@ namespace zHFT.InstructionBasedMarketClient.BusinessEntities
 
         public string Symbol { get; set; }
 
+        public string QuoteSymbol { get; set; }
+
         public SecurityType SecurityType { get; set; }
 
         public decimal? Ammount { get; set; }

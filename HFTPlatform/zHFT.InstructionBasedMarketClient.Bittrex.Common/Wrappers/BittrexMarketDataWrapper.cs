@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.MarketClient.Common.Wrappers;
 
@@ -22,6 +23,21 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Common.Wrappers
 
 
         #region Public Methods
+
+        public override object GetField(Main.Common.Enums.Fields field)
+        {
+
+            MarketDataFields mdField = (MarketDataFields)field;
+
+            if (Security == null)
+                return MarketDataFields.NULL;
+
+            else if (mdField == MarketDataFields.Currency)
+                return Security.MarketData.Currency;
+            else
+                return base.GetField(field);
+        }
+
 
         public override string ToString()
         {

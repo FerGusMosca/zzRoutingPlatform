@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\AccountManager.cs" />
+    <Compile Include="Managers\ADO\ADOInstructionManager.cs" />
     <Compile Include="Managers\InstructionManager.cs" />
     <Compile Include="Managers\PositionManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />

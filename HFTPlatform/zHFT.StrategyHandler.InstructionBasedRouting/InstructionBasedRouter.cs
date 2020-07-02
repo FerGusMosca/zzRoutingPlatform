@@ -648,6 +648,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             ExecutionSummaries.Add(pos.Security.Symbol, summary);
             PositionInstructions.Add(pos.Security.Symbol, instr);
+
+            MarketDataRequestWrapper mdReqWrapper = new MarketDataRequestWrapper(pos.Security,
+                                                                                 SubscriptionRequestType.SnapshotAndUpdates,
+                                                                                 instr.QuoteSymbol);
+
+
+            OnMessageRcv(mdReqWrapper);
         }
 
         protected virtual bool EvalMarketData(ExecutionSummary summary)
@@ -755,6 +762,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             ExecutionSummaries.Add(pos.Security.Symbol, summary);
             PositionInstructions.Add(pos.Security.Symbol, instr);
+
+            MarketDataRequestWrapper mdReqWrapper = new MarketDataRequestWrapper(pos.Security,
+                                                                                 SubscriptionRequestType.SnapshotAndUpdates,
+                                                                                 instr.QuoteSymbol);
+
+
+            OnMessageRcv(mdReqWrapper);
         }
 
         #endregion
@@ -808,7 +822,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
                 var instructionManagerAccessLayer = Type.GetType(IBRConfiguration.InstructionManagerAccessLayer);
                 if (accountManagerAccessLayer != null)
-                    InstructionManager = (IInstructionManagerAccessLayer)Activator.CreateInstance(instructionManagerAccessLayer, IBRConfiguration.InstructionsAccessLayerConnectionString, AccountManager);
+                    InstructionManager = (IInstructionManagerAccessLayer)Activator.CreateInstance(instructionManagerAccessLayer, IBRConfiguration.ADOInstructionsAccessLayerConnectionString, AccountManager);
                 else
                 {
                     DoLog("assembly not found: " + IBRConfiguration.InstructionManagerAccessLayer, Main.Common.Util.Constants.MessageType.Error);

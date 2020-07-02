@@ -1,0 +1,1057 @@
+2020-06-23 14:06:51  :: 6/23/2020 2:06:51 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:06:51  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:06:51  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:06:51  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:06:51  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:06:51  :: 6/23/2020 2:06:51 PMOrderRouterBase.LoadConfig
+2020-06-23 14:06:51  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:06:51  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:06:51  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:06:51  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:06:51  :: 6/23/2020 2:06:51 PMOrderRouterBase.LoadConfig
+2020-06-23 14:06:51  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:06:51  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:06:51  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:06:51  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:06:51  :: nextValidId: orderId=2202
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:hfarm  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:jfarm  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:06:51  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:06:58  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.hfarm  
+2020-06-23 14:06:58  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.hfarm  
+2020-06-23 14:06:59  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.eufarm  
+2020-06-23 14:06:59  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.eufarm  
+2020-06-23 14:06:59  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.jfarm  
+2020-06-23 14:06:59  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.jfarm  
+2020-06-23 14:06:59  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.usfuture  
+2020-06-23 14:06:59  :: error: reqId=-1 start=2108 end=Market data farm connection is inactive but should be available upon demand.usfuture  
+2020-06-23 14:08:54  :: 6/23/2020 2:08:54 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:08:54  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:08:54  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:08:54  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:08:54  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:08:54  :: 6/23/2020 2:08:54 PMOrderRouterBase.LoadConfig
+2020-06-23 14:08:54  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:08:54  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:08:54  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:08:54  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:08:54  :: 6/23/2020 2:08:54 PMOrderRouterBase.LoadConfig
+2020-06-23 14:08:54  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:08:54  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:08:54  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:08:54  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:08:54  :: nextValidId: orderId=2202
+2020-06-23 14:08:54  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:08:54  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:08:54  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:08:54  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:08:54  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:08:54  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:08:54  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:11:01  :: 6/23/2020 2:11:01 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:11:01  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:11:01  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:11:01  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:11:01  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:11:01  :: 6/23/2020 2:11:01 PMOrderRouterBase.LoadConfig
+2020-06-23 14:11:01  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:11:01  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:11:01  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:11:01  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:11:01  :: 6/23/2020 2:11:01 PMOrderRouterBase.LoadConfig
+2020-06-23 14:11:01  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:11:01  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:11:02  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:11:02  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:11:02  :: nextValidId: orderId=2202
+2020-06-23 14:11:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:11:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:11:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:11:02  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:11:02  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:11:02  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:11:02  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:12:44  :: 6/23/2020 2:12:44 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:12:44  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:12:44  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:12:44  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:12:44  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:12:44  :: 6/23/2020 2:12:44 PMOrderRouterBase.LoadConfig
+2020-06-23 14:12:44  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:12:44  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:12:44  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:12:44  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:12:44  :: 6/23/2020 2:12:44 PMOrderRouterBase.LoadConfig
+2020-06-23 14:12:44  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:12:44  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:12:44  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:12:44  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:12:44  :: nextValidId: orderId=2202
+2020-06-23 14:12:44  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:12:44  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:12:44  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:12:44  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:12:44  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:12:44  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:12:44  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:13:04  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:13:04  :: managedAccounts: =DU634652   
+2020-06-23 14:13:04  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:13:04  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:13:04  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:13:04  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:13:04  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:13:04  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:13:04  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:13:04  :: Synchronizing position for symbol EDN   
+2020-06-23 14:13:05  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:13:19  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:13:19  :: error: ex=No se puede leer más allá del final de la secuencia.   
+2020-06-23 14:14:01  :: 6/23/2020 2:14:01 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:14:01  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:14:01  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:14:01  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:14:01  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:14:01  :: 6/23/2020 2:14:01 PMOrderRouterBase.LoadConfig
+2020-06-23 14:14:01  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:14:01  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:14:01  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:14:01  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:14:01  :: 6/23/2020 2:14:01 PMOrderRouterBase.LoadConfig
+2020-06-23 14:14:01  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:14:01  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:14:01  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:14:01  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:14:01  :: nextValidId: orderId=2202
+2020-06-23 14:14:01  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:14:01  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:14:01  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:14:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:14:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:14:01  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:14:01  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:14:06  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:14:06  :: managedAccounts: =DU634652   
+2020-06-23 14:14:06  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:14:06  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:14:06  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:14:06  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:14:06  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:14:06  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:14:06  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:14:06  :: Synchronizing position for symbol EDN   
+2020-06-23 14:14:07  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:14:16  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:14:16  :: managedAccounts: =DU634652   
+2020-06-23 14:14:16  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:14:16  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:14:16  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:14:16  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:14:16  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:14:16  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:14:16  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:14:16  :: Synchronizing position for symbol EDN   
+2020-06-23 14:14:16  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:14:30  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:14:30  :: managedAccounts: =DU634652   
+2020-06-23 14:14:30  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:14:30  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:14:30  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:14:30  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:14:30  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:14:30  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:14:30  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:14:30  :: Synchronizing position for symbol EDN   
+2020-06-23 14:14:30  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:14:30  :: Strategy Handler - Instruction Based Router: Unwinding position for symbol EDN
+2020-06-23 14:14:36  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:14:36  :: Routing to market position for symbol EDN
+2020-06-23 14:14:36  :: Creating sell order for symbol EDN.Quantity=200 Price=4.13
+2020-06-23 14:14:36  :: Routing with IB to market for symbol EDN
+2020-06-23 14:14:36  :: Routing Order Id 2202 Symbol=EDN  Side=SELL Qty=200 Price=4.13
+2020-06-23 14:14:38  :: position: orderId=2202 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:14:38  :: orderStatus: orderId=2202 status=Submitted filled=0 remaining=200 avgFillPrice=0 permId=23213504 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:14:38  :: @Generic Order Router: Incoming message from order routing proxy: Symbol EDN ExecType New OrdStatus New CumQty=0 LvsQty=200 AvgPx=0
+2020-06-23 14:14:38  :: @IBR: Incoming message from order routing: Symbol EDN ExecType New OrdStatus New CumQty=0 LvsQty=200 AvgPx=0
+2020-06-23 14:14:38  :: Received New for symbol EDN
+2020-06-23 14:14:38  :: New for symbol EDN processed
+2020-06-23 14:14:41  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:14:46  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:14:51  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:14:56  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:01  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:06  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:11  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:16  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:21  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:26  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:31  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:36  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:41  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:46  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:51  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:15:56  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:01  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:06  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:11  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:16  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:21  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:26  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:32  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:37  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:42  :: Canceling all active orders
+2020-06-23 14:16:42  :: @Outgoing IB:Cancelling all active orders @ IB
+2020-06-23 14:16:42  :: Cancelling Order Id 2202
+2020-06-23 14:16:42  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol EDN 
+2020-06-23 14:16:42  :: Processing Market Data:Symbol=EDN Exchange=SMART SecType=CS Currency=USD- Open=4.06 High=4.18 Low=3.89 Close=3.92 Volume=109 LastPrice=4.06 LastTradeSize=1 BestBidPrice=4.07 BestBidSize=2 BestBidExch=no data BestAskPrice=4.13 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:16:42  :: orderStatus: orderId=2202 status=Cancelled filled=0 remaining=200 avgFillPrice=0 permId=23213504 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:16:42  :: @Generic Order Router: Incoming message from order routing proxy: Symbol EDN ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=200 AvgPx=0
+2020-06-23 14:16:42  :: @IBR: Incoming message from order routing: Symbol EDN ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=200 AvgPx=0
+2020-06-23 14:16:42  :: error: reqId=2202 start=202 end=Order Canceled - reason:  
+2020-06-23 14:16:42  :: Received execution report for no longer processed symbol EDN
+2020-06-23 14:16:46  :: Ending RunOnPositionCalculus for symbol EDN. The position is cleared
+2020-06-23 14:17:00  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:17:00  :: managedAccounts: =DU634652   
+2020-06-23 14:17:00  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:17:00  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:17:00  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:17:00  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:17:00  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:17:00  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:17:00  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:17:00  :: Synchronizing position for symbol EDN   
+2020-06-23 14:17:00  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:17:00  :: Strategy Handler - Instruction Based Router: Creating position for symbol MSFT
+2020-06-23 14:17:02  :: Processing Market Data:Symbol=MSFT Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:17:07  :: Processing Market Data:Symbol=MSFT Exchange=SMART SecType=CS Currency=USD- Open=201.97 High=203.54 Low=201.42 Close=200.57 Volume=171236 LastPrice=203.29 LastTradeSize=1 BestBidPrice=203.28 BestBidSize=12 BestBidExch=QWTE BestAskPrice=203.3 BestAskSize=17 BestAskExch=QWT CompositeUnderlyingPrice=no data
+2020-06-23 14:17:07  :: Routing to market position for symbol MSFT
+2020-06-23 14:17:07  :: Processing Market Data:Symbol=MSFT Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:17:07  :: Creating buy order for symbol MSFT.Quantity=24 Price=203.28
+2020-06-23 14:17:07  :: Routing with IB to market for symbol MSFT
+2020-06-23 14:17:07  :: Routing Order Id 2203 Symbol=MSFT  Side=BUY Qty=24 Price=203.28
+2020-06-23 14:17:07  :: position: orderId=2203 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:17:07  :: orderStatus: orderId=2203 status=Submitted filled=0 remaining=24 avgFillPrice=0 permId=23213505 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:17:07  :: @Generic Order Router: Incoming message from order routing proxy: Symbol MSFT ExecType New OrdStatus New CumQty=0 LvsQty=24 AvgPx=0
+2020-06-23 14:17:07  :: @IBR: Incoming message from order routing: Symbol MSFT ExecType New OrdStatus New CumQty=0 LvsQty=24 AvgPx=0
+2020-06-23 14:17:07  :: Received New for symbol MSFT
+2020-06-23 14:17:07  :: New for symbol MSFT processed
+2020-06-23 14:17:09  :: Strategy Handler - Instruction Based Router: Creating position for symbol AAPL
+2020-06-23 14:21:04  :: 6/23/2020 2:21:04 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:21:04  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:21:04  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:21:04  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:21:04  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:21:04  :: 6/23/2020 2:21:04 PMOrderRouterBase.LoadConfig
+2020-06-23 14:21:04  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:21:04  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:21:04  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:21:04  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:21:04  :: 6/23/2020 2:21:04 PMOrderRouterBase.LoadConfig
+2020-06-23 14:21:04  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:21:04  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:21:04  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:21:04  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:21:04  :: nextValidId: orderId=2204
+2020-06-23 14:21:04  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:21:04  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:21:04  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:21:04  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:21:04  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:21:04  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:21:04  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:21:08  :: Canceling all active orders
+2020-06-23 14:21:08  :: @Outgoing IB:Cancelling all active orders @ IB
+2020-06-23 14:21:18  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:21:18  :: managedAccounts: =DU634652   
+2020-06-23 14:21:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:21:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:21:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:21:18  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:21:18  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:21:18  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:21:18  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:21:18  :: Synchronizing position for symbol EDN   
+2020-06-23 14:21:18  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:21:18  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:21:41  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:21:41  :: managedAccounts: =DU634652   
+2020-06-23 14:21:41  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:21:41  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:21:41  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:21:41  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:21:41  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:21:41  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:21:41  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:21:41  :: Synchronizing position for symbol EDN   
+2020-06-23 14:21:41  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:21:41  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:21:41  :: Strategy Handler - Instruction Based Router: Creating position for symbol ORCL
+2020-06-23 14:21:44  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:21:49  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92277 LastPrice=55.93 LastTradeSize=1 BestBidPrice=55.93 BestBidSize=49 BestBidExch=XQTM BestAskPrice=55.94 BestAskSize=46 BestAskExch=IXQTM CompositeUnderlyingPrice=no data
+2020-06-23 14:21:49  :: Routing to market position for symbol ORCL
+2020-06-23 14:21:49  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:21:49  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:21:54  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92278 LastPrice=55.94 LastTradeSize=1 BestBidPrice=55.94 BestBidSize=27 BestBidExch=Q BestAskPrice=55.95 BestAskSize=77 BestAskExch=IXQTM CompositeUnderlyingPrice=no data
+2020-06-23 14:21:54  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:21:54  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:21:56  :: Strategy Handler - Instruction Based Router: Creating position for symbol MELI
+2020-06-23 14:21:59  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:21:59  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92358 LastPrice=55.95 LastTradeSize=13 BestBidPrice=55.94 BestBidSize=46 BestBidExch=XBQTMHJ BestAskPrice=55.95 BestAskSize=64 BestAskExch=XBQTM CompositeUnderlyingPrice=no data
+2020-06-23 14:21:59  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:21:59  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:04  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:04  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92360 LastPrice=55.94 LastTradeSize=1 BestBidPrice=55.94 BestBidSize=46 BestBidExch=AXBQTMJ BestAskPrice=55.95 BestAskSize=66 BestAskExch=XQTM CompositeUnderlyingPrice=no data
+2020-06-23 14:22:04  :: Processing Market Data:Symbol=MELI Exchange=SMART SecType=CS Currency=USD- Open=995.3 High=998.11 Low=977.5 Close=984.54 Volume=2051 LastPrice=988.57 LastTradeSize=1 BestBidPrice=988.9 BestBidSize=1 BestBidExch=Z BestAskPrice=989.9 BestAskSize=1 BestAskExch=W CompositeUnderlyingPrice=no data
+2020-06-23 14:22:04  :: Routing to market position for symbol MELI
+2020-06-23 14:22:04  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:04  :: Creating buy order for symbol MELI.Quantity=5 Price=988.9
+2020-06-23 14:22:04  :: Routing with IB to market for symbol MELI
+2020-06-23 14:22:04  :: Routing Order Id 2204 Symbol=MELI  Side=BUY Qty=5 Price=988.9
+2020-06-23 14:22:04  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:05  :: position: orderId=2204 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:22:05  :: orderStatus: orderId=2204 status=Submitted filled=0 remaining=5 avgFillPrice=0 permId=23213507 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:22:05  :: @Generic Order Router: Incoming message from order routing proxy: Symbol MELI ExecType New OrdStatus New CumQty=0 LvsQty=5 AvgPx=0
+2020-06-23 14:22:05  :: @IBR: Incoming message from order routing: Symbol MELI ExecType New OrdStatus New CumQty=0 LvsQty=5 AvgPx=0
+2020-06-23 14:22:05  :: Received New for symbol MELI
+2020-06-23 14:22:05  :: New for symbol MELI processed
+2020-06-23 14:22:09  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:09  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92365 LastPrice=55.95 LastTradeSize=1 BestBidPrice=55.94 BestBidSize=58 BestBidExch=IXBQTMHJ BestAskPrice=55.95 BestAskSize=70 BestAskExch=XQTM CompositeUnderlyingPrice=no data
+2020-06-23 14:22:09  :: Strategy Handler - Instruction Based Router: Creating position for symbol NFLX
+2020-06-23 14:22:35  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:35  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:35  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:35  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:35  :: Processing Market Data:Symbol=MELI Exchange=SMART SecType=CS Currency=USD- Open=995.3 High=998.11 Low=977.5 Close=984.54 Volume=2070 LastPrice=988.84 LastTradeSize=2 BestBidPrice=987.64 BestBidSize=1 BestBidExch=T BestAskPrice=989.9 BestAskSize=1 BestAskExch=W CompositeUnderlyingPrice=no data
+2020-06-23 14:22:36  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:36  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:36  :: @Order Router: Updating order for symbol MELI: qty=5 price=987.64
+2020-06-23 14:22:36  :: Updating order with IB  for symbol MELI
+2020-06-23 14:22:36  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:36  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:40  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:41  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92454 LastPrice=55.94 LastTradeSize=2 BestBidPrice=55.93 BestBidSize=64 BestBidExch=ACIXBQTMH BestAskPrice=55.94 BestAskSize=46 BestAskExch=CIXBQTMJ CompositeUnderlyingPrice=no data
+2020-06-23 14:22:41  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:41  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:41  :: Processing Market Data:Symbol=MELI Exchange=SMART SecType=CS Currency=USD- Open=995.3 High=998.11 Low=977.5 Close=984.54 Volume=2072 LastPrice=989.82 LastTradeSize=1 BestBidPrice=987.64 BestBidSize=2 BestBidExch=IT BestAskPrice=989.9 BestAskSize=1 BestAskExch=W CompositeUnderlyingPrice=no data
+2020-06-23 14:22:41  :: @Order Router: Updating order for symbol MELI: qty=5 price=987.64
+2020-06-23 14:22:41  :: Processing Market Data:Symbol=NFLX Exchange=SMART SecType=CS Currency=USD- Open=467 High=473.57 Low=465.89 Close=468.04 Volume=33192 LastPrice=473 LastTradeSize=2 BestBidPrice=472.82 BestBidSize=2 BestBidExch=IT BestAskPrice=473.01 BestAskSize=3 BestAskExch=WT CompositeUnderlyingPrice=no data
+2020-06-23 14:22:41  :: Updating order with IB  for symbol MELI
+2020-06-23 14:22:41  :: Routing to market position for symbol NFLX
+2020-06-23 14:22:41  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:41  :: Creating buy order for symbol NFLX.Quantity=31 Price=472.82
+2020-06-23 14:22:41  :: Routing with IB to market for symbol NFLX
+2020-06-23 14:22:41  :: Routing Order Id 2205 Symbol=NFLX  Side=BUY Qty=31 Price=472.82
+2020-06-23 14:22:41  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:41  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:41  :: position: orderId=2205 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:22:41  :: orderStatus: orderId=2205 status=Submitted filled=0 remaining=31 avgFillPrice=0 permId=23213508 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:22:41  :: @Generic Order Router: Incoming message from order routing proxy: Symbol NFLX ExecType New OrdStatus New CumQty=0 LvsQty=31 AvgPx=0
+2020-06-23 14:22:41  :: @IBR: Incoming message from order routing: Symbol NFLX ExecType New OrdStatus New CumQty=0 LvsQty=31 AvgPx=0
+2020-06-23 14:22:41  :: Received New for symbol NFLX
+2020-06-23 14:22:41  :: New for symbol NFLX processed
+2020-06-23 14:22:45  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92456 LastPrice=55.94 LastTradeSize=1 BestBidPrice=55.93 BestBidSize=72 BestBidExch=ACIXBQTMHJ BestAskPrice=55.94 BestAskSize=29 BestAskExch=XQTMH CompositeUnderlyingPrice=no data
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Processing Market Data:Symbol=MELI Exchange=SMART SecType=CS Currency=USD- Open=995.3 High=998.11 Low=977.5 Close=984.54 Volume=2072 LastPrice=989.82 LastTradeSize=1 BestBidPrice=987.64 BestBidSize=2 BestBidExch=IT BestAskPrice=989.9 BestAskSize=1 BestAskExch=W CompositeUnderlyingPrice=no data
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Processing Market Data:Symbol=NFLX Exchange=SMART SecType=CS Currency=USD- Open=467 High=473.57 Low=465.89 Close=468.04 Volume=33193 LastPrice=472.99 LastTradeSize=1 BestBidPrice=472.87 BestBidSize=2 BestBidExch=CT BestAskPrice=473.08 BestAskSize=3 BestAskExch=WM CompositeUnderlyingPrice=no data
+2020-06-23 14:22:46  :: @Order Router: Updating order for symbol MELI: qty=5 price=987.64
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: Updating order with IB  for symbol MELI
+2020-06-23 14:22:46  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:46  :: @Order Router: Updating order for symbol NFLX: qty=31 price=472.87
+2020-06-23 14:22:46  :: Updating order with IB  for symbol NFLX
+2020-06-23 14:22:46  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:46  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:46  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:50  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92460 LastPrice=55.93 LastTradeSize=1 BestBidPrice=55.93 BestBidSize=72 BestBidExch=ACIXBQTMHJ BestAskPrice=55.94 BestAskSize=29 BestAskExch=XQTMJ CompositeUnderlyingPrice=no data
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: Processing Market Data:Symbol=MELI Exchange=SMART SecType=CS Currency=USD- Open=995.3 High=998.11 Low=977.5 Close=984.54 Volume=2072 LastPrice=989.82 LastTradeSize=1 BestBidPrice=987.64 BestBidSize=2 BestBidExch=IT BestAskPrice=989.9 BestAskSize=1 BestAskExch=W CompositeUnderlyingPrice=no data
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: Processing Market Data:Symbol=NFLX Exchange=SMART SecType=CS Currency=USD- Open=467 High=473.57 Low=465.89 Close=468.04 Volume=33195 LastPrice=473.03 LastTradeSize=1 BestBidPrice=472.91 BestBidSize=1 BestBidExch=W BestAskPrice=473.02 BestAskSize=2 BestAskExch=BT CompositeUnderlyingPrice=no data
+2020-06-23 14:22:51  :: @Order Router: Updating order for symbol MELI: qty=5 price=987.64
+2020-06-23 14:22:51  :: Updating order with IB  for symbol MELI
+2020-06-23 14:22:51  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:51  :: @Order Router: Updating order for symbol NFLX: qty=31 price=472.91
+2020-06-23 14:22:51  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:51  :: Updating order with IB  for symbol NFLX
+2020-06-23 14:22:51  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:51  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:55  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Processing Market Data:Symbol=ORCL Exchange=SMART SecType=CS Currency=USD- Open=55.35 High=55.95 Low=55.23 Close=55.12 Volume=92466 LastPrice=55.93 LastTradeSize=1 BestBidPrice=55.93 BestBidSize=70 BestBidExch=ACIXBQTMHJ BestAskPrice=55.94 BestAskSize=37 BestAskExch=XQTMJ CompositeUnderlyingPrice=no data
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Processing Market Data:Symbol=MELI Exchange=SMART SecType=CS Currency=USD- Open=995.3 High=998.11 Low=977.5 Close=984.54 Volume=2072 LastPrice=989.82 LastTradeSize=1 BestBidPrice=987.64 BestBidSize=2 BestBidExch=IT BestAskPrice=989.9 BestAskSize=2 BestAskExch=WT CompositeUnderlyingPrice=no data
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol MELI:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: Error error processing RunOnPositionCalculus for symbol NFLX:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:22:56  :: @Order Router: Updating order for symbol MELI: qty=5 price=987.64
+2020-06-23 14:22:56  :: Processing Market Data:Symbol=NFLX Exchange=SMART SecType=CS Currency=USD- Open=467 High=473.57 Low=465.89 Close=468.04 Volume=33206 LastPrice=473.01 LastTradeSize=2 BestBidPrice=472.91 BestBidSize=1 BestBidExch=W BestAskPrice=473.02 BestAskSize=2 BestAskExch=TM CompositeUnderlyingPrice=no data
+2020-06-23 14:22:56  :: Updating order with IB  for symbol MELI
+2020-06-23 14:22:56  :: @Order Router: Updating order for symbol NFLX: qty=31 price=472.91
+2020-06-23 14:22:56  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:56  :: Updating order with IB  for symbol NFLX
+2020-06-23 14:22:56  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:56  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:22:58  :: Canceling all active orders
+2020-06-23 14:22:58  :: @Outgoing IB:Cancelling all active orders @ IB
+2020-06-23 14:22:58  :: Cancelling Order Id 2204
+2020-06-23 14:22:58  :: Cancelling Order Id 2205
+2020-06-23 14:22:58  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol ORCL 
+2020-06-23 14:22:58  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol MELI 
+2020-06-23 14:22:58  :: @Strategy Handler - Instruction Based Router: Cancelling position on symbol NFLX 
+2020-06-23 14:22:58  :: orderStatus: orderId=2204 status=Cancelled filled=0 remaining=5 avgFillPrice=0 permId=23213507 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:22:58  :: @Generic Order Router: Incoming message from order routing proxy: Symbol MELI ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=5 AvgPx=0
+2020-06-23 14:22:58  :: @IBR: Incoming message from order routing: Symbol MELI ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=5 AvgPx=0
+2020-06-23 14:22:58  :: error: reqId=2204 start=202 end=Order Canceled - reason:  
+2020-06-23 14:22:58  :: Received execution report for no longer processed symbol MELI
+2020-06-23 14:22:58  :: orderStatus: orderId=2205 status=Cancelled filled=0 remaining=31 avgFillPrice=0 permId=23213508 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:22:58  :: @Generic Order Router: Incoming message from order routing proxy: Symbol NFLX ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=31 AvgPx=0
+2020-06-23 14:22:58  :: @IBR: Incoming message from order routing: Symbol NFLX ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=31 AvgPx=0
+2020-06-23 14:22:58  :: error: reqId=2205 start=202 end=Order Canceled - reason:  
+2020-06-23 14:22:58  :: Received execution report for no longer processed symbol NFLX
+2020-06-23 14:23:00  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:23:01  :: Ending RunOnPositionCalculus for symbol MELI. The position is cleared
+2020-06-23 14:23:01  :: Ending RunOnPositionCalculus for symbol NFLX. The position is cleared
+2020-06-23 14:23:01  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:01  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:01  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:05  :: Could not create order por symbol ORCL because there was not best bid price as a reference
+2020-06-23 14:23:06  :: Processing Market Data:Symbol=ORCL Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:06  :: Processing Market Data:Symbol=MELI Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:06  :: Processing Market Data:Symbol=NFLX Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:20  :: 6/23/2020 2:23:20 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:23:20  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:23:20  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:23:21  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:23:21  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:23:21  :: 6/23/2020 2:23:21 PMOrderRouterBase.LoadConfig
+2020-06-23 14:23:21  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:23:21  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:23:21  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:23:21  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:23:21  :: 6/23/2020 2:23:21 PMOrderRouterBase.LoadConfig
+2020-06-23 14:23:21  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:23:21  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:23:21  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:23:21  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:23:21  :: nextValidId: orderId=2206
+2020-06-23 14:23:21  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:23:21  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:23:21  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:23:21  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:23:21  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:23:21  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:23:21  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:23:27  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:23:27  :: managedAccounts: =DU634652   
+2020-06-23 14:23:27  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:23:27  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:23:27  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:23:27  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:23:27  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:23:27  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:23:27  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:23:27  :: Synchronizing position for symbol EDN   
+2020-06-23 14:23:27  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:23:27  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:23:44  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:23:44  :: managedAccounts: =DU634652   
+2020-06-23 14:23:44  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:23:44  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:23:44  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:23:44  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:23:44  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:23:44  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:23:44  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:23:44  :: Synchronizing position for symbol EDN   
+2020-06-23 14:23:44  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:23:44  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:23:44  :: Strategy Handler - Instruction Based Router: Creating position for symbol CSCO
+2020-06-23 14:23:45  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:50  :: Processing Market Data:Symbol=CSCO Exchange=SMART SecType=CS Currency=USD- Open=45.85 High=45.96 Low=45.32 Close=45.16 Volume=73371 LastPrice=45.95 LastTradeSize=1 BestBidPrice=45.94 BestBidSize=64 BestBidExch=IBQWTMEJ BestAskPrice=45.95 BestAskSize=43 BestAskExch=QWTJ CompositeUnderlyingPrice=no data
+2020-06-23 14:23:50  :: Routing to market position for symbol CSCO
+2020-06-23 14:23:50  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:50  :: Creating buy order for symbol CSCO.Quantity=217 Price=45.94
+2020-06-23 14:23:50  :: Routing with IB to market for symbol CSCO
+2020-06-23 14:23:50  :: Routing Order Id 2206 Symbol=CSCO  Side=BUY Qty=217 Price=45.94
+2020-06-23 14:23:51  :: position: orderId=2206 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:23:51  :: orderStatus: orderId=2206 status=Submitted filled=0 remaining=217 avgFillPrice=0 permId=23213509 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:23:51  :: @Generic Order Router: Incoming message from order routing proxy: Symbol CSCO ExecType New OrdStatus New CumQty=0 LvsQty=217 AvgPx=0
+2020-06-23 14:23:51  :: @IBR: Incoming message from order routing: Symbol CSCO ExecType New OrdStatus New CumQty=0 LvsQty=217 AvgPx=0
+2020-06-23 14:23:51  :: Received New for symbol CSCO
+2020-06-23 14:23:51  :: New for symbol CSCO processed
+2020-06-23 14:23:55  :: Processing Market Data:Symbol=CSCO Exchange=SMART SecType=CS Currency=USD- Open=45.85 High=45.96 Low=45.32 Close=45.16 Volume=73397 LastPrice=45.94 LastTradeSize=1 BestBidPrice=45.94 BestBidSize=70 BestBidExch=IBQWTMEJ BestAskPrice=45.95 BestAskSize=33 BestAskExch=QWTJ CompositeUnderlyingPrice=no data
+2020-06-23 14:23:55  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:56  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:57  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:23:58  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:24:00  :: Processing Market Data:Symbol=CSCO Exchange=SMART SecType=CS Currency=USD- Open=45.85 High=45.96 Low=45.32 Close=45.16 Volume=73399 LastPrice=45.94 LastTradeSize=1 BestBidPrice=45.94 BestBidSize=71 BestBidExch=IBQWTMEJ BestAskPrice=45.95 BestAskSize=32 BestAskExch=QWT CompositeUnderlyingPrice=no data
+2020-06-23 14:24:12  :: execDetails: reqId=-1 start=IBApi.Contract end=IBApi.Execution  
+2020-06-23 14:24:17  :: position: orderId=2206 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:24:17  :: orderStatus: orderId=2206 status=Filled filled=217 remaining=0 avgFillPrice=45.94 permId=23213509 parentId=0 lastFillPrice=45.94 clientId=4 whyHeld=  
+2020-06-23 14:24:17  :: Error error processing RunOnPositionCalculus for symbol CSCO:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:24:17  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:24:17  :: @Order Router: Updating order for symbol CSCO: qty=217 price=45.94
+2020-06-23 14:24:17  :: Updating order with IB  for symbol CSCO
+2020-06-23 14:24:17  :: @Generic Order Router: Incoming message from order routing proxy: Symbol CSCO ExecType Trade OrdStatus Filled CumQty=217 LvsQty=0 AvgPx=45.94
+2020-06-23 14:24:17  :: @IBR: Incoming message from order routing: Symbol CSCO ExecType Trade OrdStatus Filled CumQty=217 LvsQty=0 AvgPx=45.94
+2020-06-23 14:24:17  :: position: orderId=2206 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:24:17  :: Received filled for symbol CSCO
+2020-06-23 14:24:17  :: orderStatus: orderId=2206 status=Filled filled=217 remaining=0 avgFillPrice=45.94 permId=23213509 parentId=0 lastFillPrice=45.94 clientId=4 whyHeld=  
+2020-06-23 14:24:17  :: @Generic Order Router: Incoming message from order routing proxy: Symbol CSCO ExecType Trade OrdStatus Filled CumQty=217 LvsQty=0 AvgPx=45.94
+2020-06-23 14:24:17  :: Filled for symbol CSCO processed
+2020-06-23 14:24:17  :: commissionReport: commissionReport=IBApi.CommissionReport
+2020-06-23 14:24:18  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:24:18  :: managedAccounts: =DU634652   
+2020-06-23 14:24:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:24:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:24:18  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:24:22  :: Ending RunOnPositionCalculus for symbol CSCO. The position is cleared
+2020-06-23 14:24:22  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:24:24  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:24:24  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:24:24  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:24:24  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:24:24  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:24:24  :: Synchronizing position for symbol EDN   
+2020-06-23 14:24:24  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:24:24  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:24:29  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:02  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:07  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:12  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:17  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:22  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:27  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:32  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:37  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:42  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:47  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:52  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:25:57  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:02  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:07  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:12  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:17  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:20  :: Canceling all active orders
+2020-06-23 14:26:20  :: @Outgoing IB:Cancelling all active orders @ IB
+2020-06-23 14:26:20  :: Cancelling Order Id 2206
+2020-06-23 14:26:20  :: error: reqId=2206 start=10147 end=OrderId 2206 that needs to be cancelled is not found.  
+2020-06-23 14:26:22  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:27  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:26:27  :: error: ex=No se puede leer más allá del final de la secuencia.   
+2020-06-23 14:26:27  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:47  :: @Strategy Handler - Instruction Based Router - Critical error processing position sync instruction: It was not possible to sync positions because the connection to TWS failed - 
+2020-06-23 14:26:48  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:26:48  :: managedAccounts: =DU634652   
+2020-06-23 14:26:48  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:26:48  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:26:48  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:26:48  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:26:48  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:26:48  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:26:48  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:26:48  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:26:48  :: Synchronizing position for symbol EDN   
+2020-06-23 14:26:48  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:26:48  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:26:52  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:54  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:26:54  :: managedAccounts: =DU634652   
+2020-06-23 14:26:54  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:26:54  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:26:54  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:26:54  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:26:54  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:26:54  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:26:54  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:26:54  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:26:54  :: Synchronizing position for symbol EDN   
+2020-06-23 14:26:54  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:26:54  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:26:54  :: Strategy Handler - Instruction Based Router: Creating position for symbol DIS
+2020-06-23 14:26:57  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:26:57  :: Processing Market Data:Symbol=DIS Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:02  :: Processing Market Data:Symbol=DIS Exchange=SMART SecType=CS Currency=USD- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:02  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:02  :: Processing Market Data:Symbol=DIS Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:07  :: Processing Market Data:Symbol=DIS Exchange=SMART SecType=CS Currency=USD- Open=116.82 High=117.3 Low=115.97 Close=115.92 Volume=51490 LastPrice=117.04 LastTradeSize=1 BestBidPrice=117.03 BestBidSize=2 BestBidExch=M BestAskPrice=117.04 BestAskSize=21 BestAskExch=XT CompositeUnderlyingPrice=no data
+2020-06-23 14:27:07  :: Routing to market position for symbol DIS
+2020-06-23 14:27:07  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:07  :: Creating buy order for symbol DIS.Quantity=42 Price=117.03
+2020-06-23 14:27:07  :: Processing Market Data:Symbol=DIS Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:07  :: Routing with IB to market for symbol DIS
+2020-06-23 14:27:07  :: Routing Order Id 2207 Symbol=DIS  Side=BUY Qty=42 Price=117.03
+2020-06-23 14:27:08  :: error: reqId=-1 start=2103 end=Market data farm connection is broken:cashfarm  
+2020-06-23 14:27:47  :: Processing Market Data:Symbol=DIS Exchange=SMART SecType=CS Currency=USD- Open=116.82 High=117.3 Low=115.97 Close=115.92 Volume=51490 LastPrice=117.04 LastTradeSize=1 BestBidPrice=117.03 BestBidSize=2 BestBidExch=M BestAskPrice=117.04 BestAskSize=21 BestAskExch=XT CompositeUnderlyingPrice=no data
+2020-06-23 14:27:47  :: position: orderId=2207 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:27:47  :: orderStatus: orderId=2207 status=PreSubmitted filled=0 remaining=42 avgFillPrice=0 permId=23213510 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:27:47  :: @Generic Order Router: Incoming message from order routing proxy: Symbol DIS ExecType PendingNew OrdStatus PendingNew CumQty=0 LvsQty=42 AvgPx=0
+2020-06-23 14:27:47  :: Error error processing RunOnPositionCalculus for symbol DIS:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:27:47  :: @IBR: Incoming message from order routing: Symbol DIS ExecType PendingNew OrdStatus PendingNew CumQty=0 LvsQty=42 AvgPx=0
+2020-06-23 14:27:47  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:50  :: execDetails: reqId=-1 start=IBApi.Contract end=IBApi.Execution  
+2020-06-23 14:27:50  :: @Order Router: Updating order for symbol DIS: qty=42 price=117.03
+2020-06-23 14:27:50  :: Processing Market Data:Symbol=DIS Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:27:50  :: Updating order with IB  for symbol DIS
+2020-06-23 14:27:50  :: Received PendingNew for symbol DIS
+2020-06-23 14:27:50  :: position: orderId=2207 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:27:50  :: PendingNew for symbol DIS processed
+2020-06-23 14:27:50  :: orderStatus: orderId=2207 status=Filled filled=42 remaining=0 avgFillPrice=117.02 permId=23213510 parentId=0 lastFillPrice=117.02 clientId=4 whyHeld=  
+2020-06-23 14:27:50  :: @Generic Order Router: Incoming message from order routing proxy: Symbol DIS ExecType Trade OrdStatus Filled CumQty=42 LvsQty=0 AvgPx=117.02
+2020-06-23 14:27:50  :: @IBR: Incoming message from order routing: Symbol DIS ExecType Trade OrdStatus Filled CumQty=42 LvsQty=0 AvgPx=117.02
+2020-06-23 14:27:50  :: position: orderId=2207 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:27:50  :: orderStatus: orderId=2207 status=Filled filled=42 remaining=0 avgFillPrice=117.02 permId=23213510 parentId=0 lastFillPrice=117.02 clientId=4 whyHeld=  
+2020-06-23 14:27:50  :: @Generic Order Router: Incoming message from order routing proxy: Symbol DIS ExecType Trade OrdStatus Filled CumQty=42 LvsQty=0 AvgPx=117.02
+2020-06-23 14:27:50  :: commissionReport: commissionReport=IBApi.CommissionReport
+2020-06-23 14:27:50  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:27:50  :: Received filled for symbol DIS
+2020-06-23 14:27:50  :: Filled for symbol DIS processed
+2020-06-23 14:27:51  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:27:51  :: managedAccounts: =DU634652   
+2020-06-23 14:27:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:27:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:27:51  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:27:51  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:27:51  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:27:51  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:27:51  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:27:51  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:27:51  :: Synchronizing position for symbol EDN   
+2020-06-23 14:27:51  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:27:51  :: Synchronizing position for symbol DIS   
+2020-06-23 14:27:51  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:27:55  :: Ending RunOnPositionCalculus for symbol DIS. The position is cleared
+2020-06-23 14:27:55  :: Processing Market Data:Symbol=CSCO Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:32:33  :: 6/23/2020 2:32:33 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:32:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:32:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:32:33  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:32:33  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:32:33  :: 6/23/2020 2:32:33 PMOrderRouterBase.LoadConfig
+2020-06-23 14:32:33  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:32:33  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:32:33  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:32:33  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:32:33  :: 6/23/2020 2:32:33 PMOrderRouterBase.LoadConfig
+2020-06-23 14:32:33  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:32:33  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:32:33  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:32:33  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:32:33  :: nextValidId: orderId=2208
+2020-06-23 14:32:33  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:32:33  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:32:33  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:32:33  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:32:33  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:32:33  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:32:33  :: error: reqId=-1 start=2157 end=Sec-def data farm connection is broken:secdefnj  
+2020-06-23 14:32:35  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:32:49  :: error: reqId=-1 start=2103 end=Market data farm connection is broken:usfarm.nj  
+2020-06-23 14:32:50  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:33:02  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:33:02  :: managedAccounts: =DU634652   
+2020-06-23 14:33:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:33:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:33:02  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:33:02  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:33:02  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:33:02  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:33:02  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:33:02  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:33:02  :: Synchronizing position for symbol EDN   
+2020-06-23 14:33:02  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:33:02  :: Synchronizing position for symbol DIS   
+2020-06-23 14:33:03  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:33:03  :: Strategy Handler - Instruction Based Router: Creating position for symbol JNJ
+2020-06-23 14:33:31  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:33:31  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:33:36  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31694 LastPrice=143.52 LastTradeSize=1 BestBidPrice=143.51 BestBidSize=5 BestBidExch=XTM BestAskPrice=143.53 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:33:36  :: Routing to market position for symbol JNJ
+2020-06-23 14:33:36  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:33:36  :: Creating buy order for symbol JNJ.Quantity=34 Price=143.51
+2020-06-23 14:33:36  :: Routing with IB to market for symbol JNJ
+2020-06-23 14:33:36  :: Routing Order Id 2208 Symbol=JNJ  Side=BUY Qty=34 Price=143.51
+2020-06-23 14:33:36  :: position: orderId=2208 contract=IBApi.Contract order=IBApi.Order orderState=IBApi.OrderState 
+2020-06-23 14:33:36  :: orderStatus: orderId=2208 status=Submitted filled=0 remaining=34 avgFillPrice=0 permId=23213511 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:33:36  :: @Generic Order Router: Incoming message from order routing proxy: Symbol JNJ ExecType New OrdStatus New CumQty=0 LvsQty=34 AvgPx=0
+2020-06-23 14:33:36  :: @IBR: Incoming message from order routing: Symbol JNJ ExecType New OrdStatus New CumQty=0 LvsQty=34 AvgPx=0
+2020-06-23 14:33:36  :: Received New for symbol JNJ
+2020-06-23 14:33:36  :: New for symbol JNJ processed
+2020-06-23 14:33:41  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31696 LastPrice=143.53 LastTradeSize=1 BestBidPrice=143.5 BestBidSize=4 BestBidExch=IXBM BestAskPrice=143.53 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:33:41  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:33:41  :: @Order Router: Updating order for symbol JNJ: qty=34 price=143.5
+2020-06-23 14:33:41  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:33:41  :: Updating order with IB  for symbol JNJ
+2020-06-23 14:33:46  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31702 LastPrice=143.5 LastTradeSize=5 BestBidPrice=143.5 BestBidSize=6 BestBidExch=IXBM BestAskPrice=143.53 BestAskSize=3 BestAskExch=BM CompositeUnderlyingPrice=no data
+2020-06-23 14:33:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:33:51  :: @Order Router: Updating order for symbol JNJ: qty=34 price=143.5
+2020-06-23 14:33:51  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:33:51  :: Updating order with IB  for symbol JNJ
+2020-06-23 14:33:56  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31702 LastPrice=143.5 LastTradeSize=5 BestBidPrice=143.52 BestBidSize=1 BestBidExch=M BestAskPrice=143.54 BestAskSize=3 BestAskExch=XM CompositeUnderlyingPrice=no data
+2020-06-23 14:33:56  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:41  :: @Order Router: Updating order for symbol JNJ: qty=34 price=143.52
+2020-06-23 14:34:41  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:34:41  :: Updating order with IB  for symbol JNJ
+2020-06-23 14:34:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:46  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31745 LastPrice=143.52 LastTradeSize=1 BestBidPrice=143.51 BestBidSize=4 BestBidExch=XBM BestAskPrice=143.54 BestAskSize=1 BestAskExch=T CompositeUnderlyingPrice=no data
+2020-06-23 14:34:46  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:46  :: @Order Router: Updating order for symbol JNJ: qty=34 price=143.51
+2020-06-23 14:34:46  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:34:46  :: Updating order with IB  for symbol JNJ
+2020-06-23 14:34:51  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31745 LastPrice=143.52 LastTradeSize=1 BestBidPrice=143.51 BestBidSize=7 BestBidExch=XBTM BestAskPrice=143.55 BestAskSize=2 BestAskExch=M CompositeUnderlyingPrice=no data
+2020-06-23 14:34:51  :: Error error processing RunOnPositionCalculus for symbol JNJ:El objeto que acepta valores Null debe tener un valor.
+2020-06-23 14:34:51  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:34:51  :: @Order Router: Updating order for symbol JNJ: qty=34 price=143.51
+2020-06-23 14:34:51  :: Updating order with IB  for symbol JNJ
+2020-06-23 14:34:56  :: orderStatus: orderId=2208 status=Cancelled filled=0 remaining=34 avgFillPrice=0 permId=23213511 parentId=0 lastFillPrice=0 clientId=4 whyHeld=  
+2020-06-23 14:34:56  :: @Generic Order Router: Incoming message from order routing proxy: Symbol JNJ ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=34 AvgPx=0
+2020-06-23 14:34:56  :: @IBR: Incoming message from order routing: Symbol JNJ ExecType Canceled OrdStatus Canceled CumQty=0 LvsQty=34 AvgPx=0
+2020-06-23 14:34:57  :: error: reqId=2208 start=202 end=Order Canceled - reason:  
+2020-06-23 14:34:57  :: Ending RunOnPositionCalculus for symbol JNJ. The position is cleared
+2020-06-23 14:34:57  :: Processing Market Data:Symbol=JNJ Exchange=SMART SecType=CS Currency=USD- Open=143.74 High=144.08 Low=142.68 Close=143.39 Volume=31746 LastPrice=143.53 LastTradeSize=1 BestBidPrice=143.51 BestBidSize=9 BestBidExch=CXBQTM BestAskPrice=143.56 BestAskSize=7 BestAskExch=XQT CompositeUnderlyingPrice=no data
+2020-06-23 14:34:57  :: Received Canceled for symbol JNJ. Reason: 
+2020-06-23 14:34:57  :: Canceled for symbol JNJ processed
+2020-06-23 14:34:57  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:34:58  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:34:58  :: managedAccounts: =DU634652   
+2020-06-23 14:34:58  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:34:58  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:34:58  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:34:58  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:34:58  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:34:58  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:34:58  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:34:58  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:34:58  :: Synchronizing position for symbol EDN   
+2020-06-23 14:34:58  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:34:58  :: Synchronizing position for symbol DIS   
+2020-06-23 14:34:58  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:35:02  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:35:07  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:35:21  :: Processing Market Data:Symbol=JNJ Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:35:57  :: 6/23/2020 2:35:57 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:35:57  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:35:57  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:35:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:35:58  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:35:58  :: 6/23/2020 2:35:58 PMOrderRouterBase.LoadConfig
+2020-06-23 14:35:58  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:35:58  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:35:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:35:58  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:35:58  :: 6/23/2020 2:35:58 PMOrderRouterBase.LoadConfig
+2020-06-23 14:35:58  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:35:58  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:35:58  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:35:58  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:35:58  :: nextValidId: orderId=2209
+2020-06-23 14:35:58  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:35:58  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:35:58  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:35:58  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:35:58  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:35:58  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:35:58  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:36:24  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:36:24  :: managedAccounts: =DU634652   
+2020-06-23 14:36:24  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:36:24  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:36:24  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:36:24  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:36:24  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:36:24  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:36:24  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:36:24  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:36:24  :: Synchronizing position for symbol EDN   
+2020-06-23 14:36:24  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:36:24  :: Synchronizing position for symbol DIS   
+2020-06-23 14:36:25  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:36:25  :: Strategy Handler - Instruction Based Router: Creating position for symbol XOM
+2020-06-23 14:36:33  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:36:38  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:36:43  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:36:48  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:36:53  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:36:58  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:37:03  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:37:17  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:37:22  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:37:27  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:37:32  :: Processing Market Data:Symbol=XOM Exchange= SecType=CS Currency=- Open=no data High=no data Low=no data Close=no data Volume=no data LastPrice=no data LastTradeSize=no data BestBidPrice=no data BestBidSize=no data BestBidExch=no data BestAskPrice=no data BestAskSize=no data BestAskExch=no data CompositeUnderlyingPrice=no data
+2020-06-23 14:37:49  :: 6/23/2020 2:37:49 PMMomentumStrategyBase.LoadConfig
+2020-06-23 14:37:49  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:37:49  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:37:49  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-23 14:37:49  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-23 14:37:49  :: 6/23/2020 2:37:49 PMOrderRouterBase.LoadConfig
+2020-06-23 14:37:49  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-23 14:37:49  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-23 14:37:49  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-23 14:37:49  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-23 14:37:49  :: 6/23/2020 2:37:49 PMOrderRouterBase.LoadConfig
+2020-06-23 14:37:49  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:37:49  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-23 14:37:49  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-23 14:37:49  :: managedAccounts: accountsList=DU634652
+2020-06-23 14:37:49  :: nextValidId: orderId=2209
+2020-06-23 14:37:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:37:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:37:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:37:49  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:37:49  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:37:49  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:37:49  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:37:58  :: Canceling all active orders
+2020-06-23 14:37:58  :: @Outgoing IB:Cancelling all active orders @ IB
+2020-06-23 14:38:30  :: @Strategy Handler - Instruction Based Router - Starting sync for account 1 ...
+2020-06-23 14:38:30  :: managedAccounts: =DU634652   
+2020-06-23 14:38:30  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-23 14:38:30  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-23 14:38:30  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-23 14:38:30  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-23 14:38:30  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-23 14:38:30  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-23 14:38:30  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-23 14:38:30  :: Synchronizing position for symbol CSCO   
+2020-06-23 14:38:30  :: Synchronizing position for symbol EDN   
+2020-06-23 14:38:30  :: Synchronizing position for symbol MSFT   
+2020-06-23 14:38:30  :: Synchronizing position for symbol DIS   
+2020-06-23 14:38:30  :: @Strategy Handler - Instruction Based Router - Account DU634652 - fmosca PAPER TR positions succesfully synchronized
+2020-06-23 14:38:30  :: Strategy Handler - Instruction Based Router: Creating position for symbol XOM

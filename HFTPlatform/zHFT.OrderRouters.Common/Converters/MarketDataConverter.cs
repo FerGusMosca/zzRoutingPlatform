@@ -69,6 +69,9 @@ namespace zHFT.OrderRouters.Common.Converters
             md.BestAskExch = (ValidateField(wrapper, MarketDataFields.BestAskExch) ? Convert.ToString(wrapper.GetField(MarketDataFields.BestAskExch)) : null);
             md.BestBidExch = (ValidateField(wrapper, MarketDataFields.BestBidExch) ? Convert.ToString(wrapper.GetField(MarketDataFields.BestBidExch)) : null);
 
+            md.Currency = (ValidateField(wrapper, MarketDataFields.Currency) ? Convert.ToString(wrapper.GetField(MarketDataFields.Currency)) : null);
+
+
             return md;
         }
     }

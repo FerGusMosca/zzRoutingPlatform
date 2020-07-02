@@ -101,6 +101,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Mock\outgoingOrderRouter.Mock.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="outgoingOrderRouter.Bittrex.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

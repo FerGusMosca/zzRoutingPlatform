@@ -204,18 +204,15 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     ReverseCurrency = new Dictionary<string, bool>();
 
                     AccountManager = new AccountManager(BinanceConfiguration.InstructionsAccessLayerConnectionString);
-                    InstructionManager = new InstructionManager(BinanceConfiguration.InstructionsAccessLayerConnectionString, AccountManager);
+                    //InstructionManager = new InstructionManager(BinanceConfiguration.InstructionsAccessLayerConnectionString, AccountManager);
                     AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.InstructionsAccessLayerConnectionString);
 
                     ConfigBinanceData();
 
-                    CleanPrevInstructions();
+                    //CleanPrevInstructions();
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
-
-                    ProcessInstructionsThread = new Thread(DoFindInstructions);
-                    ProcessInstructionsThread.Start();
 
                     return true;
                 }

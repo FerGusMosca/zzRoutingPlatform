@@ -34,6 +34,8 @@ namespace zHFT.MarketClient.Common.Wrappers
 
         #region Public Methods
 
+        
+
         public override string ToString()
         {
             if (Security != null)
@@ -83,7 +85,12 @@ namespace zHFT.MarketClient.Common.Wrappers
             else if (mdField == MarketDataFields.SecurityType)
                 return Security.SecType;
             else if (mdField == MarketDataFields.Currency)
-                return Security.Currency;
+            {
+                if (Security.MarketData.Currency != null)
+                    return Security.MarketData.Currency;
+                else
+                    return Security.Currency;
+            }
             else if (mdField == MarketDataFields.MDMkt)
                 return Security.Exchange;
 

@@ -28,7 +28,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
         #region Protected Attributes
 
-        protected Dictionary<int, Security> ActiveSecurities { get; set; }
+        protected Dictionary<long, Security> ActiveSecurities { get; set; }
 
         protected Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
@@ -37,8 +37,6 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         protected Thread RequestMarketDataThread { get; set; }
 
         protected Thread CleanOldSecuritiesThread { get; set; }
-
-        protected InstructionManager InstructionManager { get; set; }
 
         protected AccountManager AccountManager { get; set; }
 
@@ -59,18 +57,6 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         #endregion
 
         #region Protected Methods
-
-        protected void CleanPrevInstructions()
-        {
-            List<Instruction> prevInstrx = InstructionManager.GetPendingInstructions(GetAccountNumber());
-
-            foreach (Instruction prevInstr in prevInstrx)
-            {
-                prevInstr.Executed = true;
-                prevInstr.AccountPosition = null;
-                InstructionManager.Persist(prevInstr);
-            }
-        }
 
         protected void RemoveSymbol(string symbol)
         {
@@ -141,41 +127,11 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
             return sec;
         }
 
-        protected void ProcessPositionInstruction(Instruction instr)
-        {
-            try
-            {
-                if (instr != null)
-                {
-                    if (!ActiveSecurities.Keys.Contains(instr.Id)
-                        && !ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == instr.Symbol))
-                    {
-                        instr = InstructionManager.GetById(instr.Id);
-
-                        if (instr.InstructionType.Type == InstructionType._NEW_POSITION || instr.InstructionType.Type == InstructionType._UNWIND_POSITION)
-                        {
-                            ActiveSecurities.Add(instr.Id, BuildSecurityFromInstruction(instr));
-                            RequestMarketDataThread = new Thread(DoRequestMarketData);
-                            RequestMarketDataThread.Start(instr.Symbol);
-                        }
-                    }
-                }
-                else
-                    throw new Exception(string.Format("Could not find a related instruction for id {0}", instr.Id));
-
-
-            }
-            catch (Exception ex)
-            {
-
-                DoLog(string.Format("Critical error processing related instruction: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : "")), Main.Common.Util.Constants.MessageType.Error);
-            }
-        }
-
         protected CMState ProcessMarketDataRequest(Wrapper wrapper)
         {
             string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
-            int mdReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
+            long mdReqId = (long)wrapper.GetField(MarketDataRequestField.MDReqId);
+            string quoteSymbol = (string)wrapper.GetField(MarketDataRequestField.QuoteSymbol);
 
             Security sec = new Security() { Symbol = symbol };
 
@@ -183,36 +139,11 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
            
             RequestMarketDataThread = new Thread(DoRequestMarketData);
-            RequestMarketDataThread.Start(symbol);
+            RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
 
             return CMState.BuildSuccess();
         }
 
-        protected void DoFindInstructions()
-        {
-            while (true)
-            {
-                Thread.Sleep(GetSearchForInstrInMiliseconds());
-
-                lock (tLock)
-                {
-                    List<Instruction> instructionsToProcess = InstructionManager.GetPendingInstructions(GetAccountNumber());
-
-                    try
-                    {
-                        foreach (Instruction instr in instructionsToProcess.Where(x => x.InstructionType.Type == InstructionType._NEW_POSITION || x.InstructionType.Type == InstructionType._UNWIND_POSITION))
-                        {
-                            //We process the account positions sync instructions
-                            ProcessPositionInstruction(instr);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        DoLog(string.Format("@{2}:Critical error processing instructions: {0} - {1}", ex.Message, (ex.InnerException != null ? ex.InnerException.Message : ""), GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
-                    }
-                }
-            }
-        }
 
         protected void CancelMarketData(Security sec)
         {

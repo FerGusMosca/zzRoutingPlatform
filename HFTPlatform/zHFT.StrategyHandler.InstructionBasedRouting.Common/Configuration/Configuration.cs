@@ -29,6 +29,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
 
         public string InstructionsAccessLayerConnectionString { get; set; }
 
+        public string ADOInstructionsAccessLayerConnectionString { get; set; }
+
         public long AccountNumber { get; set; }
 
         public int RoutingUpdateInMilliseconds { get; set; }
@@ -60,6 +62,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
             if (string.IsNullOrEmpty(InstructionsAccessLayerConnectionString))
             {
                 result.Add("InstructionsAccessLayerConnectionString");
+                resultado = false;
+            }
+
+
+            if (string.IsNullOrEmpty(ADOInstructionsAccessLayerConnectionString))
+            {
+                result.Add("ADOInstructionsAccessLayerConnectionString");
                 resultado = false;
             }
 
@@ -98,5 +107,6 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
         }
 
         #endregion
+
     }
 }

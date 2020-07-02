@@ -1,0 +1,81 @@
+2020-06-15 16:16:48  :: 6/15/2020 4:16:48 PMMomentumStrategyBase.LoadConfig
+2020-06-15 16:16:48  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:16:48  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:16:48  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:16:48  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-15 16:16:49  :: 6/15/2020 4:16:49 PMOrderRouterBase.LoadConfig
+2020-06-15 16:16:49  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-15 16:16:49  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-15 16:16:49  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-15 16:16:49  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-15 16:16:49  :: 6/15/2020 4:16:49 PMOrderRouterBase.LoadConfig
+2020-06-15 16:16:49  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-15 16:16:49  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-15 16:16:49  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-15 16:16:49  :: managedAccounts: accountsList=DU634652
+2020-06-15 16:16:49  :: nextValidId: orderId=2202
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:hfarm  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:jfarm  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-15 16:16:49  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-15 16:17:10  :: 6/15/2020 4:17:10 PMMomentumStrategyBase.LoadConfig
+2020-06-15 16:17:10  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:17:10  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:17:10  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:17:10  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-15 16:17:11  :: 6/15/2020 4:17:11 PMOrderRouterBase.LoadConfig
+2020-06-15 16:17:11  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-15 16:17:11  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-15 16:17:11  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-15 16:17:11  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-15 16:17:11  :: 6/15/2020 4:17:11 PMOrderRouterBase.LoadConfig
+2020-06-15 16:17:11  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-15 16:17:11  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-15 16:17:11  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-15 16:17:11  :: managedAccounts: accountsList=DU634652
+2020-06-15 16:17:11  :: nextValidId: orderId=2202
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:hfarm  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:jfarm  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-15 16:17:11  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  
+2020-06-15 16:18:14  :: 6/15/2020 4:18:14 PMMomentumStrategyBase.LoadConfig
+2020-06-15 16:18:14  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:18:14  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:18:14  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2020-06-15 16:18:14  :: Initializing Order Router zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters
+2020-06-15 16:18:14  :: 6/15/2020 4:18:14 PMOrderRouterBase.LoadConfig
+2020-06-15 16:18:14  :: Loading config:.\outgoingOrderRouter.xml
+2020-06-15 16:18:14  :: Processing config:.\outgoingOrderRouter.xml
+2020-06-15 16:18:14  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2020-06-15 16:18:14  :: Initializing Order Router Proxy zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB
+2020-06-15 16:18:14  :: 6/15/2020 4:18:14 PMOrderRouterBase.LoadConfig
+2020-06-15 16:18:14  :: Loading config:.\outgoingOrderRouter.IB.xml
+2020-06-15 16:18:14  :: Processing config:.\outgoingOrderRouter.IB.xml
+2020-06-15 16:18:14  :: Ending GetConfiguracion .\outgoingOrderRouter.IB.xml
+2020-06-15 16:18:14  :: managedAccounts: accountsList=DU634652
+2020-06-15 16:18:14  :: nextValidId: orderId=2202
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:hfarm  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm.nj  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:jfarm  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:eufarm  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfuture  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:cashfarm  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2104 end=Market data farm connection is OK:usfarm  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:euhmds  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:fundfarm  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2106 end=HMDS data farm connection is OK:ushmds  
+2020-06-15 16:18:14  :: error: reqId=-1 start=2158 end=Sec-def data farm connection is OK:secdefnj  

@@ -2,7 +2,7 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>InstructionProcessor.Bittrex.Test</Name>
   <IncomingConfigPath>.\incomingBittrex.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.MarketClient.Bitfinex.MarketClient, zHFT.MarketClient.Bitfinex</IncomingModule>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex</IncomingModule>
 
   <OutgoingModule>zHFT.StrategyHandler.InstructionBasedRouting.CryptosInstructionBasedRouter, zHFT.StrategyHandler.InstructionBasedRouting</OutgoingModule>
   <OutgoingConfigPath>.\outgoingStrategyHandler.InstructionBasedRouting.xml</OutgoingConfigPath>

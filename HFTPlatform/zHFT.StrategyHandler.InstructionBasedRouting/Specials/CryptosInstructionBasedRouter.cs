@@ -8,6 +8,7 @@ using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Util;
+using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.DTO;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
@@ -77,6 +78,13 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
             ExecutionSummaries.Add(pos.Security.Symbol, summary);
             PositionInstructions.Add(pos.Security.Symbol, instr);
+
+            MarketDataRequestWrapper mdReqWrapper = new MarketDataRequestWrapper(pos.Security, 
+                                                                                 SubscriptionRequestType.SnapshotAndUpdates,
+                                                                                 instr.QuoteSymbol);
+
+
+            OnMessageRcv(mdReqWrapper);
             
         }
 

@@ -41,6 +41,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities
 
         public string Symbol { get; set; }
 
+        public string QuoteSymbol { get; set; }
+
         public SecurityType SecurityType { get; set; }
 
         public Side? Side { get; set; }

@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\AccountManager.cs" />
-    <Compile Include="Managers\InstructionManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

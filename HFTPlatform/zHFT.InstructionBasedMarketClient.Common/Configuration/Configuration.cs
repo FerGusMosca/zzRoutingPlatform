@@ -14,13 +14,13 @@ namespace zHFT.InstructionBasedMarketClient.Common.Configuration
 
         public bool Active { get; set; }
 
-        public long AccountNumber { get; set; }
+        //public long AccountNumber { get; set; }
 
         public string IP { get; set; }
 
         public int Port { get; set; }
 
-        public string InstructionsAccessLayerConnectionString { get; set; }
+        //public string InstructionsAccessLayerConnectionString { get; set; }
 
         public int PublishUpdateInMilliseconds { get; set; }
 
@@ -50,11 +50,11 @@ namespace zHFT.InstructionBasedMarketClient.Common.Configuration
                 resultado = false;
             }
 
-            if (AccountNumber<=0)
-            {
-                result.Add("AccountNumber");
-                resultado = false;
-            }
+            //if (AccountNumber<=0)
+            //{
+            //    result.Add("AccountNumber");
+            //    resultado = false;
+            //}
 
             if (string.IsNullOrEmpty(Exchange))
             {

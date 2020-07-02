@@ -4,7 +4,9 @@
   
   <Proxy>zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex</Proxy>
   <ProxyConfigFile>.\outgoingOrderRouter.Bittrex.xml</ProxyConfigFile>
-  
+
+  <!--<Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
+  <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
 
   <OrderUpdateInMilliseconds>1500</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

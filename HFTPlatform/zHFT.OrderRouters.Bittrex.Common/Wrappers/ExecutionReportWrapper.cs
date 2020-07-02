@@ -45,8 +45,9 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
         {
             if (OpenOrder == null)
                 return ExecType.Canceled;
-
-            if (OpenOrder.QuantityRemaining == 0)
+            if (Order.OrdStatus == OrdStatus.Rejected)
+                return ExecType.Rejected;
+            else if (OpenOrder.QuantityRemaining == 0)
                 return ExecType.Trade;
             else if (OpenOrder.QuantityRemaining < OpenOrder.Quantity)
                 return ExecType.Trade;
@@ -63,7 +64,9 @@ namespace zHFT.OrderRouters.Bittrex.Common.Wrappers
             if (OpenOrder == null)
                 return OrdStatus.Canceled; ;
 
-            if (OpenOrder.QuantityRemaining == 0)
+            if (Order.OrdStatus == OrdStatus.Rejected)
+                return OrdStatus.Rejected;
+            else if (OpenOrder.QuantityRemaining == 0)
                 return OrdStatus.Filled;
             else if (OpenOrder.QuantityRemaining > 0 && OpenOrder.QuantityRemaining < OpenOrder.Quantity)
                 return OrdStatus.PartiallyFilled;

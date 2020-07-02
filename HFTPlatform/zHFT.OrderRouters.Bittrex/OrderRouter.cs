@@ -63,12 +63,12 @@ namespace zHFT.OrderRouters.Bittrex
 
         #region Protected OrderRouterBase Methods
 
-        protected ExchangeContext GetContext()
+        protected ExchangeContext GetContext(string quoteCurrency)
         {
             return new ExchangeContext()
             {
                 ApiKey = BittrexConfiguration.ApiKey,
-                QuoteCurrency = BittrexConfiguration.QuoteCurrency,
+                QuoteCurrency = quoteCurrency != null ? quoteCurrency : BittrexConfiguration.QuoteCurrency,
                 Secret = BittrexConfiguration.Secret,
                 Simulate = BittrexConfiguration.Simulate
             };
@@ -95,7 +95,7 @@ namespace zHFT.OrderRouters.Bittrex
                         
                         foreach(Order order in ActiveOrders.Values.Where(x=>Order.ActiveStatus(x.OrdStatus)))
                         {
-                            GetOrderResponse ordResp = RunGetOrder(order.OrderId);
+                            GetOrderResponse ordResp = RunGetOrder(order.OrderId,order.Currency);
 
                             if (ordResp != null)
                             {
@@ -182,10 +182,10 @@ namespace zHFT.OrderRouters.Bittrex
             
         }
 
-        protected GetOrderResponse RunGetOrder(string uuid)
+        protected GetOrderResponse RunGetOrder(string uuid,string currency)
         {
             Exchange exchange = new Exchange();
-            ExchangeContext ctx = GetContext();
+            ExchangeContext ctx = GetContext(currency);
             exchange.Initialise(ctx);
             return exchange.GetOrder(uuid);
         
@@ -258,7 +258,7 @@ namespace zHFT.OrderRouters.Bittrex
         private void RunNewOrder(Order order, bool update)
         {
             Exchange exchange = new Exchange();
-            ExchangeContext ctx = GetContext();
+            ExchangeContext ctx = GetContext(order.Currency);
             exchange.Initialise(ctx);
 
             string symbol = order.Symbol;
@@ -280,6 +280,8 @@ namespace zHFT.OrderRouters.Bittrex
                     order.OrderId = resp.uuid;
                     ActiveOrders.Add(resp.uuid, order);
                     OrderIdMappers.Add(order.ClOrdId, resp.uuid);
+                    DoLog(string.Format("@{0}:New buy order Order Id {1} created for symbol {2}", BittrexConfiguration.Name, order.OrderId, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
+            
                 }
                 else throw new Exception(string.Format("Unknown error routing order for currency {0}", order.Symbol));
             }
@@ -294,6 +296,8 @@ namespace zHFT.OrderRouters.Bittrex
                     order.OrderId = resp.uuid;
                     ActiveOrders.Add(resp.uuid, order);
                     OrderIdMappers.Add(order.ClOrdId, resp.uuid);
+                    DoLog(string.Format("@{0}:New sell order Order Id {1} created for symbol {2}", BittrexConfiguration.Name, order.OrderId, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
+            
                 }
                 else throw new Exception(string.Format("Unknown error routing order for currency {0}", order.Symbol));
             }
@@ -304,7 +308,7 @@ namespace zHFT.OrderRouters.Bittrex
         protected override bool RunCancelOrder(Order order,bool update)
         {
             Exchange exchange = new Exchange();
-            ExchangeContext ctx = GetContext();
+            ExchangeContext ctx = GetContext(order.Currency);
             exchange.Initialise(ctx);
             DoLog(string.Format("@{0}:Cancelling Order Id {1} for symbol {2}", BittrexConfiguration.Name, order.OrderId, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
             
@@ -341,34 +345,39 @@ namespace zHFT.OrderRouters.Bittrex
                         if (OrderIdMappers.ContainsKey(origClOrderId))
                         {
                             string origUuid = OrderIdMappers[origClOrderId];
-                            Order order = ActiveOrders[origUuid];
-
-                            if (order != null)
+                            if (ActiveOrders.ContainsKey(origUuid))
                             {
-                                //Recuperamos la orden
-                                GetOrderResponse ordResp = RunGetOrder(order.OrderId);
+                                Order order = ActiveOrders[origUuid];
 
-                                //Cancelamos
-                                RunCancelOrder(order,true);
-
-                                Thread.Sleep(100);
-
-                                //Damos el alta
-                                double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
-                                order.Price = newPrice;
-                                order.ClOrdId = clOrderId;
-                                order.OrderQty = ordResp != null ? Convert.ToDouble(ordResp.QuantityRemaining) : order.OrderQty;//Nos aseguramos de solo rutear la nueva cantidad
-                                try
+                                if (order != null)
                                 {
-                                    RunNewOrder(order, true);
-                                }
-                                catch (Exception ex)
-                                {
-                                    if (ActiveOrders.ContainsKey(order.OrderId))
-                                        ActiveOrders.Remove(order.OrderId);
-                                    EvalRouteError(order, ex);
+                                    //Recuperamos la orden
+                                    GetOrderResponse ordResp = RunGetOrder(order.OrderId, order.Currency);
+
+                                    //Cancelamos
+                                    RunCancelOrder(order, true);
+
+                                    Thread.Sleep(100);
+
+                                    //Damos el alta
+                                    double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+                                    order.Price = newPrice;
+                                    order.ClOrdId = clOrderId;
+                                    order.OrderQty = ordResp != null ? Convert.ToDouble(ordResp.QuantityRemaining) : order.OrderQty;//Nos aseguramos de solo rutear la nueva cantidad
+                                    try
+                                    {
+                                        RunNewOrder(order, true);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        if (ActiveOrders.ContainsKey(order.OrderId))
+                                            ActiveOrders.Remove(order.OrderId);
+                                        EvalRouteError(order, ex);
+                                    }
                                 }
                             }
+                            else
+                                throw new Exception(string.Format("Could not find an active order to cancel (and then update) for OrderId {0}", origUuid));
 
                         }
                         else

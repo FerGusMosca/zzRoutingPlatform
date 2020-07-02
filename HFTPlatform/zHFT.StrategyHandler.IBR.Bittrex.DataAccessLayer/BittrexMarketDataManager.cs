@@ -13,167 +13,167 @@ using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
 
 namespace zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer
 {
-    public class BittrexMarketDataManager : IMarketDataReferenceHandler
-    {
-        #region Private Consts
+    //public class BittrexMarketDataManager : IMarketDataReferenceHandler
+    //{
+    //    #region Private Consts
 
-        private string _ACCOUNT_NUMBER = "AccountNumber";
-        private string _CONFIG_CONNECTION_STRING = "ConfigConnectionString";
-        private string _MARKET_DATA_QUOTE_CURRENCY = "MarketDataQuoteCurrency";
-        private string _SIMULATE = "Simulate";
+    //    private string _ACCOUNT_NUMBER = "AccountNumber";
+    //    private string _CONFIG_CONNECTION_STRING = "ConfigConnectionString";
+    //    private string _MARKET_DATA_QUOTE_CURRENCY = "MarketDataQuoteCurrency";
+    //    private string _SIMULATE = "Simulate";
 
-        private string _USD_CURRENCY = "USDT";
-        private string _BTC_CURRENCY = "BTC";
+    //    private string _USD_CURRENCY = "USDT";
+    //    private string _BTC_CURRENCY = "BTC";
 
-        #endregion
+    //    #endregion
 
-        #region Protected Attributes
+    //    #region Protected Attributes
 
-        protected List<ConfigKey> ConfigParameters { get; set; }
+    //    protected List<ConfigKey> ConfigParameters { get; set; }
 
-        protected AccountBittrexData BittrexData { get; set; }
+    //    protected AccountBittrexData BittrexData { get; set; }
 
-        protected Exchange Exchange { get; set; }
+    //    protected Exchange Exchange { get; set; }
 
-        protected ExchangeContext ExchangeContext { get; set; }
+    //    protected ExchangeContext ExchangeContext { get; set; }
 
-        #endregion
+    //    #endregion
 
-        #region Constructors
+    //    #region Constructors
 
-        public BittrexMarketDataManager(OnLogMessage OnLogMsg, List<ConfigKey> pConfigParameters)
-        {
-            ConfigParameters = pConfigParameters;
-            ValidateDictionary();
+    //    public BittrexMarketDataManager(OnLogMessage OnLogMsg, List<ConfigKey> pConfigParameters)
+    //    {
+    //        ConfigParameters = pConfigParameters;
+    //        ValidateDictionary();
 
-            LoadConfig();
+    //        LoadConfig();
 
-            Exchange = new Exchange();
+    //        Exchange = new Exchange();
 
-            ExchangeContext = GetContext();
+    //        ExchangeContext = GetContext();
 
-            Exchange.Initialise(ExchangeContext);
+    //        Exchange.Initialise(ExchangeContext);
         
-        }
+    //    }
 
-        #endregion
+    //    #endregion
 
-        #region Protected Methods
+    //    #region Protected Methods
 
-        protected ExchangeContext GetContext()
-        {
-            return new ExchangeContext()
-            {
-                ApiKey = BittrexData.APIKey,
-                QuoteCurrency = ConfigParameters.Where(x => x.Key == _MARKET_DATA_QUOTE_CURRENCY).FirstOrDefault().Value,
-                Secret = BittrexData.Secret,
-                Simulate = Convert.ToBoolean(ConfigParameters.Where(x => x.Key == _SIMULATE).FirstOrDefault().Value)
-            };
-        }
+    //    protected ExchangeContext GetContext()
+    //    {
+    //        return new ExchangeContext()
+    //        {
+    //            ApiKey = BittrexData.APIKey,
+    //            QuoteCurrency = ConfigParameters.Where(x => x.Key == _MARKET_DATA_QUOTE_CURRENCY).FirstOrDefault().Value,
+    //            Secret = BittrexData.Secret,
+    //            Simulate = Convert.ToBoolean(ConfigParameters.Where(x => x.Key == _SIMULATE).FirstOrDefault().Value)
+    //        };
+    //    }
 
-        protected void ValidateDictionary()
-        {
+    //    protected void ValidateDictionary()
+    //    {
 
-            if (ConfigParameters == null)
-                throw new Exception("Config not specified for Bittrex Account Manager!");
+    //        if (ConfigParameters == null)
+    //            throw new Exception("Config not specified for Bittrex Account Manager!");
 
-            if (!ConfigParameters.Any(x => x.Key == _ACCOUNT_NUMBER))
-                throw new Exception(string.Format("Config parameter not specified for Account Number!:{0}", _ACCOUNT_NUMBER));
-
-
-            if (!ConfigParameters.Any(x => x.Key == _MARKET_DATA_QUOTE_CURRENCY))
-                throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _MARKET_DATA_QUOTE_CURRENCY));
+    //        if (!ConfigParameters.Any(x => x.Key == _ACCOUNT_NUMBER))
+    //            throw new Exception(string.Format("Config parameter not specified for Account Number!:{0}", _ACCOUNT_NUMBER));
 
 
-            if (!ConfigParameters.Any(x => x.Key == _CONFIG_CONNECTION_STRING))
-                throw new Exception(string.Format("Config parameter not specified for Bittrex Data Connection String!:{0}", _CONFIG_CONNECTION_STRING));
+    //        if (!ConfigParameters.Any(x => x.Key == _MARKET_DATA_QUOTE_CURRENCY))
+    //            throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _MARKET_DATA_QUOTE_CURRENCY));
 
 
-            if (!ConfigParameters.Any(x => x.Key == _SIMULATE))
-                throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _SIMULATE));
+    //        if (!ConfigParameters.Any(x => x.Key == _CONFIG_CONNECTION_STRING))
+    //            throw new Exception(string.Format("Config parameter not specified for Bittrex Data Connection String!:{0}", _CONFIG_CONNECTION_STRING));
 
-            try
-            {
-                bool test = Convert.ToBoolean(ConfigParameters.Where(x => x.Key == _SIMULATE).FirstOrDefault().Value);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(string.Format("Invalid formar for config parameter {0} for Bittrex Account Manager!:{1}", _SIMULATE, ex.Message));
-            }
-        }
 
-        protected void LoadConfig()
-        {
-            string bittrexConfigDataBaseCS = ConfigParameters.Where(x => x.Key == _CONFIG_CONNECTION_STRING).FirstOrDefault().Value;
+    //        if (!ConfigParameters.Any(x => x.Key == _SIMULATE))
+    //            throw new Exception(string.Format("Config parameter not specified for Bittrex Account Manager!:{0}", _SIMULATE));
 
-            AccountBittrexDataManager accountBittrexDataManager = new AccountBittrexDataManager(bittrexConfigDataBaseCS);
+    //        try
+    //        {
+    //            bool test = Convert.ToBoolean(ConfigParameters.Where(x => x.Key == _SIMULATE).FirstOrDefault().Value);
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            throw new Exception(string.Format("Invalid formar for config parameter {0} for Bittrex Account Manager!:{1}", _SIMULATE, ex.Message));
+    //        }
+    //    }
 
-            int accountNumber = Convert.ToInt32(ConfigParameters.Where(x => x.Key == _ACCOUNT_NUMBER).FirstOrDefault().Value);
+    //    protected void LoadConfig()
+    //    {
+    //        string bittrexConfigDataBaseCS = ConfigParameters.Where(x => x.Key == _CONFIG_CONNECTION_STRING).FirstOrDefault().Value;
 
-            BittrexData = accountBittrexDataManager.GetByAccountNumber(accountNumber);
+    //        AccountBittrexDataManager accountBittrexDataManager = new AccountBittrexDataManager(bittrexConfigDataBaseCS);
 
-            if (BittrexData == null)
-                throw new Exception(string.Format("No se encontró la configuración de acceso al exchange Bittrex para la cuenta número {0}", accountNumber));
+    //        int accountNumber = Convert.ToInt32(ConfigParameters.Where(x => x.Key == _ACCOUNT_NUMBER).FirstOrDefault().Value);
 
-        }
+    //        BittrexData = accountBittrexDataManager.GetByAccountNumber(accountNumber);
 
-        public bool MarketExists( string currency,string quoteCurrency)
-        {
-            Exchange exchange = new Exchange();
+    //        if (BittrexData == null)
+    //            throw new Exception(string.Format("No se encontró la configuración de acceso al exchange Bittrex para la cuenta número {0}", accountNumber));
 
-            ExchangeContext ctx = new ExchangeContext();
-            ctx.QuoteCurrency = quoteCurrency;
+    //    }
 
-            exchange.Initialise(ctx);
+    //    public bool MarketExists( string currency,string quoteCurrency)
+    //    {
+    //        Exchange exchange = new Exchange();
 
-            try
-            {
-                GetMarketSummaryResponse resp = exchange.GetMarketSummary(currency);
+    //        ExchangeContext ctx = new ExchangeContext();
+    //        ctx.QuoteCurrency = quoteCurrency;
 
-                return resp != null;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+    //        exchange.Initialise(ctx);
 
-        #endregion
+    //        try
+    //        {
+    //            GetMarketSummaryResponse resp = exchange.GetMarketSummary(currency);
 
-        #region IMarketDataReferenceHandler Methods
+    //            return resp != null;
+    //        }
+    //        catch (Exception)
+    //        {
+    //            return false;
+    //        }
+    //    }
 
-        public MarketData GetMarketData(string symbol)
-        {
+    //    #endregion
+
+    //    #region IMarketDataReferenceHandler Methods
+
+    //    public MarketData GetMarketData(string symbol)
+    //    {
           
-            ExchangeContext = GetContext();
-            Exchange.Initialise(ExchangeContext);
+    //        ExchangeContext = GetContext();
+    //        Exchange.Initialise(ExchangeContext);
 
-            if (MarketExists(symbol, ExchangeContext.QuoteCurrency))
-            {
-                GetMarketSummaryResponse summary = Exchange.GetMarketSummary(symbol);
+    //        if (MarketExists(symbol, ExchangeContext.QuoteCurrency))
+    //        {
+    //            GetMarketSummaryResponse summary = Exchange.GetMarketSummary(symbol);
 
-                MarketData md = new MarketData();
+    //            MarketData md = new MarketData();
 
-                md.BestAskPrice = Convert.ToDouble(summary.Ask);
-                md.NominalVolume = Convert.ToDouble(summary.BaseVolume);
-                md.BestBidPrice = Convert.ToDouble(summary.Bid);
-                md.TradingSessionHighPrice = Convert.ToDouble(summary.High);
-                md.TradingSessionLowPrice = Convert.ToDouble(summary.Low);
-                md.Trade = Convert.ToDouble(summary.Last);
-                md.BestBidSize = Convert.ToInt64(summary.OpenBuyOrders);
-                md.BestAskSize = Convert.ToInt64(summary.OpenSellOrders);
-                md.MDEntryDate = summary.TimeStamp;
-                md.TradeVolume = Convert.ToDouble(summary.Volume);
+    //            md.BestAskPrice = Convert.ToDouble(summary.Ask);
+    //            md.NominalVolume = Convert.ToDouble(summary.BaseVolume);
+    //            md.BestBidPrice = Convert.ToDouble(summary.Bid);
+    //            md.TradingSessionHighPrice = Convert.ToDouble(summary.High);
+    //            md.TradingSessionLowPrice = Convert.ToDouble(summary.Low);
+    //            md.Trade = Convert.ToDouble(summary.Last);
+    //            md.BestBidSize = Convert.ToInt64(summary.OpenBuyOrders);
+    //            md.BestAskSize = Convert.ToInt64(summary.OpenSellOrders);
+    //            md.MDEntryDate = summary.TimeStamp;
+    //            md.TradeVolume = Convert.ToDouble(summary.Volume);
 
-                return md;
+    //            return md;
 
-            }
-            else
-                throw new Exception(string.Format("Could not find market for pair {0}-{1}", symbol, ExchangeContext.QuoteCurrency));
+    //        }
+    //        else
+    //            throw new Exception(string.Format("Could not find market for pair {0}-{1}", symbol, ExchangeContext.QuoteCurrency));
           
            
-        }
+    //    }
 
-        #endregion
-    }
+    //    #endregion
+    //}
 }

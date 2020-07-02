@@ -72,6 +72,7 @@ namespace zHFT.OrderRouter.Mock.Common.Converters
             SecurityType secType = (SecurityType)wrapper.GetField(OrderFields.SecurityType);
             string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
             string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
+            string currency = (string)wrapper.GetField(OrderFields.Currency);
 
 
             Order order = new Order();
@@ -86,6 +87,7 @@ namespace zHFT.OrderRouter.Mock.Common.Converters
             order.OrderQty = ordQty;
             order.Account = account;
             order.Symbol = symbol;
+            order.Currency = currency;
             order.Security = new Security() { Symbol = symbol, SecType = secType };
 
             return order;

@@ -71,6 +71,7 @@ namespace zHFT.OrderRouters.Cryptos
             double orderQty = (double)wrapper.GetField(OrderFields.OrderQty);
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
             int decimalPrecission = (int)wrapper.GetField(OrderFields.DecimalPrecission);
+            string currency = (string) wrapper.GetField(OrderFields.Currency);
 
             if (!price.HasValue)
                 throw new Exception(string.Format("Las ordenes deben tener un precio asignado. No se puede rutear orden para moneda {0}", symbol));
@@ -82,7 +83,7 @@ namespace zHFT.OrderRouters.Cryptos
                 Price = price,
                 Side = side,
                 OrderQty = orderQty,
-                Currency = GetQuoteCurrency(),
+                Currency = currency != null ? currency : GetQuoteCurrency(),
                 OrdType = OrdType.Limit,
                 ClOrdId = clOrderId,
                 DecimalPrecission = decimalPrecission,
@@ -99,13 +100,32 @@ namespace zHFT.OrderRouters.Cryptos
             {
                 lock (tLock)
                 {
+                    List<string> toRemove = new List<string>();
                     foreach (string uuid in ActiveOrders.Keys)
                     {
-                        Order order = ActiveOrders[uuid];
-                        DoLog(string.Format("@{0}:Cancelling active order for symbol {1}", GetConfig().Name, order.Security.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                        try
+                        {
+                            Order order = ActiveOrders[uuid];
+                            if (Order.ActiveStatus(order.OrdStatus))
+                            {
+                                DoLog(string.Format("@{0}:Cancelling active order {1} for symbol {2}", GetConfig().Name,uuid, order.Security.Symbol), Main.Common.Util.Constants.MessageType.Information);
 
-                        RunCancelOrder(order, false);
+                                RunCancelOrder(order, false);
+                            }
+                            else
+                            {
+                                toRemove.Add(uuid);
+                                DoLog(string.Format("@{0}:Depurating old order {1} for symbol {2}", GetConfig().Name,uuid, order.Security.Symbol), Main.Common.Util.Constants.MessageType.Information);
+
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DoLog(string.Format("@{0}:Error cancelling active order {1} !:{2}", GetConfig().Name, uuid, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                        }
                     }
+
+                    toRemove.ForEach(x => ActiveOrders.Remove(x));
 
                     return CMState.BuildSuccess();
                 }
