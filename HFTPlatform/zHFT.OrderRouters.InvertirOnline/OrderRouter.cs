@@ -29,11 +29,13 @@ namespace zHFT.OrderRouters.InvertirOnline
 
         protected OrderConverter OrderConverter { get; set; }
 
-        protected Dictionary<int, Order> OrderList { get; set; }
+        protected Dictionary<string, Order> ActiveOrders { get; set; }
 
-        protected Dictionary<string, int> OrderIdsMapper { get; set; }
+        protected Dictionary<string, string> OrderIdsMapper { get; set; }
 
         protected IOLOrderRouterManager IOLOrderRouterManager { get; set; }
+
+        protected Dictionary<string, ExecutionReportResp> LatestExecReport { get; set; }
 
         public static object tLock { get; set; }
 
@@ -51,7 +53,7 @@ namespace zHFT.OrderRouters.InvertirOnline
         {
             try
             {
-                ExecutionReportWrapper wrapper = (ExecutionReportWrapper)param;
+                Wrapper wrapper = (Wrapper)param;
                 OnMessageRcv(wrapper);
             }
             catch (Exception ex)
@@ -62,18 +64,57 @@ namespace zHFT.OrderRouters.InvertirOnline
         
         }
 
-        protected void RouteNewOrder(Wrapper wrapper)
+        protected void EvalExecutionReportsThread(object param)
         {
-            Order order = null;
-            NewOrderResponse resp = null;
 
-            lock (tLock)
+            try
             {
-                order = OrderConverter.GetNewOrder(wrapper, NextOrderId);
-                NextOrderId++;
-            }
+                while (true)
+                {
+                    lock (tLock)
+                    {
+                        List<string> ordersToDel = new List<string>();
+                        foreach (Order order in ActiveOrders.Values)
+                        {
+                            try
+                            {
+                                ExecutionReportResp execReport = IOLOrderRouterManager.GetExecutionReport(order.OrderId);
 
-            DoLog(string.Format("Routing Order Id {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
+                                ExecutionReportWrapper execReportWrapper = new ExecutionReportWrapper(order, execReport);
+                                new Thread(ProcessExecutionReport).Start(execReportWrapper);
+
+
+                                if (!execReport.IsOpenOrder())
+                                    ordersToDel.Add(order.OrderId.ToString());
+
+                                if (!LatestExecReport.ContainsKey(order.ClOrdId))
+                                    LatestExecReport.Add(order.ClOrdId, execReport);
+                                else
+                                    LatestExecReport[order.ClOrdId] = execReport;
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Critical error evaluating execution report for orderId {0}!: {1}",order.OrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                            }
+                        }
+
+                        ordersToDel.ForEach(x => ActiveOrders.Remove(x));
+                    }
+
+                    Thread.Sleep(1000);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error evaluating execution reports!: {0}", ex.Message), Main.Common.Util.Constants.MessageType.Error);
+
+            }
+        
+        }
+
+        protected NewOrderResponse DoRoute(Order order)
+        {
+            NewOrderResponse resp = null;
 
             if (order.side == Side.Buy)
                 resp = IOLOrderRouterManager.Buy(order);
@@ -82,33 +123,265 @@ namespace zHFT.OrderRouters.InvertirOnline
             else
                 throw new Exception(string.Format("Side no soportado para nueva orden:{0}", order.side));
 
-            if (wrapper.GetField(OrderFields.ClOrdID) == null)
-                throw new Exception("Could not find ClOrdId for new order");
+            if (resp.numeroOperacion.HasValue && resp.numeroOperacion.Value != 0)
+                order.OrderId = resp.numeroOperacion.Value;
+            else
+                throw new Exception(string.Format("El mercado devolvió un OrderId 0 o nulo para la orden ClOrdId = {0}. Consulte con el administrador", order.ClOrdId));
 
-            OrderIdsMapper.Add(order.ClOrdId, order.OrderId);
-            OrderList.Add(order.OrderId, order);
+            return resp;
+        }
 
-            ExecutionReportWrapper wapper = new ExecutionReportWrapper(resp, order, IOLConfiguration);
+        protected void RouteNewOrder(Wrapper wrapper)
+        {
+            Order order = null;
+            NewOrderResponse resp = null;
+            try
+            {
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
 
-            Thread publishExecReportThread = new Thread(ProcessExecutionReport);
-            publishExecReportThread.Start(wapper);
-            
+                lock (tLock)
+                {
+                    order = OrderConverter.GetNewOrder(wrapper, NextOrderId);
+                    NextOrderId++;
+                }
+
+                DoLog(string.Format("Routing Order Id {0}", order.ClOrdId), Main.Common.Util.Constants.MessageType.Information);
+
+                DoRoute(order);
+
+                lock (tLock)
+                {
+                    OrderIdsMapper.Add(order.ClOrdId, order.OrderId.ToString());
+                    ActiveOrders.Add(order.OrderId.ToString(), order);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error routing order {0} to the exchange!: {1}",order.ClOrdId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+
+                RejectedExecutionReportWrapper rejectedWrapper = new RejectedExecutionReportWrapper(ex.Message, order);
+
+                new Thread(ProcessExecutionReport).Start(rejectedWrapper);
+            }
         }
 
         protected void CancelAllOrders()
-        { 
-            //TODO: DEV CancellAllOrders
+        {
+            lock (tLock)
+            {
+
+                foreach (string orderId in ActiveOrders.Keys)
+                {
+
+                    Order order = ActiveOrders[orderId];
+
+                    DoCancel(order.ClOrdId, cancel: true);
+                }
+            }
         
         }
 
         protected void UpdateOrder(Wrapper wrapper, bool cancel)
         {
-            //TODO: DEV UpdateOrder--> Cuando se puedan emitir ordenes limit
+            string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
+            string newClOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+
+            DoLog(string.Format("First we have to cancel ClOrdId {0} ", origClOrdId), Main.Common.Util.Constants.MessageType.Information);
+
+            Wrapper rejWrapper = null;
+
+            lock (tLock)
+            {
+                rejWrapper = DoCancel(origClOrdId, cancel: false);
+
+                Thread.Sleep(100);//Esperamos 100 ms para ver si pudo cancelar
+
+                Order activeOrder = DoGetActiveOrder(origClOrdId);
+
+                if (activeOrder != null)
+                {
+                    ExecutionReportResp execReport = IOLOrderRouterManager.GetExecutionReport(activeOrder.OrderId);
+
+                    if (rejWrapper == null && execReport.IsCancelled())//cancellation is ok
+                    {
+                        if (LatestExecReport.ContainsKey(origClOrdId))
+                        {
+
+                            ActiveOrders.Remove(activeOrder.OrderId.ToString());
+
+                            ExecutionReportResp latestExecReport = LatestExecReport[origClOrdId];
+                            DoLog(string.Format("Order with ClOrdId {0} successfully cancelled", origClOrdId), Main.Common.Util.Constants.MessageType.Information);
+
+                            double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+                            double newQuantity = activeOrder.cantidad - latestExecReport.cantidad;//Nos aseguramos de solo rutear la nueva cantidad
+
+                            activeOrder.cantidad = newQuantity;
+                            activeOrder.precio = newPrice;
+                            activeOrder.ClOrdId = newClOrdId;
+
+                            NewOrderResponse resp = DoRoute(activeOrder);
+
+                            activeOrder.OrderId = resp.numeroOperacion.Value;
+
+                            OrderIdsMapper.Add(newClOrdId, activeOrder.OrderId.ToString());
+                           
+
+                            ActiveOrders.Add(activeOrder.OrderId.ToString(), activeOrder);
+                        }
+                        else
+                            rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "",CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,
+                                                                string.Format("There is not an execution report for previously existing order {0}", origClOrdId));
+                        
+                    }
+                    else
+                        if (rejWrapper == null)//La orden NO pudo se cancelada
+                            rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "", CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,
+                                                                string.Format("The order {0} could not be cancelled in a prudent time. Aborting update", origClOrdId));
+                }
+                else
+                    rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "", CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,
+                                        string.Format("Critical Error for ClOrdId {0}: Could not find an orderId after cancellation", origClOrdId));
+            }
+
+            if (rejWrapper != null)
+                OnMessageRcv(rejWrapper);
+        }
+
+        protected void UpdateOrderThread(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper)param;
+
+                UpdateOrder(wrapper, cancel: false);
+            }
+            catch (Exception ex)
+            {
+                Wrapper rejWrapper = new OrderCancelRejectWrapper("", "", CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,
+                        string.Format("CRITICAL ERROR @UpdateOrderThread:{0}", ex.Message));
+            }
+        
+        }
+
+        protected void CancelOrderThread(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper)param;
+
+                CancelOrder(wrapper, cancel: true);
+            }
+            catch (Exception ex)
+            {
+                Wrapper rejWrapper = new OrderCancelRejectWrapper("", "", CxlRejResponseTo.OrderCancelRequest, CxlRejReason.UnknownOrder,
+                        string.Format("CRITICAL ERROR @CancelOrderThread:{0}", ex.Message));
+            }
+
+        }
+
+        protected void CancelAllOrdersThread(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper)param;
+
+                CancelAllOrders();
+            }
+            catch (Exception ex)
+            {
+                Wrapper rejWrapper = new OrderCancelRejectWrapper("", "", CxlRejResponseTo.OrderCancelRequest, CxlRejReason.UnknownOrder,
+                        string.Format("CRITICAL ERROR @CancelAllOrdersThread:{0}", ex.Message));
+            }
+        }
+
+        protected Order DoGetActiveOrder(string clOrdId)
+        {
+            if (OrderIdsMapper.ContainsKey(clOrdId))
+            {
+                string orderId = OrderIdsMapper[clOrdId];
+
+                if (ActiveOrders.ContainsKey(orderId))
+                {
+
+                    Order order = ActiveOrders[orderId];
+                    return order;
+                }
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+        protected Wrapper DoCancel(string clOrdId, bool cancel)
+        {
+            List<Wrapper> toPublish = new List<Wrapper>();
+
+            if (OrderIdsMapper.ContainsKey(clOrdId))
+            {
+                string orderId = OrderIdsMapper[clOrdId];
+
+                if (ActiveOrders.ContainsKey(orderId))
+                {
+
+                    Order order = ActiveOrders[orderId];
+                    IOLOrderRouterManager.Cancel(order);
+
+                    return null;
+                }
+                else
+                {
+                    OrderCancelRejectWrapper rejWrapper = new OrderCancelRejectWrapper(clOrdId, orderId,
+                                                                                        cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
+                                                                                        CxlRejReason.UnknownOrder,
+                                                                                        string.Format("Unknown order for order Id {0}", orderId));
+
+
+                    return rejWrapper;
+                }
+            }
+            else
+            {
+                OrderCancelRejectWrapper rejWrapper = new OrderCancelRejectWrapper(clOrdId, "",
+                                                                        cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
+                                                                        CxlRejReason.UnknownOrder,
+                                                                        string.Format("Unknown order for client order Id {0}", clOrdId));
+
+                return rejWrapper;
+            }
+        
         }
 
         protected void CancelOrder(Wrapper wrapper, bool cancel)
         {
-            //TODO: DEV CancelOrder--> Cuando se puedan emitir ordenes limit
+            string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+            Wrapper rejWrapper=null;
+
+            try
+            {
+                lock (tLock)
+                {
+                    rejWrapper = DoCancel(clOrdId, cancel);
+
+                    DoLog(string.Format("Order with ClOrdId {0} successfully cancelled", clOrdId), Main.Common.Util.Constants.MessageType.Information);
+                }
+
+                if (rejWrapper != null)
+                    OnMessageRcv(rejWrapper);
+            }
+            catch (Exception ex)
+            {
+                string msg = string.Format("Exception cancelling client order Id {0}:{1}", clOrdId, ex.Message);
+
+                DoLog(msg, Main.Common.Util.Constants.MessageType.Error);
+
+                OrderCancelRejectWrapper exRejWrapper = new OrderCancelRejectWrapper(clOrdId, "",
+                                                                            cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
+                                                                            CxlRejReason.UnknownOrder,msg);
+
+                OnMessageRcv(exRejWrapper);
+            }
         }
 
 
@@ -130,18 +403,20 @@ namespace zHFT.OrderRouters.InvertirOnline
                 else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                 {
                     DoLog(string.Format("Updating order with Invertir Online  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                    UpdateOrder(wrapper, false);
+                   
+                    new Thread(UpdateOrderThread).Start(wrapper);
 
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                 {
                     DoLog(string.Format("Canceling order with Invertir Online  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                    CancelOrder(wrapper, true);
+                    new Thread(CancelOrderThread).Start(wrapper);
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                 {
                     DoLog(string.Format("@{0}:Cancelling all active orders @ Invertir Online", IOLConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-                    CancelAllOrders();
+                    new Thread(CancelAllOrdersThread).Start(wrapper);
+                    
                 }
                 else
                 {
@@ -173,11 +448,15 @@ namespace zHFT.OrderRouters.InvertirOnline
 
                     OrderConverter = new OrderConverter();
 
-                    OrderList = new Dictionary<int, Order>();
-                    OrderIdsMapper = new Dictionary<string, int>();
+                    ActiveOrders = new Dictionary<string, Order>();
+                    OrderIdsMapper = new Dictionary<string, string>();
+                    LatestExecReport = new Dictionary<string, ExecutionReportResp>();
                     
                     IOLOrderRouterManager = new IOLOrderRouterManager(pOnLogMsg,IOLConfiguration.AccountNumber,IOLConfiguration.ConfigConnectionString,
                                                                       IOLConfiguration.MainURL);
+
+
+                    new Thread(EvalExecutionReportsThread).Start();
 
                     return true;
                 }

@@ -394,7 +394,7 @@ namespace zHFT.OrderRouters.Router
 
                         if (order != null)
                         {
-                            DoLog(string.Format("@GenericOrderRouter: Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}}", 
+                            DoLog(string.Format("@GenericOrderRouter: Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", 
                                                 order.OrderId, order.Symbol,order.OrderQty, order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>", 
                                                 order.Side), Main.Common.Util.Constants.MessageType.Information);
 

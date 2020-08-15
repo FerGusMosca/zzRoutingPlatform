@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.InstrFullMarketConnectivity.IOL.Common;
 using zHFT.Main.Common.Enums;
-using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.InvertirOnline.Common.DTO;
 using zHFT.OrderRouters.InvertirOnline.Common.Responses;
@@ -19,56 +18,130 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         #endregion
 
+        #region Constructors
+
+        public ExecutionReportWrapper(Order pOrder, ExecutionReportResp pExecutionReportResp)
+        {
+            Order = pOrder;
+            ExecutionReportResp = pExecutionReportResp;
+        }
+
+        #endregion 
+
         #region Private Attributes
 
-        protected NewOrderResponse NewOrderResponse { get; set; }
+        private ExecType GetExecTypeFromIOLStatus()
+        {
+            if (ExecutionReportResp.estadoActual == ExecutionReportResp._INICIADA)
+                return ExecType.PendingNew;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_PROCESO)
+                return ExecType.New;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA)
+                return ExecType.Trade;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._TERMINADA)
+                return ExecType.Trade;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA)
+                return ExecType.Canceled;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PENDINTE_CANCELACION)
+                return ExecType.PendingCancel;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA_VTO_VALIDEZ)
+                return ExecType.Expired;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL)
+                return ExecType.PendingCancel;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_MODIFICACION)
+                return ExecType.PendingReplace;
+            else
+                return ExecType.Unknown;
+        
+        
+        
+        }
+
+        protected OrdStatus GetOrdStatusFromIOLStatus()
+        {
+            if (ExecutionReportResp.estadoActual == ExecutionReportResp._INICIADA)
+                return OrdStatus.PendingNew;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_PROCESO)
+                return OrdStatus.New;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA)
+                return OrdStatus.PartiallyFilled;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._TERMINADA)
+                return OrdStatus.Filled;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA)
+                return OrdStatus.Canceled;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PENDINTE_CANCELACION)
+                return OrdStatus.PendingCancel;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA_VTO_VALIDEZ)
+                return OrdStatus.Expired;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL)
+                return OrdStatus.PendingCancel;
+            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_MODIFICACION)
+                return OrdStatus.PendingReplace;
+            else
+                return OrdStatus.Unkwnown;
+        }
+
+        protected ExecutionReportResp ExecutionReportResp { get; set; }
 
         protected Order Order { get; set; }
 
-        protected IConfiguration Config { get; set; }
-
         #endregion
 
-        #region Constructors
+        #region Private Methods
 
-        public ExecutionReportWrapper(NewOrderResponse pNewOrderResponse, Order pOrder, IConfiguration pConfig)
+        private int? GetLastQtyFromIOL()
         {
-            NewOrderResponse = pNewOrderResponse;
+            if (ExecutionReportResp.operaciones != null && ExecutionReportResp.operaciones.Length>0)
+            {
+                
+                Trade trade = ExecutionReportResp.operaciones.Where(x => x.fecha.HasValue).OrderByDescending(x => x.fecha.Value).FirstOrDefault();
 
-            Order = pOrder;
+                return trade.cantidad;
 
-            Config = pConfig;
-        }
-
-        #endregion
-
-        #region Protected Methods
-
-        protected OrdType? GetOrdTypeFromIOLOrdType()
-        {
-           return OrdType.Market;//Order Routing for IOL only Market for the moment
-        }
-
-        protected Side GetSideFromIOLSide()
-        {
-           return Order.side;
-        }
-
-        protected ExecType GetExecTypeFromIBStatus()
-        {
-            if (NewOrderResponse.IsOk)
-                return ExecType.Trade;
+            }
             else
-                return ExecType.Rejected;
+                return null;
+        
         }
 
-        protected OrdStatus GetOrdStatusFromIBStatus()
+        private double? GetLastPxFromIOL()
         {
 
-            if (NewOrderResponse.IsOk)
-                return OrdStatus.Filled;
+            if (ExecutionReportResp.operaciones != null && ExecutionReportResp.operaciones.Length > 0)
+            {
+
+                Trade trade = ExecutionReportResp.operaciones.Where(x => x.fecha.HasValue).OrderByDescending(x => x.fecha.Value).FirstOrDefault();
+
+                return trade.precio;
+
+            }
             else
-                return OrdStatus.Rejected;
+                return null;
+        }
+
+        private string GetTextFromIOL()
+        {
+
+            if (ExecutionReportResp.estados != null && ExecutionReportResp.estados.Length > 0)
+            {
+
+                ExecutionReportState state = ExecutionReportResp.estados.Where(x => x.fecha.HasValue).OrderByDescending(x => x.fecha.Value).FirstOrDefault();
+
+                return state.detalle;
+
+            }
+            else
+                return null;
+        }
+
+        private DateTime GetTransactTimeFromIOL()
+        {
+            if (ExecutionReportResp.fechaOperado.HasValue)
+                return ExecutionReportResp.fechaOperado.Value;
+            else if (ExecutionReportResp.fechaAlta.HasValue)
+                return ExecutionReportResp.fechaAlta.Value;
+            else
+                return DateTime.Now;
         }
 
         #endregion
@@ -77,9 +150,9 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         public override string ToString()
         {
-            if (Order != null && NewOrderResponse!=null)
+            if (Order != null && ExecutionReportResp != null)
             {
-                return string.Format("Symbol {0} ExecType {1} OrdStatus {2}", Order.simbolo, GetExecTypeFromIBStatus(), GetOrdStatusFromIBStatus());
+                return string.Format("Symbol {0} ExecType {1} OrdStatus {2}", Order.simbolo, GetExecTypeFromIOLStatus(), GetOrdStatusFromIOLStatus());
             }
             else
                 return "";
@@ -90,36 +163,36 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
         {
             ExecutionReportFields xrField = (ExecutionReportFields)field;
 
-            if (NewOrderResponse == null || Order == null)
+            if (ExecutionReportResp == null || Order == null)
                 return ExecutionReportFields.NULL;
 
 
             if (xrField == ExecutionReportFields.ExecType)
-                return GetExecTypeFromIBStatus();
+                return GetExecTypeFromIOLStatus();
             if (xrField == ExecutionReportFields.ExecID)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.OrdStatus)
-                return GetOrdStatusFromIBStatus();
+                return GetOrdStatusFromIOLStatus();
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return 0;
+                return Order.cantidad-ExecutionReportResp.cantidad;
             else if (xrField == ExecutionReportFields.CumQty)
-                return Order.cantidad;
+                return ExecutionReportResp.cantidad;
             else if (xrField == ExecutionReportFields.AvgPx)
-                return ExecutionReportFields.NULL;
+                return ExecutionReportResp.precio;
             else if (xrField == ExecutionReportFields.Commission)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.Text)
-                return ExecutionReportFields.NULL;
+                return GetTextFromIOL();
             else if (xrField == ExecutionReportFields.TransactTime)
-                return DateTime.Now;
+                return GetTransactTimeFromIOL();
             else if (xrField == ExecutionReportFields.LastQty)
-                return ExecutionReportFields.NULL;
+                return GetLastQtyFromIOL();
             else if (xrField == ExecutionReportFields.LastPx)
-                return ExecutionReportFields.NULL;
+                return GetLastPxFromIOL();
             else if (xrField == ExecutionReportFields.LastMkt)
-                return ExecutionReportFields.NULL;
+                return ExecutionReportResp.mercado;
 
             if (Order == null)
                 return ExecutionReportFields.NULL;
@@ -135,7 +208,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
             else if (xrField == ExecutionReportFields.CashOrderQty)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.OrdType)
-                return GetOrdTypeFromIOLOrdType();
+                return Order.ordtype;
             else if (xrField == ExecutionReportFields.Price)
                 return Order.precio;
             else if (xrField == ExecutionReportFields.StopPx)
@@ -147,7 +220,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
             else if (xrField == ExecutionReportFields.MinQty)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.Side)
-                return GetSideFromIOLSide();
+                return Order.side;
             else if (xrField == ExecutionReportFields.QuantityType)
                 return QuantityType.SHARES;//In IB v1.0 we only work with SHARE orders
             else if (xrField == ExecutionReportFields.PriceType)

@@ -23,13 +23,17 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         protected string _MARKET_DATA_URL = "api/{Mercado}/Titulos/{Simbolo}/Cotizacion";
 
-        //protected string _BUY_URL = "api/v2/operar/Comprar";
+        protected string _BUY_URL = "api/v2/operar/Comprar";
 
-        //protected string _SELL_URL = "api/v2/operar/Vender";
+        protected string _SELL_URL = "api/v2/operar/Vender";
 
-        protected string _BUY_URL = "api/operar/Comprar";
+        protected string _DELETE_ORDER_URL = "/api/v2/operaciones/";
 
-        protected string _SELL_URL = "api/operar/Vender";
+        protected string _EXECUTION_REPORTS = "api/v2/operaciones/";
+
+        //protected string _BUY_URL = "api/operar/Comprar";
+
+        //protected string _SELL_URL = "api/operar/Vender";
 
         protected string _MAIN_BYMA_EXCHANGE = "BUE";
 
@@ -138,6 +142,39 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
                 //request.Headers["X-Username"] = AccountPrimaryData.User;
                 //request.Headers["X-Password"] = AccountPrimaryData.Password;
                 //request.Headers["Authorization"] = "Bearer " + Convert.ToBase64String(Encoding.Default.GetBytes(string.Format("{0}:{1}", AccountPrimaryData.User, AccountPrimaryData.Password)));
+
+                if (AuthenticationToken != null)
+                    request.Headers["Authorization"] = "Bearer " + AuthenticationToken.access_token;
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                using (Stream stream = response.GetResponseStream())
+                {
+                    using (StreamReader sr = new StreamReader(stream))
+                    {
+                        content = sr.ReadToEnd();
+                    }
+                }
+            }
+            return content;
+        }
+
+
+        protected string DoDeleteJson(string url)
+        {
+            string content = string.Empty;
+
+            if (AuthenticationToken == null)
+                return null;
+
+            lock (tAuthLock)
+            {
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "DELETE";
+                request.ContentType = "application/x-www-form-urlencoded";
 
                 if (AuthenticationToken != null)
                     request.Headers["Authorization"] = "Bearer " + AuthenticationToken.access_token;

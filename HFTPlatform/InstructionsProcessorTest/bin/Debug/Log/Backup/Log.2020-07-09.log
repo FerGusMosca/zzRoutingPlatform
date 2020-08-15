@@ -1,0 +1,27 @@
+2020-07-09 14:07:59  :: 9/7/2020 14:07:59MainApp.LoadConfig
+2020-07-09 14:07:59  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2020-07-09 14:07:59  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2020-07-09 14:08:00  :: Fin GetConfiguracion
+2020-07-09 14:08:00  :: Initializing Log
+2020-07-09 14:08:00  :: Initializing Incoming Module
+2020-07-09 14:08:05  :: Incoming Module successfully initialized
+2020-07-09 14:08:05  :: Initializing Outgoing Module
+2020-07-09 14:08:10  :: Outgoing Module successfully initialized
+2020-07-09 14:11:53  :: 9/7/2020 14:11:53MainApp.LoadConfig
+2020-07-09 14:11:53  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2020-07-09 14:11:53  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2020-07-09 14:11:53  :: Fin GetConfiguracion
+2020-07-09 14:11:53  :: Initializing Log
+2020-07-09 14:11:53  :: Initializing Incoming Module
+2020-07-09 14:11:57  :: Incoming Module successfully initialized
+2020-07-09 14:11:57  :: Initializing Outgoing Module
+2020-07-09 14:12:02  :: Outgoing Module successfully initialized
+2020-07-09 14:48:28  :: 9/7/2020 14:48:28MainApp.LoadConfig
+2020-07-09 14:48:28  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2020-07-09 14:48:28  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
+2020-07-09 14:48:29  :: Fin GetConfiguracion
+2020-07-09 14:48:29  :: Initializing Log
+2020-07-09 14:48:29  :: Initializing Incoming Module
+2020-07-09 14:48:30  :: Incoming Module successfully initialized
+2020-07-09 14:48:30  :: Initializing Outgoing Module
+2020-07-09 14:48:31  :: Outgoing Module successfully initialized

@@ -12,6 +12,8 @@
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
+  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
+
   <!--<AccountNumber>9</AccountNumber>--><!--IOL TEST-->
   <AccountNumber>10</AccountNumber> <!--IOL PROD-->
 
@@ -22,7 +24,7 @@
 
   <AccountManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.AccountManager, zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</AccountManagerAccessLayer>
 
-  <InstructionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.InstructionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</InstructionManagerAccessLayer>
+  <InstructionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.ADO.ADOInstructionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</InstructionManagerAccessLayer>
 
   <PositionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.PositionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</PositionManagerAccessLayer>
 

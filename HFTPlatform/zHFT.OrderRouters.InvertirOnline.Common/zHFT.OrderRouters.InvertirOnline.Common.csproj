@@ -44,10 +44,16 @@
     <Compile Include="Converters\OrderConverter.cs" />
     <Compile Include="DTO\BaseOrder.cs" />
     <Compile Include="DTO\Order.cs" />
+    <Compile Include="Responses\ExecutionReportResp.cs" />
+    <Compile Include="Responses\ExecutionReportState.cs" />
     <Compile Include="Responses\NewOrderResponse.cs" />
     <Compile Include="OrderRouterBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Responses\Trade.cs" />
     <Compile Include="Wrappers\ExecutionReportWrapper.cs" />
+    <Compile Include="Wrappers\MockExecutionReportWrapper.cs" />
+    <Compile Include="Wrappers\OrderCancelRejectWrapper.cs" />
+    <Compile Include="Wrappers\RejectedExecutionReportWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.Common\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj">

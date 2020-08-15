@@ -42,16 +42,16 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
         private static string _SYMBOL_FIELD = "simbolo";
         private static string _QTY_FIELD = "cantidad";
         private static string _AMMOUNT_FIELD = "monto";
-        private static string _TIF_FIELD = "validez";
+        private static string _TIF_FIELD = "Validez";
         private static string _SETTL_TYPE_FIELD = "plazo";
         private static string _ORD_TYPE_FIELD = "modalidad";
         private static string _PRICE_FIELD = "precio";
 
         #endregion
 
-        #region Public Methods
+        #region Private Methods
 
-        private NewOrderResponse SendOrder(Order order,string _SIDE_URL)
+        private NewOrderResponse SendOrder(Order order, string _SIDE_URL)
         {
 
             string url = MainURL + _SIDE_URL;
@@ -65,8 +65,8 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
                 parameters.Add(_SYMBOL_FIELD, order.simbolo);
                 //parameters.Add(_AMMOUNT_FIELD, (order.cantidad * order.precio).ToString("00.##"));
                 parameters.Add(_QTY_FIELD, order.cantidad.ToString());
-                //parameters.Add(_TIF_FIELD, order.validez.ToString());
-                parameters.Add(_TIF_FIELD, "2020-04-06T20:16:55.110Z");
+                parameters.Add(_TIF_FIELD, order.validez.ToString());
+                //parameters.Add(_TIF_FIELD, "2020-04-06T20:16:55.110Z");
                 parameters.Add(_SETTL_TYPE_FIELD, order.plazo);
                 //parameters.Add(_ORD_TYPE_FIELD, order.modalidad);
                 if (order.precio.HasValue)
@@ -85,6 +85,34 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
             }
         }
 
+        #endregion
+
+
+        #region Public Methods
+
+
+        public ExecutionReportResp GetExecutionReport(int orderId)
+        {
+
+            string url = MainURL + _EXECUTION_REPORTS + orderId;
+            try
+            {
+
+                Dictionary<string, string> parameters = new Dictionary<string, string>();
+               
+                string resp = DoGetJson(url);
+
+                ExecutionReportResp execReport = JsonConvert.DeserializeObject<ExecutionReportResp>(resp);
+
+                return execReport;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Se produjo un error recuperando el execution report para la orden {0}:{1}", orderId, ex.Message));
+            }
+        }
+
 
         public NewOrderResponse Buy(Order order)
         {
@@ -96,6 +124,13 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
         {
 
             return SendOrder(order, _SELL_URL);
+        }
+
+        public void Cancel(Order order)
+        {
+            string url = MainURL + _DELETE_ORDER_URL + order.OrderId;
+
+            DoDeleteJson(url);
         }
 
         #endregion

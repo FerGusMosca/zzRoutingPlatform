@@ -231,7 +231,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.
                     if (instr.AccountPosition != null)
                     {
                         cmd.Parameters.Add(new SqlParameter("@AccountPositionId", instr.AccountPosition.Id));
-                        cmd.Parameters.Add(new SqlParameter("@AccountPositionStatus", instr.AccountPosition.PositionStatus.Code.ToString()));
+                        cmd.Parameters.Add(new SqlParameter("@AccountPositionStatus", instr.AccountPosition.PositionStatus != null ? instr.AccountPosition.PositionStatus.Code.ToString() : PositionStatus._OFFLINE.ToString()));
                         cmd.Parameters.Add(new SqlParameter("@AccountPositionActive", instr.AccountPosition.Active));
                         cmd.Parameters.Add(new SqlParameter("@AccountPositionMarketPrice", instr.AccountPosition.MarketPrice));
                         cmd.Parameters.Add(new SqlParameter("@AccountPositionShares", instr.AccountPosition.Shares));

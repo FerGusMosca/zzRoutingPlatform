@@ -29,6 +29,32 @@ namespace HelloWorld.Bloomberg.Test
 
             Session session = new Session(sessionOptions);
 
+
+            if (!session.Start())
+            {
+                Console.WriteLine("Could not start session.");
+
+            }
+
+            return session;
+        }
+
+        public static void ProviderEventHandler(Event eventObject, ProviderSession session)
+        { 
+        
+        
+        }
+
+        private static ProviderSession CreateProviderSession()
+        {
+            SessionOptions sessionOptions = new SessionOptions();
+            sessionOptions.ServerHost = "platform"; // default value
+            sessionOptions.ServerPort = 8195; // default value
+            sessionOptions.AuthenticationOptions = "AuthenticationType=OS_LOGON";
+
+            ProviderSession session = new ProviderSession(sessionOptions, ProviderEventHandler);
+
+
             if (!session.Start())
             {
                 Console.WriteLine("Could not start session.");
@@ -500,6 +526,30 @@ namespace HelloWorld.Bloomberg.Test
             LoopAndLogResponses(session);
         }
 
+
+        private static void CreateCustomMessage()
+        {
+            ProviderSession session = CreateProviderSession();
+
+            string myService  ="//blp/TestService";
+            string myTopic = "testTopic";
+
+            Name messageType = new Name("MyMessageType");
+            TopicList topicList = new TopicList();
+            topicList.Add(myService+"/ticker/"+myTopic, new CorrelationID(100));
+
+            session.CreateTopics(topicList,ResolveMode.AUTO_REGISTER_SERVICES);
+
+            Topic topic = session.GetTopic(topicList.MessageAt(0));
+
+
+            //Service service = session.GetService(myService);
+            //Event helloWorldEvent = service.CreatePublishEvent();
+            //EventFormatter formatter = new EventFormatter(helloWorldEvent);
+            //formatter.AppendMessage(messageType, myTopic);
+        
+        }
+
         private static void GetBrokerSpec(Session session)
         {
             CorrelationID requestID = new CorrelationID(96);
@@ -567,7 +617,7 @@ namespace HelloWorld.Bloomberg.Test
             //Service service = session.GetService("//blp/emapisvc_beta");
            // RequestMktDataTest(session);
             //GetStrategyInfo(session);
-            GetBrokerSpec(session);
+            //GetBrokerSpec(session);
             //SubscribeOrder(session,"");
             //RequestFields(session);
             //GetDivHist(session);
@@ -576,6 +626,7 @@ namespace HelloWorld.Bloomberg.Test
             //PortfolioDataRequest(session);
             //GetFills(session);
             //GetAllActiveOrders(session);
+            CreateCustomMessage();
 
 
 

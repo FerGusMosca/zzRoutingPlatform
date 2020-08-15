@@ -22,6 +22,7 @@ namespace zHFT.Main.Common.Enums
         Expired = 'C',
         AcceptedForBidding = 'D',
         PendingReplace = 'E',
-        Replaced = '5'
+        Replaced = '5',
+        Unkwnown='X'
     }
 }

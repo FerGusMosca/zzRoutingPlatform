@@ -14,7 +14,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.DTO
 
         public string simbolo { get; set; }
 
-        public long cantidad { get; set; }
+        public double cantidad { get; set; }
 
         public double? precio { get; set; }
 
