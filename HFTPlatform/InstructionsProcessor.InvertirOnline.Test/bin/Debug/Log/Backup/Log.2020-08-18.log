@@ -1,0 +1,18 @@
+2020-08-18 16:33:58  :: 18/8/2020 16:33:58MainApp.LoadConfig
+2020-08-18 16:33:58  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-18 16:33:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-18 16:33:58  :: Fin GetConfiguracion
+2020-08-18 16:33:58  :: Initializing Log
+2020-08-18 16:33:58  :: Initializing Incoming Module
+2020-08-18 16:34:01  :: Incoming Module successfully initialized
+2020-08-18 16:34:01  :: Initializing Outgoing Module
+2020-08-18 16:34:08  :: Outgoing Module successfully initialized
+2020-08-18 16:44:17  :: 18/8/2020 16:44:17MainApp.LoadConfig
+2020-08-18 16:44:17  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-18 16:44:17  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-18 16:44:17  :: Fin GetConfiguracion
+2020-08-18 16:44:17  :: Initializing Log
+2020-08-18 16:44:17  :: Initializing Incoming Module
+2020-08-18 16:44:21  :: Incoming Module successfully initialized
+2020-08-18 16:44:21  :: Initializing Outgoing Module
+2020-08-18 16:44:25  :: Outgoing Module successfully initialized

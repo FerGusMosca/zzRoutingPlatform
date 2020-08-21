@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities;
 using zHFT.InstrFullMarketConnectivity.IOL.Common.DTO;
 using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.ADO;
@@ -69,19 +70,23 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         #region Protected Methods
 
+       
+
         protected void DoAuthenticate(string user, string password)
         {
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 
             string url = MainURL + _LOGIN_TOKEN_URL;
-            string postData = string.Format("username={0}&password={1}&grant_type=password", user, password);
-            var data = Encoding.ASCII.GetBytes(postData);
+            string postData = string.Format("username={0}&password={1}&grant_type=password", HttpUtility.UrlEncode(user), HttpUtility.UrlEncode(password));
+
+            var data = Encoding.UTF8.GetBytes(postData);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
+            //request.ContentType = "application/json";
             request.ContentLength = data.Length;
 
             using (var stream = request.GetRequestStream())

@@ -25,15 +25,17 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Responses
 
         public bool IsOpenOrder()
         {
-            return estadoActual == _INICIADA || estadoActual == _EN_PROCESO || estadoActual == _PARCIALMENTE_TERMINADA
-                   || estadoActual == _PENDINTE_CANCELACION || estadoActual == _PARCIALMENTE_TERMINADA_CANCEL
-                    || estadoActual == _EN_MODIFICACION;
+            return estadoActual.ToUpper() == _INICIADA.ToUpper() || estadoActual.ToUpper() == _EN_PROCESO.ToUpper()
+                   || estadoActual.ToUpper() == _PARCIALMENTE_TERMINADA.ToUpper()
+                   || estadoActual.ToUpper() == _PENDINTE_CANCELACION.ToUpper()
+                   || estadoActual.ToUpper() == _PARCIALMENTE_TERMINADA_CANCEL.ToUpper()
+                   || estadoActual.ToUpper() == _EN_MODIFICACION.ToUpper();
         }
 
         public bool IsCancelled()
         {
 
-            return estadoActual == _CANCELADA;
+            return estadoActual.ToUpper() == _CANCELADA.ToUpper();
         
         }
 
@@ -76,5 +78,23 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Responses
         public string modalidad { get; set; }
 
         #endregion
+
+        #region Public Methods
+
+        public double GetCumQty()
+        {
+            double cumQty = 0;
+
+            if (operaciones != null)
+            {
+                operaciones.ToList().ForEach(x => cumQty += x.cantidad);
+            }
+            return cumQty;
+        }
+
+
+        #endregion
+
+
     }
 }

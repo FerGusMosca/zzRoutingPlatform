@@ -12,7 +12,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Responses
 
         public DateTime? fecha { get; set; }
 
-        public int cantidad { get; set; }
+        public double cantidad { get; set; }
 
         public double precio { get; set; }
 

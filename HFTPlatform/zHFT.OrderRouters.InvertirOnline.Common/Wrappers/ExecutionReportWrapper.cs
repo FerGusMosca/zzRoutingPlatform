@@ -32,23 +32,23 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         private ExecType GetExecTypeFromIOLStatus()
         {
-            if (ExecutionReportResp.estadoActual == ExecutionReportResp._INICIADA)
+            if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._INICIADA.ToUpper())
                 return ExecType.PendingNew;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_PROCESO)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._EN_PROCESO.ToUpper())
                 return ExecType.New;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA.ToUpper())
                 return ExecType.Trade;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._TERMINADA)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._TERMINADA.ToUpper())
                 return ExecType.Trade;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._CANCELADA.ToUpper())
                 return ExecType.Canceled;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PENDINTE_CANCELACION)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PENDINTE_CANCELACION.ToUpper())
                 return ExecType.PendingCancel;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA_VTO_VALIDEZ)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._CANCELADA_VTO_VALIDEZ.ToUpper())
                 return ExecType.Expired;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL.ToUpper())
                 return ExecType.PendingCancel;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_MODIFICACION)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._EN_MODIFICACION.ToUpper())
                 return ExecType.PendingReplace;
             else
                 return ExecType.Unknown;
@@ -59,23 +59,23 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         protected OrdStatus GetOrdStatusFromIOLStatus()
         {
-            if (ExecutionReportResp.estadoActual == ExecutionReportResp._INICIADA)
+            if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._INICIADA.ToUpper())
                 return OrdStatus.PendingNew;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_PROCESO)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._EN_PROCESO.ToUpper())
                 return OrdStatus.New;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA.ToUpper())
                 return OrdStatus.PartiallyFilled;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._TERMINADA)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._TERMINADA.ToUpper())
                 return OrdStatus.Filled;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._CANCELADA.ToUpper())
                 return OrdStatus.Canceled;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PENDINTE_CANCELACION)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PENDINTE_CANCELACION.ToUpper())
                 return OrdStatus.PendingCancel;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._CANCELADA_VTO_VALIDEZ)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._CANCELADA_VTO_VALIDEZ.ToUpper())
                 return OrdStatus.Expired;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL.ToUpper())
                 return OrdStatus.PendingCancel;
-            else if (ExecutionReportResp.estadoActual == ExecutionReportResp._EN_MODIFICACION)
+            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._EN_MODIFICACION.ToUpper())
                 return OrdStatus.PendingReplace;
             else
                 return OrdStatus.Unkwnown;
@@ -89,7 +89,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         #region Private Methods
 
-        private int? GetLastQtyFromIOL()
+        private double? GetLastQtyFromIOL()
         {
             if (ExecutionReportResp.operaciones != null && ExecutionReportResp.operaciones.Length>0)
             {
