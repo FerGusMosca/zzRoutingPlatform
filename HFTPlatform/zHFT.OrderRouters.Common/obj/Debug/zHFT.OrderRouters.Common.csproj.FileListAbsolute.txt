@@ -64,4 +64,3 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Common\obj\Debug\zHFT.OrderRouters.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Common\obj\Debug\zHFT.OrderRouters.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Common\obj\Debug\zHFT.OrderRouters.Common.csprojResolveAssemblyReference.cache

@@ -125,13 +125,14 @@ namespace zHFT.OrderRouters.InvertirOnline
             else if (order.side == Side.Sell)
                 resp = IOLOrderRouterManager.Sell(order);
             else
-                throw new Exception(string.Format("Side no soportado para nueva orden:{0}", order.side));
+                throw new Exception(string.Format("Side not supported for the new order:{0}", order.side));
 
             if (resp.numeroOperacion.HasValue && resp.numeroOperacion.Value != 0)
                 order.OrderId = resp.numeroOperacion.Value;
             else
-                throw new Exception(string.Format("El mercado devolvió un OrderId 0 o nulo para la orden ClOrdId = {0}. Consulte con el administrador", order.ClOrdId));
+                throw new Exception(string.Format("Market returned OrderId 0 or null for ClOrdId = {0}. Check with administrator.", order.ClOrdId));
 
+            DoLog(string.Format("New order id {0} created for cl.order Id {1}", resp.numeroOperacion, order.ClOrdId),Main.Common.Util.Constants.MessageType.Information);
             return resp;
         }
 
@@ -150,7 +151,7 @@ namespace zHFT.OrderRouters.InvertirOnline
                     NextOrderId++;
                 }
 
-                DoLog(string.Format("Routing Order Id {0}", order.ClOrdId), Main.Common.Util.Constants.MessageType.Information);
+                DoLog(string.Format("Routing Client Order Id {0}", order.ClOrdId), Main.Common.Util.Constants.MessageType.Information);
 
                 DoRoute(order);
 
@@ -384,7 +385,9 @@ namespace zHFT.OrderRouters.InvertirOnline
                 {
 
                     Order order = ActiveOrders[orderId];
+                    DoLog(string.Format("Running cancellation for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
                     IOLOrderRouterManager.Cancel(order);
+                    DoLog(string.Format("Cancellation requested for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
 
                     return null;
                 }
@@ -487,7 +490,7 @@ namespace zHFT.OrderRouters.InvertirOnline
             }
             catch (Exception ex)
             {
-                DoLog("Error routing order to market using Invertir Online:" + ex.Message, Main.Common.Util.Constants.MessageType.Error);
+                DoLog("Error processing market instruction @Invertir Online order router:" + ex.Message, Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         
