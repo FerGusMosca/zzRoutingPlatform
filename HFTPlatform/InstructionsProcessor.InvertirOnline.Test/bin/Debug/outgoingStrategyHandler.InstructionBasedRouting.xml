@@ -14,8 +14,9 @@
 
   <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
 
-  <!--<AccountNumber>9</AccountNumber>--><!--IOL TEST-->
-  <AccountNumber>11</AccountNumber> <!--IOL PROD-->
+  <!--11=mbartellini,10=fmosca-->
+  <AccountNumber>10</AccountNumber><!--IOL TEST-->
+  <!--<AccountNumber>11</AccountNumber>--> <!--IOL PROD-->
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
@@ -31,8 +32,9 @@
   <AccountManagerConfig>
     <Config>
       <Key>AccountNumber</Key>
-      <!--<Value>9</Value>--><!--IOL Test-->
-      <Value>11</Value><!--IOL Prod-->
+      <Value>10</Value><!--IOL Test-->
+      <!--<Value>11</Value>--><!--IOL Prod-->
+      <!--11=mbartellini,10=fmosca-->
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>

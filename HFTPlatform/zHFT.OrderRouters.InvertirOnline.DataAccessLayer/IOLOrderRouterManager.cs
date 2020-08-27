@@ -126,11 +126,15 @@ namespace zHFT.OrderRouters.InvertirOnline.DataAccessLayer
             return SendOrder(order, _SELL_URL);
         }
 
-        public void Cancel(Order order)
+        public CancelOrderResponse Cancel(Order order)
         {
             string url = MainURL + _DELETE_ORDER_URL + order.OrderId;
 
-            DoDeleteJson(url);
+            string resp = DoDeleteJson(url);
+
+            CancelOrderResponse cxlResp = JsonConvert.DeserializeObject<CancelOrderResponse>(resp);
+
+            return cxlResp;
         }
 
         #endregion

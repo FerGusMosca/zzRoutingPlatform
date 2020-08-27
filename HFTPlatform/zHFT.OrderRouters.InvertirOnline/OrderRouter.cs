@@ -94,7 +94,7 @@ namespace zHFT.OrderRouters.InvertirOnline
                                         LatestExecReport.Add(order.ClOrdId, execReport);
                                     else
                                         LatestExecReport[order.ClOrdId] = execReport;
-                                }
+                                }//TODO eval Pendingreplace ER on ELSE
                             }
                             catch (Exception ex)
                             {
@@ -386,10 +386,22 @@ namespace zHFT.OrderRouters.InvertirOnline
 
                     Order order = ActiveOrders[orderId];
                     DoLog(string.Format("Running cancellation for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
-                    IOLOrderRouterManager.Cancel(order);
-                    DoLog(string.Format("Cancellation requested for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
+                    CancelOrderResponse cxlResp = IOLOrderRouterManager.Cancel(order);
 
-                    return null;
+                    if (cxlResp.ok.HasValue && cxlResp.ok.Value)
+                    {
+                        DoLog(string.Format("Cancellation requested for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
+
+                        return null;
+                    }
+                    else
+                    {
+                        OrderCancelRejectWrapper rejWrapper = new OrderCancelRejectWrapper(clOrdId, orderId,
+                                                                                            cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
+                                                                                            CxlRejReason.UnknownOrder,
+                                                                                            string.Format("Cancellation rejected for order Id {0}:{1}", orderId, cxlResp.GetError()));
+                        return rejWrapper;
+                    }
                 }
                 else
                 {
@@ -397,8 +409,6 @@ namespace zHFT.OrderRouters.InvertirOnline
                                                                                         cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
                                                                                         CxlRejReason.UnknownOrder,
                                                                                         string.Format("Unknown order for order Id {0}", orderId));
-
-
                     return rejWrapper;
                 }
             }
@@ -408,10 +418,8 @@ namespace zHFT.OrderRouters.InvertirOnline
                                                                         cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
                                                                         CxlRejReason.UnknownOrder,
                                                                         string.Format("Unknown order for client order Id {0}", clOrdId));
-
                 return rejWrapper;
             }
-        
         }
 
         protected void CancelOrder(Wrapper wrapper, bool cancel)

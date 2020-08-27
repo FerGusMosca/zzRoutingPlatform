@@ -1,0 +1,27 @@
+2020-08-26 15:37:57  :: 26/8/2020 15:37:57MainApp.LoadConfig
+2020-08-26 15:37:57  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-26 15:37:58  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-26 15:37:58  :: Fin GetConfiguracion
+2020-08-26 15:37:59  :: Initializing Log
+2020-08-26 15:37:59  :: Initializing Incoming Module
+2020-08-26 15:38:10  :: Incoming Module successfully initialized
+2020-08-26 15:38:10  :: Initializing Outgoing Module
+2020-08-26 15:38:13  :: Outgoing Module successfully initialized
+2020-08-26 15:44:30  :: 26/8/2020 15:44:30MainApp.LoadConfig
+2020-08-26 15:44:30  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-26 15:44:30  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-26 15:44:31  :: Fin GetConfiguracion
+2020-08-26 15:44:31  :: Initializing Log
+2020-08-26 15:44:31  :: Initializing Incoming Module
+2020-08-26 15:44:37  :: Incoming Module successfully initialized
+2020-08-26 15:44:37  :: Initializing Outgoing Module
+2020-08-26 15:44:39  :: Outgoing Module successfully initialized
+2020-08-26 15:46:28  :: 26/8/2020 15:46:28MainApp.LoadConfig
+2020-08-26 15:46:28  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-26 15:46:28  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessor.InvertirOnline.Test\bin\Debug\config.xml
+2020-08-26 15:46:28  :: Fin GetConfiguracion
+2020-08-26 15:46:29  :: Initializing Log
+2020-08-26 15:46:29  :: Initializing Incoming Module
+2020-08-26 15:46:34  :: Incoming Module successfully initialized
+2020-08-26 15:46:34  :: Initializing Outgoing Module
+2020-08-26 15:46:37  :: Outgoing Module successfully initialized

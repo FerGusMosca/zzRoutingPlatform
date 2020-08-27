@@ -44,6 +44,7 @@
     <Compile Include="Converters\OrderConverter.cs" />
     <Compile Include="DTO\BaseOrder.cs" />
     <Compile Include="DTO\Order.cs" />
+    <Compile Include="Responses\CancelOrderResponse.cs" />
     <Compile Include="Responses\ExecutionReportResp.cs" />
     <Compile Include="Responses\ExecutionReportState.cs" />
     <Compile Include="Responses\NewOrderResponse.cs" />

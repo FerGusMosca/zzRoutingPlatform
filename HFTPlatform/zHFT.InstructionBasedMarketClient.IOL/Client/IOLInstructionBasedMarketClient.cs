@@ -9,6 +9,7 @@ using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.DataAccessLayer.Managers;
 using zHFT.InstructionBasedMarketClient.IOL.Common.Configuration;
+using zHFT.InstructionBasedMarketClient.IOL.Common.DTO;
 using zHFT.InstructionBasedMarketClient.IOL.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -80,17 +81,20 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
             sec.MarketData.TradeVolume = marketData.cantidadOperaciones;
             sec.MarketData.SettlType = settlType;
 
-            if (marketData.puntas.OrderByDescending(x => x.precioCompra).FirstOrDefault() != null && marketData.puntas.OrderByDescending(x => x.precioCompra).FirstOrDefault().cantidadCompra != 0)
+            OrderBook bestBid = marketData.puntas.Where(x => x.precioCompra != 0 && x.cantidadCompra!=0).OrderByDescending(x => x.precioCompra).FirstOrDefault();
+            OrderBook bestAsk = marketData.puntas.Where(x=>x.precioVenta!=0 && x.cantidadVenta!=0).OrderBy(x => x.precioVenta).FirstOrDefault();
+
+            if (bestBid != null)
             {
-                sec.MarketData.BestBidPrice = marketData.puntas.OrderByDescending(x => x.precioCompra).FirstOrDefault().precioCompra;
-                sec.MarketData.BestBidSize = Convert.ToInt64(marketData.puntas.OrderByDescending(x => x.precioCompra).FirstOrDefault().cantidadCompra);
+                sec.MarketData.BestBidPrice = bestBid.precioCompra;
+                sec.MarketData.BestBidSize = Convert.ToInt64(bestBid.cantidadCompra);
             }
 
 
-            if (marketData.puntas.OrderBy(x => x.precioVenta).FirstOrDefault() != null && marketData.puntas.OrderBy(x => x.precioVenta).FirstOrDefault().cantidadVenta != 0)
+            if (bestAsk != null )
             {
-                sec.MarketData.BestAskPrice = marketData.puntas.OrderBy(x => x.precioVenta).FirstOrDefault().precioVenta;
-                sec.MarketData.BestAskSize = Convert.ToInt64(marketData.puntas.OrderBy(x => x.precioVenta).FirstOrDefault().cantidadVenta);
+                sec.MarketData.BestAskPrice = bestAsk.precioVenta;
+                sec.MarketData.BestAskSize = Convert.ToInt64(bestAsk.cantidadVenta);
             }
          
             return sec;
