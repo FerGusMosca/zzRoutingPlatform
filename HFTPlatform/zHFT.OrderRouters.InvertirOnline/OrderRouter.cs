@@ -252,7 +252,12 @@ namespace zHFT.OrderRouters.InvertirOnline
                 {
                     ActiveOrders.Remove(activeOrder.OrderId.ToString());
 
+                    DoLog(string.Format("Sending new order with new price={0} and new qty={1} at {2}", newPrice, newQuantity,DateTime.Now), Main.Common.Util.Constants.MessageType.Information);
+
                     NewOrderResponse resp = DoRoute(activeOrder);
+
+                    DoLog(string.Format("Order with new ClOrdId {0} successfully routed at {1}", newClOrdId, DateTime.Now), Main.Common.Util.Constants.MessageType.Information);
+
 
                     activeOrder.OrderId = resp.numeroOperacion.Value;
 
