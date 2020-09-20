@@ -207,12 +207,16 @@ namespace zHFT.OrderRouters.InvertirOnline
 
                 execReport = IOLOrderRouterManager.GetExecutionReport(activeOrder.OrderId);
                 cancelled = execReport.IsCancelled();
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
                 i++;
-                if (i > 20)
+                if (i > IOLConfiguration.CancellationTimeoutInSeconds)
                 {
-                    DoLog(string.Format("Critical error!!!. OrderId {0} could not be cancelled and stays in status {1}", activeOrder.OrderId, execReport.estadoActual),
-                            Main.Common.Util.Constants.MessageType.Error);
+                    string msg=string.Format("Critical error!!!. OrderId {0} could not be cancelled and stays in status {1}", activeOrder.OrderId, execReport.estadoActual);
+                    DoLog(msg,Main.Common.Util.Constants.MessageType.Error);
+
+                    rejWrapper = new OrderCancelRejectWrapper(activeOrder.ClOrdId, activeOrder.OrderId.ToString(), CxlRejResponseTo.OrderCancelReplaceRequest,
+                                                                CxlRejReason.Other, msg);
+
                     break;
                 }
 
@@ -385,12 +389,12 @@ namespace zHFT.OrderRouters.InvertirOnline
                 {
 
                     Order order = ActiveOrders[orderId];
-                    DoLog(string.Format("Running cancellation for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("Running cancellation for orderId {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
                     CancelOrderResponse cxlResp = IOLOrderRouterManager.Cancel(order);
 
                     if (cxlResp.ok.HasValue && cxlResp.ok.Value)
                     {
-                        DoLog(string.Format("Cancellation requested for orderId {0}", order), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("Cancellation requested for orderId {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
 
                         return null;
                     }

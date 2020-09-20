@@ -103,6 +103,7 @@
     </Content>
     <Content Include="outgoingOrderRouter.IOL.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="outgoingOrderRouter.Mock.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

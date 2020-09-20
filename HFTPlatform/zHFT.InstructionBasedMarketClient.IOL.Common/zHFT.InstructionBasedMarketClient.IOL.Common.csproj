@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="DTO\Fund.cs" />
     <Compile Include="DTO\MarketData.cs" />
     <Compile Include="DTO\OrderBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

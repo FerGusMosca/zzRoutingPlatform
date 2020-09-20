@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IOLMarketDataManager.cs" />
+    <Compile Include="IOLSecurityManager.cs" />
     <Compile Include="IOLStandaloneMarketDataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

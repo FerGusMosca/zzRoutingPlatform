@@ -24,6 +24,10 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
         protected string _MARKET_DATA_URL = "api/{Mercado}/Titulos/{Simbolo}/Cotizacion";
 
+        protected string _SECURITIES_URL = "api/v2/{0}/Titulos/Cotizacion/Instrumentos";//0=pais
+
+        protected string _FUNDS_URL = "api/v2/Titulos/FCI";
+
         protected string _BUY_URL = "api/v2/operar/Comprar";
 
         protected string _SELL_URL = "api/v2/operar/Vender";
@@ -179,6 +183,7 @@ namespace zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer
 
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "DELETE";
+                request.Timeout = 4000;
                 request.ContentType = "application/x-www-form-urlencoded";
 
                 if (AuthenticationToken != null)

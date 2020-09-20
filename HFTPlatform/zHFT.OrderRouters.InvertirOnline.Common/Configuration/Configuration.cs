@@ -18,6 +18,8 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Configuration
 
         public string MainURL { get; set; }
 
+        public int CancellationTimeoutInSeconds { get; set; }
+
         #endregion
 
         #region Private Methods
