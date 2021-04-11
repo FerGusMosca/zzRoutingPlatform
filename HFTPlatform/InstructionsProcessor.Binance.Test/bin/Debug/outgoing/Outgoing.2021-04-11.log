@@ -1,0 +1,110 @@
+2021-04-11 14:30:34  :: 4/11/2021 2:30:34 PMMomentumStrategyBase.LoadConfig
+2021-04-11 14:30:34  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:30:34  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:30:34  :: Error recovering config .\outgoingStrategyHandler.InstructionBasedRouting.xml: Invalid XML configuration file  Missing config parameter  ADOInstructionsAccessLayerConnectionString
+2021-04-11 14:30:34  :: Error initializing config file .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:31:35  :: 4/11/2021 2:31:35 PMMomentumStrategyBase.LoadConfig
+2021-04-11 14:31:35  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:31:35  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:31:35  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:31:35  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-11 14:31:35  :: 4/11/2021 2:31:35 PMOrderRouterBase.LoadConfig
+2021-04-11 14:31:35  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-11 14:31:35  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-11 14:31:35  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-11 14:31:35  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-11 14:31:36  :: 4/11/2021 2:31:36 PMOrderRouterBase.LoadConfig
+2021-04-11 14:31:36  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:31:36  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:31:36  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-11 14:31:36  :: @Outgoing Order Routing Binance:Critic error initializing .\outgoingOrderRouter.Binance.xml:Error del proveedor subyacente en Open.
+2021-04-11 14:34:18  :: 4/11/2021 2:34:18 PMMomentumStrategyBase.LoadConfig
+2021-04-11 14:34:18  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:34:18  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:34:18  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:34:18  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-11 14:34:18  :: 4/11/2021 2:34:18 PMOrderRouterBase.LoadConfig
+2021-04-11 14:34:18  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-11 14:34:18  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-11 14:34:18  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-11 14:34:18  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-11 14:34:18  :: 4/11/2021 2:34:18 PMOrderRouterBase.LoadConfig
+2021-04-11 14:34:18  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:34:18  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:34:18  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-11 14:34:18  :: @Outgoing Order Routing Binance:Critic error initializing .\outgoingOrderRouter.Binance.xml:Error del proveedor subyacente en Open.
+2021-04-11 14:35:55  :: 4/11/2021 2:35:55 PMMomentumStrategyBase.LoadConfig
+2021-04-11 14:35:55  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:35:55  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:35:55  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:35:55  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-11 14:35:55  :: 4/11/2021 2:35:55 PMOrderRouterBase.LoadConfig
+2021-04-11 14:35:55  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-11 14:35:55  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-11 14:35:55  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-11 14:35:55  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-11 14:35:55  :: 4/11/2021 2:35:55 PMOrderRouterBase.LoadConfig
+2021-04-11 14:35:55  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:35:55  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:35:55  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-11 14:35:55  :: @Outgoing Order Routing Binance:Critic error initializing .\outgoingOrderRouter.Binance.xml:Error del proveedor subyacente en Open.
+2021-04-11 14:37:26  :: 4/11/2021 2:37:26 PMMomentumStrategyBase.LoadConfig
+2021-04-11 14:37:26  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:37:26  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:37:26  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:37:26  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-11 14:37:26  :: 4/11/2021 2:37:26 PMOrderRouterBase.LoadConfig
+2021-04-11 14:37:26  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-11 14:37:26  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-11 14:37:26  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-11 14:37:26  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-11 14:37:26  :: 4/11/2021 2:37:26 PMOrderRouterBase.LoadConfig
+2021-04-11 14:37:26  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:37:26  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:37:26  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-11 14:37:26  :: @Outgoing Order Routing Binance:Critic error initializing .\outgoingOrderRouter.Binance.xml:Error del proveedor subyacente en Open.
+2021-04-11 14:38:10  :: 4/11/2021 2:38:10 PMMomentumStrategyBase.LoadConfig
+2021-04-11 14:38:10  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:38:10  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:38:10  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-11 14:38:10  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-11 14:38:10  :: 4/11/2021 2:38:10 PMOrderRouterBase.LoadConfig
+2021-04-11 14:38:10  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-11 14:38:10  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-11 14:38:10  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-11 14:38:10  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-11 14:38:10  :: 4/11/2021 2:38:10 PMOrderRouterBase.LoadConfig
+2021-04-11 14:38:10  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:38:10  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-11 14:38:10  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-11 14:38:30  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:31  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:31  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:32  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:32  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:32  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:32  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:34  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:38  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:39  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:39  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:40  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:40  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:41  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:41  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:42  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:42  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:43  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:43  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:44  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:44  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:44  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:44  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:45  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:45  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:45  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:46  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:46  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:46  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-11 14:38:47  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: Se han producido uno o varios errores. - El código de estado de la respuesta no indica un resultado correcto: 400 (Bad Request).
+2021-04-11 14:38:47  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...

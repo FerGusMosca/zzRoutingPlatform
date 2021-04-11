@@ -3,7 +3,7 @@
   <Name>Incoming Binance</Name>
   <QuoteCurrency>BTC</QuoteCurrency>
 
-  <InstructionsAccessLayerConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=Matter;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
   <PublishUpdateInMilliseconds>100</PublishUpdateInMilliseconds>
   <!--5 segundos-->
@@ -11,6 +11,6 @@
   <SearchForInstructionsInMilliseconds >100</SearchForInstructionsInMilliseconds >
   <!--1 segundos-->
 
-  <AccountNumber>7</AccountNumber>
+  <AccountNumber>3</AccountNumber>
 
 </Configuration>

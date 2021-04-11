@@ -1,6 +1,4 @@
-﻿using Binance.API.Csharp.Client;
-using Binance.API.Csharp.Client.Models.Enums;
-using Binance.API.Csharp.Client.Models.Market;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,7 +9,6 @@ using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.IBR.Binance.BusinessEntities;
-using zHFT.StrategyHandler.IBR.Binance.Common.Util;
 using zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
@@ -123,44 +120,45 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
        
         private decimal GetBitcoinPriceInUSD()
         {
-            var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-            //var binanceClient = new BinanceClient(apiClient);
-            var binanceClientProxy = new BinanceClientProxy(apiClient);
+            //var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
+            ////var binanceClient = new BinanceClient(apiClient);
+            //var binanceClientProxy = new BinanceClientProxy(apiClient);
 
-            string fullSymbol = _BTC_CURRENCY + _USD_CURRENCY;
+            //string fullSymbol = _BTC_CURRENCY + _USD_CURRENCY;
 
-            //var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null,1);
-            var resp = binanceClientProxy.GetLastMinuteCandleStick(fullSymbol);
-            Candlestick jMarketData = resp.Result.OrderByDescending(x=>x.CloseTime).FirstOrDefault();
+            ////var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null,1);
+            //var resp = binanceClientProxy.GetLastMinuteCandleStick(fullSymbol);
+            //Candlestick jMarketData = resp.Result.OrderByDescending(x=>x.CloseTime).FirstOrDefault();
 
-            return jMarketData.Close;
+            //return jMarketData.Close;
+            return 0;
         }
 
         private void RecoverMarketPriceForPosition(ref AccountPosition pos, decimal priceBTCInUSD)
         {
 
-            try
-            {
+            //try
+            //{
 
-                var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-                var binanceClient = new BinanceClientProxy(apiClient);
+            //    var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
+            //    var binanceClient = new BinanceClientProxy(apiClient);
 
-                if (pos.Security.Symbol != QuoteCurrency)
-                {
-                    string fullSymbol = pos.Security.Symbol + QuoteCurrency;
+            //    if (pos.Security.Symbol != QuoteCurrency)
+            //    {
+            //        string fullSymbol = pos.Security.Symbol + QuoteCurrency;
 
-                    var resp = binanceClient.GetLastMinuteCandleStick(fullSymbol);
-                    Candlestick jMarketData = resp.Result.OrderByDescending(x => x.CloseTime).FirstOrDefault();
+            //        var resp = binanceClient.GetLastMinuteCandleStick(fullSymbol);
+            //        Candlestick jMarketData = resp.Result.OrderByDescending(x => x.CloseTime).FirstOrDefault();
 
-                    pos.MarketPrice = jMarketData.Close * priceBTCInUSD;
-                }
-                else
-                    pos.MarketPrice = priceBTCInUSD;
-            }
-            catch (Exception)
-            {
-                pos.MarketPrice = 0;//Si no se pudo recuperar, mala suerte
-            }
+            //        pos.MarketPrice = jMarketData.Close * priceBTCInUSD;
+            //    }
+            //    else
+            //        pos.MarketPrice = priceBTCInUSD;
+            //}
+            //catch (Exception)
+            //{
+            //    pos.MarketPrice = 0;//Si no se pudo recuperar, mala suerte
+            //}
         }
 
         #endregion
@@ -174,40 +172,44 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
             {
                 lock (tLock)
                 {
-                    ReqAccountPositions = true;
-                    AbortOnTimeout = false;
-                    Positions = new List<AccountPosition>();
-                    AccountToSync = account;
-                    //Pedir las posiciones y asignar
 
-                    var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-                    var binanceClient = new BinanceClient(apiClient);
+                   // Configure services.
+                   
+                
+                    //ReqAccountPositions = true;
+                    //AbortOnTimeout = false;
+                    //Positions = new List<AccountPosition>();
+                    //AccountToSync = account;
+                    ////Pedir las posiciones y asignar
 
-                    var asyncInfo = binanceClient.GetAccountInfo();
+                    //var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
+                    //var binanceClient = new BinanceClient(apiClient);
 
-                    AccountInfo result = asyncInfo.Result;
+                    //var asyncInfo = binanceClient.GetAccountInfo();
 
-                    decimal priceBTCInUSD = GetBitcoinPriceInUSD();
+                    //AccountInfo result = asyncInfo.Result;
 
-                    foreach (Balance balance in result.Balances)
-                    {
-                        decimal ammount = balance.Free + balance.Locked;
-                        AccountPosition pos = new AccountPosition()
-                        {
-                            Account = AccountToSync,
-                            Active=true,
-                            PositionStatus=PositionStatus.GetNewPositionStatus(true),
-                            Security = new Security() { Symbol = balance.Asset },
-                            Ammount = ammount
-                        };
-                        if (pos.Ammount > 0)
-                        {
-                            RecoverMarketPriceForPosition(ref pos, priceBTCInUSD);
-                            Positions.Add(pos);
-                        }
-                    }
+                    //decimal priceBTCInUSD = GetBitcoinPriceInUSD();
 
-                    ReqAccountPositions = false;
+                    //foreach (Balance balance in result.Balances)
+                    //{
+                    //    decimal ammount = balance.Free + balance.Locked;
+                    //    AccountPosition pos = new AccountPosition()
+                    //    {
+                    //        Account = AccountToSync,
+                    //        Active=true,
+                    //        PositionStatus=PositionStatus.GetNewPositionStatus(true),
+                    //        Security = new Security() { Symbol = balance.Asset },
+                    //        Ammount = ammount
+                    //    };
+                    //    if (pos.Ammount > 0)
+                    //    {
+                    //        RecoverMarketPriceForPosition(ref pos, priceBTCInUSD);
+                    //        Positions.Add(pos);
+                    //    }
+                    //}
+
+                    //ReqAccountPositions = false;
 
                     return true;
                 }
