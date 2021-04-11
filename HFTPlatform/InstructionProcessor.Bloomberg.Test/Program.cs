@@ -505,6 +505,18 @@ namespace HelloWorld.Bloomberg.Test
             LoopAndLogResponses(session);
         }
 
+        private static void GetIssuingCountry(Session session)
+        {
+            Service refDataSvc = OpenService(session, "//blp/refdata");
+
+            Request request = refDataSvc.CreateRequest("ReferenceDataRequest");
+            request.Append("securities", "BVN US Equity");
+            request.Append("fields", "BB_COUNTRY_CODE");
+
+            session.SendRequest(request, CreateCorrelation());
+            LoopAndLogResponses(session);
+        }
+
         private static void PortfolioDataRequest(Session session)
         {
             Service refDataSvc = OpenService(session, "//blp/refdata");
@@ -520,7 +532,7 @@ namespace HelloWorld.Bloomberg.Test
         {
             Service refDataSvc = OpenService(session, "//blp/apiflds");
             Request request = refDataSvc.CreateRequest("CategorizedFieldSearchRequest");//FieldSearchRequest,CategorizedFieldSearchRequest
-            request.Set("searchSpec", "force");
+            request.Set("searchSpec", "country");
 
             session.SendRequest(request, CreateCorrelation());
             LoopAndLogResponses(session);
@@ -620,13 +632,14 @@ namespace HelloWorld.Bloomberg.Test
             //GetBrokerSpec(session);
             //SubscribeOrder(session,"");
             //RequestFields(session);
+            GetIssuingCountry(session);
             //GetDivHist(session);
             //RequestCurveList(session);
             //RouteOrder(session);
             //PortfolioDataRequest(session);
             //GetFills(session);
             //GetAllActiveOrders(session);
-            CreateCustomMessage();
+            //CreateCustomMessage();
 
 
 

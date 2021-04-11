@@ -50,6 +50,11 @@ namespace zHFT.OrderRouters.Binance
             BinanceConfiguration = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
+        protected override CMState ProcessSecurityList(Wrapper wrapper)
+        {
+            return CMState.BuildSuccess();
+        }
+
         #endregion
 
         #region Protected OrderRouterBase Methods

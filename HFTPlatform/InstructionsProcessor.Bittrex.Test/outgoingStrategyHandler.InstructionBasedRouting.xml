@@ -4,15 +4,15 @@
 
   <ReportSavingMode>BD</ReportSavingMode>
   <!--BD=SQL Server Data Base, EXCEL=CSV file, NONE=nothing-->
-  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=StrategyReportsCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
+  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=StrategyReportsCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
 
   <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
-  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString >
+  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString >
 
   <AccountNumber>1</AccountNumber>
 
@@ -49,7 +49,7 @@
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>
-      <Value>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</Value>
+      <Value>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</Value>
     </Config>
   </AccountManagerConfig>
   

@@ -199,7 +199,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                 if (LoadConfig(configFile))
                 {
 
-                    ActiveSecurities = new Dictionary<int, Security>();
+                    ActiveSecurities = new Dictionary<long, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
                     ReverseCurrency = new Dictionary<string, bool>();
 

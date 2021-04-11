@@ -1,0 +1,10 @@
+2021-03-15 13:53:31  :: 3/15/2021 1:53:31 PMBaseCommunicationModule.LoadConfig
+2021-03-15 13:53:31  :: Loading config:.\incomingBittrex.xml
+2021-03-15 13:53:31  :: Processing config:.\incomingBittrex.xml
+2021-03-15 13:53:31  :: Ending GetConfiguracion .\incomingBittrex.xml
+2021-03-15 13:56:06  :: @Incoming Bittrex:Requesting market data por symbol SC
+2021-03-15 13:56:45  :: 3/15/2021 1:56:45 PMBaseCommunicationModule.LoadConfig
+2021-03-15 13:56:45  :: Loading config:.\incomingBittrex.xml
+2021-03-15 13:56:45  :: Processing config:.\incomingBittrex.xml
+2021-03-15 13:56:45  :: Ending GetConfiguracion .\incomingBittrex.xml
+2021-03-15 13:56:57  :: @Incoming Bittrex:Requesting market data por symbol SC

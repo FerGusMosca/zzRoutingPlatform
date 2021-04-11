@@ -27,3 +27,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\bin\Debug\SecurityProcessor.IOL.Test.exe.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.exe
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.pdb

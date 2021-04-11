@@ -1,0 +1,58 @@
+2021-03-15 13:53:32  :: 3/15/2021 1:53:32 PMMomentumStrategyBase.LoadConfig
+2021-03-15 13:53:32  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-03-15 13:53:32  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-03-15 13:53:32  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-03-15 13:53:32  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-03-15 13:53:32  :: 3/15/2021 1:53:32 PMOrderRouterBase.LoadConfig
+2021-03-15 13:53:32  :: Loading config:.\outgoingOrderRouter.xml
+2021-03-15 13:53:32  :: Processing config:.\outgoingOrderRouter.xml
+2021-03-15 13:53:32  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-03-15 13:53:32  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2021-03-15 13:53:32  :: 3/15/2021 1:53:32 PMOrderRouterBase.LoadConfig
+2021-03-15 13:53:32  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2021-03-15 13:53:32  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2021-03-15 13:53:32  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2021-03-15 13:53:53  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2021-03-15 13:55:15  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2021-03-15 13:56:00  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2021-03-15 13:56:06  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2021-03-15 13:56:06  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol SC
+2021-03-15 13:56:07  :: Processing Market Data:Symbol=SC  LastPrice=0.01527 BestBidPrice=0.01527 BestAskPrice=0.01541
+2021-03-15 13:56:07  :: Routing to market position for symbol SC
+2021-03-15 13:56:07  :: Creating buy order for symbol SC.Quantity=4631368.69679109 Price=.02
+2021-03-15 13:56:07  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol SC
+2021-03-15 13:56:07  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol SC: Order Status=Rejected - Exec Type=Rejected CumQty=0.00000000 LvsQty=4631368.69679109 AvgPx=0
+2021-03-15 13:56:07  :: @IBR: Incoming message from order routing: Execution Report for symbol SC: Order Status=Rejected - Exec Type=Rejected CumQty=0.00000000 LvsQty=4631368.69679109 AvgPx=0
+2021-03-15 13:56:07  :: Received Rejected for symbol SC. Reason: INSUFFICIENT_FUNDS
+2021-03-15 13:56:07  :: Rejected for symbol SC processed
+2021-03-15 13:56:07  :: @Strategy Handler - Instruction Based Router for Bittrex OnEvalExecutionSummary: Critical error processing execution summary: Object reference not set to an instance of an object.
+2021-03-15 13:56:07  :: Canceling all active orders
+2021-03-15 13:56:07  :: @Outgoing Order Routing Bittrex:Cancelling all active orders
+2021-03-15 13:56:09  :: Ending RunOnPositionCalculus for symbol SC. The position is cleared
+2021-03-15 13:56:10  :: Processing Market Data:Symbol=SC  LastPrice=0.01527 BestBidPrice=0.01527 BestAskPrice=0.01541
+2021-03-15 13:56:14  :: Processing Market Data:Symbol=SC  LastPrice=0.01527 BestBidPrice=0.01527 BestAskPrice=0.01541
+2021-03-15 13:56:46  :: 3/15/2021 1:56:46 PMMomentumStrategyBase.LoadConfig
+2021-03-15 13:56:46  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-03-15 13:56:46  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-03-15 13:56:46  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-03-15 13:56:46  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-03-15 13:56:46  :: 3/15/2021 1:56:46 PMOrderRouterBase.LoadConfig
+2021-03-15 13:56:46  :: Loading config:.\outgoingOrderRouter.xml
+2021-03-15 13:56:46  :: Processing config:.\outgoingOrderRouter.xml
+2021-03-15 13:56:46  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-03-15 13:56:46  :: Initializing Order Router Proxy zHFT.OrderRouters.Bittrex.OrderRouter, zHFT.OrderRouters.Bittrex
+2021-03-15 13:56:46  :: 3/15/2021 1:56:46 PMOrderRouterBase.LoadConfig
+2021-03-15 13:56:46  :: Loading config:.\outgoingOrderRouter.Bittrex.xml
+2021-03-15 13:56:46  :: Processing config:.\outgoingOrderRouter.Bittrex.xml
+2021-03-15 13:56:46  :: Ending GetConfiguracion .\outgoingOrderRouter.Bittrex.xml
+2021-03-15 13:56:51  :: @Strategy Handler - Instruction Based Router for Bittrex - Starting sync for account 1 ...
+2021-03-15 13:56:57  :: @Strategy Handler - Instruction Based Router for Bittrex - Account fmosca_alien.zimzum positions succesfully synchronized
+2021-03-15 13:56:57  :: Strategy Handler - Instruction Based Router for Bittrex: Creating position for symbol SC
+2021-03-15 13:56:59  :: Processing Market Data:Symbol=SC  LastPrice=0.01547 BestBidPrice=0.01528 BestAskPrice=0.01547
+2021-03-15 13:56:59  :: Routing to market position for symbol SC
+2021-03-15 13:56:59  :: Creating buy order for symbol SC.Quantity=4628337.69633508 Price=.02
+2021-03-15 13:56:59  :: @Outgoing Order Routing Bittrex:Routing  to market for symbol SC
+2021-03-15 13:57:00  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol SC: Order Status=Rejected - Exec Type=Rejected CumQty=0.00000000 LvsQty=4628337.69633508 AvgPx=0
+2021-03-15 13:57:00  :: @IBR: Incoming message from order routing: Execution Report for symbol SC: Order Status=Rejected - Exec Type=Rejected CumQty=0.00000000 LvsQty=4628337.69633508 AvgPx=0
+2021-03-15 13:57:00  :: Received Rejected for symbol SC. Reason: INSUFFICIENT_FUNDS
+2021-03-15 13:57:00  :: Rejected for symbol SC processed
