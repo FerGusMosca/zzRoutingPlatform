@@ -454,7 +454,7 @@ namespace zHFT.OrderRouters.Binance
                     ExecutionReportThread = new Thread(DoEvalExecutionReport);
                     ExecutionReportThread.Start();
 
-                    //Todo inicializar mundo Bittrex
+                    //Todo inicializar mundo Binance
                     AccountBinanceData binanceData = AccountBinanceDataManager.GetByAccountNumber(BinanceConfiguration.AccountNumber);
 
                     if (binanceData == null)

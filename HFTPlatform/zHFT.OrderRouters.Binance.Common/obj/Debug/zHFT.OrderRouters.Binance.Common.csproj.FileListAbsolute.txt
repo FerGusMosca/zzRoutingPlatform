@@ -36,9 +36,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.OrderRouters.Binance.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.OrderRouters.Binance.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Binance.API.Csharp.Client.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Binance.API.Csharp.Client.Domain.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Binance.API.Csharp.Client.Models.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.Main.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.Main.dll
@@ -49,7 +46,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.Main.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\zHFT.OrderRouters.Binance.Common.dll
@@ -70,3 +66,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\obj\Debug\zHFT.OrderRouters.Binance.Common.csproj.CopyComplete

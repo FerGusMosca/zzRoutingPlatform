@@ -20,6 +20,7 @@ using zHFT.OrderRouters.Primary.Common;
 using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
+using ConfigLoader = zHFT.SingletonModulesHandler.Common.Util.ConfigLoader;
 
 namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 {

@@ -78,6 +78,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\Bittrex.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\obj\Debug\zHFT.OrderRouters.Bittrex.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\obj\Debug\zHFT.OrderRouters.Bittrex.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\obj\Debug\zHFT.OrderRouters.Bittrex.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\obj\Debug\zHFT.OrderRouters.Bittrex.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\obj\Debug\zHFT.OrderRouters.Bittrex.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex\obj\Debug\zHFT.OrderRouters.Bittrex.csproj.CopyComplete

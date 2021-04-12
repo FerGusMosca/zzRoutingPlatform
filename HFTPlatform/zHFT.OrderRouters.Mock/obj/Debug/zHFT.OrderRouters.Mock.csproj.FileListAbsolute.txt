@@ -76,6 +76,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\bin\Debug\zHFT.SingletonModulesHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\obj\Debug\zHFT.OrderRouters.Mock.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\obj\Debug\zHFT.OrderRouters.Mock.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\obj\Debug\zHFT.OrderRouters.Mock.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\obj\Debug\zHFT.OrderRouters.Mock.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\obj\Debug\zHFT.OrderRouters.Mock.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Mock\obj\Debug\zHFT.OrderRouters.Mock.csproj.CopyComplete

@@ -70,7 +70,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\bin\Debug\zHFT.InstructionBasedMarketClient.Common.dll
@@ -86,3 +85,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Common.csproj.CopyComplete

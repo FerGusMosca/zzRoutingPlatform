@@ -183,7 +183,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.Main.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.dll
@@ -205,9 +204,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.LogicLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Newtonsoft.Json.dll
@@ -222,7 +219,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.Main.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.pdb
@@ -240,9 +236,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Binance.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.LogicLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Newtonsoft.Json.xml
@@ -250,7 +244,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.Main.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.Main.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Config.xml
@@ -338,3 +331,10 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.exe
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.Main.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.csproj.CopyComplete

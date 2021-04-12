@@ -22,6 +22,7 @@ using zHFT.StrategyHandler.MomentumPortfolios.Common.Configuration;
 using zHFT.StrategyHandler.MomentumPortfolios.Common.Enums;
 using zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer.Managers;
 using zHFT.StrategyHandlers.Common.Converters;
+using Position = zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.Position;
 
 namespace zHFT.StrategyHandler.MomentumPortfolios.StrategyHandler
 {
@@ -44,6 +45,11 @@ namespace zHFT.StrategyHandler.MomentumPortfolios.StrategyHandler
         #endregion
 
         #region Potected and Private Methods
+
+        protected override void UnsuscribeMarketData(Main.BusinessEntities.Positions.Position pos)
+        {
+            throw new NotImplementedException();
+        }
 
         protected void RunPortfolioFormation()
         {

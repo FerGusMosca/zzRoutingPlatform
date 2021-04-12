@@ -2,10 +2,10 @@
 <Configuration>
   <Name>Outgoing Order Routing Binance</Name>
 
-  <QuoteCurrency>BTC</QuoteCurrency>
+<QuoteCurrency>BTC</QuoteCurrency>
 
-  <RefreshExecutionReportsInMilisec>100</RefreshExecutionReportsInMilisec>
+<RefreshExecutionReportsInMilisec>100</RefreshExecutionReportsInMilisec>
 
-  <ConfigConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ConfigConnectionString>
-  <AccountNumber>3</AccountNumber>
-</Configuration>
+<ConfigConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ConfigConnectionString>
+<AccountNumber>3</AccountNumber>
+        </Configuration>

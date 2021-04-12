@@ -90,6 +90,10 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csproj.CopyComplete

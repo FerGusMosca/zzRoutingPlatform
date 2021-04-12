@@ -38,3 +38,18 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Bu
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\zHFT.StrategyHandler.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.BusinessEntities\obj\Debug\zHFT.StrategyHandler.BusinessEntities.pdb

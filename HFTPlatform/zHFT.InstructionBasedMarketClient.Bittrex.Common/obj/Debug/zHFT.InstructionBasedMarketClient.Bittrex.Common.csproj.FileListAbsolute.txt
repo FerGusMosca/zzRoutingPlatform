@@ -40,6 +40,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.Common.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.Common.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.Common.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.Common\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.Common.csproj.CopyComplete

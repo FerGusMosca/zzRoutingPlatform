@@ -22,7 +22,7 @@ using zHFT.StrategyHandlers.Common.Converters;
 
 namespace zHFT.StrategyHandler.SingleStockBuyer
 {
-    public class SingleStockBuyer : StrategyBase
+/*    public class SingleStockBuyer : StrategyBase
     {
         #region Protected Attributes
 
@@ -182,5 +182,5 @@ namespace zHFT.StrategyHandler.SingleStockBuyer
 
         #endregion
 
-    }
+    }*/
 }

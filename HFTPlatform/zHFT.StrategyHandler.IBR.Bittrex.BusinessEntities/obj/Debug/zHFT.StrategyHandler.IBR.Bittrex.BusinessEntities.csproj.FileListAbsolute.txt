@@ -8,6 +8,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csproj.CoreCompileInputs.cache

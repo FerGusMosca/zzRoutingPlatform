@@ -20,3 +20,5 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos.DataAccess\obj\Debug\zHFT.OrderRouters.Cryptos.DataAccess.csproj.CoreCompileInputs.cache

@@ -25,6 +25,7 @@ using zHFT.SingletonModulesHandler.Common.Util;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.SecurityListSaver.Common.Interfaces;
+using ConfigLoader = zHFT.SingletonModulesHandler.Common.Util.ConfigLoader;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi
 {

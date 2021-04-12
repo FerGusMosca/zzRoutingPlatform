@@ -207,7 +207,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     //InstructionManager = new InstructionManager(BinanceConfiguration.InstructionsAccessLayerConnectionString, AccountManager);
                     AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.InstructionsAccessLayerConnectionString);
 
-                    ConfigBinanceData();
+                    //ConfigBinanceData();
 
                     //CleanPrevInstructions();
 

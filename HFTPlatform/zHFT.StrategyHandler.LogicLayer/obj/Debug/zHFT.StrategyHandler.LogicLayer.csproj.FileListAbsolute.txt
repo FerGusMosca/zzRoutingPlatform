@@ -119,7 +119,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\bin\Debug\zHFT.StrategyHandler.LogicLayer.dll
@@ -144,3 +143,7 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\bin\Debug\zHFT.Main.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.LogicLayer\obj\Debug\zHFT.StrategyHandler.LogicLayer.csproj.CopyComplete

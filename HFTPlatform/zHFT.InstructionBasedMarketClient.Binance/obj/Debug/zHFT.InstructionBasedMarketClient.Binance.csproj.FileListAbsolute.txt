@@ -72,13 +72,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.Binance.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.Binance.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Binance.API.Csharp.Client.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Binance.API.Csharp.Client.Domain.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Binance.API.Csharp.Client.Models.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\websocket-sharp.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.Binance.BusinessEntities.dll
@@ -146,3 +142,7 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.csproj.CopyComplete

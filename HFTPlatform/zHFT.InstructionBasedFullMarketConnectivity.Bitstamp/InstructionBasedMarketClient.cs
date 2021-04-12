@@ -13,7 +13,7 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
-using zHFT.OrderRouters.Bitstamp.Common.Converters;
+/*using zHFT.OrderRouters.Bitstamp.Common.Converters;*/
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
 using zHFT.StrategyHandler.Common.Converters;
@@ -67,7 +67,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Bitstamp
 
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
-        protected OrderConverter OrderConverter { get; set; }
+//        protected OrderConverter OrderConverter { get; set; }
 
         private Dictionary<int, Security> SecuritiesToPublish { get; set; }
 
@@ -203,60 +203,61 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Bitstamp
             {
                 this.OnLogMsg += pOnLogMsg;
 
-                if (ConfigLoader.DoLoadConfig(this, configFile))
-                {
-                    ActiveSecurities = new Dictionary<int, Security>();
-                    ContractsTimeStamps = new Dictionary<int, DateTime>();
-                    OrderConverter = new OrderConverter();
-                    SecurityListConverter = new SecurityListConverter();
-                    ActiveOrders = new Dictionary<string, Order>();
-                    ActiveOrderIdMapper = new Dictionary<string, int>();
-                    ReplacingActiveOrderIdMapper = new Dictionary<string, int>();
-                    SecuritiesToPublish = new Dictionary<int, Security>();
-                    OrderIndexId = GetNextOrderId();
-                    Start = DateTime.Now;
-
-                    InstructionManager = new InstructionManager(BitstampConfiguration.InstructionsAccessLayerConnectionString);
-                    PositionManager = new PositionManager(BitstampConfiguration.InstructionsAccessLayerConnectionString);
-                    AccountManager = new AccountManager(BitstampConfiguration.InstructionsAccessLayerConnectionString);
-
-                    var fixMessageCreator = Type.GetType(BitstampConfiguration.FIXMessageCreator);
-                    if (fixMessageCreator != null)
-                    {
-                        FIXMessageCreator = (IFIXMessageCreator)Activator.CreateInstance(fixMessageCreator);
-                    }
-                    else
-                        throw new Exception(string.Format("@{0}:Assembly not found: " + BitstampConfiguration.FIXMessageCreator));
-
-                    SessionSettings = new SessionSettings(BitstampConfiguration.FIXInitiatorPath);
-                    FileStoreFactory = new FileStoreFactory(SessionSettings);
-                    ScreenLogFactory = new ScreenLogFactory(SessionSettings);
-                    MessageFactory = new DefaultMessageFactory();
-
-                    Initiator = new SocketInitiator(this, FileStoreFactory, SessionSettings, ScreenLogFactory, MessageFactory);
-
-                    Initiator.start();
-
-                    PublishThread = new Thread(DoPublishMarketData);
-                    PublishThread.Start();
-
-                    CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
-                    CleanOldSecuritiesThread.Start();
-
-                    ProcessInstructionsThread = new Thread(DoFindInstructions);
-                    ProcessInstructionsThread.Start();
-
-                    MarketDataRequestThread = new Thread(DoRequestMarketData);
-                    MarketDataRequestThread.Start();
-
+//                if (ConfigLoader.DoLoadConfig(this, configFile))
+//                {
+//                    ActiveSecurities = new Dictionary<int, Security>();
+//                    ContractsTimeStamps = new Dictionary<int, DateTime>();
+////                    OrderConverter = new OrderConverter();
+//                    SecurityListConverter = new SecurityListConverter();
+//                    ActiveOrders = new Dictionary<string, Order>();
+//                    ActiveOrderIdMapper = new Dictionary<string, int>();
+//                    ReplacingActiveOrderIdMapper = new Dictionary<string, int>();
+//                    SecuritiesToPublish = new Dictionary<int, Security>();
+//                    OrderIndexId = GetNextOrderId();
+//                    Start = DateTime.Now;
+//
+//                    InstructionManager = new InstructionManager(BitstampConfiguration.InstructionsAccessLayerConnectionString);
+//                    PositionManager = new PositionManager(BitstampConfiguration.InstructionsAccessLayerConnectionString);
+//                    AccountManager = new AccountManager(BitstampConfiguration.InstructionsAccessLayerConnectionString);
+//
+//                    var fixMessageCreator = Type.GetType(BitstampConfiguration.FIXMessageCreator);
+//                    if (fixMessageCreator != null)
+//                    {
+//                        FIXMessageCreator = (IFIXMessageCreator)Activator.CreateInstance(fixMessageCreator);
+//                    }
+//                    else
+//                        throw new Exception(string.Format("@{0}:Assembly not found: " + BitstampConfiguration.FIXMessageCreator));
+//
+//                    SessionSettings = new SessionSettings(BitstampConfiguration.FIXInitiatorPath);
+//                    FileStoreFactory = new FileStoreFactory(SessionSettings);
+//                    ScreenLogFactory = new ScreenLogFactory(SessionSettings);
+//                    MessageFactory = new DefaultMessageFactory();
+//
+//                    Initiator = new SocketInitiator(this, FileStoreFactory, SessionSettings, ScreenLogFactory, MessageFactory);
+//
+//                    Initiator.start();
+//
+//                    PublishThread = new Thread(DoPublishMarketData);
+//                    PublishThread.Start();
+//
+//                    CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
+//                    CleanOldSecuritiesThread.Start();
+//
+//                    ProcessInstructionsThread = new Thread(DoFindInstructions);
+//                    ProcessInstructionsThread.Start();
+//
+//                    MarketDataRequestThread = new Thread(DoRequestMarketData);
+//                    MarketDataRequestThread.Start();
+//
+//                    return true;
+//
+//                }
+//                else
+//                {
+//                    DoLog(string.Format("@{0}:Error initializing config file " + configFile, BitstampConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+//                    return false;
+//                }
                     return true;
-
-                }
-                else
-                {
-                    DoLog(string.Format("@{0}:Error initializing config file " + configFile, BitstampConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
-                    return false;
-                }
             }
             catch (Exception ex)
             {

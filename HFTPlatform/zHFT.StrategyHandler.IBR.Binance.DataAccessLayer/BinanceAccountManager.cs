@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.IBR.Binance.BusinessEntities;
@@ -14,6 +15,7 @@ using zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
+using Binance;
 
 
 namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
@@ -170,13 +172,20 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
 
             try
             {
+                // https://github.com/sonvister/Binance
+                var api = new BinanceApi();
+
+                using (var user = new BinanceApiUser(BinanceData.APIKey, BinanceData.Secret))
+                {
+                   
+                       
+                }
                 lock (tLock)
                 {
 
-                   // Configure services.
                    
-                
-                    //ReqAccountPositions = true;
+
+                   //ReqAccountPositions = true;
                     //AbortOnTimeout = false;
                     //Positions = new List<AccountPosition>();
                     //AccountToSync = account;

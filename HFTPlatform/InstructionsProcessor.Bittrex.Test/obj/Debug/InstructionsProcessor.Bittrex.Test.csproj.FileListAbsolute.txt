@@ -248,6 +248,12 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.Main.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.Main.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\bin\Debug\zHFT.Main.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Bittrex.Test\obj\Debug\InstructionsProcessor.Bittrex.Test.csproj.CopyComplete

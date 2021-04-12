@@ -1,0 +1,2846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\zimzum\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\zimzum\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_HFTPlatform.1777536641.00" t="ExcludeRecursive" />
+    <e p="C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT" t="ExcludeRecursive" />
+    <e p="C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\hftplatform" t="IncludeFlat">
+      <e p="BidAskArbitrage.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="BidAskArbitrage.Test.csproj" t="IncludeRecursive" />
+        <e p="BidAskArbitrage.xml" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Primary" t="Include">
+          <e p="IncomingSingletonConfig.xml" t="Include" />
+          <e p="OutgoingSingletonConfig.xml" t="Include" />
+          <e p="Primary.xml" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="CurrencylistProcessor.Bittrex.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="CurrencylistProcessor.Bittrex.Test.csproj" t="IncludeRecursive" />
+        <e p="incomingBittrex.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingCryptocurrencyListSaver.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="HelloWorld.InvertirOnline.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="HelloWorld.InvertirOnline.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="HFTPlatform.sln" t="IncludeFlat" />
+      <e p="IBR.Bitfinex" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="genOrderRouter.xml" t="Include" />
+        <e p="IBR.Bitfinex.csproj" t="IncludeRecursive" />
+        <e p="incomingBitfinex.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="strategy.IBR.xml" t="Include" />
+      </e>
+      <e p="IBR.Bittrex.SoftMarketOrders.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="GenericOrderRouter.xml" t="Include" />
+        <e p="IBR.Bittrex.SoftMarketOrders.Test.csproj" t="IncludeRecursive" />
+        <e p="IBRConfig.xml" t="Include" />
+        <e p="incomingBittrex.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoing.Bittrex.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="IBR.IOL.SoftMarketOrders.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="GenericOrderRouter.xml" t="Include" />
+        <e p="IBR.IOL.SoftMarketOrders.Test.csproj" t="IncludeRecursive" />
+        <e p="IBRConfig.xml" t="Include" />
+        <e p="incomingIOL.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="routers" t="Include">
+          <e p="OrderRouter.IOL.xml" t="Include" />
+          <e p="OrderRouter.Mock.xml" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionProcessor.Bitstamp.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Bitstamp.xml" t="Include" />
+        <e p="Config.xml" t="Include" />
+        <e p="IncomingSingletonConfig.xml" t="Include" />
+        <e p="InstructionProcessor.Bitstamp.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="OutgoingSingletonConfig.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionProcessor.Bloomberg.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="HelloWorld.Bloomberg.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionProcessor.Primary.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="IncomingSingletonConfig.xml" t="Include" />
+        <e p="InstructionProcessor.Primary.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="OutgoingSingletonConfig.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Primary.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessor.Binance.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingBinance.xml" t="Include" />
+        <e p="InstructionsProcessor.Binance.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.Binance.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessor.Bittrex.Market.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingBittrex.xml" t="Include" />
+        <e p="InstructionsProcessor.Bittrex.Market.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.Bittrex.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessor.Bittrex.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingBittrex.xml" t="Include" />
+        <e p="InstructionsProcessor.Bittrex.Test.csproj" t="IncludeRecursive" />
+        <e p="Mock" t="Include">
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.Bittrex.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessor.Bloomberg.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingIB.xml" t="Include" />
+        <e p="InstructionsProcessor.Bloomberg.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.Bloomberg.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessor.CoinApi.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CoinApi.xml" t="Include" />
+        <e p="Config.xml" t="Include" />
+        <e p="IncomingSingletonConfig.xml" t="Include" />
+        <e p="InstructionsProcessor.CoinApi.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="OutgoingSingletonConfig.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessor.InvertirOnline.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingIOL.xml" t="Include" />
+        <e p="InstructionsProcessor.InvertirOnline.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.IOL.xml" t="Include" />
+        <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="InstructionsProcessorTest" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingIB.xml" t="Include" />
+        <e p="InstructionsProcessor.IB.Test.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.IB.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Main Apps" t="Include">
+        <e p="MomentumPortfolioFormation" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Config.xml" t="Include" />
+          <e p="MomentumPortfolioFormation.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="outgoingMomentumPorfolioFormation.xml" t="Include" />
+          <e p="outgoingRouterConfigFile.xml" t="Include" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Market Clients" t="Include">
+        <e p="Brokers" t="Include">
+          <e p="Binance" t="Include">
+            <e p="Instruction Based Market Client" t="Include" />
+          </e>
+          <e p="Bitfinex" t="Include" />
+          <e p="BitMex" t="Include">
+            <e p="Instruction Based Market Client" t="Include" />
+          </e>
+          <e p="Bitstamp" t="Include" />
+          <e p="Bittrex" t="Include">
+            <e p="Currencies Market Client" t="Include" />
+            <e p="Instruction Based Market Client" t="Include" />
+          </e>
+          <e p="Common Cryptos" t="Include" />
+          <e p="IB" t="Include">
+            <e p="Instruction Based Market Client" t="Include" />
+            <e p="Options Market Client" t="Include" />
+            <e p="Simple Market Client" t="Include" />
+          </e>
+          <e p="InvertirOnline" t="Include">
+            <e p="Instruction Based Market Client" t="Include" />
+          </e>
+          <e p="Primary" t="Include">
+            <e p="Security List Market Client" t="Include" />
+          </e>
+          <e p="Quickfix" t="Include" />
+        </e>
+        <e p="Instruction Based Market Client" t="Include" />
+        <e p="Options Market Client" t="Include" />
+      </e>
+      <e p="MarketDataDownloader" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="IOL" t="Include">
+          <e p="incomingIOL.xml" t="Include" />
+        </e>
+        <e p="MarketDataDownloader.csproj" t="IncludeRecursive" />
+        <e p="MarketDataDownloader.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="OrderImbalanceCalculator.BitMex.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingBitmex.xml" t="Include" />
+        <e p="Mock" t="Include">
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderImbalanceCalculator.BitMex.Test.csproj" t="IncludeRecursive" />
+        <e p="outgoingOrderRouter.Bitmex.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.OrderImbalanceCalculator.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="OrderImbalanceCalculator.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Bittrex" t="Include">
+          <e p="incomingBittrex.xml" t="Include" />
+        </e>
+        <e p="Config.xml" t="Include" />
+        <e p="IB" t="Include">
+          <e p="incomingIB.xml" t="Include" />
+          <e p="outgoingOrderRouter.IB.xml" t="Include" />
+        </e>
+        <e p="IOL" t="Include">
+          <e p="incomingIOL.xml" t="Include" />
+        </e>
+        <e p="Mock" t="Include">
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderImbalanceCalculator.Test.csproj" t="IncludeRecursive" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.OrderImbalanceCalculator.xml" t="Include" />
+        <e p="Primary" t="Include">
+          <e p="IncomingSingletonConfig.xml" t="Include" />
+          <e p="OutgoingSingletonConfig.xml" t="Include" />
+          <e p="Primary.xml" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="OrderRouters" t="Include">
+        <e p="Brokers" t="Include">
+          <e p="Binance" t="Include" />
+          <e p="BitMex" t="Include" />
+          <e p="Bitstamp" t="Include" />
+          <e p="Bittrex" t="Include" />
+          <e p="Bloomberg" t="Include" />
+          <e p="Cryptos" t="Include" />
+          <e p="IB" t="Include" />
+          <e p="InvertirOnline" t="Include" />
+          <e p="Mock" t="Include" />
+          <e p="Primary" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PairAlgoTradingDemo" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingIB.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingOrderRouter.IB.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.PairTradingDemo.xml" t="Include" />
+        <e p="PairAlgoTradingDemo.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PrimaryCertification" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="IncomingSingletonConfig.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OutgoingSingletonConfig.xml" t="Include" />
+        <e p="Primary.xml" t="Include" />
+        <e p="PrimaryCertification.csproj" t="IncludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="RTDPairTradingDemoLibrary" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="PairTradingRequest.cs" t="Include" />
+          <e p="RTDGatewayResponse.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PairTradingDemoServer.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="RTDPairTradingDemoLibrary.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="SecurityProcessor.IOL.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataAccessLayer" t="Include">
+          <e p="SecurityListManager.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecurityProcessor.IOL.Test.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="SecurityProcessor.Primary.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingPrimary.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="outgoingSecurityListSaver.xml" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecurityProcessor.Primary.Test.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="Singleton Modules" t="Include">
+        <e p="FullMarketConnectivity" t="Include">
+          <e p="Brokers" t="Include">
+            <e p="BitMex" t="Include" />
+            <e p="Bitstamp" t="Include" />
+            <e p="CoinApi" t="Include" />
+            <e p="InvertirOnline" t="Include" />
+            <e p="Primary" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="StrategyHandlers" t="Include">
+        <e p="Downloaders" t="Include">
+          <e p="MarketDataDownloader" t="Include" />
+          <e p="Options Contract Saver" t="Include">
+            <e p="Test" t="Include">
+              <e p="Single Stock Buyer" t="Include" />
+            </e>
+          </e>
+          <e p="SecurityList" t="Include">
+            <e p="CryptoCurrencySaver" t="Include">
+              <e p="Vendors" t="Include">
+                <e p="CoinMarketCap" t="Include" />
+                <e p="CryptoCompare" t="Include" />
+              </e>
+            </e>
+            <e p="SecurityListSaver" t="Include">
+              <e p="Brokers" t="Include">
+                <e p="CoinApi" t="Include" />
+                <e p="Primary" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Flow Strategies" t="Include" />
+        <e p="Instruction Based Routing" t="Include">
+          <e p="Brokers" t="Include">
+            <e p="Binance" t="Include" />
+            <e p="Bitfinex" t="Include" />
+            <e p="Bitstamp" t="Include" />
+            <e p="Bittrex" t="Include" />
+            <e p="Bloomberg" t="Include" />
+            <e p="CoinApi" t="Include" />
+            <e p="Cryptos" t="Include" />
+            <e p="IB" t="Include" />
+            <e p="InvertirOnline" t="Include" />
+            <e p="Primary" t="Include" />
+          </e>
+        </e>
+        <e p="Market Making" t="Include">
+          <e p="BidAskArbitrage" t="Include" />
+          <e p="Order Imbalance" t="Include" />
+        </e>
+        <e p="Momentum Strategies" t="Include" />
+        <e p="Pair Trading" t="Include">
+          <e p="RTD Server" t="Include" />
+        </e>
+      </e>
+      <e p="Test" t="Include">
+        <e p="Downloaders" t="Include">
+          <e p="MarketDataDownloader" t="Include" />
+          <e p="SecurityListDownloaders" t="Include" />
+        </e>
+        <e p="HelloWorlds" t="Include" />
+        <e p="Instruction Based Routers" t="Include">
+          <e p="Bitfinex" t="Include" />
+          <e p="Bittrex" t="Include" />
+          <e p="IOL" t="Include" />
+        </e>
+        <e p="MainAppTest" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="Config.xml" t="Include" />
+          <e p="fix" t="Include">
+            <e p="FIX44.xml" t="Include" />
+          </e>
+          <e p="FIX Sessions" t="Include" />
+          <e p="incomingConfigQuickFix.xml" t="Include" />
+          <e p="incomingIB.xml" t="Include" />
+          <e p="MainAppTest.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="outgoingOrderRouter.IB.xml" t="Include" />
+          <e p="outgoingOrderRouter.xml" t="Include" />
+          <e p="outgoingStrategyHandler.MomentumPortfolios.xml" t="Include" />
+          <e p="outgoingStrategyHandler.SingleStockBuyer.xml" t="Include" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Market Making" t="Include">
+          <e p="BidAskArbitrage" t="Include" />
+          <e p="Order Imbalance" t="Include" />
+        </e>
+        <e p="OptionsMarketDataTest" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Config.xml" t="Include" />
+          <e p="incomingIB.xml" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="OptionsMarketDataTest.csproj" t="IncludeRecursive" />
+          <e p="outgoing.xml" t="Include" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Primary Certification" t="Include" />
+      </e>
+      <e p="UtilModules" t="Include">
+        <e p="Brokers" t="Include">
+          <e p="CoinApi" t="Include" />
+          <e p="Primary" t="Include" />
+        </e>
+      </e>
+      <e p="zHFT.BasedFullMarketConnectivity.Primary.Common" t="IncludeRecursive">
+        <e p="BaseFullMarketConnectivity.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.BasedFullMarketConnectivity.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.BidAskArbitrage" t="IncludeRecursive">
+        <e p="BidAskArbitrage.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.BidAskArbitrage.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.BidAskArbitrage.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.BidAskArbitrage.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.CurrencyListMarketClient.Bittrex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="BittrexCurrencyListMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.CurrencyListMarketClient.Bittrex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.CurrencyListMarketClient.Bittrex.BusinessEntities" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Currency.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.CurrencyListMarketClient.Bittrex.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.CurrencyListMarketClient.Bittrex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="SecurityListWrapper.cs" t="Include" />
+          <e p="SecurityWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.CurrencyListMarketClient.Bittrex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.FixMessageCreator.CoinApi.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="v44" t="Include">
+          <e p="FIXMessageCreator.cs" t="Include" />
+        </e>
+        <e p="zHFT.FixMessageCreator.CoinApi.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.FixMessageCreator.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="v50Sp2" t="Include">
+          <e p="FIXMessageCreator.cs" t="Include" />
+        </e>
+        <e p="zHFT.FixMessageCreator.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.FullMrktConnectivity.BitMex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="Websockets" t="Include">
+            <e p="Auth" t="Include">
+              <e p="AuthenticationResult.cs" t="Include" />
+              <e p="UserCredentials.cs" t="Include" />
+              <e p="Welcome.cs" t="Include" />
+              <e p="WelcomeLimit.cs" t="Include" />
+            </e>
+            <e p="Util" t="Include">
+              <e p="Attribute.cs" t="Include" />
+              <e p="ForeignKey.cs" t="Include" />
+              <e p="Type.cs" t="Include" />
+            </e>
+            <e p="WebSocketAuthenticationRequest.cs" t="Include" />
+            <e p="WebSocketResponseMessage.cs" t="Include" />
+            <e p="WebSocketSubscriptionEvent.cs" t="Include" />
+            <e p="WebSocketSubscriptionRequest.cs" t="Include" />
+            <e p="WebSocketSubscriptionResponse.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.FullMrktConnectivity.BitMex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.FullMrktConnectivity.BitMex.DAL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Websockets" t="Include">
+          <e p="BaseManager.cs" t="Include" />
+        </e>
+        <e p="zHFT.FullMrktConnectivity.BitMex.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountInvertirOnlineData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstrFullMarketConnectivity.IOL.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="ExchangeConverter.cs" t="Include" />
+          <e p="SymbolConverter.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="AuthenticationToken.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstrFullMarketConnectivity.IOL.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer" t="IncludeRecursive">
+        <e p="ADO" t="Include">
+          <e p="ADOAccountIOLDataManager.cs" t="Include" />
+          <e p="ADOBaseManager.cs" t="Include" />
+        </e>
+        <e p="BaseManager.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity" t="IncludeRecursive">
+        <e p="BaseFullMarketConnectivity.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity.Bitstamp" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="FIX Sessions" t="Include">
+          <e p="initiator_prod.cfg" t="Include" />
+        </e>
+        <e p="FIXConfig" t="Include">
+          <e p="FIX44.xml" t="Include" />
+          <e p="FIX50SP2.xml" t="Include" />
+          <e p="FIXT11.xml" t="Include" />
+        </e>
+        <e p="InstructionBasedMarketClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity.CoinApi" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="FIX Sessions" t="Include">
+          <e p="initiator_prod.cfg" t="Include" />
+        </e>
+        <e p="FIXConfig" t="Include">
+          <e p="FIX44.xml" t="Include" />
+          <e p="FIX50SP2.xml" t="Include" />
+          <e p="FIXT11.xml" t="Include" />
+        </e>
+        <e p="InstructionBasedMarketClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.CoinApi.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity.Primary" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="FIX Sessions" t="Include">
+          <e p="initiator_prod.cfg" t="Include" />
+          <e p="initiator_test.cfg" t="Include" />
+        </e>
+        <e p="FIXConfig" t="Include">
+          <e p="FIX50SP2.xml" t="Include" />
+          <e p="FIXT11.xml" t="Include" />
+        </e>
+        <e p="InstructionBasedMarketClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.Primary.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedFullMarketConnectivity.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Binance" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="BinanceInstructionBasedMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Binance.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Binance.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountBinanceData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Binance.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Binance.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="BinanceClientProxy.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="BinanceMarketDataWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Binance.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountBinanceDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.BitMex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BitMexInstructionBasedMarketClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.BitMex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.BitMex.BE" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Security.cs" t="Include" />
+        <e p="zHFT.InstructionBasedMarketClient.BitMex.BE.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.BitMex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="Instrument.cs" t="Include" />
+          <e p="MarketData.cs" t="Include" />
+          <e p="OrderBookDictionary.cs" t="Include" />
+          <e p="OrderBookEntry.cs" t="Include" />
+          <e p="QueryResponse.cs" t="Include" />
+          <e p="Trade.cs" t="Include" />
+          <e p="Websockets" t="Include">
+            <e p="Events" t="Include">
+              <e p="WebSocketOrderBookL2Event.cs" t="Include" />
+              <e p="WebSocketTradeEvent.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="BitmexMarketDataWrapper.cs" t="Include" />
+          <e p="BitmexSecurityListWrapper.cs" t="Include" />
+          <e p="BitMexSecurityWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.BitMex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.BitMex.DAL" t="IncludeRecursive">
+        <e p="API" t="Include">
+          <e p="BitMEXApi.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="REST" t="Include">
+          <e p="BaseManager.cs" t="Include" />
+          <e p="MarketDataManager.cs" t="Include" />
+          <e p="SecurityListManager.cs" t="Include" />
+        </e>
+        <e p="Websockets" t="Include">
+          <e p="BaseManager.cs" t="Include" />
+          <e p="MarketDataManager.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.BitMex.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.BitMex.Logic" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderBookHandler.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.BitMex.Logic.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Bittrex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="BittrexInstructionBasedMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Bittrex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountBittrexData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Bittrex.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Bittrex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="MarketDataDTO.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="BittrexMarketDataWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Bittrex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountBittrexDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.BusinessEntities" t="IncludeRecursive">
+        <e p="Account.cs" t="Include" />
+        <e p="AccountPosition.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Broker.cs" t="Include" />
+        <e p="Customer.cs" t="Include" />
+        <e p="Instruction.cs" t="Include" />
+        <e p="InstructionType.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PositionStatus.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Stock.cs" t="Include" />
+        <e p="zHFT.InstructionBasedMarketClient.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Cryptos" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="BaseInstructionBasedMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Cryptos.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Cryptos.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="MatterEntityDataModel.Designer.cs" t="Include" />
+        <e p="MatterEntityDataModel.edmx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Cryptos.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="AutPortfolioEntityDataModel.Designer.cs" t="Include" />
+        <e p="AutPortfolioEntityDataModel.edmx" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountManager.cs" t="Include" />
+          <e p="IBAccountManager.cs" t="Include" />
+          <e p="InstructionManager.cs" t="Include" />
+          <e p="PositionManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.IB" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="IBInstructionBasedMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.IB.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.IB.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="SecurityConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.IB.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.IOL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="IOLInstructionBasedMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.IOL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.IOL.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.IOL.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.IOL.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="Fund.cs" t="Include" />
+          <e p="MarketData.cs" t="Include" />
+          <e p="OrderBook.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="InvertirOnlineMarketDataWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.IOL.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IOLMarketDataManager.cs" t="Include" />
+        <e p="IOLSecurityManager.cs" t="Include" />
+        <e p="IOLStandaloneMarketDataManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.Main" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainApp.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.Main.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.Main.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Market Data" t="Include">
+          <e p="MarketData.cs" t="Include" />
+          <e p="MarketDataRequest.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Orders" t="Include">
+          <e p="ExecutionReport.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+        </e>
+        <e p="Positions" t="Include">
+          <e p="ExecutionSummary.cs" t="Include" />
+          <e p="Position.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Securities" t="Include">
+          <e p="BaseTradingRule.cs" t="Include" />
+          <e p="ExecInstRule.cs" t="Include" />
+          <e p="FinancingDetail.cs" t="Include" />
+          <e p="LotTypeRule.cs" t="Include" />
+          <e p="OrdTypeRule.cs" t="Include" />
+          <e p="PriceLimit.cs" t="Include" />
+          <e p="Security.cs" t="Include" />
+          <e p="SecurityTradingRule.cs" t="Include" />
+          <e p="TimeInForceRule.cs" t="Include" />
+          <e p="TradingSessionRule.cs" t="Include" />
+          <e p="TradingSessionRuleGrp.cs" t="Include" />
+        </e>
+        <e p="Security List" t="Include">
+          <e p="SecurityList.cs" t="Include" />
+        </e>
+        <e p="zHFT.Main.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.Main.Common" t="IncludeRecursive">
+        <e p="Abstract" t="Include">
+          <e p="BaseCommunicationModule.cs" t="Include" />
+          <e p="BaseConfiguration.cs" t="Include" />
+        </e>
+        <e p="Apps" t="Include">
+          <e p="MainAppBase.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converter" t="Include">
+          <e p="ConverterBase.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="CMState.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="Actions.cs" t="Include" />
+          <e p="BusinessRejectReason.cs" t="Include" />
+          <e p="Currency.cs" t="Include" />
+          <e p="CxlRejReason.cs" t="Include" />
+          <e p="CxlRejResponseTo .cs" t="Include" />
+          <e p="ExecType.cs" t="Include" />
+          <e p="Fields" t="Include">
+            <e p="BusinessMessageRejectField.cs" t="Include" />
+            <e p="CryptoCurrencyFields.cs" t="Include" />
+            <e p="ExecutionReportFields.cs" t="Include" />
+            <e p="Fields.cs" t="Include" />
+            <e p="MarketDataFields.cs" t="Include" />
+            <e p="MarketDataRequestField.cs" t="Include" />
+            <e p="OfferFields.cs" t="Include" />
+            <e p="OrderBookFields.cs" t="Include" />
+            <e p="OrderCancelRejectField.cs" t="Include" />
+            <e p="OrderFields.cs" t="Include" />
+            <e p="PositionFields.cs" t="Include" />
+            <e p="SecurityFields.cs" t="Include" />
+            <e p="SecurityListFields.cs" t="Include" />
+            <e p="SecurityListRequestField.cs" t="Include" />
+          </e>
+          <e p="Halted.cs" t="Include" />
+          <e p="OrdRejReason.cs" t="Include" />
+          <e p="OrdStatus.cs" t="Include" />
+          <e p="OrdType.cs" t="Include" />
+          <e p="PositionRejectReason.cs" t="Include" />
+          <e p="PositionStatus.cs" t="Include" />
+          <e p="PriceType.cs" t="Include" />
+          <e p="QuantityType.cs" t="Include" />
+          <e p="SecurityListRequestType.cs" t="Include" />
+          <e p="SecurityRequestResult.cs" t="Include" />
+          <e p="SecurityType.cs" t="Include" />
+          <e p="SettlType.cs" t="Include" />
+          <e p="Side.cs" t="Include" />
+          <e p="SubscriptionRequestType.cs" t="Include" />
+          <e p="TickDirection.cs" t="Include" />
+          <e p="TimeInForce.cs" t="Include" />
+          <e p="UpdateAction.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="ICommunicationModule.cs" t="Include" />
+          <e p="IConfiguration.cs" t="Include" />
+          <e p="IFIXMessageCreator.cs" t="Include" />
+          <e p="ILogger.cs" t="Include" />
+          <e p="IWebsocketManager.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="ConfigLoader.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+          <e p="FixHelperExtended.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="Wrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.Main.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.Main.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="StrategyReportsEntityDataModel.Designer.cs" t="Include" />
+        <e p="StrategyReportsEntityDataModel.edmx" t="Include" />
+        <e p="zHFT.Main.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.Main.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Helpers" t="Include">
+          <e p="ExecutionReportHelper.cs" t="Include" />
+          <e p="ExecutionSummaryHelper.cs" t="Include" />
+          <e p="OrderHelper.cs" t="Include" />
+          <e p="PositionHelper.cs" t="Include" />
+        </e>
+        <e p="Managers" t="Include">
+          <e p="ADO" t="Include">
+            <e p="ADOBaseManager.cs" t="Include" />
+          </e>
+          <e p="ExecutionSummaryManager.cs" t="Include" />
+        </e>
+        <e p="Mapping" t="Include">
+          <e p="AutoMapperConfiguration.cs" t="Include" />
+          <e p="MappingEnabledAbstract.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Profiles" t="Include">
+          <e p="ExecutionReportProfile.cs" t="Include" />
+          <e p="ExecutionSummaryProfile.cs" t="Include" />
+          <e p="OrderProfile.cs" t="Include" />
+          <e p="PositionProfile.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.Main.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Bitfinex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MarketClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Bitfinex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Bitfinex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Bitfinex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Bitstamp.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Bitstamp.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="MarketDataRequestConverter.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include" />
+        <e p="MarketClientBase.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="MarketDataWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.IB" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="IBMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.IB.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.IB.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+          <e p="Contract.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="SecurityConverter.cs" t="Include" />
+        </e>
+        <e p="IBMarketClientBase.cs" t="Include" />
+        <e p="Interfaces" t="Include">
+          <e p="IContractAccessLayer.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.IB.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer" t="IncludeRecursive">
+        <e p="MomentumStrategyContractAccessLayer.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.IOL.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.IOL.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="ExchangeConverter.cs" t="Include" />
+          <e p="MarketDataRequestConverter.cs" t="Include" />
+          <e p="SymbolConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="MarketDataWrapper.cs" t="Include" />
+          <e p="SecurityListWrapper.cs" t="Include" />
+          <e p="SecurityWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Quickfix" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="QuickfixClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Quickfix.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketClient.Quickfix.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="QuickfixMarketClientBase.cs" t="Include" />
+        <e p="Wrappers" t="Include">
+          <e p="OfferWrapper.cs" t="Include" />
+          <e p="OrderBookWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketClient.Quickfix.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketOrderRouters.Bittrex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketOrderRouters.Bittrex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MarketOrderRouters.IB" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MarketOrderRouter.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MarketOrderRouters.IB.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MessageBasedFullMarketConnectivity.Primary" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="FIX Sessions" t="Include">
+          <e p="initiator_test.cfg" t="Include" />
+        </e>
+        <e p="FIXConfig" t="Include">
+          <e p="FIX50SP2.xml" t="Include" />
+          <e p="FIXT11.xml" t="Include" />
+        </e>
+        <e p="MessageBasedMarketClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MessageBasedFullMarketConnectivity.Primary.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.MessageBasedFullMarketConnectivity.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DailyOption.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Option.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Stock.cs" t="Include" />
+        <e p="zHFT.OptionsMarketClient.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IContractFilter.cs" t="Include" />
+          <e p="IOptionConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OptionsMarketClient.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="AutPortfolioEntityDataModel.Designer.cs" t="Include" />
+        <e p="AutPortfolioEntityDataModel.edmx" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OptionsMarketClient.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="DailyOptionManager.cs" t="Include" />
+          <e p="OptionsManager.cs" t="Include" />
+          <e p="StockManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OptionsMarketClient.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.DemoFilters.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Filters" t="Include">
+          <e p="DemoContractFilter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OptionsMarketClient.DemoFilters.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.IB" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="IBOptionsMarketClient.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OptionsMarketClient.IB.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OptionsMarketClient.USA.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converter" t="Include">
+          <e p="OptionConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OptionsMarketClient.USA.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderImbSimpleCalculalator.BusinesEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="FutureImbalancePosition.cs" t="Include" />
+        <e p="ImbalanceCounter.cs" t="Include" />
+        <e p="ImbalancePosition.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecurityImbalance.cs" t="Include" />
+        <e p="TradeImpact.cs" t="Include" />
+        <e p="zHFT.OrderImbSimpleCalculator.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderImbSimpleCalculalator.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include" />
+        <e p="Enums" t="Include">
+          <e p="FeeTypePerTrade.cs" t="Include" />
+          <e p="SaveEvery.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="MarketTimer.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderImbSimpleCalculator.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderImbSimpleCalculator.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ImbalancePositionManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecurityImbalanceManager.cs" t="Include" />
+        <e p="zHFT.OrderImbSimpleCalculator.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouter.Mock.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouterBase.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouter.Mock.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Router" t="Include">
+          <e p="AggressiveLimitOrderRouter.cs" t="Include" />
+          <e p="DecimalOrderRouter.cs" t="Include" />
+          <e p="MarketOrderRouter.cs" t="Include" />
+          <e p="OrderRouter.cs" t="Include" />
+          <e p="PrimaryOrderRouter.cs" t="Include" />
+          <e p="SoftDecimalMarketOrderRouter.cs" t="Include" />
+          <e p="SoftMarketOrderRouter.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Binance" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Binance.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Binance.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountBinanceData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Binance.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Binance.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="ExecutionReportDTO.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="BinanceClientProxy.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Binance.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Binance.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountBinanceDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Binance.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bitmex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bitmex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bitmex.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ExecutionReport.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Order.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bitmex.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bitmex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="Events" t="Include">
+            <e p="WebSocketExecutionReportEvent.cs" t="Include" />
+          </e>
+          <e p="ExecutionReport.cs" t="Include" />
+          <e p="Instrument.cs" t="Include" />
+          <e p="QueryResponse.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="BaseExecutionReportWrapper.cs" t="Include" />
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+          <e p="SecurityListRequestWrapper.cs" t="Include" />
+          <e p="WSExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bitmex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bitmex.DataAccessLayer" t="IncludeRecursive">
+        <e p="API" t="Include">
+          <e p="BitMEXApi.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="REST" t="Include">
+          <e p="BaseManager.cs" t="Include" />
+          <e p="OrderManager.cs" t="Include" />
+        </e>
+        <e p="Websockets" t="Include">
+          <e p="BaseManager.cs" t="Include" />
+          <e p="OrderManager.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bitmex.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bitstamp.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bitstamp.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bittrex" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bittrex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bittrex.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountBittrexData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bittrex.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bittrex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bittrex.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bittrex.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountBittrexDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bittrex.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bloomberg" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bloomberg.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Bloomberg.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include" />
+        <e p="DTOs" t="Include">
+          <e p="OrderDTO.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouterBase.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+          <e p="ManualExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Bloomberg.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration_" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="ExecutionReportConverter.cs" t="Include" />
+          <e p="MarketDataConverter.cs" t="Include" />
+          <e p="PositionConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouterBase.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="DecimalPrecissionConverter.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="CancelOrderWrapper.cs" t="Include" />
+          <e p="GenericExecutionReportWrapper.cs" t="Include" />
+          <e p="InvalidNewPositionWrapper.cs" t="Include" />
+          <e p="NewOrderWrapper.cs" t="Include" />
+          <e p="OrderListWrapper.cs" t="Include" />
+          <e p="OrderWrapper.cs" t="Include" />
+          <e p="RejectedExecutionReportWrapper.cs" t="Include" />
+          <e p="UpdateOrderWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Cryptos" t="IncludeRecursive">
+        <e p="BaseOrderRouter.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Cryptos.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Cryptos.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="MatterEntityDataModel.Designer.cs" t="Include" />
+        <e p="MatterEntityDataModel.edmx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Cryptos.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.IB" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.IB.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.IB.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="OrderStatusDTO.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouterBase.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.IB.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.InvertirOnline" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.InvertirOnline.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.InvertirOnline.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="BaseOrder.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouterBase.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Responses" t="Include">
+          <e p="CancelOrderResponse.cs" t="Include" />
+          <e p="ExecutionReportResp.cs" t="Include" />
+          <e p="ExecutionReportState.cs" t="Include" />
+          <e p="NewOrderResponse.cs" t="Include" />
+          <e p="Trade.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+          <e p="MockExecutionReportWrapper.cs" t="Include" />
+          <e p="OrderCancelRejectWrapper.cs" t="Include" />
+          <e p="RejectedExecutionReportWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.InvertirOnline.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.InvertirOnline.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IOLOrderRouterManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.InvertirOnline.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Mock" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouter.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Mock.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.OrderRouters.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="BusinessMessageRejectWrapper.cs" t="Include" />
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+          <e p="OrderCancelRejectWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.OrderRouters.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.SecurityListMarketClient.Primary" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Client" t="Include">
+          <e p="PrimarySecurityListMarketClient.cs" t="Include" />
+        </e>
+        <e p="FIX Sessions" t="Include">
+          <e p="initiator_prod.cfg" t="Include" />
+          <e p="initiator_test.cfg" t="Include" />
+        </e>
+        <e p="FIXConfig" t="Include">
+          <e p="FIX50SP2.xml" t="Include" />
+          <e p="FIXT11.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.SecurityListMarketClient.Primary.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.SecurityListMarketClient.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.SecurityListMarketClient.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.SingletonModulesHandler" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SingletonModulesHandler.cs" t="Include" />
+        <e p="zHFT.SingletonModulesHandler.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.SingletonModulesHandler.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="ModuleDirection.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="ISingletonModule.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="ConfigLoader.cs" t="Include" />
+        </e>
+        <e p="zHFT.SingletonModulesHandler.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.BaseFlowStrategies.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.BaseFlowStrategies.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CLS.CoinMarketCap.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CLS.CoinMarketCap.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CLS.CoinMarketCap.DAL" t="IncludeRecursive">
+        <e p="BaseAPIManager.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MarketCapProviderManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CLS.CryptoCompare.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="MarketDataDisplayDTO.cs" t="Include" />
+          <e p="MarketDataRawDTO.cs" t="Include" />
+          <e p="ResponseDTO.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CLS.CryptoCompare.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CLS.CryptoCompare.DAL" t="IncludeRecursive">
+        <e p="BaseAPIManager.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MarketCapProviderManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CLS.CryptoCompare.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="StrategyConfiguration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="ExecutionReportConverter.cs" t="Include" />
+          <e p="MarketDataConverter.cs" t="Include" />
+          <e p="PositionConverter.cs" t="Include" />
+          <e p="SecurityConverter.cs" t="Include" />
+          <e p="SecurityListConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Wrappers" t="Include">
+          <e p="CancelAllPositionsWrapper.cs" t="Include" />
+          <e p="CancelOrderWrapper.cs" t="Include" />
+          <e p="CancelPositionWrapper.cs" t="Include" />
+          <e p="MarketDataRequestWrapper.cs" t="Include" />
+          <e p="OrderWrapper.cs" t="Include" />
+          <e p="PositionWrapper.cs" t="Include" />
+          <e p="SecurityListRequestWrapper.cs" t="Include" />
+          <e p="SecurityWrapper.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CryptocurrencyListSaver" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CryptocurrencyListSaver.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CryptoCurrency.cs" t="Include" />
+        <e p="CryptoInPortfolio.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Security.cs" t="Include" />
+        <e p="SecurityInPortfolio.cs" t="Include" />
+        <e p="SecurityParameter.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Converters" t="Include">
+          <e p="SecurityListConverter.cs" t="Include" />
+        </e>
+        <e p="Interface" t="Include">
+          <e p="IMarketCapProvider.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecuritiesHistoricalDataEntityDataModel.Designer.cs" t="Include" />
+        <e p="SecuritiesHistoricalDataEntityDataModel.edmx" t="Include" />
+        <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer" t="IncludeRecursive">
+        <e p="ADO" t="Include">
+          <e p="CryptocurrencyManager.cs" t="Include" />
+          <e p="CryptoInPortolioManager.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="CryptocurrencyManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Binance.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountBinanceData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Binance.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Binance.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="BinanceClientProxy.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Binance.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Binance.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BinanceAccountManager.cs" t="Include" />
+        <e p="Managers" t="Include">
+          <e p="AccountBinanceDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Bitfinex.DAL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BitfinexAccountManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Bitfinex.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="BitstampAccountManager.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountBittrexData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BittrexAccountManager.cs" t="Include" />
+        <e p="BittrexMarketDataManager.cs" t="Include" />
+        <e p="Managers" t="Include">
+          <e p="AccountBittrexDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CoinApiAccountManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Cryptos.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="MatterEntityDataModel.Designer.cs" t="Include" />
+        <e p="MatterEntityDataModel.edmx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountManager.cs" t="Include" />
+          <e p="ADO" t="Include">
+            <e p="ADOInstructionManager.cs" t="Include" />
+          </e>
+          <e p="InstructionManager.cs" t="Include" />
+          <e p="PositionManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.IOL.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="AuthenticationToken.cs" t="Include" />
+          <e p="PortfolioResponse.cs" t="Include" />
+          <e p="Posicion.cs" t="Include" />
+          <e p="Titulo.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.IOL.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.IOL.DataAccessLayer" t="IncludeRecursive">
+        <e p="ADO" t="Include">
+          <e p="ADOAccountIOLDataManager.cs" t="Include" />
+          <e p="ADOBaseManager.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IOLAccountManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Primary.BusinessEntities" t="IncludeRecursive">
+        <e p="AccountPrimaryData.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Primary.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Primary.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="DetailedDailyDiff.cs" t="Include" />
+          <e p="DetailedPositionItem.cs" t="Include" />
+          <e p="DetailedPositionResponse.cs" t="Include" />
+          <e p="DetailedPositions.cs" t="Include" />
+          <e p="PositionReport.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Primary.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.IBR.Primary.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="ADO" t="Include">
+            <e p="ADOAccountPrimaryDataManager.cs" t="Include" />
+            <e p="ADOBaseManager.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PrimaryAccountManager.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.IBR.Primary.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="InstructionBasedRouter.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Specials" t="Include">
+          <e p="CryptosIcebergInstructionBasedRouter.cs" t="Include" />
+          <e p="CryptosInstructionBasedRouter.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting.Bloomberg.DAL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="BloombergAccountManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.Bloomberg.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities" t="IncludeRecursive">
+        <e p="Account.cs" t="Include" />
+        <e p="AccountPosition.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Broker.cs" t="Include" />
+        <e p="Customer.cs" t="Include" />
+        <e p="Instruction.cs" t="Include" />
+        <e p="InstructionType.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PositionStatus.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Stock.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="IcebergPositionDTO.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IAccountManagerAccessLayer.cs" t="Include" />
+          <e p="IAccountReferenceHandler.cs" t="Include" />
+          <e p="IInstructionManagerAccessLayer.cs" t="Include" />
+          <e p="IMarketDataReferenceHandler.cs" t="Include" />
+          <e p="IPositionManagerAccessLayer.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="AutPortfolioEntityDataModel.edmx" t="Include" />
+        <e p="AutPortfolioEntityDataModel1.Designer.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="AccountManager.cs" t="Include" />
+          <e p="ADO" t="Include">
+            <e p="ADOInstructionManager.cs" t="Include" />
+          </e>
+          <e p="InstructionManager.cs" t="Include" />
+          <e p="PositionManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IBAccountManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.LogicLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="StrategyBase.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.LogicLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MarketDataDownloader" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MarketDataDownloader.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MarketDataDownloader.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MktDataDownloader.BE" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Bond.cs" t="Include" />
+        <e p="BondMarketData.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MktDataDownloader.BE.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MktDataDownloader.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Util" t="Include">
+          <e p="TimeParser.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MktDataDownloader.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MktDataDownloader.DAL" t="IncludeRecursive">
+        <e p="ADOBondManager.cs" t="Include" />
+        <e p="ADOBondMarketDataManager.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MktDataDownloader.DAL.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MomentumPortfolios" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="StrategyHandler" t="Include">
+          <e p="MomentumStrategyPortfolioFormation.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MomentumPortfolios.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Portfolio.cs" t="Include" />
+        <e p="Position.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Stock.cs" t="Include" />
+        <e p="StockAlarm.cs" t="Include" />
+        <e p="Strategy.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MomentumPortfolios.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Enums" t="Include">
+          <e p="ConfigEnums.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MomentumPortfolios.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MomentumPortfolios.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="MomentumTradingEntityDataModel.Designer.cs" t="Include" />
+        <e p="MomentumTradingEntityDataModel.edmx" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Helpers" t="Include">
+          <e p="ConfigurationHelper.cs" t="Include" />
+          <e p="PortfolioHelper.cs" t="Include" />
+          <e p="PositionHelper.cs" t="Include" />
+          <e p="StockAlarmHelper.cs" t="Include" />
+          <e p="StockHelper.cs" t="Include" />
+          <e p="StrategyHelper.cs" t="Include" />
+        </e>
+        <e p="Managers" t="Include">
+          <e p="PortfolioManager.cs" t="Include" />
+          <e p="StrategyManager.cs" t="Include" />
+        </e>
+        <e p="Mapping" t="Include">
+          <e p="AutoMapperConfiguration.cs" t="Include" />
+          <e p="MappingEnabledAbstract.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Profiles" t="Include">
+          <e p="ConfigurationProfile.cs" t="Include" />
+          <e p="PortfolioProfile.cs" t="Include" />
+          <e p="PositionProfile.cs" t="Include" />
+          <e p="StockAlarmProfile.cs" t="Include" />
+          <e p="StockProfile.cs" t="Include" />
+          <e p="StrategyProfile.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OptionsContractSaver" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OptionsContractSaver.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.OptionsContractSaver.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Option.cs" t="Include" />
+        <e p="OptionBid.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OptionsContractSaver.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.OptionsContractSaver.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OptionsContractSaver.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="AutPortfolioEntityDataModel.edmx" t="Include" />
+        <e p="AutPortfolioEntityDataModel1.Designer.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.OptionsContractSaver.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OptionsContractSaver.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="OptionBidManager.cs" t="Include" />
+          <e p="OptionManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.OptionsContractSaver.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OrderImbSimpleCalculalator" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderImbalanceCalculator.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.PairTradingDemo" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="PairTradingDemo.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Service" t="Include">
+          <e p="PairTradingDemoController.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.PairTradingDemo.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.PairTradingDemo.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="PairTradingRequest.cs" t="Include" />
+          <e p="PairTradingResponse.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.PairTradingDemo.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecurityListSaver.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.SecurityListSaver.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver.BusinessEntities" t="IncludeRecursive">
+        <e p="Bill.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Country.cs" t="Include" />
+        <e p="Future.cs" t="Include" />
+        <e p="Market.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Option.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Stock.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver.CoinApi.LogicLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Translators" t="Include">
+          <e p="CoinApiSecurityTranslator.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.SecurityListSaver.CoinApi.LogicLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="ISecurityTranslator.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.SecurityListSaver.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver.DataAccess" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DataContextFactory.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SecuritiesHistoricalDataEntityDataModel.Designer.cs" t="Include" />
+        <e p="SecuritiesHistoricalDataEntityDataModel.edmx" t="Include" />
+        <e p="zHFT.StrategyHandler.SecurityListSaver.DataAccess.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Managers" t="Include">
+          <e p="BillManager.cs" t="Include" />
+          <e p="CountryManager.cs" t="Include" />
+          <e p="FutureManager.cs" t="Include" />
+          <e p="MarketManager.cs" t="Include" />
+          <e p="OptionManager.cs" t="Include" />
+          <e p="OptionMarketDataManager.cs" t="Include" />
+          <e p="StockManager.cs" t="Include" />
+          <e p="StockMarkeDataManager.cs" t="Include" />
+        </e>
+        <e p="MappingEnabledAbstract.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Translators" t="Include">
+          <e p="PrimarySecurityTranslator.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SingleStockBuyer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="SingleStockBuyer.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.SingleStockBuyer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.SingleStockBuyer.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+          <e p="Contract.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="zHFT.StrategyHandler.SingleStockBuyer.Common.csproj" t="IncludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
