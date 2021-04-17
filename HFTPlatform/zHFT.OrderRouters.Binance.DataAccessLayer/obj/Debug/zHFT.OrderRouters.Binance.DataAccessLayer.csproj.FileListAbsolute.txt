@@ -30,10 +30,13 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Binance.BusinessEntities.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.pdb
-C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csproj.CopyComplete
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\bin\Debug\zHFT.OrderRouters.Cryptos.DataAccess.dll.config
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.DataAccessLayer\obj\Debug\zHFT.OrderRouters.Binance.DataAccessLayer.csproj.CopyComplete

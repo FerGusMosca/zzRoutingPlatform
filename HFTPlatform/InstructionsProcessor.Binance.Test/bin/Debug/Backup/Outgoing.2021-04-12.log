@@ -1,0 +1,103 @@
+2021-04-12 20:33:26  :: 4/12/2021 8:33:26 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:33:26  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:33:26  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:33:27  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:33:27  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:33:27  :: 4/12/2021 8:33:27 PMOrderRouterBase.LoadConfig
+2021-04-12 20:33:27  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:33:27  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:33:27  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:33:27  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:33:27  :: 4/12/2021 8:33:27 PMOrderRouterBase.LoadConfig
+2021-04-12 20:33:27  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:33:27  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:33:27  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-12 20:33:42  :: @Outgoing Order Routing Binance:Critic error initializing .\outgoingOrderRouter.Binance.xml:The underlying provider failed on Open.
+2021-04-12 20:33:42  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.BinanceAccountManager, zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2021-04-12 20:34:49  :: 4/12/2021 8:34:49 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:34:49  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:34:49  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:34:49  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:34:49  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:34:56  :: 4/12/2021 8:34:56 PMOrderRouterBase.LoadConfig
+2021-04-12 20:34:56  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:34:56  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:34:56  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:34:59  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:35:04  :: 4/12/2021 8:35:04 PMOrderRouterBase.LoadConfig
+2021-04-12 20:35:04  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:35:04  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:35:04  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-12 20:35:19  :: @Outgoing Order Routing Binance:Critic error initializing .\outgoingOrderRouter.Binance.xml:The underlying provider failed on Open.
+2021-04-12 20:36:28  :: 4/12/2021 8:36:28 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:36:28  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:36:28  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:36:28  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:36:28  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:36:42  :: 4/12/2021 8:36:42 PMOrderRouterBase.LoadConfig
+2021-04-12 20:36:42  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:36:42  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:36:42  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:36:44  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:36:54  :: 4/12/2021 8:36:54 PMOrderRouterBase.LoadConfig
+2021-04-12 20:36:54  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:36:54  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:36:54  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-12 20:47:39  :: 4/12/2021 8:47:39 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:47:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:47:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:47:40  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:47:40  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:47:40  :: 4/12/2021 8:47:40 PMOrderRouterBase.LoadConfig
+2021-04-12 20:47:40  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:47:40  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:47:40  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:47:40  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:47:40  :: 4/12/2021 8:47:40 PMOrderRouterBase.LoadConfig
+2021-04-12 20:47:40  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:47:40  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:47:40  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-12 20:47:44  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.BinanceAccountManager, zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2021-04-12 20:50:59  :: 4/12/2021 8:50:59 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:50:59  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:50:59  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:50:59  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:50:59  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:50:59  :: 4/12/2021 8:50:59 PMOrderRouterBase.LoadConfig
+2021-04-12 20:50:59  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:51:00  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:51:00  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:51:00  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:51:00  :: 4/12/2021 8:51:00 PMOrderRouterBase.LoadConfig
+2021-04-12 20:51:00  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:51:00  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:51:00  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-12 20:51:01  :: assembly not found: zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.BinanceAccountManager, zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
+2021-04-12 20:55:39  :: 4/12/2021 8:55:39 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:55:39  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:55:39  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:55:39  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:55:39  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:55:39  :: 4/12/2021 8:55:39 PMOrderRouterBase.LoadConfig
+2021-04-12 20:55:39  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:55:39  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:55:39  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:55:39  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:55:39  :: 4/12/2021 8:55:39 PMOrderRouterBase.LoadConfig
+2021-04-12 20:55:39  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:55:39  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:55:39  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-12 20:55:58  :: 4/12/2021 8:55:58 PMMomentumStrategyBase.LoadConfig
+2021-04-12 20:55:58  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:55:58  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:55:58  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-12 20:55:58  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-12 20:55:58  :: 4/12/2021 8:55:58 PMOrderRouterBase.LoadConfig
+2021-04-12 20:55:58  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-12 20:55:58  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-12 20:55:58  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-12 20:55:58  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-12 20:55:58  :: 4/12/2021 8:55:58 PMOrderRouterBase.LoadConfig
+2021-04-12 20:55:58  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:55:58  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-12 20:55:58  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml

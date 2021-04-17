@@ -92,9 +92,11 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\quickfix_net_messages.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csproj.CopyComplete
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MarketClient.Common\obj\Debug\zHFT.MarketClient.Common.csproj.CopyComplete

@@ -2,10 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Binance;
+using Binance.API.Csharp.Client;
+using Binance.API.Csharp.Client.Models.Market;
+using CryptoExchange.Net.Authentication;
+using CryptoExchange.Net.Logging;
+using CryptoExchange.Net.Objects;
 using Microsoft.Extensions.DependencyInjection;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
@@ -15,7 +22,7 @@ using zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
-using Binance;
+using Constants = zHFT.Main.Common.Util.Constants;
 
 
 namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
@@ -172,56 +179,41 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
 
             try
             {
-                // https://github.com/sonvister/Binance
-                var api = new BinanceApi();
+               
+                ReqAccountPositions = true;
+                AbortOnTimeout = false;
+                Positions = new List<AccountPosition>();
+                AccountToSync = account;
+                ////Pedir las posiciones y asignar
+                
+                var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
+                var binanceClient = new BinanceClient(apiClient);
+                
+                var accountInfo = binanceClient.GetAccountInfo().Result;
 
-                using (var user = new BinanceApiUser(BinanceData.APIKey, BinanceData.Secret))
+                foreach (Balance balance in accountInfo.Balances)
                 {
-                   
-                       
+                    decimal ammount = balance.Free + balance.Locked;
+                    AccountPosition pos = new AccountPosition()
+                    {
+                        Account = AccountToSync,
+                        Active=true,
+                        PositionStatus=PositionStatus.GetNewPositionStatus(true),
+                        Security = new Security() { Symbol = balance.Asset },
+                        Ammount = ammount
+                    };
+                    
+                    if (pos.Ammount > 0)
+                    {
+                        //RecoverMarketPriceForPosition(ref pos, priceBTCInUSD);
+                        Positions.Add(pos);
+                    }
                 }
-                lock (tLock)
-                {
 
-                   
+                ReqAccountPositions = false;
 
-                   //ReqAccountPositions = true;
-                    //AbortOnTimeout = false;
-                    //Positions = new List<AccountPosition>();
-                    //AccountToSync = account;
-                    ////Pedir las posiciones y asignar
-
-                    //var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-                    //var binanceClient = new BinanceClient(apiClient);
-
-                    //var asyncInfo = binanceClient.GetAccountInfo();
-
-                    //AccountInfo result = asyncInfo.Result;
-
-                    //decimal priceBTCInUSD = GetBitcoinPriceInUSD();
-
-                    //foreach (Balance balance in result.Balances)
-                    //{
-                    //    decimal ammount = balance.Free + balance.Locked;
-                    //    AccountPosition pos = new AccountPosition()
-                    //    {
-                    //        Account = AccountToSync,
-                    //        Active=true,
-                    //        PositionStatus=PositionStatus.GetNewPositionStatus(true),
-                    //        Security = new Security() { Symbol = balance.Asset },
-                    //        Ammount = ammount
-                    //    };
-                    //    if (pos.Ammount > 0)
-                    //    {
-                    //        RecoverMarketPriceForPosition(ref pos, priceBTCInUSD);
-                    //        Positions.Add(pos);
-                    //    }
-                    //}
-
-                    //ReqAccountPositions = false;
-
-                    return true;
-                }
+                return ReqAccountPositions;
+                
             }
             catch (Exception ex)
             {

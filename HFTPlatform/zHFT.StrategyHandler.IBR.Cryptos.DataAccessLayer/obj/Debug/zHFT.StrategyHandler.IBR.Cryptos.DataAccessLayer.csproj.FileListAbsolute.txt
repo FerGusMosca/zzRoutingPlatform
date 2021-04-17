@@ -86,10 +86,13 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj.CopyComplete
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll.config
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj.CopyComplete

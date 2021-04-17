@@ -16,3 +16,5 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.BusinessEntities\obj\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.csproj.CoreCompileInputs.cache

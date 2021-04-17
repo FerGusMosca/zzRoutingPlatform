@@ -77,9 +77,11 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\bin\Debug\quickfix_net_messages.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csprojResolveAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj.CopyComplete
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BusinessEntities\obj\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj.CopyComplete

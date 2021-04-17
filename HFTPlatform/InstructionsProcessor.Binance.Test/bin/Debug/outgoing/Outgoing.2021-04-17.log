@@ -1,0 +1,354 @@
+2021-04-17 13:01:02  :: 4/17/2021 1:01:02 PMMomentumStrategyBase.LoadConfig
+2021-04-17 13:01:02  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:01:02  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:01:02  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:01:02  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 13:01:03  :: 4/17/2021 1:01:03 PMOrderRouterBase.LoadConfig
+2021-04-17 13:01:03  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 13:01:03  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 13:01:03  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 13:01:03  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 13:01:03  :: 4/17/2021 1:01:03 PMOrderRouterBase.LoadConfig
+2021-04-17 13:01:04  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:01:04  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:01:04  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 13:01:46  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 13:01:57  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 13:01:57  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 13:07:13  :: 4/17/2021 1:07:13 PMMomentumStrategyBase.LoadConfig
+2021-04-17 13:07:13  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:07:13  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:07:13  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:07:13  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 13:07:13  :: 4/17/2021 1:07:13 PMOrderRouterBase.LoadConfig
+2021-04-17 13:07:13  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 13:07:13  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 13:07:13  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 13:07:13  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 13:07:13  :: 4/17/2021 1:07:13 PMOrderRouterBase.LoadConfig
+2021-04-17 13:07:13  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:07:13  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:07:13  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 13:07:43  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 13:08:52  :: 4/17/2021 1:08:52 PMMomentumStrategyBase.LoadConfig
+2021-04-17 13:08:52  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:08:52  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:08:52  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:08:52  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 13:08:53  :: 4/17/2021 1:08:53 PMOrderRouterBase.LoadConfig
+2021-04-17 13:08:53  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 13:08:53  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 13:08:53  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 13:08:53  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 13:08:53  :: 4/17/2021 1:08:53 PMOrderRouterBase.LoadConfig
+2021-04-17 13:08:53  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:08:53  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:08:53  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 13:09:07  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 13:09:49  :: 4/17/2021 1:09:49 PMMomentumStrategyBase.LoadConfig
+2021-04-17 13:09:49  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:09:49  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:09:50  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 13:09:50  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 13:09:50  :: 4/17/2021 1:09:50 PMOrderRouterBase.LoadConfig
+2021-04-17 13:09:50  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 13:09:50  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 13:09:50  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 13:09:50  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 13:09:50  :: 4/17/2021 1:09:50 PMOrderRouterBase.LoadConfig
+2021-04-17 13:09:50  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:09:50  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 13:09:50  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 13:10:10  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 14:21:54  :: 4/17/2021 2:21:54 PMMomentumStrategyBase.LoadConfig
+2021-04-17 14:21:54  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 14:21:54  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 14:21:54  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 14:21:54  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 14:21:55  :: 4/17/2021 2:21:55 PMOrderRouterBase.LoadConfig
+2021-04-17 14:21:55  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 14:21:55  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 14:21:55  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 14:21:55  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 14:21:55  :: 4/17/2021 2:21:55 PMOrderRouterBase.LoadConfig
+2021-04-17 14:21:55  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 14:21:55  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 14:21:55  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 14:23:56  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:07:12  :: 4/17/2021 3:07:12 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:07:12  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:07:12  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:07:12  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:07:12  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:07:12  :: 4/17/2021 3:07:12 PMOrderRouterBase.LoadConfig
+2021-04-17 15:07:12  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:07:12  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:07:12  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:07:12  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:07:12  :: 4/17/2021 3:07:12 PMOrderRouterBase.LoadConfig
+2021-04-17 15:07:12  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:07:12  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:07:13  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:08:55  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:10:59  :: 4/17/2021 3:10:59 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:10:59  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:10:59  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:10:59  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:10:59  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:10:59  :: 4/17/2021 3:10:59 PMOrderRouterBase.LoadConfig
+2021-04-17 15:10:59  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:10:59  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:10:59  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:10:59  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:10:59  :: 4/17/2021 3:10:59 PMOrderRouterBase.LoadConfig
+2021-04-17 15:10:59  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:10:59  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:11:00  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:11:07  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:23:41  :: 4/17/2021 3:23:41 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:23:41  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:23:41  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:23:41  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:23:41  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:23:41  :: 4/17/2021 3:23:41 PMOrderRouterBase.LoadConfig
+2021-04-17 15:23:41  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:23:41  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:23:41  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:23:41  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:23:41  :: 4/17/2021 3:23:41 PMOrderRouterBase.LoadConfig
+2021-04-17 15:23:41  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:23:41  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:23:41  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:24:13  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:19  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:19  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:22  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:22  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:25  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:41  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:41  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:44  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:44  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:47  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:47  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:49  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:49  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:52  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:52  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:55  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:55  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:24:57  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:24:57  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:00  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:01  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:04  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:04  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:07  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:07  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:09  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:09  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:12  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:12  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:15  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:15  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:18  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:18  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:21  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:21  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:44  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:44  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:25:48  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:25:48  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:27:37  :: 4/17/2021 3:27:37 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:27:37  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:27:37  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:27:37  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:27:37  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:27:37  :: 4/17/2021 3:27:37 PMOrderRouterBase.LoadConfig
+2021-04-17 15:27:37  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:27:37  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:27:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:27:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:27:38  :: 4/17/2021 3:27:38 PMOrderRouterBase.LoadConfig
+2021-04-17 15:27:38  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:27:38  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:27:38  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:27:42  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:27:51  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:27:51  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:27:58  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:27:58  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:03  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:03  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:06  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:06  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:10  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:10  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:13  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:13  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:15  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:16  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:20  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:20  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:22  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:22  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:25  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:28:28  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:28:28  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:41:33  :: 4/17/2021 3:41:33 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:41:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:41:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:41:34  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:41:34  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:41:34  :: 4/17/2021 3:41:34 PMOrderRouterBase.LoadConfig
+2021-04-17 15:41:34  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:41:34  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:41:34  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:41:34  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:41:35  :: 4/17/2021 3:41:35 PMOrderRouterBase.LoadConfig
+2021-04-17 15:41:35  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:41:35  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:41:35  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:42:05  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:42:15  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:42:15  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:42:22  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:42:22  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:42:24  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:42:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:42:27  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:42:27  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:42:30  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:42:30  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:42:32  :: @Strategy Handler - Instruction Based Router for Binance - Critical error processing position sync instruction: El valor no puede ser nulo.
+Nombre del parámetro: source - 
+2021-04-17 15:48:33  :: 4/17/2021 3:48:33 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:48:33  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:48:33  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:48:34  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:48:34  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:48:34  :: 4/17/2021 3:48:34 PMOrderRouterBase.LoadConfig
+2021-04-17 15:48:34  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:48:34  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:48:34  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:48:34  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:48:34  :: 4/17/2021 3:48:34 PMOrderRouterBase.LoadConfig
+2021-04-17 15:48:34  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:48:34  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:48:34  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:48:40  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 15:55:32  :: 4/17/2021 3:55:32 PMMomentumStrategyBase.LoadConfig
+2021-04-17 15:55:32  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:55:32  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:55:32  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 15:55:32  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 15:55:32  :: 4/17/2021 3:55:32 PMOrderRouterBase.LoadConfig
+2021-04-17 15:55:32  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 15:55:32  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 15:55:32  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 15:55:32  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 15:55:33  :: 4/17/2021 3:55:33 PMOrderRouterBase.LoadConfig
+2021-04-17 15:55:33  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:55:33  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 15:55:33  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 15:55:50  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 16:03:47  :: 4/17/2021 4:03:47 PMMomentumStrategyBase.LoadConfig
+2021-04-17 16:03:47  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:03:47  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:03:47  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:03:47  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 16:03:47  :: 4/17/2021 4:03:47 PMOrderRouterBase.LoadConfig
+2021-04-17 16:03:47  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 16:03:47  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 16:03:47  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 16:03:47  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 16:03:47  :: 4/17/2021 4:03:47 PMOrderRouterBase.LoadConfig
+2021-04-17 16:03:47  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:03:47  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:03:47  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 16:04:05  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 16:05:45  :: 4/17/2021 4:05:45 PMMomentumStrategyBase.LoadConfig
+2021-04-17 16:05:45  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:05:45  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:05:45  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:05:45  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 16:05:45  :: 4/17/2021 4:05:45 PMOrderRouterBase.LoadConfig
+2021-04-17 16:05:45  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 16:05:45  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 16:05:45  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 16:05:45  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 16:05:46  :: 4/17/2021 4:05:46 PMOrderRouterBase.LoadConfig
+2021-04-17 16:05:46  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:05:46  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:05:46  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 16:06:47  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 16:15:29  :: 4/17/2021 4:15:29 PMMomentumStrategyBase.LoadConfig
+2021-04-17 16:15:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:15:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:15:30  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:15:30  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 16:15:30  :: 4/17/2021 4:15:30 PMOrderRouterBase.LoadConfig
+2021-04-17 16:15:30  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 16:15:30  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 16:15:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 16:15:30  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 16:15:30  :: 4/17/2021 4:15:30 PMOrderRouterBase.LoadConfig
+2021-04-17 16:15:30  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:15:30  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:15:30  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 16:15:42  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 16:18:06  :: 4/17/2021 4:18:06 PMMomentumStrategyBase.LoadConfig
+2021-04-17 16:18:06  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:18:06  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:18:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-17 16:18:06  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-17 16:18:07  :: 4/17/2021 4:18:07 PMOrderRouterBase.LoadConfig
+2021-04-17 16:18:07  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-17 16:18:07  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-17 16:18:07  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-17 16:18:07  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-17 16:18:07  :: 4/17/2021 4:18:07 PMOrderRouterBase.LoadConfig
+2021-04-17 16:18:07  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:18:07  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-17 16:18:07  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-17 16:18:23  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-17 16:18:25  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized

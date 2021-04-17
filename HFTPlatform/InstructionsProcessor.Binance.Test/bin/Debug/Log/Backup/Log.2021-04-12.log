@@ -1,0 +1,75 @@
+2021-04-12 20:29:53  :: 4/12/2021 8:29:52 PMMainApp.LoadConfig
+2021-04-12 20:29:53  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:29:53  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:29:53  :: Fin GetConfiguracion
+2021-04-12 20:29:53  :: Initializing Log
+2021-04-12 20:29:53  :: Initializing Incoming Module
+2021-04-12 20:29:53  :: Error initializing Incoming Module
+2021-04-12 20:29:53  :: Initializing Outgoing Module
+2021-04-12 20:32:22  :: 4/12/2021 8:32:22 PMMainApp.LoadConfig
+2021-04-12 20:32:22  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:32:22  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:32:24  :: Fin GetConfiguracion
+2021-04-12 20:32:24  :: Initializing Log
+2021-04-12 20:32:24  :: Initializing Incoming Module
+2021-04-12 20:33:18  :: 4/12/2021 8:33:18 PMMainApp.LoadConfig
+2021-04-12 20:33:18  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:33:18  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:33:19  :: Fin GetConfiguracion
+2021-04-12 20:33:19  :: Initializing Log
+2021-04-12 20:33:19  :: Initializing Incoming Module
+2021-04-12 20:33:26  :: Incoming Module successfully initialized
+2021-04-12 20:33:26  :: Initializing Outgoing Module
+2021-04-12 20:33:42  :: Error initializing Outgoing Module
+2021-04-12 20:34:47  :: 4/12/2021 8:34:47 PMMainApp.LoadConfig
+2021-04-12 20:34:47  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:34:47  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:34:47  :: Fin GetConfiguracion
+2021-04-12 20:34:47  :: Initializing Log
+2021-04-12 20:34:47  :: Initializing Incoming Module
+2021-04-12 20:34:49  :: Incoming Module successfully initialized
+2021-04-12 20:34:49  :: Initializing Outgoing Module
+2021-04-12 20:36:25  :: 4/12/2021 8:36:25 PMMainApp.LoadConfig
+2021-04-12 20:36:25  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:36:25  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:36:26  :: Fin GetConfiguracion
+2021-04-12 20:36:26  :: Initializing Log
+2021-04-12 20:36:26  :: Initializing Incoming Module
+2021-04-12 20:36:27  :: Incoming Module successfully initialized
+2021-04-12 20:36:27  :: Initializing Outgoing Module
+2021-04-12 20:47:36  :: 4/12/2021 8:47:36 PMMainApp.LoadConfig
+2021-04-12 20:47:36  :: Loading config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:47:36  :: Proccessing config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:47:37  :: Fin GetConfiguracion
+2021-04-12 20:47:37  :: Initializing Log
+2021-04-12 20:47:37  :: Initializing Incoming Module
+2021-04-12 20:47:39  :: Incoming Module successfully initialized
+2021-04-12 20:47:39  :: Initializing Outgoing Module
+2021-04-12 20:47:44  :: Error initializing Outgoing Module
+2021-04-12 20:50:57  :: 4/12/2021 8:50:57 PMMainApp.LoadConfig
+2021-04-12 20:50:57  :: Loading config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:50:57  :: Proccessing config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:50:58  :: Fin GetConfiguracion
+2021-04-12 20:50:58  :: Initializing Log
+2021-04-12 20:50:58  :: Initializing Incoming Module
+2021-04-12 20:50:59  :: Incoming Module successfully initialized
+2021-04-12 20:50:59  :: Initializing Outgoing Module
+2021-04-12 20:51:01  :: Error initializing Outgoing Module
+2021-04-12 20:55:38  :: 4/12/2021 8:55:38 PMMainApp.LoadConfig
+2021-04-12 20:55:38  :: Loading config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:55:38  :: Proccessing config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:55:38  :: Fin GetConfiguracion
+2021-04-12 20:55:38  :: Initializing Log
+2021-04-12 20:55:38  :: Initializing Incoming Module
+2021-04-12 20:55:39  :: Incoming Module successfully initialized
+2021-04-12 20:55:39  :: Initializing Outgoing Module
+2021-04-12 20:55:40  :: Outgoing Module successfully initialized
+2021-04-12 20:55:56  :: 4/12/2021 8:55:56 PMMainApp.LoadConfig
+2021-04-12 20:55:56  :: Loading config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:55:56  :: Proccessing config:C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\config.xml
+2021-04-12 20:55:56  :: Fin GetConfiguracion
+2021-04-12 20:55:56  :: Initializing Log
+2021-04-12 20:55:56  :: Initializing Incoming Module
+2021-04-12 20:55:58  :: Incoming Module successfully initialized
+2021-04-12 20:55:58  :: Initializing Outgoing Module
+2021-04-12 20:56:00  :: Outgoing Module successfully initialized
