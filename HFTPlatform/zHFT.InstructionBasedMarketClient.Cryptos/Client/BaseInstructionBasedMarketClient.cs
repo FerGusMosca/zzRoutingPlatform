@@ -30,7 +30,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
         protected Dictionary<long, Security> ActiveSecurities { get; set; }
 
-        protected Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
+        protected Dictionary<long, DateTime> ContractsTimeStamps { get; set; }
 
         protected Thread ProcessInstructionsThread { get; set; }
 
@@ -60,9 +60,9 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
         protected void RemoveSymbol(string symbol)
         {
-            List<int> keysToRemove = new List<int>();
+            List<long> keysToRemove = new List<long>();
 
-            foreach (int key in ActiveSecurities.Keys)
+            foreach (long key in ActiveSecurities.Keys)
             {
                 Security sec = ActiveSecurities[key];
 
@@ -72,10 +72,13 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                 }
             }
 
-            foreach (int keyToRemove in keysToRemove)
+            foreach (long keyToRemove in keysToRemove)
             {
-                ContractsTimeStamps.Remove(keyToRemove);
-                ActiveSecurities.Remove(keyToRemove);
+                if(ContractsTimeStamps.ContainsKey(keyToRemove))
+                    ContractsTimeStamps.Remove(keyToRemove);
+                
+                if(ActiveSecurities.ContainsKey(keyToRemove))
+                    ActiveSecurities.Remove(keyToRemove);
             }
         }
 
@@ -89,8 +92,8 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                 {
                     try
                     {
-                        List<int> keysToRemove = new List<int>();
-                        foreach (int key in ContractsTimeStamps.Keys)
+                        List<long> keysToRemove = new List<long>();
+                        foreach (long key in ContractsTimeStamps.Keys)
                         {
                             DateTime timeStamp = ContractsTimeStamps[key];
 
@@ -100,7 +103,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                             }
                         }
 
-                        foreach (int keyToRemove in keysToRemove)
+                        foreach (long keyToRemove in keysToRemove)
                         {
                             ContractsTimeStamps.Remove(keyToRemove);
                             ActiveSecurities.Remove(keyToRemove);
@@ -136,8 +139,6 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
             Security sec = new Security() { Symbol = symbol };
 
             ActiveSecurities.Add(mdReqId, sec);
-
-           
             RequestMarketDataThread = new Thread(DoRequestMarketData);
             RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
 

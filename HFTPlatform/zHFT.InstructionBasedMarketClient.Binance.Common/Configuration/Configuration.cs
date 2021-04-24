@@ -11,18 +11,13 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Common.Configuration
     public class Configuration : BaseConfiguration, IConfiguration
     {
         #region Public Attributes
-
-        public string ApiKey { get; set; }
-        public string Secret { get; set; }
         public string QuoteCurrency { get; set; }
-
-        public string InstructionsAccessLayerConnectionString { get; set; }
 
         public int PublishUpdateInMilliseconds { get; set; }
 
-        public int SearchForInstructionsInMilliseconds { get; set; }
-
         public int AccountNumber { get; set; }
+        
+        public string EFConnectionString { get; set; }
 
         #endregion
 
@@ -38,29 +33,22 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Common.Configuration
                 resultado = false;
             }
 
-            if (string.IsNullOrEmpty(InstructionsAccessLayerConnectionString))
-            {
-                result.Add("InstructionsAccessLayerConnectionString");
-                resultado = false;
-            }
-
             if (PublishUpdateInMilliseconds <= 0)
             {
                 result.Add("PublishUpdateInMilliseconds");
                 resultado = false;
             }
 
-
-            if (SearchForInstructionsInMilliseconds <= 0)
-            {
-                result.Add("SearchForInstructionsInMilliseconds");
-                resultado = false;
-            }
-
-
             if (AccountNumber <= 0)
             {
                 result.Add("AccountNumber");
+                resultado = false;
+            }
+            
+            //DBConnectionString
+            if (string.IsNullOrEmpty(EFConnectionString))
+            {
+                result.Add("EFConnectionString");
                 resultado = false;
             }
 

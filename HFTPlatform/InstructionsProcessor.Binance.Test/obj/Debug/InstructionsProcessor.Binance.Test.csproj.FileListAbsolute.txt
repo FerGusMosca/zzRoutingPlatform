@@ -343,3 +343,9 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.exe.config
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Binance.Net.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\CryptoExchange.Net.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\WebSocket4Net.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Binance.Net.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\CryptoExchange.Net.xml

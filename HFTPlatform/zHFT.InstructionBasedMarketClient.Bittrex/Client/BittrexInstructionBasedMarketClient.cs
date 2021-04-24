@@ -101,7 +101,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             string quoteSymbol = (string)parameters[1];
             try
             {
-                DoLog(string.Format("@{0}:Requesting market data por symbol {1}", BittrexConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
+                DoLog(string.Format("@{0}:Requesting market data por symbol {1}{2}", BittrexConfiguration.Name, symbol,quoteSymbol), Main.Common.Util.Constants.MessageType.Information);
 
                 bool activo = true;
                 while (activo)
@@ -268,7 +268,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
                 {
                     
                     ActiveSecurities = new Dictionary<long, Security>();
-                    ContractsTimeStamps = new Dictionary<int, DateTime>();
+                    ContractsTimeStamps = new Dictionary<long, DateTime>();
                     ReverseCurrency = new Dictionary<string, bool>();
 
                     AccountManager = new AccountManager(BittrexConfiguration.InstructionsAccessLayerConnectionString);

@@ -1,0 +1,51 @@
+2021-04-21 21:05:32  :: 4/21/2021 9:05:31 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:05:32  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:05:32  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:05:32  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:06:42  :: @Incoming Binance:Requesting market data por symbol ADA
+2021-04-21 21:07:58  :: 4/21/2021 9:07:58 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:07:58  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:07:58  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:07:58  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:09:34  :: 4/21/2021 9:09:34 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:09:34  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:09:34  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:09:35  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:09:52  :: @Incoming Binance:Requesting market data por symbol ADA
+2021-04-21 21:11:35  :: 4/21/2021 9:11:35 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:11:35  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:11:35  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:11:35  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:11:46  :: @Incoming Binance:Requesting market data por symbol ETH
+2021-04-21 21:15:02  :: 4/21/2021 9:15:02 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:15:02  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:15:02  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:15:02  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:15:37  :: @Incoming Binance:Requesting market data por symbol ETH
+2021-04-21 21:17:01  :: 4/21/2021 9:17:01 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:17:01  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:17:01  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:17:01  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:17:18  :: @Incoming Binance:Requesting market data por symbol ETH
+2021-04-21 21:17:20  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2021-04-21 21:17:21  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2021-04-21 21:18:01  :: 4/21/2021 9:18:01 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:18:01  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:18:01  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:18:01  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:19:02  :: @Incoming Binance:Requesting market data por symbol ETH
+2021-04-21 21:34:56  :: 4/21/2021 9:34:56 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:34:56  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:34:56  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:34:56  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:36:13  :: 4/21/2021 9:36:13 PMBaseCommunicationModule.LoadConfig
+2021-04-21 21:36:13  :: Loading config:.\incomingBinance.xml
+2021-04-21 21:36:13  :: Processing config:.\incomingBinance.xml
+2021-04-21 21:36:13  :: Ending GetConfiguracion .\incomingBinance.xml
+2021-04-21 21:39:07  :: @Incoming Binance:Requesting market data por symbol ETH
+2021-04-21 21:39:17  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2021-04-21 21:39:17  :: @Incoming Binance:Unsubscribing market data por symbol ETH
+2021-04-21 21:40:04  :: @Incoming Binance:Requesting market data por symbol ETC
+2021-04-21 21:40:53  :: @Incoming Binance:Requesting Unsubscribe Market Data On Demand for Symbol: Incoming Binance
+2021-04-21 21:40:54  :: @Incoming Binance:Unsubscribing market data por symbol ETC
+2021-04-21 21:41:11  :: @Incoming Binance:Requesting market data por symbol ETC

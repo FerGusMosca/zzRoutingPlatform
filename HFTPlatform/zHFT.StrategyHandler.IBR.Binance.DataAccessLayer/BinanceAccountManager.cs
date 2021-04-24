@@ -100,7 +100,24 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
 
         }
 
-        
+        protected decimal GetMarketPrice(string symbol,BinanceClient binanceClient)
+        {
+            try
+            {
+                if (symbol == _USD_CURRENCY)
+                    return 1;
+                List<PriceChangeInfo> priceChangeInfos =
+                    new List<PriceChangeInfo>(binanceClient.GetPriceChange24H(symbol + _USD_CURRENCY).Result);
+
+                return priceChangeInfos != null && priceChangeInfos.Count > 0
+                    ? priceChangeInfos[0].LastPrice
+                    : 0;
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+        }
 
         protected void LoadConfig()
         {
@@ -126,50 +143,6 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
                 throw new Exception(String.Format("No se encontró una cuenta para el número {0}", accountNumber));
         }
 
-       
-        private decimal GetBitcoinPriceInUSD()
-        {
-            //var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-            ////var binanceClient = new BinanceClient(apiClient);
-            //var binanceClientProxy = new BinanceClientProxy(apiClient);
-
-            //string fullSymbol = _BTC_CURRENCY + _USD_CURRENCY;
-
-            ////var resp = binanceClient.GetCandleSticks(fullSymbol, TimeInterval.Minutes_1, null, null,1);
-            //var resp = binanceClientProxy.GetLastMinuteCandleStick(fullSymbol);
-            //Candlestick jMarketData = resp.Result.OrderByDescending(x=>x.CloseTime).FirstOrDefault();
-
-            //return jMarketData.Close;
-            return 0;
-        }
-
-        private void RecoverMarketPriceForPosition(ref AccountPosition pos, decimal priceBTCInUSD)
-        {
-
-            //try
-            //{
-
-            //    var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
-            //    var binanceClient = new BinanceClientProxy(apiClient);
-
-            //    if (pos.Security.Symbol != QuoteCurrency)
-            //    {
-            //        string fullSymbol = pos.Security.Symbol + QuoteCurrency;
-
-            //        var resp = binanceClient.GetLastMinuteCandleStick(fullSymbol);
-            //        Candlestick jMarketData = resp.Result.OrderByDescending(x => x.CloseTime).FirstOrDefault();
-
-            //        pos.MarketPrice = jMarketData.Close * priceBTCInUSD;
-            //    }
-            //    else
-            //        pos.MarketPrice = priceBTCInUSD;
-            //}
-            //catch (Exception)
-            //{
-            //    pos.MarketPrice = 0;//Si no se pudo recuperar, mala suerte
-            //}
-        }
-
         #endregion
 
         #region Public Methods
@@ -184,7 +157,6 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
                 AbortOnTimeout = false;
                 Positions = new List<AccountPosition>();
                 AccountToSync = account;
-                ////Pedir las posiciones y asignar
                 
                 var apiClient = new ApiClient(BinanceData.APIKey, BinanceData.Secret);
                 var binanceClient = new BinanceClient(apiClient);
@@ -194,18 +166,19 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
                 foreach (Balance balance in accountInfo.Balances)
                 {
                     decimal ammount = balance.Free + balance.Locked;
+
                     AccountPosition pos = new AccountPosition()
                     {
                         Account = AccountToSync,
-                        Active=true,
-                        PositionStatus=PositionStatus.GetNewPositionStatus(true),
-                        Security = new Security() { Symbol = balance.Asset },
-                        Ammount = ammount
+                        Active = true,
+                        PositionStatus = PositionStatus.GetNewPositionStatus(true),
+                        Security = new Security() {Symbol = balance.Asset},
+                        Ammount = ammount,
                     };
                     
                     if (pos.Ammount > 0)
                     {
-                        //RecoverMarketPriceForPosition(ref pos, priceBTCInUSD);
+                        pos.MarketPrice = GetMarketPrice(balance.Asset, binanceClient);
                         Positions.Add(pos);
                     }
                 }

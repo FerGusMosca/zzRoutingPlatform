@@ -326,7 +326,7 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
                     WSMarketDataManager.SubscribeEvents(BaseManager._TRADE, UpdateTrade);
 
                     ActiveSecurities = new Dictionary<long, Security>();
-                    ContractsTimeStamps = new Dictionary<int, DateTime>();
+                    ContractsTimeStamps = new Dictionary<long, DateTime>();
                     return true;
                 }
                 else

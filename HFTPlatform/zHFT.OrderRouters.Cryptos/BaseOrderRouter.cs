@@ -19,7 +19,8 @@ namespace zHFT.OrderRouters.Cryptos
         #region Protected Attributes
 
         protected Dictionary<string, Order> ActiveOrders { get; set; }
-
+        
+        
         protected Dictionary<string, string> OrderIdMappers { get; set; }
 
         protected Thread ExecutionReportThread { get; set; }

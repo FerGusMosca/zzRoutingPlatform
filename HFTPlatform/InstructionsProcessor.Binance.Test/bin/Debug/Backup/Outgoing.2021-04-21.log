@@ -1,0 +1,251 @@
+2021-04-21 21:05:44  :: 4/21/2021 9:05:44 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:05:44  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:05:44  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:05:45  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:05:45  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:05:45  :: 4/21/2021 9:05:45 PMOrderRouterBase.LoadConfig
+2021-04-21 21:05:45  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:05:45  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:05:45  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:05:45  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:05:51  :: 4/21/2021 9:05:51 PMOrderRouterBase.LoadConfig
+2021-04-21 21:05:51  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:05:51  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:05:51  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:06:16  :: Canceling all active orders
+2021-04-21 21:06:16  :: @Outgoing Order Routing Binance:Cancelling all active orders
+2021-04-21 21:06:38  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:06:42  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:06:42  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ADA
+2021-04-21 21:08:02  :: 4/21/2021 9:08:02 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:08:02  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:08:02  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:08:02  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:08:02  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:08:02  :: 4/21/2021 9:08:02 PMOrderRouterBase.LoadConfig
+2021-04-21 21:08:02  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:08:02  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:08:02  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:08:02  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:08:02  :: 4/21/2021 9:08:02 PMOrderRouterBase.LoadConfig
+2021-04-21 21:08:02  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:08:02  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:08:02  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:09:37  :: 4/21/2021 9:09:37 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:09:37  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:09:37  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:09:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:09:38  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:09:38  :: 4/21/2021 9:09:38 PMOrderRouterBase.LoadConfig
+2021-04-21 21:09:38  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:09:38  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:09:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:09:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:09:38  :: 4/21/2021 9:09:38 PMOrderRouterBase.LoadConfig
+2021-04-21 21:09:38  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:09:38  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:09:38  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:09:50  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:09:52  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:09:52  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ADA
+2021-04-21 21:11:38  :: 4/21/2021 9:11:38 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:11:38  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:11:38  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:11:38  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:11:38  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:11:38  :: 4/21/2021 9:11:38 PMOrderRouterBase.LoadConfig
+2021-04-21 21:11:38  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:11:38  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:11:38  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:11:38  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:11:38  :: 4/21/2021 9:11:38 PMOrderRouterBase.LoadConfig
+2021-04-21 21:11:38  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:11:38  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:11:39  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:11:44  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:11:46  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:11:46  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2021-04-21 21:15:05  :: 4/21/2021 9:15:05 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:15:05  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:15:05  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:15:06  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:15:06  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:15:06  :: 4/21/2021 9:15:06 PMOrderRouterBase.LoadConfig
+2021-04-21 21:15:06  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:15:06  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:15:06  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:15:06  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:15:06  :: 4/21/2021 9:15:06 PMOrderRouterBase.LoadConfig
+2021-04-21 21:15:06  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:15:06  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:15:06  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:15:15  :: Canceling all active orders
+2021-04-21 21:15:15  :: @Outgoing Order Routing Binance:Cancelling all active orders
+2021-04-21 21:15:34  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:15:37  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:15:37  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2021-04-21 21:15:38  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2327.54 BestAskPrice=2327.55
+2021-04-21 21:15:38  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2327.46 BestAskPrice=2327.58
+2021-04-21 21:15:39  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2326.46 BestAskPrice=2326.47
+2021-04-21 21:15:40  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2325.88 BestAskPrice=2326.35
+2021-04-21 21:15:41  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2325.65 BestAskPrice=2326.28
+2021-04-21 21:15:42  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.24 BestAskPrice=2324.25
+2021-04-21 21:15:43  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.65 BestAskPrice=2324.03
+2021-04-21 21:15:43  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.13 BestAskPrice=2324.45
+2021-04-21 21:15:43  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.22 BestAskPrice=2324.84
+2021-04-21 21:15:44  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.3 BestAskPrice=2324.31
+2021-04-21 21:15:44  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.1 BestAskPrice=2324.11
+2021-04-21 21:15:45  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.97 BestAskPrice=2323.98
+2021-04-21 21:15:45  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.38 BestAskPrice=2324.39
+2021-04-21 21:15:46  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.26 BestAskPrice=2324.4
+2021-04-21 21:15:47  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.33 BestAskPrice=2323.62
+2021-04-21 21:15:47  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.54 BestAskPrice=2323.55
+2021-04-21 21:15:48  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.65 BestAskPrice=2323.66
+2021-04-21 21:15:48  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.05 BestAskPrice=2324.06
+2021-04-21 21:15:49  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.96 BestAskPrice=2325.53
+2021-04-21 21:15:49  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.98 BestAskPrice=2325.09
+2021-04-21 21:15:49  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.97 BestAskPrice=2324.98
+2021-04-21 21:15:50  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.97 BestAskPrice=2324.98
+2021-04-21 21:15:50  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.44 BestAskPrice=2324.91
+2021-04-21 21:15:51  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.08 BestAskPrice=2324.29
+2021-04-21 21:15:52  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.42 BestAskPrice=2323.97
+2021-04-21 21:15:52  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.62 BestAskPrice=2323.78
+2021-04-21 21:15:53  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.74 BestAskPrice=2324.75
+2021-04-21 21:15:53  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2324.99 BestAskPrice=2325
+2021-04-21 21:15:54  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.43 BestAskPrice=2323.96
+2021-04-21 21:15:54  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.49 BestAskPrice=2323.5
+2021-04-21 21:15:55  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.32 BestAskPrice=2323.33
+2021-04-21 21:15:55  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.33 BestAskPrice=2323.37
+2021-04-21 21:15:56  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.36 BestAskPrice=2323.37
+2021-04-21 21:15:56  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.33 BestAskPrice=2323.34
+2021-04-21 21:15:57  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.33 BestAskPrice=2323.34
+2021-04-21 21:15:57  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2322.32 BestAskPrice=2322.64
+2021-04-21 21:15:58  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2322.76 BestAskPrice=2322.77
+2021-04-21 21:16:16  :: Processing Market Data:Symbol=ETHUSDT  LastPrice=0 BestBidPrice=2323.16 BestAskPrice=2323.33
+2021-04-21 21:17:03  :: 4/21/2021 9:17:03 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:17:03  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:17:03  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:17:03  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:17:03  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:17:03  :: 4/21/2021 9:17:03 PMOrderRouterBase.LoadConfig
+2021-04-21 21:17:03  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:17:03  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:17:03  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:17:03  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:17:03  :: 4/21/2021 9:17:03 PMOrderRouterBase.LoadConfig
+2021-04-21 21:17:03  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:17:03  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:17:03  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:17:16  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:17:18  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:17:18  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2021-04-21 21:17:19  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2339.08 BestAskPrice=2339.48
+2021-04-21 21:17:19  :: Routing to market position for symbol ETH
+2021-04-21 21:17:19  :: Creating buy order for symbol ETH.Quantity=0.00213759255775775 Price=2339.08
+2021-04-21 21:17:19  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETH
+2021-04-21 21:17:19  :: @Outgoing Order Routing Binance:Routing new order for symbol ETH
+2021-04-21 21:17:20  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2339.23 BestAskPrice=2339.24
+2021-04-21 21:17:20  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2021-04-21 21:17:20  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2021-04-21 21:17:20  :: Received Rejected for symbol ETH. Reason: Possible min ammount not enough @Binance. Error: Se han producido uno o varios errores.
+2021-04-21 21:17:20  :: Rejected for symbol ETH processed
+2021-04-21 21:17:20  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2021-04-21 21:17:20  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2339.07 BestAskPrice=2339.59
+2021-04-21 21:17:20  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:17:21  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:18:04  :: 4/21/2021 9:18:04 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:18:04  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:18:04  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:18:04  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:18:04  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:18:04  :: 4/21/2021 9:18:04 PMOrderRouterBase.LoadConfig
+2021-04-21 21:18:04  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:18:04  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:18:04  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:18:04  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:18:05  :: 4/21/2021 9:18:05 PMOrderRouterBase.LoadConfig
+2021-04-21 21:18:05  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:18:05  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:18:05  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:18:59  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:19:02  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:19:02  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2021-04-21 21:19:03  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2349.37 BestAskPrice=2349.61
+2021-04-21 21:19:03  :: Routing to market position for symbol ETH
+2021-04-21 21:19:03  :: Creating buy order for symbol ETH.Quantity=0.00212823012126655 Price=2349.37
+2021-04-21 21:19:03  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETH
+2021-04-21 21:19:08  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2351.23 BestAskPrice=2351.62
+2021-04-21 21:19:28  :: @Outgoing Order Routing Binance:Routing new order for symbol ETH
+2021-04-21 21:35:03  :: 4/21/2021 9:35:03 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:35:03  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:35:03  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:35:04  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:35:04  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:35:04  :: 4/21/2021 9:35:04 PMOrderRouterBase.LoadConfig
+2021-04-21 21:35:04  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:35:04  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:35:04  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:35:04  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:35:04  :: 4/21/2021 9:35:04 PMOrderRouterBase.LoadConfig
+2021-04-21 21:35:04  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:35:04  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:35:04  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:36:16  :: 4/21/2021 9:36:16 PMMomentumStrategyBase.LoadConfig
+2021-04-21 21:36:16  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:36:16  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:36:16  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-21 21:36:16  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-21 21:36:16  :: 4/21/2021 9:36:16 PMOrderRouterBase.LoadConfig
+2021-04-21 21:36:16  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-21 21:36:16  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-21 21:36:17  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-21 21:36:17  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-21 21:36:17  :: 4/21/2021 9:36:17 PMOrderRouterBase.LoadConfig
+2021-04-21 21:36:17  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:36:17  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-21 21:36:17  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-21 21:37:39  :: Canceling all active orders
+2021-04-21 21:37:39  :: @Outgoing Order Routing Binance:Cancelling all active orders
+2021-04-21 21:39:03  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:39:07  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:39:07  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETH
+2021-04-21 21:39:09  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2384.21 BestAskPrice=2384.53
+2021-04-21 21:39:09  :: Routing to market position for symbol ETH
+2021-04-21 21:39:09  :: Creating buy order for symbol ETH.Quantity=0.00209713070576837 Price=2384.21
+2021-04-21 21:39:09  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETH
+2021-04-21 21:39:09  :: @Outgoing Order Routing Binance:Routing new order for symbol ETH
+2021-04-21 21:39:16  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2383.05 BestAskPrice=2383.14
+2021-04-21 21:39:16  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2021-04-21 21:39:16  :: @IBR: Incoming message from order routing: Execution Report for symbol ETH: Order Status=Rejected - Exec Type=Rejected
+2021-04-21 21:39:16  :: Received Rejected for symbol ETH. Reason: Possible min ammount not enough @Binance. Error: Se han producido uno o varios errores.
+2021-04-21 21:39:16  :: Rejected for symbol ETH processed
+2021-04-21 21:39:16  :: Ending RunOnPositionCalculus for symbol ETH. The position is cleared
+2021-04-21 21:39:17  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:39:17  :: Processing Market Data:Symbol=ETH  LastPrice=0 BestBidPrice=2383.52 BestAskPrice=2383.53
+2021-04-21 21:39:17  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:40:02  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:40:04  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:40:04  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETC
+2021-04-21 21:40:05  :: Processing Market Data:Symbol=ETC  LastPrice=0 BestBidPrice=32.7109 BestAskPrice=32.7201
+2021-04-21 21:40:05  :: Routing to market position for symbol ETC
+2021-04-21 21:40:05  :: Creating buy order for symbol ETC.Quantity=0.305708494721943 Price=32.71
+2021-04-21 21:40:05  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETC
+2021-04-21 21:40:05  :: @Outgoing Order Routing Binance:Routing new order for symbol ETC
+2021-04-21 21:40:11  :: Processing Market Data:Symbol=ETC  LastPrice=0 BestBidPrice=32.6459 BestAskPrice=32.6656
+2021-04-21 21:40:53  :: @Generic Order Router: Incoming message from order routing proxy: Execution Report for symbol ETC: Order Status=Rejected - Exec Type=Rejected
+2021-04-21 21:40:53  :: @IBR: Incoming message from order routing: Execution Report for symbol ETC: Order Status=Rejected - Exec Type=Rejected
+2021-04-21 21:40:53  :: Received Rejected for symbol ETC. Reason: Possible min ammount not enough @Binance. Error: Se han producido uno o varios errores.
+2021-04-21 21:40:53  :: Rejected for symbol ETC processed
+2021-04-21 21:40:53  :: Ending RunOnPositionCalculus for symbol ETC. The position is cleared
+2021-04-21 21:40:53  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:40:53  :: Processing Market Data:Symbol=ETC  LastPrice=0 BestBidPrice=32.5214 BestAskPrice=32.5549
+2021-04-21 21:40:54  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:41:09  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-21 21:41:11  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-21 21:41:11  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ETC
+2021-04-21 21:41:12  :: Processing Market Data:Symbol=ETC  LastPrice=0 BestBidPrice=32.6301 BestAskPrice=32.657
+2021-04-21 21:41:12  :: Routing to market position for symbol ETC
+2021-04-21 21:41:12  :: Creating buy order for symbol ETC.Quantity=0.306465502710687 Price=32.63
+2021-04-21 21:41:12  :: @Outgoing Order Routing Binance:Routing  to market for symbol ETC
+2021-04-21 21:41:12  :: @Outgoing Order Routing Binance:Routing new order for symbol ETC
+2021-04-21 21:41:19  :: Processing Market Data:Symbol=ETC  LastPrice=0 BestBidPrice=32.583 BestAskPrice=32.6135

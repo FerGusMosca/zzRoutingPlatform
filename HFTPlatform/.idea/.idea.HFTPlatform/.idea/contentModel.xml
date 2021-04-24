@@ -815,6 +815,7 @@
           <e p="BinanceInstructionBasedMarketClient.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
@@ -840,6 +841,7 @@
         </e>
         <e p="Util" t="Include">
           <e p="BinanceClientProxy.cs" t="Include" />
+          <e p="BinanceErrorFormatter.cs" t="Include" />
         </e>
         <e p="Wrappers" t="Include">
           <e p="BinanceMarketDataWrapper.cs" t="Include" />
@@ -1660,6 +1662,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="OrderRouter.cs" t="Include" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
@@ -1683,11 +1686,14 @@
           <e p="ExecutionReportDTO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Util" t="Include">
           <e p="BinanceClientProxy.cs" t="Include" />
+          <e p="BinanceErrorFormatter.cs" t="Include" />
+          <e p="BinanceMessageConverterValidator.cs" t="Include" />
         </e>
         <e p="Wrappers" t="Include">
           <e p="ExecutionReportWrapper.cs" t="Include" />
@@ -1865,6 +1871,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="OrderRouterBase.cs" t="Include" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>

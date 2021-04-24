@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Binance.Net.Objects.Spot.MarketData;
 using zHFT.Main.BusinessEntities.Positions;
 
 namespace zHFT.OrderRouters.Common.Util
@@ -13,7 +14,7 @@ namespace zHFT.OrderRouters.Common.Util
         {
             if (decimalNumber % 1 == 0)
                 return 0;
-
+        
             int decimalPlaces = 1;
             decimal powers = 10.0m;
             if (decimalNumber > 0.0m)
@@ -24,10 +25,10 @@ namespace zHFT.OrderRouters.Common.Util
                     ++decimalPlaces;
                 }
             }
-
+        
             return decimalPlaces;
         }
-
+        
         public static int GetDecimalPrecission(Position pos)
         {
             int countBid = 0, countAsk = 0;

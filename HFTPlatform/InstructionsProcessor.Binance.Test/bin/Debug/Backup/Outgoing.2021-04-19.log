@@ -1,0 +1,108 @@
+2021-04-19 19:52:19  :: 4/19/2021 7:52:19 PMMomentumStrategyBase.LoadConfig
+2021-04-19 19:52:19  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 19:52:19  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 19:52:20  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 19:52:20  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-19 19:52:20  :: 4/19/2021 7:52:20 PMOrderRouterBase.LoadConfig
+2021-04-19 19:52:20  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-19 19:52:20  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-19 19:52:20  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-19 19:52:20  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-19 19:52:21  :: 4/19/2021 7:52:21 PMOrderRouterBase.LoadConfig
+2021-04-19 19:52:21  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 19:52:21  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 19:52:21  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-19 19:53:30  :: Canceling all active orders
+2021-04-19 19:53:30  :: @Outgoing Order Routing Binance:Cancelling all active orders
+2021-04-19 19:54:25  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-19 19:54:28  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-19 19:54:28  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ADA
+2021-04-19 19:56:00  :: 4/19/2021 7:56:00 PMMomentumStrategyBase.LoadConfig
+2021-04-19 19:56:00  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 19:56:00  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 19:56:00  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 19:56:00  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-19 19:56:00  :: 4/19/2021 7:56:00 PMOrderRouterBase.LoadConfig
+2021-04-19 19:56:00  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-19 19:56:00  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-19 19:56:00  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-19 19:56:00  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-19 19:56:01  :: 4/19/2021 7:56:01 PMOrderRouterBase.LoadConfig
+2021-04-19 19:56:01  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 19:56:01  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 19:56:01  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-19 19:57:23  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-19 19:57:25  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-19 19:57:25  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ADA
+2021-04-19 20:12:29  :: 4/19/2021 8:12:29 PMMomentumStrategyBase.LoadConfig
+2021-04-19 20:12:29  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:12:29  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:12:30  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:12:30  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-19 20:12:30  :: 4/19/2021 8:12:30 PMOrderRouterBase.LoadConfig
+2021-04-19 20:12:30  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-19 20:12:30  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-19 20:12:30  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-19 20:12:30  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-19 20:12:30  :: 4/19/2021 8:12:30 PMOrderRouterBase.LoadConfig
+2021-04-19 20:12:30  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 20:12:30  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 20:12:30  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-19 20:12:32  :: Canceling all active orders
+2021-04-19 20:12:32  :: @Outgoing Order Routing Binance:Cancelling all active orders
+2021-04-19 20:12:50  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-19 20:12:53  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-19 20:12:53  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ADA
+2021-04-19 20:15:55  :: 4/19/2021 8:15:55 PMMomentumStrategyBase.LoadConfig
+2021-04-19 20:15:55  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:15:55  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:15:55  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:15:55  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-19 20:15:55  :: 4/19/2021 8:15:55 PMOrderRouterBase.LoadConfig
+2021-04-19 20:15:55  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-19 20:15:55  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-19 20:15:55  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-19 20:15:55  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-19 20:15:55  :: 4/19/2021 8:15:55 PMOrderRouterBase.LoadConfig
+2021-04-19 20:15:55  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 20:15:55  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 20:15:55  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml
+2021-04-19 20:15:58  :: Canceling all active orders
+2021-04-19 20:15:58  :: @Outgoing Order Routing Binance:Cancelling all active orders
+2021-04-19 20:16:15  :: @Strategy Handler - Instruction Based Router for Binance - Starting sync for account 3 ...
+2021-04-19 20:16:17  :: @Strategy Handler - Instruction Based Router for Binance - Account fmosca_binance positions succesfully synchronized
+2021-04-19 20:16:17  :: Strategy Handler - Instruction Based Router for Binance: Creating position for symbol ADA
+2021-04-19 20:16:18  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21369 BestAskPrice=1.21392
+2021-04-19 20:16:18  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21369 BestAskPrice=1.2139
+2021-04-19 20:16:19  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21369 BestAskPrice=1.2139
+2021-04-19 20:16:19  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21352 BestAskPrice=1.21409
+2021-04-19 20:16:20  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21368 BestAskPrice=1.21419
+2021-04-19 20:16:21  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21386 BestAskPrice=1.21412
+2021-04-19 20:16:21  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21376 BestAskPrice=1.21412
+2021-04-19 20:16:21  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.2138 BestAskPrice=1.21419
+2021-04-19 20:16:22  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21419 BestAskPrice=1.2145
+2021-04-19 20:16:22  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21439 BestAskPrice=1.21487
+2021-04-19 20:16:23  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21423 BestAskPrice=1.21475
+2021-04-19 20:16:24  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21407 BestAskPrice=1.21444
+2021-04-19 20:16:24  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21375 BestAskPrice=1.21379
+2021-04-19 20:16:25  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21377 BestAskPrice=1.21419
+2021-04-19 20:16:25  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21384 BestAskPrice=1.21407
+2021-04-19 20:16:25  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21385 BestAskPrice=1.2143
+2021-04-19 20:16:26  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21377 BestAskPrice=1.21416
+2021-04-19 20:16:26  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21378 BestAskPrice=1.21409
+2021-04-19 20:16:27  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21378 BestAskPrice=1.21408
+2021-04-19 20:16:27  :: Processing Market Data:Symbol=ADAUSDT  LastPrice=no data BestBidPrice=1.21383 BestAskPrice=1.21401
+2021-04-19 20:23:31  :: 4/19/2021 8:23:31 PMMomentumStrategyBase.LoadConfig
+2021-04-19 20:23:31  :: Loading config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:23:31  :: Processing config:.\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:23:31  :: Ending GetConfiguracion .\outgoingStrategyHandler.InstructionBasedRouting.xml
+2021-04-19 20:23:31  :: Initializing Order Router zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters
+2021-04-19 20:23:31  :: 4/19/2021 8:23:31 PMOrderRouterBase.LoadConfig
+2021-04-19 20:23:31  :: Loading config:.\outgoingOrderRouter.xml
+2021-04-19 20:23:31  :: Processing config:.\outgoingOrderRouter.xml
+2021-04-19 20:23:31  :: Ending GetConfiguracion .\outgoingOrderRouter.xml
+2021-04-19 20:23:31  :: Initializing Order Router Proxy zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance
+2021-04-19 20:23:40  :: 4/19/2021 8:23:40 PMOrderRouterBase.LoadConfig
+2021-04-19 20:23:40  :: Loading config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 20:23:40  :: Processing config:.\outgoingOrderRouter.Binance.xml
+2021-04-19 20:23:40  :: Ending GetConfiguracion .\outgoingOrderRouter.Binance.xml

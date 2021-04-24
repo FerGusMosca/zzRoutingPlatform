@@ -1,13 +1,12 @@
-﻿using Binance.API.Csharp.Client;
-using Binance.API.Csharp.Client.Models.Enums;
-using Binance.API.Csharp.Client.Models.Market;
-using System;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using Binance.API.Csharp.Client;
+using Binance.API.Csharp.Client.Models.Account;
+using Binance.API.Csharp.Client.Models.Market;
 using zHFT.InstructionBasedMarketClient.Binance.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Util;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
@@ -47,12 +46,12 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
         private Dictionary<string, bool> ReverseCurrency { get; set; }
 
         private AccountBinanceDataManager AccountBinanceDataManager { get; set; }
+        
+        protected AccountBinanceData AccountBinanceData { get; set; }
 
         #endregion
 
         #region Protected Methods
-
-      
 
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
@@ -63,65 +62,66 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
         protected override void DoRequestMarketData(Object param)
         { 
-           Instruction instrx = (Instruction)param;
+           string symbol = (string)((object[])param)[0];
+           string quoteSymbol = (string)((object[])param)[1];
            CultureInfo prevCulture = Thread.CurrentThread.CurrentCulture;
 
             try
             {
-                DoLog(string.Format("@{0}:Requesting market data por symbol {1}", BinanceConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                DoLog(string.Format("@{0}:Requesting market data por symbol {1}{2}", BinanceConfiguration.Name, symbol,quoteSymbol), Main.Common.Util.Constants.MessageType.Information);
 
+                var apiClient = new ApiClient(AccountBinanceData.APIKey,AccountBinanceData.Secret);
+                var binanceClient = new BinanceClient(apiClient);
+                
                 bool activo = true;
                 while (activo)
                 {
                     Thread.Sleep(BinanceConfiguration.PublishUpdateInMilliseconds);
                     CultureInfo tempCulture = new CultureInfo("ja-JP");
 
+                    if (quoteSymbol == null)
+                        quoteSymbol = BinanceConfiguration.QuoteCurrency;
+                    
                     lock (tLock)
                     {
-                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == instrx.Symbol))
+                        if (ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol ==symbol))
                         {
-                            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
-                            var binanceClient = new BinanceClientProxy(apiClient);
-                            string fullSymbol = instrx.Symbol + BinanceConfiguration.QuoteCurrency;
-
-                            var respOB = binanceClient.GetOrderBook(fullSymbol);
-                            OrderBook jOrderBook = respOB.Result;
-
-                            OrderBookOffer bestSell = jOrderBook.Asks.OrderByDescending(x => x.Price).FirstOrDefault();
-                            OrderBookOffer bestBuy = jOrderBook.Bids.OrderBy(x => x.Price).FirstOrDefault();
-
-                            var respMD = binanceClient.GetLastMinuteCandleStick(fullSymbol);
-                            Candlestick jMarketData = respMD.Result.OrderByDescending(x => x.CloseTime).FirstOrDefault();
+                            OrderBook orderBook = binanceClient.GetOrderBook(symbol + quoteSymbol).Result;
+                            List<PriceChangeInfo> priceChangeInfos = new List<PriceChangeInfo>(binanceClient.GetPriceChange24H(symbol + quoteSymbol).Result);
+                            
+                            List<OrderBookOffer> bids =new List<OrderBookOffer>(orderBook.Bids);
+                            List<OrderBookOffer> asks =new List<OrderBookOffer>(orderBook.Asks);
 
                             Security sec = new Security();
-                            sec.Symbol = instrx.Symbol;
-                            sec.MarketData.BestBidPrice = Convert.ToDouble(bestBuy.Price);
-                            sec.MarketData.BestBidCashSize = bestBuy.Quantity;
-                            sec.MarketData.BestAskPrice = Convert.ToDouble(bestSell.Price);
-                            sec.MarketData.BestAskCashSize = bestSell.Quantity;
-                            sec.MarketData.Trade = Convert.ToDouble(jMarketData.Close);
+                            sec.Symbol = symbol;
+                            sec.MarketData.BestBidPrice =bids.Count() > 0 ? (double?) Convert.ToDouble(bids[0].Price) : null;
+                            sec.MarketData.BestBidCashSize = bids.Count() > 0 ? (decimal?) Convert.ToDecimal(bids[0].Quantity) : null;
+                            sec.MarketData.BestAskPrice = asks.Count() > 0 ? (double?) Convert.ToDouble(asks[0].Price) : null;
+                            sec.MarketData.BestAskCashSize = asks.Count() > 0 ? (decimal?) Convert.ToDecimal(asks[0].Quantity) : null;
+                            //sec.MarketData.Trade = priceChange.Count() > 0? (double?) Convert.ToDouble(priceChange[0].LastPrice): null;
+                            sec.MarketData.Trade = priceChangeInfos!=null&&priceChangeInfos.Count>0?(double?)priceChangeInfos.FirstOrDefault().LastPrice:null;
                             sec.ReverseMarketData = false;
 
                             BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
-
+                            
                             OnMessageRcv(wrapper);
                         }
                         else
                         {
-                            DoLog(string.Format("@{0}:Unsubscribing market data por symbol {1}", BinanceConfiguration.Name, instrx.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                            DoLog(string.Format("@{0}:Unsubscribing market data por symbol {1}", BinanceConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
                             activo = false;
                         }
                     }
                 }
             }
-             catch (Exception ex)
+            catch (Exception ex)
             {
                 lock (tLock)
                 {
-                    RemoveSymbol(instrx.Symbol);
+                    RemoveSymbol(symbol);
                 }
 
-                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", BinanceConfiguration.Name, instrx.Symbol, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
             }
         }
 
@@ -133,11 +133,11 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
                 if (mdr.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
                 {
-                    throw new Exception(string.Format("@{0}: Market Data snaphsot not implemented for symbol {1}", GetConfig().Name, mdr.Security.Symbol));
+                    return ProcessMarketDataRequest(wrapper);
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
                 {
-                    throw new Exception(string.Format("@{0}: Market Data snaphsot+updates not implemented for symbol {1}", GetConfig().Name, mdr.Security.Symbol));
+                    return ProcessMarketDataRequest(wrapper);
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
                 {
@@ -155,7 +155,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
         protected override int GetSearchForInstrInMiliseconds()
         {
-            return BinanceConfiguration.SearchForInstructionsInMilliseconds;
+            throw new NotImplementedException();
         }
 
         protected override BaseConfiguration GetConfig()
@@ -165,24 +165,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
         protected override int GetAccountNumber()
         {
-            return BinanceConfiguration.AccountNumber;
-        }
-
-        protected void ConfigBinanceData()
-        {
-            Account account = AccountManager.GetByAccountNumber(BinanceConfiguration.AccountNumber);
-
-            if (account == null)
-                throw new Exception(string.Format("No se encontró ninguna cuenta para el número {0}", BinanceConfiguration.AccountNumber));
-
-            AccountBinanceData binanceData = AccountBinanceDataManager.GetByAccountNumber(account);
-
-            if (binanceData == null)
-                throw new Exception(string.Format("No se encontró ninguna configuración bittrex para la cuenta número {0}", BinanceConfiguration.AccountNumber));
-
-
-            BinanceConfiguration.ApiKey = binanceData.APIKey;
-            BinanceConfiguration.Secret = binanceData.Secret;
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -200,19 +183,15 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                 {
 
                     ActiveSecurities = new Dictionary<long, Security>();
-                    ContractsTimeStamps = new Dictionary<int, DateTime>();
+                    ContractsTimeStamps = new Dictionary<long, DateTime>();
                     ReverseCurrency = new Dictionary<string, bool>();
-
-                    AccountManager = new AccountManager(BinanceConfiguration.InstructionsAccessLayerConnectionString);
-                    //InstructionManager = new InstructionManager(BinanceConfiguration.InstructionsAccessLayerConnectionString, AccountManager);
-                    AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.InstructionsAccessLayerConnectionString);
-
-                    //ConfigBinanceData();
-
-                    //CleanPrevInstructions();
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
+
+                    AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.EFConnectionString);
+
+                    AccountBinanceData= AccountBinanceDataManager.GetByAccountNumber(new Account(){AccountNumber = BinanceConfiguration.AccountNumber});
 
                     return true;
                 }
@@ -224,7 +203,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
             }
             catch (Exception ex)
             {
-                DoLog("Critic error initializing " + configFile + ":" + ex.Message, Main.Common.Util.Constants.MessageType.Error);
+                DoLog("Critical error initializing " + configFile + ":" + BinanceErrorFormatter.ProcessErrorMessage(ex), Main.Common.Util.Constants.MessageType.Error);
                 return false;
             }
         }

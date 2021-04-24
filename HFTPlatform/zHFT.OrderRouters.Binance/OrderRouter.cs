@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Binance.Net.Objects.Spot.MarketData;
+using CryptoExchange.Net.Objects;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
@@ -20,6 +22,8 @@ using zHFT.OrderRouters.Binance.Common.Wrappers;
 using zHFT.OrderRouters.Binance.DataAccessLayer.Managers;
 using zHFT.OrderRouters.BINANCE.Common.Util;
 using zHFT.OrderRouters.Cryptos;
+using BinanceClient2 = Binance.Net.BinanceClient;
+using Constants = zHFT.Main.Common.Util.Constants;
 
 namespace zHFT.OrderRouters.Binance
 {
@@ -30,7 +34,13 @@ namespace zHFT.OrderRouters.Binance
         protected Common.Configuration.Configuration BinanceConfiguration { get; set; }
 
         protected AccountBinanceDataManager AccountBinanceDataManager { get; set; }
-
+        
+        protected  BinanceClient BinanceClient { get; set; }
+        
+        protected Dictionary<string, Order> JustSentOrders { get; set; }
+        //When we sent a new order to Binance, it might not be available for reading ERs
+        // just after a few seconds. So this dictionary will be used to avoid sending unecessary errors
+        
         #endregion
 
         #region Overriden Methods
@@ -59,14 +69,29 @@ namespace zHFT.OrderRouters.Binance
 
         #region Protected OrderRouterBase Methods
 
-        protected ExecutionReportDTO RunGetOrder(Order order)
+        private void LoadMemoryEntities()
         {
-            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
-            var binanceClient = new BinanceClient(apiClient);
+            var client = new BinanceClient2();
+            
+            WebCallResult<BinanceExchangeInfo> info = client.Spot.System.GetExchangeInfo();
 
+            if (info.Success)
+            {
+                DecimalPrecissionConverter.ExchangeInfo = info.Data;
+                DoLog(string.Format("Loading Binance Exchange info: {0} symbols found", 
+                                        DecimalPrecissionConverter.ExchangeInfo.Symbols.Count()),Constants.MessageType.Information);
+            }
+            else
+            {
+                throw new Exception(info.Error.Message);
+            }
+        }
+
+        protected ExecutionReportDTO RunGetExecutionReport(Order order)
+        {
             string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
 
-            var execReportResp = binanceClient.GetOrder(fullSymbol, Convert.ToInt64(order.OrderId)); ;
+            var execReportResp = BinanceClient.GetOrder(fullSymbol, Convert.ToInt64(order.OrderId)); ;
 
             var execReport = execReportResp.Result;
 
@@ -118,6 +143,33 @@ namespace zHFT.OrderRouters.Binance
             };
         }
 
+        private bool TryToGetExecutionReport(Order order,ref ExecutionReportDTO execReportDTO)
+        {
+            DoLog(string.Format("DB-Fetching ER for OrderId {0}",order.OrderId),Constants.MessageType.Information);
+            try
+            {
+                execReportDTO = RunGetExecutionReport(order);
+                
+                if (JustSentOrders.ContainsKey(order.OrderId))
+                    JustSentOrders.Remove(order.OrderId);
+            }
+            catch (Exception e)
+            {
+                if (JustSentOrders.ContainsKey(order.OrderId))
+                {
+                    DoLog(
+                        string.Format("Waiting for order {0} to arrive to the exchange", order.OrderId),
+                        Constants.MessageType.Information);
+                    return false;
+                }
+                else
+                    throw;
+            }
+                            
+            DoLog(string.Format("DB-Found ER for OrderId {0}",order.OrderId),Constants.MessageType.Information);
+            return true;
+        }
+
         protected void DoEvalExecutionReport()
         {
            
@@ -137,8 +189,11 @@ namespace zHFT.OrderRouters.Binance
                         {
 
                             Order order = ActiveOrders[orderId];
-                            ExecutionReportDTO execReportDTO = RunGetOrder(order);
-
+                            ExecutionReportDTO execReportDTO = null;
+                            
+                            if(!TryToGetExecutionReport(order,ref execReportDTO))
+                                continue;
+                            
                             if (execReportDTO != null)
                             {
                                 ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReportDTO);
@@ -148,7 +203,6 @@ namespace zHFT.OrderRouters.Binance
                                 {
                                     orderIdToRemove.Add(orderId);
                                     DoLog(string.Format("@{0}:Removing Order For Status:{1}", BinanceConfiguration.Name, status.ToString()), Main.Common.Util.Constants.MessageType.Debug);
-
                                 }
 
                                 wrappersToPublish.Add(wrapper);
@@ -158,7 +212,6 @@ namespace zHFT.OrderRouters.Binance
                                 execReportDTO = GetTheoreticalResponseOrderNotFound(order);
                                 ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReportDTO);
                                 OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
-
                                 wrappersToPublish.Add(wrapper);
                                 orderIdToRemove.Add(orderId);
                                 DoLog(string.Format("@{0}:Removing Order Because no order could be found on market for order id {1}", BinanceConfiguration.Name, orderId), Main.Common.Util.Constants.MessageType.Debug);
@@ -172,7 +225,7 @@ namespace zHFT.OrderRouters.Binance
                 }
                 catch (Exception ex)
                 {
-                    DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BinanceConfiguration.Name, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                    DoLog(string.Format("@{0}:Error processing execution reports!:{1}", BinanceConfiguration.Name, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
                 }
             }
         }
@@ -181,23 +234,30 @@ namespace zHFT.OrderRouters.Binance
         {
             DoLog(string.Format("@{0}:Routing new order for symbol {1}", BinanceConfiguration.Name, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
 
-            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
-            var binanceClient = new BinanceClientProxy(apiClient);
-
             string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
 
-            var resp = binanceClient.PostNewLimitOrder(fullSymbol,
-                                                                 Convert.ToDecimal(order.OrderQty.Value),
-                                                                 Convert.ToDecimal(order.Price.Value),
-                                                                 order.Side == Side.Buy ? OrderSide.BUY : OrderSide.SELL,
-                                                                 order.DecimalPrecission
-                                                                 );
+            decimal qty = 0;
+
+            qty = DecimalPrecissionConverter.GetQuantity(order.Symbol,
+                BinanceConfiguration.QuoteCurrency,
+                Convert.ToDecimal(order.OrderQty.Value));
+            
+            
+            DecimalPrecissionConverter.ValidateNewOrder(order.Symbol, BinanceConfiguration.QuoteCurrency,
+                                                        qty, order.Price.Value);
+            
+            var resp = BinanceClient.PostNewOrder(fullSymbol,qty,
+                                                        Convert.ToDecimal(order.Price.Value), 
+                                                        order.Side == Side.Buy ? OrderSide.BUY : OrderSide.SELL);
 
             var newOrderResp = resp.Result;
+            DoLog(string.Format("New order with OrderId {0} inserted for symbol {1}", newOrderResp.OrderId, fullSymbol),
+                Constants.MessageType.Information);
 
             if (newOrderResp != null)
             {
                 order.OrderId = newOrderResp.OrderId.ToString();
+                JustSentOrders.Add(newOrderResp.OrderId.ToString(),order);
                 ActiveOrders.Add(newOrderResp.OrderId.ToString(), order);
                 OrderIdMappers.Add(order.ClOrdId, newOrderResp.OrderId.ToString());
             }
@@ -206,21 +266,21 @@ namespace zHFT.OrderRouters.Binance
         
         }
 
-        protected void EvalRouteError(Order order, Exception ex)
-        {
-            ExecutionReportDTO execReport = GetTheoreticalResponseOrderNotFound(order);
-            order.OrdStatus = OrdStatus.Rejected;
-            order.RejReason = ex.Message;
-
-            ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
-            OnMessageRcv(wrapper);
-        }
+        // protected void EvalRouteError(Order order, Exception ex)
+        // {
+        //     ExecutionReportDTO execReport = GetTheoreticalResponseOrderNotFound(order);
+        //     order.OrdStatus = OrdStatus.Rejected;
+        //     order.RejReason = BinanceErrorFormatter.ProcessErrorMessage(ex);
+        //
+        //     ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
+        //     OnMessageRcv(wrapper);
+        // }
 
         protected void EvalErrorOnInsertingUpdate(Order order, Exception ex)
         {
             ExecutionReportDTO execReport = GetTheoreticalResponseOrderUpdatingNotFound(order);
             order.OrdStatus = OrdStatus.Rejected;
-            order.RejReason = ex.Message;
+            order.RejReason = BinanceErrorFormatter.ProcessErrorMessage(ex);
 
             ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, execReport);
             OnMessageRcv(wrapper);
@@ -230,13 +290,15 @@ namespace zHFT.OrderRouters.Binance
         {
             order.OrdStatus = OrdStatus.Rejected;
 
-            if (order.Side == Side.Buy)
-            {
-                order.RejReason = "Possible min ammount not enough @Binance. Error: " + ex.Message;
-            }
+            string message = "";
+            if (ex.InnerException != null)
+                order.RejReason = string.Format("error:{0}", ex.InnerException.Message);
             else
             {
-                order.RejReason = "Possible rounding error for Qty @Binance. Error: " + ex.Message;
+                if (order.Side == Side.Buy)
+                    order.RejReason = "Possible min ammount not enough @Binance. Error: " + BinanceErrorFormatter.ProcessErrorMessage(ex);
+                else
+                    order.RejReason = "Possible rounding error for Qty @Binance. Error: " + BinanceErrorFormatter.ProcessErrorMessage(ex);
             }
 
             order.OrderId = "not created";
@@ -286,12 +348,9 @@ namespace zHFT.OrderRouters.Binance
            
             DoLog(string.Format("@{0}:Cancelling Order Id {1} for symbol {2}", BinanceConfiguration.Name, order.OrderId, order.Symbol), Main.Common.Util.Constants.MessageType.Information);
 
-            var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
-            var binanceClient = new BinanceClient(apiClient);
-
             string fullSymbol = order.Symbol + BinanceConfiguration.QuoteCurrency;
-
-            var resp = binanceClient.CancelOrder(fullSymbol, Convert.ToInt64(order.OrderId));
+            
+            var resp = BinanceClient.CancelOrder(fullSymbol, Convert.ToInt64(order.OrderId));
 
             if (!update)//es cancelación pura
             {
@@ -303,21 +362,24 @@ namespace zHFT.OrderRouters.Binance
                 }
                 catch (Exception ex)
                 {
+                    DoLog(string.Format("Error Cancelling<for cancel> OrderId {0}: {1}",order.OrderId,BinanceErrorFormatter.ProcessErrorMessage(ex)),Constants.MessageType.Information);
+
                     return false;//hubo un error, no hay nada que se pueda cancelar.
                                  //Lo que haya pasado será analizado por el thread de Execution Report
                 }
             }
-            else
+            else //es update
             {
                 try
                 {
                     var updatedOrder = resp.Result;
-                    ActiveOrders.Remove(order.OrderId);//si llegó hasta aca es porque actualizó bien
+                    ActiveOrders.Remove(order.OrderId);//si llegó hasta aca es porque canceló bien
                     //Ya no actuallizamos mas datos de la vieja orden cancelada
                     return true;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    DoLog(string.Format("Error Cancelling<for update> OrderId {0}: {1}",order.OrderId,BinanceErrorFormatter.ProcessErrorMessage(ex)),Constants.MessageType.Error);
                     return false;
                 }
             }
@@ -331,7 +393,6 @@ namespace zHFT.OrderRouters.Binance
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
             try
             {
-
                 if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
                     throw new Exception("Could not find OrigClOrdID for order updated");
 
@@ -349,9 +410,10 @@ namespace zHFT.OrderRouters.Binance
                         if (order != null)
                         {
                             //Cancelamos
+                            DoLog(string.Format("DB-Cancelling OrderId {0} @Update",order.OrderId),Constants.MessageType.Information);
+
                             if (RunCancelOrder(order, true))
                             {
-
                                 Thread.Sleep(100);
 
                                 //Damos el alta
@@ -382,7 +444,7 @@ namespace zHFT.OrderRouters.Binance
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Error updating order {1}!:{2}", BinanceConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}:Error updating order {1}!:{2}", BinanceConfiguration.Name, origClOrderId, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
 
@@ -423,7 +485,7 @@ namespace zHFT.OrderRouters.Binance
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Error cancelling order {1}!:{2}", BinanceConfiguration.Name, origClOrderId, ex.Message), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}:Error cancelling order {1}!:{2}", BinanceConfiguration.Name, origClOrderId, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }
@@ -447,9 +509,12 @@ namespace zHFT.OrderRouters.Binance
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
 
+                    LoadMemoryEntities();
+
                     AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.ConfigConnectionString);
 
                     OrderIdMappers = new Dictionary<string, string>();
+                    JustSentOrders = new Dictionary<string, Order>();
 
                     ExecutionReportThread = new Thread(DoEvalExecutionReport);
                     ExecutionReportThread.Start();
@@ -462,6 +527,9 @@ namespace zHFT.OrderRouters.Binance
 
                     BinanceConfiguration.ApiKey = binanceData.APIKey;
                     BinanceConfiguration.Secret = binanceData.Secret;
+                    
+                    var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
+                    BinanceClient = new BinanceClient(apiClient);
 
                     return true;
                 }
@@ -473,7 +541,7 @@ namespace zHFT.OrderRouters.Binance
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Critic error initializing " + configFile + ":" + ex.Message, BinanceConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}:Critic error initializing " + configFile + ":" + BinanceErrorFormatter.ProcessErrorMessage(ex), BinanceConfiguration.Name), Main.Common.Util.Constants.MessageType.Error);
                 return false;
             }
         
