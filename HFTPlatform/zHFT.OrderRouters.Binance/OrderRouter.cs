@@ -73,7 +73,7 @@ namespace zHFT.OrderRouters.Binance
         {
             var client = new BinanceClient2();
             
-            WebCallResult<BinanceExchangeInfo> info = client.Spot.System.GetExchangeInfo();
+            WebCallResult<BinanceExchangeInfo> info = client.Spot.System.GetExchangeInfoAsync().Result;
 
             if (info.Success)
             {
@@ -145,7 +145,7 @@ namespace zHFT.OrderRouters.Binance
 
         private bool TryToGetExecutionReport(Order order,ref ExecutionReportDTO execReportDTO)
         {
-            DoLog(string.Format("DB-Fetching ER for OrderId {0}",order.OrderId),Constants.MessageType.Information);
+            DoLog(string.Format("<Order Router> Fetching ER for OrderId {0}",order.OrderId),Constants.MessageType.Information);
             try
             {
                 execReportDTO = RunGetExecutionReport(order);
@@ -155,6 +155,8 @@ namespace zHFT.OrderRouters.Binance
             }
             catch (Exception e)
             {
+                DoLog(string.Format("<Order Router> ERROR Fetching ER for OrderId {0}:{1}",order.OrderId,e.Message),Constants.MessageType.Error);
+
                 if (JustSentOrders.ContainsKey(order.OrderId))
                 {
                     DoLog(
@@ -239,8 +241,8 @@ namespace zHFT.OrderRouters.Binance
             decimal qty = 0;
 
             qty = DecimalPrecissionConverter.GetQuantity(order.Symbol,
-                BinanceConfiguration.QuoteCurrency,
-                Convert.ToDecimal(order.OrderQty.Value));
+                                                        BinanceConfiguration.QuoteCurrency,
+                                                        Convert.ToDecimal(order.OrderQty.Value));
             
             
             DecimalPrecissionConverter.ValidateNewOrder(order.Symbol, BinanceConfiguration.QuoteCurrency,

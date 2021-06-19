@@ -32,20 +32,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binance.API.Csharp.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.dll</HintPath>
+      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.dll</HintPath>
     </Reference>
     <Reference Include="Binance.API.Csharp.Client.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Domain.dll</HintPath>
+      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Binance.API.Csharp.Client.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Models.dll</HintPath>
+      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.Models.dll</HintPath>
     </Reference>
-    <Reference Include="Binance.Net, Version=6.13.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.Net.6.13.2\lib\netstandard2.0\Binance.Net.dll</HintPath>
+    <Reference Include="Binance.Net, Version=6.14.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Binance.Net.6.14.0-beta5\lib\netstandard2.0\Binance.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CryptoExchange.Net, Version=3.8.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\CryptoExchange.Net.3.8.1\lib\netstandard2.0\CryptoExchange.Net.dll</HintPath>
+    <Reference Include="CryptoExchange.Net, Version=4.0.0.10, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\CryptoExchange.Net.4.0.0-beta7\lib\netstandard2.0\CryptoExchange.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
@@ -64,8 +64,8 @@
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">

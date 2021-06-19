@@ -349,3 +349,5 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\SuperSocket.ClientEngine.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Binance.Net.xml
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\CryptoExchange.Net.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml

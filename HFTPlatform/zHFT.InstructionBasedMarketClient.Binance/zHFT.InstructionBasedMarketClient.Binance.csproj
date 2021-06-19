@@ -32,16 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binance.API.Csharp.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.dll</HintPath>
     </Reference>
     <Reference Include="Binance.API.Csharp.Client.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Domain.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.Domain.dll</HintPath>
     </Reference>
     <Reference Include="Binance.API.Csharp.Client.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Models.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.Models.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
