@@ -2,3 +2,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\bin\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.BitMex.BE\obj\Debug\zHFT.InstructionBasedMarketClient.BitMex.BE.pdb

@@ -16,7 +16,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly MarketDataRequestField MDReqId = new MarketDataRequestField(7);
         public static readonly MarketDataRequestField SettlType = new MarketDataRequestField(8);
         public static readonly MarketDataRequestField QuoteSymbol = new MarketDataRequestField(9);
-
+        public static readonly MarketDataRequestField MarketDepth = new MarketDataRequestField(10);
 
         protected MarketDataRequestField(int pInternalValue)
             : base(pInternalValue)

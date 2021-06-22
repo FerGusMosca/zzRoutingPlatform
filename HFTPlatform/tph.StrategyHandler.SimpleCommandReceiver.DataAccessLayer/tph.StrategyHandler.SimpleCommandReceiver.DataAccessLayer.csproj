@@ -50,9 +50,6 @@
         <Compile Include="WebSocketServer.cs" />
     </ItemGroup>
     <ItemGroup>
-      <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
       <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj">
         <Project>{d5516f31-ceff-4a5a-85ca-29de1f3a8156}</Project>
         <Name>tph.StrategyHandler.SimpleCommandReceiver.Common</Name>
@@ -69,6 +66,9 @@
         <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
         <Name>zHFT.Main.Common</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

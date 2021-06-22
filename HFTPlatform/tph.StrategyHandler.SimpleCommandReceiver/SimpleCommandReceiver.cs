@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using Fleck;
+using tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
-using zHFT.StrategyHandler.LogicLayer;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver
 {
-    public class SimpleCommandReceiver: BaseCommunicationModule
+    public class SimpleCommandReceiver: BaseCommunicationModule,ILogger
     {
         #region Protected Attributes
         
@@ -23,6 +22,17 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
         
         #region ICommunicationModule
 
+        public void DoLog(string msg, Constants.MessageType type)
+        {
+            if (OnLogMsg != null)
+                OnLogMsg(msg, type);
+        }
+
+        void ILogger.DoLoadConfig(string configFile, List<string> listaCamposSinValor)
+        {
+            DoLoadConfig(configFile, listaCamposSinValor);
+        }
+
         protected override void DoLoadConfig(string configFile, List<string> noValFields)
         {
             List<string> noValueFields = new List<string>();
@@ -31,7 +41,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
 
         public override CMState ProcessMessage(Wrapper wrapper)
         {
-            DoLog(string.Format("Invoking ProcessMessage @SimpleCommandReceiver which is not implemented"),Constants.MessageType.Error);
+            OnMessageRcv(wrapper);
+            DoLog(string.Format("Invoking OnMessageRcv @SimpleCommandReceiver for action {0}",wrapper.GetAction()),Constants.MessageType.Error);
             return CMState.BuildSuccess();
         }
 
@@ -45,8 +56,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 if (LoadConfig(configFile))
                 {
                     //Finish starting up the server
-//                    Server = new WebSocketServer(Configuration.WebSocketAdddress, this, OnMessageRcv);
-//                    Server.Start();
+                    Server = new WebSocketServer(Config.WebSocketURL, this, OnMessageRcv);
+                    Server.Start();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config.WebSocketURL, Constants.MessageType.Information);
                     return true;

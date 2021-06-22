@@ -581,6 +581,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zHFT.StrategyHandler.IBR.Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityProcessor.IOL.Test", "SecurityProcessor.IOL.Test\SecurityProcessor.IOL.Test.csproj", "{17F480D2-3D33-43B8-8ADF-0D438A7FA5FE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Websockets", "Websockets", "{695CA0D2-ECEF-49A2-B8F1-AC7E29539908}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleCommunicationModule", "SimpleCommunicationModule", "{90002646-7F50-4CE0-9CA6-07FB0F5A3BF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandReceiver.Common", "tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj", "{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer", "tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer\tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer.csproj", "{806616E0-18DB-4872-88CD-8377376C3416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandReceiver", "tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj", "{DA0D57B6-A469-4956-AC61-F8DD684E80B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mocks", "Mocks", "{7C7685B6-A9DF-4CBF-B4D5-B23DD23F90EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderBookMockApp", "Test\OrderBookMockApp\OrderBookMockApp.csproj", "{B3633526-F46C-4233-B1A9-2B5503E037DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1367,6 +1381,22 @@ Global
 		{17F480D2-3D33-43B8-8ADF-0D438A7FA5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17F480D2-3D33-43B8-8ADF-0D438A7FA5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17F480D2-3D33-43B8-8ADF-0D438A7FA5FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806616E0-18DB-4872-88CD-8377376C3416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806616E0-18DB-4872-88CD-8377376C3416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806616E0-18DB-4872-88CD-8377376C3416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806616E0-18DB-4872-88CD-8377376C3416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0D57B6-A469-4956-AC61-F8DD684E80B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0D57B6-A469-4956-AC61-F8DD684E80B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0D57B6-A469-4956-AC61-F8DD684E80B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0D57B6-A469-4956-AC61-F8DD684E80B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3633526-F46C-4233-B1A9-2B5503E037DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3633526-F46C-4233-B1A9-2B5503E037DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3633526-F46C-4233-B1A9-2B5503E037DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3633526-F46C-4233-B1A9-2B5503E037DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1650,6 +1680,13 @@ Global
 		{DB0973FE-226C-4C55-9045-36887DB957E5} = {C8D6BA8A-1289-4BE0-A314-F5B237E40A92}
 		{01446CE0-C0B4-44D1-A65E-00D897010821} = {11FB33E1-A4A1-4F37-BEAC-3EC9DB1ED5D2}
 		{4C331320-6CEB-4EC7-A800-05D0893E360C} = {053DF18F-57C7-4D76-B6DC-C7DDB14D876F}
+		{695CA0D2-ECEF-49A2-B8F1-AC7E29539908} = {55C9E260-A0EB-4D8B-8CC7-A88BD3A2B351}
+		{90002646-7F50-4CE0-9CA6-07FB0F5A3BF9} = {695CA0D2-ECEF-49A2-B8F1-AC7E29539908}
+		{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156} = {90002646-7F50-4CE0-9CA6-07FB0F5A3BF9}
+		{806616E0-18DB-4872-88CD-8377376C3416} = {90002646-7F50-4CE0-9CA6-07FB0F5A3BF9}
+		{DA0D57B6-A469-4956-AC61-F8DD684E80B7} = {90002646-7F50-4CE0-9CA6-07FB0F5A3BF9}
+		{7C7685B6-A9DF-4CBF-B4D5-B23DD23F90EF} = {2C3F2109-D784-416C-B155-CCD8B8996338}
+		{B3633526-F46C-4233-B1A9-2B5503E037DB} = {7C7685B6-A9DF-4CBF-B4D5-B23DD23F90EF}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

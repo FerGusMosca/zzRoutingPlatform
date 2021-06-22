@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Instructions Processor IB</Name>
+
+  <Active>true</Active>
+  <IP>localhost</IP>
+  <Port>7496</Port>
+  <IdIBClient>3</IdIBClient>
+
+  <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds><!--5 segundos-->
+
+  <SearchForInstructionsInMilliseconds >1000</SearchForInstructionsInMilliseconds > <!--1 segundos-->
+  
+  <Exchange>SMART</Exchange>
+  
+</Configuration>

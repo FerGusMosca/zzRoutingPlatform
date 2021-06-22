@@ -9,6 +9,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using MarketDepth = QuickFix.MarketDepth;
 
 namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
 {
