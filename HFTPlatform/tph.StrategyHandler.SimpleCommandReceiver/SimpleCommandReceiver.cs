@@ -61,6 +61,31 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 return CMState.BuildFail(e);
             }
         }
+        
+        protected CMState ProcessMarketData(Wrapper wrapper)
+        {
+            try
+            {
+                
+                MarketDataConverter conv= new MarketDataConverter();
+
+                MarketData md = conv.GetMarketData(wrapper, Config);
+                
+                MarketDataDTO dto = new MarketDataDTO(md);
+                
+                DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
+                
+                Server.PublishEntity<MarketDataDTO>(dto);
+                
+                return CMState.BuildSuccess();
+            
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Error processing order book:{0}}",e.Message),Constants.MessageType.Error);
+                return CMState.BuildFail(e);
+            }
+        }
 
 
         protected override void DoLoadConfig(string configFile, List<string> noValFields)
@@ -76,6 +101,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             {
                 DoLog("Processing Order Book:" + wrapper.ToString(), Constants.MessageType.Information);
                 return ProcessOrderBook(wrapper);
+            }
+            if (wrapper.GetAction() == Actions.MARKET_DATA)
+            {
+                DoLog("Processing Market Data:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessMarketData(wrapper);
             }
             else
             {

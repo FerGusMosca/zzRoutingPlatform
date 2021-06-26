@@ -583,6 +583,7 @@
         <e p="DTOs" t="Include">
           <e p="ErrorMessage.cs" t="Include" />
           <e p="MarketData" t="Include">
+            <e p="MarketDataDTO.cs" t="Include" />
             <e p="OrderBookDTO.cs" t="Include" />
           </e>
           <e p="SubscriptionResponse.cs" t="Include" />

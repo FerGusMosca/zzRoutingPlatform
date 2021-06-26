@@ -43,6 +43,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         #region Private Static Consts
 
         private static string _ORDER_BOOK_SERVICE = "OB";
+        
+        private static string _MARKET_DATA_SERVICE = "MD";
 
         #endregion
 
@@ -119,6 +121,23 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
         #region Protected Methods
 
+        protected void ProcessMarketDataRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
+        {
+            SubscribeService(socket, subscrMsg);
+
+            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,
+                                                                        new Security() {Symbol = subscrMsg.ServiceKey},
+                                                                        SubscriptionRequestType.SnapshotAndUpdates,
+                                                                        MarketDepth.TopOfBook);
+            MdReqId++;
+            CMState reqState = OnMessageReceived(wrapper);
+
+
+            ProcessSubscriptionResponse(socket, subscrMsg.Service, subscrMsg.ServiceKey, subscrMsg.UUID,
+                reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
+
+        }
+
         protected void ProcessOrderBookRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
         {
             SubscribeService(socket, subscrMsg);
@@ -146,6 +165,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 if (subscrMsg.Service == _ORDER_BOOK_SERVICE)
                 {
                     ProcessOrderBookRequest(socket, subscrMsg);
+                }
+                if (subscrMsg.Service == _MARKET_DATA_SERVICE)
+                {
+                    ProcessMarketDataRequest(socket, subscrMsg);
                 }
                 else
                 {
