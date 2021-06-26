@@ -4,6 +4,9 @@
   <QuoteCurrency>USDT</QuoteCurrency>
 
   <PublishUpdateInMilliseconds>100</PublishUpdateInMilliseconds>
+  
+  <Key></Key>
+  <Secret></Secret>
   <!--5 segundos-->
 
   <AccountNumber>4</AccountNumber>

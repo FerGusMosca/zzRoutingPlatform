@@ -20,6 +20,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common;
 using zHFT.MarketClient.Common.Converters;
+using OrderBook = zHFT.InstructionBasedMarketClient.IOL.Common.DTO.OrderBook;
 
 namespace zHFT.InstructionBasedMarketClient.IOL.Client
 {

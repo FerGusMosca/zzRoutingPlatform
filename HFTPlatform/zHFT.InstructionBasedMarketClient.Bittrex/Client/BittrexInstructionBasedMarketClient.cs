@@ -19,6 +19,7 @@ using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Converters;
 using zHFT.MarketClient.Common.Wrappers;
@@ -92,6 +93,11 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
         private string GetQuoteCurrency(string quoteSymbol)
         {
             return quoteSymbol != null ? quoteSymbol : BittrexConfiguration.QuoteCurrency;
+        }
+
+        protected override void DoRequestOrderBook(object param)
+        {
+            DoLog(String.Format("Not implemented Order Book for Bittrex"),Constants.MessageType.Error);
         }
 
         protected override void DoRequestMarketData(Object param)
@@ -206,7 +212,7 @@ namespace zHFT.InstructionBasedMarketClient.Bittrex.Client
             return BittrexConfiguration.AccountNumber;
         }
 
-        protected override CMState ProessMarketDataRequest(Wrapper wrapper)
+        protected override CMState ProcessMarketDataRequest(Wrapper wrapper)
         {
             try
             {

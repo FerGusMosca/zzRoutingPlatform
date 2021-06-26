@@ -52,6 +52,9 @@
       <Content Include="Config.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <Content Include="incomingBinance.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="incomingIB.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         <SubType>Designer</SubType>
@@ -66,9 +69,9 @@
         <Project>{da0d57b6-a469-4956-ac61-f8dd684e80b7}</Project>
         <Name>tph.StrategyHandler.SimpleCommandReceiver</Name>
       </ProjectReference>
-      <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.IB\zHFT.InstructionBasedMarketClient.IB.csproj">
-        <Project>{2ab16060-3c26-456d-a02d-8aa025bdab08}</Project>
-        <Name>zHFT.InstructionBasedMarketClient.IB</Name>
+      <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.Binance\zHFT.InstructionBasedMarketClient.Binance.csproj">
+        <Project>{edc254d7-cbf9-4b08-af29-92a64a2ec5a5}</Project>
+        <Name>zHFT.InstructionBasedMarketClient.Binance</Name>
       </ProjectReference>
       <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj">
         <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>

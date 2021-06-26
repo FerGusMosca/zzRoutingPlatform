@@ -20,7 +20,8 @@ namespace zHFT.Main.BusinessEntities.Market_Data
 
         public SettlType SettlType { get; set; }
 
-
+        public MarketDepth MarketDepth { get; set; }
+        
         #endregion
     }
 }

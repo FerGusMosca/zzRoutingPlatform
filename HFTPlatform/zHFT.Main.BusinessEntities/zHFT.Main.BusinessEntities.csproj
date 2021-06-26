@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Market Data\MarketData.cs" />
     <Compile Include="Market Data\MarketDataRequest.cs" />
+    <Compile Include="Market Data\OrderBook.cs" />
+    <Compile Include="Market Data\OrderBookEntry.cs" />
     <Compile Include="Securities\BaseTradingRule.cs" />
     <Compile Include="Securities\ExecInstRule.cs" />
     <Compile Include="Securities\FinancingDetail.cs" />

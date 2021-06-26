@@ -40,3 +40,10 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\bin\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.DataAccess\obj\Debug\zHFT.OptionsMarketClient.DataAccess.pdb

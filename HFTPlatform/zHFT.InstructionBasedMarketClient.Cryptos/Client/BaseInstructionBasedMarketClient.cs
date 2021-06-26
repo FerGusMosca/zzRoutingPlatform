@@ -44,9 +44,11 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
         #region Abstract Methods
 
+        protected abstract void DoRequestOrderBook(Object param);
+
         protected abstract void DoRequestMarketData(Object param);
 
-        protected abstract CMState ProessMarketDataRequest(Wrapper wrapper);
+        protected abstract CMState ProcessMarketDataRequest(Wrapper wrapper);
 
         protected abstract int GetSearchForInstrInMiliseconds();
 
@@ -130,7 +132,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
             return sec;
         }
 
-        protected CMState ProcessMarketDataRequest(Wrapper wrapper)
+        protected CMState OnMarketDataRequest(Wrapper wrapper)
         {
             string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
             long mdReqId = (long)wrapper.GetField(MarketDataRequestField.MDReqId);
@@ -140,6 +142,21 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
             ActiveSecurities.Add(mdReqId, sec);
             RequestMarketDataThread = new Thread(DoRequestMarketData);
+            RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
+
+            return CMState.BuildSuccess();
+        }
+        
+        protected CMState OnOrderBookRequest(Wrapper wrapper)
+        {
+            string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
+            long mdReqId = (long)wrapper.GetField(MarketDataRequestField.MDReqId);
+            string quoteSymbol = (string)wrapper.GetField(MarketDataRequestField.QuoteSymbol);
+
+            Security sec = new Security() { Symbol = symbol };
+
+            ActiveSecurities.Add(mdReqId, sec);
+            RequestMarketDataThread = new Thread(DoRequestOrderBook);
             RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
 
             return CMState.BuildSuccess();
@@ -181,7 +198,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                     }
                     else if (Actions.MARKET_DATA_REQUEST == action)
                     {
-                        return ProessMarketDataRequest(wrapper);
+                        return ProcessMarketDataRequest(wrapper);
                     }
                     else
                     {

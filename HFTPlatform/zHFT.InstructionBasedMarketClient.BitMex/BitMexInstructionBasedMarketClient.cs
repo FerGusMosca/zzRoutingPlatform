@@ -20,9 +20,11 @@ using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Converters;
 using zHFT.MarketClient.Common.Wrappers;
+using OrderBookEntry = zHFT.InstructionBasedMarketClient.BitMex.Common.DTO.OrderBookEntry;
 
 namespace zHFT.InstructionBasedMarketClient.BitMex
 {
@@ -182,6 +184,11 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
 
         }
 
+        protected override void DoRequestOrderBook(object param)
+        {
+            DoLog(String.Format("Not implemented Order Book for BitMex"),Constants.MessageType.Error);
+        }
+
         protected override void DoRequestMarketData(Object param)
         {
             string symbol = (string)param;
@@ -264,7 +271,7 @@ namespace zHFT.InstructionBasedMarketClient.BitMex
         
         }
 
-        protected override CMState ProessMarketDataRequest(Wrapper wrapper)
+        protected override CMState ProcessMarketDataRequest(Wrapper wrapper)
         {
             try
             {

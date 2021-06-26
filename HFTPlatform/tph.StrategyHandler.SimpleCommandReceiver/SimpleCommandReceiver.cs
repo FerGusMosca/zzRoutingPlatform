@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.StrategyHandler.Common.Converters;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver
 {
@@ -33,6 +37,32 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             DoLoadConfig(configFile, listaCamposSinValor);
         }
 
+        protected CMState ProcessOrderBook(Wrapper wrapper)
+        {
+            try
+            {
+                
+                MarketDataConverter conv= new MarketDataConverter();
+
+                OrderBook orderBook = conv.GetOrderBook(wrapper, Config);
+                
+                OrderBookDTO dto = new OrderBookDTO(orderBook);
+                
+                DoLog(string.Format("Sending Order book for security {0} at {1}:{2}",orderBook.Security.Symbol,DateTime.Now,orderBook.GetTopOfBook()),Constants.MessageType.Information);
+                
+                Server.PublishEntity<OrderBookDTO>(dto);
+                
+                return CMState.BuildSuccess();
+            
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Error processing order book:{0}}",e.Message),Constants.MessageType.Error);
+                return CMState.BuildFail(e);
+            }
+        }
+
+
         protected override void DoLoadConfig(string configFile, List<string> noValFields)
         {
             List<string> noValueFields = new List<string>();
@@ -41,9 +71,19 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
 
         public override CMState ProcessMessage(Wrapper wrapper)
         {
-            OnMessageRcv(wrapper);
-            DoLog(string.Format("Invoking OnMessageRcv @SimpleCommandReceiver for action {0}",wrapper.GetAction()),Constants.MessageType.Error);
-            return CMState.BuildSuccess();
+            
+            if (wrapper.GetAction() == Actions.ORDER_BOOK)
+            {
+                DoLog("Processing Order Book:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessOrderBook(wrapper);
+            }
+            else
+            {
+            
+                OnMessageRcv(wrapper);
+                DoLog(string.Format("Invoking OnMessageRcv @SimpleCommandReceiver for action {0}",wrapper.GetAction()),Constants.MessageType.Error);
+                return CMState.BuildSuccess();    
+            }
         }
 
         public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)

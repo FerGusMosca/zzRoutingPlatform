@@ -553,6 +553,7 @@
           <e p="App.Config" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
           <e p="Config.xml" t="Include" />
+          <e p="incomingBinance.xml" t="Include" />
           <e p="incomingIB.xml" t="Include" />
           <e p="obj" t="ExcludeRecursive" />
           <e p="OrderBookMockApp.csproj" t="IncludeRecursive" />
@@ -581,6 +582,9 @@
         </e>
         <e p="DTOs" t="Include">
           <e p="ErrorMessage.cs" t="Include" />
+          <e p="MarketData" t="Include">
+            <e p="OrderBookDTO.cs" t="Include" />
+          </e>
           <e p="SubscriptionResponse.cs" t="Include" />
           <e p="WebSocketMessage.cs" t="Include" />
           <e p="WebSocketSubscribeMessage.cs" t="Include" />
@@ -1218,6 +1222,8 @@
         <e p="Market Data" t="Include">
           <e p="MarketData.cs" t="Include" />
           <e p="MarketDataRequest.cs" t="Include" />
+          <e p="OrderBook.cs" t="Include" />
+          <e p="OrderBookEntry.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="Orders" t="Include">

@@ -354,6 +354,30 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
             }
 
         }
+        
+        protected void RequestOrderBookOnDemand(Security sec,bool snapshot,string mode)
+        {
+            zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new MarketClient.IB.Common.Configuration.Contract();
+
+            ctr.Currency = sec.Currency != null ? sec.Currency : "USD";
+            //ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
+            ctr.Exchange = IBConfiguration.Exchange ;
+            ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
+            ctr.Symbol = sec.Symbol;
+
+            if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
+                && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
+            {
+                DoLog(string.Format("@{0}:Requesting {2} Order Book On Demand for Symbol: {1}", IBConfiguration.Name, sec.Symbol,mode), Main.Common.Util.Constants.MessageType.Information);
+                int tickerId = _MARKET_DATA_ON_DEMAND_INDEX + ActiveSecuritiesOnDemand.Count();
+                ActiveSecuritiesOnDemand.Add(tickerId, sec);
+                ContractsTimeStamps.Add(tickerId, DateTime.Now);
+                ReqMarketDepth(tickerId, ctr);
+            }
+            else
+                DoLog(string.Format("@{0}:Order Book already subscribed for symbol: {1}", IBConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
+        }
+
 
         protected void RequestMarketDataOnDemand(Security sec,bool snapshot,string mode)
         {
@@ -411,9 +435,20 @@ namespace zHFT.InstructionBasedMarketClient.IB.Client
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
                 {
-                 
-                    RequestMarketDataOnDemand(mdr.Security, false, "Snapshot+Updates");
-                    return CMState.BuildSuccess();
+                    if (mdr.MarketDepth == null || mdr.MarketDepth == MarketDepth.TopOfBook)
+                    {
+                        RequestMarketDataOnDemand(mdr.Security, false, "Snapshot+Updates");
+                        return CMState.BuildSuccess();
+                    }
+                    else if (mdr.MarketDepth == MarketDepth.FullBook)
+                    {
+                        RequestOrderBookOnDemand(mdr.Security, false, "Snapshot+Updates");
+                        return CMState.BuildSuccess();
+                    }
+                    else
+                    {
+                        return CMState.BuildFail(new Exception(string.Format("Not implemented market depth {0} on order book request",mdr.MarketDepth)));
+                    }
                     
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)

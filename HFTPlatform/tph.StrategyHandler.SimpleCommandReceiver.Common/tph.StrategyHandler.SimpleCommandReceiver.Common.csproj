@@ -40,6 +40,7 @@
     <ItemGroup>
         <Compile Include="Configuration\Configuration.cs" />
         <Compile Include="DTOs\ErrorMessage.cs" />
+        <Compile Include="DTOs\MarketData\OrderBookDTO.cs" />
         <Compile Include="DTOs\SubscriptionResponse.cs" />
         <Compile Include="DTOs\WebSocketMessage.cs" />
         <Compile Include="DTOs\WebSocketSubscribeMessage.cs" />

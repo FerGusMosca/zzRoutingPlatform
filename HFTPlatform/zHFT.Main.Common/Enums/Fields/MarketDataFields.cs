@@ -63,6 +63,30 @@ namespace zHFT.Main.Common.Enums
 
         public static readonly MarketDataFields LastTradeDateTime = new MarketDataFields(42);
         
+        public static readonly MarketDataFields BidEntryPx0 = new MarketDataFields(43);
+        public static readonly MarketDataFields BidEntryPx1 = new MarketDataFields(44);
+        public static readonly MarketDataFields BidEntryPx2 = new MarketDataFields(45);
+        public static readonly MarketDataFields BidEntryPx3 = new MarketDataFields(46);
+        public static readonly MarketDataFields BidEntryPx4 = new MarketDataFields(47);
+        
+        public static readonly MarketDataFields AskEntryPx0 = new MarketDataFields(48);
+        public static readonly MarketDataFields AskEntryPx1 = new MarketDataFields(49);
+        public static readonly MarketDataFields AskEntryPx2 = new MarketDataFields(50);
+        public static readonly MarketDataFields AskEntryPx3 = new MarketDataFields(51);
+        public static readonly MarketDataFields AskEntryPx4 = new MarketDataFields(52);
+        
+        public static readonly MarketDataFields BidEntrySize0 = new MarketDataFields(53);
+        public static readonly MarketDataFields BidEntrySize1 = new MarketDataFields(54);
+        public static readonly MarketDataFields BidEntrySize2 = new MarketDataFields(55);
+        public static readonly MarketDataFields BidEntrySize3 = new MarketDataFields(56);
+        public static readonly MarketDataFields BidEntrySize4 = new MarketDataFields(57);
+        
+        public static readonly MarketDataFields AskEntrySize0 = new MarketDataFields(58);
+        public static readonly MarketDataFields AskEntrySize1 = new MarketDataFields(59);
+        public static readonly MarketDataFields AskEntrySize2 = new MarketDataFields(60);
+        public static readonly MarketDataFields AskEntrySize3 = new MarketDataFields(61);
+        public static readonly MarketDataFields AskEntrySize4 = new MarketDataFields(62);
+        
         protected MarketDataFields(int pInternalValue)
             : base(pInternalValue)
         {

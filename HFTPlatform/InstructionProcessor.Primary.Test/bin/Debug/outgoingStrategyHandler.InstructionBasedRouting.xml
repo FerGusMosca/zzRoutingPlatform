@@ -4,13 +4,15 @@
 
   <ReportSavingMode>BD</ReportSavingMode>
   <!--BD=SQL Server Data Base, EXCEL=CSV file, NONE=nothing-->
-  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=StrategyReports;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
+  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=StrategyReports;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
 
   <OrderRouter>zHFT.OrderRouters.Router.PrimaryOrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+
+  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
 
   <!--<AccountNumber>7</AccountNumber>--> <!--Primary Test 9008-->
   <AccountNumber>6</AccountNumber><!--Eco Valores PROD-->
@@ -21,7 +23,7 @@
 
   <AccountManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.AccountManager, zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</AccountManagerAccessLayer>
 
-  <InstructionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.InstructionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</InstructionManagerAccessLayer>
+  <InstructionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.ADO.ADOInstructionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</InstructionManagerAccessLayer>
 
   <PositionManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.PositionManager,zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</PositionManagerAccessLayer>
 
@@ -33,7 +35,7 @@
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>
-      <Value>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</Value>
+      <Value>Data Source=.\SQLDEV17;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</Value>
     </Config>
     <Config>
       <Key>DetailPositionsURL</Key>

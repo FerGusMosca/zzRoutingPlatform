@@ -32,8 +32,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             Subscriptions = new Dictionary<int, Dictionary<string, WebSocketSubscribeMessage>>();
 
             DoLog("Initializing Websocket server...", Constants.MessageType.Information);
-        
-        
+
+            MdReqId = 0;
+
+
         }
 
         #endregion
@@ -45,6 +47,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         #endregion
 
         #region Protected Attributes
+        
+        protected long MdReqId { get; set; }
 
         protected Dictionary<int, Dictionary<string, WebSocketSubscribeMessage>> Subscriptions { get; set; }
 
@@ -119,11 +123,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         {
             SubscribeService(socket, subscrMsg);
             
-            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(0,
+            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,
                                                                             new Security() {Symbol = subscrMsg.ServiceKey},
                                                                             SubscriptionRequestType.SnapshotAndUpdates,
                                                                             MarketDepth.FullBook);
-            
+            MdReqId++;
             CMState reqState = OnMessageReceived(wrapper);
 
 
@@ -160,6 +164,35 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
         #region Public Methods
 
+        public void PublishEntity<T>(T entity)
+        {
+            try
+            {
+
+                lock (ConnectedClients)
+                {
+                    foreach (IWebSocketConnection ConnectionSocket in ConnectedClients.Values)
+                    {
+                        try
+                        {
+                            if (ConnectionSocket != null && ConnectionSocket.IsAvailable)
+                            {
+                                DoSend<T>(ConnectionSocket,entity);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DoLog(string.Format("Critical error  @PublishEntity: {0}", ex.Message), Constants.MessageType.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error sending error message @PublishEntity. Error= {0}", ex.Message),Constants.MessageType.Error);
+            }
+        }
+        
         #endregion
 
         #region Websocket Methods
