@@ -10,6 +10,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Configuration
         
         public string WebSocketURL { get; set; } 
         
+        public string IncomingConfigPath { get; set; }
+        
+        public string IncomingModule { get; set; }
+        
+        public string OutgoingModule { get; set; }
+        
+        public string OutgoingConfigPath { get; set; }
+        
         #endregion
         
         public override bool CheckDefaults(List<string> result)

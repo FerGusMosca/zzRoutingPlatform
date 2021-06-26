@@ -2,9 +2,8 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Order Book Mock</Name>
 
-  <IncomingConfigPath>.\incomingBinance.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance</IncomingModule>
-  <OutgoingModule>tph.StrategyHandler.SimpleCommandReceiver.SimpleCommandReceiver, tph.StrategyHandler.SimpleCommandReceiver</OutgoingModule>
-  <OutgoingConfigPath>.\WebSocket.xml</OutgoingConfigPath>
+  <IncomingModule>tph.StrategyHandler.SimpleCommandReceiver.SimpleCommandReceiver, tph.StrategyHandler.SimpleCommandReceiver</IncomingModule>
+  <IncomingConfigPath>.\SimpleCommModule.xml</IncomingConfigPath>
+  
   <LogToConsole>true</LogToConsole>
 </Configuration>

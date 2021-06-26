@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Threading;
 using Fleck;
 using Newtonsoft.Json;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Configuration;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.Main.Common.Wrappers;
+using zHFT.OrderRouters.Common.Wrappers;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 {
@@ -154,6 +160,57 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
         }
 
+        protected void ProcessRouteOrderReq(IWebSocketConnection socket, string m)
+        {
+            RouteOrderReq routeOrderReq = JsonConvert.DeserializeObject<RouteOrderReq>(m);
+            try
+            {
+                
+                DoLog(string.Format("Incoming Route Order Req for Symbol {0} and Side {1}", routeOrderReq.Symbol, routeOrderReq.Side), Constants.MessageType.Information);
+
+                OrderConverter converter= new OrderConverter();;
+
+                Order newOrder  = converter.ConvertNewOrder(routeOrderReq);
+
+                NewOrderWrapper newOrderWrapper = new NewOrderWrapper(newOrder, new Configuration());
+                
+                CMState resp = OnMessageReceived(newOrderWrapper);
+                
+                if (resp.Success)
+                {
+                    RouteOrderAck ackMsg = new RouteOrderAck()
+                    {
+                        Msg = "RouteOrderAck",
+                        ReqId = routeOrderReq.ReqId,
+                        UUID = routeOrderReq.UUID,
+                        Success = true,
+                    };
+
+                    DoSend<RouteOrderAck>(socket, ackMsg);
+
+                    DoLog(string.Format("Route Order Req for symbol {0} qty {1} side {2} successfully processed", routeOrderReq.Symbol, routeOrderReq.Qty, routeOrderReq.Side), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Incoming Route Position Req for symbol {0} qty {1} side {2}. Error:{3}", routeOrderReq.Symbol, routeOrderReq.Qty, routeOrderReq.Side,ex.Message), Constants.MessageType.Error);
+
+                RouteOrderAck ackMsg = new RouteOrderAck()
+                {
+                    Msg = "RouteOrderAck",
+                    ReqId = routeOrderReq.ReqId,
+                    Success = false,
+                    UUID = routeOrderReq.UUID,
+                    Error = ex.Message
+
+                };
+            }
+            
+        }
+
         protected void ProcessSubscriptions(IWebSocketConnection socket, string m)
         {
             WebSocketSubscribeMessage subscrMsg = JsonConvert.DeserializeObject<WebSocketSubscribeMessage>(m);
@@ -229,6 +286,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 if (wsResp.Msg == "Subscribe")
                 {
                     ProcessSubscriptions(socket, m);
+                }
+                else if (wsResp.Msg == "RouteOrderReq")
+                {
+                    ProcessRouteOrderReq(socket, m);
+                }
+                else
+                {
+                    throw new Exception(string.Format("Not recognized messag {0}", wsResp.Msg));
                 }
             }
             catch (Exception ex)

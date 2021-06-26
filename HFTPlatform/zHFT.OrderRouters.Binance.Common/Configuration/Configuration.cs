@@ -10,12 +10,13 @@ namespace zHFT.OrderRouters.Binance.Common.Configuration
     public class Configuration : BaseConfiguration
     {
         #region Public Attributes
-
-        public string ApiKey { get; set; }
-        public string Secret { get; set; }
         public string QuoteCurrency { get; set; }
 
-        public int AccountNumber { get; set; }
+        public int? AccountNumber { get; set; }
+        
+        public string Secret { get; set; }
+        
+        public string Key { get; set; }
 
         public string ConfigConnectionString { get; set; }
 
@@ -50,12 +51,7 @@ namespace zHFT.OrderRouters.Binance.Common.Configuration
                 resultado = false;
             }
 
-            if (AccountNumber <= 0)
-            {
-                result.Add("AccountNumber");
-                resultado = false;
-            }
-
+           
             return resultado;
         }
 

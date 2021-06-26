@@ -39,9 +39,13 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Configuration\Configuration.cs" />
+        <Compile Include="Converters\OrderConverter.cs" />
         <Compile Include="DTOs\ErrorMessage.cs" />
         <Compile Include="DTOs\MarketData\MarketDataDTO.cs" />
         <Compile Include="DTOs\MarketData\OrderBookDTO.cs" />
+        <Compile Include="DTOs\OrderRouting\ExecutionReportDTO.cs" />
+        <Compile Include="DTOs\OrderRouting\RouteOrderAck.cs" />
+        <Compile Include="DTOs\OrderRouting\RouteOrderReq.cs" />
         <Compile Include="DTOs\SubscriptionResponse.cs" />
         <Compile Include="DTOs\WebSocketMessage.cs" />
         <Compile Include="DTOs\WebSocketSubscribeMessage.cs" />

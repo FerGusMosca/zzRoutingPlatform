@@ -557,11 +557,12 @@
           <e p="incomingIB.xml" t="Include" />
           <e p="obj" t="ExcludeRecursive" />
           <e p="OrderBookMockApp.csproj" t="IncludeRecursive" />
+          <e p="orderRouter.Binance.xml" t="Include" />
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
-          <e p="WebSocket.xml" t="Include" />
+          <e p="SimpleCommModule.xml" t="Include" />
         </e>
         <e p="Primary Certification" t="Include" />
       </e>
@@ -580,11 +581,19 @@
         <e p="Configuration" t="Include">
           <e p="Configuration.cs" t="Include" />
         </e>
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
         <e p="DTOs" t="Include">
           <e p="ErrorMessage.cs" t="Include" />
           <e p="MarketData" t="Include">
             <e p="MarketDataDTO.cs" t="Include" />
             <e p="OrderBookDTO.cs" t="Include" />
+          </e>
+          <e p="OrderRouting" t="Include">
+            <e p="ExecutionReportDTO.cs" t="Include" />
+            <e p="RouteOrderAck.cs" t="Include" />
+            <e p="RouteOrderReq.cs" t="Include" />
           </e>
           <e p="SubscriptionResponse.cs" t="Include" />
           <e p="WebSocketMessage.cs" t="Include" />

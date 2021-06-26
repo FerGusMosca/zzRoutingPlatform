@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Binance.Net.Objects.Spot.MarketData;
 using CryptoExchange.Net.Objects;
+using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
@@ -24,6 +25,7 @@ using zHFT.OrderRouters.BINANCE.Common.Util;
 using zHFT.OrderRouters.Cryptos;
 using BinanceClient2 = Binance.Net.BinanceClient;
 using Constants = zHFT.Main.Common.Util.Constants;
+using Side = zHFT.Main.Common.Enums.Side;
 
 namespace zHFT.OrderRouters.Binance
 {
@@ -34,6 +36,8 @@ namespace zHFT.OrderRouters.Binance
         protected Common.Configuration.Configuration BinanceConfiguration { get; set; }
 
         protected AccountBinanceDataManager AccountBinanceDataManager { get; set; }
+        
+        protected AccountBinanceData AccountBinanceData { get; set; }
         
         protected  BinanceClient BinanceClient { get; set; }
         
@@ -68,10 +72,27 @@ namespace zHFT.OrderRouters.Binance
         #endregion
 
         #region Protected OrderRouterBase Methods
+        
+        protected void BuildBinanceData()
+        {
+            if (BinanceConfiguration.AccountNumber.HasValue)
+            {
+                AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.ConfigConnectionString);
+                AccountBinanceData  = AccountBinanceDataManager.GetByAccountNumber(BinanceConfiguration.AccountNumber.Value);
+            }
+            else if(!string.IsNullOrEmpty(BinanceConfiguration.Secret) && !string.IsNullOrEmpty(BinanceConfiguration.Key))
+            {
+                AccountBinanceData  = new AccountBinanceData(){Secret = BinanceConfiguration.Secret,APIKey = BinanceConfiguration.Key};
+            }
+            else
+                throw new Exception(String.Format("Could not find biannce keys. Not an account number or secret/key pair detected"));
+            
+        }
 
         private void LoadMemoryEntities()
         {
             var client = new BinanceClient2();
+            
             
             WebCallResult<BinanceExchangeInfo> info = client.Spot.System.GetExchangeInfoAsync().Result;
 
@@ -511,26 +532,17 @@ namespace zHFT.OrderRouters.Binance
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
 
+                    BuildBinanceData();
+                    
                     LoadMemoryEntities();
-
-                    AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.ConfigConnectionString);
 
                     OrderIdMappers = new Dictionary<string, string>();
                     JustSentOrders = new Dictionary<string, Order>();
 
                     ExecutionReportThread = new Thread(DoEvalExecutionReport);
                     ExecutionReportThread.Start();
-
-                    //Todo inicializar mundo Binance
-                    AccountBinanceData binanceData = AccountBinanceDataManager.GetByAccountNumber(BinanceConfiguration.AccountNumber);
-
-                    if (binanceData == null)
-                        throw new Exception(string.Format("No se encontró ninguna configuración de autenticación contra Binance de la cuenta {0}", BinanceConfiguration.AccountNumber));
-
-                    BinanceConfiguration.ApiKey = binanceData.APIKey;
-                    BinanceConfiguration.Secret = binanceData.Secret;
                     
-                    var apiClient = new ApiClient(BinanceConfiguration.ApiKey, BinanceConfiguration.Secret);
+                    var apiClient = new ApiClient(AccountBinanceData.APIKey, AccountBinanceData.Secret);
                     BinanceClient = new BinanceClient(apiClient);
 
                     return true;
