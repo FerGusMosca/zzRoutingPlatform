@@ -4,7 +4,7 @@
   <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
   <User>fmosca</User>
-  <Password>Baiano.18</Password>
+  <Password>Baiano.19</Password>
   <RequestSecurityList>true</RequestSecurityList>
   
   <SecurityListRequestType>4</SecurityListRequestType><!--0=Symbol,
