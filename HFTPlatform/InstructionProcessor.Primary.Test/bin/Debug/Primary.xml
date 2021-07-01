@@ -47,7 +47,7 @@
   </Markets>
 
 
-  <RequestSecurityList>true</RequestSecurityList> <!--Pide y guarda la securityList-->
+  <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
   <RequestFullMarketData>false</RequestFullMarketData>
   <SaveFullMarketData>false</SaveFullMarketData>
   

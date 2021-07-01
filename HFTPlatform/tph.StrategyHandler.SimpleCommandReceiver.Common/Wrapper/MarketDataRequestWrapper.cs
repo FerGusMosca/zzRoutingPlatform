@@ -7,7 +7,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper
     {
         #region Protected Attributes
         
-        protected long MdReqId { get; set; }
+        protected int MdReqId { get; set; }
 
         protected Security Security { get; set; }
 
@@ -19,7 +19,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper
         
         #region Constructors
 
-        public MarketDataRequestWrapper(long pReqId, Security pSecurity, SubscriptionRequestType pType,
+        public MarketDataRequestWrapper(int pReqId, Security pSecurity, SubscriptionRequestType pType,
                                         MarketDepth pDetph)
         {
             MdReqId = pReqId;
@@ -42,9 +42,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper
             if (mdrField == MarketDataRequestField.Symbol)
                 return Security.Symbol;
             if (mdrField == MarketDataRequestField.Exchange)
-            {
-                return null;
-            }
+                return Security.Exchange;
             if (mdrField == MarketDataRequestField.SecurityType)
                 return Security.SecType;
             if (mdrField == MarketDataRequestField.Currency)

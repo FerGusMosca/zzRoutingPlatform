@@ -135,7 +135,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         protected CMState OnMarketDataRequest(Wrapper wrapper)
         {
             string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
-            long mdReqId = (long)wrapper.GetField(MarketDataRequestField.MDReqId);
+            int mdReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
             string quoteSymbol = (string)wrapper.GetField(MarketDataRequestField.QuoteSymbol);
 
             Security sec = new Security() { Symbol = symbol };
@@ -150,7 +150,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         protected CMState OnOrderBookRequest(Wrapper wrapper)
         {
             string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
-            long mdReqId = (long)wrapper.GetField(MarketDataRequestField.MDReqId);
+            int mdReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
             string quoteSymbol = (string)wrapper.GetField(MarketDataRequestField.QuoteSymbol);
 
             Security sec = new Security() { Symbol = symbol };
