@@ -17,6 +17,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
 using CancelOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.CancelOrderWrapper;
+using UpdateOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.UpdateOrderWrapper;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 {
@@ -207,6 +208,60 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             }
         }
 
+        protected void ProcessUpdateOrderReq(IWebSocketConnection socket, string m)
+        {
+            UpdateOrderReq updOrderReq = JsonConvert.DeserializeObject<UpdateOrderReq>(m);
+            try
+            {
+
+                DoLog(string.Format("Incoming  Order Update Req for ClOrdId {0} (Qty={1} Price={2})",
+                        updOrderReq.OrigClOrderId, updOrderReq.Qty.HasValue ? updOrderReq.Qty.Value.ToString() : "-",
+                        updOrderReq.Price.HasValue ? updOrderReq.Price.Value.ToString() : "-"),
+                        Constants.MessageType.Information);
+
+                Order order = new Order()
+                {
+                    Symbol = updOrderReq.Symbol,
+                    OrigClOrdId = updOrderReq.OrigClOrderId,
+                    ClOrdId = updOrderReq.ClOrderId,
+                    OrderId = updOrderReq.OrderId,
+                    OrderQty = updOrderReq.Qty,
+                    Price = updOrderReq.Price
+                };
+                
+                UpdateOrderWrapper updOrderReqWrapper= new UpdateOrderWrapper(order);
+                CMState resp = OnMessageReceived(updOrderReqWrapper);
+                
+                if (resp.Success)
+                {
+                    UpdateOrderAck ackMsg = new UpdateOrderAck()
+                    {
+                        Msg = "UpdateOrderAck",
+                        Success = true,
+                    };
+
+                    DoSend<UpdateOrderAck>(socket, ackMsg);
+
+                    DoLog(string.Format("Update Order Req for ClOrdId {0}  successfully processed", updOrderReq.OrigClOrderId), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Update Order Req Req for ClOrdId {0}. Error:{1}", updOrderReq.OrigClOrderId,ex.Message), Constants.MessageType.Error);
+
+                UpdateOrderAck ackMsg = new UpdateOrderAck()
+                {
+                    Msg = "UpdateOrderAck",
+                    Success = false,
+                    Error = ex.Message
+
+                };
+            }
+        }
+
         protected void ProcessCancelOrderReq(IWebSocketConnection socket, string m)
         {
             CancelOrderReq cxlOrderReq = JsonConvert.DeserializeObject<CancelOrderReq>(m);
@@ -388,6 +443,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 else if (wsResp.Msg == "CancelAllReq")
                 {
                     ProcessCancelAllReq(socket, m);
+                }
+                else if (wsResp.Msg == "UpdateOrderReq")
+                {
+                    ProcessUpdateOrderReq(socket, m);
                 }
                 else
                 {

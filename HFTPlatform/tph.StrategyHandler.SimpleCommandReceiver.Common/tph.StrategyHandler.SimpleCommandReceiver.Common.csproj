@@ -48,8 +48,11 @@
         <Compile Include="DTOs\OrderRouting\CancelOrderReq.cs" />
         <Compile Include="DTOs\OrderRouting\ExecutionReportDTO.cs" />
         <Compile Include="DTOs\OrderRouting\OrderCancelRejectDTO.cs" />
+        <Compile Include="DTOs\OrderRouting\OrderCancelReplaceRejectDTO.cs" />
         <Compile Include="DTOs\OrderRouting\RouteOrderAck.cs" />
         <Compile Include="DTOs\OrderRouting\RouteOrderReq.cs" />
+        <Compile Include="DTOs\OrderRouting\UpdateOrderAck.cs" />
+        <Compile Include="DTOs\OrderRouting\UpdateOrderReq.cs" />
         <Compile Include="DTOs\SubscriptionResponse.cs" />
         <Compile Include="DTOs\WebSocketMessage.cs" />
         <Compile Include="DTOs\WebSocketSubscribeMessage.cs" />
@@ -57,6 +60,7 @@
         <Compile Include="Wrapper\CancelAllWrapper.cs" />
         <Compile Include="Wrapper\CancelOrderWrapper.cs" />
         <Compile Include="Wrapper\MarketDataRequestWrapper.cs" />
+        <Compile Include="Wrapper\UpdateOrderWrapper.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">

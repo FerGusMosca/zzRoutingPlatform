@@ -1,6 +1,6 @@
 ﻿namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
 {
-    public class OrderCancelRejectDTO
+    public class OrderCancelReplaceRejectDTO
     {
         #region Public Attributes
         
@@ -10,9 +10,7 @@
         
         public string Text { get; set; }
         
-        public string ResponseTo { get; set; }
-        
-        public string Msg = "OrderCancelRejectMsg";
+        public string Msg = "OrderCancelReplaceRejectMsg";
         
         #endregion
     }

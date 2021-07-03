@@ -97,7 +97,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
         }
 
-        protected CMState ProcessOrderCancelReject(Wrapper wrapper)
+        protected CMState ProcessOrderCancelReplaceReject(Wrapper wrapper)
         {
             try
             {
@@ -105,6 +105,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 string clOrdId = (string) wrapper.GetField(OrderCancelRejectField.ClOrdID);
                 string origClOrdId = (string) wrapper.GetField(OrderCancelRejectField.OrigClOrdID);;
                 string text = (string) wrapper.GetField(OrderCancelRejectField.Text);;
+                CxlRejResponseTo respTo= (CxlRejResponseTo)wrapper.GetField(OrderCancelRejectField.CxlRejResponseTo);;
                 
                 DoLog(string.Format("Order Cancel Reject for ClOrdId {0} :{1}",origClOrdId,text),Constants.MessageType.Information);
 
@@ -112,7 +113,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 {
                     ClOrdId = clOrdId,
                     OrigClOrdId = origClOrdId,
-                    Text = text
+                    Text = text,
+                    ResponseTo = respTo == CxlRejResponseTo.OrderCancelRequest
+                        ? "OrderCancelRequest"
+                        : "OrderCancelReplaceRequest"
                 };
                 
                 Server.PublishEntity<OrderCancelRejectDTO>(dto);
@@ -205,8 +209,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
             else if (wrapper.GetAction() == Actions.ORDER_CANCEL_REJECT)
             {
-                DoLog("Processing Order Cancel Reject:" + wrapper.ToString(), Constants.MessageType.Information);
-                return ProcessOrderCancelReject(wrapper);
+                DoLog("Processing Order Cancel/Replace Reject:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessOrderCancelReplaceReject(wrapper);
             }
             else if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
             {

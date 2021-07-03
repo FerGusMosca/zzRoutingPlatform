@@ -599,8 +599,11 @@
             <e p="CancelOrderReq.cs" t="Include" />
             <e p="ExecutionReportDTO.cs" t="Include" />
             <e p="OrderCancelRejectDTO.cs" t="Include" />
+            <e p="OrderCancelReplaceRejectDTO.cs" t="Include" />
             <e p="RouteOrderAck.cs" t="Include" />
             <e p="RouteOrderReq.cs" t="Include" />
+            <e p="UpdateOrderAck.cs" t="Include" />
+            <e p="UpdateOrderReq.cs" t="Include" />
           </e>
           <e p="SubscriptionResponse.cs" t="Include" />
           <e p="WebSocketMessage.cs" t="Include" />
@@ -615,6 +618,7 @@
           <e p="CancelAllWrapper.cs" t="Include" />
           <e p="CancelOrderWrapper.cs" t="Include" />
           <e p="MarketDataRequestWrapper.cs" t="Include" />
+          <e p="UpdateOrderWrapper.cs" t="Include" />
         </e>
       </e>
       <e p="tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer" t="IncludeRecursive">

@@ -155,7 +155,7 @@ namespace zHFT.OrderRouters.Cryptos
                 }
                 else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                 {
-                    DoLog(string.Format("@{1}:Updating order  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("@{1}:Updating order  for symbol {0}", wrapper.GetField(OrderFields.Symbol), GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
                     return UpdateOrder(wrapper);
                     //return CMState.BuildSuccess();
                 }

@@ -453,13 +453,23 @@ namespace zHFT.OrderRouters.Binance
                                 }
                             }
                             else
-                                DoLog(string.Format("@{0}:Discarding cancelation of order because order could not be found!", BinanceConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
-
+                            {
+                                string  msg=string.Format("@{0}:Discarding cancelation of order because order {1} could not be found!", BinanceConfiguration.Name,origUuid);
+                                DoLog(msg, Main.Common.Util.Constants.MessageType.Information);
+                                OrderCancelRejectWrapper cxlReplRejWwapper = new OrderCancelRejectWrapper(origUuid, clOrderId, msg,CxlRejResponseTo.OrderCancelReplaceRequest);
+                                OnMessageRcv(cxlReplRejWwapper);
+                            }
                         }
 
                     }
                     else
-                        DoLog(string.Format("@{0}:Could not find order for origClOrderId  {1}!", BinanceConfiguration.Name, origClOrderId), Main.Common.Util.Constants.MessageType.Error);
+                    {
+                        string msg=string.Format("@{0}:Could not find order for origClOrderId  {1}!", BinanceConfiguration.Name, origClOrderId);
+                        DoLog(msg, Main.Common.Util.Constants.MessageType.Error);  
+                        OrderCancelRejectWrapper cxlReplRejWwapper = new OrderCancelRejectWrapper(origClOrderId, clOrderId, msg,CxlRejResponseTo.OrderCancelReplaceRequest);
+                        OnMessageRcv(cxlReplRejWwapper);
+                    }
+                        
 
                 }
 
@@ -498,7 +508,7 @@ namespace zHFT.OrderRouters.Binance
                     else
                     {
                         string msg = string.Format("Order {0} not found!", origClOrderId);
-                        OrderCancelRejectWrapper cxlRejWrapper=new OrderCancelRejectWrapper(origClOrderId,clOrderId,msg);
+                        OrderCancelRejectWrapper cxlRejWrapper=new OrderCancelRejectWrapper(origClOrderId,clOrderId,msg,CxlRejResponseTo.OrderCancelRequest);
                         OnMessageRcv(cxlRejWrapper);
                         DoLog(string.Format("Error trying to cancel ClOrdId {0}:{1}", origClOrderId, msg),Constants.MessageType.Information);
                     }

@@ -13,16 +13,19 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
         protected string ClOrdId { get; set; }
         
         protected string Text { get; set; }
+        
+        protected CxlRejResponseTo CxlRejResponseTo { get; set; }
 
         #endregion
 
         #region Constructors
 
-        public OrderCancelRejectWrapper(string pOrigClOrdId,string pClOrdId, string pText)
+        public OrderCancelRejectWrapper(string pOrigClOrdId,string pClOrdId, string pText,CxlRejResponseTo pCxlRejResponseTo)
         {
             OrigClOrdId = pOrigClOrdId;
             ClOrdId = pClOrdId;
             Text = pText;
+            CxlRejResponseTo = pCxlRejResponseTo;
         }
 
         #endregion
@@ -49,7 +52,7 @@ namespace zHFT.OrderRouters.Binance.Common.Wrappers
             else if (ocrField == OrderCancelRejectField.OrdStatus)
                 return OrderCancelRejectField.NULL;
             else if (ocrField == OrderCancelRejectField.CxlRejResponseTo)
-                return CxlRejResponseTo.OrderCancelRequest;
+                return CxlRejResponseTo;
             else if (ocrField == OrderCancelRejectField.CxlRejReason)
                 return CxlRejReason.Other;
             else
