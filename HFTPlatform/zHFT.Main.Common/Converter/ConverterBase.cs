@@ -19,7 +19,8 @@ namespace zHFT.Main.Common.Converter
         #endregion
 
         #region Protected Methods
-        protected bool ValidateField(Wrapper wrapper, Fields field)
+        
+        protected static bool ValidateField(Wrapper wrapper, Fields field)
         {
             return  wrapper.GetField(field) != Fields.NULL;
         }

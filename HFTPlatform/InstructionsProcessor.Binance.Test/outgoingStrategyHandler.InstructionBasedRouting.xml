@@ -14,7 +14,7 @@
   <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString >
 
 
-  <AccountNumber>4</AccountNumber>
+  <AccountNumber>3</AccountNumber>
 
   <RoutingUpdateInMilliseconds>100</RoutingUpdateInMilliseconds>
 
@@ -33,7 +33,7 @@
     </Config>
     <Config>
       <Key>AccountNumber</Key>
-      <Value>4</Value>
+      <Value>3</Value>
     </Config>
     <Config>
       <Key>ConfigConnectionString</Key>

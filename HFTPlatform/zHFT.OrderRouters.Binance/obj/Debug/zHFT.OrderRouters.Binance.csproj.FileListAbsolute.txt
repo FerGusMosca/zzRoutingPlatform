@@ -390,3 +390,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance\bin\Debug\websocket-sharp.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance\bin\Debug\zHFT.InstructionBasedMarketClient.BusinessEntities.pdb

@@ -135,7 +135,7 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         protected CMState OnMarketDataRequest(Wrapper wrapper)
         {
             string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
-            int mdReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
+            long mdReqId = Convert.ToInt64( wrapper.GetField(MarketDataRequestField.MDReqId));
             string quoteSymbol = (string)wrapper.GetField(MarketDataRequestField.QuoteSymbol);
 
             Security sec = new Security() { Symbol = symbol };

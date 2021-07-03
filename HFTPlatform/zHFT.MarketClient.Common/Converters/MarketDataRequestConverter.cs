@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Converter;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.MarketClient.Common.Converters
 {
-    public class MarketDataRequestConverter
+    public class MarketDataRequestConverter: ConverterBase
     {
-        public static MarketDataRequest GetMarketDataRequest(Wrapper wrapper)
+        public static  MarketDataRequest GetMarketDataRequest(Wrapper wrapper)
         {
             MarketDataRequest mdr = new MarketDataRequest();
             mdr.Security = new Security();
@@ -24,7 +25,12 @@ namespace zHFT.MarketClient.Common.Converters
             mdr.Security.SecType = (SecurityType)wrapper.GetField(MarketDataRequestField.SecurityType);
             mdr.SubscriptionRequestType = (SubscriptionRequestType)wrapper.GetField(MarketDataRequestField.SubscriptionRequestType);
             mdr.SettlType = (SettlType)wrapper.GetField(MarketDataRequestField.SettlType);
-            mdr.MarketDepth = (MarketDepth)wrapper.GetField(MarketDataRequestField.MarketDepth);
+
+            if (ValidateField(wrapper, MarketDataRequestField.MarketDepth))
+                mdr.MarketDepth = (MarketDepth) wrapper.GetField(MarketDataRequestField.MarketDepth);
+            else
+                mdr.MarketDepth = MarketDepth.TopOfBook;
+            
             return mdr;
 
         }

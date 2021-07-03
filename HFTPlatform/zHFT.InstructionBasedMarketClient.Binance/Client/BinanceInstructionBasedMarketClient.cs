@@ -251,6 +251,8 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
             }
             catch (Exception ex)
             {
+                DoLog(string.Format("@{0}: Error Processing market data request :{1}", BinanceConfiguration.Name,  BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+
                 return CMState.BuildFail(ex);
             }
         }
