@@ -16,6 +16,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
+using CancelOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.CancelOrderWrapper;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 {
@@ -127,31 +128,13 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
         #region Protected Methods
 
-        protected Security GetSecurityOnServiceKey(string serviceKey)
-        {
-            string[] fields = serviceKey.Split(new string[] {"."},StringSplitOptions.RemoveEmptyEntries);
-
-            string symbol = fields[0];
-            string exchange = fields.Length >= 2 ? fields[1] : null;
-            string strSecType = fields.Length >= 3 ? fields[2] : null;
-
-            exchange = exchange != "*" ? exchange : null;
-            strSecType = strSecType != "*" ? strSecType : null;
-
-            SecurityType secType = SecurityType.OTH;
-
-            if (strSecType != null)
-                secType = Security.GetSecurityType(strSecType);
-
-            return new Security() {Symbol = symbol, Exchange = exchange, SecType = secType};
-
-        }
+       
 
         protected void ProcessMarketDataRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
         {
             SubscribeService(socket, subscrMsg);
 
-            Security sec = GetSecurityOnServiceKey(subscrMsg.ServiceKey);
+            Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
             
             MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,sec,
                                                                         SubscriptionRequestType.SnapshotAndUpdates,
@@ -169,7 +152,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         {
             SubscribeService(socket, subscrMsg);
             
-            Security sec = GetSecurityOnServiceKey(subscrMsg.ServiceKey);
+            Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
             
             MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,sec,
                                                                             SubscriptionRequestType.SnapshotAndUpdates,
@@ -180,6 +163,91 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
             ProcessSubscriptionResponse(socket, subscrMsg.Service, subscrMsg.ServiceKey, subscrMsg.UUID,
                 reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
+        }
+
+        protected void ProcessCancelAllReq(IWebSocketConnection socket, string m)
+        {
+            CancelAllReq cxlAllReq = JsonConvert.DeserializeObject<CancelAllReq>(m);
+            try
+            {
+                
+                DoLog(string.Format("Incoming Cancel All Req for reason {0}", cxlAllReq.Reason), Constants.MessageType.Information);
+
+                CancelAllWrapper cxlAllWrapper = new CancelAllWrapper();
+                
+                CMState resp = OnMessageReceived(cxlAllWrapper);
+                
+                if (resp.Success)
+                {
+                    CancelOrderAck ackMsg = new CancelOrderAck()
+                    {
+                        Msg = "CancelOrderAck",
+                        Success = true,
+                    };
+
+                    DoSend<CancelOrderAck>(socket, ackMsg);
+
+                    DoLog(string.Format("Cancel All Order Req for Reaeson {0}  successfully processed", cxlAllReq.Reason), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Cancel All Req Req for Reason {0}. Error:{1}", cxlAllReq.Reason,ex.Message), Constants.MessageType.Error);
+
+                CancelOrderAck ackMsg = new CancelOrderAck()
+                {
+                    Msg = "RouteOrderAck",
+                    Success = false,
+                    Error = ex.Message
+
+                };
+            }
+        }
+
+        protected void ProcessCancelOrderReq(IWebSocketConnection socket, string m)
+        {
+            CancelOrderReq cxlOrderReq = JsonConvert.DeserializeObject<CancelOrderReq>(m);
+            try
+            {
+                
+                DoLog(string.Format("Incoming  Order Cxl Req for ClOrdId {0}", cxlOrderReq.OrigClOrderId), Constants.MessageType.Information);
+
+                CancelOrderWrapper cxlOrderReqWrapper = new CancelOrderWrapper(new Order(){OrigClOrdId = cxlOrderReq.OrigClOrderId,ClOrdId = cxlOrderReq.ClOrderId});
+                
+                CMState resp = OnMessageReceived(cxlOrderReqWrapper);
+                
+                if (resp.Success)
+                {
+                    CancelOrderAck ackMsg = new CancelOrderAck()
+                    {
+                        Msg = "CancelOrderAck",
+                        Success = true,
+                    };
+
+                    DoSend<CancelOrderAck>(socket, ackMsg);
+
+                    DoLog(string.Format("Cancel Order Req for ClOrdId {0}  successfully processed", cxlOrderReq.OrigClOrderId), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Cancel Order Req Req for ClOrdId {0}. Error:{1}", cxlOrderReq.OrigClOrderId,ex.Message), Constants.MessageType.Error);
+
+                CancelOrderAck ackMsg = new CancelOrderAck()
+                {
+                    Msg = "RouteOrderAck",
+                    Success = false,
+                    Error = ex.Message
+
+                };
+            }
+            
         }
 
         protected void ProcessRouteOrderReq(IWebSocketConnection socket, string m)
@@ -312,6 +380,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 else if (wsResp.Msg == "RouteOrderReq")
                 {
                     ProcessRouteOrderReq(socket, m);
+                }
+                else if (wsResp.Msg == "CancelOrderReq")
+                {
+                    ProcessCancelOrderReq(socket, m);
+                }
+                else if (wsResp.Msg == "CancelAllReq")
+                {
+                    ProcessCancelAllReq(socket, m);
                 }
                 else
                 {

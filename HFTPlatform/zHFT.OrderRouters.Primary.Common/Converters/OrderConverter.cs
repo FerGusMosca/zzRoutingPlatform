@@ -39,7 +39,20 @@ namespace zHFT.OrderRouters.Primary.Common
 
         }
 
-        protected string ProcessSymbol(SecurityType secType,string symbol)
+        protected string ProcessSymbol(string cleanSymbol, string exchange,SecurityType secType)
+        {
+            
+            string marketPrefixCode = ExchangeConverter.GetMarketPrefixCode(exchange);
+            string marketClearingId = ExchangeConverter.GetMarketClearingID(secType, exchange);
+
+            if (!string.IsNullOrEmpty(marketPrefixCode) && !string.IsNullOrEmpty(marketClearingId))
+                return marketPrefixCode + " - " + cleanSymbol + " - " + marketClearingId;
+            else
+                return cleanSymbol;
+            
+        }
+
+        protected string ProcessSymbolFromFullSymbol(SecurityType secType,string symbol)
         {
             string cleanSymbol = "";
 
@@ -97,13 +110,23 @@ namespace zHFT.OrderRouters.Primary.Common
             double ordQty = (double)wrapper.GetField(OrderFields.OrderQty);
             string account = (string)wrapper.GetField(OrderFields.Account);
             string symbol = (string)wrapper.GetField(OrderFields.Symbol);
+            
             SecurityType secType = (SecurityType)wrapper.GetField(OrderFields.SecurityType);
-            string exchange = ExchangeConverter.GetMarketFromFullSymbol(symbol);
+
+            string exchange = "";
+            if (ExchangeConverter.IsFullSymbol((symbol)))
+            {
+                exchange = ExchangeConverter.GetMarketFromFullSymbol(symbol);
+                symbol = ProcessSymbolFromFullSymbol(secType, symbol);
+            }
+            else
+            {
+                exchange = (string) wrapper.GetField(OrderFields.Exchange);
+                symbol = ProcessSymbol(symbol, exchange, secType);
+            }
+            
             string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
             string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
-            
-
-            symbol = ProcessSymbol(secType, symbol);
 
             Order order = new Order();
             order.ClOrdId = clOrdId;

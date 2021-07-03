@@ -495,12 +495,12 @@ namespace zHFT.OrderRouters.Binance
                         }
                         OrderIdMappers.Remove(origClOrderId);
                     }
-
                     else
                     {
-                        throw new Exception(string.Format("Could not cancel order for id {0}", origClOrderId));
-                        //TO DO: La orden fue modificada
-                        //buscar con el nuevo clOrderId
+                        string msg = string.Format("Order {0} not found!", origClOrderId);
+                        OrderCancelRejectWrapper cxlRejWrapper=new OrderCancelRejectWrapper(origClOrderId,clOrderId,msg);
+                        OnMessageRcv(cxlRejWrapper);
+                        DoLog(string.Format("Error trying to cancel ClOrdId {0}:{1}", origClOrderId, msg),Constants.MessageType.Information);
                     }
                 }
                 return CMState.BuildSuccess();

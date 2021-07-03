@@ -38,7 +38,9 @@ namespace zHFT.OrderRouters.Common.Wrappers
             else if (oField == OrderFields.SettlDate)
                 return Order.SettlDate;
             else if (oField == OrderFields.Symbol)
-                return Order.Security.Symbol;
+            {
+                return Order.Security != null ? Order.Security.Symbol : Order.Symbol;
+            }
             else if (oField == OrderFields.SecurityType)
                 return Order.Security.SecType;
             else if (oField == OrderFields.Currency)

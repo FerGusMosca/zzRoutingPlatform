@@ -324,8 +324,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
                     if (!SecurityTypes.ContainsKey(rq.Security.AltIntSymbol))
                     {
-                        SecurityTypes.Add(rq.Security.AltIntSymbol, rq.Security.SecType);
-                        ActiveSecurities.Add(rq.ReqId, new Security() { Symbol = rq.Security.AltIntSymbol, Active = true });
+                        SecurityTypes.Add(rq.Security.GetFullSymbol(), rq.Security.SecType);
+                        ActiveSecurities.Add(rq.ReqId, new Security() { Symbol = rq.Security.GetFullSymbol(), Active = true });
                         
                     }
                     Thread mdRqThrad = new Thread(DoRunMarketDataRequest);

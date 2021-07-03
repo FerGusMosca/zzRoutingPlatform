@@ -97,6 +97,37 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
         }
 
+        protected CMState ProcessOrderCancelReject(Wrapper wrapper)
+        {
+            try
+            {
+
+                string clOrdId = (string) wrapper.GetField(OrderCancelRejectField.ClOrdID);
+                string origClOrdId = (string) wrapper.GetField(OrderCancelRejectField.OrigClOrdID);;
+                string text = (string) wrapper.GetField(OrderCancelRejectField.Text);;
+                
+                DoLog(string.Format("Order Cancel Reject for ClOrdId {0} :{1}",origClOrdId,text),Constants.MessageType.Information);
+
+                OrderCancelRejectDTO dto = new OrderCancelRejectDTO()
+                {
+                    ClOrdId = clOrdId,
+                    OrigClOrdId = origClOrdId,
+                    Text = text
+                };
+                
+                Server.PublishEntity<OrderCancelRejectDTO>(dto);
+                
+                return CMState.BuildSuccess();
+            
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Error processing execution report:{0}",e.Message),Constants.MessageType.Error);
+                return CMState.BuildFail(e);
+            }
+            
+        }
+
         protected CMState ProcessExecutionReport(Wrapper wrapper)
         {
             try
@@ -172,11 +203,28 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 DoLog("Processing Execution Report:" + wrapper.ToString(), Constants.MessageType.Information);
                 return ProcessExecutionReport(wrapper);
             }
+            else if (wrapper.GetAction() == Actions.ORDER_CANCEL_REJECT)
+            {
+                DoLog("Processing Order Cancel Reject:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessOrderCancelReject(wrapper);
+            }
             else if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
             {
                 return MarketDataModule.ProcessMessage(wrapper);
             }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
+            {
+                return OrderRouterModule.ProcessMessage(wrapper);
+            }
+            else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
+            {
+                return OrderRouterModule.ProcessMessage(wrapper);
+            }
+            else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
+            {
+                return OrderRouterModule.ProcessMessage(wrapper);
+            }
+            else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
             {
                 return OrderRouterModule.ProcessMessage(wrapper);
             }

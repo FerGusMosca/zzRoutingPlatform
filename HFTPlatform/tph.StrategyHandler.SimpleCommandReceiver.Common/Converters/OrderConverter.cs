@@ -8,6 +8,30 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
 {
     public class OrderConverter
     {
+        #region Public Static Methods
+        
+        public static Security GetSecurityFullSymbol(string fullSymbol)
+        {
+            string[] fields = fullSymbol.Split(new string[] {"."},StringSplitOptions.RemoveEmptyEntries);
+
+            string symbol = fields[0];
+            string exchange = fields.Length >= 2 ? fields[1] : null;
+            string strSecType = fields.Length >= 3 ? fields[2] : null;
+
+            exchange = exchange != "*" ? exchange : null;
+            strSecType = strSecType != "*" ? strSecType : null;
+
+            SecurityType secType = SecurityType.OTH;
+
+            if (strSecType != null)
+                secType = Security.GetSecurityType(strSecType);
+
+            return new Security() {Symbol = symbol, Exchange = exchange, SecType = secType};
+
+        }
+        
+        #endregion
+        
         #region Public Attributes
 
         public Order ConvertNewOrder(RouteOrderReq newOrdeReq)
@@ -15,6 +39,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             Order order = new Order();
 
             order.OrderId = null;
+            order.Account = newOrdeReq.Account;
             order.ClOrdId = newOrdeReq.ClOrdId;
             order.OrigClOrdId = null;
             order.OrderQty = newOrdeReq.Qty;
@@ -29,9 +54,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             order.QuantityType = QuantityType.SHARES;
             order.PriceType = PriceType.FixedAmount;
 
-            order.Security = new Security();
-            order.Security.Symbol = newOrdeReq.Symbol;
-            
+            order.Security = GetSecurityFullSymbol(newOrdeReq.Symbol);
+            order.Exchange = order.Security.Exchange;
             return order;
         }
 

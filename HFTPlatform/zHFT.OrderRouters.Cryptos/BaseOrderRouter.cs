@@ -161,7 +161,7 @@ namespace zHFT.OrderRouters.Cryptos
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                 {
-                    DoLog(string.Format("@{1}:Cancelling order  for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString(), GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("@{1}:Cancelling order  for OrigClOrdId {0}", wrapper.GetField(OrderFields.OrigClOrdID).ToString(), GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
                     return CancelOrder(wrapper);
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)

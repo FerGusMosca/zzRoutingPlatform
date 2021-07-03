@@ -115,6 +115,24 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         #region Public Static Methods
 
+        public string GetFullSymbol()
+        {
+            if (Exchange != null)
+            {
+                if (AltIntSymbol != null)
+                    return string.Format("{0}.{1}", AltIntSymbol, Exchange);
+                else
+                    return string.Format("{0}.{1}", Symbol, Exchange);
+            }
+            else
+            {
+                if (AltIntSymbol != null)
+                    return string.Format("{0}", AltIntSymbol, Exchange);
+                else
+                    return string.Format("{0}", Symbol);
+            }
+
+        }
 
         public static SecurityType GetSecurityType(string secType)
         {

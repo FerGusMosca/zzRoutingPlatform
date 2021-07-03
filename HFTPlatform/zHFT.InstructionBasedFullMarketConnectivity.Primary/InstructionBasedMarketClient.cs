@@ -114,6 +114,14 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected OnMessageReceived OnMarketDataMessageRcv { get; set; }
 
+        protected void ProcesssOrderCancelReject(QuickFix.Message message)
+        {
+            DoLog(string.Format("@{0}:{1} ", PrimaryConfiguration.Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
+
+            OrderCancelRejectWrapper ocrWrapper = new OrderCancelRejectWrapper((QuickFix50.OrderCancelReject)message);
+
+            OnExecutionReportMessageRcv(ocrWrapper);
+        }
         protected OnMessageReceived OnExecutionReportMessageRcv { get; set; }
 
         
@@ -1004,6 +1012,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
                     ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
                     OnExecutionReportMessageRcv(erWrapper);
+                }
+                else if (value is QuickFix50.OrderCancelReject)
+                {
+                    QuickFix50.OrderCancelReject msg = (QuickFix50.OrderCancelReject)value;
+                    ProcesssOrderCancelReject(msg);
                 }
                 else if (value is QuickFix50Sp2.MarketDataRequestReject)
                 {

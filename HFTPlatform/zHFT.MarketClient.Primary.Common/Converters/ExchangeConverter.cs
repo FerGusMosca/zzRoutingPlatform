@@ -159,6 +159,11 @@ namespace zHFT.MarketClient.Primary.Common.Converters
 
         }
 
+        public static bool IsFullSymbol(string symbol)
+        {
+            return symbol.EndsWith(_BYMA) || symbol.EndsWith(_ROFX);
+        }
+
         public static string GetMarketFromFullSymbol(string fullSymbol)
         {
             if (fullSymbol.EndsWith(_BYMA))

@@ -109,6 +109,7 @@
     <Compile Include="Util\BinanceErrorFormatter.cs" />
     <Compile Include="Util\BinanceMessageConverterValidator.cs" />
     <Compile Include="Wrappers\ExecutionReportWrapper.cs" />
+    <Compile Include="Wrappers\OrderCancelRejectWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">

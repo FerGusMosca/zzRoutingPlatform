@@ -43,13 +43,19 @@
         <Compile Include="DTOs\ErrorMessage.cs" />
         <Compile Include="DTOs\MarketData\MarketDataDTO.cs" />
         <Compile Include="DTOs\MarketData\OrderBookDTO.cs" />
+        <Compile Include="DTOs\OrderRouting\CancelAllReq.cs" />
+        <Compile Include="DTOs\OrderRouting\CancelOrderAck.cs" />
+        <Compile Include="DTOs\OrderRouting\CancelOrderReq.cs" />
         <Compile Include="DTOs\OrderRouting\ExecutionReportDTO.cs" />
+        <Compile Include="DTOs\OrderRouting\OrderCancelRejectDTO.cs" />
         <Compile Include="DTOs\OrderRouting\RouteOrderAck.cs" />
         <Compile Include="DTOs\OrderRouting\RouteOrderReq.cs" />
         <Compile Include="DTOs\SubscriptionResponse.cs" />
         <Compile Include="DTOs\WebSocketMessage.cs" />
         <Compile Include="DTOs\WebSocketSubscribeMessage.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Wrapper\CancelAllWrapper.cs" />
+        <Compile Include="Wrapper\CancelOrderWrapper.cs" />
         <Compile Include="Wrapper\MarketDataRequestWrapper.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -64,6 +70,10 @@
       <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj">
         <Project>{97a1ba19-bf4c-48cc-9c8f-e00ba9bb9734}</Project>
         <Name>zHFT.OrderImbSimpleCalculator.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
+        <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
+        <Name>zHFT.OrderRouters.Common</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
