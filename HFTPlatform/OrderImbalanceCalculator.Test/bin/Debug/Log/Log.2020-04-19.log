@@ -1,9 +1,0 @@
-2020-04-19 16:49:50  :: 19/4/2020 16:49:50MainApp.LoadConfig
-2020-04-19 16:49:50  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
-2020-04-19 16:49:50  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\OrderImbalanceCalculator.Test\bin\Debug\config.xml
-2020-04-19 16:49:50  :: Fin GetConfiguracion
-2020-04-19 16:49:50  :: Initializing Log
-2020-04-19 16:49:50  :: Initializing Incoming Module
-2020-04-19 16:49:52  :: Incoming Module successfully initialized
-2020-04-19 16:49:52  :: Initializing Outgoing Module
-2020-04-19 16:49:58  :: Outgoing Module successfully initialized

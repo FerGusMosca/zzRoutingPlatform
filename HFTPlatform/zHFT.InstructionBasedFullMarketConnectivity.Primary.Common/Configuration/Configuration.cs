@@ -71,17 +71,17 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configurati
                 resultado = false;
             }
 
-            if (string.IsNullOrEmpty(SecuritiesAccessLayerConnectionString))
-            {
-                result.Add("SecuritiesAccessLayerConnectionString");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(InstructionsAccessLayerConnectionString))
-            {
-                result.Add("InstructionsAccessLayerConnectionString");
-                resultado = false;
-            }
+//            if (string.IsNullOrEmpty(SecuritiesAccessLayerConnectionString))
+//            {
+//                result.Add("SecuritiesAccessLayerConnectionString");
+//                resultado = false;
+//            }
+//
+//            if (string.IsNullOrEmpty(InstructionsAccessLayerConnectionString))
+//            {
+//                result.Add("InstructionsAccessLayerConnectionString");
+//                resultado = false;
+//            }
 
             if (string.IsNullOrEmpty(User))
             {
@@ -95,17 +95,17 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configurati
                 resultado = false;
             }
 
-            if (SearchForInstructionsInMilliseconds <= 0)
-            {
-                result.Add("SearchForInstructionsInMilliseconds");
-                resultado = false;
-            }
+//            if (SearchForInstructionsInMilliseconds <= 0)
+//            {
+//                result.Add("SearchForInstructionsInMilliseconds");
+//                resultado = false;
+//            }
 
-            if (AccountNumber <= 0)
-            {
-                result.Add("AccountNumber");
-                resultado = false;
-            }
+//            if (AccountNumber <= 0)
+//            {
+//                result.Add("AccountNumber");
+//                resultado = false;
+//            }
 
             if (PublishUpdateInMilliseconds <= 0)
             {

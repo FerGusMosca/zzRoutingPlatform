@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Order Imbalance Calculator</Name>
+
+  <PositionSizeInCash>10000</PositionSizeInCash>
+
+  <MaxOpenedPositions>30</MaxOpenedPositions>
+  <PositionOpeningImbalanceThreshold>0.75</PositionOpeningImbalanceThreshold>
+  <PositionOpeningImbalanceMaxThreshold>0.6</PositionOpeningImbalanceMaxThreshold>
+  <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
+  <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
+  <FeeValuePerTrade>0</FeeValuePerTrade>
+  <DecimalRounding>3</DecimalRounding>
+
+  <ActiveBlocks>3</ActiveBlocks>
+  <BlockSizeInMinutes>10</BlockSizeInMinutes>
+
+  <Currency>ARS</Currency>
+  <Exchange>BUE</Exchange>
+  <SecurityTypes>TBOND</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
+
+  <MarketStartTime>11:00 AM</MarketStartTime>
+  <MarketEndTime>05:00 PM</MarketEndTime>
+
+  <!--<Currency>USD</Currency>
+  <Exchange>SMART</Exchange>-->
+
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
+
+  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=imbalance_trading;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+  <ResetOnPersistance>true</ResetOnPersistance>
+
+  <SaveEvery>HOUR</SaveEvery>
+  <!--HOUR,_10MIN,_30MIN-->
+  
+  <StocksToMonitor>
+
+    <Symbol>ALUA.BUE</Symbol>
+    <Symbol>APBR.BUE</Symbol>
+    <Symbol>GGAL.BUE</Symbol>
+    <Symbol>BMA.BUE</Symbol>
+    <Symbol>BYMA.BUE</Symbol>
+    <Symbol>CEPU.BUE</Symbol>
+    <Symbol>COME.BUE</Symbol>
+    <Symbol>CVH.BUE</Symbol>
+    <Symbol>EDN.BUE</Symbol>
+    <Symbol>MIRG.BUE</Symbol>
+    <Symbol>TGNO4.BUE</Symbol>
+    <Symbol>TGSU2.BUE</Symbol>
+    <Symbol>TRAN.BUE</Symbol>
+    <Symbol>TS.BUE</Symbol>
+    <Symbol>TXAR.BUE</Symbol>
+    <Symbol>YPFD.BUE</Symbol>
+    <Symbol>PAMP.BUE</Symbol>
+    <Symbol>SUPV.BUE</Symbol>
+    <Symbol>VALO.BUE</Symbol>
+
+    <!--<Symbol>AAPL</Symbol>
+    <Symbol>MSFT</Symbol>
+    <Symbol>PG</Symbol>
+    <Symbol>AMZN</Symbol>
+    <Symbol>GE</Symbol>
+    <Symbol>XOM</Symbol>
+    <Symbol>GGAL</Symbol>
+    <Symbol>BMA</Symbol>
+    <Symbol>PAM</Symbol>
+    <Symbol>YPF</Symbol>
+    <Symbol>EDN</Symbol>
+    <Symbol>TEO</Symbol>
+    <Symbol>TS</Symbol>
+    <Symbol>PBR</Symbol>
+    <Symbol>CRESY</Symbol>-->
+
+    <!--<Symbol>BTC</Symbol>
+    <Symbol>ETH</Symbol>
+    <Symbol>XRP</Symbol>-->
+    
+  </StocksToMonitor>
+
+</Configuration>

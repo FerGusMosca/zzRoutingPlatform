@@ -475,7 +475,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Market Making", "Market Mak
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order Imbalance", "Order Imbalance", "{A249A6CA-E662-47C5-832A-D7B375266621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderImbalanceCalculator.Test", "OrderImbalanceCalculator.Test\OrderImbalanceCalculator.Test.csproj", "{FF52860E-DE01-4EE6-8333-C10E9191B8B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderImbalanceCalculator.App", "OrderImbalanceCalculator.App\OrderImbalanceCalculator.App.csproj", "{FF52860E-DE01-4EE6-8333-C10E9191B8B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zHFT.OrderImbSimpleCalculator.Common", "zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj", "{97A1BA19-BF4C-48CC-9C8F-E00BA9BB9734}"
 EndProject

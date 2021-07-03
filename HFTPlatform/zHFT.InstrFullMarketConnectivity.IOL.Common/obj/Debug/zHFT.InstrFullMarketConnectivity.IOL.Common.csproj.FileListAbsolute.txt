@@ -7,3 +7,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.Common\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb

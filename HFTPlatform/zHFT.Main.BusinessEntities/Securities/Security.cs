@@ -115,6 +115,7 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         #region Public Static Methods
 
+
         public string GetFullSymbol()
         {
             if (Exchange != null)

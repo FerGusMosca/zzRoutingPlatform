@@ -307,25 +307,7 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
-      <e p="OrderImbalanceCalculator.BitMex.Test" t="IncludeRecursive">
-        <e p="App.Config" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Config.xml" t="Include" />
-        <e p="incomingBitmex.xml" t="Include" />
-        <e p="Mock" t="Include">
-          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
-        </e>
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="OrderImbalanceCalculator.BitMex.Test.csproj" t="IncludeRecursive" />
-        <e p="outgoingOrderRouter.Bitmex.xml" t="Include" />
-        <e p="outgoingOrderRouter.xml" t="Include" />
-        <e p="outgoingStrategyHandler.OrderImbalanceCalculator.xml" t="Include" />
-        <e p="Program.cs" t="Include" />
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
-      </e>
-      <e p="OrderImbalanceCalculator.Test" t="IncludeRecursive">
+      <e p="OrderImbalanceCalculator.App" t="IncludeRecursive">
         <e p="App.Config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Bittrex" t="Include">
@@ -343,14 +325,32 @@
           <e p="outgoingOrderRouter.Mock.xml" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
-        <e p="OrderImbalanceCalculator.Test.csproj" t="IncludeRecursive" />
+        <e p="OrderImbalanceCalculator.App.csproj" t="IncludeRecursive" />
+        <e p="OrderImbalanceCalculator.xml" t="Include" />
         <e p="outgoingOrderRouter.xml" t="Include" />
-        <e p="outgoingStrategyHandler.OrderImbalanceCalculator.xml" t="Include" />
         <e p="Primary" t="Include">
           <e p="IncomingSingletonConfig.xml" t="Include" />
           <e p="OutgoingSingletonConfig.xml" t="Include" />
           <e p="Primary.xml" t="Include" />
         </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+      </e>
+      <e p="OrderImbalanceCalculator.BitMex.Test" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="incomingBitmex.xml" t="Include" />
+        <e p="Mock" t="Include">
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderImbalanceCalculator.BitMex.Test.csproj" t="IncludeRecursive" />
+        <e p="outgoingOrderRouter.Bitmex.xml" t="Include" />
+        <e p="outgoingOrderRouter.xml" t="Include" />
+        <e p="outgoingStrategyHandler.OrderImbalanceCalculator.xml" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />

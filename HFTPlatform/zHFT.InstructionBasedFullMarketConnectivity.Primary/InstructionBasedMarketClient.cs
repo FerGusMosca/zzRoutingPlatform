@@ -893,17 +893,40 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     OrderIndexId = GetNextOrderId();
                     Start = DateTime.Now;
 
-                    InstructionManager = new InstructionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
-                    PositionManager = new PositionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
-                    AccountManager = new AccountManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
-                    MarketManager = new MarketManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
-                    StockManager = new StockManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
-                    OptionManager = new OptionManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
-                    FutureManager = new FutureManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
-                    BillManager = new BillManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
-                    StockMarketDataManager = new StockMarkeDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
-                    OptionMarketDataManager = new OptionMarketDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                    if (PrimaryConfiguration.InstructionsAccessLayerConnectionString != null)
+                    {
 
+                        InstructionManager =
+                            new InstructionManager(PrimaryConfiguration.InstructionsAccessLayerConnectionString);
+                        MarketManager = new MarketManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        StockManager = new StockManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        OptionManager = new OptionManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        FutureManager = new FutureManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        BillManager = new BillManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        StockMarketDataManager = new StockMarkeDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        OptionMarketDataManager =new OptionMarketDataManager(PrimaryConfiguration.SecuritiesAccessLayerConnectionString);
+                        
+                        Markets = new List<Market>();
+                        foreach (string market in PrimaryConfiguration.Markets)
+                        {
+                            Market mrk = MarketManager.GetByCode(market);
+                            if (mrk != null)
+                                Markets.Add(mrk);
+                            else
+                            {
+                                DoLog(string.Format("@{0}:Market {0} not found", market), Main.Common.Util.Constants.MessageType.Error);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Markets = new List<Market>();
+                        foreach (string market in PrimaryConfiguration.Markets)
+                        {
+                            Market mrk = new Market() {Code = market, Name = market};
+                            Markets.Add(mrk);
+                        }
+                    }
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
                     if (fixMessageCreator != null)
@@ -922,20 +945,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         return false;
                     }
 
-                    Markets = new List<Market>();
-                    foreach (string market in PrimaryConfiguration.Markets)
-                    {
-                        Market mrk = MarketManager.GetByCode(market);
-                        if (mrk != null)
-                            Markets.Add(mrk);
-                        else
-                        {
-                            DoLog(string.Format("@{0}:Market {0} not found", market), Main.Common.Util.Constants.MessageType.Error);
-                        }
-                    }
-
                     SecurityTypes = new Dictionary<string, Main.Common.Enums.SecurityType>();
-
                     SessionSettings = new SessionSettings(PrimaryConfiguration.FIXInitiatorPath);
                     FileStoreFactory = new FileStoreFactory(SessionSettings);
                     ScreenLogFactory = new ScreenLogFactory(SessionSettings);
@@ -951,8 +961,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
 
-                    ProcessInstructionsThread = new Thread(DoFindInstructions);
-                    ProcessInstructionsThread.Start();
+                    if (PrimaryConfiguration.InstructionsAccessLayerConnectionString != null)
+                    {
+                        ProcessInstructionsThread = new Thread(DoFindInstructions);
+                        ProcessInstructionsThread.Start(); 
+                    }
 
                     MarketDataRequestThread = new Thread(DoRequestMarketData);
                     MarketDataRequestThread.Start();
@@ -963,7 +976,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         LastRoutingTimestamp = DateTime.Now;
 
                     return true;
-
                 }
                 else
                 {

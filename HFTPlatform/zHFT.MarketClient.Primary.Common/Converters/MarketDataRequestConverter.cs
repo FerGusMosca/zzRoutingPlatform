@@ -23,7 +23,7 @@ namespace zHFT.MarketClient.Primary.Common.Converters
 
             MarketDataRequest mdr = new MarketDataRequest();
             mdr.Security = new Security();
-            mdr.ReqId = (int)wrapper.GetField(MarketDataRequestField.MDReqId);
+            mdr.ReqId = Convert.ToInt32( wrapper.GetField(MarketDataRequestField.MDReqId));
 
             if (secType == SecurityType.CS || secType == SecurityType.TBOND || secType == SecurityType.TB)
             {
