@@ -62,9 +62,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected Dictionary<string, Order> ActiveOrders { get; set; }
 
-        protected Dictionary<string, int> ActiveOrderIdMapper { get; set; }
+        protected Dictionary<string, string> ActiveOrderIdMapper { get; set; }
 
-        protected Dictionary<string, int> ReplacingActiveOrderIdMapper { get; set; }
+        protected Dictionary<string, string> ReplacingActiveOrderIdMapper { get; set; }
 
         protected Dictionary<string, zHFT.Main.Common.Enums.SecurityType> SecurityTypes { get; set; }
 
@@ -193,7 +193,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         ActiveOrders.Add(clOrdId, order);
                         ReplacingActiveOrderIdMapper.Remove(clOrdId);
                         ActiveOrderIdMapper.Remove(origClOrdId);
-                        ActiveOrderIdMapper.Add(clOrdId, Convert.ToInt32(newMarketOrderIdRequested));
+                        ActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
                     }
                     else if (execType == zHFT.Main.Common.Enums.ExecType.Canceled)
                     {
@@ -205,6 +205,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 else
                 {
                     DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
+                    return null;
                 }
             }
 
@@ -363,6 +364,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
+            string marketClOrdId = "";
             try
             {
                 if (SessionID != null)
@@ -371,11 +373,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
                     newOrder.EffectiveTime = DateTime.Now;
 
-                    int marketClOrdId = 0;
-
                     lock (tLock)
                     {
-                        marketClOrdId = (OrderIndexId * 100);
+                        marketClOrdId = (OrderIndexId * 100).ToString();
                         OrderIndexId++;
                     }
 
@@ -386,7 +386,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     //    orderQty *= 1000;
                     //}
 
-                    QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId.ToString(), 
+                    QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId, 
                                                                                     newOrder.Symbol, 
                                                                                     newOrder.Side, 
                                                                                     newOrder.OrdType,
@@ -397,6 +397,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                                                                                     newOrder.Price,
                                                                                     newOrder.StopPx, 
                                                                                     newOrder.Account);
+                    
+                    DoLog(string.Format("Sending new order {0} for symbol {1} to the exchange",marketClOrdId,newOrder.Symbol),Constants.MessageType.Information);
+
 
                     Thread newOrdThread = new Thread(DoRunNewOrder);
                     newOrdThread.Start(msg);
@@ -404,7 +407,6 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     ActiveOrders.Add(newOrder.ClOrdId, newOrder);
                     ActiveOrderIdMapper.Add(newOrder.ClOrdId,marketClOrdId);
                    
-
                     return CMState.BuildSuccess();
                 }
                 else
@@ -416,6 +418,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
             catch (Exception ex)
             {
+                DoLog(string.Format("Critical error sending order {0} to the exchange:{1}",marketClOrdId,ex.Message),Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }
@@ -450,9 +453,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     if (ActiveOrders.Keys.Contains(origClOrdId))
                     {
                         Order order = ActiveOrders[origClOrdId];
-                        int marketOrderId = ActiveOrderIdMapper[origClOrdId];
+                        string marketOrderId = ActiveOrderIdMapper[origClOrdId];
 
-                        int newMarketOrderIdRequested = (marketOrderId + 1);
+                        string newMarketOrderIdRequested = (Convert.ToInt32(marketOrderId) + 1).ToString();
                         ReplacingActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
 
                         order.ClOrdId = clOrdId;
@@ -587,9 +590,9 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             if (ActiveOrderIdMapper.Keys.Contains(clOrdId))
             {
 
-                int marketOrderId = ActiveOrderIdMapper[clOrdId];
+                string marketOrderId = ActiveOrderIdMapper[clOrdId];
 
-                int newMarketOrderIdRequested = (marketOrderId + 1);
+                string newMarketOrderIdRequested = (Convert.ToInt32(marketOrderId) + 1).ToString();
                 ReplacingActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
 
                 order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();

@@ -86,3 +86,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.pdb

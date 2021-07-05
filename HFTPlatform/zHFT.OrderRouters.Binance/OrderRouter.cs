@@ -439,10 +439,16 @@ namespace zHFT.OrderRouters.Binance
                             {
                                 Thread.Sleep(100);
 
+                                ExecutionReportDTO cancelledOrder = new ExecutionReportDTO();
+                                TryToGetExecutionReport(order, ref cancelledOrder);
+
                                 //Damos el alta
                                 double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
                                 order.Price = newPrice;
+                                order.OrderQty = order.OrderQty.Value - Convert.ToDouble(cancelledOrder.ExecutedQty);
                                 order.ClOrdId = clOrderId;
+                                DoLog(string.Format("On Update --> Creating new order with qty={0} and Price={1}",order.OrderQty,order.Price),Constants.MessageType.Information);
+
                                 try
                                 {
                                     RunNewOrder(order);

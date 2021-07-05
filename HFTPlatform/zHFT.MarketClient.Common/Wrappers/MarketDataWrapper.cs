@@ -86,7 +86,7 @@ namespace zHFT.MarketClient.Common.Wrappers
                 return Security.SecType;
             else if (mdField == MarketDataFields.Currency)
             {
-                if (Security.MarketData.Currency != null)
+                if (Security.MarketData!=null && Security.MarketData.Currency != null)
                     return Security.MarketData.Currency;
                 else
                     return Security.Currency;

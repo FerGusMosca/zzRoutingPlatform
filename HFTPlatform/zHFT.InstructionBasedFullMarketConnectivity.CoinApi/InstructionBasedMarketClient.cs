@@ -252,8 +252,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.CoinApi
                     OrderConverter = new OrderConverter();
                     SecurityListConverter = new SecurityListConverter();
                     ActiveOrders = new Dictionary<string, Order>();
-                    ActiveOrderIdMapper = new Dictionary<string, int>();
-                    ReplacingActiveOrderIdMapper = new Dictionary<string, int>();
+                    ActiveOrderIdMapper = new Dictionary<string, string>();
+                    ReplacingActiveOrderIdMapper = new Dictionary<string, string>();
                     SecuritiesToPublish = new Dictionary<int, Security>();
                     OrderIndexId = GetNextOrderId();
                     Start = DateTime.Now;

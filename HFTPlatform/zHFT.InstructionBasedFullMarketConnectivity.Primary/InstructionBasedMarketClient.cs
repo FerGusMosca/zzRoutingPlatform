@@ -887,8 +887,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     OrderConverter = new OrderConverter();
                     SecurityListConverter = new SecurityListConverter();
                     ActiveOrders = new Dictionary<string, Order>();
-                    ActiveOrderIdMapper = new Dictionary<string, int>();
-                    ReplacingActiveOrderIdMapper = new Dictionary<string, int>();
+                    ActiveOrderIdMapper = new Dictionary<string, string>();
+                    ReplacingActiveOrderIdMapper = new Dictionary<string, string>();
                     SecuritiesToPublish = new Dictionary<int,Security>();
                     OrderIndexId = GetNextOrderId();
                     Start = DateTime.Now;
@@ -1023,7 +1023,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
                     ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
-                    OnExecutionReportMessageRcv(erWrapper);
+                    if(erWrapper!=null)
+                        OnExecutionReportMessageRcv(erWrapper);
                 }
                 else if (value is QuickFix50.OrderCancelReject)
                 {

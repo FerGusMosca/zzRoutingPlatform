@@ -13,7 +13,7 @@
   <DecimalRounding>3</DecimalRounding>
 
   <ActiveBlocks>3</ActiveBlocks>
-  <BlockSizeInMinutes>10</BlockSizeInMinutes>
+  <BlockSizeInMinutes>1</BlockSizeInMinutes>
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>
