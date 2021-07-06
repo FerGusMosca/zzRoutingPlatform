@@ -66,9 +66,12 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
         public static void ValidateNewOrder(string symbol, string quoteSymbol,decimal qty, double price)
         {
             BinanceSymbol tradedSymbol = ExchangeInfo.Symbols
-                                        .Where((x => x.BaseAsset == symbol
+                                        .Where((x => x.BaseAsset.ToUpper() == symbol.ToUpper()
                                                      && x.QuoteAsset == quoteSymbol))
                                         .FirstOrDefault();
+            
+            if(tradedSymbol==null)
+                throw new Exception(string.Format("Could not find traded symbol {0} at Binance",symbol));
 
             if (qty * Convert.ToDecimal(price) < tradedSymbol.MinNotionalFilter.MinNotional)
                 throw new Exception(string.Format("Order notional must be bigger than {0} {1}"
