@@ -43,9 +43,12 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
         public static decimal GetQuantity(string symbol, string quoteSymbol, decimal prevQty)
         {
             BinanceSymbol tradedSymbol = ExchangeInfo.Symbols
-                .Where((x => x.BaseAsset == symbol
+                .Where((x => x.BaseAsset.ToUpper() == symbol.ToUpper()
                              && x.QuoteAsset == quoteSymbol))
                 .FirstOrDefault();
+            
+            if(tradedSymbol==null)
+                throw new Exception(string.Format("Could not find symbol {0} traded in Binance",symbol));
 
             if (prevQty < tradedSymbol.LotSizeFilter.MinQuantity)
                 throw new Exception(string.Format("Trade Qty. {0} cannot be lower than {1}", prevQty,
@@ -63,9 +66,12 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
         public static void ValidateNewOrder(string symbol, string quoteSymbol,decimal qty, double price)
         {
             BinanceSymbol tradedSymbol = ExchangeInfo.Symbols
-                                        .Where((x => x.BaseAsset == symbol
+                                        .Where((x => x.BaseAsset.ToUpper() == symbol.ToUpper()
                                                      && x.QuoteAsset == quoteSymbol))
                                         .FirstOrDefault();
+            
+            if(tradedSymbol==null)
+                throw new Exception(string.Format("Could not find traded symbol {0} at Binance",symbol));
 
             if (qty * Convert.ToDecimal(price) < tradedSymbol.MinNotionalFilter.MinNotional)
                 throw new Exception(string.Format("Order notional must be bigger than {0} {1}"
