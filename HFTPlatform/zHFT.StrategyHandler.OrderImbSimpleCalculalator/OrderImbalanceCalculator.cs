@@ -275,13 +275,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
             Position pos = new Position()
             {
-                Security = new Security()
-                {
-                    Symbol = secImb.Security.Symbol,
-                    MarketData = null,
-                    Currency = Configuration.Currency,
-                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
-                },
+//                Security = new Security()
+//                {
+//                    Symbol = secImb.Security.Symbol,
+//                    MarketData = null,
+//                    Currency = Configuration.Currency,
+//                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
+//                },
+                Security = secImb.Security,
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
@@ -311,13 +312,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         {
             Position pos = new Position()
             {
-                Security = new Security()
-                {
-                    Symbol = secImb.Security.Symbol,
-                    MarketData = null,
-                    Currency = Configuration.Currency,
-                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
-                },
+//                Security = new Security()
+//                {
+//                    Symbol = secImb.Security.Symbol,
+//                    MarketData = null,
+//                    Currency = Configuration.Currency,
+//                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
+//                },
+                Security = secImb.Security,
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
@@ -359,13 +361,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         {
             Position pos = new Position()
             {
-                Security = new Security()
-                {
-                    Symbol = secImb.Security.Symbol,
-                    MarketData = null,
-                    Currency = Configuration.Currency,
-                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
-                },
+//                Security = new Security()
+//                {
+//                    Symbol = secImb.Security.Symbol,
+//                    MarketData = null,
+//                    Currency = Configuration.Currency,
+//                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
+//                },
+                Security = secImb.Security,
                 Side = openPos.Side == Side.Buy ? Side.Sell : Side.Buy,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
@@ -389,13 +392,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         {
             Position pos = new Position()
             {
-                Security = new Security()
-                {
-                    Symbol = openPos.Security.Symbol,
-                    MarketData = null,
-                    Currency = Configuration.Currency,
-                    SecType = SecurityType.CS
-                },
+//                Security = new Security()
+//                {
+//                    Symbol = openPos.Security.Symbol,
+//                    MarketData = null,
+//                    Currency = Configuration.Currency,
+//                    SecType = SecurityType.CS
+//                },
+                Security = secImb.Security,
                 Side = openPos.Side == Side.Buy ? Side.Sell : Side.Buy,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
