@@ -74,6 +74,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         protected Thread SecImbalancePersistanceThread { get; set; }
 
         protected Thread ResetEveryNMinutesThread { get; set; }
+        
+        protected Thread CloseOnTradingTimeOffThread { get; set; }
 
         protected int MarketDataRequestCounter { get; set; }
 
@@ -155,6 +157,52 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
             else
                 throw new Exception(string.Format("GetPersistanceTime {0} not implemented", Configuration.SaveEvery));
+        }
+
+        private void CloseOnTradingTimeOff()
+        {
+            try
+            {
+                while (true)
+                {
+                    bool foundToClose = false;
+                    lock (tLock)
+                    {
+                        if (!IsTradingTime())
+                        {
+                            foreach (SecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
+                            {
+                                if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+                                {
+                                    ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
+                                    if (imbPos.OpeningPosition != null)
+                                    {
+                                        foundToClose = true;
+                                        RunClose(imbPos.OpeningPosition, secImb, imbPos);
+                                        DoLog(
+                                            string.Format(
+                                                "{0} Position Closed on trading closed @{3}. Symbol {1} Qty={2} ",
+                                                imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol,
+                                                imbPos.Qty,Configuration.ClosingTime), Constants.MessageType.Information);
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    if (!foundToClose)
+                        Thread.Sleep(10 * 1000); //10 seconds
+                    else
+                        Thread.Sleep(10 * 60 * 1000); //10 minutes
+
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Critical ERROR on CloseOnTradingTimeOff:{0}", e.Message),Constants.MessageType.Error);
+            }
+            
         }
 
         private void ResetEveryNMinutes(object param)
@@ -483,7 +531,15 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
             {
                 ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
-                return imbPos.EvalStopLossHit(secImb);
+                
+                if(imbPos.EvalStopLossHit(secImb))
+                {
+                    RunClose(imbPos.OpeningPosition, secImb, imbPos);
+                    DoLog(string.Format("{0} Position Closed on stop loss hit. Symbol {1} Qty={2} Imbalance={3}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, secImb.ImbalanceSummary), Constants.MessageType.Information);
+                    return true;
+                }
+                else
+                    return false;
             }
 
             return false;
@@ -591,6 +647,12 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}  Imabalance={3}", imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, secImb.ImbalanceSummary), Constants.MessageType.Information);
 
             }
+         
+        }
+
+        private bool IsTradingTime()
+        {
+            return DateTime.Now < MarketTimer.GetTodayDateTime(Configuration.ClosingTime);
         }
 
         private void EvalOpeningClosingPositions(SecurityImbalance secImb)
@@ -601,7 +663,10 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             if (elapsed.TotalMinutes > (Configuration.BlockSizeInMinutes*Configuration.ActiveBlocks) )
             {
                 //Evaluamos no abrir mas posiciones de las deseadas @Configuration.MaxOpenedPositions
-                if (ImbalancePositions.Keys.Count < Configuration.MaxOpenedPositions && !ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+                if (ImbalancePositions.Keys.Count < Configuration.MaxOpenedPositions 
+                    && !ImbalancePositions.ContainsKey(secImb.Security.Symbol)
+                    && IsTradingTime()
+                    )
                 {
                     EvalOpeningPosition(secImb);
                 }
@@ -934,6 +999,9 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
                     ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
                     ResetEveryNMinutesThread.Start();
+                    
+                    CloseOnTradingTimeOffThread = new Thread(CloseOnTradingTimeOff);
+                    CloseOnTradingTimeOffThread.Start();
 
                     LoadPreviousImbalancePositions();
                     //SecImbalancePersistanceThread = new Thread(ImbalancePersistanceThread);

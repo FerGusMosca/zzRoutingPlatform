@@ -9,7 +9,7 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Util
     public class MarketTimer
     {
 
-        private static DateTime GetTodayDateTime(string time)
+        public static DateTime GetTodayDateTime(string time)
         {
             DateTime parsed = DateTime.Parse(time);
             int hour = int.Parse(parsed.ToString("hh"));

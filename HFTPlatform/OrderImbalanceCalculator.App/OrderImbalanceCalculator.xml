@@ -22,6 +22,8 @@
   <MarketStartTime>11:00 AM</MarketStartTime>
   <MarketEndTime>05:00 PM</MarketEndTime>
 
+  <ClosingTime>04:50 PM</ClosingTime>
+
   <!--<Currency>USD</Currency>
   <Exchange>SMART</Exchange>-->
 

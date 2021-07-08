@@ -67,6 +67,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         public string MarketStartTime { get; set; }
 
         public string MarketEndTime { get; set; }
+        
+        public string ClosingTime { get; set; }
 
         #endregion
 
@@ -129,6 +131,14 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
                 result.Add("SecurityTypes");
                 resultado = false;
             }
+            
+            
+            if (string.IsNullOrEmpty(ClosingTime))
+            {
+                result.Add("ClosingTime");
+                resultado = false;
+            }
+
 
 
             if (SecurityTypes == SecurityType.FUT.ToString())

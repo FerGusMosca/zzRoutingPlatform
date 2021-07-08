@@ -311,7 +311,9 @@ namespace zHFT.OrderRouters.Router
             lock (tLockCalculus)
             {
                 string symbol = wrapper.GetField(ExecutionReportFields.Symbol).ToString();
-                Position pos = Positions.Where(x => x.Security.Symbol == symbol).FirstOrDefault();
+                string clOrdid = wrapper.GetField(ExecutionReportFields.ClOrdID).ToString();
+                Position pos = Positions.Where(x => x.GetCurrentOrder().ClOrdId == clOrdid).FirstOrDefault();
+                //Position pos = Positions.Where(x => x.Security.Symbol == symbol).FirstOrDefault();
 
                 if (pos != null)
                 {
@@ -319,7 +321,6 @@ namespace zHFT.OrderRouters.Router
 
                     if (report != null && report.Order != null && pos.GetCurrentOrder() != null)
                         pos.GetCurrentOrder().OrderId = report.Order.OrderId;
-                        
 
                     if (report != null)
                     {
@@ -374,6 +375,10 @@ namespace zHFT.OrderRouters.Router
                         }
                     }
                 }
+                else
+                {
+                    OnMessageRcv(wrapper);//External Trading
+                }
             }
         
         }
@@ -388,25 +393,21 @@ namespace zHFT.OrderRouters.Router
 
                 if(posInOrderRouter!=null)
                 {
-                    if ( !posInOrderRouter.PositionCleared && !posInOrderRouter.PositionCanceledOrRejected && !posInOrderRouter.NewPosition)
+                    //It is not this module responsability to validate the Position Status if Cancellation is requested
+                    Order order = posInOrderRouter.GetCurrentOrder();
+
+                    if (order != null)
                     {
-                        Order order = posInOrderRouter.GetCurrentOrder();
+                        DoLog(string.Format("@GenericOrderRouter: Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", 
+                                            order.OrderId, order.Symbol,order.OrderQty, order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>", 
+                                            order.Side), Main.Common.Util.Constants.MessageType.Information);
 
-                        if (order != null)
-                        {
-                            DoLog(string.Format("@GenericOrderRouter: Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", 
-                                                order.OrderId, order.Symbol,order.OrderQty, order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>", 
-                                                order.Side), Main.Common.Util.Constants.MessageType.Information);
+                        CancelOrderWrapper cancelOrderWrapper = new CancelOrderWrapper(order, Config);
 
-                            CancelOrderWrapper cancelOrderWrapper = new CancelOrderWrapper(order, Config);
-
-                            OrderProxy.ProcessMessage(cancelOrderWrapper);
-                        }
-                        else
-                            throw new Exception(string.Format("Could not cancel order for symbol {0} because no orders where found!", posInOrderRouter.Symbol));
+                        OrderProxy.ProcessMessage(cancelOrderWrapper);
                     }
                     else
-                        throw new Exception(string.Format("Could not cancel order for position for symbol {0} because it is in an invalid state: {1}",posInOrderRouter.Symbol,posInOrderRouter.PosStatus));
+                        throw new Exception(string.Format("Could not cancel order for symbol {0} because no orders where found!", posInOrderRouter.Symbol));
                 }
                 else
                     throw new Exception(string.Format("Could not cancel order for unknown position {0}", posId));
@@ -542,7 +543,7 @@ namespace zHFT.OrderRouters.Router
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("Error processing message on order router for action {0}. Error: {1}" , wrapper.GetAction().ToString(),ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("ERROR processing message on order router for action {0}. Error: {1}" , wrapper.GetAction().ToString(),ex.Message), Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }
