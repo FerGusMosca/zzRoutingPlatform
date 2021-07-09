@@ -3,13 +3,17 @@ using zHFT.Main.Common.Enums;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
 {
-    public class RouteOrderReq:WebSocketMessage
+    public class NewOrderReq:WebSocketMessage
     {
         #region Protected Consts
 
         protected static string _BUY = "BUY";
 
         protected static string _SELL = "SELL";
+        
+        public static string _ORD_TYPE_LIMIT = "LIMIT";
+
+        public static string _ORD_TYPE_MKT = "MKT";
         
         #endregion
         
@@ -28,8 +32,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
         public double Qty { get; set; }
 
         public string  Account  { get; set; }
+        
+        public string Type { get; set; }
 
-        public double? LimitPrice { get; set; }
+        public double? Price { get; set; }
 
         public string Currency { get; set; }
 

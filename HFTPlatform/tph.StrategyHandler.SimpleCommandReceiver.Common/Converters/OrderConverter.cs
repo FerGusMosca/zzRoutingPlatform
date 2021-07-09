@@ -29,13 +29,27 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             return new Security() {Symbol = symbol, Exchange = exchange, SecType = secType};
 
         }
-        
+
+        private void ValidateNewOrder(NewOrderReq newOrdeReq)
+        {
+            if (newOrdeReq.Type == NewOrderReq._ORD_TYPE_LIMIT && !newOrdeReq.Price.HasValue)
+                throw new Exception(string.Format("New Order {0} is marked as Limit but does not have a price",
+                    newOrdeReq.ClOrdId));
+            
+            if (newOrdeReq.Type == NewOrderReq._ORD_TYPE_MKT && newOrdeReq.Price.HasValue)
+                throw new Exception(string.Format("New Order {0} is marked as Market but it has a price:{1}",
+                    newOrdeReq.ClOrdId,newOrdeReq.Price.Value));
+
+        }
+
         #endregion
         
         #region Public Attributes
 
-        public Order ConvertNewOrder(RouteOrderReq newOrdeReq)
+        public Order ConvertNewOrder(NewOrderReq newOrdeReq)
         {
+            ValidateNewOrder(newOrdeReq);
+            
             Order order = new Order();
 
             order.OrderId = null;
@@ -44,8 +58,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             order.OrigClOrdId = null;
             order.OrderQty = newOrdeReq.Qty;
             order.CashOrderQty = null;
-            order.OrdType = newOrdeReq.LimitPrice != null ? OrdType.Limit : OrdType.Market;
-            order.Price = newOrdeReq.LimitPrice;
+            order.OrdType = newOrdeReq.Price != null ? OrdType.Limit : OrdType.Market;
+            order.Price = newOrdeReq.Price;
             order.StopPx = null;
             order.Currency = newOrdeReq.Currency;
             order.ExpireTime = null;

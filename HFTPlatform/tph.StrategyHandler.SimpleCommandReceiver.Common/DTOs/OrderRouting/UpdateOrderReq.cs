@@ -6,9 +6,9 @@
         
         public string Symbol { get; set; }
         
-        public  string OrigClOrderId{get; set; }
+        public  string OrigClOrdId{get; set; }
         
-        public  string ClOrderId{get; set; }
+        public  string ClOrdId{get; set; }
         
         public  string OrderId{get; set; }
         

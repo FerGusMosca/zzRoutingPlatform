@@ -2,6 +2,15 @@
 {
     public class UpdateOrderAck:WebSocketMessage
     {
+        #region Constructors
+
+        public UpdateOrderAck()
+        {
+            Msg = "UpdOrderAck";
+        }
+
+        #endregion
+        
         #region Public Attributes
 
         public bool Success { get; set; }

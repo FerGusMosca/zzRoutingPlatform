@@ -49,8 +49,8 @@
         <Compile Include="DTOs\OrderRouting\ExecutionReportDTO.cs" />
         <Compile Include="DTOs\OrderRouting\OrderCancelRejectDTO.cs" />
         <Compile Include="DTOs\OrderRouting\OrderCancelReplaceRejectDTO.cs" />
-        <Compile Include="DTOs\OrderRouting\RouteOrderAck.cs" />
-        <Compile Include="DTOs\OrderRouting\RouteOrderReq.cs" />
+        <Compile Include="DTOs\OrderRouting\NewOrderAck.cs" />
+        <Compile Include="DTOs\OrderRouting\NewOrderReq.cs" />
         <Compile Include="DTOs\OrderRouting\UpdateOrderAck.cs" />
         <Compile Include="DTOs\OrderRouting\UpdateOrderReq.cs" />
         <Compile Include="DTOs\SubscriptionResponse.cs" />

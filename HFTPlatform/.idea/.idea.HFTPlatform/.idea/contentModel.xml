@@ -598,10 +598,10 @@
             <e p="CancelOrderAck.cs" t="Include" />
             <e p="CancelOrderReq.cs" t="Include" />
             <e p="ExecutionReportDTO.cs" t="Include" />
+            <e p="NewOrderAck.cs" t="Include" />
+            <e p="NewOrderReq.cs" t="Include" />
             <e p="OrderCancelRejectDTO.cs" t="Include" />
             <e p="OrderCancelReplaceRejectDTO.cs" t="Include" />
-            <e p="RouteOrderAck.cs" t="Include" />
-            <e p="RouteOrderReq.cs" t="Include" />
             <e p="UpdateOrderAck.cs" t="Include" />
             <e p="UpdateOrderReq.cs" t="Include" />
           </e>

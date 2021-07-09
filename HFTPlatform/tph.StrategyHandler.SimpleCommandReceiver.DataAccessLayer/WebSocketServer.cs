@@ -215,15 +215,15 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             {
 
                 DoLog(string.Format("Incoming  Order Update Req for ClOrdId {0} (Qty={1} Price={2})",
-                        updOrderReq.OrigClOrderId, updOrderReq.Qty.HasValue ? updOrderReq.Qty.Value.ToString() : "-",
+                        updOrderReq.OrigClOrdId, updOrderReq.Qty.HasValue ? updOrderReq.Qty.Value.ToString() : "-",
                         updOrderReq.Price.HasValue ? updOrderReq.Price.Value.ToString() : "-"),
                         Constants.MessageType.Information);
 
                 Order order = new Order()
                 {
                     Symbol = updOrderReq.Symbol,
-                    OrigClOrdId = updOrderReq.OrigClOrderId,
-                    ClOrdId = updOrderReq.ClOrderId,
+                    OrigClOrdId = updOrderReq.OrigClOrdId,
+                    ClOrdId = updOrderReq.ClOrdId,
                     OrderId = updOrderReq.OrderId,
                     OrderQty = updOrderReq.Qty,
                     Price = updOrderReq.Price
@@ -236,13 +236,12 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 {
                     UpdateOrderAck ackMsg = new UpdateOrderAck()
                     {
-                        Msg = "UpdateOrderAck",
                         Success = true,
                     };
 
                     DoSend<UpdateOrderAck>(socket, ackMsg);
 
-                    DoLog(string.Format("Update Order Req for ClOrdId {0}  successfully processed", updOrderReq.OrigClOrderId), Constants.MessageType.Information);
+                    DoLog(string.Format("Update Order Req for ClOrdId {0}  successfully processed", updOrderReq.OrigClOrdId), Constants.MessageType.Information);
                 }
                 else
                     throw resp.Exception;
@@ -250,11 +249,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("Critical ERROR for Update Order Req Req for ClOrdId {0}. Error:{1}", updOrderReq.OrigClOrderId,ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("Critical ERROR for Update Order Req Req for ClOrdId {0}. Error:{1}", updOrderReq.OrigClOrdId,ex.Message), Constants.MessageType.Error);
 
                 UpdateOrderAck ackMsg = new UpdateOrderAck()
                 {
-                    Msg = "UpdateOrderAck",
+                    
                     Success = false,
                     Error = ex.Message
 
@@ -307,15 +306,15 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
         protected void ProcessRouteOrderReq(IWebSocketConnection socket, string m)
         {
-            RouteOrderReq routeOrderReq = JsonConvert.DeserializeObject<RouteOrderReq>(m);
+            NewOrderReq newOrderReq = JsonConvert.DeserializeObject<NewOrderReq>(m);
             try
             {
                 
-                DoLog(string.Format("Incoming Route Order Req for Symbol {0} and Side {1}", routeOrderReq.Symbol, routeOrderReq.Side), Constants.MessageType.Information);
+                DoLog(string.Format("Incoming Route Order Req for Symbol {0} and Side {1}", newOrderReq.Symbol, newOrderReq.Side), Constants.MessageType.Information);
 
                 OrderConverter converter= new OrderConverter();;
 
-                Order newOrder  = converter.ConvertNewOrder(routeOrderReq);
+                Order newOrder  = converter.ConvertNewOrder(newOrderReq);
 
                 NewOrderWrapper newOrderWrapper = new NewOrderWrapper(newOrder, new Configuration());
                 
@@ -323,17 +322,16 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 
                 if (resp.Success)
                 {
-                    RouteOrderAck ackMsg = new RouteOrderAck()
+                    NewOrderAck ackMsg = new NewOrderAck()
                     {
-                        Msg = "RouteOrderAck",
-                        ReqId = routeOrderReq.ReqId,
-                        UUID = routeOrderReq.UUID,
+                        ReqId = newOrderReq.ReqId,
+                        UUID = newOrderReq.UUID,
                         Success = true,
                     };
 
-                    DoSend<RouteOrderAck>(socket, ackMsg);
+                    DoSend<NewOrderAck>(socket, ackMsg);
 
-                    DoLog(string.Format("Route Order Req for symbol {0} qty {1} side {2} successfully processed", routeOrderReq.Symbol, routeOrderReq.Qty, routeOrderReq.Side), Constants.MessageType.Information);
+                    DoLog(string.Format("Route Order Req for symbol {0} qty {1} side {2} successfully processed", newOrderReq.Symbol, newOrderReq.Qty, newOrderReq.Side), Constants.MessageType.Information);
                 }
                 else
                     throw resp.Exception;
@@ -341,14 +339,13 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("Critical ERROR for Incoming Route Position Req for symbol {0} qty {1} side {2}. Error:{3}", routeOrderReq.Symbol, routeOrderReq.Qty, routeOrderReq.Side,ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("Critical ERROR for Incoming Route Position Req for symbol {0} qty {1} side {2}. Error:{3}", newOrderReq.Symbol, newOrderReq.Qty, newOrderReq.Side,ex.Message), Constants.MessageType.Error);
 
-                RouteOrderAck ackMsg = new RouteOrderAck()
+                NewOrderAck ackMsg = new NewOrderAck()
                 {
-                    Msg = "RouteOrderAck",
-                    ReqId = routeOrderReq.ReqId,
+                    ReqId = newOrderReq.ReqId,
                     Success = false,
-                    UUID = routeOrderReq.UUID,
+                    UUID = newOrderReq.UUID,
                     Error = ex.Message
 
                 };
@@ -432,7 +429,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 {
                     ProcessSubscriptions(socket, m);
                 }
-                else if (wsResp.Msg == "RouteOrderReq")
+                else if (wsResp.Msg == "NewOrderReq")
                 {
                     ProcessRouteOrderReq(socket, m);
                 }
@@ -444,7 +441,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 {
                     ProcessCancelAllReq(socket, m);
                 }
-                else if (wsResp.Msg == "UpdateOrderReq")
+                else if (wsResp.Msg == "UpdOrderReq")
                 {
                     ProcessUpdateOrderReq(socket, m);
                 }
