@@ -515,6 +515,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
             else if (openPos.PositionRouting())
             {
+                DoLog(string.Format("Cancelling routing pos for symbol {0} before closing (status={1})",openPos.Security.Symbol,openPos.PosStatus),Constants.MessageType.Information);
                 return CancelRoutingPos(openPos, imbPos);
             }
             else
@@ -670,7 +671,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 {
                     EvalOpeningPosition(secImb);
                 }
-                else if (ImbalancePositions.ContainsKey(secImb.Security.Symbol))
+                else if (ImbalancePositions.ContainsKey(secImb.Security.Symbol) && IsTradingTime())
                 {
                     EvalClosingPosition(secImb);
                     EvalClosingPositionOnStopLossHit(secImb);
@@ -766,8 +767,14 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
                     if (!imbPos.IsFirstLeg())
                     {
+                        DoLog(string.Format("DB-Closing imbalance position for symbol {0} (CumQty={1})",imbPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
                         SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].Closing = false;
                         ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
+                    }
+                    else
+                    {
+                        DoLog(string.Format("DB-Fully opened imbalance {2} position for symbol {0} (CumQty={1})",
+                                                    imbPos.OpeningPosition.Security.Symbol,report.CumQty,imbPos.TradeDirection),Constants.MessageType.Information);
                     }
                 }
             }
@@ -848,9 +855,9 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         protected void LogExecutionReport(ImbalancePosition imbPos, ExecutionReport report)
         {
 
-            DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} Qty={2} CymQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
+            DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} ExecType={7} OrdStatus={8} Qty={2} CymQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
                           imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, imbPos.CurrentPos().CumQty, imbPos.CurrentPos().LeavesQty,
-                          imbPos.CurrentPos().AvgPx, imbPos.IsFirstLeg(), report.ExecType), Constants.MessageType.Information);
+                          imbPos.CurrentPos().AvgPx, imbPos.IsFirstLeg(), report.ExecType,report.OrdStatus), Constants.MessageType.Information);
 
         }
 
