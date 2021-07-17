@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Configuration;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using zHFT.Main.BusinessEntities.Orders;
@@ -128,8 +129,6 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         #endregion
 
         #region Protected Methods
-
-       
 
         protected void ProcessMarketDataRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
         {
@@ -352,7 +351,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             }
             
         }
-
+        
         protected void ProcessSubscriptions(IWebSocketConnection socket, string m)
         {
             WebSocketSubscribeMessage subscrMsg = JsonConvert.DeserializeObject<WebSocketSubscribeMessage>(m);

@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using zHFT.Main.Common.Enums;
 
 namespace zHFT.Main.BusinessEntities.Orders
 {
     public class ExecutionReport
     {
+        #region Public Static Consts
+
+        public static string _DATE_FORMAT = "%d-%m-%Y %H:%M:%S";
+        
+        #endregion
+        
         #region Public Attributes
 
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy hh:mm:ss")]
         public DateTime? TransactTime { get; set; }
 
         public long Id { get; set; }
@@ -81,5 +91,13 @@ namespace zHFT.Main.BusinessEntities.Orders
         }
 
         #endregion
+    }
+
+    public class DateFormatConverter : IsoDateTimeConverter
+    {
+        public DateFormatConverter(string format)
+        {
+            DateTimeFormat = format;
+        }
     }
 }

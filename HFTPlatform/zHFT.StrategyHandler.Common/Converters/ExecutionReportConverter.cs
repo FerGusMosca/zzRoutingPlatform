@@ -98,6 +98,7 @@ namespace zHFT.StrategyHandlers.Common.Converters
             er.LastPx = (ValidateField(wrapper, ExecutionReportFields.LastPx) ? (double?)Convert.ToDouble(wrapper.GetField(ExecutionReportFields.LastPx)) : null);
             er.LastMkt = (ValidateField(wrapper, ExecutionReportFields.LastMkt) ? Convert.ToString(wrapper.GetField(ExecutionReportFields.LastMkt)) : null);
 
+            
             er.Order = BuildOrder(wrapper);
 
             return er;

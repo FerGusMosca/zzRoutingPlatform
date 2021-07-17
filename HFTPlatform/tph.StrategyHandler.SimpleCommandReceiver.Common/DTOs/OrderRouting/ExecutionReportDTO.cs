@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Enums;
 
@@ -36,6 +37,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
 
             if (Order != null)
                 CreateTime = Order.EffectiveTime;
+
+            DatetimeFormat = _DATE_FORMAT;
         }
 
         #endregion
@@ -73,9 +76,13 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
         
         public string OrigClOrdId { get; set; }
         
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy hh:mm:ss")]
         public DateTime? LastFilledTime { get; set; }
         
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy hh:mm:ss")]
         public DateTime? CreateTime { get; set; }
+        
+        public string DatetimeFormat { get; set; }
         
         #endregion
         

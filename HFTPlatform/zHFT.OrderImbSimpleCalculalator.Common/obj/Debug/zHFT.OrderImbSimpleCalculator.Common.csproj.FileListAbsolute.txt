@@ -34,3 +34,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\Newtonsoft.Json.xml

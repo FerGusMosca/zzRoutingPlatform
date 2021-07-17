@@ -39,3 +39,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.FixMessageCreator.Primary.Common\obj\Debug\zHFT.FixMessageCreator.Primary.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.FixMessageCreator.Primary.Common\obj\Debug\zHFT.FixMessageCreator.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.FixMessageCreator.Primary.Common\obj\Debug\zHFT.FixMessageCreator.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.FixMessageCreator.Primary.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.FixMessageCreator.Primary.Common\bin\Debug\Newtonsoft.Json.xml
