@@ -232,6 +232,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             {
                 return OrderRouterModule.ProcessMessage(wrapper);
             }
+            else if (wrapper.GetAction() == Actions.ORDER_MASS_STATUS_REQUEST)
+            {
+                return OrderRouterModule.ProcessMessage(wrapper);
+            }
             else
             {
             

@@ -35,6 +35,8 @@
 
   <ResetOnPersistance>true</ResetOnPersistance>
 
+  <CancelActiveOrdersOnStart>true</CancelActiveOrdersOnStart>
+
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
   

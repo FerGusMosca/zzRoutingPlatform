@@ -88,3 +88,5 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer\obj\Debug\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml

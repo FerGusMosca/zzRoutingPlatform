@@ -603,6 +603,7 @@
             <e p="NewOrderReq.cs" t="Include" />
             <e p="OrderCancelRejectDTO.cs" t="Include" />
             <e p="OrderCancelReplaceRejectDTO.cs" t="Include" />
+            <e p="OrderMassStatusRequestAck.cs" t="Include" />
             <e p="UpdateOrderAck.cs" t="Include" />
             <e p="UpdateOrderReq.cs" t="Include" />
           </e>
@@ -2249,6 +2250,7 @@
           <e p="CancelOrderWrapper.cs" t="Include" />
           <e p="CancelPositionWrapper.cs" t="Include" />
           <e p="MarketDataRequestWrapper.cs" t="Include" />
+          <e p="OrderMassStatusRequestWrapper.cs" t="Include" />
           <e p="OrderWrapper.cs" t="Include" />
           <e p="PositionWrapper.cs" t="Include" />
           <e p="SecurityListRequestWrapper.cs" t="Include" />

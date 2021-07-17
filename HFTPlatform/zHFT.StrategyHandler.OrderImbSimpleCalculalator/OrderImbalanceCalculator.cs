@@ -282,6 +282,13 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
+        private void RequestOrderStatuses()
+        {
+            OrderMassStatusRequestWrapper omsReq = new OrderMassStatusRequestWrapper();
+            
+            OrderRouter.ProcessMessage(omsReq);
+        }
+
         private void LoadMonitorsAndRequestMarketData()
         {
             Thread.Sleep(5000);
@@ -861,6 +868,22 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         }
 
+        protected void EvalCancellingOrdersOnStartup(ExecutionReport report)
+        {
+            if (Configuration.CancelActiveOrdersOnStart && report.IsActiveOrder())
+            {
+                TimeSpan elapsed = DateTime.Now - StartTime;
+
+                if (elapsed.TotalSeconds > 10)
+                {
+                    CancelOrderWrapper cxlOrderWrapper = new CancelOrderWrapper(report.Order, Config);
+                    OrderRouter.ProcessMessage(cxlOrderWrapper);
+                }
+                else
+                    Configuration.CancelActiveOrdersOnStart = false;
+            }
+        }
+        
         protected void ProcessExecutionReport(object param)
         { 
              Wrapper wrapper = (Wrapper)param;
@@ -868,6 +891,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
              {
                  ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
+                 EvalCancellingOrdersOnStartup(report);
+                 
                  if (ImbalancePositions.ContainsKey(report.Order.Symbol))
                  {
                      ImbalancePosition imbPos = ImbalancePositions[report.Order.Symbol];
@@ -984,6 +1009,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
                     NextPosId = 1;
 
+                    RequestOrderStatuses();
+                    
                     LoadMonitorsAndRequestMarketData();
 
                     DoLog("Initializing Order Router " + Configuration.OrderRouter, Constants.MessageType.Information);

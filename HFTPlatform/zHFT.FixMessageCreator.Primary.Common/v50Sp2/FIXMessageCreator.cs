@@ -446,6 +446,17 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
             return ocr;
         }
 
+        public QuickFix.Message CreateOrderMassStatusRequest(string reqId)
+        {
+            QuickFix50Sp2.OrderMassStatusRequest omsr = new QuickFix50Sp2.OrderMassStatusRequest();
+            
+            omsr.setField(MassStatusReqID.FIELD, reqId);
+            
+            omsr.setInt(MassStatusReqType.FIELD, MassStatusReqType.STATUS_FOR_ALL_ORDERS);
+
+            return omsr;
+        }
+
 
         #endregion
     }

@@ -855,6 +855,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         DoLog(string.Format("@{0}:Cancelling all active orders @ Primary", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                         return CancelAllOrders();
                     }
+                    else if (wrapper.GetAction() == Actions.ORDER_MASS_STATUS_REQUEST)
+                    {
+                        DoLog(string.Format("@{0}:Requesting status for all the orders @ Primary", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        return RequestOrderMassStatus();
+                    }
                     else
                     {
 

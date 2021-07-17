@@ -523,6 +523,11 @@ namespace zHFT.OrderRouters.Router
                     CancelOrder(wrapper);
                     return CMState.BuildSuccess();
                 }
+                else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
+                {
+                    OrderProxy.ProcessMessage(wrapper);
+                    return CMState.BuildSuccess();
+                }
                 else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                 {
                     DoLog(string.Format("Canceling all active orders"), Constants.MessageType.Information);
@@ -533,6 +538,12 @@ namespace zHFT.OrderRouters.Router
                 {
                     OrderProxy.ProcessMessage(wrapper);
                     DoLog(string.Format("Routing security list to order router"), Constants.MessageType.Information);
+                    return CMState.BuildSuccess();
+                }
+                else if (wrapper.GetAction() == Actions.ORDER_MASS_STATUS_REQUEST)
+                {
+                    OrderProxy.ProcessMessage(wrapper);
+                    DoLog(string.Format("Routing order mass status request to order router"), Constants.MessageType.Information);
                     return CMState.BuildSuccess();
                 }
                 else

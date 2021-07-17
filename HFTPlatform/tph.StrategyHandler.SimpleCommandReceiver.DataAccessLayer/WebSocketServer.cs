@@ -17,7 +17,9 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
+using zHFT.StrategyHandler.Common.Wrappers;
 using CancelOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.CancelOrderWrapper;
+using MarketDataRequestWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.MarketDataRequestWrapper;
 using UpdateOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.UpdateOrderWrapper;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
@@ -203,6 +205,43 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                     Success = false,
                     Error = ex.Message
 
+                };
+            }
+        }
+
+        protected void ProcessOrderMassStatusRequest(IWebSocketConnection socket, string m)
+        {
+            try
+            {
+                
+                DoLog(string.Format("Incoming Order Mass Status Request"), Constants.MessageType.Information);
+
+                OrderMassStatusRequestWrapper omsrWrapper = new OrderMassStatusRequestWrapper();
+                
+                CMState resp = OnMessageReceived(omsrWrapper);
+                
+                if (resp.Success)
+                {
+                    OrderMassStatusRequestAck ackMsg = new OrderMassStatusRequestAck()
+                    {
+                        Success = true,
+                    };
+
+                    DoSend<OrderMassStatusRequestAck>(socket, ackMsg);
+                    DoLog(string.Format("Order Mass Status Request  successfully processed"), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Order Mass Status Request. Error:{0}",ex.Message), Constants.MessageType.Error);
+
+                OrderMassStatusRequestAck ackMsg = new OrderMassStatusRequestAck()
+                {
+                    Success = false,
+                    Error = ex.Message
                 };
             }
         }
@@ -443,6 +482,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 else if (wsResp.Msg == "UpdOrderReq")
                 {
                     ProcessUpdateOrderReq(socket, m);
+                }
+                else if (wsResp.Msg == "OrderMassStatusRequest")
+                {
+                    ProcessOrderMassStatusRequest(socket, m);
                 }
                 else
                 {

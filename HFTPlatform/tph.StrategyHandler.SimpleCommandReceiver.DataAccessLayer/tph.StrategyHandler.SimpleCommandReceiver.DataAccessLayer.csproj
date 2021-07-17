@@ -70,6 +70,10 @@
         <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
         <Name>zHFT.OrderRouters.Common</Name>
       </ProjectReference>
+      <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
+        <Project>{453e183d-9557-4a96-ad08-d2ad0db68765}</Project>
+        <Name>zHFT.StrategyHandler.Common</Name>
+      </ProjectReference>
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

@@ -73,6 +73,12 @@ namespace zHFT.Main.BusinessEntities.Orders
         
         }
 
+        public bool IsActiveOrder()
+        {
+            return OrdStatus == OrdStatus.New || OrdStatus == OrdStatus.PartiallyFilled ||
+                   OrdStatus == OrdStatus.PendingNew || OrdStatus == OrdStatus.Replaced;
+        }
+
         public string GetRejectReason()
         {
             if (IsCancelationExecutionReport())

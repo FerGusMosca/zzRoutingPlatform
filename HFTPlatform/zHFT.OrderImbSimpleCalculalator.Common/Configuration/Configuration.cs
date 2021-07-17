@@ -37,6 +37,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         public string OrderRouterConfigFile { get; set; }
 
         public bool ResetOnPersistance { get; set; }
+        
+        public bool CancelActiveOrdersOnStart { get; set; }
 
         public string SaveEvery { get; set; }
 

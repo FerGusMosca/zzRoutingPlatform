@@ -55,6 +55,7 @@
         <Compile Include="DTOs\OrderRouting\OrderCancelReplaceRejectDTO.cs" />
         <Compile Include="DTOs\OrderRouting\NewOrderAck.cs" />
         <Compile Include="DTOs\OrderRouting\NewOrderReq.cs" />
+        <Compile Include="DTOs\OrderRouting\OrderMassStatusRequestAck.cs" />
         <Compile Include="DTOs\OrderRouting\UpdateOrderAck.cs" />
         <Compile Include="DTOs\OrderRouting\UpdateOrderReq.cs" />
         <Compile Include="DTOs\SubscriptionResponse.cs" />

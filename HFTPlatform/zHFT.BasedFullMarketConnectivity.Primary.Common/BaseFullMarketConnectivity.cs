@@ -571,6 +571,17 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         
         }
 
+        protected CMState RequestOrderMassStatus()
+        {
+            TimeSpan epoch = DateTime.Now - new DateTime(1970, 1, 1);
+            
+            QuickFix.Message massStatusReqMsg = FIXMessageCreator.CreateOrderMassStatusRequest(epoch.TotalSeconds.ToString());
+            
+            Session.sendToTarget(massStatusReqMsg, SessionID);
+            
+            return CMState.BuildSuccess();
+        }
+
         protected CMState CancelAllOrders()
         {
             QuickFix.Message massiveCancelMsg = FIXMessageCreator.CreateOrderMassCancelRequest();
