@@ -872,7 +872,8 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="FIX Sessions" t="Include">
           <e p="initiator_prod.cfg" t="Include" />
-          <e p="initiator_test.cfg" t="Include" />
+          <e p="initiator_test_old_primary.cfg" t="Include" />
+          <e p="initiator_test_tarallo.cfg" t="Include" />
         </e>
         <e p="FIXConfig" t="Include">
           <e p="FIX50SP2.xml" t="Include" />

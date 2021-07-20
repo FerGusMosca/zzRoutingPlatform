@@ -71,6 +71,10 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         public string MarketEndTime { get; set; }
         
         public string ClosingTime { get; set; }
+        
+        public string Account { get; set; }
+        
+        public bool OnlyLong { get; set; }
 
         #endregion
 

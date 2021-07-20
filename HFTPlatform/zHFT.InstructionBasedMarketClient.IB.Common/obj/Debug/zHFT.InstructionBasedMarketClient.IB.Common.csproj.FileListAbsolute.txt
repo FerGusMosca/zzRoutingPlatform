@@ -61,3 +61,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IB.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IB.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\obj\Debug\zHFT.InstructionBasedMarketClient.IB.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.IB.Common\bin\Debug\Newtonsoft.Json.xml

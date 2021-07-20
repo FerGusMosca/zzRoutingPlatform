@@ -2,9 +2,9 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - Order Imbalance Calculator</Name>
 
-  <PositionSizeInCash>10000</PositionSizeInCash>
+  <PositionSizeInCash>1000</PositionSizeInCash>
 
-  <MaxOpenedPositions>30</MaxOpenedPositions>
+  <MaxOpenedPositions>5</MaxOpenedPositions>
   <PositionOpeningImbalanceThreshold>0.75</PositionOpeningImbalanceThreshold>
   <PositionOpeningImbalanceMaxThreshold>0.6</PositionOpeningImbalanceMaxThreshold>
   <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
@@ -13,7 +13,9 @@
   <DecimalRounding>3</DecimalRounding>
 
   <ActiveBlocks>3</ActiveBlocks>
-  <BlockSizeInMinutes>10</BlockSizeInMinutes>
+  <BlockSizeInMinutes>5</BlockSizeInMinutes>
+  
+  <Account>9732</Account>
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>
@@ -36,31 +38,34 @@
   <ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>true</CancelActiveOrdersOnStart>
+  
+  <OnlyLong>true</OnlyLong>
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
 
-    <Symbol>ALUA.BUE</Symbol>
-    <Symbol>APBR.BUE</Symbol>
     <Symbol>GGAL.BUE</Symbol>
-    <Symbol>BMA.BUE</Symbol>
-    <Symbol>BYMA.BUE</Symbol>
-    <Symbol>CEPU.BUE</Symbol>
-    <Symbol>COME.BUE</Symbol>
-    <Symbol>CVH.BUE</Symbol>
-    <Symbol>EDN.BUE</Symbol>
-    <Symbol>MIRG.BUE</Symbol>
-    <Symbol>TGNO4.BUE</Symbol>
-    <Symbol>TGSU2.BUE</Symbol>
-    <Symbol>TRAN.BUE</Symbol>
-    <Symbol>TS.BUE</Symbol>
-    <Symbol>TXAR.BUE</Symbol>
     <Symbol>YPFD.BUE</Symbol>
     <Symbol>PAMP.BUE</Symbol>
-    <Symbol>SUPV.BUE</Symbol>
-    <Symbol>VALO.BUE</Symbol>
+    <Symbol>COME.BUE</Symbol>
+    <Symbol>BMA.BUE</Symbol>
+    
+<!--    <Symbol>ALUA.BUE</Symbol>-->
+<!--    <Symbol>APBR.BUE</Symbol>-->
+<!--    <Symbol>BYMA.BUE</Symbol>-->
+<!--    <Symbol>CEPU.BUE</Symbol>-->
+<!--    <Symbol>CVH.BUE</Symbol>-->
+<!--    <Symbol>EDN.BUE</Symbol>-->
+<!--    <Symbol>MIRG.BUE</Symbol>-->
+<!--    <Symbol>TGNO4.BUE</Symbol>-->
+<!--    <Symbol>TGSU2.BUE</Symbol>-->
+<!--    <Symbol>TRAN.BUE</Symbol>-->
+<!--    <Symbol>TS.BUE</Symbol>-->
+<!--    <Symbol>TXAR.BUE</Symbol>-->
+<!--    <Symbol>SUPV.BUE</Symbol>-->
+<!--    <Symbol>VALO.BUE</Symbol>-->
 
     <!--<Symbol>AAPL</Symbol>
     <Symbol>MSFT</Symbol>

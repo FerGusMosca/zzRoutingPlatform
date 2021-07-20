@@ -333,7 +333,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
                 CancelOrderAck ackMsg = new CancelOrderAck()
                 {
-                    Msg = "RouteOrderAck",
+                    Msg = "CancelOrderAck",
                     Success = false,
                     Error = ex.Message
 

@@ -58,3 +58,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer\obj\Debug\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Bittrex.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml

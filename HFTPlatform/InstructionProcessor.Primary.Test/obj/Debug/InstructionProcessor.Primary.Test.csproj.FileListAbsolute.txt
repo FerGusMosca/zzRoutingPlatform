@@ -218,7 +218,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIXConfig\FIX50SP2.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIXConfig\FIXT11.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_prod.cfg
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test.cfg
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\Config.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\OutgoingSingletonConfig.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\Primary.xml
@@ -312,3 +311,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\obj\Debug\InstructionProcessor.Primary.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test_tarallo.cfg
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test_old_primary.cfg

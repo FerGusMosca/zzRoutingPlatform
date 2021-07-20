@@ -54,7 +54,10 @@
     <None Include="FIX Sessions\initiator_prod.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="FIX Sessions\initiator_test.cfg">
+    <None Include="FIX Sessions\initiator_test_tarallo.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="FIX Sessions\initiator_test_old_primary.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

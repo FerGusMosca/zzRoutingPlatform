@@ -61,3 +61,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\Newtonsoft.Json.xml

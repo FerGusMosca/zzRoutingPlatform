@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>InstructionProcessor.Primary.Test</Name>
-  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
-  <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test.cfg</FIXInitiatorPath>-->
+  <!--<FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>--><!--PROD NASINI-->
+  <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test_old_primary.cfg</FIXInitiatorPath>--><!--OLD TEST PRIMARY-->
+  <FIXInitiatorPath>.\FIX Sessions\initiator_test_tarallo.cfg</FIXInitiatorPath><!--TEST Tarallo-->
+  
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
-  <User>fmosca</User>
-  <!--<Password>WhYbs5wY</Password>--><!--TEST-->
-  <Password>Msk7w6cB_</Password><!--PROD-->
-  <!--<Password>Xqw7L9tS</Password>--> <!--TEST2-->
+  
+  <!--<User>fmosca</User>--><!--PROD NASINI-->
+  <User>wstradehelm</User><!--TEST TARALLO-->
+
+  <Password>eP4mw8eD_</Password><!--TEST TARALLO-->
+  <!--<Password>Msk7w6cB_</Password>--><!--PROD NASINI-->
+  <!--<Password>WhYbs5wY</Password>--><!-- Primary old TEST-->
+  <!--<Password>Xqw7L9tS</Password>--> <!--Primary old  TEST2-->
 
   <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
   <SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >

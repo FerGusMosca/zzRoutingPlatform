@@ -461,6 +461,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         order.ClOrdId = clOrdId;
                         order.OrigClOrdId = origClOrdId;
 
+                        ordQty = order.OrderQty;//We use the old qty
+
                         //CancelOrder(order, origClOrdId, newMarketOrderIdRequested.ToString());
                         //RouteNewOrder(order, (newMarketOrderIdRequested + 1).ToString());
 
