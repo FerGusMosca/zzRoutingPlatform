@@ -367,6 +367,11 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                         DisplayFullOrderList(wrapper);
                         return CMState.BuildSuccess();
                     }
+                    else if (wrapper.GetAction() == Actions.ORDER_MASS_STATUS_REQUEST)
+                    {
+                        DoLog(string.Format("@{0}:Requesting status for all the orders @ Primary", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        return RequestOrderMassStatus();
+                    }
                     else
                     {
                         DoLog(string.Format("@{0}:Sending message " + action + " not implemented", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);

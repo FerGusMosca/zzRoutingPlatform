@@ -37,7 +37,7 @@
 
   <ResetOnPersistance>true</ResetOnPersistance>
 
-  <CancelActiveOrdersOnStart>true</CancelActiveOrdersOnStart>
+  <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
   
   <OnlyLong>true</OnlyLong>
 

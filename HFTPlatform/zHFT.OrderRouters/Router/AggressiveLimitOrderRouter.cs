@@ -24,53 +24,61 @@ namespace zHFT.OrderRouters.Router
             lock (tLockCalculus)
             {
                 string symbol = wrapper.GetField(MarketDataFields.Symbol).ToString();
-                Position pos = Positions.Where(x => x.Security.Symbol == symbol).FirstOrDefault();
-
-                if (pos != null && !pos.PositionCleared && !pos.PositionCanceledOrRejected)
+                List<Position> positions= Positions.Values.Where(x => x.PositionRouting() && x.Security.Symbol == symbol).ToList();
+                foreach (Position pos in positions)
                 {
-                    MarketData updMarketData = MarketDataConverter.GetMarketData(wrapper, Config);
-
-                    if (pos.Side == Side.Buy)
+                    if (pos != null && !pos.PositionCleared && !pos.PositionCanceledOrRejected)
                     {
-                        if (pos.Security.MarketData.BestAskPrice.HasValue && !updMarketData.BestAskPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (!pos.Security.MarketData.BestAskPrice.HasValue && updMarketData.BestAskPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (pos.Security.MarketData.BestAskPrice.HasValue && updMarketData.BestAskPrice.HasValue)
-                        {
+                        MarketData updMarketData = MarketDataConverter.GetMarketData(wrapper, Config);
 
-                            if (updMarketData.BestAskPrice.Value != pos.Security.MarketData.BestAskPrice.Value)
-                            {
-                                DoLog(string.Format("Updating DOM price on ASK. Symbol: {0} - New Ask Price:{1} Old Ask Price:{2}",
-                                                      pos.Security.Symbol,
-                                                      pos.Security.MarketData.BestAskPrice.Value,
-                                                      updMarketData.BestAskPrice.Value), Constants.MessageType.Information);
+                        if (pos.Side == Side.Buy)
+                        {
+                            if (pos.Security.MarketData.BestAskPrice.HasValue && !updMarketData.BestAskPrice.HasValue)
                                 pos.NewDomFlag = true;
+                            else if (!pos.Security.MarketData.BestAskPrice.HasValue &&
+                                     updMarketData.BestAskPrice.HasValue)
+                                pos.NewDomFlag = true;
+                            else if (pos.Security.MarketData.BestAskPrice.HasValue &&
+                                     updMarketData.BestAskPrice.HasValue)
+                            {
+
+                                if (updMarketData.BestAskPrice.Value != pos.Security.MarketData.BestAskPrice.Value)
+                                {
+                                    DoLog(string.Format(
+                                        "Updating DOM price on ASK. Symbol: {0} - New Ask Price:{1} Old Ask Price:{2}",
+                                        pos.Security.Symbol,
+                                        pos.Security.MarketData.BestAskPrice.Value,
+                                        updMarketData.BestAskPrice.Value), Constants.MessageType.Information);
+                                    pos.NewDomFlag = true;
+                                }
                             }
                         }
-                    }
-                    else if (pos.Side == Side.Sell)
-                    {
-                        if (pos.Security.MarketData.BestBidPrice.HasValue && !updMarketData.BestBidPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (!pos.Security.MarketData.BestBidPrice.HasValue && updMarketData.BestBidPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (pos.Security.MarketData.BestBidPrice.HasValue && updMarketData.BestBidPrice.HasValue)
+                        else if (pos.Side == Side.Sell)
                         {
-
-                            if (updMarketData.BestBidPrice.Value != pos.Security.MarketData.BestBidPrice.Value)
-                            {
-                                DoLog(string.Format("Updating DOM price on BID. Symbol: {0} - New Bid Price:{1} Old Bid Price:{2}",
-                                                      pos.Security.Symbol,
-                                                      pos.Security.MarketData.BestBidPrice.Value,
-                                                      updMarketData.BestBidPrice.Value), Constants.MessageType.Information);
+                            if (pos.Security.MarketData.BestBidPrice.HasValue && !updMarketData.BestBidPrice.HasValue)
                                 pos.NewDomFlag = true;
+                            else if (!pos.Security.MarketData.BestBidPrice.HasValue &&
+                                     updMarketData.BestBidPrice.HasValue)
+                                pos.NewDomFlag = true;
+                            else if (pos.Security.MarketData.BestBidPrice.HasValue &&
+                                     updMarketData.BestBidPrice.HasValue)
+                            {
+
+                                if (updMarketData.BestBidPrice.Value != pos.Security.MarketData.BestBidPrice.Value)
+                                {
+                                    DoLog(string.Format(
+                                        "Updating DOM price on BID. Symbol: {0} - New Bid Price:{1} Old Bid Price:{2}",
+                                        pos.Security.Symbol,
+                                        pos.Security.MarketData.BestBidPrice.Value,
+                                        updMarketData.BestBidPrice.Value), Constants.MessageType.Information);
+                                    pos.NewDomFlag = true;
+                                }
                             }
+
                         }
-                    
+
+                        pos.Security.MarketData = updMarketData;
                     }
-                    
-                    pos.Security.MarketData = updMarketData;
                 }
             }
         }

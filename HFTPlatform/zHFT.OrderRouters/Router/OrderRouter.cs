@@ -39,7 +39,9 @@ namespace zHFT.OrderRouters.Router
 
         public static object tLockCalculus { get; set; }
 
-        public IList<Position> Positions { get; set; }
+        public Dictionary<string,Position> Positions { get; set; }
+        
+        public Dictionary<string,Position> PositionsByClOrId { get; set; }
 
         public Thread RunOnPositionCalculusThread { get; set; }
 
@@ -58,20 +60,21 @@ namespace zHFT.OrderRouters.Router
                     order.ClOrdId = pos.GetNextClOrdId(order.Index + 1);
                     pos.Orders.Add(order);
                     order.Index++;
+                    PositionsByClOrId.Add(order.ClOrdId, pos);
 
                     if (pos.Side == Side.Buy)
                     {
                         if(pos.Security.MarketData.BestBidPrice.HasValue)
                             order.Price = pos.Security.MarketData.BestBidPrice;
                         else
-                            DoLog(string.Format("Waiting to send order for security {0} because there is not a bid price as a reference", order.Security.Symbol), Constants.MessageType.Information);
+                            DoLog(string.Format("Waiting to send order for security {0} (PosId={1}) because there is not a bid price as a reference", order.Security.Symbol,pos.PosId), Constants.MessageType.Information);
                     }
                     else if (pos.Side == Side.Sell)
                     {
                         if(pos.Security.MarketData.BestAskPrice.HasValue)
                             order.Price = pos.Security.MarketData.BestAskPrice;
                         else
-                            DoLog(string.Format("Waiting to send order for security {0} because there is not an ask price as a reference", order.Security.Symbol), Constants.MessageType.Information);
+                            DoLog(string.Format("Waiting to send order for security {0} (PosId={1}) because there is not an ask price as a reference", order.Security.Symbol,pos.PosId), Constants.MessageType.Information);
                     }
                     else
                         throw new Exception("Invalid position side for Symbol " + pos.Security.Symbol);
@@ -88,13 +91,15 @@ namespace zHFT.OrderRouters.Router
 
                     if (!order.OrderQty.HasValue || order.OrderQty >= 0)
                     {
-                        DoLog(string.Format("@Order Router: Updating order for symbol {0}: qty={1} price={2}", pos.Symbol,order.OrderQty,order.Price), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("@Order Router: Updating order for symbol {0} (PosId={3}) : qty={1} price={2}", 
+                                                    pos.Symbol,order.OrderQty,order.Price,pos.PosId), Main.Common.Util.Constants.MessageType.Information);
                         UpdateOrderWrapper wrapper = new UpdateOrderWrapper(order, Config);
                         OrderProxy.ProcessMessage(wrapper);
                     }
                     else
                     {
-                        DoLog(string.Format("@Order Router: Cancelling order for symbol {0}", pos.Symbol), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("@Order Router: Cancelling order for symbol {0} (PosId={1})", pos.Symbol,pos.PosId),
+                                                    Main.Common.Util.Constants.MessageType.Information);
                         CancelOrderWrapper wrapper = new CancelOrderWrapper(order, Config);
                         OrderProxy.ProcessMessage(wrapper);
                     }
@@ -170,11 +175,13 @@ namespace zHFT.OrderRouters.Router
                     {
                         Order order = BuildOrder(pos, Side.Buy, 0);
                         pos.Orders.Add(order);
+                        PositionsByClOrId.Add(order.ClOrdId, pos);
 
-                        DoLog(string.Format("Creating buy order for symbol {0}.Quantity={1} Price={2}",
+                        DoLog(string.Format("Creating buy order for symbol {0} (PosId={3}): Quantity={1} Price={2}",
                                             pos.Security.Symbol,
                                             order.OrderQty.HasValue ? order.OrderQty.Value : 0,
-                                            order.Price.HasValue ? order.Price.Value.ToString("##.##") : "<market>"),
+                                            order.Price.HasValue ? order.Price.Value.ToString("##.##") : "<market>",
+                                            pos.PosId),
                                 Constants.MessageType.Information);
 
                         NewOrderWrapper wrapper = new NewOrderWrapper(order, Config);
@@ -196,8 +203,11 @@ namespace zHFT.OrderRouters.Router
                         ////The strategy handler might want to now that an order could not be created. 
                         ////But it has to know that if there was no asks availble the order router will continue trying to route the order
                         //OnMessageRcv(wrapper);
-                        DoLog(string.Format("Could not create order por symbol {0} because there was not best bid price as a reference", pos.Security.Symbol),
-                                             Constants.MessageType.Information);
+                        DoLog(
+                            string.Format(
+                                "Could not create order por symbol {0} (PosId={1}) because there was not best bid price as a reference",
+                                pos.Security.Symbol, pos.PosId),
+                            Constants.MessageType.Information);
                     }
                 }
                 else if (pos.Side == Side.Sell)
@@ -207,10 +217,11 @@ namespace zHFT.OrderRouters.Router
                         Order order = BuildOrder(pos, Side.Sell, 0);
                         pos.Orders.Add(order);
 
-                        DoLog(string.Format("Creating sell order for symbol {0}.Quantity={1} Price={2}",
+                        DoLog(string.Format("Creating sell order for symbol {0} (PosId={3}): Quantity={1} Price={2}",
                                             pos.Security.Symbol,
                                             order.OrderQty.HasValue ? order.OrderQty.Value : 0,
-                                            order.Price.HasValue ? order.Price.Value.ToString("##.##") : "<market>"),
+                                            order.Price.HasValue ? order.Price.Value.ToString("##.##") : "<market>",
+                                            pos.PosId),
                                 Constants.MessageType.Information);
 
                         NewOrderWrapper wrapper = new NewOrderWrapper(order, Config);
@@ -232,7 +243,7 @@ namespace zHFT.OrderRouters.Router
                         ////The strategy handler might want to now that an order could not be created. 
                         ////But it has to know that if there was no asks availble the order router will continue trying to route the order
                         //OnMessageRcv(wrapper);
-                        DoLog(string.Format("Could not create order por symbol {0} because there was not best ask price as a reference", pos.Security.Symbol),
+                        DoLog(string.Format("Could not create order por symbol {0} (PosId={1}) because there was not best ask price as a reference", pos.Security.Symbol,pos.PosId),
                                              Constants.MessageType.Information);
                     }
                 }
@@ -248,54 +259,67 @@ namespace zHFT.OrderRouters.Router
             lock (tLockCalculus)
             {
                 string symbol = wrapper.GetField(MarketDataFields.Symbol).ToString();
-                Position pos = Positions.Where(x => x.Security.Symbol == symbol).FirstOrDefault();
 
-                if (pos != null && !pos.PositionCleared && ! pos.PositionCanceledOrRejected)
+                List<Position> openPos = Positions.Values.Where(x => x.PositionRouting() && x.Security.Symbol == symbol).ToList();
+
+                foreach (Position pos in openPos)
                 {
-                    MarketData updMarketData = MarketDataConverter.GetMarketData(wrapper, Config);
 
-                    if (pos.Side == Side.Buy)
+                    if (pos != null && !pos.PositionCleared && !pos.PositionCanceledOrRejected)
                     {
-                        if (pos.Security.MarketData.BestBidPrice.HasValue && !updMarketData.BestBidPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (!pos.Security.MarketData.BestBidPrice.HasValue && updMarketData.BestBidPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (pos.Security.MarketData.BestBidPrice.HasValue && updMarketData.BestBidPrice.HasValue)
-                        {
+                        MarketData updMarketData = MarketDataConverter.GetMarketData(wrapper, Config);
 
-                            if (updMarketData.BestBidPrice.Value != pos.Security.MarketData.BestBidPrice.Value)
-                            {
-                                DoLog(string.Format("Updating DOM price on BID. Symbol: {0} - New Bid Price:{1} Old Bid Price:{2}",
-                                                      pos.Security.Symbol,
-                                                      pos.Security.MarketData.BestBidPrice.Value,
-                                                      updMarketData.BestBidPrice.Value), Constants.MessageType.Information);
+                        if (pos.Side == Side.Buy)
+                        {
+                            if (pos.Security.MarketData.BestBidPrice.HasValue && !updMarketData.BestBidPrice.HasValue)
                                 pos.NewDomFlag = true;
+                            else if (!pos.Security.MarketData.BestBidPrice.HasValue &&
+                                     updMarketData.BestBidPrice.HasValue)
+                                pos.NewDomFlag = true;
+                            else if (pos.Security.MarketData.BestBidPrice.HasValue &&
+                                     updMarketData.BestBidPrice.HasValue)
+                            {
+
+                                if (updMarketData.BestBidPrice.Value != pos.Security.MarketData.BestBidPrice.Value)
+                                {
+                                    DoLog(string.Format(
+                                        "Updating DOM price on BID. Symbol: {0} (PosId={3}) - New Bid Price:{1} Old Bid Price:{2}",
+                                        pos.Security.Symbol,
+                                        pos.Security.MarketData.BestBidPrice.Value,
+                                        updMarketData.BestBidPrice.Value,
+                                        pos.PosId), Constants.MessageType.Information);
+                                    pos.NewDomFlag = true;
+                                }
                             }
                         }
-                    }
 
-                    if (pos.Side == Side.Sell)
-                    {
-
-                        if (pos.Security.MarketData.BestAskPrice.HasValue && !updMarketData.BestAskPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (!pos.Security.MarketData.BestAskPrice.HasValue && updMarketData.BestAskPrice.HasValue)
-                            pos.NewDomFlag = true;
-                        else if (pos.Security.MarketData.BestAskPrice.HasValue && updMarketData.BestAskPrice.HasValue)
+                        if (pos.Side == Side.Sell)
                         {
 
-                            if (updMarketData.BestAskPrice.Value != pos.Security.MarketData.BestAskPrice.Value)
-                            {
-                                DoLog(string.Format("Updating DOM price on ASK. Symbol: {0} - New Ask Price:{1} Old Ask Price:{2}",
-                                                      pos.Security.Symbol,
-                                                      pos.Security.MarketData.BestAskPrice.Value,
-                                                      updMarketData.BestAskPrice.Value), Constants.MessageType.Information);
+                            if (pos.Security.MarketData.BestAskPrice.HasValue && !updMarketData.BestAskPrice.HasValue)
                                 pos.NewDomFlag = true;
+                            else if (!pos.Security.MarketData.BestAskPrice.HasValue &&
+                                     updMarketData.BestAskPrice.HasValue)
+                                pos.NewDomFlag = true;
+                            else if (pos.Security.MarketData.BestAskPrice.HasValue &&
+                                     updMarketData.BestAskPrice.HasValue)
+                            {
+
+                                if (updMarketData.BestAskPrice.Value != pos.Security.MarketData.BestAskPrice.Value)
+                                {
+                                    DoLog(string.Format(
+                                        "Updating DOM price on ASK. Symbol: {0} (PosId={3}) - New Ask Price:{1} Old Ask Price:{2}",
+                                        pos.Security.Symbol,
+                                        pos.Security.MarketData.BestAskPrice.Value,
+                                        updMarketData.BestAskPrice.Value,
+                                        pos.PosId), Constants.MessageType.Information);
+                                    pos.NewDomFlag = true;
+                                }
                             }
                         }
-                    }
 
-                    pos.Security.MarketData = updMarketData;
+                        pos.Security.MarketData = updMarketData;
+                    }
                 }
             }
         }
@@ -306,15 +330,23 @@ namespace zHFT.OrderRouters.Router
             Config = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
+        protected void RemovePositionOnFinishedOrder(Position pos, string clOrdId,ExecutionReport report)
+        {
+            Positions.Remove(pos.PosId);
+            PositionsByClOrId.Remove(clOrdId);
+            DoLog(string.Format("<Generic Order Router> - Removing PosId {0} (ClOrId {1}) on report {2}", pos.PosId, clOrdId,
+                report.ExecType), Constants.MessageType.Information);
+            
+        }
+
         protected virtual void ProcessExecutionReport(Wrapper wrapper)
         {
             lock (tLockCalculus)
             {
                 string symbol = wrapper.GetField(ExecutionReportFields.Symbol).ToString();
                 string clOrdid = wrapper.GetField(ExecutionReportFields.ClOrdID).ToString();
-                Position pos = Positions.Where(x => x.GetCurrentOrder().ClOrdId == clOrdid).FirstOrDefault();
-                //Position pos = Positions.Where(x => x.Security.Symbol == symbol).FirstOrDefault();
-
+                Position pos = PositionsByClOrId[clOrdid];
+                
                 if (pos != null)
                 {
                     ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
@@ -349,11 +381,10 @@ namespace zHFT.OrderRouters.Router
                             pos.LastPx = report.LastPx;
                             pos.LastQty = report.LastQty;
                             pos.PositionCleared = true;
+                            
                             pos.SetPositionStatusFromExecution(report.ExecType);
                             pos.ExecutionReports.Add(report);
-
-                            Positions.Remove(pos);
-
+                            RemovePositionOnFinishedOrder(pos, clOrdid, report);
                             OnMessageRcv(wrapper);
                         }
                         else if (report.ExecType == ExecType.DoneForDay || report.ExecType == ExecType.Stopped
@@ -362,9 +393,10 @@ namespace zHFT.OrderRouters.Router
                         {
                             pos.PositionCanceledOrRejected = true;
                             pos.PositionCleared = false;
-                            pos.ExecutionReports.Add(report);
+                            
                             pos.SetPositionStatusFromExecution(report.ExecType);
-                            Positions.Remove(pos);
+                            pos.ExecutionReports.Add(report);
+                            RemovePositionOnFinishedOrder(pos, clOrdid, report);
                             OnMessageRcv(wrapper);
                         }
                         else
@@ -377,6 +409,7 @@ namespace zHFT.OrderRouters.Router
                 }
                 else
                 {
+                    DoLog(string.Format("<Generic Order Router> - External Trading for ClOrdId {0}",clOrdid),Constants.MessageType.Information);
                     OnMessageRcv(wrapper);//External Trading
                 }
             }
@@ -389,7 +422,7 @@ namespace zHFT.OrderRouters.Router
             {
                 string posId = Convert.ToString(wrapper.GetField(PositionFields.PosId));
 
-                Position posInOrderRouter = Positions.Where(x => x.PosId == posId).FirstOrDefault();
+                Position posInOrderRouter = Positions[posId];
 
                 if(posInOrderRouter!=null)
                 {
@@ -398,23 +431,23 @@ namespace zHFT.OrderRouters.Router
 
                     if (order != null)
                     {
-                        DoLog(string.Format("@GenericOrderRouter: Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", 
+                        DoLog(string.Format("<GenericOrderRouter> Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3} (PosId={4})", 
                                             order.OrderId, order.Symbol,order.OrderQty, order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>", 
-                                            order.Side), Main.Common.Util.Constants.MessageType.Information);
+                                            order.Side,posId), Main.Common.Util.Constants.MessageType.Information);
 
                         CancelOrderWrapper cancelOrderWrapper = new CancelOrderWrapper(order, Config);
 
                         OrderProxy.ProcessMessage(cancelOrderWrapper);
                     }
                     else
-                        throw new Exception(string.Format("Could not cancel order for symbol {0} because no orders where found!", posInOrderRouter.Symbol));
+                        throw new Exception(string.Format("ERROR-Could not cancel order for symbol {0} (PosId={1}) because no orders where found!", posInOrderRouter.Symbol,posInOrderRouter.PosId));
                 }
                 else
-                    throw new Exception(string.Format("Could not cancel order for unknown position {0}", posId));
+                    throw new Exception(string.Format("ERROR-Could not cancel order for unknown position {0}", posId));
                 
             }
             else
-                throw new Exception(string.Format("Could not cancel order if no PosId was specified"));
+                throw new Exception(string.Format("ERROR-Could not cancel order if no PosId was specified"));
         }
 
         #endregion 
@@ -437,7 +470,7 @@ namespace zHFT.OrderRouters.Router
                 lock (tLockCalculus)
                 {
                     currentPos = PositionConverter.GetPosition(positionWrapper, Config);
-                    Positions.Add(currentPos);
+                    Positions.Add(currentPos.PosId, currentPos);
                 }
 
                 while (run)
@@ -448,7 +481,7 @@ namespace zHFT.OrderRouters.Router
 
                         lock (tLockCalculus)
                         {
-                            posInOrderRouter = Positions.Where(x => x.PosId == currentPos.PosId).FirstOrDefault();
+                            posInOrderRouter = Positions[currentPos.PosId];
                         }
 
                         if (posInOrderRouter!=null && !posInOrderRouter.PositionCleared && !posInOrderRouter.PositionCanceledOrRejected)
@@ -468,17 +501,17 @@ namespace zHFT.OrderRouters.Router
                         else
                         {
                             run = false;
-                            DoLog(string.Format("Ending RunOnPositionCalculus for symbol {0}. The position is cleared",
-                                currentPos.Security.Symbol), Constants.MessageType.Error);
+                            DoLog(string.Format("ERROR-Ending RunOnPositionCalculus for symbol {0} (PosId={1}). The position is cleared",
+                                currentPos.Security.Symbol,currentPos.PosId), Constants.MessageType.Error);
                         }
 
                         Thread.Sleep(ORConfiguration.OrderUpdateInMilliseconds);
                     }
                     catch (Exception ex)
                     {
-                        DoLog(string.Format("Error error processing RunOnPositionCalculus for symbol {0}:{1}",
+                        DoLog(string.Format("ERROR-Error processing RunOnPositionCalculus for symbol {0} (PosId={2}):{1}",
                                 currentPos.Security.Symbol,
-                                ex.Message), Constants.MessageType.Error);
+                                ex.Message,currentPos.PosId), Constants.MessageType.Error);
                     }
                 }
 
@@ -486,7 +519,7 @@ namespace zHFT.OrderRouters.Router
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("Critical error processing RunOnPositionCalculus :{0}",ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("Critical ERROR processing RunOnPositionCalculus :{0}",ex.Message), Constants.MessageType.Error);
             }
         }
 
@@ -501,15 +534,16 @@ namespace zHFT.OrderRouters.Router
                 if (wrapper.GetAction() == Actions.NEW_POSITION)
                 {
                     string symbol = Convert.ToString(wrapper.GetField(PositionFields.Symbol));
-                    if (!Positions.Any(x => x.Symbol == symbol))
+                    string posId = Convert.ToString(wrapper.GetField(PositionFields.Symbol));
+                    if (!Positions.ContainsKey(posId))
                     {
-                        DoLog(string.Format("Routing to market position for symbol {0}", wrapper.GetField(PositionFields.Symbol).ToString()), Constants.MessageType.Information);
+                        DoLog(string.Format("<Generic Order Router> - Routing to market position for symbol {0} (PosId={1})",symbol,posId), Constants.MessageType.Information);
                         RunOnPositionCalculusThread = new Thread(new ParameterizedThreadStart(RunOnPositionCalculus));
                         RunOnPositionCalculusThread.Start(wrapper);
                         return CMState.BuildSuccess();
                     }
                     else
-                        return CMState.BuildFail(new Exception(string.Format("There is already an position being processed for symbol {0}", symbol)));
+                        return CMState.BuildFail(new Exception(string.Format("There is already a position being processed for symbol {0} (PosId={1})", symbol,posId)));
                 }
                 else if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
@@ -571,13 +605,14 @@ namespace zHFT.OrderRouters.Router
                 {
                     tLockCalculus = new object();
 
-                    Positions = new List<Position>();
+                    Positions = new Dictionary<string, Position>();
+                    PositionsByClOrId = new Dictionary<string, Position>();
                     PositionConverter = new PositionConverter();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
 
 
-                    DoLog("Initializing Order Router Proxy " + ORConfiguration.Proxy, Constants.MessageType.Information);
+                    DoLog("Initializing Generic Order Router " + ORConfiguration.Proxy, Constants.MessageType.Information);
                     if (!string.IsNullOrEmpty(ORConfiguration.Proxy))
                     {
                         var orderProxyType = Type.GetType(ORConfiguration.Proxy);
@@ -590,7 +625,7 @@ namespace zHFT.OrderRouters.Router
                             throw new Exception("assembly not found: " + ORConfiguration.Proxy);
                     }
                     else
-                        DoLog("Order Router proxy not found. It will not be initialized", Constants.MessageType.Error);
+                        DoLog("Generic Order Router not found. It will not be initialized", Constants.MessageType.Error);
 
                     return true;
                 }
@@ -620,7 +655,7 @@ namespace zHFT.OrderRouters.Router
             {
                 if (wrapper != null)
                 {
-                    DoLog("@Generic Order Router: Incoming message from order routing proxy: " + wrapper.ToString(), Constants.MessageType.Debug);
+                    DoLog("@Generic Order Router: Incoming message from Real Order Router: " + wrapper.ToString(), Constants.MessageType.Debug);
 
                     if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                     {
