@@ -21,6 +21,7 @@ using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 using zHFT.SingletonModulesHandler.Common.Util;
 using ConfigLoader = zHFT.SingletonModulesHandler.Common.Util.ConfigLoader;
+using SecurityType = zHFT.Main.Common.Enums.SecurityType;
 
 namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 {
@@ -267,6 +268,8 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     OrderIndexId = GetNextOrderId();
                     OrderConverter = new OrderConverter();
                     ActiveOrders = new Dictionary<string, Order>();
+                    SecurityTypes=new Dictionary<string, SecurityType>();
+                    ActiveSecurities=new Dictionary<int, Security>();
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
                     if (fixMessageCreator != null)

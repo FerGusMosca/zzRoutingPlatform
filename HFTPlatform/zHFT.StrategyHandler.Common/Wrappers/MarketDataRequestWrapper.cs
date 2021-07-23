@@ -34,7 +34,7 @@ namespace zHFT.StrategyHandler.Common.Wrappers
         public MarketDataRequestWrapper(Security pSecurity, SubscriptionRequestType pSubscriptionRequestType,string pQuoteSymbol=null)
         {
             TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
-            MdReqId = Convert.ToInt64(elapsed.TotalMilliseconds) ;
+            MdReqId = Convert.ToInt64(elapsed.TotalSeconds) ;
             Security = pSecurity;
             SubscriptionRequestType = pSubscriptionRequestType;
             QuoteSymbol = pQuoteSymbol;

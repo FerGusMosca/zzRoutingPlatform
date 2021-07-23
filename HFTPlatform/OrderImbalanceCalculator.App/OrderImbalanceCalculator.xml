@@ -13,7 +13,7 @@
   <DecimalRounding>3</DecimalRounding>
 
   <ActiveBlocks>3</ActiveBlocks>
-  <BlockSizeInMinutes>5</BlockSizeInMinutes>
+  <BlockSizeInMinutes>1</BlockSizeInMinutes>
   
   <Account>9732</Account>
 

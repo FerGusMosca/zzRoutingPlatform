@@ -98,3 +98,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\PrimaryCertification\obj\Debug\PrimaryCertification.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\PrimaryCertification\obj\Debug\PrimaryCertification.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\PrimaryCertification\obj\Debug\PrimaryCertification.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\PrimaryCertification\bin\Debug\FIX Sessions\initiator_test_tarallo.cfg
