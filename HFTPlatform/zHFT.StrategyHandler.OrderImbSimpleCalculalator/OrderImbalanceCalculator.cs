@@ -922,18 +922,28 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         protected void ProcessExecutionReport(object param)
         { 
              Wrapper wrapper = (Wrapper)param;
-             lock (tLock)
-             {
-                 ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
-                 EvalCancellingOrdersOnStartup(report);
-                 
-                 if (ImbalancePositions.ContainsKey(report.Order.Symbol))
+             try
+             {
+             
+                 lock (tLock)
                  {
-                     ImbalancePosition imbPos = ImbalancePositions[report.Order.Symbol];
-                     AssignMainERParameters(imbPos, report);
-                     LogExecutionReport(imbPos, report);
+                     ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
+
+                     EvalCancellingOrdersOnStartup(report);
+                     
+                     if (ImbalancePositions.ContainsKey(report.Order.Symbol))
+                     {
+                         ImbalancePosition imbPos = ImbalancePositions[report.Order.Symbol];
+                         AssignMainERParameters(imbPos, report);
+                         LogExecutionReport(imbPos, report);
+                     }
                  }
+             
+             }
+             catch (Exception e)
+             {
+                 DoLog(string.Format("Error persisting execution report {0}:{1]",wrapper.ToString(),e.Message),Constants.MessageType.Information);
              }
         }
 

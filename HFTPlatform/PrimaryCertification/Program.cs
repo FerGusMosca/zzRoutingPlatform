@@ -89,6 +89,7 @@ namespace PrimaryCertification
 
 
                 Order order = new Order();
+                order.ClOrdId = Guid.NewGuid().ToString();
                 order.Security = new Security() { Symbol = symbol, SecType = SecurityType.CS };
                 order.Symbol = symbol;
                 order.Exchange = exchange;
@@ -157,6 +158,16 @@ namespace PrimaryCertification
             App.ProcessMessageToOutgoing(updateWrapper);
         }
 
+        protected static void ProcessMassStatusRequestWrapper()
+        {
+            Console.Clear();
+            
+            OrderMassStatusRequestWrapper omsReq = new OrderMassStatusRequestWrapper();
+            
+            App.ProcessMessageToOutgoing(omsReq);
+            
+        }
+
         protected static void ProcessListOrdersRequest(string command)
         {
             Console.Clear();
@@ -199,6 +210,10 @@ namespace PrimaryCertification
             else if (command.StartsWith("LO"))
             {
                 ProcessListOrdersRequest(command);
+            }
+            else if (command.StartsWith("MO"))
+            {
+                ProcessMassStatusRequestWrapper();
             }
         }
 
@@ -255,6 +270,7 @@ namespace PrimaryCertification
                 Console.WriteLine("CO-Cancel Order. Ejemplo: CO <ClOrderId>");//100 es el Id de la orden
                 Console.WriteLine("UO-Cancel Order. Ejemplo: CO <ClOrderId> <qty> <price>");//100 es el Id de la orden
                 Console.WriteLine("LO-List Orders.");
+                Console.WriteLine("MO-Order Mass Status Request.");
                 Console.WriteLine("cls-Limpiar Pantalla");
                 Console.WriteLine("q-Quit");
 

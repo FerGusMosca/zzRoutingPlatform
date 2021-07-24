@@ -270,6 +270,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
                     ActiveOrders = new Dictionary<string, Order>();
                     SecurityTypes=new Dictionary<string, SecurityType>();
                     ActiveSecurities=new Dictionary<int, Security>();
+                    ActiveOrderIdMapper=new Dictionary<string, string>();
 
                     var fixMessageCreator = Type.GetType(PrimaryConfiguration.FIXMessageCreator);
                     if (fixMessageCreator != null)

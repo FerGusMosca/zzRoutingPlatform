@@ -204,7 +204,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 }
                 else
                 {
-                    DoLog(string.Format("@{0} Could not find ClOrderId for Execution Report!", GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
+                    DoLog(string.Format("@{0} Ignoring unknown ClOrderId {1}  for Execution Report!", GetConfig().Name,marketOrderId), Main.Common.Util.Constants.MessageType.Information);
                     return null;
                 }
             }
@@ -610,6 +610,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
                 order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
                 order.OrigClOrdId = clOrdId;
+                
+                //ActiveOrderIdMapper.Add(order.ClOrdId,newMarketOrderIdRequested);
 
                 double orderQty = order.OrderQty.Value;
                 //Procesamientos especiales de la cantidad de las ordenes
