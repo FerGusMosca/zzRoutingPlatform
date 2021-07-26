@@ -540,7 +540,15 @@ namespace zHFT.OrderRouters.Router
                 lock (tLockCalculus)
                 {
                     currentPos = PositionConverter.GetPosition(positionWrapper, Config);
-                    Positions.Add(currentPos.PosId, currentPos);
+                    if (!Positions.ContainsKey(currentPos.PosId))
+                    {
+                        Positions.Add(currentPos.PosId, currentPos);
+                    }
+                    else
+                    {
+                        throw new Exception(String.Format("Position with PosId {0} for symbol {1} has already been added!",currentPos.PosId,currentPos.Security.Symbol));
+                    }
+                    
                 }
 
                 while (run)

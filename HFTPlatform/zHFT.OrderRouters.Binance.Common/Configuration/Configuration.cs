@@ -38,11 +38,11 @@ namespace zHFT.OrderRouters.Binance.Common.Configuration
             }
 
 
-            if (string.IsNullOrEmpty(ConfigConnectionString))
-            {
-                result.Add("ConfigConnectionString");
-                resultado = false;
-            }
+//            if (string.IsNullOrEmpty(ConfigConnectionString))
+//            {
+//                result.Add("ConfigConnectionString");
+//                resultado = false;
+//            }
 
 
             if (RefreshExecutionReportsInMilisec <= 0)

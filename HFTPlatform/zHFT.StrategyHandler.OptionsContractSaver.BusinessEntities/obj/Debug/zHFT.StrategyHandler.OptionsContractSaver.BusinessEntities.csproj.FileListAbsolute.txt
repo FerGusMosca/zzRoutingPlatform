@@ -38,3 +38,16 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Op
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.BusinessEntities.pdb

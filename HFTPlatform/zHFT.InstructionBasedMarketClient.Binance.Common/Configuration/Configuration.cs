@@ -50,11 +50,11 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Common.Configuration
             }
             
             //DBConnectionString
-            if (string.IsNullOrEmpty(EFConnectionString))
-            {
-                result.Add("EFConnectionString");
-                resultado = false;
-            }
+//            if (string.IsNullOrEmpty(EFConnectionString))
+//            {
+//                result.Add("EFConnectionString");
+//                resultado = false;
+//            }
 
             return resultado;
         }

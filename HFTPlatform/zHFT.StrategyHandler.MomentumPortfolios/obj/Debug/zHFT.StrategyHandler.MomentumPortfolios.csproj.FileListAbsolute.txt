@@ -131,3 +131,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\zHFT.Main.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb

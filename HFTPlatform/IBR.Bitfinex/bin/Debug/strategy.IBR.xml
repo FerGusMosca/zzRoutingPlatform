@@ -16,7 +16,7 @@
 
   <RoutingUpdateInMilliseconds>100</RoutingUpdateInMilliseconds>
 
-  <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.BittrexAccountManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</AccoutReferenceHandler>
+  <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Bitfinex.DAL.BitfinexAccountManager,zHFT.StrategyHandler.IBR.Bitfinex.DAL</AccoutReferenceHandler>
 
   <MarketDataReferenceHandler>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.BittrexMarketDataManager, zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</MarketDataReferenceHandler>
 

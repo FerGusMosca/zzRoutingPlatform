@@ -43,7 +43,7 @@ namespace zHFT.Main.Common.Abstract
         public T GetConfiguration<T>(string configFile, List<string> listaErrs)
         {
 
-            LogEvent(this.GetType(), "Creating Serializer");
+            LogEvent(this.GetType(), string.Format("Creating Serializer",configFile));
             XmlSerializer mySerializer = new XmlSerializer(typeof(T));
             FileStream myFileStream = null;
             T config;
@@ -51,9 +51,9 @@ namespace zHFT.Main.Common.Abstract
             {
                 try
                 {
-                    LogEvent(this.GetType(), "Creating filestream");
+                    LogEvent(this.GetType(), string.Format("Creating filestream {0}",configFile));
                     myFileStream = new FileStream(configFile, FileMode.Open);
-                    LogEvent(this.GetType(), "Deserializing Config");
+                    LogEvent(this.GetType(), string.Format("Deserializing Config {0}",configFile));
                     config = (T)mySerializer.Deserialize(myFileStream);
 
                     if (!((IConfiguration)config).CheckDefaults(listaErrs))

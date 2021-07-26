@@ -8,7 +8,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\obj\Debug\zHFT.StrategyHandler.IBR.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\bin\Debug\zHFT.StrategyHandler.IBR.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\bin\Debug\zHFT.StrategyHandler.IBR.Primary.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\obj\Debug\zHFT.StrategyHandler.IBR.Primary.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\obj\Debug\zHFT.StrategyHandler.IBR.Primary.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\obj\Debug\zHFT.StrategyHandler.IBR.Primary.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Primary.Common\obj\Debug\zHFT.StrategyHandler.IBR.Primary.Common.pdb

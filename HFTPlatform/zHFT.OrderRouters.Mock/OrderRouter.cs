@@ -35,6 +35,8 @@ namespace zHFT.OrderRouters.Mock
         protected OrderConverter OrderConverter { get; set; }
 
         protected List<Order> PendingToExecuteOrders { get; set; }
+        
+        protected  object tLock { get; set; }
 
         #endregion
 
@@ -45,7 +47,7 @@ namespace zHFT.OrderRouters.Mock
 
             while (true)
             {
-                lock (PendingToExecuteOrders)
+                lock (tLock)
                 {
                     List<Order> toRemove = new List<Order>();
                     foreach (Order order in PendingToExecuteOrders)
@@ -68,22 +70,22 @@ namespace zHFT.OrderRouters.Mock
             }
         }
 
-        protected CMState RouteNewOrder(Wrapper wrapper)
+        protected void RouteNewOrder(object pWrapper)
         {
-            lock (PendingToExecuteOrders)
+            Wrapper wrapper = (Wrapper) pWrapper;
+            lock (tLock)
             {
                 Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
                 newOrder.EffectiveTime = DateTime.Now;
 
                 PendingToExecuteOrders.Add(newOrder);
             }
-
-            return CMState.BuildSuccess();
         }
 
-        protected CMState UpdateOrder(Wrapper wrapper)
+        protected void UpdateOrder(object pWrapper)
         {
-            lock (PendingToExecuteOrders)
+            Wrapper wrapper = (Wrapper) pWrapper;
+            lock (tLock)
             {
                 string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
                 string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
@@ -116,11 +118,12 @@ namespace zHFT.OrderRouters.Mock
 
 
             }
-            return CMState.BuildSuccess();
+            
         }
 
-        protected CMState CancelOrder(Wrapper wrapper)
+        protected void CancelOrder(object pWrapper)
         {
+            Wrapper wrapper = (Wrapper) pWrapper;
             string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
             string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
 
@@ -149,12 +152,9 @@ namespace zHFT.OrderRouters.Mock
                 }
             
             }
-
-
-            return CMState.BuildSuccess();
         }
 
-        protected CMState CancelAllOrders()
+        protected void CancelAllOrders(object pParam)
         {
             lock (PendingToExecuteOrders)
             {
@@ -170,7 +170,6 @@ namespace zHFT.OrderRouters.Mock
 
                 PendingToExecuteOrders.Clear();
             }
-            return CMState.BuildSuccess();
         }
 
         #endregion
@@ -193,25 +192,34 @@ namespace zHFT.OrderRouters.Mock
                     if (wrapper.GetAction() == Actions.NEW_ORDER)
                     {
                         DoLog(string.Format("@{0}:Routing with Mock to market for symbol {1}", Configuration.Name, wrapper.GetField(OrderFields.Symbol).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        return RouteNewOrder(wrapper);
+                        Thread RouteOrdersThread = new Thread(new ParameterizedThreadStart(RouteNewOrder));
+                        RouteOrdersThread.Start(wrapper);
+                        return CMState.BuildSuccess();
                     }
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
                         DoLog(string.Format("@{0}:Updating order with Mock  for symbol {1}", Configuration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        UpdateOrder(wrapper);
+                        
+                        Thread RouteOrdersThread = new Thread(new ParameterizedThreadStart(UpdateOrder));
+                        RouteOrdersThread.Start(wrapper);
                         return CMState.BuildSuccess();
 
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
                     {
                         DoLog(string.Format("@{0}:Canceling order with Mock  for ClOrdId {1}", Configuration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
-                        CancelOrder(wrapper);
+                        
+                        Thread RouteOrdersThread = new Thread(new ParameterizedThreadStart(CancelOrder));
+                        RouteOrdersThread.Start(wrapper);
                         return CMState.BuildSuccess();
+                        
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                     {
                         DoLog(string.Format("@{0}:Cancelling all active orders @ Mock", Configuration.Name), Main.Common.Util.Constants.MessageType.Information);
-                        return CancelAllOrders();
+                        Thread RouteOrdersThread = new Thread(new ParameterizedThreadStart(CancelAllOrders));
+                        RouteOrdersThread.Start(wrapper);
+                        return CMState.BuildSuccess();
                     }
                     else
                     {
@@ -243,6 +251,8 @@ namespace zHFT.OrderRouters.Mock
             {
                 OrderConverter = new OrderConverter();
                 PendingToExecuteOrders = new List<Order>();
+                
+                tLock=new object();
 
                 InternalOrderId = 1;
 

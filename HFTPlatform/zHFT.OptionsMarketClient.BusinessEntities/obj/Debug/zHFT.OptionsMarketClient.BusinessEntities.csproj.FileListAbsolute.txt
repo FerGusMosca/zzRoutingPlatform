@@ -33,3 +33,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.csprojResolveAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\bin\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\bin\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.BusinessEntities\obj\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb

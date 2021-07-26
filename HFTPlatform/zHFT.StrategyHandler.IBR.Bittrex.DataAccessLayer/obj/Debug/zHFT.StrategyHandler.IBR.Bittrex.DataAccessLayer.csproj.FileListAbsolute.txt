@@ -97,3 +97,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml

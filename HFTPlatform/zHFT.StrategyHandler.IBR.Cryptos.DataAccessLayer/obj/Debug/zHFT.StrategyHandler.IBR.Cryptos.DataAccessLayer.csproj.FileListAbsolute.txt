@@ -96,3 +96,5 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml

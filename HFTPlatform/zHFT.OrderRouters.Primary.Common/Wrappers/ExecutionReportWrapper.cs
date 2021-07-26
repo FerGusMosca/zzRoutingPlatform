@@ -22,6 +22,14 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
         protected IConfiguration Config { get; set; }
 
         #endregion
+        
+        #region Public Attributes
+        
+        public string ClOrdId { get; set; }
+        
+        public string OrigClOrdId { get; set; }
+        
+        #endregion
 
         #region Constructors
 
@@ -40,13 +48,13 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
         {
             string OrdId = null;
             if (field == ClOrdID.FIELD)
-                OrdId = FixHelper.GetNullFieldIfSet(msg, ClOrdID.FIELD);
+                OrdId = ClOrdId != null ? ClOrdId : FixHelper.GetNullFieldIfSet(msg, ClOrdID.FIELD);
             else if (field == SecondaryClOrdID.FIELD)
                 OrdId = FixHelper.GetNullFieldIfSet(msg, SecondaryClOrdID.FIELD);
             else if (field == OrderID.FIELD)
                 OrdId = FixHelper.GetNullFieldIfSet(msg, OrderID.FIELD);
             else if (field == OrigClOrdID.FIELD)
-                OrdId = FixHelper.GetNullFieldIfSet(msg, OrigClOrdID.FIELD);
+                OrdId = OrigClOrdId != null ? OrigClOrdId : FixHelper.GetNullFieldIfSet(msg, OrigClOrdID.FIELD);
 
             return OrdId;
         }

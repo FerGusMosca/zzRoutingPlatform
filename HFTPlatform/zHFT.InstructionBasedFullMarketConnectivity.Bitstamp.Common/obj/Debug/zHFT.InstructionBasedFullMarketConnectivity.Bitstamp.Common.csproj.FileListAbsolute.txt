@@ -40,8 +40,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Bitstamp.Common\bin\Debug\Newtonsoft.Json.xml

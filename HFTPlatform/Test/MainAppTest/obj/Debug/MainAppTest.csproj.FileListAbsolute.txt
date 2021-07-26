@@ -103,3 +103,18 @@ C:\Users\zimzum\Desktop\Desktop\Trading SW\zHFT\MainAppTest.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.exe
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\Config.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\incomingConfigQuickFix.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\incomingIB.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingOrderRouter.IB.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingOrderRouter.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingStrategyHandler.MomentumPortfolios.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingStrategyHandler.SingleStockBuyer.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\MainAppTest.exe.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\MainAppTest.exe
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\MainAppTest.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.exe
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.pdb

@@ -476,7 +476,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         
         }
 
-        private void PendilCancelTimeoutThread(object symbol)
+        private void PendingCancelTimeoutThread(object symbol)
         {
             try
             {
@@ -499,7 +499,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 {
                     //We have to cancel the position before closing it.
                     PendingCancels.Add(rPos.Symbol, imbPos);
-                    new Thread(PendilCancelTimeoutThread).Start(rPos.Symbol);
+                    new Thread(PendingCancelTimeoutThread).Start(rPos.Symbol);
                 }
                 CancelPositionWrapper cancelWrapper = new CancelPositionWrapper(rPos, Config);
                 return OrderRouter.ProcessMessage(cancelWrapper);
@@ -658,17 +658,20 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 RunClose(imbPos.OpeningPosition, secImb, imbPos);
-                DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2} Imabalance={3} PosId={4}", 
+                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2} Imabalance={3} PosId={4}", 
                                             imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
-                                            secImb.ImbalanceSummary,imbPos.ClosingPosition.PosId), 
+                                            secImb.ImbalanceSummary,
+                                            imbPos.ClosingPosition!=null? imbPos.ClosingPosition.PosId:"-"), 
                                             Constants.MessageType.Information);
             }
             else if (imbPos.EvalClosingLongPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 RunClose(imbPos.OpeningPosition, secImb, imbPos);
-                DoLog(string.Format("{0} Position Closed on market. Symbol {1} Qty={2}  Imabalance={3} PosId={4}", 
-                    imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty, secImb.ImbalanceSummary,
-                    imbPos.ClosingPosition.PosId), Constants.MessageType.Information);
+                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  Imabalance={3} PosId={4}",
+                        imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
+                        secImb.ImbalanceSummary,
+                        imbPos.ClosingPosition != null ? imbPos.ClosingPosition.PosId : null),
+                    Constants.MessageType.Information);
 
             }
          
@@ -788,7 +791,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             {
                 //We canceled a position that has to be closed!
                 ImbalancePosition pendImbPos = PendingCancels[report.Order.Symbol];
-                DoLog(string.Format("Recv ER for Pending Cancel position for symbol{0}", report.Order.Symbol), 
+                DoLog(string.Format("Recv ER for Pending Cancel position for symbol {0}", report.Order.Symbol), 
                             Main.Common.Util.Constants.MessageType.Information);
 
                 if (report.ExecType == ExecType.Canceled)

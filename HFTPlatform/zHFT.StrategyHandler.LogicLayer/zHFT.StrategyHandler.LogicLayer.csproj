@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayTradingStrategyBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrategyBase.cs" />
   </ItemGroup>
@@ -60,6 +61,14 @@
     <ProjectReference Include="..\zHFT.Main.DataAccess\zHFT.Main.DataAccess.csproj">
       <Project>{45327582-1408-48a2-8330-066bfe715475}</Project>
       <Name>zHFT.Main.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj">
+      <Project>{97a1ba19-bf4c-48cc-9c8f-e00ba9bb9734}</Project>
+      <Name>zHFT.OrderImbSimpleCalculator.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
+      <Project>{f0d1b9aa-e500-460f-9b01-5a818b5283c9}</Project>
+      <Name>zHFT.StrategyHandler.BusinessEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
       <Project>{453e183d-9557-4a96-ad08-d2ad0db68765}</Project>

@@ -35,3 +35,10 @@ C:\Users\zimzum\Desktop\Desktop\Trading SW\zHFT\zHFT.MarketClient.IB.MomentumStr
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer\obj\Debug\zHFT.MarketClient.IB.MomentumStrategies.DataAccessLayer.pdb

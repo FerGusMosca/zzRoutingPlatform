@@ -120,7 +120,7 @@ namespace zHFT.Main
         protected override CMState ProcessOutgoing(Wrapper wrapper)
         {
             //StrongLogOutgoing("ProcessOutgoing: " + wrapper.ToString(), Constants.MessageType.Information);
-            Console.WriteLine("ProcessOutgoing: " + wrapper.ToString());
+            //Console.WriteLine("ProcessOutgoing: " + wrapper.ToString());
             try
             {
                 if (IncomingModule != null)

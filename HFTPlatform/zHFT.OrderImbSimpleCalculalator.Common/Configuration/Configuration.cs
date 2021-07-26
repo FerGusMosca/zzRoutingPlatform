@@ -75,6 +75,8 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         public string Account { get; set; }
         
         public bool OnlyLong { get; set; }
+        
+        
 
         #endregion
 

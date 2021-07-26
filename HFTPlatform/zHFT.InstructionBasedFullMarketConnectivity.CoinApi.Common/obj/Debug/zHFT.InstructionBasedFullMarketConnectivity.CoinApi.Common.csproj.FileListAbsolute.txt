@@ -40,8 +40,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common\bin\Debug\Newtonsoft.Json.xml

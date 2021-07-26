@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Cryptos Day Turtles</Name>
+  
+<!--  Binance-->
+  <IncomingConfigPath>.\Binance\incomingBinance.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance</IncomingModule>
+
+  <OutgoingModule>tph.DayTurtles.LogicLayer.DayTurtles,tph.DayTurtles.LogicLayer</OutgoingModule>
+  <OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>

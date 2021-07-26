@@ -30,6 +30,9 @@ namespace zHFT.StrategyHandler.Common.Configuration
 
         public string ReportSavingConnectionString { get; set; }
         
+        public int? DecimalRounding{ get; set; }
+        
+        
         #endregion
 
         #region Private Methods

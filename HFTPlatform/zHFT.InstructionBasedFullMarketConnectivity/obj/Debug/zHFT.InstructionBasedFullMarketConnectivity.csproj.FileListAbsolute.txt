@@ -51,3 +51,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity\bin\Debug\Newtonsoft.Json.xml

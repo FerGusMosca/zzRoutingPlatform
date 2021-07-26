@@ -2,3 +2,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\bin\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.pdb

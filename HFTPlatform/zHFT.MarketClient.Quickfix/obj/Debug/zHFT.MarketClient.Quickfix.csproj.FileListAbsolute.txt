@@ -64,3 +64,24 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.Quick
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.MarketClient.Quickfix.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.MarketClient.Quickfix.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.MarketClient.Quickfix.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.MarketClient.Quickfix.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Quickfix\obj\Debug\zHFT.MarketClient.Quickfix.pdb

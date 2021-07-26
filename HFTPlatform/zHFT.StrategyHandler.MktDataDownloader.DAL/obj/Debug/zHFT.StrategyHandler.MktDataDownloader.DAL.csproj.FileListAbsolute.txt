@@ -5,3 +5,12 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\bin\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.DAL\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.DAL.pdb

@@ -19,6 +19,7 @@ using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.OrderRouters.Primary.Common;
 using zHFT.OrderRouters.Primary.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Converters;
+using ExecType = QuickFix.ExecType;
 
 namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 {
@@ -127,86 +128,111 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         #region Protected Methods
 
+        protected void ProcessNewOrderExecutionReport(string clOrdId,ExecutionReportWrapper erWrapper)
+        {
+            zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
+            zHFT.Main.Common.Enums.OrdStatus ordStatus = (zHFT.Main.Common.Enums.OrdStatus)erWrapper.GetField(ExecutionReportFields.OrdStatus);
+            
+            if (ActiveOrders.Keys.Contains(clOrdId))
+            {
+                if (execType == zHFT.Main.Common.Enums.ExecType.New)//New-> Guardamos el OrderId de mercado
+                {
+                    Order order = ActiveOrders[clOrdId];
+                    string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                    order.OrderId = orderId;
+                }
+                else if (execType == zHFT.Main.Common.Enums.ExecType.Trade && ordStatus == zHFT.Main.Common.Enums.OrdStatus.Filled)
+                {
+                    ActiveOrders.Remove(clOrdId);
+                    ActiveOrderIdMapper.Remove(clOrdId);
+                }
+                else if (execType == zHFT.Main.Common.Enums.ExecType.DoneForDay || execType == zHFT.Main.Common.Enums.ExecType.Stopped
+                                                                                || execType == zHFT.Main.Common.Enums.ExecType.Suspended || execType == zHFT.Main.Common.Enums.ExecType.Rejected
+                                                                                || execType == zHFT.Main.Common.Enums.ExecType.Expired || execType == zHFT.Main.Common.Enums.ExecType.Canceled)
+                {
+
+                    ActiveOrders.Remove(clOrdId);
+                    ActiveOrderIdMapper.Remove(clOrdId);
+                }
+                    
+                // El formato de los ClOrdId/OrigClOrdId @Primary es distinto al manejado por el OrderRouter
+                // entonces hay un mapeo entre lo que se manda y lo que se recibe
+                erWrapper.ClOrdId = clOrdId;
+                erWrapper.OrigClOrdId = null;
+                    
+            }
+            else
+            {
+                DoLog(string.Format("@{0} Could not find order for ClOrderId {1} ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
+            }
+            
+        }
+
+        protected void ProcessCancelReplaceExecutionReport(string clOrdId,string origClOrdId,ExecutionReportWrapper erWrapper)
+        {
+            zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
+            zHFT.Main.Common.Enums.OrdStatus ordStatus = (zHFT.Main.Common.Enums.OrdStatus)erWrapper.GetField(ExecutionReportFields.OrdStatus);
+            
+            string oldMarketClOrderId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
+            string newMarketClOrderIdRequested = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
+            
+            origClOrdId = oldMarketClOrderId != null ? ActiveOrderIdMapper.Keys.Where(x => ActiveOrderIdMapper[x]== oldMarketClOrderId).FirstOrDefault() : null;
+            clOrdId = newMarketClOrderIdRequested != null ? ReplacingActiveOrderIdMapper.Keys.Where(x => ReplacingActiveOrderIdMapper[x] == newMarketClOrderIdRequested).FirstOrDefault() : null;
+            
+            if (!string.IsNullOrEmpty(origClOrdId) && ActiveOrders.Keys.Contains(origClOrdId))
+            {
+
+                if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
+                {
+                    Order order = ActiveOrders[origClOrdId];
+                    string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
+                    order.OrderId = orderId;
+
+                    ActiveOrders.Remove(origClOrdId);
+                    ActiveOrders.Add(clOrdId, order);
+                    ReplacingActiveOrderIdMapper.Remove(clOrdId);
+                    ActiveOrderIdMapper.Remove(origClOrdId);
+                    ActiveOrderIdMapper.Add(clOrdId, newMarketClOrderIdRequested);
+                }
+                else if (execType == zHFT.Main.Common.Enums.ExecType.Canceled)
+                {
+                    ActiveOrders.Remove(origClOrdId);
+                    ActiveOrderIdMapper.Remove(origClOrdId);
+                }
+                
+                // El formato de los ClOrdId/OrigClOrdId @Primary es distinto al manejado por el OrderRouter
+                // entonces hay un mapeo entre lo que se manda y lo que se recibe
+                erWrapper.ClOrdId = clOrdId;
+                erWrapper.OrigClOrdId = origClOrdId;
+            }
+            else
+            {
+                DoLog(string.Format("@{0} Ignoring unknown ClOrderId {1}  for Execution Report!", GetConfig().Name,oldMarketClOrderId), Main.Common.Util.Constants.MessageType.Information);
+                //return null;
+            }
+        }
+
         protected ExecutionReportWrapper ProcesssExecutionReportMessage(QuickFix.Message message)
         {
             DoLog(string.Format("@{0}:{1} ", GetConfig().Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
             ExecutionReportWrapper erWrapper = new ExecutionReportWrapper((QuickFix50.ExecutionReport)message, GetConfig());
 
-            string marketOrderId = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
+            string marketClOrderId = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
            
             zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
             zHFT.Main.Common.Enums.OrdStatus ordStatus = (zHFT.Main.Common.Enums.OrdStatus)erWrapper.GetField(ExecutionReportFields.OrdStatus);
 
-
-            string clOrdId = marketOrderId != null ? ActiveOrderIdMapper.Keys.Where(x => ActiveOrderIdMapper[x].ToString() == marketOrderId).FirstOrDefault() : null;
-
+            string clOrdId = marketClOrderId != null ? ActiveOrderIdMapper.Keys.Where(x => ActiveOrderIdMapper[x].ToString() == marketClOrderId).FirstOrDefault() : null;
+            string origClOrdId = null;
+            
             if (clOrdId != null)//Estamos en un alta
             {
-                if (ActiveOrders.Keys.Contains(clOrdId))
-                {
-                    if (execType == zHFT.Main.Common.Enums.ExecType.New)//New-> Guardamos el OrderId de mercado
-                    {
-                        Order order = ActiveOrders[clOrdId];
-                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
-                        order.OrderId = orderId;
-                    }
-                    else if (execType == zHFT.Main.Common.Enums.ExecType.Trade && ordStatus == zHFT.Main.Common.Enums.OrdStatus.Filled)
-                    {
-                        ActiveOrders.Remove(clOrdId);
-                        ActiveOrderIdMapper.Remove(clOrdId);
-                    }
-                    else if (execType == zHFT.Main.Common.Enums.ExecType.DoneForDay || execType == zHFT.Main.Common.Enums.ExecType.Stopped
-                                || execType == zHFT.Main.Common.Enums.ExecType.Suspended || execType == zHFT.Main.Common.Enums.ExecType.Rejected
-                                || execType == zHFT.Main.Common.Enums.ExecType.Expired || execType == zHFT.Main.Common.Enums.ExecType.Canceled)
-                    {
-
-                        ActiveOrders.Remove(clOrdId);
-                        ActiveOrderIdMapper.Remove(clOrdId);
-                    }
-                    
-                }
-                else
-                {
-                    DoLog(string.Format("@{0} Could not find order for ClOrderId {1} ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
-                }
-
+                ProcessNewOrderExecutionReport(clOrdId, erWrapper);
             }
             else //Estamos en un update/cancel
             {
-                marketOrderId = (string)erWrapper.GetField(ExecutionReportFields.OrigClOrdID);
-                string newMarketOrderIdRequested = (string)erWrapper.GetField(ExecutionReportFields.ClOrdID);
-                string origClOrdId = marketOrderId != null ? ActiveOrderIdMapper.Keys.Where(x => ActiveOrderIdMapper[x].ToString() == marketOrderId).FirstOrDefault() : null;
-
-                if (!string.IsNullOrEmpty(origClOrdId) && ActiveOrders.Keys.Contains(origClOrdId))
-                {
-
-                    if (execType == zHFT.Main.Common.Enums.ExecType.Replaced)
-                    {
-                        clOrdId = newMarketOrderIdRequested != null ? ReplacingActiveOrderIdMapper.Keys.Where(x => ReplacingActiveOrderIdMapper[x].ToString() == newMarketOrderIdRequested).FirstOrDefault() : null;
-
-                        Order order = ActiveOrders[origClOrdId];
-                        string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
-                        order.OrderId = orderId;
-
-                        ActiveOrders.Remove(origClOrdId);
-                        ActiveOrders.Add(clOrdId, order);
-                        ReplacingActiveOrderIdMapper.Remove(clOrdId);
-                        ActiveOrderIdMapper.Remove(origClOrdId);
-                        ActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
-                    }
-                    else if (execType == zHFT.Main.Common.Enums.ExecType.Canceled)
-                    {
-                        ActiveOrders.Remove(origClOrdId);
-                        ActiveOrderIdMapper.Remove(origClOrdId);
-                    }
-                    
-                }
-                else
-                {
-                    DoLog(string.Format("@{0} Ignoring unknown ClOrderId {1}  for Execution Report!", GetConfig().Name,marketOrderId), Main.Common.Util.Constants.MessageType.Information);
-                    return null;
-                }
+                ProcessCancelReplaceExecutionReport(clOrdId, origClOrdId, erWrapper);
             }
 
             return erWrapper;

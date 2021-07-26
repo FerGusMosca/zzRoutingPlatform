@@ -190,3 +190,7 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.exe
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\obj\Debug\InstructionsProcessor.Binance.Test.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb

@@ -18,7 +18,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\bin\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csproj.CoreCompileInputs.cache

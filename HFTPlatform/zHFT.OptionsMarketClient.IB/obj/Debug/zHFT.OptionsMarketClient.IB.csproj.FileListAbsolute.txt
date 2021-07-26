@@ -122,3 +122,34 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClien
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.csprojResolveAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.IB.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.IB.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\TWSLib.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.Main.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.Main.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.MarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.MarketClient.IB.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\MDFShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\quickfix_net.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\ToolsShared.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\quickfix_net_messages.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.Main.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.MarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.MarketClient.IB.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\zHFT.OptionsMarketClient.DataAccess.dll.config
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OptionsMarketClient.IB\obj\Debug\zHFT.OptionsMarketClient.IB.pdb

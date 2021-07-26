@@ -72,3 +72,5 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\bin\Debug\Newtonsoft.Json.xml

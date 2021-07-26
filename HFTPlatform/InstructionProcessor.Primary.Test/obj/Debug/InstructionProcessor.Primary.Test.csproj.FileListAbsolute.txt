@@ -314,3 +314,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\Newtonsoft.Json.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test_tarallo.cfg
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\FIX Sessions\initiator_test_old_primary.cfg
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.BusinessEntities.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionProcessor.Primary.Test\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
