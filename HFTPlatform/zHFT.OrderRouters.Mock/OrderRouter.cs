@@ -89,7 +89,7 @@ namespace zHFT.OrderRouters.Mock
             {
                 string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
                 string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
-                double? ordQty = (double?)wrapper.GetField(OrderFields.OrderQty);
+                //double? ordQty = (double?)wrapper.GetField(OrderFields.OrderQty);
                 double? price = (double?)wrapper.GetField(OrderFields.Price);
 
                
@@ -97,8 +97,9 @@ namespace zHFT.OrderRouters.Mock
 
                 if (pendingOrder != null)
                 {
-                    pendingOrder.OrderQty = ordQty;
+                    pendingOrder.OrderQty = pendingOrder.OrderQty;
                     pendingOrder.Price = price;
+                    pendingOrder.OrigClOrdId = origClOrdId;
                     pendingOrder.ClOrdId = clOrdId;
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Replaced, OrdStatus.Replaced,

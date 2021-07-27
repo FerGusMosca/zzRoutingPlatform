@@ -31,6 +31,7 @@ namespace zHFT.OrderRouters.Router
                 QuantityType = pos.QuantityType,
                 PriceType = PriceType.FixedAmount,
                 DecimalPrecission=DecimalPrecissionConverter.GetDecimalPrecission(pos),
+                Account = pos.AccountId,
                 Index = index
             };
 

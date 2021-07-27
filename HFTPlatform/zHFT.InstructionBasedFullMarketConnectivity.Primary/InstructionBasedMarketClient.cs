@@ -1028,7 +1028,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 {
                     QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
                     ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
-                    if(erWrapper!=null)
+                    if(erWrapper!=null && OnExecutionReportMessageRcv!=null)
                         OnExecutionReportMessageRcv(erWrapper);
                 }
                 else if (value is QuickFix50.OrderCancelReject)

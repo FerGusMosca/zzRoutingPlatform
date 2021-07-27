@@ -2,12 +2,12 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - TurtlesDayTrading</Name>
   
-  <OpenWindow>20</OpenWindow>
-  <CloseWindow>5</CloseWindow>
+  <OpenWindow>5</OpenWindow>
+  <CloseWindow>3</CloseWindow>
 
-  <PositionSizeInCash>20</PositionSizeInCash>
+  <PositionSizeInCash>1000</PositionSizeInCash>
 
-  <MaxOpenedPositions>3</MaxOpenedPositions>
+  <MaxOpenedPositions>6</MaxOpenedPositions>
   <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
@@ -25,7 +25,7 @@
   <ClosingTime>10:50 PM</ClosingTime>
 
 
-  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+  <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
@@ -35,7 +35,7 @@
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
   
-  <OnlyLong>true</OnlyLong>
+  <OnlyLong>false</OnlyLong>
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
@@ -44,13 +44,13 @@
 
     <Symbol>BTC</Symbol>
     <Symbol>ETH</Symbol>
-    <Symbol>DOGE</Symbol>
-    <Symbol>BNB</Symbol>
-    <Symbol>ADA</Symbol>
-    <Symbol>XRP</Symbol>
-    <Symbol>UNI</Symbol>
-    <Symbol>BCH</Symbol>
-    <Symbol>LINK</Symbol>
+<!--    <Symbol>DOGE</Symbol>-->
+<!--    <Symbol>BNB</Symbol>-->
+<!--    <Symbol>ADA</Symbol>-->
+<!--    <Symbol>XRP</Symbol>-->
+<!--    <Symbol>UNI</Symbol>-->
+<!--    <Symbol>BCH</Symbol>-->
+<!--    <Symbol>LINK</Symbol>-->
     
   </StocksToMonitor>
 

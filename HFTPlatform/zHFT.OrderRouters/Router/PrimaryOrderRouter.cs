@@ -14,7 +14,7 @@ namespace zHFT.OrderRouters.Router
     {
         #region Protected Overriden Methods
 
-        protected override void EvalUpdatingPositionOnDOM(Position pos)
+        protected override void EvalUpdPosOnNewMarketData(Position pos)
         {
             if (pos.NewDomFlag && !pos.NewPosition && !pos.PositionCanceledOrRejected && !pos.PositionCleared)
             {
