@@ -231,13 +231,13 @@ namespace zHFT.StrategyHandler.LogicLayer
 
                     if (!trdPos.IsFirstLeg())
                     {
-                        DoLog(string.Format("DB-Closing imbalance position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
+                        DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
                         PortfolioPositionsToMonitor[trdPos.OpeningPosition.Security.Symbol].Closing = false;
                         TradingPositions.Remove(trdPos.OpeningPosition.Security.Symbol);
                     }
                     else
                     {
-                        DoLog(string.Format("DB-Fully opened imbalance {2} position for symbol {0} (CumQty={1})",
+                        DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",
                                                     trdPos.OpeningPosition.Security.Symbol,report.CumQty,trdPos.TradeDirection),Constants.MessageType.Information);
                     }
                 }
@@ -270,7 +270,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         private void LoadCloseRegularPos(Position openPos, PortfolioPosition portfPos, TradingPosition trdPos)
         {
-            Position pos = new Position()
+            Position closingPos = new Position()
             {
 //                Security = new Security()
 //                {
@@ -290,11 +290,11 @@ namespace zHFT.StrategyHandler.LogicLayer
             };
 
 
-            pos.PositionCleared = true;
-            pos.LoadPosId(NextPosId);
+            closingPos.PositionCleared = true;
+            closingPos.LoadPosId(NextPosId);
             NextPosId++;
 
-            trdPos.ClosingPosition = pos;
+            trdPos.ClosingPosition = closingPos;
             trdPos.ClosingDate = DateTime.Now;
             trdPos.DoCloseTradingPosition(trdPos);
         }
@@ -339,7 +339,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
             catch (Exception e)
             {
-                DoLog(string.Format("Error persisting execution report {0}:{1]",wrapper.ToString(),e.Message),Constants.MessageType.Information);
+                DoLog(string.Format("Error persisting execution report {0}:{1}",wrapper.ToString(),e.Message),Constants.MessageType.Information);
             }
         }
         
@@ -392,7 +392,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 else
                     LoadCloseRegularPos(openRoutingPos, portfPos, tradingPos);
                 portfPos.Closing = true;
-                PositionWrapper posWrapper = new PositionWrapper(openRoutingPos, Config);
+                PositionWrapper posWrapper = new PositionWrapper(tradingPos.ClosingPosition, Config);
                 return OrderRouter.ProcessMessage(posWrapper);
             }
             else if (openRoutingPos.PositionRouting())
@@ -478,7 +478,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                             DoLog(string.Format("ER Cancelled for Pending Cancel for symbol {0} (PosId={1}): We were opening the position position. Live Qty<flat>=0",
                                                       report.Order.Symbol,tradPos.OpeningPosition.PosId), Main.Common.Util.Constants.MessageType.Information);
 
-                            //It was not executed. We can remove the ImbalancePosition
+                            //It was not executed. We can remove the Position
                         }
                     }
 
@@ -752,8 +752,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 LoadPreviousTradingPositions();
                 
                 RequestOrderStatuses();
-                //SecImbalancePersistanceThread = new Thread(ImbalancePersistanceThread);
-                //SecImbalancePersistanceThread.Start();
+                
 
                 return true;
             }

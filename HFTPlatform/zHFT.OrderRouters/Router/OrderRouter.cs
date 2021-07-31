@@ -373,8 +373,8 @@ namespace zHFT.OrderRouters.Router
 
         protected Position FindPositionInMemory(Wrapper reportWrapper)
         {
-            string symbol = reportWrapper.GetField(ExecutionReportFields.Symbol).ToString();
-            string clOrdid = reportWrapper.GetField(ExecutionReportFields.ClOrdID).ToString();
+            string symbol = (string)  reportWrapper.GetField(ExecutionReportFields.Symbol);
+            string clOrdid = (string) reportWrapper.GetField(ExecutionReportFields.ClOrdID);
             string origClOrdId = (string) reportWrapper.GetField(ExecutionReportFields.OrigClOrdID);
             
             Position pos = null;
@@ -470,8 +470,9 @@ namespace zHFT.OrderRouters.Router
                 }
                 else
                 {
-                    string clOrdid = wrapper.GetField(ExecutionReportFields.ClOrdID).ToString();
-                    DoLog(string.Format("<Generic Order Router> - External Trading for ClOrdId {0}",clOrdid),Constants.MessageType.Information);
+                    string clOrdid = (string) wrapper.GetField(ExecutionReportFields.ClOrdID);
+                    DoLog(string.Format("<Generic Order Router> - External Trading for ClOrdId {0}",
+                        clOrdid != null ? clOrdid : "NO ClOrId"), Constants.MessageType.Information);
                     OnMessageRcv(wrapper);//External Trading
                 }
             }
@@ -614,7 +615,7 @@ namespace zHFT.OrderRouters.Router
                     string posId = Convert.ToString(wrapper.GetField(PositionFields.PosId));
                     if (!Positions.ContainsKey(posId))
                     {
-                        DoLog(string.Format("<Gen. Order Router> - Routing to market position for symbol {0} (PosId={1})",symbol,posId), Constants.MessageType.Information);
+                        DoLog(string.Format("<Gen. Order Router.> - Routing to market position for symbol {0} (PosId={1})",symbol,posId), Constants.MessageType.Information);
                         RunOnPositionCalculusThread = new Thread(new ParameterizedThreadStart(RunOnPositionCalculus));
                         RunOnPositionCalculusThread.Start(wrapper);
                         return CMState.BuildSuccess();
@@ -732,10 +733,12 @@ namespace zHFT.OrderRouters.Router
             {
                 if (wrapper != null)
                 {
-                    DoLog("@Generic Order Router: Incoming message from Real Order Router: " + wrapper.ToString(), Constants.MessageType.Debug);
+                    //DoLog("@Generic Order Router: Incoming message from Real Order Router: " + wrapper.ToString(), Constants.MessageType.Debug);
 
                     if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                     {
+                        //DoLog("@Generic Order Router: Incoming execution report from Real -Order Router", Constants.MessageType.Debug);
+
                         ProcessExecutionReport(wrapper);
                     }
                     else
@@ -749,7 +752,7 @@ namespace zHFT.OrderRouters.Router
             catch (Exception ex)
             {
 
-                DoLog("Error processing message from order routing: " + (wrapper != null ? wrapper.ToString() : "") + " Error:" + ex.Message, Constants.MessageType.Error);
+                DoLog("<Generic Order Router> ERROR @ProcessOutgoing: " + (wrapper != null ? wrapper.GetAction().ToString() : "") + " Error:" + ex.Message, Constants.MessageType.Error);
 
                 return CMState.BuildFail(ex);
             }
