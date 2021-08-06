@@ -946,7 +946,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
              }
              catch (Exception e)
              {
-                 DoLog(string.Format("Error persisting execution report {0}:{1]",wrapper.ToString(),e.Message),Constants.MessageType.Information);
+                 DoLog(string.Format("Error persisting execution report {0}:{1}-{2}",
+                     wrapper != null ? wrapper.ToString() : "?", e.Message,e.StackTrace), Constants.MessageType.Information);
              }
         }
 

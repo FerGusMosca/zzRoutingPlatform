@@ -611,6 +611,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.DayTurtles.Common", "tp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.DayTurtles.DataAccessLayer", "tph.DayTurtles.DataAccessLayer\tph.DayTurtles.DataAccessLayer.csproj", "{376AD17A-6040-4218-970C-90AA4B3FB3FF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Connectors", "Connectors", "{B80FAE0F-2666-462F-8EE9-B169D9E9584C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebsocketConnector2", "Test\WebsocketConnector2\WebsocketConnector2.csproj", "{1D9398C2-B80D-423A-B8DA-22A835CECC13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1433,6 +1437,10 @@ Global
 		{376AD17A-6040-4218-970C-90AA4B3FB3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{376AD17A-6040-4218-970C-90AA4B3FB3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{376AD17A-6040-4218-970C-90AA4B3FB3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9398C2-B80D-423A-B8DA-22A835CECC13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9398C2-B80D-423A-B8DA-22A835CECC13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9398C2-B80D-423A-B8DA-22A835CECC13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9398C2-B80D-423A-B8DA-22A835CECC13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1731,6 +1739,8 @@ Global
 		{2520F7AF-284F-42D3-AF42-D134B5E8ED6C} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 		{C1380514-5FE0-401E-8DC5-3BD93EF13EE4} = {716595DF-FCD5-4104-929F-1BDB8AF4A43F}
 		{376AD17A-6040-4218-970C-90AA4B3FB3FF} = {716595DF-FCD5-4104-929F-1BDB8AF4A43F}
+		{B80FAE0F-2666-462F-8EE9-B169D9E9584C} = {2C3F2109-D784-416C-B155-CCD8B8996338}
+		{1D9398C2-B80D-423A-B8DA-22A835CECC13} = {B80FAE0F-2666-462F-8EE9-B169D9E9584C}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

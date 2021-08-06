@@ -130,10 +130,11 @@ namespace PrimaryCertification
         {
             string[] fields = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-             if (fields.Length != 2)
+             if (fields.Length < 2)
                 throw new Exception("Comando CO con mal formato");
 
             Order order = new Order();
+            order.OrigClOrdId = fields[1].Trim();
             order.ClOrdId = fields[1].Trim();
 
             zHFT.OrderRouters.Common.Wrappers.CancelOrderWrapper cancelWrapper = new zHFT.OrderRouters.Common.Wrappers.CancelOrderWrapper(order, null);

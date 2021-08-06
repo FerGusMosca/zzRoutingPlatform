@@ -485,29 +485,40 @@ namespace zHFT.OrderRouters.Router
             {
                 string posId = Convert.ToString(wrapper.GetField(PositionFields.PosId));
 
-                Position posInOrderRouter = Positions[posId];
-
-                if(posInOrderRouter!=null)
+                if (Positions.ContainsKey(posId))
                 {
-                    //It is not this module responsability to validate the Position Status if Cancellation is requested
-                    Order order = posInOrderRouter.GetCurrentOrder();
+                    Position posInOrderRouter = Positions[posId];
 
-                    if (order != null)
+                    if (posInOrderRouter != null)
                     {
-                        DoLog(string.Format("<<Gen. Order Router> - Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3} (PosId={4})", 
-                                            order.OrderId, order.Symbol,order.OrderQty, order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>", 
-                                            order.Side,posId), Main.Common.Util.Constants.MessageType.Information);
+                        //It is not this module responsability to validate the Position Status if Cancellation is requested
+                        Order order = posInOrderRouter.GetCurrentOrder();
 
-                        CancelOrderWrapper cancelOrderWrapper = new CancelOrderWrapper(order, Config);
+                        if (order != null)
+                        {
+                            DoLog(string.Format(
+                                "<<Gen. Order Router> - Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3} (PosId={4})",
+                                order.OrderId, order.Symbol, order.OrderQty,
+                                order.Price.HasValue ? order.Price.Value.ToString() : "<mkt>",
+                                order.Side, posId), Main.Common.Util.Constants.MessageType.Information);
 
-                        OrderProxy.ProcessMessage(cancelOrderWrapper);
+                            CancelOrderWrapper cancelOrderWrapper = new CancelOrderWrapper(order, Config);
+
+                            OrderProxy.ProcessMessage(cancelOrderWrapper);
+                        }
+                        else
+                            throw new Exception(string.Format(
+                                "ERROR-Could not cancel order for symbol {0} (PosId={1}) because no orders where found!",
+                                posInOrderRouter.Symbol, posInOrderRouter.PosId));
                     }
                     else
-                        throw new Exception(string.Format("ERROR-Could not cancel order for symbol {0} (PosId={1}) because no orders where found!", posInOrderRouter.Symbol,posInOrderRouter.PosId));
+                        throw new Exception(string.Format("ERROR-Could not cancel order for unknown position {0}",
+                            posId));
                 }
                 else
-                    throw new Exception(string.Format("ERROR-Could not cancel order for unknown position {0}", posId));
-                
+                {
+                    DoLog(string.Format("ERROR-Could not find a position for posId {0} to cancel",posId),Constants.MessageType.Error);
+                }
             }
             else
                 throw new Exception(string.Format("ERROR-Could not cancel order if no PosId was specified"));
@@ -631,7 +642,9 @@ namespace zHFT.OrderRouters.Router
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_POSITION)
                 {
-                    DoLog(string.Format("Cancelling order for symbol {0}",wrapper.GetField(PositionFields.Symbol).ToString()), Constants.MessageType.Information);
+                    string posId = (string) wrapper.GetField(PositionFields.PosId);
+                    string symbol = (string) wrapper.GetField(PositionFields.Symbol);
+                    DoLog(string.Format("Cancelling order for symbol {0} (PosId={1})",symbol,posId), Constants.MessageType.Information);
                     CancelOrder(wrapper);
                     return CMState.BuildSuccess();
                 }

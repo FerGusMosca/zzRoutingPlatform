@@ -141,10 +141,17 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     string orderId = (string)erWrapper.GetField(ExecutionReportFields.OrderID);
                     order.OrderId = orderId;
                 }
-                else if (execType == zHFT.Main.Common.Enums.ExecType.Trade && ordStatus == zHFT.Main.Common.Enums.OrdStatus.Filled)
+                else if (execType == zHFT.Main.Common.Enums.ExecType.Trade )
                 {
-                    ActiveOrders.Remove(clOrdId);
-                    ActiveOrderIdMapper.Remove(clOrdId);
+                    Order order = ActiveOrders[clOrdId];
+                    
+                    order.CumQty = (decimal?) erWrapper.GetField(ExecutionReportFields.CumQty);
+                    if (ordStatus == zHFT.Main.Common.Enums.OrdStatus.Filled)
+                    {
+                        
+                        ActiveOrders.Remove(clOrdId);
+                        ActiveOrderIdMapper.Remove(clOrdId);
+                    }
                 }
                 else if (execType == zHFT.Main.Common.Enums.ExecType.DoneForDay || execType == zHFT.Main.Common.Enums.ExecType.Stopped
                                                                                 || execType == zHFT.Main.Common.Enums.ExecType.Suspended || execType == zHFT.Main.Common.Enums.ExecType.Rejected
@@ -487,11 +494,12 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         order.ClOrdId = clOrdId;
                         order.OrigClOrdId = origClOrdId;
 
-                        ordQty = order.OrderQty;//We use the old qty
+                        //We use the order leaves qty
+                        ordQty = order.OrderQty - Convert.ToDouble((order.CumQty.HasValue ? order.CumQty.Value : 0));
+                        //Console.Beep();
 
                         //CancelOrder(order, origClOrdId, newMarketOrderIdRequested.ToString());
                         //RouteNewOrder(order, (newMarketOrderIdRequested + 1).ToString());
-
                        
                         //Procesamientos especiales de la cantidad de las ordenes
                         if (order.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
@@ -634,7 +642,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 string newMarketOrderIdRequested = (Convert.ToInt32(marketOrderId) + 1).ToString();
                 ReplacingActiveOrderIdMapper.Add(clOrdId, newMarketOrderIdRequested);
 
-                order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
+                //order.ClOrdId = (Convert.ToInt32(clOrdId) + 1).ToString();
+                order.ClOrdId = clOrdId + "cxl";
                 order.OrigClOrdId = clOrdId;
                 
                 //ActiveOrderIdMapper.Add(order.ClOrdId,newMarketOrderIdRequested);
@@ -678,7 +687,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 if (SessionID != null)
                 {
                     string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
-                    DoLog(string.Format("@{0}:Cancelling all orders @Primary ", GetConfig().Name), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("@{0}:Cancelling order {1} @Primary ", GetConfig().Name,clOrdId), Main.Common.Util.Constants.MessageType.Information);
 
                     if (ActiveOrders.Keys.Contains(clOrdId))
                     {

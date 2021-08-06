@@ -504,6 +504,7 @@
         </e>
       </e>
       <e p="Test" t="Include">
+        <e p="Connectors" t="Include" />
         <e p="DayTurtles" t="Include" />
         <e p="DayTurtles.Cryptos.App" t="IncludeRecursive">
           <e p="App.Config" t="Include" />
@@ -595,6 +596,24 @@
           <e p="SimpleCommModule.xml" t="Include" />
         </e>
         <e p="Primary Certification" t="Include" />
+        <e p="WebsocketConnector2" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Config.xml" t="Include" />
+          <e p="incomingBinance.xml" t="Include" />
+          <e p="incomingIB.xml" t="Include" />
+          <e p="IncomingSingletonConfig.xml" t="Include" />
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="orderRouter.Binance.xml" t="Include" />
+          <e p="OutgoingSingletonConfig.xml" t="Include" />
+          <e p="Primary.xml" t="Include" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="SimpleCommModule.xml" t="Include" />
+          <e p="WebsocketConnector2.csproj" t="IncludeRecursive" />
+        </e>
       </e>
       <e p="tph.DayTurtles.BusinessEntities" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

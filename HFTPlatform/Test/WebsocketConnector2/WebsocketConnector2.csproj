@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{1D9398C2-B80D-423A-B8DA-22A835CECC13}</ProjectGuid>
+        <OutputType>Exe</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>WebsocketConnector2</RootNamespace>
+        <AssemblyName>WebsocketConnector2</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="MDFShared, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\Librerias\MDFShared.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Configuration" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="ToolsShared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\Librerias\ToolsShared.dll</HintPath>
+        </Reference>
+        <Reference Include="zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\BidAskArbitrage.Test\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Config.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="incomingBinance.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="incomingIB.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="IncomingSingletonConfig.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="orderRouter.Binance.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="OutgoingSingletonConfig.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Primary.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="SimpleCommModule.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj">
+        <Project>{da0d57b6-a469-4956-ac61-f8dd684e80b7}</Project>
+        <Name>tph.StrategyHandler.SimpleCommandReceiver</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.FixMessageCreator.Primary.Common\zHFT.FixMessageCreator.Primary.Common.csproj">
+        <Project>{0d4cb00d-382b-4503-a9a0-b05574ef4218}</Project>
+        <Name>zHFT.FixMessageCreator.Primary.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.InstructionBasedFullMarketConnectivity.Primary\zHFT.InstructionBasedFullMarketConnectivity.Primary.csproj">
+        <Project>{f6a7d207-af0a-48a8-b69c-f067d63e8f6b}</Project>
+        <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.Binance\zHFT.InstructionBasedMarketClient.Binance.csproj">
+        <Project>{edc254d7-cbf9-4b08-af29-92a64a2ec5a5}</Project>
+        <Name>zHFT.InstructionBasedMarketClient.Binance</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+        <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+        <Name>zHFT.Main.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.Main\zHFT.Main.csproj">
+        <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
+        <Name>zHFT.Main</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.OrderRouters.Binance\zHFT.OrderRouters.Binance.csproj">
+        <Project>{f93bbf1f-9111-48b2-9610-ecbbd9f8aa9c}</Project>
+        <Name>zHFT.OrderRouters.Binance</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.SingletonModulesHandler\zHFT.SingletonModulesHandler.csproj">
+        <Project>{0ffdf4c8-e294-4760-aad1-e57e63ac93dc}</Project>
+        <Name>zHFT.SingletonModulesHandler</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

@@ -111,7 +111,9 @@ namespace zHFT.OrderRouters.Mock
                 {
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Rejected, OrdStatus.Rejected,
-                                                                  0, 0, null, null,null, new Order() { }, string.Format("No such order active for ClOrdId {0}", origClOrdId));
+                        0, 0, null, null, null,
+                        new Order() {OrigClOrdId = origClOrdId, ClOrdId = clOrdId},
+                        string.Format("No such order active for ClOrdId {0}", origClOrdId));
 
                     OnMessageRcv(erWrapper);
 
@@ -146,7 +148,9 @@ namespace zHFT.OrderRouters.Mock
                 {
 
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Rejected, OrdStatus.Rejected,
-                                                                  0, 0, null, null,null, new Order() { }, string.Format("No such order active for ClOrdId {0}", origClOrdId));
+                        0, 0, null, null, null,
+                        new Order() {OrigClOrdId = origClOrdId, ClOrdId = clOrdId},
+                        string.Format("No such order active for OrigClOrdId {0}", origClOrdId));
 
                     OnMessageRcv(erWrapper);
 

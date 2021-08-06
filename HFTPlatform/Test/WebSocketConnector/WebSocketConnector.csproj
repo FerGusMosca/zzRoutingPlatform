@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net472</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="Config.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="incomingBinance.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="incomingIB.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="IncomingSingletonConfig.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="orderRouter.Binance.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="OutgoingSingletonConfig.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Primary.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="SimpleCommModule.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj" />
+      <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
+      <ProjectReference Include="..\..\zHFT.Main\zHFT.Main.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MDFShared, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\..\Librerias\MDFShared.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Configuration" />
+      <Reference Include="ToolsShared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\..\Librerias\ToolsShared.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
