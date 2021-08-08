@@ -69,9 +69,10 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         public override string ToString()
         {
             return string.Format(
-                "Symbol={0} Open={1} High={2} Low={3} Close={4} Trade={5} BestBidPx={6} BestAskPx={7} Volume={8}",
+                "DateTime={9} Symbol={0} Open={1} High={2} Low={3} Close={4} Trade={5} BestBidPx={6} BestAskPx={7} Volume={8}",
                 Security.Symbol, OpeningPrice, TradingSessionHighPrice, TradingSessionLowPrice,
-                ClosingPrice, Trade, BestBidPrice, BestAskPrice, TradeVolume);
+                ClosingPrice, Trade, BestBidPrice, BestAskPrice, TradeVolume,
+                MDEntryDate != null ? MDEntryDate.Value.ToString() : "");
         }
 
         #endregion

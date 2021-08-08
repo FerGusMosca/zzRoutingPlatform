@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading;
 using Binance.API.Csharp.Client;
 using Binance.API.Csharp.Client.Models.Account;
+using Binance.API.Csharp.Client.Models.Enums;
 using Binance.API.Csharp.Client.Models.Market;
 using zHFT.InstructionBasedMarketClient.Binance.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Util;
@@ -45,6 +46,8 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
         }
 
         private Dictionary<string, bool> ReverseCurrency { get; set; }
+        
+        protected  Dictionary<int, Wrapper> HistoricalPricesRequests { get; set; }
 
         private AccountBinanceDataManager AccountBinanceDataManager { get; set; }
         
@@ -149,7 +152,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     RemoveSymbol(symbol);
                 }
 
-                DoLog(string.Format("@{0}: Error Requesting market data por symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: Error Requesting order book for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
             }
             
         }
@@ -162,7 +165,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
             try
             {
-                DoLog(string.Format("@{0}:Requesting market data por symbol {1}{2}", BinanceConfiguration.Name, symbol,quoteSymbol), Main.Common.Util.Constants.MessageType.Information);
+                DoLog(string.Format("@{0}:Requesting market data for symbol {1}{2}", BinanceConfiguration.Name, symbol,quoteSymbol), Main.Common.Util.Constants.MessageType.Information);
 
                 var apiClient = new ApiClient(AccountBinanceData.APIKey,AccountBinanceData.Secret);
                 var binanceClient = new BinanceClient(apiClient);
@@ -197,7 +200,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     sec.MarketData.BestAskPrice=priceChg != null ? (double?) priceChg.AskPrice : null;
                     sec.MarketData.Trade = priceChg != null ? (double?) priceChg.LastPrice : null;
                     sec.ReverseMarketData = false;
-                    sec.MarketData.MDEntryDate = priceChg != null ? (DateTime?) DateTime.Now : null;
+                    sec.MarketData.MDEntryDate = priceChg != null ? (DateTime?)EpochConverter.FromEpoch(priceChg.CloseTime) : null;
                     sec.MarketData.OpeningPrice = priceChg != null ? (double?) priceChg.OpenPrice : null;
                     sec.MarketData.ClosingPrice = priceChg != null ? (double?) priceChg.LastPrice : null;
                     sec.MarketData.TradingSessionHighPrice = priceChg != null ? (double?) priceChg.HighPrice : null;
@@ -217,8 +220,87 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     RemoveSymbol(symbol);
                 }
 
-                DoLog(string.Format("@{0}: ERRPR- Requesting market data por symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: ERROR- Requesting market data for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
             }
+        }
+
+        protected TimeInterval GetTimeInterval(zHFT.Main.Common.Enums.CandleInterval interval )
+        {
+            TimeInterval? binanceInterval = null;
+            if (interval == CandleInterval.Minute_1)
+                binanceInterval = TimeInterval.Minutes_1;
+            else if (interval == CandleInterval.HOUR_1)
+                binanceInterval = TimeInterval.Hours_1;
+            else if (interval == CandleInterval.DAY)
+                binanceInterval = TimeInterval.Days_1;
+            else
+            {
+                throw new Exception(string.Format("TimeInterval {0} not implemented on Market Data Request",interval));
+            }
+
+            return binanceInterval.Value;
+        }
+
+        protected void DoRequestHistoricalPricesRequest(object param)
+        {
+            Wrapper wrapper = (Wrapper) ((object[]) param)[0];
+            try
+            {
+                var apiClient = new ApiClient(AccountBinanceData.APIKey, AccountBinanceData.Secret);
+                var binanceClient = new BinanceClient(apiClient);
+
+                string symbol = wrapper.GetField(HistoricalPricesRequestFields.Symbol) as string; //Symbol + quote symbol
+                DateTime? from = wrapper.GetField(HistoricalPricesRequestFields.From) as DateTime?;
+                DateTime? to = wrapper.GetField(HistoricalPricesRequestFields.To) as DateTime?;
+                zHFT.Main.Common.Enums.CandleInterval interval = (zHFT.Main.Common.Enums.CandleInterval) wrapper.GetField(HistoricalPricesRequestFields.Interval);
+                string quoteSymbol = BinanceConfiguration.QuoteCurrency;
+                
+                List<Candlestick> candles =
+                    new List<Candlestick>(binanceClient.GetCandleSticks(symbol+quoteSymbol, GetTimeInterval(interval), from,to,1500).Result);
+
+                List<BinanceMarketDataWrapper> result = new List<BinanceMarketDataWrapper>();
+                foreach (Candlestick candle in candles.OrderBy(x => x.OpenTime))
+                {
+
+                    Security sec = new Security();
+                    ;
+                    sec.Symbol = symbol;
+                    sec.MarketData.Trade = (double?) candle.Close;
+                    sec.ReverseMarketData = false;
+                    sec.MarketData.MDEntryDate =EpochConverter.FromEpoch(candle.OpenTime);
+                    sec.MarketData.OpeningPrice = (double?) candle.Open;
+                    sec.MarketData.ClosingPrice = (double?) candle.Close;
+                    sec.MarketData.TradingSessionHighPrice = (double?) candle.High;
+                    sec.MarketData.TradingSessionLowPrice = (double?) candle.Low;
+                    sec.MarketData.CashVolume = (double?) candle.Volume;
+
+                    BinanceMarketDataWrapper mdWrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
+
+                    result.Add(mdWrapper);
+                }
+
+                HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(new List<Wrapper>(result));
+
+                OnMessageRcv(histWrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}: Error Processing historical candles request :{1}", BinanceConfiguration.Name,  BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
+        protected override CMState ProcessHistoricalPricesRequest(Wrapper wrapper)
+        {
+            int reqId = (int) wrapper.GetField(HistoricalPricesRequestFields.MDReqId);
+
+            if (!HistoricalPricesRequests.ContainsKey(reqId))
+            {
+                RequestMarketDataThread = new Thread(DoRequestHistoricalPricesRequest);
+                RequestMarketDataThread.Start(new object[] {wrapper});
+                HistoricalPricesRequests.Add(reqId, wrapper);
+            }
+
+            return CMState.BuildSuccess();
         }
 
         protected override CMState ProcessMarketDataRequest(Wrapper wrapper)
@@ -297,6 +379,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     ActiveSecurities = new Dictionary<long, Security>();
                     ContractsTimeStamps = new Dictionary<long, DateTime>();
                     ReverseCurrency = new Dictionary<string, bool>();
+                    HistoricalPricesRequests= new Dictionary<int, Wrapper>();
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();

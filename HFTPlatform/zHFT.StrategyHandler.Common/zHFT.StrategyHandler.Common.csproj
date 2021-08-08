@@ -58,6 +58,7 @@
     <Compile Include="Wrappers\CancelAllPositionsWrapper.cs" />
     <Compile Include="Wrappers\CancelOrderWrapper.cs" />
     <Compile Include="Wrappers\CancelPositionWrapper.cs" />
+    <Compile Include="Wrappers\HistoricalPricesRequestWrapper.cs" />
     <Compile Include="Wrappers\MarketDataRequestWrapper.cs" />
     <Compile Include="Wrappers\OrderMassStatusRequestWrapper.cs" />
     <Compile Include="Wrappers\OrderWrapper.cs" />

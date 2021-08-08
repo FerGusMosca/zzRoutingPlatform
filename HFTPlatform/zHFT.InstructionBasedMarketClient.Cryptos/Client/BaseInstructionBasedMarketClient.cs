@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -47,6 +48,11 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         protected abstract void DoRequestOrderBook(Object param);
 
         protected abstract void DoRequestMarketData(Object param);
+
+        protected virtual CMState ProcessHistoricalPricesRequest(Wrapper wrapper)
+        {
+            return CMState.BuildSuccess();
+        }
 
         protected abstract CMState ProcessMarketDataRequest(Wrapper wrapper);
 
@@ -139,10 +145,13 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
             string quoteSymbol = (string)wrapper.GetField(MarketDataRequestField.QuoteSymbol);
 
             Security sec = new Security() { Symbol = symbol };
-
-            ActiveSecurities.Add(mdReqId, sec);
-            RequestMarketDataThread = new Thread(DoRequestMarketData);
-            RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
+            if (!ActiveSecurities.ContainsKey(mdReqId))
+            {
+                ActiveSecurities.Add(mdReqId, sec);
+                RequestMarketDataThread = new Thread(DoRequestMarketData);
+                RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
+                
+            }
 
             return CMState.BuildSuccess();
         }
@@ -155,9 +164,12 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
 
             Security sec = new Security() { Symbol = symbol };
 
-            ActiveSecurities.Add(mdReqId, sec);
-            RequestMarketDataThread = new Thread(DoRequestOrderBook);
-            RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
+            if (!ActiveSecurities.ContainsKey(mdReqId))
+            {
+                ActiveSecurities.Add(mdReqId, sec);
+                RequestMarketDataThread = new Thread(DoRequestOrderBook);
+                RequestMarketDataThread.Start(new object[] { symbol ,quoteSymbol});
+            }
 
             return CMState.BuildSuccess();
         }
@@ -199,6 +211,10 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                     else if (Actions.MARKET_DATA_REQUEST == action)
                     {
                         return ProcessMarketDataRequest(wrapper);
+                    }
+                    else if (Actions.HISTORICAL_PRICES_REQUEST == action)
+                    {
+                        return ProcessHistoricalPricesRequest(wrapper);
                     }
                     else
                     {

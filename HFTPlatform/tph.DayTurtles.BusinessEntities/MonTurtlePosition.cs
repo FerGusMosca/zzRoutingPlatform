@@ -134,44 +134,48 @@ namespace tph.DayTurtles.BusinessEntities
         
         #region Public Methods
 
-        public void AppendCandle(MarketData md)
+        public virtual bool AppendCandle(MarketData md)
         {
+            bool newCandle = false;
             if (md.MDEntryDate.HasValue)
             {
-                string key = md.MDEntryDate.Value.ToString("yyyyMMddhhmm");
-
+                string key = md.MDEntryDate.Value.ToString("yyyyMMddHHmm");
+                
                 if (!Candles.ContainsKey(key))
+                {
+                    newCandle = true;
                     Candles.Add(key, md);
+                }
                 else
                     Candles[key] = md;
 
             }
-
+            
             Security.MarketData = md;
-
+            return newCandle;
         }
 
-        public bool LongSignalTriggered()
+        public virtual bool LongSignalTriggered()
         {
             return IsHighest(OpenWindow);
         }
         
-        public bool ShortSignalTriggered()
+        public virtual bool ShortSignalTriggered()
         {
             return IsLowest(OpenWindow);
         }
         
-        public bool EvalClosingLongPosition()
+        public virtual bool EvalClosingLongPosition()
         {
             return IsLowest(CloseWindow);
         }
 
-        public bool EvalClosingShortPosition()
+        public virtual bool EvalClosingShortPosition()
         {
             return IsHighest(CloseWindow);
         }
 
-        public bool EvalStopLossHit(TradTurtlesPosition tradPos)
+        public virtual bool EvalStopLossHit(TradTurtlesPosition tradPos)
         {
 
             if (tradPos.OpeningPosition != null && !tradPos.OpeningPosition.PositionRouting())
@@ -202,12 +206,12 @@ namespace tph.DayTurtles.BusinessEntities
             }
         }
 
-        public bool EvalAbortingClosingShortPosition()
+        public virtual bool EvalAbortingClosingShortPosition()
         {
             return false;//When triggered, we just CLOSE the SHORT positions- 
         }
 
-        public bool EvalAbortingClosingLongPosition()
+        public virtual bool EvalAbortingClosingLongPosition()
         {
             return false;//When triggered, we just CLOSE the LONG positions-
         }
@@ -217,7 +221,7 @@ namespace tph.DayTurtles.BusinessEntities
             return false;//When triggered, we just open the LONG positions-
         }
 
-        public bool EvalAbortingNewShortPosition()
+        public virtual bool EvalAbortingNewShortPosition()
         {
             return false;//When triggered, we just open the SHORT positions-
         }

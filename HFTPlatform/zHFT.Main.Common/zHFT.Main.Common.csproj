@@ -69,6 +69,7 @@
     <Compile Include="Enums\Fields\CryptoCurrencyFields.cs" />
     <Compile Include="Enums\Fields\ExecutionReportFields.cs" />
     <Compile Include="Enums\Fields\Fields.cs" />
+    <Compile Include="Enums\Fields\HistoricalPricesRequestFields.cs" />
     <Compile Include="Enums\Fields\MarketDataFields.cs" />
     <Compile Include="Enums\Fields\MarketDataRequestField.cs" />
     <Compile Include="Enums\Fields\OfferFields.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Enums\Fields\SecurityFields.cs" />
     <Compile Include="Enums\Fields\SecurityListFields.cs" />
     <Compile Include="Enums\Fields\SecurityListRequestField.cs" />
+    <Compile Include="Enums\Fields\TimeInterval.cs" />
     <Compile Include="Enums\Halted.cs" />
     <Compile Include="Enums\MarketDepth.cs" />
     <Compile Include="Enums\OrdRejReason.cs" />

@@ -57,7 +57,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\BinanceClientProxy.cs" />
     <Compile Include="Util\BinanceErrorFormatter.cs" />
+    <Compile Include="Util\EpochConverter.cs" />
     <Compile Include="Wrappers\BinanceMarketDataWrapper.cs" />
+    <Compile Include="Wrappers\HistoricalPricesWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">

@@ -27,5 +27,7 @@ namespace zHFT.Main.Common.Enums
         BUSINESS_MESSAGE_REJECT,
         ORDER_LIST,
         ORDER_MASS_STATUS_REQUEST,
+        HISTORICAL_PRICES_REQUEST,
+        HISTORICAL_PRICES,
     }
 }

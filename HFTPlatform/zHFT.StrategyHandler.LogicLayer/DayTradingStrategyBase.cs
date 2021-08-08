@@ -92,6 +92,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         #region Protected Abstract Methods
 
+        protected abstract void ProcessHistoricalPrices(object pWrapper);
+        
         protected abstract void ProcessMarketData(object pWrapper);
 
         protected abstract void DoPersist(TradingPosition trdPos);
@@ -686,6 +688,13 @@ namespace zHFT.StrategyHandler.LogicLayer
                 {
                     //DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
                     Thread mdThread = new Thread(ProcessMarketData);
+                    mdThread.Start(wrapper);
+                    return CMState.BuildSuccess();
+                }
+
+                if (wrapper.GetAction() == Actions.HISTORICAL_PRICES)
+                {
+                    Thread mdThread = new Thread(ProcessHistoricalPrices);
                     mdThread.Start(wrapper);
                     return CMState.BuildSuccess();
                 }

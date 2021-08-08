@@ -22,11 +22,11 @@ namespace tph.DayTurtles.LogicLayer
 {
     public class DayTurtles:DayTradingStrategyBase
     {
-          #region Protected Attributes
+        #region Protected Attributes
           
-          protected TurtlesPortfolioPositionManager TurtlesPortfolioPositionManager { get; set; }
+        protected TurtlesPortfolioPositionManager TurtlesPortfolioPositionManager { get; set; }
           
-          #endregion
+        #endregion
         
         #region Overriden Methods
 
@@ -35,16 +35,23 @@ namespace tph.DayTurtles.LogicLayer
             Config = ConfigLoader.GetConfiguration<Configuration>(this, configFile, noValFlds);
         }
 
-        public Configuration GetConfig()
+        public virtual Configuration GetConfig()
         {
             return (Configuration) Config;
         }
+        
+        
 
         #endregion
         
         #region Public Methods
-        
-        private void EvalOpeningPosition(MonTurtlePosition turtlePos)
+
+        protected virtual void InitializeManagers()
+        {
+            TurtlesPortfolioPositionManager= new TurtlesPortfolioPositionManager(GetConfig().ConnectionString);
+        }
+
+        protected void EvalOpeningPosition(MonTurtlePosition turtlePos)
         {
             if (turtlePos.LongSignalTriggered())
             {
@@ -86,7 +93,7 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
         
-        private bool EvalClosingPositionOnStopLossHit(MonTurtlePosition turtlePos)
+        protected bool EvalClosingPositionOnStopLossHit(MonTurtlePosition turtlePos)
         {
             if (TradingPositions.ContainsKey(turtlePos.Security.Symbol))
             {
@@ -107,7 +114,7 @@ namespace tph.DayTurtles.LogicLayer
             return false;
         }
         
-        private void EvalAbortingOpeningPositions(MonTurtlePosition turtlePos)
+        protected void EvalAbortingOpeningPositions(MonTurtlePosition turtlePos)
         {
             if (TradingPositions.ContainsKey(turtlePos.Security.Symbol))
             {
@@ -129,7 +136,7 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
         
-        private void EvalClosingPosition(MonTurtlePosition turtlePos)
+        protected void EvalClosingPosition(MonTurtlePosition turtlePos)
         {
             TradTurtlesPosition trdPos = (TradTurtlesPosition) TradingPositions[turtlePos.Security.Symbol];
 
@@ -163,7 +170,7 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
         
-        private void EvalAbortingClosingPositions(MonTurtlePosition turtlePos)
+        protected void EvalAbortingClosingPositions(MonTurtlePosition turtlePos)
         {
             if (TradingPositions.ContainsKey(turtlePos.Security.Symbol))
             {
@@ -222,6 +229,11 @@ namespace tph.DayTurtles.LogicLayer
                 FeeTypePerTrade = Config.FeeTypePerTrade,
                 FeeValuePerTrade = Config.FeeValuePerTrade
             };
+        }
+
+        protected override void ProcessHistoricalPrices(object pWrapper)
+        {
+            //We don't need them
         }
 
         protected override void ProcessMarketData(object pWrapper)
@@ -323,9 +335,9 @@ namespace tph.DayTurtles.LogicLayer
             if (ConfigLoader.LoadConfig(this, configFile))
             {
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
-                
-                TurtlesPortfolioPositionManager= new TurtlesPortfolioPositionManager(GetConfig().ConnectionString);
 
+                InitializeManagers();
+                
                 return true;
 
             }

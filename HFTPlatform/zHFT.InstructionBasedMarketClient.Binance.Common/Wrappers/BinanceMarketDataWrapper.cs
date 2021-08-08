@@ -89,7 +89,11 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers
 
                 if (Security.MarketData != null)
                 {
-                    resp += string.Format(" LastPrice={0}", Security.MarketData.Trade.HasValue ? Security.MarketData.Trade.Value.ToString("0.########") : "no data");
+                    resp += string.Format(" Date={0}", Security.MarketData.MDEntryDate.HasValue ? Security.MarketData.MDEntryDate.Value.ToString() : "no data");
+
+                    resp += string.Format(" Closing Price={0}", Security.MarketData.ClosingPrice.HasValue ? Security.MarketData.ClosingPrice.Value.ToString("0.########") : "no data");
+                    resp += string.Format(" High={0}", Security.MarketData.TradingSessionHighPrice.HasValue ? Security.MarketData.TradingSessionHighPrice.Value.ToString("0.########") : "no data");
+                    resp += string.Format(" Low={0}", Security.MarketData.TradingSessionLowPrice.HasValue ? Security.MarketData.TradingSessionLowPrice.Value.ToString("0.########") : "no data");
                     resp += string.Format(" BestBidPrice={0}", Security.MarketData.BestBidPrice.HasValue ? Security.MarketData.BestBidPrice.Value.ToString("0.########") : "no data");
                     resp += string.Format(" BestAskPrice={0}", Security.MarketData.BestAskPrice.HasValue ? Security.MarketData.BestAskPrice.Value.ToString("0.########") : "no data");
 
