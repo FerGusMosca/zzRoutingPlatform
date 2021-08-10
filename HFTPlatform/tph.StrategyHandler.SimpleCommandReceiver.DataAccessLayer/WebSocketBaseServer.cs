@@ -11,7 +11,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 {
     public abstract class WebSocketBaseServer
     {
-                #region Protected Attributes
+        #region Protected Attributes
 
         protected Dictionary<int, IWebSocketConnection> ConnectedClients { get; set; }
 

@@ -63,7 +63,7 @@ namespace zHFT.MarketClient.Primary.Common.Converters
                 return fields[_SYMBOL_INDEX].Trim() + _INSTR_FIELD_SEPARATOR + market;
             }
             else if (market == _ROFX)
-                return symbol;
+                return symbol + _INSTR_FIELD_SEPARATOR + _ROFX;
             else
                 throw new Exception(string.Format("GetFullSymbolFromPrimary translation not implemented for exchange {0}", market));
         }

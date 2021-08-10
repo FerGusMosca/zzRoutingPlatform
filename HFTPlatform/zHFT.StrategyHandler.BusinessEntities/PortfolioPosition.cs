@@ -16,6 +16,16 @@ namespace zHFT.StrategyHandler.BusinessEntities
         
         #endregion
         
+        #region public Methods
+        
+        public virtual string SignalTriggered()
+        {
+            return "";
+
+        }
+        
+        #endregion
+        
         
     }
 }

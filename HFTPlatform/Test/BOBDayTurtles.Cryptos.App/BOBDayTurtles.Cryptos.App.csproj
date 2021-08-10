@@ -94,6 +94,10 @@
         <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>
         <Name>zHFT.OrderRouters.Mock</Name>
       </ProjectReference>
+      <ProjectReference Include="..\..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
+        <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
+        <Name>zHFT.OrderRouters</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

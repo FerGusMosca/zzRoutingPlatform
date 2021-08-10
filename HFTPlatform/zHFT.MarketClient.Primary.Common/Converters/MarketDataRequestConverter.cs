@@ -35,6 +35,11 @@ namespace zHFT.MarketClient.Primary.Common.Converters
                 mdr.Security.Symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
                 mdr.Security.AltIntSymbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
             }
+            else if (secType == SecurityType.FUT)
+            {
+                mdr.Security.Symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
+                mdr.Security.AltIntSymbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
+            }
             else
                 throw new Exception(string.Format("Security Type translation not yet implemented: {0}", secType.ToString()));
 

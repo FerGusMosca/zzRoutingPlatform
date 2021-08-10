@@ -85,7 +85,53 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         #region Protected Methods
 
-        protected bool EvalTimespan(MarketData newLocalMinimum,MarketData localMimimum)
+        private DateTime GetStartDate(DateTime date, int span)
+        {
+            
+            if (CandleInterval == CandleInterval.Minute_1)
+                return date.AddMinutes(span);
+            else if (CandleInterval == CandleInterval.HOUR_1)
+                return date.AddHours(span);
+            else if (CandleInterval == CandleInterval.DAY)
+                return date.AddDays(span);
+            else
+            {
+                throw new Exception(string.Format("Trendline Creator.GetStartDate - Candle Interval not implemented:{0}",CandleInterval));
+            }
+        }
+        
+        private DateTime GetEndDate(DateTime date, int span)
+        {
+            
+            if (CandleInterval == CandleInterval.Minute_1)
+                return date.AddMinutes(-1*span);
+            else if (CandleInterval == CandleInterval.HOUR_1)
+                return date.AddHours(-1*span);
+            else if (CandleInterval == CandleInterval.DAY)
+                return date.AddDays(-1*span);
+            else
+            {
+                throw new Exception(string.Format("Trendline Creator.GetEndDate - Candle Interval not implemented:{0}",CandleInterval));
+            }
+        }
+        
+        private int GetSpan(DateTime start, DateTime end)
+        {
+
+            if (CandleInterval == CandleInterval.Minute_1)
+                return Convert.ToInt32((end - start).TotalMinutes);
+            else if (CandleInterval == CandleInterval.HOUR_1)
+                return Convert.ToInt32((end - start).TotalHours);
+            else if (CandleInterval == CandleInterval.DAY)
+                return Convert.ToInt32((end - start).TotalDays);
+            else
+            {
+                throw new Exception(string.Format("Trendline Creator.GetSpan - Candle Interval not implemented:{0}",
+                    CandleInterval));
+            }
+        }
+
+        private bool EvalTimespan(MarketData newLocalMinimum,MarketData localMimimum)
         {
 
             if (CandleInterval == CandleInterval.Minute_1)
@@ -170,15 +216,20 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             }
         }
 
-        protected bool EvalTrendlineBroken(List<MarketData> allHistoricalPrices, Trendline possibleTrendline,bool downside)
+        protected bool EvalTrendlineBroken(List<MarketData> allHistoricalPrices, Trendline possTrnd,bool downside)
         {
-            IList<MarketData> pricesInPeriod = allHistoricalPrices.Where(x => DateTime.Compare(x.MDEntryDate.Value, possibleTrendline.StartPrice.MDEntryDate.Value) >= 0
-                                                                    && DateTime.Compare(x.MDEntryDate.Value, possibleTrendline.EndPrice.MDEntryDate.Value) <= 0).ToList();
+            //We just consider the prices outside of the local maximum/minimum range
+            DateTime startDate = GetStartDate(possTrnd.StartDate,StrategyConfiguration.InnerTrendlinesSpan);
+            DateTime endDate = GetEndDate(possTrnd.EndDate,StrategyConfiguration.InnerTrendlinesSpan);
+
+            IList<MarketData> pricesInPeriod = allHistoricalPrices
+                .Where(x => DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
+                            && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
 
             foreach (MarketData price in pricesInPeriod)
             {
 
-                if (EvalTrendlineBroken(price, allHistoricalPrices, possibleTrendline, downside))
+                if (EvalTrendlineBroken(price, allHistoricalPrices, possTrnd, downside))
                     return true;
             }
 
@@ -194,6 +245,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                 {
                     Trendline possibleTrendline = new Trendline()
                     {
+                        JustBroken = false,
                         Security = stock,
                         StartPrice = localMimimum,
                         EndPrice = newLocalMinimum,
@@ -219,6 +271,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                 {
                     Trendline possibleTrendline = new Trendline()
                     {
+                        JustBroken = false,
                         Security = stock,
                         StartPrice = localMaximum,
                         EndPrice = newLocalMaximum,
@@ -238,13 +291,18 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         protected void EvalBrokenTrendlines(MarketData price,List<Trendline> trendlines, List<MarketData> allHistoricalPrices, bool downside)
         {
+            
             foreach (Trendline trendline in trendlines.Where(x=>   x.BrokenDate==null 
                                                                 && DateTime.Compare(x.EndDate,price.MDEntryDate.Value)<0).ToList())
             {
-                if (EvalTrendlineBroken(price, allHistoricalPrices, trendline, downside))
+                if (GetSpan(trendline.EndDate, price.MDEntryDate.Value) > 5)//Safety threshold
                 {
-                    trendline.BrokenDate = price.MDEntryDate.Value;
-                    trendline.Modified = true;
+
+                    if (EvalTrendlineBroken(price, allHistoricalPrices, trendline, downside))
+                    {
+                        trendline.BrokenDate = price.MDEntryDate.Value;
+                        trendline.Modified = true;
+                    }
                 }
             }
         }
@@ -349,8 +407,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
                 if (EvalLocalMaximum(pricesArr.ToList(), price, i))
                 {
-
-                    EvalResistance(stock, price,ResistanceTrendlines, allHistoricalPrices);
+                    EvalResistance(stock, price, ResistanceTrendlines, allHistoricalPrices);
 
                     LocalMaximums.Add(price);
                 }

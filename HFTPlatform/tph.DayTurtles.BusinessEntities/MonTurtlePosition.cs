@@ -226,6 +226,13 @@ namespace tph.DayTurtles.BusinessEntities
             return false;//When triggered, we just open the SHORT positions-
         }
 
+        public virtual string SignalTriggered()
+        {
+            //It logs information abou the signal that has been triggered
+            return "";
+
+        }
+
         #endregion
     }
 }

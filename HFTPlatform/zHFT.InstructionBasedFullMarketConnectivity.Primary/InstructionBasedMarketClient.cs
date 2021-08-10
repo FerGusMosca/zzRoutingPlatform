@@ -151,9 +151,27 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     secType = SecurityTypes[fullSymbol];
                 else
                 {
-                    DoLog(string.Format("@{0}:Could not find Security Type for symbol {1} ", PrimaryConfiguration.Name, primarySymbol), Main.Common.Util.Constants.MessageType.Error);
-                    return;
-                    //throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
+                    if(SecurityTypes.Keys.Any(x=>x.StartsWith(fullSymbol)))
+                    {
+                        string key = SecurityTypes.Keys.Where(x => x.StartsWith(fullSymbol)).FirstOrDefault();
+
+                        secType = SecurityTypes[key];
+
+                        if (secType != zHFT.Main.Common.Enums.SecurityType.FUT &&
+                            secType != zHFT.Main.Common.Enums.SecurityType.OPT)
+                        {
+                            throw new Exception(string.Format("Unknown security type {0} for symbol {1}", secType,
+                                primarySymbol));
+                        }
+                    }
+                    else
+                    {
+                        DoLog(string.Format("@{0}:Could not find Security Type for symbol {1} ", PrimaryConfiguration.Name, primarySymbol), Main.Common.Util.Constants.MessageType.Error);
+                        return;
+                        //throw new Exception(string.Format("Could not find Security Type for symbol {0}", primarySymbol));
+                    }
+
+                    
                 }
 
                 if(ActiveSecurities.Values.Any(x => x.Symbol == fullSymbol && x.Active)

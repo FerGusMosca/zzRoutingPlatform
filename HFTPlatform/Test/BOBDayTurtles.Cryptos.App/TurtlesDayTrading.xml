@@ -15,7 +15,7 @@
   
   <InnerTrendlinesSpan>60</InnerTrendlinesSpan><!--in candles-->
   <OuterTrendlineSpan>30</OuterTrendlineSpan><!--in candles-->
-  <PerforationThresholds>0.01</PerforationThresholds><!--in candles-->
+  <PerforationThresholds>0</PerforationThresholds><!--in pct 0-1-->
   <Account>9732</Account>
 
   <Currency>ARS</Currency>
@@ -44,17 +44,16 @@
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
-
-    <Symbol>BTC</Symbol>
     <Symbol>ETH</Symbol>
+    <Symbol>BCH</Symbol>
+    <Symbol>BTC</Symbol>
     <Symbol>DOGE</Symbol>
     <Symbol>BNB</Symbol>
     <Symbol>ADA</Symbol>
     <Symbol>XRP</Symbol>
     <Symbol>UNI</Symbol>
-    <Symbol>BCH</Symbol>
     <Symbol>LINK</Symbol>
-    
+<!--    -->
   </StocksToMonitor>
 
 </Configuration>

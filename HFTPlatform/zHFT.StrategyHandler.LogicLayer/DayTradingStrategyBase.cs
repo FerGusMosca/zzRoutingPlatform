@@ -686,7 +686,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             {
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
-                    //DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
                     Thread mdThread = new Thread(ProcessMarketData);
                     mdThread.Start(wrapper);
                     return CMState.BuildSuccess();

@@ -453,6 +453,8 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
             omsr.setField(MassStatusReqID.FIELD, reqId);
             
             omsr.setInt(MassStatusReqType.FIELD, MassStatusReqType.STATUS_FOR_ALL_ORDERS);
+            
+            omsr.setField(SecurityStatus.FIELD, "0");
 
             return omsr;
         }

@@ -32,6 +32,8 @@ namespace tph.BOBDayTurtles.BusinessEntities
         public DateTime? BrokenDate { get; set; }
 
         public TrendlineType TrendlineType { get; set; }
+        
+        public bool JustBroken { get; set; }
 
 
         #region Indirect Attributes
