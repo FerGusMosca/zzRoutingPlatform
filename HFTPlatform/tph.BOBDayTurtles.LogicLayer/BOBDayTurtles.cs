@@ -151,30 +151,39 @@ namespace tph.BOBDayTurtles.LogicLayer
 
         protected void RecalculateNewTrendlines(MonBOBTurtlePosition portfPos)
         {
-            List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
-            histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
-            
-            List<Trendline> newResistances = TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, 
-                                                                                GetConfig(), portfPos.Resistances, 
-                                                                                portfPos.GetLastCandle());
-            
-            List<Trendline> newSupports = TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, GetConfig(), portfPos.Supports, 
-                                            portfPos.GetLastCandle());
+            try
+            {
+                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
+                histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
+                
+                List<Trendline> newResistances = TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, 
+                                                                                    GetConfig(), portfPos.Resistances, 
+                                                                                    portfPos.GetLastCandle());
+                
+                List<Trendline> newSupports = TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, GetConfig(), portfPos.Supports, 
+                                                portfPos.GetLastCandle());
 
-            foreach (Trendline newRes in newResistances)
-            {
-                DoLog(String.Format("Found new resistance for symbol {0}: StartDate={1} EndDate={2}",
-                                        newRes.Security.Symbol,newRes.StartDate,newRes.EndDate),Constants.MessageType.Information);
-            }
+                foreach (Trendline newRes in newResistances)
+                {
+                    DoLog(String.Format("Found new resistance for symbol {0}: StartDate={1} EndDate={2}",
+                                            newRes.Security.Symbol,newRes.StartDate,newRes.EndDate),Constants.MessageType.Information);
+                }
+                
+                foreach (Trendline newRes in newSupports)
+                {
+                    DoLog(String.Format("Found new support for symbol {0}: StartDate={1} EndDate={2}",
+                        newRes.Security.Symbol,newRes.StartDate,newRes.EndDate),Constants.MessageType.Information);
+                }
+                
+                portfPos.Resistances.AddRange(newResistances);
+                portfPos.Supports.AddRange(newSupports);
             
-            foreach (Trendline newRes in newSupports)
-            {
-                DoLog(String.Format("Found new support for symbol {0}: StartDate={1} EndDate={2}",
-                    newRes.Security.Symbol,newRes.StartDate,newRes.EndDate),Constants.MessageType.Information);
-            }
             
-            portfPos.Resistances.AddRange(newResistances);
-            portfPos.Supports.AddRange(newSupports);
+            }
+            catch (Exception e)
+            {
+               DoLog(string.Format("Critical ERROR recalculating new trendlines for symbol {0}:{1}",portfPos.Security.Symbol,e.Message),Constants.MessageType.Error);
+            }
             
             
         }

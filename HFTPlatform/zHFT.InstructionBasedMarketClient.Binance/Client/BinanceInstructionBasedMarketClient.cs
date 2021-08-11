@@ -117,32 +117,40 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                 bool activo = true;
                 while (activo)
                 {
-                    Thread.Sleep(BinanceConfiguration.PublishUpdateInMilliseconds);
-                    CultureInfo tempCulture = new CultureInfo("ja-JP");
-
-                    if (quoteSymbol == null)
-                        quoteSymbol = BinanceConfiguration.QuoteCurrency;
-                    
-                    lock (tLock)
+                    try
                     {
-                        if (!ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == symbol))
+                        Thread.Sleep(BinanceConfiguration.PublishUpdateInMilliseconds);
+                        CultureInfo tempCulture = new CultureInfo("ja-JP");
+
+                        if (quoteSymbol == null)
+                            quoteSymbol = BinanceConfiguration.QuoteCurrency;
+                        
+                        lock (tLock)
                         {
-                            DoLog(string.Format("@{0}:Unsubscribing order book por symbol {1}", BinanceConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
-                            activo = false;
-                            continue;
+                            if (!ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == symbol))
+                            {
+                                DoLog(string.Format("@{0}:Unsubscribing order book por symbol {1}", BinanceConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
+                                activo = false;
+                                continue;
+                            }
+                                
                         }
-                            
-                    }
+                        
+                        OrderBook orderBook = binanceClient.GetOrderBook(symbol + quoteSymbol).Result;
+                        List<OrderBookOffer> bids =new List<OrderBookOffer>(orderBook.Bids);
+                        List<OrderBookOffer> asks =new List<OrderBookOffer>(orderBook.Asks);
+
+                        Security sec = DoPopulateL1(symbol, quoteSymbol, bids, asks);
+
+                        BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec,bids,asks, BinanceConfiguration);
+                                
+                        OnMessageRcv(wrapper);
                     
-                    OrderBook orderBook = binanceClient.GetOrderBook(symbol + quoteSymbol).Result;
-                    List<OrderBookOffer> bids =new List<OrderBookOffer>(orderBook.Bids);
-                    List<OrderBookOffer> asks =new List<OrderBookOffer>(orderBook.Asks);
-
-                    Security sec = DoPopulateL1(symbol, quoteSymbol, bids, asks);
-
-                    BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec,bids,asks, BinanceConfiguration);
-                            
-                    OnMessageRcv(wrapper);
+                    }
+                    catch (Exception ex)
+                    {
+                        DoLog(string.Format("@{0}: temp ERROR Requesting order book for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+                    }
                 }
             }
             catch (Exception ex)
@@ -152,7 +160,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     RemoveSymbol(symbol);
                 }
 
-                DoLog(string.Format("@{0}: Error Requesting order book for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: Critical ERROR Requesting order book for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
             }
             
         }

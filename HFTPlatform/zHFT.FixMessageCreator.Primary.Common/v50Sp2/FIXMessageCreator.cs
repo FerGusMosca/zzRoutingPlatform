@@ -456,6 +456,8 @@ namespace zHFT.FixMessageCreator.Primary.Common.v50Sp2
             
             omsr.setField(SecurityStatus.FIELD, "0");
 
+            omsr.setField(SecurityGroup.FIELD, "external");
+
             return omsr;
         }
 

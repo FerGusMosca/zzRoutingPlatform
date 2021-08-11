@@ -79,6 +79,8 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
                 return zHFT.Main.Common.Enums.ExecType.Trade;
             else if (estado == QuickFix.ExecType.PENDING_CANCEL)
                 return zHFT.Main.Common.Enums.ExecType.PendingCancel;
+            else if (estado == QuickFix.ExecType.ORDER_STATUS)
+                return zHFT.Main.Common.Enums.ExecType.OrderStatus;
             else
                 throw new Exception("Tipo de ejecución no soportado: " + estado.ToString());
         }

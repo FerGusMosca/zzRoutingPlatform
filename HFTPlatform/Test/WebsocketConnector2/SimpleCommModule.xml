@@ -2,7 +2,7 @@
 <Configuration>
   <Name>WebSocket</Name>
   
-  <WebSocketURL>ws://0.0.0.0:8182</WebSocketURL>
+  <WebSocketURL>ws://0.0.0.0:9192</WebSocketURL>
 
   <IncomingConfigPath>.\IncomingSingletonConfig.xml</IncomingConfigPath>
   <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>

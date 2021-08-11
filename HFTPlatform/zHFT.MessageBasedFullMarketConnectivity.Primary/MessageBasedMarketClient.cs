@@ -155,6 +155,10 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
             string origClOrdId = (string)wrapper.GetField(ExecutionReportFields.OrigClOrdID);
             string clOrdId = (string)wrapper.GetField(ExecutionReportFields.ClOrdID);
             string orderId = (string)wrapper.GetField(ExecutionReportFields.OrderID);
+
+            if (clOrdId == null && origClOrdId == null)
+                throw new Exception(string.Format("Recceived unknown Execution Report for symbol {0}", symbol));
+            
             string text= (string)wrapper.GetField(ExecutionReportFields.Text);
 
             zHFT.Main.Common.Enums.OrdStatus status = (zHFT.Main.Common.Enums.OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
