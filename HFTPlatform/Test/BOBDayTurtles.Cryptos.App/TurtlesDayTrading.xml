@@ -13,9 +13,9 @@
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
   
-  <InnerTrendlinesSpan>60</InnerTrendlinesSpan><!--in candles-->
-  <OuterTrendlineSpan>30</OuterTrendlineSpan><!--in candles-->
-  <PerforationThresholds>0</PerforationThresholds><!--in pct 0-1-->
+  <InnerTrendlinesSpan>30</InnerTrendlinesSpan><!--in candles-->
+  <OuterTrendlinesSpan>30</OuterTrendlinesSpan><!--in candles-->
+  <PerforationThresholds>0.001</PerforationThresholds><!--in pct 0-1-->
   <Account>9732</Account>
 
   <Currency>ARS</Currency>

@@ -75,6 +75,16 @@ namespace zHFT.Main.BusinessEntities.Market_Data
                 MDEntryDate != null ? MDEntryDate.Value.ToString() : "");
         }
 
+        public bool BiggerGreendCandle(double refPrice)
+        {
+            return ClosingPrice > refPrice && ClosingPrice > OpeningPrice;
+        }
+        
+        public bool LowerRedCandle(double refPrice)
+        {
+            return ClosingPrice < refPrice && ClosingPrice < OpeningPrice;
+        }
+
         #endregion
     }
 }

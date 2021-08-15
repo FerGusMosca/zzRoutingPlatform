@@ -30,10 +30,16 @@ namespace tph.BOBDayTurtles.BusinessEntities
         public MarketData EndPrice { get; set; }
 
         public DateTime? BrokenDate { get; set; }
+        
+        public double? BrokenTrendlinePrice { get; set; }
 
+        public MarketData BrokenMarketPrice { get; set; }
+        
         public TrendlineType TrendlineType { get; set; }
         
         public bool JustBroken { get; set; }
+        
+        public bool JustFound { get; set; }
 
 
         #region Indirect Attributes
@@ -151,7 +157,7 @@ namespace tph.BOBDayTurtles.BusinessEntities
             {
                 if (_Slope == double.MinValue && AllHistoricalPrices!=null)
                 {
-                    int countDaysInTrendline = CountTradingDays(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
+                    int countDaysInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
 
                     _Slope = (GetPriceToUse(EndPrice).Value - GetPriceToUse(StartPrice).Value) / Convert.ToDouble(countDaysInTrendline);
                 }
@@ -174,37 +180,28 @@ namespace tph.BOBDayTurtles.BusinessEntities
         {
             if (price == null)
                 return null;
-            
+
             if (TrendlineType == TrendlineType.Resistance)
-                //return price.TradingSessionHighPrice;
-                return price.ClosingPrice;
+                return price.ClosingPrice > price.OpeningPrice ? price.ClosingPrice : price.OpeningPrice;
             else if (TrendlineType == TrendlineType.Support)
-                //return price.TradingSessionLowPrice;
-                return price.OpeningPrice;
+                return price.OpeningPrice < price.ClosingPrice ? price.OpeningPrice : price.ClosingPrice;
             else
                 return 0;
-            //  throw new Exception(string.Format("Invalid trendline type {0}", TrendlineType.ToString()));
-
         }
-
-        private int CountTradingDays(List<MarketData> allHistoricalPrices,DateTime startDate,DateTime endDate)
+        
+        // Minutes, Hours, Days
+        private int CountTradingUnits(List<MarketData> allHistoricalPrices,DateTime startDate,DateTime endDate)
         {
             int count = 0;
 
-            List<MarketData> tradingDaysInPeriod = allHistoricalPrices.Where(x =>   DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
-                                                                            && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
+            List<MarketData> tradingUnitsInPeriod = allHistoricalPrices.Where(x =>     DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
+                                                                                    && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
 
-            count = tradingDaysInPeriod.Count;
+            count = tradingUnitsInPeriod.Count - 1;
 
 
-            if (count == 0)
+            if (count < 0)
                 throw new Exception(string.Format("Start date {0} older than historical prices end", startDate));
-
-            //if (DateTime.Compare(allHistoricalPrices.OrderByDescending(x => x.Date).FirstOrDefault().Date, endDate.Date) < 0)
-            //    throw new Exception(string.Format("End date {0} older than historical prices end", endDate));
-
-            //if (DateTime.Compare(allHistoricalPrices.OrderBy(x => x.Date).FirstOrDefault().Date, startDate.Date) > 0)
-            //    throw new Exception(string.Format("Start date {0} newer than historical prices first date", startDate));
 
             return count;
         
@@ -221,8 +218,8 @@ namespace tph.BOBDayTurtles.BusinessEntities
                 AllHistoricalPrices = allHistoricalPrices;
 
             double finalPrice = 0;
-           
-            int countDaysFromStartPrice = CountTradingDays(AllHistoricalPrices, StartPrice.MDEntryDate.Value, date) - 1;
+
+            int countDaysFromStartPrice = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, date);
 
             finalPrice = GetPriceToUse(StartPrice).Value + (Slope * Convert.ToDouble(countDaysFromStartPrice));
 
@@ -249,6 +246,44 @@ namespace tph.BOBDayTurtles.BusinessEntities
             else
                 return true;
         
+        }
+
+        public string GetBrokenData()
+        {
+            if (BrokenDate.HasValue)
+            {
+                string resp = "";
+
+                resp += string.Format(" Broken_Date={0} ",BrokenDate.Value);
+                resp += string.Format(" Broken_Trendline_Price={0} ",BrokenTrendlinePrice);
+                resp += string.Format(" Broken_Market_Price={0} ", BrokenMarketPrice != null ? BrokenMarketPrice.ClosingPrice.ToString() : "-");
+                return resp;
+            }
+            else
+            {
+                return " no broken ";
+            }
+        }
+
+        public bool IsBroken(DateTime? date)
+        {
+            if (!date.HasValue)
+                return BrokenDate != null;
+            
+            
+            if (BrokenDate != null)
+            {
+                //We validate that it was broken before than date
+
+                if (DateTime.Compare(BrokenDate.Value, date.Value) < 0)
+                    return true;
+                else
+                    return false;
+            }
+            else
+                return false;
+
+
         }
 
         #endregion

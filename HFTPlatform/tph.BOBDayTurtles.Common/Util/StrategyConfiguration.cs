@@ -4,6 +4,8 @@
     {
         public int InnerTrendlinesSpan { get; set; }
         
+        public int OuterTrendlinesSpan { get; set; }
+        
         public double PerforationThresholds { get; set; }
     }
 }

@@ -49,6 +49,80 @@ namespace tph.BOBDayTurtles.LogicLayer
 
         #endregion
         
+        #region Private Methods
+        
+        private void BuildTrendlines(string symbol)
+        {
+            MonBOBTurtlePosition portfPos = (MonBOBTurtlePosition) PortfolioPositionsToMonitor[symbol];
+            List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
+            histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
+
+            DoLog(string.Format("Received historical candles for symbol {0}:{1} candles", symbol,histPrices.Count), Constants.MessageType.Information);
+
+            List<Trendline> resistances = TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
+            List<Trendline> supports =TrendLineCreator.BuildSupports(portfPos.Security, histPrices, GetConfig());
+            portfPos.PopulateTrendlines(resistances, supports);
+
+            List<Trendline> activeResistancces = resistances.Where(x => x.BrokenDate == null).ToList();
+            foreach (Trendline resistance in activeResistancces)
+            {
+                DoLog(string.Format("Found prev resistance for symbol {2} --> Start={0} End={1}",resistance.StartDate,resistance.EndDate,resistance.Symbol),Constants.MessageType.Information);                    
+            }
+                
+            List<Trendline> activeSupports = supports.Where(x => x.BrokenDate == null).ToList();
+            foreach (Trendline support in activeSupports)
+            {
+                DoLog(string.Format("Found prev support for symbol {2} --> Start={0} End={1}",support.StartDate,support.EndDate,support.Symbol),Constants.MessageType.Information);                    
+            }
+                
+            TrendLineCreator.ResetJustFound(portfPos.Security);
+                
+            DoLog(string.Format("Trendlines calculated for symbol {0}", symbol),Constants.MessageType.Information);
+                            
+            ProcessedHistoricalPrices.Add(symbol);
+        }
+        
+        protected void RecalculateNewTrendlines(MonBOBTurtlePosition portfPos)
+        {
+            try
+            {
+                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
+                histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
+                
+                List<Trendline> newResistances = TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, portfPos.GetLastCandle());
+                
+                List<Trendline> newSupports = TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, portfPos.GetLastCandle());
+
+                foreach (Trendline newRes in newResistances)
+                {
+                    DoLog(String.Format("Found new resistance for symbol {0}: StartDate={1} EndDate={2} Broken={3}",
+                        newRes.Security.Symbol,newRes.StartDate,newRes.EndDate,newRes.GetBrokenData()),
+                        Constants.MessageType.Information);
+                    portfPos.AppendResistance(newRes);
+
+                }
+                
+                foreach (Trendline newSupport in newSupports)
+                {
+                    DoLog(String.Format("Found new support for symbol {0}: StartDate={1} EndDate={2} Broken={3}",
+                        newSupport.Security.Symbol,newSupport.StartDate,newSupport.EndDate,newSupport.GetBrokenData()),
+                        Constants.MessageType.Information);
+                    portfPos.AppendSupport(newSupport);
+                    
+                }
+                
+                TrendLineCreator.ResetJustFound(portfPos.Security);
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Critical ERROR recalculating new trendlines for symbol {0}:{1}",portfPos.Security.Symbol,e.Message),Constants.MessageType.Error);
+            }
+            
+            
+        }
+        
+        #endregion
+        
         #region Protected Methods
         
         protected void EvalOpeningClosingPositions(MonTurtlePosition turtlePos)
@@ -70,45 +144,6 @@ namespace tph.BOBDayTurtles.LogicLayer
                 EvalAbortingOpeningPositions(turtlePos);
                 EvalAbortingClosingPositions(turtlePos);
             }
-        }
-
-        private void BuildTrendlines(string symbol)
-        {
-                MonBOBTurtlePosition portfPos = (MonBOBTurtlePosition) PortfolioPositionsToMonitor[symbol];
-                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
-                histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
-
-    //                        foreach (MarketData md in histPrices.OrderBy(x => x.MDEntryDate))
-    //                        {
-    //                            DoLog(
-    //                                string.Format("Processing historical price for symbol {0}: Date={1} Close={2}",
-    //                                    md.Security.Symbol, md.MDEntryDate.Value, md.ClosingPrice),
-    //                                Constants.MessageType.Information);
-    //                        }
-
-
-                DoLog(string.Format("Received historical candles for symbol {0}:{1} candles", symbol,histPrices.Count), Constants.MessageType.Information);
-
-                List<Trendline> resistances = TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
-                List<Trendline> supports =TrendLineCreator.BuildSupports(portfPos.Security, histPrices, GetConfig());
-                portfPos.PopulateTrendlines(resistances, supports);
-
-                List<Trendline> activeResistancces = resistances.Where(x => x.BrokenDate == null).ToList();
-                foreach (Trendline resistance in activeResistancces)
-                {
-                    DoLog(string.Format("Found active resistance for symbol {2} Start={0} End={1}",resistance.StartDate,resistance.EndDate,resistance.Symbol),Constants.MessageType.Information);                    
-                }
-                
-                List<Trendline> activeSupports = supports.Where(x => x.BrokenDate == null).ToList();
-                foreach (Trendline support in activeSupports)
-                {
-                    DoLog(string.Format("Found active support for symbol {2} Start={0} End={1}",support.StartDate,support.EndDate,support.Symbol),Constants.MessageType.Information);                    
-                }
-                
-                
-                DoLog(string.Format("Trendlines calculated for symbol {0}", symbol),Constants.MessageType.Information);
-                            
-                ProcessedHistoricalPrices.Add(symbol);
         }
 
         protected override void ProcessHistoricalPrices(object pWrapper)
@@ -149,45 +184,6 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        protected void RecalculateNewTrendlines(MonBOBTurtlePosition portfPos)
-        {
-            try
-            {
-                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
-                histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
-                
-                List<Trendline> newResistances = TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, 
-                                                                                    GetConfig(), portfPos.Resistances, 
-                                                                                    portfPos.GetLastCandle());
-                
-                List<Trendline> newSupports = TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, GetConfig(), portfPos.Supports, 
-                                                portfPos.GetLastCandle());
-
-                foreach (Trendline newRes in newResistances)
-                {
-                    DoLog(String.Format("Found new resistance for symbol {0}: StartDate={1} EndDate={2}",
-                                            newRes.Security.Symbol,newRes.StartDate,newRes.EndDate),Constants.MessageType.Information);
-                }
-                
-                foreach (Trendline newRes in newSupports)
-                {
-                    DoLog(String.Format("Found new support for symbol {0}: StartDate={1} EndDate={2}",
-                        newRes.Security.Symbol,newRes.StartDate,newRes.EndDate),Constants.MessageType.Information);
-                }
-                
-                portfPos.Resistances.AddRange(newResistances);
-                portfPos.Supports.AddRange(newSupports);
-            
-            
-            }
-            catch (Exception e)
-            {
-               DoLog(string.Format("Critical ERROR recalculating new trendlines for symbol {0}:{1}",portfPos.Security.Symbol,e.Message),Constants.MessageType.Error);
-            }
-            
-            
-        }
-
         protected override void ProcessMarketData(object pWrapper)
         {
             Wrapper wrapper = (Wrapper) pWrapper;
@@ -205,11 +201,11 @@ namespace tph.BOBDayTurtles.LogicLayer
                         {
                             bool newCandle = portfPos.AppendCandle(md);
 
-                            if (newCandle)
-                                RecalculateNewTrendlines(portfPos);
-
                             EvalOpeningClosingPositions(portfPos);
                             UpdateLastPrice(portfPos, md);
+                            
+                            if (newCandle)//THIS MUST BE EVALUATED AFTER THE EvalOpening
+                                RecalculateNewTrendlines(portfPos);
                         }
                     }
                 }
@@ -263,8 +259,9 @@ namespace tph.BOBDayTurtles.LogicLayer
                     };
 
                     MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(GetConfig().OpenWindow,
-                        GetConfig().CloseWindow,
-                        GetConfig().StopLossForOpenPositionPct)
+                                                                            GetConfig().CloseWindow,
+                                                                            GetConfig().StopLossForOpenPositionPct,
+                                                                            GetConfig().OuterTrendlineSpan)
                     {
                         Security = sec,
                         DecimalRounding = Config.DecimalRounding,
@@ -313,11 +310,6 @@ namespace tph.BOBDayTurtles.LogicLayer
         
         public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {
-            this.ModuleConfigFile = configFile;
-            this.OnMessageRcv += pOnMessageRcv;
-            this.OnLogMsg += pOnLogMsg;
-            StartTime = DateTime.Now;
-            LastCounterResetTime = StartTime;
 
             if (ConfigLoader.LoadConfig(this, configFile))
             {

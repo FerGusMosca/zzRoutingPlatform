@@ -13,8 +13,14 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 {
     public class TrendLineCreator
     {
+        #region Private Static Attributes
+        
+        private static Dictionary<string,TrendLineCreator> TrdCreatorDict { get; set; }
+        
+        #endregion
+        
         #region Private Attributes
-
+        
         private Security Stock { get; set; }
 
         private StrategyConfiguration StrategyConfiguration { get; set; }
@@ -28,6 +34,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
         public List<MarketData> LocalMaximums { get; set; }
 
         public  List<Trendline> SupportTrendlines { get; set; }
+        
+        public DateTime LastSafeMinDateResistances { get; set; }
+        
+        public DateTime LastSafeMinDateSupports{ get; set; }
 
         public List<Trendline> ResistanceTrendlines { get; set; }
 
@@ -35,7 +45,8 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         #region Constructor
 
-        public TrendLineCreator(Security pStock,StrategyConfiguration pConfig,CandleInterval pInterval)
+        public TrendLineCreator(Security pStock,StrategyConfiguration pConfig,CandleInterval pInterval,
+                                DateTime pMinSafeDateResistances,DateTime pMinSafeDateSupports)
         {
             Stock = pStock;
 
@@ -52,6 +63,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             SupportTrendlines = new List<Trendline>();
 
             ResistanceTrendlines = new List<Trendline>();
+
+            LastSafeMinDateResistances =pMinSafeDateResistances;
+
+            LastSafeMinDateSupports = pMinSafeDateSupports;
 
         }
         
@@ -76,6 +91,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
             if(resistances!=null)
                 ResistanceTrendlines.AddRange(resistances);
+            
+            LastSafeMinDateResistances = DateTime.MinValue;
+
+            LastSafeMinDateSupports = DateTime.MinValue;
 
         }
 
@@ -157,8 +176,15 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             int take = endIndex-startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            return !rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take);
-
+            if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
+            {
+                return !LocalMinimums.Any(x =>  Math.Abs(GetLowestPrice(x) - GetLowestPrice(currentPrice)) < 0.01 &&
+                                                DateTime.Compare(x.MDEntryDate.Value, currentPrice.MDEntryDate.Value) != 0);
+            }
+            else
+            {
+                return false;
+            }
         }
 
         protected double GetHighestPrice(MarketData md)
@@ -185,10 +211,17 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             int take = endIndex - startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            List<MarketData> temp = rangePrices.Where(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)).ToList();
-
-            return !rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) && (rangePrices.Count == take);
-
+            if (!rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) &&
+                (rangePrices.Count == take))
+            {
+                //We avoid double trendlines because of equal highes/lowest
+                return !LocalMaximums.Any(x =>
+                                                Math.Abs(GetHighestPrice(x) - GetHighestPrice(currentPrice)) < 0.01 &&
+                                                DateTime.Compare(x.MDEntryDate.Value, currentPrice.MDEntryDate.Value) != 0);
+            }
+            else
+                return false;
+            
         }
 
         protected bool EvalTrendlineBroken(MarketData price, List<MarketData> allHistoricalPrices, Trendline possibleTrendline, bool downside)
@@ -200,7 +233,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             {
                 trendlinePrice = trendlinePrice - (StrategyConfiguration.PerforationThresholds * trendlinePrice);
 
-                if (GetLowestPrice(price) < trendlinePrice)
+                if (price.LowerRedCandle(trendlinePrice))//red candle
                     return true;
                 else
                     return false;
@@ -209,7 +242,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             {
                 trendlinePrice = trendlinePrice + (StrategyConfiguration.PerforationThresholds * trendlinePrice);
 
-                if (GetHighestPrice(price)> trendlinePrice)
+                if (price.BiggerGreendCandle(trendlinePrice))
                     return true;
                 else
                     return false;
@@ -219,25 +252,24 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
         protected bool EvalTrendlineBroken(List<MarketData> allHistoricalPrices, Trendline possTrnd,bool downside)
         {
             //We just consider the prices outside of the local maximum/minimum range
-            DateTime startDate = GetStartDate(possTrnd.StartDate,StrategyConfiguration.InnerTrendlinesSpan);
-            DateTime endDate = GetEndDate(possTrnd.EndDate,StrategyConfiguration.InnerTrendlinesSpan);
+            DateTime startDate = GetStartDate(possTrnd.StartDate,0);
+            DateTime endDate = GetEndDate(possTrnd.EndDate,0);
 
             IList<MarketData> pricesInPeriod = allHistoricalPrices
-                .Where(x => DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
-                            && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
+                                                .Where(x => DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
+                                                && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
 
             foreach (MarketData price in pricesInPeriod)
             {
-
                 if (EvalTrendlineBroken(price, allHistoricalPrices, possTrnd, downside))
                     return true;
             }
 
-
             return false;
         }
 
-        protected void EvalSupport(Security stock,MarketData newLocalMinimum, IList<Trendline> trendlines,List<MarketData> allHistoricalPrices)
+        protected void EvalSupport(Security stock,MarketData newLocalMinimum,
+                                    List<MarketData> allHistoricalPrices,bool markJustFound=false)
         {
             foreach (MarketData localMimimum in LocalMinimums)
             {
@@ -246,6 +278,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                     Trendline possibleTrendline = new Trendline()
                     {
                         JustBroken = false,
+                        JustFound = markJustFound ,
                         Security = stock,
                         StartPrice = localMimimum,
                         EndPrice = newLocalMinimum,
@@ -257,13 +290,18 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
                     if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, true))
                     {
-                        trendlines.Add(possibleTrendline);
+                        if (!SupportTrendlines.Any(x => DateTime.Compare(x.StartDate, possibleTrendline.StartDate) == 0
+                                                 && DateTime.Compare(x.EndDate, possibleTrendline.EndDate) == 0))
+                        {
+                            SupportTrendlines.Add(possibleTrendline);
+                        }
                     }
                 }
             }
         }
 
-        protected void EvalResistance(Security stock, MarketData newLocalMaximum, IList<Trendline> trendlines, List<MarketData> allHistoricalPrices)
+        protected void EvalResistance(Security stock, MarketData newLocalMaximum, 
+                                     List<MarketData> allHistoricalPrices,bool markJustFound=false)
         {
             foreach (MarketData localMaximum in LocalMaximums)
             {
@@ -272,6 +310,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                     Trendline possibleTrendline = new Trendline()
                     {
                         JustBroken = false,
+                        JustFound = markJustFound,
                         Security = stock,
                         StartPrice = localMaximum,
                         EndPrice = newLocalMaximum,
@@ -283,7 +322,12 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
                     if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, false))
                     {
-                        trendlines.Add(possibleTrendline);
+                        if (!ResistanceTrendlines.Any(x =>
+                            DateTime.Compare(x.StartDate, possibleTrendline.StartDate) == 0
+                            && DateTime.Compare(x.EndDate, possibleTrendline.EndDate) == 0))
+                        {
+                            ResistanceTrendlines.Add(possibleTrendline);
+                        }
                     }
                 }
             }
@@ -292,15 +336,19 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
         protected void EvalBrokenTrendlines(MarketData price,List<Trendline> trendlines, List<MarketData> allHistoricalPrices, bool downside)
         {
             
-            foreach (Trendline trendline in trendlines.Where(x=>   x.BrokenDate==null 
+            foreach (Trendline trendline in trendlines.Where(x=>   !x.IsBroken(price.MDEntryDate)
                                                                 && DateTime.Compare(x.EndDate,price.MDEntryDate.Value)<0).ToList())
             {
                 if (GetSpan(trendline.EndDate, price.MDEntryDate.Value) > 5)//Safety threshold
                 {
 
-                    if (EvalTrendlineBroken(price, allHistoricalPrices, trendline, downside))
+                    if (EvalTrendlineBroken(price, allHistoricalPrices, trendline, downside) 
+                        && !trendline.BrokenDate.HasValue)
                     {
+
                         trendline.BrokenDate = price.MDEntryDate.Value;
+                        trendline.BrokenTrendlinePrice=trendline.CalculateTrendPrice(price.MDEntryDate.Value,allHistoricalPrices);
+                        trendline.BrokenMarketPrice=price;    
                         trendline.Modified = true;
                     }
                 }
@@ -309,10 +357,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         protected void ExtractPrevMinimums(bool usePrevTrendlines, DateTime? prevStartDate)
         {
-            LocalMinimums.Clear();
-
             if (usePrevTrendlines)
             {
+                LocalMinimums.Clear();
+                
                 if (!prevStartDate.HasValue)
                     throw new Exception("If you want to decompose prev supports you have to provide a start date");
 
@@ -330,10 +378,11 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         protected void ExtractPrevMaximums(bool usePrevTrendlines, DateTime? prevStartDate)
         {
-            LocalMaximums.Clear();
 
             if (usePrevTrendlines)
             {
+                LocalMaximums.Clear();
+                
                 if (!prevStartDate.HasValue)
                     throw new Exception("If you want to decompose prev supports you have to provide a start date");
 
@@ -352,8 +401,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         #region Public Methods
 
-        public List<Trendline> ProcessSupportTrendlines(Security stock, List<MarketData> allHistoricalPrices,bool processSafetyThreshold,
-                                                        DateTime startDate,DateTime endDate,bool usePrevTrendlines,DateTime? startPrevTrendlineDate)
+        public List<Trendline> ProcessSupportTrendlines(Security stock, List<MarketData> allHistoricalPrices,
+                                                        bool processSafetyThreshold,DateTime startDate,DateTime endDate,
+                                                        bool usePrevTrendlines,DateTime? startPrevTrendlineDate,
+                                                        bool markJustFound=false)
         {
             int i = 0;
             ExtractPrevMinimums(usePrevTrendlines, startPrevTrendlineDate);
@@ -373,7 +424,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                 if (EvalLocalMinimum(pricesArr.ToList(), price, i))
                 {
 
-                    EvalSupport(stock, price, SupportTrendlines, allHistoricalPrices);
+                    EvalSupport(stock, price, allHistoricalPrices,markJustFound);
 
                     LocalMinimums.Add(price);
                 }
@@ -387,8 +438,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         }
 
-        public List<Trendline> ProcessResistanceTrendlines(Security stock, List<MarketData> allHistoricalPrices, bool processSafetyThreshold,
-                                                           DateTime startDate, DateTime endDate,bool usePrevTrendlines,DateTime? startPrevTrendlineDate)
+        public List<Trendline> ProcessResistanceTrendlines(Security stock, List<MarketData> allHistoricalPrices, 
+                                                            bool processSafetyThreshold, DateTime startDate,
+                                                            DateTime endDate,bool usePrevTrendlines,
+                                                            DateTime? startPrevTrendlineDate,bool markJustFound=false)
         {
             int i = 0;
             ExtractPrevMaximums(usePrevTrendlines, startPrevTrendlineDate);
@@ -407,7 +460,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
                 if (EvalLocalMaximum(pricesArr.ToList(), price, i))
                 {
-                    EvalResistance(stock, price, ResistanceTrendlines, allHistoricalPrices);
+                    EvalResistance(stock, price, allHistoricalPrices, markJustFound);
 
                     LocalMaximums.Add(price);
                 }
@@ -420,89 +473,166 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             return ResistanceTrendlines;
 
         }
-        
-        #region Static Methods
-        public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,Configuration config)
+
+        public  void UpdateNextDateToStartForResistances()
+        {
+            if (LocalMaximums.Count > 0)
+            {
+
+                //Highest maximum
+                DateTime nextDatetoStart = LocalMaximums.OrderByDescending(x => x.MDEntryDate.Value)
+                                                        .FirstOrDefault().MDEntryDate.Value;
+
+                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
+
+                LastSafeMinDateResistances = nextDatetoStart;
+            }
+            else
+            {
+                LastSafeMinDateResistances = DateTime.MinValue;
+            }
+        }
+
+        public void MoveNextDateMinDateForResistances()
+        {
+            LastSafeMinDateResistances=GetStartDate(LastSafeMinDateResistances,1);
+        }
+
+        public  void UpdateNextDateToStartForSupports()
         {
 
-            TrendLineCreator trdCreator = new TrendLineCreator(sec,
-                new StrategyConfiguration()
-                {
-                    PerforationThresholds = config.PerforationThresholds,
-                    InnerTrendlinesSpan = config.InnerTrendlinesSpan
-                }, CandleInterval.Minute_1);
+            if (LocalMinimums.Count > 0)
+            {
+
+                //Highest maximum
+                DateTime nextDatetoStart = LocalMinimums.OrderByDescending(x => x.MDEntryDate.Value)
+                                                        .FirstOrDefault().MDEntryDate.Value;
+
+                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
+
+                LastSafeMinDateSupports = nextDatetoStart;
+            }
+            else
+            {
+                LastSafeMinDateSupports = DateTime.MinValue;
+            }
+        }
+
+        public void MoveNextDateMinDateForSupports()
+        {
+            LastSafeMinDateSupports=GetStartDate(LastSafeMinDateSupports,1);
+        }
+
+        public void ResetJustFound()
+        {
+            foreach (Trendline resistance in ResistanceTrendlines.Where(x=>x.JustFound))
+            {
+                resistance.JustFound = false;
+            }
+            
+            foreach (Trendline support in SupportTrendlines.Where(x=>x.JustFound))
+            {
+                support.JustFound = false;
+            }
+            
+        }
+        
+        #region Static Methods
+
+
+        private static void BuildInnerTrendlineCreator(Security sec,Configuration config,DateTime minSafeDate)
+        {
+            if(TrdCreatorDict==null)
+                TrdCreatorDict=new Dictionary<string, TrendLineCreator>();
+            
+            if (!TrdCreatorDict.ContainsKey(sec.Symbol))
+            {
+                TrendLineCreator trdCreator = new TrendLineCreator(sec,
+                    new StrategyConfiguration()
+                    {
+                        PerforationThresholds = config.PerforationThresholds,
+                        InnerTrendlinesSpan = config.InnerTrendlinesSpan
+                    }, CandleInterval.Minute_1,minSafeDate,minSafeDate);
+                
+                TrdCreatorDict.Add(sec.Symbol,trdCreator);
+            }
+        }
+        public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,Configuration config)
+        {
 
             DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
             DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
 
-            List<Trendline> trendlines = trdCreator.ProcessResistanceTrendlines(sec,
+            BuildInnerTrendlineCreator(sec, config, minDate);
+
+            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
+                                        prices, true, minDate,
+                                        maxDate, false, null);
+
+            TrdCreatorDict[sec.Symbol].UpdateNextDateToStartForResistances();
+            return trendlines;
+
+        }
+        
+        public static List<Trendline> UpdateResistances(Security sec, List<MarketData> prices,MarketData lastCandle)
+        {
+            if (TrdCreatorDict == null)
+                throw new Exception(
+                    string.Format("TrendlineCreator has to be instantiated first building the resistances!"));
+            
+            DateTime minDate = TrdCreatorDict[sec.Symbol].LastSafeMinDateResistances;
+            DateTime maxDate = lastCandle.MDEntryDate.Value;
+
+            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
                 prices, true, minDate,
-                maxDate, false, null);
-            return trendlines;
+                maxDate, false, null,markJustFound:true);
+            
+            TrdCreatorDict[sec.Symbol].MoveNextDateMinDateForResistances();
+            
+            return trendlines.Where(x=>x.JustFound).ToList();
 
         }
-        
-        public static List<Trendline> UpdateResistances(Security sec, List<MarketData> prices,Configuration config,
-                                                         List<Trendline> oldResistances,MarketData lastCandle)
+
+        public static void ResetJustFound(Security sec)
         {
-
-            TrendLineCreator trdCreator = new TrendLineCreator(sec,
-                new StrategyConfiguration()
-                {
-                    PerforationThresholds = config.PerforationThresholds,
-                    InnerTrendlinesSpan = config.InnerTrendlinesSpan
-                }, CandleInterval.Minute_1, null, oldResistances);
-
-            DateTime startDate = lastCandle.MDEntryDate.Value.AddDays(-1);
-            DateTime minDate = oldResistances.OrderByDescending(x => x.EndDate).FirstOrDefault().EndDate;
-            DateTime maxDate = lastCandle.MDEntryDate.Value;
-
-            List<Trendline> trendlines = trdCreator.ProcessResistanceTrendlines(sec,
-                prices, false, minDate,
-                maxDate, true, startDate);
-            return trendlines;
-
+            TrdCreatorDict[sec.Symbol].ResetJustFound();
         }
-        
-        public static List<Trendline> UpdateSupports(Security sec, List<MarketData> prices,Configuration config,
-            List<Trendline> oldSupports,MarketData lastCandle)
+
+        public static List<Trendline> UpdateSupports(Security sec, List<MarketData> prices,MarketData lastCandle)
         {
 
-            TrendLineCreator trdCreator = new TrendLineCreator(sec,
-                new StrategyConfiguration()
-                {
-                    PerforationThresholds = config.PerforationThresholds,
-                    InnerTrendlinesSpan = config.InnerTrendlinesSpan
-                }, CandleInterval.Minute_1, oldSupports, null);
-
-            DateTime startDate = lastCandle.MDEntryDate.Value.AddDays(-1);
-            DateTime minDate = oldSupports.OrderByDescending(x => x.EndDate).FirstOrDefault().EndDate;
+            if (TrdCreatorDict == null)
+                throw new Exception(
+                    string.Format("TrendlineCreator has to be instantiated first building the supports!"));
+            
+            DateTime minDate = TrdCreatorDict[sec.Symbol].LastSafeMinDateSupports;
             DateTime maxDate = lastCandle.MDEntryDate.Value;
 
-            List<Trendline> trendlines = trdCreator.ProcessSupportTrendlines(sec,
-                                         prices, false, minDate,
-                                        maxDate, true, startDate);
-            return trendlines;
+            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
+                                         prices, true, minDate,
+                                        maxDate, false, null,markJustFound:true);
+            
+            TrdCreatorDict[sec.Symbol].MoveNextDateMinDateForSupports();
+            return trendlines.Where(x => x.JustFound).ToList();
 
         }
         
         public static List<Trendline> BuildSupports(Security sec, List<MarketData> prices,Configuration config)
         {
 
-            TrendLineCreator trdCreator = new TrendLineCreator(sec,
-                new StrategyConfiguration()
-                {
-                    PerforationThresholds = config.PerforationThresholds,
-                    InnerTrendlinesSpan = config.InnerTrendlinesSpan
-                }, CandleInterval.Minute_1);
-
+            
             
             DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
             DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
+            
+            BuildInnerTrendlineCreator(sec,config,minDate);
 
-            List<Trendline> trendlines = trdCreator.ProcessSupportTrendlines(sec,
+            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
                 prices, true, minDate, maxDate,
                 false, null);
+            
+            
+            TrdCreatorDict[sec.Symbol].UpdateNextDateToStartForSupports();
             return trendlines;
 
         }

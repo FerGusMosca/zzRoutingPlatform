@@ -852,7 +852,10 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     }
                     else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
                     {
-                        DoLog(string.Format("@{0}:Updating order with Primary  for symbol {1}", PrimaryConfiguration.Name, wrapper.GetField(OrderFields.ClOrdID).ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        string clOrdId = (string) wrapper.GetField(OrderFields.ClOrdID);
+                        string origClOrdId = (string) wrapper.GetField(OrderFields.OrigClOrdID);
+                        string symbol = (string) wrapper.GetField(OrderFields.Symbol);
+                        DoLog(string.Format("@{0}:Updating order with Primary for symbol {1} (OrigClOrdId={2} ClOrdId={3})", PrimaryConfiguration.Name, symbol,origClOrdId,clOrdId), Main.Common.Util.Constants.MessageType.Information);
                         UpdateOrder(wrapper);
                         return CMState.BuildSuccess();
 

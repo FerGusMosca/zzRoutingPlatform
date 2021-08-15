@@ -10,17 +10,23 @@ namespace tph.BOBDayTurtles.BusinessEntities
     {
         #region Constructors
         
-        public MonBOBTurtlePosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct) : base(openWindow, closeWindow, stopLossForOpenPositionPct)
+        public MonBOBTurtlePosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct,
+                                    int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct)
         {
+            Resistances=new List<Trendline>();
+            Supports=new List<Trendline>();
+            OuterSignalSpan = outerSignalSpan;
         }
         
         #endregion
         
         #region Protected Attributes
         
-        public List<Trendline> Resistances { get; set; }
+        protected List<Trendline> Resistances { get; set; }
         
-        public List<Trendline> Supports { get; set; }
+        protected List<Trendline> Supports { get; set; }
+        
+        protected int OuterSignalSpan { get; set; }
         
         #endregion
         
@@ -34,16 +40,20 @@ namespace tph.BOBDayTurtles.BusinessEntities
             MarketData lastClosedCandle = GetLastFinishedCandle();
             bool found = false;
             List<Trendline> activeResistances = Resistances.Where(x => x.TrendlineType == TrendlineType.Resistance
-                                                                         && x.BrokenDate == null).ToList();
+                                                                    && !x.IsBroken(lastClosedCandle.MDEntryDate)).ToList();
             foreach (Trendline trendline in activeResistances)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
-                if (lastClosedCandle.ClosingPrice > trendlinePrice)
+                if( lastClosedCandle.BiggerGreendCandle(trendlinePrice) )
                 {
                     trendline.BrokenDate = lastClosedCandle.MDEntryDate;
+                    trendline.BrokenTrendlinePrice = trendlinePrice;
+                    trendline.BrokenMarketPrice = lastClosedCandle;
                     trendline.JustBroken = true;
-                    found = true;
+                    if(EnoughSpan(trendline,lastClosedCandle))
+                        found = true;
                 }
+             
             }
 
             return found;
@@ -58,15 +68,18 @@ namespace tph.BOBDayTurtles.BusinessEntities
             MarketData lastClosedCandle = GetLastFinishedCandle();
             bool found = false;
             List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
-                                                                 && x.BrokenDate == null).ToList();
+                                                                 && !x.IsBroken(lastClosedCandle.MDEntryDate)).ToList();
             foreach (Trendline trendline in activeSupports)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
-                if (lastClosedCandle.ClosingPrice < trendlinePrice)
+                if (lastClosedCandle.LowerRedCandle(trendlinePrice)  )
                 {
                     trendline.BrokenDate = lastClosedCandle.MDEntryDate;
+                    trendline.BrokenTrendlinePrice = trendlinePrice;
+                    trendline.BrokenMarketPrice = lastClosedCandle;
                     trendline.JustBroken = true;
-                    found = true;
+                    if(EnoughSpan(trendline,lastClosedCandle))
+                        found = true;
                 }
             }
 
@@ -99,9 +112,28 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
         public void PopulateTrendlines(List<Trendline> resistances,List<Trendline> supports)
         {
-            Resistances = resistances;
-            Supports = supports;
+            resistances.ForEach(x=>Resistances.Add(x));
+            supports.ForEach(x=>Supports.Add(x));
+        }
 
+        public void AppendSupport(Trendline support)
+        {
+            if (!Supports.Any(x =>
+                DateTime.Compare(x.StartDate, support.StartDate) == 0 &&
+                DateTime.Compare(x.EndDate, support.EndDate) == 0))
+            {
+                Supports.Add(support);
+            }
+        }
+        
+        public void AppendResistance(Trendline resistance)
+        {
+            if (!Resistances.Any(x =>
+                DateTime.Compare(x.StartDate, resistance.StartDate) == 0 &&
+                DateTime.Compare(x.EndDate, resistance.EndDate) == 0))
+            {
+                Resistances.Add(resistance);
+            }
         }
 
         public override bool LongSignalTriggered()
@@ -136,6 +168,12 @@ namespace tph.BOBDayTurtles.BusinessEntities
                 return "";
             }
 
+        }
+
+        protected bool EnoughSpan(Trendline trendline, MarketData md)
+        {
+            TimeSpan elapsed = md.MDEntryDate.Value - trendline.EndDate;
+            return elapsed.TotalMinutes >= OuterSignalSpan;
         }
 
         #endregion

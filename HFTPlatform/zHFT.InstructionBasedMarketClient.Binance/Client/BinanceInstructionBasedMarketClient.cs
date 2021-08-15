@@ -181,43 +181,51 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                 bool activo = true;
                 while (activo)
                 {
-                    Thread.Sleep(BinanceConfiguration.PublishUpdateInMilliseconds);
-                    CultureInfo tempCulture = new CultureInfo("ja-JP");
-
-                    if (quoteSymbol == null)
-                        quoteSymbol = BinanceConfiguration.QuoteCurrency;
-
-                    lock (tLock)
+                    try
                     {
-                        if (!ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == symbol))
-                        {
-                            DoLog(string.Format("@{0}:Unsubscribing market data por symbol {1}", BinanceConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
-                            activo = false;
-                            continue;
-                        }
-                            
-                    }
-                    
-                    List<PriceChangeInfo> priceChangeInfos = new List<PriceChangeInfo>(binanceClient.GetPriceChange24H(symbol + quoteSymbol).Result);
-                        
-                    PriceChangeInfo priceChg=priceChangeInfos.Count>0? priceChangeInfos.OrderByDescending(x=>x.LastId).FirstOrDefault():null;
-                        
-                    Security sec =  new Security();;
-                    sec.Symbol = symbol;
-                    sec.MarketData.BestBidPrice = priceChg != null ? (double?) priceChg.BidPrice : null;
-                    sec.MarketData.BestAskPrice=priceChg != null ? (double?) priceChg.AskPrice : null;
-                    sec.MarketData.Trade = priceChg != null ? (double?) priceChg.LastPrice : null;
-                    sec.ReverseMarketData = false;
-                    sec.MarketData.MDEntryDate = priceChg != null ? (DateTime?)EpochConverter.FromEpoch(priceChg.CloseTime) : null;
-                    sec.MarketData.OpeningPrice = priceChg != null ? (double?) priceChg.OpenPrice : null;
-                    sec.MarketData.ClosingPrice = priceChg != null ? (double?) priceChg.LastPrice : null;
-                    sec.MarketData.TradingSessionHighPrice = priceChg != null ? (double?) priceChg.HighPrice : null;
-                    sec.MarketData.TradingSessionLowPrice = priceChg != null ? (double?) priceChg.LowPrice : null;
-                    sec.MarketData.CashVolume = priceChg != null ? (double?) priceChg.Volume : null;
+                        Thread.Sleep(BinanceConfiguration.PublishUpdateInMilliseconds);
+                        CultureInfo tempCulture = new CultureInfo("ja-JP");
 
-                    BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
+                        if (quoteSymbol == null)
+                            quoteSymbol = BinanceConfiguration.QuoteCurrency;
+
+                        lock (tLock)
+                        {
+                            if (!ActiveSecurities.Values.Where(x => x.Active).Any(x => x.Symbol == symbol))
+                            {
+                                DoLog(string.Format("@{0}:Unsubscribing market data por symbol {1}", BinanceConfiguration.Name, symbol), Main.Common.Util.Constants.MessageType.Information);
+                                activo = false;
+                                continue;
+                            }
+                                
+                        }
                         
-                    OnMessageRcv(wrapper);
+                        List<PriceChangeInfo> priceChangeInfos = new List<PriceChangeInfo>(binanceClient.GetPriceChange24H(symbol + quoteSymbol).Result);
+                            
+                        PriceChangeInfo priceChg=priceChangeInfos.Count>0? priceChangeInfos.OrderByDescending(x=>x.LastId).FirstOrDefault():null;
+                            
+                        Security sec =  new Security();;
+                        sec.Symbol = symbol;
+                        sec.MarketData.BestBidPrice = priceChg != null ? (double?) priceChg.BidPrice : null;
+                        sec.MarketData.BestAskPrice=priceChg != null ? (double?) priceChg.AskPrice : null;
+                        sec.MarketData.Trade = priceChg != null ? (double?) priceChg.LastPrice : null;
+                        sec.ReverseMarketData = false;
+                        sec.MarketData.MDEntryDate = priceChg != null ? (DateTime?)EpochConverter.FromEpoch(priceChg.CloseTime) : null;
+                        sec.MarketData.OpeningPrice = priceChg != null ? (double?) priceChg.OpenPrice : null;
+                        sec.MarketData.ClosingPrice = priceChg != null ? (double?) priceChg.LastPrice : null;
+                        sec.MarketData.TradingSessionHighPrice = priceChg != null ? (double?) priceChg.HighPrice : null;
+                        sec.MarketData.TradingSessionLowPrice = priceChg != null ? (double?) priceChg.LowPrice : null;
+                        sec.MarketData.CashVolume = priceChg != null ? (double?) priceChg.Volume : null;
+
+                        BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
+                            
+                        OnMessageRcv(wrapper);
+                    
+                    }
+                    catch (Exception ex)
+                    {
+                        DoLog(string.Format("@{0}: ERROR- Requesting market data for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+                    }
                     
                 }
             }
@@ -228,7 +236,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     RemoveSymbol(symbol);
                 }
 
-                DoLog(string.Format("@{0}: ERROR- Requesting market data for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
+                DoLog(string.Format("@{0}: Critical ERROR- Requesting market data for symbol {1}:{2}", BinanceConfiguration.Name, symbol, BinanceErrorFormatter.ProcessErrorMessage(ex)), Main.Common.Util.Constants.MessageType.Error);
             }
         }
 

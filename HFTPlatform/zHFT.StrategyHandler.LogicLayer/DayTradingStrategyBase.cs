@@ -74,7 +74,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         public void DoLog(string msg, zHFT.Main.Common.Util.Constants.MessageType type)
         {
-            OnLogMsg(string.Format("{0}", msg), type);
+            if(OnLogMsg!=null)
+                OnLogMsg(string.Format("{0}", msg), type);
         }
 
         public virtual void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
