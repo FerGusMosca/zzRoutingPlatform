@@ -584,7 +584,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             DateTime maxDate = lastCandle.MDEntryDate.Value;
 
             List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
-                prices, true, minDate,
+                prices, false, minDate,
                 maxDate, false, null,markJustFound:true);
             
             TrdCreatorDict[sec.Symbol].MoveNextDateMinDateForResistances();
@@ -609,7 +609,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             DateTime maxDate = lastCandle.MDEntryDate.Value;
 
             List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
-                                         prices, true, minDate,
+                                         prices, false, minDate,
                                         maxDate, false, null,markJustFound:true);
             
             TrdCreatorDict[sec.Symbol].MoveNextDateMinDateForSupports();

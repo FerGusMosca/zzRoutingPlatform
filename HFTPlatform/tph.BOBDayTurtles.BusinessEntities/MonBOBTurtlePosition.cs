@@ -3,91 +3,102 @@ using System.Collections.Generic;
 using System.Linq;
 using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.Common.Enums;
 
 namespace tph.BOBDayTurtles.BusinessEntities
 {
-    public class MonBOBTurtlePosition:MonTurtlePosition
+    public class MonBOBTurtlePosition : MonTurtlePosition
     {
         #region Constructors
-        
+
         public MonBOBTurtlePosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct,
-                                    int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct)
+            int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct)
         {
-            Resistances=new List<Trendline>();
-            Supports=new List<Trendline>();
+            Resistances = new List<Trendline>();
+            Supports = new List<Trendline>();
             OuterSignalSpan = outerSignalSpan;
         }
-        
+
         #endregion
-        
+
         #region Protected Attributes
-        
-        protected List<Trendline> Resistances { get; set; }
-        
-        protected List<Trendline> Supports { get; set; }
-        
+
+        public List<Trendline> Resistances { get; set; }
+
+        public List<Trendline> Supports { get; set; }
+
         protected int OuterSignalSpan { get; set; }
         
+        public  Trendline LastOpenTrendline { get; set; }
+
         #endregion
-        
+
         #region Protected Methods
-        
+
         protected bool EvalResistanceBroken()
         {
-            List<MarketData> histPrices = new List<MarketData>(Candles.Values);
-            histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
+            List<MarketData> histPrices = GetHistoricalPrices();
 
             MarketData lastClosedCandle = GetLastFinishedCandle();
             bool found = false;
             List<Trendline> activeResistances = Resistances.Where(x => x.TrendlineType == TrendlineType.Resistance
-                                                                    && !x.IsBroken(lastClosedCandle.MDEntryDate)).ToList();
+                                                                       && !x.IsBroken(lastClosedCandle.MDEntryDate)
+                                                                       && x.ValidDistanceToEndDate(lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
+                                                                       && x.IsSoftSlope(histPrices)).ToList();
             foreach (Trendline trendline in activeResistances)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
-                if( lastClosedCandle.BiggerGreendCandle(trendlinePrice) )
+                if (lastClosedCandle.BiggerGreendCandle(trendlinePrice))
                 {
                     trendline.BrokenDate = lastClosedCandle.MDEntryDate;
                     trendline.BrokenTrendlinePrice = trendlinePrice;
                     trendline.BrokenMarketPrice = lastClosedCandle;
                     trendline.JustBroken = true;
-                    if(EnoughSpan(trendline,lastClosedCandle))
+                    if (EnoughSpan(trendline, lastClosedCandle))
+                    {
                         found = true;
+                        LastOpenTrendline = trendline;
+                    }
                 }
-             
+
             }
 
             return found;
         }
-        
+
         protected bool EvalSupportBroken()
         {
 
-            List<MarketData> histPrices = new List<MarketData>(Candles.Values);
-            histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
+            List<MarketData> histPrices = GetHistoricalPrices();
 
             MarketData lastClosedCandle = GetLastFinishedCandle();
             bool found = false;
             List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
-                                                                 && !x.IsBroken(lastClosedCandle.MDEntryDate)).ToList();
+                                                                 && !x.IsBroken(lastClosedCandle.MDEntryDate)
+                                                                 && x.ValidDistanceToEndDate(lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
+                                                                 && x.IsSoftSlope(histPrices)).ToList();
             foreach (Trendline trendline in activeSupports)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
-                if (lastClosedCandle.LowerRedCandle(trendlinePrice)  )
+                if (lastClosedCandle.LowerRedCandle(trendlinePrice))
                 {
                     trendline.BrokenDate = lastClosedCandle.MDEntryDate;
                     trendline.BrokenTrendlinePrice = trendlinePrice;
                     trendline.BrokenMarketPrice = lastClosedCandle;
                     trendline.JustBroken = true;
-                    if(EnoughSpan(trendline,lastClosedCandle))
+                    if (EnoughSpan(trendline, lastClosedCandle))
+                    {
+                        LastOpenTrendline = trendline;
                         found = true;
+                    }
                 }
             }
 
             return found;
         }
-        
+
         #endregion
-        
+
         #region Public Methods
 
         public virtual bool HasHistoricalCandles()
@@ -105,9 +116,25 @@ namespace tph.BOBDayTurtles.BusinessEntities
             return Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
         }
         
+        public DateTime GetLastCandleDate()
+        {
+            MarketData lastCandle = GetLastCandle();
+
+            if (lastCandle != null && lastCandle.MDEntryDate.HasValue)
+                return lastCandle.MDEntryDate.Value;
+            else
+                return DateTime.Now;
+        }
+
         public MarketData GetLastFinishedCandle()
         {
             return Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).ToArray()[1];
+        }
+
+        public List<MarketData> GetHistoricalPrices()
+        {
+            List<MarketData> histPrices = new List<MarketData>(Candles.Values);
+            return histPrices.OrderBy(x => x.MDEntryDate).ToList();
         }
 
         public void PopulateTrendlines(List<Trendline> resistances,List<Trendline> supports)

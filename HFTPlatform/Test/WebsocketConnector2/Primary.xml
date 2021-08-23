@@ -9,8 +9,8 @@
   <Password>Msk7w6cB_</Password><!--PROD-->
   <!--<Password>Xqw7L9tS</Password>--> <!--TEST2-->
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
-  <SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >
+<!--  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >-->
+<!--  <SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >-->
 
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
 

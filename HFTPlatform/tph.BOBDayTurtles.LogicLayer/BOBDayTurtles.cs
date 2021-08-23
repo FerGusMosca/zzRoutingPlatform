@@ -5,6 +5,7 @@ using System.Threading;
 using tph.BOBDayTurtles.BusinessEntities;
 using tph.BOBDayTurtles.Common.Configuration;
 using tph.BOBDayTurtles.Common.Util;
+using tph.BOBDayTurtles.DataAccessLayer;
 using tph.BOBDayTurtles.LogicLayer.Util;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.DataAccessLayer;
@@ -30,7 +31,9 @@ namespace tph.BOBDayTurtles.LogicLayer
           
         protected List<string> ProcessedHistoricalPrices { get; set; }
         
-        protected TurtlesPortfolioPositionManager TurtlesPortfolioPositionManager { get; set; }
+        protected BOBTurtlesPortfolioPositionManager BOBTurtlesPortfolioPositionManager { get; set; }
+        
+        protected TrendlineManager TrendlineManager { get; set; }
           
         #endregion
         
@@ -218,6 +221,7 @@ namespace tph.BOBDayTurtles.LogicLayer
 
         protected override TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
         {
+            MonBOBTurtlePosition bobPos = (MonBOBTurtlePosition) portfPos;
             return new TradBOBTurtlesPosition()
             {
                 StrategyName = Config.Name,
@@ -225,7 +229,8 @@ namespace tph.BOBDayTurtles.LogicLayer
                 OpeningPosition = pos,
                 OpeningPortfolioPosition = portfPos,
                 FeeTypePerTrade = Config.FeeTypePerTrade,
-                FeeValuePerTrade = Config.FeeValuePerTrade
+                FeeValuePerTrade = Config.FeeValuePerTrade,
+                OpeningTrendline = bobPos.LastOpenTrendline
             };
         }
 
@@ -236,7 +241,7 @@ namespace tph.BOBDayTurtles.LogicLayer
                 lock (tPersistLock)
                 {
                     TradBOBTurtlesPosition turtlesTradPos = (TradBOBTurtlesPosition) trdPos;
-                    TurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(turtlesTradPos);
+                    BOBTurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(turtlesTradPos);
                 }
                
             }
@@ -280,7 +285,51 @@ namespace tph.BOBDayTurtles.LogicLayer
                 }
             }
         }
-        
+
+        private void DoPersist(MonBOBTurtlePosition portfPos,List<Trendline> trendlines)
+        {
+            foreach (Trendline trendline in trendlines)
+            {
+                if(!trendline.BrokenDate.HasValue)
+                    TrendlineManager.Persist(trendline,portfPos);
+                else
+                {
+                    if (!trendline.Persisted)
+                    {
+                        TrendlineManager.Persist(trendline, portfPos);
+                        trendline.Persisted = true;
+                    }
+                }
+            }
+        }
+
+        protected void DoPersistTrendlinesThread(object param)
+        {
+            while (true)
+            {
+                try
+                {
+                    lock (tLock)
+                    {
+
+                        foreach (MonBOBTurtlePosition portfPos in PortfolioPositionsToMonitor.Values)
+                        {
+                            DoPersist(portfPos,portfPos.Resistances);
+                            DoPersist(portfPos,portfPos.Supports);
+                        }
+                        
+                    }
+
+                    Thread.Sleep(5000);//5 seconds sleep
+                }
+                catch (Exception e)
+                {
+                    DoLog(string.Format("@BOBDayTurtles - Critical ERROR Persting Trendlines:{0}",e.Message),Constants.MessageType.Error);
+                }
+            }
+            
+        }
+
         protected void DoRequestHistoricalPricesThread(object param)
         {
             try
@@ -301,7 +350,7 @@ namespace tph.BOBDayTurtles.LogicLayer
         
         protected override void InitializeManagers()
         {
-            TurtlesPortfolioPositionManager= new TurtlesPortfolioPositionManager(GetConfig().ConnectionString);
+            BOBTurtlesPortfolioPositionManager= new BOBTurtlesPortfolioPositionManager(GetConfig().ConnectionString);
         }
         
         #endregion
@@ -314,13 +363,23 @@ namespace tph.BOBDayTurtles.LogicLayer
             if (ConfigLoader.LoadConfig(this, configFile))
             {
                 ProcessedHistoricalPrices=new List<string>();
+
+                Trendline._SHORT_SOFT_UPWARD_SLOPE = GetConfig().MaxShortPositiveSlope;
+                Trendline._SHORT_SOFT_DOWNARD_SLOPE = GetConfig().MaxShortNegativeSlope;
+                Trendline._LONG_SOFT_UPWARD_SLOPE = GetConfig().MaxLongPositiveSlope;
+                Trendline._LONG_SOFT_DOWNARD_SLOPE = GetConfig().MaxLongNegativeSlope;
                 
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
+                
+                TrendlineManager= new TrendlineManager(GetConfig().ConnectionString);
 
                 Thread.Sleep(2000);
                 
                 Thread historicalPricesThread = new Thread(new ParameterizedThreadStart(DoRequestHistoricalPricesThread));
                 historicalPricesThread.Start();
+                
+                Thread persistTrendlinesThread = new Thread(new ParameterizedThreadStart(DoPersistTrendlinesThread));
+                persistTrendlinesThread.Start();
                 
                 return true;
 

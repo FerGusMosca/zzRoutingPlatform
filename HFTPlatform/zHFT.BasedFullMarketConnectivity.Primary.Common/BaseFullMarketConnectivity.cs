@@ -537,8 +537,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     }
                     else
                     {
-                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", GetConfig().Name, clOrdId), Main.Common.Util.Constants.MessageType.Error);
-                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", GetConfig().Name, clOrdId));
+                        DoLog(string.Format("@{0}:Order for ClOrdId {1} not found! ", GetConfig().Name, origClOrdId), Main.Common.Util.Constants.MessageType.Error);
+                        throw new Exception(string.Format("@{0}:Order for ClOrdId {1} not found!!", GetConfig().Name, origClOrdId));
                     }
                 }
                 else

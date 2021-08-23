@@ -8,4 +8,10 @@
       <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="tph.BOBDayTurtles.BusinessEntities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\..\..\..\..\BOB Day Turtles\tph.BOBDayTurtles.BusinessEntities.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

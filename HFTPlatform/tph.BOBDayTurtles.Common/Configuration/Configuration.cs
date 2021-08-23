@@ -17,6 +17,14 @@ namespace tph.BOBDayTurtles.Common.Configuration
         public int OuterTrendlineSpan { get; set; }
         
         public double PerforationThresholds { get; set; }
+        
+        public double MaxLongPositiveSlope { get; set; }
+        
+        public double MaxLongNegativeSlope { get; set; }
+        
+        public double MaxShortPositiveSlope { get; set; }
+        
+        public double MaxShortNegativeSlope { get; set; }
 
         #endregion
     }

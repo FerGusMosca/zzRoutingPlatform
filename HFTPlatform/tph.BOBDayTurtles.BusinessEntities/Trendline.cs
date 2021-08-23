@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
 
 namespace tph.BOBDayTurtles.BusinessEntities
 {
@@ -11,16 +12,30 @@ namespace tph.BOBDayTurtles.BusinessEntities
         Support = 'S',
         Resistance = 'R'
     }
-    
+
     public class Trendline
     {
-        #region Private static Consts
+        #region Constructors
 
-        private static double _SOFT_UPWARD_SLOPE = 1 ;//1 degrees
-
-        private static double _SOFT_DOWNARD_SLOPE = 8;//8 degrees
+        public Trendline()
+        {
+            Persisted = false;
+        }
 
         #endregion
+        
+        #region Private static Consts
+
+        public static double _SHORT_SOFT_UPWARD_SLOPE = 1 ;//1 degrees
+
+        public static double _SHORT_SOFT_DOWNARD_SLOPE = 8;//8 degrees
+
+        public static double _LONG_SOFT_UPWARD_SLOPE = 1 ;//1 degrees
+
+        public static double _LONG_SOFT_DOWNARD_SLOPE = 8;//8 degrees
+        
+        #endregion
+        
         #region Public Attributes
 
         public Security Security { get; set; }
@@ -40,6 +55,8 @@ namespace tph.BOBDayTurtles.BusinessEntities
         public bool JustBroken { get; set; }
         
         public bool JustFound { get; set; }
+        
+        public bool Persisted { get; set; }
 
 
         #region Indirect Attributes
@@ -175,6 +192,22 @@ namespace tph.BOBDayTurtles.BusinessEntities
         #endregion
 
         #region Privte Methods
+        
+        private int GetSpan(DateTime start, DateTime end,CandleInterval CandleInterval)
+        {
+
+            if (CandleInterval == CandleInterval.Minute_1)
+                return Convert.ToInt32((end - start).TotalMinutes);
+            else if (CandleInterval == CandleInterval.HOUR_1)
+                return Convert.ToInt32((end - start).TotalHours);
+            else if (CandleInterval == CandleInterval.DAY)
+                return Convert.ToInt32((end - start).TotalDays);
+            else
+            {
+                throw new Exception(string.Format("Trendline Creator.GetSpan - Candle Interval not implemented:{0}",
+                    CandleInterval));
+            }
+        }
 
         private double? GetPriceToUse(MarketData price)
         {
@@ -182,9 +215,11 @@ namespace tph.BOBDayTurtles.BusinessEntities
                 return null;
 
             if (TrendlineType == TrendlineType.Resistance)
-                return price.ClosingPrice > price.OpeningPrice ? price.ClosingPrice : price.OpeningPrice;
+                //return price.ClosingPrice > price.OpeningPrice ? price.ClosingPrice : price.OpeningPrice;
+                return price.ClosingPrice;
             else if (TrendlineType == TrendlineType.Support)
-                return price.OpeningPrice < price.ClosingPrice ? price.OpeningPrice : price.ClosingPrice;
+                //return price.OpeningPrice < price.ClosingPrice ? price.OpeningPrice : price.ClosingPrice;
+                return price.ClosingPrice;
             else
                 return 0;
         }
@@ -225,23 +260,43 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
             return finalPrice;
         }
+        
+        public double GetSlopeDegrees()
+        {
+            double pctGrowth = (EndPrice.ClosingPrice.Value / StartPrice.ClosingPrice.Value) - 1;
+            pctGrowth *= 100;
+            
+            int countUnitsInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
+
+            double hourAdjust = 60 / Convert.ToDouble(countUnitsInTrendline);
+
+            return pctGrowth * hourAdjust;
+        }
+
 
         public bool IsSoftSlope(List<MarketData> allHistoricalPrices)
         {
             if (TrendlineType == TrendlineType.Resistance)
             {
 
-                double radSlope = Math.Atan(Convert.ToDouble(Slope));
-
-                double degSlope = (radSlope * 180) / Math.PI;
+                double degSlope = GetSlopeDegrees();
 
                 if (degSlope > 0)
-                    return degSlope < _SOFT_UPWARD_SLOPE;
+                    return degSlope < _LONG_SOFT_UPWARD_SLOPE;
                 else
                 {
                     //We avoid slopes that are too deep
-                    return degSlope>(-1 * _SOFT_DOWNARD_SLOPE);
+                    return degSlope>(-1 * _LONG_SOFT_DOWNARD_SLOPE);
                 }
+            }
+            else if (TrendlineType == TrendlineType.Support)
+            {
+                double degSlope = GetSlopeDegrees();
+                
+                if (degSlope > 0)
+                    return degSlope < _SHORT_SOFT_UPWARD_SLOPE;
+                else
+                    return degSlope>(-1 * _SHORT_SOFT_DOWNARD_SLOPE);
             }
             else
                 return true;
@@ -286,6 +341,13 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
         }
 
+        public bool ValidDistanceToEndDate(DateTime date, int outerSpan,CandleInterval candleInterval)
+        {
+            int elapsed = GetSpan(EndDate, date, candleInterval);
+            return elapsed >= outerSpan;
+        }
+
+        
         #endregion
     }
 }

@@ -15,6 +15,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandler.IBR.Primary.Common.DTO;
 
 namespace PrimaryCertification
 {
@@ -178,6 +179,35 @@ namespace PrimaryCertification
             App.ProcessMessageToOutgoing(wrapper);
         }
 
+        protected static void ProcessPositions()
+        {
+            string baseURL = ConfigurationManager.AppSettings["RESTURL"];
+            string user = ConfigurationManager.AppSettings["User"];
+            string password = ConfigurationManager.AppSettings["Password"];
+            PositionsServiceLayer svcLayer = new PositionsServiceLayer(baseURL, user, password);
+
+            PositionsDto resp = svcLayer.GetPositions(Account);
+
+            if (resp != null && resp.report != null)
+            {
+                Console.WriteLine(string.Format("Positions found: {0}", resp.report.Positions.Count));
+
+                foreach (string key in resp.report.Positions.Keys)
+                {
+
+                    foreach (DetailedPositionItem item in resp.report.Positions[key].detailedPositions)
+                    {
+                        Console.WriteLine(string.Format("Position for symbol {0}: Qty={1}",
+                            item.symbolReference, item.totalCurrentSize));
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("No positions found");
+            }
+        }
+
         protected static void ProcessCommand(string command)
         {
             if (command == "cls")
@@ -215,6 +245,10 @@ namespace PrimaryCertification
             else if (command.StartsWith("MO"))
             {
                 ProcessMassStatusRequestWrapper();
+            }
+            else if (command.StartsWith("GP"))
+            {
+                ProcessPositions();
             }
         }
 
@@ -258,6 +292,7 @@ namespace PrimaryCertification
         static void Main(string[] args)
         {
             Run();
+            
             string command = "";
 
             while (command != "q")
@@ -271,6 +306,7 @@ namespace PrimaryCertification
                 Console.WriteLine("CO-Cancel Order. Ejemplo: CO <ClOrderId>");//100 es el Id de la orden
                 Console.WriteLine("UO-Cancel Order. Ejemplo: CO <ClOrderId> <qty> <price>");//100 es el Id de la orden
                 Console.WriteLine("LO-List Orders.");
+                Console.WriteLine("GP-Get Positions.");
                 Console.WriteLine("MO-Order Mass Status Request.");
                 Console.WriteLine("cls-Limpiar Pantalla");
                 Console.WriteLine("q-Quit");

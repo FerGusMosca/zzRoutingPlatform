@@ -74,29 +74,25 @@ namespace tph.DayTurtles.BusinessEntities
         {
             if (Candles.Count < window)
                 return false;
+
+            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
+
+            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value)
+                                                      .Skip(1).Take(window).ToList();
             
             //We ignore the last candle which is the current candle
-            List<string> keys = Candles.Keys.Skip(Candles.Count - window - 1).ToList();
-
-            if (keys.Count == (window + 1))
+            bool foundBigger = false;
+            foreach (MarketData md in candles)
             {
-                bool higher = false;
-
-                foreach (string key in keys)
+                if (md.ClosingPrice > lastCandle.ClosingPrice 
+                    && md.MDEntryDate.HasValue && lastCandle.MDEntryDate.HasValue
+                    && DateTime.Compare(md.MDEntryDate.Value, lastCandle.MDEntryDate.Value) < 0)
                 {
-                    if (Candles[key].ClosingPrice > Security.MarketData.ClosingPrice 
-                        && Candles[key].MDEntryDate.HasValue && Security.MarketData.MDEntryDate.HasValue
-                        && DateTime.Compare(Candles[key].MDEntryDate.Value, Security.MarketData.MDEntryDate.Value) < 0)
-                    {
-                        higher = true;
-                    }
+                    foundBigger = true;
                 }
-
-                return !higher;
-
             }
-            else
-                return false;
+
+            return !foundBigger;
             
         }
         
@@ -104,30 +100,26 @@ namespace tph.DayTurtles.BusinessEntities
         {
             if (Candles.Count < window)
                 return false;
+
+            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
+
+            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value)
+                                                     .Skip(1).Take(window).ToList();
             
             //We ignore the last candle which is the current candle
-            List<string> keys = Candles.Keys.Skip(Candles.Count - window - 1).ToList();
-
-            if (keys.Count == (window + 1))
+            bool foundLower = false;
+            foreach (MarketData md in candles)
             {
-                bool lower = false;
-
-                foreach (string key in keys)
+                if (md.ClosingPrice < lastCandle.ClosingPrice 
+                    && md.MDEntryDate.HasValue && lastCandle.MDEntryDate.HasValue
+                    && DateTime.Compare(md.MDEntryDate.Value, lastCandle.MDEntryDate.Value) < 0)
                 {
-                    if (Candles[key].ClosingPrice < Security.MarketData.ClosingPrice 
-                        && Candles[key].MDEntryDate.HasValue && Security.MarketData.MDEntryDate.HasValue
-                        && DateTime.Compare(Candles[key].MDEntryDate.Value, Security.MarketData.MDEntryDate.Value) < 0)
-                    {
-                        lower = true;
-                    }
+                    foundLower = true;
                 }
-
-                return !lower;
-
             }
-            else
-                return false;
-            
+
+            return !foundLower;
+
         }
 
         #endregion

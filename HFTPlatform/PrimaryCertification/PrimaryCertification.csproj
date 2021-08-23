@@ -36,6 +36,10 @@
     <Reference Include="MDFShared">
       <HintPath>..\..\Librerias\MDFShared.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,11 +53,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PositionDto.cs" />
+    <Compile Include="PositionsDto.cs" />
+    <Compile Include="PositionsServiceLayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.FixMessageCreator.Primary.Common\zHFT.FixMessageCreator.Primary.Common.csproj">
@@ -91,6 +99,10 @@
     <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
       <Project>{453e183d-9557-4a96-ad08-d2ad0db68765}</Project>
       <Name>zHFT.StrategyHandler.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Primary.Common\zHFT.StrategyHandler.IBR.Primary.Common.csproj">
+      <Project>{161d754e-fa0e-4eda-9093-b0eebb66993a}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Primary.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.SecurityListSaver.Common\zHFT.StrategyHandler.SecurityListSaver.Common.csproj">
       <Project>{29b4d20c-132a-4068-adb1-067f35f20a2a}</Project>

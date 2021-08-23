@@ -49,7 +49,6 @@ namespace tph.DayTurtles.DataAccessLayer
                     cmd.Parameters.Add(new SqlParameter("@FinalCap", pos.FinalCap));
                     cmd.Parameters.Add(new SqlParameter("@Profit", pos.Profit));
 
-
                     cmd.ExecuteNonQuery();
                 }
                 connection.Dispose();

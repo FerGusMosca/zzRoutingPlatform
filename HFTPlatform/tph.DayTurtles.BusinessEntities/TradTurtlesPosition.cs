@@ -13,6 +13,8 @@ namespace tph.DayTurtles.BusinessEntities
         
         #endregion
         
+        
+        
         #region Public Methods
 
 

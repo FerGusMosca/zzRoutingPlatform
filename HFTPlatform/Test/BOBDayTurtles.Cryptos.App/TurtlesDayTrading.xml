@@ -2,8 +2,14 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - TurtlesDayTrading</Name>
   
-  <OpenWindow>5</OpenWindow>
-  <CloseWindow>3</CloseWindow>
+  <OpenWindow>20</OpenWindow>
+  <CloseWindow>10</CloseWindow>
+  
+  <MaxLongPositiveSlope>0</MaxLongPositiveSlope><!--m-->
+  <MaxLongNegativeSlope>0.4</MaxLongNegativeSlope> <!--m-->
+
+  <MaxShortPositiveSlope>0.4</MaxShortPositiveSlope><!--m-->
+  <MaxShortNegativeSlope>0</MaxShortNegativeSlope> <!--m-->
 
   <PositionSizeInCash>1000</PositionSizeInCash>
 
@@ -32,7 +38,7 @@
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <ResetOnPersistance>true</ResetOnPersistance>
 
@@ -52,7 +58,15 @@
     <Symbol>ADA</Symbol>
     <Symbol>XRP</Symbol>
     <Symbol>UNI</Symbol>
-    <Symbol>LINK</Symbol>
+    <Symbol>DGB</Symbol>
+    <Symbol>XEM</Symbol>
+    <Symbol>BAT</Symbol>
+    <Symbol>XTZ</Symbol>
+    <Symbol>DOT</Symbol>
+    <Symbol>LTC</Symbol>
+    <Symbol>AAVE</Symbol>
+    <Symbol>BCH</Symbol>
+   
 <!--    -->
   </StocksToMonitor>
 
