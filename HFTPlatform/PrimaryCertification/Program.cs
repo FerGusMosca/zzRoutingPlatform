@@ -190,15 +190,19 @@ namespace PrimaryCertification
 
             if (resp != null && resp.report != null)
             {
-                Console.WriteLine(string.Format("Positions found: {0}", resp.report.Positions.Count));
+                Console.WriteLine(string.Format("Positions found: {0}", resp.report.Values.Count));
 
-                foreach (string key in resp.report.Positions.Keys)
+                foreach (string key in resp.report.Keys)
                 {
 
-                    foreach (DetailedPositionItem item in resp.report.Positions[key].detailedPositions)
+                    foreach (DetailedPositions pos in resp.report[key].Values)
                     {
-                        Console.WriteLine(string.Format("Position for symbol {0}: Qty={1}",
-                            item.symbolReference, item.totalCurrentSize));
+
+                        foreach (DetailedPositionItem item in pos.detailedPositions)
+                        {
+                            Console.WriteLine(string.Format("Position for symbol {0}: Qty={1}",
+                                item.symbolReference, item.totalCurrentSize));
+                        }
                     }
                 }
             }

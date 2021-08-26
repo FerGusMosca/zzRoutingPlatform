@@ -203,10 +203,16 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 }
                 else if (execType == zHFT.Main.Common.Enums.ExecType.Canceled)
                 {
+                    DoLog(string.Format("Canceled replacement for OrigClOrdId={0} ClOrdId={1}",origClOrdId,clOrdId),Constants.MessageType.Information);
                     ActiveOrders.Remove(origClOrdId);
                     ActiveOrderIdMapper.Remove(origClOrdId);
                 }
-                
+                else if (execType == zHFT.Main.Common.Enums.ExecType.Rejected)//Replace Rejected
+                {
+                    DoLog(string.Format("Rejected replacement for OrigClOrdId={0} ClOrdId={1}",origClOrdId,clOrdId),Constants.MessageType.Information);
+                    ReplacingActiveOrderIdMapper.Remove(clOrdId);
+                }
+
                 // El formato de los ClOrdId/OrigClOrdId @Primary es distinto al manejado por el OrderRouter
                 // entonces hay un mapeo entre lo que se manda y lo que se recibe
                 erWrapper.ClOrdId = clOrdId;

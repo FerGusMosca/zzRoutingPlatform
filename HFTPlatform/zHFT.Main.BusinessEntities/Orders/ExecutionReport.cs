@@ -95,6 +95,22 @@ namespace zHFT.Main.BusinessEntities.Orders
             else
                 return "-";
         }
+        
+        public override string ToString()
+        {
+            string er = "";
+
+            er += string.Format(" OrdStatus={0} ", OrdStatus != null ? OrdStatus.ToString() : "");
+            er += string.Format(" ExecType={0} ", ExecType != null ? ExecType.ToString() : "");
+            er += string.Format(" ClOrdId={0} ", Order != null ? Order.ClOrdId : "");
+            er += string.Format(" OrigClOrdId={0} ", Order != null ? Order.OrigClOrdId : "");
+            er += string.Format(" OrderId={0} ", Order != null ? Order.OrderId : "");
+            er += string.Format(" CumQty={0} ", CumQty);
+            er += string.Format(" LvsQty={0} ", LeavesQty);
+            er += string.Format(" Text={0} ", Text);
+            
+            return er;
+        }
 
         #endregion
     }
@@ -106,4 +122,6 @@ namespace zHFT.Main.BusinessEntities.Orders
             DateTimeFormat = format;
         }
     }
+    
+   
 }

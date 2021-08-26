@@ -389,19 +389,23 @@
       <e p="PrimaryCertification" t="IncludeRecursive">
         <e p="App.Config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Common.Dtos" t="Include">
+          <e p="PositionDto.cs" t="Include" />
+          <e p="PositionsDto.cs" t="Include" />
+        </e>
         <e p="Config.xml" t="Include" />
         <e p="IncomingSingletonConfig.xml" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="OutgoingSingletonConfig.xml" t="Include" />
         <e p="packages.config" t="Include" />
-        <e p="PositionDto.cs" t="Include" />
-        <e p="PositionsDto.cs" t="Include" />
-        <e p="PositionsServiceLayer.cs" t="Include" />
         <e p="Primary.xml" t="Include" />
         <e p="PrimaryCertification.csproj" t="IncludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="ServiceLayer" t="Include">
+          <e p="PositionsServiceLayer.cs" t="Include" />
         </e>
       </e>
       <e p="RTDPairTradingDemoLibrary" t="IncludeRecursive">

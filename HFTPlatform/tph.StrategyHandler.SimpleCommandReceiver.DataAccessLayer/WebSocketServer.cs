@@ -437,6 +437,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                         {
                             if (ConnectionSocket != null && ConnectionSocket.IsAvailable)
                             {
+                                DoLog(string.Format("DB-@DoSend:{0}",ConnectionSocket.ConnectionInfo.ClientIpAddress),Constants.MessageType.Information);
                                 DoSend<T>(ConnectionSocket,entity);
                             }
                         }
