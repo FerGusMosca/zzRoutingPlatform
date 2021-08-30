@@ -176,10 +176,10 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             int take = endIndex-startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
+            if (!rangePrices.Any(x => GetClosingPrice(x) < GetClosingPrice(currentPrice)) && (rangePrices.Count == take))
+            //if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
             {
-                return !LocalMinimums.Any(x =>  Math.Abs(GetLowestPrice(x) - GetLowestPrice(currentPrice)) < 0.01 &&
-                                                DateTime.Compare(x.MDEntryDate.Value, currentPrice.MDEntryDate.Value) != 0);
+                return true;
             }
             else
             {
@@ -187,20 +187,25 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             }
         }
 
-        protected double GetHighestPrice(MarketData md)
-        {
-            if (md.ClosingPrice > md.OpeningPrice)
-                return md.ClosingPrice.Value;
-            else
-                return md.OpeningPrice.Value;
-        }
+//        protected double GetHighestPrice(MarketData md)
+//        {
+//            if (md.ClosingPrice > md.OpeningPrice)
+//                return md.ClosingPrice.Value;
+//            else
+//                return md.OpeningPrice.Value;
+//        }
+//        
+//        protected double GetLowestPrice(MarketData md)
+//        {
+//            if (md.ClosingPrice < md.OpeningPrice)
+//                return md.ClosingPrice.Value;
+//            else
+//                return md.OpeningPrice.Value;
+//        }
         
-        protected double GetLowestPrice(MarketData md)
+        protected double GetClosingPrice(MarketData md)
         {
-            if (md.ClosingPrice < md.OpeningPrice)
-                return md.ClosingPrice.Value;
-            else
-                return md.OpeningPrice.Value;
+            return md.ClosingPrice.Value;
         }
 
         protected bool EvalLocalMaximum(List<MarketData> prices, MarketData currentPrice, int index)
@@ -211,13 +216,11 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             int take = endIndex - startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            if (!rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) &&
-                (rangePrices.Count == take))
+            if (!rangePrices.Any(x => GetClosingPrice(x) > GetClosingPrice(currentPrice)) &&(rangePrices.Count == take))
+            //if (!rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) &&(rangePrices.Count == take))
             {
                 //We avoid double trendlines because of equal highes/lowest
-                return !LocalMaximums.Any(x =>
-                                                Math.Abs(GetHighestPrice(x) - GetHighestPrice(currentPrice)) < 0.01 &&
-                                                DateTime.Compare(x.MDEntryDate.Value, currentPrice.MDEntryDate.Value) != 0);
+                return true;
             }
             else
                 return false;
@@ -474,23 +477,25 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         }
 
-        public  void UpdateNextDateToStartForResistances()
+        public  void SetNextDateToStartForResistances(DateTime lastDate,int innerSpan)
         {
-            if (LocalMaximums.Count > 0)
-            {
 
-                //Highest maximum
-                DateTime nextDatetoStart = LocalMaximums.OrderByDescending(x => x.MDEntryDate.Value)
-                                                        .FirstOrDefault().MDEntryDate.Value;
-
-                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
-
-                LastSafeMinDateResistances = nextDatetoStart;
-            }
-            else
-            {
-                LastSafeMinDateResistances = DateTime.MinValue;
-            }
+            LastSafeMinDateResistances= lastDate.AddMinutes(-1 * ((innerSpan * 2) + 2));
+            
+//            if (LocalMaximums.Count > 0)
+//            {
+//
+//                DateTime nextDatetoStart = LocalMaximums.OrderByDescending(x => x.MDEntryDate.Value)
+//                                                        .FirstOrDefault().MDEntryDate.Value;
+//
+//                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
+//
+//                LastSafeMinDateResistances = nextDatetoStart;
+//            }
+//            else
+//            {
+//                LastSafeMinDateResistances = DateTime.MinValue;
+//            }
         }
 
         public void MoveNextDateMinDateForResistances()
@@ -498,24 +503,24 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             LastSafeMinDateResistances=GetStartDate(LastSafeMinDateResistances,1);
         }
 
-        public  void UpdateNextDateToStartForSupports()
+        public  void SetNextDateToStartForSupports(DateTime lastDate,int innerSpan)
         {
-
-            if (LocalMinimums.Count > 0)
-            {
-
-                //Highest maximum
-                DateTime nextDatetoStart = LocalMinimums.OrderByDescending(x => x.MDEntryDate.Value)
-                                                        .FirstOrDefault().MDEntryDate.Value;
-
-                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
-
-                LastSafeMinDateSupports = nextDatetoStart;
-            }
-            else
-            {
-                LastSafeMinDateSupports = DateTime.MinValue;
-            }
+            LastSafeMinDateSupports= lastDate.AddMinutes(-1 * ((innerSpan * 2) + 2));
+//            if (LocalMinimums.Count > 0)
+//            {
+//
+//                //Highest maximum
+//                DateTime nextDatetoStart = LocalMinimums.OrderByDescending(x => x.MDEntryDate.Value)
+//                                                        .FirstOrDefault().MDEntryDate.Value;
+//
+//                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
+//
+//                LastSafeMinDateSupports = nextDatetoStart;
+//            }
+//            else
+//            {
+//                LastSafeMinDateSupports = DateTime.MinValue;
+//            }
         }
 
         public void MoveNextDateMinDateForSupports()
@@ -569,7 +574,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                                         prices, true, minDate,
                                         maxDate, false, null);
 
-            TrdCreatorDict[sec.Symbol].UpdateNextDateToStartForResistances();
+            TrdCreatorDict[sec.Symbol].SetNextDateToStartForResistances(maxDate,config.InnerTrendlinesSpan);
             return trendlines;
 
         }
@@ -584,7 +589,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             DateTime maxDate = lastCandle.MDEntryDate.Value;
 
             List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
-                prices, false, minDate,
+                prices, true, minDate,
                 maxDate, false, null,markJustFound:true);
             
             TrdCreatorDict[sec.Symbol].MoveNextDateMinDateForResistances();
@@ -609,7 +614,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             DateTime maxDate = lastCandle.MDEntryDate.Value;
 
             List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
-                                         prices, false, minDate,
+                                         prices, true, minDate,
                                         maxDate, false, null,markJustFound:true);
             
             TrdCreatorDict[sec.Symbol].MoveNextDateMinDateForSupports();
@@ -632,7 +637,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                 false, null);
             
             
-            TrdCreatorDict[sec.Symbol].UpdateNextDateToStartForSupports();
+            TrdCreatorDict[sec.Symbol].SetNextDateToStartForSupports(maxDate,config.InnerTrendlinesSpan);
             return trendlines;
 
         }

@@ -95,7 +95,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected abstract void ProcessHistoricalPrices(object pWrapper);
         
-        protected abstract void ProcessMarketData(object pWrapper);
+        protected abstract  void ProcessMarketData(object pWrapper);
 
         protected abstract void DoPersist(TradingPosition trdPos);
 
@@ -234,14 +234,13 @@ namespace zHFT.StrategyHandler.LogicLayer
 
                     if (!trdPos.IsFirstLeg())
                     {
-                        DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
+                        //DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
                         PortfolioPositionsToMonitor[trdPos.OpeningPosition.Security.Symbol].Closing = false;
                         TradingPositions.Remove(trdPos.OpeningPosition.Security.Symbol);
                     }
                     else
                     {
-                        DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",
-                                                    trdPos.OpeningPosition.Security.Symbol,report.CumQty,trdPos.TradeDirection),Constants.MessageType.Information);
+                        //DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty,trdPos.TradeDirection),Constants.MessageType.Information);
                     }
                 }
             }
@@ -630,7 +629,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             
         }
         
-        protected void ProcessSecurityList(Wrapper wrapper)
+        protected  async void  ProcessSecurityList(Wrapper wrapper)
         {
             try
             {
@@ -688,15 +687,13 @@ namespace zHFT.StrategyHandler.LogicLayer
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
                     DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
-                    Thread mdThread = new Thread(ProcessMarketData);
-                    mdThread.Start(wrapper);
+                    ProcessMarketData(wrapper);
                     return CMState.BuildSuccess();
                 }
 
                 if (wrapper.GetAction() == Actions.HISTORICAL_PRICES)
                 {
-                    Thread mdThread = new Thread(ProcessHistoricalPrices);
-                    mdThread.Start(wrapper);
+                    ProcessHistoricalPrices(wrapper);
                     return CMState.BuildSuccess();
                 }
                 else if (wrapper.GetAction() == Actions.SECURITY_LIST)

@@ -46,3 +46,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Bitstamp.Common\obj\Debug\zHFT.MarketClient.Bitstamp.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Bitstamp.Common\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Bitstamp.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MarketClient.Bitstamp.Common\obj\Debug\zHFT.MarketClient.Bitstamp.Common.csprojAssemblyReference.cache

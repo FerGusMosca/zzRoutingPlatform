@@ -85,7 +85,7 @@ namespace tph.BOBDayTurtles.LogicLayer
             ProcessedHistoricalPrices.Add(symbol);
         }
         
-        protected void RecalculateNewTrendlines(MonBOBTurtlePosition portfPos)
+        protected  void RecalculateNewTrendlines(MonBOBTurtlePosition portfPos)
         {
             try
             {
@@ -149,7 +149,7 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        protected override void ProcessHistoricalPrices(object pWrapper)
+        protected override async void ProcessHistoricalPrices(object pWrapper)
         {
 
             try
@@ -187,7 +187,7 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        protected override void ProcessMarketData(object pWrapper)
+        protected override  async void ProcessMarketData(object pWrapper)
         {
             Wrapper wrapper = (Wrapper) pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
