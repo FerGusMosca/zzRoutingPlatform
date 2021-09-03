@@ -330,7 +330,7 @@ namespace tph.BOBDayTurtles.BusinessEntities
             {
                 //We validate that it was broken before than date
 
-                if (DateTime.Compare(BrokenDate.Value, date.Value) < 0)
+                if (DateTime.Compare(BrokenDate.Value, date.Value) <= 0)
                     return true;
                 else
                     return false;

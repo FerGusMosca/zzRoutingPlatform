@@ -177,18 +177,28 @@ namespace tph.BOBDayTurtles.BusinessEntities
         public override string SignalTriggered()
         {
             //It logs information abou the signal that has been triggered
-
+            
             Trendline resistance = Resistances.Where(x => x.JustBroken).FirstOrDefault();
             Trendline support = Supports.Where(x => x.JustBroken).FirstOrDefault();
 
             if (resistance != null)
             {
-                return string.Format(" --> Broken Resistance: Start={0} End={1}  ",resistance.StartDate, resistance.EndDate);
+                MarketData lastCandle = GetLastCandle();
+                List<MarketData> histPrices = GetHistoricalPrices();
+                double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
+                return string.Format(" --> Broken Resistance: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
+                                    resistance.StartDate, resistance.EndDate,DateTime.Now,lastCandle.ClosingPrice,lastCandle.MDEntryDate.Value,
+                                    trendlinePrice);
             }
             
             else if (support != null)
             {
-                return string.Format(" --> Broken Support: Start={0} End={1}  ",support.StartDate, support.EndDate);
+                MarketData lastCandle = GetLastCandle();
+                List<MarketData> histPrices = GetHistoricalPrices();
+                double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
+                return string.Format(" --> Broken Support: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
+                    support.StartDate, support.EndDate,DateTime.Now,lastCandle.ClosingPrice,lastCandle.MDEntryDate.Value,
+                    trendlinePrice);
             }
             else
             {

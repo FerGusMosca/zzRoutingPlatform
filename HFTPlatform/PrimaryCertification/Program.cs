@@ -115,13 +115,29 @@ namespace PrimaryCertification
         {
             string[] fields = command.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (fields.Length != 3)
+            if (fields.Length <3)
                 throw new Exception("Comando MD con mal formato");
 
             string symbol = fields[1].Trim();
             string exchange = fields[2].Trim();
 
-            Security sec = new Security() { Symbol = symbol, Exchange = exchange, SecType = SecurityType.CS };
+            string strSecType = null;
+            
+            if(fields.Length>=4)
+                strSecType = fields[3].Trim();
+
+            SecurityType secType = SecurityType.CS;
+
+            if (strSecType == "CS")
+                secType = SecurityType.CS;
+            else if (strSecType == "FUT")
+                secType = SecurityType.FUT;
+            else
+            {
+                throw new Exception(string.Format("Not recognized security type {0}", strSecType));
+            }
+
+            Security sec = new Security() { Symbol = symbol, Exchange = exchange, SecType = secType };
 
             MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(sec, SubscriptionRequestType.SnapshotAndUpdates);
             App.ProcessMessageToIncoming(mdrWrapper);
