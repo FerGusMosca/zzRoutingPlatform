@@ -627,6 +627,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BOBDayTurtles.Cryptos.App",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.BOBDayTurtles.DataAccessLayer", "tph.BOBDayTurtles.DataAccessLayer\tph.BOBDayTurtles.DataAccessLayer.csproj", "{A379C29E-B790-49FA-B07B-E70572DD76B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreWebsocketFIXConnector", "Test\NetCoreWebsocketFIXConnector\NetCoreWebsocketFIXConnector.csproj", "{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1473,6 +1475,10 @@ Global
 		{A379C29E-B790-49FA-B07B-E70572DD76B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A379C29E-B790-49FA-B07B-E70572DD76B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A379C29E-B790-49FA-B07B-E70572DD76B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1779,6 +1785,7 @@ Global
 		{9C044414-6993-4FFA-B5C1-A36B779E70D5} = {B19A9A2A-896C-42DF-9078-329BEAF8A079}
 		{15B610EF-04C9-4CBD-B921-2D252878194E} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 		{A379C29E-B790-49FA-B07B-E70572DD76B4} = {B19A9A2A-896C-42DF-9078-329BEAF8A079}
+		{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC} = {B80FAE0F-2666-462F-8EE9-B169D9E9584C}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

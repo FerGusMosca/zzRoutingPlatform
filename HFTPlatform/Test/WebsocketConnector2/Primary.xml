@@ -1,12 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
   <Name>InstructionProcessor.Primary.Test</Name>
-  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
+<!--  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>-->
   <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test.cfg</FIXInitiatorPath>-->
+  <FIXInitiatorPath>.\FIX Sessions\initiator_test_tarallo.cfg</FIXInitiatorPath><!--TEST Tarallo-->
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
-  <User>fmosca</User>
+<!--  <User>fmosca</User>--><!--PROD NASINI-->
+<!--  <Password>Msk7w6cB_</Password>&lt;!&ndash;PROD&ndash;&gt;-->
+  
+  <User>wstradehelm</User><!--TEST TARALLO-->
+  <Password>eP4mw8eD_</Password><!--TEST TARALLO-->
+  
   <!--<Password>WhYbs5wY</Password>--><!--TEST-->
-  <Password>Msk7w6cB_</Password><!--PROD-->
+  
   <!--<Password>Xqw7L9tS</Password>--> <!--TEST2-->
 
 <!--  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >-->

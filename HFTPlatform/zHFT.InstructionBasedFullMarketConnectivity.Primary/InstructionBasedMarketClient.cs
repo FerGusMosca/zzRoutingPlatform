@@ -1069,7 +1069,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             catch (Exception ex)
             {
 
-                DoLog(string.Format("{0}: Error processing message @fromApp:{1} ", PrimaryConfiguration.Name, ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("{0}: Error processing message @fromApp:{1} - StackTrace:{2} ", 
+                    PrimaryConfiguration.Name, ex.Message,ex.StackTrace), Constants.MessageType.Error);
 
             }
             

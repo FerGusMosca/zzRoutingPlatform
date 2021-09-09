@@ -144,8 +144,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 else if (execType == zHFT.Main.Common.Enums.ExecType.Trade )
                 {
                     Order order = ActiveOrders[clOrdId];
-                    
-                    order.CumQty = (decimal?) erWrapper.GetField(ExecutionReportFields.CumQty);
+
+                    order.CumQty = (decimal?) Convert.ToDecimal(erWrapper.GetField(ExecutionReportFields.CumQty));
                     if (ordStatus == zHFT.Main.Common.Enums.OrdStatus.Filled)
                     {
                         

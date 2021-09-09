@@ -593,6 +593,27 @@
           <e p="Order Imbalance" t="Include" />
         </e>
         <e p="Mocks" t="Include" />
+        <e p="NetCoreWebsocketFIXConnector" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Config.xml" t="Include" />
+          <e p="incomingBinance.xml" t="Include" />
+          <e p="incomingIB.xml" t="Include" />
+          <e p="IncomingSingletonConfig.xml" t="Include" />
+          <e p="NetCoreWebsocketFIXConnector.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp3.1" t="Include">
+                <e p="NetCoreWebsocketFIXConnector.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="orderRouter.Binance.xml" t="Include" />
+          <e p="OutgoingSingletonConfig.xml" t="Include" />
+          <e p="Primary.xml" t="Include" />
+          <e p="Program.cs" t="Include" />
+          <e p="SimpleCommModule.xml" t="Include" />
+        </e>
         <e p="OptionsMarketDataTest" t="IncludeRecursive">
           <e p="App.Config" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
