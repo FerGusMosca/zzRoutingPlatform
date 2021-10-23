@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>InstructionProcessor.Primary</Name>
+  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath> <!--PROD Nasini-->
+  <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test.cfg</FIXInitiatorPath>-->
+  <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test_tarallo.cfg</FIXInitiatorPath>-->
+  
+  <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
+
+  <!--Nasini PROD-->
+  <User>fmosca</User>
+  <Password>Msk7w6cB_</Password>
+
+  <!--Tarallo Test-->
+<!--<User>wstradehelm</User>
+    <Password>eP4mw8eD_</Password>-->
+
+  
+  <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
+
+  <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds>
+  <!--5 segundos-->
+
+  <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest>
+  <!--Seconds-->
+
+  <WaitingTimeForOrderRoutingInMiliseconds>1000</WaitingTimeForOrderRoutingInMiliseconds><!--No más de una orden por segundo-->
+
+  <SecurityTypes>
+    <SecurityType>CS</SecurityType>
+    <!--CS= Common Stock-->
+    <SecurityType>OPT</SecurityType>
+    <!--OPT=Options-->
+    <SecurityType>FUT</SecurityType>
+    <!--FUT=Futures-->
+    <SecurityType>TB</SecurityType>
+    <!--TB=Treasury Bills-->
+  </SecurityTypes>
+
+  <Markets>
+    <Market>ROFX</Market>
+    <Market>BUE</Market>
+    <!--BUE=BYMA,ROFX=Rofex,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
+  </Markets>
+
+
+  <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
+  <RequestFullMarketData>false</RequestFullMarketData>
+  <SaveFullMarketData>false</SaveFullMarketData>
+  
+  
+</Configuration>

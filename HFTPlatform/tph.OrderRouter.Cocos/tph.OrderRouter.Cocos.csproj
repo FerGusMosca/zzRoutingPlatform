@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\tph.OrderRouter.Cocos.Common\tph.OrderRouter.Cocos.Common.csproj" />
+      <ProjectReference Include="..\tph.OrderRouter.ServiceLayer\tph.OrderRouter.ServiceLayer.csproj" />
+      <ProjectReference Include="..\zHFT.OrderRouters.Cryptos\zHFT.OrderRouters.Cryptos.csproj" />
+    </ItemGroup>
+
+</Project>
