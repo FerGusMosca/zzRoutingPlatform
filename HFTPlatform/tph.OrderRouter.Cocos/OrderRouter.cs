@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using tph.OrderRouter.Cocos.Common.Converters;
 using tph.OrderRouter.ServiceLayer;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
@@ -11,6 +12,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common;
+using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.OrderRouters.Cryptos;
 
 namespace tph.OrderRouter.Cocos
@@ -31,7 +33,6 @@ namespace tph.OrderRouter.Cocos
             set { Config = value; }
         }
         
-        
         #endregion
         
         #region Protected Methods
@@ -42,12 +43,14 @@ namespace tph.OrderRouter.Cocos
 
         protected override CMState ProcessIncoming(Wrapper wrapper)
         {
-            throw new NotImplementedException();
+            //Este Communication Module no tiene modulos de Incoming o Outgoing
+            return CMState.BuildFail(new Exception("No incoming module set for Cocos order router!"));
         }
 
         protected override CMState ProcessOutgoing(Wrapper wrapper)
         {
-            throw new NotImplementedException();
+            //Este Communication Module no tiene modulos de Incoming o Outgoing
+            return CMState.BuildFail(new Exception("No outgoing module set for Cocos order router!"));
         }
 
         protected void TestValidateNewOrder()
@@ -67,13 +70,93 @@ namespace tph.OrderRouter.Cocos
             
             CocosOrderRouterServiceClient.ValidateNewOrder(order);
         }
+        
+        protected void DoRoute(Order order)
+        {
+            //TODO: Send order and return pending new ER
+            DoLog(string.Format("New order created for cl.order Id {0}",  order.ClOrdId),Constants.MessageType.Information);
+            
+        }
+        
+        protected void RouteNewOrder(Wrapper wrapper)
+        {
+            Order order = null;
+            try
+            {
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
+
+                lock (tLock)
+                {
+                    order = OrderConverter.GetNewOrder(wrapper);
+                }
+
+                DoLog(string.Format("Routing Client Order Id {0}", order.ClOrdId), Constants.MessageType.Information);
+
+                DoRoute(order);
+
+                lock (tLock)
+                {
+                    ActiveOrders.Add(order.OrderId.ToString(), order);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error routing order {0} to the exchange!: {1}",order.ClOrdId, ex.Message), Constants.MessageType.Error);
+
+                RejectedExecutionReportWrapper rejectedWrapper = new RejectedExecutionReportWrapper(order, ex.Message);
+
+                new Thread(ProcessExecutionReport).Start(rejectedWrapper);
+            }
+        }
 
         #endregion
 
-        public CMState ProcessMessage(Wrapper wrapper)
+        public  CMState ProcessMessage(Wrapper wrapper)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                if (wrapper.GetAction() == Actions.NEW_ORDER)
+                {
+                    DoLog(string.Format("Routing with Cocos to market for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()),Constants.MessageType.Information);
+                    RouteNewOrder(wrapper);
+
+                }
+                else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
+                {
+                    DoLog(string.Format("Updating order with Cocos for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Constants.MessageType.Information);
+                   
+                    //new Thread(UpdateOrderThread).Start(wrapper);
+
+                }
+                else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
+                {
+                    DoLog(string.Format("Canceling order with Cocos for symbol {0}", wrapper.GetField(OrderFields.Symbol).ToString()), Constants.MessageType.Information);
+                    //new Thread(CancelOrderThread).Start(wrapper);
+                }
+                else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
+                {
+                    DoLog(string.Format("@{0}:Cancelling all active orders @ Cocos", CocosConfiguration.Name), Constants.MessageType.Information);
+                    //new Thread(CancelAllOrdersThread).Start(wrapper);
+                    
+                }
+                else
+                {
+                    DoLog(string.Format("Could not process order routing for action {0} with Cocos:", wrapper.GetAction().ToString()),Constants.MessageType.Error);
+                    return CMState.BuildFail(new Exception(string.Format("Could not process order routing for action {0} with Cocos:", wrapper.GetAction().ToString())));
+                }
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                DoLog("Error processing market instruction @Invertir Online order router:" + ex.Message, Constants.MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+        
         }
+
 
         public  bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {

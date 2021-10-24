@@ -5,7 +5,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj" />
       <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
+      <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj" />
     </ItemGroup>
 
 </Project>

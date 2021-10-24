@@ -24,6 +24,33 @@ namespace zHFT.Main.Common.Converter
         {
             return  wrapper.GetField(field) != Fields.NULL;
         }
+        
+        protected  void ValidateNewOrder(Wrapper wrapper)
+        {
+            if (!ValidateField(wrapper, OrderFields.Account))
+                throw new Exception("Missing account for order");
+
+            if (!ValidateField(wrapper, OrderFields.OrdType))
+                throw new Exception("Missing order type for order");
+
+            if (!ValidateField(wrapper, OrderFields.Side))
+                throw new Exception("Missing side for order");
+
+            if (!ValidateField(wrapper, OrderFields.Symbol))
+                throw new Exception("Missing symbol for order");
+
+            //if (!ValidateField(wrapper, OrderFields.Exchange))
+            //    throw new Exception("Missing exchange for order");
+
+            if (!ValidateField(wrapper, OrderFields.SecurityType))
+                throw new Exception("Missing Security Type for order");
+
+            OrdType ordType = (OrdType)wrapper.GetField(OrderFields.OrdType);
+
+            //if (ordType != OrdType.Limit)
+            //    throw new Exception(string.Format("Tipo de orden no soportado por el ruteador:{0}", ordType));
+        
+        }
 
 
         protected void ValidatePosition(Wrapper wrapper)

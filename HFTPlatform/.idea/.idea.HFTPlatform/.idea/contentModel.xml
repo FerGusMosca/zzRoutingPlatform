@@ -820,6 +820,9 @@
         <e p="Configuration" t="Include">
           <e p="Configuration.cs" t="Include" />
         </e>
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
         <e p="DTO" t="Include">
           <e p="Generic" t="Include">
             <e p="TransactionError.cs" t="Include" />
@@ -2266,9 +2269,11 @@
           <e p="Configuration.cs" t="Include" />
         </e>
         <e p="Converters" t="Include">
+          <e p="ExchangeConverter.cs" t="Include" />
           <e p="ExecutionReportConverter.cs" t="Include" />
           <e p="MarketDataConverter.cs" t="Include" />
           <e p="PositionConverter.cs" t="Include" />
+          <e p="SymbolConverter.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="OrderRouterBase.cs" t="Include" />

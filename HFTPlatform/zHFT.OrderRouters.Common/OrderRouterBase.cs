@@ -36,6 +36,21 @@ namespace zHFT.OrderRouters.Common
         #endregion
 
         #region Protected Methods
+        
+        protected void ProcessExecutionReport(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper)param;
+                OnMessageRcv(wrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error publishing execution report for new order: {0}",ex.Message), Main.Common.Util.Constants.MessageType.Error);
+
+            }
+        
+        }
 
         protected void DoLog(string msg, Constants.MessageType type)
         {
