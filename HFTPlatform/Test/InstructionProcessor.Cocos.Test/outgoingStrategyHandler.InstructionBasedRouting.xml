@@ -20,7 +20,7 @@
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
-  <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.IOLAccountManager, zHFT.StrategyHandler.IBR.IOL.DataAccessLayer</AccoutReferenceHandler>
+  <AccoutReferenceHandler>tph.StrategyHandler.IBR.Cocos.ServiceLayer.CocosAccountClient , tph.StrategyHandler.IBR.Cocos.ServiceLayer</AccoutReferenceHandler>
 
 
   <AccountManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.AccountManager, zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</AccountManagerAccessLayer>

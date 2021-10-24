@@ -643,6 +643,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cocos", "Cocos", "{6DA15D60
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstructionProcessor.Cocos.Test", "Test\InstructionProcessor.Cocos.Test\InstructionProcessor.Cocos.Test.csproj", "{DA532903-B92F-47C5-BFCA-954462A44B72}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cocos", "Cocos", "{261C89A1-C8D3-473F-B4C2-9818797864E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.IBR.Cocos.Common", "tph.StrategyHandler.IBR.Cocos.Common\tph.StrategyHandler.IBR.Cocos.Common.csproj", "{F9A66E36-72F8-45E1-B69F-FF0491D48966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.IBR.Cocos.ServiceLayer", "tph.StrategyHandler.IBR.Cocos.ServiceLayer\tph.StrategyHandler.IBR.Cocos.ServiceLayer.csproj", "{C57802B7-C978-4962-B85F-503ED84E53CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1513,6 +1519,14 @@ Global
 		{DA532903-B92F-47C5-BFCA-954462A44B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA532903-B92F-47C5-BFCA-954462A44B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA532903-B92F-47C5-BFCA-954462A44B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A66E36-72F8-45E1-B69F-FF0491D48966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A66E36-72F8-45E1-B69F-FF0491D48966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A66E36-72F8-45E1-B69F-FF0491D48966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A66E36-72F8-45E1-B69F-FF0491D48966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C57802B7-C978-4962-B85F-503ED84E53CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C57802B7-C978-4962-B85F-503ED84E53CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C57802B7-C978-4962-B85F-503ED84E53CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C57802B7-C978-4962-B85F-503ED84E53CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1827,6 +1841,9 @@ Global
 		{0966EED6-F4E0-413F-B25E-8C8B833C5287} = {1D9E075F-BDC1-4E9F-B15E-82A7BFB49B69}
 		{6DA15D60-30D9-4781-AEC9-94831738AB77} = {B6B3A487-FCD3-4897-A920-9ECB29A59F25}
 		{DA532903-B92F-47C5-BFCA-954462A44B72} = {6DA15D60-30D9-4781-AEC9-94831738AB77}
+		{261C89A1-C8D3-473F-B4C2-9818797864E6} = {761ED010-FF2C-4257-AB19-3FDAC5D4C37B}
+		{F9A66E36-72F8-45E1-B69F-FF0491D48966} = {261C89A1-C8D3-473F-B4C2-9818797864E6}
+		{C57802B7-C978-4962-B85F-503ED84E53CD} = {261C89A1-C8D3-473F-B4C2-9818797864E6}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

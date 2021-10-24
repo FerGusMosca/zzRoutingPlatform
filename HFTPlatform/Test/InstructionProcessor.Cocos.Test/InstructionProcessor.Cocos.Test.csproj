@@ -74,6 +74,10 @@
         <Project>{601050cf-cc79-479c-9206-2da7a71ac500}</Project>
         <Name>tph.OrderRouter.Cocos</Name>
       </ProjectReference>
+      <ProjectReference Include="..\..\tph.StrategyHandler.IBR.Cocos.ServiceLayer\tph.StrategyHandler.IBR.Cocos.ServiceLayer.csproj">
+        <Project>{c57802b7-c978-4962-b85f-503ed84e53cd}</Project>
+        <Name>tph.StrategyHandler.IBR.Cocos.ServiceLayer</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.IOL\zHFT.InstructionBasedMarketClient.IOL.csproj">
         <Project>{c4247863-54f4-44aa-8888-5523dd1b92ed}</Project>
         <Name>zHFT.InstructionBasedMarketClient.IOL</Name>

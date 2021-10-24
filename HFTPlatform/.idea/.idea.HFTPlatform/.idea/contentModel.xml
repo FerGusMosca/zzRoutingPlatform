@@ -490,6 +490,7 @@
             <e p="Bitstamp" t="Include" />
             <e p="Bittrex" t="Include" />
             <e p="Bloomberg" t="Include" />
+            <e p="Cocos" t="Include" />
             <e p="CoinApi" t="Include" />
             <e p="Cryptos" t="Include" />
             <e p="IB" t="Include" />
@@ -853,6 +854,24 @@
           </e>
         </e>
         <e p="tph.OrderRouter.ServiceLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.StrategyHandler.IBR.Cocos.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.IBR.Cocos.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.StrategyHandler.IBR.Cocos.ServiceLayer" t="IncludeRecursive">
+        <e p="BaseServiceClient.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CocosAccountServiceClient.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.IBR.Cocos.ServiceLayer.csproj" t="IncludeRecursive" />
       </e>
       <e p="tph.StrategyHandler.SimpleCommandReceiver" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
