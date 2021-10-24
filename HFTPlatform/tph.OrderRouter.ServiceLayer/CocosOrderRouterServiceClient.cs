@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using tph.OrderRouter.Cocos.Common.DTO.Generic;
+using tph.OrderRouter.Cocos.Common.DTO.Orders;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
@@ -65,29 +68,50 @@ namespace tph.OrderRouter.ServiceLayer
         
         #region Public Methods
 
-        public void ValidateNewOrder(Order order)
+        public ValidateNewOrder ValidateNewOrder(Order order)
         {
-            string url = string.Format("{0}{1}", BaseURL, _VALIDATE_NEW_ORDER_ASYNC);
-            
-            Dictionary<string, string> queryString =  new Dictionary<string, string>();
-            queryString.Add("NombreEspecie", order.Security.Symbol);
-            queryString.Add("Cantidad", order.OrderQty.HasValue ? order.OrderQty.Value.ToString() : "0");
+            try
+            {
+           
+                string url = string.Format("{0}{1}", BaseURL, _VALIDATE_NEW_ORDER_ASYNC);
+                
+                Dictionary<string, string> queryString =  new Dictionary<string, string>();
+                queryString.Add("NombreEspecie", order.Security.Symbol);
+                queryString.Add("Cantidad", order.OrderQty.HasValue ? order.OrderQty.Value.ToString() : "0");
 
-            queryString.Add("Precio", order.Price.HasValue ? order.Price.Value.ToString() : "");
-            queryString.Add("Importe",  "");
+                queryString.Add("Precio", order.Price.HasValue ? order.Price.Value.ToString() : "");
+                queryString.Add("Importe",  "");
 
-            if (order.Side == Side.Buy)
-                queryString.Add("OptionTipo", _SIDE_BUY);
-            else if (order.Side == Side.Sell)
-                queryString.Add("OptionTipo", _SIDE_SELL);
-            else
-                throw new Exception(string.Format("Side not implemented:{0}", order.Side));
+                if (order.Side == Side.Buy)
+                    queryString.Add("OptionTipo", _SIDE_BUY);
+                else if (order.Side == Side.Sell)
+                    queryString.Add("OptionTipo", _SIDE_SELL);
+                else
+                    throw new Exception(string.Format("Side not implemented:{0}", order.Side));
 
-            queryString.Add("DateValid", GetTIF(order));
-            
-            queryString.Add("OptionTipoPlazo", GetSettlement(order));
-            
-            DoPostJson(url, queryString);
+                queryString.Add("DateValid", GetTIF(order));
+                
+                queryString.Add("OptionTipoPlazo", GetSettlement(order));
+                
+                string resp = DoPostJson(url, queryString);
+
+                ValidateNewOrder validateOrdResp= JsonConvert.DeserializeObject<ValidateNewOrder>(resp);
+
+                return validateOrdResp;
+
+            }
+            catch (Exception e)
+            {
+                return new ValidateNewOrder()
+                {
+                    Success = false,
+                    Error = new TransactionError()
+                    {
+                        Codigo = 0,
+                        Descripcion = string.Format("ERROR @ValidateNewOrder:{0}", e.Message)
+                    }
+                };
+            }
         }
 
         #endregion

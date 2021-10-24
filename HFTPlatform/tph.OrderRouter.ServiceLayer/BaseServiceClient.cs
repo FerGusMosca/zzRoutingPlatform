@@ -47,6 +47,7 @@ namespace tph.OrderRouter.ServiceLayer
         
         #region Protected Methods
         
+        //if there are error, exceptions will be thrown
         protected void DoAuthenticate()
         {
             string url = string.Format("{0}{1}", BaseURL, _LOGIN_URL);
@@ -65,7 +66,10 @@ namespace tph.OrderRouter.ServiceLayer
                 CookieHandler.CookieContainer = cookies;
             }
 
-            DoPostJson(url, queryString);
+            string resp = DoPostJson(url, queryString);
+
+            if (!resp.Contains("usuarioLogueado"))
+                throw new Exception(string.Format("Could not authenticate user {0} and DNI {1}", User, DNI));
 
         }
 
@@ -78,7 +82,7 @@ namespace tph.OrderRouter.ServiceLayer
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 |
                                                        SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
                 
-                using (var httpClient = new HttpClient(CookieHandler))
+                using (var httpClient = new HttpClient(CookieHandler,false))
                 {
                     using (var content = new FormUrlEncodedContent(postData))
                     {

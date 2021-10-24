@@ -55,7 +55,7 @@ namespace tph.OrderRouter.Cocos
             Order order= new Order();
             
             order.Security=new Security();;
-            order.Security.Symbol = "GGAL.BUE";
+            order.Security.Symbol = "GGAL";
             order.Security.SecType = SecurityType.CS;
             order.Security.Exchange = "BUE";
             
@@ -109,7 +109,7 @@ namespace tph.OrderRouter.Cocos
             }
             catch (Exception ex)
             {
-                DoLog("Critic error initializing " + configFile + ":" + ex.Message,Constants.MessageType.Error);
+                DoLog("Critical ERROR initializing " + configFile + ":" + ex.Message,Constants.MessageType.Error);
                 return false;
             }
         }
