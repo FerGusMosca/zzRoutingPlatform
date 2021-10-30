@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using tph.OrderRouter.Cocos.Common.DTO.Accounts;
 using tph.OrderRouter.Cocos.Common.DTO.Generic;
 using tph.OrderRouter.Cocos.Common.DTO.Orders;
 using zHFT.Main.BusinessEntities.Orders;
@@ -67,6 +68,38 @@ namespace tph.OrderRouter.ServiceLayer
         #endregion
         
         #region Public Methods
+
+        public Positions GetPositions(string accountId)
+        {
+            try
+            {
+                string url = string.Format("{0}{1}", BaseURL, _GET_POSITIONS);
+
+
+                Dictionary<string, string> queryString = new Dictionary<string, string>();
+                queryString.Add("comitente", accountId);
+                queryString.Add("consolida", "0");
+                queryString.Add("proceso", "22");
+
+                string resp = DoPostJson(url, queryString);
+
+                Positions pos = JsonConvert.DeserializeObject<Positions>(resp);
+
+                return pos;
+            }
+            catch (Exception e)
+            {
+                return new Positions()
+                {
+                    Success = false,
+                    Error = new TransactionError()
+                    {
+                        Codigo = 0,
+                        Descripcion = string.Format("ERROR @Positions:{0}", e.Message)
+                    }
+                };
+            }
+        }
 
         public ValidateNewOrder ValidateNewOrder(Order order)
         {

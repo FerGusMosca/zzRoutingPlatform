@@ -44,6 +44,18 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\tph.OrderRouter.Cocos.Common\tph.OrderRouter.Cocos.Common.csproj">
+        <Project>{3c9714b0-c852-42b6-920b-53c9545873c2}</Project>
+        <Name>tph.OrderRouter.Cocos.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\tph.OrderRouter.ServiceLayer\tph.OrderRouter.ServiceLayer.csproj">
+        <Project>{0966eed6-f4e0-413f-b25e-8c8b833c5287}</Project>
+        <Name>tph.OrderRouter.ServiceLayer</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+        <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+        <Name>zHFT.Main.BusinessEntities</Name>
+      </ProjectReference>
       <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
         <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
         <Name>zHFT.Main.Common</Name>

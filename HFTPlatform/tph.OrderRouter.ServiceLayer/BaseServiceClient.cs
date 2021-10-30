@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using tph.OrderRouter.Cocos.Common.DTO.Generic;
+using tph.OrderRouter.Cocos.Common.DTO.Orders;
 
 namespace tph.OrderRouter.ServiceLayer
 {
@@ -15,6 +17,8 @@ namespace tph.OrderRouter.ServiceLayer
         protected string _LOGIN_URL = "/Login/Ingresar";
 
         protected string _VALIDATE_NEW_ORDER_ASYNC = "/Order/ValidarCargaOrdenAsync";
+        
+        protected string _GET_POSITIONS = "/Consultas/GetConsulta";
 
         #endregion
         
@@ -46,7 +50,7 @@ namespace tph.OrderRouter.ServiceLayer
         #endregion
         
         #region Protected Methods
-        
+
         //if there are error, exceptions will be thrown
         protected void DoAuthenticate()
         {

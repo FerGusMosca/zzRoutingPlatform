@@ -824,6 +824,16 @@
           <e p="OrderConverter.cs" t="Include" />
         </e>
         <e p="DTO" t="Include">
+          <e p="Accounts" t="Include">
+            <e p="ActivoPosition.cs" t="Include" />
+            <e p="AperturaPosition.cs" t="Include" />
+            <e p="DetallePosition.cs" t="Include" />
+            <e p="GetPositions.cs" t="Include" />
+            <e p="Positions.cs" t="Include" />
+            <e p="PositionsResult.cs" t="Include" />
+            <e p="SubtotalPosition.cs" t="Include" />
+            <e p="TotalPosition.cs" t="Include" />
+          </e>
           <e p="Generic" t="Include">
             <e p="TransactionError.cs" t="Include" />
             <e p="TransactionResponse.cs" t="Include" />
@@ -838,7 +848,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="net472" t="Include">
+            <e p="net461" t="Include">
               <e p="tph.OrderRouter.Cocos.Common.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -851,7 +861,7 @@
         <e p="CocosOrderRouterServiceClient.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="net472" t="Include">
+            <e p="net461" t="Include">
               <e p="tph.OrderRouter.ServiceLayer.AssemblyInfo.cs" t="Include" />
             </e>
           </e>

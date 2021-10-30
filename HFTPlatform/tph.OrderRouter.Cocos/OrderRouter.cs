@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using tph.OrderRouter.Cocos.Common.Converters;
+using tph.OrderRouter.Cocos.Common.DTO.Accounts;
 using tph.OrderRouter.ServiceLayer;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
@@ -70,7 +71,13 @@ namespace tph.OrderRouter.Cocos
             
             CocosOrderRouterServiceClient.ValidateNewOrder(order);
         }
-        
+
+        protected void TestSyncPositions()
+        {
+            Positions pos = CocosOrderRouterServiceClient.GetPositions("20171");
+            //GetPositions
+        }
+
         protected void DoRoute(Order order)
         {
             //TODO: Send order and return pending new ER
@@ -178,7 +185,8 @@ namespace tph.OrderRouter.Cocos
                                                                                       CocosConfiguration.User, 
                                                                                       CocosConfiguration.Password);
 
-                    TestValidateNewOrder();
+                    //TestSyncPositions();
+                    //TestValidateNewOrder();
 
                     //new Thread(EvalExecutionReportsThread).Start();
 

@@ -2,17 +2,17 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - Instruction Based Router</Name>
 
-  <ReportSavingMode>BD</ReportSavingMode>
+  <ReportSavingMode>NONE</ReportSavingMode>
   <!--BD=SQL Server Data Base, EXCEL=CSV file, NONE=nothing-->
-  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=StrategyReports;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
+  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=StrategyReports;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
-  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
+  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
 
   <!--11=mbartellini,10=fmosca-->
   <AccountNumber>10</AccountNumber><!--IOL TEST-->
@@ -20,8 +20,7 @@
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
 
-  <AccoutReferenceHandler>tph.StrategyHandler.IBR.Cocos.ServiceLayer.CocosAccountClient , tph.StrategyHandler.IBR.Cocos.ServiceLayer</AccoutReferenceHandler>
-
+  <AccoutReferenceHandler>tph.StrategyHandler.IBR.Cocos.ServiceLayer.CocosAccountServiceClient, tph.StrategyHandler.IBR.Cocos.ServiceLayer</AccoutReferenceHandler>
 
   <AccountManagerAccessLayer>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.AccountManager, zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</AccountManagerAccessLayer>
 
@@ -31,19 +30,28 @@
 
   <AccountManagerConfig>
     <Config>
-      <Key>AccountNumber</Key>
-      <Value>10</Value><!--IOL Test-->
-      <!--<Value>11</Value>--><!--IOL Prod-->
-      <!--11=mbartellini,10=fmosca-->
+      <Key>BASE_URL</Key>
+      <Value>https://cocoscap.com</Value>
     </Config>
+
     <Config>
-      <Key>ConfigConnectionString</Key>
-      <Value>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</Value>
+      <Key>DNI</Key>
+      <Value>29865449</Value>
     </Config>
+
     <Config>
-      <Key>MainURL</Key>
-      <!--<Value>https://api-sandbox.invertironline.com/</Value>--><!--Invertir Online Test-->
-      <Value>https://api.invertironline.com/</Value> <!--Invertir Online PROD-->
+      <Key>USER</Key>
+      <Value>zimzum</Value>
+    </Config>
+
+    <Config>
+      <Key>PWD</Key>
+      <Value>Baiano70$76</Value>
+    </Config>
+
+    <Config>
+      <Key>ACCOUNT</Key>
+      <Value>20171</Value>
     </Config>
   </AccountManagerConfig>
 
