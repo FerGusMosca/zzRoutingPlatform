@@ -4,18 +4,18 @@
 
   <ReportSavingMode>NONE</ReportSavingMode>
   <!--BD=SQL Server Data Base, EXCEL=CSV file, NONE=nothing-->
-  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=StrategyReports;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
+  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=StrategyReports;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\outgoingOrderRouter.xml</OrderRouterConfigFile>
 
-  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
 
-  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV17;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
+  <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
 
-  <!--11=mbartellini,10=fmosca-->
-  <AccountNumber>10</AccountNumber><!--IOL TEST-->
+  <!--12=Cocos-->
+  <AccountNumber>12</AccountNumber><!--IOL TEST-->
   <!--<AccountNumber>11</AccountNumber>--> <!--IOL PROD-->
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>

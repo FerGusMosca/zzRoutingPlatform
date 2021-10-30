@@ -247,3 +247,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.StrategyHandler.BusinessEntities.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb

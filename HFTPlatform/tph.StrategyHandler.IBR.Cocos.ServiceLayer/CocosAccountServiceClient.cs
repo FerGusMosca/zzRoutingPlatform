@@ -10,6 +10,7 @@ using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
+using PositionStatus = zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.PositionStatus;
 
 namespace tph.StrategyHandler.IBR.Cocos.ServiceLayer
 {
@@ -103,6 +104,7 @@ namespace tph.StrategyHandler.IBR.Cocos.ServiceLayer
                             },
                             Shares = innerPos.CANT.Value,
                             Weight = 0,
+                            PositionStatus = PositionStatus.GetNewPositionStatus(true),
                             MarketPrice = GetSafeDecimal(innerPos.PCIO), 
                         };
 

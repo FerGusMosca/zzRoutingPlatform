@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\zimzum\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\zimzum\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_HFTPlatform.1777536641.00" t="ExcludeRecursive" />
-    <e p="C:\Users\zimzum\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT" t="ExcludeRecursive" />
-    <e p="C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\hftplatform" t="IncludeFlat">
+    <e p="C:\Users\Compumar\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Compumar\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_HFTPlatform.-1813116124.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT" t="ExcludeRecursive" />
+    <e p="C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\hftplatform" t="IncludeFlat">
       <e p="BidAskArbitrage.Test" t="IncludeRecursive">
         <e p="App.Config" t="Include" />
         <e p="BidAskArbitrage.Test.csproj" t="IncludeRecursive" />
@@ -602,6 +602,8 @@
           <e p="obj" t="ExcludeRecursive" />
           <e p="outgoingOrderRouter.Cocos.xml" t="Include" />
           <e p="outgoingOrderRouter.xml" t="Include" />
+          <e p="outgoingStrategyHandler.InstructionBasedRouting - Desktop - Copy.xml" t="Include" />
+          <e p="outgoingStrategyHandler.InstructionBasedRouting - Notebook.xml" t="Include" />
           <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
