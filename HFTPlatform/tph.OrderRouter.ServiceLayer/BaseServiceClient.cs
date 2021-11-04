@@ -18,7 +18,11 @@ namespace tph.OrderRouter.ServiceLayer
 
         protected string _VALIDATE_NEW_ORDER_ASYNC = "/Order/ValidarCargaOrdenAsync";
         
+        protected string _CONFIRM_NEW_ORDER_ASYNC = "/Order/EnviarOrdenConfirmadaAsyc";
+        
         protected string _GET_POSITIONS = "/Consultas/GetConsulta";
+        
+        protected string _GET_EXECUTION_REPORTS = "/Consultas/GetConsulta";
 
         #endregion
         

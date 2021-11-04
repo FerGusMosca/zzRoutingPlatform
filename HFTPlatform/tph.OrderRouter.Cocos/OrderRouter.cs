@@ -70,6 +70,8 @@ namespace tph.OrderRouter.Cocos
             order.Side = Side.Buy;
             
             CocosOrderRouterServiceClient.ValidateNewOrder(order);
+            
+            CocosOrderRouterServiceClient.ConfirmNewOrder(order);
         }
 
         protected void TestSyncPositions()
@@ -83,6 +85,63 @@ namespace tph.OrderRouter.Cocos
             //TODO: Send order and return pending new ER
             DoLog(string.Format("New order created for cl.order Id {0}",  order.ClOrdId),Constants.MessageType.Information);
             
+        }
+        
+        protected  void EvalExecutionReportsThread(object param)
+        {
+
+            try
+            {
+                while (true)
+                {
+                    lock (tLock)
+                    {
+                        CocosOrderRouterServiceClient.GetExecutionReports("20171");
+                        
+                        List<string> ordersToDel = new List<string>();
+                        foreach (Order order in ActiveOrders.Values)
+                        {
+                            try
+                            {
+                                
+                                //TODO: Retrieve execution report manager to retrieve execution reports
+                                //TODO: Pendings Update dictionary
+                                //TODO: ProcessExecutionReport thread
+                                //TODO: LatestExecReport
+                                //ExecutionReportResp execReport = IOLOrderRouterManager.GetExecutionReport(order.OrderId);
+
+//                                if (!PendingUpdate.ContainsKey(order.OrderId.ToString()))
+//                                {
+//                                    ExecutionReportWrapper execReportWrapper = new ExecutionReportWrapper(order, execReport);
+//                                    new Thread(ProcessExecutionReport).Start(execReportWrapper);
+//
+//                                    if (!execReport.IsOpenOrder())
+//                                        ordersToDel.Add(order.OrderId.ToString());
+//
+//                                    if (!LatestExecReport.ContainsKey(order.ClOrdId))
+//                                        LatestExecReport.Add(order.ClOrdId, execReport);
+//                                    else
+//                                        LatestExecReport[order.ClOrdId] = execReport;
+//                                }//TODO eval Pendingreplace ER on ELSE
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog(string.Format("Critical error evaluating execution report for orderId {0}!: {1}",order.OrderId, ex.Message), Constants.MessageType.Error);
+                            }
+                        }
+
+                        ordersToDel.ForEach(x => ActiveOrders.Remove(x));
+                    }
+
+                    Thread.Sleep(1000);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical error evaluating execution reports!: {0}", ex.Message), Constants.MessageType.Error);
+
+            }
+        
         }
         
         protected void RouteNewOrder(Wrapper wrapper)
@@ -185,10 +244,10 @@ namespace tph.OrderRouter.Cocos
                                                                                       CocosConfiguration.User, 
                                                                                       CocosConfiguration.Password);
 
-                    //TestSyncPositions();
+                    
                     //TestValidateNewOrder();
-
-                    //new Thread(EvalExecutionReportsThread).Start();
+                    
+                    new Thread(EvalExecutionReportsThread).Start();
 
                     return true;
                 }

@@ -147,6 +147,56 @@ namespace tph.OrderRouter.ServiceLayer
             }
         }
 
+        public ValidateNewOrder ConfirmNewOrder(Order order)
+        {
+            try
+            {
+                string url = string.Format("{0}{1}", BaseURL, _CONFIRM_NEW_ORDER_ASYNC);
+                Dictionary<string, string> queryString =  new Dictionary<string, string>();
+                string resp = DoPostJson(url, queryString);
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public ExecutionReportsResponse GetExecutionReports(string accountId)
+        {
+            try
+            {
+                string url = string.Format("{0}{1}", BaseURL, _GET_EXECUTION_REPORTS);
+
+
+                Dictionary<string, string> queryString = new Dictionary<string, string>();
+                queryString.Add("comitente", accountId);
+                queryString.Add("consolida", "0");
+                queryString.Add("proceso", "121");
+
+                string resp = DoPostJson(url, queryString);
+
+                ExecutionReportsResponse execReports = JsonConvert.DeserializeObject<ExecutionReportsResponse>(resp);
+
+                return execReports;
+            }
+            catch (Exception e)
+            {
+                return new ExecutionReportsResponse()
+                {
+                    Success = false,
+                    Error = new TransactionError()
+                    {
+                        Codigo = 0,
+                        Descripcion = string.Format("ERROR @GetExecutionReports:{0}", e.Message)
+                    }
+                };
+            }
+            
+            
+        }
+
         #endregion
     }
 }

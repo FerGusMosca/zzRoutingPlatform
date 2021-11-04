@@ -18,3 +18,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\obj\Debug\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csprojAssemblyReference.cache
