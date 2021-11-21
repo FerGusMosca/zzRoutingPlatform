@@ -21,7 +21,7 @@ namespace tph.OrderRouter.Cocos.Common.Converters
                         try
                         {
                             zHFT.Main.BusinessEntities.Orders.ExecutionReport tphExecReport = new  zHFT.Main.BusinessEntities.Orders.ExecutionReport();
-                        
+                            //TODO convert field by fields
                             tphExecutionReports.Add(tphExecReport);
                         }
                         catch (Exception e)

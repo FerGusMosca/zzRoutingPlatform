@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using tph.OrderRouter.Cocos.Common.Converters;
 using tph.OrderRouter.Cocos.Common.DTO.Accounts;
+using tph.OrderRouter.Cocos.Common.DTO.Orders;
 using tph.OrderRouter.ServiceLayer;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
@@ -96,7 +97,9 @@ namespace tph.OrderRouter.Cocos
                 {
                     lock (tLock)
                     {
-                        CocosOrderRouterServiceClient.GetExecutionReports("20171");
+                        ExecutionReportsResponse execResp = CocosOrderRouterServiceClient.GetExecutionReports("20171");
+
+                        zHFT.Main.BusinessEntities.Orders.ExecutionReport[] execReports =  ExecutionReportConverter.ConvertExecutionReports(execResp);
                         
                         List<string> ordersToDel = new List<string>();
                         foreach (Order order in ActiveOrders.Values)

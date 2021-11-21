@@ -12,7 +12,7 @@ namespace tph.OrderRouter.Cocos.Common.Converters
         
         #region Protected Static Methods
 
-        private static void ValidateNewOrder(Wrapper wrapper)
+        public new static void ValidateNewOrder(Wrapper wrapper)
         {
             
         }

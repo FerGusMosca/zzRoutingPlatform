@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Sockets;
 using System.Text;
 using tph.OrderRouter.Cocos.Common.DTO.Generic;
 using tph.OrderRouter.Cocos.Common.DTO.Orders;
@@ -54,6 +56,19 @@ namespace tph.OrderRouter.ServiceLayer
         #endregion
         
         #region Protected Methods
+        
+        public  string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
 
         //if there are error, exceptions will be thrown
         protected void DoAuthenticate()
@@ -64,6 +79,8 @@ namespace tph.OrderRouter.ServiceLayer
             queryString.Add("Dni", DNI);
             queryString.Add("Usuario", User);
             queryString.Add("Password", Password);
+            //queryString.Add("IpAddress","190.193.48.235");
+            queryString.Add("IpAddress",GetLocalIPAddress());
             
             //CookieHandler
 
@@ -92,6 +109,9 @@ namespace tph.OrderRouter.ServiceLayer
                 
                 using (var httpClient = new HttpClient(CookieHandler,false))
                 {
+                    httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+                    //httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+                    httpClient.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
                     using (var content = new FormUrlEncodedContent(postData))
                     {
                         content.Headers.Clear();
