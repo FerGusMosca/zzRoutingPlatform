@@ -122,9 +122,11 @@ namespace PrimaryCertification
             string exchange = fields[2].Trim();
 
             string strSecType = null;
-            
-            if(fields.Length>=4)
+
+            if (fields.Length >= 4)
                 strSecType = fields[3].Trim();
+            else
+                strSecType = "CS";
 
             SecurityType secType = SecurityType.CS;
 
@@ -321,7 +323,7 @@ namespace PrimaryCertification
                 Console.WriteLine("--------------------");
                 Console.WriteLine("Ingrese comando");
                 Console.WriteLine("SL-Security List Request");
-                Console.WriteLine("MD-Market Data Request. Ejemplo: MD GGAL BUE");
+                Console.WriteLine("MD-Market Data Request. Ejemplo: MD GGAL BUE <CS>");
                 Console.WriteLine("NOS-New Order Single. Ejemplo: NOS GGAL BUE <Side:B/S> <OrdType:LMT/MKT> <qty> <price>");//B=Buy,LMT=Limit,100=Qty,80=Limit Price
                 Console.WriteLine("CO-Cancel Order. Ejemplo: CO <ClOrderId>");//100 es el Id de la orden
                 Console.WriteLine("UO-Cancel Order. Ejemplo: CO <ClOrderId> <qty> <price>");//100 es el Id de la orden
