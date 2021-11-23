@@ -43,6 +43,7 @@
     <Compile Include="DTO\DetailedDailyDiff.cs" />
     <Compile Include="DTO\DetailedPositionItem.cs" />
     <Compile Include="DTO\DetailedPositionResponse.cs" />
+    <Compile Include="DTO\DetailedPositionSummary.cs" />
     <Compile Include="DTO\DetailedPositions.cs" />
     <Compile Include="DTO\PositionReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

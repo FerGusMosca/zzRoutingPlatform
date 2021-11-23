@@ -197,9 +197,9 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
             DetailedPositionResponse detailedPositionResp = JsonConvert.DeserializeObject<DetailedPositionResponse>(resp);
 
-            foreach (var secType in detailedPositionResp.report.Keys)
+            foreach (var secType in detailedPositionResp.detailedPosition.report.Keys)
             {
-                Dictionary<string, DetailedPositions> detailsPositionsForSecType = detailedPositionResp.report[secType];
+                Dictionary<string, DetailedPositions> detailsPositionsForSecType = detailedPositionResp.detailedPosition.report[secType];
 
                 foreach (string symbol in detailsPositionsForSecType.Keys)
                 {
@@ -235,7 +235,7 @@ namespace zHFT.StrategyHandler.IBR.Primary.DataAccessLayer
 
             string resp = DoGetJson(url);
 
-            DetailedPositionResponse detailedPositionResp = JsonConvert.DeserializeObject<DetailedPositionResponse>(resp);
+            DetailedPositionSummary detailedPositionResp = JsonConvert.DeserializeObject<DetailedPositionSummary>(resp);
 
 
             Account.Balance = Convert.ToDecimal(detailedPositionResp.totalMarketValue);

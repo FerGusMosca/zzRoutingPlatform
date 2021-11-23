@@ -26,3 +26,10 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll.config
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.pdb
