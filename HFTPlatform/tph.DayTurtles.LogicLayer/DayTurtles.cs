@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
+using tph.DayTurtles.Common.Util;
 using tph.DayTurtles.DataAccessLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
@@ -245,13 +246,18 @@ namespace tph.DayTurtles.LogicLayer
             {
                 lock (tLock)
                 {
-                    if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities!=null)
+                    string cleanSymbol = SymbolConverter.GetCleanSymbol(md.Security.Symbol);
+                    if (PortfolioPositionsToMonitor.ContainsKey(cleanSymbol) && Securities!=null)
                     {
-                        MonTurtlePosition portfPos = (MonTurtlePosition) PortfolioPositionsToMonitor[md.Security.Symbol];
+                        MonTurtlePosition portfPos = (MonTurtlePosition) PortfolioPositionsToMonitor[cleanSymbol];
                         portfPos.AppendCandle(md);
                         EvalOpeningClosingPositions(portfPos);
                         UpdateLastPrice(portfPos, md);
                     }
+//                    else
+//                    {
+//                        DoLog(string.Format("DB-Skipping not monitored MD for symbol {0}",cleanSymbol),Constants.MessageType.Information);
+//                    }
                 }
             }
             catch (Exception e)

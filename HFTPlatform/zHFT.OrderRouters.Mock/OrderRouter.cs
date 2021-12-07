@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -75,10 +76,24 @@ namespace zHFT.OrderRouters.Mock
             Wrapper wrapper = (Wrapper) pWrapper;
             lock (tLock)
             {
-                Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
-                newOrder.EffectiveTime = DateTime.Now;
+                try
+                {
+                    Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
+                    newOrder.EffectiveTime = DateTime.Now;
 
-                PendingToExecuteOrders.Add(newOrder);
+                    PendingToExecuteOrders.Add(newOrder);
+                }
+                catch (Exception e)
+                {
+                    // Get stack trace for the exception with source file information
+                    var st = new StackTrace(e, true);
+                    // Get the top stack frame
+                    var frame = st.GetFrame(0);
+                    // Get the line number from the stack frame
+                    var line = frame.GetFileLineNumber();
+                    DoLog(string.Format("@{0}:CRITICAL ERROR Sending order to market {1}", Configuration.Name, e.Message), Main.Common.Util.Constants.MessageType.Error);
+                    DoLog(string.Format("File Name: {0} Line={1}",frame.GetFileName(),line),Constants.MessageType.Error);
+                }
             }
         }
 
