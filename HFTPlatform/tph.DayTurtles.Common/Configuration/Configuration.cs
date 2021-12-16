@@ -12,6 +12,7 @@ namespace tph.DayTurtles.Common.Configuration
         
         public string ConnectionString { get; set; }
         
+        
         #endregion
     }
 }

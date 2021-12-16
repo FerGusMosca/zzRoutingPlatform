@@ -5,6 +5,13 @@ namespace zHFT.StrategyHandler.BusinessEntities
     public class PortfolioPosition
     {
         
+        #region Public Static Consts
+
+        public static string _CANLDE_REF_PRICE_TRADE = "TRADE";
+        public static string _CANLDE_REF_PRICE_CLOSE = "CLOSE";
+        
+        #endregion
+        
         #region Public Attributes
         
         public Security Security { get; set; }

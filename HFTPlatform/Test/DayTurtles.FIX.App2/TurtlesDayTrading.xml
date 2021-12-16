@@ -4,6 +4,7 @@
   
   <OpenWindow>20</OpenWindow>
   <CloseWindow>10</CloseWindow>
+  <CandleReferencePrice>TRADE</CandleReferencePrice><!-- Cryptos ->CLOSE ; BYMA -> TRADE -->
 
   <PositionSizeInCash>1000</PositionSizeInCash>
 

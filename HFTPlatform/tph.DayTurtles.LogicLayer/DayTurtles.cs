@@ -310,7 +310,8 @@ namespace tph.DayTurtles.LogicLayer
 
                     MonTurtlePosition portfPos = new MonTurtlePosition(GetConfig().OpenWindow,
                         GetConfig().CloseWindow,
-                        GetConfig().StopLossForOpenPositionPct)
+                        GetConfig().StopLossForOpenPositionPct,
+                        GetConfig().CandleReferencePrice)
                     {
                         Security = sec,
                         DecimalRounding = Config.DecimalRounding,

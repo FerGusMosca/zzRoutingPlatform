@@ -46,6 +46,8 @@ namespace zHFT.StrategyHandler.Common
         
         public bool OnlyLong { get; set; }
         
+        public string CandleReferencePrice { get; set; }
+        
         #endregion
 
         public override bool CheckDefaults(List<string> result)

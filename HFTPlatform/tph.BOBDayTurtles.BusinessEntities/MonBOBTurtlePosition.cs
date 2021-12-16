@@ -4,15 +4,18 @@ using System.Linq;
 using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Enums;
+using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.BOBDayTurtles.BusinessEntities
 {
     public class MonBOBTurtlePosition : MonTurtlePosition
     {
+        
         #region Constructors
 
         public MonBOBTurtlePosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct,
-            int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct)
+            int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct,
+            PortfolioPosition._CANLDE_REF_PRICE_CLOSE)
         {
             Resistances = new List<Trendline>();
             Supports = new List<Trendline>();

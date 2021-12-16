@@ -10,12 +10,13 @@ namespace tph.DayTurtles.BusinessEntities
     {
         #region Constructors
 
-        public MonTurtlePosition(int openWindow, int closeWindow,double stopLossForOpenPositionPct)
+        public MonTurtlePosition(int openWindow, int closeWindow,double stopLossForOpenPositionPct, string candleRefPrice)
         {
             Candles = new Dictionary<string, MarketData>();
             OpenWindow = openWindow;
             CloseWindow = closeWindow;
             StopLossForOpenPositionPct = stopLossForOpenPositionPct;
+            CandleReferencePrice = candleRefPrice;
         }
 
         #endregion
@@ -27,6 +28,8 @@ namespace tph.DayTurtles.BusinessEntities
         public int CloseWindow { get; set; }
         
         public double StopLossForOpenPositionPct { get; set; }
+        
+        public string CandleReferencePrice { get; set; }
 
         public Dictionary<string, MarketData> Candles { get; set; }
 
@@ -70,6 +73,46 @@ namespace tph.DayTurtles.BusinessEntities
             return lowest;
         }
 
+        public bool IsBigger(MarketData  md , MarketData lastCandle)
+       {
+           if (string.IsNullOrEmpty(CandleReferencePrice))
+           {
+               return md.ClosingPrice > lastCandle.ClosingPrice;
+           }
+           else if (CandleReferencePrice == _CANLDE_REF_PRICE_CLOSE)
+           {
+               return md.ClosingPrice > lastCandle.ClosingPrice;
+           }
+           else if (CandleReferencePrice == _CANLDE_REF_PRICE_TRADE)
+           {
+               return md.Trade > lastCandle.Trade;
+           }
+           else
+           {
+               throw new Exception(string.Format("Candle Reference  Price not recognized:{0}",CandleReferencePrice));
+           }
+       }
+
+        public bool Islower(MarketData  md , MarketData lastCandle)
+        {
+            if (string.IsNullOrEmpty(CandleReferencePrice))
+            {
+                return md.ClosingPrice < lastCandle.ClosingPrice;
+            }
+            else if (CandleReferencePrice == _CANLDE_REF_PRICE_CLOSE)
+            {
+                return md.ClosingPrice < lastCandle.ClosingPrice;
+            }
+            else if (CandleReferencePrice == _CANLDE_REF_PRICE_TRADE)
+            {
+                return md.Trade < lastCandle.Trade;
+            }
+            else
+            {
+                throw new Exception(string.Format("Candle Reference  Price not recognized:{0}",CandleReferencePrice));
+            }
+        }
+        
         public bool IsHighest(int window)
         {
             if (Candles.Count < window)
@@ -84,7 +127,8 @@ namespace tph.DayTurtles.BusinessEntities
             bool foundBigger = false;
             foreach (MarketData md in candles)
             {
-                if (md.ClosingPrice > lastCandle.ClosingPrice 
+                if ( 
+                    IsBigger(md,lastCandle)
                     && md.MDEntryDate.HasValue && lastCandle.MDEntryDate.HasValue
                     && DateTime.Compare(md.MDEntryDate.Value, lastCandle.MDEntryDate.Value) < 0)
                 {
@@ -110,7 +154,7 @@ namespace tph.DayTurtles.BusinessEntities
             bool foundLower = false;
             foreach (MarketData md in candles)
             {
-                if (md.ClosingPrice < lastCandle.ClosingPrice 
+                if (Islower(md,lastCandle)
                     && md.MDEntryDate.HasValue && lastCandle.MDEntryDate.HasValue
                     && DateTime.Compare(md.MDEntryDate.Value, lastCandle.MDEntryDate.Value) < 0)
                 {
