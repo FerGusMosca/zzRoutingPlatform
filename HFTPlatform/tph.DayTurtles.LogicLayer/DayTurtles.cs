@@ -247,9 +247,11 @@ namespace tph.DayTurtles.LogicLayer
                 lock (tLock)
                 {
                     string cleanSymbol = SymbolConverter.GetCleanSymbol(md.Security.Symbol);
-                    if (PortfolioPositionsToMonitor.ContainsKey(cleanSymbol) && Securities!=null)
+                    if (PortfolioPositionsToMonitor.Keys.Any(x=>SymbolConverter.GetCleanSymbol(x)==cleanSymbol)&& Securities!=null)
+                    //if (PortfolioPositionsToMonitor.ContainsKey(cleanSymbol) && Securities!=null)
                     {
-                        MonTurtlePosition portfPos = (MonTurtlePosition) PortfolioPositionsToMonitor[cleanSymbol];
+                        string symbol = PortfolioPositionsToMonitor.Keys.Where(x=>SymbolConverter.GetCleanSymbol(x)==cleanSymbol).FirstOrDefault();
+                        MonTurtlePosition portfPos = (MonTurtlePosition) PortfolioPositionsToMonitor[symbol];
                         portfPos.AppendCandle(md);
                         EvalOpeningClosingPositions(portfPos);
                         UpdateLastPrice(portfPos, md);

@@ -395,6 +395,10 @@
           <e p="PositionsDto.cs" t="Include" />
         </e>
         <e p="Config.xml" t="Include" />
+        <e p="FIX Sessions" t="Include">
+          <e p="initiator_prod_tarallo.cfg" t="Include" />
+          <e p="initiator_test_tarallo.cfg" t="Include" />
+        </e>
         <e p="IncomingSingletonConfig.xml" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="OutgoingSingletonConfig.xml" t="Include" />
@@ -565,6 +569,9 @@
           <e p="bin" t="ExcludeRecursive" />
           <e p="Config.xml" t="Include" />
           <e p="DayTurtles.FIX.App2.csproj" t="IncludeRecursive" />
+          <e p="FIX Sessions" t="Include">
+            <e p="initiator_prod.cfg" t="Include" />
+          </e>
           <e p="genOrderRouter.xml" t="Include" />
           <e p="Mock" t="Include">
             <e p="outgoingOrderRouter.Mock.xml" t="Include" />

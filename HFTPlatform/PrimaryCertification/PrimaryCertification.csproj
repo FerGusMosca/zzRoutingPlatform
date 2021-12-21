@@ -113,6 +113,12 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FIX Sessions\initiator_prod_tarallo.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="FIX Sessions\initiator_test_tarallo.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="IncomingSingletonConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -179,7 +179,7 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.Commission)
                 return FixHelper.GetDoubleFieldIfSet(ExecutionReport, Commission.FIELD);
             else if (xrField == ExecutionReportFields.Text)
-                return ExecutionReport.getField(Text.FIELD);
+                return FixHelper.GetFieldIfSet(ExecutionReport, Text.FIELD);
             else if (xrField == ExecutionReportFields.TransactTime)
                 return DateTime.Now;
             else if (xrField == ExecutionReportFields.LastQty)
@@ -219,9 +219,9 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.PriceType)
                 return zHFT.Main.Common.Enums.PriceType.FixedAmount;//In Primary v1.0 we only work with FIXED AMMOUNT orders
             else if (xrField == ExecutionReportFields.Account)
-                return ExecutionReport.getField(QuickFix.Account.FIELD);
+                return FixHelper.GetFieldIfSet(ExecutionReport, Account.FIELD);
             else if (xrField == ExecutionReportFields.ExecInst)
-                return ExecutionReport.getField(QuickFix.ExecInst.FIELD);
+                FixHelper.GetFieldIfSet(ExecutionReport, ExecInst.FIELD);
 
             return ExecutionReportFields.NULL;
         }

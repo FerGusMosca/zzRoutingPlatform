@@ -1047,6 +1047,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 }
                 else if (value is QuickFix50.ExecutionReport)
                 {
+                    DoLog(string.Format("ER={0}", value), Constants.MessageType.Information);
                     QuickFix50.ExecutionReport msg = (QuickFix50.ExecutionReport)value;
                     ExecutionReportWrapper erWrapper = ProcesssExecutionReportMessage(msg);
                     if(erWrapper!=null && OnExecutionReportMessageRcv!=null)

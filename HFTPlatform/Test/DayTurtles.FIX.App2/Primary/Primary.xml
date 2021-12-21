@@ -8,12 +8,16 @@
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
 
   <!--Nasini PROD-->
-  <User>fmosca</User>
-  <Password>Msk7w6cB_</Password>
+<!--  <User>fmosca</User>-->
+<!--  <Password>Msk7w6cB_</Password>-->
 
   <!--Tarallo Test-->
 <!--<User>wstradehelm</User>
     <Password>eP4mw8eD_</Password>-->
+
+  <!--Tarallo PROD-->
+  <User>mgasser</User>
+  <Password>EuFNp8tS_</Password>
 
   
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
