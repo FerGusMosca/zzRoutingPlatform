@@ -396,6 +396,7 @@
         </e>
         <e p="Config.xml" t="Include" />
         <e p="FIX Sessions" t="Include">
+          <e p="initiator_nasini_prod.cfg" t="Include" />
           <e p="initiator_prod_tarallo.cfg" t="Include" />
           <e p="initiator_test_tarallo.cfg" t="Include" />
         </e>
@@ -570,7 +571,8 @@
           <e p="Config.xml" t="Include" />
           <e p="DayTurtles.FIX.App2.csproj" t="IncludeRecursive" />
           <e p="FIX Sessions" t="Include">
-            <e p="initiator_prod.cfg" t="Include" />
+            <e p="initiator_nasini_prod.cfg" t="Include" />
+            <e p="initiator_tarallo_prod.cfg" t="Include" />
           </e>
           <e p="genOrderRouter.xml" t="Include" />
           <e p="Mock" t="Include">

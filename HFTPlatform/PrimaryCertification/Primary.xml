@@ -5,13 +5,17 @@
   <FIXInitiatorPath>.\FIX Sessions\initiator_prod_tarallo.cfg</FIXInitiatorPath>
   <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
 
-  <!-- PROD User-->
+  <!-- Tarallo PROD -->
   <User>mgasser</User>
   <Password>EuFNp8tS_</Password>
   
   <!-- TEST User-->
 <!--  <User>wstradehelm</User>-->
 <!--  <Password>eP4mw8eD_</Password>-->
+
+  <!--Nasini PROD-->
+<!--  <User>fmosca</User>-->
+<!--  <Password>Msk7w6cB_</Password>-->
 
   <SecurityTypes>
     <SecurityType>CS</SecurityType>

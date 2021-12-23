@@ -14,7 +14,8 @@
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
 
-  <Account>9732</Account>
+<!--  <Account>9732</Account>--> <!-- TARALLO-->
+  <Account>10262</Account> <!-- NASINI-->
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>

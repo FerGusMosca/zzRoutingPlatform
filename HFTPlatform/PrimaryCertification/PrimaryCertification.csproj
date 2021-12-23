@@ -113,6 +113,9 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="FIX Sessions\initiator_nasini_prod.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="FIX Sessions\initiator_prod_tarallo.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

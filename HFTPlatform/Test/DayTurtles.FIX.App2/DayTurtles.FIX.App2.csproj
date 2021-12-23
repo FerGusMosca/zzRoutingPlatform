@@ -143,7 +143,10 @@
       <Content Include="Config.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-      <Content Include="FIX Sessions\initiator_prod.cfg">
+      <Content Include="FIX Sessions\initiator_nasini_prod.cfg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="FIX Sessions\initiator_tarallo_prod.cfg">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
       <Content Include="GenOrderRouter.xml">
