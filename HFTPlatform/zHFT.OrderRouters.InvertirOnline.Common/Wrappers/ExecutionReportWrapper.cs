@@ -176,9 +176,9 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return Order.cantidad-ExecutionReportResp.cantidad;
+                return Order.cantidad-ExecutionReportResp.GetCumQty();
             else if (xrField == ExecutionReportFields.CumQty)
-                return ExecutionReportResp.cantidad;
+                return ExecutionReportResp.GetCumQty();
             else if (xrField == ExecutionReportFields.AvgPx)
                 return ExecutionReportResp.precio;
             else if (xrField == ExecutionReportFields.Commission)

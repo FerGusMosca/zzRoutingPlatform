@@ -285,7 +285,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                                 summary.Position.SetPositionStatusFromExecution(report.ExecType);
                                 UpdateExecutionSummaryData(summary, report);
                                 EvalExecutionSummary(summary);
-                                DoLog(string.Format("Partially filled for symbol {0} processed", summary.Position.Symbol), Main.Common.Util.Constants.MessageType.Debug);
+                                DoLog(string.Format("Partially filled for symbol {0} processed (LvsQty={1})", summary.Position.Symbol,report.LeavesQty), Main.Common.Util.Constants.MessageType.Debug);
 
                             }//Filled
                             else if (report.ExecType == ExecType.Trade && report.OrdStatus == OrdStatus.Filled)

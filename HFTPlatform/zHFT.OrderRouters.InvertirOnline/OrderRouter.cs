@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Common;
 using zHFT.OrderRouters.InvertirOnline.Common.Converters;
@@ -85,6 +86,17 @@ namespace zHFT.OrderRouters.InvertirOnline
                                 if (!PendingUpdate.ContainsKey(order.OrderId.ToString()))
                                 {
                                     ExecutionReportWrapper execReportWrapper = new ExecutionReportWrapper(order, execReport);
+                                    DoLog(string.Format(
+                                            "@IOL Order Router - Publishing ER for symbol {0}. Status={1} ExecType={2} CumQty={3} LvsQty={4}",
+                                            execReportWrapper.GetField(ExecutionReportFields.Symbol),
+                                            execReportWrapper.GetField(ExecutionReportFields.OrdStatus),
+                                            execReportWrapper.GetField(ExecutionReportFields.ExecType),
+                                            execReportWrapper.GetField(ExecutionReportFields.CumQty),
+                                            execReportWrapper.GetField(ExecutionReportFields.LeavesQty)),
+                                        Constants.MessageType.Information);
+                                    
+                                    
+                                    
                                     new Thread(ProcessExecutionReport).Start(execReportWrapper);
 
                                     if (!execReport.IsOpenOrder())
