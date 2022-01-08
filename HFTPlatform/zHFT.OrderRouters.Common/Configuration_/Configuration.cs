@@ -17,6 +17,8 @@ namespace zHFT.OrderRouters.Common.Configuration
         public string ProxyConfigFile { get; set; }
 
         public int OrderUpdateInMilliseconds  { get; set; }
+        
+        public int ConsecutiveOrdersPacingInSec { get; set; }
 
         public int DOMUpdateInMilliseconds { get; set; }
 

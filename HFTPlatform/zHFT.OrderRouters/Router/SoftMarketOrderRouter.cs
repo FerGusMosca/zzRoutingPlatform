@@ -24,9 +24,11 @@ namespace zHFT.OrderRouters.Router
 
         protected ICommunicationModule MarketDataModule { get; set; }
 
-        public Dictionary<string,Position> PositionsDict { get; set; }
+        public Dictionary<string, Position> PositionsDict { get; set; }
 
         public Dictionary<string, Position> PendingPartialOrderPositionsDict { get; set; }
+
+        public Dictionary<string, DateTime> PacingDict { get; set; }
 
         public Dictionary<string, Position> ActiveOrdersDict { get; set; }
 
@@ -39,10 +41,10 @@ namespace zHFT.OrderRouters.Router
         private void LogNewOrder(Position pos, Order newOrder)
         {
             DoLog(string.Format("Creating buy order for symbol {0}.Quantity={1} Price={2}",
-                                                pos.Security.Symbol,
-                                                newOrder.OrderQty.HasValue ? newOrder.OrderQty.Value : 0,
-                                                newOrder.Price.HasValue ? newOrder.Price.Value.ToString("##.##") : "<market>"),
-                                                Constants.MessageType.Information);
+                    pos.Security.Symbol,
+                    newOrder.OrderQty.HasValue ? newOrder.OrderQty.Value : 0,
+                    newOrder.Price.HasValue ? newOrder.Price.Value.ToString("##.##") : "<market>"),
+                Constants.MessageType.Information);
         }
 
         protected virtual double GetFullOrderQty(Position pos, double price)
@@ -55,7 +57,7 @@ namespace zHFT.OrderRouters.Router
                 if (pos.IsMonetaryQuantity())
                 {
                     pos.Qty = Convert.ToDouble(Math.Floor(pos.CashQty.Value / price));
-                    pos.CashQty = null;//this doesn't apply anymore
+                    pos.CashQty = null; //this doesn't apply anymore
                     return Convert.ToDouble(pos.Qty);
                 }
                 else
@@ -63,13 +65,38 @@ namespace zHFT.OrderRouters.Router
                     if (pos.Qty.HasValue)
                         return Convert.ToDouble(pos.Qty.Value);
                     else
-                        throw new Exception(string.Format("Missing quantity for new order for security {0}", pos.Security.Symbol));
+                        throw new Exception(string.Format("Missing quantity for new order for security {0}",
+                            pos.Security.Symbol));
                 }
             }
             else
-            { 
+            {
                 //We had some traeds, now we use the LeavesQty
                 return Convert.ToDouble(pos.LeavesQty);
+            }
+        }
+
+        protected bool PacingElapsed(Position pos)
+        {
+
+            if (PacingDict.ContainsKey(pos.PosId))
+            {
+                DateTime start = PacingDict[pos.PosId];
+
+                TimeSpan elapsed = DateTime.Now - start;
+
+                if (ORConfiguration.ConsecutiveOrdersPacingInSec > 0)
+                    return elapsed.TotalSeconds > ORConfiguration.ConsecutiveOrdersPacingInSec;
+                else
+                {
+                    DoLog(string.Format("ERROR-DB- ConsecutiveOrdersPacingInSec has not been established!"),Constants.MessageType.Information);
+                    return false;
+                }
+            }
+            else
+            {
+                DoLog(string.Format("ERROR-DB: Pacing info not found for PosId {0}",pos.PosId),Constants.MessageType.Information);
+                return false;
             }
         }
 
@@ -165,7 +192,7 @@ namespace zHFT.OrderRouters.Router
                 foreach (Position pos in PositionsDict.Values.Where(x =>   x.Security.Symbol == updMarketData.Security.Symbol 
                                                                         && x.PositionRouting() ))
                 {
-                    if (!PendingPartialOrderPositionsDict.ContainsKey(pos.PosId))
+                    if (!PendingPartialOrderPositionsDict.ContainsKey(pos.PosId) && PacingElapsed(pos))
                     {
                         double qty = 0;
                         try
@@ -177,6 +204,7 @@ namespace zHFT.OrderRouters.Router
                             LogNewOrder(pos, newOrder);
 
                             PendingPartialOrderPositionsDict.Add(pos.PosId, pos);
+                            PacingDict.Add(pos.PosId,DateTime.Now);
                             ActiveOrdersDict.Add(newOrder.ClOrdId, pos);
 
                             CMState processed = OrderProxy.ProcessMessage(new NewOrderWrapper(newOrder, Config));
@@ -366,6 +394,8 @@ namespace zHFT.OrderRouters.Router
                 PositionsDict = new Dictionary<string, Position>();
 
                 PendingPartialOrderPositionsDict = new Dictionary<string, Position>();
+
+                PacingDict = new Dictionary<string, DateTime>(); 
 
                 ActiveOrdersDict = new Dictionary<string, Position>();
 

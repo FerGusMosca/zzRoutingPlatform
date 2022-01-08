@@ -10,6 +10,8 @@
 
   <Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
   <ProxyConfigFile>.\Primary\OutgoingSingletonConfig.xml</ProxyConfigFile>
+  
+  <ConsecutiveOrdersPacingInSec>20</ConsecutiveOrdersPacingInSec>
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->
