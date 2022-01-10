@@ -27,11 +27,11 @@
   <ClosingTime>10:50 PM</ClosingTime>
 
 
-  <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
+  <OrderRouter>zHFT.OrderRouters.Router.SoftMarketOrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=daily_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <ResetOnPersistance>true</ResetOnPersistance>
 

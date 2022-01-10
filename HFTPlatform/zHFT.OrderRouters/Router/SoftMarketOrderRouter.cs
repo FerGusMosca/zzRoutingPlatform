@@ -95,8 +95,9 @@ namespace zHFT.OrderRouters.Router
             }
             else
             {
-                DoLog(string.Format("ERROR-DB: Pacing info not found for PosId {0}",pos.PosId),Constants.MessageType.Information);
-                return false;
+                return true;
+                //DoLog(string.Format("ERROR-DB: Pacing info not found for PosId {0}",pos.PosId),Constants.MessageType.Information);
+                //return false;
             }
         }
 
@@ -204,7 +205,8 @@ namespace zHFT.OrderRouters.Router
                             LogNewOrder(pos, newOrder);
 
                             PendingPartialOrderPositionsDict.Add(pos.PosId, pos);
-                            PacingDict.Add(pos.PosId,DateTime.Now);
+                            if(PacingDict.ContainsKey(pos.PosId))
+                                PacingDict.Add(pos.PosId,DateTime.Now);
                             ActiveOrdersDict.Add(newOrder.ClOrdId, pos);
 
                             CMState processed = OrderProxy.ProcessMessage(new NewOrderWrapper(newOrder, Config));
