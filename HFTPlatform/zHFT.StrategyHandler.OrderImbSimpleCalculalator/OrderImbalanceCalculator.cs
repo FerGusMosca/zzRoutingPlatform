@@ -99,7 +99,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        public  void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
+        public virtual  void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             List<string> noValueFields = new List<string>();
             Config = new zHFT.OrderImbSimpleCalculator.Common.Configuration.Configuration().GetConfiguration<zHFT.OrderImbSimpleCalculator.Common.Configuration.Configuration>(configFile, noValueFields);
@@ -290,7 +290,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             OrderRouter.ProcessMessage(omsReq);
         }
 
-        private void LoadMonitorsAndRequestMarketData()
+        protected  virtual void LoadMonitorsAndRequestMarketData()
         {
             Thread.Sleep(5000);
             foreach (string symbol in Configuration.StocksToMonitor)
@@ -509,7 +509,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
         
         }
 
-        private CMState RunClose(Position openPos, SecurityImbalance secImb, ImbalancePosition imbPos)
+        protected CMState RunClose(Position openPos, SecurityImbalance secImb, ImbalancePosition imbPos)
         {
             if (openPos.PosStatus == PositionStatus.Filled)
             {
@@ -618,7 +618,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        private void EvalOpeningPosition(SecurityImbalance secImb)
+        protected void EvalOpeningPosition(SecurityImbalance secImb)
         {
             if (secImb.LongPositionThresholdTriggered(Configuration.PositionOpeningImbalanceThreshold))
             {
@@ -651,7 +651,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        private void EvalClosingPosition(SecurityImbalance secImb)
+        protected virtual void EvalClosingPosition(SecurityImbalance secImb)
         {
             ImbalancePosition imbPos = ImbalancePositions[secImb.Security.Symbol];
 
@@ -709,7 +709,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 DoLog(string.Format("Waiting for min recovery data to be over. Elapsed {0} minutes",elapsed.TotalMinutes),Constants.MessageType.Information);
         }
 
-        private CMState ProcessMarketData(Wrapper wrapper)
+        protected CMState ProcessMarketData(Wrapper wrapper)
         {
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
 
@@ -720,7 +720,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     
                     SecurityImbalance secImb = SecurityImbalancesToMonitor[md.Security.Symbol];
                     //DoLog(string.Format("Processing MD for imbalance summary: {0}",secImb.ImbalanceSummary),Constants.MessageType.Information);
-                    secImb.Security.MarketData = md;
+                    secImb.AppendMarketData(md);
                     secImb.ProcessCounters();
                     EvalOpeningClosingPositions(secImb);
                     
@@ -1033,7 +1033,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        public bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
+        public virtual bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {
             try
             {

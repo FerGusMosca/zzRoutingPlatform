@@ -103,6 +103,10 @@
       <Project>{e041b62c-c7ae-4bac-9351-68373afbc209}</Project>
       <Name>zHFT.StrategyHandler.IBR.Primary.DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.OrderImbExtendedCalculator\zHFT.StrategyHandler.OrderImbExtendedCalculator.csproj">
+      <Project>{a3dbe9e6-5fc7-4479-a02e-cce12bbc11b6}</Project>
+      <Name>zHFT.StrategyHandler.OrderImbExtendedCalculator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.OrderImbSimpleCalculalator\zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj">
       <Project>{7b111ae6-b9d1-459b-81b8-a8084be56df4}</Project>
       <Name>zHFT.StrategyHandler.OrderImbSimpleCalculator</Name>
@@ -128,6 +132,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="IB\incomingIB.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OrderImbalanceExtCalculator.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

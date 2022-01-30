@@ -327,6 +327,7 @@
         <e p="obj" t="ExcludeRecursive" />
         <e p="OrderImbalanceCalculator.App.csproj" t="IncludeRecursive" />
         <e p="OrderImbalanceCalculator.xml" t="Include" />
+        <e p="OrderImbalanceExtCalculator.xml" t="Include" />
         <e p="outgoingOrderRouter.xml" t="Include" />
         <e p="Primary" t="Include">
           <e p="IncomingSingletonConfig.xml" t="Include" />
@@ -2024,12 +2025,17 @@
         </e>
         <e p="SecurityImbalance.cs" t="Include" />
         <e p="TradeImpact.cs" t="Include" />
+        <e p="TurtlesExitVersion" t="Include">
+          <e p="ImbalancePositionTurtlesExit.cs" t="Include" />
+          <e p="SecurityImbalanceTurtlesExit.cs" t="Include" />
+        </e>
         <e p="zHFT.OrderImbSimpleCalculator.BusinessEntities.csproj" t="IncludeRecursive" />
       </e>
       <e p="zHFT.OrderImbSimpleCalculalator.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Configuration" t="Include">
           <e p="Configuration.cs" t="Include" />
+          <e p="ExtendedConfiguration.cs" t="Include" />
         </e>
         <e p="Converters" t="Include" />
         <e p="Enums" t="Include">
@@ -3147,6 +3153,18 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="zHFT.StrategyHandler.OptionsContractSaver.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="zHFT.StrategyHandler.OrderImbExtendedCalculator" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net461" t="Include">
+              <e p="zHFT.StrategyHandler.OrderImbExtendedCalculator.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="OrderImbExtendedCalculator.cs" t="Include" />
+        <e p="zHFT.StrategyHandler.OrderImbExtendedCalculator.csproj" t="IncludeRecursive" />
       </e>
       <e p="zHFT.StrategyHandler.OrderImbSimpleCalculalator" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

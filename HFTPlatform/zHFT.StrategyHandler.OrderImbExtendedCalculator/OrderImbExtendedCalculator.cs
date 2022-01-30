@@ -1,0 +1,115 @@
+﻿using System.Collections.Generic;
+using System.Threading;
+using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
+using zHFT.OrderImbSimpleCalculator.BusinessEntities;
+using zHFT.OrderImbSimpleCalculator.Common.Configuration;
+using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandler.OrderImbSimpleCalculator;
+
+namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
+{
+    public class OrderImbExtendedCalculator:OrderImbalanceCalculator
+    {
+        #region Protected Attributes
+        
+        protected Dictionary<string, ImbalancePositionTurtlesExit> ImbalancePositions { get; set; }
+        
+        #endregion
+        
+        #region Protected Overriden Methods
+
+        public override void DoLoadConfig(string configFile, List<string> noValFields)
+        {
+            List<string> noValueFields = new List<string>();
+            Config = new zHFT.OrderImbSimpleCalculator.Common.Configuration.ExtendedConfiguration().GetConfiguration<zHFT.OrderImbSimpleCalculator.Common.Configuration.ExtendedConfiguration>(configFile, noValueFields);
+        }
+
+        protected override void EvalClosingPosition(SecurityImbalance secImb)
+        {
+            ImbalancePositionTurtlesExit imbPos = ImbalancePositions[secImb.Security.Symbol];
+
+            if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
+            {
+                RunClose(imbPos.OpeningPosition, secImb, imbPos);
+                DoLog(string.Format("Closing {0} Position on market w/Turtles. Symbol {1} Qty={2} Imabalance={3} PosId={4}", 
+                        imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
+                        secImb.ImbalanceSummary,
+                        imbPos.ClosingPosition!=null? imbPos.ClosingPosition.PosId:"-"), 
+                    Constants.MessageType.Information);
+            }
+            else if (imbPos.EvalClosingLongPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
+            {
+                RunClose(imbPos.OpeningPosition, secImb, imbPos);
+                DoLog(string.Format("Closing {0} Position on market w/Turtles. Symbol {1} Qty={2}  Imabalance={3} PosId={4}",
+                        imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
+                        secImb.ImbalanceSummary,
+                        imbPos.ClosingPosition != null ? imbPos.ClosingPosition.PosId : null),
+                    Constants.MessageType.Information);
+
+            }
+         
+        }
+        
+        protected  override void LoadMonitorsAndRequestMarketData()
+        {
+            Thread.Sleep(5000);
+            foreach (string symbol in Configuration.StocksToMonitor)
+            {
+                if (!SecurityImbalancesToMonitor.ContainsKey(symbol))
+                {
+                    Security sec = new Security()
+                    {
+                        Symbol = symbol,
+                        SecType = Security.GetSecurityType(Configuration.SecurityTypes),
+                        MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+                        Currency = Configuration.Currency,
+                        Exchange = Configuration.Exchange
+                    };
+
+                    ExtendedConfiguration extConfig = (ExtendedConfiguration) Configuration;
+
+                    SecurityImbalanceTurtlesExit secImbalance = new SecurityImbalanceTurtlesExit()
+                    {
+                        Security = sec,
+                        DecimalRounding = Configuration.DecimalRounding,
+                        CandleReferencePrice = extConfig.CandleReferencePrice,
+                        CloseWindow = extConfig.ClosingWindow
+                    };
+
+                    //1- We add the current security to monitor
+                    SecurityImbalancesToMonitor.Add(symbol, secImbalance);
+
+                    Securities.Add(sec);//So far, this is all wehave regarding the Securities
+
+                    //2- We request market data
+
+                    MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
+                    MarketDataRequestCounter++;
+                    OnMessageRcv(wrapper);
+                }
+            }
+        }
+        
+        #endregion
+        
+        #region Protected OVerriden Methods
+        
+        public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
+        {
+            if (base.Initialize(pOnMessageRcv, pOnLogMsg, configFile))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
+    }
+}

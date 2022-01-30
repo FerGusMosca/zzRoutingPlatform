@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<Configuration  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - Order Imbalance Calculator</Name>
 
   <PositionSizeInCash>1000</PositionSizeInCash>
@@ -11,10 +11,12 @@
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
+  <ClosingWindow>20</ClosingWindow>
+  <CandleReferencePrice>TRADE</CandleReferencePrice><!-- Cryptos ->CLOSE ; BYMA -> TRADE -->
 
   <ActiveBlocks>3</ActiveBlocks>
   <BlockSizeInMinutes>5</BlockSizeInMinutes>
-  
+
   <Account>9732</Account>
 
   <Currency>ARS</Currency>
@@ -38,12 +40,12 @@
   <ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-  
+
   <OnlyLong>true</OnlyLong>
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
-  
+
   <StocksToMonitor>
 
     <Symbol>GGAL.BUE</Symbol>
@@ -51,21 +53,21 @@
     <Symbol>PAMP.BUE</Symbol>
     <Symbol>COME.BUE</Symbol>
     <Symbol>BMA.BUE</Symbol>
-    
-<!--    <Symbol>ALUA.BUE</Symbol>-->
-<!--    <Symbol>APBR.BUE</Symbol>-->
-<!--    <Symbol>BYMA.BUE</Symbol>-->
-<!--    <Symbol>CEPU.BUE</Symbol>-->
-<!--    <Symbol>CVH.BUE</Symbol>-->
-<!--    <Symbol>EDN.BUE</Symbol>-->
-<!--    <Symbol>MIRG.BUE</Symbol>-->
-<!--    <Symbol>TGNO4.BUE</Symbol>-->
-<!--    <Symbol>TGSU2.BUE</Symbol>-->
-<!--    <Symbol>TRAN.BUE</Symbol>-->
-<!--    <Symbol>TS.BUE</Symbol>-->
-<!--    <Symbol>TXAR.BUE</Symbol>-->
-<!--    <Symbol>SUPV.BUE</Symbol>-->
-<!--    <Symbol>VALO.BUE</Symbol>-->
+
+    <!--    <Symbol>ALUA.BUE</Symbol>-->
+    <!--    <Symbol>APBR.BUE</Symbol>-->
+    <!--    <Symbol>BYMA.BUE</Symbol>-->
+    <!--    <Symbol>CEPU.BUE</Symbol>-->
+    <!--    <Symbol>CVH.BUE</Symbol>-->
+    <!--    <Symbol>EDN.BUE</Symbol>-->
+    <!--    <Symbol>MIRG.BUE</Symbol>-->
+    <!--    <Symbol>TGNO4.BUE</Symbol>-->
+    <!--    <Symbol>TGSU2.BUE</Symbol>-->
+    <!--    <Symbol>TRAN.BUE</Symbol>-->
+    <!--    <Symbol>TS.BUE</Symbol>-->
+    <!--    <Symbol>TXAR.BUE</Symbol>-->
+    <!--    <Symbol>SUPV.BUE</Symbol>-->
+    <!--    <Symbol>VALO.BUE</Symbol>-->
 
     <!--<Symbol>AAPL</Symbol>
     <Symbol>MSFT</Symbol>
@@ -86,7 +88,7 @@
     <!--<Symbol>BTC</Symbol>
     <Symbol>ETH</Symbol>
     <Symbol>XRP</Symbol>-->
-    
+
   </StocksToMonitor>
 
 </Configuration>

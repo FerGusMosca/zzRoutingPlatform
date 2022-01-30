@@ -76,7 +76,9 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         
         public bool OnlyLong { get; set; }
         
+        public int ClosingWindow { get; set; }
         
+        public string CandleReferencePrice { get; set; }
 
         #endregion
 

@@ -649,6 +649,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.IBR.Coc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.IBR.Cocos.ServiceLayer", "tph.StrategyHandler.IBR.Cocos.ServiceLayer\tph.StrategyHandler.IBR.Cocos.ServiceLayer.csproj", "{C57802B7-C978-4962-B85F-503ED84E53CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zHFT.StrategyHandler.OrderImbExtendedCalculator", "zHFT.StrategyHandler.OrderImbExtendedCalculator\zHFT.StrategyHandler.OrderImbExtendedCalculator.csproj", "{A3DBE9E6-5FC7-4479-A02E-CCE12BBC11B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1527,6 +1529,10 @@ Global
 		{C57802B7-C978-4962-B85F-503ED84E53CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C57802B7-C978-4962-B85F-503ED84E53CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C57802B7-C978-4962-B85F-503ED84E53CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DBE9E6-5FC7-4479-A02E-CCE12BBC11B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DBE9E6-5FC7-4479-A02E-CCE12BBC11B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DBE9E6-5FC7-4479-A02E-CCE12BBC11B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DBE9E6-5FC7-4479-A02E-CCE12BBC11B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1844,6 +1850,7 @@ Global
 		{261C89A1-C8D3-473F-B4C2-9818797864E6} = {761ED010-FF2C-4257-AB19-3FDAC5D4C37B}
 		{F9A66E36-72F8-45E1-B69F-FF0491D48966} = {261C89A1-C8D3-473F-B4C2-9818797864E6}
 		{C57802B7-C978-4962-B85F-503ED84E53CD} = {261C89A1-C8D3-473F-B4C2-9818797864E6}
+		{A3DBE9E6-5FC7-4479-A02E-CCE12BBC11B6} = {D78AE0BE-D7A1-415C-BC50-462FF5DC2698}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

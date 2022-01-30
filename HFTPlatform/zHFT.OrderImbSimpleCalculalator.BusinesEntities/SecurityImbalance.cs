@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.OrderImbSimpleCalculator.BusinesEntities;
 
@@ -41,17 +42,19 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         #region Statistical Data
 
-        public string ImbalanceSummary {
+        public string ImbalanceSummary
+        {
 
-            get {
-
-                return string.Format("{0} - Imbalance Bid:{1} Imbalance Ask: {2}", Security.Symbol, ImbalanceCounter.BidSizeImbalance.ToString("0.##"), ImbalanceCounter.AskSizeImbalance.ToString("0.##"));
+            get
+            {
+                return string.Format("{0} - Imbalance Bid:{1} Imbalance Ask: {2}", Security.Symbol,
+                    ImbalanceCounter.BidSizeImbalance.ToString("0.##"),
+                    ImbalanceCounter.AskSizeImbalance.ToString("0.##"));
             }
-        
+
         }
 
         #endregion
-
 
         #region Public Methods
 
@@ -67,13 +70,18 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public bool LongPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
         {
-            return ImbalanceCounter.LongPositionThresholdTriggered(positionOpeningImbalanceThreshold) ;
+            return ImbalanceCounter.LongPositionThresholdTriggered(positionOpeningImbalanceThreshold);
         }
 
         public bool ShortPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
         {
             return ImbalanceCounter.ShortPositionThresholdTriggered(positionOpeningImbalanceThreshold);
 
+        }
+
+        public virtual void AppendMarketData(MarketData md)
+        {
+            Security.MarketData = md;
         }
 
         #endregion

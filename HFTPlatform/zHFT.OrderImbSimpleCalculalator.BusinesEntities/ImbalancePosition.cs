@@ -244,7 +244,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return ClosingPosition == null;
         }
 
-        public bool EvalStopLossHit(SecurityImbalance secImb)
+        public virtual bool EvalStopLossHit(SecurityImbalance secImb)
         {
             if (secImb.Closing)
                 return false;
@@ -270,38 +270,35 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return false;
         }
 
-
-        public bool EvalClosingShortPosition(SecurityImbalance secImb,decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalClosingShortPosition(SecurityImbalance secImb,decimal positionOpeningImbalanceMaxThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT && !secImb.Closing
                    && secImb.ImbalanceCounter.BidSizeImbalance < positionOpeningImbalanceMaxThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
 
-       
-
-        public bool EvalClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
         {
             return (TradeDirection == ImbalancePosition._LONG && !secImb.Closing
                    && secImb.ImbalanceCounter.AskSizeImbalance < positionOpeningImbalanceMaxThreshold
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
 
-        public bool EvalAbortingNewLongPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
+        public virtual bool EvalAbortingNewLongPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
         {
             return (TradeDirection == ImbalancePosition._LONG
                    && secImb.ImbalanceCounter.AskSizeImbalance < PositionOpeningImbalanceThreshold
                    && OpeningPosition.PositionRouting());
         }
 
-        public bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
+        public virtual bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT
                    && secImb.ImbalanceCounter.BidSizeImbalance < PositionOpeningImbalanceThreshold
                     && OpeningPosition.PositionRouting());
         }
 
-        public bool EvalAbortingClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalAbortingClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
         {
             return (TradeDirection == ImbalancePosition._LONG
                    && ClosingPosition!=null
@@ -309,15 +306,13 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                    && ClosingPosition.PositionRouting());
         }
 
-        public bool EvalAbortingClosingShortPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalAbortingClosingShortPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
         {
             return (TradeDirection == ImbalancePosition._SHORT
                    && ClosingPosition != null
                    && secImb.ImbalanceCounter.BidSizeImbalance > positionOpeningImbalanceMaxThreshold
                    && ClosingPosition.PositionRouting());
         }
-
-
       
 
         #endregion
