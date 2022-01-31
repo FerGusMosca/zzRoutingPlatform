@@ -227,6 +227,7 @@ namespace zHFT.OrderRouters.Router
                     {
                         Order order = BuildOrder(pos, Side.Sell, 0);
                         pos.Orders.Add(order);
+                        PositionsByClOrId.Add(order.ClOrdId, pos);
 
                         DoLog(string.Format("Creating sell order for symbol {0} (PosId={3}): Quantity={1} Price={2}",
                                 pos.Security.Symbol,
