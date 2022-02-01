@@ -115,6 +115,12 @@ namespace zHFT.OrderRouters.Router
                 else
                     pos.PositionCleared = true;
             }
+            else
+            {
+                DoLog(string.Format("DB-x --> No if entry For PosId={0} NewDomFlag={1} NewPosition={2} PositionCanceledOrRejected={3} PositionCleared={4}",
+                    pos.PosId,pos.NewDomFlag,pos.NewPosition,pos.PositionCanceledOrRejected,pos.PositionCleared),Constants.MessageType.Information);
+
+            }
 
         }
 
@@ -229,11 +235,12 @@ namespace zHFT.OrderRouters.Router
                         pos.Orders.Add(order);
                         PositionsByClOrId.Add(order.ClOrdId, pos);
 
-                        DoLog(string.Format("Creating sell order for symbol {0} (PosId={3}): Quantity={1} Price={2}",
+                        DoLog(string.Format("Creating sell order for symbol {0} (PosId={3}): Quantity={1} Price={2} ClOrdId={4}",
                                 pos.Security.Symbol,
                                 order.OrderQty.HasValue ? order.OrderQty.Value : 0,
                                 order.Price.HasValue ? order.Price.Value.ToString("##.##") : "<market>",
-                                pos.PosId),
+                                pos.PosId,
+                                order.ClOrdId),
                             Constants.MessageType.Information);
 
                         NewOrderWrapper wrapper = new NewOrderWrapper(order, Config);

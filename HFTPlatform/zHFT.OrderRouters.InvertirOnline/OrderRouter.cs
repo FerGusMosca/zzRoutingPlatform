@@ -319,9 +319,11 @@ namespace zHFT.OrderRouters.InvertirOnline
                 }
             }
             else
-                rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "", CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,
-                                    string.Format("Critical Error for ClOrdId {0}: Could not find an orderId after cancellation", origClOrdId));
-
+            {
+                string msg = string.Format("Critical ERROR for OrigClOrdId={0}: Could not find an orderId after cancellation",origClOrdId);
+                rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "", CxlRejResponseTo.OrderCancelReplaceRequest,CxlRejReason.UnknownOrder,msg);
+                DoLog(msg, Constants.MessageType.Information);
+            }
             
 
             if (rejWrapper != null)

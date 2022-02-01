@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
@@ -16,11 +18,42 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
     {
         #region Protected Attributes
         
-        protected Dictionary<string, ImbalancePositionTurtlesExit> ImbalancePositions { get; set; }
         
         #endregion
         
         #region Protected Overriden Methods
+        
+        protected override ImbalancePosition LoadNewRegularPos(SecurityImbalance secImb, Side side)
+        {
+
+            Position pos = new Position()
+            {
+
+                Security = secImb.Security,
+                Side = side,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                CashQty = Configuration.PositionSizeInCash,
+                QuantityType = QuantityType.CURRENCY,
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
+                AccountId = Configuration.Account,
+            };
+
+            pos.LoadPosId(NextPosId);
+            NextPosId++;
+
+            return new ImbalancePositionTurtlesExit()
+            {
+                StrategyName = Configuration.Name,
+                OpeningDate = DateTime.Now,
+                OpeningPosition = pos,
+                OpeningImbalance = secImb,
+                FeeTypePerTrade = Configuration.FeeTypePerTrade,
+                FeeValuePerTrade = Configuration.FeeValuePerTrade
+            };
+        
+        }
 
         public override void DoLoadConfig(string configFile, List<string> noValFields)
         {
@@ -30,7 +63,7 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
 
         protected override void EvalClosingPosition(SecurityImbalance secImb)
         {
-            ImbalancePositionTurtlesExit imbPos = ImbalancePositions[secImb.Security.Symbol];
+            ImbalancePositionTurtlesExit imbPos = (ImbalancePositionTurtlesExit) ImbalancePositions[secImb.Security.Symbol];
 
             if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
@@ -102,6 +135,7 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
         {
             if (base.Initialize(pOnMessageRcv, pOnLogMsg, configFile))
             {
+                 
                 return true;
             }
             else

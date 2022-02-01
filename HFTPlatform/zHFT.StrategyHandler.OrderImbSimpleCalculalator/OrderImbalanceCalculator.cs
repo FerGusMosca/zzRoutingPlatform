@@ -326,7 +326,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             }
         }
 
-        private ImbalancePosition LoadNewRegularPos(SecurityImbalance secImb, Side side)
+        protected virtual ImbalancePosition LoadNewRegularPos(SecurityImbalance secImb, Side side)
         {
 
             Position pos = new Position()
