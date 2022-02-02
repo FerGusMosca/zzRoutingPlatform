@@ -58,9 +58,9 @@ namespace zHFT.OrderRouters.Router
                 if (oldOrder != null)
                 {
                     Order order = oldOrder.Clone();
-                    string origClOrdId = order.ClOrdId;
+                    //string origClOrdId = order.OrigClOrdId;
                     order.ClOrdId = pos.GetNextClOrdId(order.Index + 1);
-                    order.OrigClOrdId = origClOrdId;
+                    //order.OrigClOrdId = origClOrdId;
                     pos.Orders.Add(order);
                     order.Index++;
                     DoLog(string.Format("<Gen. Order Router> - Replacing OrigClOrdId {0} with ClOrdid {1} for symbol {2} (PosId {3}) ",order.OrigClOrdId,order.ClOrdId,pos.Security.Symbol,pos.PosId),Constants.MessageType.Information);

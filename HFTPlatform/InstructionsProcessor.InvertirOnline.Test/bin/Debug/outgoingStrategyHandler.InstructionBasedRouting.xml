@@ -15,7 +15,7 @@
   <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString>
 
   <!--11=mbartellini,10=fmosca-->
-  <AccountNumber>10</AccountNumber><!--IOL TEST-->
+  <AccountNumber>11</AccountNumber><!--IOL TEST-->
   <!--<AccountNumber>11</AccountNumber>--> <!--IOL PROD-->
 
   <RoutingUpdateInMilliseconds>1000</RoutingUpdateInMilliseconds>
@@ -32,7 +32,7 @@
   <AccountManagerConfig>
     <Config>
       <Key>AccountNumber</Key>
-      <Value>10</Value><!--IOL Test-->
+      <Value>11</Value><!--IOL Test-->
       <!--<Value>11</Value>--><!--IOL Prod-->
       <!--11=mbartellini,10=fmosca-->
     </Config>
