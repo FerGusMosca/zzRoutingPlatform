@@ -130,6 +130,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected void ProcessNewOrderExecutionReport(string clOrdId,ExecutionReportWrapper erWrapper)
         {
+            
             zHFT.Main.Common.Enums.ExecType execType = (zHFT.Main.Common.Enums.ExecType)erWrapper.GetField(ExecutionReportFields.ExecType);
             zHFT.Main.Common.Enums.OrdStatus ordStatus = (zHFT.Main.Common.Enums.OrdStatus)erWrapper.GetField(ExecutionReportFields.OrdStatus);
             
@@ -227,6 +228,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected ExecutionReportWrapper ProcesssExecutionReportMessage(QuickFix.Message message)
         {
+            
             DoLog(string.Format("@{0}:{1} ", GetConfig().Name, message.ToString()), Main.Common.Util.Constants.MessageType.Information);
 
             ExecutionReportWrapper erWrapper = new ExecutionReportWrapper((QuickFix50.ExecutionReport)message, GetConfig());

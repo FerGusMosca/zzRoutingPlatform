@@ -799,6 +799,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected override void DoRunNewOrder(object param)
         {
+            
             QuickFix.Message nosMessage = (QuickFix.Message)param;
 
             try

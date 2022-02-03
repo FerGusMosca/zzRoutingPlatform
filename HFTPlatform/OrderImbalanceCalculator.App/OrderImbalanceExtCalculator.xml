@@ -17,7 +17,8 @@
   <ActiveBlocks>3</ActiveBlocks>
   <BlockSizeInMinutes>10</BlockSizeInMinutes>
 
-  <Account>9732</Account>
+<!--  <Account>9732</Account>&lt;!&ndash;y esta cuenta???&ndash;&gt;-->
+  <Account>3318</Account><!--Tarallo PROD-->
 
   <Currency>ARS</Currency>
   <Exchange>BUE</Exchange>

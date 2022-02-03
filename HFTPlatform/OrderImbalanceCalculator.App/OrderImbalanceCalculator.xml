@@ -50,9 +50,15 @@
 
     <Symbol>GGAL.BUE</Symbol>
     <Symbol>YPFD.BUE</Symbol>
-    <Symbol>PAMP.BUE</Symbol>
-    <Symbol>COME.BUE</Symbol>
-    <Symbol>BMA.BUE</Symbol>
+    <Symbol>SPY.BUE</Symbol>
+    <Symbol>QQQ.BUE</Symbol>
+    <Symbol>ARKK.BUE</Symbol>
+    <Symbol>TSLA.BUE</Symbol>
+
+    <Symbol>AAPL.BUE</Symbol>
+    <Symbol>MELI.BUE</Symbol>
+    <Symbol>MSFT.BUE</Symbol>
+    <!--<Symbol>VALE.BUE</Symbol> -->
 
     <!--    <Symbol>ALUA.BUE</Symbol>-->
     <!--    <Symbol>APBR.BUE</Symbol>-->

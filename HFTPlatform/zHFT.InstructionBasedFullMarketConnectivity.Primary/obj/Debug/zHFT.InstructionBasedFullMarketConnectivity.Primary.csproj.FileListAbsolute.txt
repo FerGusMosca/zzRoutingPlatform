@@ -226,3 +226,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\obj\Debug\zHFT.InstructionBasedFullMarketConnectivity.Primary.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\FIX Sessions\initiator_prod_tarallo.cfg
