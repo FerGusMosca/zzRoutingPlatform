@@ -104,6 +104,30 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
         
         }
 
+        private double? GetLeavesQty()
+        {
+            if (GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
+            {
+                return 0;
+            }
+            else
+            {
+                return Order.cantidad - ExecutionReportResp.GetCumQty();;
+            }
+        }
+
+        private double? GetCumQty()
+        {
+            if (GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
+            {
+                return Order.cantidad;
+            }
+            else
+            {
+                return ExecutionReportResp.GetCumQty();
+            }
+        }
+
         private double? GetLastPxFromIOL()
         {
 
@@ -176,9 +200,9 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return Order.cantidad-ExecutionReportResp.GetCumQty();
+                return GetLeavesQty();
             else if (xrField == ExecutionReportFields.CumQty)
-                return ExecutionReportResp.GetCumQty();
+                return GetCumQty();
             else if (xrField == ExecutionReportFields.AvgPx)
                 return ExecutionReportResp.precio;
             else if (xrField == ExecutionReportFields.Commission)

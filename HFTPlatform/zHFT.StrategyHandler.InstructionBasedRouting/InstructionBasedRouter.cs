@@ -991,15 +991,18 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
                     if (summary != null)
                     {
+                        DoLog(string.Format("DB-IBR =>LvsQty={0} CumQty={1} PosStatus={2} CanceledOrRejected={3}",
+                            summary.LeavesQty,summary.CumQty,summary.Position.PosStatus,summary.Position.PositionCanceledOrRejected),
+                            Constants.MessageType.Information);
 
                         if (summary.IsFilledPosition()  || summary.Position.PositionCanceledOrRejected)
                         {
-
+                            DoLog(string.Format("DB-IBR 2 here"),Constants.MessageType.Information);
                             summary.Position.PositionCleared = summary.LeavesQty <= 0;
 
                             if (PositionInstructions.ContainsKey(summary.Position.Symbol))
                             {
-
+                                DoLog(string.Format("DB-IBR 3 here"),Constants.MessageType.Information);
                                 Instruction instr = PositionInstructions[summary.Position.Symbol];
 
                                 if (instr == null)
