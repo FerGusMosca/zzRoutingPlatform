@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Orders;
+using zHFT.Main.Common.Enums;
 
 namespace zHFT.OrderRouters.InvertirOnline.Common.Responses
 {
@@ -34,8 +36,9 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Responses
 
         public bool IsCancelled()
         {
-
-            return estadoActual.ToUpper() == _CANCELADA.ToUpper();
+            //NOTa ESTO ES un bug de IOL
+            //Cuando se cancela una orden, la marca como TERMINADA si es una orden Partially FIlled (cualquier cosa)
+            return estadoActual.ToUpper() == _CANCELADA.ToUpper() || estadoActual.ToUpper() == _TERMINADA.ToUpper();
         
         }
 
@@ -80,16 +83,47 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Responses
         #endregion
 
         #region Public Methods
+        
+        public OrdStatus GetOrdStatusFromIOLStatus()
+        {
+            if (estadoActual.ToUpper() == ExecutionReportResp._INICIADA.ToUpper())
+                return OrdStatus.PendingNew;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._EN_PROCESO.ToUpper())
+                return OrdStatus.New;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA.ToUpper())
+                return OrdStatus.PartiallyFilled;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._TERMINADA.ToUpper())
+                return OrdStatus.Filled;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._CANCELADA.ToUpper())
+                return OrdStatus.Canceled;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._PENDINTE_CANCELACION.ToUpper())
+                return OrdStatus.PendingCancel;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._CANCELADA_VTO_VALIDEZ.ToUpper())
+                return OrdStatus.Expired;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL.ToUpper())
+                return OrdStatus.PendingCancel;
+            else if (estadoActual.ToUpper() == ExecutionReportResp._EN_MODIFICACION.ToUpper())
+                return OrdStatus.PendingReplace;
+            else
+                return OrdStatus.Unkwnown;
+        }
 
         public double GetCumQty()
         {
-            double cumQty = 0;
-
-            if (operaciones != null)
+            //Esto es por otro bug de IOL
+            if (GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
+                return cantidad;
+            else
             {
-                operaciones.ToList().ForEach(x => cumQty += x.cantidad);
+                double cumQty = 0;
+
+                if (operaciones != null)
+                {
+                    operaciones.ToList().ForEach(x => cumQty += x.cantidad);
+                }
+
+                return cumQty;
             }
-            return cumQty;
         }
 
 

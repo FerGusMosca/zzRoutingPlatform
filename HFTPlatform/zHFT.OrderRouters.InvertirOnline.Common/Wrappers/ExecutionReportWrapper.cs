@@ -57,30 +57,6 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
         
         }
 
-        protected OrdStatus GetOrdStatusFromIOLStatus()
-        {
-            if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._INICIADA.ToUpper())
-                return OrdStatus.PendingNew;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._EN_PROCESO.ToUpper())
-                return OrdStatus.New;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA.ToUpper())
-                return OrdStatus.PartiallyFilled;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._TERMINADA.ToUpper())
-                return OrdStatus.Filled;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._CANCELADA.ToUpper())
-                return OrdStatus.Canceled;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PENDINTE_CANCELACION.ToUpper())
-                return OrdStatus.PendingCancel;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._CANCELADA_VTO_VALIDEZ.ToUpper())
-                return OrdStatus.Expired;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._PARCIALMENTE_TERMINADA_CANCEL.ToUpper())
-                return OrdStatus.PendingCancel;
-            else if (ExecutionReportResp.estadoActual.ToUpper() == ExecutionReportResp._EN_MODIFICACION.ToUpper())
-                return OrdStatus.PendingReplace;
-            else
-                return OrdStatus.Unkwnown;
-        }
-
         protected ExecutionReportResp ExecutionReportResp { get; set; }
 
         protected Order Order { get; set; }
@@ -106,7 +82,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         private double? GetLeavesQty()
         {
-            if (GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
+            if (ExecutionReportResp.GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
             {
                 return 0;
             }
@@ -118,7 +94,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
 
         private double? GetCumQty()
         {
-            if (GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
+            if (ExecutionReportResp.GetOrdStatusFromIOLStatus() == OrdStatus.Filled)
             {
                 return Order.cantidad;
             }
@@ -176,7 +152,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
         {
             if (Order != null && ExecutionReportResp != null)
             {
-                return string.Format("Symbol {0} ExecType {1} OrdStatus {2}", Order.simbolo, GetExecTypeFromIOLStatus(), GetOrdStatusFromIOLStatus());
+                return string.Format("Symbol {0} ExecType {1} OrdStatus {2}", Order.simbolo, GetExecTypeFromIOLStatus(), ExecutionReportResp.GetOrdStatusFromIOLStatus());
             }
             else
                 return "";
@@ -196,7 +172,7 @@ namespace zHFT.OrderRouters.InvertirOnline.Common.Wrappers
             if (xrField == ExecutionReportFields.ExecID)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.OrdStatus)
-                return GetOrdStatusFromIOLStatus();
+                return ExecutionReportResp.GetOrdStatusFromIOLStatus();
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.LeavesQty)

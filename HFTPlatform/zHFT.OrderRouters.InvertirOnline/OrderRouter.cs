@@ -202,13 +202,10 @@ namespace zHFT.OrderRouters.InvertirOnline
         protected ExecutionReportResp RunUpdateCancellation(Order activeOrder, Wrapper rejWrapper)
         {
 
-            lock (tLock)
-            {
-                if (!PendingUpdate.ContainsKey(activeOrder.OrderId.ToString()))
-                    PendingUpdate.Add(activeOrder.OrderId.ToString(),activeOrder);
+            if (!PendingUpdate.ContainsKey(activeOrder.OrderId.ToString()))
+                PendingUpdate.Add(activeOrder.OrderId.ToString(),activeOrder);
 
-                rejWrapper = DoCancel(activeOrder.ClOrdId, cancel: false);
-            }
+            rejWrapper = DoCancel(activeOrder.ClOrdId, cancel: false);
 
             bool cancelled = false;
             ExecutionReportResp execReport = null;
@@ -216,14 +213,14 @@ namespace zHFT.OrderRouters.InvertirOnline
             int i = 0;
             while (!cancelled)
             {
-
                 execReport = IOLOrderRouterManager.GetExecutionReport(activeOrder.OrderId);
                 cancelled = execReport.IsCancelled();
-                Thread.Sleep(1000);
+                if(!cancelled)
+                    Thread.Sleep(1000);
                 i++;
                 if (i > IOLConfiguration.CancellationTimeoutInSeconds)
                 {
-                    string msg=string.Format("Critical error!!!. OrderId {0} could not be cancelled and stays in status {1}", activeOrder.OrderId, execReport.estadoActual);
+                    string msg=string.Format("Critical ERROR!!!. OrderId {0} (ClOrdId={2}) could not be cancelled and stays in status {1}", activeOrder.OrderId, execReport.estadoActual,activeOrder.ClOrdId);
                     DoLog(msg,Main.Common.Util.Constants.MessageType.Error);
 
                     rejWrapper = new OrderCancelRejectWrapper(activeOrder.ClOrdId, activeOrder.OrderId.ToString(), CxlRejResponseTo.OrderCancelReplaceRequest,
@@ -259,16 +256,20 @@ namespace zHFT.OrderRouters.InvertirOnline
                 activeOrder.cantidad = newQuantity;
                 activeOrder.precio = newPrice;
                 activeOrder.ClOrdId = newClOrdId;
-
-                lock (tLock)
+               
+                if (activeOrder.cantidad > 0)
                 {
                     ActiveOrders.Remove(activeOrder.OrderId.ToString());
-
-                    DoLog(string.Format("Sending new order with new price={0} and new qty={1} at {2}", newPrice, newQuantity,DateTime.Now), Main.Common.Util.Constants.MessageType.Information);
+                    
+                    DoLog(
+                        string.Format("Sending new order with new price={0} and new qty={1} at {2}", newPrice,
+                            newQuantity, DateTime.Now), Main.Common.Util.Constants.MessageType.Information);
 
                     NewOrderResponse resp = DoRoute(activeOrder);
 
-                    DoLog(string.Format("Order with new ClOrdId {0} successfully routed at {1}", newClOrdId, DateTime.Now), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(
+                        string.Format("Order with new ClOrdId {0} successfully routed at {1}", newClOrdId,
+                            DateTime.Now), Main.Common.Util.Constants.MessageType.Information);
 
 
                     activeOrder.OrderId = resp.numeroOperacion.Value;
@@ -276,6 +277,13 @@ namespace zHFT.OrderRouters.InvertirOnline
                     OrderIdsMapper.Add(newClOrdId, activeOrder.OrderId.ToString());
 
                     ActiveOrders.Add(activeOrder.OrderId.ToString(), activeOrder);
+                }
+                else
+                {
+                    //Volvemos a agregar la orden cancelada, pero que estaba Filled
+                    //Para que le llege a los demás modulos como Filled.
+                    //Intenté cancelar una orden que estaba fully Filled
+                    DoLog(String.Format("WARNING- On Update: CANCELLED an order that was fully filled. No new order is created"),Constants.MessageType.Information);
                 }
             }
             else
@@ -286,45 +294,45 @@ namespace zHFT.OrderRouters.InvertirOnline
         protected void UpdateOrder(Wrapper wrapper, bool cancel)
         {
             string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
-            string newClOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
 
             DoLog(string.Format("First we have to cancel ClOrdId {0} ", origClOrdId), Main.Common.Util.Constants.MessageType.Information);
 
             Wrapper rejWrapper = null;
 
-                
-            Order activeOrder = DoGetActiveOrder(origClOrdId);
-                
-            if (activeOrder != null)
+            lock (tLock)
             {
-                try
-                {
-                    ExecutionReportResp execReport = RunUpdateCancellation(activeOrder, rejWrapper);
+                Order activeOrder = DoGetActiveOrder(origClOrdId);
 
-                    if (rejWrapper == null && execReport.IsCancelled())//cancellation is ok
-                        RunUpdateOrderCreation(activeOrder, wrapper, rejWrapper);
-                    else
-                        if (rejWrapper == null)//La orden NO pudo se cancelada
-                            rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "", CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,
-                                                                string.Format("The order {0} could not be cancelled in a prudent time. Aborting update", origClOrdId));
-                }
-                catch (Exception ex)
+                if (activeOrder != null)
                 {
-                    throw;
+                    try
+                    {
+                        ExecutionReportResp execReport = RunUpdateCancellation(activeOrder, rejWrapper);
+
+                        if (rejWrapper == null && execReport.IsCancelled()) //cancellation is ok
+                            RunUpdateOrderCreation(activeOrder, wrapper, rejWrapper);
+                        else if (rejWrapper == null) //La orden NO pudo se cancelada
+                            rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "",CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder,string.Format("The order {0} could not be cancelled in a prudent time. Aborting update",origClOrdId));
+
+                    }
+                    catch (Exception ex)
+                    {
+                        throw;
+                    }
+                    finally
+                    {
+                        if (PendingUpdate.ContainsKey(activeOrder.OrderId.ToString()))
+                            PendingUpdate.Remove(activeOrder.OrderId.ToString());
+                    }
                 }
-                finally
+                else
                 {
-                    if (PendingUpdate.ContainsKey(activeOrder.OrderId.ToString()))
-                        PendingUpdate.Remove(activeOrder.OrderId.ToString());
+                    string msg =string.Format("Critical ERROR for OrigClOrdId={0}: Could not find an orderId after cancellation",origClOrdId);
+                    rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "",CxlRejResponseTo.OrderCancelReplaceRequest, CxlRejReason.UnknownOrder, msg);
+                    DoLog(msg, Constants.MessageType.Information);
                 }
             }
-            else
-            {
-                string msg = string.Format("Critical ERROR for OrigClOrdId={0}: Could not find an orderId after cancellation",origClOrdId);
-                rejWrapper = new OrderCancelRejectWrapper(origClOrdId, "", CxlRejResponseTo.OrderCancelReplaceRequest,CxlRejReason.UnknownOrder,msg);
-                DoLog(msg, Constants.MessageType.Information);
-            }
-            
+
 
             if (rejWrapper != null)
                 OnMessageRcv(rejWrapper);
@@ -408,12 +416,12 @@ namespace zHFT.OrderRouters.InvertirOnline
                 {
 
                     Order order = ActiveOrders[orderId];
-                    DoLog(string.Format("Running cancellation for orderId {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
+                    DoLog(string.Format("Running cancellation for orderId {0} (ClOrdId={1})", order.OrderId,clOrdId), Main.Common.Util.Constants.MessageType.Information);
                     CancelOrderResponse cxlResp = IOLOrderRouterManager.Cancel(order);
 
                     if (cxlResp.ok.HasValue && cxlResp.ok.Value)
                     {
-                        DoLog(string.Format("Cancellation requested for orderId {0}", order.OrderId), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog(string.Format("Cancellation requested for orderId {0} (ClOrdId={1})", order.OrderId,clOrdId), Main.Common.Util.Constants.MessageType.Information);
 
                         return null;
                     }
