@@ -45,9 +45,6 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
         private InstructionManager InstructionManager { get; set; }
 
         private Dictionary<int, Security> ActiveSecurities { get; set; }
-
-        private Dictionary<int, Security> ActiveSecuritiesOnDemand { get; set; }
-
         private Dictionary<int, DateTime> ContractsTimeStamps { get; set; }
 
         private Dictionary<string, zHFT.InstructionBasedMarketClient.IOL.Common.DTO.MarketData> LastMarketDataRecvDict { get; set; }
@@ -290,15 +287,8 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
         protected void RequestMarketDataOnDemand(MarketDataRequest mdr, bool snapshot, string mode)
         {
-            //zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new MarketClient.IB.Common.Configuration.Contract();
 
-            //ctr.Currency = sec.Currency;
-            //ctr.Exchange = sec.Exchange;
-            //ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
-            //ctr.Symbol = sec.Symbol;
-
-            if (!ActiveSecurities.Values.Any(x => x.Symbol == mdr.Security.Symbol)
-                && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == mdr.Security.Symbol))
+            if (!ActiveSecurities.Values.Any(x => x.Symbol == mdr.Security.Symbol && x.Active))
             {
                 DoLog(string.Format("@{0}:Requesting {2} Market Data On Demand for Symbol: {1}", IOLConfiguration.Name, mdr.Security.Symbol, mode), Main.Common.Util.Constants.MessageType.Information);
                 ActiveSecurities.Add(ActiveSecurities.Keys.Count + 1, mdr.Security);
@@ -312,6 +302,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
 
         protected void CancelMarketData(Security sec)
         {
+
             if (ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol))
             {
                 foreach (Security s in ActiveSecurities.Values)
@@ -320,18 +311,6 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                         s.Active = false;
                 }
               
-                DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IOLConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
-                //TODO DEV: Cancel Market Data
-            }
-            else if (ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
-            {
-
-                foreach (Security s in ActiveSecuritiesOnDemand.Values)
-                {
-                    if (sec.Symbol == s.Symbol)
-                        s.Active = false;
-                }
-
                 DoLog(string.Format("@{0}:Requesting Unsubscribe Market Data On Demand for Symbol: {0}", IOLConfiguration.Name, sec.Symbol), Main.Common.Util.Constants.MessageType.Information);
                 //TODO DEV: Cancel Market Data
             }
@@ -400,7 +379,7 @@ namespace zHFT.InstructionBasedMarketClient.IOL.Client
                     
 
                     ActiveSecurities = new Dictionary<int, Security>();
-                    ActiveSecuritiesOnDemand = new Dictionary<int, Security>();
+                    
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
                     LastMarketDataRecvDict = new Dictionary<string, Common.DTO.MarketData>();
 
