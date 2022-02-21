@@ -677,7 +677,12 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
          
         }
 
-        private bool IsTradingTime()
+        protected virtual bool PacingValidations(string symbol)
+        {
+            return true;
+        }
+
+        protected virtual bool IsTradingTime()
         {
             return DateTime.Now < MarketTimer.GetTodayDateTime(Configuration.ClosingTime);
         }
@@ -693,6 +698,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 if (ImbalancePositions.Keys.Count < Configuration.MaxOpenedPositions 
                     && !ImbalancePositions.ContainsKey(secImb.Security.Symbol)
                     && IsTradingTime()
+                    && PacingValidations(secImb.Security.Symbol)
                     )
                 {
                     EvalOpeningPosition(secImb);
@@ -862,6 +868,8 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     {
                         DoLog(string.Format("DB-Closing imbalance position for symbol {0} (CumQty={1})",imbPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
                         SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].Closing = false;
+                        SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].LastOpenedPosition = imbPos.CurrentPos();
+                        SecurityImbalancesToMonitor[imbPos.OpeningPosition.Security.Symbol].LastTradedTime = DateTime.Now;
                         ImbalancePositions.Remove(imbPos.OpeningPosition.Security.Symbol);
                     }
                     else

@@ -20,6 +20,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         
         public int CloseWindow { get; set; }
         
+        public int OppTrendClosingWindow { get; set; }
+        
         public string CandleReferencePrice { get; set; }
         
         #endregion

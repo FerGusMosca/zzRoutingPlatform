@@ -11,7 +11,13 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         
         public int ClosingWindow { get; set; }
         
+        public int  OppTrendClosingWindow { get; set; }
+        
         public string CandleReferencePrice { get; set; }
+        
+        public string MaxOpeningTime { get; set; }
+        
+        public int MaxMinWaitBtwConsecutivePos { get; set; }
         
         #endregion
         

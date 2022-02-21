@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
 using zHFT.OrderImbSimpleCalculator.BusinesEntities;
 
 namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
@@ -25,10 +27,16 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         #region Public Attributes
 
         public Security Security { get; set; }
+        
+        public MarketData OpeningPrice { get; set; }
 
         public DateTime DateTime { get; set; }
 
         public ImbalanceCounter ImbalanceCounter { get; set; }
+        
+        public Position LastOpenedPosition { get; set; }
+        
+        public DateTime? LastTradedTime { get; set; }
 
         public bool Closing { get; set; }
 
@@ -82,6 +90,45 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public virtual void AppendMarketData(MarketData md)
         {
             Security.MarketData = md;
+
+            if (OpeningPrice != null)
+                OpeningPrice = md;
+        }
+
+        public bool ValidPacing(int maxMinWaitBtwConsecutivePos)
+        {
+            if (LastOpenedPosition != null && LastTradedTime.HasValue)
+            {
+                TimeSpan elapsed = DateTime.Now - LastTradedTime.Value;
+
+                return elapsed.TotalMinutes > maxMinWaitBtwConsecutivePos;
+            }
+            else 
+                return true;
+        }
+
+        public bool IsLongDay()
+        {
+            if (OpeningPrice != null && Security.MarketData != null)
+            {
+                return Security.MarketData.Trade > OpeningPrice.Trade;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+        public bool IsShortDay()
+        {
+            if (OpeningPrice != null && Security.MarketData != null)
+            {
+                return Security.MarketData.Trade < OpeningPrice.Trade;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         #endregion

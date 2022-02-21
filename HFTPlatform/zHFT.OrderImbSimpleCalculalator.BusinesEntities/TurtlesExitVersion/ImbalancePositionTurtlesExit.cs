@@ -123,7 +123,9 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             {
                 SecurityImbalanceTurtlesExit tSecImb = (SecurityImbalanceTurtlesExit) secImb;
 
-                bool newHigh = IsHighest(tSecImb.CloseWindow, tSecImb.Candles,tSecImb.CandleReferencePrice);
+                
+                bool newHigh = IsHighest(tSecImb.IsShortDay() ?tSecImb.CloseWindow:tSecImb.OppTrendClosingWindow,
+                                         tSecImb.Candles,tSecImb.CandleReferencePrice);
                 
                 return (TradeDirection == ImbalancePosition._SHORT 
                         && !secImb.Closing
@@ -147,7 +149,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             {
                 SecurityImbalanceTurtlesExit tSecImb = (SecurityImbalanceTurtlesExit) secImb;
                 
-                bool newLow = IsLowest(tSecImb.CloseWindow, tSecImb.Candles,tSecImb.CandleReferencePrice);
+                bool newLow = IsLowest(tSecImb.IsLongDay() ?tSecImb.CloseWindow:tSecImb.OppTrendClosingWindow, 
+                                       tSecImb.Candles,tSecImb.CandleReferencePrice);
                 
                 return (TradeDirection == ImbalancePosition._LONG
                         && !secImb.Closing

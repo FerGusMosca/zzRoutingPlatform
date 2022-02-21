@@ -11,8 +11,10 @@
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
-  <ClosingWindow>20</ClosingWindow>
+  <ClosingWindow>40</ClosingWindow>
+  <OppTrendClosingWindow>20</OppTrendClosingWindow>
   <CandleReferencePrice>TRADE</CandleReferencePrice><!-- Cryptos ->CLOSE ; BYMA -> TRADE -->
+  <MaxMinWaitBtwConsecutivePos>20</MaxMinWaitBtwConsecutivePos>
 
   <ActiveBlocks>3</ActiveBlocks>
   <BlockSizeInMinutes>10</BlockSizeInMinutes>
@@ -27,6 +29,7 @@
   <MarketStartTime>11:00 AM</MarketStartTime>
   <MarketEndTime>05:00 PM</MarketEndTime>
 
+  <MaxOpeningTime>03:50 PM</MaxOpeningTime>
   <ClosingTime>04:50 PM</ClosingTime>
 
   <!--<Currency>USD</Currency>

@@ -9,6 +9,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.OrderImbSimpleCalculator.BusinessEntities;
 using zHFT.OrderImbSimpleCalculator.Common.Configuration;
+using zHFT.OrderImbSimpleCalculator.Common.Util;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.OrderImbSimpleCalculator;
 
@@ -110,7 +111,8 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
                         Security = sec,
                         DecimalRounding = Configuration.DecimalRounding,
                         CandleReferencePrice = extConfig.CandleReferencePrice,
-                        CloseWindow = extConfig.ClosingWindow
+                        CloseWindow = extConfig.ClosingWindow,
+                        OppTrendClosingWindow=extConfig.OppTrendClosingWindow
                     };
 
                     //1- We add the current security to monitor
@@ -127,6 +129,22 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
             }
         }
         
+        protected override bool IsTradingTime()
+        {
+            return DateTime.Now < MarketTimer.GetTodayDateTime(Configuration.ClosingTime)
+                && DateTime.Now < MarketTimer.GetTodayDateTime(((ExtendedConfiguration)Configuration).MaxOpeningTime);
+        }
+
+        protected override bool PacingValidations(string symbol)
+        {
+            if(SecurityImbalancesToMonitor.ContainsKey(symbol))
+                return SecurityImbalancesToMonitor[symbol].ValidPacing(((ExtendedConfiguration)Configuration).MaxMinWaitBtwConsecutivePos);
+            else
+            {
+                return false;
+            }
+        }
+
         #endregion
         
         #region Protected OVerriden Methods
