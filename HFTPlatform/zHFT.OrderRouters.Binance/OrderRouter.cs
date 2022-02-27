@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Binance.Net.Objects.Spot.MarketData;
+using Binance.Net.Objects.Models.Spot;
 using CryptoExchange.Net.Objects;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.Main.BusinessEntities.Orders;
@@ -23,7 +23,7 @@ using zHFT.OrderRouters.Binance.Common.Wrappers;
 using zHFT.OrderRouters.Binance.DataAccessLayer.Managers;
 using zHFT.OrderRouters.BINANCE.Common.Util;
 using zHFT.OrderRouters.Cryptos;
-using BinanceClient2 = Binance.Net.BinanceClient;
+using BinanceClient2 = Binance.Net.Clients.BinanceClient;
 using Constants = zHFT.Main.Common.Util.Constants;
 using Side = zHFT.Main.Common.Enums.Side;
 
@@ -93,14 +93,12 @@ namespace zHFT.OrderRouters.Binance
         {
             var client = new BinanceClient2();
             
-            
-            WebCallResult<BinanceExchangeInfo> info = client.Spot.System.GetExchangeInfoAsync().Result;
+            WebCallResult<BinanceExchangeInfo> info = client.SpotApi.ExchangeData.GetExchangeInfoAsync().Result;
 
             if (info.Success)
             {
                 DecimalPrecissionConverter.ExchangeInfo = info.Data;
-                DoLog(string.Format("Loading Binance Exchange info: {0} symbols found", 
-                                        DecimalPrecissionConverter.ExchangeInfo.Symbols.Count()),Constants.MessageType.Information);
+                DoLog(string.Format("Loading Binance Exchange info: {0} symbols found", DecimalPrecissionConverter.ExchangeInfo.Symbols.Count()),Constants.MessageType.Information);
             }
             else
             {

@@ -276,3 +276,7 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Binance.Net.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\CryptoExchange.Net.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.Common\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml

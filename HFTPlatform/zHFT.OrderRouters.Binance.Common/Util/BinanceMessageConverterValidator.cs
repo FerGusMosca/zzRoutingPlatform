@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Binance.Net.Objects.Spot.MarketData;
+using Binance.Net.Objects.Models.Spot;
 
 namespace zHFT.OrderRouters.BINANCE.Common.Util
 {
