@@ -87,12 +87,13 @@ namespace zHFT.OrderRouters.InvertirOnline
                                 {
                                     ExecutionReportWrapper execReportWrapper = new ExecutionReportWrapper(order, execReport);
                                     DoLog(string.Format(
-                                            "@IOL Order Router - Publishing ER for symbol {0}. Status={1} ExecType={2} CumQty={3} LvsQty={4}",
+                                            "@IOL Order Router - Publishing ER for symbol {0}. Status={1} ExecType={2} CumQty={3} LvsQty={4} - Order Price={5}",
                                             execReportWrapper.GetField(ExecutionReportFields.Symbol),
                                             execReportWrapper.GetField(ExecutionReportFields.OrdStatus),
                                             execReportWrapper.GetField(ExecutionReportFields.ExecType),
                                             execReportWrapper.GetField(ExecutionReportFields.CumQty),
-                                            execReportWrapper.GetField(ExecutionReportFields.LeavesQty)),
+                                            execReportWrapper.GetField(ExecutionReportFields.LeavesQty),
+                                            order.precio),
                                         Constants.MessageType.Information);
                                     
                                     
@@ -427,6 +428,8 @@ namespace zHFT.OrderRouters.InvertirOnline
                     }
                     else
                     {
+                        DoLog(string.Format("ERROR requesting cancellation for orderId {0} (ClOrdId={1})", order.OrderId,clOrdId), Main.Common.Util.Constants.MessageType.Information);
+
                         OrderCancelRejectWrapper rejWrapper = new OrderCancelRejectWrapper(clOrdId, orderId,
                                                                                             cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
                                                                                             CxlRejReason.UnknownOrder,
@@ -436,6 +439,8 @@ namespace zHFT.OrderRouters.InvertirOnline
                 }
                 else
                 {
+                    DoLog(string.Format("REJECTED cancellation for  ClOrdId={0}: Order no longer active", clOrdId), Main.Common.Util.Constants.MessageType.Information);
+
                     OrderCancelRejectWrapper rejWrapper = new OrderCancelRejectWrapper(clOrdId, orderId,
                                                                                         cancel ? CxlRejResponseTo.OrderCancelRequest : CxlRejResponseTo.OrderCancelReplaceRequest,
                                                                                         CxlRejReason.UnknownOrder,
