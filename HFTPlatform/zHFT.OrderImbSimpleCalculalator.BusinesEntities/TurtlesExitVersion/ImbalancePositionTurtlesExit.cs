@@ -84,7 +84,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return !foundBigger;
             
         }
-        
+
         public bool IsLowest(int window,Dictionary<string, MarketData> Candles, string CandleReferencePrice)
         {
             if (Candles.Count < window)
@@ -114,6 +114,23 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         #endregion
         
         #region Public Overriden Methods
+        
+        public override string ClosingSummary(SecurityImbalance secImb)
+        {
+            SecurityImbalanceTurtlesExit tSecImb = (SecurityImbalanceTurtlesExit) secImb;
+            return string.Format(
+                "IsLongDay={0} OpeningTrade={1} LastTrade={2} CloseWindow={3} OppTrendCloseWindow={4}",
+                tSecImb.IsLongDay(),
+                tSecImb.OpeningPrice != null && tSecImb.OpeningPrice.Trade.HasValue
+                    ? tSecImb.OpeningPrice.Trade.Value.ToString("#.##")
+                    : "<no trade>",
+                tSecImb.Security != null && tSecImb.Security.MarketData != null &&
+                tSecImb.Security.MarketData.Trade.HasValue
+                    ? tSecImb.Security.MarketData.Trade.Value.ToString("#.##")
+                    : "<no market data>",
+                tSecImb.CloseWindow,
+                tSecImb.OppTrendClosingWindow);
+        }
 
         public override bool EvalClosingShortPosition(SecurityImbalance secImb,
             decimal positionOpeningImbalanceMaxThreshold)
@@ -152,11 +169,13 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
                 bool newLow = IsLowest(tSecImb.IsLongDay() ?tSecImb.CloseWindow:tSecImb.OppTrendClosingWindow, 
                                        tSecImb.Candles,tSecImb.CandleReferencePrice);
                 
-                return (TradeDirection == ImbalancePosition._LONG
-                        && !secImb.Closing
-                        && newLow
-                        && (OpeningPosition.PosStatus == PositionStatus.Filled ||
-                            OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
+                bool closeLong= (TradeDirection == ImbalancePosition._LONG
+                                && !secImb.Closing
+                                && newLow
+                                && (OpeningPosition.PosStatus == PositionStatus.Filled ||
+                                    OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
+
+                return closeLong;
             }
             else
             {

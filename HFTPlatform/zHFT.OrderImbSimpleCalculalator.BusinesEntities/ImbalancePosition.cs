@@ -244,6 +244,11 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return ClosingPosition == null;
         }
 
+        public virtual string ClosingSummary(SecurityImbalance secImb)
+        {
+            return "";
+        }
+
         public virtual bool EvalStopLossHit(SecurityImbalance secImb)
         {
             if (secImb.Closing)
