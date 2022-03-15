@@ -658,7 +658,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 RunClose(imbPos.OpeningPosition, secImb, imbPos);
-                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2} Imabalance={3} PosId={4} ClosingSummary={5}", 
+                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2} Imbalance={3} PosId={4} ClosingSummary={5}", 
                                             imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
                                             secImb.ImbalanceSummary,
                                             imbPos.ClosingPosition!=null? imbPos.ClosingPosition.PosId:"-",
@@ -668,7 +668,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             else if (imbPos.EvalClosingLongPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
             {
                 RunClose(imbPos.OpeningPosition, secImb, imbPos);
-                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  Imabalance={3} PosId={4} ClosingSummary={5}",
+                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  Imbalance={3} PosId={4} ClosingSummary={5}",
                         imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
                         secImb.ImbalanceSummary,
                         imbPos.ClosingPosition != null ? imbPos.ClosingPosition.PosId : null,
