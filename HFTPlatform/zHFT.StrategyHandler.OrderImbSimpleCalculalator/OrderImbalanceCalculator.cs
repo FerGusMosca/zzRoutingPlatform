@@ -689,6 +689,11 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             return DateTime.Now < MarketTimer.GetTodayDateTime(Configuration.ClosingTime);
         }
 
+        protected virtual bool InsideTradingWindow()
+        {
+            return true;
+        }
+
         private void EvalOpeningClosingPositions(SecurityImbalance secImb)
         {
 
@@ -700,6 +705,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 if (ImbalancePositions.Keys.Count < Configuration.MaxOpenedPositions 
                     && !ImbalancePositions.ContainsKey(secImb.Security.Symbol)
                     && IsTradingTime()
+                    && InsideTradingWindow()
                     && PacingValidations(secImb.Security.Symbol)
                     )
                 {

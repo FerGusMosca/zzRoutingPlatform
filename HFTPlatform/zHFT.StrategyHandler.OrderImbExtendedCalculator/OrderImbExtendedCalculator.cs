@@ -131,10 +131,14 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
             }
         }
         
+        protected override bool InsideTradingWindow()
+        {
+            return DateTime.Now < MarketTimer.GetTodayDateTime(((ExtendedConfiguration)Configuration).MaxOpeningTime);
+        }
+        
         protected override bool IsTradingTime()
         {
-            return DateTime.Now < MarketTimer.GetTodayDateTime(Configuration.ClosingTime)
-                && DateTime.Now < MarketTimer.GetTodayDateTime(((ExtendedConfiguration)Configuration).MaxOpeningTime);
+            return DateTime.Now < MarketTimer.GetTodayDateTime(Configuration.ClosingTime);
         }
 
         protected override bool PacingValidations(string symbol)
