@@ -93,6 +93,10 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
             if (OpeningPrice != null)
                 OpeningPrice = md;
+
+            //Sometimes the first MD might not have a Trade
+            if (OpeningPrice != null && !OpeningPrice.Trade.HasValue && md != null && md.Trade.HasValue)
+                OpeningPrice.Trade = md.Trade;
         }
 
         public bool ValidPacing(int maxMinWaitBtwConsecutivePos)
