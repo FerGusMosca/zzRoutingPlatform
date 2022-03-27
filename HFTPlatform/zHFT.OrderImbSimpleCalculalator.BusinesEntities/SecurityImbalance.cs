@@ -91,7 +91,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         {
             Security.MarketData = md;
 
-            if (OpeningPrice != null)
+            if (OpeningPrice == null)
                 OpeningPrice = md;
 
             //Sometimes the first MD might not have a Trade
