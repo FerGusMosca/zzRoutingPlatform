@@ -483,6 +483,26 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected double CalculateUpdateQty(Order order)
+        {
+            if (order.CumQty.HasValue && order.CumQty.Value > 0)
+            {
+                DoLog("DB1-UPD Partially Filled", Constants.MessageType.Information);
+                DoLog(string.Format("CumQty={0} OrdQty={1} -->  Using OrdQty",order.CumQty.Value,order.OrderQty.Value),Constants.MessageType.Information);
+                double ordQty = order.OrderQty.Value ;//v1:FIX Protocol version
+                
+                //v2: Version when we use the LeavesQty as  new order size
+                //double ordQty = order.OrderQty - Convert.ToDouble((order.CumQty.HasValue ? order.CumQty.Value : 0));
+                
+                return ordQty;
+            }
+            else
+            {
+                return order.OrderQty.Value;
+            }
+
+        }
+
         protected CMState UpdateOrder(Wrapper wrapper)
         {
             try
@@ -508,7 +528,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                         order.OrigClOrdId = origClOrdId;
 
                         //We use the order leaves qty
-                        ordQty = order.OrderQty - Convert.ToDouble((order.CumQty.HasValue ? order.CumQty.Value : 0));
+                        ordQty = CalculateUpdateQty(order);
+                        
                         //Console.Beep();
 
                         //CancelOrder(order, origClOrdId, newMarketOrderIdRequested.ToString());
@@ -520,7 +541,6 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                             ordQty *= 1000;
                         }
 
-                        
                         QuickFix.Message updMessage = FIXMessageCreator.CreateOrderCancelReplaceRequest(
                                                                             newMarketOrderIdRequested.ToString(),
                                                                             order.OrderId,
