@@ -11,7 +11,6 @@
 
 <!--  <AccountNumber></AccountNumber>-->
 
-  <EFConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</EFConnectionString>
-
+<!--  <EFConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</EFConnectionString>-->
 
 </Configuration>
