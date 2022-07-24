@@ -2795,6 +2795,7 @@
           <e p="AccountManager.cs" t="Include" />
           <e p="ADO" t="Include">
             <e p="ADOCryptoAccountManager.cs" t="Include" />
+            <e p="ADOCryptoPositionManager.cs" t="Include" />
             <e p="ADOInstructionManager.cs" t="Include" />
           </e>
           <e p="InstructionManager.cs" t="Include" />
@@ -2953,6 +2954,7 @@
           <e p="ADO" t="Include">
             <e p="ADOAccountManager.cs" t="Include" />
             <e p="ADOInstructionManager.cs" t="Include" />
+            <e p="ADOPositionManager.cs" t="Include" />
           </e>
           <e p="InstructionManager.cs" t="Include" />
           <e p="PositionManager.cs" t="Include" />

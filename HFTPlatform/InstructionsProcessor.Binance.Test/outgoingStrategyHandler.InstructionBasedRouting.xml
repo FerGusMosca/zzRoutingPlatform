@@ -13,7 +13,6 @@
   <InstructionsAccessLayerConnectionString >metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
   <ADOInstructionsAccessLayerConnectionString>data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ADOInstructionsAccessLayerConnectionString >
 
-
   <AccountNumber>3</AccountNumber>
 
   <RoutingUpdateInMilliseconds>100</RoutingUpdateInMilliseconds>
@@ -24,7 +23,7 @@
 
   <InstructionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.ADO.ADOInstructionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</InstructionManagerAccessLayer>
 
-  <PositionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.PositionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</PositionManagerAccessLayer>
+  <PositionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.ADO.ADOCryptoPositionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</PositionManagerAccessLayer>
 
   <AccountManagerConfig>
     <Config>

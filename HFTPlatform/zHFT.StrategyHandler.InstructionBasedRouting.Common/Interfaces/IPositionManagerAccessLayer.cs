@@ -13,12 +13,12 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces
 
         AccountPosition GetById(long id);
 
-        void DeleteAllOnline(int accountId);
+        //void DeleteAllOnline(int accountId);
 
-        void Persist(AccountPosition pos);
+        //void Persist(AccountPosition pos);
 
         void PersistAndReplace(List<AccountPosition> positions, int accountId);
 
-        void Delete(AccountPosition pos);
+        //void Delete(AccountPosition pos);
     }
 }

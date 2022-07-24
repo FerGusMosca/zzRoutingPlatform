@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Managers\AccountManager.cs" />
     <Compile Include="Managers\ADO\ADOCryptoAccountManager.cs" />
+    <Compile Include="Managers\ADO\ADOCryptoPositionManager.cs" />
     <Compile Include="Managers\ADO\ADOInstructionManager.cs" />
     <Compile Include="Managers\InstructionManager.cs" />
     <Compile Include="Managers\PositionManager.cs" />
