@@ -22,6 +22,7 @@ using zHFT.OrderRouters.Binance.Common.DTO;
 using zHFT.OrderRouters.Binance.Common.Wrappers;
 using zHFT.OrderRouters.Binance.DataAccessLayer.Managers;
 using zHFT.OrderRouters.BINANCE.Common.Util;
+using zHFT.OrderRouters.Binance.DataAccessLayer.Managers.ADO;
 using zHFT.OrderRouters.Cryptos;
 using BinanceClient2 = Binance.Net.Clients.BinanceClient;
 using Constants = zHFT.Main.Common.Util.Constants;
@@ -78,7 +79,7 @@ namespace zHFT.OrderRouters.Binance
             if (BinanceConfiguration.AccountNumber.HasValue)
             {
                 AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.ConfigConnectionString);
-                AccountBinanceData  = AccountBinanceDataManager.GetByAccountNumber(BinanceConfiguration.AccountNumber.Value);
+                AccountBinanceData  = AccountBinanceDataManager.GetAccountBinanceData(BinanceConfiguration.AccountNumber.Value);
             }
             else if(!string.IsNullOrEmpty(BinanceConfiguration.Secret) && !string.IsNullOrEmpty(BinanceConfiguration.Key))
             {

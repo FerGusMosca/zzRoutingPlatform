@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace zHFT.Main.DataAccessLayer.Managers.ADO
 {
@@ -11,7 +12,9 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
     {
         #region Protected Attributes
 
-        protected SqlConnection Conn { get; set; }
+        protected SqlConnection DatabaseConnection { get; set; }
+        
+        protected string ConnectionString { get; set; }
 
 
         #endregion
@@ -20,9 +23,14 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
 
         public void Dispose()
         {
-            Conn.Dispose();
+            DatabaseConnection.Dispose();
         }
 
+        #endregion
+        
+        #region Protected Methods
+
+       
         #endregion
     }
 }

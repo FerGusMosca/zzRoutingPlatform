@@ -12,6 +12,7 @@ using zHFT.InstructionBasedMarketClient.Binance.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Util;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.Managers;
+using zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.Managers.ADO;
 using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Cryptos.Client;
 using zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.Managers;
@@ -49,6 +50,8 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
         
         protected  Dictionary<int, Wrapper> HistoricalPricesRequests { get; set; }
 
+        //private AccountBinanceDataManager AccountBinanceDataManager { get; set; }
+        
         private AccountBinanceDataManager AccountBinanceDataManager { get; set; }
         
         protected AccountBinanceData AccountBinanceData { get; set; }
@@ -61,7 +64,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
         {
             if (BinanceConfiguration.AccountNumber.HasValue)
             {
-                AccountBinanceData = AccountBinanceDataManager.GetByAccountNumber(new Account(){AccountNumber = BinanceConfiguration.AccountNumber.Value});
+                AccountBinanceData = AccountBinanceDataManager.GetAccountBinanceData(BinanceConfiguration.AccountNumber.Value);
             }
             else if(!string.IsNullOrEmpty(BinanceConfiguration.Secret) && !string.IsNullOrEmpty(BinanceConfiguration.Key))
             {
@@ -400,10 +403,10 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
 
-                    
-                    if(BinanceConfiguration.EFConnectionString!=null)
-                        AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.EFConnectionString);
-
+                    if (BinanceConfiguration.ConnectionString != null)
+                    {
+                        AccountBinanceDataManager = new AccountBinanceDataManager(BinanceConfiguration.ConnectionString);
+                    }
                     BuildBinanceData();
                     
                     return true;

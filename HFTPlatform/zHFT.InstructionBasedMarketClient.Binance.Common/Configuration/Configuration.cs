@@ -17,7 +17,9 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Common.Configuration
 
         public int? AccountNumber { get; set; }
         
-        public string EFConnectionString { get; set; }
+        //public string EFConnectionString { get; set; }
+        
+        public string ConnectionString { get; set; }
         
         public string Key { get; set; }
         

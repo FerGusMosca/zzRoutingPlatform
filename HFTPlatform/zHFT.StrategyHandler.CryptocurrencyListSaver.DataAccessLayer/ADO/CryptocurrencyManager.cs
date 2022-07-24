@@ -16,7 +16,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO
 
         public CryptocurrencyManager(string connectionString)
         {
-            Conn = new SqlConnection(connectionString);
+            DatabaseConnection = new SqlConnection(connectionString);
             
 
         }
@@ -27,9 +27,9 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO
 
         public void PersistCrypto(CryptoCurrency crypto)
         {
-            using (SqlCommand cmd = Conn.CreateCommand())
+            using (SqlCommand cmd = DatabaseConnection.CreateCommand())
             {
-                Conn.Open();
+                DatabaseConnection.Open();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "PersistCryptoCurrency";
                 cmd.Parameters.Add(new SqlParameter("@Symbol", crypto.Symbol));
@@ -42,7 +42,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO
                
                 cmd.ExecuteNonQuery();
 
-                Conn.Close();
+                DatabaseConnection.Close();
             }
              
         }

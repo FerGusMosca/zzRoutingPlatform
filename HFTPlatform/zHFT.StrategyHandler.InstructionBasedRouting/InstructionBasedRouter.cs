@@ -800,7 +800,6 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             {
                 ExecutionSummaries = new Dictionary<string, ExecutionSummary>();
                 PositionInstructions = new Dictionary<string, Instruction>();
-
                 
                 var accountManagerAccessLayer = Type.GetType(IBRConfiguration.AccountManagerAccessLayer);
                 if (accountManagerAccessLayer != null)

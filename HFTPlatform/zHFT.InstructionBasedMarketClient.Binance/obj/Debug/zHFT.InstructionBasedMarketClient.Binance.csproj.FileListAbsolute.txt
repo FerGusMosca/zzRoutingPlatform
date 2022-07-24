@@ -152,3 +152,9 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Binance.API.Csharp.Client.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Binance.API.Csharp.Client.Domain.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\Binance.API.Csharp.Client.Models.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.Main.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\AutoMapper.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.Main.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.Main.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.Main.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.Binance\bin\Debug\zHFT.Main.DataAccess.dll.config

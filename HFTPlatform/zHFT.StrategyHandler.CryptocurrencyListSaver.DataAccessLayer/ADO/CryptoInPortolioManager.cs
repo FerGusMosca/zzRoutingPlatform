@@ -17,7 +17,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO
 
         public CryptoInPortolioManager(string connectionString)
         {
-            Conn = new SqlConnection(connectionString);
+            DatabaseConnection = new SqlConnection(connectionString);
             
 
         }
@@ -47,11 +47,11 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO
 
         public List<CryptoInPortfolio> GetCryptoInPortfolio()
         {
-            Conn.Open();
+            DatabaseConnection.Open();
 
             List<CryptoInPortfolio> cryptosInPortfolio = new List<CryptoInPortfolio>();
 
-            SqlCommand cmd = new SqlCommand("GetCryptosInPortfolio", Conn);
+            SqlCommand cmd = new SqlCommand("GetCryptosInPortfolio", DatabaseConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -75,7 +75,7 @@ namespace zHFT.StrategyHandler.CryptocurrencyListSaver.DataAccessLayer.ADO
             finally
             {
                 reader.Close();
-                Conn.Close();
+                DatabaseConnection.Close();
             }
             return cryptosInPortfolio;
         

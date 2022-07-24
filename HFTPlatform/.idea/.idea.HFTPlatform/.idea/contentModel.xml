@@ -1280,9 +1280,13 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Managers" t="Include">
           <e p="AccountBinanceDataManager.cs" t="Include" />
+          <e p="ADO" t="Include">
+            <e p="AccountBinanceDataManager.cs" t="Include" />
+          </e>
         </e>
         <e p="MappingEnabledAbstract.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
@@ -1735,6 +1739,7 @@
           <e p="MappingEnabledAbstract.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Profiles" t="Include">
           <e p="ExecutionReportProfile.cs" t="Include" />
           <e p="ExecutionSummaryProfile.cs" t="Include" />
@@ -2144,6 +2149,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Managers" t="Include">
           <e p="AccountBinanceDataManager.cs" t="Include" />
+          <e p="ADO" t="Include">
+            <e p="AccountBinanceDataManager.cs" t="Include" />
+          </e>
         </e>
         <e p="MappingEnabledAbstract.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />

@@ -49,7 +49,6 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="websocket-sharp, Version=1.0.2.32519, Culture=neutral, PublicKeyToken=5660b08a1845a91e">
       <HintPath>..\packages\WebSocketSharp-NonPreRelease.1.0.0\lib\net35\websocket-sharp.dll</HintPath>
@@ -96,6 +95,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801e5410-738b-47c9-895f-0ad1b5860a2a}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
       <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
