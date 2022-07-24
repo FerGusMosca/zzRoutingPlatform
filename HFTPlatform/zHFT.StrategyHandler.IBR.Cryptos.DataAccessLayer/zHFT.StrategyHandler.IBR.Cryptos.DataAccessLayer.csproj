@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Managers\AccountManager.cs" />
+    <Compile Include="Managers\ADO\ADOCryptoAccountManager.cs" />
     <Compile Include="Managers\ADO\ADOInstructionManager.cs" />
     <Compile Include="Managers\InstructionManager.cs" />
     <Compile Include="Managers\PositionManager.cs" />
@@ -58,6 +59,10 @@
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801e5410-738b-47c9-895f-0ad1b5860a2a}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Cryptos.DataAccess\zHFT.StrategyHandler.IBR.Cryptos.DataAccess.csproj">
       <Project>{d74a8a08-4952-45e0-812e-0d365b6a48e9}</Project>
       <Name>zHFT.StrategyHandler.IBR.Cryptos.DataAccess</Name>
@@ -69,6 +74,10 @@
     <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.Common\zHFT.StrategyHandler.InstructionBasedRouting.Common.csproj">
       <Project>{12e8c682-1075-41c9-bbd8-0020c62aaae5}</Project>
       <Name>zHFT.StrategyHandler.InstructionBasedRouting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj">
+      <Project>{58324d7e-90c3-46f4-96e2-ea0fe424663b}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

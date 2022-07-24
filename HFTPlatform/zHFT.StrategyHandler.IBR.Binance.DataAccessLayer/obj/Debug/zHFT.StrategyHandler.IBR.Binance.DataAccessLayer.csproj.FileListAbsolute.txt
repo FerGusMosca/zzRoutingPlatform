@@ -218,3 +218,9 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\CryptoExchange.Net.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\zHFT.Main.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\AutoMapper.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\zHFT.Main.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\zHFT.Main.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\zHFT.Main.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Binance.DataAccessLayer\bin\Debug\zHFT.Main.DataAccess.dll.config

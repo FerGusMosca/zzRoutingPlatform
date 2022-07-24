@@ -20,7 +20,7 @@
 
   <AccoutReferenceHandler>zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.BinanceAccountManager, zHFT.StrategyHandler.IBR.Binance.DataAccessLayer</AccoutReferenceHandler>
 
-  <AccountManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.AccountManager,zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</AccountManagerAccessLayer>
+  <AccountManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.ADO.ADOCryptoAccountManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</AccountManagerAccessLayer>
 
   <InstructionManagerAccessLayer>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers.ADO.ADOInstructionManager, zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</InstructionManagerAccessLayer>
 

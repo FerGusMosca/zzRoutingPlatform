@@ -196,3 +196,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\InstructionsProcessor.Binance.Test\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll.config
