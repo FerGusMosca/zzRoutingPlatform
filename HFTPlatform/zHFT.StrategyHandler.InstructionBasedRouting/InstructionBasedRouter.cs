@@ -803,7 +803,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 
                 var accountManagerAccessLayer = Type.GetType(IBRConfiguration.AccountManagerAccessLayer);
                 if (accountManagerAccessLayer != null)
-                    AccountManager = (IAccountManagerAccessLayer)Activator.CreateInstance(accountManagerAccessLayer, IBRConfiguration.InstructionsAccessLayerConnectionString);
+                    AccountManager = (IAccountManagerAccessLayer)Activator.CreateInstance(accountManagerAccessLayer, IBRConfiguration.ADOInstructionsAccessLayerConnectionString);
                 else
                 {
                     DoLog("assembly not found: " + IBRConfiguration.AccountManagerAccessLayer, Main.Common.Util.Constants.MessageType.Error);
@@ -812,10 +812,10 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
 
                 var positionManagerAccessLayer = Type.GetType(IBRConfiguration.PositionManagerAccessLayer);
                 if (positionManagerAccessLayer != null)
-                    PositionManager = (IPositionManagerAccessLayer)Activator.CreateInstance(positionManagerAccessLayer, IBRConfiguration.InstructionsAccessLayerConnectionString);
+                    PositionManager = (IPositionManagerAccessLayer)Activator.CreateInstance(positionManagerAccessLayer, IBRConfiguration.ADOInstructionsAccessLayerConnectionString);
                 else
                 {
-                    DoLog("assembly not found: " + IBRConfiguration.InstructionsAccessLayerConnectionString, Main.Common.Util.Constants.MessageType.Error);
+                    DoLog("assembly not found: " + IBRConfiguration.PositionManagerAccessLayer, Main.Common.Util.Constants.MessageType.Error);
                     return false;
                 }
 

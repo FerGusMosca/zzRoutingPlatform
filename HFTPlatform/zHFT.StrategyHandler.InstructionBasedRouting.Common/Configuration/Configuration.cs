@@ -27,8 +27,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
     {
         #region Public Attributes
 
-        public string InstructionsAccessLayerConnectionString { get; set; }
-
+//        public string InstructionsAccessLayerConnectionString { get; set; }
+//
         public string ADOInstructionsAccessLayerConnectionString { get; set; }
 
         public long AccountNumber { get; set; }
@@ -59,12 +59,12 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration
 
             resultado = base.CheckDefaults(result);
 
-            if (string.IsNullOrEmpty(InstructionsAccessLayerConnectionString))
-            {
-                result.Add("InstructionsAccessLayerConnectionString");
-                resultado = false;
-            }
-
+//            
+//if (string.IsNullOrEmpty(InstructionsAccessLayerConnectionString))
+//            {
+//                result.Add("InstructionsAccessLayerConnectionString");
+//                resultado = false;
+//            }
 
             if (string.IsNullOrEmpty(ADOInstructionsAccessLayerConnectionString))
             {
