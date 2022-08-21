@@ -17,11 +17,11 @@ using Microsoft.Extensions.DependencyInjection;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.IBR.Binance.BusinessEntities;
-using zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers;
-using zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.Managers;
+using zHFT.StrategyHandler.IBR.Binance.DataAccessLayer.Managers.ADO;
 using zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Configuration;
 using zHFT.StrategyHandler.InstructionBasedRouting.Common.Interfaces;
+using zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.ADO;
 using Constants = zHFT.Main.Common.Util.Constants;
 
 
@@ -122,21 +122,19 @@ namespace zHFT.StrategyHandler.IBR.Binance.DataAccessLayer
         protected void LoadConfig()
         {
             string binanceConfigDataBaseCS=ConfigParameters.Where(x => x.Key == _CONFIG_CONNECTION_STRING).FirstOrDefault().Value;
-
+            
             AccountBinanceDataManager accountBinanceDataManager = new AccountBinanceDataManager(binanceConfigDataBaseCS);
             
             int accountNumber = Convert.ToInt32(ConfigParameters.Where(x => x.Key == _ACCOUNT_NUMBER).FirstOrDefault().Value);
 
             QuoteCurrency=ConfigParameters.Where(x => x.Key == _QUOTE_CURRENCY).FirstOrDefault().Value;
 
-            BinanceData = accountBinanceDataManager.GetByAccountNumber(accountNumber);
+            BinanceData = accountBinanceDataManager.GetAccountBinanceData(accountNumber);
 
             if (BinanceData == null)
                 throw new Exception(string.Format("No se encontró la configuración de acceso al exchange Binance para la cuenta número {0}", accountNumber));
 
-
-            AccountManager accountManager = new AccountManager(binanceConfigDataBaseCS);
-
+            ADOAccountManager accountManager= new ADOAccountManager(binanceConfigDataBaseCS);
             AccountToSync = accountManager.GetByAccountNumber(accountNumber);
 
             if (AccountToSync == null)

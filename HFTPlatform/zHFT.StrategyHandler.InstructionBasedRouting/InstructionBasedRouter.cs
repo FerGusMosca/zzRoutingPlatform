@@ -847,7 +847,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
             catch (Exception ex)
             {
-                DoLog("Critic error initializing " + IBRConfiguration.Name + ":" + ex.Message + "-" + (ex.StackTrace!=null?ex.StackTrace:""), Main.Common.Util.Constants.MessageType.Error);
+                DoLog("CRITICAL ERROR initializing " + IBRConfiguration.Name + ":" + ex.Message + "-" + (ex.StackTrace!=null?ex.StackTrace:""), Main.Common.Util.Constants.MessageType.Error);
                 return false;
             }
         }

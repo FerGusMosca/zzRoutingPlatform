@@ -1731,6 +1731,7 @@
         <e p="Managers" t="Include">
           <e p="ADO" t="Include">
             <e p="ADOBaseManager.cs" t="Include" />
+            <e p="ADOExecutionSummaryManager.cs" t="Include" />
           </e>
           <e p="ExecutionSummaryManager.cs" t="Include" />
         </e>
@@ -2716,6 +2717,9 @@
         <e p="BinanceAccountManager.cs" t="Include" />
         <e p="Managers" t="Include">
           <e p="AccountBinanceDataManager.cs" t="Include" />
+          <e p="ADO" t="Include">
+            <e p="AccountBinanceDataManager.cs" t="Include" />
+          </e>
         </e>
         <e p="MappingEnabledAbstract.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />

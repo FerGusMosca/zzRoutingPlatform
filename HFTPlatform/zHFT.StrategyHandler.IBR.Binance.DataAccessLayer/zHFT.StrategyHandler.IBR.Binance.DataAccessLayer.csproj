@@ -192,6 +192,7 @@
   <ItemGroup>
     <Compile Include="BinanceAccountManager.cs" />
     <Compile Include="Managers\AccountBinanceDataManager.cs" />
+    <Compile Include="Managers\ADO\AccountBinanceDataManager.cs" />
     <Compile Include="MappingEnabledAbstract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -203,6 +204,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801e5410-738b-47c9-895f-0ad1b5860a2a}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Binance.BusinessEntities\zHFT.StrategyHandler.IBR.Binance.BusinessEntities.csproj">
       <Project>{baf202e5-9cdb-4b0a-bc69-1988bc0bb216}</Project>

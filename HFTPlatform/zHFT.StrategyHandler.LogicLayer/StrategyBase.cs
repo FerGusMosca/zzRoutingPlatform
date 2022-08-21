@@ -13,6 +13,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.Main.DataAccessLayer.Managers;
+using zHFT.Main.DataAccessLayer.Managers.ADO;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandlers.Common.Converters;
@@ -47,7 +48,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected int NextPosId { get; set; }
 
-        protected ExecutionSummaryManager ExecutionSummaryManager { get; set; }
+        protected ADOExecutionSummaryManager ExecutionSummaryManager { get; set; }
 
         protected Common.Configuration.StrategyConfiguration StrategyConfiguration
         {
@@ -521,7 +522,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     tLock = new object();
 
                     if (StrategyConfiguration.ReportSavingBD())
-                        ExecutionSummaryManager = new ExecutionSummaryManager(StrategyConfiguration.ReportSavingConnectionString);
+                        ExecutionSummaryManager = new ADOExecutionSummaryManager(StrategyConfiguration.ReportSavingConnectionString);
 
                     //ExecutionSummaryManager.GetTest();
                     return OnInitialize();

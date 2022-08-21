@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,14 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
         #endregion
 
         #region Public Methods
+        
+        public static bool HasColumn(DbDataReader Reader, string ColumnName) { 
+            foreach (DataRow row in Reader.GetSchemaTable().Rows) { 
+                if (row["ColumnName"].ToString() == ColumnName) 
+                    return true; 
+            } //Still here? Column not found. 
+            return false; 
+        }
 
         public void Dispose()
         {

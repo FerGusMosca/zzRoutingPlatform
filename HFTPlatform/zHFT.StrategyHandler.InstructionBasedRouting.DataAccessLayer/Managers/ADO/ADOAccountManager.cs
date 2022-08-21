@@ -38,13 +38,25 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.
                 AccountNumber = Convert.ToInt64(reader["account_number"]),
                 Broker = new Broker(){Id=Convert.ToInt32(reader["broker_id"])},
                 Name = reader["name"]!=DBNull.Value ?reader["name"].ToString():null,
-                AccountDesc = reader["account"]!=DBNull.Value ?reader["account"].ToString():null,
-                URL = reader["url"]!=DBNull.Value ?reader["url"].ToString():null,
-                Port = reader["port"]!=DBNull.Value ?(long?)Convert.ToInt64(reader["port"]):null,
+                //AccountDesc = reader["account"]!=DBNull.Value ?reader["account"].ToString():null,
+                //URL = reader["url"]!=DBNull.Value ?reader["url"].ToString():null,
+                //Port = reader["port"]!=DBNull.Value ?(long?)Convert.ToInt64(reader["port"]):null,
                 Balance = reader["balance"]!=DBNull.Value ?(long?)Convert.ToDecimal(reader["balance"]):null,
-                Currency = reader["currency"]!=DBNull.Value ?reader["currency"].ToString():null,
+                //Currency = reader["currency"]!=DBNull.Value ?reader["currency"].ToString():null,
                 GenericAccountNumber = reader["generic_s_number"]!=DBNull.Value ?reader["generic_s_number"].ToString():null,
             };
+
+            if (HasColumn(reader, "url"))
+                account.URL = reader["url"] != DBNull.Value ? reader["url"].ToString() : null;
+            
+            if (HasColumn(reader, "port"))
+                account.Port = reader["port"]!=DBNull.Value ?(long?)Convert.ToInt64(reader["port"]):null;
+            
+            if (HasColumn(reader, "currency"))
+                account.URL =  reader["currency"]!=DBNull.Value ?reader["currency"].ToString():null;
+            
+            if (HasColumn(reader, "account"))
+                account.AccountDesc =  reader["account"]!=DBNull.Value ?reader["account"].ToString():null;
 
             return account;
         }
@@ -62,6 +74,50 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.Managers.
 
             cmd.Parameters.AddWithValue("@Id", id);
             cmd.Parameters["@Id"].Direction = ParameterDirection.Input;
+            
+            cmd.Parameters.AddWithValue("@AccountNumber", null);
+            cmd.Parameters["@AccountNumber"].Direction = ParameterDirection.Input;
+            
+            cmd.Connection.Open();
+
+            // Open DB
+            SqlDataReader reader;
+            Account account = null;
+
+            try
+            {
+                // Run Query
+                reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        account=BuildAccount(reader);
+                    }
+                }
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+
+            return account;
+        }
+        
+        public Account GetByAccountNumber(long accountNumber)
+        {
+            //DatabaseConnection = new MySqlConnection(ConnectionString);
+            SqlCommand cmd = new SqlCommand(_SP_GET_ACCOUNTS, new SqlConnection(ConnectionString));
+            cmd.CommandTimeout = 60;
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Id", null);
+            cmd.Parameters["@Id"].Direction = ParameterDirection.Input;
+            
+            cmd.Parameters.AddWithValue("@AccountNumber", accountNumber);
+            cmd.Parameters["@AccountNumber"].Direction = ParameterDirection.Input;
             
             cmd.Connection.Open();
 
