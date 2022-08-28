@@ -23,7 +23,7 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
 
         private static string _SP_PERSIST_EXECUTION_SUMMARY = "PersistExecutionSummary";
         
-        private static string _SP_PERSIST_POSITION= "PersistPosition";
+        private static string _SP_PERSIST_POSITION= "PersistPositions";
         
         private static string _SP_PERSIST_ORDER= "PersistOrder";
         
@@ -82,15 +82,7 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
             try
             {
                 // Run Query
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        summary.Id = Convert.ToInt64(cmd.ExecuteScalar());
-                    }
-                }
+                summary.Id = Convert.ToInt64(cmd.ExecuteScalar());
             }
             finally
             {
@@ -187,15 +179,7 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
             try
             {
                 // Run Query
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        order.Id = Convert.ToInt64(cmd.ExecuteScalar());
-                    }
-                }
+                order.Id = Convert.ToInt64(cmd.ExecuteScalar());
             }
             finally
             {
@@ -271,15 +255,7 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
             try
             {
                 // Run Query
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        pos.Id = Convert.ToInt32(cmd.ExecuteScalar());
-                    }
-                }
+                pos.Id = Convert.ToInt32(cmd.ExecuteScalar());
             }
             finally
             {
@@ -353,15 +329,7 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
             try
             {
                 // Run Query
-                reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        execRep.Id = Convert.ToInt64(cmd.ExecuteScalar());
-                    }
-                }
+                execRep.Id = Convert.ToInt64(cmd.ExecuteScalar());
             }
             finally
             {

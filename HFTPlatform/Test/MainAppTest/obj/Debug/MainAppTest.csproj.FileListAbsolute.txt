@@ -118,3 +118,18 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.exe
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\Config.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\incomingConfigQuickFix.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\incomingIB.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingOrderRouter.IB.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingOrderRouter.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingStrategyHandler.MomentumPortfolios.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\outgoingStrategyHandler.SingleStockBuyer.xml
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\MainAppTest.exe.config
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\MainAppTest.exe
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\Desktop\Trading SW\zHFT\MainAppTest.pdb
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csprojAssemblyReference.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csproj.CoreCompileInputs.cache
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.csproj.CopyComplete
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.exe
+C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\Test\MainAppTest\obj\Debug\MainAppTest.pdb
