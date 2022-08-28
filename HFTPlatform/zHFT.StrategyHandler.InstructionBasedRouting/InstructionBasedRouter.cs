@@ -431,8 +431,8 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
                 }
                 catch (Exception ex)
                 {
-                    DoLog(string.Format("@{2} - Critical error processing position sync instruction: {0} - {1}", 
-                           ex.Message, ex.InnerException != null ? ex.InnerException.Message : "", IBRConfiguration.Name), 
+                    DoLog(string.Format("@{2} - Critical error processing position sync instruction: {0} - {1} - {3}", 
+                           ex.Message, ex.InnerException != null ? ex.InnerException.Message : "", IBRConfiguration.Name,ex.StackTrace), 
                            Main.Common.Util.Constants.MessageType.Error);
                 }
             }
@@ -1025,7 +1025,7 @@ namespace zHFT.StrategyHandler.InstructionBasedRouting
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0} OnEvalExecutionSummary: Critical error processing execution summary: {1}", IBRConfiguration.Name, ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("@{0} OnEvalExecutionSummary: Critical error processing execution summary: {1}-{2}", IBRConfiguration.Name, ex.Message,ex.StackTrace), Constants.MessageType.Error);
                 CancelAllNotCleared((int?)IBRConfiguration.AccountNumber);
             }
         }
