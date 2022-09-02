@@ -5,7 +5,7 @@
   <ReportSavingMode>BD</ReportSavingMode>
   <!--BD=SQL Server Data Base, EXCEL=CSV file, NONE=nothing-->
 <!--  <ReportSavingConnectionString>metadata=res://*/StrategyReportsEntityDataModel.csdl|res://*/StrategyReportsEntityDataModel.ssdl|res://*/StrategyReportsEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=StrategyReportsCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ReportSavingConnectionString>-->
-  <ReportSavingConnectionString>data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ReportSavingConnectionString>
+  <ReportSavingConnectionString>data source=.\SQLDEV17;initial catalog=StrategyReportsCryptos;integrated security=True;multipleactiveresultsets=True</ReportSavingConnectionString>
   
   
   <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
