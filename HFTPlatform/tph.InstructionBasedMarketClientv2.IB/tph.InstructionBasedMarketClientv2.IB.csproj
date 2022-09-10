@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{E8A862A1-54A8-425F-BF2B-25ECE95098B0}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>tph.InstructionBasedMarketClientv2_.IB</RootNamespace>
+        <AssemblyName>tph.InstructionBasedMarketClientv2.IB</AssemblyName>
+        <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Connection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\TWS.1.0.0\lib\net461\Connection.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="CSharpAPI, Version=9.73.6.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\TWS.1.0.0\lib\net461\CSharpAPI.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Factory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\TWS.1.0.0\lib\net461\Factory.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="MarketData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\TWS.1.0.0\lib\net461\MarketData.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="TWSConnection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\packages\TWS.1.0.0\lib\net461\TWSConnection.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="IBInstructionBasedMarketClient.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\tph.MarketClient.IB.Common\tph.MarketClient.IB.Common.csproj">
+        <Project>{256ca911-23b8-4d40-8af5-27a6378fcf32}</Project>
+        <Name>tph.MarketClient.IB.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Common\zHFT.InstructionBasedMarketClient.Common.csproj">
+        <Project>{2b6248b2-af75-4687-9faf-f9ea29d9335f}</Project>
+        <Name>zHFT.InstructionBasedMarketClient.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IB.Common\zHFT.InstructionBasedMarketClient.IB.Common.csproj">
+        <Project>{f679e82c-9645-43fa-9faf-237dc44483bb}</Project>
+        <Name>zHFT.InstructionBasedMarketClient.IB.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+        <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+        <Name>zHFT.Main.BusinessEntities</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+        <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+        <Name>zHFT.Main.Common</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+        <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
+        <Name>zHFT.MarketClient.Common</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

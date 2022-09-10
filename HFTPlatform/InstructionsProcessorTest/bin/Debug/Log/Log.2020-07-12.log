@@ -1,9 +1,0 @@
-2020-07-12 13:00:12  :: 12/7/2020 13:00:12MainApp.LoadConfig
-2020-07-12 13:00:12  :: Loading config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
-2020-07-12 13:00:12  :: Proccessing config:C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatform\InstructionsProcessorTest\bin\Debug\config.xml
-2020-07-12 13:00:12  :: Fin GetConfiguracion
-2020-07-12 13:00:13  :: Initializing Log
-2020-07-12 13:00:13  :: Initializing Incoming Module
-2020-07-12 13:00:17  :: Incoming Module successfully initialized
-2020-07-12 13:00:17  :: Initializing Outgoing Module
-2020-07-12 13:00:22  :: Outgoing Module successfully initialized

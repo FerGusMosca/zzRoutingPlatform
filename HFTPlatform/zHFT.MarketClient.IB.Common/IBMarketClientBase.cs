@@ -109,6 +109,8 @@ namespace zHFT.MarketClient.IB.Common
             ibContract.Currency = ctr.Currency;
             ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
 
+            
+
             ClientSocket.reqMktData(reqId, ibContract, "", snapshot, null);
 
         }

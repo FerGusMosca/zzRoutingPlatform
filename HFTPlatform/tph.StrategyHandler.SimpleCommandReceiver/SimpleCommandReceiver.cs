@@ -272,7 +272,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
             catch (Exception ex)
             {
-                DoLog("Critic error initializing " + configFile + ":" + ex.Message, Constants.MessageType.Error);
+                DoLog("Critical error initializing " + configFile + ":" + ex.Message, Constants.MessageType.Error);
                 return false;
             }
         }

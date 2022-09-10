@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net461</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="Config.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="incomingIB.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+      <Content Include="outgoingOrderRouter.IB.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="outgoingOrderRouter.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="SimpleCommModule.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\tph.InstructionBasedMarketClientv2.IB\tph.InstructionBasedMarketClientv2.IB.csproj" />
+      <ProjectReference Include="..\..\tph.MarketClient.IB.Common\tph.MarketClient.IB.Common.csproj" />
+      <ProjectReference Include="..\..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj" />
+      <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.IB\zHFT.InstructionBasedMarketClient.IB.csproj" />
+      <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
+      <ProjectReference Include="..\..\zHFT.Main\zHFT.Main.csproj" />
+      <ProjectReference Include="..\..\zHFT.OrderRouters.IB\zHFT.OrderRouters.IB.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MDFShared, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\..\Librerias\MDFShared.dll</HintPath>
+      </Reference>
+      <Reference Include="System.Configuration" />
+      <Reference Include="ToolsShared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\..\Librerias\ToolsShared.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

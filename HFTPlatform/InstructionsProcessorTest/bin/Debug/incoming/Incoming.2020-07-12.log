@@ -1,5 +1,0 @@
-2020-07-12 13:00:13  :: 7/12/2020 1:00:13 PMMarketClientBase.LoadConfig
-2020-07-12 13:00:13  :: Loading config:.\incomingIB.xml
-2020-07-12 13:00:13  :: Processing config:.\incomingIB.xml
-2020-07-12 13:00:13  :: Ending GetConfiguracion .\incomingIB.xml
-2020-07-12 13:00:17  :: error: ex=No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión 127.0.0.1:4001   
