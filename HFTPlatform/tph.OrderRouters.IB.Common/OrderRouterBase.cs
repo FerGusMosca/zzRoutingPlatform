@@ -1,133 +1,94 @@
 ﻿using IBApi;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using zHFT.Main.BusinessEntities.Market_Data;
-using zHFT.Main.BusinessEntities.Securities;
+using tph.OrderRouters.IB.Common.DTO;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
-using zHFT.MarketClient.Common;
-using zHFT.MarketClient.Common.Wrappers;
-using zHFT.MarketClient.IB.Common.Converters;
 using Constants = zHFT.Main.Common.Util.Constants;
 
-namespace tph.MarketClient.IB.Common
+namespace zHFT.OrderRouters.IB.Common
 {
-    public abstract class IBMarketClientBase : MarketClientBase, ICommunicationModule, EWrapper,EReaderSignal
+    public abstract class OrderRouterBase : ICommunicationModule, EWrapper,EReaderSignal
     {
-        #region Private Consts
+        #region Protected Attributes
 
-        private static string _US_PRIMARY_EXCHANGE = "ISLAND";
+        protected string ModuleConfigFile { get; set; }
 
-        #endregion
-
-        #region Private And Protected Attributes
+        protected OnLogMessage OnLogMsg { get; set; }
 
         protected OnMessageReceived OnMessageRcv { get; set; }
 
-        protected Dictionary<int, Security> ContractRequests { get; set; }
+        protected IConfiguration Config { get; set; }
 
-        protected EClientSocket ClientSocket { get; set; }
+        protected int NextOrderId { get; set; }
 
         #endregion
 
-        #region Public Abstract Mehtods
+        #region Abstract Methods
 
         public abstract CMState ProcessMessage(Wrapper wrapper);
 
         public abstract bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile);
 
-        protected abstract void ProcessField(string ev, int tickerId, int field, double value);
+        protected abstract void DoLoadConfig(string configFile, List<string> noValueFields);
 
-        protected abstract void ProcessField(string ev, int tickerId, int field, int value);
+        protected abstract CMState ProcessIncoming(Wrapper wrapper);
 
-        protected abstract void ProcessField(string ev, int tickerId, int field, string value);
+        protected abstract CMState ProcessOutgoing(Wrapper wrapper);
+
+        protected abstract void ProcessOrderStatus(OrderStatusDTO dto);
+
+        protected abstract void ProcessOrderError(int id, int errorCode, string errorMsg);
+
         #endregion
 
         #region Protected Methods
 
-        protected Security BuildSecurityFromConfig(zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
+        protected void DoLog(string msg, Main.Common.Util.Constants.MessageType type)
         {
-            Security sec = new Security()
+            if (OnLogMsg != null)
+                OnLogMsg(msg, type);
+        }
+
+        protected bool LoadConfig(string configFile)
+        {
+            DoLog(DateTime.Now.ToString() + "OrderRouterBase.LoadConfig", Main.Common.Util.Constants.MessageType.Information);
+
+            DoLog("Loading config:" + configFile, Main.Common.Util.Constants.MessageType.Information);
+            if (!File.Exists(configFile))
             {
-                Symbol = ctr.Symbol,
-                Exchange = ctr.Exchange,
-                Currency = ctr.Currency,
-                SecType = SecurityConverter.GetSecurityTypeFromIBCode(ctr.SecType)
-            };
+                DoLog(configFile + " does not exists", Main.Common.Util.Constants.MessageType.Error);
+                return false;
+            }
 
-            return sec;
-
-        }
-
-        protected void DoRunPublishSecurity(Object param)
-        {
-            Security sec = (Security)param;
-            RunPublishSecurity(sec);
-        }
-
-        protected void RunPublishSecurity(Security sec)
-        { 
+            List<string> noValueFields = new List<string>();
+            DoLog("Processing config:" + configFile, Main.Common.Util.Constants.MessageType.Information);
             try
             {
-                
-                MarketDataWrapper wrapper = new MarketDataWrapper(sec, GetConfig());
-                CMState state = OnMessageRcv(wrapper);
-
-                if (state.Success)
-                    DoLog(string.Format("IB Publishing Market Data for Security {0} ", sec.Symbol),  Constants.MessageType.Information);
-                else
-                    DoLog(string.Format("Error Publishing Market Data for Security {0}. Error={1} ",
-                                        sec.Symbol,
-                                        state.Exception != null ? state.Exception.Message : ""),
-                                        Constants.MessageType.Error);
-
+                DoLoadConfig(configFile, noValueFields);
+                DoLog("Ending GetConfiguracion " + configFile, Main.Common.Util.Constants.MessageType.Information);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                DoLog(string.Format("Error Publishing Market Data for Security {0}. Error={1} ",
-                                            sec.Symbol, ex != null ? ex.Message : ""),
-                                            Constants.MessageType.Error);
+                DoLog("Error recovering config " + configFile + ": " + e.Message, Main.Common.Util.Constants.MessageType.Error);
+                return false;
             }
-        
+
+            if (noValueFields.Count > 0)
+                noValueFields.ForEach(s => DoLog(string.Format(Main.Common.Util.Constants.FieldMissing, s), Main.Common.Util.Constants.MessageType.Error));
+
+            return true;
         }
 
         #endregion
 
-        #region IB Methods
-
-        protected void ReqMktData(int reqId,bool snapshot, zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
-        {
-            Contract ibContract = new Contract();
-
-            ibContract.Symbol = ctr.Symbol;
-            ibContract.SecType = ctr.SecType;
-            ibContract.Exchange = ctr.Exchange;
-            ibContract.Currency = ctr.Currency;
-            ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
-
-            //ClientSocket.reqMktData(reqId, ibContract, "", snapshot, null);
-
-            ClientSocket.reqMktData(reqId, ibContract, "", snapshot, false, new List<TagValue>());
-        }
-
-        protected void ReqMarketDepth(int reqId, zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
-        {
-            Contract ibContract = new Contract();
-
-            ibContract.Symbol = ctr.Symbol;
-            ibContract.SecType = ctr.SecType;
-            ibContract.Exchange = ctr.Exchange;
-            ibContract.Currency = ctr.Currency;
-            ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
-
-            ClientSocket.reqMarketDepth(reqId, ibContract, 5, null);
-
-        }
+       #region IB Methods
        
         public void accountDownloadEnd(string account)
         {
@@ -148,7 +109,23 @@ namespace tph.MarketClient.IB.Common
                 parentId,
                 lastFillPrice,
                 clientId,
-                whyHeld), Constants.MessageType.Information);
+                whyHeld), Main.Common.Util.Constants.MessageType.Information);
+
+            OrderStatusDTO dto = new OrderStatusDTO()
+            {
+                Id = orderId,
+                Status = status,
+                Filled = filled,
+                Remaining = remaining,
+                AvgFillPrice = avgFillPrice,
+                PermId = permId,
+                ParentId = parentId,
+                LastFillPrice = lastFillPrice,
+                CliendId = clientId,
+                WhyHeld = whyHeld
+            };
+            
+            ProcessOrderStatus(dto);
         }
 
         public void accountSummary(int reqId, string account, string tag, string value, string currency)
@@ -206,7 +183,11 @@ namespace tph.MarketClient.IB.Common
         
         public void tickPrice(int tickerId, int field, double price, TickAttrib attribs)
         {
-            ProcessField("tickPrice", tickerId, field, price);
+            DoLog(string.Format("tickPrice: tickerId={0} field={1} canAutoExec={2}",
+                tickerId,
+                field,
+                attribs.CanAutoExecute
+                ), Constants.MessageType.Information);
         }
 
         public void deltaNeutralValidation(int reqId, UnderComp underComp)
@@ -629,7 +610,6 @@ namespace tph.MarketClient.IB.Common
                                  tickerId,
                                  field,
                                  value), Constants.MessageType.Information);
-            ProcessField("tickGeneric", tickerId, field, value);
         }
 
         public void tickOptionComputation(int tickerId, int field, double impliedVolatility, double delta, double optPrice, double pvDividend, double gamma, double vega, double theta, double undPrice)
@@ -649,13 +629,10 @@ namespace tph.MarketClient.IB.Common
 
         public void tickSize(int tickerId, int field, int size)
         {
-            
-            //DoLog(string.Format("tickSize: tickerId={0} field={1} size={2} ",
-            //                     tickerId,
-            //                     TickType.getField(field),
-            //                     size), MessageType.Information);
-            ProcessField("tickSize", tickerId, field, size);
-            
+            DoLog(string.Format("tickSize: tickerId={0} field={1} size={2} ",
+                tickerId,
+                TickType.getField(field),
+                size), Main.Common.Util.Constants.MessageType.Information);
         }
 
         public virtual void tickSnapshotEnd(int tickerId)
@@ -666,11 +643,10 @@ namespace tph.MarketClient.IB.Common
 
         public void tickString(int tickerId, int field, string value)
         {
-            //DoLog(string.Format("tickString: tickerId={0} field={1} value={2} ",
-            //                    tickerId,
-            //                    TickType.getField(field),
-            //                    value), MessageType.Information);
-            ProcessField("tickGeneric", tickerId, field, value);
+            DoLog(string.Format("tickString: tickerId={0} field={1} value={2} ",
+                tickerId,
+                TickType.getField(field),
+                value), Main.Common.Util.Constants.MessageType.Information);
         }
 
         public void updatePortfolio(Contract contract, double position, double marketPrice, double marketValue, double averageCost,
@@ -754,7 +730,5 @@ namespace tph.MarketClient.IB.Common
         }
 
         #endregion
-
-       
     }
 }

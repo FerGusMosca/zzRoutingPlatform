@@ -28,6 +28,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\tph.InstructionBasedMarketClientv2.IB\tph.InstructionBasedMarketClientv2.IB.csproj" />
       <ProjectReference Include="..\..\tph.MarketClient.IB.Common\tph.MarketClient.IB.Common.csproj" />
+      <ProjectReference Include="..\..\tph.OrderRouters.IB\tph.OrderRouters.IB.csproj" />
       <ProjectReference Include="..\..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj" />
       <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.IB\zHFT.InstructionBasedMarketClient.IB.csproj" />
       <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
