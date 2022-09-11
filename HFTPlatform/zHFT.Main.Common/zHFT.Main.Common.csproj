@@ -108,6 +108,7 @@
     <Compile Include="Util\ConfigLoader.cs" />
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\FixHelperExtended.cs" />
+    <Compile Include="Util\Logger.cs" />
     <Compile Include="Wrappers\Wrapper.cs" />
   </ItemGroup>
   <ItemGroup />

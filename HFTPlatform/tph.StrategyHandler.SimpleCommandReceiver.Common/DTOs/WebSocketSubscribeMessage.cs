@@ -7,6 +7,10 @@
         public static string _SUSBSCRIPTION_TYPE_SUBSCRIBE = "S";
 
         public static string _SUSBSCRIPTION_TYPE_UNSUBSCRIBE = "U";
+        
+        public static string _ORDER_BOOK_SERVICE = "OB";
+        
+        public static string _MARKET_DATA_SERVICE = "MD";
 
         #endregion
 
