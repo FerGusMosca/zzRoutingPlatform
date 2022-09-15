@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
@@ -32,6 +33,12 @@ namespace tph.MarketClient.IB.Common
         protected Dictionary<int, Security> ContractRequests { get; set; }
 
         protected EClientSocket ClientSocket { get; set; }
+        
+        protected EReader EReader { get; set; }
+        
+        protected EReaderSignal EReaderSignal { get; set; }
+        
+        protected Thread ReaderThread { get; set; }
 
         #endregion
 
@@ -49,6 +56,23 @@ namespace tph.MarketClient.IB.Common
         #endregion
 
         #region Protected Methods
+        
+        protected void ReaderThreadImp()
+        {
+            try
+            {
+                while (ClientSocket.IsConnected()) 
+                { 
+                    waitForSignal(); 
+                    EReader.processMsgs();
+                                
+                } 
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("CRITICAL error processing ReaderThreadImp:{0}",e.Message),Constants.MessageType.Error);
+            }
+        }
 
         protected Security BuildSecurityFromConfig(zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
         {
@@ -124,9 +148,8 @@ namespace tph.MarketClient.IB.Common
             ibContract.Exchange = ctr.Exchange;
             ibContract.Currency = ctr.Currency;
             ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
-
-            ClientSocket.reqMarketDepth(reqId, ibContract, 5, null);
-
+            
+            ClientSocket.reqMarketDepth(reqId, ibContract, 5, new List<TagValue>());
         }
        
         public void accountDownloadEnd(string account)
@@ -745,12 +768,12 @@ namespace tph.MarketClient.IB.Common
         
         public void issueSignal()
         {
-            DoLog("issueSignal" , Constants.MessageType.Information);
+            //DoLog("issueSignal" , Constants.MessageType.Information);
         }
 
         public void waitForSignal()
         {
-            DoLog("waitForSignal" , Constants.MessageType.Information);
+           //DoLog("waitForSignal" , Constants.MessageType.Information);
         }
 
         #endregion

@@ -96,7 +96,7 @@ namespace OrderBookLoaderMock2
                 logger.MarketDataSubcriptionLogic= new MarketDataSubcriptionLogic(mockWS,logger,logger);
                 
                 //#1 - Test Order Book Subscription
-                logger.MarketDataSubcriptionLogic.SubscribeOrderBook("AAPL");
+                logger.MarketDataSubcriptionLogic.SubscribeOrderBook("AAPL.NYSE.CS");
                 
                 //#2- Send Orders
 

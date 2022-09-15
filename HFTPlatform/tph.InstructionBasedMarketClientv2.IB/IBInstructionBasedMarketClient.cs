@@ -380,6 +380,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
         #region Public Methods
 
+
         public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string moduleConfigFile)
         {
             try
@@ -394,8 +395,15 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
 
                     ClientSocket = new EClientSocket(this, this);
-                    
+
                     ClientSocket.eConnect(IBConfiguration.IP, IBConfiguration.Port, IBConfiguration.IdIBClient);
+                    
+                    EReader= new EReader(ClientSocket, this);
+                    EReader.Start();
+                    
+                    ReaderThread = new Thread(ReaderThreadImp){IsBackground = true};
+                    
+                    ReaderThread.Start();
 
                     PublishThread = new Thread(DoPublish);
                     PublishThread.Start();
