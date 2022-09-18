@@ -146,6 +146,32 @@ namespace OrderBookLoaderMock.LogicLayer
             }
         }
         
+        public void SubscribeMarketData(string symbol)
+        {
+            try
+            {
+                DoLog(string.Format("Subscribing order book for symbol {0}", symbol),Constants.MessageType.Information);
+
+                WebSocketSubscribeMessage subscMsg = new WebSocketSubscribeMessage()
+                {
+                    Msg = "Subscribe",
+                    Service = WebSocketSubscribeMessage._MARKET_DATA_SERVICE,
+                    SubscriptionType = WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_SUBSCRIBE,
+                    ServiceKey = symbol,
+                    UUID = Guid.NewGuid().ToString()
+                };
+
+                DoSend<WebSocketSubscribeMessage>(subscMsg);
+                
+                DoLog(string.Format("Order book subscribed for symbol {0}", symbol),Constants.MessageType.Information);
+            
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Order book subscription error for symbol {0}:{1}", symbol,e.Message),Constants.MessageType.Error);
+            }
+        }
+        
         #endregion
     }
 }

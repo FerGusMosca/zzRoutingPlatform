@@ -235,6 +235,12 @@ namespace zHFT.Main.BusinessEntities.Positions
         
         }
 
+        public bool FilledPos()
+        {
+
+            return PosStatus == PositionStatus.Filled;
+        }
+
         public void SetPositionStatusFromExecutionStatus(OrdStatus ordStatus)
         {
             if (ordStatus == OrdStatus.New)

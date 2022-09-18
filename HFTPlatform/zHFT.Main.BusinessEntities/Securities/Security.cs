@@ -154,6 +154,8 @@ namespace zHFT.Main.BusinessEntities.Securities
                 return SecurityType.TB;
             else if (secType.ToUpper() == SecurityType.TBOND.ToString())
                 return SecurityType.TBOND;
+            else if (secType.ToUpper() == SecurityType.CMDTY.ToString())
+                return SecurityType.CMDTY;
             else if (secType.ToUpper() == SecurityType.OTH.ToString())
                 return SecurityType.OTH;
             else

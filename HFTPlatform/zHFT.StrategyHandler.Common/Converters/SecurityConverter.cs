@@ -57,6 +57,26 @@ namespace zHFT.StrategyHandler.Common.Converters
 
             return s;
         }
+        
+        public static Security GetSecurityFullSymbol(string fullSymbol)
+        {
+            string[] fields = fullSymbol.Split(new string[] {"."},StringSplitOptions.RemoveEmptyEntries);
+
+            string symbol = fields[0];
+            string exchange = fields.Length >= 2 ? fields[1] : null;
+            string strSecType = fields.Length >= 3 ? fields[2] : null;
+
+            exchange = exchange != "*" ? exchange : null;
+            strSecType = strSecType != "*" ? strSecType : null;
+
+            SecurityType secType = SecurityType.OTH;
+
+            if (strSecType != null)
+                secType = Security.GetSecurityType(strSecType);
+
+            return new Security() {Symbol = symbol, Exchange = exchange, SecType = secType};
+
+        }
 
         #endregion
     }

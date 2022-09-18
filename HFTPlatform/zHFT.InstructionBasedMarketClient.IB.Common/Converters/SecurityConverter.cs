@@ -15,6 +15,7 @@ namespace zHFT.InstructionBasedMarketClient.IB.Common.Converters
         private static string _SECURITY_TYPE_FUTURE = "FUT";
         private static string _SECURITY_TYPE_OPTIONS = "OPT";
         private static string _SECURITY_TYPE_INDEX = "IND";
+        private static string _SECURITY_TYPE_COMMODITY = "CMDTY";
         private static string _SECURITY_TYPE_CASH = "CASH";
         
         #endregion
@@ -34,6 +35,8 @@ namespace zHFT.InstructionBasedMarketClient.IB.Common.Converters
                 return _SECURITY_TYPE_INDEX;
             else if (type == SecurityType.CASH)
                 return _SECURITY_TYPE_CASH;
+            else if (type == SecurityType.CMDTY)
+                return _SECURITY_TYPE_COMMODITY;
             else
                 throw new Exception(string.Format("Could not process security type {0}", type.ToString()));
 

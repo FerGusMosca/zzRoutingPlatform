@@ -19,6 +19,7 @@ namespace zHFT.Main.Common.Enums
         REPO,//Repurchase,
         CC,//CryptoCurrency
         OTH,//Other,
+        CMDTY,//CMDTY
         SWAP,
         MF
     }

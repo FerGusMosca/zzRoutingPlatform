@@ -10,7 +10,7 @@ namespace NetCoreWebsocketIBConnector2
 {
     class Program
     {
-               #region Private Static Consts
+        #region Private Static Consts
         
         private static bool ToConsole { get; set; }
 

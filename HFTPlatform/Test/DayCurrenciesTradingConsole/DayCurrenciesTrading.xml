@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>DayCurrenciesTrading</Name>
+
+  <IncomingConfigPath>.\incomingIB.xml</IncomingConfigPath>
+  <IncomingModule>tph.InstructionBasedMarketClientv2.IB.Client.IBInstructionBasedMarketClient,tph.InstructionBasedMarketClientv2.IB</IncomingModule>
+
+<!--  <OutgoingModule>tph.OrderRouters.IB.OrderRouter, tph.OrderRouters.IB</OutgoingModule>-->
+<!--  <OutgoingConfigPath>.\outgoingOrderRouter.IB.xml</OutgoingConfigPath>-->
+
+  
+  <MovAvgShort>45</MovAvgShort>
+  <MovAvgLong>90</MovAvgLong>
+  
+  <PositionSizeInCash>1000</PositionSizeInCash>
+
+
+  <PairToMonitor>
+    <Pair>EUR$USD.SMART.CMDTY</Pair>
+    <Pair>CAD$USD.SMART.CMDTY</Pair>
+    <!--    -->
+  </PairToMonitor>
+  
+
+</Configuration>
