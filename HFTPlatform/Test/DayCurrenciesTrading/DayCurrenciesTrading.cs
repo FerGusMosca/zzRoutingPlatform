@@ -80,8 +80,8 @@ namespace DayCurrenciesTrading
                     lock (CurrencyPairMonitoringPositions)
                     {
 
-                        Security pairSec = SecurityConverter.GetSecurityFullSymbol(pair.Replace(_PAIR_SEPARATOR_ORIG,
-                            _PAIR_SEPARATOR_DEST));
+                        Security pairSec = SecurityConverter.GetSecurityFullSymbol(pair);
+                        pairSec.Symbol = pairSec.Symbol.Replace(_PAIR_SEPARATOR_ORIG,_PAIR_SEPARATOR_DEST);
 
                         InitiateMonitoringPosition(pairSec);
                         MDReqs.Add(mdReqId, pairSec);

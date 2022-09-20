@@ -75,6 +75,10 @@
         <Project>{e8a862a1-54a8-425f-bf2b-25ece95098b0}</Project>
         <Name>tph.InstructionBasedMarketClientv2.IB</Name>
       </ProjectReference>
+      <ProjectReference Include="..\..\tph.OrderRouters.IB\tph.OrderRouters.IB.csproj">
+        <Project>{e63de1db-3e2b-4ba5-8701-c04837d559a2}</Project>
+        <Name>tph.OrderRouters.IB</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj">
         <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
         <Name>zHFT.Main.Common</Name>

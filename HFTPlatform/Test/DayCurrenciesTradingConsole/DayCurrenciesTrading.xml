@@ -5,8 +5,8 @@
   <IncomingConfigPath>.\incomingIB.xml</IncomingConfigPath>
   <IncomingModule>tph.InstructionBasedMarketClientv2.IB.Client.IBInstructionBasedMarketClient,tph.InstructionBasedMarketClientv2.IB</IncomingModule>
 
-<!--  <OutgoingModule>tph.OrderRouters.IB.OrderRouter, tph.OrderRouters.IB</OutgoingModule>-->
-<!--  <OutgoingConfigPath>.\outgoingOrderRouter.IB.xml</OutgoingConfigPath>-->
+  <OutgoingModule>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OutgoingModule>
+  <OutgoingConfigPath>.\outgoingOrderRouter.xml</OutgoingConfigPath>
 
   
   <MovAvgShort>45</MovAvgShort>

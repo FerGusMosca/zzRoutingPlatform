@@ -123,7 +123,7 @@ namespace DayCurrenciesTrading.BusinessEntities
             }
             else
             {
-                if (LastRoutingClosingPosition == null)
+                if (LastRoutingOpeningPosition!=null &&LastRoutingClosingPosition == null)
                     return true;
                 else
                     return false;
