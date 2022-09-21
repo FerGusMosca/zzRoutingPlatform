@@ -130,7 +130,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.dll
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\TWSLib.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\MDFShared.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\ToolsShared.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedFullMarketConnectivity.Primary\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll

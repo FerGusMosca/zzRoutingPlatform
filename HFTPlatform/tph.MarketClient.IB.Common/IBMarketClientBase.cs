@@ -132,7 +132,7 @@ namespace tph.MarketClient.IB.Common
             ibContract.SecType = ctr.SecType;
             ibContract.Exchange = ctr.Exchange;
             ibContract.Currency = ctr.Currency;
-            ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
+            ibContract.PrimaryExch = ctr.PrimaryExchange;
 
             //ClientSocket.reqMktData(reqId, ibContract, "", snapshot, null);
 
@@ -147,7 +147,7 @@ namespace tph.MarketClient.IB.Common
             ibContract.SecType = ctr.SecType;
             ibContract.Exchange = ctr.Exchange;
             ibContract.Currency = ctr.Currency;
-            ibContract.PrimaryExch = _US_PRIMARY_EXCHANGE;
+            ibContract.PrimaryExch = ctr.PrimaryExchange;
             
             ClientSocket.reqMarketDepth(reqId, ibContract, 5, new List<TagValue>());
         }

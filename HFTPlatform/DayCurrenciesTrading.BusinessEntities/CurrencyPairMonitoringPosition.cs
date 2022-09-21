@@ -16,7 +16,8 @@ namespace DayCurrenciesTrading.BusinessEntities
         public CurrencyPairMonitoringPosition(Security pPair, Configuration pConfiguration)
         {
             Pair = pPair;
-            ExponentialMovingAverage=new ExponentialMovingAverage(pConfiguration.MovAvgLong,pConfiguration.MovAvgShort);
+            ExponentialMovingAverageLong=new ExponentialMovingAverage(pConfiguration.MovAvgLong);
+            ExponentialMovingAverageShort=new ExponentialMovingAverage(pConfiguration.MovAvgShort);
             CLosing = false;
         }
 
@@ -26,7 +27,9 @@ namespace DayCurrenciesTrading.BusinessEntities
         
         public Security Pair { get; set; }
         
-        public ExponentialMovingAverage ExponentialMovingAverage { get; set; }
+        public ExponentialMovingAverage ExponentialMovingAverageLong { get; set; }
+        
+        public ExponentialMovingAverage ExponentialMovingAverageShort { get; set; }
         
         public Position LastRoutingOpeningPosition { get; set; }
         
@@ -42,13 +45,12 @@ namespace DayCurrenciesTrading.BusinessEntities
 
         public string ImbalanceSummary
         {
-
             get
             {
                 return string.Format("{0} - Last Price:{1} ExpMovShort: {2} ExpMovLong:{3}", Pair.Symbol,
-                    ExponentialMovingAverage.GetLastPrice()!=null?  ExponentialMovingAverage.GetLastPrice().Value.ToString("0.##"):"-",
-                    ExponentialMovingAverage.CalculateShortAverage()!=null?  ExponentialMovingAverage.CalculateShortAverage().Value.ToString("0.##"):"-",
-                    ExponentialMovingAverage.CalculateLongAverage()!=null?  ExponentialMovingAverage.CalculateLongAverage().Value.ToString("0.##"):"-");
+                    ExponentialMovingAverageLong.GetLastPrice()!=null?  ExponentialMovingAverageLong.GetLastPrice().Value.ToString("0.##"):"-",
+                    ExponentialMovingAverageLong.Average.ToString("0.##"),
+                    ExponentialMovingAverageShort.Average.ToString("0.##"));
             }
 
         }
@@ -148,32 +150,28 @@ namespace DayCurrenciesTrading.BusinessEntities
 
         public bool CloseLong()
         {
-            //TODO Use indicators
-            return false;
+            return ExponentialMovingAverageShort.Average < ExponentialMovingAverageLong.Average;
         }
 
         public bool CloseShort()
         {
-            //TODO use indicators
-            return false;
+            return ExponentialMovingAverageLong.Average < ExponentialMovingAverageShort.Average;
         }
 
         public bool LongSignalTriggered()
         {
-            //TODO use indicators
-            return true;
+            return ExponentialMovingAverageShort.Average > ExponentialMovingAverageLong.Average;
         }
         
         public bool ShortSignalTriggered()
         {
 
-            //TODO use indicators
-            return true;
+            return ExponentialMovingAverageLong.Average > ExponentialMovingAverageShort.Average;
         }
 
         public void UpdatePrice(MarketData md)
         {
-            ExponentialMovingAverage.UpdatePrice(md);
+            ExponentialMovingAverageLong.UpdatePrice(md);
 
         }
         

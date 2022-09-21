@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using IBApi;
 using tph.MarketClient.IB.Common;
+using zHFT.InstructionBasedMarketClient.IB.Common.Converters;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
@@ -27,6 +28,9 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
         private int _MAX_ELAPSED_HOURS_FOR_MARKET_DATA = 12;
 
         private int _MARKET_DATA_ON_DEMAND_INDEX = 1000000;
+
+        private string _SECURITY_SYMBOL_SEP_ORIG = "$";
+        private string _SECURITY_SYMBOL_SEP_DEST = "";
 
         #endregion
 
@@ -271,11 +275,13 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
         {
             zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new zHFT.MarketClient.IB.Common.Configuration.Contract();
 
-            ctr.Currency = sec.Currency != null ? sec.Currency : "USD";
+            ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,_SECURITY_SYMBOL_SEP_ORIG);
             //ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
-            ctr.Exchange = IBConfiguration.Exchange ;
+            ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
-            ctr.Symbol = sec.Symbol;
+            ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, _SECURITY_SYMBOL_SEP_ORIG);
+            ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
+            sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
             if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
                 && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
@@ -293,11 +299,13 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
         protected void RequestMarketDataOnDemand(Security sec,bool snapshot,string mode)
         {
             zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new zHFT.MarketClient.IB.Common.Configuration.Contract();
-
-            ctr.Currency = sec.Currency;
+            
             ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
-            ctr.Symbol = sec.Symbol;
+            ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,_SECURITY_SYMBOL_SEP_ORIG);
+            ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, _SECURITY_SYMBOL_SEP_ORIG);
+            ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
+            sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
             if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
                 && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))

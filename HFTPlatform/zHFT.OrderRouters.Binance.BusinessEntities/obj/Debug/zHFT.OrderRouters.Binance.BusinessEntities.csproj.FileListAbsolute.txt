@@ -23,3 +23,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Binance.BusinessEntities\obj\Debug\zHFT.OrderRouters.Binance.BusinessEntities.csprojAssemblyReference.cache

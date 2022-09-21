@@ -22,5 +22,7 @@ namespace zHFT.MarketClient.IB.Common.Configuration
 
         [XmlElement("Exchange")]
         public string Exchange { get; set; }
+        
+        public string PrimaryExchange { get; set; }
     }
 }
