@@ -72,6 +72,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         <SubType>Designer</SubType>
       </Content>
+      <Content Include="outgoingOrderRouter.IB.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="OutgoingSingletonConfig.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
@@ -85,6 +88,10 @@
       </Content>
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\..\tph.OrderRouters.IB\tph.OrderRouters.IB.csproj">
+        <Project>{e63de1db-3e2b-4ba5-8701-c04837d559a2}</Project>
+        <Name>tph.OrderRouters.IB</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj">
         <Project>{da0d57b6-a469-4956-ac61-f8dd684e80b7}</Project>
         <Name>tph.StrategyHandler.SimpleCommandReceiver</Name>

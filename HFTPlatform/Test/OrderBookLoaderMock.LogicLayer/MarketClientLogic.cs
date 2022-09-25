@@ -6,12 +6,13 @@ using OrderBookLoaderMock.Common.DTO;
 using OrderBookLoaderMock.Common.DTO.Orders;
 using OrderBookLoaderMock.Common.Interfaces;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 
 namespace OrderBookLoaderMock.LogicLayer
 {
-    public class MarketDataSubcriptionLogic
+    public class MarketClientLogic
     {
         #region Public Attributes
         
@@ -23,13 +24,16 @@ namespace OrderBookLoaderMock.LogicLayer
         
         protected IMarketDataPublication OnMarketData { get; set; }
         
+        protected IOnExecutionReport OnExecutionReport { get; set; }
+        
         protected  ILogger Logger { get; set; }
         
         #endregion
         
         #region Constructors
 
-        public MarketDataSubcriptionLogic(string mockWS,IMarketDataPublication pOnMarketData,ILogger pLogger )
+        public MarketClientLogic(string mockWS,IMarketDataPublication pOnMarketData,IOnExecutionReport pOnExecutionReport,
+                                ILogger pLogger )
         {
             MarketDataWebSocketClient= new WebSocketClient(mockWS,OnWebsocketMsg,OnMarketDataEv,OnExecutionReportEv);
 
@@ -40,6 +44,8 @@ namespace OrderBookLoaderMock.LogicLayer
             OrdersSynchronizerThreadStarted = false;
             
             OnMarketData = pOnMarketData;
+
+            OnExecutionReport = pOnExecutionReport;
 
             Logger = pLogger;
         }
@@ -71,10 +77,13 @@ namespace OrderBookLoaderMock.LogicLayer
         
         public void OnExecutionReportEv(ExecutionReportMsg er)
         {
+            
+            DoLog(string.Format("Recv exec report for symbol {0}:{1}", er.Order.Symbol, er.ToString()),
+                Constants.MessageType.Information);
+            
             lock (EventsLock)
             {
-                DoLog(string.Format("Recv exec report for symbol {0}:{1}", er.Order.Symbol, er.ToString()),
-                    Constants.MessageType.Information);
+                OnExecutionReport.OnExecutionReport(er);
             }
         }
 
@@ -104,7 +113,6 @@ namespace OrderBookLoaderMock.LogicLayer
                         OnMarketData.ProcessEvent(msg);
 
                     }
-
                     else if (msg.Msg == "OrderCancelRejectMsg")
                     {
                         OrderCancelRejectMsg ocr = (OrderCancelRejectMsg) msg;
@@ -145,7 +153,42 @@ namespace OrderBookLoaderMock.LogicLayer
                 DoLog(string.Format("Order book subscription error for symbol {0}:{1}", symbol,e.Message),Constants.MessageType.Error);
             }
         }
-        
+
+        public void SendLimitOrder(string symbol,string side, int qty, double price)
+        {
+            try
+            {
+                DoLog(string.Format("SendingOrderForSymbol for symbol {0}", symbol), Constants.MessageType.Information);
+
+                NewOrderReq newOrderReq = new NewOrderReq()
+                {
+                    Msg = "NewOrderReq",
+                    ClOrdId = Guid.NewGuid().ToString(),
+                    UUID = Guid.NewGuid().ToString(),
+                    ReqId = Guid.NewGuid().ToString(),
+                    Symbol = symbol,
+                    Side = side,
+                    Currency = "USD",
+                    Account = "",
+                    Price = price,
+                    Type = NewOrderReq._ORD_TYPE_LIMIT,
+                    Qty = qty,
+                    
+                };
+
+                DoSend<NewOrderReq>(newOrderReq);
+
+                DoLog(string.Format("Order sent for symbol for symbol {0} (Qty={1} Price={2})", symbol,qty,price), Constants.MessageType.Information);
+
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("ERROR SendingOrderForSymbol for symbol {0}:{1}", symbol,e.Message), Constants.MessageType.Error);
+
+            }
+
+        }
+
         public void SubscribeMarketData(string symbol)
         {
             try

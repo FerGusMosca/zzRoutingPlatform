@@ -10,6 +10,6 @@ namespace OrderBookLoaderMock.Common.Interfaces
         
         void OnMarketData(MarketDataMsg msg);
         
-        void OnExecutionReport(ExecutionReportMsg msg);
+        
     }
 }

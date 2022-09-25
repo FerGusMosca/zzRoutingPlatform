@@ -148,31 +148,55 @@ namespace DayCurrenciesTrading.BusinessEntities
 
         }
 
+        public bool EvalTradingConditions()
+        {
+            
+            if (ExponentialMovingAverageLong.Length < ExponentialMovingAverageLong.Prices.Count)
+                return false;
+            else if (ExponentialMovingAverageShort.Length < ExponentialMovingAverageShort.Prices.Count)
+                return false;
+            else
+            {
+                return true;
+            }
+            
+        }
+
         public bool CloseLong()
         {
+            if (!EvalTradingConditions())
+                return false;
+            
             return ExponentialMovingAverageShort.Average < ExponentialMovingAverageLong.Average;
         }
 
         public bool CloseShort()
         {
+            if (!EvalTradingConditions())
+                return false;
+            
             return ExponentialMovingAverageLong.Average < ExponentialMovingAverageShort.Average;
         }
 
         public bool LongSignalTriggered()
         {
+            if (!EvalTradingConditions())
+                return false;
+            
             return ExponentialMovingAverageShort.Average > ExponentialMovingAverageLong.Average;
         }
         
         public bool ShortSignalTriggered()
         {
-
+            if (!EvalTradingConditions())
+                return false;
+            
             return ExponentialMovingAverageLong.Average > ExponentialMovingAverageShort.Average;
         }
 
         public void UpdatePrice(MarketData md)
         {
             ExponentialMovingAverageLong.UpdatePrice(md);
-
         }
         
         #endregion

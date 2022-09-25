@@ -26,7 +26,7 @@ namespace DayCurrenciesTrading
         #region Public Consts
 
         protected static string _PAIR_SEPARATOR_ORIG = "$";
-        protected static string _PAIR_SEPARATOR_DEST = ".";
+        protected static string _PAIR_SEPARATOR_DEST = "";
         
         #endregion
         
@@ -81,7 +81,6 @@ namespace DayCurrenciesTrading
                     {
 
                         Security pairSec = SecurityConverter.GetSecurityFullSymbol(pair);
-                        pairSec.Symbol = pairSec.Symbol.Replace(_PAIR_SEPARATOR_ORIG,_PAIR_SEPARATOR_DEST);
 
                         InitiateMonitoringPosition(pairSec);
                         MDReqs.Add(mdReqId, pairSec);
@@ -135,6 +134,7 @@ namespace DayCurrenciesTrading
                 CashQty = Configuration.PositionSizeInCash,
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = ""
                 //StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
                 
             };
@@ -202,6 +202,8 @@ namespace DayCurrenciesTrading
                    //UpdateLastPrice(secImb, md);
                 }
             }
+            
+            OrderRouter.ProcessMessage(wrapper);
 
             return CMState.BuildSuccess();
         }
@@ -371,7 +373,7 @@ namespace DayCurrenciesTrading
 
             try
             {
-                lock (tLock)
+                lock (CurrencyPairMonitoringPositions)
                 {
                     ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
@@ -388,7 +390,7 @@ namespace DayCurrenciesTrading
             }
             catch (Exception e)
             {
-                DoLog(string.Format("Error persisting execution report {0}:{1}-{2}",
+                DoLog(string.Format("Error processing execution report {0}:{1}-{2}",
                     wrapper != null ? wrapper.ToString() : "?", e.Message,e.StackTrace), Constants.MessageType.Information);
             }
         }
@@ -427,7 +429,7 @@ namespace DayCurrenciesTrading
 
                 if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                 {
-                    Thread ProcessExecutionReportThread = new Thread(new ParameterizedThreadStart(ProcessExecutionReport));
+                    Thread ProcessExecutionReportThread = new Thread(ProcessExecutionReport);
                     ProcessExecutionReportThread.Start(wrapper);
                 }
                 else if (wrapper.GetAction() == Actions.SECURITY_LIST_REQUEST)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using tph.OrderRouters.IB.Common.DTO;
 using zHFT.Main.Common.DTO;
@@ -27,6 +28,14 @@ namespace zHFT.OrderRouters.IB.Common
         protected IConfiguration Config { get; set; }
 
         protected int NextOrderId { get; set; }
+        
+        protected EClientSocket ClientSocket { get; set; }
+        
+        protected EReader EReader { get; set; }
+        
+        protected EReaderSignal EReaderSignal { get; set; }
+        
+        protected Thread ReaderThread { get; set; }
 
         #endregion
 
@@ -206,14 +215,14 @@ namespace zHFT.OrderRouters.IB.Common
 
         public void displayGroupList(int reqId, string groups)
         {
-            DoLog(string.Format("error: reqId={0} groups={1}",
+            DoLog(string.Format("displayGroupList: reqId={0} groups={1}",
                                 reqId,
                                 groups), Constants.MessageType.Information);
         }
 
         public void displayGroupUpdated(int reqId, string contractInfo)
         {
-            DoLog(string.Format("error: reqId={0} contractInfo={1}",
+            DoLog(string.Format("displayGroupUpdated: reqId={0} contractInfo={1}",
                                 reqId,
                                 contractInfo), Constants.MessageType.Information);
         }
@@ -512,6 +521,7 @@ namespace zHFT.OrderRouters.IB.Common
 
         public void nextValidId(int orderId)
         {
+            NextOrderId = orderId;
             DoLog(string.Format("nextValidId: orderId={0}",
                                 orderId), Constants.MessageType.Information);
         }
@@ -721,12 +731,29 @@ namespace zHFT.OrderRouters.IB.Common
         
         public void issueSignal()
         {
-            DoLog("issueSignal" , Constants.MessageType.Information);
+            //DoLog("issueSignal" , Constants.MessageType.Information);
         }
 
         public void waitForSignal()
         {
-            DoLog("waitForSignal" , Constants.MessageType.Information);
+           //DoLog("waitForSignal" , Constants.MessageType.Information);
+        }
+        
+        protected void ReaderThreadImp()
+        {
+            try
+            {
+                while (ClientSocket.IsConnected()) 
+                { 
+                    waitForSignal(); 
+                    EReader.processMsgs();
+                                
+                } 
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("CRITICAL error processing ReaderThreadImp:{0}",e.Message),Constants.MessageType.Error);
+            }
         }
 
         #endregion

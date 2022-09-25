@@ -48,6 +48,7 @@
         <Compile Include="DTO\Orders\OrderCancelRejectMsg.cs" />
         <Compile Include="DTO\Orders\OrderCancelResponse.cs" />
         <Compile Include="Interfaces\IMarketDataPublication.cs" />
+        <Compile Include="Interfaces\IOnExecutionReport.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>

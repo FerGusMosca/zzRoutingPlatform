@@ -281,7 +281,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
             ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, _SECURITY_SYMBOL_SEP_ORIG);
             ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
-            sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
+            //sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
             if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
                 && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))
@@ -305,7 +305,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,_SECURITY_SYMBOL_SEP_ORIG);
             ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, _SECURITY_SYMBOL_SEP_ORIG);
             ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
-            sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
+            //sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
             if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
                 && !ActiveSecuritiesOnDemand.Values.Any(x => x.Symbol == sec.Symbol))

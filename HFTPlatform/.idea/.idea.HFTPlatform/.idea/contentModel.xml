@@ -593,6 +593,7 @@
           <e p="incomingIB.xml" t="Include" />
           <e p="obj" t="ExcludeRecursive" />
           <e p="outgoingOrderRouter.IB.xml" t="Include" />
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
           <e p="outgoingOrderRouter.xml" t="Include" />
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
@@ -775,6 +776,7 @@
           </e>
           <e p="Interfaces" t="Include">
             <e p="IMarketDataPublication.cs" t="Include" />
+            <e p="IOnExecutionReport.cs" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive" />
           <e p="OrderBookLoaderMock.Common.csproj" t="IncludeRecursive" />
@@ -784,7 +786,7 @@
         </e>
         <e p="OrderBookLoaderMock.LogicLayer" t="IncludeRecursive">
           <e p="bin" t="ExcludeRecursive" />
-          <e p="MarketDataSubcriptionLogic.cs" t="Include" />
+          <e p="MarketClientLogic.cs" t="Include" />
           <e p="obj" t="ExcludeRecursive" />
           <e p="OrderBookLoaderMock.LogicLayer.csproj" t="IncludeRecursive" />
           <e p="packages.config" t="Include" />
@@ -840,6 +842,7 @@
           <e p="IncomingSingletonConfig.xml" t="Include" />
           <e p="obj" t="ExcludeRecursive" />
           <e p="orderRouter.Binance.xml" t="Include" />
+          <e p="outgoingOrderRouter.IB.xml" t="Include" />
           <e p="OutgoingSingletonConfig.xml" t="Include" />
           <e p="Primary.xml" t="Include" />
           <e p="Program.cs" t="Include" />

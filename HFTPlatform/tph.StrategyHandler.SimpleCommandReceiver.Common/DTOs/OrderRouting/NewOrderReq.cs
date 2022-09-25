@@ -7,9 +7,9 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
     {
         #region Protected Consts
 
-        protected static string _BUY = "BUY";
+        public static string _BUY = "BUY";
 
-        protected static string _SELL = "SELL";
+        public static string _SELL = "SELL";
         
         public static string _ORD_TYPE_LIMIT = "LIMIT";
 

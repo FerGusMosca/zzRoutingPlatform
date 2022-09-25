@@ -80,25 +80,24 @@ namespace DayCurrenciesTrading.BusinessEntities.TechnicalIndicators
 
         public void UpdatePrice(MarketData md)
         {
-            if (!md.MDEntryDate.HasValue)
+            if (!md.MDLocalEntryDate.HasValue)
                 return;
             
             lock (Prices)
             {
-                string key = md.MDEntryDate.Value.ToString("yyyyMMddhhmm");
+                string key = md.MDLocalEntryDate.Value.ToString("yyyyMMddhhmm");
                 LastUpdatedPrice = md;
 
                 if (!Prices.ContainsKey(key))
 
                 {
                     //We process the previous minute!
-                    UpdateMovingAverage(Prices.Values.ToArray()[Prices.Values.Count - 1]);
+                    if(Prices.Values.Count>0)
+                        UpdateMovingAverage(Prices.Values.ToArray()[Prices.Values.Count - 1]);
                     Prices.Add(key,md);
                 }
                 else
                 {
-                    
-                   
                     
                     Prices[key] = md;
                 }

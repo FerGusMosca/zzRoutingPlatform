@@ -8,16 +8,16 @@
   <OutgoingModule>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OutgoingModule>
   <OutgoingConfigPath>.\outgoingOrderRouter.xml</OutgoingConfigPath>
 
-  
-  <MovAvgShort>45</MovAvgShort>
-  <MovAvgLong>90</MovAvgLong>
+
+  <MovAvgShort>10</MovAvgShort>
+  <MovAvgLong>15</MovAvgLong>
   
   <PositionSizeInCash>1000</PositionSizeInCash>
 
 
   <PairToMonitor>
-    <Pair>EUR$USD.SMART.CMDTY</Pair>
-    <Pair>CAD$USD.SMART.CMDTY</Pair>
+    <Pair>EUR$GBP.IDEALPRO.CASH</Pair>
+<!--    <Pair>CAD$USD.IDEALPRO.CASH</Pair>-->
     <!--    -->
   </PairToMonitor>
   

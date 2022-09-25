@@ -62,6 +62,9 @@
       <Content Include="outgoingOrderRouter.IB.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <Content Include="outgoingOrderRouter.Mock.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="outgoingOrderRouter.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>

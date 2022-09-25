@@ -10,17 +10,18 @@ using OrderBookLoaderMock.Common.DTO.Orders;
 using OrderBookLoaderMock.Common.Interfaces;
 using OrderBookLoaderMock.LogicLayer;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 
 namespace OrderBookLoaderMock2
 {
-    internal class Program:IMarketDataPublication,ILogger
+    internal class Program:IMarketDataPublication,IOnExecutionReport,ILogger
     {
         #region Protected Attributes
         protected Logger Logger { get; set; }
         
-        protected MarketDataSubcriptionLogic MarketDataSubcriptionLogic { get; set; }
+        protected MarketClientLogic MarketClientLogic { get; set; }
         
         #endregion
 
@@ -80,7 +81,7 @@ namespace OrderBookLoaderMock2
 
         public void OnExecutionReport(ExecutionReportMsg msg)
         {
-            Console.WriteLine(string.Format("Execution Report: {0}",msg.ToString()));
+            Console.WriteLine(string.Format("Execution Report Received!: {0}",msg.ToString()));
         }
 
         static void Main(string[] args)
@@ -93,12 +94,13 @@ namespace OrderBookLoaderMock2
                 logger.DoLog("Initializing Order Book Loader Mock App", Constants.MessageType.Information);
 
                 
-                logger.MarketDataSubcriptionLogic= new MarketDataSubcriptionLogic(mockWS,logger,logger);
+                logger.MarketClientLogic= new MarketClientLogic(mockWS,logger,logger,logger);
                 
                 //#1 - Test Order Book Subscription
-                logger.MarketDataSubcriptionLogic.SubscribeMarketData("EUR$GBP.IDEALPRO.CASH");
+                //ogger.MarketClientLogic.SubscribeMarketData("EUR$GBP.IDEALPRO.CASH");
                 
                 //#2- Send Orders
+                logger.MarketClientLogic.SendLimitOrder("AAPL.SMART.CS", NewOrderReq._BUY, 1, 100);
 
                 logger.DoLog(string.Format("Existing Order Book Loader Mock processed"), Constants.MessageType.Information);
 

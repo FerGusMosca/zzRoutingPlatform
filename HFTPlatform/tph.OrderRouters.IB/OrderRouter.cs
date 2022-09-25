@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using tph.OrderRouters.IB.Common.Converters;
 using tph.OrderRouters.IB.Common.DTO;
@@ -36,7 +37,7 @@ namespace tph.OrderRouters.IB
             set { Config = value; }
         }
 
-        protected EClientSocket ClientSocket { get; set; }
+        
 
         protected OrderConverter OrderConverter { get; set; }
 
@@ -82,7 +83,7 @@ namespace tph.OrderRouters.IB
             OrdType ordType = (OrdType)wrapper.GetField(OrderFields.OrdType);
             double? price=(double?)wrapper.GetField(OrderFields.Price);
             Side side = (Side)wrapper.GetField(OrderFields.Side);
-            TimeInForce tif = (TimeInForce)wrapper.GetField(OrderFields.TimeInForce);
+            TimeInForce tif = wrapper.GetField(OrderFields.TimeInForce)!=null? (TimeInForce)wrapper.GetField(OrderFields.TimeInForce):TimeInForce.Day;
             
             // Create a new Order to specify the type of order to be placed
             Order orderInfo = new Order();
@@ -341,6 +342,13 @@ namespace tph.OrderRouters.IB
 
                     ClientSocket = new EClientSocket(this,this);
                     ClientSocket.eConnect(IBConfiguration.IP, IBConfiguration.Port, IBConfiguration.IdIBClient);
+                    
+                    EReader= new EReader(ClientSocket, this);
+                    EReader.Start();
+                    
+                    ReaderThread = new Thread(ReaderThreadImp){IsBackground = true};
+                    
+                    ReaderThread.Start();
 
                     OrderConverter = new OrderConverter();
 

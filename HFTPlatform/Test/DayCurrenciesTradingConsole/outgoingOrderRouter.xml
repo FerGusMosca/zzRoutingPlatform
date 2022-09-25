@@ -3,11 +3,11 @@
   <Name>Outgoing Generic</Name>
   
 <!--  -->
-<!--  <Proxy>tph.OrderRouters.IB.OrderRouter, tph.OrderRouters.IB</Proxy>-->
-<!--  <ProxyConfigFile>.\outgoingOrderRouter.IB.xml</ProxyConfigFile>-->
+  <Proxy>tph.OrderRouters.IB.OrderRouter, tph.OrderRouters.IB</Proxy>
+  <ProxyConfigFile>.\outgoingOrderRouter.IB.xml</ProxyConfigFile>
 
-  <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
-  <ProxyConfigFile>dummy</ProxyConfigFile>
+<!--  <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>-->
+<!--  <ProxyConfigFile>outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

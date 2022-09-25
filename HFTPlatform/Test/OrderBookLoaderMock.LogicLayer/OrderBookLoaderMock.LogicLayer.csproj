@@ -42,7 +42,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="MarketDataSubcriptionLogic.cs" />
+        <Compile Include="MarketClientLogic.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="WebSocketClient.cs" />
     </ItemGroup>
