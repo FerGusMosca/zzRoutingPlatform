@@ -21,7 +21,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             exchange = exchange != "*" ? exchange : null;
             strSecType = strSecType != "*" ? strSecType : null;
 
-            SecurityType secType = SecurityType.OTH;
+            SecurityType secType = SecurityType.CS;//Default security type
 
             if (strSecType != null)
                 secType = Security.GetSecurityType(strSecType);

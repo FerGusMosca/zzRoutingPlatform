@@ -60,6 +60,7 @@
     <ItemGroup>
         <Compile Include="Configuration\Configuration.cs" />
         <Compile Include="Converters\OrderConverter.cs" />
+        <Compile Include="Converters\SecurityConverter.cs" />
         <Compile Include="DTO\OrderStatusDTO.cs" />
         <Compile Include="OrderRouterBase.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

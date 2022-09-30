@@ -57,6 +57,7 @@
     <Compile Include="Abstract\BaseConfiguration.cs" />
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Converter\ConverterBase.cs" />
+    <Compile Include="Converter\SecurityConverterBase.cs" />
     <Compile Include="Enums\Actions.cs" />
     <Compile Include="Apps\MainAppBase.cs" />
     <Compile Include="DTO\CMState.cs" />
@@ -107,6 +108,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\ConfigLoader.cs" />
     <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\CurrencySeparators.cs" />
     <Compile Include="Util\FixHelperExtended.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="Wrappers\Wrapper.cs" />

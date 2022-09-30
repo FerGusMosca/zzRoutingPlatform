@@ -12,6 +12,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Converters;
 using Constants = zHFT.Main.Common.Util.Constants;
@@ -29,8 +30,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
         private int _MARKET_DATA_ON_DEMAND_INDEX = 1000000;
 
-        private string _SECURITY_SYMBOL_SEP_ORIG = "$";
-        private string _SECURITY_SYMBOL_SEP_DEST = "";
+        
 
         #endregion
 
@@ -275,11 +275,11 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
         {
             zHFT.MarketClient.IB.Common.Configuration.Contract ctr = new zHFT.MarketClient.IB.Common.Configuration.Contract();
 
-            ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,_SECURITY_SYMBOL_SEP_ORIG);
+            ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
             //ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
-            ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, _SECURITY_SYMBOL_SEP_ORIG);
+            ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
             ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
             //sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
@@ -302,8 +302,8 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             
             ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
-            ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,_SECURITY_SYMBOL_SEP_ORIG);
-            ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, _SECURITY_SYMBOL_SEP_ORIG);
+            ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+            ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
             ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
             //sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 

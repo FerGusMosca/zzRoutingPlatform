@@ -63,15 +63,17 @@ namespace tph.OrderRouters.IB
         { 
             Contract contract = new Contract();
 
-            contract.Symbol = (string)wrapper.GetField(OrderFields.Symbol);
-
             SecurityType type = (SecurityType) wrapper.GetField(OrderFields.SecurityType);
-
+            string exchange = (string)wrapper.GetField(OrderFields.Exchange); 
+            string currency = (string)wrapper.GetField(OrderFields.Currency); 
+            string fullSymbol = (string)wrapper.GetField(OrderFields.Symbol);     
+            
+            
             OrderConverter.AssginContractType(contract, type);
-
-            contract.Currency = (string)wrapper.GetField(OrderFields.Currency);
-            contract.Exchange = IBConfiguration.Exchange;
-            contract.PrimaryExch = _US_PRIMARY_EXCHANGE;
+            contract.Symbol=SecurityConverter.GetSymbol(type,fullSymbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+            contract.Currency=SecurityConverter.GetCurrency(type,null,fullSymbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+            contract.Exchange = exchange != null ? exchange : IBConfiguration.Exchange ;;
+            contract.PrimaryExch = SecurityConverter.GetPrimaryExchange(type);;
 
             return contract;
         

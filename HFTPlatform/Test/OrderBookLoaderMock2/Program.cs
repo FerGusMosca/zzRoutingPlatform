@@ -97,10 +97,11 @@ namespace OrderBookLoaderMock2
                 logger.MarketClientLogic= new MarketClientLogic(mockWS,logger,logger,logger);
                 
                 //#1 - Test Order Book Subscription
-                //ogger.MarketClientLogic.SubscribeMarketData("EUR$GBP.IDEALPRO.CASH");
+                //logger.MarketClientLogic.SubscribeMarketData("EUR$GBP.IDEALPRO.CASH");
+                logger.MarketClientLogic.SubscribeMarketData("AAPL");
                 
                 //#2- Send Orders
-                logger.MarketClientLogic.SendLimitOrder("AAPL.SMART.CS", NewOrderReq._BUY, 1, 100);
+                logger.MarketClientLogic.SendLimitOrder("AAPL", NewOrderReq._BUY, 1, 100);
 
                 logger.DoLog(string.Format("Existing Order Book Loader Mock processed"), Constants.MessageType.Information);
 

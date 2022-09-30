@@ -1087,6 +1087,7 @@
         </e>
         <e p="Converters" t="Include">
           <e p="OrderConverter.cs" t="Include" />
+          <e p="SecurityConverter.cs" t="Include" />
         </e>
         <e p="DTO" t="Include">
           <e p="OrderStatusDTO.cs" t="Include" />
@@ -1853,6 +1854,7 @@
         </e>
         <e p="Converter" t="Include">
           <e p="ConverterBase.cs" t="Include" />
+          <e p="SecurityConverterBase.cs" t="Include" />
         </e>
         <e p="DTO" t="Include">
           <e p="CMState.cs" t="Include" />
@@ -1915,6 +1917,7 @@
         <e p="Util" t="Include">
           <e p="ConfigLoader.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
+          <e p="CurrencySeparators.cs" t="Include" />
           <e p="FixHelperExtended.cs" t="Include" />
           <e p="Logger.cs" t="Include" />
         </e>
