@@ -10,7 +10,9 @@ using OrderBookLoaderMock.Common.DTO.Orders;
 using OrderBookLoaderMock.Common.Interfaces;
 using OrderBookLoaderMock.LogicLayer;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 
@@ -72,6 +74,23 @@ namespace OrderBookLoaderMock2
                 Console.ForegroundColor = ConsoleColor.White;
 
             }
+            else if (msg.Msg == "CandlebarMsg")
+            {
+                CandlebarMsg cb = (CandlebarMsg) msg;
+                Console.WriteLine(string.Format("=============New Candle for Symbol {0} ===============",cb.Symbol));
+                Console.WriteLine(string.Format(
+                    " Key={6} DateTime={7} Open={0} High={1} Low={2} Close={3} Trade={4} Volume={5}",
+                    cb.Open.HasValue ? cb.Open.Value.ToString("##.##") : "-",
+                    cb.High.HasValue ? cb.High.Value.ToString("##.##") : "-",
+                    cb.Low.HasValue ? cb.Low.Value.ToString("##.##") : "-",
+                    cb.Close.HasValue ? cb.Close.Value.ToString("##.##") : "-",
+                    cb.Trade.HasValue ? cb.Trade.Value.ToString("##.##") : "-",
+                    cb.Volume, cb.Key, cb.Date.ToString("yyyy-MM-dd hh:mm:ss"))
+                );
+
+
+
+            }
         }
 
         public   void OnMarketData(MarketDataMsg msg)
@@ -98,10 +117,11 @@ namespace OrderBookLoaderMock2
                 
                 //#1 - Test Order Book Subscription
                 //logger.MarketClientLogic.SubscribeMarketData("EUR$GBP.IDEALPRO.CASH");
-                logger.MarketClientLogic.SubscribeMarketData("AAPL");
+                //logger.MarketClientLogic.SubscribeMarketData("AAPL");
+                logger.MarketClientLogic.SubscribeCandlebars("AAPL");
                 
                 //#2- Send Orders
-                logger.MarketClientLogic.SendLimitOrder("AAPL", NewOrderReq._BUY, 1, 100);
+                //logger.MarketClientLogic.SendLimitOrder("AAPL", NewOrderReq._BUY, 1, 100);
 
                 logger.DoLog(string.Format("Existing Order Book Loader Mock processed"), Constants.MessageType.Information);
 

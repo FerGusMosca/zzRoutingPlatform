@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using DayCurrenciesTrading.BusinessEntities;
 using DayCurrenciesTrading.Common.Configuration;
@@ -23,12 +24,6 @@ namespace DayCurrenciesTrading
     public class DayCurrenciesTrading: DayCurrencyBase,  ICommunicationModule, ILogger
     {
         
-        #region Public Consts
-
-        protected static string _PAIR_SEPARATOR_ORIG = "$";
-        protected static string _PAIR_SEPARATOR_DEST = "";
-        
-        #endregion
         
         #region Public Attributes
         
@@ -108,10 +103,13 @@ namespace DayCurrenciesTrading
             {
                 if (monPos.CloseLongPosition() || monPos.CloseShortPosition())
                 {
-                    
-                    DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2} PosId={3} ",
+
+                    DoLog(string.Format(
+                            "CLOSING {0} Position on market. Symbol {1} Qty={2} PosId={3}. Mov Avg Short={4} Mov Avg Long={5} ",
                             monPos.TradeDirection(), monPos.Pair.Symbol, monPos.LastRoutingOpeningPosition.Qty,
-                            monPos.LastRoutingClosingPosition != null ? monPos.LastRoutingClosingPosition.PosId : "-"),
+                            monPos.LastRoutingClosingPosition != null ? monPos.LastRoutingClosingPosition.PosId : "-",
+                            monPos.ExponentialMovingAverageShort.Average.ToString("##.####"),
+                            monPos.ExponentialMovingAverageLong.Average.ToString("##.####")),
                         Constants.MessageType.Information);
                 
                     Position routingClosPos =  RunClose(monPos.LastRoutingOpeningPosition);
@@ -148,6 +146,11 @@ namespace DayCurrenciesTrading
         {
             Position routingPos= LoadNewRegularPos(monPos.Pair, side);
             
+            DoLog(string.Format("OPENING New Pos for Symbol {0} movg avgs. MovAvg Short={1} MovAvg Long={2}",
+                monPos.Pair.Symbol,
+                monPos.ExponentialMovingAverageShort.Average.ToString("##.####"),
+                monPos.ExponentialMovingAverageLong.Average.ToString("##.####")),Constants.MessageType.Information);
+            
             PositionWrapper posWrapper = new PositionWrapper(routingPos, Config);
             monPos.LastRoutingOpeningPosition = routingPos;
             monPos.LastRoutingClosingPosition = null;
@@ -166,15 +169,19 @@ namespace DayCurrenciesTrading
         {
             if (monPos.CanOpenRoutingPosition())
             {
-                //Ready to open a new routing position
-                if (monPos.LongSignalTriggered())
+                if (CurrencyPairMonitoringPositions.Values.Where(x => x.IsOpenPosition()).Count() <
+                    Configuration.MaxPositionsInPortfolio)
                 {
-                    LoadNewPos(monPos, Side.Buy);
+                    //Ready to open a new routing position
+                    if (monPos.LongSignalTriggered())
+                    {
+                        LoadNewPos(monPos, Side.Buy);
 
-                }
-                else if(monPos.ShortSignalTriggered())
-                { 
-                    LoadNewPos(monPos, Side.Sell);
+                    }
+                    else if(monPos.ShortSignalTriggered())
+                    { 
+                        LoadNewPos(monPos, Side.Sell);
+                    } 
                 }
             }
             else
@@ -195,6 +202,10 @@ namespace DayCurrenciesTrading
                         Constants.MessageType.Information);
 
                     CurrencyPairMonitoringPosition monPos = CurrencyPairMonitoringPositions[md.Security.Symbol];
+                    DoLog(string.Format("Updating {0} movg avgs. Mov Avg Short={1} Mov Avg Long={2}",
+                        md.Security.Symbol,
+                        monPos.ExponentialMovingAverageShort.Average.ToString("##.####"),
+                        monPos.ExponentialMovingAverageLong.Average.ToString("##.####")),Constants.MessageType.Information);
                     
                     monPos.UpdatePrice(md);
                     

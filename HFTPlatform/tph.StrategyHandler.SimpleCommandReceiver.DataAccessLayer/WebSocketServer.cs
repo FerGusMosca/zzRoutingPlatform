@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using System.Threading;
 using Fleck;
 using Newtonsoft.Json;
@@ -24,11 +25,18 @@ using UpdateOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrap
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 {
+    
+    public delegate void OnSubscribeMarketData(Security security);
+
+    public delegate void OnSubscribeCandlebars(Security security);
+    
     public class WebSocketServer:WebSocketBaseServer
     {
         #region Constructors
 
-        public WebSocketServer(string pURL, ILogger pLogger, OnMessageReceived pOnMessageReceived)
+        public WebSocketServer(string pURL, ILogger pLogger, OnMessageReceived pOnMessageReceived,
+                                OnSubscribeMarketData pOnSubscribeMarketData = null, OnSubscribeCandlebars pOnSubscribeCandlebars = null,
+                                bool pSimulateCandlebars = false)
         {
             URL = pURL;
 
@@ -40,11 +48,17 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
             OnMessageReceived = pOnMessageReceived;
 
+            OnSubscribeCandlebars = pOnSubscribeCandlebars;
+
+            OnSubscribeMarketData = pOnSubscribeMarketData;
+
             Subscriptions = new Dictionary<int, Dictionary<string, WebSocketSubscribeMessage>>();
 
             DoLog("Initializing Websocket server...", Constants.MessageType.Information);
 
             MdReqId = 0;
+
+            SimulateCandlebars = pSimulateCandlebars;
 
 
         }
@@ -56,6 +70,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         private static string _ORDER_BOOK_SERVICE = "OB";
         
         private static string _MARKET_DATA_SERVICE = "MD";
+        
+        private static string _CANDLEBAR_SERVICE = "CB";
 
         #endregion
 
@@ -137,13 +153,49 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             SubscribeService(socket, subscrMsg);
 
             Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
+
+            
             
             MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,sec,
                                                                         SubscriptionRequestType.SnapshotAndUpdates,
                                                                         MarketDepth.TopOfBook);
             MdReqId++;
             CMState reqState = OnMessageReceived(wrapper);
+            
+            if (reqState.Success && OnSubscribeMarketData != null)
+                OnSubscribeMarketData(sec);
 
+
+            ProcessSubscriptionResponse(socket, subscrMsg.Service, subscrMsg.ServiceKey, subscrMsg.UUID,
+                reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
+
+        }
+        
+        protected void ProcessCandlebarRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
+        {
+            SubscribeService(socket, subscrMsg);
+
+            Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
+            
+            Wrapper wrapper = null;
+            
+            if (SimulateCandlebars)
+            {
+                
+                wrapper = new MarketDataRequestWrapper(MdReqId,sec,SubscriptionRequestType.SnapshotAndUpdates,MarketDepth.TopOfBook);
+                MdReqId++;
+            }
+            else
+            {
+                throw new Exception(string.Format("Candlebar subscription not implemented without simulation"));
+                //Simulation is when we ask market data but return candlebars
+            }
+
+            CMState reqState = OnMessageReceived(wrapper);
+
+            if (reqState.Success && OnSubscribeCandlebars != null)
+                OnSubscribeCandlebars(sec);
+                
 
             ProcessSubscriptionResponse(socket, subscrMsg.Service, subscrMsg.ServiceKey, subscrMsg.UUID,
                 reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
@@ -399,19 +451,33 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
             if (subscrMsg.SubscriptionType == WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_SUBSCRIBE)
             {
-                if (subscrMsg.Service == _ORDER_BOOK_SERVICE)
+                try
                 {
-                    ProcessOrderBookRequest(socket, subscrMsg);
+
+
+                    if (subscrMsg.Service == _ORDER_BOOK_SERVICE)
+                    {
+                        ProcessOrderBookRequest(socket, subscrMsg);
+                    }
+                    else if (subscrMsg.Service == _MARKET_DATA_SERVICE)
+                    {
+                        ProcessMarketDataRequest(socket, subscrMsg);
+                    }
+                    else if (subscrMsg.Service == _CANDLEBAR_SERVICE)
+                    {
+                        ProcessCandlebarRequest(socket, subscrMsg);
+                    }
+                    else
+                    {
+                        throw new Exception(string.Format("Subscription method not available:{0}", subscrMsg.Service));
+                    }
+
                 }
-                if (subscrMsg.Service == _MARKET_DATA_SERVICE)
+                catch (Exception e)
                 {
-                    ProcessMarketDataRequest(socket, subscrMsg);
+                    ProcessSubscriptionResponse(socket, subscrMsg.Service, subscrMsg.ServiceKey, subscrMsg.UUID,false, e.Message);
                 }
-                else
-                {
-                    throw new Exception(string.Format("Subscription method not available:{0}",subscrMsg.Service));
-                }
-                
+
             }
             else if (subscrMsg.SubscriptionType == WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_UNSUBSCRIBE)
             {

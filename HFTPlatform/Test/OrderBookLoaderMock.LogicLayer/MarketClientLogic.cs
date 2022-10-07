@@ -113,6 +113,12 @@ namespace OrderBookLoaderMock.LogicLayer
                         OnMarketData.ProcessEvent(msg);
 
                     }
+                    else  if (msg.Msg == "CandlebarMsg")
+                    {
+                       
+                        OnMarketData.ProcessEvent(msg);
+
+                    }
                     else if (msg.Msg == "OrderCancelRejectMsg")
                     {
                         OrderCancelRejectMsg ocr = (OrderCancelRejectMsg) msg;
@@ -212,6 +218,32 @@ namespace OrderBookLoaderMock.LogicLayer
             catch (Exception e)
             {
                 DoLog(string.Format("Order book subscription error for symbol {0}:{1}", symbol,e.Message),Constants.MessageType.Error);
+            }
+        }
+        
+        public void SubscribeCandlebars(string symbol)
+        {
+            try
+            {
+                DoLog(string.Format("Subscribing candlebars for symbol {0}", symbol),Constants.MessageType.Information);
+
+                WebSocketSubscribeMessage subscMsg = new WebSocketSubscribeMessage()
+                {
+                    Msg = "Subscribe",
+                    Service = WebSocketSubscribeMessage._CANDLEBAR_SERVICE,
+                    SubscriptionType = WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_SUBSCRIBE,
+                    ServiceKey = symbol,
+                    UUID = Guid.NewGuid().ToString()
+                };
+
+                DoSend<WebSocketSubscribeMessage>(subscMsg);
+                
+                DoLog(string.Format("Candlebar subscribed for symbol {0}", symbol),Constants.MessageType.Information);
+            
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Candlebar subscription error for symbol {0}:{1}", symbol,e.Message),Constants.MessageType.Error);
             }
         }
         

@@ -26,6 +26,8 @@ namespace DayCurrenciesTrading.Common.Configuration
         
         public double PositionSizeInCash { get; set; }
         
+        public int MaxPositionsInPortfolio { get; set; }
+        
         
         #endregion
         

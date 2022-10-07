@@ -39,6 +39,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="DTO\Generic\UnknownMessage.cs" />
+        <Compile Include="DTO\Market Data\CandlebarMsg.cs" />
         <Compile Include="DTO\Market Data\ClientDepthOfBook.cs" />
         <Compile Include="DTO\Market Data\HistoricalPricesUpdateDTO.cs" />
         <Compile Include="DTO\Market Data\MarketDataMsg.cs" />

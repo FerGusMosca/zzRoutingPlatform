@@ -40,8 +40,9 @@ namespace zHFT.MarketClient.Common.Wrappers
         {
             if (Security != null)
             {
-                string resp = string.Format("Symbol={0} Exchange={1} SecType={2} Currency={3}",
-                                           Security.Symbol, Security.Exchange, Security.SecType.ToString(), Security.Currency);
+                string resp = string.Format(" DateTime={4} Symbol={0} Exchange={1} SecType={2} Currency={3}",
+                    Security.Symbol, Security.Exchange, Security.SecType.ToString(), Security.Currency,
+                    Security.MarketData != null ? Security.MarketData.GetDateTime() : "-");
 
 
                 if (Security.MarketData != null)

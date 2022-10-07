@@ -22,8 +22,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         protected Fleck.WebSocketServer WebSocketServer { get; set; }
 
         protected ILogger Logger { get; set; }
+        
+        protected bool SimulateCandlebars { get; set; }
 
         protected OnMessageReceived OnMessageReceived { get; set; }
+        
+        protected OnSubscribeMarketData OnSubscribeMarketData { get; set; } 
+        
+        protected  OnSubscribeCandlebars OnSubscribeCandlebars { get; set; }
 
         #endregion
 

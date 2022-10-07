@@ -17,7 +17,7 @@ namespace DayCurrenciesTrading.BusinessEntities.TechnicalIndicators
             Prices = new Dictionary<string, MarketData>();
             Initialized = false;
 
-            WeightMultiplier = 2 / (pLength + 1);
+            WeightMultiplier = 2 / Convert.ToDouble((pLength + 1));
         }
 
         #endregion
@@ -50,12 +50,12 @@ namespace DayCurrenciesTrading.BusinessEntities.TechnicalIndicators
 
         protected void UpdateMovingAverage(MarketData md)
         {
-            if(!md.ClosingPrice.HasValue)
+            if(!md.GetMidPrice().HasValue)
                 throw new Exception(String.Format("ERROR critical situation when closing price does not have a value for security {0} @UpdateMovingAverage",md.Security.Symbol));
             
             if (!Initialized)
             {
-                Average = md.ClosingPrice.Value;
+                Average = md.GetMidPrice().Value;
 
                 PreviousAverage = Average;
 
@@ -67,7 +67,7 @@ namespace DayCurrenciesTrading.BusinessEntities.TechnicalIndicators
 
             }
 
-            Average = ((md.ClosingPrice.Value - PreviousAverage) * WeightMultiplier) + PreviousAverage;
+            Average = ((md.GetMidPrice().Value - PreviousAverage) * WeightMultiplier) + PreviousAverage;
             
             Slope = Average - PreviousAverage;
 
@@ -89,7 +89,6 @@ namespace DayCurrenciesTrading.BusinessEntities.TechnicalIndicators
                 LastUpdatedPrice = md;
 
                 if (!Prices.ContainsKey(key))
-
                 {
                     //We process the previous minute!
                     if(Prices.Values.Count>0)

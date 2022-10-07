@@ -97,6 +97,8 @@ namespace OrderBookLoaderMock.LogicLayer
 //                                OnEvent(JsonConvert.DeserializeObject<AuthenticationResp>(resp));
                             else if (wsResp.Msg == "NewOrderResponse")
                                 OnEvent(JsonConvert.DeserializeObject<NewOrderResponse>(resp));
+                            else if (wsResp.Msg == "CandlebarMsg")
+                                OnEvent(JsonConvert.DeserializeObject<CandlebarMsg>(resp));
                             else if (wsResp.Msg == "MarketDataMsg")
                                 OnMarketData(JsonConvert.DeserializeObject<MarketDataMsg>(resp));
                             else if (wsResp.Msg == "ExecutionReportMsg")

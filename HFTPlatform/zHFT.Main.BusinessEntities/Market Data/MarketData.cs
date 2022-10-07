@@ -66,13 +66,26 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         
         #region Public Methods
 
+        public string GetDateTime()
+        {
+            if (MDEntryDate.HasValue)
+                return MDEntryDate.Value.ToString("yyyy-MM-dd hh:mm:ss");
+            else if (MDLocalEntryDate.HasValue)
+                return MDLocalEntryDate.Value.ToString("yyyy-MM-dd hh:mm:ss");
+            else
+            {
+                return "-";
+            }
+
+        }
+
         public override string ToString()
         {
             return string.Format(
                 "DateTime={9} Symbol={0} Open={1} High={2} Low={3} Close={4} Trade={5} BestBidPx={6} BestAskPx={7} Volume={8}",
                 Security.Symbol, OpeningPrice, TradingSessionHighPrice, TradingSessionLowPrice,
                 ClosingPrice, Trade, BestBidPrice, BestAskPrice, TradeVolume,
-                MDEntryDate != null ? MDEntryDate.Value.ToString() : "");
+                GetDateTime());
         }
 
         public bool BiggerGreendCandle(double refPrice)
@@ -84,6 +97,18 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         public bool LowerRedCandle(double refPrice)
         {
             return ClosingPrice < refPrice && ClosingPrice < OpeningPrice;
+        }
+
+
+        public double? GetMidPrice()
+        {
+
+            if (BestAskPrice.HasValue && BestBidPrice.HasValue)
+                return (BestAskPrice.Value + BestBidPrice.Value) / 2;
+            else
+            {
+                return null;
+            }
         }
 
         #endregion

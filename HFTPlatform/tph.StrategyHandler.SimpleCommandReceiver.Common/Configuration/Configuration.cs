@@ -18,6 +18,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Configuration
         
         public string OutgoingConfigPath { get; set; }
         
+        public bool SimulateCandlebars { get; set; }
+        
         #endregion
         
         public override bool CheckDefaults(List<string> result)

@@ -762,6 +762,7 @@
               <e p="UnknownMessage.cs" t="Include" />
             </e>
             <e p="Market Data" t="Include">
+              <e p="CandlebarMsg.cs" t="Include" />
               <e p="ClientDepthOfBook.cs" t="Include" />
               <e p="HistoricalPricesUpdateDTO.cs" t="Include" />
               <e p="MarketDataMsg.cs" t="Include" />
@@ -1142,6 +1143,7 @@
         <e p="DTOs" t="Include">
           <e p="ErrorMessage.cs" t="Include" />
           <e p="MarketData" t="Include">
+            <e p="CandlebarDTO.cs" t="Include" />
             <e p="MarketDataDTO.cs" t="Include" />
             <e p="MarketDataReqDTO.cs" t="Include" />
             <e p="OrderBookDTO.cs" t="Include" />
@@ -1168,6 +1170,9 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="tph.StrategyHandler.SimpleCommandReceiver.Common.csproj" t="IncludeRecursive" />
+        <e p="Util" t="Include">
+          <e p="CandleBarHandler.cs" t="Include" />
+        </e>
         <e p="Wrapper" t="Include">
           <e p="CancelAllWrapper.cs" t="Include" />
           <e p="CancelOrderWrapper.cs" t="Include" />
@@ -1805,6 +1810,7 @@
       <e p="zHFT.Main.BusinessEntities" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Market Data" t="Include">
+          <e p="Candlebar.cs" t="Include" />
           <e p="MarketData.cs" t="Include" />
           <e p="MarketDataRequest.cs" t="Include" />
           <e p="OrderBook.cs" t="Include" />

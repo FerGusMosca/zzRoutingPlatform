@@ -11,6 +11,8 @@
         public static string _ORDER_BOOK_SERVICE = "OB";
         
         public static string _MARKET_DATA_SERVICE = "MD";
+        
+        public static string _CANDLEBAR_SERVICE = "CB";
 
         #endregion
 

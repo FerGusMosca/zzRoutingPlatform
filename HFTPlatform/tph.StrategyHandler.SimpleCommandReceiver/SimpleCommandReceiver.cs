@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Security;
+using System.Security.Permissions;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Util;
 using tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.DTO;
@@ -17,6 +22,9 @@ using zHFT.StrategyHandlers.Common.Converters;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver
 {
+
+  
+    
     public class SimpleCommandReceiver : BaseCommunicationModule, ILogger
     {
         #region Protected Attributes
@@ -28,7 +36,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
         protected WebSocketServer Server { get; set; }
 
         public tph.StrategyHandler.SimpleCommandReceiver.Common.Configuration.Configuration Config { get; set; }
-
+        
+        protected Dictionary<string, DateTime> MarketDataSubscriptions { get; set; }
+        
+        protected Dictionary<string, DateTime> CandlebarSubscriptions { get; set; }
+        
         #endregion
 
         #region ICommunicationModule
@@ -94,6 +106,29 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             {
                 DoLog(string.Format("Error processing order book:{0}}",e.Message),Constants.MessageType.Error);
                 return CMState.BuildFail(e);
+            }
+        }
+
+        protected void OnSubscribeMarketData(Security security)
+        {
+            lock (MarketDataSubscriptions)
+            {
+                if (!MarketDataSubscriptions.ContainsKey(security.Symbol))
+                    MarketDataSubscriptions.Add(security.Symbol, DateTime.Now);
+            }
+        }
+
+        protected void OnSubscribeCandlebar(Security security)
+        {
+            lock (CandlebarSubscriptions)
+            {
+                if (!CandlebarSubscriptions.ContainsKey(security.Symbol))
+                {
+                    CandlebarSubscriptions.Add(security.Symbol, DateTime.Now);
+
+                    CandleBarHandler.InitializeNewSubscription(security);
+
+                }
             }
         }
 
@@ -165,13 +200,34 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 MarketDataConverter conv= new MarketDataConverter();
 
                 MarketData md = conv.GetMarketData(wrapper, Config);
+
+                if (MarketDataSubscriptions.ContainsKey(md.Security.Symbol))
+                {
+                    MarketDataDTO dto = new MarketDataDTO(md);
                 
-                MarketDataDTO dto = new MarketDataDTO(md);
+                    DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
                 
-                DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
+                    Server.PublishEntity<MarketDataDTO>(dto);
+                    
+                }
                 
-                Server.PublishEntity<MarketDataDTO>(dto);
-                
+                if (CandlebarSubscriptions.ContainsKey(md.Security.Symbol))
+                {
+                    //Evaluar si tengo que simular market data
+                    if (Config.SimulateCandlebars)
+                    {
+                        Candlebar newCandle = CandleBarHandler.ProcessMarketData(md);
+
+                        if (newCandle != null)
+                        {
+                            CandlebarDTO dto = new CandlebarDTO(newCandle);
+                            DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
+
+                            Server.PublishEntity<CandlebarDTO>(dto);
+                        }
+                    }
+                }
+
                 return CMState.BuildSuccess();
             
             }
@@ -257,8 +313,12 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                     //Build the  trading modules
                     LoadModules();
                     
+                    MarketDataSubscriptions=new Dictionary<string, DateTime>();
+                    CandlebarSubscriptions = new Dictionary<string, DateTime>();
+                    
                     //Finish starting up the server
-                    Server = new WebSocketServer(Config.WebSocketURL, this, ProcessMessage);
+                    Server = new WebSocketServer(Config.WebSocketURL, this, ProcessMessage,OnSubscribeMarketData,
+                                                OnSubscribeCandlebar,Config.SimulateCandlebars);
                     Server.Start();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config.WebSocketURL, Constants.MessageType.Information);
