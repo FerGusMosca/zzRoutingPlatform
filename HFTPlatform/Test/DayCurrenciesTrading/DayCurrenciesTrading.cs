@@ -68,14 +68,14 @@ namespace DayCurrenciesTrading
             {
                 int mdReqId = GetNextMDReqId();
 
-                foreach (string pair in Configuration.PairToMonitor)
+                foreach (PairToMonitor pair in Configuration.PairsToMonitor)
                 {
-                    DoLog(string.Format("Requesting Market Data for Security {0}",pair),Constants.MessageType.Information);
+                    DoLog(string.Format("Requesting Market Data for Security {0}",pair.Symbol),Constants.MessageType.Information);
 
                     lock (CurrencyPairMonitoringPositions)
                     {
 
-                        Security pairSec = SecurityConverter.GetSecurityFullSymbol(pair);
+                        Security pairSec = SecurityConverter.GetSecurityFullSymbol(pair.Symbol);
 
                         InitiateMonitoringPosition(pairSec);
                         MDReqs.Add(mdReqId, pairSec);
@@ -119,7 +119,7 @@ namespace DayCurrenciesTrading
             }
         }
         
-        protected virtual Position LoadNewRegularPos(Security sec, Side side)
+        protected virtual Position LoadNewRegularPos(Security sec, Side side, double size)
         {
 
             Position pos = new Position()
@@ -129,7 +129,7 @@ namespace DayCurrenciesTrading
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                CashQty = Configuration.PositionSizeInCash,
+                CashQty = size,
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = ""
@@ -144,7 +144,7 @@ namespace DayCurrenciesTrading
         }
         protected Position LoadNewPos(CurrencyPairMonitoringPosition monPos, Side side)
         {
-            Position routingPos= LoadNewRegularPos(monPos.Pair, side);
+            Position routingPos= LoadNewRegularPos(monPos.Pair, side, Configuration.FindPair(monPos.Pair.Symbol).PositionSize);
             
             DoLog(string.Format("OPENING New Pos for Symbol {0} movg avgs. MovAvg Short={1} MovAvg Long={2}",
                 monPos.Pair.Symbol,

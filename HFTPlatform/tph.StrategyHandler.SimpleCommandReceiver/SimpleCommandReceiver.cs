@@ -221,11 +221,16 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                         if (newCandle != null)
                         {
                             CandlebarDTO dto = new CandlebarDTO(newCandle);
-                            DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
+                            DoLog(string.Format("Sending Candlebar for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
 
                             Server.PublishEntity<CandlebarDTO>(dto);
                         }
+                        else
+                        {
+                            DoLog("DB2-else @new candle",Constants.MessageType.Information);
+                        }
                     }
+                    
                 }
 
                 return CMState.BuildSuccess();

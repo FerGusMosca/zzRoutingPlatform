@@ -17,18 +17,49 @@
   <MaxPositionsInPortfolio>3</MaxPositionsInPortfolio>
 
 
-  <PairToMonitor>
-    <Pair>EUR$USD.IDEALPRO.CASH</Pair>
-    <Pair>USD$CAD.IDEALPRO.CASH</Pair>
-    <Pair>CAD$JPY.IDEALPRO.CASH</Pair>
-    <Pair>GBP$USD.IDEALPRO.CASH</Pair>
-    <Pair>AED$USD.IDEALPRO.CASH</Pair>
-    <Pair>KRW$USD.IDEALPRO.CASH</Pair>
-    <Pair>USD$CAD.IDEALPRO.CASH</Pair>
+  <PairsToMonitor>
+    
+    <Pair>
+      <Symbol>EUR$USD.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000.5</PositionSize>  <!-- 1000 USD -->
+      
+    </Pair>
 
-<!--    <Pair>CAD$USD.IDEALPRO.CASH</Pair>-->
+
+    <Pair>
+      <Symbol>USD$CAD.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000.5</PositionSize> <!-- 1000 CAD dollar -->
+
+    </Pair>
+
+
+    <Pair>
+      <Symbol>CAD$JPY.IDEALPRO.CASH</Symbol>
+      <PositionSize>5000</PositionSize><!-- 5000 Yen -->
+
+    </Pair>
+
+    <Pair>
+      <Symbol>GBP$USD.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000</PositionSize><!-- 1000 USD -->
+
+    </Pair>
+
+    <Pair>
+      <Symbol>AED$USD.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000</PositionSize><!-- 1000 USD -->
+
+    </Pair>
+
+    <Pair>
+      <Symbol>KRW$USD.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000</PositionSize><!-- 1000 USD -->
+
+    </Pair>
+    
+
     <!--    -->
-  </PairToMonitor>
+  </PairsToMonitor>
   
 
 </Configuration>
