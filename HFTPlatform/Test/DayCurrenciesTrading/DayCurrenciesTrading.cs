@@ -104,17 +104,30 @@ namespace DayCurrenciesTrading
                 if (monPos.CloseLongPosition() || monPos.CloseShortPosition())
                 {
 
-                    DoLog(string.Format(
-                            "CLOSING {0} Position on market. Symbol {1} Qty={2} PosId={3}. Mov Avg Short={4} Mov Avg Long={5} ",
-                            monPos.TradeDirection(), monPos.Pair.Symbol, monPos.LastRoutingOpeningPosition.Qty,
-                            monPos.LastRoutingClosingPosition != null ? monPos.LastRoutingClosingPosition.PosId : "-",
-                            monPos.ExponentialMovingAverageShort.Average.ToString("##.####"),
-                            monPos.ExponentialMovingAverageLong.Average.ToString("##.####")),
-                        Constants.MessageType.Information);
-                
-                    Position routingClosPos =  RunClose(monPos.LastRoutingOpeningPosition);
+                    if (!monPos.CLosing)
+                    {
+                        DoLog(string.Format(
+                                "CLOSING {0} Position on market. Symbol {1} Qty={2} PosId={3}. Mov Avg Short={4} Mov Avg Long={5} ",
+                                monPos.TradeDirection(), monPos.Pair.Symbol, monPos.LastRoutingOpeningPosition.Qty,
+                                monPos.LastRoutingClosingPosition != null
+                                    ? monPos.LastRoutingClosingPosition.PosId
+                                    : "-",
+                                monPos.ExponentialMovingAverageShort.Average.ToString("##.####"),
+                                monPos.ExponentialMovingAverageLong.Average.ToString("##.####")),
+                            Constants.MessageType.Information);
 
-                    monPos.LastRoutingClosingPosition = routingClosPos;
+                        Position routingClosPos = RunClose(monPos.LastRoutingOpeningPosition);
+
+                        monPos.LastRoutingClosingPosition = routingClosPos;
+                    }
+                    else
+                    {
+                        DoLog(string.Format("On Market Data - Waiting {0} position to be closed for symbol {1}",
+                            monPos.LastRoutingClosingPosition != null
+                                ? monPos.LastRoutingClosingPosition.PosStatus.ToString()
+                                : "?",
+                            monPos.Pair.Symbol), Constants.MessageType.Information);
+                    }
                 }
             }
         }
@@ -132,7 +145,7 @@ namespace DayCurrenciesTrading
                 CashQty = size,
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
-                AccountId = ""
+                AccountId = "",
                 //StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
                 
             };
@@ -146,10 +159,11 @@ namespace DayCurrenciesTrading
         {
             Position routingPos= LoadNewRegularPos(monPos.Pair, side, Configuration.FindPair(monPos.Pair.Symbol).PositionSize);
             
-            DoLog(string.Format("OPENING New Pos for Symbol {0} movg avgs. MovAvg Short={1} MovAvg Long={2}",
+            DoLog(string.Format("OPENING {3} New Pos for Symbol {0} movg avgs. MovAvg Short={1} MovAvg Long={2}",
                 monPos.Pair.Symbol,
                 monPos.ExponentialMovingAverageShort.Average.ToString("##.####"),
-                monPos.ExponentialMovingAverageLong.Average.ToString("##.####")),Constants.MessageType.Information);
+                monPos.ExponentialMovingAverageLong.Average.ToString("##.####"),
+                routingPos.PosStatus.ToString()),Constants.MessageType.Information);
             
             PositionWrapper posWrapper = new PositionWrapper(routingPos, Config);
             monPos.LastRoutingOpeningPosition = routingPos;
@@ -387,12 +401,13 @@ namespace DayCurrenciesTrading
                 lock (CurrencyPairMonitoringPositions)
                 {
                     ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
-
+                    string fullSymbol = string.Format("{0}{1}{2}",report.Order.Symbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG,report.Order.Currency);
+                    //Console.Beep();
                     //EvalCancellingOrdersOnStartup(report);
                      
-                    if (CurrencyPairMonitoringPositions.ContainsKey(report.Order.Symbol))
+                    if (CurrencyPairMonitoringPositions.ContainsKey(fullSymbol))
                     {
-                        CurrencyPairMonitoringPosition monPos = CurrencyPairMonitoringPositions[report.Order.Symbol];
+                        CurrencyPairMonitoringPosition monPos = CurrencyPairMonitoringPositions[fullSymbol];
                         AssignMainERParameters(monPos, report);
                         LogExecutionReport(monPos, report);
                     }

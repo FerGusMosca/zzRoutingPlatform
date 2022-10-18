@@ -9,8 +9,8 @@
   <OutgoingConfigPath>.\outgoingOrderRouter.xml</OutgoingConfigPath>
 
 
-  <MovAvgShort>10</MovAvgShort>
-  <MovAvgLong>15</MovAvgLong>
+  <MovAvgShort>45</MovAvgShort>
+  <MovAvgLong>90</MovAvgLong>
   
   <PositionSizeInCash>5000</PositionSizeInCash>
   
@@ -46,19 +46,31 @@
     </Pair>
 
     <Pair>
-      <Symbol>AED$USD.IDEALPRO.CASH</Symbol>
+      <Symbol>AUD$USD.IDEALPRO.CASH</Symbol>
       <PositionSize>1000</PositionSize><!-- 1000 USD -->
 
     </Pair>
 
     <Pair>
-      <Symbol>KRW$USD.IDEALPRO.CASH</Symbol>
-      <PositionSize>1000</PositionSize><!-- 1000 USD -->
+      <Symbol>EUR$CAD.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000</PositionSize><!-- 1000 CAD -->
 
     </Pair>
-    
 
-    <!--    -->
+
+    <Pair>
+      <Symbol>USD$CHF.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000</PositionSize> <!-- 1000 Francos -->
+
+    </Pair>
+
+    <Pair>
+      <Symbol>EUR$GBP.IDEALPRO.CASH</Symbol>
+      <PositionSize>1000</PositionSize> <!-- 1000 libras -->
+
+    </Pair>
+
+  
   </PairsToMonitor>
   
 

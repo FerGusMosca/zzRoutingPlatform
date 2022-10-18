@@ -24,6 +24,22 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Util
         
         #region Protected Static Methods
 
+        protected static double GetAnyVolume(MarketData md)
+        {
+            if (md.NominalVolume.HasValue)
+                return md.NominalVolume.Value;
+            else if (md.CashVolume.HasValue)
+                return md.CashVolume.Value;
+            else if (md.TradeVolume.HasValue)
+                return md.TradeVolume.Value;
+            else
+            {
+                return 0;
+            }
+
+
+        }
+
         protected static double? GetCandlePrice(MarketData md)
         {
 
@@ -104,7 +120,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Util
                             cb.Open = mdPrice;
                         cb.Trade = mdPrice;
                         cb.Close = mdPrice;
-                        cb.Volume = md.NominalVolume.HasValue ? Convert.ToInt32(md.NominalVolume.Value) : 0;
+                        cb.Volume = Convert.ToInt32(GetAnyVolume(md));
                         
                     }
                     
@@ -123,7 +139,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Util
                         Open = mdPrice,
                         Trade = mdPrice,
                         Close = mdPrice,
-                        Volume = md.NominalVolume.HasValue ? Convert.ToInt32(md.NominalVolume.Value) : 0
+                        Volume = Convert.ToInt32(GetAnyVolume(md))
                     };
                     
                     candlesDict.Add(key, newCb);
