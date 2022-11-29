@@ -35,7 +35,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         
         public string Key { get; set; }
         
-        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy hh:mm:ss")]
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
         public DateTime Date { get; set; }
         
         #endregion

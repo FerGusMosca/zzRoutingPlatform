@@ -47,7 +47,7 @@ namespace NetCoreWebsocketIBConnector2
             ILogSource appLogger;
             ILogSource incommingLogger;
             ILogSource outgoingLogger;
-
+            
             appLogger = new PerDayFileLogSource(Directory.GetCurrentDirectory() + "\\Log", Directory.GetCurrentDirectory() + "\\Log\\Backup")
             {
                 FilePattern = "Log.{0:yyyy-MM-dd}.log",

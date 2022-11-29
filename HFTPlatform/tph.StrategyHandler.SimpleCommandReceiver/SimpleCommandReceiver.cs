@@ -205,7 +205,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 {
                     MarketDataDTO dto = new MarketDataDTO(md);
                 
-                    DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
+                    DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),md.ToString()),Constants.MessageType.Information);
                 
                     Server.PublishEntity<MarketDataDTO>(dto);
                     
@@ -221,7 +221,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                         if (newCandle != null)
                         {
                             CandlebarDTO dto = new CandlebarDTO(newCandle);
-                            DoLog(string.Format("Sending Candlebar for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now,md.ToString()),Constants.MessageType.Information);
+                            DoLog(string.Format("Sending Candlebar for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),md.ToString()),Constants.MessageType.Information);
 
                             Server.PublishEntity<CandlebarDTO>(dto);
                         }
@@ -316,6 +316,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 if (LoadConfig(configFile))
                 {
                     //Build the  trading modules
+                    DoLog(string.Format("Initializing SimpleCommRcv module @{0}",DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")),Constants.MessageType.Information);
                     LoadModules();
                     
                     MarketDataSubscriptions=new Dictionary<string, DateTime>();
