@@ -13,7 +13,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using Constants = zHFT.Main.Common.Util.Constants;
 
-namespace zHFT.OrderRouters.IB.Common
+namespace tph.OrderRouters.IB.Common
 {
     public abstract class OrderRouterBase : ICommunicationModule, EWrapper,EReaderSignal
     {
@@ -59,7 +59,7 @@ namespace zHFT.OrderRouters.IB.Common
 
         #region Protected Methods
 
-        protected void DoLog(string msg, Main.Common.Util.Constants.MessageType type)
+        protected void DoLog(string msg, Constants.MessageType type)
         {
             if (OnLogMsg != null)
                 OnLogMsg(msg, type);
@@ -67,30 +67,30 @@ namespace zHFT.OrderRouters.IB.Common
 
         protected bool LoadConfig(string configFile)
         {
-            DoLog(DateTime.Now.ToString() + "OrderRouterBase.LoadConfig", Main.Common.Util.Constants.MessageType.Information);
+            DoLog(DateTime.Now.ToString() + "OrderRouterBase.LoadConfig", Constants.MessageType.Information);
 
-            DoLog("Loading config:" + configFile, Main.Common.Util.Constants.MessageType.Information);
+            DoLog("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))
             {
-                DoLog(configFile + " does not exists", Main.Common.Util.Constants.MessageType.Error);
+                DoLog(configFile + " does not exists", Constants.MessageType.Error);
                 return false;
             }
 
             List<string> noValueFields = new List<string>();
-            DoLog("Processing config:" + configFile, Main.Common.Util.Constants.MessageType.Information);
+            DoLog("Processing config:" + configFile, Constants.MessageType.Information);
             try
             {
                 DoLoadConfig(configFile, noValueFields);
-                DoLog("Ending GetConfiguracion " + configFile, Main.Common.Util.Constants.MessageType.Information);
+                DoLog("Ending GetConfiguracion " + configFile, Constants.MessageType.Information);
             }
             catch (Exception e)
             {
-                DoLog("Error recovering config " + configFile + ": " + e.Message, Main.Common.Util.Constants.MessageType.Error);
+                DoLog("Error recovering config " + configFile + ": " + e.Message, Constants.MessageType.Error);
                 return false;
             }
 
             if (noValueFields.Count > 0)
-                noValueFields.ForEach(s => DoLog(string.Format(Main.Common.Util.Constants.FieldMissing, s), Main.Common.Util.Constants.MessageType.Error));
+                noValueFields.ForEach(s => DoLog(string.Format(Constants.FieldMissing, s), Constants.MessageType.Error));
 
             return true;
         }
@@ -118,7 +118,7 @@ namespace zHFT.OrderRouters.IB.Common
                 parentId,
                 lastFillPrice,
                 clientId,
-                whyHeld), Main.Common.Util.Constants.MessageType.Information);
+                whyHeld), Constants.MessageType.Information);
 
             OrderStatusDTO dto = new OrderStatusDTO()
             {
@@ -208,6 +208,7 @@ namespace zHFT.OrderRouters.IB.Common
 
         public void verifyAndAuthCompleted(bool isSuccessful, string errorText)
         {
+            DoLog(string.Format("DBX-Error={0} at {1}",errorText,DateTime.Now),Constants.MessageType.Information);
             DoLog(string.Format("error: isSuccessful={0} errorText={1}",
                 isSuccessful,
                 errorText), Constants.MessageType.Information);
@@ -428,6 +429,7 @@ namespace zHFT.OrderRouters.IB.Common
 
         public void error(int id, int errorCode, string errorMsg)
         {
+            DoLog(string.Format("DBX-Error={0} at {1}",errorMsg,DateTime.Now),Constants.MessageType.Information);
             DoLog(string.Format("error: reqId={0} start={1} end={2}  ",
                                 id,
                                 errorCode,
@@ -436,12 +438,14 @@ namespace zHFT.OrderRouters.IB.Common
 
         public void error(string str)
         {
+            DoLog(string.Format("DBX-Error={0} at {1}",str,DateTime.Now),Constants.MessageType.Information);
             DoLog(string.Format("error: str={0}   ",
                                 str), Constants.MessageType.Information);
         }
 
         public void error(Exception e)
         {
+            DoLog(string.Format("DBX-Error={0} at",e.Message,DateTime.Now),Constants.MessageType.Information);
             DoLog(string.Format("error: ex={0}   ",
                                 e.Message), Constants.MessageType.Information);
         }
@@ -642,7 +646,7 @@ namespace zHFT.OrderRouters.IB.Common
             DoLog(string.Format("tickSize: tickerId={0} field={1} size={2} ",
                 tickerId,
                 TickType.getField(field),
-                size), Main.Common.Util.Constants.MessageType.Information);
+                size), Constants.MessageType.Information);
         }
 
         public virtual void tickSnapshotEnd(int tickerId)
@@ -656,7 +660,7 @@ namespace zHFT.OrderRouters.IB.Common
             DoLog(string.Format("tickString: tickerId={0} field={1} value={2} ",
                 tickerId,
                 TickType.getField(field),
-                value), Main.Common.Util.Constants.MessageType.Information);
+                value), Constants.MessageType.Information);
         }
 
         public void updatePortfolio(Contract contract, double position, double marketPrice, double marketValue, double averageCost,

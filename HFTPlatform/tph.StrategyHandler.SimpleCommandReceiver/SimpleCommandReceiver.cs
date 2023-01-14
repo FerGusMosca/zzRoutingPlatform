@@ -205,7 +205,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 {
                     MarketDataDTO dto = new MarketDataDTO(md);
                 
-                    DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),md.ToString()),Constants.MessageType.Information);
+                    //DoLog(string.Format("Sending MarketData for security {0} at {1}:{2}",md.Security.Symbol,DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"),md.ToString()),Constants.MessageType.Information);
                 
                     Server.PublishEntity<MarketDataDTO>(dto);
                     
@@ -213,7 +213,6 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 
                 if (CandlebarSubscriptions.ContainsKey(md.Security.Symbol))
                 {
-                    //Evaluar si tengo que simular market data
                     if (Config.SimulateCandlebars)
                     {
                         Candlebar newCandle = CandleBarHandler.ProcessMarketData(md);
@@ -227,7 +226,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                         }
                         else
                         {
-                            DoLog("DB2-else @new candle",Constants.MessageType.Information);
+                            //DoLog("DB2-else @new candle",Constants.MessageType.Information);
                         }
                     }
                     

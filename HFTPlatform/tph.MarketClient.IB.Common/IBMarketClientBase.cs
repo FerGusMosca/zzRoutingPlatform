@@ -461,7 +461,7 @@ namespace tph.MarketClient.IB.Common
 
         public void error(int id, int errorCode, string errorMsg)
         {
-            DoLog(string.Format("error: reqId={0} start={1} end={2}  ",
+            DoLog(string.Format("error: id={0} errorCode={1} errorMsg={2}  ",
                                 id,
                                 errorCode,
                                 errorMsg), Constants.MessageType.Information);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.OrderRouters.IB.Common;
 using tph.OrderRouters.IB.Common.Converters;
 using tph.OrderRouters.IB.Common.DTO;
 using tph.OrderRouters.IB.Common.Wrappers;
@@ -13,7 +14,6 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
-using zHFT.OrderRouters.IB.Common;
 using Constants = zHFT.Main.Common.Util.Constants;
 
 
@@ -136,7 +136,7 @@ namespace tph.OrderRouters.IB
             Contract contract = GetContract(wrapper);
 
             Order order = GetNewOrder(wrapper);
-
+            
             ClientSocket.placeOrder(order.OrderId, contract, order);
             DoLog(string.Format("Routing Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", order.OrderId, contract.Symbol, 
                                 order.TotalQuantity, order.LmtPrice, order.Action), Constants.MessageType.Information);
@@ -144,6 +144,7 @@ namespace tph.OrderRouters.IB
                 throw new Exception("Could not find ClOrdId for new order");
 
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+            DoLog(string.Format("DBX-new order set for clOrdId {0} at {1]",clOrderId,DateTime.Now),Constants.MessageType.Information);
 
             OrderIdsMapper.Add(clOrderId, order.OrderId);
             OrderList.Add(order.OrderId, order);
