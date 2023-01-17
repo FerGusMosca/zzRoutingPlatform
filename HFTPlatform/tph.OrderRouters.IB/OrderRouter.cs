@@ -262,8 +262,19 @@ namespace tph.OrderRouters.IB
         {
             try
             {
-                Order order = OrderList[dto.Id];
-                Contract contract = ContractList[dto.Id];
+                Order order = null;
+                Contract contract = null;
+                if (OrderList.ContainsKey(dto.Id))
+                    order = OrderList[dto.Id];
+                else
+                    throw new Exception($"Could not find order in OrderList dict for id {dto.Id}");
+                
+                
+                if (ContractList.ContainsKey(dto.Id))
+                    contract = ContractList[dto.Id];
+                else
+                    throw new Exception($"Could not find order in ContractList dict for id {dto.Id}");
+                
                 if (order != null)
                 {
 
