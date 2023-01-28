@@ -71,7 +71,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.csprojAssemblyReference.cache
@@ -96,3 +95,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.BusinessEntities\obj\Debug\zHFT.Main.BusinessEntities.csproj.AssemblyReference.cache

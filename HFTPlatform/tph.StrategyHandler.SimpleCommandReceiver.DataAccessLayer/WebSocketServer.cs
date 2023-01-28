@@ -400,11 +400,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             try
             {
                 
-                DoLog(string.Format("Incoming Route Order Req for Symbol {0} and Side {1}", newOrderReq.Symbol, newOrderReq.Side), Constants.MessageType.Information);
+                DoLog(string.Format("Incoming Route Order Req for Symbol {0} and Side {1} Type {2} and Price {3}",
+                        newOrderReq.Symbol, newOrderReq.Side,newOrderReq.Type,newOrderReq.Price), Constants.MessageType.Information);
 
                 OrderConverter converter= new OrderConverter();;
 
                 Order newOrder  = converter.ConvertNewOrder(newOrderReq);
+                DoLog(string.Format("DBX-Converter Order: Type={0} Price={1}",newOrder.OrdType,
+                    newOrder.Price.HasValue?newOrder.Price.Value.ToString():"null."),Constants.MessageType.Information);
 
                 NewOrderWrapper newOrderWrapper = new NewOrderWrapper(newOrder, new Configuration());
                 

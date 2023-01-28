@@ -35,7 +35,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
@@ -78,3 +77,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.Common\obj\Debug\zHFT.OrderImbSimpleCalculator.Common.csproj.AssemblyReference.cache

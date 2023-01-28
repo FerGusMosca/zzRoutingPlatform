@@ -138,13 +138,13 @@ namespace tph.OrderRouters.IB
             Order order = GetNewOrder(wrapper);
             
             ClientSocket.placeOrder(order.OrderId, contract, order);
-            DoLog(string.Format("Routing Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}", order.OrderId, contract.Symbol, 
-                                order.TotalQuantity, order.LmtPrice, order.Action), Constants.MessageType.Information);
+            DoLog(string.Format("Routing Order Id {0} Symbol={1}  Side={4} Qty={2} Type={3} Price={4}", order.OrderId, contract.Symbol, 
+                                order.TotalQuantity,order.OrderType, order.LmtPrice, order.Action), Constants.MessageType.Information);
             if (wrapper.GetField(OrderFields.ClOrdID) == null)
                 throw new Exception("Could not find ClOrdId for new order");
 
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
-            DoLog(string.Format("DBX-new order set for clOrdId {0} at {1]",clOrderId,DateTime.Now),Constants.MessageType.Information);
+            DoLog(string.Format("DBX-new order set for clOrdId {0} at {1}",clOrderId,DateTime.Now),Constants.MessageType.Information);
 
             OrderIdsMapper.Add(clOrderId, order.OrderId);
             OrderList.Add(order.OrderId, order);
