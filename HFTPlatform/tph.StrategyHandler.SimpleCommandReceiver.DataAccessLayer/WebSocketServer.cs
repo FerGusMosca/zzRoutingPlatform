@@ -359,7 +359,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 
                 DoLog(string.Format("Incoming  Order Cxl Req for ClOrdId {0}", cxlOrderReq.OrigClOrderId), Constants.MessageType.Information);
 
-                CancelOrderWrapper cxlOrderReqWrapper = new CancelOrderWrapper(new Order(){OrigClOrdId = cxlOrderReq.OrigClOrderId,ClOrdId = cxlOrderReq.ClOrderId});
+                CancelOrderWrapper cxlOrderReqWrapper = new CancelOrderWrapper(new Order() { OrigClOrdId = cxlOrderReq.OrigClOrderId, ClOrdId = cxlOrderReq.ClOrderId, Security = new Security() { Symbol = "?" } });
                 
                 CMState resp = OnMessageReceived(cxlOrderReqWrapper);
                 

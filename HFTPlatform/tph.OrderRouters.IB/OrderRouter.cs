@@ -138,7 +138,7 @@ namespace tph.OrderRouters.IB
             Order order = GetNewOrder(wrapper);
             
             ClientSocket.placeOrder(order.OrderId, contract, order);
-            DoLog(string.Format("Routing Order Id {0} Symbol={1}  Side={4} Qty={2} Type={3} Price={4}", order.OrderId, contract.Symbol, 
+            DoLog(string.Format("Routing Order Id {0} Symbol={1}  Side={2} Qty={2} Type={3} Price={4}", order.OrderId, contract.Symbol, 
                                 order.TotalQuantity,order.OrderType, order.LmtPrice, order.Action), Constants.MessageType.Information);
             if (wrapper.GetField(OrderFields.ClOrdID) == null)
                 throw new Exception("Could not find ClOrdId for new order");
@@ -181,22 +181,22 @@ namespace tph.OrderRouters.IB
             if (OrderIdsMapper.ContainsKey(origClOrderId))
             {
                 int orderId = OrderIdsMapper[origClOrderId];
-                Order order = GetExistingOrder(wrapper);
                 
-                order.OrderId = orderId;
 
                 if (!cancel)
                 {
+                    Order order = GetExistingOrder(wrapper);
+
+                    order.OrderId = orderId;
                     DoLog(string.Format("Updating Order Id {0}", order.OrderId), Constants.MessageType.Information);
                     ClientSocket.placeOrder(order.OrderId, contract, order);
                     OrderIdsMapper.Add(clOrderId, orderId);
                 }
                 else
                 {
-                    DoLog(string.Format("Cancelling Order Id {0} Symbol={1}  Side={4} Qty={2} Price={3}}", order.OrderId, contract.Symbol,
-                                order.TotalQuantity, order.LmtPrice, order.Action), Constants.MessageType.Information);
+                    DoLog(string.Format("Cancelling Order Id {0} ", orderId), Constants.MessageType.Information);
                     
-                    ClientSocket.cancelOrder(order.OrderId);
+                    ClientSocket.cancelOrder(orderId);
                 }
                 
                 

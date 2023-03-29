@@ -30,7 +30,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\HFTPlatform\hftplatform\HFTPlatfor
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\bin\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb
@@ -41,3 +40,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.InstructionBasedMarketClient.DataAccess\obj\Debug\zHFT.InstructionBasedMarketClient.DataAccess.csproj.AssemblyReference.cache
