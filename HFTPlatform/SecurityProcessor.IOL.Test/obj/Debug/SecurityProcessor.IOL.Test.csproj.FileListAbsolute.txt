@@ -59,6 +59,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\bin\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.csproj.CopyComplete
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\SecurityProcessor.IOL.Test\obj\Debug\SecurityProcessor.IOL.Test.csproj.AssemblyReference.cache

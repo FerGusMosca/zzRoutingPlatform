@@ -78,12 +78,12 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public bool LongPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
         {
-            return ImbalanceCounter.LongPositionThresholdTriggered(positionOpeningImbalanceThreshold);
+            return ImbalanceCounter.LongPositionThresholdTriggered(positionOpeningImbalanceThreshold) && IsLongDay();
         }
 
         public bool ShortPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
         {
-            return ImbalanceCounter.ShortPositionThresholdTriggered(positionOpeningImbalanceThreshold);
+            return ImbalanceCounter.ShortPositionThresholdTriggered(positionOpeningImbalanceThreshold) && IsShortDay();
 
         }
 

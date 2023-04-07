@@ -46,7 +46,9 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
         #region Public Static Consts
 
         public static string _PENDING_NEW = "PendingNew";
-            
+
+        public static string _PENDING_CANCEL = "PendingCancel";
+
         public static string _NEW = "New";
         
         public static string _CANCELED = "Canceled";
@@ -104,6 +106,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
                 return _FILLED;
             else if (OrdStatus == OrdStatus.Expired)
                 return _EXPIRED;
+            else if (OrdStatus == OrdStatus.Rejected)
+                return _REJECTED;
+
+            else if (OrdStatus == OrdStatus.PendingCancel)
+                return _PENDING_CANCEL;
             else
                 return _UNKNWOWN;
             

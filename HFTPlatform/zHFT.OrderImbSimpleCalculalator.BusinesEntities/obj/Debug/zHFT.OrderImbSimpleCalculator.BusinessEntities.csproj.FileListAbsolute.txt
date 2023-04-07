@@ -25,10 +25,10 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderImbSimpleCalculalator.BusinesEntities\obj\Debug\zHFT.OrderImbSimpleCalculator.BusinessEntities.csproj.AssemblyReference.cache
