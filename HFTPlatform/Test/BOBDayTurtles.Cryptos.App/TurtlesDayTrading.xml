@@ -19,8 +19,8 @@
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
   
-  <InnerTrendlinesSpan>30</InnerTrendlinesSpan><!--in candles-->
-  <OuterTrendlinesSpan>30</OuterTrendlinesSpan><!--in candles-->
+  <InnerTrendlinesSpan>120</InnerTrendlinesSpan><!--in candles-->
+  <OuterTrendlinesSpan>60</OuterTrendlinesSpan><!--in candles-->
   <PerforationThresholds>0.0005</PerforationThresholds><!--in pct 0-1-->
   <Account>9732</Account>
 
@@ -51,21 +51,7 @@
   
   <StocksToMonitor>
     <Symbol>ETH</Symbol>
-    <Symbol>BCH</Symbol>
-    <Symbol>BTC</Symbol>
-    <Symbol>DOGE</Symbol>
-    <Symbol>BNB</Symbol>
-    <Symbol>ADA</Symbol>
-    <Symbol>XRP</Symbol>
-    <Symbol>UNI</Symbol>
-    <Symbol>DGB</Symbol>
-    <Symbol>XEM</Symbol>
-    <Symbol>BAT</Symbol>
-    <Symbol>XTZ</Symbol>
-    <Symbol>DOT</Symbol>
-      <Symbol>LTC</Symbol>
-    <Symbol>AAVE</Symbol>
-    <Symbol>BCH</Symbol>
+
    
 <!--    -->
   </StocksToMonitor>

@@ -24,6 +24,13 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
         #endregion
         
+        #region Public Static Consts
+
+        public static string _TRENDLINE_TYPE_RESISTANCE = "R";
+        public static string _TRENDLINE_TYPE_SUPPORT = "S";
+        
+        #endregion
+        
         #region Private static Consts
 
         public static double _SHORT_SOFT_UPWARD_SLOPE = 1 ;//1 degrees
@@ -37,6 +44,8 @@ namespace tph.BOBDayTurtles.BusinessEntities
         #endregion
         
         #region Public Attributes
+        
+        public long Id { get; set; }
 
         public Security Security { get; set; }
 
@@ -57,6 +66,12 @@ namespace tph.BOBDayTurtles.BusinessEntities
         public bool JustFound { get; set; }
         
         public bool Persisted { get; set; }
+        
+        public bool? ManualNew { get; set; }
+        
+        public bool? ToDisabled { get; set; }
+        
+        public bool? Disabled { get; set; }
 
 
         #region Indirect Attributes

@@ -38,7 +38,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csproj.CoreCompileInputs.cache
@@ -49,3 +48,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.Main.DataAccess\obj\Debug\zHFT.Main.DataAccess.csproj.AssemblyReference.cache

@@ -32,13 +32,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Binance.API.Csharp.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.dll</HintPath>
+      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Binance.API.Csharp.Client.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.Domain.dll</HintPath>
+      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Domain.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Binance.API.Csharp.Client.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Librerias\Binance\morpheums\Binance.API.Csharp.Client.Models.dll</HintPath>
+      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Models.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Binance.Net, Version=8.1.5.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\Binance.Net.8.1.5\lib\netstandard2.0\Binance.Net.dll</HintPath>
