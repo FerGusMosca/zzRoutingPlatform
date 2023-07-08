@@ -341,7 +341,9 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             
             foreach (Trendline trendline in trendlines.Where(x=>   !x.IsBroken(price.MDEntryDate)
                                                                 && DateTime.Compare(x.EndDate,price.MDEntryDate.Value)<0).ToList())
+
             {
+                
                 if (GetSpan(trendline.EndDate, price.MDEntryDate.Value) > 5)//Safety threshold
                 {
 
@@ -641,7 +643,41 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             return trendlines;
 
         }
+
+        public static void AppendSupport(string symbol, Trendline trendline)
+        {
+            
+            TrdCreatorDict[symbol].SupportTrendlines.Add(trendline);
+        }
         
+        public static void AppendResistance(string symbol, Trendline trendline)
+        {
+            
+            TrdCreatorDict[symbol].ResistanceTrendlines.Add(trendline);
+        }
+
+        public static Trendline FetchResistance(string symbol, Trendline refTrendline)
+        {
+            Trendline memPosResistance = TrdCreatorDict[symbol].ResistanceTrendlines
+                .FirstOrDefault(x => DateTime.Compare(x.StartDate, refTrendline.StartDate) == 0
+                                     && DateTime.Compare(x.EndDate, refTrendline.EndDate) == 0
+                                     && x.TrendlineType == refTrendline.TrendlineType);
+
+            return memPosResistance;
+
+        }
+        
+        public static Trendline FetchSupport(string symbol, Trendline refTrendline)
+        {
+            Trendline memPosSupport = TrdCreatorDict[symbol].SupportTrendlines
+                .FirstOrDefault(x => DateTime.Compare(x.StartDate, refTrendline.StartDate) == 0
+                                     && DateTime.Compare(x.EndDate, refTrendline.EndDate) == 0
+                                     && x.TrendlineType == refTrendline.TrendlineType);
+
+            return memPosSupport;
+
+        }
+
         #endregion
         
         #endregion

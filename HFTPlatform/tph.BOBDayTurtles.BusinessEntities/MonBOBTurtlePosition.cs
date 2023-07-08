@@ -57,6 +57,7 @@ namespace tph.BOBDayTurtles.BusinessEntities
                     trendline.BrokenTrendlinePrice = trendlinePrice;
                     trendline.BrokenMarketPrice = lastClosedCandle;
                     trendline.JustBroken = true;
+                    trendline.Persisted = false;
                     if (EnoughSpan(trendline, lastClosedCandle))
                     {
                         found = true;
@@ -89,6 +90,7 @@ namespace tph.BOBDayTurtles.BusinessEntities
                     trendline.BrokenTrendlinePrice = trendlinePrice;
                     trendline.BrokenMarketPrice = lastClosedCandle;
                     trendline.JustBroken = true;
+                    trendline.Persisted = false;
                     if (EnoughSpan(trendline, lastClosedCandle))
                     {
                         LastOpenTrendline = trendline;

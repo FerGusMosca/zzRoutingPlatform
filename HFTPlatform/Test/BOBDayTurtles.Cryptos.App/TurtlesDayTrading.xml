@@ -50,7 +50,9 @@
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
-    <Symbol>ETH</Symbol>
+ 
+    <Symbol>DOGE</Symbol>
+
 
    
 <!--    -->

@@ -318,7 +318,7 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        private void DoUpdate(Trendline updTrendline,Trendline memTrendline,MonBOBTurtlePosition monPos)
+        private void DoUpdate(Trendline updTrendline,Trendline memTrendline,MonBOBTurtlePosition monPos,bool persit=false)
         {
             if (memTrendline != null)
             {
@@ -334,33 +334,42 @@ namespace tph.BOBDayTurtles.LogicLayer
             updTrendline.BrokenTrendlinePrice = 0;
             updTrendline.ToDisabled = false;
             updTrendline.Disabled = true;
-            TrendlineManager.Persist(updTrendline,monPos);
+            
+            if(persit)
+                TrendlineManager.Persist(updTrendline,monPos);
         }
 
         private Trendline UpdateResistance(Trendline updTrendline,MonBOBTurtlePosition monPos)
         {
-            Trendline memTrendline = monPos.Resistances
+            Trendline memPosTrendine = monPos.Resistances
                 .FirstOrDefault(x => DateTime.Compare(x.StartDate, updTrendline.StartDate) == 0
                                      && DateTime.Compare(x.EndDate, updTrendline.EndDate) == 0
                                      && x.TrendlineType == updTrendline.TrendlineType);
 
+            Trendline memCrtrTrendline = TrendLineCreator.FetchResistance(monPos.Security.Symbol, updTrendline);
 
-            DoUpdate(updTrendline, memTrendline, monPos);
 
-            return memTrendline;
+            DoUpdate(updTrendline, memPosTrendine, monPos,true);
+            DoUpdate(updTrendline, memCrtrTrendline, monPos);
+
+            return memPosTrendine;
         }
         
         private Trendline UpdateSupport(Trendline updTrendline,MonBOBTurtlePosition monPos)
         {
-            Trendline memTrendline = monPos.Supports
+            Trendline memPosTrendline = monPos.Supports
                 .FirstOrDefault(x => DateTime.Compare(x.StartDate, updTrendline.StartDate) == 0
                                      && DateTime.Compare(x.EndDate, updTrendline.EndDate) == 0
                                      && x.TrendlineType == updTrendline.TrendlineType);
+            
+            
+            Trendline memCrtrTrendline = TrendLineCreator.FetchSupport(monPos.Security.Symbol, updTrendline);
 
 
-            DoUpdate(updTrendline, memTrendline, monPos);
+            DoUpdate(updTrendline, memPosTrendline, monPos,true);
+            DoUpdate(updTrendline, memCrtrTrendline, monPos);
 
-            return memTrendline;
+            return memPosTrendline;
         }
 
         protected void DoRefreshTrendlines(object param)
@@ -391,11 +400,14 @@ namespace tph.BOBDayTurtles.LogicLayer
                             {
                                 if (updTrendline.TrendlineType==TrendlineType.Resistance)
                                 {
-                                    monPos.Resistances.Add(updTrendline);
+                                    monPos.AppendResistance(updTrendline);
+                                    TrendLineCreator.AppendResistance(updTrendline.Security.Symbol,updTrendline);
+                                    
                                 }
                                 else if(updTrendline.TrendlineType==TrendlineType.Support)
                                 {
-                                    monPos.Supports.Add(updTrendline);
+                                    monPos.AppendSupport(updTrendline);
+                                    TrendLineCreator.AppendSupport(updTrendline.Security.Symbol,updTrendline);
                                 }
 
                                 updTrendline.ManualNew = false;
