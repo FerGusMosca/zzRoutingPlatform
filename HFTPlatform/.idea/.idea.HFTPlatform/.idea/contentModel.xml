@@ -692,6 +692,26 @@
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
         </e>
+        <e p="IntFIgDayTurtles.Cryptos.App" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Binance" t="Include">
+            <e p="incomingBinance.xml" t="Include" />
+            <e p="outgoingOrderRouter.Binance.xml" t="Include" />
+          </e>
+          <e p="Config.xml" t="Include" />
+          <e p="genOrderRouter.xml" t="Include" />
+          <e p="IntFIgDayTurtles.Cryptos.App.csproj" t="IncludeRecursive" />
+          <e p="Mock" t="Include">
+            <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="TurtlesDayTrading.xml" t="Include" />
+        </e>
         <e p="MainAppTest" t="IncludeRecursive">
           <e p="App.Config" t="Include" />
           <e p="Config.xml" t="Include" />

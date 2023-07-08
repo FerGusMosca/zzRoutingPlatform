@@ -1,9 +1,10 @@
-﻿using tph.TrendlineTurtles.BusinessEntities;
+﻿using tph.DayTurtles.BusinessEntities;
+using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.IntFig.DayTurtles.BusinessEntities
 {
-    public class TradIntFigTurtlesPosition:TradingPosition
+    public class TradIntFigTurtlesPosition:TradTrendlineTurtlesPosition
     {
         
         #region Public Attributes

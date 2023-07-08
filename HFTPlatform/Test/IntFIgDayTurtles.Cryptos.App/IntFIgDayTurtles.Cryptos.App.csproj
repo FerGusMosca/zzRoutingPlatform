@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15B610EF-04C9-4CBD-B921-2D252878194E}</ProjectGuid>
+    <ProjectGuid>{D3D6094E-998E-404C-A5DF-0EC9F6F39E80}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BOBDayTurtles.Cryptos.App</RootNamespace>
-    <AssemblyName>BOBDayTurtles.Cryptos.App</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>IntFIgDayTurtles.Cryptos.App</RootNamespace>
+    <AssemblyName>IntFIgDayTurtles.Cryptos.App</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -35,6 +35,9 @@
     <Reference Include="MDFShared, Version=1.10.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\Librerias\MDFShared.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\..\..\Librerias\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -49,8 +52,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Binance\incomingBinance.xml" />
-    <Content Include="Binance\outgoingOrderRouter.Binance.xml" />
+    <Content Include="Binance\incomingBinance.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Binance\outgoingOrderRouter.Binance.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -69,13 +76,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\tph.BOBDayTurtles.LogicLayer\tph.BOBDayTurtles.LogicLayer.csproj">
-      <Project>{247f9bc4-ceb4-46be-8f1e-54616fc692a8}</Project>
-      <Name>tph.BOBDayTurtles.LogicLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\tph.TrendlineTurtles.LogicLayer\tph.TrendlineTurtles.LogicLayer.csproj">
-      <Project>{5b4129ef-e319-437c-a21a-1b3cf03e0fe0}</Project>
-      <Name>tph.TrendlineTurtles.LogicLayer</Name>
+    <ProjectReference Include="..\..\tph.IntFigDayTurtles.LogicLayer\tph.IntFigDayTurtles.LogicLayer.csproj">
+      <Project>{7153bb9f-4971-468f-a534-a8d4ae124de8}</Project>
+      <Name>tph.IntFigDayTurtles.LogicLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.Binance\zHFT.InstructionBasedMarketClient.Binance.csproj">
       <Project>{edc254d7-cbf9-4b08-af29-92a64a2ec5a5}</Project>

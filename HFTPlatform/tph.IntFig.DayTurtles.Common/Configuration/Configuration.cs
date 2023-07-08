@@ -7,12 +7,7 @@ namespace tph.IntFig.DayTurtles.Common.Configuration
     {
         #region Public Attributes
 
-        public int CloseWindow { get; set; }
-        
-        public decimal ProximityToTriggerTrade { get; set; }
-
-        public string ConnectionString { get; set; }
-        
+        public double ProximityPctToTriggerTrade { get; set; }
 
         #endregion
     }
