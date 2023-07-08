@@ -161,11 +161,11 @@ namespace tph.DayTurtles.LogicLayer
             {
                 
                 MarketData lowest = turtlePos.LowestOnWindow(turtlePos.CloseWindow);
-                DoLog(string.Format(
-                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
-                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
-                        lowest != null && lowest.Trade.HasValue ? lowest.Trade.ToString() : "-"),
-                    Constants.MessageType.Information);
+//                DoLog(string.Format(
+//                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
+//                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
+//                        lowest != null && lowest.Trade.HasValue ? lowest.Trade.ToString() : "-"),
+//                    Constants.MessageType.Information);
             }
         }
         

@@ -22,7 +22,7 @@
 
   <ClosingTime>10:50 PM</ClosingTime>
   
-  <ProximityPctToTriggerTrade> 0.5 </ProximityPctToTriggerTrade><!--0.5%-->
+  <ProximityPctToTriggerTrade> 0.25 </ProximityPctToTriggerTrade><!--0.25%-->
 
   <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
 

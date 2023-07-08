@@ -62,6 +62,12 @@ namespace tph.IntFig.DayTurtles.BusinessEntities
             return false;
         }
         
+        public override bool EvalClosingLongPosition()
+        {
+            return IsLowest(CloseWindow) && !LongSignalTriggered();
+            // If we have a long signal triggered , we stay in
+        }
+        
         public override bool ShortSignalTriggered()
         {
             return false;//TODO develop short positions
