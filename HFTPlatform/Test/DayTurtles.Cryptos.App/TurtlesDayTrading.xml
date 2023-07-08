@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<DayTurtlesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - TurtlesDayTrading</Name>
   
   <OpenWindow>5</OpenWindow>
@@ -19,11 +19,7 @@
   <Exchange>BUE</Exchange>
   <SecurityTypes>CC</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <MarketStartTime>11:00 AM</MarketStartTime>
-  <MarketEndTime>11:00 PM</MarketEndTime>
-
   <ClosingTime>10:50 PM</ClosingTime>
-
 
   <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -54,4 +50,4 @@
     
   </StocksToMonitor>
 
-</Configuration>
+</DayTurtlesConfiguration>

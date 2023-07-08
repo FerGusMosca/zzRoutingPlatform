@@ -5,7 +5,7 @@ using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 
-namespace tph.BOBDayTurtles.BusinessEntities
+namespace tph.TrendlineTurtles.BusinessEntities
 {
     public enum TrendlineType
     {

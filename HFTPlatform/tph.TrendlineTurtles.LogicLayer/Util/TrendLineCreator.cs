@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using tph.BOBDayTurtles.BusinessEntities;
-using tph.BOBDayTurtles.Common.Configuration;
-using tph.BOBDayTurtles.Common.Util;
 using tph.DayTurtles.BusinessEntities;
+using tph.TrendlineTurtles.BusinessEntities;
+using tph.TrendlineTurtles.Common.Configuration;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.Enums;
+using zHFT.StrategyHandler.Common.Configuration;
 
-namespace tph.BOBDayTurtles.LogicLayer.Util
+namespace tph.TrendlineTurtles.LogicLayer.Util
 {
     public class TrendLineCreator
     {
@@ -23,7 +24,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
         
         private Security Stock { get; set; }
 
-        private StrategyConfiguration StrategyConfiguration { get; set; }
+        private TrendlineConfiguration StrategyConfiguration { get; set; }
         
         protected CandleInterval CandleInterval{ get; set; }
 
@@ -45,7 +46,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         #region Constructor
 
-        public TrendLineCreator(Security pStock,StrategyConfiguration pConfig,CandleInterval pInterval,
+        public TrendLineCreator(Security pStock,TrendlineConfiguration pConfig,CandleInterval pInterval,
                                 DateTime pMinSafeDateResistances,DateTime pMinSafeDateSupports)
         {
             Stock = pStock;
@@ -70,7 +71,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         }
         
-        public TrendLineCreator(Security pStock, StrategyConfiguration pConfig,CandleInterval pInterval, List <Trendline> supports, List<Trendline> resistances)
+        public TrendLineCreator(Security pStock, TrendlineConfiguration pConfig,CandleInterval pInterval, List <Trendline> supports, List<Trendline> resistances)
         {
             Stock = pStock;
 
@@ -547,7 +548,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
         #region Static Methods
 
 
-        private static void BuildInnerTrendlineCreator(Security sec,Configuration config,DateTime minSafeDate)
+        private static void BuildInnerTrendlineCreator(Security sec,TrendlineConfiguration config,DateTime minSafeDate)
         {
             if(TrdCreatorDict==null)
                 TrdCreatorDict=new Dictionary<string, TrendLineCreator>();
@@ -555,7 +556,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
             if (!TrdCreatorDict.ContainsKey(sec.Symbol))
             {
                 TrendLineCreator trdCreator = new TrendLineCreator(sec,
-                    new StrategyConfiguration()
+                    new TrendlineConfiguration()
                     {
                         PerforationThresholds = config.PerforationThresholds,
                         InnerTrendlinesSpan = config.InnerTrendlinesSpan
@@ -564,7 +565,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
                 TrdCreatorDict.Add(sec.Symbol,trdCreator);
             }
         }
-        public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,Configuration config)
+        public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,TrendlineConfiguration config)
         {
 
             DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
@@ -624,7 +625,7 @@ namespace tph.BOBDayTurtles.LogicLayer.Util
 
         }
         
-        public static List<Trendline> BuildSupports(Security sec, List<MarketData> prices,Configuration config)
+        public static List<Trendline> BuildSupports(Security sec, List<MarketData> prices,TrendlineConfiguration config)
         {
 
             

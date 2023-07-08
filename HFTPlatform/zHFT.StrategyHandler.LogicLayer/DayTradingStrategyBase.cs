@@ -92,6 +92,8 @@ namespace zHFT.StrategyHandler.LogicLayer
         #endregion
 
         #region Protected Abstract Methods
+        
+        public abstract void InitializeManagers(string connStr);
 
         protected abstract void ProcessHistoricalPrices(object pWrapper);
         
@@ -710,6 +712,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                 return CMState.BuildFail(ex);
             }
         }
+
+        
         
         public virtual bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
         {

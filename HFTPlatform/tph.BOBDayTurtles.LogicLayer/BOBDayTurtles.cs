@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading;
 using tph.BOBDayTurtles.BusinessEntities;
 using tph.BOBDayTurtles.Common.Configuration;
-using tph.BOBDayTurtles.Common.Util;
-using tph.BOBDayTurtles.DataAccessLayer;
-using tph.BOBDayTurtles.LogicLayer.Util;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.DataAccessLayer;
+using tph.TrendlineTurtles.BusinessEntities;
+using tph.TrendlineTurtles.DataAccessLayer;
+using tph.TrendlineTurtles.LogicLayer.Util;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Positions;
@@ -24,18 +24,8 @@ using zHFT.StrategyHandler.LogicLayer;
 
 namespace tph.BOBDayTurtles.LogicLayer
 {
-    public class BOBDayTurtles : DayTurtles.LogicLayer.DayTurtles
+    public class BOBDayTurtles : TrendlineTurtles.LogicLayer.TrendlineTurtles
     {
-
-        #region Protected Attributes
-
-        protected List<string> ProcessedHistoricalPrices { get; set; }
-
-        protected BOBTurtlesPortfolioPositionManager BOBTurtlesPortfolioPositionManager { get; set; }
-
-        protected TrendlineManager TrendlineManager { get; set; }
-
-        #endregion
 
         #region Overriden Methods
 
@@ -48,90 +38,6 @@ namespace tph.BOBDayTurtles.LogicLayer
         public Configuration GetConfig()
         {
             return (Configuration) Config;
-        }
-
-        #endregion
-
-        #region Private Methods
-
-        private void BuildTrendlines(string symbol)
-        {
-            MonBOBTurtlePosition portfPos = (MonBOBTurtlePosition) PortfolioPositionsToMonitor[symbol];
-            List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
-            histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
-
-            DoLog(string.Format("Received historical candles for symbol {0}:{1} candles", symbol, histPrices.Count),
-                Constants.MessageType.Information);
-
-            List<Trendline> resistances = TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
-            List<Trendline> supports = TrendLineCreator.BuildSupports(portfPos.Security, histPrices, GetConfig());
-            portfPos.PopulateTrendlines(resistances, supports);
-
-            List<Trendline> activeResistancces = resistances.Where(x => x.BrokenDate == null).ToList();
-            foreach (Trendline resistance in activeResistancces)
-            {
-                DoLog(
-                    string.Format("Found prev resistance for symbol {2} --> Start={0} End={1}", resistance.StartDate,
-                        resistance.EndDate, resistance.Symbol), Constants.MessageType.Information);
-            }
-
-            List<Trendline> activeSupports = supports.Where(x => x.BrokenDate == null).ToList();
-            foreach (Trendline support in activeSupports)
-            {
-                DoLog(
-                    string.Format("Found prev support for symbol {2} --> Start={0} End={1}", support.StartDate,
-                        support.EndDate, support.Symbol), Constants.MessageType.Information);
-            }
-
-            TrendLineCreator.ResetJustFound(portfPos.Security);
-
-            DoLog(string.Format("Trendlines calculated for symbol {0}", symbol), Constants.MessageType.Information);
-
-            ProcessedHistoricalPrices.Add(symbol);
-        }
-
-        protected void RecalculateNewTrendlines(MonBOBTurtlePosition portfPos)
-        {
-            try
-            {
-                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
-                histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
-
-                List<Trendline> newResistances =
-                    TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, portfPos.GetLastCandle());
-
-                List<Trendline> newSupports =
-                    TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, portfPos.GetLastCandle());
-
-                foreach (Trendline newRes in newResistances)
-                {
-                    DoLog(String.Format("Found new resistance for symbol {0}: StartDate={1} EndDate={2} Broken={3}",
-                            newRes.Security.Symbol, newRes.StartDate, newRes.EndDate, newRes.GetBrokenData()),
-                        Constants.MessageType.Information);
-                    portfPos.AppendResistance(newRes);
-
-                }
-
-                foreach (Trendline newSupport in newSupports)
-                {
-                    DoLog(String.Format("Found new support for symbol {0}: StartDate={1} EndDate={2} Broken={3}",
-                            newSupport.Security.Symbol, newSupport.StartDate, newSupport.EndDate,
-                            newSupport.GetBrokenData()),
-                        Constants.MessageType.Information);
-                    portfPos.AppendSupport(newSupport);
-
-                }
-
-                TrendLineCreator.ResetJustFound(portfPos.Security);
-            }
-            catch (Exception e)
-            {
-                DoLog(
-                    string.Format("Critical ERROR recalculating new trendlines for symbol {0}:{1}",
-                        portfPos.Security.Symbol, e.Message), Constants.MessageType.Error);
-            }
-
-
         }
 
         #endregion
@@ -159,80 +65,6 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        protected override async void ProcessHistoricalPrices(object pWrapper)
-        {
-
-            try
-            {
-                lock (tLock)
-                {
-                    HistoricalPricesWrapper historicalPricesWrapper = (HistoricalPricesWrapper) pWrapper;
-
-                    List<Wrapper> mdWrappers = (List<Wrapper>) historicalPricesWrapper.GetField(Fields.NULL);
-
-                    string symbol = null;
-                    foreach (MarketDataWrapper mdWrp in mdWrappers)
-                    {
-                        MarketData md = MarketDataConverter.GetMarketData(mdWrp, GetConfig());
-
-                        if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null)
-                        {
-                            MonBOBTurtlePosition portfPos =
-                                (MonBOBTurtlePosition) PortfolioPositionsToMonitor[md.Security.Symbol];
-                            portfPos.AppendCandle(md);
-                            symbol = md.Security.Symbol;
-                        }
-                    }
-
-                    if (symbol != null)
-                    {
-                        BuildTrendlines(symbol);
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DoLog(string.Format("Critical ERROR processing Trendlines : {0}", e.Message),
-                    Constants.MessageType.Error);
-            }
-        }
-
-        protected override async void ProcessMarketData(object pWrapper)
-        {
-            Wrapper wrapper = (Wrapper) pWrapper;
-            MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
-
-            try
-            {
-                lock (tLock)
-                {
-                    if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null
-                                                                                    && ProcessedHistoricalPrices
-                                                                                        .Contains(md.Security.Symbol))
-                    {
-                        MonBOBTurtlePosition portfPos =
-                            (MonBOBTurtlePosition) PortfolioPositionsToMonitor[md.Security.Symbol];
-                        if (portfPos.HasHistoricalCandles())
-                        {
-                            bool newCandle = portfPos.AppendCandle(md);
-
-                            EvalOpeningClosingPositions(portfPos);
-                            UpdateLastPrice(portfPos, md);
-
-                            if (newCandle) //THIS MUST BE EVALUATED AFTER THE EvalOpening
-                                RecalculateNewTrendlines(portfPos);
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                DoLog(
-                    string.Format("ERROR @DailyTurtles- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
-                    Constants.MessageType.Error);
-            }
-        }
-
         protected override TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
         {
             MonBOBTurtlePosition bobPos = (MonBOBTurtlePosition) portfPos;
@@ -246,19 +78,6 @@ namespace tph.BOBDayTurtles.LogicLayer
                 FeeValuePerTrade = Config.FeeValuePerTrade,
                 OpeningTrendline = bobPos.LastOpenTrendline
             };
-        }
-
-        protected override void DoPersist(TradingPosition trdPos)
-        {
-            if (PortfolioPositionsToMonitor.ContainsKey(trdPos.CurrentPos().Security.Symbol))
-            {
-                lock (tPersistLock)
-                {
-                    TradBOBTurtlesPosition turtlesTradPos = (TradBOBTurtlesPosition) trdPos;
-                    BOBTurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(turtlesTradPos);
-                }
-
-            }
         }
 
         protected override void LoadMonitorsAndRequestMarketData()
@@ -301,183 +120,6 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        private void DoPersist(MonBOBTurtlePosition portfPos, List<Trendline> trendlines)
-        {
-            foreach (Trendline trendline in trendlines)
-            {
-                if (!trendline.BrokenDate.HasValue)
-                    TrendlineManager.Persist(trendline, portfPos);
-                else
-                {
-                    if (!trendline.Persisted)
-                    {
-                        TrendlineManager.Persist(trendline, portfPos);
-                        trendline.Persisted = true;
-                    }
-                }
-            }
-        }
-
-        private void DoUpdate(Trendline updTrendline,Trendline memTrendline,MonBOBTurtlePosition monPos,bool persit=false)
-        {
-            if (memTrendline != null)
-            {
-                memTrendline.BrokenDate = DateTime.Now;
-                memTrendline.Modified = true;
-                memTrendline.BrokenTrendlinePrice = 0;
-
-            }
-            else
-                throw new Exception($"Error locating trendline Id {updTrendline.Id} --> not found in memory!");
-                                
-            updTrendline.BrokenDate=DateTime.Now;
-            updTrendline.BrokenTrendlinePrice = 0;
-            updTrendline.ToDisabled = false;
-            updTrendline.Disabled = true;
-            
-            if(persit)
-                TrendlineManager.Persist(updTrendline,monPos);
-        }
-
-        private Trendline UpdateResistance(Trendline updTrendline,MonBOBTurtlePosition monPos)
-        {
-            Trendline memPosTrendine = monPos.Resistances
-                .FirstOrDefault(x => DateTime.Compare(x.StartDate, updTrendline.StartDate) == 0
-                                     && DateTime.Compare(x.EndDate, updTrendline.EndDate) == 0
-                                     && x.TrendlineType == updTrendline.TrendlineType);
-
-            Trendline memCrtrTrendline = TrendLineCreator.FetchResistance(monPos.Security.Symbol, updTrendline);
-
-
-            DoUpdate(updTrendline, memPosTrendine, monPos,true);
-            DoUpdate(updTrendline, memCrtrTrendline, monPos);
-
-            return memPosTrendine;
-        }
-        
-        private Trendline UpdateSupport(Trendline updTrendline,MonBOBTurtlePosition monPos)
-        {
-            Trendline memPosTrendline = monPos.Supports
-                .FirstOrDefault(x => DateTime.Compare(x.StartDate, updTrendline.StartDate) == 0
-                                     && DateTime.Compare(x.EndDate, updTrendline.EndDate) == 0
-                                     && x.TrendlineType == updTrendline.TrendlineType);
-            
-            
-            Trendline memCrtrTrendline = TrendLineCreator.FetchSupport(monPos.Security.Symbol, updTrendline);
-
-
-            DoUpdate(updTrendline, memPosTrendline, monPos,true);
-            DoUpdate(updTrendline, memCrtrTrendline, monPos);
-
-            return memPosTrendline;
-        }
-
-        protected void DoRefreshTrendlines(object param)
-        {
-            while (true)
-            {
-                try
-                {
-                    List<Trendline> toRefresh =  TrendlineManager.GetTrendlines();
-                    lock (tLock)
-                    {
-                        foreach (Trendline updTrendline in toRefresh)
-                        {
-                            MonBOBTurtlePosition monPos =(MonBOBTurtlePosition) PortfolioPositionsToMonitor[updTrendline.Security.Symbol];
-
-
-                            if (updTrendline.ToDisabled.HasValue && updTrendline.ToDisabled.Value)
-                            {
-                                if (updTrendline.TrendlineType == TrendlineType.Resistance)
-                                    UpdateResistance(updTrendline, monPos);
-                                
-                                if (updTrendline.TrendlineType == TrendlineType.Support)
-                                    UpdateSupport(updTrendline, monPos);
-                            }
-
-
-                            if (updTrendline.ManualNew.HasValue && updTrendline.ManualNew.Value)
-                            {
-                                if (updTrendline.TrendlineType==TrendlineType.Resistance)
-                                {
-                                    monPos.AppendResistance(updTrendline);
-                                    TrendLineCreator.AppendResistance(updTrendline.Security.Symbol,updTrendline);
-                                    
-                                }
-                                else if(updTrendline.TrendlineType==TrendlineType.Support)
-                                {
-                                    monPos.AppendSupport(updTrendline);
-                                    TrendLineCreator.AppendSupport(updTrendline.Security.Symbol,updTrendline);
-                                }
-
-                                updTrendline.ManualNew = false;
-                                TrendlineManager.Persist(updTrendline,monPos);
-
-                            }
-
-                        }
-                    }
-
-                    Thread.Sleep(1000);//1 sec sleep
-                }
-                catch (Exception e)
-                {
-                    DoLog(string.Format("@BOBDayTurtles - Critical ERROR @DoRefreshTrendlines:{0}",e.Message),Constants.MessageType.Error);
-                }
-            }
-            
-        }
-
-        protected void DoPersistTrendlinesThread(object param)
-        {
-            while (true)
-            {
-                try
-                {
-                    lock (tLock)
-                    {
-
-                        foreach (MonBOBTurtlePosition portfPos in PortfolioPositionsToMonitor.Values)
-                        {
-                            DoPersist(portfPos,portfPos.Resistances);
-                            DoPersist(portfPos,portfPos.Supports);
-                        }
-                        
-                    }
-
-                    Thread.Sleep(5000);//5 seconds sleep
-                }
-                catch (Exception e)
-                {
-                    DoLog(string.Format("@BOBDayTurtles - Critical ERROR Persting Trendlines:{0}",e.Message),Constants.MessageType.Error);
-                }
-            }
-            
-        }
-
-        protected void DoRequestHistoricalPricesThread(object param)
-        {
-            try
-            {
-                int i = 1;
-                foreach (string symbol in PortfolioPositionsToMonitor.Keys)
-                {
-                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i,symbol,DateTime.Now.AddMinutes(-1000),null,CandleInterval.Minute_1);
-                    OnMessageRcv(reqWrapper);
-                    i++;
-                }
-            }
-            catch (Exception e)
-            {
-               DoLog(string.Format("@BOBDayTurtles - Critical ERROR Requesting Historical Prices:{0}",e.Message),Constants.MessageType.Error);
-            }
-        }
-        
-        protected override void InitializeManagers()
-        {
-            BOBTurtlesPortfolioPositionManager= new BOBTurtlesPortfolioPositionManager(GetConfig().ConnectionString);
-        }
-        
         #endregion
         
         #region Public Methods
@@ -489,14 +131,14 @@ namespace tph.BOBDayTurtles.LogicLayer
             {
                 ProcessedHistoricalPrices=new List<string>();
 
-                Trendline._SHORT_SOFT_UPWARD_SLOPE = GetConfig().MaxShortPositiveSlope;
-                Trendline._SHORT_SOFT_DOWNARD_SLOPE = GetConfig().MaxShortNegativeSlope;
-                Trendline._LONG_SOFT_UPWARD_SLOPE = GetConfig().MaxLongPositiveSlope;
-                Trendline._LONG_SOFT_DOWNARD_SLOPE = GetConfig().MaxLongNegativeSlope;
-                
+//                Trendline._SHORT_SOFT_UPWARD_SLOPE = GetConfig().MaxShortPositiveSlope;
+//                Trendline._SHORT_SOFT_DOWNARD_SLOPE = GetConfig().MaxShortNegativeSlope;
+//                Trendline._LONG_SOFT_UPWARD_SLOPE = GetConfig().MaxLongPositiveSlope;
+//                Trendline._LONG_SOFT_DOWNARD_SLOPE = GetConfig().MaxLongNegativeSlope;
+
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
                 
-                TrendlineManager= new TrendlineManager(GetConfig().ConnectionString);
+                InitializeManagers(GetConfig().ConnectionString);
 
                 Thread.Sleep(2000);
                 
@@ -508,8 +150,6 @@ namespace tph.BOBDayTurtles.LogicLayer
                 
                 Thread refreshTrendlinesThread = new Thread(new ParameterizedThreadStart(DoRefreshTrendlines));
                 refreshTrendlinesThread.Start();
-                
-                //
                 
                 return true;
 

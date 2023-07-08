@@ -9,6 +9,7 @@
       <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj" />
       <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj" />
       <ProjectReference Include="..\tph.DayTurtles.DataAccessLayer\tph.DayTurtles.DataAccessLayer.csproj" />
+      <ProjectReference Include="..\tph.TrendlineTurtles.Common\tph.TrendlineTurtles.Common.csproj" />
       <ProjectReference Include="..\zHFT.StrategyHandler.LogicLayer\zHFT.StrategyHandler.LogicLayer.csproj" />
     </ItemGroup>
 

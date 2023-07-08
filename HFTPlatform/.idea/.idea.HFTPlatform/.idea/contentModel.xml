@@ -539,7 +539,9 @@
         <e p="Momentum Strategies" t="Include">
           <e p="BOBDayTurtles" t="Include" />
           <e p="DayTurtles" t="Include" />
+          <e p="IntFigDayTurtles" t="Include" />
           <e p="MomentumPortfolios" t="Include" />
+          <e p="TrendlineTurtles" t="Include" />
         </e>
         <e p="Pair Trading" t="Include">
           <e p="RTD Server" t="Include" />
@@ -875,7 +877,6 @@
         </e>
         <e p="tph.BOBDayTurtles.BusinessEntities.csproj" t="IncludeRecursive" />
         <e p="TradBOBTurtlesPosition.cs" t="Include" />
-        <e p="Trendline.cs" t="Include" />
       </e>
       <e p="tph.BOBDayTurtles.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -893,13 +894,11 @@
       </e>
       <e p="tph.BOBDayTurtles.DataAccessLayer" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="BOBTurtlesPortfolioPositionManager.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="tph.BOBDayTurtles.DataAccessLayer.csproj" t="IncludeRecursive" />
-        <e p="TrendlineManager.cs" t="Include" />
       </e>
       <e p="tph.BOBDayTurtles.LogicLayer" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -909,9 +908,6 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="tph.BOBDayTurtles.LogicLayer.csproj" t="IncludeRecursive" />
-        <e p="Util" t="Include">
-          <e p="TrendLineCreator.cs" t="Include" />
-        </e>
       </e>
       <e p="tph.DayTurtles.BusinessEntities" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -929,7 +925,7 @@
       <e p="tph.DayTurtles.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Configuration" t="Include">
-          <e p="Configuration.cs" t="Include" />
+          <e p="DayTurtlesConfiguration.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -990,6 +986,46 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="tph.InstructionBasedMarketClientv2.IB.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.IntFig.DayTurtles.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MonIntFigTurtlePosition.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.IntFig.DayTurtles.BusinessEntities.csproj" t="IncludeRecursive" />
+        <e p="TradIntFigTurtlesPosition.cs" t="Include" />
+      </e>
+      <e p="tph.IntFig.DayTurtles.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.IntFig.DayTurtles.Common.csproj" t="IncludeRecursive" />
+        <e p="Util" t="Include" />
+      </e>
+      <e p="tph.IntFigDayTurtles.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.IntFigDayTurtles.DataAccessLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.IntFigDayTurtles.LogicLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="IntFigDayTurtles.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.IntFigDayTurtles.LogicLayer.csproj" t="IncludeRecursive" />
       </e>
       <e p="tph.MarketClient.IB.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -1202,6 +1238,50 @@
         <e p="tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer.csproj" t="IncludeRecursive" />
         <e p="WebSocketBaseServer.cs" t="Include" />
         <e p="WebSocketServer.cs" t="Include" />
+      </e>
+      <e p="tph.TrendlineTurtles.BusinessEntities" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MonTrendlineTurtlesPosition.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.TrendlineTurtles.BusinessEntities.csproj" t="IncludeRecursive" />
+        <e p="TradTrendlineTurtlesPosition.cs" t="Include" />
+        <e p="Trendline.cs" t="Include" />
+      </e>
+      <e p="tph.TrendlineTurtles.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="TrendlineConfiguration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.TrendlineTurtles.Common.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.TrendlineTurtles.DataAccessLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.TrendlineTurtles.DataAccessLayer.csproj" t="IncludeRecursive" />
+        <e p="TrendlineManager.cs" t="Include" />
+        <e p="TrendlineTurtlesPortfolioPositionManager.cs" t="Include" />
+      </e>
+      <e p="tph.TrendlineTurtles.LogicLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.TrendlineTurtles.LogicLayer.csproj" t="IncludeRecursive" />
+        <e p="TrendlineTurtles.cs" t="Include" />
+        <e p="Util" t="Include">
+          <e p="TrendLineCreator.cs" t="Include" />
+        </e>
       </e>
       <e p="UtilModules" t="Include">
         <e p="Brokers" t="Include">

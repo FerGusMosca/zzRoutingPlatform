@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using tph.BOBDayTurtles.BusinessEntities;
+using tph.DayTurtles.BusinessEntities;
+using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 
-namespace tph.BOBDayTurtles.DataAccessLayer
+namespace tph.TrendlineTurtles.DataAccessLayer
 {
     public class TrendlineManager
     {
@@ -139,7 +140,7 @@ namespace tph.BOBDayTurtles.DataAccessLayer
         }
         
         
-        public void Persist(Trendline trendline,MonBOBTurtlePosition monPortfpPos)
+        public void Persist(Trendline trendline,MonTurtlePosition monPortfpPos)
         {
 
             SqlConnection Conn = null;

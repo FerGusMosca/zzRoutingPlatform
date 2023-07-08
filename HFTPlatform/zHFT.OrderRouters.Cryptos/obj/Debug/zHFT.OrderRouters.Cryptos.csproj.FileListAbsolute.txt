@@ -56,7 +56,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\bin\Debug\zHFT.OrderRouters.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.csprojAssemblyReference.cache
@@ -85,3 +84,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Cryptos\obj\Debug\zHFT.OrderRouters.Cryptos.csproj.AssemblyReference.cache

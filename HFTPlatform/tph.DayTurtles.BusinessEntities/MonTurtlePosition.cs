@@ -210,6 +210,39 @@ namespace tph.DayTurtles.BusinessEntities
         {
             return IsHighest(CloseWindow);
         }
+        
+        
+        public virtual List<MarketData> GetHistoricalPrices()
+        {
+            List<MarketData> histPrices = new List<MarketData>(Candles.Values);
+            return histPrices.OrderBy(x => x.MDEntryDate).ToList();
+        }
+        
+        public virtual MarketData GetLastFinishedCandle()
+        {
+            return Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).ToArray()[1];
+        }
+        
+        public virtual MarketData GetLastCandle()
+        {
+            return Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
+        }
+        
+        public virtual bool HasHistoricalCandles()
+        {
+            return Candles.Keys.Count > 0;
+        }
+        
+        public virtual DateTime GetLastCandleDate()
+        {
+            MarketData lastCandle = GetLastCandle();
+
+            if (lastCandle != null && lastCandle.MDEntryDate.HasValue)
+                return lastCandle.MDEntryDate.Value;
+            else
+                return DateTime.Now;
+        }
+
 
         public virtual bool EvalStopLossHit(TradTurtlesPosition tradPos)
         {

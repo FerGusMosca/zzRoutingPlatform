@@ -6,6 +6,7 @@ using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
 using tph.DayTurtles.Common.Util;
 using tph.DayTurtles.DataAccessLayer;
+using tph.TrendlineTurtles.Common.Configuration;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
@@ -33,24 +34,21 @@ namespace tph.DayTurtles.LogicLayer
 
         public override  void  DoLoadConfig(string configFile, List<string> noValFlds)
         {
-            Config = ConfigLoader.GetConfiguration<Configuration>(this, configFile, noValFlds);
+            Config = ConfigLoader.GetConfiguration<DayTurtlesConfiguration>(this, configFile, noValFlds);
         }
 
-        public virtual Configuration GetConfig()
+        public virtual TrendlineConfiguration GetConfig()
         {
-            return (Configuration) Config;
+            return (TrendlineConfiguration) Config;
         }
         
         
 
         #endregion
         
+        
         #region Public Methods
 
-        protected virtual void InitializeManagers()
-        {
-            TurtlesPortfolioPositionManager= new TurtlesPortfolioPositionManager(GetConfig().ConnectionString);
-        }
 
         protected void EvalOpeningPosition(MonTurtlePosition turtlePos)
         {
@@ -86,11 +84,11 @@ namespace tph.DayTurtles.LogicLayer
             else
             {
                 MarketData highest = turtlePos.HighestOnWindow(turtlePos.OpenWindow);
-                DoLog(string.Format(
-                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
-                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
-                        highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
-                    Constants.MessageType.Information);
+//                DoLog(string.Format(
+//                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
+//                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
+//                        highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
+//                    Constants.MessageType.Information);
             }
         }
         
@@ -232,6 +230,11 @@ namespace tph.DayTurtles.LogicLayer
             };
         }
 
+        public override void InitializeManagers(string connStr)
+        {
+            TurtlesPortfolioPositionManager = new TurtlesPortfolioPositionManager(connStr);
+        }
+
         protected override void ProcessHistoricalPrices(object pWrapper)
         {
             //We don't need them
@@ -345,7 +348,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
-                InitializeManagers();
+                InitializeManagers(GetConfig().ConnectionString);
                 
                 return true;
 

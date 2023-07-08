@@ -21,11 +21,7 @@
   <Exchange>BUE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <MarketStartTime>11:00 AM</MarketStartTime>
-  <MarketEndTime>11:00 PM</MarketEndTime>
-
   <ClosingTime>10:50 PM</ClosingTime>
-
 
   <OrderRouter>zHFT.OrderRouters.Router.SoftMarketOrderRouter, zHFT.OrderRouters</OrderRouter>
 

@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using tph.BOBDayTurtles.BusinessEntities;
+using tph.DayTurtles.BusinessEntities;
+using tph.TrendlineTurtles.BusinessEntities;
 
-namespace tph.BOBDayTurtles.DataAccessLayer
+
+namespace tph.TrendlineTurtles.DataAccessLayer
 {
-      public class BOBTurtlesPortfolioPositionManager
+      public class TrendlineTurtlesPortfolioPositionManager
     {
         #region Protected Attributes
 
@@ -15,7 +17,7 @@ namespace tph.BOBDayTurtles.DataAccessLayer
 
         #region Constructor
 
-        public BOBTurtlesPortfolioPositionManager(string adoConnectionString)
+        public TrendlineTurtlesPortfolioPositionManager(string adoConnectionString)
         {
             ADOConnectionString = adoConnectionString;
         }
@@ -24,7 +26,7 @@ namespace tph.BOBDayTurtles.DataAccessLayer
         
         #region Public Methods
 
-        public void PersistPortfolioPositionTrade(TradBOBTurtlesPosition pos)
+        public void PersistPortfolioPositionTrade(TradTrendlineTurtlesPosition pos)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {

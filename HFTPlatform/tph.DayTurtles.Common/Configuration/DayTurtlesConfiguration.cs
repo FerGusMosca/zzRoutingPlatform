@@ -2,7 +2,7 @@
 
 namespace tph.DayTurtles.Common.Configuration
 {
-    public class Configuration:BaseStrategyConfiguration
+    public class DayTurtlesConfiguration:BaseStrategyConfiguration
     {
         #region Public Attributes
         
