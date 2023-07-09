@@ -24,7 +24,8 @@ namespace tph.TrendlineTurtles.BusinessEntities
         #region Constructors
         public MonTrendlineTurtlesPosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct, string candleRefPrice) : base(openWindow, closeWindow, stopLossForOpenPositionPct, candleRefPrice)
         {
-            
+            Supports=new List<Trendline>();
+            Resistances=new List<Trendline>();
         }
         
         #endregion
@@ -37,6 +38,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
             supports.ForEach(x=>Supports.Add(x));
         }
 
+      
         public void AppendSupport(Trendline support)
         {
             if (!Supports.Any(x =>

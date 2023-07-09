@@ -9,6 +9,7 @@ using tph.TrendlineTurtles.LogicLayer.Util;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
@@ -52,7 +53,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                             EvalOpeningClosingPositions(portfPos);
                             UpdateLastPrice(portfPos, md);
 
-                            if (newCandle) //THIS MUST BE EVALUATED AFTER THE EvalOpening
+                            if (newCandle && GetConfig().RecalculateTrendlines) //THIS MUST BE EVALUATED AFTER THE EvalOpening
                                 RecalculateNewTrendlines(portfPos);
                         }
                     }
@@ -68,7 +69,6 @@ namespace tph.TrendlineTurtles.LogicLayer
         
         protected override async void ProcessHistoricalPrices(object pWrapper)
         {
-
             try
             {
                 lock (tLock)
@@ -91,7 +91,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                         }
                     }
 
-                    if (symbol != null)
+                    if (symbol != null && GetConfig().RecalculateTrendlines)
                     {
                         BuildTrendlines(symbol);
                     }
@@ -107,13 +107,15 @@ namespace tph.TrendlineTurtles.LogicLayer
         protected void BuildTrendlines(string symbol)
         {
             MonTrendlineTurtlesPosition portfPos = (MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[symbol];
+            
             List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
             histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
 
             DoLog(string.Format("Received historical candles for symbol {0}:{1} candles", symbol, histPrices.Count),
                 Constants.MessageType.Information);
 
-            List<Trendline> resistances = TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
+            List<Trendline> resistances =
+                TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
             List<Trendline> supports = TrendLineCreator.BuildSupports(portfPos.Security, histPrices, GetConfig());
             portfPos.PopulateTrendlines(resistances, supports);
 
@@ -121,7 +123,8 @@ namespace tph.TrendlineTurtles.LogicLayer
             foreach (Trendline resistance in activeResistancces)
             {
                 DoLog(
-                    string.Format("Found prev resistance for symbol {2} --> Start={0} End={1}", resistance.StartDate,
+                    string.Format("Found prev resistance for symbol {2} --> Start={0} End={1}",
+                        resistance.StartDate,
                         resistance.EndDate, resistance.Symbol), Constants.MessageType.Information);
             }
 
@@ -138,6 +141,25 @@ namespace tph.TrendlineTurtles.LogicLayer
             DoLog(string.Format("Trendlines calculated for symbol {0}", symbol), Constants.MessageType.Information);
 
             ProcessedHistoricalPrices.Add(symbol);
+       
+        }
+
+        public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
+        {
+            bool init= base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
+
+            if (init)
+            {
+                foreach (var monPosition in PortfolioPositionsToMonitor.Values)
+                {
+                    TrendLineCreator.InitializeCreator(monPosition.Security, GetConfig(),
+                        DateTime.Now.AddMinutes(-1000));
+                    DoLog($"Portfolio Position for symbol {monPosition.Security.Symbol} successfully initialized",
+                        Constants.MessageType.Information);
+                }
+            }
+
+            return init;
         }
 
         protected void RecalculateNewTrendlines(MonTrendlineTurtlesPosition portfPos)
@@ -279,6 +301,13 @@ namespace tph.TrendlineTurtles.LogicLayer
                     {
                         foreach (Trendline updTrendline in toRefresh)
                         {
+                            if (!TrendLineCreator.SymbolInitialized(updTrendline.Symbol))
+                            {
+                                DoLog($"WARNING - Waiting for symbo. {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
+                                continue;
+                            }
+                            
+
                             MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[updTrendline.Security.Symbol];
 
 

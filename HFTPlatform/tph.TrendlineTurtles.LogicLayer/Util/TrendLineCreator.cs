@@ -547,31 +547,27 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         
         #region Static Methods
 
-
-        private static void BuildInnerTrendlineCreator(Security sec,TrendlineConfiguration config,DateTime minSafeDate)
+        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate)
         {
             if(TrdCreatorDict==null)
                 TrdCreatorDict=new Dictionary<string, TrendLineCreator>();
             
-            if (!TrdCreatorDict.ContainsKey(sec.Symbol))
-            {
-                TrendLineCreator trdCreator = new TrendLineCreator(sec,
-                    new TrendlineConfiguration()
-                    {
-                        PerforationThresholds = config.PerforationThresholds,
-                        InnerTrendlinesSpan = config.InnerTrendlinesSpan
-                    }, CandleInterval.Minute_1,minSafeDate,minSafeDate);
+            
+            TrendLineCreator trdCreator = new TrendLineCreator(sec,
+                new TrendlineConfiguration()
+                {
+                    PerforationThresholds = config.PerforationThresholds,
+                    InnerTrendlinesSpan = config.InnerTrendlinesSpan
+                }, CandleInterval.Minute_1,minSafeDate,minSafeDate);
                 
-                TrdCreatorDict.Add(sec.Symbol,trdCreator);
-            }
+            TrdCreatorDict.Add(sec.Symbol,trdCreator);
         }
+
         public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,TrendlineConfiguration config)
         {
 
             DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
             DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
-
-            BuildInnerTrendlineCreator(sec, config, minDate);
 
             List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
                                         prices, true, minDate,
@@ -633,8 +629,6 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
             DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
             
-            BuildInnerTrendlineCreator(sec,config,minDate);
-
             List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
                 prices, true, minDate, maxDate,
                 false, null);
@@ -644,17 +638,23 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             return trendlines;
 
         }
+        
+        public static bool SymbolInitialized(string symbol)
+        {
+            return TrdCreatorDict.ContainsKey(symbol);
+        }
+
 
         public static void AppendSupport(string symbol, Trendline trendline)
         {
-            
-            TrdCreatorDict[symbol].SupportTrendlines.Add(trendline);
+            if(TrdCreatorDict.ContainsKey(symbol))
+                TrdCreatorDict[symbol].SupportTrendlines.Add(trendline);
         }
         
         public static void AppendResistance(string symbol, Trendline trendline)
         {
-            
-            TrdCreatorDict[symbol].ResistanceTrendlines.Add(trendline);
+            if(TrdCreatorDict.ContainsKey(symbol))
+                TrdCreatorDict[symbol].ResistanceTrendlines.Add(trendline);
         }
 
         public static Trendline FetchResistance(string symbol, Trendline refTrendline)

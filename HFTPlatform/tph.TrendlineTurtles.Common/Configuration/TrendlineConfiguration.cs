@@ -25,6 +25,8 @@ namespace tph.TrendlineTurtles.Common.Configuration
         public double MaxShortPositiveSlope { get; set; }
         
         public double MaxShortNegativeSlope { get; set; }
+        
+        public bool RecalculateTrendlines { get; set; }
 
         #endregion
     }

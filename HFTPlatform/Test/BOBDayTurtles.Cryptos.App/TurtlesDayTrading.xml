@@ -42,6 +42,8 @@
   
   <OnlyLong>false</OnlyLong>
 
+  <RecalculateTrendlines>false</RecalculateTrendlines>
+
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
   

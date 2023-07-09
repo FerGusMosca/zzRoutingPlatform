@@ -34,6 +34,8 @@
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
   
+  <RecalculateTrendlines>false</RecalculateTrendlines>
+  
   <OnlyLong>false</OnlyLong>
 
   <SaveEvery>HOUR</SaveEvery>
