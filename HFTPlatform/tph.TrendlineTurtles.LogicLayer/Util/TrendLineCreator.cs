@@ -337,7 +337,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             }
         }
 
-        protected void EvalBrokenTrendlines(MarketData price,List<Trendline> trendlines, List<MarketData> allHistoricalPrices, bool downside)
+  
+        public void EvalBrokenTrendlines(MarketData price,List<Trendline> trendlines, List<MarketData> allHistoricalPrices, bool downside)
         {
             
             foreach (Trendline trendline in trendlines.Where(x=>   !x.IsBroken(price.MDEntryDate)
@@ -356,6 +357,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                         trendline.BrokenTrendlinePrice=trendline.CalculateTrendPrice(price.MDEntryDate.Value,allHistoricalPrices);
                         trendline.BrokenMarketPrice=price;    
                         trendline.Modified = true;
+                        trendline.JustBroken = true;
+                        trendline.Persisted = false;
                     }
                 }
             }
@@ -546,6 +549,19 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         }
         
         #region Static Methods
+        
+        public static void EvalBrokenTrendlines(MonTrendlineTurtlesPosition portfPos,MarketData price)
+        {
+            if (TrdCreatorDict.ContainsKey(portfPos.Security.Symbol))
+            {
+                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
+                histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
+                
+                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrendlines(price,portfPos.Supports,histPrices,true);
+                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrendlines(price,portfPos.Resistances,histPrices,false);
+            }
+        }
+
 
         public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate)
         {

@@ -55,6 +55,9 @@ namespace tph.TrendlineTurtles.LogicLayer
 
                             if (newCandle && GetConfig().RecalculateTrendlines) //THIS MUST BE EVALUATED AFTER THE EvalOpening
                                 RecalculateNewTrendlines(portfPos);
+                            else
+                                EvalBrokenTrendlines(portfPos, md);
+                            
                         }
                     }
                 }
@@ -91,7 +94,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                         }
                     }
 
-                    if (symbol != null && GetConfig().RecalculateTrendlines)
+                    if (symbol != null )
                     {
                         BuildTrendlines(symbol);
                     }
@@ -111,34 +114,38 @@ namespace tph.TrendlineTurtles.LogicLayer
             List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
             histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
 
-            DoLog(string.Format("Received historical candles for symbol {0}:{1} candles", symbol, histPrices.Count),
-                Constants.MessageType.Information);
-
-            List<Trendline> resistances =
-                TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
-            List<Trendline> supports = TrendLineCreator.BuildSupports(portfPos.Security, histPrices, GetConfig());
-            portfPos.PopulateTrendlines(resistances, supports);
-
-            List<Trendline> activeResistancces = resistances.Where(x => x.BrokenDate == null).ToList();
-            foreach (Trendline resistance in activeResistancces)
+            if (GetConfig().RecalculateTrendlines)
             {
-                DoLog(
-                    string.Format("Found prev resistance for symbol {2} --> Start={0} End={1}",
-                        resistance.StartDate,
-                        resistance.EndDate, resistance.Symbol), Constants.MessageType.Information);
+
+                DoLog(string.Format("Received historical candles for symbol {0}:{1} candles", symbol, histPrices.Count),
+                    Constants.MessageType.Information);
+
+                List<Trendline> resistances =
+                    TrendLineCreator.BuildResistances(portfPos.Security, histPrices, GetConfig());
+                List<Trendline> supports = TrendLineCreator.BuildSupports(portfPos.Security, histPrices, GetConfig());
+                portfPos.PopulateTrendlines(resistances, supports);
+
+                List<Trendline> activeResistancces = resistances.Where(x => x.BrokenDate == null).ToList();
+                foreach (Trendline resistance in activeResistancces)
+                {
+                    DoLog(
+                        string.Format("Found prev resistance for symbol {2} --> Start={0} End={1}",
+                            resistance.StartDate,
+                            resistance.EndDate, resistance.Symbol), Constants.MessageType.Information);
+                }
+
+                List<Trendline> activeSupports = supports.Where(x => x.BrokenDate == null).ToList();
+                foreach (Trendline support in activeSupports)
+                {
+                    DoLog(
+                        string.Format("Found prev support for symbol {2} --> Start={0} End={1}", support.StartDate,
+                            support.EndDate, support.Symbol), Constants.MessageType.Information);
+                }
+
+                TrendLineCreator.ResetJustFound(portfPos.Security);
+
+                DoLog(string.Format("Trendlines calculated for symbol {0}", symbol), Constants.MessageType.Information);
             }
-
-            List<Trendline> activeSupports = supports.Where(x => x.BrokenDate == null).ToList();
-            foreach (Trendline support in activeSupports)
-            {
-                DoLog(
-                    string.Format("Found prev support for symbol {2} --> Start={0} End={1}", support.StartDate,
-                        support.EndDate, support.Symbol), Constants.MessageType.Information);
-            }
-
-            TrendLineCreator.ResetJustFound(portfPos.Security);
-
-            DoLog(string.Format("Trendlines calculated for symbol {0}", symbol), Constants.MessageType.Information);
 
             ProcessedHistoricalPrices.Add(symbol);
        
@@ -160,6 +167,12 @@ namespace tph.TrendlineTurtles.LogicLayer
             }
 
             return init;
+        }
+
+        protected void EvalBrokenTrendlines(MonTrendlineTurtlesPosition portfPos,MarketData price)
+        {
+            TrendLineCreator.EvalBrokenTrendlines(portfPos,price);
+            
         }
 
         protected void RecalculateNewTrendlines(MonTrendlineTurtlesPosition portfPos)
