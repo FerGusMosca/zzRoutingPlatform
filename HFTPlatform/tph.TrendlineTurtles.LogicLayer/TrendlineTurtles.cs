@@ -387,7 +387,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                 }
                 catch (Exception e)
                 {
-                    DoLog(string.Format("@BOBDayTurtles - Critical ERROR Persting Trendlines:{0}",e.Message),Constants.MessageType.Error);
+                    DoLog(string.Format("@BOBDayTurtles - Critical ERROR Persisting Trendlines:{0}",e.Message),Constants.MessageType.Error);
                 }
             }
             
