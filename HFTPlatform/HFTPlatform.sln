@@ -717,6 +717,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.TrendlineTurtles.Common
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntFIgDayTurtles.Cryptos.App", "Test\IntFIgDayTurtles.Cryptos.App\IntFIgDayTurtles.Cryptos.App.csproj", "{D3D6094E-998E-404C-A5DF-0EC9F6F39E80}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SuicideTest", "SuicideTest", "{17AF453E-D992-48A1-93E4-E8583CC9A559}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuicideTest", "Test\SuicideTest\SuicideTest.csproj", "{7D57763C-DF7E-4407-B2B1-3D379575514D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1695,6 +1699,10 @@ Global
 		{D3D6094E-998E-404C-A5DF-0EC9F6F39E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3D6094E-998E-404C-A5DF-0EC9F6F39E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3D6094E-998E-404C-A5DF-0EC9F6F39E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D57763C-DF7E-4407-B2B1-3D379575514D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D57763C-DF7E-4407-B2B1-3D379575514D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D57763C-DF7E-4407-B2B1-3D379575514D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D57763C-DF7E-4407-B2B1-3D379575514D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2046,6 +2054,8 @@ Global
 		{E4E58669-A221-4701-8B60-61D2F2E4BA61} = {5586466E-6D66-4973-A912-75A9836AC7C8}
 		{8DD493CB-4798-4334-ACC4-305D8E938D9A} = {5586466E-6D66-4973-A912-75A9836AC7C8}
 		{D3D6094E-998E-404C-A5DF-0EC9F6F39E80} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
+		{17AF453E-D992-48A1-93E4-E8583CC9A559} = {2C3F2109-D784-416C-B155-CCD8B8996338}
+		{7D57763C-DF7E-4407-B2B1-3D379575514D} = {17AF453E-D992-48A1-93E4-E8583CC9A559}
 	EndGlobalSection
 	GlobalSection(Performance) = preSolution
 		HasPerformanceSessions = true

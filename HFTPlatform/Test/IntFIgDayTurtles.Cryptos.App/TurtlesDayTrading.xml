@@ -47,6 +47,10 @@
     <Symbol>DOGE</Symbol>
     <Symbol>ADA</Symbol>
     <Symbol>XRP</Symbol>
+    <Symbol>SOL</Symbol>
+    <Symbol>LTC</Symbol>
+    <Symbol>MATIC</Symbol>
+    <Symbol>BCH</Symbol>
   </StocksToMonitor>
 
 </Configuration>
