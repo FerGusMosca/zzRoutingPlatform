@@ -54,8 +54,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\bin\Debug\zHFT.Main.DataAccess.dll.config
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\obj\Debug\zHFT.BidAskArbitrage.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\obj\Debug\zHFT.BidAskArbitrage.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\obj\Debug\zHFT.BidAskArbitrage.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\obj\Debug\zHFT.BidAskArbitrage.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\obj\Debug\zHFT.BidAskArbitrage.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.BidAskArbitrage\obj\Debug\zHFT.BidAskArbitrage.csproj.AssemblyReference.cache

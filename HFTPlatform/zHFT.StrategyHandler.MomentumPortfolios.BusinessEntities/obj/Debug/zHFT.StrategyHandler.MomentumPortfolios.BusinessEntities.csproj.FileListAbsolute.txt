@@ -67,7 +67,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.dll
@@ -98,3 +97,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj.AssemblyReference.cache

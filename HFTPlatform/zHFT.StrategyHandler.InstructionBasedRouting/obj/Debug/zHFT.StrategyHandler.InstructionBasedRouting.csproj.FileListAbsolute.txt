@@ -233,7 +233,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.Main.DataAccess.dll.config
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.DataAccess.dll.config
@@ -298,3 +297,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.csproj.AssemblyReference.cache

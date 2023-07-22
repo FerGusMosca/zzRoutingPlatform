@@ -57,7 +57,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\bin\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.dll
@@ -83,3 +82,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SingleStockBuyer.Common\obj\Debug\zHFT.StrategyHandler.SingleStockBuyer.Common.csproj.AssemblyReference.cache

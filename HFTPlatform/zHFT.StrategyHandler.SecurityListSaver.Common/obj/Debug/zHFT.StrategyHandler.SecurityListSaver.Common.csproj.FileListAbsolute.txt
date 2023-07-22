@@ -66,7 +66,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\bin\Debug\zHFT.Main.BusinessEntities.dll
@@ -84,3 +83,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Common\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.csproj.AssemblyReference.cache

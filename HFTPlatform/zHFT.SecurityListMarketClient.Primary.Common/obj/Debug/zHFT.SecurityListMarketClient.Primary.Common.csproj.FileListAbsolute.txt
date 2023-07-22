@@ -74,7 +74,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\obj\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\obj\Debug\zHFT.SecurityListMarketClient.Primary.Common.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\bin\Debug\MDFShared.dll
@@ -96,3 +95,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\obj\Debug\zHFT.SecurityListMarketClient.Primary.Common.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\obj\Debug\zHFT.SecurityListMarketClient.Primary.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\obj\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SecurityListMarketClient.Primary.Common\obj\Debug\zHFT.SecurityListMarketClient.Primary.Common.csproj.AssemblyReference.cache

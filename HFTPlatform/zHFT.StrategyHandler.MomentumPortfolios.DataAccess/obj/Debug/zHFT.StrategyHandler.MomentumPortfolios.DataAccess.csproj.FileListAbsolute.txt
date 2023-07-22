@@ -26,7 +26,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\bin\Debug\EntityFramework.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
@@ -41,3 +40,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj.AssemblyReference.cache

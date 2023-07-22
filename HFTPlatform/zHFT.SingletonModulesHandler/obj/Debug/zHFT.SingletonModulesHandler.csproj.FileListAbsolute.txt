@@ -40,7 +40,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\bin\Debug\zHFT.SingletonModulesHandler.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.dll
@@ -66,3 +65,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.SingletonModulesHandler\obj\Debug\zHFT.SingletonModulesHandler.csproj.AssemblyReference.cache

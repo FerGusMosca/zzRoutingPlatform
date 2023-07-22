@@ -26,4 +26,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OptionsContractSaver.DataAccess\obj\Debug\zHFT.StrategyHandler.OptionsContractSaver.DataAccess.csproj.AssemblyReference.cache

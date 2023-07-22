@@ -60,8 +60,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.CoinApi.DataAccessLayer.csproj.AssemblyReference.cache

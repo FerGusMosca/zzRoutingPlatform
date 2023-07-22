@@ -38,7 +38,7 @@
   
   <StocksToMonitor>
 
-    <Symbol>BTC</Symbol>
+	<!--<Symbol>BTC</Symbol>-->
     <Symbol>ETH</Symbol>
 <!--    <Symbol>DOGE</Symbol>-->
 <!--    <Symbol>BNB</Symbol>-->

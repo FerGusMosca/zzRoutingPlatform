@@ -92,7 +92,6 @@ C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.Mo
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.pdb
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\zHFT.MarketClient.Common.dll
 C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.pdb
@@ -178,3 +177,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MomentumPortfolios\obj\Debug\zHFT.StrategyHandler.MomentumPortfolios.csproj.AssemblyReference.cache

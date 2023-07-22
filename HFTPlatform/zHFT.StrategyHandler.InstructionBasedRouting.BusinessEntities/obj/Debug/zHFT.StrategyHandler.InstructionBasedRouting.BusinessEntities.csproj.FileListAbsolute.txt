@@ -85,7 +85,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\bin\Debug\Newtonsoft.Json.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.dll
@@ -105,3 +104,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlat
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities\obj\Debug\zHFT.StrategyHandler.InstructionBasedRouting.BusinessEntities.csproj.AssemblyReference.cache

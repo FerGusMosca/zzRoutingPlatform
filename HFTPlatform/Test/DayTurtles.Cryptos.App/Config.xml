@@ -6,7 +6,12 @@
   <IncomingConfigPath>.\Binance\incomingBinance.xml</IncomingConfigPath>
   <IncomingModule>zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance</IncomingModule>
 
-  <OutgoingModule>tph.DayTurtles.LogicLayer.DayTurtles,tph.DayTurtles.LogicLayer</OutgoingModule>
-  <OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>
-  <LogToConsole>true</LogToConsole>
+	<!-- <OutgoingModule>tph.DayTurtles.LogicLayer.DayTurtles,tph.DayTurtles.LogicLayer</OutgoingModule>-->
+	<!-- <OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>-->
+	
+	
+	<OutgoingModule>tph.StrategyHanders.TestStrategies.TestModule.TestStrategy,tph.StrategyHanders.TestStrategies.TestModule</OutgoingModule>
+	<OutgoingConfigPath>.\TestStrategyConfig.xml</OutgoingConfigPath>
+	
+	<LogToConsole>true</LogToConsole>
 </Configuration>

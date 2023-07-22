@@ -31,8 +31,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.DAL.csproj.AssemblyReference.cache

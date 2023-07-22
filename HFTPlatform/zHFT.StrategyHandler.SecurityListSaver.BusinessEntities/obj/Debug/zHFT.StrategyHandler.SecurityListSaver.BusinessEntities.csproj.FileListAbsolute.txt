@@ -42,7 +42,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\quickfix_net_messages.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
@@ -66,3 +65,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.BusinessEntities.csproj.AssemblyReference.cache

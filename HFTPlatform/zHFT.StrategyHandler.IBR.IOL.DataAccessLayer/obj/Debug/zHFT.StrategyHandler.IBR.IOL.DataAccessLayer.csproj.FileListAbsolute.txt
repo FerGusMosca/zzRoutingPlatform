@@ -85,7 +85,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.dll
@@ -122,3 +121,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.IOL.DataAccessLayer.csproj.AssemblyReference.cache

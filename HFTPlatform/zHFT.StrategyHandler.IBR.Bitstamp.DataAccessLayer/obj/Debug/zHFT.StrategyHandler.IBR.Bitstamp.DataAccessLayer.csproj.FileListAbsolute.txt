@@ -61,8 +61,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.InstructionBasedRouting.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\bin\Debug\zHFT.StrategyHandler.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\bin\Debug\zHFT.MarketClient.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer\obj\Debug\zHFT.StrategyHandler.IBR.Bitstamp.DataAccessLayer.csproj.AssemblyReference.cache

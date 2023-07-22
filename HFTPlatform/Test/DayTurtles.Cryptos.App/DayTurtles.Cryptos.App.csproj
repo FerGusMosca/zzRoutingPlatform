@@ -7,7 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Bittrex\outgoingOrderRouter.Bittrex.xml" />
+      <None Remove="TestStrategyConfig.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\..\tph.DayTurtles.LogicLayer\tph.DayTurtles.LogicLayer.csproj" />
+      <ProjectReference Include="..\..\tph.OrderRouter.Bittrex\tph.OrderRouter.Bittrex.csproj" />
+      <ProjectReference Include="..\..\tph.StrategyHanders.TestStrategies.TestModule\tph.StrategyHanders.TestStrategies.TestModule.csproj" />
       <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.Binance\zHFT.InstructionBasedMarketClient.Binance.csproj" />
       <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
       <ProjectReference Include="..\..\zHFT.Main\zHFT.Main.csproj" />
@@ -34,6 +41,9 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         <SubType>Designer</SubType>
       </Content>
+      <Content Include="Bittrex\outgoingOrderRouter.Bittrex.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
       <Content Include="Config.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
@@ -42,6 +52,10 @@
       </Content>
       <Content Include="Mock\outgoingOrderRouter.Mock.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="TestStrategyConfig.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <SubType>Designer</SubType>
       </Content>
       <Content Include="TurtlesDayTrading.xml">
         <SubType>Designer</SubType>

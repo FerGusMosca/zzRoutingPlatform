@@ -56,7 +56,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\zHFT.Main.DataAccessLayer.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\zHFT.Main.DataAccess.dll.config
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.dll
@@ -65,3 +64,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\Newtonsoft.Json.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\zHFT.StrategyHandler.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\bin\Debug\zHFT.StrategyHandler.BusinessEntities.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.OrderImbSimpleCalculalator\obj\Debug\zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj.AssemblyReference.cache

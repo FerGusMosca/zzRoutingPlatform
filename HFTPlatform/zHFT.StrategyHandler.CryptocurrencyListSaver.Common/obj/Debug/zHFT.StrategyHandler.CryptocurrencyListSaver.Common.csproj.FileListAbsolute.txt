@@ -42,8 +42,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CryptocurrencyListSaver.Common\obj\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.csproj.AssemblyReference.cache

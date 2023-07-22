@@ -63,8 +63,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\bin\Debug\zHFT.OrderImbSimpleCalculator.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\bin\Debug\zHFT.Main.DataAccess.dll.config
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.PairTradingDemo\obj\Debug\zHFT.StrategyHandler.PairTradingDemo.csproj.AssemblyReference.cache

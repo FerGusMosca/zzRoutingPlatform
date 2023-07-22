@@ -12,3 +12,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.csproj.CoreCompileInputs.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.Bittrex.BusinessEntities\obj\Debug\zHFT.OrderRouters.Bittrex.BusinessEntities.csproj.AssemblyReference.cache

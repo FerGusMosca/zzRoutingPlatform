@@ -7,3 +7,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CryptoCompare.Common\obj\Debug\zHFT.StrategyHandler.CLS.CryptoCompare.Common.csproj.AssemblyReference.cache

@@ -37,9 +37,9 @@ namespace tph.DayTurtles.LogicLayer
             Config = ConfigLoader.GetConfiguration<DayTurtlesConfiguration>(this, configFile, noValFlds);
         }
 
-        public virtual TrendlineConfiguration GetConfig()
+        public virtual DayTurtlesConfiguration GetConfig()
         {
-            return (TrendlineConfiguration) Config;
+            return (DayTurtlesConfiguration) Config;
         }
         
         

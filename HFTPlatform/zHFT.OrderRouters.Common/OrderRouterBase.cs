@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
@@ -21,7 +22,7 @@ namespace zHFT.OrderRouters.Common
 
         protected OnMessageReceived OnMessageRcv { get; set; }
 
-        protected IConfiguration Config { get; set; }
+        protected BaseConfiguration Config { get; set; }
 
         #endregion
 

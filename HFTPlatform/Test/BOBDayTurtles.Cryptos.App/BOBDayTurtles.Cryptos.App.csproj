@@ -49,8 +49,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Binance\incomingBinance.xml" />
-    <Content Include="Binance\outgoingOrderRouter.Binance.xml" />
+    <Content Include="Binance\incomingBinance.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Binance\outgoingOrderRouter.Binance.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Bittrex\outgoingOrderRouter.Bittrex.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -72,6 +79,10 @@
     <ProjectReference Include="..\..\tph.BOBDayTurtles.LogicLayer\tph.BOBDayTurtles.LogicLayer.csproj">
       <Project>{247f9bc4-ceb4-46be-8f1e-54616fc692a8}</Project>
       <Name>tph.BOBDayTurtles.LogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\tph.OrderRouter.Bittrex\tph.OrderRouter.Bittrex.csproj">
+      <Project>{ea854ca2-5893-4e29-b47e-88c71917b6fb}</Project>
+      <Name>tph.OrderRouter.Bittrex</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\tph.TrendlineTurtles.LogicLayer\tph.TrendlineTurtles.LogicLayer.csproj">
       <Project>{5b4129ef-e319-437c-a21a-1b3cf03e0fe0}</Project>
@@ -98,6 +109,7 @@
       <Name>zHFT.OrderRouters</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.

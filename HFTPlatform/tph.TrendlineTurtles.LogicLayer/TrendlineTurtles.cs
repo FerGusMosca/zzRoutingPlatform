@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using tph.DayTurtles.BusinessEntities;
 using tph.TrendlineTurtles.BusinessEntities;
+using tph.TrendlineTurtles.Common.Configuration;
 using tph.TrendlineTurtles.DataAccessLayer;
 using tph.TrendlineTurtles.LogicLayer.Util;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
@@ -27,11 +28,16 @@ namespace tph.TrendlineTurtles.LogicLayer
         protected List<string> ProcessedHistoricalPrices { get; set; }
         
         protected TrendlineTurtlesPortfolioPositionManager TrendlineTurtlesPortfolioPositionManager { get; set; }
-        
+
         #endregion
-     
+
         #region Protected Methods
-        
+
+        public  TrendlineConfiguration GetConfig()
+        {
+            return (TrendlineConfiguration)Config;
+        }
+
         protected override async void ProcessMarketData(object pWrapper)
         {
             Wrapper wrapper = (Wrapper) pWrapper;

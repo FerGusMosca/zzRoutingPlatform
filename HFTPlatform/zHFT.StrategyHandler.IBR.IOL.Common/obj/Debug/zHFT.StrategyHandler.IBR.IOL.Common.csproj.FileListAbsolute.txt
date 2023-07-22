@@ -17,4 +17,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.csproj.CoreCompileInputs.cache
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.csprojAssemblyReference.cache
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.IBR.IOL.Common\obj\Debug\zHFT.StrategyHandler.IBR.IOL.Common.csproj.AssemblyReference.cache

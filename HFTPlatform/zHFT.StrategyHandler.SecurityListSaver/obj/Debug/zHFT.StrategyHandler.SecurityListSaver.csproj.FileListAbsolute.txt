@@ -169,8 +169,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.DataAccess.dll.config
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\bin\Debug\zHFT.Main.DataAccess.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\bin\Debug\zHFT.Main.DataAccess.dll.config
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.csproj.AssemblyReference.cache

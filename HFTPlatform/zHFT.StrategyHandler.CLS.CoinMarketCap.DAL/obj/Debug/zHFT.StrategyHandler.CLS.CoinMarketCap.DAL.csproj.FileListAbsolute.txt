@@ -25,8 +25,8 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.StrategyHandler.CryptocurrencyListSaver.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\bin\Debug\zHFT.Main.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL\obj\Debug\zHFT.StrategyHandler.CLS.CoinMarketCap.DAL.csproj.AssemblyReference.cache

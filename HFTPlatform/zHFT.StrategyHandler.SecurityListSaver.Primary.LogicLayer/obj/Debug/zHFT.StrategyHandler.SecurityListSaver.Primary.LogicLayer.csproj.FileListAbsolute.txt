@@ -70,7 +70,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\bin\Debug\zHFT.StrategyHandler.SecurityListSaver.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.dll
@@ -96,3 +95,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer\obj\Debug\zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.csproj.AssemblyReference.cache

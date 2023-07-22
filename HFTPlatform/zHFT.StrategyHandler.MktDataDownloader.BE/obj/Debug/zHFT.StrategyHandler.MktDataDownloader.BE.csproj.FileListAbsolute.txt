@@ -7,3 +7,4 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.BE\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.BE\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.dll
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.BE\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.StrategyHandler.MktDataDownloader.BE\obj\Debug\zHFT.StrategyHandler.MktDataDownloader.BE.csproj.AssemblyReference.cache

@@ -52,7 +52,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.MarketClient.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.MarketClient.Primary.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\bin\Debug\zHFT.SecurityListMarketClient.Primary.Common.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.dll
@@ -82,3 +81,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.MessageBasedFullMarketConnectivity.Primary.Common\obj\Debug\zHFT.MessageBasedFullMarketConnectivity.Primary.Common.csproj.AssemblyReference.cache
