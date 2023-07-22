@@ -14,12 +14,14 @@ using tph.OrderRouter.Bittrex.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.OrderRouters.Bittrex.Common.Configuration;
 using zHFT.OrderRouters.Bittrex.DataAccessLayer.Managers;
 using zHFT.OrderRouters.Cryptos;
 using zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities;
 using static zHFT.Main.Common.Util.Constants;
+using TimeInForce = Bittrex.Net.Enums.TimeInForce;
 
 namespace tph.OrderRouter.Bittrex
 {
@@ -54,9 +56,10 @@ namespace tph.OrderRouter.Bittrex
                         if (ActiveOrders.ContainsKey(clOrdId))
                         {
                             Order order = ActiveOrders[clOrdId];
-                            DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Qty Filled={data.Data.Delta.QuantityFilled}", MessageType.Information);
+                            DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled}", MessageType.Information);
                             wrapper = new ExecutionReportWrapper(order, data.Data);
                             order.CumQty = data.Data.Delta.QuantityFilled;
+                            order.OrderId = data.Data.Delta.Id;
                         }
                         else
                             DoLog($"WARNING - Could not find an order in memory for  ClOrdId {clOrdId}", MessageType.Information);
@@ -97,11 +100,13 @@ namespace tph.OrderRouter.Bittrex
                 throw new Exception($"Could not create an order without a qty for Symbol {symbol} at Bittrex Order Router");
 
             decimal price = 0;
-
             if (order.Price.HasValue)
                 price = Convert.ToDecimal(order.Price.Value);
             else
                 throw new Exception($"Could not create an order without a price for symbol {symbol}. Orders must be limit orders at Bittrex");
+
+            //TODO DBG
+            price = 1810;
 
             lock (ActiveOrders)
             {
@@ -209,7 +214,32 @@ namespace tph.OrderRouter.Bittrex
 
         protected override CMState CancelOrder(zHFT.Main.Common.Wrappers.Wrapper wrapper)
         {
-            throw new NotImplementedException();
+            string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
+            try
+            {
+                //New order id
+                string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+               
+                lock (ActiveOrders)
+                {
+                    
+                    if (ActiveOrders.ContainsKey(origClOrderId)  )
+                    {
+                        Order order = ActiveOrders[origClOrderId];
+                        RunCancelOrder(order, false);
+                    }
+                    else
+                        throw new Exception($"Could not find an internal ClOrdId for OrigClOrdId {origClOrderId}");
+                }
+               
+                return CMState.BuildSuccess();
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error cancelling order {1}!:{2}", BittrexConfiguration.Name, origClOrderId, ex.Message), MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
         }
 
         protected override void DoLoadConfig(string configFile, List<string> noValueFields)
@@ -256,15 +286,21 @@ namespace tph.OrderRouter.Bittrex
                 return CMState.BuildFail(ex);
             }
         }
-
-        protected override bool RunCancelOrder(Order order, bool update)
+   
+        protected override zHFT.Main.Common.DTO.CMState UpdateOrder(zHFT.Main.Common.Wrappers.Wrapper wrapper)
         {
             throw new NotImplementedException();
         }
 
-        protected override zHFT.Main.Common.DTO.CMState UpdateOrder(zHFT.Main.Common.Wrappers.Wrapper wrapper)
+        protected override bool RunCancelOrder(Order order, bool update)
         {
-            throw new NotImplementedException();
+            if (order.OrderId != null)
+            {
+                BittrexRestClient.SpotApi.Trading.CancelOrderAsync(order.OrderId);
+                return true;
+            }
+            else
+                return false;
         }
 
         #endregion

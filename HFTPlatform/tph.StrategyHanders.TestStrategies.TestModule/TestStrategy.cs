@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Positions;
@@ -83,9 +84,15 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
             //pos.Security.MarketData = new MarketData() { Currency = pos.Security.Currency };
             pos.LoadPosId(NextPosId);
+            NextPosId++;
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
 
             CMState state = OrderRouter.ProcessMessage(posWrapper);
+
+            Thread.Sleep(12000);//2 seconds
+
+            CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(pos, Config);
+            CMState state2 = OrderRouter.ProcessMessage(cxlWrapper);
 
         }
 

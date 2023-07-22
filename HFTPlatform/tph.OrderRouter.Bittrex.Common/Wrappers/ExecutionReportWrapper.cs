@@ -166,6 +166,7 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
                 return QuantityType.CURRENCY;
             else if (xrField == ExecutionReportFields.PriceType)
                 return PriceType.FixedAmount;
+
             else
                 return ExecutionReportFields.NULL;
         }
