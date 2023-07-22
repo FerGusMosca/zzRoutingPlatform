@@ -1,7 +1,10 @@
-﻿using Bittrex.Net.Clients;
+﻿using Bittrex.Data;
+using Bittrex.Net.Clients;
 using Bittrex.Net.Enums;
+using Bittrex.Net.Objects.Models;
 using Bittrex.Net.Objects.Models.Socket;
 using CryptoExchange.Net.Authentication;
+using CryptoExchange.Net.Objects;
 using CryptoExchange.Net.Sockets;
 using System;
 using System.Collections.Generic;
@@ -105,9 +108,6 @@ namespace tph.OrderRouter.Bittrex
             else
                 throw new Exception($"Could not create an order without a price for symbol {symbol}. Orders must be limit orders at Bittrex");
 
-            //TODO DBG
-            price = 1810;
-
             lock (ActiveOrders)
             {
                 ActiveOrders.Add(order.ClOrdId, order);
@@ -124,7 +124,7 @@ namespace tph.OrderRouter.Bittrex
             DoLog($"@{BittrexConfiguration.Name}:New {side} order Order sent to market for symbol {symbol} for qty {ordQty} and price {price}", MessageType.Information);
         }
 
-        protected void EvalRouteError(Order order, Exception ex)
+        private void EvalRouteError(Order order, Exception ex)
         {
             DoLog($"Error routing order for symbol {order.Security.Symbol}: {ex.Message}", MessageType.Error);
 
@@ -147,6 +147,37 @@ namespace tph.OrderRouter.Bittrex
 
             //ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, ordResp);
             //OnMessageRcv(wrapper);
+        }
+
+        private BittrexOrder FetchOrder(Order order)
+        {
+
+            if (order.OrderId != null)
+            {
+
+                WebCallResult<BittrexOrder> orderResp = BittrexRestClient.SpotApi.Trading.GetOrderAsync(order.OrderId).Result;
+
+                if (orderResp.Success)
+                {
+                    BittrexOrder resp = null;
+                    Error error = null;
+                    orderResp.GetResultOrError(out resp, out error);
+
+                    if (error != null)
+                        throw new Exception(error.Message);
+
+                    if (resp != null)
+                        return resp;
+                    else
+                        throw new Exception($"Could not find order for {order.OrderId}");
+                }
+                else
+                    throw new Exception(orderResp.Error != null ? orderResp.Error.Message : "Unknown error");
+
+            }
+            else
+                throw new Exception($"Cannot fetch an order that has not been yet accepted in the market!");
+
         }
 
         #endregion
@@ -289,7 +320,75 @@ namespace tph.OrderRouter.Bittrex
    
         protected override zHFT.Main.Common.DTO.CMState UpdateOrder(zHFT.Main.Common.Wrappers.Wrapper wrapper)
         {
-            throw new NotImplementedException();
+            string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
+
+            string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
+            try
+            {
+
+                if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
+                    throw new Exception("Could not find OrigClOrdID for order updated");
+
+                if (wrapper.GetField(OrderFields.ClOrdID) == null)
+                    throw new Exception("Could not find ClOrdId for new order");
+
+                lock (ActiveOrders)
+                {
+                        
+                    if (ActiveOrders.ContainsKey(origClOrderId))
+                    {
+                        Order order = ActiveOrders[origClOrderId];
+
+                        if (order != null)
+                        {
+                            if (order.OrderId == null)
+                                throw new Exception($"The client order id {origClOrderId} has not been accepted on the exchange and cannot be updated ");
+
+                            //Fetch Order --> w/rest client
+                            BittrexOrder ordResp = FetchOrder(order);
+
+                            //Cancel the order
+                            RunCancelOrder(order, true);
+
+                            Thread.Sleep(100);
+
+                            //Damos el alta
+                            double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+                            order.Price = newPrice;
+                            order.ClOrdId = clOrderId;
+                            decimal lvsQty = 0;
+
+                            if (ordResp.Quantity.HasValue)
+                                lvsQty = ordResp.Quantity.Value - ordResp.QuantityFilled;
+                            else
+                                throw new Exception($"Could not find the market order quantity to replace!");
+
+                            order.OrderQty = Convert.ToDouble(lvsQty);//Nos aseguramos de solo rutear la nueva cantidad
+                            try
+                            {
+                                RunNewOrder(order, true);
+                            }
+                            catch (Exception ex)
+                            {
+                                if (ActiveOrders.ContainsKey(order.OrderId))
+                                    ActiveOrders.Remove(order.OrderId);
+                                EvalRouteError(order, ex);
+                            }
+                        }
+                    }
+                    else
+                        throw new Exception(string.Format("Could not find an active order to cancel (and then update) for Client Order Id {0}", origClOrderId));
+
+                  
+                }
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("@{0}:Error updating order {1}!:{2}", BittrexConfiguration.Name, origClOrderId, ex.Message), MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
         }
 
         protected override bool RunCancelOrder(Order order, bool update)

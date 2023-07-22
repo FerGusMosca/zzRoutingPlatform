@@ -89,10 +89,10 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
             CMState state = OrderRouter.ProcessMessage(posWrapper);
 
-            Thread.Sleep(12000);//2 seconds
+            //Thread.Sleep(12000);//2 seconds
 
-            CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(pos, Config);
-            CMState state2 = OrderRouter.ProcessMessage(cxlWrapper);
+            //CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(pos, Config);
+            //CMState state2 = OrderRouter.ProcessMessage(cxlWrapper);
 
         }
 
