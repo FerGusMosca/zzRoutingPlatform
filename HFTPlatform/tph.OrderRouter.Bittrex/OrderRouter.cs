@@ -1,6 +1,8 @@
 ﻿using Bittrex.Net.Clients;
 using Bittrex.Net.Enums;
+using Bittrex.Net.Objects.Models.Socket;
 using CryptoExchange.Net.Authentication;
+using CryptoExchange.Net.Sockets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +10,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.OrderRouter.Bittrex.Common;
+using tph.OrderRouter.Bittrex.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.OrderRouters.Bittrex.Common.Configuration;
-using zHFT.OrderRouters.Bittrex.Common.Wrappers;
 using zHFT.OrderRouters.Bittrex.DataAccessLayer.Managers;
 using zHFT.OrderRouters.Cryptos;
 using zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities;
@@ -32,12 +34,58 @@ namespace tph.OrderRouter.Bittrex
 
         protected BittrexRestClient BittrexRestClient { get; set; }
 
+        protected BittrexSocketClient BittrexSocketClient { get; set; }
+
         #endregion
 
         #region Private Methods
 
+        private void UpdateExecutionReport(DataEvent<BittrexOrderUpdate> data)
+        {
+            try 
+            {
+                ExecutionReportWrapper wrapper = null;
+                lock (ActiveOrders)
+                {
+                    if (OrderIdMappers.ContainsKey(data.Data.Delta.ClientOrderId))
+                    {
+                        string clOrdId = OrderIdMappers[data.Data.Delta.ClientOrderId];
+
+                        if (ActiveOrders.ContainsKey(clOrdId))
+                        {
+                            Order order = ActiveOrders[clOrdId];
+                            DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Qty Filled={data.Data.Delta.QuantityFilled}", MessageType.Information);
+                            wrapper = new ExecutionReportWrapper(order, data.Data);
+                            order.CumQty = data.Data.Delta.QuantityFilled;
+                        }
+                        else
+                            DoLog($"WARNING - Could not find an order in memory for  ClOrdId {clOrdId}", MessageType.Information);
+                    }
+                    else
+                        DoLog($"WARNING - Could not find an order in memory for internal ClOrdId {data.Data.Delta.ClientOrderId}", MessageType.Information);
+                }
+
+                if(wrapper!=null)
+                    OnMessageRcv(wrapper);
+
+            }
+            catch(Exception ex)
+            {
+                DoLog($"@{BittrexConfiguration.Name}- ERROR Processing execution report: {ex.Message}",MessageType.Error);
+            }
+        }
+
+        private void SubscribeExecutionReports()
+        {
+            BittrexSocketClient.SpotApi.SubscribeToOrderUpdatesAsync(data =>
+            {
+                UpdateExecutionReport(data);
+            });
+        }
+
         private void RunNewOrder(Order order, bool update)
         {
+            string internalClOdId = Guid.NewGuid().ToString();
             string symbol = $"{order.Symbol}-{order.Currency}";
             DoLog($"@{BittrexConfiguration.Name}:Creating order Order for symbol {symbol}", MessageType.Information);
             zHFT.Main.Common.Enums.Side side = order.Side;
@@ -55,12 +103,19 @@ namespace tph.OrderRouter.Bittrex
             else
                 throw new Exception($"Could not create an order without a price for symbol {symbol}. Orders must be limit orders at Bittrex");
 
+            lock (ActiveOrders)
+            {
+                ActiveOrders.Add(order.ClOrdId, order);
+                OrderIdMappers.Add(internalClOdId, order.ClOrdId);
+            }
+
             BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
                                                                OrderConverter.ConvertSide(side), 
                                                                OrderType.Limit,
                                                                TimeInForce.GoodTillCanceled, 
                                                                ordQty, 
-                                                               price);
+                                                               price,
+                                                               clientOrderId: internalClOdId);
             DoLog($"@{BittrexConfiguration.Name}:New {side} order Order sent to market for symbol {symbol} for qty {ordQty} and price {price}", MessageType.Information);
         }
 
@@ -128,6 +183,14 @@ namespace tph.OrderRouter.Bittrex
                         options.ApiCredentials = new ApiCredentials(BittrexConfiguration.ApiKey, BittrexConfiguration.Secret);
                         options.RequestTimeout = TimeSpan.FromSeconds(60);
                     });
+
+                    BittrexSocketClient = new BittrexSocketClient(options =>
+                    {
+                        options.ApiCredentials = new ApiCredentials(BittrexConfiguration.ApiKey, BittrexConfiguration.Secret);
+                        options.RequestTimeout = TimeSpan.FromSeconds(60);
+                    });
+
+                    SubscribeExecutionReports();
 
                     return true;
                 }

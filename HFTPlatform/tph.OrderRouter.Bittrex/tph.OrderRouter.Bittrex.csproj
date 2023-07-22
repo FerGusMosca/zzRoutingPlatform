@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bittrex, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Bittrex.Net, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\Librerias\Bittrex.NET 8\Bittrex.Net.dll</HintPath>
     </Reference>
