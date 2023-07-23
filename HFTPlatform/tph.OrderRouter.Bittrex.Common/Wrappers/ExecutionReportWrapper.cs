@@ -20,9 +20,10 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
 
         #region Constructors
 
-        public ExecutionReportWrapper(Order pOrder, BittrexOrderUpdate pBittrexOrderUpdate) {
+        public ExecutionReportWrapper(Order pOrder, BittrexOrderUpdate pBittrexOrderUpdate,bool isReplacement) {
             Order = pOrder;
             BittrexOrderUpdate = pBittrexOrderUpdate;
+            IsReplacement = isReplacement;
         }
 
         #endregion
@@ -32,6 +33,9 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
         protected Order Order { get; set; } 
 
         protected BittrexOrderUpdate BittrexOrderUpdate { get; set; }
+        
+
+        protected bool IsReplacement { get; set; }
 
         #endregion
 
@@ -56,7 +60,16 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
                     if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
                         return ExecType.Trade;
                     else
-                        return ExecType.Canceled;
+                    {
+                        if (IsReplacement)
+                        {
+                            return ExecType.Replaced;
+                        }
+                        else
+                        {
+                            return ExecType.Canceled;
+                        }
+                    }
                 }
             }
             else
@@ -84,7 +97,16 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
                     if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
                         return OrdStatus.Filled;
                     else
-                        return OrdStatus.Canceled;
+                    {
+                        if (IsReplacement)
+                        {
+                            return OrdStatus.Replaced;
+                        }
+                        else
+                        {
+                            return OrdStatus.Canceled;
+                        }
+                    }
                 }
             }
             else

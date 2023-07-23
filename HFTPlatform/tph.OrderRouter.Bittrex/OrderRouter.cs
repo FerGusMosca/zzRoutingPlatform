@@ -41,6 +41,8 @@ namespace tph.OrderRouter.Bittrex
 
         protected BittrexSocketClient BittrexSocketClient { get; set; }
 
+        protected Dictionary<string, Order> PendingReplacements { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -58,9 +60,11 @@ namespace tph.OrderRouter.Bittrex
 
                         if (ActiveOrders.ContainsKey(clOrdId))
                         {
+                            bool isRepl = PendingReplacements.ContainsKey(clOrdId);
+
                             Order order = ActiveOrders[clOrdId];
                             DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled}", MessageType.Information);
-                            wrapper = new ExecutionReportWrapper(order, data.Data);
+                            wrapper = new ExecutionReportWrapper(order, data.Data, isRepl);
                             order.CumQty = data.Data.Delta.QuantityFilled;
                             order.OrderId = data.Data.Delta.Id;
                         }
@@ -197,7 +201,8 @@ namespace tph.OrderRouter.Bittrex
 
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
-                    
+                    PendingReplacements = new Dictionary<string, Order>();
+
                     AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.ConfigConnectionString);
 
                     OrderIdMappers = new Dictionary<string, string>();
@@ -349,6 +354,8 @@ namespace tph.OrderRouter.Bittrex
 
                             //Cancel the order
                             RunCancelOrder(order, true);
+
+                            PendingReplacements.Add(origClOrderId, order);
 
                             Thread.Sleep(100);
 

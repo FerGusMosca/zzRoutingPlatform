@@ -266,6 +266,8 @@ namespace zHFT.OrderRouters.Bittrex
             double ordQty = order.OrderQty.Value;
             double price = order.Price.Value;
 
+            
+
             EvalReverse(ref symbol, ref ordQty, ref side, price, exchange, ctx);
 
             if (side == Side.Buy)

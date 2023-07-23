@@ -67,7 +67,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             OnMessageRcv(wrapper);
         }
 
-        private void RouteNewTestOrder()
+        private void RouteNewBuyTestOrder()
         {
 
             Position pos = new Position()
@@ -78,6 +78,35 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 NewPosition = true,
                 CashQty = 100,
                 QuantityType = QuantityType.CURRENCY,
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = null,
+            };
+
+            //pos.Security.MarketData = new MarketData() { Currency = pos.Security.Currency };
+            pos.LoadPosId(NextPosId);
+            NextPosId++;
+            PositionWrapper posWrapper = new PositionWrapper(pos, Config);
+
+            CMState state = OrderRouter.ProcessMessage(posWrapper);
+
+            //Thread.Sleep(12000);//2 seconds
+
+            //CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(pos, Config);
+            //CMState state2 = OrderRouter.ProcessMessage(cxlWrapper);
+
+        }
+
+        private void RouteNewSellTestOrder()
+        {
+
+            Position pos = new Position()
+            {
+                Security = GetSecurity(),
+                Side = Side.Sell,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                Qty = 0.01397,
+                QuantityType = QuantityType.SHARES,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = null,
             };
@@ -136,7 +165,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 MarketDataRequestCounter = 1;
                 InitializeModules(pOnLogMsg);
                 RequestMarketData();
-                RouteNewTestOrder();
+                //RouteNewBuyTestOrder();
+                RouteNewSellTestOrder();
                 return true;
 
             }
@@ -152,7 +182,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             {
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
-                    //DoLog("Processing Market Data:" + wrapper.ToString(), MessageType.Information);
+                    DoLog("Processing Market Data:" + wrapper.ToString(), MessageType.Information);
                     OrderRouter.ProcessMessage(wrapper);
                     return CMState.BuildSuccess();
                 }
