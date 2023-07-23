@@ -63,8 +63,9 @@ namespace tph.OrderRouter.Bittrex
                             bool isRepl = PendingReplacements.ContainsKey(clOrdId);
 
                             Order order = ActiveOrders[clOrdId];
-                            DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled}", MessageType.Information);
                             wrapper = new ExecutionReportWrapper(order, data.Data, isRepl);
+                            OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
+                            DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={status} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
                             order.CumQty = data.Data.Delta.QuantityFilled;
                             order.OrderId = data.Data.Delta.Id;
                         }
@@ -369,6 +370,11 @@ namespace tph.OrderRouter.Bittrex
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
             try
             {
+
+                if (PendingReplacements.ContainsKey(origClOrderId))
+                {
+                    return CMState.BuildSuccess();
+                }
 
                 if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
                     throw new Exception("Could not find OrigClOrdID for order updated");

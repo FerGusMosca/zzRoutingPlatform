@@ -688,7 +688,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             {
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
-                    DoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
+                    //SDoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
                     ProcessMarketData(wrapper);
                     return CMState.BuildSuccess();
                 }

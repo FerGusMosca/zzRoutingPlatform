@@ -91,8 +91,9 @@ namespace zHFT.OrderRouters.Router
                         order.OrderQty = pos.LeavesQty;
                     else if (pos.IsMonetaryQuantity())
                     {
-                        double qty = Math.Floor(pos.CashQty.Value / order.Price.Value);
-                        order.OrderQty = qty - pos.CumQty; //Lo que hay que comprar menos lo ya comprado
+                        order.OrderQty = pos.LeavesQty;
+                        //double qty = Math.Floor(pos.CashQty.Value / order.Price.Value);
+                        //order.OrderQty = qty - pos.CumQty; //Lo que hay que comprar menos lo ya comprado
                     }
                     else
                         throw new Exception("Could not process position quantity type: " + pos.QuantityType.ToString());
@@ -105,7 +106,8 @@ namespace zHFT.OrderRouters.Router
                     }
                     else
                     {
-                        DoLog(string.Format("@Order Router: Cancelling order for symbol {0} (PosId={1})", pos.Symbol,pos.PosId), Main.Common.Util.Constants.MessageType.Information);
+                        DoLog($"<DBG> CashQty={pos.CashQty} Price={order.Price.Value}", Constants.MessageType.Information);
+                        DoLog(string.Format("<DBG>@Order Router: Cancelling order for symbol {0} (PosId={1})", pos.Symbol,pos.PosId), Main.Common.Util.Constants.MessageType.Information);
                         CancelOrderWrapper wrapper = new CancelOrderWrapper(order, Config);
                         OrderProxy.ProcessMessage(wrapper);
                     }
