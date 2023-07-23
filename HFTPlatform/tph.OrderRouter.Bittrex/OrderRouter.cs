@@ -93,6 +93,19 @@ namespace tph.OrderRouter.Bittrex
             });
         }
 
+
+        //TODO DBG
+        private decimal UpdatePrice(Side side,decimal price)
+        {
+            //if (side == Side.Buy)
+            //    return price - 10;
+            //else
+            //    return price + 10;
+
+            return price;
+        
+        }
+
         private void RunNewOrder(Order order, bool update)
         {
             string internalClOdId = Guid.NewGuid().ToString();
@@ -117,6 +130,8 @@ namespace tph.OrderRouter.Bittrex
                 ActiveOrders.Add(order.ClOrdId, order);
                 OrderIdMappers.Add(internalClOdId, order.ClOrdId);
             }
+
+            price = UpdatePrice(side, price);
 
             BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
                                                                OrderConverter.ConvertSide(side), 
@@ -182,6 +197,30 @@ namespace tph.OrderRouter.Bittrex
             else
                 throw new Exception($"Cannot fetch an order that has not been yet accepted in the market!");
 
+        }
+
+        private void WaitUntilCancelled(Order order)
+        {
+            bool canneled = false;
+            int i = 0;
+
+            while (!canneled)
+            {
+
+                if (i > 100)//10 segs
+                    throw new Exception($"CRITICAL ERROR! COULD NOT CANEL ORDER {order.OrderId} FOR SYMBOL {order.Security.Symbol} AFTER TIMEOUT!");
+
+                BittrexOrder execRep = FetchOrder(order);
+
+                if(execRep.Status== OrderStatus.Closed)
+                {
+                    canneled = true;
+                }
+                i++;
+                Thread.Sleep(100);
+
+            }
+        
         }
 
         #endregion
@@ -354,6 +393,8 @@ namespace tph.OrderRouter.Bittrex
 
                             //Cancel the order
                             RunCancelOrder(order, true);
+
+                            WaitUntilCancelled(order);
 
                             PendingReplacements.Add(origClOrderId, order);
 

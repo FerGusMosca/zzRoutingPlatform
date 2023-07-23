@@ -45,8 +45,8 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
         {
             if (BittrexOrderUpdate.Delta.Status == OrderStatus.Open)
             {
-                if (BittrexOrderUpdate.Delta.QuantityFilled == 0)
-                    return ExecType.New;
+                if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
+                    return ExecType.Trade;
                 else
                     return ExecType.Trade;
 
@@ -64,10 +64,17 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
                         if (IsReplacement)
                         {
                             return ExecType.Replaced;
+
                         }
                         else
                         {
-                            return ExecType.Canceled;
+
+                            if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
+                                return ExecType.Trade;
+                            else
+                            {
+                                return ExecType.Canceled;
+                            }
                         }
                     }
                 }
@@ -82,10 +89,10 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
 
             if (BittrexOrderUpdate.Delta.Status == OrderStatus.Open)
             {
-                if (BittrexOrderUpdate.Delta.QuantityFilled == 0)
-                    return OrdStatus.New;
-                else
+                if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
                     return OrdStatus.PartiallyFilled;
+                else
+                    return OrdStatus.New;
 
             }
             else if (BittrexOrderUpdate.Delta.Status == OrderStatus.Closed)
@@ -94,13 +101,20 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
                     return OrdStatus.Rejected;
                 else
                 {
-                    if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
-                        return OrdStatus.Filled;
-                    else
+
+                    if (IsReplacement)
                     {
-                        if (IsReplacement)
+                        return OrdStatus.Replaced;
+
+                    }
+                    else {
+
+                        if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
                         {
-                            return OrdStatus.Replaced;
+                            if(BittrexOrderUpdate.Delta.Quantity> BittrexOrderUpdate.Delta.QuantityFilled )
+                                return OrdStatus.PartiallyFilled;
+                            else
+                                return OrdStatus.Filled;
                         }
                         else
                         {

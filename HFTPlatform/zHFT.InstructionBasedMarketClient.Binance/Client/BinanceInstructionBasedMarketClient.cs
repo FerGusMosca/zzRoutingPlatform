@@ -82,24 +82,40 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
         }
 
-        protected Security DoPopulateL1(string symbol,string quoteSymbol, List<OrderBookOffer> bids,List<OrderBookOffer> asks)
+        protected void DoPopulateTopOfBook(Security sec, List<OrderBookOffer> bids, List<OrderBookOffer> asks)
+        {
+            sec.MarketData.BestBidPrice = bids.Count() > 0 ? (double?)Convert.ToDouble(bids[0].Price) : null;
+            sec.MarketData.BestBidCashSize = bids.Count() > 0 ? (decimal?)Convert.ToDecimal(bids[0].Quantity) : null;
+            sec.MarketData.BestAskPrice = asks.Count() > 0 ? (double?)Convert.ToDouble(asks[0].Price) : null;
+            sec.MarketData.BestAskCashSize = asks.Count() > 0 ? (decimal?)Convert.ToDecimal(asks[0].Quantity) : null;
+        }
+
+        protected void DoPopulateL1(Security sec,string symbol,string quoteSymbol, List<OrderBookOffer> bids,List<OrderBookOffer> asks)
         {
             var apiClient = new ApiClient(AccountBinanceData.APIKey,AccountBinanceData.Secret);
             var binanceClient = new BinanceClient(apiClient);
             
             List<PriceChangeInfo> priceChangeInfos = new List<PriceChangeInfo>(binanceClient.GetPriceChange24H(symbol + quoteSymbol).Result);
 
-            Security sec = new Security();
             sec.Symbol = symbol;
-            sec.MarketData.BestBidPrice =bids.Count() > 0 ? (double?) Convert.ToDouble(bids[0].Price) : null;
-            sec.MarketData.BestBidCashSize = bids.Count() > 0 ? (decimal?) Convert.ToDecimal(bids[0].Quantity) : null;
-            sec.MarketData.BestAskPrice = asks.Count() > 0 ? (double?) Convert.ToDouble(asks[0].Price) : null;
-            sec.MarketData.BestAskCashSize = asks.Count() > 0 ? (decimal?) Convert.ToDecimal(asks[0].Quantity) : null;
+            DoPopulateTopOfBook(sec, bids, asks);
             //sec.MarketData.Trade = priceChange.Count() > 0? (double?) Convert.ToDouble(priceChange[0].LastPrice): null;
             sec.MarketData.Trade = priceChangeInfos!=null&&priceChangeInfos.Count>0?(double?)priceChangeInfos.FirstOrDefault().LastPrice:null;
             sec.ReverseMarketData = false;
 
-            return sec;
+            
+
+        }
+        protected void DoPopulateL1(Security sec, string symbol, string quoteSymbol )
+        {
+            var apiClient = new ApiClient(AccountBinanceData.APIKey, AccountBinanceData.Secret);
+            var binanceClient = new BinanceClient(apiClient);
+
+            OrderBook orderBook = binanceClient.GetOrderBook(symbol + quoteSymbol).Result;
+            List<OrderBookOffer> bids = new List<OrderBookOffer>(orderBook.Bids);
+            List<OrderBookOffer> asks = new List<OrderBookOffer>(orderBook.Asks);
+            DoPopulateTopOfBook(sec, bids, asks);
+            //List<OrderBookOffer> bids, List<OrderBookOffer> asks
 
         }
 
@@ -143,7 +159,8 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                         List<OrderBookOffer> bids =new List<OrderBookOffer>(orderBook.Bids);
                         List<OrderBookOffer> asks =new List<OrderBookOffer>(orderBook.Asks);
 
-                        Security sec = DoPopulateL1(symbol, quoteSymbol, bids, asks);
+                        Security sec = new Security();
+                        DoPopulateL1(sec,symbol, quoteSymbol, bids, asks);
 
                         BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec,bids,asks, BinanceConfiguration);
                                 
@@ -219,6 +236,8 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                         sec.MarketData.TradingSessionHighPrice = priceChg != null ? (double?) priceChg.HighPrice : null;
                         sec.MarketData.TradingSessionLowPrice = priceChg != null ? (double?) priceChg.LowPrice : null;
                         sec.MarketData.CashVolume = priceChg != null ? (double?) priceChg.Volume : null;
+
+                        DoPopulateL1(sec, symbol, quoteSymbol);
 
                         BinanceMarketDataWrapper wrapper = new BinanceMarketDataWrapper(sec, BinanceConfiguration);
                             

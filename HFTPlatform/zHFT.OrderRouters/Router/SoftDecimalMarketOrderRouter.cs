@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.Common.Enums;
@@ -42,7 +43,7 @@ namespace zHFT.OrderRouters.Router
             }
         }
 
-        protected override Order BuildOrder(Position pos, int index, double qty)
+        protected override Order BuildOrder(Position pos, int index, double qty,MarketData md)
         {
             string clOrdId = Guid.NewGuid().ToString();
             Order order = new Order()
@@ -53,7 +54,7 @@ namespace zHFT.OrderRouters.Router
                 Side = pos.Side,
 
                 OrdType = OrdType.Limit,
-                Price = pos.Side == Side.Buy ? pos.Security.MarketData.BestAskPrice : pos.Security.MarketData.BestBidPrice,
+                Price = pos.Side == Side.Buy ? md.BestAskPrice : md.BestBidPrice,
 
                 DecimalPrecission = DecimalPrecissionConverter.GetDecimalPrecission(pos),
 

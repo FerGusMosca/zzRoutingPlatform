@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
@@ -14,6 +15,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandlers.Common.Converters;
 using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.StrategyHanders.TestStrategies.TestModule
@@ -25,6 +27,16 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         public string OrderRouter { get; set; }
 
         public string OrderRouterConfigFile { get; set; }
+
+        public string Symbol { get; set; }
+
+        public string Currency { get; set; }
+
+        public string Side { get; set; }
+
+        public double SellQty { get; set; }
+
+        public double BuyQty { get; set; }
 
         public bool CheckDefaults(List<string> result)
         {
@@ -45,6 +57,10 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
         protected int MarketDataRequestCounter { get; set; }
 
+        protected bool Routing { get; set; }
+
+        protected bool RecvMarketData { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -52,7 +68,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         private Security GetSecurity()
         {
 
-            return new Security() { Symbol = "ETH" ,Currency="USDT"};
+            return new Security() { Symbol = Config.Symbol ,Currency=Config.Currency};
         
         }
 
@@ -67,6 +83,21 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             OnMessageRcv(wrapper);
         }
 
+        private void ProcessExecutionReport(Wrapper wrapper)
+        {
+            ExecutionReportConverter converter = new ExecutionReportConverter();
+
+            ExecutionReport execRep= converter.GetExecutionReport(wrapper, Config);
+
+            if (!execRep.IsActiveOrder())
+            {
+                Routing = false;
+                DoLog($"Finished routing with {execRep.OrdStatus} execution report", MessageType.Information);
+            }
+
+        
+        }
+
         private void RouteNewBuyTestOrder()
         {
 
@@ -76,7 +107,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 Side = Side.Buy,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                CashQty = 100,
+                CashQty = Config.BuyQty,
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = null,
@@ -85,6 +116,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             //pos.Security.MarketData = new MarketData() { Currency = pos.Security.Currency };
             pos.LoadPosId(NextPosId);
             NextPosId++;
+            Routing = true;
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
 
             CMState state = OrderRouter.ProcessMessage(posWrapper);
@@ -105,7 +137,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 Side = Side.Sell,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                Qty = 0.01397,
+                Qty = Config.SellQty,
                 QuantityType = QuantityType.SHARES,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = null,
@@ -114,6 +146,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             //pos.Security.MarketData = new MarketData() { Currency = pos.Security.Currency };
             pos.LoadPosId(NextPosId);
             NextPosId++;
+            Routing = true;
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
 
             CMState state = OrderRouter.ProcessMessage(posWrapper);
@@ -146,8 +179,45 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
         protected CMState ProcessOutgoing(Wrapper wrapper)
         {
-            //TODO process Execution reports here
-            return CMState.BuildSuccess();
+            try
+            {
+                if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
+                {
+                    ProcessExecutionReport(wrapper);
+
+                    return CMState.BuildSuccess();
+                }
+
+
+                else
+                    return CMState.BuildFail(new Exception(string.Format("Could not process action {0} for strategy {1}", wrapper.GetAction().ToString(), Config.Name)));
+            }
+            catch (Exception ex)
+            {
+                DoLog("Error processing market data @" + Config.Name + ":" + ex.Message, MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+        }
+
+        private async void WaitForMarketDataAndRoute()
+        {
+            try
+            {
+                while (!RecvMarketData)
+                {
+                    Thread.Sleep(100);
+                }
+
+                if (Config.Side == "BUY")
+                    RouteNewBuyTestOrder();
+                else
+                    RouteNewSellTestOrder();
+            }
+            catch (Exception ex) {
+
+                DoLog($"CRITICAL ERROR ROUTING TO MARKET :{ex.Message}", MessageType.Error);
+            
+            }
         }
 
         #endregion
@@ -162,11 +232,14 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             if (ConfigLoader.LoadConfig(this, configFile))
             {
                 NextPosId =1;
+                Routing = false;
+                RecvMarketData= false;
                 MarketDataRequestCounter = 1;
                 InitializeModules(pOnLogMsg);
                 RequestMarketData();
-                //RouteNewBuyTestOrder();
-                RouteNewSellTestOrder();
+
+                WaitForMarketDataAndRoute();
+
                 return true;
 
             }
@@ -182,8 +255,13 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             {
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
-                    DoLog("Processing Market Data:" + wrapper.ToString(), MessageType.Information);
-                    OrderRouter.ProcessMessage(wrapper);
+                    RecvMarketData = true;
+                    if (Routing)
+                    {
+                        DoLog("Processing Market Data:" + wrapper.ToString(), MessageType.Information);
+                        OrderRouter.ProcessMessage(wrapper);
+                    }
+
                     return CMState.BuildSuccess();
                 }
 

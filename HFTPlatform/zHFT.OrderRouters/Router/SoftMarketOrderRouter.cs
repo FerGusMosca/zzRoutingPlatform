@@ -160,7 +160,7 @@ namespace zHFT.OrderRouters.Router
             Config = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
-        protected virtual Order BuildOrder(Position pos, int index, double qty)
+        protected virtual Order BuildOrder(Position pos, int index, double qty, MarketData updMarketData)
         {
             string clOrdId = Guid.NewGuid().ToString();
             Order order = new Order()
@@ -169,7 +169,7 @@ namespace zHFT.OrderRouters.Router
                 ClOrdId = clOrdId,
                 OrigClOrdId = clOrdId,
                 Side = pos.Side,
-                OrdType = OrdType.Market,
+                OrdType = OrdType.Limit,
                 TimeInForce = TimeInForce.Day,
                 Currency = pos.Security.Currency,
                 QuantityType = pos.QuantityType,
@@ -178,6 +178,11 @@ namespace zHFT.OrderRouters.Router
                 Index = index,// this index is the order number in the fina order list
                 OrderQty = qty
             };
+
+            if (pos.Side == Side.Buy)
+                order.Price = updMarketData.BestAskPrice;
+            else if (pos.Side == Side.Sell)
+                order.Price = updMarketData.BestBidPrice;
             
             pos.LeavesQty = qty;
 
@@ -199,7 +204,7 @@ namespace zHFT.OrderRouters.Router
                         try
                         {
                             qty = GetQty(pos, updMarketData);
-                            Order newOrder = BuildOrder(pos, pos.Orders.Count, qty);
+                            Order newOrder = BuildOrder(pos, pos.Orders.Count, qty,updMarketData);
                             pos.Orders.Add(newOrder);
 
                             LogNewOrder(pos, newOrder);
@@ -216,7 +221,7 @@ namespace zHFT.OrderRouters.Router
                         }
                         catch (Exception ex)
                         {
-                            Order newOrder = BuildOrder(pos, pos.Orders.Count, qty);
+                            Order newOrder = BuildOrder(pos, pos.Orders.Count, qty, updMarketData);
                             RejectedExecutionReportWrapper rejWrapper = new RejectedExecutionReportWrapper(newOrder, ex.Message);
                             OnMessageRcv(rejWrapper);
 

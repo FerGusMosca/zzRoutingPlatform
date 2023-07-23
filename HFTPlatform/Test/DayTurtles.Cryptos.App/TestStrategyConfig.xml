@@ -7,5 +7,16 @@
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
+	<Symbol>ETH</Symbol>
+
+
+	<Currency>USDT</Currency>
+
+	<Side>SELL</Side><!--BUY,SELL-->
+
+	<SellQty>0.01995</SellQty> <!--shares-->
+
+	<BuyQty>100</BuyQty><!--cash-->
+
 
 </Configuration>
