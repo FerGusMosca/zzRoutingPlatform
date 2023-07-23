@@ -43,6 +43,8 @@ namespace tph.OrderRouter.Bittrex
 
         protected Dictionary<string, Order> PendingReplacements { get; set; }
 
+        protected object tLockUpdate = new object();
+
         #endregion
 
         #region Private Methods
@@ -52,7 +54,7 @@ namespace tph.OrderRouter.Bittrex
             try 
             {
                 ExecutionReportWrapper wrapper = null;
-                lock (ActiveOrders)
+                lock (tLockUpdate)
                 {
                     if (OrderIdMappers.ContainsKey(data.Data.Delta.ClientOrderId))
                     {
@@ -65,7 +67,7 @@ namespace tph.OrderRouter.Bittrex
                             Order order = ActiveOrders[clOrdId];
                             wrapper = new ExecutionReportWrapper(order, data.Data, isRepl);
                             OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
-                            DoLog($"Received exec report for order {data.Data.Delta.ClientOrderId} for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={status} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
+                            DoLog($"Received exec report for order (int Cl Ord Id= {data.Data.Delta.ClientOrderId} ClOrdId={clOrdId} ) for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={status} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
                             order.CumQty = data.Data.Delta.QuantityFilled;
                             order.OrderId = data.Data.Delta.Id;
                         }
@@ -242,6 +244,7 @@ namespace tph.OrderRouter.Bittrex
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
                     PendingReplacements = new Dictionary<string, Order>();
+                    tLockUpdate = new object();
 
                     AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.ConfigConnectionString);
 
@@ -382,7 +385,7 @@ namespace tph.OrderRouter.Bittrex
                 if (wrapper.GetField(OrderFields.ClOrdID) == null)
                     throw new Exception("Could not find ClOrdId for new order");
 
-                lock (ActiveOrders)
+                lock (tLockUpdate)
                 {
                         
                     if (ActiveOrders.ContainsKey(origClOrderId))
@@ -392,17 +395,19 @@ namespace tph.OrderRouter.Bittrex
                         if (order != null)
                         {
                             if (order.OrderId == null)
-                                throw new Exception($"The client order id {origClOrderId} has not been accepted on the exchange and cannot be updated ");
-
+                            {
+                                DoLog($" WARNING - The client order id {origClOrderId} has not been accepted on the exchange and cannot be updated ",MessageType.Information);
+                                return CMState.BuildSuccess();
+                            }
                             //Fetch Order --> w/rest client
                             BittrexOrder ordResp = FetchOrder(order);
+
+                            PendingReplacements.Add(origClOrderId, order);
 
                             //Cancel the order
                             RunCancelOrder(order, true);
 
                             WaitUntilCancelled(order);
-
-                            PendingReplacements.Add(origClOrderId, order);
 
                             Thread.Sleep(100);
 
