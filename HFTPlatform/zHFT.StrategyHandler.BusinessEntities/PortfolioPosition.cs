@@ -30,6 +30,11 @@ namespace zHFT.StrategyHandler.BusinessEntities
             return "";
 
         }
+
+        public bool IsClosing()
+        {
+            return Closing;
+        }
         
         #endregion
         

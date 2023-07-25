@@ -135,32 +135,32 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
         
-        protected void EvalClosingPosition(MonTurtlePosition turtlePos)
+        protected void EvalClosingPosition(MonTurtlePosition monPos)
         {
-            TradTurtlesPosition trdPos = (TradTurtlesPosition) TradingPositions[turtlePos.Security.Symbol];
+            TradTurtlesPosition portfPos = (TradTurtlesPosition) TradingPositions[monPos.Security.Symbol];
 
-            if (trdPos.IsShortDirection() && turtlePos.EvalClosingShortPosition())
+            if (portfPos.IsShortDirection() && monPos.EvalClosingShortPosition()  && !monPos.IsClosing())
             {
-                RunClose(trdPos.OpeningPosition, turtlePos, trdPos);
+                RunClose(portfPos.OpeningPosition, monPos, portfPos);
                 DoLog(string.Format("Closing {0} Position  on market. Symbol {1} Qty={2} DateTime={3} PosId={4}",
-                        trdPos.TradeDirection, trdPos.OpeningPosition.Security.Symbol, trdPos.Qty,
+                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
                         DateTime.Now,
-                        trdPos.ClosingPosition != null ? trdPos.ClosingPosition.PosId : "-"),
+                        portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-"),
                     Constants.MessageType.Information);
             }
-            else if (trdPos.IsLongDirection() && turtlePos.EvalClosingLongPosition())
+            else if (portfPos.IsLongDirection() && monPos.EvalClosingLongPosition() && !monPos.IsClosing())
             {
-                RunClose(trdPos.OpeningPosition, turtlePos, trdPos);
+                RunClose(portfPos.OpeningPosition, monPos, portfPos);
                 DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  DateTime={3} PosId={4}",
-                        trdPos.TradeDirection, trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTime.Now,
-                        trdPos.ClosingPosition != null ? trdPos.ClosingPosition.PosId : "-"),
+                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty, DateTime.Now,
+                        portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-"),
                     Constants.MessageType.Information);
 
             }
             else
             {
                 
-                MarketData lowest = turtlePos.LowestOnWindow(turtlePos.CloseWindow);
+                MarketData lowest = monPos.LowestOnWindow(monPos.CloseWindow);
 //                DoLog(string.Format(
 //                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
 //                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
@@ -191,24 +191,24 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
         
-        protected void EvalOpeningClosingPositions(MonTurtlePosition turtlePos)
+        protected void EvalOpeningClosingPositions(MonTurtlePosition monPos)
         {
             
             TimeSpan elapsed = DateTime.Now - StartTime;
 
             if (TradingPositions.Keys.Count < Config.MaxOpenedPositions 
-                && !TradingPositions.ContainsKey(turtlePos.Security.Symbol)
+                && !TradingPositions.ContainsKey(monPos.Security.Symbol)
                 && IsTradingTime()
             )
             {
-                EvalOpeningPosition(turtlePos);
+                EvalOpeningPosition(monPos);
             }
-            else if (TradingPositions.ContainsKey(turtlePos.Security.Symbol) && IsTradingTime())
+            else if (TradingPositions.ContainsKey(monPos.Security.Symbol) && IsTradingTime())
             {
-                EvalClosingPosition(turtlePos);
-                EvalClosingPositionOnStopLossHit(turtlePos);
-                EvalAbortingOpeningPositions(turtlePos);
-                EvalAbortingClosingPositions(turtlePos);
+                EvalClosingPosition(monPos);
+                EvalClosingPositionOnStopLossHit(monPos);
+                EvalAbortingOpeningPositions(monPos);
+                EvalAbortingClosingPositions(monPos);
             }
         }
 

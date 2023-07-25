@@ -387,28 +387,28 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        protected CMState RunClose(Position openRoutingPos, PortfolioPosition portfPos, TradingPosition tradingPos)
+        protected CMState RunClose(Position openRoutingPos, PortfolioPosition monfPos, TradingPosition portfPos)
         {
             if (openRoutingPos.PosStatus == PositionStatus.Filled)
             {
                 if (Security.GetSecurityType(Config.SecurityTypes) == SecurityType.FUT)
-                    LoadCloseFuturePos(openRoutingPos, portfPos, tradingPos);
+                    LoadCloseFuturePos(openRoutingPos, monfPos, portfPos);
                 else
-                    LoadCloseRegularPos(openRoutingPos, portfPos, tradingPos);
-                portfPos.Closing = true;
-                PositionWrapper posWrapper = new PositionWrapper(tradingPos.ClosingPosition, Config);
+                    LoadCloseRegularPos(openRoutingPos, monfPos, portfPos);
+                monfPos.Closing = true;
+                PositionWrapper posWrapper = new PositionWrapper(portfPos.ClosingPosition, Config);
                 return OrderRouter.ProcessMessage(posWrapper);
             }
             else if (openRoutingPos.PositionRouting())
             {
                 DoLog(string.Format("Cancelling routing pos for symbol {0} before closing (status={1} posId={2})",
                         openRoutingPos.Security.Symbol,openRoutingPos.PosStatus,openRoutingPos.PosId),Constants.MessageType.Information);
-                return CancelRoutingPos(openRoutingPos, tradingPos);
+                return CancelRoutingPos(openRoutingPos, portfPos);
             }
             else
             {
                 DoLog(string.Format("{0} Aborting  position on invalid state. Symbol {1} Qty={2} PosStatus={3} PosId={4}", 
-                        tradingPos.TradeDirection, tradingPos.OpeningPosition.Security.Symbol, tradingPos.Qty,
+                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
                         openRoutingPos.PosStatus.ToString(),openRoutingPos.PosId), 
                     Constants.MessageType.Information);
                 return CMState.BuildSuccess();
