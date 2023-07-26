@@ -483,7 +483,8 @@ namespace zHFT.OrderRouters.Router
                     string clOrdid = (string) wrapper.GetField(ExecutionReportFields.ClOrdID);
                     DoLog(string.Format("<Generic Order Router> - External Trading for ClOrdId {0}",
                         clOrdid != null ? clOrdid : "NO ClOrId"), Constants.MessageType.Information);
-                    OnMessageRcv(wrapper);//External Trading
+                    //OnMessageRcv(wrapper);//External Trading
+                    //Better not send this as it might be a lost ER than might re open a position!
                 }
             }
         

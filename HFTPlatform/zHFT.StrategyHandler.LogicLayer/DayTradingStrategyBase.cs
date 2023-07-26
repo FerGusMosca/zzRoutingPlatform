@@ -231,6 +231,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
                 if (report.OrdStatus == OrdStatus.Filled)
                 {
+                    DoLog($"Persisting ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus}) --> FirstLeg?={trdPos}", Constants.MessageType.Information);
+
                     Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
                     persitThread.Start(trdPos);
 
@@ -242,7 +244,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     }
                     else
                     {
-                        //DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty,trdPos.TradeDirection),Constants.MessageType.Information);
+                        DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty,trdPos.TradeDirection),Constants.MessageType.Information);
                     }
                 }
             }
@@ -331,7 +333,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
                     EvalCancellingOrdersOnStartup(report);
-                     
+                    DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus})", Constants.MessageType.Information);
                     if (TradingPositions.ContainsKey(report.Order.Symbol))
                     {
                         TradingPosition trdPos = TradingPositions[report.Order.Symbol];
@@ -659,7 +661,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             try
             {
                 if (wrapper != null)
-                    DoLog("Incoming message from order routing: " + wrapper.ToString(), Constants.MessageType.Information);
+                    DoLog($"Incoming message from order routing w/ Action {wrapper.GetAction()}: " + wrapper.ToString(), Constants.MessageType.Information);
 
                 if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
                 {
