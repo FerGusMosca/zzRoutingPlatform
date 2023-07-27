@@ -21,6 +21,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.OrderRouters.Bittrex.Common.Configuration;
 using zHFT.OrderRouters.Bittrex.DataAccessLayer.Managers;
+using zHFT.OrderRouters.Common.Converters;
 using zHFT.OrderRouters.Cryptos;
 using zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities;
 using static zHFT.Main.Common.Util.Constants;
@@ -43,11 +44,31 @@ namespace tph.OrderRouter.Bittrex
 
         protected Dictionary<string, Order> PendingReplacements { get; set; }
 
+        protected ExecutionReportConverter ExecutionReportConverter { get; set; }
+
         protected object tLockUpdate = new object();
 
         #endregion
 
         #region Private Methods
+
+        private ExecutionReport EvalFinishedExecutionReport(ExecutionReportWrapper wrapper, DataEvent<BittrexOrderUpdate> data)
+        {
+            ExecutionReport execRep= ExecutionReportConverter.GetExecutionReport(wrapper, GetConfig());
+            
+            if(!execRep.IsActiveOrder())
+            {
+                if(ActiveOrders.ContainsKey(execRep.Order.ClOrdId))
+                    ActiveOrders.Remove(execRep.Order.ClOrdId);
+
+
+                if (OrderIdMappers.ContainsKey(data.Data.Delta.ClientOrderId))
+                    OrderIdMappers.Remove(data.Data.Delta.ClientOrderId);
+            }
+
+            return execRep;
+        
+        }
 
         private void UpdateExecutionReport(DataEvent<BittrexOrderUpdate> data)
         {
@@ -66,8 +87,8 @@ namespace tph.OrderRouter.Bittrex
 
                             Order order = ActiveOrders[clOrdId];
                             wrapper = new ExecutionReportWrapper(order, data.Data, isRepl);
-                            OrdStatus status = (OrdStatus)wrapper.GetField(ExecutionReportFields.OrdStatus);
-                            DoLog($"Received exec report for order (int Cl Ord Id= {data.Data.Delta.ClientOrderId} ClOrdId={clOrdId} ) for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={status} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
+                            ExecutionReport exeRep = EvalFinishedExecutionReport(wrapper, data);
+                            DoLog($"Received exec report for order (int Cl Ord Id= {data.Data.Delta.ClientOrderId} ClOrdId={clOrdId} ) for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={exeRep.OrdStatus} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
                             order.CumQty = data.Data.Delta.QuantityFilled;
                             order.OrderId = data.Data.Delta.Id;
                         }
@@ -113,7 +134,7 @@ namespace tph.OrderRouter.Bittrex
         {
             string internalClOdId = Guid.NewGuid().ToString();
             string symbol = $"{order.Symbol}-{order.Currency}";
-            DoLog($"@{BittrexConfiguration.Name}:Creating order Order for symbol {symbol}", MessageType.Information);
+            DoLog($"@{BittrexConfiguration.Name}:Creating order Order for symbol {symbol} w/ClOrdId ={order.ClOrdId}", MessageType.Information);
             zHFT.Main.Common.Enums.Side side = order.Side;
             decimal ordQty = 0;
 
@@ -244,6 +265,7 @@ namespace tph.OrderRouter.Bittrex
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
                     PendingReplacements = new Dictionary<string, Order>();
+                    ExecutionReportConverter = new ExecutionReportConverter();
                     tLockUpdate = new object();
 
                     AccountBittrexDataManager = new AccountBittrexDataManager(BittrexConfiguration.ConfigConnectionString);
@@ -429,14 +451,14 @@ namespace tph.OrderRouter.Bittrex
                             }
                             catch (Exception ex)
                             {
-                                if (ActiveOrders.ContainsKey(order.OrderId))
-                                    ActiveOrders.Remove(order.OrderId);
+                                //if (ActiveOrders.ContainsKey(order.OrderId))
+                                //    ActiveOrders.Remove(order.OrderId);
                                 EvalRouteError(order, ex);
                             }
                         }
                     }
                     else
-                        throw new Exception(string.Format("Could not find an active order to cancel (and then update) for Client Order Id {0}", origClOrderId));
+                        throw new Exception(string.Format("Could not find an active order to cancel (and then) for Client Order Id {0}", origClOrderId));
 
                   
                 }
