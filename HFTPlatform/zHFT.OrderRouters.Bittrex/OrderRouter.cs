@@ -458,8 +458,8 @@ namespace zHFT.OrderRouters.Bittrex
 
                     OrderIdMappers = new Dictionary<string, string>();
 
-                    ExecutionReportThread = new Thread(DoEvalExecutionReport);
-                    ExecutionReportThread.Start();
+                    PendingNewCancelationsThread = new Thread(DoEvalExecutionReport);
+                    PendingNewCancelationsThread.Start();
 
                     //Todo inicializar mundo Bittrex
                     AccountBittrexData bittrexData = AccountBittrexDataManager.GetByAccountNumber(BittrexConfiguration.AccountNumber);

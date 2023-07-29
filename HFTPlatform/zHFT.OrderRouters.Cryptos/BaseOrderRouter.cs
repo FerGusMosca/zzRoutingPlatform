@@ -23,7 +23,7 @@ namespace zHFT.OrderRouters.Cryptos
         
         protected Dictionary<string, string> OrderIdMappers { get; set; }
 
-        protected Thread ExecutionReportThread { get; set; }
+        protected Thread PendingNewCancelationsThread { get; set; }
 
         protected List<string> CanceledOrders { get; set; }
 

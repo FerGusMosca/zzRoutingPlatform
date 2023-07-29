@@ -19,9 +19,11 @@ using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Wrappers;
 using zHFT.OrderRouters.Bittrex.Common.Configuration;
 using zHFT.OrderRouters.Bittrex.DataAccessLayer.Managers;
 using zHFT.OrderRouters.Common.Converters;
+using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.OrderRouters.Cryptos;
 using zHFT.StrategyHandler.IBR.Bittrex.BusinessEntities;
 using static zHFT.Main.Common.Util.Constants;
@@ -31,6 +33,12 @@ namespace tph.OrderRouter.Bittrex
 {
     public class OrderRouter : BaseOrderRouter
     {
+
+        #region Private Static COnsts
+
+        private static int _MAX_SECONDS_NEW_ORD = 5;
+
+        #endregion
 
         #region Protected Attrbuts
 
@@ -43,6 +51,8 @@ namespace tph.OrderRouter.Bittrex
         protected BittrexSocketClient BittrexSocketClient { get; set; }
 
         protected Dictionary<string, Order> PendingReplacements { get; set; }
+
+        protected Dictionary<string , DateTime> PendingNews { get; set; }
 
         protected ExecutionReportConverter ExecutionReportConverter { get; set; }
 
@@ -70,7 +80,73 @@ namespace tph.OrderRouter.Bittrex
         
         }
 
-        private void UpdateExecutionReport(DataEvent<BittrexOrderUpdate> data)
+        private void PendingNewThread(object parm)
+        {
+
+            try
+            {
+
+                while (true)
+                {
+                    lock (tLockUpdate)
+                    {
+                        List<string> toRemove = new List<string>();
+                        List<Wrapper> toSend = new List<Wrapper>();
+                        foreach (string clOrdId in PendingNews.Keys)
+                        {
+                            try
+                            {
+                                TimeSpan elapsed = DateTime.Now - PendingNews[clOrdId];
+
+                                if (elapsed.TotalSeconds > _MAX_SECONDS_NEW_ORD)
+                                {
+                                    DoLog($"HIGH WARNING--> Cancelling order {clOrdId} on timeout!", MessageType.Error);
+
+                                    if (ActiveOrders.ContainsKey(clOrdId))
+                                    {
+                                        Order order = ActiveOrders[clOrdId];
+
+                                        ExecutionReport cxlRep = new ExecutionReport();
+                                        cxlRep.Order = order;
+                                        cxlRep.ExecType = ExecType.Canceled;
+                                        cxlRep.OrdStatus = OrdStatus.Canceled;
+                                        cxlRep.Text = "Cancelled because of timeout!";
+                                        cxlRep.CumQty = order.CumQty.HasValue ? Convert.ToDouble(order.CumQty) : 0;
+                                        cxlRep.TransactTime = DateTime.Now;
+                                        cxlRep.LeavesQty = 0;
+
+                                        GenericExecutionReportWrapper wrapper = new GenericExecutionReportWrapper(cxlRep);
+
+                                        ActiveOrders.Remove(clOrdId);
+
+                                        toSend.Add(wrapper);
+                                        Console.Beep();//<DBG>
+                                        DoLog($"HIGH WARNING--> Order {clOrdId} marked for cancelation!", MessageType.Error);
+
+                                    }
+
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                DoLog($"Error canceling order {clOrdId}:{ex.Message}", MessageType.Information);
+                            }
+                        }
+
+                        toRemove.ForEach(x => PendingNews.Remove(x));
+                        toSend.ForEach(x => OnMessageRcv(x));
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITIAL ERROR @PendingNewThread:{ex.Message}", MessageType.Error);
+            }
+        
+        }
+
+        private void ProcessExecutionReport(DataEvent<BittrexOrderUpdate> data)
         {
             try 
             {
@@ -113,7 +189,7 @@ namespace tph.OrderRouter.Bittrex
         {
             BittrexSocketClient.SpotApi.SubscribeToOrderUpdatesAsync(data =>
             {
-                UpdateExecutionReport(data);
+                ProcessExecutionReport(data);
             });
         }
 
@@ -265,6 +341,7 @@ namespace tph.OrderRouter.Bittrex
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
                     PendingReplacements = new Dictionary<string, Order>();
+                    PendingNews = new Dictionary<string, DateTime>(); 
                     ExecutionReportConverter = new ExecutionReportConverter();
                     tLockUpdate = new object();
 
@@ -272,8 +349,8 @@ namespace tph.OrderRouter.Bittrex
 
                     OrderIdMappers = new Dictionary<string, string>();
 
-                    //ExecutionReportThread = new Thread(DoEvalExecutionReport);
-                    //ExecutionReportThread.Start();
+                    PendingNewCancelationsThread = new Thread(PendingNewThread);
+                    PendingNewCancelationsThread.Start();
 
                     //Todo inicializar mundo Bittrex
                     zHFT.OrderRouters.Bittrex.BusinessEntities.AccountBittrexData bittrexData = AccountBittrexDataManager.GetByAccountNumber(BittrexConfiguration.AccountNumber);

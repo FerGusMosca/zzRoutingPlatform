@@ -554,8 +554,8 @@ namespace zHFT.OrderRouters.Binance
                     OrderIdMappers = new Dictionary<string, string>();
                     JustSentOrders = new Dictionary<string, Order>();
 
-                    ExecutionReportThread = new Thread(DoEvalExecutionReport);
-                    ExecutionReportThread.Start();
+                    PendingNewCancelationsThread = new Thread(DoEvalExecutionReport);
+                    PendingNewCancelationsThread.Start();
                     
                     var apiClient = new ApiClient(AccountBinanceData.APIKey, AccountBinanceData.Secret);
                     BinanceClient = new BinanceClient(apiClient);

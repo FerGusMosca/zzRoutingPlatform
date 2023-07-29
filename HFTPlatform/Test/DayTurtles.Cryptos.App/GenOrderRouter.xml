@@ -12,6 +12,8 @@
 	<Proxy>tph.OrderRouter.Bittrex.OrderRouter, tph.OrderRouter.Bittrex</Proxy>
 	<ProxyConfigFile>.\Bittrex\outgoingOrderRouter.Bittrex.xml</ProxyConfigFile>
 
+	
+
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->
 
