@@ -327,6 +327,7 @@ namespace tph.OrderRouter.Bittrex
                     if (ActiveOrders.ContainsKey(origClOrderId)  )
                     {
                         Order order = ActiveOrders[origClOrderId];
+                        DoLog($"Running cancelation for ClOrdId {origClOrderId}", MessageType.Information);
                         RunCancelOrder(order, false);
                     }
                     else
