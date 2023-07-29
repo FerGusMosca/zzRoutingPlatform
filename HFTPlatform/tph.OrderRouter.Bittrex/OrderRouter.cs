@@ -136,6 +136,7 @@ namespace tph.OrderRouter.Bittrex
                         toRemove.ForEach(x => PendingNews.Remove(x));
                         toSend.ForEach(x => OnMessageRcv(x));
                     }
+                    Thread.Sleep(_MAX_SECONDS_NEW_ORD * 1000);
                 }
 
             }
@@ -501,6 +502,12 @@ namespace tph.OrderRouter.Bittrex
                             }
                             //Fetch Order --> w/rest client
                             BittrexOrder ordResp = FetchOrder(order);
+
+                            if (ordResp.Status == OrderStatus.Closed)
+                            {
+                                DoLog($"Trying to cancel an already cancelled or filled order: {origClOrderId}", MessageType.Information);
+                                return CMState.BuildSuccess();
+                            }
 
                             PendingReplacements.Add(origClOrderId, order);
 

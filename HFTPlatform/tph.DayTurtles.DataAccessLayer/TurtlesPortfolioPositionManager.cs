@@ -49,6 +49,25 @@ namespace tph.DayTurtles.DataAccessLayer
                     cmd.Parameters.Add(new SqlParameter("@FinalCap", pos.FinalCap));
                     cmd.Parameters.Add(new SqlParameter("@Profit", pos.Profit));
 
+                    if (pos.IsFirstLeg())
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@IsClosing", "N"));
+                        cmd.Parameters.Add(new SqlParameter("@OpenPosId", pos.OpeningPosition.PosId));
+                        cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", pos.OpeningPosition.GetCurrentOrder().ClOrdId));
+                        //cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", null));
+                        //cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", null));
+
+                    }
+                    else {
+
+                        cmd.Parameters.Add(new SqlParameter("@IsClosing", "Y"));
+                        cmd.Parameters.Add(new SqlParameter("@ClosingPosId", pos.OpeningPosition.PosId));
+                        cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", pos.ClosingPosition.GetCurrentOrder().ClOrdId));
+                        //cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", null));
+                        //cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", null));
+
+                    }
+
                     cmd.ExecuteNonQuery();
                 }
                 connection.Dispose();
