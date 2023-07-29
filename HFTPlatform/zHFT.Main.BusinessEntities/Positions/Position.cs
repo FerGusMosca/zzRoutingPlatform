@@ -178,6 +178,27 @@ namespace zHFT.Main.BusinessEntities.Positions
             return Orders.Where(x => x.ClOrdId.StartsWith(orderIdPlusOrdPrefix)).FirstOrDefault();
         }
 
+        public string GetLastFilledClOrdId()
+        {
+            string clOrdID = "-";
+            if(ExecutionReports!=null)
+            {
+                foreach(ExecutionReport execRep in ExecutionReports)
+                {
+                    if (execRep.OrdStatus == OrdStatus.Filled || execRep.OrdStatus == OrdStatus.PartiallyFilled)
+                    { 
+                        if(execRep.Order!=null)
+                            clOrdID=execRep.Order.ClOrdId;  
+                    
+                    }
+                    
+                }
+            }
+
+            return clOrdID;
+        
+        }
+
         public void SetPositionStatusFromExecution(ExecType execType)
         {
             if (execType == ExecType.New)

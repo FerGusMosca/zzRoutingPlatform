@@ -54,6 +54,8 @@ namespace tph.OrderRouter.Bittrex
 
         protected Dictionary<string , DateTime> PendingNews { get; set; }
 
+        protected Dictionary<string, decimal> PrevCumQtys { get; set; }
+
         protected ExecutionReportConverter ExecutionReportConverter { get; set; }
 
         protected object tLockUpdate = new object();
@@ -78,6 +80,22 @@ namespace tph.OrderRouter.Bittrex
 
             return execRep;
         
+        }
+
+        private GenericExecutionReportWrapper BuildCanceledExecutionReport(Order order,string reason)
+        {
+            ExecutionReport cxlRep = new ExecutionReport();
+            cxlRep.Order = order;
+            cxlRep.ExecType = ExecType.Canceled;
+            cxlRep.OrdStatus = OrdStatus.Canceled;
+            cxlRep.Text = reason;
+            cxlRep.CumQty = order.CumQty.HasValue ? Convert.ToDouble(order.CumQty) : 0;
+            cxlRep.TransactTime = DateTime.Now;
+            cxlRep.LeavesQty = 0;
+
+            GenericExecutionReportWrapper wrapper = new GenericExecutionReportWrapper(cxlRep);
+
+            return wrapper;
         }
 
         private void PendingNewThread(object parm)
@@ -105,18 +123,7 @@ namespace tph.OrderRouter.Bittrex
                                     if (ActiveOrders.ContainsKey(clOrdId))
                                     {
                                         Order order = ActiveOrders[clOrdId];
-
-                                        ExecutionReport cxlRep = new ExecutionReport();
-                                        cxlRep.Order = order;
-                                        cxlRep.ExecType = ExecType.Canceled;
-                                        cxlRep.OrdStatus = OrdStatus.Canceled;
-                                        cxlRep.Text = "Cancelled because of timeout!";
-                                        cxlRep.CumQty = order.CumQty.HasValue ? Convert.ToDouble(order.CumQty) : 0;
-                                        cxlRep.TransactTime = DateTime.Now;
-                                        cxlRep.LeavesQty = 0;
-
-                                        GenericExecutionReportWrapper wrapper = new GenericExecutionReportWrapper(cxlRep);
-
+                                        GenericExecutionReportWrapper wrapper = BuildCanceledExecutionReport(order, "Cancelled because of timeout!");
                                         ActiveOrders.Remove(clOrdId);
 
                                         toSend.Add(wrapper);
@@ -147,6 +154,15 @@ namespace tph.OrderRouter.Bittrex
         
         }
 
+        private decimal GetPrevCumQty(string clOrdId)
+        {
+            if (PrevCumQtys.ContainsKey(clOrdId))
+                return PrevCumQtys[clOrdId];
+            else
+                return 0;
+        
+        }
+
         private void ProcessExecutionReport(DataEvent<BittrexOrderUpdate> data)
         {
             try 
@@ -166,7 +182,7 @@ namespace tph.OrderRouter.Bittrex
                             wrapper = new ExecutionReportWrapper(order, data.Data, isRepl);
                             ExecutionReport exeRep = EvalFinishedExecutionReport(wrapper, data);
                             DoLog($"Received exec report for order (int Cl Ord Id= {data.Data.Delta.ClientOrderId} ClOrdId={clOrdId} ) for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={exeRep.OrdStatus} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
-                            order.CumQty = data.Data.Delta.QuantityFilled;
+                            order.CumQty = GetPrevCumQty(clOrdId)+ data.Data.Delta.QuantityFilled;
                             order.OrderId = data.Data.Delta.Id;
                         }
                         else
@@ -207,7 +223,7 @@ namespace tph.OrderRouter.Bittrex
         
         }
 
-        private void RunNewOrder(Order order, bool update)
+        private BittrexOrder RunNewOrder(Order order, bool update)
         {
             string internalClOdId = Guid.NewGuid().ToString();
             string symbol = $"{order.Symbol}-{order.Currency}";
@@ -234,39 +250,39 @@ namespace tph.OrderRouter.Bittrex
 
             price = UpdatePrice(side, price);
 
-            BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
+            WebCallResult<BittrexOrder> plOrder =BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
                                                                OrderConverter.ConvertSide(side), 
                                                                OrderType.Limit,
                                                                TimeInForce.GoodTillCanceled, 
                                                                ordQty, 
                                                                price,
-                                                               clientOrderId: internalClOdId);
+                                                               clientOrderId: internalClOdId).Result;
             DoLog($"@{BittrexConfiguration.Name}:New {side} order Order sent to market for symbol {symbol} for qty {ordQty} and price {price}", MessageType.Information);
+
+            if (plOrder.Success)
+            {
+                return plOrder.Data;
+
+            }
+            else
+                return null;
         }
 
-        private void EvalRouteError(Order order, Exception ex)
+        private void EvalRouteError(Order order,string clOrdId, Exception ex)
         {
-            DoLog($"Error routing order for symbol {order.Security.Symbol}: {ex.Message}", MessageType.Error);
 
-            //TODO--> Build EvalRouteError --> Route unexisting symbol
-            //GetOrderResponse ordResp = GetTheoreticalResponse(order, "");
-            //order.OrdStatus = OrdStatus.Rejected;
-            //ordResp.CancelInitiated = true;
+            if (ActiveOrders.ContainsKey(clOrdId))
+                ActiveOrders.Remove(clOrdId);
 
+            if (PrevCumQtys.ContainsKey(clOrdId))
+                PrevCumQtys.Remove(clOrdId);
 
-            //if (ex.Message.Contains(_INSUFFICIENT_FUNDS))
-            //{
-            //    order.RejReason = _INSUFFICIENT_FUNDS;
-            //}
-            //else if (ex.Message.Contains(MIN_TRADE_REQUIREMENT_NOT_MET))
-            //{
-            //    order.RejReason = MIN_TRADE_REQUIREMENT_NOT_MET;
-            //}
-            //else
-            //    order.RejReason = ex.Message;
+            string msg = $"Error routing order for symbol {order.Security.Symbol}: {ex.Message}";
+            DoLog(msg, MessageType.Error);
+            Wrapper cxlWrapper = BuildCanceledExecutionReport(order, msg);
+            OnMessageRcv(cxlWrapper);
 
-            //ExecutionReportWrapper wrapper = new ExecutionReportWrapper(order, ordResp);
-            //OnMessageRcv(wrapper);
+         
         }
 
         private BittrexOrder FetchOrder(Order order)
@@ -342,7 +358,8 @@ namespace tph.OrderRouter.Bittrex
                     ActiveOrders = new Dictionary<string, Order>();
                     CanceledOrders = new List<string>();
                     PendingReplacements = new Dictionary<string, Order>();
-                    PendingNews = new Dictionary<string, DateTime>(); 
+                    PendingNews = new Dictionary<string, DateTime>();
+                    PrevCumQtys = new Dictionary<string, decimal>();
                     ExecutionReportConverter = new ExecutionReportConverter();
                     tLockUpdate = new object();
 
@@ -456,7 +473,7 @@ namespace tph.OrderRouter.Bittrex
                 }
                 catch (Exception ex)
                 {
-                    EvalRouteError(order, ex);
+                    EvalRouteError(order,order.ClOrdId, ex);
                 }
 
                 return CMState.BuildSuccess();
@@ -532,13 +549,26 @@ namespace tph.OrderRouter.Bittrex
                             order.OrderQty = Convert.ToDouble(lvsQty);//Nos aseguramos de solo rutear la nueva cantidad
                             try
                             {
-                                RunNewOrder(order, true);
+                                //Prev CumQty added with the new order
+                                PrevCumQtys.Add(clOrderId, order.CumQty.HasValue ? order.CumQty.Value : 0);
+                                BittrexOrder plOrder= RunNewOrder(order, true);
+
+                                if (plOrder == null || plOrder.Status == OrderStatus.Closed)
+                                {
+                                    string msg = $"WARNING! - Could not insert new order {clOrderId}. The exchange rejected it!  ";
+                                    DoLog(msg,MessageType.Information);
+                                    Wrapper cxlWrapper =BuildCanceledExecutionReport(order, msg);
+
+                                    if (ActiveOrders.ContainsKey(clOrderId))
+                                        ActiveOrders.Remove(clOrderId);
+                                    PrevCumQtys.Remove(clOrderId);
+                                    OnMessageRcv(cxlWrapper);
+                                }
                             }
                             catch (Exception ex)
                             {
-                                //if (ActiveOrders.ContainsKey(order.OrderId))
-                                //    ActiveOrders.Remove(order.OrderId);
-                                EvalRouteError(order, ex);
+                                
+                                EvalRouteError(order,clOrderId, ex);
                             }
                         }
                     }
