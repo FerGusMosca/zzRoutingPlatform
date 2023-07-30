@@ -155,7 +155,7 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
             else if (xrField == ExecutionReportFields.LeavesQty)
                 return BittrexOrderUpdate.Delta.Quantity- BittrexOrderUpdate.Delta.QuantityFilled;
             else if (xrField == ExecutionReportFields.CumQty)
-                return BittrexOrderUpdate.Delta.QuantityFilled;
+                return Order.CumQty;
             else if (xrField == ExecutionReportFields.AvgPx)
                 return BittrexOrderUpdate.Delta.Price;
             else if (xrField == ExecutionReportFields.Commission)
