@@ -52,6 +52,17 @@ namespace zHFT.OrderRouters.Router
 
         #region Private Methods
 
+        private void UpdateTimeoutPosDict(string posId)
+        {
+            lock (PositionsTimeoutDict)
+            {
+                if (!PositionsTimeoutDict.ContainsKey(posId))
+                    PositionsTimeoutDict.Add(posId, DateTime.Now);
+                else
+                    PositionsTimeoutDict[posId] = DateTime.Now;
+            }
+        }
+
         private void CleanTimeoutPosDict(string posId)
         {
             lock (PositionsTimeoutDict)
@@ -78,11 +89,14 @@ namespace zHFT.OrderRouters.Router
                             if (elapsed.TotalSeconds > 20)//20 seconds
                             {
                                 //Remove current order
-                                if (Positions.ContainsKey(posId))
+                                if (Positions.ContainsKey(posId) )
                                 {
                                     Position position = Positions[posId];
-                                    position.RemoveLastOrder();
-                                    position.PendingCxlRepl = false;
+                                    if (position.PendingCxlRepl)
+                                    {
+                                        position.RemoveLastOrder();
+                                        position.PendingCxlRepl = false;
+                                    }
                                 }
                             }
                         }
@@ -108,6 +122,7 @@ namespace zHFT.OrderRouters.Router
             {
 
                 pos.PendingCxlRepl = true;
+                UpdateTimeoutPosDict(pos.PosId);
                 Order oldOrder = pos.GetCurrentOrder();
                 if (oldOrder != null)
                 {
@@ -508,7 +523,7 @@ namespace zHFT.OrderRouters.Router
                             pos.LastQty = report.LastQty;
                             pos.PositionCleared = true;
                             pos.PendingCxlRepl = false;
-                            
+
                             pos.SetPositionStatusFromExecution(report.ExecType);
                             pos.ExecutionReports.Add(report);
                             RemovePositionOnFinishedOrder(pos, report);
@@ -526,6 +541,14 @@ namespace zHFT.OrderRouters.Router
                             pos.ExecutionReports.Add(report);
                             RemovePositionOnFinishedOrder(pos, report);
                             CleanTimeoutPosDict(pos.PosId);
+                            OnMessageRcv(wrapper);
+                        }
+                        else if (report.ExecType == ExecType.New)
+                        {
+                            pos.PendingCxlRepl = false;
+                            CleanTimeoutPosDict(pos.PosId);
+                            pos.SetPositionStatusFromExecution(report.ExecType);
+                            pos.ExecutionReports.Add(report);
                             OnMessageRcv(wrapper);
                         }
                         else
