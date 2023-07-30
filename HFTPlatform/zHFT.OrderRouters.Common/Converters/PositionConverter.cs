@@ -97,6 +97,7 @@ namespace zHFT.OrderRouters.Common.Converters
                 pos.NewDomFlag = false;
                 pos.PositionCleared = false;
                 pos.PositionCanceledOrRejected = false;
+                pos.PendingCxlRepl=false;
                 pos.PosStatus = PositionStatus.PendingNew;
                 pos.NewPosition = true;
             }

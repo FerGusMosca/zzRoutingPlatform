@@ -116,6 +116,8 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         public bool NewPosition { get; set; }
 
+        public bool PendingCxlRepl { get; set; }
+
         #endregion
 
         #endregion
@@ -176,6 +178,14 @@ namespace zHFT.Main.BusinessEntities.Positions
 
             //There will be only one order with this prefix, which could be updated many times (index)
             return Orders.Where(x => x.ClOrdId.StartsWith(orderIdPlusOrdPrefix)).FirstOrDefault();
+        }
+
+        public void RemoveLastOrder()
+        { 
+            if(Orders.Count>0)
+            {
+                Orders.RemoveAt(Orders.Count-1);
+            }
         }
 
         public string GetLastFilledClOrdId()

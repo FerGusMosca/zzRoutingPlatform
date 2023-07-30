@@ -179,11 +179,12 @@ namespace tph.OrderRouter.Bittrex
                             bool isRepl = PendingReplacements.ContainsKey(clOrdId);
 
                             Order order = ActiveOrders[clOrdId];
+                            order.CumQty = GetPrevCumQty(clOrdId) + data.Data.Delta.QuantityFilled;
+                            order.OrderId = data.Data.Delta.Id;//ORDER MATTERS!
                             wrapper = new ExecutionReportWrapper(order, data.Data, isRepl);
                             ExecutionReport exeRep = EvalFinishedExecutionReport(wrapper, data);
                             DoLog($"Received exec report for order (int Cl Ord Id= {data.Data.Delta.ClientOrderId} ClOrdId={clOrdId} ) for symbol {order.Security.Symbol}--> Status={data.Data.Delta.Status} and Cum.Qty={data.Data.Delta.QuantityFilled} ER Status={exeRep.OrdStatus} CloseTime={data.Data.Delta.CloseTime}", MessageType.Information);
-                            order.CumQty = GetPrevCumQty(clOrdId)+ data.Data.Delta.QuantityFilled;
-                            order.OrderId = data.Data.Delta.Id;
+                            
                         }
                         else
                             DoLog($"WARNING - Could not find an order in memory for  ClOrdId {clOrdId}", MessageType.Information);
@@ -318,10 +319,10 @@ namespace tph.OrderRouter.Bittrex
 
         private void WaitUntilCancelled(Order order)
         {
-            bool canneled = false;
+            bool canceled = false;
             int i = 0;
 
-            while (!canneled)
+            while (!canceled)
             {
 
                 if (i > 100)//10 segs
@@ -331,7 +332,7 @@ namespace tph.OrderRouter.Bittrex
 
                 if(execRep.Status== OrderStatus.Closed)
                 {
-                    canneled = true;
+                    canceled = true;
                 }
                 i++;
                 Thread.Sleep(100);

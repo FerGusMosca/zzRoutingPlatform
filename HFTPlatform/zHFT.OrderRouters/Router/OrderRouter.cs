@@ -44,16 +44,70 @@ namespace zHFT.OrderRouters.Router
 
         public Dictionary<string, Position> PositionsByClOrId { get; set; }
 
+        public Dictionary<string, DateTime> PositionsTimeoutDict { get; set; }
+
         public Thread RunOnPositionCalculusThread { get; set; }
 
         #endregion
 
         #region Private Methods
 
+        private void CleanTimeoutPosDict(string posId)
+        {
+            lock (PositionsTimeoutDict)
+            {
+                if(PositionsTimeoutDict.ContainsKey(posId))
+                    PositionsTimeoutDict.Remove(posId);
+
+            }
+        }
+
+        protected void OrdersTimeoutThread(object param)
+        {
+
+            try
+            {
+                while (true)
+                {
+                    lock (PositionsTimeoutDict)
+                    {
+                        foreach (string posId in PositionsTimeoutDict.Keys)
+                        {
+                            TimeSpan elapsed = DateTime.Now - PositionsTimeoutDict[posId];
+
+                            if (elapsed.TotalSeconds > 20)//20 seconds
+                            {
+                                //Remove current order
+                                if (Positions.ContainsKey(posId))
+                                {
+                                    Position position = Positions[posId];
+                                    position.RemoveLastOrder();
+                                    position.PendingCxlRepl = false;
+                                }
+                            }
+                        }
+
+                    }
+                    Thread.Sleep(100);
+                }
+            }
+            catch(Exception ex)
+            {
+                DoLog($"CRITICAL ERROR with timeout threads at Generic Order Router:{ex.Message}", Constants.MessageType.Error);
+            }
+        
+        }
+
         protected virtual void EvalUpdPosOnNewMarketData(Position pos)
         {
-            if (pos.NewDomFlag && !pos.NewPosition && !pos.PositionCanceledOrRejected && !pos.PositionCleared)
+            if (pos.NewDomFlag && 
+                !pos.NewPosition && 
+                !pos.PositionCanceledOrRejected && 
+                !pos.PositionCleared &&
+                !pos.PendingCxlRepl)
             {
+
+                pos.PendingCxlRepl = true;
                 Order oldOrder = pos.GetCurrentOrder();
                 if (oldOrder != null)
                 {
@@ -437,9 +491,10 @@ namespace zHFT.OrderRouters.Router
                             pos.LastPx = report.LastPx;
                             pos.LastQty = report.LastQty;
                             pos.PositionCleared = false;
+                            pos.PendingCxlRepl = false;
                             pos.SetPositionStatusFromExecution(report.ExecType);
                             pos.ExecutionReports.Add(report);
-
+                            CleanTimeoutPosDict(pos.PosId);
                             OnMessageRcv(wrapper);
 
                         }//Filled
@@ -452,10 +507,12 @@ namespace zHFT.OrderRouters.Router
                             pos.LastPx = report.LastPx;
                             pos.LastQty = report.LastQty;
                             pos.PositionCleared = true;
+                            pos.PendingCxlRepl = false;
                             
                             pos.SetPositionStatusFromExecution(report.ExecType);
                             pos.ExecutionReports.Add(report);
                             RemovePositionOnFinishedOrder(pos, report);
+                            CleanTimeoutPosDict(pos.PosId);
                             OnMessageRcv(wrapper);
                         }
                         else if (report.ExecType == ExecType.DoneForDay || report.ExecType == ExecType.Stopped
@@ -464,10 +521,11 @@ namespace zHFT.OrderRouters.Router
                         {
                             pos.PositionCanceledOrRejected = true;
                             pos.PositionCleared = false;
-                            
+                            pos.PendingCxlRepl = false;
                             pos.SetPositionStatusFromExecution(report.ExecType);
                             pos.ExecutionReports.Add(report);
                             RemovePositionOnFinishedOrder(pos, report);
+                            CleanTimeoutPosDict(pos.PosId);
                             OnMessageRcv(wrapper);
                         }
                         else
@@ -709,9 +767,11 @@ namespace zHFT.OrderRouters.Router
 
                     Positions = new Dictionary<string, Position>();
                     PositionsByClOrId = new Dictionary<string, Position>();
+                    PositionsTimeoutDict = new Dictionary<string, DateTime>();
                     PositionConverter = new PositionConverter();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
+                    
 
 
                     DoLog("Initializing Generic Order Router " + ORConfiguration.Proxy, Constants.MessageType.Information);
@@ -728,6 +788,9 @@ namespace zHFT.OrderRouters.Router
                     }
                     else
                         DoLog("Generic Order Router not found. It will not be initialized", Constants.MessageType.Error);
+
+                    Thread myTimeoutThreads = new Thread(OrdersTimeoutThread);
+                    myTimeoutThreads.Start();
 
                     return true;
                 }

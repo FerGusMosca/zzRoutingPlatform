@@ -45,10 +45,10 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
         {
             if (BittrexOrderUpdate.Delta.Status == OrderStatus.Open)
             {
-                if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
+                if (Order.CumQty>0)
                     return ExecType.Trade;
                 else
-                    return ExecType.Trade;
+                    return ExecType.New;
 
             }
             else if (BittrexOrderUpdate.Delta.Status == OrderStatus.Closed)
@@ -89,7 +89,7 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
 
             if (BittrexOrderUpdate.Delta.Status == OrderStatus.Open)
             {
-                if (BittrexOrderUpdate.Delta.QuantityFilled > 0)
+                if (Order.CumQty>0)
                     return OrdStatus.PartiallyFilled;
                 else
                     return OrdStatus.New;
