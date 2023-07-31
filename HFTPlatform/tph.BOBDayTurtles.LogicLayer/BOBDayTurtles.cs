@@ -49,14 +49,14 @@ namespace tph.BOBDayTurtles.LogicLayer
 
             TimeSpan elapsed = DateTime.Now - StartTime;
 
-            if (TradingPositions.Keys.Count < Config.MaxOpenedPositions
-                && !TradingPositions.ContainsKey(turtlePos.Security.Symbol)
+            if (PortfolioPositions.Keys.Count < Config.MaxOpenedPositions
+                && !PortfolioPositions.ContainsKey(turtlePos.Security.Symbol)
                 && IsTradingTime()
             )
             {
                 EvalOpeningPosition(turtlePos);
             }
-            else if (TradingPositions.ContainsKey(turtlePos.Security.Symbol) && IsTradingTime())
+            else if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol) && IsTradingTime())
             {
                 EvalClosingPosition(turtlePos);
                 EvalClosingPositionOnStopLossHit(turtlePos);

@@ -52,6 +52,14 @@ namespace zHFT.OrderRouters.Router
 
         #region Private Methods
 
+        private void AppendPositionByClOrdId(string clOrdId, Position pos)
+        {
+            if (PositionsByClOrId.ContainsKey(clOrdId))
+                PositionsByClOrId[clOrdId] = pos;
+            else
+                PositionsByClOrId[clOrdId] = pos;
+        }
+
         private void UpdateTimeoutPosDict(string posId)
         {
             lock (PositionsTimeoutDict)
@@ -133,7 +141,7 @@ namespace zHFT.OrderRouters.Router
                     pos.Orders.Add(order);
                     order.Index++;
                     DoLog(string.Format("<Gen. Order Router> - Replacing OrigClOrdId {0} with ClOrdid {1} for symbol {2} (PosId {3}) ",order.OrigClOrdId,order.ClOrdId,pos.Security.Symbol,pos.PosId),Constants.MessageType.Information);
-                    PositionsByClOrId.Add(order.ClOrdId, pos);
+                    AppendPositionByClOrdId(order.ClOrdId, pos);
 
                     if (pos.Side == Side.Buy)
                     {

@@ -484,6 +484,46 @@ namespace tph.OrderRouter.Bittrex
                 return CMState.BuildFail(ex);
             }
         }
+
+        private bool ValidateCancelation(string origClOrdId,string clOrderId)
+        {
+            if (PendingReplacements.ContainsKey(origClOrdId))
+            {
+                return false;
+            }
+
+            if (origClOrdId == null)
+                throw new Exception("Could not find OrigClOrdID for order updated");
+
+            if (clOrderId == null)
+                throw new Exception("Could not find ClOrdId for new order");
+
+           lock(tLockUpdate)
+            {
+
+                if (ActiveOrders.ContainsKey(origClOrdId))
+                {
+                    Order order = ActiveOrders[origClOrdId];
+
+                    if (order.OrderId == null)
+                    {
+                        DoLog($" WARNING - The client order id {origClOrdId} has not been accepted on the exchange and cannot be updated ", MessageType.Information);
+                        return false;
+                    }
+                    //Fetch Order --> w/rest client
+                    BittrexOrder ordResp = FetchOrder(order);
+
+                    if (ordResp.Status == OrderStatus.Closed)
+                    {
+                        DoLog($"Trying to cancel an already canceled or filled order: {origClOrdId}", MessageType.Information);
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+
+        }
    
         protected override zHFT.Main.Common.DTO.CMState UpdateOrder(zHFT.Main.Common.Wrappers.Wrapper wrapper)
         {
@@ -492,17 +532,9 @@ namespace tph.OrderRouter.Bittrex
             string clOrderId = wrapper.GetField(OrderFields.ClOrdID).ToString();
             try
             {
-
-                if (PendingReplacements.ContainsKey(origClOrderId))
-                {
+                if (!ValidateCancelation(origClOrderId, clOrderId))
                     return CMState.BuildSuccess();
-                }
-
-                if (wrapper.GetField(OrderFields.OrigClOrdID) == null)
-                    throw new Exception("Could not find OrigClOrdID for order updated");
-
-                if (wrapper.GetField(OrderFields.ClOrdID) == null)
-                    throw new Exception("Could not find ClOrdId for new order");
+             
 
                 lock (tLockUpdate)
                 {
@@ -511,62 +543,48 @@ namespace tph.OrderRouter.Bittrex
                     {
                         Order order = ActiveOrders[origClOrderId];
 
-                        if (order != null)
+                        PendingReplacements.Add(origClOrderId, order);
+
+                        //Cancel the order
+                        RunCancelOrder(order, true);
+
+                        WaitUntilCancelled(order);
+
+                        Thread.Sleep(100);
+
+                        //Prepare new order
+                        double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+                        order.Price = newPrice;
+                        order.ClOrdId = clOrderId;
+                        double lvsQty =  order.OrderQty.Value - Convert.ToDouble(order.CumQty.Value);
+                        order.OrderQty = Convert.ToDouble(lvsQty);//only route new qty
+                        PrevCumQtys.Add(clOrderId, order.CumQty.HasValue ? order.CumQty.Value : 0);
+
+                        try
                         {
-                            if (order.OrderId == null)
-                            {
-                                DoLog($" WARNING - The client order id {origClOrderId} has not been accepted on the exchange and cannot be updated ",MessageType.Information);
-                                return CMState.BuildSuccess();
-                            }
-                            //Fetch Order --> w/rest client
-                            BittrexOrder ordResp = FetchOrder(order);
-
-                            if (ordResp.Status == OrderStatus.Closed)
-                            {
-                                DoLog($"Trying to cancel an already canceled or filled order: {origClOrderId}", MessageType.Information);
-                                return CMState.BuildSuccess();
-                            }
-
-                            PendingReplacements.Add(origClOrderId, order);
-
-                            //Cancel the order
-                            RunCancelOrder(order, true);
-
-                            WaitUntilCancelled(order);
-
-                            Thread.Sleep(100);
-
-                            //Damos el alta
-                            double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
-                            order.Price = newPrice;
-                            order.ClOrdId = clOrderId;
-                            double lvsQty =  order.OrderQty.Value - Convert.ToDouble(order.CumQty.Value);
-                            order.OrderQty = Convert.ToDouble(lvsQty);//only route new qty
+                            //Prev CumQty added with the new order
                             
-                            try
-                            {
-                                //Prev CumQty added with the new order
-                                PrevCumQtys.Add(clOrderId, order.CumQty.HasValue ? order.CumQty.Value : 0);
-                                BittrexOrder plOrder= RunNewOrder(order, true);
+                            BittrexOrder plOrder= RunNewOrder(order, true);
 
-                                if (plOrder == null || plOrder.Status == OrderStatus.Closed)
-                                {
-                                    string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
-                                    DoLog(msg,MessageType.Information);
-                                    Wrapper cxlWrapper =BuildCanceledExecutionReport(order, msg);
-
-                                    if (ActiveOrders.ContainsKey(clOrderId))
-                                        ActiveOrders.Remove(clOrderId);
-                                    PrevCumQtys.Remove(clOrderId);
-                                    OnMessageRcv(cxlWrapper);
-                                }
-                            }
-                            catch (Exception ex)
+                            if (plOrder == null || plOrder.Status == OrderStatus.Closed)
                             {
-                                
-                                EvalRouteError(order,clOrderId, ex);
+                                order.ClOrdId = origClOrderId;//The active order is the original one
+                                string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
+                                DoLog(msg,MessageType.Information);
+                                Wrapper cxlWrapper =BuildCanceledExecutionReport(order, msg);
+
+                                if (ActiveOrders.ContainsKey(clOrderId))
+                                    ActiveOrders.Remove(clOrderId);
+                                PrevCumQtys.Remove(clOrderId);
+                                OnMessageRcv(cxlWrapper);
                             }
                         }
+                        catch (Exception ex)
+                        {
+                                
+                            EvalRouteError(order,clOrderId, ex);
+                        }
+                        
                     }
                     else
                         throw new Exception(string.Format("Could not find an active order to cancel (and then) for Client Order Id {0}", origClOrderId));

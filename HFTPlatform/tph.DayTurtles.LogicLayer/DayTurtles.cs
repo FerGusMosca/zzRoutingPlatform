@@ -56,7 +56,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 TradTurtlesPosition trdPos = (TradTurtlesPosition) LoadNewPos(turtlePos, Side.Buy);
                 PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
-                TradingPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
+                PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                 CMState state = OrderRouter.ProcessMessage(posWrapper);
                 DoLog(string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4} {5}", trdPos.TradeDirection,
                     trdPos.OpeningPosition.Security.Symbol, trdPos.OpeningPosition.CashQty, DateTime.Now, trdPos.OpeningPosition.PosId,turtlePos.SignalTriggered()), Constants.MessageType.Information);
@@ -68,7 +68,7 @@ namespace tph.DayTurtles.LogicLayer
                 {
                     TradTurtlesPosition trdPos = (TradTurtlesPosition) LoadNewPos(turtlePos, Side.Sell);
                     PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
-                    TradingPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
+                    PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                     CMState state = OrderRouter.ProcessMessage(posWrapper);
                     DoLog(
                         string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4}  {5}",
@@ -94,9 +94,9 @@ namespace tph.DayTurtles.LogicLayer
         
         protected bool EvalClosingPositionOnStopLossHit(MonTurtlePosition turtlePos)
         {
-            if (TradingPositions.ContainsKey(turtlePos.Security.Symbol))
+            if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol))
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition) TradingPositions[turtlePos.Security.Symbol];
+                TradTurtlesPosition trdPos = (TradTurtlesPosition) PortfolioPositions[turtlePos.Security.Symbol];
                 
                 if(turtlePos.EvalStopLossHit(trdPos))
                 {
@@ -115,9 +115,9 @@ namespace tph.DayTurtles.LogicLayer
         
         protected void EvalAbortingOpeningPositions(MonTurtlePosition turtlePos)
         {
-            if (TradingPositions.ContainsKey(turtlePos.Security.Symbol))
+            if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol))
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition) TradingPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
+                TradTurtlesPosition trdPos = (TradTurtlesPosition) PortfolioPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
             
                 if(turtlePos.EvalAbortingNewLongPosition())
                 {
@@ -137,7 +137,7 @@ namespace tph.DayTurtles.LogicLayer
         
         protected void EvalClosingPosition(MonTurtlePosition monPos)
         {
-            TradTurtlesPosition portfPos = (TradTurtlesPosition) TradingPositions[monPos.Security.Symbol];
+            TradTurtlesPosition portfPos = (TradTurtlesPosition) PortfolioPositions[monPos.Security.Symbol];
 
             if (portfPos.IsShortDirection() && monPos.EvalClosingShortPosition()  && !monPos.IsClosing())
             {
@@ -171,9 +171,9 @@ namespace tph.DayTurtles.LogicLayer
         
         protected void EvalAbortingClosingPositions(MonTurtlePosition turtlePos)
         {
-            if (TradingPositions.ContainsKey(turtlePos.Security.Symbol))
+            if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol))
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition) TradingPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
+                TradTurtlesPosition trdPos = (TradTurtlesPosition) PortfolioPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
             
                 if(turtlePos.EvalAbortingClosingLongPosition())
                 {
@@ -196,14 +196,14 @@ namespace tph.DayTurtles.LogicLayer
             
             TimeSpan elapsed = DateTime.Now - StartTime;
 
-            if (TradingPositions.Keys.Count < Config.MaxOpenedPositions 
-                && !TradingPositions.ContainsKey(monPos.Security.Symbol)
+            if (PortfolioPositions.Keys.Count < Config.MaxOpenedPositions 
+                && !PortfolioPositions.ContainsKey(monPos.Security.Symbol)
                 && IsTradingTime()
             )
             {
                 EvalOpeningPosition(monPos);
             }
-            else if (TradingPositions.ContainsKey(monPos.Security.Symbol) && IsTradingTime())
+            else if (PortfolioPositions.ContainsKey(monPos.Security.Symbol) && IsTradingTime())
             {
                 EvalClosingPosition(monPos);
                 EvalClosingPositionOnStopLossHit(monPos);
