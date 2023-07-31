@@ -130,8 +130,23 @@ namespace zHFT.StrategyHandler.LogicLayer
             trdPos.CurrentPos().PositionCanceledOrRejected = true;
             trdPos.CurrentPos().PositionCleared = false;
             trdPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
-            if (trdPos.IsFirstLeg() && trdPos.OpeningPosition.CumQty == 0)
-                PortfolioPositions.Remove(trdPos.OpeningPosition.Security.Symbol);
+            if (trdPos.IsFirstLeg() )
+            {
+                if (trdPos.OpeningPosition.CumQty == 0)
+                    PortfolioPositions.Remove(trdPos.OpeningPosition.Security.Symbol);
+                else //it was filled and will have to be treated as such
+                    trdPos.CurrentPos().SetPositionStatusFromExecutionStatus(OrdStatus.Filled); 
+
+            }
+            else
+            {
+                if (trdPos.ClosingPosition.CumQty == 0)
+                    PortfolioPositions.Remove(trdPos.ClosingPosition.Security.Symbol);
+                else //it was filled and will have to be treated as such
+                    trdPos.CurrentPos().SetPositionStatusFromExecutionStatus(OrdStatus.Filled);
+
+
+            }
         
         }
         
@@ -219,32 +234,31 @@ namespace zHFT.StrategyHandler.LogicLayer
                 return LoadNewRegularPos(portPos, side);
         }
         
-        protected void AssignMainERParameters(TradingPosition trdPos,ExecutionReport report)
+        protected void AssignMainERParameters(TradingPosition portfPos,ExecutionReport report)
         {
             if (!report.IsCancelationExecutionReport())
             {
-                trdPos.CurrentPos().CumQty = report.CumQty;
-                trdPos.CurrentPos().LeavesQty = report.LeavesQty;
-                trdPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
-                trdPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
-                trdPos.CurrentPos().ExecutionReports.Add(report);
+                portfPos.CurrentPos().CumQty = report.CumQty;
+                portfPos.CurrentPos().LeavesQty = report.LeavesQty;
+                portfPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
+                portfPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
+                portfPos.CurrentPos().ExecutionReports.Add(report);
 
                 if (report.OrdStatus == OrdStatus.Filled)
                 {
-                    DoLog($"Persisting ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus}) --> FirstLeg?={trdPos}", Constants.MessageType.Information);
+                    DoLog($"Persisting ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus}) --> FirstLeg?={portfPos}", Constants.MessageType.Information);
 
-                    Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
-                    persitThread.Start(trdPos);
+                    
 
-                    if (!trdPos.IsFirstLeg())
+                    if (!portfPos.IsFirstLeg())
                     {
                         //DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
-                        PortfolioPositionsToMonitor[trdPos.OpeningPosition.Security.Symbol].Closing = false;
-                        PortfolioPositions.Remove(trdPos.OpeningPosition.Security.Symbol);
+                        PortfolioPositionsToMonitor[portfPos.OpeningPosition.Security.Symbol].Closing = false;
+                        PortfolioPositions.Remove(portfPos.OpeningPosition.Security.Symbol);
                     }
                     else
                     {
-                        DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty,trdPos.TradeDirection),Constants.MessageType.Information);
+                        DoLog(string.Format("DB-Fully opened {2} position for symbol {0} (CumQty={1})",portfPos.OpeningPosition.Security.Symbol,report.CumQty,portfPos.TradeDirection),Constants.MessageType.Information);
                     }
                 }
             }
@@ -252,26 +266,34 @@ namespace zHFT.StrategyHandler.LogicLayer
             {
                 if (PendingCancels.ContainsKey(report.Order.Symbol))
                 {
-                    ProcessOrderCancellation(trdPos, report);
+                    ProcessOrderCancellation(portfPos, report);
                 }
                 else
                 {
                     if (report.OrdStatus == OrdStatus.Rejected)
                     {
                         DoLog(string.Format("Rejected execution report symbol {0} (PosId={4}): ER Status={1} ER ExecType={1} ER Text={3}",
-                                                report.Order.Symbol, report.OrdStatus, report.ExecType, report.Text,trdPos.CurrentPos().PosId),
+                                                report.Order.Symbol, report.OrdStatus, report.ExecType, report.Text,portfPos.CurrentPos().PosId),
                                                 Main.Common.Util.Constants.MessageType.Information);
-                        ProcessOrderRejection(trdPos, report);
+                        ProcessOrderRejection(portfPos, report);
                     }
                     else
                     {
                         DoLog(string.Format("WARNING-Recv ER for symbol {0} (PosId={4}): ER Status={1} ER ExecType={1} ER Text={3}",
-                                                report.Order.Symbol, report.OrdStatus, report.ExecType, report.Text,trdPos.CurrentPos().PosId),
+                                                report.Order.Symbol, report.OrdStatus, report.ExecType, report.Text,portfPos.CurrentPos().PosId),
                                                 Main.Common.Util.Constants.MessageType.Information);
-                        EvalRemoval(trdPos, report);
+                        EvalRemoval(portfPos, report);
                     }
                 }
             }
+
+            if (!(portfPos.IsFirstLeg() && portfPos.CurrentPos().CumQty == 0))
+            {
+
+                Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
+                persitThread.Start(portfPos);
+            }
+
         }
         
         private void LoadCloseRegularPos(Position openPos, PortfolioPosition portfPos, TradingPosition trdPos)
@@ -430,6 +452,8 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
             else if (tradPos.CurrentPos().PositionRouting()) //OPEN:most probably an update failed--> we do nothing
             {
+                EvalRemoval(tradPos, report);
+
                 DoLog(string.Format("@{0} WARNING-Action on OPEN position rejected for symbol {1} (PosId={3}):{2} ",
                     Config.Name, tradPos.OpeningPosition.Security.Symbol, report.Text,
                     tradPos.CurrentPos().PosId), Constants.MessageType.Error);

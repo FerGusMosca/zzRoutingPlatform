@@ -82,12 +82,12 @@ namespace tph.OrderRouter.Bittrex
 
         }
 
-        private GenericExecutionReportWrapper BuildCanceledExecutionReport(Order order, string reason)
+        private GenericExecutionReportWrapper BuildRejectedExecutionReport(Order order, string reason)
         {
             ExecutionReport cxlRep = new ExecutionReport();
             cxlRep.Order = order;
-            cxlRep.ExecType = ExecType.Canceled;
-            cxlRep.OrdStatus = OrdStatus.Canceled;
+            cxlRep.ExecType = ExecType.Rejected;
+            cxlRep.OrdStatus = OrdStatus.Rejected;
             cxlRep.Text = reason;
             cxlRep.CumQty = order.CumQty.HasValue ? Convert.ToDouble(order.CumQty) : 0;
             cxlRep.TransactTime = DateTime.Now;
@@ -118,17 +118,17 @@ namespace tph.OrderRouter.Bittrex
 
                                 if (elapsed.TotalSeconds > _MAX_SECONDS_NEW_ORD)
                                 {
-                                    DoLog($"HIGH WARNING--> Cancelling order {clOrdId} on timeout!", MessageType.Error);
+                                    DoLog($"HIGH WARNING--> Rejecting order {clOrdId} on timeout!", MessageType.Error);
 
                                     if (ActiveOrders.ContainsKey(clOrdId))
                                     {
                                         Order order = ActiveOrders[clOrdId];
-                                        GenericExecutionReportWrapper wrapper = BuildCanceledExecutionReport(order, "Cancelled because of timeout!");
+                                        GenericExecutionReportWrapper wrapper = BuildRejectedExecutionReport(order, "Cancelled because of timeout!");
                                         ActiveOrders.Remove(clOrdId);
 
                                         toSend.Add(wrapper);
                                         Console.Beep();//<DBG>
-                                        DoLog($"HIGH WARNING--> Order {clOrdId} marked for cancelation!", MessageType.Error);
+                                        DoLog($"HIGH WARNING--> Order {clOrdId} marked for rejection!", MessageType.Error);
 
                                     }
 
@@ -280,7 +280,7 @@ namespace tph.OrderRouter.Bittrex
 
             string msg = $"Error routing order for symbol {order.Security.Symbol}: {ex.Message}";
             DoLog(msg, MessageType.Error);
-            Wrapper cxlWrapper = BuildCanceledExecutionReport(order, msg);
+            Wrapper cxlWrapper = BuildRejectedExecutionReport(order, msg);
             OnMessageRcv(cxlWrapper);
 
          
@@ -571,7 +571,7 @@ namespace tph.OrderRouter.Bittrex
                                 order.ClOrdId = origClOrderId;//The active order is the original one
                                 string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
                                 DoLog(msg,MessageType.Information);
-                                Wrapper cxlWrapper =BuildCanceledExecutionReport(order, msg);
+                                Wrapper cxlWrapper =BuildRejectedExecutionReport(order, msg);
 
                                 if (ActiveOrders.ContainsKey(clOrderId))
                                     ActiveOrders.Remove(clOrderId);
