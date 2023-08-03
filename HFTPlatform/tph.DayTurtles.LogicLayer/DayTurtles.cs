@@ -190,6 +190,61 @@ namespace tph.DayTurtles.LogicLayer
                 }
             }
         }
+
+        protected void EvalDepuratingPositionsThread(object param)
+        {
+
+          
+            while (true)
+            {
+                lock (tLock)
+                {
+                    try 
+                    {
+                        List<string> toRemove= new List<string>();
+                        DoLog($"=========SUMMARY OF PORTF STATUS!=========", Constants.MessageType.Information);
+                        foreach (string symbol in PortfolioPositions.Keys)
+                        {
+                            TradingPosition portfPos = PortfolioPositions[symbol];
+
+                            DoLog($"Summary for Symbol={symbol} FirstLeg={portfPos.IsFirstLeg()} LongCumQty={portfPos.OpenCumQty()} CloseCumQty={portfPos.CloseCumQty()}",Constants.MessageType.Information);
+
+
+                            if (   portfPos.OpeningPosition != null 
+                                && portfPos.OpeningPosition.PositionNoLongerActive()
+                                && portfPos.ClosingPosition!=null
+                                && portfPos.ClosingPosition.PositionNoLongerActive()
+                                && portfPos.IsInFactClosedPortfPos()
+                                )
+                            {
+                                toRemove.Add(symbol);
+                            }
+
+
+                        }
+
+                        foreach (string symbol in toRemove)
+                        {
+                            DoLog($"Portf Poisition removed cuz considered closed: {symbol} ", Constants.MessageType.Information);
+                            PortfolioPositions.Remove(symbol);
+                        
+                        }
+                    
+                    
+                    
+                    }
+                    catch(Exception ex)
+                    {
+                        DoLog($"CRITICAL error removing closed positions with unperfect closing:{ex.Message}", Constants.MessageType.Error);
+                    }
+                }
+
+
+
+                Thread.Sleep(60 * 1000);//1 minute
+            }
+
+        }
         
         protected void EvalOpeningClosingPositions(MonTurtlePosition monPos)
         {
@@ -290,8 +345,8 @@ namespace tph.DayTurtles.LogicLayer
             {
                 lock (tPersistLock)
                 {
-                    TradTurtlesPosition turtlesTradPos = (TradTurtlesPosition) trdPos;
-                    TurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(turtlesTradPos);
+                    TradTurtlesPosition portfPos = (TradTurtlesPosition) trdPos;
+                    TurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(portfPos);
                 }
                
             }
@@ -349,7 +404,12 @@ namespace tph.DayTurtles.LogicLayer
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
                 InitializeManagers(GetConfig().ConnectionString);
+
+                Thread depuarateThread = new Thread(EvalDepuratingPositionsThread);
+                depuarateThread.Start();
+
                 
+
                 return true;
 
             }

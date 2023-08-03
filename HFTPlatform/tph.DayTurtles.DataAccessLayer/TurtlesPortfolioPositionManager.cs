@@ -54,6 +54,7 @@ namespace tph.DayTurtles.DataAccessLayer
                         cmd.Parameters.Add(new SqlParameter("@IsClosing", "N"));
                         cmd.Parameters.Add(new SqlParameter("@OpenPosId", pos.OpeningPosition.PosId));
                         cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", pos.OpeningPosition.GetLastFilledClOrdId()));
+                        cmd.Parameters.Add(new SqlParameter("@OpenQty", pos.OpeningPosition.CumQty));
                         //cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", null));
                         //cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", null));
 
@@ -61,8 +62,9 @@ namespace tph.DayTurtles.DataAccessLayer
                     else {
 
                         cmd.Parameters.Add(new SqlParameter("@IsClosing", "Y"));
-                        cmd.Parameters.Add(new SqlParameter("@ClosingPosId", pos.OpeningPosition.PosId));
+                        cmd.Parameters.Add(new SqlParameter("@ClosingPosId", pos.ClosingPosition.PosId));
                         cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", pos.ClosingPosition.GetLastFilledClOrdId()));
+                        cmd.Parameters.Add(new SqlParameter("@CloseQty", pos.ClosingPosition.CumQty));
                         //cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", null));
                         //cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", null));
 

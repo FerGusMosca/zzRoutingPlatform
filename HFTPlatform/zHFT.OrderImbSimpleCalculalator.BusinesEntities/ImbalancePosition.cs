@@ -59,14 +59,15 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             get { return OpeningPosition.Side == Side.Buy ? _LONG : _SHORT; }
         }
 
-        public double OpeningPrice
+        public double? OpeningPrice
         {
             get {
 
                 if (OpeningPosition.AvgPx.HasValue)
                     return OpeningPosition.AvgPx.Value;
                 else
-                    throw new Exception(string.Format("Opening price not available for trade on symbol {0}", OpeningPosition.Security.Symbol));
+                    return null;
+                    //throw new Exception(string.Format("Opening price not available for trade on symbol {0}", OpeningPosition.Security.Symbol));
             
             }
         }

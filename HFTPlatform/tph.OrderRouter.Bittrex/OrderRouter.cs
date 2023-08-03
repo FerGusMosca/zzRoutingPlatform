@@ -568,15 +568,19 @@ namespace tph.OrderRouter.Bittrex
 
                             if (plOrder == null || plOrder.Status == OrderStatus.Closed)
                             {
-                                order.ClOrdId = origClOrderId;//The active order is the original one
-                                string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
-                                DoLog(msg,MessageType.Information);
-                                Wrapper cxlWrapper =BuildRejectedExecutionReport(order, msg);
+                                if (plOrder.QuantityFilled == 0)
+                                {
+                                    order.ClOrdId = origClOrderId;//The active order is the original one
+                                    string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
+                                    DoLog(msg, MessageType.Information);
+                                    Wrapper cxlWrapper = BuildRejectedExecutionReport(order, msg);
 
-                                if (ActiveOrders.ContainsKey(clOrderId))
-                                    ActiveOrders.Remove(clOrderId);
-                                PrevCumQtys.Remove(clOrderId);
-                                OnMessageRcv(cxlWrapper);
+                                    if (ActiveOrders.ContainsKey(clOrderId))
+                                        ActiveOrders.Remove(clOrderId);
+                                    PrevCumQtys.Remove(clOrderId);
+                                    OnMessageRcv(cxlWrapper);
+                                }
+                                //if it was a filled--> it will be recv as an Exec Report!
                             }
                         }
                         catch (Exception ex)

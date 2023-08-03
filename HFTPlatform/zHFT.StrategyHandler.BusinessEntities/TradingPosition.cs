@@ -1,4 +1,5 @@
 ﻿using System;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.Common.Enums;
 
@@ -13,69 +14,86 @@ namespace zHFT.StrategyHandler.BusinessEntities
         public static string _SHORT = "SHORT";
 
         #endregion
-        
+
         #region Public Attributes
-        
+
         public string StrategyName { get; set; }
-        
+
         public Position OpeningPosition { get; set; }
 
         public Position ClosingPosition { get; set; }
-        
+
         public DateTime OpeningDate { get; set; }
 
         public DateTime? ClosingDate { get; set; }
-        
+
         public bool Closing { get; set; }
-        
+
         public string TradeDirection
         {
             get { return OpeningPosition.Side == Side.Buy ? _LONG : _SHORT; }
         }
-        
-        public virtual double Qty { 
-            get 
+
+        public virtual double Qty {
+            get
             {
-                if (   OpeningPosition.QuantityType == QuantityType.SHARES 
-                       || OpeningPosition.QuantityType == QuantityType.CURRENCY )
+                if (OpeningPosition.QuantityType == QuantityType.SHARES
+                       || OpeningPosition.QuantityType == QuantityType.CURRENCY)
                     return OpeningPosition.CumQty;
                 else
-                    throw new Exception (string.Format("Qty not available for Qty type {0}",OpeningPosition.QuantityType));
-            } 
+                    throw new Exception(string.Format("Qty not available for Qty type {0}", OpeningPosition.QuantityType));
+            }
         }
-        
+
         public string FeeTypePerTrade { get; set; }
 
         public double FeeValuePerTrade { get; set; }
-        
+
         public PortfolioPosition OpeningPortfolioPosition { get; set; }
-        
+
         public double? LastPrice { get; set; }
-        
+
         #endregion
-        
+
         #region Public Methods
-        
+
         public Position CurrentPos()
         {
             return ClosingPosition == null ? OpeningPosition : ClosingPosition;
-        
+
         }
-        
+
+        public double OpenCumQty()
+        {
+            if (OpeningPosition != null)
+                return OpeningPosition.CumQty;
+            else
+                return 0;
+        }
+
+        public double CloseCumQty()
+        {
+            if (ClosingPosition != null)
+                return ClosingPosition.CumQty;
+            else
+                return 0;
+        }
+
         public bool IsFirstLeg()
         {
             return ClosingPosition == null;
         }
-        
-        public double OpeningPrice
+
+        public double? OpeningPrice
         {
             get {
 
                 if (OpeningPosition.AvgPx.HasValue)
                     return OpeningPosition.AvgPx.Value;
                 else
-                    throw new Exception(string.Format("Opening price not available for trade on symbol {0}", OpeningPosition.Security.Symbol));
-            
+                    return null;
+                //throw new Exception(string.Format("Opening price not available for trade on symbol {0}", OpeningPosition.Security.Symbol));
+
             }
         }
 
@@ -91,6 +109,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
             }
         }
+
 
         public virtual double TotalFee
         {
@@ -131,7 +150,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
                     return 0;
             }
         }
-        
+
         public virtual double? NominalProfit
         {
 
@@ -147,7 +166,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
                 else if (TradeDirection == _SHORT)
                 {
                     if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
-                        return (InitialCap - TotalFee - FinalCap) ;
+                        return (InitialCap - TotalFee - FinalCap);
                     else
                         return null;
                 }
@@ -156,14 +175,14 @@ namespace zHFT.StrategyHandler.BusinessEntities
             }
 
         }
-        
+
         public virtual double InitialCap
         {
             get
             {
                 if (!OpeningPosition.AvgPx.HasValue)
                     return 0;
-                    //throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
+                //throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
 
                 return OpeningPosition.CumQty * OpeningPosition.AvgPx.Value;
             }
@@ -179,9 +198,9 @@ namespace zHFT.StrategyHandler.BusinessEntities
                     {
                         if (!ClosingPosition.AvgPx.HasValue)
                             return 0;
-                            //throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
+                        //throw new Exception(string.Format("Unknown AvgPx for position on Security {0}", OpeningPosition.Security.Symbol));
 
-                        return (OpeningPosition.CumQty * ClosingPosition.AvgPx.Value) ;
+                        return (ClosingPosition.CumQty * ClosingPosition.AvgPx.Value);
                     }
                     else
                         return null;
@@ -194,41 +213,67 @@ namespace zHFT.StrategyHandler.BusinessEntities
         public virtual double? Profit
         {
 
-            get 
+            get
             {
                 if (TradeDirection == _LONG)
                 {
                     if (FinalCap.HasValue && InitialCap != 0)
-                        return (((FinalCap - TotalFee) / InitialCap) - 1) ;
+                        return (((FinalCap - TotalFee) / InitialCap) - 1);
                     else
                         return null;
                 }
                 else if (TradeDirection == _SHORT)
                 {
                     if (FinalCap.HasValue && FinalCap.HasValue && FinalCap.Value != 0)
-                        return (((InitialCap) / (FinalCap + TotalFee)) - 1) ;
+                        return (((InitialCap) / (FinalCap + TotalFee)) - 1);
                     else
                         return null;
                 }
                 else
                     return null;
             }
-        
+
         }
 
         #endregion
-        
+
         #region Public Methods
 
         public bool IsLongDirection()
         {
             return TradeDirection == _LONG;
         }
-        
+
         public bool IsShortDirection()
         {
             return TradeDirection == _SHORT;
         }
+
+        public bool IsInFactClosedPortfPos()
+        {
+            if (OpeningPosition != null && ClosingPosition != null)
+            {
+
+                if (FinalCap.HasValue)
+                {
+                    double pct = Math.Abs(Convert.ToDouble(InitialCap / FinalCap.Value) - 1);
+
+                    if (pct < 0.05)
+                        return true;//Less that 5% difference btw buy and sell
+                    else
+                        return false;
+                }
+                else
+                    return false;
+
+            }
+            else 
+                return false;
+        
+        }
+
+
+
 
         #endregion
         

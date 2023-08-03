@@ -591,17 +591,27 @@ namespace zHFT.StrategyHandler.LogicLayer
             if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
             {
                 TradingPosition trdPos = PortfolioPositions[portfPos.Security.Symbol];
-                if (trdPos.OpeningPosition.PosStatus == PositionStatus.Filled
-                    || trdPos.OpeningPosition.PosStatus == PositionStatus.PartiallyFilled)
+
+                if(trdPos.OpeningPosition!=null)
                 {
-                    if (trdPos.ClosingPosition == null)
-                    {
-                        trdPos.LastPrice = md.Trade;
-                        Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
-                        persitThread.Start(trdPos);
-                        
-                    }
+                    trdPos.LastPrice = md.Trade;
+                    Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
+                    persitThread.Start(trdPos);
+
+
                 }
+
+                //if (trdPos.OpeningPosition.PosStatus == PositionStatus.Filled
+                //    || trdPos.OpeningPosition.PosStatus == PositionStatus.PartiallyFilled)
+                //{
+                //    if (trdPos.ClosingPosition == null)
+                //    {
+                //        trdPos.LastPrice = md.Trade;
+                //        Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
+                //        persitThread.Start(trdPos);
+                        
+                //    }
+                //}
             }
         
         }

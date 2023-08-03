@@ -329,13 +329,15 @@ namespace DayCurrenciesTrading
         
         }
         
-         protected void AssignMainERParameters(CurrencyPairMonitoringPosition monPos,ExecutionReport report)
+        protected void AssignMainERParameters(CurrencyPairMonitoringPosition monPos,ExecutionReport report)
         {
+
+            monPos.CurrentPos().CumQty = report.CumQty;
+            monPos.CurrentPos().LeavesQty = report.LeavesQty;
+            monPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
+
             if (!report.IsCancelationExecutionReport())
             {
-                monPos.CurrentPos().CumQty = report.CumQty;
-                monPos.CurrentPos().LeavesQty = report.LeavesQty;
-                monPos.CurrentPos().AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
                 monPos.CurrentPos().SetPositionStatusFromExecutionStatus(report.OrdStatus);
                 monPos.CurrentPos().ExecutionReports.Add(report);
 
