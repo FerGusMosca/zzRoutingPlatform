@@ -239,7 +239,7 @@ namespace tph.OrderRouter.Bittrex
         
         }
 
-        private BittrexOrder RunNewOrder(Order order, bool update)
+        private BittrexOrder RunNewOrder(Order order, decimal? updQty=null)
         {
             string internalClOdId = Guid.NewGuid().ToString();
             string symbol = $"{order.Symbol}-{order.Currency}";
@@ -247,7 +247,9 @@ namespace tph.OrderRouter.Bittrex
             zHFT.Main.Common.Enums.Side side = order.Side;
             decimal ordQty = 0;
 
-            if (order.OrderQty.HasValue)
+            if (updQty.HasValue)
+                ordQty = updQty.Value;
+            else if (order.OrderQty.HasValue)
                 ordQty = Convert.ToDecimal(order.OrderQty.Value);
             else
                 throw new Exception($"Could not create an order without a qty for Symbol {symbol} at Bittrex Order Router");
@@ -356,16 +358,17 @@ namespace tph.OrderRouter.Bittrex
         
         }
 
-        private void UpdateNewOrder(Order order,Wrapper wrapper,string clOrderId)
+        private decimal UpdateNewOrder(Order order,Wrapper wrapper,string clOrderId)
         {
             //Prepare new order
+            DoLog($"{BittrexConfiguration.Name}- Updating order --> FullQty={order.OrderQty} CumQty={order.CumQty}", MessageType.Information);
             double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
             order.Price = newPrice;
             order.ClOrdId = clOrderId;
-            double lvsQty = order.OrderQty.Value - Convert.ToDouble(order.CumQty.Value);
-            DoLog($"{Config.Name}- Updated order --> FullQty={order.OrderQty} CumQty={order.CumQty} NewQty={lvsQty} NewPrice={newPrice}", MessageType.Information);
-            order.OrderQty = Convert.ToDouble(lvsQty);//only route new qty
+            decimal lvsQty = Convert.ToDecimal(order.OrderQty.Value) - (order.CumQty.HasValue ? order.CumQty.Value : 0);
             PrevCumQtys.Add(clOrderId, order.CumQty.HasValue ? order.CumQty.Value : 0);
+            DoLog($"{BittrexConfiguration.Name}- Updated order --> FullQty={order.OrderQty} CumQty={order.CumQty} NewQty={lvsQty} NewPrice={newPrice}", MessageType.Information);
+            return lvsQty;
         }
         
 
@@ -519,7 +522,7 @@ namespace tph.OrderRouter.Bittrex
                 {
                     lock (tLock)
                     {
-                        RunNewOrder(order, false);
+                        RunNewOrder(order);
                     }
                 }
                 catch (Exception ex)
@@ -602,12 +605,12 @@ namespace tph.OrderRouter.Bittrex
 
                         Thread.Sleep(100);
 
-                        UpdateNewOrder(order, wrapper, clOrderId);
+                        decimal newOrdQty = UpdateNewOrder(order, wrapper, clOrderId);
 
                         try
                         {
                             //Prev CumQty added with the new order
-                            BittrexOrder plOrder= RunNewOrder(order, true);
+                            BittrexOrder plOrder= RunNewOrder(order, newOrdQty);
 
                             ProcessNewOrderRejection(order, plOrder, origClOrderId, clOrderId);
                         }
@@ -628,7 +631,8 @@ namespace tph.OrderRouter.Bittrex
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("@{0}:Error updating order {1}!:{2}", BittrexConfiguration.Name, origClOrderId, ex.Message), MessageType.Error);
+                
+                DoLog($"@{BittrexConfiguration.Name}:Error updating order {origClOrderId}!:{ex.Message} - {ex.Source} - Stack={ex.StackTrace} ", MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }

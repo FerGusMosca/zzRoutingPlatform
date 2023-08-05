@@ -41,6 +41,20 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
 
         #region Private Methods
 
+        private decimal GetAvgPx()
+        {
+
+            if (BittrexOrderUpdate.Delta.QuantityFilled != 0)
+            {
+                return BittrexOrderUpdate.Delta.QuoteQuantityFilled / BittrexOrderUpdate.Delta.QuantityFilled;
+
+
+            }
+            else
+                return 0;
+        
+        }
+
         public ExecType GetExecTypeFromBittrexStatus()
         {
             if (BittrexOrderUpdate.Delta.Status == OrderStatus.Open)
@@ -157,7 +171,7 @@ namespace tph.OrderRouter.Bittrex.Common.Wrappers
             else if (xrField == ExecutionReportFields.CumQty)
                 return Order.CumQty;
             else if (xrField == ExecutionReportFields.AvgPx)
-                return BittrexOrderUpdate.Delta.Price;
+                return GetAvgPx();
             else if (xrField == ExecutionReportFields.Commission)
                 return BittrexOrderUpdate.Delta.Fee;
             else if (xrField == ExecutionReportFields.Text)

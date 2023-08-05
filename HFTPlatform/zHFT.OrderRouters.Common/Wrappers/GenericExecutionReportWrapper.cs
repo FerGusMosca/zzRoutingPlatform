@@ -34,6 +34,7 @@ namespace zHFT.OrderRouters.Common.Wrappers
 
         #region Public Methods
 
+
         public override object GetField(Main.Common.Enums.Fields field)
         {
             ExecutionReportFields xrField = (ExecutionReportFields)field;
