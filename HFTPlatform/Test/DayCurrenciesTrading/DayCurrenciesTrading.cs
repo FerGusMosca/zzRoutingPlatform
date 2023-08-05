@@ -388,7 +388,7 @@ namespace DayCurrenciesTrading
          protected void LogExecutionReport(CurrencyPairMonitoringPosition monPos, ExecutionReport report)
          {
 
-             DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} ExecType={7} OrdStatus={8} Qty={2} CymQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
+             DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} ExecType={7} OrdStatus={8} Qty={2} CumQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
                  monPos.TradeDirection(), monPos.LastRoutingOpeningPosition.Security.Symbol, monPos.CurrentPos().Qty, monPos.CurrentPos().CumQty, monPos.CurrentPos().LeavesQty,
                  monPos.CurrentPos().AvgPx, monPos.IsFirstLeg(), report.ExecType,report.OrdStatus), Constants.MessageType.Information);
 

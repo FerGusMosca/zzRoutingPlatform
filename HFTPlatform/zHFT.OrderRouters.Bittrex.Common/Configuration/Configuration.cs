@@ -22,6 +22,8 @@ namespace zHFT.OrderRouters.Bittrex.Common.Configuration
 
         public int RefreshExecutionReportsInMilisec { get; set; }
 
+        public decimal? RoutePriceUpdPct { get; set; }
+
         #endregion
 
         #region Public Methods

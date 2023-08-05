@@ -531,7 +531,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         protected void LogExecutionReport(TradingPosition tradingPos, ExecutionReport report)
         {
 
-            DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} ExecType={7} OrdStatus={8} Qty={2} CymQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
+            DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} ExecType={7} OrdStatus={8} Qty={2} CumQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
                 tradingPos.TradeDirection, tradingPos.OpeningPosition.Security.Symbol, tradingPos.Qty, tradingPos.CurrentPos().CumQty, tradingPos.CurrentPos().LeavesQty,
                 tradingPos.CurrentPos().AvgPx, tradingPos.IsFirstLeg(), report.ExecType,report.OrdStatus), Constants.MessageType.Information);
         }

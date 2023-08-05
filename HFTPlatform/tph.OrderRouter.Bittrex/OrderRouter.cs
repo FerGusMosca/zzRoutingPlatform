@@ -4,7 +4,6 @@ using Bittrex.Net.Enums;
 using Bittrex.Net.Objects.Models;
 using Bittrex.Net.Objects.Models.Socket;
 using CryptoExchange.Net.Authentication;
-using CryptoExchange.Net.Objects;
 using CryptoExchange.Net.Sockets;
 using System;
 using System.Collections.Generic;
@@ -215,10 +214,26 @@ namespace tph.OrderRouter.Bittrex
         //TODO DBG
         private decimal UpdatePrice(Side side,decimal price)
         {
-            //if (side == Side.Buy)
-            //    return price - 10;
-            //else
-            //    return price + 10;
+            if (BittrexConfiguration.RoutePriceUpdPct.HasValue)
+            {
+
+                if (side == Side.Buy)
+                {
+                    DoLog($"Updating buy price from {price} adding {price * BittrexConfiguration.RoutePriceUpdPct.Value}", MessageType.Information);
+                    price += price * BittrexConfiguration.RoutePriceUpdPct.Value;
+
+                }
+                else if (side == Side.Sell)
+                {
+                    DoLog($"Updating sell price from {price} substracting {price * BittrexConfiguration.RoutePriceUpdPct.Value}", MessageType.Information);
+                    price -= price * BittrexConfiguration.RoutePriceUpdPct.Value;
+
+                }
+                else
+                    throw new Exception($"Side not recognized!:{side}");
+            
+            }
+
 
             return price;
         
@@ -251,7 +266,7 @@ namespace tph.OrderRouter.Bittrex
 
             price = UpdatePrice(side, price);
 
-            WebCallResult<BittrexOrder> plOrder =BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
+            CryptoExchange.Net.Objects.WebCallResult<BittrexOrder> plOrder =BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
                                                                OrderConverter.ConvertSide(side), 
                                                                OrderType.Limit,
                                                                TimeInForce.GoodTillCanceled, 
@@ -292,12 +307,12 @@ namespace tph.OrderRouter.Bittrex
             if (order.OrderId != null)
             {
 
-                WebCallResult<BittrexOrder> orderResp = BittrexRestClient.SpotApi.Trading.GetOrderAsync(order.OrderId).Result;
+                CryptoExchange.Net.Objects.WebCallResult<BittrexOrder> orderResp = BittrexRestClient.SpotApi.Trading.GetOrderAsync(order.OrderId).Result;
 
                 if (orderResp.Success)
                 {
                     BittrexOrder resp = null;
-                    Error error = null;
+                    CryptoExchange.Net.Objects.Error error = null;
                     orderResp.GetResultOrError(out resp, out error);
 
                     if (error != null)
@@ -317,7 +332,7 @@ namespace tph.OrderRouter.Bittrex
 
         }
 
-        private void WaitUntilCancelled(Order order)
+        private void WaitUntilCancelled(zHFT.Main.BusinessEntities.Orders.Order order)
         {
             bool canceled = false;
             int i = 0;
@@ -339,6 +354,41 @@ namespace tph.OrderRouter.Bittrex
 
             }
         
+        }
+
+        private void UpdateNewOrder(Order order,Wrapper wrapper,string clOrderId)
+        {
+            //Prepare new order
+            double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
+            order.Price = newPrice;
+            order.ClOrdId = clOrderId;
+            double lvsQty = order.OrderQty.Value - Convert.ToDouble(order.CumQty.Value);
+            DoLog($"{Config.Name}- Updated order --> FullQty={order.OrderQty} CumQty={order.CumQty} NewQty={lvsQty} NewPrice={newPrice}", MessageType.Information);
+            order.OrderQty = Convert.ToDouble(lvsQty);//only route new qty
+            PrevCumQtys.Add(clOrderId, order.CumQty.HasValue ? order.CumQty.Value : 0);
+        }
+        
+
+        //For example--> because of low qty
+        private void ProcessNewOrderRejection(Order order, BittrexOrder plOrder, string origClOrderId,string clOrderId)
+        {
+            if (plOrder == null || plOrder.Status == OrderStatus.Closed)
+            {
+                if (plOrder.QuantityFilled == 0)
+                {
+                    order.ClOrdId = origClOrderId;//The active order is the original one
+                    string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
+                    DoLog(msg, MessageType.Information);
+                    Wrapper cxlWrapper = BuildRejectedExecutionReport(order, msg);
+
+                    if (ActiveOrders.ContainsKey(clOrderId))
+                        ActiveOrders.Remove(clOrderId);
+                    PrevCumQtys.Remove(clOrderId);
+                    OnMessageRcv(cxlWrapper);
+                }
+                //if it was a filled--> it will be recv as an Exec Report!
+            }
+
         }
 
         #endregion
@@ -525,7 +575,7 @@ namespace tph.OrderRouter.Bittrex
 
         }
    
-        protected override zHFT.Main.Common.DTO.CMState UpdateOrder(zHFT.Main.Common.Wrappers.Wrapper wrapper)
+        protected override CMState UpdateOrder(Wrapper wrapper)
         {
             string origClOrderId = wrapper.GetField(OrderFields.OrigClOrdID).ToString();
 
@@ -552,36 +602,14 @@ namespace tph.OrderRouter.Bittrex
 
                         Thread.Sleep(100);
 
-                        //Prepare new order
-                        double? newPrice = (double?)wrapper.GetField(OrderFields.Price);
-                        order.Price = newPrice;
-                        order.ClOrdId = clOrderId;
-                        double lvsQty =  order.OrderQty.Value - Convert.ToDouble(order.CumQty.Value);
-                        order.OrderQty = Convert.ToDouble(lvsQty);//only route new qty
-                        PrevCumQtys.Add(clOrderId, order.CumQty.HasValue ? order.CumQty.Value : 0);
+                        UpdateNewOrder(order, wrapper, clOrderId);
 
                         try
                         {
                             //Prev CumQty added with the new order
-                            
                             BittrexOrder plOrder= RunNewOrder(order, true);
 
-                            if (plOrder == null || plOrder.Status == OrderStatus.Closed)
-                            {
-                                if (plOrder.QuantityFilled == 0)
-                                {
-                                    order.ClOrdId = origClOrderId;//The active order is the original one
-                                    string msg = $"WARNING! - Could not insert new order {clOrderId} with new qty {order.OrderQty} (prev CumQty={order.CumQty.Value}). The exchange rejected it!  ";
-                                    DoLog(msg, MessageType.Information);
-                                    Wrapper cxlWrapper = BuildRejectedExecutionReport(order, msg);
-
-                                    if (ActiveOrders.ContainsKey(clOrderId))
-                                        ActiveOrders.Remove(clOrderId);
-                                    PrevCumQtys.Remove(clOrderId);
-                                    OnMessageRcv(cxlWrapper);
-                                }
-                                //if it was a filled--> it will be recv as an Exec Report!
-                            }
+                            ProcessNewOrderRejection(order, plOrder, origClOrderId, clOrderId);
                         }
                         catch (Exception ex)
                         {

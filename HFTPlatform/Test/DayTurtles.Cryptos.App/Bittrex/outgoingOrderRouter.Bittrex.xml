@@ -5,6 +5,8 @@
   <QuoteCurrency>USDT</QuoteCurrency>
   <Simulate>false</Simulate>
 
+  <RoutePriceUpdPct>0.005</RoutePriceUpdPct><!--0.005=0.5%-->
+
   <RefreshExecutionReportsInMilisec>5000</RefreshExecutionReportsInMilisec>
 
   <ConfigConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ConfigConnectionString>
