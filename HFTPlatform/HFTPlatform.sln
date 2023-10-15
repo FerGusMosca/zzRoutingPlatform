@@ -585,7 +585,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityProcessor.IOL.Test"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Websockets", "Websockets", "{695CA0D2-ECEF-49A2-B8F1-AC7E29539908}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleCommunicationModule", "SimpleCommunicationModule", "{90002646-7F50-4CE0-9CA6-07FB0F5A3BF9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleCommunicationModule-Server", "SimpleCommunicationModule-Server", "{90002646-7F50-4CE0-9CA6-07FB0F5A3BF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandReceiver.Common", "tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj", "{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}"
 EndProject
@@ -732,6 +732,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestStrategies", "TestStrategies", "{F67C21E8-425F-42F9-BDAD-7CD2027FE728}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHanders.TestStrategies.TestModule", "tph.StrategyHanders.TestStrategies.TestModule\tph.StrategyHanders.TestStrategies.TestModule.csproj", "{9DC6F07C-0B4D-4576-836F-C495D1174A8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SimpleCommunicationModule-Client", "SimpleCommunicationModule-Client", "{11F14B9A-9AF8-47B4-884D-24768AC9D970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandSender", "tph.StrategyHandler.SimpleCommandSender\tph.StrategyHandler.SimpleCommandSender.csproj", "{8EE45D34-B75B-4C43-9469-B76E45834D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandSender.Common", "tph.StrategyHandler.SimpleCommandSender.Common\tph.StrategyHandler.SimpleCommandSender.Common.csproj", "{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTurtles.Websocket.App", "Test\DayTurtles.Websocket.App\DayTurtles.Websocket.App.csproj", "{76F0699D-C791-41D1-B54D-8ACC18693F83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1731,6 +1739,18 @@ Global
 		{9DC6F07C-0B4D-4576-836F-C495D1174A8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DC6F07C-0B4D-4576-836F-C495D1174A8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DC6F07C-0B4D-4576-836F-C495D1174A8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE45D34-B75B-4C43-9469-B76E45834D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE45D34-B75B-4C43-9469-B76E45834D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE45D34-B75B-4C43-9469-B76E45834D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE45D34-B75B-4C43-9469-B76E45834D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76F0699D-C791-41D1-B54D-8ACC18693F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76F0699D-C791-41D1-B54D-8ACC18693F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76F0699D-C791-41D1-B54D-8ACC18693F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76F0699D-C791-41D1-B54D-8ACC18693F83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2089,6 +2109,10 @@ Global
 		{DFCF39FD-709F-471B-8018-A5BEEFFA931C} = {4778447D-98D1-4411-BDFA-FC65B0A88F11}
 		{F67C21E8-425F-42F9-BDAD-7CD2027FE728} = {55C9E260-A0EB-4D8B-8CC7-A88BD3A2B351}
 		{9DC6F07C-0B4D-4576-836F-C495D1174A8E} = {F67C21E8-425F-42F9-BDAD-7CD2027FE728}
+		{11F14B9A-9AF8-47B4-884D-24768AC9D970} = {695CA0D2-ECEF-49A2-B8F1-AC7E29539908}
+		{8EE45D34-B75B-4C43-9469-B76E45834D53} = {11F14B9A-9AF8-47B4-884D-24768AC9D970}
+		{12EE0D1F-D9F9-4AD5-A757-CF58C717A314} = {11F14B9A-9AF8-47B4-884D-24768AC9D970}
+		{76F0699D-C791-41D1-B54D-8ACC18693F83} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}

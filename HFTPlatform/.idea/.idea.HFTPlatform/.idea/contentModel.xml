@@ -546,8 +546,10 @@
         <e p="Pair Trading" t="Include">
           <e p="RTD Server" t="Include" />
         </e>
+        <e p="TestStrategies" t="Include" />
         <e p="Websockets" t="Include">
-          <e p="SimpleCommunicationModule" t="Include" />
+          <e p="SimpleCommunicationModule-Client" t="Include" />
+          <e p="SimpleCommunicationModule-Server" t="Include" />
         </e>
       </e>
       <e p="Test" t="Include">
@@ -557,6 +559,9 @@
           <e p="Binance" t="Include">
             <e p="incomingBinance.xml" t="Include" />
             <e p="outgoingOrderRouter.Binance.xml" t="Include" />
+          </e>
+          <e p="Bittrex" t="Include">
+            <e p="outgoingOrderRouter.Bittrex.xml" t="Include" />
           </e>
           <e p="BOBDayTurtles.Cryptos.App.csproj" t="IncludeRecursive" />
           <e p="Config.xml" t="Include" />
@@ -634,6 +639,9 @@
             <e p="incomingBinance.xml" t="Include" />
             <e p="outgoingOrderRouter.Binance.xml" t="Include" />
           </e>
+          <e p="Bittrex" t="Include">
+            <e p="outgoingOrderRouter.Bittrex.xml" t="Include" />
+          </e>
           <e p="Config.xml" t="Include" />
           <e p="DayTurtles.Cryptos.App.csproj" t="IncludeRecursive" />
           <e p="genOrderRouter.xml" t="Include" />
@@ -648,6 +656,7 @@
             </e>
           </e>
           <e p="Program.cs" t="Include" />
+          <e p="TestStrategyConfig.xml" t="Include" />
           <e p="TurtlesDayTrading.xml" t="Include" />
         </e>
         <e p="DayTurtles.FIX.App2" t="IncludeRecursive">
@@ -675,6 +684,27 @@
             <e p="AssemblyInfo.cs" t="Include" />
           </e>
           <e p="TurtlesDayTrading.xml" t="Include" />
+        </e>
+        <e p="DayTurtles.Websocket.App" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Config.xml" t="Include" />
+          <e p="DayTurtles.Websocket.App.csproj" t="IncludeRecursive" />
+          <e p="genOrderRouter.xml" t="Include" />
+          <e p="Mock" t="Include">
+            <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="TurtlesDayTrading.xml" t="Include" />
+          <e p="Websocket" t="Include">
+            <e p="IncomingSingletonConfig.xml" t="Include" />
+            <e p="OutgoingSingletonConfig.xml" t="Include" />
+            <e p="Websocket.xml" t="Include" />
+          </e>
         </e>
         <e p="Downloaders" t="Include">
           <e p="MarketDataDownloader" t="Include" />
@@ -1082,13 +1112,30 @@
         <e p="tph.MarketClient.IB.Common.csproj" t="IncludeRecursive" />
       </e>
       <e p="tph.OrderRouter.Bittrex" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="OrderRouter.cs" t="Include" />
+        <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
+        <e p="TestOrderRouter.cs" t="Include" />
         <e p="tph.OrderRouter.Bittrex.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.OrderRouter.Bittrex.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Converters" t="Include">
+          <e p="OrderConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.OrderRouter.Bittrex.Common.csproj" t="IncludeRecursive" />
+        <e p="Wrappers" t="Include">
+          <e p="ExecutionReportWrapper.cs" t="Include" />
+        </e>
       </e>
       <e p="tph.OrderRouter.Bittrex.ServiceLayer" t="IncludeRecursive">
         <e p="BaseClient.cs" t="Include" />
@@ -1204,6 +1251,15 @@
           <e p="ExecutionReportWrapper.cs" t="Include" />
         </e>
       </e>
+      <e p="tph.StrategyHanders.TestStrategies.TestModule" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="TestStrategy.cs" t="Include" />
+        <e p="tph.StrategyHanders.TestStrategies.TestModule.csproj" t="IncludeRecursive" />
+      </e>
       <e p="tph.StrategyHandler.IBR.Cocos.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -1290,6 +1346,26 @@
         <e p="tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer.csproj" t="IncludeRecursive" />
         <e p="WebSocketBaseServer.cs" t="Include" />
         <e p="WebSocketServer.cs" t="Include" />
+      </e>
+      <e p="tph.StrategyHandler.SimpleCommandSender" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderRouterWSClient.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.SimpleCommandSender.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.StrategyHandler.SimpleCommandSender.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="Configuration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.SimpleCommandSender.Common.csproj" t="IncludeRecursive" />
       </e>
       <e p="tph.TrendlineTurtles.BusinessEntities" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

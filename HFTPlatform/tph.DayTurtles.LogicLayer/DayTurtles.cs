@@ -408,8 +408,6 @@ namespace tph.DayTurtles.LogicLayer
                 Thread depuarateThread = new Thread(EvalDepuratingPositionsThread);
                 depuarateThread.Start();
 
-                
-
                 return true;
 
             }

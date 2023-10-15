@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DayTurtlesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - TurtlesDayTrading</Name>
+
+  <OpenWindow>5</OpenWindow>
+  <CloseWindow>3</CloseWindow>
+
+  <PositionSizeInCash>1000</PositionSizeInCash>
+
+  <MaxOpenedPositions>6</MaxOpenedPositions>
+  <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
+  <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
+  <FeeValuePerTrade>0</FeeValuePerTrade>
+  <DecimalRounding>3</DecimalRounding>
+
+  <Account>9732</Account>
+
+  <Currency>ARS</Currency>
+  <Exchange>BUE</Exchange>
+  <SecurityTypes>CC</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
+
+  <ClosingTime>10:50 PM</ClosingTime>
+
+  <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+  <ResetOnPersistance>true</ResetOnPersistance>
+
+  <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+
+  <OnlyLong>false</OnlyLong>
+
+  <SaveEvery>HOUR</SaveEvery>
+  <!--HOUR,_10MIN,_30MIN-->
+
+  <StocksToMonitor>
+
+    <!--<Symbol>BTC</Symbol>-->
+    <Symbol>ETH</Symbol>
+    <!--    <Symbol>DOGE</Symbol>-->
+    <!--    <Symbol>BNB</Symbol>-->
+    <!--    <Symbol>ADA</Symbol>-->
+    <!--    <Symbol>XRP</Symbol>-->
+    <!--    <Symbol>UNI</Symbol>-->
+    <!--    <Symbol>BCH</Symbol>-->
+    <!--    <Symbol>LINK</Symbol>-->
+
+  </StocksToMonitor>
+
+</DayTurtlesConfiguration>
