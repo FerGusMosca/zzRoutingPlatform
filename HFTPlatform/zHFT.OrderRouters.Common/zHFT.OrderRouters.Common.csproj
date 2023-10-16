@@ -97,6 +97,7 @@
     <Compile Include="Converters\ExchangeConverter.cs" />
     <Compile Include="Converters\ExecutionReportConverter.cs" />
     <Compile Include="Converters\MarketDataConverter.cs" />
+    <Compile Include="Converters\OrderConverter.cs" />
     <Compile Include="Converters\PositionConverter.cs" />
     <Compile Include="Converters\SymbolConverter.cs" />
     <Compile Include="OrderRouterBase.cs" />

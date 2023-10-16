@@ -6,9 +6,11 @@ using Newtonsoft.Json;
 using OrderBookLoaderMock.Common.DTO;
 using OrderBookLoaderMock.Common.DTO.Orders;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using tph.StrategyHandler.SimpleCommandSender.Common.Configuration;
 using tph.StrategyHandler.SimpleCommandSender.ServiceLayer;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
@@ -17,6 +19,7 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
+using zHFT.OrderRouters.Common.Converters;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 
 namespace tph.StrategyHandler.SimpleCommandSender
@@ -39,6 +42,12 @@ namespace tph.StrategyHandler.SimpleCommandSender
         protected Dictionary<string,long> MarketDataRequests { get; set; }
         
         protected Dictionary<string,long> CandlebarRequests { get; set; }
+        
+        protected  Dictionary<string,NewOrderReq> JsonOrdersDict { get; set; }
+        
+        protected OrderConverter WrapperOrderConverter { get; set; }
+        
+        protected tph.StrategyHandler.SimpleCommandSender.Common.Util.OrderConverter JsonOrderConverter { get; set; }
         
         #endregion
 
@@ -168,12 +177,35 @@ namespace tph.StrategyHandler.SimpleCommandSender
 
         #region Incoming Process Methods
 
+        protected void ProcessNewOrderRequest(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper) param;
+                Order newOrder = WrapperOrderConverter.ConvertNewOrder(wrapper);
+                NewOrderReq newOrderReq = JsonOrderConverter.ConvertNewOrder(newOrder);;
+                JsonOrdersDict.Add(newOrderReq.ClOrdId,newOrderReq);
+                
+                string strReq = JsonConvert.SerializeObject(newOrderReq, Newtonsoft.Json.Formatting.None,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+                
+                WebSocketClient.Send(strReq);
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR sending market data request: {ex.Message}",Constants.MessageType.Information);
+            }
+        }
+
         protected  void ProcessMarketDataRequest(object param)
         {
             try
             {
                 Wrapper wrapper = (Wrapper) param;
-                Thread.Sleep(5000);
                 string symbol = (string) wrapper.GetField(MarketDataRequestField.Symbol);
                 long mdReq = Convert.ToInt64( wrapper.GetField(MarketDataRequestField.MDReqId));
 
@@ -305,11 +337,9 @@ namespace tph.StrategyHandler.SimpleCommandSender
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
             {
                 //return OrderRouterModule.ProcessMessage(wrapper);
-                return  CMState.BuildSuccess();
-            }
-            else if (wrapper.GetAction() == Actions.NEW_ORDER)
-            {
-                //return OrderRouterModule.ProcessMessage(wrapper);
+                DoLog("Processing New Order Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessNewOrderRequest)).Start(wrapper);
+                DoLog("New Order Request Successfully:" + wrapper.ToString(), Constants.MessageType.Information);
                 return  CMState.BuildSuccess();
             }
             else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
@@ -354,6 +384,9 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     
                     MarketDataRequests= new Dictionary<string, long>();
                     CandlebarRequests=new Dictionary<string, long>();
+                    WrapperOrderConverter = new OrderConverter();
+                    JsonOrderConverter = new tph.StrategyHandler.SimpleCommandSender.Common.Util.OrderConverter();
+                    JsonOrdersDict=new Dictionary<string, NewOrderReq>();
                     
                     //Finish starting up the server
                     WebSocketClient = new WebSocketClient(Config.WebSocketURL,
