@@ -2796,6 +2796,7 @@
           <e p="GenericExecutionReportWrapper.cs" t="Include" />
           <e p="InvalidNewPositionWrapper.cs" t="Include" />
           <e p="NewOrderWrapper.cs" t="Include" />
+          <e p="OrderCancelRejectWrapper.cs" t="Include" />
           <e p="OrderListWrapper.cs" t="Include" />
           <e p="OrderWrapper.cs" t="Include" />
           <e p="RejectedExecutionReportWrapper.cs" t="Include" />

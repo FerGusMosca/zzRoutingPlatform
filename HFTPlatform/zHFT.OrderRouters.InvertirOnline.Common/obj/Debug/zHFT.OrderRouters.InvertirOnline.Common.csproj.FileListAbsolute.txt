@@ -42,7 +42,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.Main.BusinessEntities.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.Main.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\Newtonsoft.Json.xml
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.dll
@@ -66,3 +65,6 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.OrderRouters.Common.dll
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\bin\Debug\zHFT.OrderRouters.Common.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline.Common\obj\Debug\zHFT.OrderRouters.InvertirOnline.Common.csproj.AssemblyReference.cache

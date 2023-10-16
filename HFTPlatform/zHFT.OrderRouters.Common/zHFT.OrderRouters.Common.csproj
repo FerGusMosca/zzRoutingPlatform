@@ -107,6 +107,7 @@
     <Compile Include="Wrappers\GenericExecutionReportWrapper.cs" />
     <Compile Include="Wrappers\InvalidNewPositionWrapper.cs" />
     <Compile Include="Wrappers\NewOrderWrapper.cs" />
+    <Compile Include="Wrappers\OrderCancelRejectWrapper.cs" />
     <Compile Include="Wrappers\OrderListWrapper.cs" />
     <Compile Include="Wrappers\OrderWrapper.cs" />
     <Compile Include="Wrappers\RejectedExecutionReportWrapper.cs" />

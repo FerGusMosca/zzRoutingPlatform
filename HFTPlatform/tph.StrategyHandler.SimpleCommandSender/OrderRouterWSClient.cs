@@ -20,6 +20,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.OrderRouters.Common.Converters;
+using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 
 namespace tph.StrategyHandler.SimpleCommandSender
@@ -95,7 +96,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             DoLog($"{Config.Name}--> Recv msg:{msg.ToString()}", Constants.MessageType.Information);
         }
 
-        public void ProcessMarketDataAsync(object param)
+        public void ProcessIncomingAsync(object param)
         {
             try
             {
@@ -104,7 +105,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             catch (Exception e)
             {
-               DoLog($"ERROR @ProcessMarketDataAsync:{e.Message}",Constants.MessageType.Information);
+               DoLog($"ERROR @ProcessIncomingAsync:{e.Message}",Constants.MessageType.Information);
             }
         }
 
@@ -123,7 +124,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     //All updates are Snapshot and updates in this module
                     
                     MarketDataWrapper mdWrapper =  new MarketDataWrapper(sec,Config);
-                    (new Thread(ProcessMarketDataAsync)).Start(mdWrapper);
+                    (new Thread(ProcessIncomingAsync)).Start(mdWrapper);
                     
                     DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
                 }
@@ -152,7 +153,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     //All updates are Snapshot and updates in this module
                     MarketDataWrapper mdWrapper =  new MarketDataWrapper(sec,Config);
                     
-                    (new Thread(ProcessMarketDataAsync)).Start(mdWrapper);
+                    (new Thread(ProcessIncomingAsync)).Start(mdWrapper);
                     
                     DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
                 }
@@ -177,6 +178,43 @@ namespace tph.StrategyHandler.SimpleCommandSender
 
         #region Incoming Process Methods
 
+        protected void ProcessCancelOrderRequest(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper) param;
+                
+                string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+
+                CancelOrderReq cxlReq = new CancelOrderReq() {ClOrderId = clOrdId, OrigClOrderId = clOrdId};
+
+                if (JsonOrdersDict.ContainsKey(clOrdId))
+                {
+                    string strReq = JsonConvert.SerializeObject(cxlReq, Newtonsoft.Json.Formatting.None,
+                        new JsonSerializerSettings
+                        {
+                            NullValueHandling = NullValueHandling.Ignore
+                        });
+
+                    WebSocketClient.Send(strReq);
+                }
+                else
+                {
+                    OrderCancelRejectWrapper cxlRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
+                        $"Could not find ClOrdId {clOrdId} as a managed order",
+                        CxlRejReason.TooLateToCancel, CxlRejResponseTo.OrderCancelRequest);
+                    
+                    (new Thread(ProcessIncomingAsync)).Start(cxlRejWapper);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR canceling order : {ex.Message}",Constants.MessageType.Information);
+            }
+            
+        }
+
         protected void ProcessNewOrderRequest(object param)
         {
             try
@@ -197,7 +235,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             catch (Exception ex)
             {
-                DoLog($"ERROR sending market data request: {ex.Message}",Constants.MessageType.Information);
+                DoLog($"ERROR sending new order to market: {ex.Message}",Constants.MessageType.Information);
             }
         }
 
@@ -246,7 +284,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             try
             {
                 Wrapper wrapper = (Wrapper) param;
-                Thread.Sleep(5000);
+                
                 string symbol = (string) wrapper.GetField(MarketDataRequestField.Symbol);
                 long mdReq = Convert.ToInt64( wrapper.GetField(MarketDataRequestField.MDReqId));
 
@@ -336,7 +374,6 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
             {
-                //return OrderRouterModule.ProcessMessage(wrapper);
                 DoLog("Processing New Order Request:" + wrapper.ToString(), Constants.MessageType.Information);
                 (new Thread(ProcessNewOrderRequest)).Start(wrapper);
                 DoLog("New Order Request Successfully:" + wrapper.ToString(), Constants.MessageType.Information);
@@ -344,8 +381,10 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
             {
-                //return OrderRouterModule.ProcessMessage(wrapper);
-                return  CMState.BuildSuccess();
+                DoLog("Processing Cxl Order Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessCancelOrderRequest)).Start(wrapper);
+                DoLog("Cxl Order Request Successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
+                return CMState.BuildSuccess();
             }
             else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
             {

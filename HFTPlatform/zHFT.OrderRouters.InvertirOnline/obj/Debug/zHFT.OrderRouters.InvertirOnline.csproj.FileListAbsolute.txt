@@ -74,7 +74,6 @@ C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatfo
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.InstrFullMarketConnectivity.IOL.Common.pdb
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\Newtonsoft.Json.xml
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\bin\Debug\zHFT.Main.BusinessEntities.pdb
-C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.csprojAssemblyReference.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.csproj.CoreCompileInputs.cache
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.csproj.CopyComplete
 C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.dll
@@ -107,3 +106,4 @@ C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatf
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.csproj.CopyComplete
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.dll
 C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.pdb
+C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\zHFT.OrderRouters.InvertirOnline\obj\Debug\zHFT.OrderRouters.InvertirOnline.csproj.AssemblyReference.cache
