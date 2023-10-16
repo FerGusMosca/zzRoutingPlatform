@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\..\Librerias\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -42,13 +45,33 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Test\OrderBookLoaderMock.Common\OrderBookLoaderMock.Common.csproj">
+      <Project>{c63327a8-65ae-4e80-9f83-c6331d632590}</Project>
+      <Name>OrderBookLoaderMock.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj">
+      <Project>{d5516f31-ceff-4a5a-85ca-29de1f3a8156}</Project>
+      <Name>tph.StrategyHandler.SimpleCommandReceiver.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandSender.Common\tph.StrategyHandler.SimpleCommandSender.Common.csproj">
       <Project>{12ee0d1f-d9f9-4ad5-a757-cf58c717a314}</Project>
       <Name>tph.StrategyHandler.SimpleCommandSender.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandSender.ServiceLayer\tph.StrategyHandler.SimpleCommandSender.ServiceLayer.csproj">
+      <Project>{c48d6c0c-8892-4fe9-b4fa-6209e42c75e4}</Project>
+      <Name>tph.StrategyHandler.SimpleCommandSender.ServiceLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.SingletonModulesHandler.Common\zHFT.SingletonModulesHandler.Common.csproj">
       <Project>{89dcba08-faf9-47df-8cd1-8d076ce75c9c}</Project>

@@ -1,12 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using OrderBookLoaderMock.Common.DTO;
+using OrderBookLoaderMock.Common.DTO.Orders;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using tph.StrategyHandler.SimpleCommandSender.Common.Configuration;
+using tph.StrategyHandler.SimpleCommandSender.ServiceLayer;
+using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
 
 namespace tph.StrategyHandler.SimpleCommandSender
@@ -21,6 +31,14 @@ namespace tph.StrategyHandler.SimpleCommandSender
         protected OnMessageReceived OnIncomingMessageRcv { get; set; }
         
         protected  static ISingletonModule Instance { get; set; }
+        
+        protected WebSocketClient WebSocketClient { get; set; }
+        
+        public tph.StrategyHandler.SimpleCommandSender.Common.Configuration.Configuration Config { get; set; }
+        
+        protected Dictionary<string,long> MarketDataRequests { get; set; }
+        
+        protected Dictionary<string,long> CandlebarRequests { get; set; }
         
         #endregion
 
@@ -45,6 +63,191 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 Instance = new OrderRouterWSClient(pOnLogMsg,configFile);
             }
             return Instance;
+        }
+
+        #endregion
+
+        #region Websocket MEthods
+        
+        public  void ProcessEvent(WebSocketMessage msg)
+        {
+
+            if (msg.Msg == "AuthenticationResp")
+            {
+                //TODO process AuthResp
+
+            }
+            else if (msg.Msg == "ClientDepthOfBook")
+            {
+                //TODO process ClientDepthOfBook
+
+            }
+
+            DoLog($"{Config.Name}--> Recv msg:{msg.ToString()}", Constants.MessageType.Information);
+        }
+
+        public void ProcessMarketDataAsync(object param)
+        {
+            try
+            {
+                Wrapper mdWrapper = (Wrapper) param;
+                OnIncomingMessageRcv(mdWrapper);
+            }
+            catch (Exception e)
+            {
+               DoLog($"ERROR @ProcessMarketDataAsync:{e.Message}",Constants.MessageType.Information);
+            }
+        }
+
+        public void ProcessCandlebar(CandlebarMsg msg)
+        {
+            
+            try
+            {
+                if (MarketDataRequests.ContainsKey(msg.Symbol))
+                {
+                    long mdReqId = CandlebarRequests[msg.Symbol];
+                    Security sec = new Security();
+                    sec.Symbol = msg.Symbol;
+                    //sec.MarketData = msg;
+                    throw new Exception($"Candlebar wrapper not implemented @ProcessCandlebar");
+                    //All updates are Snapshot and updates in this module
+                    
+                    MarketDataWrapper mdWrapper =  new MarketDataWrapper(sec,Config);
+                    (new Thread(ProcessMarketDataAsync)).Start(mdWrapper);
+                    
+                    DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
+                }
+                else
+                {
+                    DoLog($"Ignoring candlebar for unknown symbol {msg.Symbol}",Constants.MessageType.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR processing candlebar {ex.Message}",Constants.MessageType.Information);
+            }
+        }
+
+        public  void ProcessMarketData(MarketDataMsg msg)
+        {
+            try
+            {
+                if (MarketDataRequests.ContainsKey(msg.Symbol))
+                {
+                    long mdReqId = MarketDataRequests[msg.Symbol];
+                    Security sec = new Security();
+                    sec.Symbol = msg.Symbol;
+                    sec.MarketData = msg;
+
+                    //All updates are Snapshot and updates in this module
+                    MarketDataWrapper mdWrapper =  new MarketDataWrapper(sec,Config);
+                    
+                    (new Thread(ProcessMarketDataAsync)).Start(mdWrapper);
+                    
+                    DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
+                }
+                else
+                {
+                    DoLog($"Ignoring market data for unknown symbol {msg.Symbol}",Constants.MessageType.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR processing market data {ex.Message}",Constants.MessageType.Information);
+            }
+        }
+        
+        public  void ProcessExecutionReport(ExecutionReportMsg msg)
+        {
+            //TODO Process Exec Report to prev modules (wrapper and stuff)            
+            DoLog($"{Config.Name}--> Recv ExecutionReport:{msg.ToString()}", Constants.MessageType.Information);
+        }
+
+        #endregion
+
+        #region Incoming Process Methods
+
+        protected  void ProcessMarketDataRequest(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper) param;
+                Thread.Sleep(5000);
+                string symbol = (string) wrapper.GetField(MarketDataRequestField.Symbol);
+                long mdReq = Convert.ToInt64( wrapper.GetField(MarketDataRequestField.MDReqId));
+
+                if (symbol == null)
+                    throw new Exception($"Could not find a symbol for market data request");
+
+                if (MarketDataRequests.ContainsKey(symbol))
+                    MarketDataRequests.Remove(symbol);
+                
+                MarketDataRequests.Add(symbol,mdReq);
+                
+                WebSocketSubscribeMessage subscr = new WebSocketSubscribeMessage()
+                {
+                    Msg = "Subscribe",
+                    SubscriptionType = WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_SUBSCRIBE,
+                    Service = "MD",
+                    ServiceKey = symbol,
+                    UUID = Guid.NewGuid().ToString()
+                };
+                
+                string strReq = JsonConvert.SerializeObject(subscr, Newtonsoft.Json.Formatting.None,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+                
+                WebSocketClient.Send(strReq);
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR sending market data request: {ex.Message}",Constants.MessageType.Information);
+            }
+        }
+        
+        protected  void ProcessCandlebarRequest(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper) param;
+                Thread.Sleep(5000);
+                string symbol = (string) wrapper.GetField(MarketDataRequestField.Symbol);
+                long mdReq = Convert.ToInt64( wrapper.GetField(MarketDataRequestField.MDReqId));
+
+                if (symbol == null)
+                    throw new Exception($"Could not find a symbol for market data request");
+
+                if (CandlebarRequests.ContainsKey(symbol))
+                    CandlebarRequests.Remove(symbol);
+                
+                CandlebarRequests.Add(symbol,mdReq);
+                
+                WebSocketSubscribeMessage subscr = new WebSocketSubscribeMessage()
+                {
+                    Msg = "Subscribe",
+                    SubscriptionType = WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_SUBSCRIBE,
+                    Service = "CB",
+                    ServiceKey = symbol,
+                    UUID = Guid.NewGuid().ToString()
+                };
+                
+                string strReq = JsonConvert.SerializeObject(subscr, Newtonsoft.Json.Formatting.None,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+                
+                WebSocketClient.Send(strReq);
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR sending market data request: {ex.Message}",Constants.MessageType.Information);
+            }
         }
 
         #endregion
@@ -87,8 +290,21 @@ namespace tph.StrategyHandler.SimpleCommandSender
         {
             if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
             {
-                DoLog("Processing Market Data:" + wrapper.ToString(), Constants.MessageType.Information);
-                //return ProcessMarketData(wrapper);
+                DoLog("Processing Market Data Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessMarketDataRequest)).Start(wrapper);
+                DoLog("Market Data Request successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
+                return  CMState.BuildSuccess();
+            }
+            else if (wrapper.GetAction() == Actions.CANDLE_BAR_REQUEST)
+            {
+                DoLog("Processing Candlebar Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessMarketDataRequest)).Start(wrapper);
+                DoLog("Candlebar Request successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
+                return  CMState.BuildSuccess();
+            }
+            else if (wrapper.GetAction() == Actions.NEW_ORDER)
+            {
+                //return OrderRouterModule.ProcessMessage(wrapper);
                 return  CMState.BuildSuccess();
             }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
@@ -134,10 +350,15 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 if (LoadConfig(configFile))
                 {
                     //Build the  trading modules
-                    DoLog(string.Format("Initializing SimpleCommRcv module @{0}",DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")),Constants.MessageType.Information);
+                    DoLog(string.Format("Initializing SimpleCommSender module @{0}",DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")),Constants.MessageType.Information);
+                    
+                    MarketDataRequests= new Dictionary<string, long>();
+                    CandlebarRequests=new Dictionary<string, long>();
                     
                     //Finish starting up the server
-                    //TODO Initialize Websocket client
+                    WebSocketClient = new WebSocketClient(Config.WebSocketURL,
+                        ProcessEvent, ProcessMarketData,ProcessCandlebar, ProcessExecutionReport);
+                    WebSocketClient.Connect().Wait();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config, Constants.MessageType.Information);
                     return true;

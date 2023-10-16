@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer")]
+[assembly: AssemblyTitle("tph.StrategyHandler.SimpleCommandSender.ServiceLayer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyProduct("tph.StrategyHandler.SimpleCommandSender.ServiceLayer")]
+[assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("806616E0-18DB-4872-88CD-8377376C3416")]
+[assembly: Guid("C48D6C0C-8892-4FE9-B4FA-6209E42C75E4")]
 
 // Version information for an assembly consists of the following four values:
 //

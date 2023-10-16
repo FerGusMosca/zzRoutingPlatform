@@ -2,7 +2,7 @@
 <Configuration>
   <Name>Websocket Client</Name>
   
-  <WebSocketURL>xxxx</WebSocketURL>
+  <WebSocketURL>ws://localhost:9192</WebSocketURL>
 
   <!--I=incoming,O=outgoing-->
 </Configuration>
