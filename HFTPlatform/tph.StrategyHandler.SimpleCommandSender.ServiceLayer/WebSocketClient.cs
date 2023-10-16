@@ -34,6 +34,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
         protected ProcessExecutionReport OnExecutionReport { get; set; }
 
         protected ClientWebSocket SubscriptionWebSocket { get; set; }
+        
+        protected  object tLock { get; set; }
 
         #endregion
         
@@ -48,24 +50,26 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
             OnMarketData = pOnMarketData;
             OnCandlebar = pOnProcessCandlebar;
             OnExecutionReport = pOnExecutionReport;
+            
+            tLock=new object();
         }
 
         #endregion
         
         #region Public Methods
         
-        public async Task<bool> Connect()
+        public bool Connect()
         {
 
             SubscriptionWebSocket = new ClientWebSocket();
-            await SubscriptionWebSocket.ConnectAsync(new Uri(WebSocketURL), CancellationToken.None);
+            SubscriptionWebSocket.ConnectAsync(new Uri(WebSocketURL), CancellationToken.None);
 
             Thread respThread = new Thread(ReadResponses);
             respThread.Start(new object[] { });
             return true;
         }
         
-        public virtual async void ReadResponses(object param)
+        public virtual  void ReadResponses(object param)
         {
             while (true)
             {
@@ -75,16 +79,21 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                     WebSocketReceiveResult webSocketResp;
                     if (SubscriptionWebSocket.State == WebSocketState.Open)
                     {
-                        do
+                        lock (tLock)
                         {
-                            ArraySegment<byte> bytesReceived = new ArraySegment<byte>(new byte[1000]);
-                            webSocketResp = await SubscriptionWebSocket.ReceiveAsync(bytesReceived, CancellationToken.None);
-                            resp += Encoding.ASCII.GetString(bytesReceived.Array, 0, webSocketResp.Count);
+                            do
+                            {
+
+                                ArraySegment<byte> bytesReceived = new ArraySegment<byte>(new byte[1000]);
+                                webSocketResp = SubscriptionWebSocket
+                                    .ReceiveAsync(bytesReceived, CancellationToken.None).Result;
+                                resp += Encoding.ASCII.GetString(bytesReceived.Array, 0, webSocketResp.Count);
+                            } while (!webSocketResp.EndOfMessage);
                         }
-                        while (!webSocketResp.EndOfMessage);
 
                         if (resp != "")
                         {
+                            //Console.Beep();
                             WebSocketMessage wsResp = JsonConvert.DeserializeObject<WebSocketMessage>(resp);
                             
                             if (wsResp.Msg == "SubscriptionResponse")
@@ -129,7 +138,10 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                         }
                     }
                     else
+                    {
+                        //Console.Beep(1000,2000);
                         Thread.Sleep(100);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -139,17 +151,32 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
             }
         }
         
-        public async void Send(string strMsg)
+        public  void Send(string strMsg)
         {
-            byte[] msgArray = Encoding.ASCII.GetBytes(strMsg);
+            try
+            {
+                if(SubscriptionWebSocket.State!=WebSocketState.Open)
+                    throw new Exception($"Websocket is in status {SubscriptionWebSocket.State} and it should be OPEN!");
+                
+                byte[] msgArray = Encoding.ASCII.GetBytes(strMsg);
 
-            ArraySegment<byte> bytesToSend = new ArraySegment<byte>(msgArray);
+                ArraySegment<byte> bytesToSend = new ArraySegment<byte>(msgArray);
 
-            await SubscriptionWebSocket.SendAsync(bytesToSend, WebSocketMessageType.Text, true,
-                CancellationToken.None);
-
+                lock (tLock)
+                {
+                    Thread.Sleep(1);//Amazing how this solves everything?
+                    SubscriptionWebSocket.SendAsync(bytesToSend, WebSocketMessageType.Text, true,
+                        CancellationToken.None);
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = $"CRITICAL ERROR sending message through the websocket: {ex.Message}";
+            }
         }
         
+
+
         #endregion
     }
 }

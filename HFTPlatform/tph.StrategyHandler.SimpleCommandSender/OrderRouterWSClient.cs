@@ -119,8 +119,9 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     {
                         NullValueHandling = NullValueHandling.Ignore
                     });
-                
+
                 WebSocketClient.Send(strReq);
+                
             }
             catch (Exception e)
             {
@@ -335,14 +336,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     UUID = Guid.NewGuid().ToString()
                 };
                 
-                string strReq = JsonConvert.SerializeObject(subscr, Newtonsoft.Json.Formatting.None,
-                    new JsonSerializerSettings
-                    {
-                        NullValueHandling = NullValueHandling.Ignore
-                    });
-                
-                WebSocketClient.Send(strReq);
-
+                DoSendAsync<WebSocketSubscribeMessage>(subscr);
             }
             catch (Exception ex)
             {
@@ -509,7 +503,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     //Finish starting up the server
                     WebSocketClient = new WebSocketClient(Config.WebSocketURL,
                         ProcessEvent, ProcessMarketData,ProcessCandlebar, ProcessExecutionReport);
-                    WebSocketClient.Connect().Wait();
+                    WebSocketClient.Connect();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config, Constants.MessageType.Information);
                     return true;
