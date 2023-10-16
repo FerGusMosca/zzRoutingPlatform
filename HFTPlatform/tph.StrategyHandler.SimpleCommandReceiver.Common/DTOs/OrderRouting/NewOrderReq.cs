@@ -53,6 +53,25 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
                 throw new Exception(string.Format("Not recognize Side {0} @RouteOrderReq", Side));
         }
 
+        public NewOrderReq Clone()
+        {
+            NewOrderReq cloned = new NewOrderReq();
+
+            cloned.ClOrdId = ClOrdId;
+            cloned.Account = Account;
+            cloned.Currency = Currency;
+            cloned.Price = Price;
+            cloned.Type = Type;
+            cloned.Side = Side;
+            cloned.Symbol = Symbol;
+            cloned.Qty = Qty;
+            cloned.UUID = UUID;
+            cloned.ReqId = ReqId;
+
+            return cloned;
+
+        }
+
         #endregion
     }
 }

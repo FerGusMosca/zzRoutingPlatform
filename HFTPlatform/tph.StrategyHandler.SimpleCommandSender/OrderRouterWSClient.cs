@@ -77,7 +77,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
 
         #endregion
 
-        #region Websocket MEthods
+        #region Websocket Methods
         
         public  void ProcessEvent(WebSocketMessage msg)
         {
@@ -105,8 +105,28 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             catch (Exception e)
             {
-               DoLog($"ERROR @ProcessIncomingAsync:{e.Message}",Constants.MessageType.Information);
+               DoLog($"ERROR @ProcessIncomingAsync:{e.Message}",Constants.MessageType.Error);
             }
+        }
+
+        public void DoSendAsync<T>(object param)
+        {
+            try
+            {
+                T objToSend = (T) param;
+                string strReq = JsonConvert.SerializeObject(objToSend, Newtonsoft.Json.Formatting.None,
+                    new JsonSerializerSettings
+                    {
+                        NullValueHandling = NullValueHandling.Ignore
+                    });
+                
+                WebSocketClient.Send(strReq);
+            }
+            catch (Exception e)
+            {
+                DoLog($"ERROR @DoSendAsync:{e.Message}",Constants.MessageType.Error);
+            }
+            
         }
 
         public void ProcessCandlebar(CandlebarMsg msg)
@@ -114,23 +134,26 @@ namespace tph.StrategyHandler.SimpleCommandSender
             
             try
             {
-                if (MarketDataRequests.ContainsKey(msg.Symbol))
+                lock (MarketDataRequests)
                 {
-                    long mdReqId = CandlebarRequests[msg.Symbol];
-                    Security sec = new Security();
-                    sec.Symbol = msg.Symbol;
-                    //sec.MarketData = msg;
-                    throw new Exception($"Candlebar wrapper not implemented @ProcessCandlebar");
-                    //All updates are Snapshot and updates in this module
-                    
-                    MarketDataWrapper mdWrapper =  new MarketDataWrapper(sec,Config);
-                    (new Thread(ProcessIncomingAsync)).Start(mdWrapper);
-                    
-                    DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
-                }
-                else
-                {
-                    DoLog($"Ignoring candlebar for unknown symbol {msg.Symbol}",Constants.MessageType.Information);
+                    if (MarketDataRequests.ContainsKey(msg.Symbol))
+                    {
+                        long mdReqId = CandlebarRequests[msg.Symbol];
+                        Security sec = new Security();
+                        sec.Symbol = msg.Symbol;
+                        //sec.MarketData = msg;
+                        throw new Exception($"Candlebar wrapper not implemented @ProcessCandlebar");
+                        //All updates are Snapshot and updates in this module
+
+                        MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Config);
+                        (new Thread(ProcessIncomingAsync)).Start(mdWrapper);
+
+                        DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
+                    }
+                    else
+                    {
+                        DoLog($"Ignoring candlebar for unknown symbol {msg.Symbol}", Constants.MessageType.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -143,23 +166,26 @@ namespace tph.StrategyHandler.SimpleCommandSender
         {
             try
             {
-                if (MarketDataRequests.ContainsKey(msg.Symbol))
+                lock (MarketDataRequests)
                 {
-                    long mdReqId = MarketDataRequests[msg.Symbol];
-                    Security sec = new Security();
-                    sec.Symbol = msg.Symbol;
-                    sec.MarketData = msg;
+                    if (MarketDataRequests.ContainsKey(msg.Symbol))
+                    {
+                        long mdReqId = MarketDataRequests[msg.Symbol];
+                        Security sec = new Security();
+                        sec.Symbol = msg.Symbol;
+                        sec.MarketData = msg;
 
-                    //All updates are Snapshot and updates in this module
-                    MarketDataWrapper mdWrapper =  new MarketDataWrapper(sec,Config);
-                    
-                    (new Thread(ProcessIncomingAsync)).Start(mdWrapper);
-                    
-                    DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
-                }
-                else
-                {
-                    DoLog($"Ignoring market data for unknown symbol {msg.Symbol}",Constants.MessageType.Information);
+                        //All updates are Snapshot and updates in this module
+                        MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Config);
+
+                        (new Thread(ProcessIncomingAsync)).Start(mdWrapper);
+
+                        DoLog($"{Config.Name}--> Recv Market Data:{msg.ToString()}", Constants.MessageType.Information);
+                    }
+                    else
+                    {
+                        DoLog($"Ignoring market data for unknown symbol {msg.Symbol}",Constants.MessageType.Information);
+                    }
                 }
             }
             catch (Exception ex)
@@ -178,6 +204,52 @@ namespace tph.StrategyHandler.SimpleCommandSender
 
         #region Incoming Process Methods
 
+        protected void ProcessUpdateOrderRequest(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper) param;
+                
+                string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+                string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
+                double price = (double)wrapper.GetField(OrderFields.Price);
+
+                UpdateOrderReq updReq = new UpdateOrderReq()
+                {
+                    OrigClOrdId = origClOrdId,
+                    ClOrdId = clOrdId,
+                    Price = price
+                };
+
+                lock (JsonOrdersDict)
+                {
+                    if (JsonOrdersDict.ContainsKey(origClOrdId))
+                    {
+                        NewOrderReq toUpdOrderReq = JsonOrdersDict[origClOrdId];
+                        NewOrderReq updated = toUpdOrderReq.Clone();
+                        updated.ClOrdId = clOrdId;
+                        updated.Price = price;
+                        JsonOrdersDict.Add(clOrdId, updated);
+
+                        DoSendAsync<NewOrderReq>(updReq);
+                    }
+                    else
+                    {
+                        OrderCancelRejectWrapper cxlRplRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
+                            $"Could not find ClOrdId {origClOrdId} as a managed order",
+                            CxlRejReason.UnknownOrder, CxlRejResponseTo.OrderCancelReplaceRequest);
+
+                        (new Thread(ProcessIncomingAsync)).Start(cxlRplRejWapper);
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                DoLog($"ERROR updating order:{e.Message}",Constants.MessageType.Error);
+            }
+        }
+
         protected void ProcessCancelOrderRequest(object param)
         {
             try
@@ -188,23 +260,20 @@ namespace tph.StrategyHandler.SimpleCommandSender
 
                 CancelOrderReq cxlReq = new CancelOrderReq() {ClOrderId = clOrdId, OrigClOrderId = clOrdId};
 
-                if (JsonOrdersDict.ContainsKey(clOrdId))
+                lock (JsonOrdersDict)
                 {
-                    string strReq = JsonConvert.SerializeObject(cxlReq, Newtonsoft.Json.Formatting.None,
-                        new JsonSerializerSettings
-                        {
-                            NullValueHandling = NullValueHandling.Ignore
-                        });
+                    if (JsonOrdersDict.ContainsKey(clOrdId))
+                    {
+                        DoSendAsync<CancelOrderReq>(cxlReq);
+                    }
+                    else
+                    {
+                        OrderCancelRejectWrapper cxlRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
+                            $"Could not find ClOrdId {clOrdId} as a managed order",
+                            CxlRejReason.TooLateToCancel, CxlRejResponseTo.OrderCancelRequest);
 
-                    WebSocketClient.Send(strReq);
-                }
-                else
-                {
-                    OrderCancelRejectWrapper cxlRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
-                        $"Could not find ClOrdId {clOrdId} as a managed order",
-                        CxlRejReason.TooLateToCancel, CxlRejResponseTo.OrderCancelRequest);
-                    
-                    (new Thread(ProcessIncomingAsync)).Start(cxlRejWapper);
+                        (new Thread(ProcessIncomingAsync)).Start(cxlRejWapper);
+                    }
                 }
 
             }
@@ -222,16 +291,13 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 Wrapper wrapper = (Wrapper) param;
                 Order newOrder = WrapperOrderConverter.ConvertNewOrder(wrapper);
                 NewOrderReq newOrderReq = JsonOrderConverter.ConvertNewOrder(newOrder);;
-                JsonOrdersDict.Add(newOrderReq.ClOrdId,newOrderReq);
-                
-                string strReq = JsonConvert.SerializeObject(newOrderReq, Newtonsoft.Json.Formatting.None,
-                    new JsonSerializerSettings
-                    {
-                        NullValueHandling = NullValueHandling.Ignore
-                    });
-                
-                WebSocketClient.Send(strReq);
 
+                lock (JsonOrdersDict)
+                {
+                    JsonOrdersDict.Add(newOrderReq.ClOrdId, newOrderReq);
+                }
+                
+                DoSendAsync<NewOrderReq>(newOrderReq);
             }
             catch (Exception ex)
             {
@@ -250,11 +316,16 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 if (symbol == null)
                     throw new Exception($"Could not find a symbol for market data request");
 
-                if (MarketDataRequests.ContainsKey(symbol))
-                    MarketDataRequests.Remove(symbol);
+                lock (MarketDataRequests)
+                {
+
+                    if (MarketDataRequests.ContainsKey(symbol))
+                        MarketDataRequests.Remove(symbol);
+
+                    MarketDataRequests.Add(symbol, mdReq);
+                }
                 
-                MarketDataRequests.Add(symbol,mdReq);
-                
+
                 WebSocketSubscribeMessage subscr = new WebSocketSubscribeMessage()
                 {
                     Msg = "Subscribe",
@@ -291,11 +362,16 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 if (symbol == null)
                     throw new Exception($"Could not find a symbol for market data request");
 
-                if (CandlebarRequests.ContainsKey(symbol))
-                    CandlebarRequests.Remove(symbol);
+                lock (CandlebarRequests)
+                {
+
+                    if (CandlebarRequests.ContainsKey(symbol))
+                        CandlebarRequests.Remove(symbol);
+
+                    CandlebarRequests.Add(symbol, mdReq);
+                }
                 
-                CandlebarRequests.Add(symbol,mdReq);
-                
+
                 WebSocketSubscribeMessage subscr = new WebSocketSubscribeMessage()
                 {
                     Msg = "Subscribe",
@@ -388,7 +464,10 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
             {
-                //return OrderRouterModule.ProcessMessage(wrapper);
+                
+                DoLog("Processing Cxl Repl. Order Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessUpdateOrderRequest)).Start(wrapper);
+                DoLog("Cxl Repl. Order Request Successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
                 return  CMState.BuildSuccess();
             }
             else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)

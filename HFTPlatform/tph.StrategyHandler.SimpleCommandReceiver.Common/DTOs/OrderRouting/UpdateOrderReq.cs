@@ -2,6 +2,15 @@
 {
     public class UpdateOrderReq:WebSocketMessage
     {
+        #region Constructors
+
+        public UpdateOrderReq()
+        {
+            Msg = "UpdateOrderReq";
+        }
+
+        #endregion
+        
         #region Public Attributes
         
         public string Symbol { get; set; }
