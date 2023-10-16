@@ -502,7 +502,8 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     
                     //Finish starting up the server
                     WebSocketClient = new WebSocketClient(Config.WebSocketURL,
-                        ProcessEvent, ProcessMarketData,ProcessCandlebar, ProcessExecutionReport);
+                        ProcessEvent, ProcessMarketData,ProcessCandlebar, ProcessExecutionReport,
+                        DoLog);
                     WebSocketClient.Connect();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config, Constants.MessageType.Information);

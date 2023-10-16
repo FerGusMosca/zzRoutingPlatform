@@ -9,6 +9,8 @@ using OrderBookLoaderMock.Common.DTO.Generic;
 using OrderBookLoaderMock.Common.DTO.Orders;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
+using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 
 namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
 {
@@ -32,6 +34,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
         
         protected ProcessCandlebar OnCandlebar { get; set; }
         protected ProcessExecutionReport OnExecutionReport { get; set; }
+        
+        protected  OnLogMessage OnLogMessage { get; set; }
 
         protected ClientWebSocket SubscriptionWebSocket { get; set; }
         
@@ -43,13 +47,15 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
 
         public WebSocketClient(string pWebSocketURL, ProcessEvent pOnEvent,ProcessMarketData pOnMarketData,
                                 ProcessCandlebar pOnProcessCandlebar,
-                                ProcessExecutionReport pOnExecutionReport)
+                                ProcessExecutionReport pOnExecutionReport,
+                                OnLogMessage pOnLogMessage)
         {
             WebSocketURL = pWebSocketURL;
             OnEvent = pOnEvent;
             OnMarketData = pOnMarketData;
             OnCandlebar = pOnProcessCandlebar;
             OnExecutionReport = pOnExecutionReport;
+            OnLogMessage = pOnLogMessage;
             
             tLock=new object();
         }
@@ -63,6 +69,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
 
             SubscriptionWebSocket = new ClientWebSocket();
             SubscriptionWebSocket.ConnectAsync(new Uri(WebSocketURL), CancellationToken.None);
+
+            OnLogMessage($"Websocket client successfully connected", Constants.MessageType.Information);
 
             Thread respThread = new Thread(ReadResponses);
             respThread.Start(new object[] { });
@@ -145,6 +153,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                 }
                 catch (Exception ex)
                 {
+                    OnLogMessage(ex.Message, Constants.MessageType.Error);
                     ErrorMessage errorMsg = new ErrorMessage() { Msg = "ErrorMsg", Error = ex.Message };
                     OnEvent(errorMsg);
                 }
@@ -172,6 +181,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
             catch (Exception ex)
             {
                 string msg = $"CRITICAL ERROR sending message through the websocket: {ex.Message}";
+
+                OnLogMessage(msg, Constants.MessageType.Error);
             }
         }
         
