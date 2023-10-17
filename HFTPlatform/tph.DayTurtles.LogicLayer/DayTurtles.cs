@@ -84,11 +84,11 @@ namespace tph.DayTurtles.LogicLayer
             else
             {
                 MarketData highest = turtlePos.HighestOnWindow(turtlePos.OpenWindow);
-//                DoLog(string.Format(
-//                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
-//                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
-//                        highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
-//                    Constants.MessageType.Information);
+                DoLog(string.Format(
+                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
+                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
+                        highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
+                    Constants.MessageType.Information);
             }
         }
         
@@ -314,10 +314,10 @@ namespace tph.DayTurtles.LogicLayer
                         EvalOpeningClosingPositions(portfPos);
                         UpdateLastPrice(portfPos, md);
                     }
-                    else
-                    {
-                        DoLog(string.Format("DB-Skipping not monitored MD for symbol {0}",cleanSymbol),Constants.MessageType.Information);
-                    }
+//                    else
+//                    {
+//                        DoLog(string.Format("DB-Skipping not monitored MD for symbol {0}",cleanSymbol),Constants.MessageType.Information);
+//                    }
                 }
             }
             catch (Exception e)
