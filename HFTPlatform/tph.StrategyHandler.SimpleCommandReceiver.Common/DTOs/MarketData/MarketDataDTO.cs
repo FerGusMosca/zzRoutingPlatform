@@ -1,8 +1,18 @@
-﻿namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
+﻿using System;
+using Newtonsoft.Json;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
+
+namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
 {
     public class MarketDataDTO:zHFT.Main.BusinessEntities.Market_Data.MarketData
     {
         #region Constructors
+
+
+        public MarketDataDTO()
+        {
+            
+        }
 
         public MarketDataDTO(zHFT.Main.BusinessEntities.Market_Data.MarketData md)
         {
@@ -59,6 +69,29 @@
         
         public string Symbol { get; set; }
         
+       [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        public DateTime? MDEntryDate { get; set; }
+        
+        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        public DateTime? MDLocalEntryDate { get; set; }
+        
+        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        public DateTime? SettlDate { get; set; }
+
+        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        public DateTime? LastTradeDateTime { get; set; }
+        
+        
         #endregion
+        
+        
+        public override string ToString()
+        {
+            return string.Format(
+                "DateTime={9} Symbol={0} Open={1} High={2} Low={3} Close={4} Trade={5} BestBidPx={6} BestAskPx={7} Volume={8}",
+                Security.Symbol, OpeningPrice, TradingSessionHighPrice, TradingSessionLowPrice,
+                ClosingPrice, Trade, BestBidPrice, BestAskPrice, TradeVolume,
+                MDLocalEntryDate);
+        }
     }
 }

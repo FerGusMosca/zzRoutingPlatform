@@ -744,7 +744,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
             catch (Exception ex)
             {
-                DoLog("Error processing market data @" + Config.Name + ":" + ex.Message, Main.Common.Util.Constants.MessageType.Error);
+                DoLog( $"ERROR @ProcessMessage { Config.Name } : {ex.Message}", Main.Common.Util.Constants.MessageType.Error);
                 return CMState.BuildFail(ex);
             }
         }

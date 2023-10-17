@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using Newtonsoft.Json;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 
@@ -35,7 +36,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         
         public string Key { get; set; }
         
-        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
+        [JsonConverter(typeof(WebsocketConnectorDateTimeConverter))]
         public DateTime Date { get; set; }
         
         #endregion

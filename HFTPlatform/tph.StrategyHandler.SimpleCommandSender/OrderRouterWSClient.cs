@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using OrderBookLoaderMock.Common.DTO;
-using OrderBookLoaderMock.Common.DTO.Orders;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using tph.StrategyHandler.SimpleCommandSender.Common.Configuration;
@@ -130,7 +129,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             
         }
 
-        public void ProcessCandlebar(CandlebarMsg msg)
+        public void ProcessCandlebar(CandlebarDTO msg)
         {
             
             try
@@ -163,7 +162,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
         }
 
-        public  void ProcessMarketData(MarketDataMsg msg)
+        public  void ProcessMarketData(MarketDataDTO msg)
         {
             try
             {
@@ -195,7 +194,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
         }
         
-        public  void ProcessExecutionReport(ExecutionReportMsg msg)
+        public  void ProcessExecutionReport(ExecutionReportDTO msg)
         {
             //TODO Process Exec Report to prev modules (wrapper and stuff)            
             DoLog($"{Config.Name}--> Recv ExecutionReport:{msg.ToString()}", Constants.MessageType.Information);
@@ -335,7 +334,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     ServiceKey = symbol,
                     UUID = Guid.NewGuid().ToString()
                 };
-                
+                DoLog($"Subscribing Market Data for symbol {symbol}", Constants.MessageType.Information);
                 DoSendAsync<WebSocketSubscribeMessage>(subscr);
             }
             catch (Exception ex)

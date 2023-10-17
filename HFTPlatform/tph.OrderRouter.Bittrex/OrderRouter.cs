@@ -269,7 +269,7 @@ namespace tph.OrderRouter.Bittrex
             price = UpdatePrice(side, price);
 
             CryptoExchange.Net.Objects.WebCallResult<BittrexOrder> plOrder =BittrexRestClient.SpotApi.Trading.PlaceOrderAsync(symbol, 
-                                                               OrderConverter.ConvertSide(side), 
+                                                                tph.OrderRouter.Bittrex.Common.OrderConverter.ConvertSide(side), 
                                                                OrderType.Limit,
                                                                TimeInForce.GoodTillCanceled, 
                                                                ordQty, 

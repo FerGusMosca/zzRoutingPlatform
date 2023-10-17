@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DayTurtlesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - TurtlesDayTrading</Name>
-  
-  <OpenWindow>5</OpenWindow>
-  <CloseWindow>3</CloseWindow>
 
-  <PositionSizeInCash>1000</PositionSizeInCash>
+  <OpenWindow>20</OpenWindow>
+  <CloseWindow>10</CloseWindow>
 
-  <MaxOpenedPositions>6</MaxOpenedPositions>
+  <PositionSizeInCash>100</PositionSizeInCash>
+
+  <MaxOpenedPositions>4</MaxOpenedPositions>
   <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
@@ -19,7 +19,7 @@
   <Exchange>BUE</Exchange>
   <SecurityTypes>CC</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>10:50 PM</ClosingTime>
+  <ClosingTime>23:50 PM</ClosingTime>
 
   <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -30,24 +30,27 @@
   <ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-  
-  <OnlyLong>false</OnlyLong>
+
+  <OnlyLong>true</OnlyLong>
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
-  
+
   <StocksToMonitor>
 
-	<!--<Symbol>BTC</Symbol>-->
+    <!--<Symbol>BTC</Symbol>-->
     <Symbol>ETH</Symbol>
-<!--    <Symbol>DOGE</Symbol>-->
-<!--    <Symbol>BNB</Symbol>-->
-<!--    <Symbol>ADA</Symbol>-->
-<!--    <Symbol>XRP</Symbol>-->
-<!--    <Symbol>UNI</Symbol>-->
-<!--    <Symbol>BCH</Symbol>-->
-<!--    <Symbol>LINK</Symbol>-->
-    
+    <Symbol>DOGE</Symbol>
+    <Symbol>ADA</Symbol>
+    <Symbol>XRP</Symbol>
+    <!--    <Symbol>DOGE</Symbol>-->
+    <!--    <Symbol>BNB</Symbol>-->
+    <!--    <Symbol>ADA</Symbol>-->
+    <!--    <Symbol>XRP</Symbol>-->
+    <!--    <Symbol>UNI</Symbol>-->
+    <!--    <Symbol>BCH</Symbol>-->
+    <!--    <Symbol>LINK</Symbol>-->
+
   </StocksToMonitor>
 
 </DayTurtlesConfiguration>

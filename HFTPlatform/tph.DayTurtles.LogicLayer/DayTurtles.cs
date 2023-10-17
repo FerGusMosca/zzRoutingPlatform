@@ -314,10 +314,10 @@ namespace tph.DayTurtles.LogicLayer
                         EvalOpeningClosingPositions(portfPos);
                         UpdateLastPrice(portfPos, md);
                     }
-//                    else
-//                    {
-//                        DoLog(string.Format("DB-Skipping not monitored MD for symbol {0}",cleanSymbol),Constants.MessageType.Information);
-//                    }
+                    else
+                    {
+                        DoLog(string.Format("DB-Skipping not monitored MD for symbol {0}",cleanSymbol),Constants.MessageType.Information);
+                    }
                 }
             }
             catch (Exception e)

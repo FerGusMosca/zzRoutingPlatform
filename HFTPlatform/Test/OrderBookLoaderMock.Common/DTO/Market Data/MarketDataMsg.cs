@@ -18,10 +18,8 @@ namespace OrderBookLoaderMock.Common.DTO
         public override string ToString()
         {
             return string.Format(
-                "Symbol={0} Open={1} High={2} Low={3} Close={4} Trade={5} BestBidPx={6} BestAskPx={7} Volume={8}",
-                Security.Symbol, OpeningPrice, TradingSessionHighPrice,
-                TradingSessionLowPrice, ClosingPrice, Trade, BestBidPrice,
-                BestAskPrice, TradeVolume);
+                $"Date={MDEntryDate} Symbol={Security.Symbol} Open={OpeningPrice} High={TradingSessionHighPrice} Low={TradingSessionLowPrice} Close={ClosingPrice} Trade={Trade} BestBidPx={BestBidPrice} BestAskPx={BestAskPrice} Volume={TradeVolume}");
+            
         }
 
         #endregion

@@ -1,9 +1,19 @@
 ﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
 using zHFT.Main.BusinessEntities.Securities;
 
 namespace OrderBookLoaderMock.Common.DTO
 {
+    public class CustomDateTimeConverter : IsoDateTimeConverter
+    {
+        public CustomDateTimeConverter()
+        {
+            base.DateTimeFormat = "dd-MM-yyyy HH:mm:ss";
+        }
+    }
+    
     public class CandlebarMsg: WebSocketMessage
     {
         #region Public Attributes
@@ -27,6 +37,7 @@ namespace OrderBookLoaderMock.Common.DTO
         
         public string Key { get; set; }
         
+        [JsonConverter(typeof(CustomDateTimeConverter))]
         public DateTime Date { get; set; }
         
         #endregion

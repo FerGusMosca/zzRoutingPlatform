@@ -8,6 +8,7 @@ using OrderBookLoaderMock.Common.DTO;
 using OrderBookLoaderMock.Common.DTO.Generic;
 using OrderBookLoaderMock.Common.DTO.Orders;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
+using UnknownMessage = OrderBookLoaderMock.Common.DTO.Generic.UnknownMessage;
 
 namespace OrderBookLoaderMock.LogicLayer
 {
