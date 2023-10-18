@@ -37,7 +37,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public string Key { get; set; }
         
         [JsonConverter(typeof(WebsocketConnectorDateTimeConverter))]
-        public DateTime Date { get; set; }
+        public override DateTime Date { get; set; }
         
         #endregion
     }

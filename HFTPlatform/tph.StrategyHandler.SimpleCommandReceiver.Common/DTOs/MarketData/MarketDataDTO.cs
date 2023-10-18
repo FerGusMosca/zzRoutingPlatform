@@ -70,16 +70,16 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public string Symbol { get; set; }
         
        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
-        public DateTime? MDEntryDate { get; set; }
+        public override DateTime? MDEntryDate { get; set; }
         
         [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
-        public DateTime? MDLocalEntryDate { get; set; }
+        public override DateTime? MDLocalEntryDate { get; set; }
         
         [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
-        public DateTime? SettlDate { get; set; }
+        public override DateTime? SettlDate { get; set; }
 
         [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
-        public DateTime? LastTradeDateTime { get; set; }
+        public override DateTime? LastTradeDateTime { get; set; }
         
         
         #endregion

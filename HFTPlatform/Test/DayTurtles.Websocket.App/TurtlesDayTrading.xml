@@ -19,7 +19,7 @@
   <Exchange>BUE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>04:51 PM</ClosingTime>
+  <ClosingTime>07:51 PM</ClosingTime>
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 

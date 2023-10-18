@@ -11,7 +11,7 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         
         public string Key { get; set; }
         
-        public DateTime Date { get; set; }
+        public virtual DateTime Date { get; set; }
         
         
         public double? High { get; set; }

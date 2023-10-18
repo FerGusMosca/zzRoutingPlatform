@@ -50,15 +50,15 @@ namespace zHFT.Main.BusinessEntities.Market_Data
 
         public UpdateAction MDUpdateAction { get; set; }
         public string Currency { get; set; }
-        public DateTime? MDEntryDate { get; set; }
-        public DateTime? MDLocalEntryDate { get; set; }
+        public virtual DateTime? MDEntryDate { get; set; }
+        public virtual DateTime? MDLocalEntryDate { get; set; }
         public TickDirection TickDirection { get; set; }
         public double? MDTradeSize { get; set; }
 
         public SettlType SettlType { get; set; }
-        public DateTime? SettlDate { get; set; }
+        public virtual DateTime? SettlDate { get; set; }
 
-        public DateTime? LastTradeDateTime { get; set; }
+        public virtual DateTime? LastTradeDateTime { get; set; }
 
         public Security Security { get; set; }
 

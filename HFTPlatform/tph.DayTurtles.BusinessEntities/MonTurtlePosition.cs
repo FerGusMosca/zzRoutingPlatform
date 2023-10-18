@@ -71,8 +71,6 @@ namespace tph.DayTurtles.BusinessEntities
 
             return key;;
 
-
-
         }
 
         public MarketData HighestOnWindow(int window)
