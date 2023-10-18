@@ -8,6 +8,12 @@ namespace tph.DayTurtles.BusinessEntities
 {
     public class MonTurtlePosition : PortfolioPosition
     {
+        #region
+
+
+        protected static string _CANDLE_DATE_FORMAT = "yyyyMMddHHmm";
+
+        #endregion
         #region Constructors
 
         public MonTurtlePosition(int openWindow, int closeWindow,double stopLossForOpenPositionPct, string candleRefPrice)
@@ -36,6 +42,38 @@ namespace tph.DayTurtles.BusinessEntities
         #endregion
 
         #region Private Methods
+
+        protected bool CanCreateCandle(MarketData md)
+        {
+            string key = "";
+
+            if (md.MDEntryDate.HasValue)
+                return true;
+            else if (md.MDLocalEntryDate.HasValue)
+                return true;
+            else
+                return false;
+        }
+
+        protected string GetCandleKey(MarketData md)
+        {
+            string key = "";
+            
+            if(md.MDEntryDate.HasValue)
+                 key = md.MDEntryDate.Value.ToString(_CANDLE_DATE_FORMAT);
+            else if(md.MDLocalEntryDate.HasValue)
+                key = md.MDLocalEntryDate.Value.ToString(_CANDLE_DATE_FORMAT);
+            else
+            {
+
+                throw new Exception($"Market data entry date not available in new market data");
+            }
+
+            return key;;
+
+
+
+        }
 
         public MarketData HighestOnWindow(int window)
         {
@@ -173,9 +211,9 @@ namespace tph.DayTurtles.BusinessEntities
         public virtual bool AppendCandle(MarketData md)
         {
             bool newCandle = false;
-            if (md.MDEntryDate.HasValue)
+            if (CanCreateCandle(md))
             {
-                string key = md.MDEntryDate.Value.ToString("yyyyMMddHHmm");
+                string key = GetCandleKey(md);
                 
                 if (!Candles.ContainsKey(key))
                 {

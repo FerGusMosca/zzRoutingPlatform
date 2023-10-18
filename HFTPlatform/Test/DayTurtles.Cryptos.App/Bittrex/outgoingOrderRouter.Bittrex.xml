@@ -5,7 +5,7 @@
   <QuoteCurrency>USDT</QuoteCurrency>
   <Simulate>false</Simulate>
 
-  <RoutePriceUpdPct>0.005</RoutePriceUpdPct><!--0.005=0.5%-->
+  <RoutePriceUpdPct>0.0005</RoutePriceUpdPct><!--0.005=0.05%-->
 
   <RefreshExecutionReportsInMilisec>5000</RefreshExecutionReportsInMilisec>
 
