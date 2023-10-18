@@ -113,6 +113,20 @@ namespace zHFT.Main.BusinessEntities.Market_Data
             }
         }
 
+        public DateTime? GetOrderingDate()
+        {
+            if (MDEntryDate.HasValue)
+                return MDEntryDate.Value;
+            else if (MDLocalEntryDate.HasValue)
+                return MDLocalEntryDate.Value;
+            else
+            {
+                return null;
+            }
+
+
+        }
+
         #endregion
     }
 }

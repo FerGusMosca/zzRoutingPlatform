@@ -156,9 +156,9 @@ namespace tph.DayTurtles.BusinessEntities
             if (Candles.Count < window)
                 return false;
 
-            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
+            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
 
-            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value)
+            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.GetOrderingDate())
                                                       .Skip(1).Take(window).ToList();
             
             //We ignore the last candle which is the current candle
@@ -167,8 +167,8 @@ namespace tph.DayTurtles.BusinessEntities
             {
                 if ( 
                     IsBigger(md,lastCandle)
-                    && md.MDEntryDate.HasValue && lastCandle.MDEntryDate.HasValue
-                    && DateTime.Compare(md.MDEntryDate.Value, lastCandle.MDEntryDate.Value) < 0)
+                    && md.GetOrderingDate().HasValue && lastCandle.GetOrderingDate().HasValue
+                    && DateTime.Compare(md.GetOrderingDate().Value, lastCandle.GetOrderingDate().Value) < 0)
                 {
                     foundBigger = true;
                 }
@@ -183,9 +183,9 @@ namespace tph.DayTurtles.BusinessEntities
             if (Candles.Count < window)
                 return false;
 
-            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
+            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
 
-            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.MDEntryDate.Value)
+            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.GetOrderingDate())
                                                      .Skip(1).Take(window).ToList();
             
             //We ignore the last candle which is the current candle
@@ -193,8 +193,8 @@ namespace tph.DayTurtles.BusinessEntities
             foreach (MarketData md in candles)
             {
                 if (Islower(md,lastCandle)
-                    && md.MDEntryDate.HasValue && lastCandle.MDEntryDate.HasValue
-                    && DateTime.Compare(md.MDEntryDate.Value, lastCandle.MDEntryDate.Value) < 0)
+                    && md.GetOrderingDate().HasValue && lastCandle.GetOrderingDate().HasValue
+                    && DateTime.Compare(md.GetOrderingDate().Value, lastCandle.GetOrderingDate().Value) < 0)
                 {
                     foundLower = true;
                 }
@@ -253,17 +253,17 @@ namespace tph.DayTurtles.BusinessEntities
         public virtual List<MarketData> GetHistoricalPrices()
         {
             List<MarketData> histPrices = new List<MarketData>(Candles.Values);
-            return histPrices.OrderBy(x => x.MDEntryDate).ToList();
+            return histPrices.OrderBy(x => x.GetOrderingDate()).ToList();
         }
         
         public virtual MarketData GetLastFinishedCandle()
         {
-            return Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).ToArray()[1];
+            return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[1];
         }
         
         public virtual MarketData GetLastCandle()
         {
-            return Candles.Values.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault();
+            return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
         }
         
         public virtual bool HasHistoricalCandles()
@@ -277,6 +277,8 @@ namespace tph.DayTurtles.BusinessEntities
 
             if (lastCandle != null && lastCandle.MDEntryDate.HasValue)
                 return lastCandle.MDEntryDate.Value;
+            if (lastCandle != null && lastCandle.MDLocalEntryDate.HasValue)
+                return lastCandle.MDLocalEntryDate.Value;
             else
                 return DateTime.Now;
         }
