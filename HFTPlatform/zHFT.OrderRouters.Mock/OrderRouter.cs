@@ -53,6 +53,7 @@ namespace zHFT.OrderRouters.Mock
                     List<Order> toRemove = new List<Order>();
                     foreach (Order order in PendingToExecuteOrders)
                     {
+                        //Console.Beep();//DBG
                         TimeSpan elapsed = DateTime.Now - order.EffectiveTime.Value;
                         if (elapsed.TotalSeconds > Configuration.OrdeExecutionEveryNSeconds)
                         {

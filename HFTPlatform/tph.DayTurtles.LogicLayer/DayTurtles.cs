@@ -141,20 +141,20 @@ namespace tph.DayTurtles.LogicLayer
 
             if (portfPos.IsShortDirection() && monPos.EvalClosingShortPosition()  && !monPos.IsClosing())
             {
-                RunClose(portfPos.OpeningPosition, monPos, portfPos);
                 DoLog(string.Format("Closing {0} Position  on market. Symbol {1} Qty={2} DateTime={3} PosId={4}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
                         DateTime.Now,
                         portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-"),
                     Constants.MessageType.Information);
+                RunClose(portfPos.OpeningPosition, monPos, portfPos);
             }
             else if (portfPos.IsLongDirection() && monPos.EvalClosingLongPosition() && !monPos.IsClosing())
             {
-                RunClose(portfPos.OpeningPosition, monPos, portfPos);
                 DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  DateTime={3} PosId={4}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty, DateTime.Now,
                         portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-"),
                     Constants.MessageType.Information);
+                RunClose(portfPos.OpeningPosition, monPos, portfPos);
 
             }
             else

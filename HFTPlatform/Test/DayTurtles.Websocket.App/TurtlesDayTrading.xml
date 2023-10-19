@@ -30,8 +30,10 @@
   <ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+  
+  <CandleReferencePrice>TRADE</CandleReferencePrice> <!-- IMPORTANT: bacause canle CLOSE prices do not always have, the candle close -->
 
-  <OnlyLong>true</OnlyLong>
+  <OnlyLong>false</OnlyLong>
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->

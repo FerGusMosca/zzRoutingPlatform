@@ -154,9 +154,13 @@ namespace tph.DayTurtles.BusinessEntities
             if (Candles.Count < window)
                 return false;
 
-            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            MarketData lastCandle = Candles.Values
+                                                .Where(x=>  x.GetOrderingDate()!=null)
+                                                .OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
 
-            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.GetOrderingDate())
+            List<MarketData> candles = Candles.Values
+                                                      .Where(x=>  x.GetOrderingDate()!=null)
+                                                      .OrderByDescending(x => x.GetOrderingDate())
                                                       .Skip(1).Take(window).ToList();
             
             //We ignore the last candle which is the current candle
@@ -181,9 +185,12 @@ namespace tph.DayTurtles.BusinessEntities
             if (Candles.Count < window)
                 return false;
 
-            MarketData lastCandle = Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            MarketData lastCandle = Candles.Values
+                                           .Where(x=>  x.GetOrderingDate()!=null)
+                                           .OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
 
-            List<MarketData> candles = Candles.Values.OrderByDescending(x => x.GetOrderingDate())
+            List<MarketData> candles = Candles.Values.Where(x=>  x.GetOrderingDate()!=null)
+                                                      .OrderByDescending(x => x.GetOrderingDate())
                                                      .Skip(1).Take(window).ToList();
             
             //We ignore the last candle which is the current candle
