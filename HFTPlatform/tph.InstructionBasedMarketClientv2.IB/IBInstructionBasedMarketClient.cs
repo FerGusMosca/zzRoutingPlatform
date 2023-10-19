@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using IBApi;
+using tph.InstructionBasedMarketClient.IB.Common.Converters;
+using tph.InstructionBasedMarketClient.IB.Common.DTO;
 using tph.MarketClient.IB.Common;
-using zHFT.InstructionBasedMarketClient.IB.Common.Converters;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
@@ -15,7 +16,9 @@ using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Converters;
+using zHFT.StrategyHandler.Common.Wrappers;
 using Constants = zHFT.Main.Common.Util.Constants;
+using SecurityConverter = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter;
 
 
 namespace tph.InstructionBasedMarketClientv2.IB.Client
@@ -342,7 +345,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
          
         }
 
-        protected CMState ProessMarketDataRequest(Wrapper wrapper)
+        protected CMState ProcessMarketDataRequest(Wrapper wrapper)
         {
             try
             {
@@ -384,6 +387,66 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             }
         }
 
+        protected void ProcessHistoricalDataRequestAsync(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper) param;
+
+                HistoricalPricesRequestDTO dto = HistoricalPriceConverter.ConvertHistoricalPriceRequest(wrapper);
+
+                zHFT.MarketClient.IB.Common.Configuration.Contract ctr =
+                    new zHFT.MarketClient.IB.Common.Configuration.Contract();
+
+                ctr.Exchange = IBConfiguration.Exchange;
+                ctr.SecType =
+                    zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(
+                        dto.SecurityType);
+                ctr.Currency = SecurityConverter.GetCurrency(dto.SecurityType, dto.Currency, dto.Symbol,
+                    CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+                ctr.Symbol = SecurityConverter.GetSymbol(dto.SecurityType, dto.Symbol,
+                    CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+                ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(dto.SecurityType);
+
+                Contract ibContract = new Contract();
+
+                ibContract.Symbol = ctr.Symbol;
+                ibContract.SecType = ctr.SecType;
+                ibContract.Exchange = ctr.Exchange;
+                ibContract.Currency = ctr.Currency;
+                ibContract.PrimaryExch = ctr.PrimaryExchange;
+
+                DoLog(
+                    $"Requesting Historical Prices for symbol ={dto.Symbol} QueryTime={dto.QueryTime} DurationString={dto.DurationString} BarSize={dto.BarSize}",
+                    Constants.MessageType.Information);
+
+
+                ClientSocket.reqHistoricalData(dto.ReqId, ibContract, dto.QueryTime, dto.DurationString, dto.BarSize,
+                    dto.WhatToShow, 1, 1, false, null);
+                Thread.Sleep(1000); //So as any requests do not affect IB
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL error requesting Historical Prices : {ex.Message}",Constants.MessageType.Error);
+            }
+        }
+
+        protected void RequestHistoricalPricesTest()
+        {
+
+            TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+
+            DateTime to = DateTime.Now.AddYears(-2);
+            DateTime from = to.AddDays(-5);
+
+            HistoricalPricesRequestWrapper wrapper = new HistoricalPricesRequestWrapper(
+                                                Convert.ToInt32(elapsed.TotalSeconds),
+                                                "SPY",from, to, CandleInterval.Minute_1);
+
+            (new Thread(ProcessHistoricalDataRequestAsync)).Start(wrapper);
+
+        }
+
         #endregion
 
         #region Public Methods
@@ -393,6 +456,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
         {
             try
             {
+                
                 this.OnMessageRcv += pOnMessageRcv;
                 this.OnLogMsg += pOnLogMsg;
 
@@ -418,6 +482,8 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();
+                    
+                    RequestHistoricalPricesTest();
 
                     return true;
                 }
@@ -443,7 +509,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                     Actions action = wrapper.GetAction();
                     if (Actions.MARKET_DATA_REQUEST == action)
                     {
-                        return ProessMarketDataRequest(wrapper);
+                        return ProcessMarketDataRequest(wrapper);
                     }
                     else
                     {

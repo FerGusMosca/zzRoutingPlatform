@@ -35,6 +35,8 @@
   
   <OnlyLong>false</OnlyLong>
 
+  <CandleReferencePrice>TRADE</CandleReferencePrice> <!-- IMPORTANT: bacause canle CLOSE prices do not always have, the candle close -->
+
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
   
@@ -45,6 +47,8 @@
     <Symbol>YPFD.BUE</Symbol>
     <Symbol>TECO2.BUE</Symbol>
     <Symbol>PAMP.BUE</Symbol>
+    
+    
 
     
   </StocksToMonitor>

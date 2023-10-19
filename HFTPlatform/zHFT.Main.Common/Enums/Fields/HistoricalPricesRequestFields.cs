@@ -9,6 +9,8 @@
         public static readonly HistoricalPricesRequestFields To = new HistoricalPricesRequestFields(4);
         public static readonly HistoricalPricesRequestFields Interval = new HistoricalPricesRequestFields(5);
         public static readonly HistoricalPricesRequestFields MDReqId = new HistoricalPricesRequestFields(6);
+        public static readonly HistoricalPricesRequestFields Currency = new HistoricalPricesRequestFields(7);
+        public static readonly HistoricalPricesRequestFields SecurityType = new HistoricalPricesRequestFields(8);
         
         protected HistoricalPricesRequestFields(int pInternalValue)
             : base(pInternalValue)

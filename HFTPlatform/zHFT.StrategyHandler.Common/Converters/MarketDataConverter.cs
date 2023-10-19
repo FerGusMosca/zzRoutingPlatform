@@ -147,6 +147,12 @@ namespace zHFT.StrategyHandler.Common.Converters
 
             md.LastTradeDateTime = (ValidateField(wrapper, MarketDataFields.LastTradeDateTime) ? (DateTime?)wrapper.GetField(MarketDataFields.LastTradeDateTime) : null);
 
+            if (md.MDEntryDate.HasValue && !md.MDLocalEntryDate.HasValue)
+                md.MDLocalEntryDate = md.MDLocalEntryDate;
+            else if (md.MDLocalEntryDate.HasValue && !md.MDEntryDate.HasValue)
+                md.MDEntryDate = md.MDLocalEntryDate;
+            
+            
             return md;
         
         }

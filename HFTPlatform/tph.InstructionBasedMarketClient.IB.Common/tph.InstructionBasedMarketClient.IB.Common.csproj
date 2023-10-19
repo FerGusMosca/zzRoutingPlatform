@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
+      <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj" />
     </ItemGroup>
 
 </Project>
