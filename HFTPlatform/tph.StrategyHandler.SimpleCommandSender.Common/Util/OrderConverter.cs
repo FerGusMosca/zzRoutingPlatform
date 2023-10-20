@@ -58,6 +58,13 @@ namespace tph.StrategyHandler.SimpleCommandSender.Common.Util
                 newOrderReqJson.Side = NewOrderReq._SELL;
             else
                 throw new Exception($"Side not recognized for Websocket connector client: {newOrder.Side}");
+            
+            if (newOrder.TimeInForce == TimeInForce.Day)
+                newOrderReqJson.TimeInForce =NewOrderReq._TIF_DAY;
+            else if (newOrder.TimeInForce == TimeInForce.GoodTillCancel)
+                newOrderReqJson.TimeInForce =NewOrderReq._TIF_GTC;
+            else
+                newOrderReqJson.TimeInForce =NewOrderReq._TIF_UNK;
 
             newOrderReqJson.Symbol = newOrder.Security.Symbol;
 

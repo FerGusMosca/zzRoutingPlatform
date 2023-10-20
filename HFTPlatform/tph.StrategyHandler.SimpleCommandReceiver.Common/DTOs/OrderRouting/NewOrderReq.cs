@@ -5,6 +5,18 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
 {
     public class NewOrderReq:WebSocketMessage
     {
+
+        #region Constructors
+
+
+
+        public NewOrderReq()
+        {
+            Msg = "NewOrderReq";
+        }
+
+        #endregion
+        
         #region Protected Consts
 
         public static string _BUY = "BUY";
@@ -14,6 +26,12 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
         public static string _ORD_TYPE_LIMIT = "LIMIT";
 
         public static string _ORD_TYPE_MKT = "MKT";
+
+        public static string _TIF_GTC = "GTC";
+
+        public static string _TIF_DAY = "DAY";
+
+        public static string _TIF_UNK = "UNK";
         
         #endregion
         
@@ -38,6 +56,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
         public double? Price { get; set; }
 
         public string Currency { get; set; }
+        
+        public string TimeInForce { get; set; }
+        
+        public DateTime CreationTime { get; set; }
 
         #endregion
         
@@ -51,6 +73,34 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
                 return zHFT.Main.Common.Enums.Side.Sell;
             else
                 throw new Exception(string.Format("Not recognize Side {0} @RouteOrderReq", Side));
+        }
+
+        public OrdType GetOrdType()
+        {
+
+            if (Type == _ORD_TYPE_LIMIT)
+                return OrdType.Limit;
+            else if (Type == _ORD_TYPE_MKT)
+                return OrdType.Market;
+            else
+            {
+                throw new Exception($"Unknown order type {Type}");
+            }
+
+        }
+        
+        public TimeInForce GetTimeInforce()
+        {
+
+            if (Type == _TIF_DAY)
+                return zHFT.Main.Common.Enums.TimeInForce.Day;
+            else if (Type == _TIF_GTC)
+                return  zHFT.Main.Common.Enums.TimeInForce.GoodTillCancel;
+            else
+            {
+                return zHFT.Main.Common.Enums.TimeInForce.Day;
+            }
+
         }
 
         public NewOrderReq Clone()

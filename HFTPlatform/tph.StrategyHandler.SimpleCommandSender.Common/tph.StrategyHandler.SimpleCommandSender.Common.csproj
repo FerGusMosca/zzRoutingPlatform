@@ -41,6 +41,7 @@
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\OrderConverter.cs" />
+    <Compile Include="Wrappers\ExecutionReportWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj">

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.StrategyHanders.TestStrategies.TestModule.Common.Configuration;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
@@ -20,29 +21,7 @@ using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.StrategyHanders.TestStrategies.TestModule
 {
-    public class Configuration:IConfiguration
-    { 
-
-        public string Name { get; set; }
-        public string OrderRouter { get; set; }
-
-        public string OrderRouterConfigFile { get; set; }
-
-        public string Symbol { get; set; }
-
-        public string Currency { get; set; }
-
-        public string Side { get; set; }
-
-        public double SellQty { get; set; }
-
-        public double BuyQty { get; set; }
-
-        public bool CheckDefaults(List<string> result)
-        {
-            return true;
-        }
-    }
+  
 
     public class TestStrategy : BaseCommunicationModule,ILogger
     {
@@ -146,6 +125,30 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             //CMState state2 = OrderRouter.ProcessMessage(cxlWrapper);
 
         }
+        
+        private void RouteMarketOrder(Side side)
+        {
+
+            Position pos = new Position()
+            {
+                Security = GetSecurity(),
+                Side = side,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                Qty = Config.BuyQty,
+                QuantityType = QuantityType.SHARES,
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = "TestStrategyAcc",
+            };
+
+           
+            pos.LoadPosId(NextPosId);
+            NextPosId++;
+            Routing = true;
+            PositionWrapper posWrapper = new PositionWrapper(pos, Config);
+
+            CMState state = OrderRouter.ProcessMessage(posWrapper);
+        }
 
         private void RouteNewSellTestOrder()
         {
@@ -222,10 +225,10 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         {
             try
             {
-                while (!RecvMarketData)
-                {
-                    Thread.Sleep(100);
-                }
+//                while (!RecvMarketData)
+//                {
+//                    Thread.Sleep(100);
+//                }
 
                 if (Config.Side == "BUY")
                     RouteNewBuyTestOrder();
@@ -236,6 +239,25 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
                 DoLog($"CRITICAL ERROR ROUTING TO MARKET :{ex.Message}", MessageType.Error);
             
+            }
+        }
+
+        protected void EvalActions()
+        {
+            if (Config.Action == Configuration._ACTION_ROUTE_MARKET)
+            {
+                
+                if (Config.Side == Configuration._SIDE_BUY)
+                    RouteMarketOrder(Side.Buy);
+                else if(Config.Side==Configuration._SIDE_SELL)
+                    RouteMarketOrder(Side.Sell);
+                else
+                    DoLog($"@{Config.Name}--> Side not implemented:{Config.Side}",MessageType.Error);
+            }
+            else
+            {
+                
+                DoLog($"@{Config.Name}-->Action not implemented !:{Config.Action}",MessageType.Error);
             }
         }
 
@@ -255,11 +277,13 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 RecvMarketData= false;
                 MarketDataRequestCounter = 1;
                 InitializeModules(pOnLogMsg);
-                RequestMarketData();
+                //RequestMarketData();
                 
-                RequestHistoricalPrices();
+                //RequestHistoricalPrices();
 
-                WaitForMarketDataAndRoute();
+                //WaitForMarketDataAndRoute();
+
+                EvalActions();
 
                 return true;
 

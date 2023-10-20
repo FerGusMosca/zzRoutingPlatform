@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Test Strategy</Name>
+
+
+  <OrderRouter>zHFT.OrderRouters.Router.MarketOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+	<Symbol>SPY</Symbol>
+	
+	
+	<Action>ROUTE_MARKET</Action><!--ROUTE_MARKET-->
+
+
+	<Currency>USD</Currency>
+
+	<Side>BUY</Side><!--BUY,SELL-->
+	<SellQty>204.58</SellQty> <!--shares-->
+	<BuyQty>1000</BuyQty><!--cash-->
+
+
+</Configuration>

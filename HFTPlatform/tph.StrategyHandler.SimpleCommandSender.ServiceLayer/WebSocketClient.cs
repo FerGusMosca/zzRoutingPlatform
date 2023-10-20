@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 
@@ -126,7 +127,11 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                             else if (wsResp.Msg == "CandlebarMsg")
                                 OnCandlebar(JsonConvert.DeserializeObject<CandlebarDTO>(resp));
                             else if (wsResp.Msg == "ExecutionReportMsg")
-                                OnExecutionReport(JsonConvert.DeserializeObject<ExecutionReportDTO>(resp));
+                            {
+                                ExecutionReport execRep = JsonConvert.DeserializeObject<ExecutionReport>(resp);
+                                ExecutionReportDTO dto = new ExecutionReportDTO(execRep);
+                                OnExecutionReport(dto);
+                            }
 //                            else if (wsResp.Msg == "OrderCancelRejectMsg")
 //                                OnEvent(JsonConvert.DeserializeObject<OrderCancelRejectDTO>(resp));
                             else if (wsResp.Msg == "UnsubscriptionResponse")

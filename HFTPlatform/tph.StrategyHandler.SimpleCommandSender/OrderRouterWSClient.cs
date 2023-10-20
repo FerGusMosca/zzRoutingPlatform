@@ -8,6 +8,7 @@ using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using tph.StrategyHandler.SimpleCommandSender.Common.Configuration;
+using tph.StrategyHandler.SimpleCommandSender.Common.Wrappers;
 using tph.StrategyHandler.SimpleCommandSender.ServiceLayer;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
@@ -107,6 +108,19 @@ namespace tph.StrategyHandler.SimpleCommandSender
                DoLog($"ERROR @ProcessIncomingAsync:{e.Message}",Constants.MessageType.Error);
             }
         }
+        
+        public void ProcessExecutionReportAsync(object param)
+        {
+            try
+            {
+                Wrapper erWrapper = (Wrapper) param;
+                OnExecutionReportMessageRcv(erWrapper);
+            }
+            catch (Exception e)
+            {
+                DoLog($"ERROR @ProcessExecutionReportAsync:{e.Message}",Constants.MessageType.Error);
+            }
+        }
 
         public void DoSendAsync<T>(object param)
         {
@@ -196,8 +210,25 @@ namespace tph.StrategyHandler.SimpleCommandSender
         
         public  void ProcessExecutionReport(ExecutionReportDTO msg)
         {
-            //TODO Process Exec Report to prev modules (wrapper and stuff)            
-            DoLog($"{Config.Name}--> Recv ExecutionReport:{msg.ToString()}", Constants.MessageType.Information);
+            try
+            {
+                lock (JsonOrdersDict)
+                {
+
+                    if (JsonOrdersDict.ContainsKey(msg.ClOrdId))
+                    {
+                        DoLog($"{Config.Name}--> Recv ExecutionReport:{msg.ToString()}",
+                            Constants.MessageType.Information);
+                        NewOrderReq order = JsonOrdersDict[msg.ClOrdId];
+                        ExecutionReportWrapper execReportWrapper = new ExecutionReportWrapper(msg, order);
+                        (new Thread(ProcessExecutionReportAsync)).Start(execReportWrapper);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"{Config.Name} - CRITICAL ERROR processing execution report:{ex.Message}",Constants.MessageType.Error);
+            }
         }
 
         #endregion

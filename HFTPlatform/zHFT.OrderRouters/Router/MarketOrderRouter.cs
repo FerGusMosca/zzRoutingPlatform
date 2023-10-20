@@ -57,6 +57,7 @@ namespace zHFT.OrderRouters.Router
                 Currency = Currency.USD.ToString(),
                 QuantityType = pos.QuantityType,
                 PriceType = PriceType.FixedAmount,
+                Account = pos.AccountId,
                 Index = index
             };
             order.OrigClOrdId = order.ClOrdId;

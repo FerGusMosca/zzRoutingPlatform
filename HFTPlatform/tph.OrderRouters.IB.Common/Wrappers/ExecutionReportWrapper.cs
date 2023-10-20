@@ -189,7 +189,7 @@ namespace tph.OrderRouters.IB.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrdType)
                 return GetOrdTypeFromIBOrdType();
             else if (xrField == ExecutionReportFields.Price)
-                return Order.LmtPrice;
+                return (Order.OrderType == _ORDER_TYPE_LIMIT? (double?) Order.LmtPrice:null);
             else if (xrField == ExecutionReportFields.StopPx)
                 return Order.TrailStopPrice != double.MaxValue ? (double?)Order.TrailStopPrice : null;
             else if (xrField == ExecutionReportFields.Currency)
