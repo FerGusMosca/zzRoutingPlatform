@@ -1055,6 +1055,7 @@
           <e p="SecurityConverter.cs" t="Include" />
         </e>
         <e p="DTO" t="Include">
+          <e p="HistoricalPricesHoldingDTO.cs" t="Include" />
           <e p="HistoricalPricesRequestDTO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

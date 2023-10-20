@@ -82,6 +82,25 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             MarketDataRequestCounter++;
             OnMessageRcv(wrapper);
         }
+        
+        private void RequestHistoricalPrices()
+        {
+
+            TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+
+            DateTime to = DateTime.Now.AddYears(-2);
+            DateTime from = to.AddDays(-1);
+            string symbol = "SPY";
+            CandleInterval interval = CandleInterval.Minute_1;
+
+            HistoricalPricesRequestWrapper wrapper = new HistoricalPricesRequestWrapper(
+                Convert.ToInt32(elapsed.TotalSeconds),
+                symbol, from, to, interval);
+            
+            OnMessageRcv(wrapper);
+
+
+        }
 
         private void ProcessExecutionReport(Wrapper wrapper)
         {
@@ -237,6 +256,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 MarketDataRequestCounter = 1;
                 InitializeModules(pOnLogMsg);
                 RequestMarketData();
+                
+                RequestHistoricalPrices();
 
                 WaitForMarketDataAndRoute();
 

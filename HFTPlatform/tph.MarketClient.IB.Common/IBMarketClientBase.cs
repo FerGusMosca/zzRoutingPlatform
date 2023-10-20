@@ -2,10 +2,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.InstructionBasedMarketClient.IB.Common.DTO;
+using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
@@ -15,6 +18,7 @@ using zHFT.MarketClient.Common;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.IB.Common.Converters;
 using Constants = zHFT.Main.Common.Util.Constants;
+using MarketData = zHFT.Main.BusinessEntities.Market_Data.MarketData;
 
 namespace tph.MarketClient.IB.Common
 {
@@ -39,6 +43,10 @@ namespace tph.MarketClient.IB.Common
         protected EReaderSignal EReaderSignal { get; set; }
         
         protected Thread ReaderThread { get; set; }
+        
+        protected Dictionary<int, HistoricalPricesHoldingDTO> HistoricalPricesRequest { get; set; }
+        protected object tLockHistoricalPricesRequest { get; set; }
+        
 
         #endregion
 
@@ -502,17 +510,52 @@ namespace tph.MarketClient.IB.Common
 
         public void historicalData(int reqId, Bar bar)
         {
-            DoLog(string.Format("historicalData: reqId={0} date={1} open={2} high={3} low={4} close={5} close={6} volume={7} count={8} WAP={9} ",
-                reqId,
-                bar.Time,
-                bar.Open,
-                bar.High,
-                bar.Low,
-                bar.Close,
-                bar.Close,
-                bar.Volume,
-                bar.Count,
-                bar.WAP), Constants.MessageType.Information);
+            lock (HistoricalPricesRequest)
+            {
+                try
+                {
+                    if (HistoricalPricesRequest.ContainsKey(reqId))
+                    {
+                        HistoricalPricesHoldingDTO dtoRecord = HistoricalPricesRequest[reqId];
+                        zHFT.Main.BusinessEntities.Market_Data.MarketData md =new zHFT.Main.BusinessEntities.Market_Data.MarketData();
+
+                        DateTime date;
+                        string format = "yyyyMMdd  HH:mm:ss";
+                       
+                        if (DateTime.TryParseExact(bar.Time, format, CultureInfo.InvariantCulture, DateTimeStyles.None,
+                            out date))
+                        {
+                            md.MDEntryDate = date;
+                            md.MDLocalEntryDate = date;
+                        }
+                        else
+                            throw new Exception($"Could not convert date {bar.ToString()} with format {format}");
+                        
+                        md.Trade = bar.Close;
+                        md.OpeningPrice = bar.Open;
+                        md.ClosingPrice = bar.Close;
+                        md.TradingSessionHighPrice = bar.High;
+                        md.TradingSessionLowPrice = bar.Low;
+                        md.CashVolume = bar.Volume;
+                        md.NominalVolume = bar.Count; //number of trades
+                        //bar.WAP;
+
+                        dtoRecord.MarketDataList.Add(md);
+
+                        DoLog(string.Format(
+                            "historicalData: reqId={0} date={1} open={2} high={3} low={4} close={5} close={6} volume={7} count={8} WAP={9} ",
+                            reqId,bar.Time,bar.Open,bar.High,bar.Low,bar.Close,bar.Close,bar.Volume,bar.Count,bar.WAP), Constants.MessageType.Information);
+                    }
+                    else
+                    {
+                        DoLog($"WARNING-Ignoring historical prices for request {reqId}",Constants.MessageType.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DoLog($"CRITICAL ERROR Processing historical price for req Id {reqId}: {ex.Message}",Constants.MessageType.Error);
+                }
+            }
         }
 
         public void historicalDataUpdate(int reqId, Bar bar)
@@ -530,12 +573,60 @@ namespace tph.MarketClient.IB.Common
                 bar.WAP), Constants.MessageType.Information);
         }
 
+        public void OnPublishHistoricalPricesAsync(object param)
+        {
+            try
+            {
+                CMState state = OnMessageRcv((Wrapper) param);
+                if (!state.Success)
+                    throw state.Exception;
+            }
+            catch (Exception e)
+            {
+                DoLog($"CRITICAL ERROR @OnPublishHistoricalPricesAsync: {e.Message}",Constants.MessageType.Information);
+            }
+        }
+
         public void historicalDataEnd(int reqId, string start, string end)
         {
-            DoLog(string.Format("historicalDataEnd: reqId={0} start={1} end={2}  ",
-                                reqId,
-                                start,
-                                end), Constants.MessageType.Information);
+            lock (HistoricalPricesRequest)
+            {
+                try
+                {
+                    if (HistoricalPricesRequest.ContainsKey(reqId))
+                    {
+                        DoLog(string.Format("historicalDataEnd: reqId={0} start={1} end={2}  ",
+                            reqId,
+                            start,
+                            end), Constants.MessageType.Information);
+                        
+                        HistoricalPricesHoldingDTO dtoRecord = HistoricalPricesRequest[reqId];
+
+                        List<Wrapper> marketDataWrapper =  new List<Wrapper>();
+                        foreach (zHFT.Main.BusinessEntities.Market_Data.MarketData md in dtoRecord.MarketDataList)
+                        {
+                            
+                            Security sec = new Security();
+                            sec.Symbol = dtoRecord.Security.Symbol;
+                            sec.SecType = dtoRecord.Security.SecType;
+                            sec.Currency = dtoRecord.Security.Currency;
+                            sec.MarketData = md;
+                            MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, GetConfig());
+                            marketDataWrapper.Add(mdWrapper);
+                        }
+
+
+                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(marketDataWrapper);
+                        HistoricalPricesRequest.Remove(reqId);
+                        (new Thread(OnPublishHistoricalPricesAsync)).Start(histWrp);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    DoLog($"CRITICAL ERROR Publishing Historical prices: {ex.Message}",Constants.MessageType.Information);
+                }
+                
+            }
         }
 
         public void managedAccounts(string accountsList)
