@@ -15,6 +15,7 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common;
+using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.IB.Common.Converters;
 using Constants = zHFT.Main.Common.Util.Constants;
@@ -601,6 +602,11 @@ namespace tph.MarketClient.IB.Common
                             end), Constants.MessageType.Information);
                         
                         HistoricalPricesHoldingDTO dtoRecord = HistoricalPricesRequest[reqId];
+                        
+                        Security mainSec = new Security();
+                        mainSec.Symbol = dtoRecord.Security.Symbol;
+                        mainSec.SecType = dtoRecord.Security.SecType;
+                        mainSec.Currency = dtoRecord.Security.Currency;
 
                         List<Wrapper> marketDataWrapper =  new List<Wrapper>();
                         foreach (zHFT.Main.BusinessEntities.Market_Data.MarketData md in dtoRecord.MarketDataList)
@@ -616,7 +622,7 @@ namespace tph.MarketClient.IB.Common
                         }
 
 
-                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(marketDataWrapper);
+                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(mainSec,marketDataWrapper);
                         HistoricalPricesRequest.Remove(reqId);
                         (new Thread(OnPublishHistoricalPricesAsync)).Start(histWrp);
                     }

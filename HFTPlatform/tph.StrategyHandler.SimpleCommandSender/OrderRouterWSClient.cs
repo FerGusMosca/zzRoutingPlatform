@@ -8,8 +8,10 @@ using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using tph.StrategyHandler.SimpleCommandSender.Common.Configuration;
+using tph.StrategyHandler.SimpleCommandSender.Common.Util;
 using tph.StrategyHandler.SimpleCommandSender.Common.Wrappers;
 using tph.StrategyHandler.SimpleCommandSender.ServiceLayer;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
@@ -18,10 +20,11 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
-using zHFT.OrderRouters.Common.Converters;
 using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
+using OrderConverter = zHFT.OrderRouters.Common.Converters.OrderConverter;
 
 namespace tph.StrategyHandler.SimpleCommandSender
 {
@@ -41,6 +44,8 @@ namespace tph.StrategyHandler.SimpleCommandSender
         public tph.StrategyHandler.SimpleCommandSender.Common.Configuration.Configuration Config { get; set; }
         
         protected Dictionary<string,long> MarketDataRequests { get; set; }
+        
+        protected Dictionary<string,long> HistoricalPricesRequests { get; set; }
         
         protected Dictionary<string,long> CandlebarRequests { get; set; }
         
@@ -176,6 +181,42 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
         }
 
+        public void ProcessHistoricalPrices(HistoricalPricesDTO msg)
+        {
+            try
+            {
+                lock (HistoricalPricesRequests)
+                {
+                    if (HistoricalPricesRequests.ContainsKey(msg.Symbol))
+                    {
+                        Security mainSec = new Security() {Symbol = msg.Symbol};
+                        List<Wrapper> mdWrappers = new List<Wrapper>();
+                        foreach (MarketData md in msg.MarketData)
+                        {
+                            Security sec = new Security() {Symbol = msg.Symbol};
+                            sec.MarketData = md;
+                            MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Config);
+                            mdWrappers.Add(mdWrapper);
+                        }
+
+                        HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(mainSec, mdWrappers);
+                        DoLog($"{Config.Name}--> Recv {mdWrappers.Count} prices for symbol :{mainSec.Symbol}",
+                            Constants.MessageType.Information);
+                        (new Thread(ProcessIncomingAsync)).Start(histWrapper);
+                    }
+                    else
+                    {
+                        DoLog($"Ignoring historical prices for unknown symbol {msg.Symbol}",
+                            Constants.MessageType.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR processing historical prices {ex.Message}",Constants.MessageType.Error);
+            }
+        }
+
         public  void ProcessMarketData(MarketDataDTO msg)
         {
             try
@@ -204,7 +245,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             catch (Exception ex)
             {
-                DoLog($"ERROR processing market data {ex.Message}",Constants.MessageType.Information);
+                DoLog($"ERROR processing market data {ex.Message}",Constants.MessageType.Error);
             }
         }
         
@@ -336,6 +377,29 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
         }
 
+        protected void ProcessHistoricalPricesRequest(object param)
+        {
+            try
+            {
+                HistoricalPricesReqDTO reqDTO=HistoricalPricesRequestConverter.ConvertHistoricalPricesRequest( (Wrapper) param);
+
+                lock (HistoricalPricesRequests)
+                {
+                    if (HistoricalPricesRequests.ContainsKey(reqDTO.Symbol))
+                        HistoricalPricesRequests.Remove(reqDTO.Symbol);
+                    HistoricalPricesRequests.Add(reqDTO.Symbol, reqDTO.HistPrReqId);
+                }
+                
+                DoLog($"Subscribing historical prices for symbol {reqDTO.Symbol}", Constants.MessageType.Information);
+                DoSendAsync<HistoricalPricesReqDTO>(reqDTO);
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR sending historical prices request: {ex.Message}",Constants.MessageType.Information);
+            }
+            
+        }
+
         protected  void ProcessMarketDataRequest(object param)
         {
             try
@@ -465,6 +529,13 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 DoLog("Market Data Request successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
                 return  CMState.BuildSuccess();
             }
+            else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES_REQUEST)
+            {
+                DoLog("Processing Historical Prices Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessHistoricalPricesRequest)).Start(wrapper);
+                DoLog("Historical Prices Request successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
+                return  CMState.BuildSuccess();
+            }
             else if (wrapper.GetAction() == Actions.CANDLE_BAR_REQUEST)
             {
                 DoLog("Processing Candlebar Request:" + wrapper.ToString(), Constants.MessageType.Information);
@@ -525,6 +596,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     DoLog(string.Format("Initializing SimpleCommSender module @{0}",DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")),Constants.MessageType.Information);
                     
                     MarketDataRequests= new Dictionary<string, long>();
+                    HistoricalPricesRequests=new Dictionary<string, long>();
                     CandlebarRequests=new Dictionary<string, long>();
                     WrapperOrderConverter = new OrderConverter();
                     JsonOrderConverter = new tph.StrategyHandler.SimpleCommandSender.Common.Util.OrderConverter();
@@ -533,7 +605,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     //Finish starting up the server
                     WebSocketClient = new WebSocketClient(Config.WebSocketURL,
                         ProcessEvent, ProcessMarketData,ProcessCandlebar, ProcessExecutionReport,
-                        DoLog);
+                        ProcessHistoricalPrices,DoLog);
                     WebSocketClient.Connect();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config, Constants.MessageType.Information);

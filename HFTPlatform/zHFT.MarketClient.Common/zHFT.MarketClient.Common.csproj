@@ -43,6 +43,7 @@
     <Compile Include="Converters\MarketDataRequestConverter.cs" />
     <Compile Include="MarketClientBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wrappers\HistoricalPricesWrapper.cs" />
     <Compile Include="Wrappers\MarketDataWrapper.cs" />
   </ItemGroup>
   <ItemGroup>

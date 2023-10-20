@@ -6,9 +6,6 @@
 <!--    <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>-->
 <!--    <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
 
-
-
-
   <Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
   <ProxyConfigFile>.\Websocket\OutgoingSingletonConfig.xml</ProxyConfigFile>
 

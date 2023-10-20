@@ -46,6 +46,9 @@
     <Compile Include="Converters\OrderConverter.cs" />
     <Compile Include="DTOs\ErrorMessage.cs" />
     <Compile Include="DTOs\MarketData\CandlebarDTO.cs" />
+    <Compile Include="DTOs\MarketData\HistoricalPricesDTO.cs" />
+    <Compile Include="DTOs\MarketData\HistoricalPricesReqAckDTO.cs" />
+    <Compile Include="DTOs\MarketData\HistoricalPricesReqDTO.cs" />
     <Compile Include="DTOs\MarketData\MarketDataDTO.cs" />
     <Compile Include="DTOs\MarketData\MarketDataReqDTO.cs" />
     <Compile Include="DTOs\MarketData\OrderBookDTO.cs" />

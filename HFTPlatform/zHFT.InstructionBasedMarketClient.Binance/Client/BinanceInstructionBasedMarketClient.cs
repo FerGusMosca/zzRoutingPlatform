@@ -23,6 +23,7 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Converters;
 using OrderBook = Binance.API.Csharp.Client.Models.Market.OrderBook;
 
@@ -316,8 +317,11 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
 
                     result.Add(mdWrapper);
                 }
+                
+                Security mainSec = new Security();
+                mainSec.Symbol = symbol;
 
-                HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(new List<Wrapper>(result));
+                HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(mainSec,new List<Wrapper>(result));
 
                 OnMessageRcv(histWrapper);
             }

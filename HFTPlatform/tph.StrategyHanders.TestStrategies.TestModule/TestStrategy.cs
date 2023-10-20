@@ -15,6 +15,8 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
+using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandlers.Common.Converters;
 using static zHFT.Main.Common.Util.Constants;
@@ -39,6 +41,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         protected bool Routing { get; set; }
 
         protected bool RecvMarketData { get; set; }
+        
+        protected Position LastRoutedPosition { get; set; }
 
         #endregion
 
@@ -67,9 +71,9 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
             TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
 
-            DateTime to = DateTime.Now.AddYears(-2);
+            DateTime to = DateTime.Now;
             DateTime from = to.AddDays(-1);
-            string symbol = "SPY";
+            string symbol = Config.Symbol;
             CandleInterval interval = CandleInterval.Minute_1;
 
             HistoricalPricesRequestWrapper wrapper = new HistoricalPricesRequestWrapper(
@@ -112,6 +116,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             };
 
             //pos.Security.MarketData = new MarketData() { Currency = pos.Security.Currency };
+            
             pos.LoadPosId(NextPosId);
             NextPosId++;
             Routing = true;
@@ -126,7 +131,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
         }
         
-        private void RouteMarketOrder(Side side)
+        private void RouteOrder(Side side, bool cashQty)
         {
 
             Position pos = new Position()
@@ -135,19 +140,52 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                Qty = Config.BuyQty,
-                QuantityType = QuantityType.SHARES,
+                Qty =side==Side.Buy? Config.BuyQty:Config.SellQty,//Cash if there is no price
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = "TestStrategyAcc",
             };
+            
+         
 
-           
+            if (side == Side.Buy)
+            {
+                pos.QuantityType =cashQty ? QuantityType.CURRENCY : QuantityType.SHARES;
+
+            }
+            else if (side==Side.Sell)
+            {
+                pos.QuantityType =  QuantityType.SHARES;
+            }
+            else
+            {
+                throw new Exception($"Invalid side {side}");
+            }
+
+
             pos.LoadPosId(NextPosId);
             NextPosId++;
             Routing = true;
+            LastRoutedPosition = pos;
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
-
             CMState state = OrderRouter.ProcessMessage(posWrapper);
+        }
+
+
+        private void CancelLastPosition()
+        {
+            if (LastRoutedPosition != null)
+            {
+
+                CancelPositionWrapper posToCxlWrapper=new CancelPositionWrapper(LastRoutedPosition, Config);
+                DoLog($"Cancel Position {LastRoutedPosition.PosId} on market",MessageType.Information);
+                CMState state = OrderRouter.ProcessMessage(posToCxlWrapper);
+            }
+            else
+            {
+                DoLog($"Could not cancel a position because no position has ben routed!", MessageType.Error);
+            }
+
+
         }
 
         private void RouteNewSellTestOrder()
@@ -242,17 +280,71 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             }
         }
 
+        protected void ProcessMarketData(Wrapper wrapper)
+        {
+            MarketDataWrapper mdWrapper = (MarketDataWrapper) wrapper;
+
+            DoLog($"{mdWrapper.ToString()}", MessageType.Information);
+
+        }
+
+
+        protected void ProcessHistoricalPrices(Wrapper wrapper)
+        {
+
+            HistoricalPricesWrapper histWrapper = (HistoricalPricesWrapper) wrapper;
+
+           Security sec = (Security) histWrapper.GetField(HistoricalPricesFields.Security);
+           List<Wrapper> prices = (List<Wrapper>) histWrapper.GetField(HistoricalPricesFields.Candles);
+
+
+           DoLog($"Received prices for security {sec.Symbol}", MessageType.Information);
+
+           foreach (Wrapper wr in prices)
+           {
+               MarketDataWrapper mdWrapper = (MarketDataWrapper) wr;
+
+               DoLog($"{mdWrapper.ToString()}", MessageType.Information);
+           }
+        }
+
         protected void EvalActions()
         {
+            Thread.Sleep(3000);//WAIT for the websocket to connect 
             if (Config.Action == Configuration._ACTION_ROUTE_MARKET)
             {
                 
                 if (Config.Side == Configuration._SIDE_BUY)
-                    RouteMarketOrder(Side.Buy);
+                    RouteOrder(Side.Buy,false);
                 else if(Config.Side==Configuration._SIDE_SELL)
-                    RouteMarketOrder(Side.Sell);
+                    RouteOrder(Side.Sell,false);
                 else
                     DoLog($"@{Config.Name}--> Side not implemented:{Config.Side}",MessageType.Error);
+            }
+            else  if (Config.Action == Configuration._ACTION_ROUTE_CASH)
+            {
+                
+                if (Config.Side == Configuration._SIDE_BUY)
+                    RouteOrder(Side.Buy,true);
+                else if(Config.Side==Configuration._SIDE_SELL)
+                    RouteOrder(Side.Sell,true);
+                else
+                    DoLog($"@{Config.Name}--> Side not implemented:{Config.Side}",MessageType.Error);
+            }
+            else if (Config.Action == Configuration._ACTION_MARKET_DATA_REQUEST)
+            {
+
+                RequestMarketData();
+            }
+            else if (Config.Action == Configuration._ACTION_HISTORICAL_RICES_REQUEST)
+            {
+
+                RequestHistoricalPrices();
+            }
+            else if (Config.Action == Configuration._ACTION_CANCEL_LAST_POSITION)
+            {
+
+                CancelLastPosition();
             }
             else
             {
@@ -306,6 +398,14 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                         DoLog("Processing Market Data:" + wrapper.ToString(), MessageType.Information);
                         OrderRouter.ProcessMessage(wrapper);
                     }
+
+                    ProcessMarketData(wrapper);
+
+                    return CMState.BuildSuccess();
+                }
+                else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES)
+                {
+                    ProcessHistoricalPrices(wrapper);
 
                     return CMState.BuildSuccess();
                 }

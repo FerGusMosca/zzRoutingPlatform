@@ -13,6 +13,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Wrappers;

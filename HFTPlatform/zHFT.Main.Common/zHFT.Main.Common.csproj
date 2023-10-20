@@ -70,6 +70,7 @@
     <Compile Include="Enums\Fields\CryptoCurrencyFields.cs" />
     <Compile Include="Enums\Fields\ExecutionReportFields.cs" />
     <Compile Include="Enums\Fields\Fields.cs" />
+    <Compile Include="Enums\Fields\HistoricalPricesFields.cs" />
     <Compile Include="Enums\Fields\HistoricalPricesRequestFields.cs" />
     <Compile Include="Enums\Fields\MarketDataFields.cs" />
     <Compile Include="Enums\Fields\MarketDataRequestField.cs" />

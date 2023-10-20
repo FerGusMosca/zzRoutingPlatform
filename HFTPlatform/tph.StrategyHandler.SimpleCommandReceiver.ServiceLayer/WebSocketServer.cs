@@ -260,6 +260,46 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 };
             }
         }
+        
+        protected void ProcessHistoricalPricesRequest(IWebSocketConnection socket, string m)
+        {
+            try
+            {
+                DoLog(string.Format("Incoming HistoricalPricesRequest Request"), Constants.MessageType.Information);
+
+                HistoricalPricesReqDTO dto =JsonConvert.DeserializeObject<HistoricalPricesReqDTO>(m);
+
+                HistoricalPricesRequestWrapper hprWrapper = new HistoricalPricesRequestWrapper(dto.HistPrReqId,
+                    dto.Symbol,
+                    dto.From, dto.To, dto.GetCandleInterval());
+                
+                CMState resp = OnMessageReceived(hprWrapper);
+                
+                if (resp.Success)
+                {
+                    HistoricalPricesReqAckDTO ackMsg = new HistoricalPricesReqAckDTO()
+                    {
+                        Success = true,
+                    };
+
+                    DoSend<HistoricalPricesReqAckDTO>(socket, ackMsg);
+                    DoLog(string.Format("Historical Prices Request  successfully processed"), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Historical Prices Request. Error:{0}",ex.Message), Constants.MessageType.Error);
+
+                HistoricalPricesReqAckDTO ackMsg = new HistoricalPricesReqAckDTO()
+                {
+                    Success = false,
+                    Error = ex.Message
+                };
+            }
+        }
 
         protected void ProcessOrderMassStatusRequest(IWebSocketConnection socket, string m)
         {
@@ -556,6 +596,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 else if (wsResp.Msg == "OrderMassStatusRequest")
                 {
                     ProcessOrderMassStatusRequest(socket, m);
+                }
+                else if (wsResp.Msg == "HistoricalPricesRequest")
+                {
+                    ProcessHistoricalPricesRequest(socket, m);
                 }
                 else
                 {

@@ -17,6 +17,8 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
+using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandlers.Common.Converters;
 
@@ -28,6 +30,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
     public class SimpleCommandReceiver : BaseCommunicationModule, ILogger
     {
         #region Protected Attributes
+        
+        protected MarketDataConverter MarketDataConverter { get; set; }
 
         protected ICommunicationModule MarketDataModule { get; set; }
 
@@ -192,6 +196,48 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
         }
 
+        protected CMState ProcessHistoricalPrices(Wrapper wrapper)
+        {
+            
+            try
+            {
+                lock (tLock)
+                {
+                    HistoricalPricesWrapper historicalPricesWrapper = (HistoricalPricesWrapper) wrapper;
+                    
+                    Security sec= (Security) historicalPricesWrapper.GetField(HistoricalPricesFields.Security);
+                    List<Wrapper> mdWrappers = (List<Wrapper>) historicalPricesWrapper.GetField(HistoricalPricesFields.Candles);
+
+                   
+                    List<MarketData> marketDataList= new List<MarketData>();
+                    if (mdWrappers != null)
+                    {
+                        foreach (MarketDataWrapper mdWrp in mdWrappers)
+                        {
+
+                            MarketData md = MarketDataConverter.GetMarketData(mdWrp, Config);
+                            marketDataList.Add(md);
+                        }
+                    }
+
+                    HistoricalPricesDTO dto = new HistoricalPricesDTO()
+                    {
+                        Symbol = sec != null ? sec.Symbol : "?",
+                        MarketData = marketDataList
+                    };
+                    
+                    Server.PublishEntity<HistoricalPricesDTO>(dto);
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog($"@{Config.Name}-Critical ERROR processing historical prices : {e.Message}",
+                    Constants.MessageType.Error);
+            }
+            
+            return CMState.BuildSuccess();
+        }
+
         protected CMState ProcessMarketData(Wrapper wrapper)
         {
             try
@@ -262,6 +308,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 DoLog("Processing Market Data:" + wrapper.ToString(), Constants.MessageType.Information);
                 return ProcessMarketData(wrapper);
             }
+            else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES)
+            {
+                DoLog("Processing Historical Prices:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessHistoricalPrices(wrapper);
+            }
             else if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
             {
                 DoLog("Processing Execution Report:" + wrapper.ToString(), Constants.MessageType.Information);
@@ -273,6 +324,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 return ProcessOrderCancelReplaceReject(wrapper);
             }
             else if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
+            {
+                return MarketDataModule.ProcessMessage(wrapper);
+            }
+            else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES_REQUEST)
             {
                 return MarketDataModule.ProcessMessage(wrapper);
             }
@@ -320,6 +375,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                     
                     MarketDataSubscriptions=new Dictionary<string, DateTime>();
                     CandlebarSubscriptions = new Dictionary<string, DateTime>();
+                    MarketDataConverter=new MarketDataConverter();
                     
                     //Finish starting up the server
                     Server = new WebSocketServer(Config.WebSocketURL, this, ProcessMessage,OnSubscribeMarketData,

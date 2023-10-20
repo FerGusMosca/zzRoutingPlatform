@@ -23,6 +23,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
     
     public delegate void ProcessExecutionReport(ExecutionReportDTO msg);
     
+    public delegate void ProcessHistoricalPrices(HistoricalPricesDTO msg);
+    
     public class WebSocketClient
     {
         #region Protected Attributes
@@ -35,6 +37,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
         
         protected ProcessCandlebar OnCandlebar { get; set; }
         protected ProcessExecutionReport OnExecutionReport { get; set; }
+        
+        protected ProcessHistoricalPrices OnHistoricalPrices { get; set; }
         
         protected  OnLogMessage OnLogMessage { get; set; }
 
@@ -51,6 +55,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
         public WebSocketClient(string pWebSocketURL, ProcessEvent pOnEvent,ProcessMarketData pOnMarketData,
                                 ProcessCandlebar pOnProcessCandlebar,
                                 ProcessExecutionReport pOnExecutionReport,
+                                ProcessHistoricalPrices pOnHistoricalPrices,
                                 OnLogMessage pOnLogMessage)
         {
             WebSocketURL = pWebSocketURL;
@@ -58,6 +63,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
             OnMarketData = pOnMarketData;
             OnCandlebar = pOnProcessCandlebar;
             OnExecutionReport = pOnExecutionReport;
+            OnHistoricalPrices = pOnHistoricalPrices;
             OnLogMessage = pOnLogMessage;
             
             MessagesQueue=new ConcurrentQueue<string>();
@@ -74,8 +80,15 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
 
             SubscriptionWebSocket = new ClientWebSocket();
             SubscriptionWebSocket.ConnectAsync(new Uri(WebSocketURL), CancellationToken.None);
-            
-            
+
+            while (SubscriptionWebSocket.State != WebSocketState.Open)
+            {
+                OnLogMessage($"Waiting for the websocket to connect to {WebSocketURL}",
+                    Constants.MessageType.Information);
+                Thread.Sleep(100);
+            }
+
+
             OnLogMessage($"Websocket client successfully connected", Constants.MessageType.Information);
 
             (new Thread(ReadResponses)).Start(new object[] { });
@@ -131,6 +144,11 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                                 ExecutionReport execRep = JsonConvert.DeserializeObject<ExecutionReport>(resp);
                                 ExecutionReportDTO dto = new ExecutionReportDTO(execRep);
                                 OnExecutionReport(dto);
+                            }
+                            else if (wsResp.Msg == "HistoricalPricesMsg")
+                            {
+                                HistoricalPricesDTO histDTO = JsonConvert.DeserializeObject<HistoricalPricesDTO>(resp);
+                                OnHistoricalPrices(histDTO);
                             }
 //                            else if (wsResp.Msg == "OrderCancelRejectMsg")
 //                                OnEvent(JsonConvert.DeserializeObject<OrderCancelRejectDTO>(resp));

@@ -10,6 +10,14 @@ namespace tph.StrategyHanders.TestStrategies.TestModule.Common.Configuration
         #region Public Static Consts
 
         public static string _ACTION_ROUTE_MARKET = "ROUTE_MARKET";
+        
+        public static string _ACTION_ROUTE_CASH = "ROUTE_CASH";
+
+        public static string _ACTION_MARKET_DATA_REQUEST = "MARKET_DATA_REQUEST";
+        
+        public static string _ACTION_HISTORICAL_RICES_REQUEST = "HISTORICAL_PRICES_REQUEST";
+        
+        public static string _ACTION_CANCEL_LAST_POSITION = "CANCEL_LAST_POSITION";
 
         public static string _SIDE_BUY = "BUY";
 

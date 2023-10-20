@@ -57,6 +57,10 @@
       <Project>{4A57ED3B-774D-4344-B091-3328838F57F5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
       <Project>{453E183D-9557-4A96-AD08-D2AD0DB68765}</Project>
       <Name>zHFT.StrategyHandler.Common</Name>

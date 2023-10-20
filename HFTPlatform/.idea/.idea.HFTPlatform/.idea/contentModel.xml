@@ -1363,6 +1363,9 @@
           <e p="ErrorMessage.cs" t="Include" />
           <e p="MarketData" t="Include">
             <e p="CandlebarDTO.cs" t="Include" />
+            <e p="HistoricalPricesDTO.cs" t="Include" />
+            <e p="HistoricalPricesReqAckDTO.cs" t="Include" />
+            <e p="HistoricalPricesReqDTO.cs" t="Include" />
             <e p="MarketDataDTO.cs" t="Include" />
             <e p="MarketDataReqDTO.cs" t="Include" />
             <e p="OrderBookDTO.cs" t="Include" />
@@ -1432,6 +1435,7 @@
         </e>
         <e p="tph.StrategyHandler.SimpleCommandSender.Common.csproj" t="IncludeRecursive" />
         <e p="Util" t="Include">
+          <e p="HistoricalPricesRequestConverter.cs" t="Include" />
           <e p="OrderConverter.cs" t="Include" />
         </e>
         <e p="Wrappers" t="Include">
@@ -1792,7 +1796,6 @@
         </e>
         <e p="Wrappers" t="Include">
           <e p="BinanceMarketDataWrapper.cs" t="Include" />
-          <e p="HistoricalPricesWrapper.cs" t="Include" />
         </e>
         <e p="zHFT.InstructionBasedMarketClient.Binance.Common.csproj" t="IncludeRecursive" />
       </e>
@@ -2177,6 +2180,7 @@
             <e p="CryptoCurrencyFields.cs" t="Include" />
             <e p="ExecutionReportFields.cs" t="Include" />
             <e p="Fields.cs" t="Include" />
+            <e p="HistoricalPricesFields.cs" t="Include" />
             <e p="HistoricalPricesRequestFields.cs" t="Include" />
             <e p="MarketDataFields.cs" t="Include" />
             <e p="MarketDataRequestField.cs" t="Include" />
@@ -2317,6 +2321,7 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Wrappers" t="Include">
+          <e p="HistoricalPricesWrapper.cs" t="Include" />
           <e p="MarketDataWrapper.cs" t="Include" />
         </e>
         <e p="zHFT.MarketClient.Common.csproj" t="IncludeRecursive" />
