@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>BOB_TRENDLINES</Name>
+  <Name>BOB_TRENDLINES_WEBSOCKET_IB</Name>
   
   <OpenWindow>20</OpenWindow>
   <CloseWindow>10</CloseWindow>
@@ -24,13 +24,13 @@
   <PerforationThresholds>0.0005</PerforationThresholds><!--in pct 0-1-->
   <Account>9732</Account>
 
-  <Currency>ARS</Currency>
-  <Exchange>BUE</Exchange>
-  <SecurityTypes>CC</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
+  <Currency>USD</Currency>
+  <Exchange>NYSE</Exchange>
+  <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>10:50 PM</ClosingTime>
+  <ClosingTime>04:51 PM</ClosingTime>
 
-  <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
@@ -42,18 +42,19 @@
   
   <OnlyLong>false</OnlyLong>
 
-  <RecalculateTrendlines>false</RecalculateTrendlines>
+  <RecalculateTrendlines>true</RecalculateTrendlines>
+
+  <HistoricalPricesPeriod>-4</HistoricalPricesPeriod><!---4= -4 days-->
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
-    <Symbol>BTC</Symbol>
-    <Symbol>ETH</Symbol>
-    <Symbol>DOGE</Symbol>
-    <Symbol>ADA</Symbol>
-    <Symbol>XRP</Symbol>
-
+    <Symbol>SPY</Symbol>
+    <Symbol>QQQ</Symbol>
+    <Symbol>IWM</Symbol>
+    <Symbol>XLF</Symbol>
+	
 <!--    -->
   </StocksToMonitor>
 

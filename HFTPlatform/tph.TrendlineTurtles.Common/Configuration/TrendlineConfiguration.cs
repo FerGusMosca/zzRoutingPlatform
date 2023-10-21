@@ -1,16 +1,11 @@
-﻿using zHFT.StrategyHandler.Common;
+﻿using tph.DayTurtles.Common.Configuration;
+using zHFT.StrategyHandler.Common;
 
 namespace tph.TrendlineTurtles.Common.Configuration
 {
-    public class TrendlineConfiguration: BaseStrategyConfiguration
+    public class TrendlineConfiguration: DayTurtlesConfiguration
     {
         #region Public Attr
-        
-        public int OpenWindow { get; set; }
-
-        public int CloseWindow { get; set; }
-
-        public string ConnectionString { get; set; }
 
         public int InnerTrendlinesSpan { get; set; }
         
@@ -27,6 +22,8 @@ namespace tph.TrendlineTurtles.Common.Configuration
         public double MaxShortNegativeSlope { get; set; }
         
         public bool RecalculateTrendlines { get; set; }
+
+        public int HistoricalPricesPeriod { get; set; }
 
         #endregion
     }

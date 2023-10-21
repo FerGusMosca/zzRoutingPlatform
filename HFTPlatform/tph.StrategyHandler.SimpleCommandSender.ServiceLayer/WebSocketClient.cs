@@ -192,8 +192,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
         {
             try
             {
-                if(SubscriptionWebSocket.State!=WebSocketState.Open)
-                    throw new Exception($"Websocket is in status {SubscriptionWebSocket.State} and it should be OPEN!");
+                //if(SubscriptionWebSocket.State!=WebSocketState.Open)
+                //    throw new Exception($"Websocket is in status {SubscriptionWebSocket.State} and it should be OPEN!");
                 
                 byte[] msgArray = Encoding.ASCII.GetBytes(strMsg);
 
@@ -202,7 +202,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                 lock (tLock)
                 {
                     Thread.Sleep(1);//Amazing how this solves everything?
-                    //Console.Beep();
+                    
                     SubscriptionWebSocket.SendAsync(bytesToSend, WebSocketMessageType.Text, true,
                         CancellationToken.None);
                 }
@@ -211,7 +211,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
             {
                 
                 string msg = $"CRITICAL ERROR sending message through the websocket: {ex.Message}";
-
+                Console.Beep(1000,2000);
                 OnLogMessage(msg, Constants.MessageType.Error);
             }
         }

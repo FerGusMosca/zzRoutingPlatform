@@ -303,7 +303,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                         updated.Price = price;
                         JsonOrdersDict.Add(clOrdId, updated);
 
-                        DoSendAsync<NewOrderReq>(updReq);
+                        DoSendAsync<UpdateOrderReq>(updReq);
                     }
                     else
                     {
@@ -321,6 +321,43 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 DoLog($"ERROR updating order:{e.Message}",Constants.MessageType.Error);
             }
         }
+
+        protected void ProcessSecurityListRequest(object param)
+        {
+
+            try
+            {
+                //Wrapper wrapper = (Wrapper)param;
+
+                //string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+
+                DoLog($"Security List Request not implemented @{Config.Name}", Constants.MessageType.Information);
+
+                //CancelOrderReq cxlReq = new CancelOrderReq() { ClOrderId = clOrdId, OrigClOrderId = clOrdId };
+
+                //lock (JsonOrdersDict)
+                //{
+                //    if (JsonOrdersDict.ContainsKey(clOrdId))
+                //    {
+                //        DoSendAsync<CancelOrderReq>(cxlReq);
+                //    }
+                //    else
+                //    {
+                //        OrderCancelRejectWrapper cxlRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
+                //            $"Could not find ClOrdId {clOrdId} as a managed order",
+                //            CxlRejReason.TooLateToCancel, CxlRejResponseTo.OrderCancelRequest);
+
+                //        (new Thread(ProcessIncomingAsync)).Start(cxlRejWapper);
+                //    }
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR requesting security list  : {ex.Message}", Constants.MessageType.Information);
+            }
+        }
+
 
         protected void ProcessCancelOrderRequest(object param)
         {
@@ -555,6 +592,13 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 DoLog("Processing Cxl Order Request:" + wrapper.ToString(), Constants.MessageType.Information);
                 (new Thread(ProcessCancelOrderRequest)).Start(wrapper);
                 DoLog("Cxl Order Request Successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
+                return CMState.BuildSuccess();
+            }
+            else if (wrapper.GetAction() == Actions.SECURITY_LIST_REQUEST)
+            {
+                DoLog("Processing Security List Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessSecurityListRequest)).Start(wrapper);
+                DoLog("Security List Request Successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
                 return CMState.BuildSuccess();
             }
             else if (wrapper.GetAction() == Actions.UPDATE_ORDER)

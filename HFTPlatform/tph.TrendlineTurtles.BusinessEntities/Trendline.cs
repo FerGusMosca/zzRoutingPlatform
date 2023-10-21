@@ -242,7 +242,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         // Minutes, Hours, Days
         private int CountTradingUnits(List<MarketData> allHistoricalPrices,DateTime startDate,DateTime endDate)
         {
-            int count = GetSpan(startDate, endDate, CandleInterval.Minute_1) - 1;
+            int count = GetSpan(startDate, endDate, CandleInterval.Minute_1) ;
 
 //            List<MarketData> tradingUnitsInPeriod = allHistoricalPrices.Where(x =>     DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
 //                                                                                    && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();

@@ -58,6 +58,10 @@
       <Project>{515f567e-797d-4248-bcef-3a97cacf8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj">
+      <Project>{C1380514-5FE0-401E-8DC5-3BD93EF13EE4}</Project>
+      <Name>tph.DayTurtles.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.DayTurtles.DataAccessLayer\tph.DayTurtles.DataAccessLayer.csproj">
       <Project>{376ad17a-6040-4218-970c-90aa4b3fb3ff}</Project>
       <Name>tph.DayTurtles.DataAccessLayer</Name>

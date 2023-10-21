@@ -97,7 +97,9 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 DoLog($"Finished routing with {execRep.OrdStatus} execution report", MessageType.Information);
             }
 
-        
+
+            DoLog($"{Config.Name}--> Recv Exec. Report:{execRep.ToString()}", MessageType.Information);
+
         }
 
         private void RouteNewBuyTestOrder()
@@ -133,7 +135,6 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         
         private void RouteOrder(Side side, bool cashQty)
         {
-
             Position pos = new Position()
             {
                 Security = GetSecurity(),
@@ -150,6 +151,9 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             if (side == Side.Buy)
             {
                 pos.QuantityType =cashQty ? QuantityType.CURRENCY : QuantityType.SHARES;
+
+                if (cashQty)
+                    pos.CashQty = Config.BuyQty;
 
             }
             else if (side==Side.Sell)
@@ -308,6 +312,23 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
            }
         }
 
+        protected void OnRouteCash()
+        {
+            RequestMarketData();
+            
+            while (!RecvMarketData)
+            {
+                Thread.Sleep(100);
+            }
+            
+            if (Config.Side == Configuration._SIDE_BUY)
+                RouteOrder(Side.Buy,true);
+            else if(Config.Side==Configuration._SIDE_SELL)
+                RouteOrder(Side.Sell,true);
+            else
+                DoLog($"@{Config.Name}--> Side not implemented:{Config.Side}",MessageType.Error);
+        }
+
         protected void EvalActions()
         {
             Thread.Sleep(3000);//WAIT for the websocket to connect 
@@ -323,13 +344,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             }
             else  if (Config.Action == Configuration._ACTION_ROUTE_CASH)
             {
-                
-                if (Config.Side == Configuration._SIDE_BUY)
-                    RouteOrder(Side.Buy,true);
-                else if(Config.Side==Configuration._SIDE_SELL)
-                    RouteOrder(Side.Sell,true);
-                else
-                    DoLog($"@{Config.Name}--> Side not implemented:{Config.Side}",MessageType.Error);
+                OnRouteCash();
             }
             else if (Config.Action == Configuration._ACTION_MARKET_DATA_REQUEST)
             {
@@ -343,7 +358,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             }
             else if (Config.Action == Configuration._ACTION_CANCEL_LAST_POSITION)
             {
-
+                OnRouteCash();
+                Thread.Sleep(10000);
                 CancelLastPosition();
             }
             else

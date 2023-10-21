@@ -180,7 +180,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             if (!rangePrices.Any(x => GetClosingPrice(x) < GetClosingPrice(currentPrice)) && (rangePrices.Count == take))
             //if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
             {
-                return true;
+                //return true;
+                return !ReapeatedValues(currentPrice, LocalMinimums);//We avoid repeated minimum
             }
             else
             {
@@ -209,6 +210,28 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             return md.ClosingPrice.Value;
         }
 
+        protected bool ReapeatedValues(MarketData currentPrice,List<MarketData> referencePrices)
+        {
+            
+            foreach (MarketData referencePr in referencePrices)
+            {
+                if (GetClosingPrice(referencePr) == GetClosingPrice(currentPrice))
+                {
+
+                    if (currentPrice.MDEntryDate.HasValue && referencePr.MDEntryDate.HasValue)
+                    {
+                        TimeSpan elapsed = currentPrice.MDEntryDate.Value - referencePr.MDEntryDate.Value;
+
+                        if (Math.Abs(Convert.ToInt32(elapsed.TotalMinutes)) < 10)
+                            return true;
+                    }
+                }
+            }
+
+            return false;
+
+        }
+
         protected bool EvalLocalMaximum(List<MarketData> prices, MarketData currentPrice, int index)
         {
             int startIndex = index - StrategyConfiguration.InnerTrendlinesSpan;
@@ -221,7 +244,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             //if (!rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) &&(rangePrices.Count == take))
             {
                 //We avoid double trendlines because of equal highes/lowest
-                return true;
+                //return true;
+                return !ReapeatedValues(currentPrice, LocalMaximums);//We avoid repeated maximums
             }
             else
                 return false;
@@ -455,7 +479,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int i = 0;
             ExtractPrevMaximums(usePrevTrendlines, startPrevTrendlineDate);
 
-            MarketData[] pricesArr = allHistoricalPrices.Where(x =>   DateTime.Compare(startDate, x.MDEntryDate.Value) <= 0 
+         MarketData[] pricesArr = allHistoricalPrices.Where(x =>   DateTime.Compare(startDate, x.MDEntryDate.Value) <= 0 
                                                                && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToArray();
 
 

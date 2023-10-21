@@ -32,9 +32,15 @@ namespace tph.TrendlineTurtles.LogicLayer
 
         #endregion
 
+        #region Protected Static Consts
+
+        public static int _DAYS_TO_SUBSTRACT = -10;
+
+        #endregion
+
         #region Protected Methods
 
-        public  TrendlineConfiguration GetConfig()
+        public TrendlineConfiguration GetConfig()
         {
             return (TrendlineConfiguration)Config;
         }
@@ -167,7 +173,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                 foreach (var monPosition in PortfolioPositionsToMonitor.Values)
                 {
                     TrendLineCreator.InitializeCreator(monPosition.Security, GetConfig(),
-                        DateTime.Now.AddMinutes(-1000));
+                        DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod));
                     DoLog($"Portfolio Position for symbol {monPosition.Security.Symbol} successfully initialized",
                         Constants.MessageType.Information);
                 }
@@ -238,7 +244,12 @@ namespace tph.TrendlineTurtles.LogicLayer
 
             }
         }
-        
+
+        protected virtual void DoPersist(TradingPosition trdPos)
+        {
+            DoPersistPosition(trdPos);
+        }
+
         private void DoPersistTrendline(MonTrendlineTurtlesPosition portfPos, List<Trendline> trendlines)
         {
             foreach (Trendline trendline in trendlines)
@@ -407,7 +418,9 @@ namespace tph.TrendlineTurtles.LogicLayer
                 int i = 1;
                 foreach (string symbol in PortfolioPositionsToMonitor.Keys)
                 {
-                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i,symbol,DateTime.Now.AddMinutes(-1000),null,CandleInterval.Minute_1);
+                     DateTime from = DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod);
+
+                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i,symbol, from, DateTime.Now,CandleInterval.Minute_1);
                     OnMessageRcv(reqWrapper);
                     i++;
                 }
