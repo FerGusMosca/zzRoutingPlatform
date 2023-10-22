@@ -60,6 +60,8 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
         protected object tLock = new object();
 
+        
+
         #endregion
 
         #region Protected Methods
@@ -388,6 +390,86 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             }
         }
 
+        protected void DoRequestOptionChain(string symbol,SecurityType secType, string currency, string exchange)
+        {
+            try
+            {
+
+                lock (OptionChainRequested)
+                {
+                    Contract contract = new Contract();
+                    contract.Symbol = symbol;
+                    contract.SecType = SecurityConverter.GetSecurityType(secType);
+                    contract.Exchange = exchange!=null?exchange: OptionChainResponseDTO._DEFAULT_EXCHANGE;
+                    contract.Currency = currency != null ? currency : OptionChainResponseDTO._DEFAULT_CURRENCY; ;
+                    
+                    TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+                    int reqId = Convert.ToInt32(elapsed.TotalSeconds);
+
+
+                    OptionChainRequested.Add(reqId, contract);
+                    //TODO timeout algo
+                    ClientSocket.reqContractDetails(reqId, contract);
+
+                }
+            }
+            catch 
+            {
+
+                throw;
+            }
+        }
+
+        protected CMState ProcessSecurityListRequest(Wrapper wrapper)
+        {
+
+            try
+            {
+
+                SecurityListRequestWrapper slrWrapper = (SecurityListRequestWrapper)wrapper;
+
+                string symbol = (string)slrWrapper.GetField(SecurityListRequestField.Symbol);
+                string currency = (string)slrWrapper.GetField(SecurityListRequestField.Currency);
+                string exchange= (string)slrWrapper.GetField(SecurityListRequestField.Exchange);
+
+                SecurityListRequestType slrType;
+                if (slrWrapper.GetField(SecurityListRequestField.SecurityListRequestType) != Fields.NULL)
+                    slrType = (SecurityListRequestType)slrWrapper.GetField(SecurityListRequestField.SecurityListRequestType);
+                else
+                    throw new Exception($"Missing field on Security List Request: SecurityListRequestType");
+
+
+                SecurityType secType;
+                if (slrWrapper.GetField(SecurityListRequestField.SecurityType) != Fields.NULL)
+                    secType = (SecurityType)slrWrapper.GetField(SecurityListRequestField.SecurityType);
+                else
+                    throw new Exception($"Missing field on Security List Request: SecurityListRequestType");
+
+
+                if (slrType == SecurityListRequestType.OptionChain)
+                {
+                    if (symbol == null)
+                        throw new Exception($"MUST specify a symbol to requet an option chain");
+
+                    DoLog($"@{IBConfiguration.Name}-> Requesting Option Chain for symbol {symbol}  ", Constants.MessageType.Information);
+
+                    DoRequestOptionChain(symbol,secType,currency,exchange);
+                }
+                else
+                    throw new Exception($"@{IBConfiguration.Name}--> Security List Request Type {slrType} not implemented!");
+
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+
+                string msg = $"@{IBConfiguration.Name}--> ERROR requesting security list: {ex.Message}";
+                DoLog(msg, Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(msg));
+            }
+        }
+
         protected void ProcessHistoricalDataRequestAsync(object param)
         {
             try
@@ -467,6 +549,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                     ActiveSecuritiesOnDemand = new Dictionary<int, Security>();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
                     HistoricalPricesRequest = new Dictionary<int, HistoricalPricesHoldingDTO>();
+                    OptionChainRequested = new Dictionary<int, Contract>();
                     tLockHistoricalPricesRequest = new object();
 
                     ClientSocket = new EClientSocket(this, this);
@@ -518,6 +601,11 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                         DoLog($"{IBConfiguration.Name}: Recv Historical Prices Request for symbol {symbol}",Constants.MessageType.Information);
                         (new Thread(ProcessHistoricalDataRequestAsync)).Start(wrapper);
                         return CMState.BuildSuccess();
+                    }
+                    else if (Actions.SECURITY_LIST_REQUEST == action)
+                    {
+                        DoLog($"{IBConfiguration.Name}: Recv Security List Request ", Constants.MessageType.Information);
+                        return ProcessSecurityListRequest(wrapper);
                     }
                     else
                     {

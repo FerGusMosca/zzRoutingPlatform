@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -192,6 +193,21 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
         }
 
+        //OptionChainRequest
+        private void OptionChainRequest()
+        {
+            SecurityListRequestWrapper slrWrapper = new SecurityListRequestWrapper(
+                                                                                    SecurityListRequestType.OptionChain,
+                                                                                    Config.Symbol,
+                                                                                    SecurityType.CS,
+                                                                                    null,
+                                                                                    "USD"
+                                                                                    );
+
+            DoLog($"{Config.Name}-->Requesting option change for symbol {Config.Symbol} ", MessageType.Information);
+            CMState state = OnMessageRcv(slrWrapper);
+        }
+
         private void RouteNewSellTestOrder()
         {
 
@@ -361,6 +377,11 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 OnRouteCash();
                 Thread.Sleep(10000);
                 CancelLastPosition();
+            }
+            else if (Config.Action == Configuration._ACTION_OPTION_CHAIN_REQUEST)
+            {
+                
+                OptionChainRequest();
             }
             else
             {

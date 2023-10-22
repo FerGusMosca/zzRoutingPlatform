@@ -10,6 +10,9 @@ namespace zHFT.Main.Common.Enums
     {
         public static readonly SecurityListRequestField Symbol = new SecurityListRequestField(2);
         public static readonly SecurityListRequestField SecurityListRequestType = new SecurityListRequestField(3);
+        public static readonly SecurityListRequestField Exchange = new SecurityListRequestField(4);
+        public static readonly SecurityListRequestField Currency = new SecurityListRequestField(5);
+        public static readonly SecurityListRequestField SecurityType = new SecurityListRequestField(6);
 
 
 

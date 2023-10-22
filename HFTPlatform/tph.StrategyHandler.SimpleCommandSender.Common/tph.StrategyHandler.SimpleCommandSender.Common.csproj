@@ -42,6 +42,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\HistoricalPricesRequestConverter.cs" />
     <Compile Include="Util\OrderConverter.cs" />
+    <Compile Include="Util\SecurityListRequestConverter.cs" />
     <Compile Include="Wrappers\ExecutionReportWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,7 +60,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO" />
+    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

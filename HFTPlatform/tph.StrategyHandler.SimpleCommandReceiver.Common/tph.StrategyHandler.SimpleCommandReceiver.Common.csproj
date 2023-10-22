@@ -52,6 +52,8 @@
     <Compile Include="DTOs\MarketData\MarketDataDTO.cs" />
     <Compile Include="DTOs\MarketData\MarketDataReqDTO.cs" />
     <Compile Include="DTOs\MarketData\OrderBookDTO.cs" />
+    <Compile Include="DTOs\MarketData\SecurityListReqAckDTO.cs" />
+    <Compile Include="DTOs\MarketData\SecurityListReqDTO.cs" />
     <Compile Include="DTOs\OrderRouting\CancelAllReq.cs" />
     <Compile Include="DTOs\OrderRouting\CancelOrderAck.cs" />
     <Compile Include="DTOs\OrderRouting\CancelOrderReq.cs" />

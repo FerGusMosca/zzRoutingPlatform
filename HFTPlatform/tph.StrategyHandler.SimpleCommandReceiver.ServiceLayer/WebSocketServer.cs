@@ -29,8 +29,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
     public delegate void OnSubscribeMarketData(Security security);
 
     public delegate void OnSubscribeCandlebars(Security security);
-    
-    public class WebSocketServer:WebSocketBaseServer
+
+    public class WebSocketServer : WebSocketBaseServer
     {
         #region Constructors
 
@@ -68,15 +68,15 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         #region Private Static Consts
 
         private static string _ORDER_BOOK_SERVICE = "OB";
-        
+
         private static string _MARKET_DATA_SERVICE = "MD";
-        
+
         private static string _CANDLEBAR_SERVICE = "CB";
 
         #endregion
 
         #region Protected Attributes
-        
+
         protected int MdReqId { get; set; }
 
         protected Dictionary<int, Dictionary<string, WebSocketSubscribeMessage>> Subscriptions { get; set; }
@@ -128,7 +128,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
         protected void UnsubscribeService(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
         {
-            DoLog(string.Format("Unsubscribing client {0} for service {1}",socket.ConnectionInfo.ClientPort,subscrMsg.Service),Constants.MessageType.Information);
+            DoLog(string.Format("Unsubscribing client {0} for service {1}", socket.ConnectionInfo.ClientPort, subscrMsg.Service), Constants.MessageType.Information);
             if (Subscriptions[socket.ConnectionInfo.ClientPort] != null)
             {
                 if (Subscriptions[socket.ConnectionInfo.ClientPort].ContainsKey(subscrMsg.Service))
@@ -137,7 +137,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                     DoLog(string.Format("Unsubscribed client {0} for service {1}", socket.ConnectionInfo.ClientPort, subscrMsg.Service), Constants.MessageType.Information);
                 }
                 else
-                    DoLog(string.Format("Could not find subscription to  service {1} for client {0} ", socket.ConnectionInfo.ClientPort, subscrMsg.Service),Constants.MessageType.Information);
+                    DoLog(string.Format("Could not find subscription to  service {1} for client {0} ", socket.ConnectionInfo.ClientPort, subscrMsg.Service), Constants.MessageType.Information);
 
             }
             else
@@ -154,14 +154,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
             Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
 
-            
-            
-            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,sec,
+
+
+            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId, sec,
                                                                         SubscriptionRequestType.SnapshotAndUpdates,
                                                                         MarketDepth.TopOfBook);
             MdReqId++;
             CMState reqState = OnMessageReceived(wrapper);
-            
+
             if (reqState.Success && OnSubscribeMarketData != null)
                 OnSubscribeMarketData(sec);
 
@@ -170,19 +170,19 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
 
         }
-        
+
         protected void ProcessCandlebarRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
         {
             SubscribeService(socket, subscrMsg);
 
             Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
-            
+
             Wrapper wrapper = null;
-            
+
             if (SimulateCandlebars)
             {
-                
-                wrapper = new MarketDataRequestWrapper(MdReqId,sec,SubscriptionRequestType.SnapshotAndUpdates,MarketDepth.TopOfBook);
+
+                wrapper = new MarketDataRequestWrapper(MdReqId, sec, SubscriptionRequestType.SnapshotAndUpdates, MarketDepth.TopOfBook);
                 MdReqId++;
             }
             else
@@ -195,7 +195,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
             if (reqState.Success && OnSubscribeCandlebars != null)
                 OnSubscribeCandlebars(sec);
-                
+
 
             ProcessSubscriptionResponse(socket, subscrMsg.Service, subscrMsg.ServiceKey, subscrMsg.UUID,
                 reqState.Success, reqState.Exception != null ? reqState.Exception.Message : null);
@@ -205,10 +205,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         protected void ProcessOrderBookRequest(IWebSocketConnection socket, WebSocketSubscribeMessage subscrMsg)
         {
             SubscribeService(socket, subscrMsg);
-            
+
             Security sec = OrderConverter.GetSecurityFullSymbol(subscrMsg.ServiceKey);
-            
-            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId,sec,
+
+            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MdReqId, sec,
                                                                             SubscriptionRequestType.SnapshotAndUpdates,
                                                                             MarketDepth.FullBook);
             MdReqId++;
@@ -224,13 +224,13 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             CancelAllReq cxlAllReq = JsonConvert.DeserializeObject<CancelAllReq>(m);
             try
             {
-                
+
                 DoLog(string.Format("Incoming Cancel All Req for reason {0}", cxlAllReq.Reason), Constants.MessageType.Information);
 
                 CancelAllWrapper cxlAllWrapper = new CancelAllWrapper();
-                
+
                 CMState resp = OnMessageReceived(cxlAllWrapper);
-                
+
                 if (resp.Success)
                 {
                     CancelOrderAck ackMsg = new CancelOrderAck()
@@ -249,7 +249,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("Critical ERROR for Cancel All Req Req for Reason {0}. Error:{1}", cxlAllReq.Reason,ex.Message), Constants.MessageType.Error);
+                DoLog(string.Format("Critical ERROR for Cancel All Req Req for Reason {0}. Error:{1}", cxlAllReq.Reason, ex.Message), Constants.MessageType.Error);
 
                 CancelOrderAck ackMsg = new CancelOrderAck()
                 {
@@ -260,7 +260,48 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 };
             }
         }
-        
+
+        protected void ProcessSecurityListRequest(IWebSocketConnection socket, string m)
+        {
+
+            try
+            {
+                DoLog(string.Format("Incoming ProcessSecurityListRequest Request"), Constants.MessageType.Information);
+
+                SecurityListReqDTO dto = JsonConvert.DeserializeObject<SecurityListReqDTO>(m);
+
+                SecurityListRequestWrapper hprWrapper = new SecurityListRequestWrapper(dto.SecurityListRequestType, dto.Symbol,
+                                                                                        dto.SecurityType,dto.Exchange,dto.Currency);
+
+                CMState resp = OnMessageReceived(hprWrapper);
+
+                if (resp.Success)
+                {
+                    SecurityListReqAckDTO ackMsg = new SecurityListReqAckDTO()
+                    {
+                        Success = true,
+                    };
+
+                    DoSend<SecurityListReqAckDTO>(socket, ackMsg);
+                    DoLog(string.Format("Security List Request Request  successfully processed"), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Security List Request. Error:{0}", ex.Message), Constants.MessageType.Error);
+
+                SecurityListReqAckDTO ackMsg = new SecurityListReqAckDTO()
+                {
+                    Success = false,
+                    Error = ex.Message
+                };
+            }
+        }
+
+
         protected void ProcessHistoricalPricesRequest(IWebSocketConnection socket, string m)
         {
             try
@@ -600,6 +641,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 else if (wsResp.Msg == "HistoricalPricesRequest")
                 {
                     ProcessHistoricalPricesRequest(socket, m);
+                }
+                else if (wsResp.Msg == "SecurityListRequest")
+                {
+                    ProcessSecurityListRequest(socket, m);
                 }
                 else
                 {

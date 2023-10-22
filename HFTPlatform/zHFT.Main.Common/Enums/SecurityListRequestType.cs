@@ -13,6 +13,7 @@ namespace zHFT.Main.Common.Enums
         Product=2,
         TradingSessionID=3,
         AllSecurities=4,
-        MarketID = 5,//MarketID or MarketID + MarketSegmentID
+        MarketID = 5,//MarketID or MarketID + MarketSegmentID,
+        OptionChain=6
     }
 }

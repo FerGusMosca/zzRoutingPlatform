@@ -81,6 +81,10 @@
       <Project>{89dcba08-faf9-47df-8cd1-8d076ce75c9c}</Project>
       <Name>zHFT.SingletonModulesHandler.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
+      <Project>{453E183D-9557-4A96-AD08-D2AD0DB68765}</Project>
+      <Name>zHFT.StrategyHandler.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

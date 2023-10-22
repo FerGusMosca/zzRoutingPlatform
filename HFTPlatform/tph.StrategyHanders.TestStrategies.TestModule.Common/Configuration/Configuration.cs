@@ -19,6 +19,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule.Common.Configuration
         
         public static string _ACTION_CANCEL_LAST_POSITION = "CANCEL_LAST_POSITION";
 
+        public static string _ACTION_OPTION_CHAIN_REQUEST = "OPTION_CHAIN_REQUEST";
+
         public static string _SIDE_BUY = "BUY";
 
         public static string _SIDE_SELL = "SELL";

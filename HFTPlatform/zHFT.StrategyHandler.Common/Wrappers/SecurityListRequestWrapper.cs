@@ -16,6 +16,12 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         protected string Symbol { get; set; }
 
+        protected SecurityType SecurityType { get; set; }
+
+        public  string Exchange { get; set; }
+
+        public string Currency { get; set; }
+
         #endregion
 
         #region Constructors
@@ -26,6 +32,21 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
             Symbol = symbol;
         
+        }
+
+        public SecurityListRequestWrapper(SecurityListRequestType type, string symbol,SecurityType pSecType, string pExchange, 
+                                           string pCurrency)
+        {
+            SecurityListRequestType = type;
+
+            Symbol = symbol;
+
+            SecurityType=pSecType;
+
+            Currency = pCurrency;
+
+            Exchange= pExchange;
+
         }
 
         #endregion
@@ -39,6 +60,12 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Symbol;
             else if (slrField == SecurityListRequestField.SecurityListRequestType)
                 return SecurityListRequestType;
+            else if (slrField == SecurityListRequestField.SecurityType)
+                return SecurityType;
+            else if (slrField == SecurityListRequestField.Currency)
+                return Currency;
+            else if (slrField == SecurityListRequestField.Exchange)
+                return Exchange;
             else
                 return SecurityListRequestField.NULL;
         }

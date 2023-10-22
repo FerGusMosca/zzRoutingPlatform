@@ -24,6 +24,7 @@ using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.SingletonModulesHandler.Common.Interfaces;
+using zHFT.StrategyHandler.Common.Wrappers;
 using OrderConverter = zHFT.OrderRouters.Common.Converters.OrderConverter;
 
 namespace tph.StrategyHandler.SimpleCommandSender
@@ -324,32 +325,11 @@ namespace tph.StrategyHandler.SimpleCommandSender
 
         protected void ProcessSecurityListRequest(object param)
         {
-
             try
             {
-                //Wrapper wrapper = (Wrapper)param;
-
-                //string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
-
-                DoLog($"Security List Request not implemented @{Config.Name}", Constants.MessageType.Information);
-
-                //CancelOrderReq cxlReq = new CancelOrderReq() { ClOrderId = clOrdId, OrigClOrderId = clOrdId };
-
-                //lock (JsonOrdersDict)
-                //{
-                //    if (JsonOrdersDict.ContainsKey(clOrdId))
-                //    {
-                //        DoSendAsync<CancelOrderReq>(cxlReq);
-                //    }
-                //    else
-                //    {
-                //        OrderCancelRejectWrapper cxlRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
-                //            $"Could not find ClOrdId {clOrdId} as a managed order",
-                //            CxlRejReason.TooLateToCancel, CxlRejResponseTo.OrderCancelRequest);
-
-                //        (new Thread(ProcessIncomingAsync)).Start(cxlRejWapper);
-                //    }
-                //}
+                SecurityListRequestWrapper wrapper = (SecurityListRequestWrapper)param;
+                SecurityListReqDTO reqDTO = SecurityListRequestConverter.ConvertSecurityListRequest(wrapper);
+                DoSendAsync<SecurityListReqDTO>(reqDTO);
 
             }
             catch (Exception ex)

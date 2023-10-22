@@ -50,11 +50,12 @@
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
-    <Symbol>SPY</Symbol>
+    <!--<Symbol>SPY</Symbol>
     <Symbol>QQQ</Symbol>
     <Symbol>IWM</Symbol>
-    <Symbol>XLF</Symbol>
-	
+    <Symbol>XLF</Symbol>-->
+	<Symbol>EFA</Symbol>
+	  
 <!--    -->
   </StocksToMonitor>
 

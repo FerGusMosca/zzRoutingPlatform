@@ -331,6 +331,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             {
                 return MarketDataModule.ProcessMessage(wrapper);
             }
+            else if (wrapper.GetAction() == Actions.SECURITY_LIST_REQUEST)
+            {
+                return MarketDataModule.ProcessMessage(wrapper);
+            }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
             {
                 return OrderRouterModule.ProcessMessage(wrapper);

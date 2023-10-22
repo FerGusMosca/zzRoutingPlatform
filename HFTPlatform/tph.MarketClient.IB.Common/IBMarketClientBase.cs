@@ -2,8 +2,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,8 +20,11 @@ using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common;
 using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
+using zHFT.MarketClient.IB.Common.Configuration;
 using zHFT.MarketClient.IB.Common.Converters;
+using zHFT.StrategyHandler.Common.Wrappers;
 using Constants = zHFT.Main.Common.Util.Constants;
+using Contract = IBApi.Contract;
 using MarketData = zHFT.Main.BusinessEntities.Market_Data.MarketData;
 
 namespace tph.MarketClient.IB.Common
@@ -46,6 +52,8 @@ namespace tph.MarketClient.IB.Common
         protected Thread ReaderThread { get; set; }
         
         protected Dictionary<int, HistoricalPricesHoldingDTO> HistoricalPricesRequest { get; set; }
+
+        protected Dictionary<int, Contract> OptionChainRequested { get; set; }
         protected object tLockHistoricalPricesRequest { get; set; }
         
 
@@ -217,11 +225,49 @@ namespace tph.MarketClient.IB.Common
             DoLog(string.Format("connectionClosed"), Constants.MessageType.Information);
         }
 
+
+        private void EvalOptionChainRequest(int reqId, ContractDetails contractDetails)
+        {
+          
+            try
+            {
+                lock (OptionChainRequested)
+                {
+                    if (OptionChainRequested.ContainsKey(reqId))
+                    {
+                        DoLog($"Recv Contract Details for symbol {contractDetails.UnderSymbol} (ReqId={reqId})", Constants.MessageType.Information);
+
+                        Contract underContract = OptionChainRequested[reqId];
+
+                        int contractId = 0;
+
+                        if (contractDetails.Summary != null)
+                            contractId = contractDetails.Summary.ConId;
+                        else
+                            throw new Exception($"CondId value could not be found for security {contractDetails.UnderSymbol}");
+
+                        DoLog($"Extracting ContractId -->{contractId}", Constants.MessageType.Information);
+                        ClientSocket.reqSecDefOptParams(reqId, underContract.Symbol,null, underContract.SecType, contractId);
+                    }
+                }
+            }
+            catch (Exception ex) {
+                DoLog($"CRITICAL ERROR processing contract details for symbol {contractDetails.UnderSymbol}", Constants.MessageType.Error);
+            }
+
+        }
+
         public virtual void contractDetails(int reqId, ContractDetails contractDetails)
         {
+            
+            
             DoLog(string.Format("contractDetails: reqId={0} contractDetails={1}",
                                 reqId,
                                 contractDetails.ToString()), Constants.MessageType.Information);
+
+
+            EvalOptionChainRequest(reqId, contractDetails);
+
         }
 
         public virtual void contractDetailsEnd(int reqId)
@@ -306,6 +352,45 @@ namespace tph.MarketClient.IB.Common
             DoLog(string.Format("accountUpdateMultiEnd: requestId={0} ",requestId), Constants.MessageType.Information);
         }
 
+        private void EvalOptionChainResponse(int reqId, string exchange, int underlyingConId, string tradingClass,
+            string multiplier, HashSet<string> expirations, HashSet<double> strikes)
+        {
+            try
+            {
+                lock (OptionChainRequested)
+                {
+                    if (OptionChainRequested.ContainsKey(reqId))
+                    {
+                        Contract contract = OptionChainRequested[reqId];
+
+                        if (contract.Exchange == exchange || string.IsNullOrEmpty(contract.Exchange))
+                        {
+
+                            List<Wrapper> wrappers = new List<Wrapper>();
+
+                            foreach(string exp in expirations)
+                            {
+                                //TODO build SecurityList wrapper
+                                Security sec = new Security() { Symbol = "" };//TODO see other paramters
+                                SecurityWrapper secWrapper = new SecurityWrapper(sec, GetConfig());
+                                wrappers.Add(secWrapper);
+                            }
+
+
+                            //TODO build Wrapper --> Save it on memory                            
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR evaluating option chain response for reqId {reqId}:{ex.Message}", Constants.MessageType.Error);
+            
+            }
+        
+        
+        }
+
         public void securityDefinitionOptionParameter(int reqId, string exchange, int underlyingConId, string tradingClass,
             string multiplier, HashSet<string> expirations, HashSet<double> strikes)
         {
@@ -318,6 +403,7 @@ namespace tph.MarketClient.IB.Common
                                     multiplier,
                                     expirations.Count,
                                     strikes.Count), Constants.MessageType.Information);
+            EvalOptionChainResponse(reqId,exchange,underlyingConId,tradingClass,multiplier,expirations, strikes);
         }
 
         public void securityDefinitionOptionParameterEnd(int reqId)
@@ -754,7 +840,7 @@ namespace tph.MarketClient.IB.Common
 
         public void tickOptionComputation(int tickerId, int field, double impliedVolatility, double delta, double optPrice, double pvDividend, double gamma, double vega, double theta, double undPrice)
         {
-            DoLog(string.Format("tickOptionComputation: tickerId={0} field={1} impliedVolatility={2} delta={3} optPrice={4} pvDividend={5} gamma={6} vega={7} theta={8} undPrice={9} ",
+            DoLog(string.Format("tickrequeComputation: tickerId={0} field={1} impliedVolatility={2} delta={3} optPrice={4} pvDividend={5} gamma={6} vega={7} theta={8} undPrice={9} ",
                                 tickerId,
                                 field,
                                 impliedVolatility,
