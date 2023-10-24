@@ -27,9 +27,14 @@ namespace tph.DayTurtles.LogicLayer
         #region Protected Attributes
           
         protected TurtlesPortfolioPositionManager TurtlesPortfolioPositionManager { get; set; }
-          
+
+        protected TurtlesCustomWindowManager TurtlesCustomWindowManager { get; set; }  
+
+
+        protected List<TurtlesCustomWindow> TurtlesWindowList { get; set; }
+
         #endregion
-        
+
         #region Overriden Methods
 
         public override  void  DoLoadConfig(string configFile, List<string> noValFlds)
@@ -83,7 +88,7 @@ namespace tph.DayTurtles.LogicLayer
             }
             else
             {
-                MarketData highest = turtlePos.HighestOnWindow(turtlePos.OpenWindow);
+                MarketData highest = turtlePos.HighestOnWindow(GetWindow(turtlePos.Security.Symbol, true));
                 DoLog(string.Format(
                         "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
                         turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
@@ -160,7 +165,7 @@ namespace tph.DayTurtles.LogicLayer
             else
             {
                 
-                MarketData lowest = monPos.LowestOnWindow(monPos.CloseWindow);
+                MarketData lowest = monPos.LowestOnWindow(GetWindow(monPos.Security.Symbol, false));
 //                DoLog(string.Format(
 //                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
 //                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
@@ -288,6 +293,16 @@ namespace tph.DayTurtles.LogicLayer
         public override void InitializeManagers(string connStr)
         {
             TurtlesPortfolioPositionManager = new TurtlesPortfolioPositionManager(connStr);
+
+            TurtlesCustomWindowManager=new TurtlesCustomWindowManager(connStr);
+        }
+
+        public void LoadCustomTurtlesWindows()
+        {
+
+            TurtlesWindowList=TurtlesCustomWindowManager.GetTurtlesCustomWindow();
+
+
         }
 
         protected override void ProcessHistoricalPrices(object pWrapper)
@@ -351,6 +366,28 @@ namespace tph.DayTurtles.LogicLayer
                
             }
         }
+
+        protected int GetWindow(string symbol, bool isOpen)
+        {
+
+            if (TurtlesWindowList.Any(x => x.Symbol == symbol))
+            {
+
+                if (isOpen)
+                    return TurtlesWindowList.Where(x => x.Symbol == symbol).FirstOrDefault().OpenWindow;
+                else
+                    return TurtlesWindowList.Where(x => x.Symbol == symbol).FirstOrDefault().CloseWindow;
+
+            }
+            else
+            {
+                if (isOpen)
+                    return GetConfig().OpenWindow;
+                else
+                    return GetConfig().CloseWindow;
+            }
+        
+        }
         
         protected override void LoadMonitorsAndRequestMarketData()
         {
@@ -368,8 +405,8 @@ namespace tph.DayTurtles.LogicLayer
                         Exchange = Config.Exchange
                     };
 
-                    MonTurtlePosition portfPos = new MonTurtlePosition(GetConfig().OpenWindow,
-                        GetConfig().CloseWindow,
+                    MonTurtlePosition portfPos = new MonTurtlePosition(GetWindow(symbol,true),
+                        GetWindow(symbol, false),
                         GetConfig().StopLossForOpenPositionPct,
                         GetConfig().CandleReferencePrice)
                     {
@@ -404,6 +441,8 @@ namespace tph.DayTurtles.LogicLayer
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
                 InitializeManagers(GetConfig().ConnectionString);
+
+                LoadCustomTurtlesWindows();
 
                 Thread depuarateThread = new Thread(EvalDepuratingPositionsThread);
                 depuarateThread.Start();

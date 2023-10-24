@@ -19,6 +19,7 @@
   <Exchange>BUE</Exchange>
   <SecurityTypes>CC</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
+	<!--no opening time-->
   <ClosingTime>23:50 PM</ClosingTime>
 
   <OrderRouter>zHFT.OrderRouters.Router.DecimalOrderRouter, zHFT.OrderRouters</OrderRouter>

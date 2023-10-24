@@ -23,6 +23,8 @@ namespace zHFT.StrategyHandler.Common
         public string OrderRouter { get; set; }
         
         public string OrderRouterConfigFile { get; set; }
+
+        public string OpeningTime { get; set; }
         
         public string ClosingTime { get; set; }
         

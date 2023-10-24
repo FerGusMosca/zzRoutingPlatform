@@ -620,7 +620,28 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         protected bool IsTradingTime()
         {
-            return DateTime.Now < MarketTimer.GetTodayDateTime(Config.ClosingTime);
+            DateTime closeTime = MarketTimer.GetTodayDateTime(Config.ClosingTime);
+
+            bool validOpening = false;
+            if (!string.IsNullOrEmpty(Config.OpeningTime))
+            {
+                validOpening= DateTime.Now > MarketTimer.GetTodayDateTime(Config.OpeningTime);
+            }
+            else
+                validOpening = true;
+
+            bool validClosing = false;
+            if (string.IsNullOrEmpty(Config.ClosingTime))
+            {
+                validClosing = DateTime.Now < MarketTimer.GetTodayDateTime(Config.ClosingTime);
+            }
+            else
+                validClosing = true;
+
+            return validOpening && validClosing;
+
+
+            
         }
         
         private void CloseOnTradingTimeOff()
