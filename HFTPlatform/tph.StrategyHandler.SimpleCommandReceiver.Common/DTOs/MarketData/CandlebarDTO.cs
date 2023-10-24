@@ -11,6 +11,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
     {
          #region Constructors
 
+        public CandlebarDTO() { }
+
         public CandlebarDTO(Candlebar cb)
         {
             Open = cb.Open;
@@ -35,8 +37,9 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public string Symbol { get; set; }
         
         public string Key { get; set; }
-        
-        [JsonConverter(typeof(WebsocketConnectorDateTimeConverter))]
+
+        //[JsonConverter(typeof(WebsocketConnectorDateTimeConverter))]
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
         public override DateTime Date { get; set; }
         
         #endregion

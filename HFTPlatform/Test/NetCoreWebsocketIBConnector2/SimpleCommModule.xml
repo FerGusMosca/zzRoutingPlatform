@@ -2,7 +2,7 @@
 <Configuration>
   <Name>WebSocket</Name>
   
-  <WebSocketURL>ws://0.0.0.0:7172</WebSocketURL>
+  <WebSocketURL>ws://0.0.0.0:9192</WebSocketURL>
 
   <IncomingConfigPath>.\incomingIB.xml</IncomingConfigPath>
   <IncomingModule>tph.InstructionBasedMarketClientv2.IB.Client.IBInstructionBasedMarketClient,tph.InstructionBasedMarketClientv2.IB</IncomingModule>

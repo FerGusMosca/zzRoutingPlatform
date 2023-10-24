@@ -91,14 +91,14 @@ namespace zHFT.Main.BusinessEntities.Market_Data
         public bool BiggerGreendCandle(double refPrice)
         {
             //return ClosingPrice > refPrice && ClosingPrice > OpeningPrice;
-            return ClosingPrice > refPrice ;
+            return Trade > refPrice ;
         }
 
       
         public bool LowerRedCandle(double refPrice)
         {
             //return ClosingPrice < refPrice && ClosingPrice < OpeningPrice;
-            return ClosingPrice < refPrice ;
+            return Trade < refPrice ;
         }
 
 

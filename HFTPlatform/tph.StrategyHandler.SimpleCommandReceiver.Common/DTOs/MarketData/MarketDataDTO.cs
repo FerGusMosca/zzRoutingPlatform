@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
+using zHFT.Main.BusinessEntities.Orders;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
 {
@@ -68,17 +69,21 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public string Msg = "MarketDataMsg";
         
         public string Symbol { get; set; }
-        
-       [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+
+        //[JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
         public override DateTime? MDEntryDate { get; set; }
-        
-        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+
+        //[JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
         public override DateTime? MDLocalEntryDate { get; set; }
-        
-        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+
+        //[JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
         public override DateTime? SettlDate { get; set; }
 
-        [JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        //[JsonConverter(typeof(WebsocketConnectorFullTimeConverter))]
+        [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy HH:mm:ss")]
         public override DateTime? LastTradeDateTime { get; set; }
         
         

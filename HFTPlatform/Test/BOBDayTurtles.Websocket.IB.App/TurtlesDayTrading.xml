@@ -44,17 +44,17 @@
 
   <RecalculateTrendlines>true</RecalculateTrendlines>
 
-  <HistoricalPricesPeriod>-4</HistoricalPricesPeriod><!---4= -4 days-->
+  <HistoricalPricesPeriod>-6</HistoricalPricesPeriod><!---4= -4 days-->
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
   
   <StocksToMonitor>
-    <!--<Symbol>SPY</Symbol>
+    <Symbol>SPY</Symbol>
     <Symbol>QQQ</Symbol>
     <Symbol>IWM</Symbol>
-    <Symbol>XLF</Symbol>-->
-	<Symbol>EFA</Symbol>
+    <Symbol>XLF</Symbol>
+	
 	  
 <!--    -->
   </StocksToMonitor>

@@ -135,11 +135,16 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             }
         }
         
-        private int GetSpan(DateTime start, DateTime end)
+        private int GetSpan(DateTime start, DateTime end, List<MarketData> prices)
         {
 
             if (CandleInterval == CandleInterval.Minute_1)
-                return Convert.ToInt32((end - start).TotalMinutes);
+            {
+                List< MarketData> innerPrices= prices.Where(x=>DateTime.Compare(start,x.MDEntryDate.Value)<=0 
+                                                            && DateTime.Compare(x.MDEntryDate.Value, end)<=0).ToList();
+                return innerPrices.Count;
+                //return Convert.ToInt32((end - start).TotalMinutes);
+            }
             else if (CandleInterval == CandleInterval.HOUR_1)
                 return Convert.ToInt32((end - start).TotalHours);
             else if (CandleInterval == CandleInterval.DAY)
@@ -364,13 +369,16 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
   
         public void EvalBrokenTrendlines(MarketData price,List<Trendline> trendlines, List<MarketData> allHistoricalPrices, bool downside)
         {
-            
-            foreach (Trendline trendline in trendlines.Where(x=>   !x.IsBroken(price.MDEntryDate)
-                                                                && DateTime.Compare(x.EndDate,price.MDEntryDate.Value)<0).ToList())
+
+
+            List<Trendline> activeTrendlines = trendlines.Where(x => !x.IsBroken(price.MDEntryDate)
+                                                                && DateTime.Compare(x.EndDate, price.MDEntryDate.Value) < 0).ToList();
+
+            foreach (Trendline trendline in activeTrendlines)
 
             {
                 
-                if (GetSpan(trendline.EndDate, price.MDEntryDate.Value) > 5)//Safety threshold
+                if (GetSpan(trendline.EndDate, price.MDEntryDate.Value, allHistoricalPrices) > 5)//Safety threshold
                 {
 
                     if (EvalTrendlineBroken(price, allHistoricalPrices, trendline, downside) 

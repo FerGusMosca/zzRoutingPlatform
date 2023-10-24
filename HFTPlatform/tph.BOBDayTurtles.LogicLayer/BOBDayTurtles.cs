@@ -54,7 +54,11 @@ namespace tph.BOBDayTurtles.LogicLayer
                 && IsTradingTime()
             )
             {
-                EvalOpeningPosition(turtlePos);
+                lock (tSynchronizationLock)
+                {
+                    //Console.Beep(100, 1000);//DBG
+                    EvalOpeningPosition(turtlePos);
+                }
             }
             else if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol) && IsTradingTime())
             {

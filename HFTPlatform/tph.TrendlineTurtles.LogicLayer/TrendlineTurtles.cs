@@ -109,7 +109,10 @@ namespace tph.TrendlineTurtles.LogicLayer
 
                     if (symbol != null )
                     {
-                        BuildTrendlines(symbol);
+                        lock (tSynchronizationLock)
+                        {
+                            BuildTrendlines(symbol);
+                        }
                     }
                 }
             }
@@ -159,7 +162,7 @@ namespace tph.TrendlineTurtles.LogicLayer
 
                 DoLog(string.Format("Trendlines calculated for symbol {0}", symbol), Constants.MessageType.Information);
             }
-
+            //Console.Beep();//DBG
             ProcessedHistoricalPrices.Add(symbol);
        
         }
@@ -245,7 +248,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             }
         }
 
-        protected virtual void DoPersist(TradingPosition trdPos)
+        protected override void DoPersist(TradingPosition trdPos)
         {
             DoPersistPosition(trdPos);
         }
@@ -418,9 +421,10 @@ namespace tph.TrendlineTurtles.LogicLayer
                 int i = 1;
                 foreach (string symbol in PortfolioPositionsToMonitor.Keys)
                 {
-                     DateTime from = DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod);
+                    DateTime from = DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod);
+                    DateTime to = DateTime.Now.AddDays(1);   
 
-                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i,symbol, from, DateTime.Now,CandleInterval.Minute_1);
+                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i,symbol, from, to, CandleInterval.Minute_1);
                     OnMessageRcv(reqWrapper);
                     i++;
                 }

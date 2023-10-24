@@ -3,5 +3,10 @@
     public class ErrorMessage:WebSocketMessage
     {
         public string Error { get; set; }
+
+        public override string ToString()
+        {
+            return Error;
+        }
     }
 }

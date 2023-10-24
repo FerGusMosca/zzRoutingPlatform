@@ -68,6 +68,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected Dictionary<string, PortfolioPosition> PortfolioPositionsToMonitor { get; set; }
 
+        protected object tSynchronizationLock { get; set; }
+
         #endregion
 
         #region Load Methods
@@ -759,7 +761,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                 LastCounterResetTime = StartTime;
 
                 tLock = new object();
-                tPersistLock=new object();
+                tSynchronizationLock = new object();
+                tPersistLock =new object();
                 PortfolioPositionsToMonitor = new Dictionary<string, PortfolioPosition>();
                 PortfolioPositions = new Dictionary<string, TradingPosition>();
                 PendingCancels = new Dictionary<string, TradingPosition>();
