@@ -515,50 +515,21 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         }
 
-        public  void SetNextDateToStartForResistances(DateTime lastDate,int innerSpan)
-        {
-
-            LastSafeMinDateResistances= lastDate.AddMinutes(-1 * ((innerSpan * 2) + 2));
-            
-//            if (LocalMaximums.Count > 0)
-//            {
-//
-//                DateTime nextDatetoStart = LocalMaximums.OrderByDescending(x => x.MDEntryDate.Value)
-//                                                        .FirstOrDefault().MDEntryDate.Value;
-//
-//                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
-//
-//                LastSafeMinDateResistances = nextDatetoStart;
-//            }
-//            else
-//            {
-//                LastSafeMinDateResistances = DateTime.MinValue;
-//            }
-        }
 
         public void MoveNextDateMinDateForResistances()
         {
             LastSafeMinDateResistances=GetStartDate(LastSafeMinDateResistances,1);
         }
 
-        public  void SetNextDateToStartForSupports(DateTime lastDate,int innerSpan)
+        public  void SetNextDateToStartForTrendlines(DateTime lastDate, List<MarketData> prices, int innerSpan)
         {
-            LastSafeMinDateSupports= lastDate.AddMinutes(-1 * ((innerSpan * 2) + 2));
-//            if (LocalMinimums.Count > 0)
-//            {
-//
-//                //Highest maximum
-//                DateTime nextDatetoStart = LocalMinimums.OrderByDescending(x => x.MDEntryDate.Value)
-//                                                        .FirstOrDefault().MDEntryDate.Value;
-//
-//                nextDatetoStart=GetStartDate(nextDatetoStart, 0);
-//
-//                LastSafeMinDateSupports = nextDatetoStart;
-//            }
-//            else
-//            {
-//                LastSafeMinDateSupports = DateTime.MinValue;
-//            }
+            
+
+            MarketData firstMarketData = prices.Where(x => DateTime.Compare(x.MDEntryDate.Value, lastDate) < 0).OrderByDescending(x => x.MDEntryDate.Value).Take(2 * innerSpan).FirstOrDefault();
+
+            if (firstMarketData != null && firstMarketData.MDEntryDate.HasValue)
+                LastSafeMinDateSupports=firstMarketData.MDEntryDate.Value;
+
         }
 
         public void MoveNextDateMinDateForSupports()
@@ -621,7 +592,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                                         prices, true, minDate,
                                         maxDate, false, null);
 
-            TrdCreatorDict[sec.Symbol].SetNextDateToStartForResistances(maxDate,config.InnerTrendlinesSpan);
+            TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate,prices,config.InnerTrendlinesSpan);
             return trendlines;
 
         }
@@ -682,7 +653,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 false, null);
             
             
-            TrdCreatorDict[sec.Symbol].SetNextDateToStartForSupports(maxDate,config.InnerTrendlinesSpan);
+            TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices,config.InnerTrendlinesSpan);
             return trendlines;
 
         }
