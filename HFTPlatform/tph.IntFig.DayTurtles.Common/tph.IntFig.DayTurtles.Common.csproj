@@ -45,6 +45,10 @@
     <Folder Include="Util" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj">
+      <Project>{c1380514-5fe0-401e-8dc5-3bd93ef13ee4}</Project>
+      <Name>tph.DayTurtles.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.TrendlineTurtles.Common\tph.TrendlineTurtles.Common.csproj">
       <Project>{8dd493cb-4798-4334-acc4-305d8e938d9a}</Project>
       <Name>tph.TrendlineTurtles.Common</Name>

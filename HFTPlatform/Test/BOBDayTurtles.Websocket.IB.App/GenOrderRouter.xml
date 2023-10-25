@@ -6,6 +6,7 @@
 
 	 <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
     <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>
+	
 
 
   <OrderUpdateInMilliseconds>2000</OrderUpdateInMilliseconds>

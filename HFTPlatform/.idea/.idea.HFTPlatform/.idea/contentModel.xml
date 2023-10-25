@@ -576,16 +576,17 @@
           </e>
           <e p="TurtlesDayTrading.xml" t="Include" />
         </e>
-        <e p="BOBDayTurtles.IB.App" t="IncludeRecursive">
+        <e p="BOBDayTurtles.Websocket.IB.App" t="IncludeRecursive">
           <e p="App.Config" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
-          <e p="BOBDayTurtles.IB.App.csproj" t="IncludeRecursive" />
+          <e p="BOBDayTurtles.Websocket.IB.App.csproj" t="IncludeRecursive" />
           <e p="Config.xml" t="Include" />
           <e p="genOrderRouter.xml" t="Include" />
           <e p="Mock" t="Include">
             <e p="outgoingOrderRouter.Mock.xml" t="Include" />
           </e>
           <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
@@ -737,6 +738,7 @@
           <e p="Bitfinex" t="Include" />
           <e p="Bittrex" t="Include" />
           <e p="Cocos" t="Include" />
+          <e p="Interactive Brokers" t="Include" />
           <e p="IOL" t="Include" />
         </e>
         <e p="InstructionProcessor.Cocos.Test" t="IncludeRecursive">
@@ -751,6 +753,15 @@
           <e p="outgoingStrategyHandler.InstructionBasedRouting - Desktop - Copy.xml" t="Include" />
           <e p="outgoingStrategyHandler.InstructionBasedRouting - Notebook.xml" t="Include" />
           <e p="outgoingStrategyHandler.InstructionBasedRouting.xml" t="Include" />
+          <e p="Program.cs" t="Include" />
+          <e p="Properties" t="Include">
+            <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+        <e p="InstructionsProcessor.IBv2.Websocket.App" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="InstructionsProcessor.IBv2.Websocket.App.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive" />
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
@@ -1029,6 +1040,7 @@
         </e>
         <e p="tph.DayTurtles.BusinessEntities.csproj" t="IncludeRecursive" />
         <e p="TradTurtlesPosition.cs" t="Include" />
+        <e p="TurtlesCustomWindow.cs" t="Include" />
       </e>
       <e p="tph.DayTurtles.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -1057,6 +1069,7 @@
           </e>
         </e>
         <e p="tph.DayTurtles.DataAccessLayer.csproj" t="IncludeRecursive" />
+        <e p="TurtlesCustomWindowManager.cs" t="Include" />
         <e p="TurtlesPortfolioPositionManager.cs" t="Include" />
       </e>
       <e p="tph.DayTurtles.LogicLayer" t="IncludeRecursive">
@@ -1080,6 +1093,7 @@
         <e p="DTO" t="Include">
           <e p="HistoricalPricesHoldingDTO.cs" t="Include" />
           <e p="HistoricalPricesRequestDTO.cs" t="Include" />
+          <e p="OptionChainResponseDTO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -1369,6 +1383,8 @@
             <e p="MarketDataDTO.cs" t="Include" />
             <e p="MarketDataReqDTO.cs" t="Include" />
             <e p="OrderBookDTO.cs" t="Include" />
+            <e p="SecurityListReqAckDTO.cs" t="Include" />
+            <e p="SecurityListReqDTO.cs" t="Include" />
           </e>
           <e p="OrderRouting" t="Include">
             <e p="CancelAllReq.cs" t="Include" />
@@ -1437,6 +1453,7 @@
         <e p="Util" t="Include">
           <e p="HistoricalPricesRequestConverter.cs" t="Include" />
           <e p="OrderConverter.cs" t="Include" />
+          <e p="SecurityListRequestConverter.cs" t="Include" />
         </e>
         <e p="Wrappers" t="Include">
           <e p="ExecutionReportWrapper.cs" t="Include" />

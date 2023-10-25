@@ -523,9 +523,10 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         public  void SetNextDateToStartForTrendlines(DateTime lastDate, List<MarketData> prices, int innerSpan)
         {
-            
 
-            MarketData firstMarketData = prices.Where(x => DateTime.Compare(x.MDEntryDate.Value, lastDate) < 0).OrderByDescending(x => x.MDEntryDate.Value).Take(2 * innerSpan).FirstOrDefault();
+            List<MarketData> orderedPrices = prices.Where(x => DateTime.Compare(x.MDEntryDate.Value, lastDate) < 0).OrderByDescending(x => x.MDEntryDate.Value).ToList();
+            List<MarketData> filteredPrices = orderedPrices.Take(2 * innerSpan).OrderBy(x=>x.MDEntryDate.Value).ToList();
+            MarketData firstMarketData = filteredPrices.FirstOrDefault();
 
             if (firstMarketData != null && firstMarketData.MDEntryDate.HasValue)
                 LastSafeMinDateSupports=firstMarketData.MDEntryDate.Value;

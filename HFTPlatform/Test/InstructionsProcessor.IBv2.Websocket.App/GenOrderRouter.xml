@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Outgoing Generic</Name>
+
+
+	<!--Mock-->
+	<!--<Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
+	<ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
+
+	<!--Websocket-->
+	<Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
+	<ProxyConfigFile>.\Websocket\OutgoingSingletonConfig.xml</ProxyConfigFile>
+
+
+	<OrderUpdateInMilliseconds>2000</OrderUpdateInMilliseconds>
+	<!--<OrderIdStart>00</OrderIdStart>-->
+
+</Configuration>
