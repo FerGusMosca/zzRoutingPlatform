@@ -631,7 +631,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 validOpening = true;
 
             bool validClosing = false;
-            if (string.IsNullOrEmpty(Config.ClosingTime))
+            if (!string.IsNullOrEmpty(Config.ClosingTime))
             {
                 validClosing = DateTime.Now < MarketTimer.GetTodayDateTime(Config.ClosingTime);
             }

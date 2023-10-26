@@ -102,6 +102,7 @@ namespace tph.BOBDayTurtles.LogicLayer
 
                     MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(GetConfig().OpenWindow,
                         GetConfig().CloseWindow,
+                        GetConfig().ExitOnMMov,
                         GetConfig().StopLossForOpenPositionPct,
                         GetConfig().OuterTrendlineSpan)
                     {

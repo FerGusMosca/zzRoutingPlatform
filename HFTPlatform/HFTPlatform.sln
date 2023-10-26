@@ -631,7 +631,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.BOBDayTurtles.DataAcces
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreWebsocketFIXConnector", "Test\NetCoreWebsocketFIXConnector\NetCoreWebsocketFIXConnector.csproj", "{9561B32B-D6C4-48F8-A5B9-11181DE2B9AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTurtles.FIX.App2", "Test\DayTurtles.FIX.App2\DayTurtles.FIX.App2.csproj", "{0BAA08B7-0673-413B-8A0E-EF734F21F2D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTurtles.FIX.App", "Test\DayTurtles.FIX.App2\DayTurtles.FIX.App.csproj", "{0BAA08B7-0673-413B-8A0E-EF734F21F2D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cocos", "Cocos", "{1D9E075F-BDC1-4E9F-B15E-82A7BFB49B69}"
 EndProject
@@ -754,6 +754,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interactive Brokers", "Interactive Brokers", "{2994B4D9-799E-4185-914E-E8E5A100A9A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstructionsProcessor.IBv2.Websocket.App", "Test\InstructionsProcessor.IBv2.Websocket.App\InstructionsProcessor.IBv2.Websocket.App.csproj", "{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerrankTest", "HackerrrankTest\HackerrankTest.csproj", "{6D185A65-FAA0-45D6-887E-4715B260C1D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1785,6 +1787,10 @@ Global
 		{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2154,6 +2160,7 @@ Global
 		{12364991-8F85-4C51-8A3C-0A83D68DF761} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 		{2994B4D9-799E-4185-914E-E8E5A100A9A2} = {B6B3A487-FCD3-4897-A920-9ECB29A59F25}
 		{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60} = {2994B4D9-799E-4185-914E-E8E5A100A9A2}
+		{6D185A65-FAA0-45D6-887E-4715B260C1D8} = {2FF68C69-8003-4781-8DDD-DE08F76325BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}

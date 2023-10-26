@@ -46,8 +46,11 @@
 
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
-  
-  <StocksToMonitor>
+
+	<ExitOnMMov>false</ExitOnMMov>
+	<!--Close window is mmov-->
+
+	<StocksToMonitor>
     <Symbol>BTC</Symbol>
     <Symbol>ETH</Symbol>
     <Symbol>DOGE</Symbol>

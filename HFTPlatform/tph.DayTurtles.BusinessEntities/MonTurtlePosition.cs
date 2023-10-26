@@ -16,13 +16,14 @@ namespace tph.DayTurtles.BusinessEntities
         #endregion
         #region Constructors
 
-        public MonTurtlePosition(int openWindow, int closeWindow,double stopLossForOpenPositionPct, string candleRefPrice)
+        public MonTurtlePosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct, string candleRefPrice)
         {
             Candles = new Dictionary<string, MarketData>();
             OpenWindow = openWindow;
             CloseWindow = closeWindow;
             StopLossForOpenPositionPct = stopLossForOpenPositionPct;
             CandleReferencePrice = candleRefPrice;
+            ExitOnMMov = pExitOnMMov;
         }
 
         #endregion
@@ -32,10 +33,12 @@ namespace tph.DayTurtles.BusinessEntities
         public int OpenWindow { get; set; }
 
         public int CloseWindow { get; set; }
-        
+
+        public bool ExitOnMMov { get; set; }
+
         public double StopLossForOpenPositionPct { get; set; }
-        
-        public string CandleReferencePrice { get; set; }
+
+
 
         public Dictionary<string, MarketData> Candles { get; set; }
 
@@ -58,10 +61,10 @@ namespace tph.DayTurtles.BusinessEntities
         protected string GetCandleKey(MarketData md)
         {
             string key = "";
-            
-            if(md.MDEntryDate.HasValue)
-                 key = md.MDEntryDate.Value.ToString(_CANDLE_DATE_FORMAT);
-            else if(md.MDLocalEntryDate.HasValue)
+
+            if (md.MDEntryDate.HasValue)
+                key = md.MDEntryDate.Value.ToString(_CANDLE_DATE_FORMAT);
+            else if (md.MDLocalEntryDate.HasValue)
                 key = md.MDLocalEntryDate.Value.ToString(_CANDLE_DATE_FORMAT);
             else
             {
@@ -69,7 +72,7 @@ namespace tph.DayTurtles.BusinessEntities
                 throw new Exception($"Market data entry date not available in new market data");
             }
 
-            return key;;
+            return key; ;
 
         }
 
@@ -109,44 +112,68 @@ namespace tph.DayTurtles.BusinessEntities
             return lowest;
         }
 
-        public bool IsBigger(MarketData  md , MarketData lastCandle)
-       {
-           if (string.IsNullOrEmpty(CandleReferencePrice))
-           {
-               return md.ClosingPrice > lastCandle.ClosingPrice;
-           }
-           else if (CandleReferencePrice == _CANLDE_REF_PRICE_CLOSE)
-           {
-               return md.ClosingPrice > lastCandle.ClosingPrice;
-           }
-           else if (CandleReferencePrice == _CANLDE_REF_PRICE_TRADE)
-           {
-               return md.Trade > lastCandle.Trade;
-           }
-           else
-           {
-               throw new Exception(string.Format("Candle Reference  Price not recognized:{0}",CandleReferencePrice));
-           }
-       }
-
-        public bool Islower(MarketData  md , MarketData lastCandle)
+        public bool IsBigger(MarketData md, MarketData lastCandle)
         {
-            if (string.IsNullOrEmpty(CandleReferencePrice))
+            return GetReferencePrice(md) > GetReferencePrice(lastCandle);
+
+        }
+
+        public bool Islower(MarketData md, MarketData lastCandle)
+        {
+            return GetReferencePrice(md) < GetReferencePrice(lastCandle);
+
+        }
+
+        protected double CalculateSimpleMovAvg(int window)
+        {
+            List<MarketData> windowcandles = Candles.Values.Where(x => x.GetOrderingDate() != null)
+                                              .OrderByDescending(x => x.GetOrderingDate().Value)
+                                              .Take(window).ToList();
+
+            //calculate the avg
+            double sum = 0;
+            int count = 0;
+            foreach (MarketData md in windowcandles)
             {
-                return md.ClosingPrice < lastCandle.ClosingPrice;
+                if (GetReferencePrice(md) != null)
+                {
+                    sum += GetReferencePrice(md).Value;
+                    count++;
+                }
             }
-            else if (CandleReferencePrice == _CANLDE_REF_PRICE_CLOSE)
+
+            double avg = sum / Convert.ToDouble(count);
+            return avg;
+        }
+
+        protected bool IsHigherThanMMov(int window,bool higherOrEqual)
+        {
+            MarketData lastCandle = LastValidCandle();
+
+            double avg = CalculateSimpleMovAvg(window);
+
+            if (GetReferencePrice(lastCandle) != null)
             {
-                return md.ClosingPrice < lastCandle.ClosingPrice;
-            }
-            else if (CandleReferencePrice == _CANLDE_REF_PRICE_TRADE)
-            {
-                return md.Trade < lastCandle.Trade;
+                if(higherOrEqual)
+                    return GetReferencePrice(lastCandle).Value >= avg;
+                else
+                    return GetReferencePrice(lastCandle).Value > avg;
+
             }
             else
-            {
-                throw new Exception(string.Format("Candle Reference  Price not recognized:{0}",CandleReferencePrice));
-            }
+                return false; 
+
+        }
+
+        public MarketData LastValidCandle()
+        {
+            MarketData lastCandle = Candles.Values
+                                                   .Where(x => x.GetOrderingDate() != null 
+                                                            && GetReferencePrice(x)!=null)
+                                                   .OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+
+
+            return lastCandle;
         }
         
         public bool IsHighest(int window)
@@ -154,9 +181,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (Candles.Count < window)
                 return false;
 
-            MarketData lastCandle = Candles.Values
-                                                .Where(x=>  x.GetOrderingDate()!=null)
-                                                .OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            MarketData lastCandle = LastValidCandle();
 
             List<MarketData> candles = Candles.Values
                                                       .Where(x=>  x.GetOrderingDate()!=null)
@@ -185,9 +210,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (Candles.Count < window)
                 return false;
 
-            MarketData lastCandle = Candles.Values
-                                           .Where(x=>  x.GetOrderingDate()!=null)
-                                           .OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            MarketData lastCandle = LastValidCandle();
 
             List<MarketData> candles = Candles.Values.Where(x=>  x.GetOrderingDate()!=null)
                                                       .OrderByDescending(x => x.GetOrderingDate())
@@ -236,6 +259,7 @@ namespace tph.DayTurtles.BusinessEntities
 
         public virtual bool LongSignalTriggered()
         {
+            
             return IsHighest(OpenWindow);
         }
         
@@ -246,12 +270,19 @@ namespace tph.DayTurtles.BusinessEntities
         
         public virtual bool EvalClosingLongPosition()
         {
-            return IsLowest(CloseWindow);
+            if (ExitOnMMov)
+                return !IsHigherThanMMov(CloseWindow,true);
+            else
+                return IsLowest(CloseWindow);
         }
 
         public virtual bool EvalClosingShortPosition()
         {
-            return IsHighest(CloseWindow);
+            if (ExitOnMMov)
+                return IsHigherThanMMov(CloseWindow, true);
+            else
+                return IsHighest(CloseWindow);
+            
         }
         
         

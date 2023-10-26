@@ -15,8 +15,8 @@ namespace tph.BOBDayTurtles.BusinessEntities
         
         #region Constructors
 
-        public MonBOBTurtlePosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct,
-            int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct,
+        public MonBOBTurtlePosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct,
+            int outerSignalSpan) : base(openWindow, closeWindow, pExitOnMMov, stopLossForOpenPositionPct,
             PortfolioPosition._CANLDE_REF_PRICE_CLOSE)
         {
             Resistances = new List<Trendline>();
