@@ -272,6 +272,23 @@ namespace zHFT.Main.BusinessEntities.Positions
             return PosStatus == PositionStatus.Filled;
         }
 
+        public double GetPositionQty()
+        {
+            if (PositionRouting() || FilledPos())
+            {
+                double qty = 0;
+
+                qty += CumQty;
+                qty += LeavesQty.HasValue ? LeavesQty.Value : 0;
+                return qty;
+
+            }
+            else
+                return 0;
+        
+        
+        }
+
         public void SetPositionStatusFromExecutionStatus(OrdStatus ordStatus)
         {
             if (ordStatus == OrdStatus.New)

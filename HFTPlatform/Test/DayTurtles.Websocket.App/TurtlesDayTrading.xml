@@ -2,8 +2,8 @@
 <DayTurtlesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Name>Strategy Handler - TurtlesDayTrading</Name>
 
-  <OpenWindow>20</OpenWindow>
-  <CloseWindow>5</CloseWindow>
+  <OpenWindow>40</OpenWindow>
+  <CloseWindow>200</CloseWindow>
 
   <PositionSizeInCash>1000</PositionSizeInCash>
 
@@ -47,10 +47,12 @@
   <StocksToMonitor>
 
     <!--<Symbol>BTC</Symbol>-->
-    <Symbol>GGAL</Symbol>
-    <Symbol>SPY</Symbol>
-    <Symbol>QQQ</Symbol>
-    <Symbol>MSFT</Symbol>
+	  <Symbol>GGAL</Symbol>
+	  <Symbol>YPF</Symbol>
+	  <Symbol>SPY</Symbol>
+	  <Symbol>QQQ</Symbol>
+	  <Symbol>MSFT</Symbol>
+	  <Symbol>META</Symbol>
  
 
 
