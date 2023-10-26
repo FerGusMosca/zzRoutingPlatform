@@ -1,6 +1,7 @@
 ﻿using IBApi;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace zHFT.MarketClient.IB.Common.Converters
 
         #endregion
 
-        #region
+        #region Public Static Methods
 
         //We convert IB security type codes into Generic Type Codes
         public static SecurityType GetSecurityTypeFromIBCode(string ibSecurityTypeCode)
@@ -113,6 +114,39 @@ namespace zHFT.MarketClient.IB.Common.Converters
                 security.MarketData.LastTradeDateTime = epoch.AddSeconds(Convert.ToDouble(value));
             }
 
+        }
+
+        public static List<Security> BuildOptionChainSecurities(int reqId, string underSymbol,string currency, string exchange, int underlyingConId, string tradingClass,
+            string multiplier, HashSet<string> expirations, HashSet<double> strikes)
+        {
+            List<Security> optionChain = new List<Security>();
+            foreach (string exp in expirations)
+            {
+
+                foreach (double strike in strikes)
+                {
+                    
+                    Security secCall = new Security();
+                    secCall.Symbol = tradingClass;
+                    secCall.StrikePrice = strike;
+                    secCall.SecType = SecurityType.OPT;
+                    secCall.MaturityDate = (DateTime?)DateTime.ParseExact(exp, "yyyyMMdd", CultureInfo.InvariantCulture);
+                    secCall.MaturityMonthYear = exp.Substring(0, 6);
+                    secCall.Currency = currency;
+                    secCall.PutOrCall = PutOrCall.Call;
+                    secCall.StrikeMultiplier = Convert.ToInt32(multiplier);
+                    secCall.Exchange = exchange;
+                    secCall.AltIntSymbol = underlyingConId.ToString();
+                    secCall.SymbolSfx = secCall.BuildOptionSymbol();
+
+
+                    optionChain.Add(secCall);
+                    Security secPut = secCall.CallToPut();
+                    optionChain.Add(secPut);
+                }
+            }
+
+            return optionChain;
         }
 
         #endregion

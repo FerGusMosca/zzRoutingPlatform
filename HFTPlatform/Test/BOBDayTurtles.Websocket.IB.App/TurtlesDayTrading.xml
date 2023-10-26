@@ -54,9 +54,9 @@
   
   <StocksToMonitor>
     <Symbol>SPY</Symbol>
-    <Symbol>QQQ</Symbol>
+    <!--<Symbol>QQQ</Symbol>
     <Symbol>IWM</Symbol>
-    <Symbol>XLF</Symbol>
+    <Symbol>XLF</Symbol>-->
 	
 	  
 <!--    -->

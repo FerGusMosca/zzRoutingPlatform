@@ -501,6 +501,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
                 if (EvalLocalMaximum(pricesArr.ToList(), price, i))
                 {
+
                     EvalResistance(stock, price, allHistoricalPrices, markJustFound);
 
                     LocalMaximums.Add(price);

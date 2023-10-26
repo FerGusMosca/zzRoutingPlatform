@@ -18,6 +18,7 @@ namespace zHFT.Main.Common.Enums
         public static readonly SecurityListFields NoRelatedSym = new SecurityListFields(8);
         public static readonly SecurityListFields Securities = new SecurityListFields(9);
         public static readonly SecurityListFields ContractPositionNumber = new SecurityListFields(10);
+        public static readonly SecurityListFields SecurityListRequestId = new SecurityListFields(11);
 
         protected SecurityListFields(int pInternalValue)
             : base(pInternalValue)

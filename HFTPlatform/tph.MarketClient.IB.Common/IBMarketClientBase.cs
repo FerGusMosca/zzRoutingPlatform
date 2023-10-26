@@ -4,9 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Contracts;
+using System.Dynamic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -29,7 +31,7 @@ using MarketData = zHFT.Main.BusinessEntities.Market_Data.MarketData;
 
 namespace tph.MarketClient.IB.Common
 {
-    public abstract class IBMarketClientBase : MarketClientBase, ICommunicationModule, EWrapper,EReaderSignal
+    public abstract class IBMarketClientBase : MarketClientBase, ICommunicationModule, EWrapper, EReaderSignal
     {
         #region Private Consts
 
@@ -44,18 +46,18 @@ namespace tph.MarketClient.IB.Common
         protected Dictionary<int, Security> ContractRequests { get; set; }
 
         protected EClientSocket ClientSocket { get; set; }
-        
+
         protected EReader EReader { get; set; }
-        
+
         protected EReaderSignal EReaderSignal { get; set; }
-        
+
         protected Thread ReaderThread { get; set; }
-        
+
         protected Dictionary<int, HistoricalPricesHoldingDTO> HistoricalPricesRequest { get; set; }
 
         protected Dictionary<int, Contract> OptionChainRequested { get; set; }
         protected object tLockHistoricalPricesRequest { get; set; }
-        
+
 
         #endregion
 
@@ -73,21 +75,21 @@ namespace tph.MarketClient.IB.Common
         #endregion
 
         #region Protected Methods
-        
+
         protected void ReaderThreadImp()
         {
             try
             {
-                while (ClientSocket.IsConnected()) 
-                { 
-                    waitForSignal(); 
+                while (ClientSocket.IsConnected())
+                {
+                    waitForSignal();
                     EReader.processMsgs();
-                                
-                } 
+
+                }
             }
             catch (Exception e)
             {
-                DoLog(string.Format("CRITICAL error processing ReaderThreadImp:{0}",e.Message),Constants.MessageType.Error);
+                DoLog(string.Format("CRITICAL error processing ReaderThreadImp:{0}", e.Message), Constants.MessageType.Error);
             }
         }
 
@@ -112,15 +114,15 @@ namespace tph.MarketClient.IB.Common
         }
 
         protected void RunPublishSecurity(Security sec)
-        { 
+        {
             try
             {
-                
+
                 MarketDataWrapper wrapper = new MarketDataWrapper(sec, GetConfig());
                 CMState state = OnMessageRcv(wrapper);
 
                 if (state.Success)
-                    DoLog(string.Format("IB Publishing Market Data for Security {0} ", sec.Symbol),  Constants.MessageType.Information);
+                    DoLog(string.Format("IB Publishing Market Data for Security {0} ", sec.Symbol), Constants.MessageType.Information);
                 else
                     DoLog(string.Format("Error Publishing Market Data for Security {0}. Error={1} ",
                                         sec.Symbol,
@@ -134,14 +136,14 @@ namespace tph.MarketClient.IB.Common
                                             sec.Symbol, ex != null ? ex.Message : ""),
                                             Constants.MessageType.Error);
             }
-        
+
         }
 
         #endregion
 
         #region IB Methods
 
-        protected void ReqMktData(int reqId,bool snapshot, zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
+        protected void ReqMktData(int reqId, bool snapshot, zHFT.MarketClient.IB.Common.Configuration.Contract ctr)
         {
             Contract ibContract = new Contract();
 
@@ -165,16 +167,16 @@ namespace tph.MarketClient.IB.Common
             ibContract.Exchange = ctr.Exchange;
             ibContract.Currency = ctr.Currency;
             ibContract.PrimaryExch = ctr.PrimaryExchange;
-            
+
             ClientSocket.reqMarketDepth(reqId, ibContract, 5, new List<TagValue>());
         }
-       
+
         public void accountDownloadEnd(string account)
         {
             DoLog(string.Format("accountDownloadEnd: account={0}",
                                 account), Constants.MessageType.Information);
         }
-        
+
         public void orderStatus(int orderId, string status, double filled, double remaining, double avgFillPrice, int permId,
             int parentId, double lastFillPrice, int clientId, string whyHeld, double mktCapPrice)
         {
@@ -228,7 +230,7 @@ namespace tph.MarketClient.IB.Common
 
         private void EvalOptionChainRequest(int reqId, ContractDetails contractDetails)
         {
-          
+
             try
             {
                 lock (OptionChainRequested)
@@ -247,7 +249,7 @@ namespace tph.MarketClient.IB.Common
                             throw new Exception($"CondId value could not be found for security {contractDetails.UnderSymbol}");
 
                         DoLog($"Extracting ContractId -->{contractId}", Constants.MessageType.Information);
-                        ClientSocket.reqSecDefOptParams(reqId, underContract.Symbol,null, underContract.SecType, contractId);
+                        ClientSocket.reqSecDefOptParams(reqId, underContract.Symbol, null, underContract.SecType, contractId);
                     }
                 }
             }
@@ -259,8 +261,8 @@ namespace tph.MarketClient.IB.Common
 
         public virtual void contractDetails(int reqId, ContractDetails contractDetails)
         {
-            
-            
+
+
             DoLog(string.Format("contractDetails: reqId={0} contractDetails={1}",
                                 reqId,
                                 contractDetails.ToString()), Constants.MessageType.Information);
@@ -281,7 +283,7 @@ namespace tph.MarketClient.IB.Common
             DoLog(string.Format("currentTime: time={0}",
                                 time), Constants.MessageType.Information);
         }
-        
+
         public void tickPrice(int tickerId, int field, double price, TickAttrib attribs)
         {
             ProcessField("tickPrice", tickerId, field, price);
@@ -333,7 +335,7 @@ namespace tph.MarketClient.IB.Common
 
         public void positionMultiEnd(int requestId)
         {
-            DoLog(string.Format("positionMultiEnd: requestId={0}" ,requestId), Constants.MessageType.Information);
+            DoLog(string.Format("positionMultiEnd: requestId={0}", requestId), Constants.MessageType.Information);
         }
 
         public void accountUpdateMulti(int requestId, string account, string modelCode, string key, string value, string currency)
@@ -349,7 +351,7 @@ namespace tph.MarketClient.IB.Common
 
         public void accountUpdateMultiEnd(int requestId)
         {
-            DoLog(string.Format("accountUpdateMultiEnd: requestId={0} ",requestId), Constants.MessageType.Information);
+            DoLog(string.Format("accountUpdateMultiEnd: requestId={0} ", requestId), Constants.MessageType.Information);
         }
 
         private void EvalOptionChainResponse(int reqId, string exchange, int underlyingConId, string tradingClass,
@@ -363,22 +365,23 @@ namespace tph.MarketClient.IB.Common
                     {
                         Contract contract = OptionChainRequested[reqId];
 
-                        if (contract.Exchange == exchange || string.IsNullOrEmpty(contract.Exchange))
+                        List<Security> optionChain = SecurityConverter.BuildOptionChainSecurities(reqId, contract.Symbol, contract.Currency, 
+                                                                                                  exchange, underlyingConId, tradingClass,
+                                                                                                  multiplier, expirations, strikes);
+
+                        List<Wrapper> secWrappers = new List<Wrapper>();
+                        foreach (Security option in optionChain)
                         {
+                            SecurityWrapper wrapper = new SecurityWrapper(option, null) ;
+                            secWrappers.Add(wrapper) ;  
 
-                            List<Wrapper> wrappers = new List<Wrapper>();
-
-                            foreach(string exp in expirations)
-                            {
-                                //TODO build SecurityList wrapper
-                                Security sec = new Security() { Symbol = "" };//TODO see other paramters
-                                SecurityWrapper secWrapper = new SecurityWrapper(sec, GetConfig());
-                                wrappers.Add(secWrapper);
-                            }
-
-
-                            //TODO build Wrapper --> Save it on memory                            
                         }
+
+
+                        SecurityListWrapper wrapperList = new SecurityListWrapper(reqId, secWrappers, zHFT.Main.Common.Enums.SecurityListRequestType.OptionChain, "IB");
+
+                        (new Thread(OnPublishAsync)).Start(wrapperList);
+
                     }
                 }
             }
@@ -387,8 +390,6 @@ namespace tph.MarketClient.IB.Common
                 DoLog($"ERROR evaluating option chain response for reqId {reqId}:{ex.Message}", Constants.MessageType.Error);
             
             }
-        
-        
         }
 
         public void securityDefinitionOptionParameter(int reqId, string exchange, int underlyingConId, string tradingClass,
@@ -660,7 +661,7 @@ namespace tph.MarketClient.IB.Common
                 bar.WAP), Constants.MessageType.Information);
         }
 
-        public void OnPublishHistoricalPricesAsync(object param)
+        public void OnPublishAsync(object param)
         {
             try
             {
@@ -710,7 +711,7 @@ namespace tph.MarketClient.IB.Common
 
                         HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(mainSec,marketDataWrapper);
                         HistoricalPricesRequest.Remove(reqId);
-                        (new Thread(OnPublishHistoricalPricesAsync)).Start(histWrp);
+                        (new Thread(OnPublishAsync)).Start(histWrp);
                     }
                 }
                 catch (Exception ex)

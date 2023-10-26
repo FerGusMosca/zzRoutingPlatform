@@ -21,6 +21,7 @@ using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandlers.Common.Converters;
+using LocalSecurityListConverter = tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver
 {
@@ -196,6 +197,27 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
         }
 
+        protected CMState ProcessSecurityList(Wrapper wrapper)
+        {
+            try
+            {
+                lock (tLock)
+                {
+                    SecurityListWrapper secListWrapper = (SecurityListWrapper)wrapper;
+                    SecurityListDTO dto = LocalSecurityListConverter.SecurityListConverter.ConvertSecurityList(secListWrapper);
+                    Server.PublishEntity<SecurityListDTO>(dto);
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog($"@{Config.Name}-Critical ERROR processing historical prices : {e.Message}",
+                    Constants.MessageType.Error);
+            }
+
+            return CMState.BuildSuccess();
+
+        }
+
         protected CMState ProcessHistoricalPrices(Wrapper wrapper)
         {
             
@@ -313,6 +335,12 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 DoLog("Processing Historical Prices:" + wrapper.ToString(), Constants.MessageType.Information);
                 return ProcessHistoricalPrices(wrapper);
             }
+            else if (wrapper.GetAction() == Actions.SECURITY_LIST)
+            {
+                DoLog("Processing Security List:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessSecurityList(wrapper);
+            }
+            
             else if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
             {
                 DoLog("Processing Execution Report:" + wrapper.ToString(), Constants.MessageType.Information);

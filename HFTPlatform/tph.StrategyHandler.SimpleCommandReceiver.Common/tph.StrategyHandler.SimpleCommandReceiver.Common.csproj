@@ -44,6 +44,7 @@
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Converters\DateFormatConverter.cs" />
     <Compile Include="Converters\OrderConverter.cs" />
+    <Compile Include="Converters\SecurityListConverter.cs" />
     <Compile Include="DTOs\ErrorMessage.cs" />
     <Compile Include="DTOs\MarketData\CandlebarDTO.cs" />
     <Compile Include="DTOs\MarketData\HistoricalPricesDTO.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="DTOs\MarketData\MarketDataDTO.cs" />
     <Compile Include="DTOs\MarketData\MarketDataReqDTO.cs" />
     <Compile Include="DTOs\MarketData\OrderBookDTO.cs" />
+    <Compile Include="DTOs\MarketData\SecurityListDTO.cs" />
     <Compile Include="DTOs\MarketData\SecurityListReqAckDTO.cs" />
     <Compile Include="DTOs\MarketData\SecurityListReqDTO.cs" />
     <Compile Include="DTOs\OrderRouting\CancelAllReq.cs" />
@@ -85,6 +87,10 @@
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43A49A1C-0367-4000-A144-FF3CDC6B198A}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj">
       <Project>{97a1ba19-bf4c-48cc-9c8f-e00ba9bb9734}</Project>
       <Name>zHFT.OrderImbSimpleCalculator.Common</Name>
@@ -92,6 +98,10 @@
     <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
       <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
       <Name>zHFT.OrderRouters.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
+      <Project>{453E183D-9557-4A96-AD08-D2AD0DB68765}</Project>
+      <Name>zHFT.StrategyHandler.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

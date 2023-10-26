@@ -91,6 +91,7 @@
     <Compile Include="Enums\PositionRejectReason.cs" />
     <Compile Include="Enums\PositionStatus.cs" />
     <Compile Include="Enums\PriceType.cs" />
+    <Compile Include="Enums\PutOrCall.cs" />
     <Compile Include="Enums\QuantityType.cs" />
     <Compile Include="Enums\SecurityListRequestType.cs" />
     <Compile Include="Enums\SecurityRequestResult.cs" />

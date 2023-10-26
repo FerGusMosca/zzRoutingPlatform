@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,13 @@ namespace zHFT.Main.BusinessEntities.Securities
 {
     public class Security
     {
+        #region Private Static Consts
+
+        private static string _PUT_PREFIX = "P";
+        private static string _CALL_PREFIX = "C";
+
+        #endregion
+
 
         #region Public Methods
 
@@ -43,7 +51,7 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public string StrikeCurrency { get; set; }
 
-        public string PutOrCall { get; set; }
+        public PutOrCall PutOrCall { get; set; }
 
         public int StrikeMultiplier { get; set; }
 
@@ -111,6 +119,27 @@ namespace zHFT.Main.BusinessEntities.Securities
             return cloned;
         }
 
+        public Security CallToPut()
+        {
+
+            Security cloned = new Security();
+            cloned.Symbol = Symbol;
+            cloned.StrikePrice = StrikePrice;
+            cloned.MaturityDate = MaturityDate;
+            cloned.MaturityMonthYear = MaturityMonthYear;
+           
+            cloned.Currency = Currency;
+            cloned.PutOrCall = PutOrCall == PutOrCall.Call ? PutOrCall.Put : PutOrCall.Call;
+            cloned.StrikeMultiplier = StrikeMultiplier;
+            cloned.Exchange = Exchange;
+            cloned.AltIntSymbol = AltIntSymbol ;
+            cloned.SecType = SecType;
+            cloned.SymbolSfx = cloned.BuildOptionSymbol();
+
+            return cloned;
+
+        }
+
         #endregion
 
         #region Public Static Methods
@@ -133,6 +162,15 @@ namespace zHFT.Main.BusinessEntities.Securities
                     return string.Format("{0}", Symbol);
             }
 
+        }
+
+        public  string BuildOptionSymbol()
+        {
+
+            string rightCode = PutOrCall == PutOrCall.Call ? _CALL_PREFIX : _PUT_PREFIX;
+            string optionSymbol = $"{Symbol}{rightCode}{MaturityMonthYear}{StrikePrice.Value.ToString("0.00")}";
+
+            return optionSymbol;
         }
 
         public static SecurityType GetSecurityType(string secType)
