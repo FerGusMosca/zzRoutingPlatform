@@ -49,6 +49,13 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             else
                 throw new Exception($"Missing mandatory SecurityListRequestType for Security List");
 
+            string marketId = null;
+            if (ValidateField(securityListWrapper, SecurityListFields.MarketID))
+                marketId = (string)securityListWrapper.GetField(SecurityListFields.MarketID);
+            else
+                throw new Exception($"Missing mandatory SecurityListRequestType for Security List");
+
+
 
             List<Security> securities = new List<Security>();
             foreach (zHFT.Main.Common.Wrappers.Wrapper secWr in securitiesWrapper)
@@ -63,7 +70,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             {
                 Securities = securities,
                 SecurityListRequestId = securityListReqId,
-                SecurityListRequestType = type
+                SecurityListRequestType = type,
+                Market=marketId
 
             };
 

@@ -55,6 +55,18 @@ namespace zHFT.StrategyHandler.Common.Converters
             s.ContractSize = (decimal?)(ValidateField(wrapper, SecurityFields.ContractSize) ? wrapper.GetField(SecurityFields.ContractSize) : null);
 
 
+            #region Option Fields
+            s.StrikePrice = (double?)(ValidateField(wrapper, SecurityFields.StrikePrice) ? wrapper.GetField(SecurityFields.StrikePrice) : null);
+            s.MaturityDate = (DateTime?)(ValidateField(wrapper, SecurityFields.MaturityDate) ? wrapper.GetField(SecurityFields.MaturityDate) : null);
+            s.MaturityMonthYear = (string)(ValidateField(wrapper, SecurityFields.MaturityMonthYear) ? wrapper.GetField(SecurityFields.MaturityMonthYear) : null);
+            s.PutOrCall = (PutOrCall?)(ValidateField(wrapper, SecurityFields.PutOrCall) ? wrapper.GetField(SecurityFields.PutOrCall) : null);
+            s.StrikeMultiplier = (int?)(ValidateField(wrapper, SecurityFields.StrikeMultiplier) ? wrapper.GetField(SecurityFields.StrikeMultiplier) : null);
+            s.AltIntSymbol = (string)(ValidateField(wrapper, SecurityFields.AltIntSymbol) ? wrapper.GetField(SecurityFields.AltIntSymbol) : null);
+          
+
+            #endregion
+
+
             return s;
         }
         

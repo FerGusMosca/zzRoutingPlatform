@@ -49,6 +49,10 @@
       <Project>{58606026-4268-4258-93f6-e3003941b553}</Project>
       <Name>tph.StrategyHanders.TestStrategies.TestModule.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj">
+      <Project>{D5516F31-CEFF-4A5A-85CA-29DE1F3A8156}</Project>
+      <Name>tph.StrategyHandler.SimpleCommandReceiver.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

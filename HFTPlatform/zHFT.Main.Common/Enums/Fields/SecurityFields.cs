@@ -24,13 +24,16 @@ namespace zHFT.Main.Common.Enums
         public static readonly SecurityFields SymbolSfx = new SecurityFields(12);
         public static readonly SecurityFields StrikeCurrency = new SecurityFields(13);
         public static readonly SecurityFields UnderlyingSymbol = new SecurityFields(14);
+        public static readonly SecurityFields PutOrCall = new SecurityFields(27);
+        public static readonly SecurityFields StrikeMultiplier = new SecurityFields(28);
+        public static readonly SecurityFields AltIntSymbol = new SecurityFields(29);
 
         #endregion
 
 
         #region Contract Fields
 
-        public static readonly SecurityFields Factor = new SecurityFields(14);
+
         public static readonly SecurityFields CFICode = new SecurityFields(15);
         public static readonly SecurityFields ContractMultiplier = new SecurityFields(16);
         public static readonly SecurityFields MinPriceIncrement = new SecurityFields(17);
@@ -42,7 +45,8 @@ namespace zHFT.Main.Common.Enums
         public static readonly SecurityFields ContractPositionNumber = new SecurityFields(23);
         public static readonly SecurityFields MarginRatio = new SecurityFields(24);
         public static readonly SecurityFields ContractSize = new SecurityFields(25);
-       
+        public static readonly SecurityFields Factor = new SecurityFields(26);
+
         #endregion
 
         protected SecurityFields(int pInternalValue)

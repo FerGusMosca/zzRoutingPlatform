@@ -51,9 +51,9 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public string StrikeCurrency { get; set; }
 
-        public PutOrCall PutOrCall { get; set; }
+        public PutOrCall? PutOrCall { get; set; }
 
-        public int StrikeMultiplier { get; set; }
+        public int? StrikeMultiplier { get; set; }
 
         #endregion
 
@@ -123,18 +123,20 @@ namespace zHFT.Main.BusinessEntities.Securities
         {
 
             Security cloned = new Security();
-            cloned.Symbol = Symbol;
+            cloned.SymbolSfx = SymbolSfx;
             cloned.StrikePrice = StrikePrice;
             cloned.MaturityDate = MaturityDate;
             cloned.MaturityMonthYear = MaturityMonthYear;
-           
             cloned.Currency = Currency;
-            cloned.PutOrCall = PutOrCall == PutOrCall.Call ? PutOrCall.Put : PutOrCall.Call;
+           
+            if(PutOrCall.HasValue)
+                cloned.PutOrCall = PutOrCall == zHFT.Main.Common.Enums.PutOrCall.Call ? zHFT.Main.Common.Enums.PutOrCall.Put : zHFT.Main.Common.Enums.PutOrCall.Call;
+            
             cloned.StrikeMultiplier = StrikeMultiplier;
             cloned.Exchange = Exchange;
             cloned.AltIntSymbol = AltIntSymbol ;
             cloned.SecType = SecType;
-            cloned.SymbolSfx = cloned.BuildOptionSymbol();
+            cloned.Symbol = cloned.BuildOptionSymbol();
 
             return cloned;
 
@@ -167,8 +169,21 @@ namespace zHFT.Main.BusinessEntities.Securities
         public  string BuildOptionSymbol()
         {
 
-            string rightCode = PutOrCall == PutOrCall.Call ? _CALL_PREFIX : _PUT_PREFIX;
-            string optionSymbol = $"{Symbol}{rightCode}{MaturityMonthYear}{StrikePrice.Value.ToString("0.00")}";
+            string rightCode = "?";
+            if (PutOrCall.HasValue)
+            {
+                if (PutOrCall.Value == zHFT.Main.Common.Enums.PutOrCall.Call)
+                {
+                    rightCode = _CALL_PREFIX;
+                }
+                else if (PutOrCall.Value == zHFT.Main.Common.Enums.PutOrCall.Put)
+                {
+                    rightCode = _PUT_PREFIX;
+                }
+                else throw new Exception($"PutOrCall value not recognized:{PutOrCall.Value}");
+            }
+
+            string optionSymbol = $"{SymbolSfx}{rightCode}{MaturityMonthYear}{StrikePrice.Value.ToString("0.00")}";
 
             return optionSymbol;
         }

@@ -249,6 +249,33 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 DoLog($"ERROR processing market data {ex.Message}",Constants.MessageType.Error);
             }
         }
+
+        public void ProcessSecurityList(SecurityListDTO msg)
+        {
+            try
+            {
+                List<Wrapper> securityWrapperList = new List<Wrapper>();
+
+                foreach (Security sec in msg.Securities)
+                {
+                    SecurityWrapper secWrapper = new SecurityWrapper(sec, Config);
+                    securityWrapperList.Add(secWrapper);
+                
+                }
+
+
+                DoLog($"{Config.Name}-->Received security list for Security List Req. Id {msg.SecurityListRequestId}--> Type={msg.SecurityListRequestType}", Constants.MessageType.Information);
+                SecurityListWrapper wrapper = new SecurityListWrapper(msg.SecurityListRequestId,
+                                                                      securityWrapperList,
+                                                                      msg.SecurityListRequestType, msg.Market);
+                (new Thread(ProcessIncomingAsync)).Start(wrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog($"{Config.Name} - CRITICAL ERROR processing security list:{ex.Message}", Constants.MessageType.Error);
+            }
+
+        }
         
         public  void ProcessExecutionReport(ExecutionReportDTO msg)
         {
@@ -629,7 +656,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     //Finish starting up the server
                     WebSocketClient = new WebSocketClient(Config.WebSocketURL,
                         ProcessEvent, ProcessMarketData,ProcessCandlebar, ProcessExecutionReport,
-                        ProcessHistoricalPrices,DoLog);
+                        ProcessHistoricalPrices,ProcessSecurityList,DoLog);
                     WebSocketClient.Connect();
 
                     DoLog("Websocket successfully initialized on URL:  " + Config, Constants.MessageType.Information);

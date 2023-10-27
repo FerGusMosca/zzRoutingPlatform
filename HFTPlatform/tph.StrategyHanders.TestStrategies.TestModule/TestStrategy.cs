@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.StrategyHanders.TestStrategies.TestModule.Common.Configuration;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
@@ -308,6 +310,28 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
         }
 
+        protected void ProcessSecurityList(Wrapper wrapper)
+        {
+            try
+            {
+                SecurityListWrapper secListWrapper = (SecurityListWrapper)wrapper;
+
+                SecurityListDTO secListMsg = SecurityListConverter.ConvertSecurityList(secListWrapper);
+
+                DoLog($"Processing Security List For Req Id {secListMsg.SecurityListRequestId}(Type={secListMsg.SecurityListRequestType})", MessageType.Information);
+
+                foreach (Security sec in secListMsg.Securities)
+                {
+                    DoLog($"Recv Security Symbol {sec.Symbol}", MessageType.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"{Config.Name}--> CRITICAL ERROR processing security list:{ex.Message}", MessageType.Error);
+            
+            }
+        }
 
         protected void ProcessHistoricalPrices(Wrapper wrapper)
         {
@@ -446,8 +470,14 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
                     return CMState.BuildSuccess();
                 }
+                else if (wrapper.GetAction() == Actions.SECURITY_LIST  )
+                {
+                    ProcessSecurityList(wrapper);
 
-               
+                    return CMState.BuildSuccess();
+                }
+
+
                 else
                     return CMState.BuildFail(new Exception(string.Format("Could not process action {0} for strategy {1}", wrapper.GetAction().ToString(), Config.Name)));
             }

@@ -64,8 +64,29 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Security.Exchange;
             else if (sField == SecurityFields.Halted)
                 return Security.Halted;
+            else if (sField == SecurityFields.SecurityDesc)
+                return Security.SecurityDesc;
+            else if (sField == SecurityFields.StrikePrice)
+                return Security.StrikePrice;
+            else if (sField == SecurityFields.MaturityDate)
+                return Security.MaturityDate;
+            else if (sField == SecurityFields.MaturityMonthYear)
+                return Security.MaturityMonthYear;
+            else if (sField == SecurityFields.SymbolSfx)
+                return Security.SymbolSfx;
+            else if (sField == SecurityFields.StrikeCurrency)
+                return Security.StrikeCurrency;
+            else if (sField == SecurityFields.UnderlyingSymbol)
+                return Security.UnderlyingSymbol;
+            else if (sField == SecurityFields.PutOrCall)
+                return Security.PutOrCall;
+            else if (sField == SecurityFields.StrikeMultiplier)
+                return Security.StrikeMultiplier;
+            else if (sField == SecurityFields.AltIntSymbol)
+                return Security.AltIntSymbol;
             else if (sField == SecurityFields.MarketData)
                 return new MarketDataWrapper(Security, Config);
+
 
             return ExecutionReportFields.NULL;
         }

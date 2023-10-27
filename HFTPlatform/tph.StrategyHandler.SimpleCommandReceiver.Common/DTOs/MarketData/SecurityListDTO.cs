@@ -12,11 +12,15 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
     {
         #region Public Attributes
 
+        public string Msg = "SecurityListMsg";
+
         public int SecurityListRequestId { get; set; }
 
         public SecurityListRequestType SecurityListRequestType { get; set; }
 
         public List<Security> Securities { get; set; }
+
+        public string Market { get; set; }
 
         #endregion
     }

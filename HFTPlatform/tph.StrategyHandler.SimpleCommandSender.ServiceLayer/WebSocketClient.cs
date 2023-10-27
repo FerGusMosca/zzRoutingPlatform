@@ -24,7 +24,10 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
     public delegate void ProcessExecutionReport(ExecutionReportDTO msg);
     
     public delegate void ProcessHistoricalPrices(HistoricalPricesDTO msg);
-    
+
+    public delegate void ProcessSecurityList(SecurityListDTO msg);
+
+
     public class WebSocketClient
     {
         #region Protected Attributes
@@ -39,7 +42,9 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
         protected ProcessExecutionReport OnExecutionReport { get; set; }
         
         protected ProcessHistoricalPrices OnHistoricalPrices { get; set; }
-        
+
+        protected ProcessSecurityList OnSecurityList { get; set; }
+
         protected  OnLogMessage OnLogMessage { get; set; }
 
         protected ClientWebSocket SubscriptionWebSocket { get; set; }
@@ -56,6 +61,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                                 ProcessCandlebar pOnProcessCandlebar,
                                 ProcessExecutionReport pOnExecutionReport,
                                 ProcessHistoricalPrices pOnHistoricalPrices,
+                                ProcessSecurityList pOnProcessSecurityList,
                                 OnLogMessage pOnLogMessage)
         {
             WebSocketURL = pWebSocketURL;
@@ -64,6 +70,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
             OnCandlebar = pOnProcessCandlebar;
             OnExecutionReport = pOnExecutionReport;
             OnHistoricalPrices = pOnHistoricalPrices;
+            OnSecurityList= pOnProcessSecurityList;
             OnLogMessage = pOnLogMessage;
             
             MessagesQueue=new ConcurrentQueue<string>();
@@ -139,6 +146,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                                 OnMarketData(JsonConvert.DeserializeObject<MarketDataDTO>(resp));
                             else if (wsResp.Msg == "CandlebarMsg")
                                 OnCandlebar(JsonConvert.DeserializeObject<CandlebarDTO>(resp));
+                            else if (wsResp.Msg == "SecurityListMsg")
+                                OnSecurityList(JsonConvert.DeserializeObject<SecurityListDTO>(resp));
                             else if (wsResp.Msg == "ExecutionReportMsg")
                             {
                                 ExecutionReport execRep = JsonConvert.DeserializeObject<ExecutionReport>(resp);

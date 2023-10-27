@@ -127,7 +127,6 @@ namespace zHFT.MarketClient.IB.Common.Converters
                 {
                     
                     Security secCall = new Security();
-                    secCall.Symbol = tradingClass;
                     secCall.StrikePrice = strike;
                     secCall.SecType = SecurityType.OPT;
                     secCall.MaturityDate = (DateTime?)DateTime.ParseExact(exp, "yyyyMMdd", CultureInfo.InvariantCulture);
@@ -137,8 +136,8 @@ namespace zHFT.MarketClient.IB.Common.Converters
                     secCall.StrikeMultiplier = Convert.ToInt32(multiplier);
                     secCall.Exchange = exchange;
                     secCall.AltIntSymbol = underlyingConId.ToString();
-                    secCall.SymbolSfx = secCall.BuildOptionSymbol();
-
+                    secCall.SymbolSfx = tradingClass;
+                    secCall.Symbol = secCall.BuildOptionSymbol();
 
                     optionChain.Add(secCall);
                     Security secPut = secCall.CallToPut();
