@@ -39,7 +39,7 @@ namespace tph.TrendlineTurtles.DataAccessLayer
                     cmd.Parameters.Add(new SqlParameter("@OpeningDate", pos.OpeningDate));
                     cmd.Parameters.Add(new SqlParameter("@ClosingDate", pos.ClosingDate));
                     cmd.Parameters.Add(new SqlParameter("@Symbol",pos.OpeningPosition.Security.Symbol ));
-                    cmd.Parameters.Add(new SqlParameter("@Qty", pos.Qty));
+                    cmd.Parameters.Add(new SqlParameter("@Qty", pos.OpeningPosition.GetPositionQty()));
                     cmd.Parameters.Add(new SqlParameter("@TradeDirection", pos.TradeDirection));
                     cmd.Parameters.Add(new SqlParameter("@OpeningPrice", pos.OpeningPrice));
                     cmd.Parameters.Add(new SqlParameter("@LastPrice", pos.LastPrice));

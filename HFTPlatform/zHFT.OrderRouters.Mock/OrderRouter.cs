@@ -153,7 +153,7 @@ namespace zHFT.OrderRouters.Mock
 
                 if (cancelOrder != null)
                 {
-
+                    PendingToExecuteOrders.Remove(cancelOrder);
                     ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Canceled, OrdStatus.Canceled,
                                                                                    0, cancelOrder.OrderQty.Value, null, null,null, cancelOrder);
 
