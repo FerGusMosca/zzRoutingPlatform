@@ -19,6 +19,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common;
 using zHFT.MarketClient.Common.Common.Wrappers;
@@ -366,22 +367,30 @@ namespace tph.MarketClient.IB.Common
                     {
                         Contract contract = OptionChainRequested[reqId];
 
-                        List<Security> optionChain = SecurityConverter.BuildOptionChainSecurities(reqId, contract.Symbol, contract.Currency, 
-                                                                                                  exchange, underlyingConId, tradingClass,
-                                                                                                  multiplier, expirations, strikes);
-
-                        List<Wrapper> secWrappers = new List<Wrapper>();
-                        foreach (Security option in optionChain)
+                        if (contract.Exchange == exchange)
                         {
-                            SecurityWrapper wrapper = new SecurityWrapper(option, null) ;
-                            secWrappers.Add(wrapper) ;  
 
+                            List<Security> optionChain = SecurityConverter.BuildOptionChainSecurities(reqId, contract.Symbol, contract.Currency,
+                                                                                                      exchange, underlyingConId, tradingClass,
+                                                                                                      multiplier, expirations, strikes);
+
+                            List<Wrapper> secWrappers = new List<Wrapper>();
+                            foreach (Security option in optionChain)
+                            {
+                                SecurityWrapper wrapper = new SecurityWrapper(option, null);
+                                secWrappers.Add(wrapper);
+
+                            }
+
+
+                            SecurityListWrapper wrapperList = new SecurityListWrapper(reqId, secWrappers, zHFT.Main.Common.Enums.SecurityListRequestType.OptionChain, "IB");
+
+                            (new Thread(OnPublishAsync)).Start(wrapperList);
                         }
-
-
-                        SecurityListWrapper wrapperList = new SecurityListWrapper(reqId, secWrappers, zHFT.Main.Common.Enums.SecurityListRequestType.OptionChain, "IB");
-
-                        (new Thread(OnPublishAsync)).Start(wrapperList);
+                        else
+                        {
+                            DoLog($"Ignoring contracts for not wanted exchange {exchange}", Constants.MessageType.Debug);
+                        }
 
                     }
                 }

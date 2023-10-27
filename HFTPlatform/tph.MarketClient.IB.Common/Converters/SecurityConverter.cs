@@ -132,11 +132,14 @@ namespace zHFT.MarketClient.IB.Common.Converters
                     secCall.MaturityDate = (DateTime?)DateTime.ParseExact(exp, "yyyyMMdd", CultureInfo.InvariantCulture);
                     secCall.MaturityMonthYear = exp.Substring(0, 6);
                     secCall.Currency = currency;
+                    secCall.StrikeCurrency = currency;
                     secCall.PutOrCall = PutOrCall.Call;
                     secCall.StrikeMultiplier = Convert.ToInt32(multiplier);
                     secCall.Exchange = exchange;
                     secCall.AltIntSymbol = underlyingConId.ToString();
                     secCall.SymbolSfx = tradingClass;
+                    secCall.UnderlyingSymbol= tradingClass;
+                    secCall.StrikeCurrency=currency;
                     secCall.Symbol = secCall.BuildOptionSymbol();
 
                     optionChain.Add(secCall);

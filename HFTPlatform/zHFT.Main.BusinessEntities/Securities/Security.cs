@@ -135,6 +135,8 @@ namespace zHFT.Main.BusinessEntities.Securities
             cloned.StrikeMultiplier = StrikeMultiplier;
             cloned.Exchange = Exchange;
             cloned.AltIntSymbol = AltIntSymbol ;
+            cloned.UnderlyingSymbol= UnderlyingSymbol ;
+            cloned.StrikeCurrency= StrikeCurrency;
             cloned.SecType = SecType;
             cloned.Symbol = cloned.BuildOptionSymbol();
 
