@@ -755,7 +755,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interactive Brokers", "Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstructionsProcessor.IBv2.Websocket.App", "Test\InstructionsProcessor.IBv2.Websocket.App\InstructionsProcessor.IBv2.Websocket.App.csproj", "{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerrankTest", "HackerrrankTest\HackerrankTest.csproj", "{6D185A65-FAA0-45D6-887E-4715B260C1D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerrankTest", "HackerrrankTest\HackerrankTest.csproj", "{6D185A65-FAA0-45D6-887E-4715B260C1D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HistoricalPricesDownloader", "HistoricalPricesDownloader", "{35908695-51AD-4A7F-95DC-2F8886A0CAE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.HistoricalPricesDownloader", "tph.StrategyHandler.HistoricalPricesDownloader\tph.StrategyHandler.HistoricalPricesDownloader.csproj", "{51662D41-AC72-463D-9D2A-690C4E049A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.HistoricalPricesDownloader.Common", "tph.StrategyHandler.HistoricalPricesDownloader.Common\tph.StrategyHandler.HistoricalPricesDownloader.Common.csproj", "{2E9709ED-F277-454F-8A26-763701CF73DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HistoricalPricesDownloader", "HistoricalPricesDownloader", "{D84CA362-A905-4D21-BFAE-B0A85935A1C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoricalPricesDownloader", "HistoricalPricesDownloader\HistoricalPricesDownloader.csproj", "{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1791,6 +1801,18 @@ Global
 		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D185A65-FAA0-45D6-887E-4715B260C1D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51662D41-AC72-463D-9D2A-690C4E049A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51662D41-AC72-463D-9D2A-690C4E049A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51662D41-AC72-463D-9D2A-690C4E049A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51662D41-AC72-463D-9D2A-690C4E049A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E9709ED-F277-454F-8A26-763701CF73DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9709ED-F277-454F-8A26-763701CF73DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9709ED-F277-454F-8A26-763701CF73DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9709ED-F277-454F-8A26-763701CF73DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2161,6 +2183,11 @@ Global
 		{2994B4D9-799E-4185-914E-E8E5A100A9A2} = {B6B3A487-FCD3-4897-A920-9ECB29A59F25}
 		{EB2CCE9D-2455-442A-B3E2-CE806EDE7C60} = {2994B4D9-799E-4185-914E-E8E5A100A9A2}
 		{6D185A65-FAA0-45D6-887E-4715B260C1D8} = {2FF68C69-8003-4781-8DDD-DE08F76325BB}
+		{35908695-51AD-4A7F-95DC-2F8886A0CAE3} = {38C64FBF-EDB4-4C24-8CC7-84C9F3E33696}
+		{51662D41-AC72-463D-9D2A-690C4E049A23} = {35908695-51AD-4A7F-95DC-2F8886A0CAE3}
+		{2E9709ED-F277-454F-8A26-763701CF73DF} = {35908695-51AD-4A7F-95DC-2F8886A0CAE3}
+		{D84CA362-A905-4D21-BFAE-B0A85935A1C7} = {0865D8DF-AF6F-4A09-B292-FD424324308D}
+		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F} = {D84CA362-A905-4D21-BFAE-B0A85935A1C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}
