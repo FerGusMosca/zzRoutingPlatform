@@ -28,7 +28,7 @@
   <Exchange>NYSE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>04:51 PM</ClosingTime>
+  <ClosingTime>08:51 PM</ClosingTime>
 
   <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 

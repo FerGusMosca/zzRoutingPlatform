@@ -100,8 +100,8 @@ namespace tph.BOBDayTurtles.LogicLayer
                         Exchange = Config.Exchange
                     };
 
-                    MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(GetConfig().OpenWindow,
-                        GetConfig().CloseWindow,
+                    MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(GetWindow(symbol, true),
+                        GetWindow(symbol, false),
                         GetConfig().ExitOnMMov,
                         GetConfig().StopLossForOpenPositionPct,
                         GetConfig().OuterTrendlineSpan)
