@@ -9,6 +9,8 @@
 
         public static readonly HistoricalPricesFields Interval = new HistoricalPricesFields(4);
 
+        public static readonly HistoricalPricesFields RequestId = new HistoricalPricesFields(5);
+
         protected HistoricalPricesFields(int pInternalValue) : base(pInternalValue)
         {
         

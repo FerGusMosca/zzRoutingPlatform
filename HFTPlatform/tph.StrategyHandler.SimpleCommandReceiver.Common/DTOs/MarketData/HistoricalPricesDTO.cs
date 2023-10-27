@@ -3,18 +3,13 @@ using zHFT.Main.Common.Enums;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
 {
-    public class HistoricalPricesDTO
+    public class HistoricalPricesDTO: zHFT.StrategyHandler.Common.DTO.HistoricalPricesDTO
     {
         #region Public Attributes
         
         public string Msg = "HistoricalPricesMsg";
 
-        public string Symbol { get; set; }
-
-        public CandleInterval Interval { get; set; }
-        
-        public List<zHFT.Main.BusinessEntities.Market_Data.MarketData> MarketData { get; set; }
-
+  
         #endregion
     }
 }

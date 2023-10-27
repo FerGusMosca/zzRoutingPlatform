@@ -30,7 +30,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader.DAL
 
         #region Public Methods
 
-        public void PersistPortfolioPositionTrade(string symbol, CandleInterval interval, MarketData md)
+        public void Persist(string symbol, CandleInterval interval, MarketData md)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {

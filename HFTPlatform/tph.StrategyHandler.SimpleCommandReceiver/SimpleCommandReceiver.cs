@@ -226,28 +226,15 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 lock (tLock)
                 {
                     HistoricalPricesWrapper historicalPricesWrapper = (HistoricalPricesWrapper) wrapper;
+
+                    zHFT.StrategyHandler.Common.DTO.HistoricalPricesDTO extrDto =  HistoricalPricesConverter.ConvertHistoricalPrices(historicalPricesWrapper);
                     
-                    Security sec= (Security) historicalPricesWrapper.GetField(HistoricalPricesFields.Security);
-                    List<Wrapper> mdWrappers = (List<Wrapper>) historicalPricesWrapper.GetField(HistoricalPricesFields.Candles);
-                    CandleInterval interval = (CandleInterval)historicalPricesWrapper.GetField(HistoricalPricesFields.Interval);
-
-
-                    List<MarketData> marketDataList= new List<MarketData>();
-                    if (mdWrappers != null)
-                    {
-                        foreach (MarketDataWrapper mdWrp in mdWrappers)
-                        {
-
-                            MarketData md = MarketDataConverter.GetMarketData(mdWrp, Config);
-                            marketDataList.Add(md);
-                        }
-                    }
-
                     HistoricalPricesDTO dto = new HistoricalPricesDTO()
                     {
-                        Symbol = sec != null ? sec.Symbol : "?",
-                        Interval= interval,
-                        MarketData = marketDataList
+                        Symbol = extrDto.Symbol,
+                        Interval= extrDto.Interval,
+                        MarketData = extrDto.MarketData,
+                        ReqId=extrDto.ReqId
                     };
                     
                     Server.PublishEntity<HistoricalPricesDTO>(dto);

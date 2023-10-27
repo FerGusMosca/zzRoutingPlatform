@@ -49,10 +49,12 @@
     <Compile Include="Configuration\BaseStrategyConfiguration.cs" />
     <Compile Include="Configuration\StrategyConfiguration.cs" />
     <Compile Include="Converters\ExecutionReportConverter.cs" />
+    <Compile Include="Converters\HistoricalPricesConverter.cs" />
     <Compile Include="Converters\MarketDataConverter.cs" />
     <Compile Include="Converters\PositionConverter.cs" />
     <Compile Include="Converters\SecurityConverter.cs" />
     <Compile Include="Converters\SecurityListConverter.cs" />
+    <Compile Include="DTO\HistoricalPricesDTO.cs" />
     <Compile Include="enums\FeeTypePerTrade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wrappers\CancelAllPositionsWrapper.cs" />
@@ -81,7 +83,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Util" />
+    <Folder Include="Util\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

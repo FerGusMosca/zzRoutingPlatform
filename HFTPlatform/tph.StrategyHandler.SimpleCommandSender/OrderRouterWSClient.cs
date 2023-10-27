@@ -200,7 +200,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                             mdWrappers.Add(mdWrapper);
                         }
 
-                        HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(mainSec, msg.Interval, mdWrappers);
+                        HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(msg.ReqId,mainSec, msg.Interval, mdWrappers);
                         DoLog($"{Config.Name}--> Recv {mdWrappers.Count} prices for symbol :{mainSec.Symbol}",
                             Constants.MessageType.Information);
                         (new Thread(ProcessIncomingAsync)).Start(histWrapper);

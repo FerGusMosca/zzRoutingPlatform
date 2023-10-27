@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using tph.StrategyHandler.HistoricalPricesDownloader.Common.Configuration;
 using tph.StrategyHandler.HistoricalPricesDownloader.DAL;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.Configuration;
@@ -14,6 +15,9 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
+using zHFT.StrategyHandler.Common.Converters;
+using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.LogicLayer;
 using static zHFT.Main.Common.Util.Constants;
@@ -44,7 +48,42 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
 
         protected CMState ProcessHistoricalPrices(Wrapper wrapper)
         {
-            return CMState.BuildSuccess();
+            try
+            {
+
+                HistoricalPricesWrapper histWrapper = (HistoricalPricesWrapper)wrapper;
+
+                zHFT.StrategyHandler.Common.DTO.HistoricalPricesDTO dto = HistoricalPricesConverter.ConvertHistoricalPrices(histWrapper);
+
+
+                if (HistoricalPricesRequests.ContainsKey(dto.ReqId))
+                {
+                    DoLog($"{Config.Name}-> Processing historical prices for symbol {dto.Symbol}:{dto.MarketData.Count} prices found", MessageType.Information);
+
+                    foreach (MarketData md in dto.MarketData)
+                    {
+                        DoLog($"{Config.Name} Persisting market data for date {md.GetDateTime()}:{md.ToString()}", MessageType.Information);
+                        CandleManager.Persist(dto.Symbol, dto.Interval, md);
+
+                    }
+
+
+                    DoLog($"{Config.Name}--> All the pricess were succesfully persisted", MessageType.Information);
+                }
+                else {
+
+                    DoLog($"{Config.Name}--> Ignoring unknwon historical price for request Id {dto.ReqId}", MessageType.Information);
+                
+                }
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                DoLog($"{Config.Name}--> CRITICAL ERROR Processing historical prices:{ex.Message}",MessageType.Error);
+                return CMState.BuildFail(ex);
+            
+            }
         }
 
         protected void DoSendAsync(object param)
@@ -82,8 +121,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
                         reqId,symbol, from, to, interval,Config.Currency, secType);
 
                     HistoricalPricesRequests.Add(reqId, symbol);
-                    //TODO Uncomment request
-                    //(new Thread(DoSendAsync)).Start(wrapper);
+                    (new Thread(DoSendAsync)).Start(wrapper);
                     
                     Thread.Sleep(Config.PacingBtwRequests);//Some pacing for safety
                 }
