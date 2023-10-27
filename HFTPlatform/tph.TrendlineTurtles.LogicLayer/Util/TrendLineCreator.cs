@@ -182,7 +182,9 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int take = endIndex-startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            if (!rangePrices.Any(x => GetClosingPrice(x) < GetClosingPrice(currentPrice)) && (rangePrices.Count == take))
+            MarketData lowerPrice = rangePrices.Where(x => GetClosingPrice(x) < GetClosingPrice(currentPrice)).FirstOrDefault();
+
+            if (lowerPrice==null && (rangePrices.Count == take))
             //if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
             {
                 //return true;
@@ -245,7 +247,9 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int take = endIndex - startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            if (!rangePrices.Any(x => GetClosingPrice(x) > GetClosingPrice(currentPrice)) &&(rangePrices.Count == take))
+            MarketData higherPrice = rangePrices.Where(x => GetClosingPrice(x) > GetClosingPrice(currentPrice)).FirstOrDefault();
+
+            if (higherPrice==null && (rangePrices.Count == take))
             //if (!rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) &&(rangePrices.Count == take))
             {
                 //We avoid double trendlines because of equal highes/lowest
