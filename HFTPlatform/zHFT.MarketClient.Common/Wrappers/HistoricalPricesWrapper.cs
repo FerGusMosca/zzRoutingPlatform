@@ -10,10 +10,11 @@ namespace zHFT.MarketClient.Common.Common.Wrappers
         
         #region Constructors
 
-        public HistoricalPricesWrapper(Security pSecurity,List<Wrapper> candlesWrapper)
+        public HistoricalPricesWrapper(Security pSecurity,CandleInterval pInterval,List<Wrapper> candlesWrapper)
         {
             CandlesWrapper = candlesWrapper;
             Security = pSecurity;
+            CandleInterval = CandleInterval;
         }
 
         #endregion
@@ -23,9 +24,11 @@ namespace zHFT.MarketClient.Common.Common.Wrappers
         
         protected Security Security { get; set; }
         protected List<Wrapper> CandlesWrapper { get; set; }
-        
+
+        protected CandleInterval CandleInterval { get; set; }
+
         #endregion
-        
+
         #region Public Methods
         public override object GetField(Fields field)
         {
@@ -39,6 +42,8 @@ namespace zHFT.MarketClient.Common.Common.Wrappers
                 return Security;
             else if (hpField == HistoricalPricesFields.Candles)
                 return CandlesWrapper;
+            else if (hpField == HistoricalPricesFields.Interval)
+                return CandleInterval;
             else if (hpField == HistoricalPricesFields.NULL)//default
                 return CandlesWrapper;
             else

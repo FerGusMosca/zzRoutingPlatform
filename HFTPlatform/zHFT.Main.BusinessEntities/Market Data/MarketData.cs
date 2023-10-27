@@ -79,6 +79,19 @@ namespace zHFT.Main.BusinessEntities.Market_Data
 
         }
 
+        public DateTime? GetReferenceDateTime()
+        {
+            if (MDEntryDate.HasValue)
+                return MDEntryDate.Value;
+            else if (MDLocalEntryDate.HasValue)
+                return MDLocalEntryDate.Value;
+            else
+            {
+                throw new Exception($"Datetime cannot be null for market data");
+            }
+
+        }
+
         public override string ToString()
         {
             return string.Format(

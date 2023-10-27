@@ -229,8 +229,9 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                     
                     Security sec= (Security) historicalPricesWrapper.GetField(HistoricalPricesFields.Security);
                     List<Wrapper> mdWrappers = (List<Wrapper>) historicalPricesWrapper.GetField(HistoricalPricesFields.Candles);
+                    CandleInterval interval = (CandleInterval)historicalPricesWrapper.GetField(HistoricalPricesFields.Interval);
 
-                   
+
                     List<MarketData> marketDataList= new List<MarketData>();
                     if (mdWrappers != null)
                     {
@@ -245,6 +246,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                     HistoricalPricesDTO dto = new HistoricalPricesDTO()
                     {
                         Symbol = sec != null ? sec.Symbol : "?",
+                        Interval= interval,
                         MarketData = marketDataList
                     };
                     

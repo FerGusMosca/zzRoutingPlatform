@@ -17,6 +17,7 @@ using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common;
@@ -709,7 +710,7 @@ namespace tph.MarketClient.IB.Common
                         }
 
 
-                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(mainSec,marketDataWrapper);
+                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(mainSec,CandleInterval.Minute_1,marketDataWrapper);
                         HistoricalPricesRequest.Remove(reqId);
                         (new Thread(OnPublishAsync)).Start(histWrp);
                     }

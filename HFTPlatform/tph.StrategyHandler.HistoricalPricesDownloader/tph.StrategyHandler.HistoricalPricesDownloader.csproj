@@ -49,6 +49,10 @@
       <Project>{2E9709ED-F277-454F-8A26-763701CF73DF}</Project>
       <Name>tph.StrategyHandler.HistoricalPricesDownloader.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.HistoricalPricesDownloader.DAL\tph.StrategyHandler.HistoricalPricesDownloader.DAL.csproj">
+      <Project>{800C6964-BA92-4892-82AA-018D1C2B2716}</Project>
+      <Name>tph.StrategyHandler.HistoricalPricesDownloader.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

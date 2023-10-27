@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.StrategyHandler.HistoricalPricesDownloader.Common.Configuration;
+using tph.StrategyHandler.HistoricalPricesDownloader.DAL;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.Configuration;
@@ -33,6 +34,8 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
         protected OnMessageReceived OnMessageRcv { get; set; }
 
         protected Dictionary<int,string> HistoricalPricesRequests { get; set; }
+
+        protected CandleManager CandleManager { get; set; }
 
         #endregion
 
@@ -117,7 +120,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
             {
 
                 HistoricalPricesRequests = new Dictionary<int, string>();
-                //TODO Initialize Managers
+                CandleManager = new CandleManager(Config.ConnectionString);
 
                 RequestHistoricalPrices();
 

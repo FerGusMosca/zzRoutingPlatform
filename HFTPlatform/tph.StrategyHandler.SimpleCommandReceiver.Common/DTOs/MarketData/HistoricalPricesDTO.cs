@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using zHFT.Main.Common.Enums;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
 {
@@ -9,6 +10,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public string Msg = "HistoricalPricesMsg";
 
         public string Symbol { get; set; }
+
+        public CandleInterval Interval { get; set; }
         
         public List<zHFT.Main.BusinessEntities.Market_Data.MarketData> MarketData { get; set; }
 

@@ -767,6 +767,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HistoricalPricesDownloader"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoricalPricesDownloader", "HistoricalPricesDownloader\HistoricalPricesDownloader.csproj", "{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.HistoricalPricesDownloader.DAL", "tph.StrategyHandler.HistoricalPricesDownloader.DAL\tph.StrategyHandler.HistoricalPricesDownloader.DAL.csproj", "{800C6964-BA92-4892-82AA-018D1C2B2716}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1813,6 +1815,10 @@ Global
 		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{800C6964-BA92-4892-82AA-018D1C2B2716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800C6964-BA92-4892-82AA-018D1C2B2716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800C6964-BA92-4892-82AA-018D1C2B2716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800C6964-BA92-4892-82AA-018D1C2B2716}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2188,6 +2194,7 @@ Global
 		{2E9709ED-F277-454F-8A26-763701CF73DF} = {35908695-51AD-4A7F-95DC-2F8886A0CAE3}
 		{D84CA362-A905-4D21-BFAE-B0A85935A1C7} = {0865D8DF-AF6F-4A09-B292-FD424324308D}
 		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F} = {D84CA362-A905-4D21-BFAE-B0A85935A1C7}
+		{800C6964-BA92-4892-82AA-018D1C2B2716} = {35908695-51AD-4A7F-95DC-2F8886A0CAE3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}
