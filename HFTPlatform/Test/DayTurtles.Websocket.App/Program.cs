@@ -30,9 +30,6 @@ namespace DayTurtles.Wensocket.App
         public static void Main(string[] args)
         {
 
-            DateTime inpuDate = DateTime.ParseExact("07:05:45PM", "hh:mm:sstt", CultureInfo.InvariantCulture);
-            Console.WriteLine(inpuDate.ToString("HH:mm:ss"));
-
             string archivoConfig = Const.ConfigFileDefault;
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             archivoConfig = Directory.GetCurrentDirectory() + "\\" + archivoConfig;

@@ -207,21 +207,38 @@ namespace tph.TrendlineTurtles.BusinessEntities
         #endregion
 
         #region Privte Methods
-        
-        private int GetSpan(DateTime start, DateTime end,CandleInterval CandleInterval)
-        {
 
-            if (CandleInterval == CandleInterval.Minute_1)
-                return Convert.ToInt32((end - start).TotalMinutes);
-            else if (CandleInterval == CandleInterval.HOUR_1)
-                return Convert.ToInt32((end - start).TotalHours);
-            else if (CandleInterval == CandleInterval.DAY)
-                return Convert.ToInt32((end - start).TotalDays);
-            else
-            {
-                throw new Exception(string.Format("Trendline Creator.GetSpan - Candle Interval not implemented:{0}",
-                    CandleInterval));
-            }
+        private int CountCandlesBetweenDates(List<MarketData> prices,DateTime start, DateTime end)
+        {
+            List<MarketData> tradingUnitsInPeriod = prices.Where(x => DateTime.Compare(x.MDEntryDate.Value, start) >= 0
+                                                                            && DateTime.Compare(x.MDEntryDate.Value, end) <= 0).ToList();
+
+            int count = tradingUnitsInPeriod.Count - 1;
+
+
+            if (count < 0)
+                throw new Exception(string.Format($"Start date {start} older than historical prices end {end}"));
+
+            return count;
+
+        }
+        
+        private int GetSpan(List<MarketData> prices,DateTime start, DateTime end,CandleInterval CandleInterval)
+        {
+            return CountCandlesBetweenDates(prices, start, end);
+
+            //if (CandleInterval == CandleInterval.Minute_1)
+            //    return Convert.ToInt32((end - start).TotalMinutes);
+                
+            //else if (CandleInterval == CandleInterval.HOUR_1)
+            //    return Convert.ToInt32((end - start).TotalHours);
+            //else if (CandleInterval == CandleInterval.DAY)
+            //    return Convert.ToInt32((end - start).TotalDays);
+            //else
+            //{
+            //    throw new Exception(string.Format("Trendline Creator.GetSpan - Candle Interval not implemented:{0}",
+            //        CandleInterval));
+            //}
         }
 
         private double? GetPriceToUse(MarketData price)
@@ -242,19 +259,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         // Minutes, Hours, Days
         private int CountTradingUnits(List<MarketData> allHistoricalPrices,DateTime startDate,DateTime endDate)
         {
-            //int count = GetSpan(startDate, endDate, CandleInterval.Minute_1) ;
-
-            List<MarketData> tradingUnitsInPeriod = allHistoricalPrices.Where(x => DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
-                                                                                    && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
-
-            int count = tradingUnitsInPeriod.Count - 1;
-
-
-            if (count < 0)
-                throw new Exception(string.Format("Start date {0} older than historical prices end", startDate));
-
-            return count;
-        
+            return GetSpan(allHistoricalPrices,startDate, endDate, CandleInterval.Minute_1) ;
         }
 
         #endregion
@@ -262,10 +267,10 @@ namespace tph.TrendlineTurtles.BusinessEntities
         #region Public Methods
 
         //Given a certain date, it estimates the trendprice
-        public double CalculateTrendPrice(DateTime date, List<MarketData> allHistoricalPrices)
+        public double CalculateTrendPrice(DateTime date, List<MarketData> prices)
         {
             if(AllHistoricalPrices==null)
-                AllHistoricalPrices = allHistoricalPrices;
+                AllHistoricalPrices = prices;
 
             double finalPrice = 0;
 
@@ -291,30 +296,31 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
         public bool IsSoftSlope(List<MarketData> allHistoricalPrices)
         {
-            if (TrendlineType == TrendlineType.Resistance)
-            {
+            return true;
+            //if (TrendlineType == TrendlineType.Resistance)
+            //{
 
-                double degSlope = GetSlopeDegrees();
+            //    double degSlope = GetSlopeDegrees();
 
-                if (degSlope > 0)
-                    return degSlope < _LONG_SOFT_UPWARD_SLOPE;
-                else
-                {
-                    //We avoid slopes that are too deep
-                    return degSlope>(-1 * _LONG_SOFT_DOWNARD_SLOPE);
-                }
-            }
-            else if (TrendlineType == TrendlineType.Support)
-            {
-                double degSlope = GetSlopeDegrees();
+            //    if (degSlope > 0)
+            //        return degSlope < _LONG_SOFT_UPWARD_SLOPE;
+            //    else
+            //    {
+            //        //We avoid slopes that are too deep
+            //        return degSlope>(-1 * _LONG_SOFT_DOWNARD_SLOPE);
+            //    }
+            //}
+            //else if (TrendlineType == TrendlineType.Support)
+            //{
+            //    double degSlope = GetSlopeDegrees();
                 
-                if (degSlope > 0)
-                    return degSlope < _SHORT_SOFT_UPWARD_SLOPE;
-                else
-                    return degSlope>(-1 * _SHORT_SOFT_DOWNARD_SLOPE);
-            }
-            else
-                return true;
+            //    if (degSlope > 0)
+            //        return degSlope < _SHORT_SOFT_UPWARD_SLOPE;
+            //    else
+            //        return degSlope>(-1 * _SHORT_SOFT_DOWNARD_SLOPE);
+            //}
+            //else
+            //    return true;
         
         }
 
@@ -356,9 +362,9 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
         }
 
-        public bool ValidDistanceToEndDate(DateTime date, int outerSpan,CandleInterval candleInterval)
+        public bool ValidDistanceToEndDate(List<MarketData> prices,DateTime date, int outerSpan,CandleInterval candleInterval)
         {
-            int elapsed = GetSpan(EndDate, date, candleInterval);
+            int elapsed = GetSpan(prices,EndDate, date, candleInterval);
             return elapsed >= outerSpan;
         }
 

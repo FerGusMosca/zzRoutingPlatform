@@ -77,7 +77,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
             bool found = false;
             List<Trendline> activeResistances = Resistances.Where(x => x.TrendlineType == TrendlineType.Resistance
                                                                        && !x.IsBroken(lastClosedCandle.MDEntryDate)
-                                                                       && x.ValidDistanceToEndDate(lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
+                                                                       && x.ValidDistanceToEndDate(histPrices,lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
                                                                        && x.IsSoftSlope(histPrices)).ToList();
             foreach (Trendline trendline in activeResistances)
             {
@@ -110,7 +110,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
             bool found = false;
             List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
                                                                  && !x.IsBroken(lastClosedCandle.MDEntryDate)
-                                                                 && x.ValidDistanceToEndDate(lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
+                                                                 && x.ValidDistanceToEndDate(histPrices,lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
                                                                  && x.IsSoftSlope(histPrices)).ToList();
             foreach (Trendline trendline in activeSupports)
             {

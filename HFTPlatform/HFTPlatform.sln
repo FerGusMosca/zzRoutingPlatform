@@ -739,7 +739,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandSender.Common", "tph.StrategyHandler.SimpleCommandSender.Common\tph.StrategyHandler.SimpleCommandSender.Common.csproj", "{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTurtles.Websocket.App", "Test\DayTurtles.Websocket.App\DayTurtles.Websocket.App.csproj", "{76F0699D-C791-41D1-B54D-8ACC18693F83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayTurtles.Websocket.IB.App", "Test\DayTurtles.Websocket.App\DayTurtles.Websocket.IB.App.csproj", "{76F0699D-C791-41D1-B54D-8ACC18693F83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.SimpleCommandSender.ServiceLayer", "tph.StrategyHandler.SimpleCommandSender.ServiceLayer\tph.StrategyHandler.SimpleCommandSender.ServiceLayer.csproj", "{C48D6C0C-8892-4FE9-B4FA-6209E42C75E4}"
 EndProject

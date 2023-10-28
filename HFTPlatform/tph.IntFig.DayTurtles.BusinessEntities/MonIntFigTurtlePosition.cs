@@ -43,7 +43,7 @@ namespace tph.IntFig.DayTurtles.BusinessEntities
             MarketData lastClosedCandle = GetLastFinishedCandle();
             List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
                                                                  && !x.IsBroken(lastClosedCandle.MDEntryDate)
-                                                                 && x.ValidDistanceToEndDate(lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)).ToList();
+                                                                 && x.ValidDistanceToEndDate(histPrices,lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)).ToList();
 
             foreach (Trendline trendline in activeSupports)
             {
