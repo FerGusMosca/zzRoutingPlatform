@@ -30,13 +30,13 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
         public override bool LongSignalTriggered()
         {
-            return EvalResistanceBroken();
+            return EvalResistanceBroken() && IsHigherThanMMov(CloseWindow, false);
             
         }
         
         public override bool ShortSignalTriggered()
         {
-            return EvalSupportBroken();
+            return EvalSupportBroken() && !IsHigherThanMMov(CloseWindow, false);
         }
         
         public override string SignalTriggered()

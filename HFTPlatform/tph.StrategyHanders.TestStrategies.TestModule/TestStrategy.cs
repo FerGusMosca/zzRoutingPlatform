@@ -20,9 +20,11 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
+using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandlers.Common.Converters;
 using static zHFT.Main.Common.Util.Constants;
+using SecurityListConverter = tph.StrategyHandler.SimpleCommandReceiver.Common.Converters.SecurityListConverter;
 
 namespace tph.StrategyHanders.TestStrategies.TestModule
 {
@@ -47,8 +49,16 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         
         protected Position LastRoutedPosition { get; set; }
 
-        #endregion
+        protected MarketData LastMarketDataRecv { get; set; }
 
+
+        protected Dictionary<string, SecurityListRequestWrapper> SecurityListRequests { get; set; }
+
+        protected Dictionary<string,Security> OptionChainEvaluated { get; set; }
+       
+
+        #endregion
+                
         #region Private Methods
 
         private Security GetSecurity()
@@ -198,6 +208,9 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         //OptionChainRequest
         private void OptionChainRequest()
         {
+
+            RequestMarketData();
+
             SecurityListRequestWrapper slrWrapper = new SecurityListRequestWrapper(
                                                                                     SecurityListRequestType.OptionChain,
                                                                                     Config.Symbol,
@@ -205,6 +218,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                                                                                     null,
                                                                                     "USD"
                                                                                     );
+
+            SecurityListRequests.Add(Config.Symbol,slrWrapper );
 
             DoLog($"{Config.Name}-->Requesting option change for symbol {Config.Symbol} ", MessageType.Information);
             CMState state = OnMessageRcv(slrWrapper);
@@ -304,10 +319,21 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
         protected void ProcessMarketData(Wrapper wrapper)
         {
-            MarketDataWrapper mdWrapper = (MarketDataWrapper) wrapper;
+            try
+            {
+                MarketDataWrapper mdWrapper = (MarketDataWrapper)wrapper;
 
-            DoLog($"{mdWrapper.ToString()}", MessageType.Information);
+                MarketDataConverter conv = new MarketDataConverter();
 
+                LastMarketDataRecv = conv.GetMarketData(mdWrapper, Config);
+
+                DoLog($"Recv market data for symbol {Config.Symbol}:{mdWrapper.ToString()}", MessageType.Information);
+            }
+            catch (Exception ex)
+            {
+                DoLog($"Critical error processing received market data for symbool {Config.Symbol}:{ex.Message}", MessageType.Error);
+            
+            }
         }
 
         protected void ProcessSecurityList(Wrapper wrapper)
@@ -322,7 +348,28 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
                 foreach (Security sec in secListMsg.Securities)
                 {
+
                     DoLog($"Recv Security Symbol {sec.Symbol}", MessageType.Information);
+
+                    if (LastMarketDataRecv != null && sec.StrikePrice.HasValue)
+                    {
+                        if (LastMarketDataRecv.Trade.HasValue)
+                        {
+                            double higher = LastMarketDataRecv.Trade.Value * 1.01d;
+                            double lower = LastMarketDataRecv.Trade.Value * 0.99d;
+
+                            if (sec.StrikePrice.Value > lower && sec.StrikePrice.Value < higher)
+                            {
+                                DoLog($"Adding option {sec.Symbol} because the Strike={sec.StrikePrice.Value.ToString("0.00")} is close to the market price {LastMarketDataRecv.Trade.Value.ToString("0.00")} ",MessageType.Information);
+                                OptionChainEvaluated.Add(sec.Symbol, sec);
+                            }
+                        
+                        
+                        }
+                    
+                    
+                    }
+
                 }
 
             }
@@ -429,6 +476,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 Routing = false;
                 RecvMarketData= false;
                 MarketDataRequestCounter = 1;
+                SecurityListRequests = new Dictionary<string, SecurityListRequestWrapper>();
+                OptionChainEvaluated = new Dictionary<string, Security>();
                 InitializeModules(pOnLogMsg);
                 //RequestMarketData();
                 
