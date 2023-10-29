@@ -769,6 +769,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoricalPricesDownloader"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.StrategyHandler.HistoricalPricesDownloader.DAL", "tph.StrategyHandler.HistoricalPricesDownloader.DAL\tph.StrategyHandler.HistoricalPricesDownloader.DAL.csproj", "{800C6964-BA92-4892-82AA-018D1C2B2716}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.ConsoleStrategy.LogicLayer", "tph.ConsoleStrategy.LogicLayer\tph.ConsoleStrategy.LogicLayer.csproj", "{04F03187-C24C-492A-828D-9385123E350F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consoles", "Consoles", "{C156F948-9986-477A-AB98-3F567CF6194B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.ConsoleStrategy.Common", "tph.ConsoleStrategy.Common\tph.ConsoleStrategy.Common.csproj", "{23191040-ADF0-46D9-BCA2-65E68EA1B9C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consoles", "Consoles", "{D625CE48-318B-4B52-A166-B7F112D94C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTrading.Websocket.App", "ConsoleTrading.Websocket.App\ConsoleTrading.Websocket.App.csproj", "{4E64AE72-1B10-4976-8175-19A7726968D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1819,6 +1829,18 @@ Global
 		{800C6964-BA92-4892-82AA-018D1C2B2716}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800C6964-BA92-4892-82AA-018D1C2B2716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{800C6964-BA92-4892-82AA-018D1C2B2716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F03187-C24C-492A-828D-9385123E350F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F03187-C24C-492A-828D-9385123E350F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F03187-C24C-492A-828D-9385123E350F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F03187-C24C-492A-828D-9385123E350F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23191040-ADF0-46D9-BCA2-65E68EA1B9C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23191040-ADF0-46D9-BCA2-65E68EA1B9C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23191040-ADF0-46D9-BCA2-65E68EA1B9C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23191040-ADF0-46D9-BCA2-65E68EA1B9C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E64AE72-1B10-4976-8175-19A7726968D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E64AE72-1B10-4976-8175-19A7726968D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E64AE72-1B10-4976-8175-19A7726968D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E64AE72-1B10-4976-8175-19A7726968D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2195,6 +2217,11 @@ Global
 		{D84CA362-A905-4D21-BFAE-B0A85935A1C7} = {0865D8DF-AF6F-4A09-B292-FD424324308D}
 		{5659FD7D-2F5E-4C17-8C4B-C4BFA5985C0F} = {D84CA362-A905-4D21-BFAE-B0A85935A1C7}
 		{800C6964-BA92-4892-82AA-018D1C2B2716} = {35908695-51AD-4A7F-95DC-2F8886A0CAE3}
+		{04F03187-C24C-492A-828D-9385123E350F} = {C156F948-9986-477A-AB98-3F567CF6194B}
+		{C156F948-9986-477A-AB98-3F567CF6194B} = {55C9E260-A0EB-4D8B-8CC7-A88BD3A2B351}
+		{23191040-ADF0-46D9-BCA2-65E68EA1B9C7} = {C156F948-9986-477A-AB98-3F567CF6194B}
+		{D625CE48-318B-4B52-A166-B7F112D94C24} = {2C3F2109-D784-416C-B155-CCD8B8996338}
+		{4E64AE72-1B10-4976-8175-19A7726968D5} = {D625CE48-318B-4B52-A166-B7F112D94C24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}

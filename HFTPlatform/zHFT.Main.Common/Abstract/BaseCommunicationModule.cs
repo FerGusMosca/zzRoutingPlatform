@@ -72,6 +72,28 @@ namespace zHFT.Main.Common.Abstract
             return true;
         }
 
+        protected ICommunicationModule LoadModule(string assembly, string assemblyName)
+        {
+            DoLog("Initializing Order Router " + assembly, Constants.MessageType.Information);
+            ICommunicationModule module = null;
+            if (!string.IsNullOrEmpty(assembly))
+            {
+                var type = Type.GetType(assembly);
+                if (type != null)
+                {
+                    module = (ICommunicationModule)Activator.CreateInstance(type);
+
+
+                }
+                else
+                    throw new Exception("assembly not found: " + assembly);
+            }
+            else
+                DoLog(string.Format("{0} not found. It will not be initialized", assemblyName), Constants.MessageType.Error);
+
+            return module;
+        }
+
 
         #endregion
     }

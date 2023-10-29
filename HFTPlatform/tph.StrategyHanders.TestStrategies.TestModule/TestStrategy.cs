@@ -345,7 +345,8 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 SecurityListDTO secListMsg = SecurityListConverter.ConvertSecurityList(secListWrapper);
 
                 DoLog($"Processing Security List For Req Id {secListMsg.SecurityListRequestId}(Type={secListMsg.SecurityListRequestType})", MessageType.Information);
-
+                //TODO Delete when open mkt
+                LastMarketDataRecv = new MarketData() { Trade = 410 };
                 foreach (Security sec in secListMsg.Securities)
                 {
 
@@ -372,6 +373,11 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
                 }
 
+                //TODO Remove or improve for testing
+                Security optionToReq = OptionChainEvaluated.Values.FirstOrDefault();
+                TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+                MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(Convert.ToInt32(elapsed.TotalSeconds), optionToReq, SubscriptionRequestType.Snapshot);
+                OnMessageRcv(mdrWrapper);
             }
             catch (Exception ex)
             {
@@ -547,10 +553,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             DoLoadConfig(configFile, listaCamposSinValor);
         }
 
-        void ILogger.DoLog(string msg, Constants.MessageType type)
-        {
-            
-        }
+       
 
         #endregion
     }

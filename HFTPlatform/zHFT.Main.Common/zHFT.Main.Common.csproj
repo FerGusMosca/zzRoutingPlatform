@@ -114,6 +114,8 @@
     <Compile Include="Util\CurrencySeparators.cs" />
     <Compile Include="Util\FixHelperExtended.cs" />
     <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\SecurityTypeTranslator.cs" />
+    <Compile Include="Util\SideTranslator.cs" />
     <Compile Include="Wrappers\Wrapper.cs" />
   </ItemGroup>
   <ItemGroup />
