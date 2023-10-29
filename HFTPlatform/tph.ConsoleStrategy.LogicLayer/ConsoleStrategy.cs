@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.ConsoleStrategy.Common.Configuration;
 using tph.ConsoleStrategy.Common.Util;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
@@ -14,6 +16,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
 using static zHFT.Main.Common.Util.Constants;
 
@@ -32,6 +35,10 @@ namespace tph.ConsoleStrategy.LogicLayer
         protected ICommunicationModule OrderRouter { get; set; }
 
         protected int NextPosId { get; set; }
+
+        protected Dictionary<string, Position> RoutedPosDict { get; set; }
+
+        protected Dictionary<string ,MarketData > MarketDataDict { get; set; }
 
         #endregion
 
@@ -55,7 +62,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
-        protected virtual Position LoadNewRegularPos(Security sec, Side side, double cashQty)
+        protected virtual Position LoadNewRegularPos(Security sec, Side side,QuantityType qtyType, double qty)
         {
 
             Position pos = new Position()
@@ -65,11 +72,12 @@ namespace tph.ConsoleStrategy.LogicLayer
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
-                CashQty = cashQty,
-                QuantityType = QuantityType.CURRENCY,
+                CashQty = qtyType == QuantityType.CURRENCY ? (double?)qty : null,
+                Qty= qtyType == QuantityType.SHARES ? (double?)qty : null,
+                QuantityType = qtyType,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 AccountId = "",
-                
+
 
             };
 
@@ -81,6 +89,22 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         protected CMState ProcessMarketData(Wrapper wrapper)
         {
+            MarketData md = MarketDataConverter.ConvertMarketData(wrapper);
+            lock (MarketDataDict)
+            {
+
+                if (!MarketDataDict.ContainsKey(md.Security.Symbol))
+                {
+                    DoLog($"Recv first MD for symbol {md.Security.Symbol}:{md.ToString()}", MessageType.PriorityInformation);
+                    MarketDataDict.Add(md.Security.Symbol, md);
+                }
+                else
+                {
+                    MarketDataDict[md.Security.Symbol] = md;
+                }
+
+            }
+
             OrderRouter.ProcessMessage(wrapper);
 
             return CMState.BuildSuccess();
@@ -105,7 +129,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             }
         }
 
-        protected void DoLoadNewPos(string[] param)
+        protected void DoLoadNewPos(string[] param,QuantityType qtyType)
         {
             string cmd = param[0];
 
@@ -114,27 +138,86 @@ namespace tph.ConsoleStrategy.LogicLayer
             string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
             string strSide = CommandValidator.ExtractMandatoryParam(param, 2);
             Side side = SideTranslator.TranslateMandatorySide(strSide);
-            double cashQty = CommandValidator.ExtractMandatoryDouble(param, 3);
+            double qty = CommandValidator.ExtractMandatoryDouble(param, 3);
             string currency = CommandValidator.ExtractNonMandatoryParam(param, 4);
             string exchange = CommandValidator.ExtractNonMandatoryParam(param, 5);
             string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 6);
             SecurityType? secType = SecurityTypeTranslator.TranslateNonMandatorySecurityType(strSecType);
 
 
-            Security sec = GetSecurity(symbol, currency, exchange, secType);
-            Position pos = LoadNewRegularPos(sec, side, cashQty);
+            Position pos = null;
+            lock (RoutedPosDict)
+            {
+                Security sec = GetSecurity(symbol, currency, exchange, secType);
+                pos = LoadNewRegularPos(sec, side, qtyType, qty);
 
-            DoLog($"ROUTING {symbol} Pos for Symbol {0} Side={strSide} CashQty={cashQty.ToString("0.00")}", Constants.MessageType.PriorityInformation);
+                DoLog($"ROUTING {symbol} Pos for Symbol {0} Side={strSide} CashQty={qty.ToString("0.00")}", Constants.MessageType.PriorityInformation);
+                RoutedPosDict.Add(pos.PosId, pos);
+
+            }
 
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
+            OrderRouter.ProcessMessage(posWrapper);
         }
 
-        protected void ProcessNewPos(string[] param)
+        protected void CancelAll(string[] param)
+        {
+
+            lock (RoutedPosDict)
+            {
+                foreach (Position cxlPos in RoutedPosDict.Values)
+                {
+
+                    if (!cxlPos.PositionNoLongerActive())
+                    {
+                        CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(cxlPos, Config);
+
+                        DoLog($"Sending cancelation for PosId {cxlPos.PosId}", MessageType.PriorityInformation);
+                        OrderRouter.ProcessMessage(cxlWrapper);
+
+                    }
+                    else
+                    {
+                        DoLog($"Ignoring position {cxlPos.PosId} because it is in status {cxlPos.PosStatus}", MessageType.PriorityInformation);
+                    }
+                    
+                }
+
+
+              
+            }
+        }
+
+        protected void CancelPosition(string[] param)
+        {
+            string mainCmd = param[0];
+            CommandValidator.ValidateCommandParams(mainCmd, param, 2, 2);
+
+            string posId = param[1];
+
+            lock (RoutedPosDict)
+            {
+                if (RoutedPosDict.ContainsKey(posId))
+                {
+                    Position cxlPos = RoutedPosDict[posId];
+
+                    CancelPositionWrapper cxlWrapper= new CancelPositionWrapper(cxlPos, Config);
+
+                    DoLog($"Sending cancelation for PosId {posId}", MessageType.PriorityInformation);
+                    OrderRouter.ProcessMessage(cxlWrapper);
+                }
+                else
+                    DoLog($"Could not find a position for PosId {posId}", MessageType.Error);
+            }
+
+        }
+
+        protected void ProcessNewPos(string[] param,QuantityType qtyType)
         {
             try
             {
                 DoRequestMarketData(param);
-                DoLoadNewPos(param);
+                DoLoadNewPos(param,qtyType);
             }
             catch (Exception ex)
             {
@@ -143,6 +226,40 @@ namespace tph.ConsoleStrategy.LogicLayer
             }
         
         }
+
+        protected void ListRoutedPositions(string[] param)
+        {
+            lock (RoutedPosDict)
+            {
+                Console.WriteLine();
+                Console.WriteLine("==============Listing Routed Positions==============");
+                foreach (Position pos in RoutedPosDict.Values)
+                {
+
+
+                    string strQty = "?";
+                    if (pos.IsMonetaryQuantity())
+                    {
+                        strQty = pos.CashQty.HasValue ? pos.CashQty.Value.ToString("0.##") : "?";
+                    }
+                    else if(pos.IsNonMonetaryQuantity())
+                    {
+
+                        strQty = pos.Qty.HasValue ? pos.Qty.Value.ToString("0.00") : "?";
+                    }
+
+                    Console.WriteLine($" PosId={pos.PosId} Symbol={pos.Security.Symbol} Side={pos.Side} Qty={strQty} QtyType={pos.QuantityType}" +
+                                     $"  Status={pos.PosStatus} CumQty={pos.CumQty} LvsQty={pos.LeavesQty} AvgPx={pos.AvgPx}");
+                
+                }
+                Console.WriteLine();
+            
+            
+            }
+        
+        
+        }
+
 
         #endregion
 
@@ -195,9 +312,14 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         protected void ShowCommands()
         {
+            Console.WriteLine();
             Console.WriteLine($"==========Trading Commands ==========");
-            Console.WriteLine($"NewPos <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
-        
+            Console.WriteLine($"#1-NewPosCash <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
+            Console.WriteLine($"#2-NewPosQty <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
+            Console.WriteLine($"#3-ListRoutedPositions ");
+            Console.WriteLine($"#4-CancelPosition <PosId>");
+            Console.WriteLine($"#5-CancelAll");
+            Console.WriteLine();
         }
 
         protected void ProcessCommands(string cmd)
@@ -206,10 +328,32 @@ namespace tph.ConsoleStrategy.LogicLayer
             string mainCmd = cmdArr[0];
 
 
-            if (mainCmd == "NewPos")
+            if (mainCmd == "NewPosCash")
             {
-                ProcessNewPos(cmdArr);
+                ProcessNewPos(cmdArr,QuantityType.CURRENCY);
             }
+            else if (mainCmd == "NewPosQty")
+            {
+                ProcessNewPos(cmdArr,QuantityType.SHARES);
+            }
+            else if (mainCmd == "ListRoutedPositions")
+            {
+                ListRoutedPositions(cmdArr);
+            }
+            else if (mainCmd == "CancelPosition")
+            {
+                CancelPosition(cmdArr);
+            }
+            else if (mainCmd == "CancelAll")
+            {
+                CancelAll(cmdArr);
+            }
+
+            else if (mainCmd == "cls")
+            {
+                Console.Clear();
+            }
+
             else
             {
                 DoLog($"Command not recognized: {mainCmd}", MessageType.Error);
@@ -270,6 +414,8 @@ namespace tph.ConsoleStrategy.LogicLayer
             {
                 NextPosId = 1;
                 MarketDataRequests = new Dictionary<string, Wrapper>();
+                RoutedPosDict=new Dictionary<string, Position>();
+                MarketDataDict = new Dictionary<string, MarketData>();
 
                 OrderRouter = LoadModule(Config.OrderRouter, "Order Router Module");
                 OrderRouter.Initialize(ProcessOutgoing, pOnLogMsg, Config.OrderRouterConfigFile);

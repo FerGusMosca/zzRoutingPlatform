@@ -156,5 +156,12 @@ namespace zHFT.StrategyHandler.Common.Converters
             return md;
         
         }
+
+        public static MarketData ConvertMarketData(Wrapper wrapper)
+        {
+            MarketDataConverter conv = new MarketDataConverter();
+            return conv.GetMarketData(wrapper, null);
+        
+        }
     }
 }
