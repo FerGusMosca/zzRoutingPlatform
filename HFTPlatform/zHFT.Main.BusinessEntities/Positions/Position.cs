@@ -325,6 +325,54 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         }
 
+        public Position Clone()
+        {
+            Position cloned = new Position();
+            cloned.Id = 0;
+            cloned.Security = Security;
+            cloned.PosStatus = PosStatus;
+            cloned.Side = Side;
+            cloned.Exchange = Exchange;
+            cloned.QuantityType = QuantityType;
+            cloned.PriceType = PriceType;
+            cloned.Qty = Qty;
+            cloned.CashQty = CashQty;
+            cloned.Percent = Percent;
+            cloned.ExecutionReports = new List<ExecutionReport>();
+            cloned.Orders=new List<Order>();
+            cloned.CumQty = 0;
+            cloned.LeavesQty = 0;
+            cloned.AvgPx = null;
+            cloned.LastMkt = null;
+            cloned.LastPx = null;
+            cloned.LastQty=null;
+            cloned.AccountId = AccountId;
+            cloned.PositionRejectReason= PositionRejectReason;
+            cloned.StopLossPct = StopLossPct;
+
+            cloned.NewDomFlag = false;
+            cloned.PositionCleared=false;
+            cloned.PositionCanceledOrRejected=false;
+            cloned.NewPosition = true;
+            cloned.PendingCxlRepl = false;
+
+            return cloned;
+        
+        
+        }
+
+
+        public Side FlipSide()
+        {
+            if (Side == Side.Buy)
+                return Side.Sell;
+            else if (Side == Side.Sell)
+                return Side.Buy;
+            else
+                throw new Exception($"Invalid side to flip:{Side}");
+        
+        }
+
         #endregion
 
     }

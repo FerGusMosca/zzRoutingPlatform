@@ -188,6 +188,52 @@ namespace tph.ConsoleStrategy.LogicLayer
             }
         }
 
+        protected void UnwindPos(string[] param)
+        {
+            string mainCmd = param[0];
+            CommandValidator.ValidateCommandParams(mainCmd, param, 2, 2);
+
+            string posId = param[1];
+
+
+            lock (RoutedPosDict)
+            {
+                if (RoutedPosDict.ContainsKey(posId))
+                {
+                    Position unwindPos = RoutedPosDict[posId];
+
+                    if (unwindPos.PositionNoLongerActive())
+                    {
+                        DoLog($"Ignoring position {unwindPos.PosId}(symbol={unwindPos.Security.Symbol}) because it is in status {unwindPos.PosStatus}", MessageType.PriorityInformation);
+
+                    }
+                    else if (unwindPos.PositionRouting())
+                    {
+                        DoLog($"Position is being routed to the exchange {unwindPos.PosId}(symbol={unwindPos.Security.Symbol} status={unwindPos.PosStatus}) --> Cancel the positions first!", MessageType.PriorityInformation);
+                    }
+                    else
+                    {
+                        Position newPos = unwindPos.Clone();
+
+                        newPos.Qty = unwindPos.CumQty;
+                        newPos.QuantityType = QuantityType.SHARES;
+                        newPos.Side = unwindPos.FlipSide();
+                        newPos.LoadPosId(NextPosId);
+                        newPos.PosStatus = PositionStatus.PendingNew;
+
+                        NextPosId++;
+
+                        PositionWrapper posWrapper = new PositionWrapper(newPos, Config);
+
+                        DoLog($"Unwinding position PosId {NextPosId} Side={unwindPos.Side}->{newPos.Side} Qty={newPos.Qty}", MessageType.PriorityInformation);
+                        OrderRouter.ProcessMessage(posWrapper);
+                    }
+                }
+                else
+                    DoLog($"Could not find a position for PosId {posId}", MessageType.Error);
+            }
+        }
+
         protected void CancelPosition(string[] param)
         {
             string mainCmd = param[0];
@@ -319,6 +365,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             Console.WriteLine($"#3-ListRoutedPositions ");
             Console.WriteLine($"#4-CancelPosition <PosId>");
             Console.WriteLine($"#5-CancelAll");
+            Console.WriteLine($"#6-UnwindPos <PosId>");
             Console.WriteLine();
         }
 
@@ -348,7 +395,10 @@ namespace tph.ConsoleStrategy.LogicLayer
             {
                 CancelAll(cmdArr);
             }
-
+            else if (mainCmd == "UnwindPos")
+            {
+                UnwindPos(cmdArr);
+            }
             else if (mainCmd == "cls")
             {
                 Console.Clear();
