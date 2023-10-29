@@ -345,7 +345,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
         
-        protected void ProcessExecutionReport(object param)
+        protected virtual void ProcessExecutionReport(object param)
         { 
             Wrapper wrapper = (Wrapper)param;
 
@@ -772,6 +772,29 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
 
+        protected ICommunicationModule LoadModules(string module,string configFile, OnLogMessage pOnLogMsg)
+        {
+            DoLog($"Initializing {module} " , Constants.MessageType.Information);
+            if (!string.IsNullOrEmpty(module))
+            {
+                var typeModule = Type.GetType(module);
+                if (typeModule != null)
+                {
+                    ICommunicationModule dest = (ICommunicationModule)Activator.CreateInstance(typeModule);
+                    dest.Initialize(ProcessOutgoing, pOnLogMsg, Config.OrderRouterConfigFile);
+                    return dest;
+                }
+                else
+                    throw new Exception("assembly not found: " + Config.OrderRouter);
+            }
+            else
+            {
+                DoLog($"{module} not found. It will not be initialized", Constants.MessageType.Error);
+                return null;
+            }
+
+        }
+
         
         
         public virtual bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)
@@ -795,21 +818,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 NextPosId = 1;
 
                 LoadMonitorsAndRequestMarketData();
-
-                DoLog("Initializing Order Router " + Config.OrderRouter, Constants.MessageType.Information);
-                if (!string.IsNullOrEmpty(Config.OrderRouter))
-                {
-                    var typeOrderRouter = Type.GetType(Config.OrderRouter);
-                    if (typeOrderRouter != null)
-                    {
-                        OrderRouter = (ICommunicationModule)Activator.CreateInstance(typeOrderRouter);
-                        OrderRouter.Initialize(ProcessOutgoing, pOnLogMsg, Config.OrderRouterConfigFile);
-                    }
-                    else
-                        throw new Exception("assembly not found: " + Config.OrderRouter);
-                }
-                else
-                    DoLog("Order Router not found. It will not be initialized", Constants.MessageType.Error);
+                OrderRouter=LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 
                 SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);
                 OnMessageRcv(slWrapper);

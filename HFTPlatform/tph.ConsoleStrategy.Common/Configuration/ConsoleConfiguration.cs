@@ -4,19 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.Abstract;
+using zHFT.StrategyHandler.Common;
 
 namespace tph.ConsoleStrategy.Common.Configuration
 {
-    public class ConsoleConfiguration : BaseConfiguration
+    public class ConsoleConfiguration : BaseStrategyConfiguration
     {
-
-        #region Public Attributes
-
-        public string OrderRouter { get; set; }
-
-        public string OrderRouterConfigFile { get; set; }
-
-        #endregion
 
         public override bool CheckDefaults(List<string> result)
         {

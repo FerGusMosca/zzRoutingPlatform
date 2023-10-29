@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using tph.ConsoleStrategy.Common.Configuration;
 using tph.ConsoleStrategy.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
@@ -16,25 +17,21 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandler.LogicLayer;
 using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.ConsoleStrategy.LogicLayer
 {
-    public class ConsoleStrategy : BaseCommunicationModule,ILogger
+    public class ConsoleStrategy : DayTradingStrategyBase
     {
 
 
         #region Protected Attributes
 
-        public ConsoleConfiguration Config { get; set; }
-
         protected Dictionary<string, Wrapper> MarketDataRequests { get; set; }
-
-        protected ICommunicationModule OrderRouter { get; set; }
-
-        protected int NextPosId { get; set; }
 
         protected Dictionary<string, Position> RoutedPosDict { get; set; }
 
@@ -87,28 +84,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             return pos;
         }
 
-        protected CMState ProcessMarketData(Wrapper wrapper)
-        {
-            MarketData md = MarketDataConverter.ConvertMarketData(wrapper);
-            lock (MarketDataDict)
-            {
-
-                if (!MarketDataDict.ContainsKey(md.Security.Symbol))
-                {
-                    DoLog($"Recv first MD for symbol {md.Security.Symbol}:{md.ToString()}", MessageType.PriorityInformation);
-                    MarketDataDict.Add(md.Security.Symbol, md);
-                }
-                else
-                {
-                    MarketDataDict[md.Security.Symbol] = md;
-                }
-
-            }
-
-            OrderRouter.ProcessMessage(wrapper);
-
-            return CMState.BuildSuccess();
-        }
+      
 
         public CMState ProcessIncoming(Wrapper wrapper)
         {
@@ -117,7 +93,8 @@ namespace tph.ConsoleStrategy.LogicLayer
                 if (wrapper.GetAction() == Actions.MARKET_DATA)
                 {
 
-                    return ProcessMarketData(wrapper);
+                    ProcessMarketData(wrapper);
+                    return CMState.BuildSuccess();
                 }
                 else
                     return CMState.BuildFail(new Exception($"@{Config.Name}-->Could not process action {wrapper.GetAction().ToString()} "));
@@ -156,8 +133,8 @@ namespace tph.ConsoleStrategy.LogicLayer
 
             }
 
-            PositionWrapper posWrapper = new PositionWrapper(pos, Config);
-            OrderRouter.ProcessMessage(posWrapper);
+            DoOpenTradingRegularPos(pos, null);
+
         }
 
         protected void CancelAll(string[] param)
@@ -311,6 +288,84 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         #region Private Methods
 
+        protected void ShowCommands()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"==========Trading Commands ==========");
+            Console.WriteLine($"#1-NewPosCash <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
+            Console.WriteLine($"#2-NewPosQty <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
+            Console.WriteLine($"#3-ListRoutedPositions ");
+            Console.WriteLine($"#4-CancelPosition <PosId>");
+            Console.WriteLine($"#5-CancelAll");
+            Console.WriteLine($"#6-UnwindPos <PosId>");
+            Console.WriteLine();
+        }
+
+        protected void ProcessCommands(string cmd)
+        {
+            string[] cmdArr = cmd.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string mainCmd = cmdArr[0];
+
+
+            if (mainCmd == "NewPosCash")
+            {
+                ProcessNewPos(cmdArr, QuantityType.CURRENCY);
+            }
+            else if (mainCmd == "NewPosQty")
+            {
+                ProcessNewPos(cmdArr, QuantityType.SHARES);
+            }
+            else if (mainCmd == "ListRoutedPositions")
+            {
+                ListRoutedPositions(cmdArr);
+            }
+            else if (mainCmd == "CancelPosition")
+            {
+                CancelPosition(cmdArr);
+            }
+            else if (mainCmd == "CancelAll")
+            {
+                CancelAll(cmdArr);
+            }
+            else if (mainCmd == "UnwindPos")
+            {
+                UnwindPos(cmdArr);
+            }
+            else if (mainCmd == "cls")
+            {
+                Console.Clear();
+            }
+
+            else
+            {
+                DoLog($"Command not recognized: {mainCmd}", MessageType.Error);
+
+            }
+        }
+
+        protected void ReadCommand(object param)
+        {
+            try
+            {
+
+                while (true)
+                {
+                    ShowCommands();
+
+                    string cmd = Console.ReadLine();
+
+                    ProcessCommands(cmd);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"{Config.Name}-->CRITICAL ERROR Reading command: {ex.Message}", MessageType.Error);
+                Console.ReadKey();
+            }
+
+        }
+
         private Security GetSecurity(string symbol, string currency, string exchange, SecurityType? secType)
         {
             return new Security()
@@ -351,103 +406,36 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         #region Protected Methods
 
-        protected CMState ProcessExecutionReport(Wrapper wrapper)
+        protected override void ProcessExecutionReport(object param)
         {
-            return CMState.BuildSuccess();
-        }
+            Wrapper wrapper = (Wrapper)param;
 
-        protected void ShowCommands()
-        {
-            Console.WriteLine();
-            Console.WriteLine($"==========Trading Commands ==========");
-            Console.WriteLine($"#1-NewPosCash <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
-            Console.WriteLine($"#2-NewPosQty <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
-            Console.WriteLine($"#3-ListRoutedPositions ");
-            Console.WriteLine($"#4-CancelPosition <PosId>");
-            Console.WriteLine($"#5-CancelAll");
-            Console.WriteLine($"#6-UnwindPos <PosId>");
-            Console.WriteLine();
-        }
-
-        protected void ProcessCommands(string cmd)
-        {
-            string[] cmdArr = cmd.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
-            string mainCmd = cmdArr[0];
-
-
-            if (mainCmd == "NewPosCash")
-            {
-                ProcessNewPos(cmdArr,QuantityType.CURRENCY);
-            }
-            else if (mainCmd == "NewPosQty")
-            {
-                ProcessNewPos(cmdArr,QuantityType.SHARES);
-            }
-            else if (mainCmd == "ListRoutedPositions")
-            {
-                ListRoutedPositions(cmdArr);
-            }
-            else if (mainCmd == "CancelPosition")
-            {
-                CancelPosition(cmdArr);
-            }
-            else if (mainCmd == "CancelAll")
-            {
-                CancelAll(cmdArr);
-            }
-            else if (mainCmd == "UnwindPos")
-            {
-                UnwindPos(cmdArr);
-            }
-            else if (mainCmd == "cls")
-            {
-                Console.Clear();
-            }
-
-            else
-            {
-                DoLog($"Command not recognized: {mainCmd}", MessageType.Error);
-            
-            }
-        }
-
-
-        protected void ReadCommand(object param)
-        {
             try
             {
 
-                while (true)
-                { 
-                    ShowCommands();
+                ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
-                    string cmd = Console.ReadLine();
 
-                    ProcessCommands(cmd);
-                }
+                DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus} CumQty={report.CumQty} LvsQqty={report.LeavesQty} AvgPx={report.AvgPx})", Constants.MessageType.PriorityInformation);
+                //TODO see if we can identify the routed position based on the ER order ClOrId
+
             }
-            catch(Exception ex)
+            catch (Exception e)
             {
-
-                DoLog($"{Config.Name}-->CRITICAL ERROR Reading command: {ex.Message}", MessageType.Error);
-                Console.ReadKey();
+                DoLog($"{Config.Name}--> CRITICAL ERROR processing execution report:{e.Message}", MessageType.Error);
             }
-        
         }
+
 
         #endregion
 
-        #region ICommunicationModule, ILogger
+            #region ICommunicationModule, ILogger
 
-        protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
+        public override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             Config = ConfigLoader.GetConfiguration<ConsoleConfiguration>(this, configFile, listaCamposSinValor);
         }
-
-        void ILogger.DoLoadConfig(string configFile, List<string> listaCamposSinValor)
-        {
-            DoLoadConfig(configFile, listaCamposSinValor);
-        }
+     
 
         public void DoLog(string msg, Constants.MessageType type)
         {
@@ -462,14 +450,16 @@ namespace tph.ConsoleStrategy.LogicLayer
 
             if (ConfigLoader.LoadConfig(this, configFile))
             {
+                
                 NextPosId = 1;
                 MarketDataRequests = new Dictionary<string, Wrapper>();
                 RoutedPosDict=new Dictionary<string, Position>();
                 MarketDataDict = new Dictionary<string, MarketData>();
 
-                OrderRouter = LoadModule(Config.OrderRouter, "Order Router Module");
-                OrderRouter.Initialize(ProcessOutgoing, pOnLogMsg, Config.OrderRouterConfigFile);
+                OrderRouter=LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 
+                if (OrderRouter == null)
+                    throw new Exception($"Could not initialize order router!:{Config.OrderRouter}");
 
                 (new Thread(ReadCommand)).Start(null);
                 return true;
@@ -480,46 +470,71 @@ namespace tph.ConsoleStrategy.LogicLayer
                 return false;
             }
         }
+    
+        #region Base DayTradingModule Methods
 
-
-        public override CMState ProcessMessage(Wrapper wrapper)
+        public override void InitializeManagers(string connStr)
         {
-            try
-            {
-                if (wrapper.GetAction() == Actions.MARKET_DATA)
-                {
-
-                    return ProcessMarketData(wrapper);
-                }
-                else
-                    return CMState.BuildFail(new Exception(string.Format("Could not process action {0} for strategy {1}", wrapper.GetAction().ToString(), Config.Name)));
-            }
-            catch (Exception ex)
-            {
-                DoLog($"{Config.Name}-->Error processing market data: {ex.Message} ", Constants.MessageType.Error);
-                return CMState.BuildFail(ex);
-            }
+            //No managers-No DB
         }
 
-        public  CMState ProcessOutgoing(Wrapper wrapper)
+        protected override void ProcessHistoricalPrices(object pWrapper)
         {
-            try
+            //Not implemented
+        }
+
+        protected override void ProcessMarketData(object pWrapper)
+        {
+            Wrapper wrapper = (Wrapper)pWrapper;
+            MarketData md = MarketDataConverter.ConvertMarketData(wrapper);
+            lock (MarketDataDict)
             {
-                if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
+
+                if (!MarketDataDict.ContainsKey(md.Security.Symbol))
                 {
-                    //SDoLog("Processing Market Data:" + wrapper.ToString(), Main.Common.Util.Constants.MessageType.Information);
-                    ProcessExecutionReport(wrapper);
-                    return CMState.BuildSuccess();
+                    DoLog($"Recv first MD for symbol {md.Security.Symbol}:{md.ToString()}", MessageType.PriorityInformation);
+                    MarketDataDict.Add(md.Security.Symbol, md);
                 }
                 else
-                    return CMState.BuildFail(new Exception(string.Format("Could not process action {0} for strategy {1}", wrapper.GetAction().ToString(), Config.Name)));
+                {
+                    MarketDataDict[md.Security.Symbol] = md;
+                }
+
             }
-            catch (Exception ex)
-            {
-                DoLog($"ERROR @ProcessMessage {Config.Name} : {ex.Message}", MessageType.Error);
-                return CMState.BuildFail(ex);
-            }
+
+            OrderRouter.ProcessMessage(wrapper);
         }
+
+        protected override void DoPersist(TradingPosition trdPos)
+        {
+            //No managers no DB
+        }
+
+        protected override void ResetEveryNMinutes(object param)
+        {
+            
+        }
+
+        protected override void LoadPreviousTradingPositions()
+        {
+            
+        }
+
+        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
+        {
+            PositionWrapper posWrapper = new PositionWrapper(pos, Config);
+            OrderRouter.ProcessMessage(posWrapper);
+
+            return null;
+
+        }
+
+        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingFuturePos(Position pos, PortfolioPosition portfPos)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
 
 
