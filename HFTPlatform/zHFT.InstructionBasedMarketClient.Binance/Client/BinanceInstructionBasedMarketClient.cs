@@ -321,7 +321,7 @@ namespace zHFT.InstructionBasedMarketClient.Binance.Client
                 Security mainSec = new Security();
                 mainSec.Symbol = symbol;
 
-                HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(mainSec,CandleInterval.Minute_1,new List<Wrapper>(result));
+                HistoricalPricesWrapper histWrapper = new HistoricalPricesWrapper(0,mainSec,CandleInterval.Minute_1,new List<Wrapper>(result));
 
                 OnMessageRcv(histWrapper);
             }

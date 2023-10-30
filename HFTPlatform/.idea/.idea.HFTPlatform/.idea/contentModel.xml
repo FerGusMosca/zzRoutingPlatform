@@ -22,6 +22,28 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
+      <e p="ConsoleTrading.Websocket.App" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="ConsoleTrading.Websocket.App.csproj" t="IncludeRecursive" />
+        <e p="ConsoleTrading.xml" t="Include" />
+        <e p="genOrderRouter.xml" t="Include" />
+        <e p="Mock" t="Include">
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Websocket" t="Include">
+          <e p="IncomingSingletonConfig.xml" t="Include" />
+          <e p="OutgoingSingletonConfig.xml" t="Include" />
+          <e p="Websocket.xml" t="Include" />
+        </e>
+      </e>
       <e p="CurrencylistProcessor.Bittrex.Test" t="IncludeRecursive">
         <e p="App.Config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -58,6 +80,28 @@
         </e>
       </e>
       <e p="HFTPlatform.sln" t="IncludeFlat" />
+      <e p="HistoricalPricesDownloader" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Config.xml" t="Include" />
+        <e p="genOrderRouter.xml" t="Include" />
+        <e p="HistoricalPricesDownloader.csproj" t="IncludeRecursive" />
+        <e p="HistoricalPricesDownloader.xml" t="Include" />
+        <e p="Mock" t="Include">
+          <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="Websocket" t="Include">
+          <e p="IncomingSingletonConfig.xml" t="Include" />
+          <e p="OutgoingSingletonConfig.xml" t="Include" />
+          <e p="Websocket.xml" t="Include" />
+        </e>
+      </e>
       <e p="IBR.Bitfinex" t="IncludeRecursive">
         <e p="App.Config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -493,8 +537,10 @@
         </e>
       </e>
       <e p="StrategyHandlers" t="Include">
+        <e p="Consoles" t="Include" />
         <e p="DayCurrenciesTrading" t="Include" />
         <e p="Downloaders" t="Include">
+          <e p="HistoricalPricesDownloader" t="Include" />
           <e p="MarketDataDownloader" t="Include" />
           <e p="Options Contract Saver" t="Include">
             <e p="Test" t="Include">
@@ -601,6 +647,7 @@
         <e p="Connectors" t="Include">
           <e p="Client" t="Include" />
         </e>
+        <e p="Consoles" t="Include" />
         <e p="CryptoAlgosTest" t="Include" />
         <e p="CryptoAlgoTest" t="IncludeRecursive">
           <e p="App.Config" t="Include" />
@@ -685,7 +732,7 @@
           <e p="App.Config" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
           <e p="Config.xml" t="Include" />
-          <e p="DayTurtles.FIX.App2.csproj" t="IncludeRecursive" />
+          <e p="DayTurtles.FIX.App.csproj" t="IncludeRecursive" />
           <e p="FIX Sessions" t="Include">
             <e p="initiator_nasini_prod.cfg" t="Include" />
             <e p="initiator_tarallo_prod.cfg" t="Include" />
@@ -711,7 +758,7 @@
           <e p="App.Config" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
           <e p="Config.xml" t="Include" />
-          <e p="DayTurtles.Websocket.App.csproj" t="IncludeRecursive" />
+          <e p="DayTurtles.Websocket.IB.App.csproj" t="IncludeRecursive" />
           <e p="genOrderRouter.xml" t="Include" />
           <e p="Mock" t="Include">
             <e p="outgoingOrderRouter.Mock.xml" t="Include" />
@@ -730,6 +777,7 @@
           </e>
         </e>
         <e p="Downloaders" t="Include">
+          <e p="HistoricalPricesDownloader" t="Include" />
           <e p="MarketDataDownloader" t="Include" />
           <e p="SecurityListDownloaders" t="Include" />
         </e>
@@ -759,12 +807,25 @@
           </e>
         </e>
         <e p="InstructionsProcessor.IBv2.Websocket.App" t="IncludeRecursive">
+          <e p="App.Config" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
+          <e p="Config.xml" t="Include" />
+          <e p="genOrderRouter.xml" t="Include" />
+          <e p="InstructionBasedRouting.xml" t="Include" />
           <e p="InstructionsProcessor.IBv2.Websocket.App.csproj" t="IncludeRecursive" />
+          <e p="Mock" t="Include">
+            <e p="outgoingOrderRouter.Mock.xml" t="Include" />
+          </e>
           <e p="obj" t="ExcludeRecursive" />
+          <e p="packages.config" t="Include" />
           <e p="Program.cs" t="Include" />
           <e p="Properties" t="Include">
             <e p="AssemblyInfo.cs" t="Include" />
+          </e>
+          <e p="Websocket" t="Include">
+            <e p="IncomingSingletonConfig.xml" t="Include" />
+            <e p="OutgoingSingletonConfig.xml" t="Include" />
+            <e p="Websocket.xml" t="Include" />
           </e>
         </e>
         <e p="IntFIgDayTurtles.Cryptos.App" t="IncludeRecursive">
@@ -1027,6 +1088,29 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="tph.BOBDayTurtles.LogicLayer.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.ConsoleStrategy.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="ConsoleConfiguration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.ConsoleStrategy.Common.csproj" t="IncludeRecursive" />
+        <e p="Util" t="Include">
+          <e p="CommandValidator.cs" t="Include" />
+        </e>
+      </e>
+      <e p="tph.ConsoleStrategy.LogicLayer" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ConsoleStrategy.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.ConsoleStrategy.LogicLayer.csproj" t="IncludeRecursive" />
       </e>
       <e p="tph.DayTurtles.BusinessEntities" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -1336,6 +1420,38 @@
         </e>
         <e p="tph.StrategyHanders.TestStrategies.TestModule.Common.csproj" t="IncludeRecursive" />
       </e>
+      <e p="tph.StrategyHandler.HistoricalPricesDownloader" t="IncludeRecursive">
+        <e p="App.Config" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="HistoricalPricesDownloader.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.HistoricalPricesDownloader.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="tph.StrategyHandler.HistoricalPricesDownloader.Common" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Configuration" t="Include">
+          <e p="HistoricalPricesDownloaderConfiguration.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.HistoricalPricesDownloader.Common.csproj" t="IncludeRecursive" />
+        <e p="Util" t="Include" />
+      </e>
+      <e p="tph.StrategyHandler.HistoricalPricesDownloader.DAL" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CandleManager.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="tph.StrategyHandler.HistoricalPricesDownloader.DAL.csproj" t="IncludeRecursive" />
+      </e>
       <e p="tph.StrategyHandler.IBR.Cocos.Common" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -1372,6 +1488,7 @@
         <e p="Converters" t="Include">
           <e p="DateFormatConverter.cs" t="Include" />
           <e p="OrderConverter.cs" t="Include" />
+          <e p="SecurityListConverter.cs" t="Include" />
         </e>
         <e p="DTOs" t="Include">
           <e p="ErrorMessage.cs" t="Include" />
@@ -1383,6 +1500,7 @@
             <e p="MarketDataDTO.cs" t="Include" />
             <e p="MarketDataReqDTO.cs" t="Include" />
             <e p="OrderBookDTO.cs" t="Include" />
+            <e p="SecurityListDTO.cs" t="Include" />
             <e p="SecurityListReqAckDTO.cs" t="Include" />
             <e p="SecurityListReqDTO.cs" t="Include" />
           </e>
@@ -2219,6 +2337,7 @@
           <e p="PositionRejectReason.cs" t="Include" />
           <e p="PositionStatus.cs" t="Include" />
           <e p="PriceType.cs" t="Include" />
+          <e p="PutOrCall.cs" t="Include" />
           <e p="QuantityType.cs" t="Include" />
           <e p="SecurityListRequestType.cs" t="Include" />
           <e p="SecurityRequestResult.cs" t="Include" />
@@ -2242,11 +2361,14 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
         <e p="Util" t="Include">
+          <e p="CandleIntervalTranslator.cs" t="Include" />
           <e p="ConfigLoader.cs" t="Include" />
           <e p="Constants.cs" t="Include" />
           <e p="CurrencySeparators.cs" t="Include" />
           <e p="FixHelperExtended.cs" t="Include" />
           <e p="Logger.cs" t="Include" />
+          <e p="SecurityTypeTranslator.cs" t="Include" />
+          <e p="SideTranslator.cs" t="Include" />
         </e>
         <e p="Wrappers" t="Include">
           <e p="Wrapper.cs" t="Include" />
@@ -2340,6 +2462,7 @@
         <e p="Wrappers" t="Include">
           <e p="HistoricalPricesWrapper.cs" t="Include" />
           <e p="MarketDataWrapper.cs" t="Include" />
+          <e p="SecurityListWrapper.cs" t="Include" />
         </e>
         <e p="zHFT.MarketClient.Common.csproj" t="IncludeRecursive" />
       </e>
@@ -3150,10 +3273,14 @@
         </e>
         <e p="Converters" t="Include">
           <e p="ExecutionReportConverter.cs" t="Include" />
+          <e p="HistoricalPricesConverter.cs" t="Include" />
           <e p="MarketDataConverter.cs" t="Include" />
           <e p="PositionConverter.cs" t="Include" />
           <e p="SecurityConverter.cs" t="Include" />
           <e p="SecurityListConverter.cs" t="Include" />
+        </e>
+        <e p="DTO" t="Include">
+          <e p="HistoricalPricesDTO.cs" t="Include" />
         </e>
         <e p="Enums" t="Include">
           <e p="FeeTypePerTrade.cs" t="Include" />

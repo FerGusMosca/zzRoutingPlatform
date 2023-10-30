@@ -185,9 +185,12 @@ namespace tph.TrendlineTurtles.LogicLayer
             return init;
         }
 
-        protected void EvalBrokenTrendlines(MonTrendlineTurtlesPosition portfPos,MarketData price)
+        protected void EvalBrokenTrendlines(MonTrendlineTurtlesPosition monPortfPos,MarketData price)
         {
-            TrendLineCreator.EvalBrokenTrendlines(portfPos,price);
+
+            MarketData priceToUse = monPortfPos.GetLastFinishedCandle(GetConfig().SkipCandlesToBreakTrndln);
+
+            TrendLineCreator.EvalBrokenTrendlines(monPortfPos, priceToUse);
             
         }
 

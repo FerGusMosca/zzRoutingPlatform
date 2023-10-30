@@ -22,6 +22,7 @@
   <InnerTrendlinesSpan>120</InnerTrendlinesSpan><!--in candles-->
   <OuterTrendlinesSpan>60</OuterTrendlinesSpan><!--in candles-->
   <PerforationThresholds>0.0005</PerforationThresholds><!--in pct 0-1-->
+	<SkipCandlesToBreakTrndln>3</SkipCandlesToBreakTrndln>
   <Account>9732</Account>
 
   <Currency>USD</Currency>

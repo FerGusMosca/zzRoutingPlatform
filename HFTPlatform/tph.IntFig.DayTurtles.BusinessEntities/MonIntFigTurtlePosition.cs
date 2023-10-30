@@ -40,7 +40,7 @@ namespace tph.IntFig.DayTurtles.BusinessEntities
         public override bool LongSignalTriggered()
         {
             List<MarketData> histPrices = GetHistoricalPrices();
-            MarketData lastClosedCandle = GetLastFinishedCandle();
+            MarketData lastClosedCandle = GetLastFinishedCandle(1);
             List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
                                                                  && !x.IsBroken(lastClosedCandle.MDEntryDate)
                                                                  && x.ValidDistanceToEndDate(histPrices,lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)).ToList();

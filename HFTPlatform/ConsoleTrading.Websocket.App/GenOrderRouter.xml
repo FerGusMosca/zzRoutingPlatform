@@ -3,12 +3,16 @@
   <Name>Outgoing Primary</Name>
 
 
-    <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
-    <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>
+    <!--<Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
+    <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
 
-  <ConsecutiveOrdersPacingInSec>20</ConsecutiveOrdersPacingInSec>
+	<ProxyConfigFile>.\Websocket\OutgoingSingletonConfig.xml</ProxyConfigFile>
+	<Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
+	
 
-  <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
+	<ConsecutiveOrdersPacingInSec>20</ConsecutiveOrdersPacingInSec>
+
+  <OrderUpdateInMilliseconds>1000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->
 
 </Configuration>

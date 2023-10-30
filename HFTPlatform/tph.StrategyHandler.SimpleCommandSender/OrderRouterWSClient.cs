@@ -329,8 +329,13 @@ namespace tph.StrategyHandler.SimpleCommandSender
                         NewOrderReq updated = toUpdOrderReq.Clone();
                         updated.ClOrdId = clOrdId;
                         updated.Price = price;
-                        JsonOrdersDict.Add(clOrdId, updated);
 
+                        if(!JsonOrdersDict.ContainsKey(clOrdId))
+                            JsonOrdersDict.Add(clOrdId, updated);
+                        else
+                            JsonOrdersDict[clOrdId] = updated;
+
+                        DoLog($"{Config.Name}--> Updating Symbol {toUpdOrderReq.Symbol} price: {toUpdOrderReq.Price}-> {updated.Price}", Constants.MessageType.PriorityInformation);
                         DoSendAsync<UpdateOrderReq>(updReq);
                     }
                     else
@@ -346,7 +351,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
             catch (Exception e)
             {
-                DoLog($"ERROR updating order:{e.Message}",Constants.MessageType.Error);
+                DoLog($"{Config.Name}-->ERROR updating order:{e.Message}",Constants.MessageType.Error);
             }
         }
 

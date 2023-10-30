@@ -31,6 +31,12 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         #endregion
 
+        #region Private Static Consts
+
+        private static string _POS_ID_FORMAT = "000";
+
+        #endregion
+
         #region Public Attributes
 
         public int Id { get; set; }
@@ -154,7 +160,22 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         public void LoadPosId(int id)
         {
-            _PosId = id.ToString("000");
+            _PosId = id.ToString(_POS_ID_FORMAT);
+        }
+
+        public static string ExtractPosIDPrefix(string clOrdId)
+        {
+
+            try
+            {
+                return clOrdId.Substring(0, _POS_ID_FORMAT.Length);
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        
         }
 
         public void LoadPosId(string posId)

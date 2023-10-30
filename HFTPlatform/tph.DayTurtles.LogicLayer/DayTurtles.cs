@@ -6,7 +6,6 @@ using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
 using tph.DayTurtles.Common.Util;
 using tph.DayTurtles.DataAccessLayer;
-using tph.TrendlineTurtles.Common.Configuration;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;

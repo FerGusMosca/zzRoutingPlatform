@@ -8,13 +8,15 @@ namespace tph.DayTurtles.BusinessEntities
 {
     public class MonTurtlePosition : PortfolioPosition
     {
-        #region
+        #region Protected Static Consts
 
 
         protected static string _CANDLE_DATE_FORMAT = "yyyyMMddHHmm";
 
         #endregion
+
         #region Constructors
+
 
         public MonTurtlePosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct, string candleRefPrice)
         {
@@ -37,8 +39,6 @@ namespace tph.DayTurtles.BusinessEntities
         public bool ExitOnMMov { get; set; }
 
         public double StopLossForOpenPositionPct { get; set; }
-
-
 
         public Dictionary<string, MarketData> Candles { get; set; }
 
@@ -292,9 +292,9 @@ namespace tph.DayTurtles.BusinessEntities
             return histPrices.OrderBy(x => x.GetOrderingDate()).ToList();
         }
         
-        public virtual MarketData GetLastFinishedCandle()
+        public virtual MarketData GetLastFinishedCandle(int cowntdown)
         {
-            return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[1];
+            return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[cowntdown];
         }
         
         public virtual MarketData GetLastCandle()

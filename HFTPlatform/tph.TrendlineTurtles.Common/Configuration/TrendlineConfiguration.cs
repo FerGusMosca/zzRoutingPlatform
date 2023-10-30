@@ -25,6 +25,8 @@ namespace tph.TrendlineTurtles.Common.Configuration
 
         public int HistoricalPricesPeriod { get; set; }
 
+        public int SkipCandlesToBreakTrndln { get; set; }
+
         #endregion
     }
 }

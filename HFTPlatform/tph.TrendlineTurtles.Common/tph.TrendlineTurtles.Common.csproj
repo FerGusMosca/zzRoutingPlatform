@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj">
-      <Project>{C1380514-5FE0-401E-8DC5-3BD93EF13EE4}</Project>
+      <Project>{c1380514-5fe0-401e-8dc5-3bd93ef13ee4}</Project>
       <Name>tph.DayTurtles.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">

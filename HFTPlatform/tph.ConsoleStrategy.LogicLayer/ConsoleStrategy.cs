@@ -21,6 +21,7 @@ using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.LogicLayer;
+using zHFT.StrategyHandlers.Common.Converters;
 using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.ConsoleStrategy.LogicLayer
@@ -36,6 +37,7 @@ namespace tph.ConsoleStrategy.LogicLayer
         protected Dictionary<string, Position> RoutedPosDict { get; set; }
 
         protected Dictionary<string ,MarketData > MarketDataDict { get; set; }
+
 
         #endregion
 
@@ -151,6 +153,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
                         DoLog($"Sending cancelation for PosId {cxlPos.PosId}", MessageType.PriorityInformation);
                         OrderRouter.ProcessMessage(cxlWrapper);
+
 
                     }
                     else
@@ -406,6 +409,35 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         #region Protected Methods
 
+
+        protected void AssignMainERParameters(Position pos, ExecutionReport report)
+        {
+            pos.CumQty = report.CumQty;
+            pos.LeavesQty = report.LeavesQty;
+            pos.AvgPx = report.AvgPx.HasValue ? (double?)report.AvgPx.Value : null;
+            pos.SetPositionStatusFromExecutionStatus(report.OrdStatus);
+            pos.ExecutionReports.Add(report);
+
+        }
+
+        protected int LoadFirstPostId()
+        {
+            TimeSpan elapsed = DateTime.Now - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+
+            int posIdInit = Convert.ToInt32(elapsed.TotalMinutes);
+
+            if (posIdInit > 1000)
+            {
+
+                return posIdInit - 1000;
+            }
+            else
+                return posIdInit;
+
+        
+        
+        }
+
         protected override void ProcessExecutionReport(object param)
         {
             Wrapper wrapper = (Wrapper)param;
@@ -415,6 +447,45 @@ namespace tph.ConsoleStrategy.LogicLayer
 
                 ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
+
+                if (report.Order != null)
+                {
+
+                    string clOrdId = report.Order.ClOrdId;
+
+                    string posId = Position.ExtractPosIDPrefix(clOrdId);
+
+                    if (posId != null)
+                    {
+                        lock (RoutedPosDict)
+                        {
+                            if (RoutedPosDict.ContainsKey(posId))
+                            {
+
+                                Position pos = RoutedPosDict[posId];
+                                AssignMainERParameters(pos, report);
+
+                                DoLog($"{Config.Name}--> Recv ER: PosId:{posId} Symbol:{pos.Symbol} Status={report.OrdStatus} CumQty:{report.CumQty} LvsQty:{report.LeavesQty} AvgPx:{report.AvgPx}   ", MessageType.PriorityInformation);
+                            }
+                            else
+                            {
+                                DoLog($"{Config.Name}--> Ignorning not processed PosId {posId}", MessageType.PriorityInformation);
+                            
+                            }
+                        }
+
+
+                    }
+                    else
+                        DoLog($"{Config.Name}--> Could not recognize ClOrdId {clOrdId}", MessageType.PriorityInformation);
+
+
+
+                }
+                else
+                {
+                    DoLog($"{Config.Name}-->Recv unkwnon exec report w/no order ", MessageType.PriorityInformation);
+                }
 
                 DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus} CumQty={report.CumQty} LvsQqty={report.LeavesQty} AvgPx={report.AvgPx})", Constants.MessageType.PriorityInformation);
                 //TODO see if we can identify the routed position based on the ER order ClOrId
@@ -451,12 +522,13 @@ namespace tph.ConsoleStrategy.LogicLayer
             if (ConfigLoader.LoadConfig(this, configFile))
             {
                 
-                NextPosId = 1;
+                NextPosId = LoadFirstPostId();
                 MarketDataRequests = new Dictionary<string, Wrapper>();
                 RoutedPosDict=new Dictionary<string, Position>();
                 MarketDataDict = new Dictionary<string, MarketData>();
+                ExecutionReportConverter = new ExecutionReportConverter();
 
-                OrderRouter=LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
+                OrderRouter =LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 
                 if (OrderRouter == null)
                     throw new Exception($"Could not initialize order router!:{Config.OrderRouter}");
