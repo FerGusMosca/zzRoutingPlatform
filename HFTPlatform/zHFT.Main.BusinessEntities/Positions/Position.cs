@@ -163,6 +163,11 @@ namespace zHFT.Main.BusinessEntities.Positions
             _PosId = id.ToString(_POS_ID_FORMAT);
         }
 
+        public void LoadPosGuid(string guid)
+        {
+            _PosId = guid;
+        }
+
         public static string ExtractPosIDPrefix(string clOrdId)
         {
 
@@ -176,6 +181,21 @@ namespace zHFT.Main.BusinessEntities.Positions
                 return null;
             }
         
+        }
+
+        public static string ExtractPosIDPrefix(string clOrdId, int length)
+        {
+
+            try
+            {
+                return clOrdId.Substring(0, length);
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
 
         public void LoadPosId(string posId)

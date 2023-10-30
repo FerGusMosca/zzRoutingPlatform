@@ -38,6 +38,8 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         protected Dictionary<string ,MarketData > MarketDataDict { get; set; }
 
+        protected static int _POS_ID_LENGTH = 36;
+
 
         #endregion
 
@@ -61,6 +63,14 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
+        protected void LoadPosId(Position pos)
+        {
+            //pos.LoadPosId(NextPosId);
+            pos.LoadPosGuid(Guid.NewGuid().ToString());
+            //int length = pos.PosId.Length;
+
+        }
+
         protected virtual Position LoadNewRegularPos(Security sec, Side side,QuantityType qtyType, double qty)
         {
 
@@ -80,7 +90,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
             };
 
-            pos.LoadPosId(NextPosId);
+            LoadPosId(pos);
             NextPosId++;
 
             return pos;
@@ -198,7 +208,8 @@ namespace tph.ConsoleStrategy.LogicLayer
                         newPos.Qty = unwindPos.CumQty;
                         newPos.QuantityType = QuantityType.SHARES;
                         newPos.Side = unwindPos.FlipSide();
-                        newPos.LoadPosId(NextPosId);
+                        LoadPosId(newPos);
+                        //newPos.LoadPosId(NextPosId);
                         newPos.PosStatus = PositionStatus.PendingNew;
 
                         NextPosId++;
@@ -296,7 +307,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             Console.WriteLine();
             Console.WriteLine($"==========Trading Commands ==========");
             Console.WriteLine($"#1-NewPosCash <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
-            Console.WriteLine($"#2-NewPosQty <symbol> <side> <CashQty> <Currency*> <Echange*> <SecType*>");
+            Console.WriteLine($"#2-NewPosQty <symbol> <side> <Qty> <Currency*> <Echange*> <SecType*>");
             Console.WriteLine($"#3-ListRoutedPositions ");
             Console.WriteLine($"#4-CancelPosition <PosId>");
             Console.WriteLine($"#5-CancelAll");
@@ -453,7 +464,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
                     string clOrdId = report.Order.ClOrdId;
 
-                    string posId = Position.ExtractPosIDPrefix(clOrdId);
+                    string posId = Position.ExtractPosIDPrefix(clOrdId,_POS_ID_LENGTH);
 
                     if (posId != null)
                     {
