@@ -18,7 +18,7 @@ namespace TestStrategyTest
                 Console.WriteLine(msg);
             else if (msg.StartsWith("toConsole->"))
             {
-                Console.WriteLine(msg.Replace("toConsole->", ""));
+                Console.WriteLine(msg.Replace("toConsole->", ""));//xxxxx
                 Console.WriteLine("");
             }
 
@@ -34,7 +34,7 @@ namespace TestStrategyTest
             ToConsole = Convert.ToBoolean(ConfigurationManager.AppSettings["allwaysToConsole"]);
             ILogSource appLogger;
             ILogSource incommingLogger;
-            ILogSource outgoingLogger;/xx
+            ILogSource outgoingLogger;//xx
 
             appLogger = new PerDayFileLogSource(Directory.GetCurrentDirectory() + "\\Log", Directory.GetCurrentDirectory() + "\\Log\\Backup")
             {

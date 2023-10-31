@@ -553,7 +553,12 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
             DoLoadConfig(configFile, listaCamposSinValor);
         }
 
-       
+        void ILogger.DoLog(string msg, MessageType type)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         #endregion
     }
