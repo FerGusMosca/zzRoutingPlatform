@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Security List Processor</Name>
+
+  <SecuritiesAccessLayerConnectionString >data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True</SecuritiesAccessLayerConnectionString >
+  <CryptosInPortfolioConnectionString>data source=.\SQLDEV;initial catalog=BOBIntFigCryptoMetrics;integrated security=True;multipleactiveresultsets=True</CryptosInPortfolioConnectionString>
+  <Country>ARG</Country><!--USA=Estados Unidos,ARG=Argentna-->
+  <MarketClearingID>48hs</MarketClearingID>
+  <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
+  <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest><!--Seconds-->
+  
+
+  <MarketCapProvider>zHFT.StrategyHandler.CLS.CryptoCompare.DAL.MarketCapProviderManager, zHFT.StrategyHandler.CLS.CryptoCompare.DAL</MarketCapProvider>
+  <MarketCapProviderAPIKey>2fc2122c-855e-4911-8757-885b18cc8d8a</MarketCapProviderAPIKey>
+  <MarketCapProviderURL>https://min-api.cryptocompare.com/</MarketCapProviderURL>
+  <MarketCapCurrency>USD</MarketCapCurrency>
+    
+  <SaveNewSecurities>false</SaveNewSecurities>
+  <SecurityTypes>
+    <SecurityType>CS</SecurityType><!--CS= Common Stock-->
+    <SecurityType>OPT</SecurityType><!--OPT=Options-->
+  </SecurityTypes>
+
+  <Markets>
+    <Market>BUE</Market> <!--BUE=BYMA,NMS=Nasdaq,NYQ=NYSE,PCX=Arca-->
+  </Markets>
+  
+</Configuration>

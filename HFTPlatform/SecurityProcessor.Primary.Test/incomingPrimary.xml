@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Security List Processor Primary</Name>
+  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
+  <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
+  <User>fmosca</User>
+  <Password>Baiano.19</Password>
+  <RequestSecurityList>true</RequestSecurityList>
+  
+  <SecurityListRequestType>4</SecurityListRequestType><!--0=Symbol,
+                                                          1=SecurityType and/or CFICode,
+                                                          2=Product,
+                                                          3=TradingSessionID,
+                                                          4=All Securities-->
+</Configuration>

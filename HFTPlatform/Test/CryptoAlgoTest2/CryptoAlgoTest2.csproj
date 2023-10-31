@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>CryptoAlgoTest2</AssemblyName>
+        <RootNamespace>CryptoAlgoTest2</RootNamespace>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Outgoing Primary</Name>
+  
+  <Proxy>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</Proxy>
+  <ProxyConfigFile>.\Primary\OutgoingSingletonConfig.xml</ProxyConfigFile>
+
+  <!--<Proxy>zHFT.OrderRouters.IB.OrderRouter, zHFT.OrderRouters.IB</Proxy>
+  <ProxyConfigFile>.\IB\outgoingOrderRouter.IB.xml</ProxyConfigFile>-->
+
+<!--  <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>-->
+<!--  <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
+
+  <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
+  <!--<OrderIdStart>00</OrderIdStart>-->
+
+</Configuration>

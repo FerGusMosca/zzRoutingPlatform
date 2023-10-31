@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF80D3BC-A29C-4096-8BB6-998B971FC14A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InstructionsProcessorTest</RootNamespace>
+    <AssemblyName>InstructionsProcessorTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MDFShared">
+      <HintPath>..\..\Librerias\MDFShared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolsShared">
+      <HintPath>..\..\Librerias\ToolsShared.dll</HintPath>
+    </Reference>
+    <Reference Include="TWSLib">
+      <HintPath>..\..\Librerias\TWSLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IB\zHFT.InstructionBasedMarketClient.IB.csproj">
+      <Project>{2ab16060-3c26-456d-a02d-8aa025bdab08}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main\zHFT.Main.csproj">
+      <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
+      <Name>zHFT.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.IB\zHFT.MarketClient.IB.csproj">
+      <Project>{ad8cf334-5123-465f-81c4-f784c88f7632}</Project>
+      <Name>zHFT.MarketClient.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.IB\zHFT.OrderRouters.IB.csproj">
+      <Project>{ae6ca067-5460-4957-93e4-3031b74f45e7}</Project>
+      <Name>zHFT.OrderRouters.IB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
+      <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
+      <Name>zHFT.OrderRouters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer.csproj">
+      <Project>{58324d7e-90c3-46f4-96e2-ea0fe424663b}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer\zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer.csproj">
+      <Project>{943d7342-fedc-4e71-aee0-c15a0857b18a}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting.IB.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting\zHFT.StrategyHandler.InstructionBasedRouting.csproj">
+      <Project>{17ca0ba8-f7b0-4d4e-bd40-568fe93a345e}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="incomingIB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="outgoingOrderRouter.IB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingStrategyHandler.InstructionBasedRouting.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

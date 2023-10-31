@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{17F480D2-3D33-43B8-8ADF-0D438A7FA5FE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SecurityProcessor.IOL.Test</RootNamespace>
+    <AssemblyName>SecurityProcessor.IOL.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccessLayer\SecurityListManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities\zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities.csproj">
+      <Project>{887c5bf2-a6df-48d1-bfc2-0667af33d61b}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.Common\zHFT.InstrFullMarketConnectivity.IOL.Common.csproj">
+      <Project>{599f2026-666f-492c-b41f-3704881f32a1}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer\zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.csproj">
+      <Project>{7a43e37d-d6ac-4090-ba4b-d42801f3ed08}</Project>
+      <Name>zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL.BusinessEntities\zHFT.InstructionBasedMarketClient.IOL.BusinessEntities.csproj">
+      <Project>{68a83f35-6673-49b3-8670-0184cd3434a0}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.IOL.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL.Common\zHFT.InstructionBasedMarketClient.IOL.Common.csproj">
+      <Project>{1f39f08c-711b-4878-891d-69e7f435abcb}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.IOL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer\zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer.csproj">
+      <Project>{85ebcd2a-a70f-4b40-b2ab-00f20f2df69e}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

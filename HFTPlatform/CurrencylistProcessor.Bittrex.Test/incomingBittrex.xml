@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Curremcy List Processor Bittrex</Name>
+  <ApiKey>f1cf7fe940224b4cbfc08f716749d983</ApiKey>
+  <Secret>772305fdeeb542cebb990c47d66829b8</Secret>
+  <QuoteCurrency>USD</QuoteCurrency>
+  <Simulate>true</Simulate>
+  
+  
+</Configuration>

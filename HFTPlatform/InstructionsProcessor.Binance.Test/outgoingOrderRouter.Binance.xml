@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+    <Name>Outgoing Order Routing Binance</Name>
+
+    <QuoteCurrency>USDT</QuoteCurrency>
+    
+    <RefreshExecutionReportsInMilisec>100</RefreshExecutionReportsInMilisec>
+    
+    <ConfigConnectionString>data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ConfigConnectionString>
+    <AccountNumber>3</AccountNumber>
+</Configuration>

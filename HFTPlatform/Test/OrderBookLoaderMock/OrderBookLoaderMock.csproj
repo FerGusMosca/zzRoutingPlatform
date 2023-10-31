@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net461</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\fwk\fwk.common\fwk.common.csproj" />
+      <ProjectReference Include="..\..\Rialto.LogicLayer\Rialto.LogicLayer.csproj" />
+      <ProjectReference Include="..\..\tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj" />
+      <ProjectReference Include="..\..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj" />
+      <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj" />
+      <ProjectReference Include="..\OrderBookLoaderMock.Common\OrderBookLoaderMock.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="config\security_mapping.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="config\shareholder_mapping.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AWSSDK" Version="2.3.55.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Configuration" />
+    </ItemGroup>
+
+</Project>

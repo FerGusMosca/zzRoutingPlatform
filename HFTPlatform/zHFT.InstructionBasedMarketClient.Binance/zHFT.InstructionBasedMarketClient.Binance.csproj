@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDC254D7-CBF9-4B08-AF29-92A64A2EC5A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zHFT.InstructionBasedMarketClient.Binance</RootNamespace>
+    <AssemblyName>zHFT.InstructionBasedMarketClient.Binance</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Binance.API.Csharp.Client, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Binance.API.Csharp.Client.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Domain.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Binance.API.Csharp.Client.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\Binance.API.Csharp.Client.1.4.0\lib\net46\Binance.API.Csharp.Client.Models.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp, Version=1.0.2.32519, Culture=neutral, PublicKeyToken=5660b08a1845a91e">
+      <HintPath>..\packages\WebSocketSharp-NonPreRelease.1.0.0\lib\net35\websocket-sharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\BinanceInstructionBasedMarketClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Binance.BusinessEntities\zHFT.InstructionBasedMarketClient.Binance.BusinessEntities.csproj">
+      <Project>{0d409fad-fd56-4b0f-b9e2-1f937594dea1}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Binance.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Binance.Common\zHFT.InstructionBasedMarketClient.Binance.Common.csproj">
+      <Project>{28e52630-7d49-4c75-a78e-54a5c033db98}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Binance.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer\zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer.csproj">
+      <Project>{c8f1937f-a42e-485d-8197-fd35a913d541}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Binance.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
+      <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Common\zHFT.InstructionBasedMarketClient.Common.csproj">
+      <Project>{2b6248b2-af75-4687-9faf-f9ea29d9335f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer\zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.csproj">
+      <Project>{2d4a56cb-b881-4189-b360-db0b2ab27c9f}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Cryptos\zHFT.InstructionBasedMarketClient.Cryptos.csproj">
+      <Project>{6f6b09b8-01f9-48bf-85c5-af34498fb070}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Cryptos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801e5410-738b-47c9-895f-0ad1b5860a2a}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

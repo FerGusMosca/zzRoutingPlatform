@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0C111FD5-F155-4D07-B983-4EC9F0F43B52}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InstructionsProcessor.Bittrex.Test</RootNamespace>
+    <AssemblyName>InstructionsProcessor.Bittrex.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MDFShared">
+      <HintPath>..\..\Librerias\MDFShared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolsShared">
+      <HintPath>..\..\Librerias\ToolsShared.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Bittrex\zHFT.InstructionBasedMarketClient.Bittrex.csproj">
+      <Project>{d0e6f84d-fae3-40e4-91c1-c20e2c880a24}</Project>
+      <Name>zHFT.InstructionBasedMarketClient.Bittrex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main\zHFT.Main.csproj">
+      <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
+      <Name>zHFT.Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Bittrex\zHFT.OrderRouters.Bittrex.csproj">
+      <Project>{b927643d-b884-4755-ab63-d4c78e262c9b}</Project>
+      <Name>zHFT.OrderRouters.Bittrex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Mock\zHFT.OrderRouters.Mock.csproj">
+      <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>
+      <Name>zHFT.OrderRouters.Mock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
+      <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
+      <Name>zHFT.OrderRouters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer\zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer.csproj">
+      <Project>{3d536a90-25c5-4831-97e7-9b9fc8a1e16d}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Bittrex.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer\zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer.csproj">
+      <Project>{d9e755cf-6007-4ab6-9dbd-551ab3bd36ad}</Project>
+      <Name>zHFT.StrategyHandler.IBR.Cryptos.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.InstructionBasedRouting\zHFT.StrategyHandler.InstructionBasedRouting.csproj">
+      <Project>{17ca0ba8-f7b0-4d4e-bd40-568fe93a345e}</Project>
+      <Name>zHFT.StrategyHandler.InstructionBasedRouting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="incomingBittrex.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Mock\outgoingOrderRouter.Mock.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.Bittrex.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingOrderRouter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="outgoingStrategyHandler.InstructionBasedRouting.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

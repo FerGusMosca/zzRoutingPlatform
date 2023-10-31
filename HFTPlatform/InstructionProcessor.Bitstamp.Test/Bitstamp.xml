@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>InstructionProcessor.Primary.Test</Name>
+  <FIXInitiatorPath>.\FIX Sessions\initiator_prod.cfg</FIXInitiatorPath>
+  <!--<FIXInitiatorPath>.\FIX Sessions\initiator_test.cfg</FIXInitiatorPath>-->
+  <FIXMessageCreator>zHFT.FixMessageCreator.Primary.Common.v50Sp2.FIXMessageCreator,zHFT.FixMessageCreator.Primary.Common</FIXMessageCreator>
+  <User>SKPZwO3c0hHj999EznozR3o79h2zyw6J</User><!--Key-->
+  <Password>6g7BEowv3Xg8cU42F0DuZZGcTdXyQCQC</Password><!--Secret-->
+
+  <InstructionsAccessLayerConnectionString >metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+  <!--<SecuritiesAccessLayerConnectionString >metadata=res://*/SecuritiesHistoricalDataEntityDataModel.csdl|res://*/SecuritiesHistoricalDataEntityDataModel.ssdl|res://*/SecuritiesHistoricalDataEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</SecuritiesAccessLayerConnectionString >-->
+
+  <!--<SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>-->
+
+  <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds>
+  <!--5 segundos-->
+
+  <SearchForInstructionsInMilliseconds >1000</SearchForInstructionsInMilliseconds >
+  <!--1 segundos-->
+
+  <!--<AccountNumber>5</AccountNumber>--><!--Primary Test-->
+  <AccountNumber>6</AccountNumber><!--Eco Valores PROD-->
+  <!--<AccountNumber>7</AccountNumber>--><!--Primary Test 9008-->
+
+  <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest>
+  <!--Seconds-->
+
+  <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
+  <RequestFullMarketData>false</RequestFullMarketData>
+  <SaveFullMarketData>false</SaveFullMarketData>
+
+</Configuration>

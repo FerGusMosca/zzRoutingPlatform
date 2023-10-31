@@ -1,0 +1,86 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer;
+using zHFT.InstrFullMarketConnectivity.IOL.DataAccessLayer.ADO;
+using zHFT.InstructionBasedMarketClient.IOL.Common.DTO;
+using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
+
+namespace zHFT.InstructionBasedMarketClient.IOL.DataAccessLayer
+{
+    public class IOLMarketDataManager:BaseManager
+    {
+        #region Constructors
+
+        public IOLMarketDataManager(OnLogMessage OnLogMsg, int pAccountNumber, 
+                                    string pCredentialsConnectionString,string pMainURL)
+        {
+
+            Name = "Invertir Online Market Data Client";
+            Logger = OnLogMsg;
+            CredentialsConnectionString = pCredentialsConnectionString;
+            AccountNumber = pAccountNumber;
+            MainURL = pMainURL;
+            
+            LoadConfig();
+            Logger("Authenticating Market Data Client On Invertir Online", Main.Common.Util.Constants.MessageType.Information);
+            Authenticate();
+            Logger(string.Format("Market Data Client authenticated On Invertir Online. Token:{0}", AuthenticationToken.access_token),
+                   Main.Common.Util.Constants.MessageType.Information);
+        
+        }
+
+        private string GetIOLSettlType(SettlType settlType)
+        {
+            if (settlType == SettlType.Tplus2)
+                return _IOL_CLEAR_TPLUS2;
+            else
+                throw new Exception(string.Format("Settl Type {0} not implemented for IOL", settlType.ToString()));
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public override object GetMarketData(string symbol, string exchange, SettlType settlType)
+        {
+
+            string iolExchange = "";
+
+            if (exchange == _MAIN_BYMA_EXCHANGE)
+                iolExchange = _IOL_BYMA_EXCHANGE;
+            else
+                throw new Exception(string.Format("Mercado {0} no reconocido", exchange));
+
+
+            string url = MainURL + _MARKET_DATA_URL
+                         + string.Format("?mercado=BCBA&simbolo={0}&model.simbolo={0}&model.mercado={1}&model.plazo={2}",
+                                        symbol, iolExchange, GetIOLSettlType(settlType));
+            try
+            {
+                string resp = DoGetJson(url);
+
+                if (resp != null)
+                {
+                    MarketData marketData = JsonConvert.DeserializeObject<MarketData>(resp);
+
+                    return marketData;
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Se produjo un error accediendo al market data para el activo {0}:{1}", symbol, ex.Message));
+            }
+        }
+
+        #endregion
+    }
+}

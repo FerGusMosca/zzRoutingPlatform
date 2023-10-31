@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Incoming Bittrex</Name>
+  <QuoteCurrency>BTC</QuoteCurrency>
+  <Simulate>false</Simulate>
+
+  <InstructionsAccessLayerConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=Matter;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</InstructionsAccessLayerConnectionString >
+
+  <PublishUpdateInMilliseconds>100</PublishUpdateInMilliseconds>
+  <!--5 segundos-->
+
+  <SearchForInstructionsInMilliseconds >100</SearchForInstructionsInMilliseconds >
+  <!--1 segundos-->
+
+  <AccountNumber>1</AccountNumber>
+
+</Configuration>

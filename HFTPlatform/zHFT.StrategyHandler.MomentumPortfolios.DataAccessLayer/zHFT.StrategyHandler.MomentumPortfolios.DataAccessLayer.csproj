@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E792F6A2-8892-4334-B4CC-9E49B142F597}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer</RootNamespace>
+    <AssemblyName>zHFT.StrategyHandler.MomentumPortfolios.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\Librerias\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ConfigurationHelper.cs" />
+    <Compile Include="Helpers\PortfolioHelper.cs" />
+    <Compile Include="Helpers\PositionHelper.cs" />
+    <Compile Include="Helpers\StockAlarmHelper.cs" />
+    <Compile Include="Helpers\StockHelper.cs" />
+    <Compile Include="Managers\PortfolioManager.cs" />
+    <Compile Include="Managers\StrategyManager.cs" />
+    <Compile Include="Mapping\AutoMapperConfiguration.cs" />
+    <Compile Include="Helpers\StrategyHelper.cs" />
+    <Compile Include="Mapping\MappingEnabledAbstract.cs" />
+    <Compile Include="Profiles\ConfigurationProfile.cs" />
+    <Compile Include="Profiles\PortfolioProfile.cs" />
+    <Compile Include="Profiles\PositionProfile.cs" />
+    <Compile Include="Profiles\StockAlarmProfile.cs" />
+    <Compile Include="Profiles\StockProfile.cs" />
+    <Compile Include="Profiles\StrategyProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities\zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities.csproj">
+      <Project>{6257656f-fc67-4a0b-9f55-8a82cc43d9c4}</Project>
+      <Name>zHFT.StrategyHandler.MomentumPortfolios.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.MomentumPortfolios.Common\zHFT.StrategyHandler.MomentumPortfolios.Common.csproj">
+      <Project>{0fc94acf-3330-416b-af35-0e573c507723}</Project>
+      <Name>zHFT.StrategyHandler.MomentumPortfolios.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.MomentumPortfolios.DataAccess\zHFT.StrategyHandler.MomentumPortfolios.DataAccess.csproj">
+      <Project>{93993848-41a7-4bc7-8e79-3bb163ef259a}</Project>
+      <Name>zHFT.StrategyHandler.MomentumPortfolios.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

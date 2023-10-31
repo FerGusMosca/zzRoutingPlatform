@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net461</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="TWS" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\tph.InstructionBasedMarketClient.IB.Common\tph.InstructionBasedMarketClient.IB.Common.csproj" />
+      <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.Binance.Common\zHFT.InstructionBasedMarketClient.Binance.Common.csproj" />
+      <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj" />
+    </ItemGroup>
+
+</Project>

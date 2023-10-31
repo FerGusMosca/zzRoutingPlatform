@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Outgoing IOL</Name>
+  <!--Para los archivos de logs-->
+  <AccountNumber>11</AccountNumber>
+  <!--<AccountNumber>11</AccountNumber>-->
+  <!--11=mbartellini,10=fmosca-->
+  <ConfigConnectionString>Data Source=.\SQLDEV;Initial Catalog=AutPortfolio;Integrated Security=SSPI;</ConfigConnectionString>
+  <!--<MainURL>https://api-sandbox.invertironline.com/</MainURL> --><!--DEV-->
+  <MainURL>https://api.invertironline.com/</MainURL> <!--PROD-->
+
+  <CancellationTimeoutInSeconds>20</CancellationTimeoutInSeconds>
+  
+</Configuration>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Order Imbalance Calculator</Name>
+  
+  
+  <!--Invertir Online-->
+<!--  <IncomingConfigPath>.\IOL\incomingIOL.xml</IncomingConfigPath>-->
+<!--  <IncomingModule>zHFT.InstructionBasedMarketClient.IOL.Client.IOLInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IOL</IncomingModule>-->
+
+  <!--Primary-->
+  <IncomingConfigPath>.\Primary\IncomingSingletonConfig.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+
+  <!--IB-->
+  <!--<IncomingConfigPath>.\IB\incomingIB.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.IB.Client.IBInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.IB</IncomingModule>-->
+  
+  <!--Bittrex-->
+  <!--<IncomingConfigPath>.\Bittrex\incomingBittrex.xml</IncomingConfigPath>
+  <IncomingModule>zHFT.InstructionBasedMarketClient.Bittrex.Client.BittrexInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Bittrex</IncomingModule>-->
+
+  <!--Regular-->
+<!--  <OutgoingModule>zHFT.StrategyHandler.OrderImbSimpleCalculator.OrderImbalanceCalculator, zHFT.StrategyHandler.OrderImbSimpleCalculator</OutgoingModule>-->
+<!--  <OutgoingConfigPath>.\OrderImbalanceCalculator.xml</OutgoingConfigPath>-->
+
+  <!--Extended-->
+  <OutgoingModule>zHFT.StrategyHandler.OrderImbExtendedCalculator.OrderImbExtendedCalculator, zHFT.StrategyHandler.OrderImbExtendedCalculator</OutgoingModule>
+  <OutgoingConfigPath>.\OrderImbalanceExtCalculator.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Incoming Binance</Name>
+  <QuoteCurrency>USDT</QuoteCurrency>
+
+  <PublishUpdateInMilliseconds>100</PublishUpdateInMilliseconds>
+  
+  <Key></Key>
+  <Secret></Secret>
+  <!--5 segundos-->
+
+  <AccountNumber>17</AccountNumber>
+
+<!--  <EFConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</EFConnectionString>-->
+  <ConnectionString>data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  
+</Configuration>

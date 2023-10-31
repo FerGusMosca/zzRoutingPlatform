@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HistoricalPricesDownloaderConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Historical Prices Downloader</Name>
+
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+	<SecurityType>CS</SecurityType><!--CS=Common Stock-->
+	<Currency>USD</Currency>
+
+	<From>2023-10-18</From><!--yyyy-MM-dd-->
+	
+	<To>2023-10-18</To><!--yyyy-MM-dd-->
+
+	<PacingBtwRequests>1000</PacingBtwRequests><!--milliseconds-->
+	<PacingOnConnections>3000</PacingOnConnections><!--milliseconds-->
+
+	<Interval>MINUTE</Interval><!--MINUTE,DAY-->
+		
+	<SymbolsToDownload>
+
+    <!--<Symbol>BTC</Symbol>-->
+	  <Symbol>QQQ</Symbol>
+	  <Symbol>SPY</Symbol>
+
+
+  </SymbolsToDownload>
+
+</HistoricalPricesDownloaderConfiguration>

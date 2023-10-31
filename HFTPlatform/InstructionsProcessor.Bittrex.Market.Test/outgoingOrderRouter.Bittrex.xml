@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Outgoing Order Routing Bittrex</Name>
+
+  <QuoteCurrency>BTC</QuoteCurrency>
+  <Simulate>false</Simulate>
+
+  <RefreshExecutionReportsInMilisec>5000</RefreshExecutionReportsInMilisec>
+
+  <ConfigConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=Matter;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ConfigConnectionString>
+  <AccountNumber>1</AccountNumber>
+</Configuration>

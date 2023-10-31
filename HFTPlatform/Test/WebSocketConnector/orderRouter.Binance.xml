@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+    <Name>Outgoing Order Routing Binance</Name>
+
+    <QuoteCurrency>USDT</QuoteCurrency>
+    
+    <RefreshExecutionReportsInMilisec>100</RefreshExecutionReportsInMilisec>
+    
+    <ConfigConnectionString>metadata=res://*/MatterEntityDataModel.csdl|res://*/MatterEntityDataModel.ssdl|res://*/MatterEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV17;initial catalog=SeekingBiasCryptos;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</ConfigConnectionString>
+    <Key>tmhXIW2T2bivhqegxL8NDBV97YcT5DyK9qgY5OtB2AEcfdTKEnMr5qFv5EP6x54L</Key>
+    <Secret>TcN8EQDcma4Bp7OAI1NBMK0cB6qufA7zXdRTC8N9nXNjxy389L4kFH9AA6Itf2T7</Secret>
+</Configuration>
