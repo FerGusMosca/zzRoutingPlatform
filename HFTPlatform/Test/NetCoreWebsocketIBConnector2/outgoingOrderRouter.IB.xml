@@ -4,9 +4,9 @@
   <!--Para los archivos de logs-->
   <Active>true</Active>
   <IP>localhost</IP>
-   <Port>7496</Port>  <!--REAL ACCOUNT-->
+   <!--<Port>7496</Port>-->  <!--REAL ACCOUNT-->
 
-  <!--<Port>7497</Port>--><!-- PAPER TRADING-->
+  <Port>7497</Port><!-- PAPER TRADING-->
 
   <IdIBClient>4</IdIBClient>
 

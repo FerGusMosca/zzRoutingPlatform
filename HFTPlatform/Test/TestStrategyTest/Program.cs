@@ -34,7 +34,7 @@ namespace TestStrategyTest
             ToConsole = Convert.ToBoolean(ConfigurationManager.AppSettings["allwaysToConsole"]);
             ILogSource appLogger;
             ILogSource incommingLogger;
-            ILogSource outgoingLogger;
+            ILogSource outgoingLogger;/xx
 
             appLogger = new PerDayFileLogSource(Directory.GetCurrentDirectory() + "\\Log", Directory.GetCurrentDirectory() + "\\Log\\Backup")
             {
