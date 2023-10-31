@@ -18,7 +18,7 @@ namespace TestStrategyTest
                 Console.WriteLine(msg);
             else if (msg.StartsWith("toConsole->"))
             {
-                Console.WriteLine(msg.Replace("toConsole->", ""));//xxxxx
+                Console.WriteLine(msg.Replace("toConsole->", ""));//x
                 Console.WriteLine("");
             }
 
