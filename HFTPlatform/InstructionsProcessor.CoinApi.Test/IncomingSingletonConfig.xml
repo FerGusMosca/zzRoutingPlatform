@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration>
-  <Name>Incoming Singleton CoinApi FIX</Name>
-  <SingletonAssembly>zHFT.InstructionBasedFullMarketConnectivity.CoinApi.InstructionBasedMarketClient, zHFT.InstructionBasedFullMarketConnectivity.CoinApi</SingletonAssembly>
-  <SingletonConfigFile>.\CoinApi.xml</SingletonConfigFile>
-  <ModuleDirection>I</ModuleDirection>
-  <!--I=incoming,O=outgoing-->
-</Configuration>

@@ -1,9 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
-  &lt;Assembly Path="C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\HFTPlatform\packages\Microsoft.Extensions.DependencyInjection.6.0.0-preview.3.21201.4\lib\net461\Microsoft.Extensions.DependencyInjection.dll" /&gt;&#xD;
-  &lt;Assembly Path="C:\Users\Compumar\Desktop\Projects\Seeking Bias\tphplatform\hftplatform\HFTPlatform\packages\Binance.Net.6.13.2\lib\netstandard2.0\Binance.Net.dll" /&gt;&#xD;
-  &lt;Assembly Path="C:\Users\zimzum\Desktop\BOB Day Turtles\tph.DayTurtles.BusinessEntities.dll" /&gt;&#xD;
-  &lt;Assembly Path="C:\Users\zimzum\Desktop\Projects\Seeking Bias\tph_platform\hftplatform\Librerias\TWSLib.dll" /&gt;&#xD;
-&lt;/AssemblyExplorer&gt;</s:String>
-	
-	</wpf:ResourceDictionary>

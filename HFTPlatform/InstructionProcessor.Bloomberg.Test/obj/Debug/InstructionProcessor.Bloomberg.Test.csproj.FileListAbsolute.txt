@@ -1,8 +1,0 @@
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\bin\Debug\InstructionProcessor.Bloomberg.Test.exe.config
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\bin\Debug\InstructionProcessor.Bloomberg.Test.exe
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\bin\Debug\InstructionProcessor.Bloomberg.Test.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\bin\Debug\Bloomberglp.Blpapi.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\bin\Debug\Bloomberglp.Blpapi.xml
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\obj\Debug\InstructionProcessor.Bloomberg.Test.exe
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\obj\Debug\InstructionProcessor.Bloomberg.Test.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\InstructionProcessor.Bloomberg.Test\obj\Debug\InstructionProcessor.Bloomberg.Test.csprojResolveAssemblyReference.cache

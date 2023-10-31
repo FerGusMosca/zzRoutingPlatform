@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration>
-  <Name>Outgoing TO DB</Name>
-  <EFOptionsAccessLayerConnectionString>metadata=res://*/AutPortfolioEntityDataModel.csdl|res://*/AutPortfolioEntityDataModel.ssdl|res://*/AutPortfolioEntityDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;</EFOptionsAccessLayerConnectionString>
-  <OptionsAccessLayerConnectionString>Data Source=.\SQLDEV;initial catalog=AutPortfolio;integrated security=True;multipleactiveresultsets=True</OptionsAccessLayerConnectionString>
-</Configuration>

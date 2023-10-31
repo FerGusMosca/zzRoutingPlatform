@@ -1,6 +1,0 @@
-C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient\bin\Debug\zHFT.MarketClient.exe.config
-C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient\bin\Debug\zHFT.MarketClient.exe
-C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient\bin\Debug\zHFT.MarketClient.pdb
-C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient\obj\Debug\zHFT.MarketClient.exe
-C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient\obj\Debug\zHFT.MarketClient.pdb
-C:\Users\Compumar\Dropbox\HFTPlatform\HFTPlatform\zHFT.MarketClient\obj\Debug\zHFT.MarketClient.csprojResolveAssemblyReference.cache

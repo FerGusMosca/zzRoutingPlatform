@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Security List Processor</Name>
-  <IncomingConfigPath>.\incomingPrimary.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.SecurityListMarketClient.Primary.Client.PrimarySecurityListMarketClient, zHFT.SecurityListMarketClient.Primary</IncomingModule>
-  <OutgoingModule>zHFT.StrategyHandler.SecurityListSaver.SecurityListSaver, zHFT.StrategyHandler.SecurityListSaver</OutgoingModule>
-  <OutgoingConfigPath>.\outgoingSecurityListSaver.xml</OutgoingConfigPath>
-  <LogToConsole>true</LogToConsole>
-</Configuration>

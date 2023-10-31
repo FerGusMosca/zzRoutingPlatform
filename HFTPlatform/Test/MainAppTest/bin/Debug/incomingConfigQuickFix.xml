@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Configuration>
-  <Name>FIX Initiator</Name>
-  <!--Para los archivos de logs-->
-  <Active>true</Active>
-  <FIXConfigFile>.\FIX Sessions\initiator.cfg</FIXConfigFile>
-
-  <Mercado>MAE</Mercado>
-</Configuration>

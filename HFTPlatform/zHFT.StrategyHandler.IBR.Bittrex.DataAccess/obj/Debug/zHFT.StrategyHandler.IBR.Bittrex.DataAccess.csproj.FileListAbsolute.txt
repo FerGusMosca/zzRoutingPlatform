@@ -1,5 +1,0 @@
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.dll.config
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\bin\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.pdb
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.dll
-C:\Users\zimzum\Desktop\Projects\HFTPlatform\HFTPlatform\zHFT.StrategyHandler.IBR.Bittrex.DataAccess\obj\Debug\zHFT.StrategyHandler.IBR.Bittrex.DataAccess.pdb
