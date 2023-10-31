@@ -309,16 +309,29 @@ namespace tph.StrategyHandler.SimpleCommandSender
             try
             {
                 Wrapper wrapper = (Wrapper) param;
-                
+
+                //TODO build converter!
+                string symbol = (string)wrapper.GetField(OrderFields.Symbol);
                 string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
                 string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
                 double price = (double)wrapper.GetField(OrderFields.Price);
+                OrdType ordType = (OrdType)wrapper.GetField(OrderFields.OrdType);
+                Side side = (Side)wrapper.GetField(OrderFields.Side);
+                TimeInForce tif = (TimeInForce)wrapper.GetField(OrderFields.TimeInForce);
+                double ordQty = (double)wrapper.GetField(OrderFields.OrderQty);
 
                 UpdateOrderReq updReq = new UpdateOrderReq()
                 {
                     OrigClOrdId = origClOrdId,
                     ClOrdId = clOrdId,
-                    Price = price
+                    Symbol = symbol,
+                    Price = price,
+                    OrdType = ordType,
+                    Side = side,
+                    TimeInForce = tif,
+                    Qty=ordQty
+                   
+
                 };
 
                 lock (JsonOrdersDict)

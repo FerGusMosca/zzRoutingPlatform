@@ -1,4 +1,6 @@
-﻿namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
+﻿using zHFT.Main.Common.Enums;
+
+namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
 {
     public class UpdateOrderReq:WebSocketMessage
     {
@@ -6,7 +8,7 @@
 
         public UpdateOrderReq()
         {
-            Msg = "UpdateOrderReq";
+            Msg = "UpdOrderReq";
         }
 
         #endregion
@@ -24,6 +26,13 @@
         public  double? Qty{get; set; }
         
         public  double? Price{get; set; }
+
+        public OrdType OrdType { get; set; }
+
+        public Side Side { get; set; }
+
+        public TimeInForce TimeInForce { get; set; }
+
         
         #endregion
     }

@@ -313,6 +313,12 @@ namespace zHFT.Main.BusinessEntities.Positions
             return PosStatus == PositionStatus.Filled;
         }
 
+        public bool CanceledPos()
+        {
+
+            return PosStatus == PositionStatus.Canceled;
+        }
+
         public double GetPositionQty()
         {
             if (PositionRouting() || FilledPos())

@@ -38,6 +38,8 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         protected Dictionary<string ,MarketData > MarketDataDict { get; set; }
 
+        protected PositionIdTranslator PositionIdTranslator { get; set; }
+
         protected static int _POS_ID_LENGTH = 36;
 
 
@@ -63,13 +65,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
-        protected void LoadPosId(Position pos)
-        {
-            //pos.LoadPosId(NextPosId);
-            pos.LoadPosGuid(Guid.NewGuid().ToString());
-            //int length = pos.PosId.Length;
-
-        }
+       
 
         protected virtual Position LoadNewRegularPos(Security sec, Side side,QuantityType qtyType, double qty)
         {
@@ -90,8 +86,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
             };
 
-            LoadPosId(pos);
-            NextPosId++;
+            pos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
 
             return pos;
         }
@@ -161,14 +156,16 @@ namespace tph.ConsoleStrategy.LogicLayer
                     {
                         CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(cxlPos, Config);
 
-                        DoLog($"Sending cancelation for PosId {cxlPos.PosId}", MessageType.PriorityInformation);
+                        int friendlyPosId = PositionIdTranslator.GetFriendlyPosId(cxlPos.PosId);
+                        DoLog($"Sending cancelation for PosId {friendlyPosId} ({cxlPos.PosId})", MessageType.PriorityInformation);
                         OrderRouter.ProcessMessage(cxlWrapper);
 
 
                     }
                     else
                     {
-                        DoLog($"Ignoring position {cxlPos.PosId} because it is in status {cxlPos.PosStatus}", MessageType.PriorityInformation);
+                        int friendlyPosId = PositionIdTranslator.GetFriendlyPosId(cxlPos.PosId);
+                        DoLog($"Ignoring position {friendlyPosId} ({cxlPos.PosId}) because it is in status {cxlPos.PosStatus}", MessageType.PriorityInformation);
                     }
                     
                 }
@@ -183,45 +180,39 @@ namespace tph.ConsoleStrategy.LogicLayer
             string mainCmd = param[0];
             CommandValidator.ValidateCommandParams(mainCmd, param, 2, 2);
 
-            string posId = param[1];
+            int friendlyPosId = Convert.ToInt32(param[1]) ;
 
 
             lock (RoutedPosDict)
             {
-                if (RoutedPosDict.ContainsKey(posId))
+                string guidPosId = PositionIdTranslator.GetRealPosId(friendlyPosId);
+                if (RoutedPosDict.ContainsKey(guidPosId))
                 {
-                    Position unwindPos = RoutedPosDict[posId];
+                    Position unwindPos = RoutedPosDict[guidPosId];
 
-                    if (unwindPos.PositionNoLongerActive())
+                    if (unwindPos.PositionRouting())
                     {
-                        DoLog($"Ignoring position {unwindPos.PosId}(symbol={unwindPos.Security.Symbol}) because it is in status {unwindPos.PosStatus}", MessageType.PriorityInformation);
-
+                        DoLog($"Position is being routed to the exchange {friendlyPosId} ({guidPosId}) (symbol={unwindPos.Security.Symbol} status={unwindPos.PosStatus}) --> Cancel the positions first!", MessageType.PriorityInformation);
                     }
-                    else if (unwindPos.PositionRouting())
-                    {
-                        DoLog($"Position is being routed to the exchange {unwindPos.PosId}(symbol={unwindPos.Security.Symbol} status={unwindPos.PosStatus}) --> Cancel the positions first!", MessageType.PriorityInformation);
-                    }
-                    else
+                    else if (unwindPos.FilledPos() || (unwindPos.CanceledPos() && unwindPos.CumQty>0))
                     {
                         Position newPos = unwindPos.Clone();
 
                         newPos.Qty = unwindPos.CumQty;
                         newPos.QuantityType = QuantityType.SHARES;
                         newPos.Side = unwindPos.FlipSide();
-                        LoadPosId(newPos);
+                        newPos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
                         //newPos.LoadPosId(NextPosId);
                         newPos.PosStatus = PositionStatus.PendingNew;
 
-                        NextPosId++;
-
                         PositionWrapper posWrapper = new PositionWrapper(newPos, Config);
 
-                        DoLog($"Unwinding position PosId {NextPosId} Side={unwindPos.Side}->{newPos.Side} Qty={newPos.Qty}", MessageType.PriorityInformation);
+                        DoLog($"Unwinding position w/ PosId {newPos.PosId} Side={unwindPos.Side}->{newPos.Side} Qty={newPos.Qty}", MessageType.PriorityInformation);
                         OrderRouter.ProcessMessage(posWrapper);
                     }
                 }
                 else
-                    DoLog($"Could not find a position for PosId {posId}", MessageType.Error);
+                    DoLog($"Could not find a position for PosId {friendlyPosId} ({guidPosId})", MessageType.Error);
             }
         }
 
@@ -230,21 +221,22 @@ namespace tph.ConsoleStrategy.LogicLayer
             string mainCmd = param[0];
             CommandValidator.ValidateCommandParams(mainCmd, param, 2, 2);
 
-            string posId = param[1];
+            int friendlyPosId = Convert.ToInt32(param[1]);
+            string guidPosId = PositionIdTranslator.GetRealPosId(friendlyPosId);
 
             lock (RoutedPosDict)
             {
-                if (RoutedPosDict.ContainsKey(posId))
+                if (RoutedPosDict.ContainsKey(guidPosId))
                 {
-                    Position cxlPos = RoutedPosDict[posId];
+                    Position cxlPos = RoutedPosDict[guidPosId];
 
                     CancelPositionWrapper cxlWrapper= new CancelPositionWrapper(cxlPos, Config);
 
-                    DoLog($"Sending cancelation for PosId {posId}", MessageType.PriorityInformation);
+                    DoLog($"Sending cancelation for PosId {friendlyPosId}({guidPosId})", MessageType.PriorityInformation);
                     OrderRouter.ProcessMessage(cxlWrapper);
                 }
                 else
-                    DoLog($"Could not find a position for PosId {posId}", MessageType.Error);
+                    DoLog($"Could not find a position for PosId {friendlyPosId}({guidPosId})", MessageType.Error);
             }
 
         }
@@ -285,7 +277,7 @@ namespace tph.ConsoleStrategy.LogicLayer
                         strQty = pos.Qty.HasValue ? pos.Qty.Value.ToString("0.00") : "?";
                     }
 
-                    Console.WriteLine($" PosId={pos.PosId} Symbol={pos.Security.Symbol} Side={pos.Side} Qty={strQty} QtyType={pos.QuantityType}" +
+                    Console.WriteLine($" PosId={PositionIdTranslator.GetFriendlyPosId(pos.PosId)} Symbol={pos.Security.Symbol} Side={pos.Side} Qty={strQty} QtyType={pos.QuantityType}" +
                                      $"  Status={pos.PosStatus} CumQty={pos.CumQty} LvsQty={pos.LeavesQty} AvgPx={pos.AvgPx}");
                 
                 }
@@ -320,39 +312,48 @@ namespace tph.ConsoleStrategy.LogicLayer
             string[] cmdArr = cmd.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             string mainCmd = cmdArr[0];
 
+            try
+            {
 
-            if (mainCmd == "NewPosCash")
-            {
-                ProcessNewPos(cmdArr, QuantityType.CURRENCY);
-            }
-            else if (mainCmd == "NewPosQty")
-            {
-                ProcessNewPos(cmdArr, QuantityType.SHARES);
-            }
-            else if (mainCmd == "ListRoutedPositions")
-            {
-                ListRoutedPositions(cmdArr);
-            }
-            else if (mainCmd == "CancelPosition")
-            {
-                CancelPosition(cmdArr);
-            }
-            else if (mainCmd == "CancelAll")
-            {
-                CancelAll(cmdArr);
-            }
-            else if (mainCmd == "UnwindPos")
-            {
-                UnwindPos(cmdArr);
-            }
-            else if (mainCmd == "cls")
-            {
-                Console.Clear();
-            }
+                if (mainCmd == "NewPosCash")
+                {
+                    ProcessNewPos(cmdArr, QuantityType.CURRENCY);
+                }
+                else if (mainCmd == "NewPosQty")
+                {
+                    ProcessNewPos(cmdArr, QuantityType.SHARES);
+                }
+                else if (mainCmd == "ListRoutedPositions")
+                {
+                    ListRoutedPositions(cmdArr);
+                }
+                else if (mainCmd == "CancelPosition")
+                {
+                    CancelPosition(cmdArr);
+                }
+                else if (mainCmd == "CancelAll")
+                {
+                    CancelAll(cmdArr);
+                }
+                else if (mainCmd == "UnwindPos")
+                {
+                    UnwindPos(cmdArr);
+                }
+                else if (mainCmd == "cls")
+                {
+                    Console.Clear();
+                }
 
-            else
+                else
+                {
+                    DoLog($"Command not recognized: {mainCmd}", MessageType.Error);
+
+                }
+            }
+            catch(Exception ex)
             {
-                DoLog($"Command not recognized: {mainCmd}", MessageType.Error);
+                DoLog($"ERROR Processing Command:{ex.Message}", MessageType.Error);
+
 
             }
         }
@@ -511,7 +512,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         #endregion
 
-            #region ICommunicationModule, ILogger
+        #region ICommunicationModule, ILogger
 
         public override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
@@ -537,6 +538,7 @@ namespace tph.ConsoleStrategy.LogicLayer
                 MarketDataRequests = new Dictionary<string, Wrapper>();
                 RoutedPosDict=new Dictionary<string, Position>();
                 MarketDataDict = new Dictionary<string, MarketData>();
+                PositionIdTranslator = new PositionIdTranslator(1);
                 ExecutionReportConverter = new ExecutionReportConverter();
 
                 OrderRouter =LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
@@ -617,10 +619,10 @@ namespace tph.ConsoleStrategy.LogicLayer
             throw new NotImplementedException();
         }
 
-        #endregion
+    #endregion
 
 
 
-        #endregion
+    #endregion
     }
 }

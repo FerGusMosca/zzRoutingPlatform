@@ -397,7 +397,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                     ClOrdId = updOrderReq.ClOrdId,
                     OrderId = updOrderReq.OrderId,
                     OrderQty = updOrderReq.Qty,
-                    Price = updOrderReq.Price
+                    Price = updOrderReq.Price,
+                    TimeInForce = updOrderReq.TimeInForce,
+                    Side = updOrderReq.Side,
+                    OrdType = updOrderReq.OrdType,
+                    
                 };
                 
                 UpdateOrderWrapper updOrderReqWrapper= new UpdateOrderWrapper(order);
