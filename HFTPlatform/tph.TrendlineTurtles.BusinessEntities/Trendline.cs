@@ -248,10 +248,10 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
             if (TrendlineType == TrendlineType.Resistance)
                 //return price.ClosingPrice > price.OpeningPrice ? price.ClosingPrice : price.OpeningPrice;
-                return price.ClosingPrice;
+                return price.Trade;
             else if (TrendlineType == TrendlineType.Support)
                 //return price.OpeningPrice < price.ClosingPrice ? price.OpeningPrice : price.ClosingPrice;
-                return price.ClosingPrice;
+                return price.Trade;
             else
                 return 0;
         }
@@ -283,7 +283,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         
         public double GetSlopeDegrees()
         {
-            double pctGrowth = (EndPrice.ClosingPrice.Value / StartPrice.ClosingPrice.Value) - 1;
+            double pctGrowth = (EndPrice.Trade.Value / StartPrice.Trade.Value) - 1;
             pctGrowth *= 100;
             
             int countUnitsInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
@@ -332,7 +332,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
                 resp += string.Format(" Broken_Date={0} ",BrokenDate.Value);
                 resp += string.Format(" Broken_Trendline_Price={0} ",BrokenTrendlinePrice);
-                resp += string.Format(" Broken_Market_Price={0} ", BrokenMarketPrice != null ? BrokenMarketPrice.ClosingPrice.ToString() : "-");
+                resp += string.Format(" Broken_Market_Price={0} ", BrokenMarketPrice != null ? BrokenMarketPrice.Trade.ToString() : "-");
                 return resp;
             }
             else

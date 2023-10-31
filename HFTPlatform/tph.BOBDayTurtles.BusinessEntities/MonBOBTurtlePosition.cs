@@ -52,7 +52,7 @@ namespace tph.BOBDayTurtles.BusinessEntities
                 List<MarketData> histPrices = GetHistoricalPrices();
                 double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
                 return string.Format(" --> Broken Resistance: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
-                                    resistance.StartDate, resistance.EndDate,DateTime.Now,lastCandle.ClosingPrice,lastCandle.MDEntryDate.Value,
+                                    resistance.StartDate, resistance.EndDate,DateTime.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
                                     trendlinePrice);
             }
             
@@ -62,7 +62,7 @@ namespace tph.BOBDayTurtles.BusinessEntities
                 List<MarketData> histPrices = GetHistoricalPrices();
                 double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
                 return string.Format(" --> Broken Support: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
-                    support.StartDate, support.EndDate,DateTime.Now,lastCandle.ClosingPrice,lastCandle.MDEntryDate.Value,
+                    support.StartDate, support.EndDate,DateTime.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
                     trendlinePrice);
             }
             else

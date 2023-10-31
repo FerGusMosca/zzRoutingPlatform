@@ -22,7 +22,8 @@
   <InnerTrendlinesSpan>120</InnerTrendlinesSpan><!--in candles-->
   <OuterTrendlinesSpan>60</OuterTrendlinesSpan><!--in candles-->
   <PerforationThresholds>0.0005</PerforationThresholds><!--in pct 0-1-->
-	<SkipCandlesToBreakTrndln>3</SkipCandlesToBreakTrndln>
+
+
   <Account>9732</Account>
 
   <Currency>USD</Currency>
@@ -47,6 +48,9 @@
 
   <HistoricalPricesPeriod>-6</HistoricalPricesPeriod><!---4= -4 days-->
 
+	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
+	<!--0=No Skip-->
+
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
 
@@ -54,11 +58,11 @@
 	<!--Close window is mmov-->
   
   <StocksToMonitor>
-    <Symbol>SPY</Symbol>
+    <!--<Symbol>SPY</Symbol>-->
     <!--<Symbol>QQQ</Symbol>
     <Symbol>IWM</Symbol>
-    <Symbol>XLF</Symbol>-->
-	
+    -->
+	  <Symbol>XLF</Symbol>
 	  
 <!--    -->
   </StocksToMonitor>

@@ -247,6 +247,8 @@ namespace tph.DayTurtles.BusinessEntities
                 {
                     newCandle = true;
                     Candles.Add(key, md);
+                    //The trade price is always the Close price of the candle
+                    //The last candle will have a Trade and when switching to the next candle, that trade will be the close price
                 }
                 else
                     Candles[key] = md;

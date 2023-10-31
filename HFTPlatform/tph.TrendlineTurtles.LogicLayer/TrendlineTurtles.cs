@@ -16,6 +16,8 @@ using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.BusinessEntities;
+using zHFT.StrategyHandler.Common.Converters;
+using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 
 namespace tph.TrendlineTurtles.LogicLayer
@@ -91,12 +93,11 @@ namespace tph.TrendlineTurtles.LogicLayer
                 {
                     HistoricalPricesWrapper historicalPricesWrapper = (HistoricalPricesWrapper) pWrapper;
 
-                    List<Wrapper> mdWrappers = (List<Wrapper>) historicalPricesWrapper.GetField(Fields.NULL);
+                    HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(historicalPricesWrapper); 
 
                     string symbol = null;
-                    foreach (MarketDataWrapper mdWrp in mdWrappers)
+                    foreach (MarketData md in hpDto.MarketData)
                     {
-                        MarketData md = MarketDataConverter.GetMarketData(mdWrp, GetConfig());
 
                         if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null)
                         {
