@@ -42,6 +42,8 @@ namespace tph.DayTurtles.BusinessEntities
 
         public Dictionary<string, MarketData> Candles { get; set; }
 
+        protected string LastSignalTriggered { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -198,6 +200,7 @@ namespace tph.DayTurtles.BusinessEntities
                     && DateTime.Compare(md.GetOrderingDate().Value, lastCandle.GetOrderingDate().Value) < 0)
                 {
                     foundBigger = true;
+                    break;
                 }
             }
 
@@ -225,6 +228,7 @@ namespace tph.DayTurtles.BusinessEntities
                     && DateTime.Compare(md.GetOrderingDate().Value, lastCandle.GetOrderingDate().Value) < 0)
                 {
                     foundLower = true;
+                    break;
                 }
             }
 
@@ -261,30 +265,96 @@ namespace tph.DayTurtles.BusinessEntities
 
         public virtual bool LongSignalTriggered()
         {
-            
-            return IsHighest(OpenWindow);
+            bool isHighestTurtles = IsHighest(OpenWindow);
+            bool higherMMov = IsHigherThanMMov(CloseWindow, false);
+
+            if (isHighestTurtles && higherMMov)
+            {
+
+                LastSignalTriggered = $"LONG : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                return true;
+            }
+            else
+                return false;
         }
         
         public virtual bool ShortSignalTriggered()
         {
-            return IsLowest(OpenWindow);
+
+            bool isLowestTurtles = IsLowest(OpenWindow);
+            bool higherMMov = IsHigherThanMMov(CloseWindow, false);
+
+            if (isLowestTurtles && !higherMMov)
+            {
+
+                LastSignalTriggered = $"SHORT : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                return true;
+            }
+            else
+                return false;
+            
         }
         
         public virtual bool EvalClosingLongPosition()
         {
+
             if (ExitOnMMov)
-                return !IsHigherThanMMov(CloseWindow,true);
+            {
+                bool higherMMov = IsHigherThanMMov(CloseWindow, true);
+                if (!higherMMov)
+                {
+                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    return true;
+                }
+                else
+                    return false;
+
+            }
             else
-                return IsLowest(CloseWindow);
+            {
+                bool isLowestTurtles = IsLowest(CloseWindow);
+                if (isLowestTurtles)
+                {
+                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    return true;
+                }
+                else 
+                { 
+                
+                    return false;
+                }
+                
+            }
         }
 
         public virtual bool EvalClosingShortPosition()
         {
             if (ExitOnMMov)
-                return IsHigherThanMMov(CloseWindow, true);
+            {
+                bool higherMMov = IsHigherThanMMov(CloseWindow, true);
+                if (higherMMov)
+                {
+                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    return true;
+                }
+                else
+                    return false;
+
+            }
             else
-                return IsHighest(CloseWindow);
-            
+            {
+                bool isHighestTurtles = IsLowest(CloseWindow);
+                if (isHighestTurtles)
+                {
+                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    return true;
+                }
+                else
+                {
+
+                    return false;
+                }
+            }
         }
         
         
@@ -376,7 +446,7 @@ namespace tph.DayTurtles.BusinessEntities
         public virtual string SignalTriggered()
         {
             //It logs information abou the signal that has been triggered
-            return "";
+            return LastSignalTriggered;
 
         }
 

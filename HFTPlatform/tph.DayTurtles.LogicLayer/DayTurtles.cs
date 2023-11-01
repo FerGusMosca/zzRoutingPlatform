@@ -62,8 +62,14 @@ namespace tph.DayTurtles.LogicLayer
                 PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
                 PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                 CMState state = OrderRouter.ProcessMessage(posWrapper);
-                DoLog(string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4} {5}", trdPos.TradeDirection,
-                    trdPos.OpeningPosition.Security.Symbol, trdPos.OpeningPosition.CashQty, DateTime.Now, trdPos.OpeningPosition.PosId, turtlePos.SignalTriggered()), Constants.MessageType.Information);
+                DoLog(string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4} {5}", 
+                    trdPos.TradeDirection,
+                    trdPos.OpeningPosition.Security.Symbol, 
+                    trdPos.OpeningPosition.CashQty, 
+                    DateTime.Now, 
+                    trdPos.OpeningPosition.PosId, 
+                    turtlePos.SignalTriggered()),
+                    Constants.MessageType.Information);
 
             }
             else if (turtlePos.ShortSignalTriggered())
@@ -76,8 +82,12 @@ namespace tph.DayTurtles.LogicLayer
                     CMState state = OrderRouter.ProcessMessage(posWrapper);
                     DoLog(
                         string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4}  {5}",
-                            trdPos.TradeDirection, trdPos.OpeningPosition.Security.Symbol,
-                            trdPos.OpeningPosition.CashQty, DateTime.Now, trdPos.OpeningPosition.PosId, turtlePos.SignalTriggered()),
+                            trdPos.TradeDirection, 
+                            trdPos.OpeningPosition.Security.Symbol,
+                            trdPos.OpeningPosition.CashQty, 
+                            DateTime.Now, 
+                            trdPos.OpeningPosition.PosId, 
+                            turtlePos.SignalTriggered()),
                         Constants.MessageType.Information);
                 }
                 else

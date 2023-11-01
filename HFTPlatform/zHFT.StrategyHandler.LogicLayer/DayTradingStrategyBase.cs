@@ -248,7 +248,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
                 if (report.OrdStatus == OrdStatus.Filled)
                 {
-                    DoLog($"Persisting ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus}) --> FirstLeg?={portfPos}", Constants.MessageType.Information);
+                    DoLog($"Persisting ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus} (AvgPx={report.AvgPx}) --> FirstLeg?={portfPos}", Constants.MessageType.Information);
 
                     
 
