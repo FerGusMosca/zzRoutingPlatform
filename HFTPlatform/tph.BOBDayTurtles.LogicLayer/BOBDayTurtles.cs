@@ -146,9 +146,7 @@ namespace tph.BOBDayTurtles.LogicLayer
                 InitializeManagers(GetConfig().ConnectionString);
 
                 Thread.Sleep(2000);
-                
-                Thread historicalPricesThread = new Thread(new ParameterizedThreadStart(DoRequestHistoricalPricesThread));
-                historicalPricesThread.Start();
+
                 
                 Thread persistTrendlinesThread = new Thread(new ParameterizedThreadStart(DoPersistTrendlinesThread));
                 persistTrendlinesThread.Start();

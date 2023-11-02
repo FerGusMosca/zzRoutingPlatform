@@ -62,6 +62,10 @@
       <Project>{45327582-1408-48a2-8330-066bfe715475}</Project>
       <Name>zHFT.Main.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43A49A1C-0367-4000-A144-FF3CDC6B198A}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj">
       <Project>{97a1ba19-bf4c-48cc-9c8f-e00ba9bb9734}</Project>
       <Name>zHFT.OrderImbSimpleCalculator.Common</Name>

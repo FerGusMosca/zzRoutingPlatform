@@ -6,6 +6,7 @@ using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
 using tph.DayTurtles.Common.Util;
 using tph.DayTurtles.DataAccessLayer;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
@@ -15,7 +16,9 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.StrategyHandler.BusinessEntities;
+using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.LogicLayer;
 
@@ -52,6 +55,32 @@ namespace tph.DayTurtles.LogicLayer
 
 
         #region Public Methods
+
+        protected override void DoRequestHistoricalPricesThread(object param)
+        {
+            try
+            {
+                int i = 1;
+
+                foreach (string symbol in PortfolioPositionsToMonitor.Keys)
+                {
+                    int openWindow = GetWindow(symbol, true);
+                    int closeWindow = GetWindow(symbol, false);
+                    int windowToUse= openWindow>closeWindow?openWindow:closeWindow;
+
+                    DateTime from = DateTime.Now.AddDays(-1);
+                    DateTime to = DateTime.Now;
+
+                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
+                    OnMessageRcv(reqWrapper);
+                    i++;
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("@BOBDayTurtles - Critical ERROR Requesting Historical Prices:{0}", e.Message), Constants.MessageType.Error);
+            }
+        }
 
 
         protected void EvalOpeningPosition(MonTurtlePosition turtlePos)
@@ -315,8 +344,20 @@ namespace tph.DayTurtles.LogicLayer
 
         protected override void ProcessHistoricalPrices(object pWrapper)
         {
-            //We don't need them
+            try
+            {
+                lock (tLock)
+                {
+                    LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Critical ERROR processing Trendlines : {0}", e.Message),
+                    Constants.MessageType.Error);
+            }
         }
+    
 
         protected override void ProcessMarketData(object pWrapper)
         {

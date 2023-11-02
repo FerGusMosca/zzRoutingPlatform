@@ -240,7 +240,7 @@ namespace tph.DayTurtles.BusinessEntities
         
         #region Public Methods
 
-        public virtual bool AppendCandle(MarketData md)
+        public override bool AppendCandle(MarketData md)
         {
             bool newCandle = false;
             if (CanCreateCandle(md))

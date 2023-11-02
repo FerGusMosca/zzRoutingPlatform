@@ -13,10 +13,12 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.OrderImbSimpleCalculator.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common;
 using zHFT.StrategyHandler.Common.Converters;
+using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandlers.Common.Converters;
 
@@ -94,7 +96,8 @@ namespace zHFT.StrategyHandler.LogicLayer
         #endregion
 
         #region Protected Abstract Methods
-        
+
+
         public abstract void InitializeManagers(string connStr);
 
         protected abstract void ProcessHistoricalPrices(object pWrapper);
@@ -112,9 +115,32 @@ namespace zHFT.StrategyHandler.LogicLayer
         protected abstract TradingPosition DoOpenTradingFuturePos(Position pos, PortfolioPosition portfPos);
 
         #endregion
-        
+
         #region Protected Methods
-        
+
+
+        protected HistoricalPricesDTO LoadHistoricalPrices(HistoricalPricesWrapper hpWrapper)
+        {
+
+            HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(hpWrapper);
+
+            string symbol = null;
+            foreach (MarketData md in hpDto.MarketData)
+            {
+
+                if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null)
+                {
+                    PortfolioPosition monPortfPos = (PortfolioPosition)PortfolioPositionsToMonitor[md.Security.Symbol];
+                    monPortfPos.AppendCandle(md);
+                    symbol = md.Security.Symbol;
+                }
+            }
+
+            return hpDto;
+        }
+
+        protected virtual void DoRequestHistoricalPricesThread(object param) { }
+
         protected void LoadTradingParameters()
         {
             foreach (Security sec in Securities)
@@ -817,8 +843,13 @@ namespace zHFT.StrategyHandler.LogicLayer
 
                 NextPosId = 1;
 
+                OrderRouter = LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
+
                 LoadMonitorsAndRequestMarketData();
-                OrderRouter=LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
+
+                Thread historicalPricesThread = new Thread(new ParameterizedThreadStart(DoRequestHistoricalPricesThread));
+                historicalPricesThread.Start();
+                
 
                 SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);
                 OnMessageRcv(slWrapper);

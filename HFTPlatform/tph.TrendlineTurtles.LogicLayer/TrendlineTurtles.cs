@@ -47,6 +47,28 @@ namespace tph.TrendlineTurtles.LogicLayer
             return (TrendlineConfiguration)Config;
         }
 
+        protected override void DoRequestHistoricalPricesThread(object param)
+        {
+            try
+            {
+                int i = 1;
+
+                foreach (string symbol in PortfolioPositionsToMonitor.Keys)
+                {
+                    DateTime from = DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod);
+                    DateTime to = DateTime.Now.AddDays(1);
+
+                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
+                    OnMessageRcv(reqWrapper);
+                    i++;
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("@BOBDayTurtles - Critical ERROR Requesting Historical Prices:{0}", e.Message), Constants.MessageType.Error);
+            }
+        }
+
         protected override async void ProcessMarketData(object pWrapper)
         {
             Wrapper wrapper = (Wrapper) pWrapper;
@@ -89,31 +111,17 @@ namespace tph.TrendlineTurtles.LogicLayer
         {
             try
             {
+                HistoricalPricesDTO dto = null;
                 lock (tLock)
                 {
-                    HistoricalPricesWrapper historicalPricesWrapper = (HistoricalPricesWrapper) pWrapper;
+                        dto=LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
+                }
 
-                    HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(historicalPricesWrapper); 
-
-                    string symbol = null;
-                    foreach (MarketData md in hpDto.MarketData)
+                if (dto != null && dto.Symbol!=null)
+                {
+                    lock (tSynchronizationLock)
                     {
-
-                        if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null)
-                        {
-                            MonTrendlineTurtlesPosition portfPos =
-                                (MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[md.Security.Symbol];
-                            portfPos.AppendCandle(md);
-                            symbol = md.Security.Symbol;
-                        }
-                    }
-
-                    if (symbol != null )
-                    {
-                        lock (tSynchronizationLock)
-                        {
-                            BuildTrendlines(symbol);
-                        }
+                        BuildTrendlines(dto.Symbol);
                     }
                 }
             }
@@ -418,26 +426,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             
         }
         
-        protected void DoRequestHistoricalPricesThread(object param)
-        {
-            try
-            {
-                int i = 1;
-                foreach (string symbol in PortfolioPositionsToMonitor.Keys)
-                {
-                    DateTime from = DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod);
-                    DateTime to = DateTime.Now.AddDays(1);   
 
-                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i,symbol, from, to, CandleInterval.Minute_1);
-                    OnMessageRcv(reqWrapper);
-                    i++;
-                }
-            }
-            catch (Exception e)
-            {
-                DoLog(string.Format("@BOBDayTurtles - Critical ERROR Requesting Historical Prices:{0}",e.Message),Constants.MessageType.Error);
-            }
-        }
 
         protected virtual void InitializeManagers(string connStr)
         {
