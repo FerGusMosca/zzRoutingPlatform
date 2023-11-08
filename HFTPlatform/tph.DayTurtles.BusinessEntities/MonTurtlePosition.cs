@@ -126,7 +126,12 @@ namespace tph.DayTurtles.BusinessEntities
 
         }
 
-        protected double CalculateSimpleMovAvg(int window)
+        public double CalculateSimpleMovAvg()
+        {
+            return CalculateSimpleMovAvg(CloseWindow);
+        }
+
+        public double CalculateSimpleMovAvg(int window)
         {
             List<MarketData> windowcandles = Candles.Values.Where(x => x.GetOrderingDate() != null)
                                               .OrderByDescending(x => x.GetOrderingDate().Value)

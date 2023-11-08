@@ -8,7 +8,9 @@ using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.Common.Configuration;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.TrendlineTurtles.LogicLayer.Util
 {
@@ -42,12 +44,15 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         public List<Trendline> ResistanceTrendlines { get; set; }
 
+        protected OnLogMessage OnLogMsg { get; set; }
+
         #endregion
 
         #region Constructor
 
         public TrendLineCreator(Security pStock,TrendlineConfiguration pConfig,CandleInterval pInterval,
-                                DateTime pMinSafeDateResistances,DateTime pMinSafeDateSupports)
+                                DateTime pMinSafeDateResistances,DateTime pMinSafeDateSupports,
+                                 OnLogMessage pOnLogMsg)
         {
             Stock = pStock;
 
@@ -68,6 +73,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             LastSafeMinDateResistances =pMinSafeDateResistances;
 
             LastSafeMinDateSupports = pMinSafeDateSupports;
+
+            OnLogMsg += pOnLogMsg;
 
         }
         
@@ -306,7 +313,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         }
 
         protected void EvalSupport(Security stock,MarketData newLocalMinimum,
-                                    List<MarketData> allHistoricalPrices,bool markJustFound=false)
+                                    List<MarketData> allHistoricalPrices, DateTime searchStart, DateTime searchEnd, bool markJustFound=false)
         {
             foreach (MarketData localMimimum in LocalMinimums)
             {
@@ -325,20 +332,28 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                         Modified = true
                     };
 
+                    OnLogMsg($"TrndlCreator.DBG1-Found new potential support for Date={newLocalMinimum.MDEntryDate.Value} and price={newLocalMinimum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
+
                     if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, true))
                     {
                         if (!SupportTrendlines.Any(x => DateTime.Compare(x.StartDate, possibleTrendline.StartDate) == 0
                                                  && DateTime.Compare(x.EndDate, possibleTrendline.EndDate) == 0))
                         {
                             SupportTrendlines.Add(possibleTrendline);
+                            OnLogMsg($"TrndlCreator.DBG1-Trendline not broken or repeated --> ADDED", MessageType.Information);
                         }
+                    }
+                    else
+                    {
+                        OnLogMsg($"TrndlCreator.DBG1-Trendline broken --> IGNORED", MessageType.Information);
                     }
                 }
             }
         }
 
         protected void EvalResistance(Security stock, MarketData newLocalMaximum, 
-                                     List<MarketData> allHistoricalPrices,bool markJustFound=false)
+                                     List<MarketData> allHistoricalPrices, DateTime searchStart, DateTime searchEnd, bool markJustFound=false
+                                     )
         {
             foreach (MarketData localMaximum in LocalMaximums)
             {
@@ -357,6 +372,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                         Modified = true
                     };
 
+                    OnLogMsg($"TrndlCreator.DBG1-Found new potential resistance for Date={newLocalMaximum.MDEntryDate.Value} and price={newLocalMaximum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
+
                     if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, false))
                     {
                         if (!ResistanceTrendlines.Any(x =>
@@ -364,7 +381,12 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                             && DateTime.Compare(x.EndDate, possibleTrendline.EndDate) == 0))
                         {
                             ResistanceTrendlines.Add(possibleTrendline);
+                            OnLogMsg($"TrndlCreator.DBG1-Trendline not broken or repeated --> ADDED", MessageType.Information);
                         }
+                    }
+                    else {
+                        OnLogMsg($"TrndlCreator.DBG1-Trendline broken --> IGNORED", MessageType.Information);
+
                     }
                 }
             }
@@ -469,7 +491,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 if (EvalLocalMinimum(pricesArr.ToList(), price, i))
                 {
 
-                    EvalSupport(stock, price, allHistoricalPrices,markJustFound);
+                    EvalSupport(stock, price, allHistoricalPrices,startDate,endDate,markJustFound);
 
                     LocalMinimums.Add(price);
                 }
@@ -506,7 +528,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 if (EvalLocalMaximum(pricesArr.ToList(), price, i))
                 {
 
-                    EvalResistance(stock, price, allHistoricalPrices, markJustFound);
+                    EvalResistance(stock, price, allHistoricalPrices, startDate, endDate, markJustFound);
 
                     LocalMaximums.Add(price);
                 }
@@ -572,18 +594,18 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         }
 
 
-        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate)
+        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate, OnLogMessage pOnLogMsg)
         {
             if(TrdCreatorDict==null)
                 TrdCreatorDict=new Dictionary<string, TrendLineCreator>();
-            
-            
+
+
             TrendLineCreator trdCreator = new TrendLineCreator(sec,
                 new TrendlineConfiguration()
                 {
                     PerforationThresholds = config.PerforationThresholds,
                     InnerTrendlinesSpan = config.InnerTrendlinesSpan
-                }, CandleInterval.Minute_1,minSafeDate,minSafeDate);
+                }, CandleInterval.Minute_1, minSafeDate, minSafeDate, pOnLogMsg);
                 
             TrdCreatorDict.Add(sec.Symbol,trdCreator);
         }

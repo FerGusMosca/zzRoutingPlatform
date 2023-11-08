@@ -184,8 +184,11 @@ namespace tph.TrendlineTurtles.LogicLayer
             {
                 foreach (var monPosition in PortfolioPositionsToMonitor.Values)
                 {
-                    TrendLineCreator.InitializeCreator(monPosition.Security, GetConfig(),
-                        DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod));
+                    TrendLineCreator.InitializeCreator(monPosition.Security,
+                                                       GetConfig(),
+                                                       DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod),
+                                                       pOnLogMsg);
+
                     DoLog($"Portfolio Position for symbol {monPosition.Security.Symbol} successfully initialized",
                         Constants.MessageType.Information);
                 }
