@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using tph.DayTurtles.BusinessEntities;
+using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using tph.TrendlineTurtles.Common.Configuration;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -189,7 +190,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int take = endIndex-startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            MarketData lowerPrice = rangePrices.Where(x => GetClosingPrice(x) < GetClosingPrice(currentPrice)).FirstOrDefault();
+            MarketData lowerPrice = rangePrices.Where(x => GetReferencePrice(x) < GetReferencePrice(currentPrice)).FirstOrDefault();
 
             if (lowerPrice==null && (rangePrices.Count == take))
             //if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
@@ -203,25 +204,13 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             }
         }
 
-//        protected double GetHighestPrice(MarketData md)
-//        {
-//            if (md.ClosingPrice > md.OpeningPrice)
-//                return md.ClosingPrice.Value;
-//            else
-//                return md.OpeningPrice.Value;
-//        }
-//        
-//        protected double GetLowestPrice(MarketData md)
-//        {
-//            if (md.ClosingPrice < md.OpeningPrice)
-//                return md.ClosingPrice.Value;
-//            else
-//                return md.OpeningPrice.Value;
-//        }
-        
-        protected double GetClosingPrice(MarketData md)
+        protected double GetReferencePrice(MarketData md)
         {
-            return md.ClosingPrice.Value;
+            double? price= ReferencePriceCalculator.GetReferencePrice(md, StrategyConfiguration.CandleReferencePrice);
+            if (price.HasValue)
+                return price.Value;
+            else
+                throw new Exception($"Reference Price not found for symbol {md.Security.Symbol} at {md.MDEntryDate.Value}");
         }
 
         protected bool ReapeatedValues(MarketData currentPrice,List<MarketData> referencePrices)
@@ -229,7 +218,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             
             foreach (MarketData referencePr in referencePrices)
             {
-                if (GetClosingPrice(referencePr) == GetClosingPrice(currentPrice))
+                if (GetReferencePrice(referencePr) == GetReferencePrice(currentPrice))
                 {
 
                     if (currentPrice.MDEntryDate.HasValue && referencePr.MDEntryDate.HasValue)
@@ -254,7 +243,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int take = endIndex - startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
 
-            MarketData higherPrice = rangePrices.Where(x => GetClosingPrice(x) > GetClosingPrice(currentPrice)).FirstOrDefault();
+            MarketData higherPrice = rangePrices.Where(x => GetReferencePrice(x) > GetReferencePrice(currentPrice)).FirstOrDefault();
 
             if (higherPrice==null && (rangePrices.Count == take))
             //if (!rangePrices.Any(x => GetHighestPrice(x) > GetHighestPrice(currentPrice)) &&(rangePrices.Count == take))
@@ -332,7 +321,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                         Modified = true
                     };
 
-                    OnLogMsg($"TrndlCreator.DBG1-Found new potential support for Date={newLocalMinimum.MDEntryDate.Value} and price={newLocalMinimum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
+                    OnLogMsg($"TrndlCreator.DBG1-Found new potential support for symbo {stock.Symbol} for Date={newLocalMinimum.MDEntryDate.Value} and price={newLocalMinimum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
 
                     if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, true))
                     {
@@ -604,7 +593,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 new TrendlineConfiguration()
                 {
                     PerforationThresholds = config.PerforationThresholds,
-                    InnerTrendlinesSpan = config.InnerTrendlinesSpan
+                    InnerTrendlinesSpan = config.InnerTrendlinesSpan,
+                    CandleReferencePrice=config.CandleReferencePrice
                 }, CandleInterval.Minute_1, minSafeDate, minSafeDate, pOnLogMsg);
                 
             TrdCreatorDict.Add(sec.Symbol,trdCreator);

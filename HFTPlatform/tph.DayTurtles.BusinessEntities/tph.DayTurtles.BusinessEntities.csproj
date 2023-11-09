@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj" />
       <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj" />
     </ItemGroup>
 

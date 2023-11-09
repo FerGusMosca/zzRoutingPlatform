@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using tph.DayTurtles.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.StrategyHandler.BusinessEntities;
 
@@ -116,13 +117,13 @@ namespace tph.DayTurtles.BusinessEntities
 
         public bool IsBigger(MarketData md, MarketData lastCandle)
         {
-            return GetReferencePrice(md) > GetReferencePrice(lastCandle);
+            return ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice) > ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice);
 
         }
 
         public bool Islower(MarketData md, MarketData lastCandle)
         {
-            return GetReferencePrice(md) < GetReferencePrice(lastCandle);
+            return ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice) < ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice);
 
         }
 
@@ -142,9 +143,9 @@ namespace tph.DayTurtles.BusinessEntities
             int count = 0;
             foreach (MarketData md in windowcandles)
             {
-                if (GetReferencePrice(md) != null)
+                if (ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice) != null)
                 {
-                    sum += GetReferencePrice(md).Value;
+                    sum += ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice).Value;
                     count++;
                 }
             }
@@ -159,12 +160,12 @@ namespace tph.DayTurtles.BusinessEntities
 
             double avg = CalculateSimpleMovAvg(window);
 
-            if (GetReferencePrice(lastCandle) != null)
+            if (ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice) != null)
             {
                 if(higherOrEqual)
-                    return GetReferencePrice(lastCandle).Value >= avg;
+                    return ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice).Value >= avg;
                 else
-                    return GetReferencePrice(lastCandle).Value > avg;
+                    return ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice).Value > avg;
 
             }
             else
@@ -176,7 +177,7 @@ namespace tph.DayTurtles.BusinessEntities
         {
             MarketData lastCandle = Candles.Values
                                                    .Where(x => x.GetOrderingDate() != null 
-                                                            && GetReferencePrice(x)!=null)
+                                                            && ReferencePriceCalculator.GetReferencePrice(x,CandleReferencePrice)!=null)
                                                    .OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
 
 
@@ -276,7 +277,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (isHighestTurtles && higherMMov)
             {
 
-                LastSignalTriggered = $"LONG : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                LastSignalTriggered = $"LONG : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                 return true;
             }
             else
@@ -292,7 +293,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (isLowestTurtles && !higherMMov)
             {
 
-                LastSignalTriggered = $"SHORT : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                LastSignalTriggered = $"SHORT : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                 return true;
             }
             else
@@ -308,7 +309,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool higherMMov = IsHigherThanMMov(CloseWindow, true);
                 if (!higherMMov)
                 {
-                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else
@@ -320,7 +321,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool isLowestTurtles = IsLowest(CloseWindow);
                 if (isLowestTurtles)
                 {
-                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else 
@@ -339,7 +340,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool higherMMov = IsHigherThanMMov(CloseWindow, true);
                 if (higherMMov)
                 {
-                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else
@@ -351,7 +352,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool isHighestTurtles = IsLowest(CloseWindow);
                 if (isHighestTurtles)
                 {
-                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{GetReferencePrice(GetLastCandle())} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else

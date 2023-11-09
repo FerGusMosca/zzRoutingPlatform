@@ -7,12 +7,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
     public class PortfolioPosition
     {
         
-        #region Public Static Consts
-
-        public static string _CANLDE_REF_PRICE_TRADE = "TRADE";
-        public static string _CANLDE_REF_PRICE_CLOSE = "CLOSE";
-        
-        #endregion
+      
         
         #region Public Attributes
         
@@ -44,26 +39,6 @@ namespace zHFT.StrategyHandler.BusinessEntities
         public bool IsClosing()
         {
             return Closing;
-        }
-
-        public double? GetReferencePrice(MarketData md)
-        {
-            if (string.IsNullOrEmpty(CandleReferencePrice))
-            {
-                return md.ClosingPrice;
-            }
-            else if (CandleReferencePrice == _CANLDE_REF_PRICE_CLOSE)
-            {
-                return md.ClosingPrice ;
-            }
-            else if (CandleReferencePrice == _CANLDE_REF_PRICE_TRADE)
-            {
-                return md.Trade;
-            }
-            else
-            {
-                throw new Exception(string.Format("Candle Reference  Price not recognized:{0}", CandleReferencePrice));
-            }
         }
 
         #endregion

@@ -104,7 +104,8 @@ namespace tph.BOBDayTurtles.LogicLayer
                         GetWindow(symbol, false),
                         GetConfig().ExitOnMMov,
                         GetConfig().StopLossForOpenPositionPct,
-                        GetConfig().OuterTrendlineSpan)
+                        GetConfig().OuterTrendlineSpan,
+                        GetConfig().CandleReferencePrice)
                     {
                         Security = sec,
                         DecimalRounding = Config.DecimalRounding,

@@ -41,8 +41,12 @@
   <ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-  
-  <OnlyLong>false</OnlyLong>
+
+<CandleReferencePrice>TRADE</CandleReferencePrice>
+<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
+
+
+	<OnlyLong>false</OnlyLong>
 
   <RecalculateTrendlines>true</RecalculateTrendlines>
 
