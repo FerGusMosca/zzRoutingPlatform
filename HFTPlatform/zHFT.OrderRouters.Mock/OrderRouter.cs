@@ -242,6 +242,11 @@ namespace zHFT.OrderRouters.Mock
                         RouteOrdersThread.Start(wrapper);
                         return CMState.BuildSuccess();
                     }
+                    else if (wrapper.GetAction() == Actions.ORDER_MASS_STATUS_REQUEST)
+                    {
+                        DoLog(string.Format("@{0}:Order Mass Status Req. Recv @ Mock", Configuration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        return CMState.BuildSuccess();
+                    }
                     else
                     {
 

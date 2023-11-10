@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Order Imbalance Calculator- Websocket - IB</Name>
+
+	<!--Websocket-->
+	<IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
+	<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+
+
+
+	<!--Extended-->
+  <OutgoingModule>zHFT.StrategyHandler.OrderImbExtendedCalculator.OrderImbExtendedCalculator, zHFT.StrategyHandler.OrderImbExtendedCalculator</OutgoingModule>
+  <OutgoingConfigPath>.\OrderImbalanceExtCalculator.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>

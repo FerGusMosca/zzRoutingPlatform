@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ExtendedConfiguration  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Strategy Handler - Order Imbalance Calculator - Websocket IB</Name>
+
+  <PositionSizeInCash>10000</PositionSizeInCash>
+
+  <MaxOpenedPositions>4</MaxOpenedPositions>
+  <PositionOpeningImbalanceThreshold>0.85</PositionOpeningImbalanceThreshold>
+  <PositionOpeningImbalanceMaxThreshold>0.7</PositionOpeningImbalanceMaxThreshold>
+  <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
+  <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
+  <FeeValuePerTrade>0</FeeValuePerTrade>
+  <DecimalRounding>3</DecimalRounding>
+  <ClosingWindow>40</ClosingWindow>
+  <OppTrendClosingWindow>20</OppTrendClosingWindow>
+  <CandleReferencePrice>TRADE</CandleReferencePrice><!-- Cryptos ->CLOSE ; BYMA -> TRADE -->
+  <MaxMinWaitBtwConsecutivePos>20</MaxMinWaitBtwConsecutivePos>
+
+  <ActiveBlocks>3</ActiveBlocks>
+  <BlockSizeInMinutes>10</BlockSizeInMinutes>
+
+  <Account>XX</Account><!--IB Test-->
+
+  <Currency>USD</Currency>
+  <Exchange>SMART</Exchange>
+  <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
+
+  <MarketStartTime>11:30 AM</MarketStartTime>
+  <MarketEndTime>06:00 PM</MarketEndTime>
+
+  <MaxOpeningTime>05:00 PM</MaxOpeningTime>
+  <ClosingTime>05:50 PM</ClosingTime>
+
+
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=imbalance_trading;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+  <ResetOnPersistance>true</ResetOnPersistance>
+
+  <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+
+  <OnlyLong>false</OnlyLong>
+
+  <SaveEvery>HOUR</SaveEvery>
+  <!--HOUR,_10MIN,_30MIN-->
+
+  <StocksToMonitor>
+
+    <Symbol>SPY</Symbol>
+    <Symbol>IWM</Symbol>
+    <Symbol>XLF</Symbol>
+    <Symbol>QQQ</Symbol>
+
+
+  </StocksToMonitor>
+
+</ExtendedConfiguration>
