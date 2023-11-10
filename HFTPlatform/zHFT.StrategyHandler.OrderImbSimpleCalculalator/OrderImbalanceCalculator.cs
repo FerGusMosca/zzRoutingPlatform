@@ -646,8 +646,12 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 }
                 else
                 {
-                    DoLog(string.Format("SHORT signal for symbol {0} triggered but OnlyLong mode is enabled",secImb.Security.Symbol),Constants.MessageType.Information);
+                    DoLog(string.Format("SHORT signal for symbol {0} triggered but OnlyLong mode is enabled", secImb.Security.Symbol), Constants.MessageType.Information);
                 }
+            }
+            else {
+                DoLog($"===> Imbalance Summary for {secImb.Security.Symbol}: Bid={secImb.ImbalanceCounter.BidSizeImbalance} Ask={secImb.ImbalanceCounter.AskSizeImbalance} ", Constants.MessageType.Information);
+            
             }
         }
 
