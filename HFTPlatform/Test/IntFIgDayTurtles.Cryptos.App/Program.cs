@@ -14,13 +14,7 @@ namespace IntFIgDayTurtles.Cryptos.App
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
-            if (ToConsole)
-                Console.WriteLine(msg);
-            else if (msg.StartsWith("toConsole->"))
-            {
-                Console.WriteLine(msg.Replace("toConsole->", ""));
-                Console.WriteLine("");
-            }
+            ConsoleDisplayer.GetInstance(ToConsole).DoLog(msg, type);
         }
         
         public static void Main(string[] args)

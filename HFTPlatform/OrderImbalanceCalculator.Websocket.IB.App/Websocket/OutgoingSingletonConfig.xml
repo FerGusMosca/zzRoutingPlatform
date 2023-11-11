@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-  <Name>Outgoing Singleton FIX</Name>
+  <Name>Outgoing Singleton WS</Name>
   <SingletonAssembly>tph.StrategyHandler.SimpleCommandSender.OrderRouterWSClient, tph.StrategyHandler.SimpleCommandSender</SingletonAssembly>
   <SingletonConfigFile>.\Websocket\Websocket.xml</SingletonConfigFile>
   <ModuleDirection>O</ModuleDirection>

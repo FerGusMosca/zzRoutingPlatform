@@ -26,13 +26,7 @@ namespace NetCoreWebsocketFIXConnector
                 return;
 
 
-            if (ToConsole)
-                Console.WriteLine(msg);
-            else if (msg.StartsWith("toConsole->"))
-            {
-                Console.WriteLine(msg.Replace("toConsole->", ""));
-                Console.WriteLine("");
-            }
+            ConsoleDisplayer.GetInstance(ToConsole).DoLog(msg, type);
         }
 
         #endregion

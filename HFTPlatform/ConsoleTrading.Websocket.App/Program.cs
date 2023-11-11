@@ -19,20 +19,8 @@ namespace ConsoleTrading.Websocket.App
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
-            if (type == Constants.MessageType.PriorityInformation || type == Constants.MessageType.Error || type == Constants.MessageType.Debug)
-            {
-                if (ToConsole)
-                    Console.WriteLine(msg);
-                else if (msg.StartsWith("toConsole->"))
-                {
-                    Console.WriteLine(msg.Replace("toConsole->", ""));
-                    Console.WriteLine("");
-                }
-            }
-
-
+            ConsoleDisplayer.GetInstance(ToConsole).DoLogLight(msg, type);
         }
-
 
         public static void Main(string[] args)
         {

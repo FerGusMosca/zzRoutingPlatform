@@ -22,25 +22,7 @@ namespace OrderImbalanceCalculator.BitMex.Test
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
-            if (ToConsole)
-                Console.WriteLine(msg);
-            else if (msg.StartsWith("toConsole->"))
-            {
-                if (OnlyLogImbalanceInfo)
-                {
-                    if (msg.StartsWith(ImbalanceInfoPrefix))
-                    {
-                        Console.WriteLine(msg.Replace("toConsole->", ""));
-                        Console.WriteLine("");
-                    }
-
-                }
-                else
-                {
-                    Console.WriteLine(msg.Replace("toConsole->", ""));
-                    Console.WriteLine("");
-                }
-            }
+            ConsoleDisplayer.GetInstance(ToConsole).DoLog(msg, type);
 
 
         }

@@ -650,7 +650,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 }
             }
             else {
-                DoLog($"===> Imbalance Summary for {secImb.Security.Symbol}: Bid={secImb.ImbalanceCounter.BidSizeImbalance} Ask={secImb.ImbalanceCounter.AskSizeImbalance} ", Constants.MessageType.Information);
+                DoLog($"===> Imbalance Summary for {secImb.Security.Symbol}: Bid={secImb.ImbalanceCounter.BidSizeImbalance.ToString("0.00")} Ask={secImb.ImbalanceCounter.AskSizeImbalance.ToString("0.00")} ", Constants.MessageType.Information);
             
             }
         }
@@ -724,7 +724,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 }
             }
             else
-                DoLog(string.Format("Waiting for min recovery data to be over. Elapsed {0} minutes",elapsed.TotalMinutes),Constants.MessageType.Information);
+                DoLog(string.Format("Waiting for min recovery data to be over. Elapsed {0} minutes",elapsed.TotalMinutes.ToString("0.00")),Constants.MessageType.Information);
         }
 
         protected CMState ProcessMarketData(Wrapper wrapper)

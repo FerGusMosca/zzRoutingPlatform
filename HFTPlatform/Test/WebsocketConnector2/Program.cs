@@ -22,17 +22,7 @@ namespace WebsocketConnector2
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
-            if (DebugLevel == "INFO" && type == Constants.MessageType.Debug)
-                return;
-
-
-            if (ToConsole)
-                Console.WriteLine(msg);
-            else if (msg.StartsWith("toConsole->"))
-            {
-                Console.WriteLine(msg.Replace("toConsole->", ""));
-                Console.WriteLine("");
-            }
+            ConsoleDisplayer.GetInstance(ToConsole).DoLog(msg, type);
         }
 
         #endregion

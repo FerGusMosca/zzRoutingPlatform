@@ -172,7 +172,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     }
                     else
                     {
-                        DoLog($"Ignoring candlebar for unknown symbol {msg.Symbol}", Constants.MessageType.Information);
+                        //DoLog($"Ignoring candlebar for unknown symbol {msg.Symbol}", Constants.MessageType.Information);
                     }
                 }
             }
@@ -208,7 +208,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     else
                     {
                         DoLog($"Ignoring historical prices for unknown symbol {msg.Symbol}",
-                            Constants.MessageType.Information);
+                            Constants.MessageType.Debug);
                     }
                 }
             }
@@ -240,7 +240,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     }
                     else
                     {
-                        DoLog($"Ignoring market data for unknown symbol {msg.Symbol}",Constants.MessageType.Information);
+                        DoLog($"Ignoring market data for unknown symbol {msg.Symbol}",Constants.MessageType.Debug);
                     }
                 }
             }
