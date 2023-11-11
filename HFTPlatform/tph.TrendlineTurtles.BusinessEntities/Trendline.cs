@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using tph.DayTurtles.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
@@ -23,28 +24,28 @@ namespace tph.TrendlineTurtles.BusinessEntities
         }
 
         #endregion
-        
+
         #region Public Static Consts
 
         public static string _TRENDLINE_TYPE_RESISTANCE = "R";
         public static string _TRENDLINE_TYPE_SUPPORT = "S";
-        
+
         #endregion
-        
+
         #region Private static Consts
 
-        public static double _SHORT_SOFT_UPWARD_SLOPE = 1 ;//1 degrees
+        public static double _SHORT_SOFT_UPWARD_SLOPE = 1;//1 degrees
 
         public static double _SHORT_SOFT_DOWNARD_SLOPE = 8;//8 degrees
 
-        public static double _LONG_SOFT_UPWARD_SLOPE = 1 ;//1 degrees
+        public static double _LONG_SOFT_UPWARD_SLOPE = 1;//1 degrees
 
         public static double _LONG_SOFT_DOWNARD_SLOPE = 8;//8 degrees
-        
+
         #endregion
-        
+
         #region Public Attributes
-        
+
         public long Id { get; set; }
 
         public Security Security { get; set; }
@@ -54,24 +55,26 @@ namespace tph.TrendlineTurtles.BusinessEntities
         public MarketData EndPrice { get; set; }
 
         public DateTime? BrokenDate { get; set; }
-        
+
         public double? BrokenTrendlinePrice { get; set; }
 
         public MarketData BrokenMarketPrice { get; set; }
-        
+
         public TrendlineType TrendlineType { get; set; }
-        
+
         public bool JustBroken { get; set; }
-        
+
         public bool JustFound { get; set; }
-        
+
         public bool Persisted { get; set; }
-        
+
         public bool? ManualNew { get; set; }
-        
+
         public bool? ToDisabled { get; set; }
-        
+
         public bool? Disabled { get; set; }
+
+        public string CandleReferencePrice { get; set; }
 
 
         #region Indirect Attributes
@@ -247,11 +250,11 @@ namespace tph.TrendlineTurtles.BusinessEntities
                 return null;
 
             if (TrendlineType == TrendlineType.Resistance)
-                //return price.ClosingPrice > price.OpeningPrice ? price.ClosingPrice : price.OpeningPrice;
-                return price.Trade;
+                //return price.Trade;
+                return ReferencePriceCalculator.GetReferencePrice(price, CandleReferencePrice).Value;
             else if (TrendlineType == TrendlineType.Support)
-                //return price.OpeningPrice < price.ClosingPrice ? price.OpeningPrice : price.ClosingPrice;
-                return price.Trade;
+                //return price.Trade;
+                return ReferencePriceCalculator.GetReferencePrice(price, CandleReferencePrice).Value;
             else
                 return 0;
         }
@@ -341,6 +344,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
             }
         }
 
+        //Used to filter all the trendlines that were previously broken
         public bool IsBroken(DateTime? date)
         {
             if (!date.HasValue)
@@ -362,10 +366,51 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
         }
 
+        //Evaluates that a trendline has been just broken by this new price
+        public bool EvalTrendlineJustBroken(MarketData price, List<MarketData> histPrices, double perfThreshold,  bool downside)
+        {
+
+            double trendlinePrice = CalculateTrendPrice(price.MDEntryDate.Value, histPrices);
+
+            if (downside)
+            {
+                trendlinePrice = trendlinePrice - (perfThreshold  * trendlinePrice);
+
+                if (price.LowerRedCandle(trendlinePrice))//red candle
+                    return true;
+                else
+                    return false;
+            }
+            else
+            {
+                trendlinePrice = trendlinePrice + (perfThreshold * trendlinePrice);
+
+                if (price.BiggerGreendCandle(trendlinePrice))
+                    return true;
+                else
+                    return false;
+            }
+        }
+
         public bool ValidDistanceToEndDate(List<MarketData> prices,DateTime date, int outerSpan,CandleInterval candleInterval)
         {
             int elapsed = GetSpan(prices,EndDate, date, candleInterval);
             return elapsed >= outerSpan;
+        }
+
+        public void DoBreak(MarketData price, List<MarketData> prices)
+        {
+            if (!price.GetReferenceDateTime().HasValue)
+            {
+                throw new Exception($"Could not find a GetReferenceDateTime for {price.Security.Symbol} market data");
+            }
+
+            BrokenDate = price.GetReferenceDateTime();
+            BrokenTrendlinePrice = CalculateTrendPrice(price.GetReferenceDateTime().Value, prices);
+            BrokenMarketPrice = price;
+            Modified = true;
+            JustBroken = true;
+            Persisted = false;
         }
 
         

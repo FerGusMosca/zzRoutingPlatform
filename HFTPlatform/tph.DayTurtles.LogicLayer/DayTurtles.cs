@@ -204,7 +204,7 @@ namespace tph.DayTurtles.LogicLayer
             {
 
                 MarketData lowest = monPos.LowestOnWindow(GetWindow(monPos.Security.Symbol, false));
-                DoLog($"{Config.Name}.DBG2 -> NO CLOSING SIGNAL TRIGGEREDl triggered for symbol {monPos.Security.Symbol} (MMov={monPos.CalculateSimpleMovAvg()}) ",Constants.MessageType.Information);
+                DoLog($"{Config.Name} -> NO CLOSING SIGNAL TRIGGEREDl triggered for symbol {monPos.Security.Symbol} (MMov={monPos.CalculateSimpleMovAvg()}) ",Constants.MessageType.Information);
                 //                DoLog(string.Format(
                 //                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
                 //                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,

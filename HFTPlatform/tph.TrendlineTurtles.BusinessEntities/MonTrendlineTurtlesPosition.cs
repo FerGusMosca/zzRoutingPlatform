@@ -84,11 +84,8 @@ namespace tph.TrendlineTurtles.BusinessEntities
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
                 if (lastClosedCandle.BiggerGreendCandle(trendlinePrice))
                 {
-                    trendline.BrokenDate = lastClosedCandle.MDEntryDate;
-                    trendline.BrokenTrendlinePrice = trendlinePrice;
-                    trendline.BrokenMarketPrice = lastClosedCandle;
-                    trendline.JustBroken = true;
-                    trendline.Persisted = false;
+                    trendline.DoBreak(lastClosedCandle, histPrices);
+
                     if (EnoughSpan(trendline, lastClosedCandle))
                     {
                         found = true;
@@ -117,11 +114,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
                 if (lastClosedCandle.LowerRedCandle(trendlinePrice))
                 {
-                    trendline.BrokenDate = lastClosedCandle.MDEntryDate;
-                    trendline.BrokenTrendlinePrice = trendlinePrice;
-                    trendline.BrokenMarketPrice = lastClosedCandle;
-                    trendline.JustBroken = true;
-                    trendline.Persisted = false;
+                    trendline.DoBreak(lastClosedCandle, histPrices);
                     if (EnoughSpan(trendline, lastClosedCandle))
                     {
                         LastOpenTrendline = trendline;

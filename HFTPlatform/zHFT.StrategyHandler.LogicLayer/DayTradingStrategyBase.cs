@@ -70,6 +70,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected Dictionary<string, PortfolioPosition> PortfolioPositionsToMonitor { get; set; }
 
+        protected PositionIdTranslator PositionIdTranslator { get; set; }
+
         protected object tSynchronizationLock { get; set; }
 
         #endregion
@@ -224,7 +226,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                 AccountId = Config.Account,
             };
 
-            pos.LoadPosId(NextPosId);
+            //pos.LoadPosId(NextPosId);
+            pos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
             NextPosId++;
 
             return DoOpenTradingRegularPos(pos, portfPos);
@@ -347,7 +350,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
 
             closingPos.PositionCleared = true;
-            closingPos.LoadPosId(NextPosId);
+            closingPos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
+            //closingPos.LoadPosId(NextPosId);
             NextPosId++;
 
             trdPos.ClosingPosition = closingPos;
@@ -842,6 +846,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 Securities = new List<Security>();
 
                 NextPosId = 1;
+                PositionIdTranslator = new PositionIdTranslator(NextPosId);
 
                 OrderRouter = LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 

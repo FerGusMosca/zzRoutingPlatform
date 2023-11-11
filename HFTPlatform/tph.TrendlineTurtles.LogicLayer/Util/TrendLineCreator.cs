@@ -17,8 +17,14 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 {
     public class TrendLineCreator
     {
+        #region Protected Static Consts
+
+        protected static int _REPEATED_MAX_MIN_MAX_DISTANCE = 10;
+
+        #endregion
+
         #region Private Static Attributes
-        
+
         private static Dictionary<string,TrendLineCreator> TrdCreatorDict { get; set; }
         
         #endregion
@@ -27,7 +33,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         
         private Security Stock { get; set; }
 
-        private TrendlineConfiguration StrategyConfiguration { get; set; }
+        private TrendlineConfiguration TrendlineConfiguration { get; set; }
         
         protected CandleInterval CandleInterval{ get; set; }
 
@@ -53,13 +59,13 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         public TrendLineCreator(Security pStock,TrendlineConfiguration pConfig,CandleInterval pInterval,
                                 DateTime pMinSafeDateResistances,DateTime pMinSafeDateSupports,
-                                 OnLogMessage pOnLogMsg)
+                                OnLogMessage pOnLogMsg)
         {
             Stock = pStock;
 
             CandleInterval = pInterval;
 
-            StrategyConfiguration = pConfig;
+            TrendlineConfiguration = pConfig;
 
             //TrendlineConfiguration = pTrendlineConf;
 
@@ -83,7 +89,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         {
             Stock = pStock;
 
-            StrategyConfiguration = pConfig;
+            TrendlineConfiguration = pConfig;
             
             CandleInterval = pInterval;
 
@@ -169,13 +175,13 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
             if (CandleInterval == CandleInterval.Minute_1)
                 return ((newLocalMinimum.MDEntryDate.Value - localMimimum.MDEntryDate.Value).TotalMinutes >
-                        Convert.ToDouble(StrategyConfiguration.InnerTrendlinesSpan));
+                        Convert.ToDouble(TrendlineConfiguration.InnerTrendlinesSpan));
             else if (CandleInterval == CandleInterval.HOUR_1)
                 return ((newLocalMinimum.MDEntryDate.Value - localMimimum.MDEntryDate.Value).TotalHours >
-                        Convert.ToDouble(StrategyConfiguration.InnerTrendlinesSpan));
+                        Convert.ToDouble(TrendlineConfiguration.InnerTrendlinesSpan));
             else if (CandleInterval == CandleInterval.DAY)
                 return ((newLocalMinimum.MDEntryDate.Value - localMimimum.MDEntryDate.Value).TotalDays >
-                    Convert.ToDouble(StrategyConfiguration.InnerTrendlinesSpan));
+                    Convert.ToDouble(TrendlineConfiguration.InnerTrendlinesSpan));
             else
             {
                 throw new Exception(string.Format("Trendline Creator - Candle Interval not implemented:{0}",CandleInterval));
@@ -184,8 +190,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         protected bool EvalLocalMinimum(List<MarketData> prices, MarketData currentPrice,int index)
         {
-            int startIndex = index - StrategyConfiguration.InnerTrendlinesSpan;
-            int endIndex = index + StrategyConfiguration.InnerTrendlinesSpan;
+            int startIndex = index - TrendlineConfiguration.InnerTrendlinesSpan;
+            int endIndex = index + TrendlineConfiguration.InnerTrendlinesSpan;
 
             int take = endIndex-startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
@@ -196,7 +202,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             //if (!rangePrices.Any(x => GetLowestPrice(x) < GetLowestPrice(currentPrice)) && (rangePrices.Count == take))
             {
                 //return true;
-                return !ReapeatedValues(currentPrice, LocalMinimums);//We avoid repeated minimum
+                return !ReapeatedValues(currentPrice, LocalMinimums,prices);//We avoid repeated minimum
             }
             else
             {
@@ -206,26 +212,25 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         protected double GetReferencePrice(MarketData md)
         {
-            double? price= ReferencePriceCalculator.GetReferencePrice(md, StrategyConfiguration.CandleReferencePrice);
+            double? price= ReferencePriceCalculator.GetReferencePrice(md, TrendlineConfiguration.CandleReferencePrice);
             if (price.HasValue)
                 return price.Value;
             else
                 throw new Exception($"Reference Price not found for symbol {md.Security.Symbol} at {md.MDEntryDate.Value}");
         }
 
-        protected bool ReapeatedValues(MarketData currentPrice,List<MarketData> referencePrices)
+        protected bool ReapeatedValues(MarketData currentPrice,List<MarketData> referencePrices, List<MarketData> histPrices)
         {
             
-            foreach (MarketData referencePr in referencePrices)
+            foreach (MarketData refPrice in referencePrices)
             {
-                if (GetReferencePrice(referencePr) == GetReferencePrice(currentPrice))
+                if (GetReferencePrice(refPrice) == GetReferencePrice(currentPrice))
                 {
 
-                    if (currentPrice.MDEntryDate.HasValue && referencePr.MDEntryDate.HasValue)
+                    if (currentPrice.MDEntryDate.HasValue && refPrice.MDEntryDate.HasValue)
                     {
-                        TimeSpan elapsed = currentPrice.MDEntryDate.Value - referencePr.MDEntryDate.Value;
-
-                        if (Math.Abs(Convert.ToInt32(elapsed.TotalMinutes)) < 10)
+                        int distBtwCandles = GetSpan(refPrice.GetReferenceDateTime().Value, currentPrice.GetReferenceDateTime().Value, histPrices);
+                        if (distBtwCandles < _REPEATED_MAX_MIN_MAX_DISTANCE)
                             return true;
                     }
                 }
@@ -237,8 +242,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         protected bool EvalLocalMaximum(List<MarketData> prices, MarketData currentPrice, int index)
         {
-            int startIndex = index - StrategyConfiguration.InnerTrendlinesSpan;
-            int endIndex = index + StrategyConfiguration.InnerTrendlinesSpan;
+            int startIndex = index - TrendlineConfiguration.InnerTrendlinesSpan;
+            int endIndex = index + TrendlineConfiguration.InnerTrendlinesSpan;
 
             int take = endIndex - startIndex;
             List<MarketData> rangePrices = prices.Skip(startIndex).Take(take).ToList();
@@ -250,51 +255,28 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             {
                 //We avoid double trendlines because of equal highes/lowest
                 //return true;
-                return !ReapeatedValues(currentPrice, LocalMaximums);//We avoid repeated maximums
+                return !ReapeatedValues(currentPrice, LocalMaximums,prices);//We avoid repeated maximums
             }
             else
                 return false;
             
         }
 
-        protected bool EvalTrendlineBroken(MarketData price, List<MarketData> allHistoricalPrices, Trendline possibleTrendline, bool downside)
-        {
-
-            double trendlinePrice = possibleTrendline.CalculateTrendPrice(price.MDEntryDate.Value, allHistoricalPrices);
-
-            if (downside)
-            {
-                trendlinePrice = trendlinePrice - (StrategyConfiguration.PerforationThresholds * trendlinePrice);
-
-                if (price.LowerRedCandle(trendlinePrice))//red candle
-                    return true;
-                else
-                    return false;
-            }
-            else
-            {
-                trendlinePrice = trendlinePrice + (StrategyConfiguration.PerforationThresholds * trendlinePrice);
-
-                if (price.BiggerGreendCandle(trendlinePrice))
-                    return true;
-                else
-                    return false;
-            }
-        }
-
-        protected bool EvalTrendlineBroken(List<MarketData> allHistoricalPrices, Trendline possTrnd,bool downside)
+        //Given new Local Max/Min--> Are they a trendline?
+        //Compare all the inner prices
+        protected bool EvalPotentialNewTrendlineBroken(List<MarketData> histPrices, Trendline possTrnd,bool downside)
         {
             //We just consider the prices outside of the local maximum/minimum range
             DateTime startDate = GetStartDate(possTrnd.StartDate,0);
             DateTime endDate = GetEndDate(possTrnd.EndDate,0);
 
-            IList<MarketData> pricesInPeriod = allHistoricalPrices
+            IList<MarketData> pricesInPeriod = histPrices
                                                 .Where(x => DateTime.Compare(x.MDEntryDate.Value, startDate) >= 0
                                                 && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToList();
 
             foreach (MarketData price in pricesInPeriod)
             {
-                if (EvalTrendlineBroken(price, allHistoricalPrices, possTrnd, downside))
+                if (possTrnd.EvalTrendlineJustBroken(price, histPrices, TrendlineConfiguration.PerforationThresholds, downside))
                     return true;
             }
 
@@ -317,24 +299,24 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                         EndPrice = newLocalMinimum,
                         BrokenDate = null,
                         TrendlineType = TrendlineType.Support,
-                        //TrendlineConfiguration = TrendlineConfiguration,
+                        CandleReferencePrice= TrendlineConfiguration.CandleReferencePrice,
                         Modified = true
                     };
 
-                    OnLogMsg($"TrndlCreator.DBG1-Found new potential support for symbo {stock.Symbol} for Date={newLocalMinimum.MDEntryDate.Value} and price={newLocalMinimum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
+                    OnLogMsg($"TrndlCreator-Found new potential support for symbo {stock.Symbol} for Date={newLocalMinimum.MDEntryDate.Value} and price={newLocalMinimum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
 
-                    if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, true))
+                    if (!EvalPotentialNewTrendlineBroken(allHistoricalPrices, possibleTrendline, true))
                     {
                         if (!SupportTrendlines.Any(x => DateTime.Compare(x.StartDate, possibleTrendline.StartDate) == 0
                                                  && DateTime.Compare(x.EndDate, possibleTrendline.EndDate) == 0))
                         {
                             SupportTrendlines.Add(possibleTrendline);
-                            OnLogMsg($"TrndlCreator.DBG1-Trendline not broken or repeated --> ADDED", MessageType.Information);
+                            OnLogMsg($"TrndlCreator-Trendline not broken or repeated --> ADDED", MessageType.Information);
                         }
                     }
                     else
                     {
-                        OnLogMsg($"TrndlCreator.DBG1-Trendline broken --> IGNORED", MessageType.Information);
+                        OnLogMsg($"TrndlCreator-Trendline broken --> IGNORED", MessageType.Information);
                     }
                 }
             }
@@ -357,24 +339,24 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                         EndPrice = newLocalMaximum,
                         BrokenDate = null,
                         TrendlineType = TrendlineType.Resistance,
-                        //TrendlineConfiguration = TrendlineConfiguration,
+                        CandleReferencePrice = TrendlineConfiguration.CandleReferencePrice,
                         Modified = true
                     };
 
-                    OnLogMsg($"TrndlCreator.DBG1-Found new potential resistance for Date={newLocalMaximum.MDEntryDate.Value} and price={newLocalMaximum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
+                    OnLogMsg($"TrndlCreator-Found new potential resistance for Date={newLocalMaximum.MDEntryDate.Value} and price={newLocalMaximum.Trade} (search from={searchStart} search to={searchEnd})", MessageType.Information);
 
-                    if (!EvalTrendlineBroken(allHistoricalPrices, possibleTrendline, false))
+                    if (!EvalPotentialNewTrendlineBroken(allHistoricalPrices, possibleTrendline, false))
                     {
                         if (!ResistanceTrendlines.Any(x =>
                             DateTime.Compare(x.StartDate, possibleTrendline.StartDate) == 0
                             && DateTime.Compare(x.EndDate, possibleTrendline.EndDate) == 0))
                         {
                             ResistanceTrendlines.Add(possibleTrendline);
-                            OnLogMsg($"TrndlCreator.DBG1-Trendline not broken or repeated --> ADDED", MessageType.Information);
+                            OnLogMsg($"TrndlCreator-Trendline not broken or repeated --> ADDED", MessageType.Information);
                         }
                     }
                     else {
-                        OnLogMsg($"TrndlCreator.DBG1-Trendline broken --> IGNORED", MessageType.Information);
+                        OnLogMsg($"TrndlCreator-Trendline broken --> IGNORED", MessageType.Information);
 
                     }
                 }
@@ -382,32 +364,26 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         }
 
   
-        public void EvalBrokenTrendlines(MarketData price,List<Trendline> trendlines, List<MarketData> allHistoricalPrices, bool downside)
+        //Given a new Price --> Does it break any trendline?
+        public void EvalBrokenTrndLineForNewPrice(MarketData price,List<Trendline> trendlines, List<MarketData> histPrices, bool downside)
         {
 
-
+            //Compared to BE we do not use
+            //ValidDistanceToEndDate --> because this price could be an inner price
+            //SoftSlope --> That is for opening. I could break a trendline and not open trade because of slope
             List<Trendline> activeTrendlines = trendlines.Where(x => !x.IsBroken(price.MDEntryDate)
                                                                 && DateTime.Compare(x.EndDate, price.MDEntryDate.Value) < 0).ToList();
 
             foreach (Trendline trendline in activeTrendlines)
-
             {
-                
-                if (GetSpan(trendline.EndDate, price.MDEntryDate.Value, allHistoricalPrices) > 5)//Safety threshold
-                {
+                //if (GetSpan(trendline.EndDate, price.MDEntryDate.Value, histPrices) > 5)//Safety threshold
+                //{
 
-                    if (EvalTrendlineBroken(price, allHistoricalPrices, trendline, downside) 
-                        && !trendline.BrokenDate.HasValue)
+                    if (trendline.EvalTrendlineJustBroken(price, histPrices, TrendlineConfiguration.PerforationThresholds, downside))
                     {
-
-                        trendline.BrokenDate = price.MDEntryDate.Value;
-                        trendline.BrokenTrendlinePrice=trendline.CalculateTrendPrice(price.MDEntryDate.Value,allHistoricalPrices);
-                        trendline.BrokenMarketPrice=price;    
-                        trendline.Modified = true;
-                        trendline.JustBroken = true;
-                        trendline.Persisted = false;
+                        trendline.DoBreak(price, histPrices);
                     }
-                }
+                //}
             }
         }
 
@@ -470,7 +446,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
             foreach (MarketData price in pricesArr)
             {
-                if (i < StrategyConfiguration.InnerTrendlinesSpan && processSafetyThreshold)
+                if (i < TrendlineConfiguration.InnerTrendlinesSpan && processSafetyThreshold)
                 {
                     i++;
                     continue;
@@ -485,7 +461,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                     LocalMinimums.Add(price);
                 }
 
-                EvalBrokenTrendlines(price, SupportTrendlines, allHistoricalPrices, true);
+                EvalBrokenTrndLineForNewPrice(price, SupportTrendlines, allHistoricalPrices, true);
 
                 i++;
             }
@@ -494,7 +470,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         }
 
-        public List<Trendline> ProcessResistanceTrendlines(Security stock, List<MarketData> allHistoricalPrices, 
+        public List<Trendline> ProcessResistanceTrendlines(Security security, List<MarketData> allHistPrices, 
                                                             bool processSafetyThreshold, DateTime startDate,
                                                             DateTime endDate,bool usePrevTrendlines,
                                                             DateTime? startPrevTrendlineDate,bool markJustFound=false)
@@ -502,13 +478,13 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int i = 0;
             ExtractPrevMaximums(usePrevTrendlines, startPrevTrendlineDate);
 
-         MarketData[] pricesArr = allHistoricalPrices.Where(x =>   DateTime.Compare(startDate, x.MDEntryDate.Value) <= 0 
+         MarketData[] pricesArr = allHistPrices.Where(x =>   DateTime.Compare(startDate, x.MDEntryDate.Value) <= 0 
                                                                && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToArray();
 
 
             foreach (MarketData price in pricesArr)
             {
-                if (i < StrategyConfiguration.InnerTrendlinesSpan && processSafetyThreshold)
+                if (i < TrendlineConfiguration.InnerTrendlinesSpan && processSafetyThreshold)
                 {
                     i++;
                     continue;
@@ -517,12 +493,12 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 if (EvalLocalMaximum(pricesArr.ToList(), price, i))
                 {
 
-                    EvalResistance(stock, price, allHistoricalPrices, startDate, endDate, markJustFound);
+                    EvalResistance(security, price, allHistPrices, startDate, endDate, markJustFound);
 
                     LocalMaximums.Add(price);
                 }
 
-                EvalBrokenTrendlines(price, ResistanceTrendlines, allHistoricalPrices, false);
+                EvalBrokenTrndLineForNewPrice(price, ResistanceTrendlines, allHistPrices, false);
 
                 i++;
             }
@@ -577,8 +553,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
                 histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
                 
-                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrendlines(price,portfPos.Supports,histPrices,true);
-                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrendlines(price,portfPos.Resistances,histPrices,false);
+                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrndLineForNewPrice(price,portfPos.Supports,histPrices,true);
+                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrndLineForNewPrice(price,portfPos.Resistances,histPrices,false);
             }
         }
 
