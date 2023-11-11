@@ -51,7 +51,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
         protected Dictionary<string,long> CandlebarRequests { get; set; }
         
         protected  Dictionary<string,NewOrderReq> JsonOrdersDict { get; set; }
-        
+
         protected OrderConverter WrapperOrderConverter { get; set; }
         
         protected tph.StrategyHandler.SimpleCommandSender.Common.Util.OrderConverter JsonOrderConverter { get; set; }
@@ -310,51 +310,30 @@ namespace tph.StrategyHandler.SimpleCommandSender
             {
                 Wrapper wrapper = (Wrapper) param;
 
-                //TODO build converter!
-                string symbol = (string)wrapper.GetField(OrderFields.Symbol);
-                string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
-                string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
-                double price = (double)wrapper.GetField(OrderFields.Price);
-                OrdType ordType = (OrdType)wrapper.GetField(OrderFields.OrdType);
-                Side side = (Side)wrapper.GetField(OrderFields.Side);
-                TimeInForce tif = (TimeInForce)wrapper.GetField(OrderFields.TimeInForce);
-                double ordQty = (double)wrapper.GetField(OrderFields.OrderQty);
+                UpdateOrderReq updReq= SimpleCommandSender.Common.Util.OrderConverter.ConvertUpdateOrderReq(wrapper);
 
-                UpdateOrderReq updReq = new UpdateOrderReq()
-                {
-                    OrigClOrdId = origClOrdId,
-                    ClOrdId = clOrdId,
-                    Symbol = symbol,
-                    Price = price,
-                    OrdType = ordType,
-                    Side = side,
-                    TimeInForce = tif,
-                    Qty=ordQty
-                   
-
-                };
 
                 lock (JsonOrdersDict)
                 {
-                    if (JsonOrdersDict.ContainsKey(origClOrdId))
+                    if (JsonOrdersDict.ContainsKey(updReq.OrigClOrdId))
                     {
-                        NewOrderReq toUpdOrderReq = JsonOrdersDict[origClOrdId];
+                        NewOrderReq toUpdOrderReq = JsonOrdersDict[updReq.OrigClOrdId];
                         NewOrderReq updated = toUpdOrderReq.Clone();
-                        updated.ClOrdId = clOrdId;
-                        updated.Price = price;
+                        updated.ClOrdId = updReq.ClOrdId;
+                        updated.Price = updReq.Price;
 
-                        if(!JsonOrdersDict.ContainsKey(clOrdId))
-                            JsonOrdersDict.Add(clOrdId, updated);
+                        if(!JsonOrdersDict.ContainsKey(updReq.ClOrdId))
+                            JsonOrdersDict.Add(updReq.ClOrdId, updated);
                         else
-                            JsonOrdersDict[clOrdId] = updated;
+                            JsonOrdersDict[updReq.ClOrdId] = updated;
 
                         DoLog($"{Config.Name}--> Updating Symbol {toUpdOrderReq.Symbol} price: {toUpdOrderReq.Price}-> {updated.Price}", Constants.MessageType.PriorityInformation);
                         DoSendAsync<UpdateOrderReq>(updReq);
                     }
                     else
                     {
-                        OrderCancelRejectWrapper cxlRplRejWapper = new OrderCancelRejectWrapper(clOrdId, null,
-                            $"Could not find ClOrdId {origClOrdId} as a managed order",
+                        OrderCancelRejectWrapper cxlRplRejWapper = new OrderCancelRejectWrapper(updReq.ClOrdId, null,
+                            $"Could not find ClOrdId {updReq.OrigClOrdId} as a managed order",
                             CxlRejReason.UnknownOrder, CxlRejResponseTo.OrderCancelReplaceRequest);
 
                         (new Thread(ProcessIncomingAsync)).Start(cxlRplRejWapper);

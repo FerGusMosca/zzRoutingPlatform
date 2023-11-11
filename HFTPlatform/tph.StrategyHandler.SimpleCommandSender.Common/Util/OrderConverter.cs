@@ -1,11 +1,13 @@
 ﻿using System;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using zHFT.Main.BusinessEntities.Orders;
+using zHFT.Main.Common.Converter;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Wrappers;
 
 namespace tph.StrategyHandler.SimpleCommandSender.Common.Util
 {
-    public class OrderConverter
+    public class OrderConverter : ConverterBase
     {
         #region Protected Methods
 
@@ -71,6 +73,84 @@ namespace tph.StrategyHandler.SimpleCommandSender.Common.Util
 
             return newOrderReqJson;
         }
+
+
+        public static UpdateOrderReq ConvertUpdateOrderReq(Wrapper wrapper)
+        {
+
+            string symbol =null;
+
+            if (ValidateField(wrapper, HistoricalPricesRequestFields.Symbol))
+                symbol = (string)wrapper.GetField(HistoricalPricesRequestFields.Symbol);
+            else
+                throw new Exception($"Missing field on Update Order Request: Symbol");
+
+
+            string clOrdId =null;
+            if (ValidateField(wrapper, OrderFields.ClOrdID))
+                clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+            else
+                throw new Exception($"Missing field on Update Order Request: ClOrdID");
+
+
+            string origClOrdId = null;
+            if (ValidateField(wrapper, OrderFields.OrigClOrdID))
+                origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
+            else
+                throw new Exception($"Missing field on Update Order Request: OrigClOrdID");
+
+           
+            double price ;
+            if (ValidateField(wrapper, OrderFields.Price))
+                price = (double)wrapper.GetField(OrderFields.Price);
+            else
+                throw new Exception($"Missing field on Update Order Request: Price");
+            
+
+            OrdType ordType;
+            if (ValidateField(wrapper, OrderFields.OrdType))
+                ordType = (OrdType)wrapper.GetField(OrderFields.OrdType);
+            else
+                ordType = OrdType.Limit;
+
+            Side side;
+            if (ValidateField(wrapper, OrderFields.Side))
+                side = (Side)wrapper.GetField(OrderFields.Side);
+            else
+                side = Side.Unknown;
+
+
+            double? ordQty;
+            if (ValidateField(wrapper, OrderFields.OrderQty))
+                ordQty = (double)wrapper.GetField(OrderFields.OrderQty);
+            else
+                ordQty = null;
+
+            TimeInForce tif;
+            if (ValidateField(wrapper, OrderFields.TimeInForce))
+                tif = (TimeInForce)wrapper.GetField(OrderFields.TimeInForce);
+            else
+                tif = TimeInForce.Day;
+
+
+            UpdateOrderReq updReq = new UpdateOrderReq()
+            {
+                OrigClOrdId = origClOrdId,
+                ClOrdId = clOrdId,
+                Symbol = symbol,
+                Price = price,
+                OrdType = ordType,
+                Side = side,
+                TimeInForce = tif,
+                Qty = ordQty
+            };
+
+            return updReq;
+
+
+
+        }
+
 
         #endregion
 
