@@ -23,6 +23,18 @@ namespace tph.ConsoleStrategy.Common.Util
         
         }
 
+        public static void ValidateCommandVariableParams(string cmd, string[] param, int minParams, int maxParams)
+        {
+            if (param.Length < minParams)
+                throw new Exception($"Command {cmd} must have at least {minParams} params");
+
+
+            if (param.Length > minParams && param.Length > maxParams)
+                throw new Exception($"Command {cmd} on its variable version must have between {minParams} and {maxParams} params");
+
+
+        }
+
         public static string ExtractMandatoryParam(string[] param, int pos)
         {
             if (param.Length >= (pos + 1))

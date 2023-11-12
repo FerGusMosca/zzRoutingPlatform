@@ -255,6 +255,31 @@ namespace tph.ConsoleStrategy.LogicLayer
             }
         
         }
+        protected void RequestMarketdata(string[] param)
+        {
+            try
+            {
+                string cmd = param[0];
+
+                CommandValidator.ValidateCommandVariableParams(cmd, param, 2, 5);
+
+                string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
+                string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 2);
+                SecurityType? secType = SecurityTypeTranslator.TranslateNonMandatorySecurityType(strSecType);
+                string currency = CommandValidator.ExtractNonMandatoryParam(param, 3);
+                string exchange = CommandValidator.ExtractNonMandatoryParam(param, 4);
+
+                DoLog($"Requesting Market Data for Symbol={symbol} SecType={secType} Currency={currency} exchange={exchange}", MessageType.PriorityInformation);
+                (new Thread(RequestMarketDataAsync)).Start(new object[] { symbol, currency, exchange, secType });
+
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"{Config.Name}--> CRITICAL ERROR Requesting Market Data:{ex.Message}", MessageType.Error);
+            }
+
+        }
 
         protected void ListRoutedPositions(string[] param)
         {
@@ -304,6 +329,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             Console.WriteLine($"#4-CancelPosition <PosId>");
             Console.WriteLine($"#5-CancelAll");
             Console.WriteLine($"#6-UnwindPos <PosId>");
+            Console.WriteLine($"#7-RequestMarketData <symbol> <SecType*> <Currency*> <Echange*>");
             Console.WriteLine();
         }
 
@@ -338,6 +364,10 @@ namespace tph.ConsoleStrategy.LogicLayer
                 else if (mainCmd == "UnwindPos")
                 {
                     UnwindPos(cmdArr);
+                }
+                else if (mainCmd == "RequestMarketData")
+                {
+                    RequestMarketdata(cmdArr);
                 }
                 else if (mainCmd == "cls")
                 {
