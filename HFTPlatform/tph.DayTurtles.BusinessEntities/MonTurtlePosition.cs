@@ -257,7 +257,8 @@ namespace tph.DayTurtles.BusinessEntities
                 {
 
                     MarketData lastCandle = GetLastCandle();
-                    lastCandle.ClosingPrice = lastCandle.Trade;
+                    if(lastCandle!=null)
+                        lastCandle.ClosingPrice = lastCandle.Trade;
 
                     newCandle = true;
                     md.OpeningPrice = md.Trade;
