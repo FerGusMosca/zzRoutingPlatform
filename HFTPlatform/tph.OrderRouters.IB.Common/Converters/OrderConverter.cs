@@ -66,6 +66,10 @@ namespace tph.OrderRouters.IB.Common.Converters
             }
             else if (side == Side.Sell)
                 orderInfo.Action = _SIDE_SELL;
+            else if (side == Side.SellShort )
+                orderInfo.Action = _SIDE_SELL;
+            else if (side == Side.BuyToClose)
+                orderInfo.Action = _SIDE_BUY;
             else
                 throw new Exception(string.Format("Side {0} not supported yet", side.ToString()));
         

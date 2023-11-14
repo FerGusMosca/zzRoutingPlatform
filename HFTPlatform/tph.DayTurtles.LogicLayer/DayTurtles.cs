@@ -178,6 +178,21 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
 
+        protected void CloseAllOpenPositions(MonTurtlePosition monPos)
+        {
+            foreach (TradTurtlesPosition portfPos in PortfolioPositions.Values)
+            {
+                DoLog(string.Format("Closing {0} Position  on market CLOSED. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
+                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
+                        DateTimeManager.Now,
+                        portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-",
+                        "MARKET CLOSED"),
+                    Constants.MessageType.Information);
+                RunClose(portfPos.OpeningPosition, monPos, portfPos);
+            }
+        
+        }
+
         protected void EvalClosingPosition(MonTurtlePosition monPos)
         {
             TradTurtlesPosition portfPos = (TradTurtlesPosition)PortfolioPositions[monPos.Security.Symbol];
@@ -311,6 +326,10 @@ namespace tph.DayTurtles.LogicLayer
                 EvalAbortingOpeningPositions(monPos);
                 EvalAbortingClosingPositions(monPos);
             }
+            else if (!IsTradingTime())
+            {
+                CloseAllOpenPositions(monPos);
+            }
         }
 
         protected override TradingPosition DoOpenTradingFuturePos(Position pos, PortfolioPosition portfPos)
@@ -372,6 +391,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 lock (tLock)
                 {
+                    
                     string cleanSymbol = SymbolConverter.GetCleanSymbol(md.Security.Symbol);
                     if (PortfolioPositionsToMonitor.Keys.Any(x => SymbolConverter.GetCleanSymbol(x) == cleanSymbol) && Securities != null)
                     //if (PortfolioPositionsToMonitor.ContainsKey(cleanSymbol) && Securities!=null)
