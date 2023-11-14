@@ -30,6 +30,7 @@ using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.SecurityListSaver.BusinessEntities;
 using zHFT.StrategyHandler.SecurityListSaver.Common.Interfaces;
 using zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers;
+using SecurityListWrapper = zHFT.MarketClient.Primary.Common.Wrappers.SecurityListWrapper;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {

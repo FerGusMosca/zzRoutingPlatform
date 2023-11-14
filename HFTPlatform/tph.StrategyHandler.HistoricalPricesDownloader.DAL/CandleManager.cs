@@ -11,54 +11,54 @@ using zHFT.Main.Common.Util;
 
 namespace tph.StrategyHandler.HistoricalPricesDownloader.DAL
 {
-    public class CandleManager
-    {
-        #region Protected Attributes
+    //public class CandleManager
+    //{
+    //    #region Protected Attributes
 
-        public string ADOConnectionString { get; set; }
+    //    public string ADOConnectionString { get; set; }
 
-        #endregion
+    //    #endregion
 
-        #region Constructor
+    //    #region Constructor
 
-        public CandleManager(string adoConnectionString)
-        {
-            ADOConnectionString = adoConnectionString;
-        }
+    //    public CandleManager(string adoConnectionString)
+    //    {
+    //        ADOConnectionString = adoConnectionString;
+    //    }
 
-        #endregion
+    //    #endregion
 
-        #region Public Methods
+    //    #region Public Methods
 
-        public void Persist(string symbol, CandleInterval interval, MarketData md)
-        {
-            using (var connection = new SqlConnection(ADOConnectionString))
-            {
-                using (SqlCommand cmd = connection.CreateCommand())
-                {
-                    connection.Open();
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "PersistCandle";
-                    cmd.Parameters.Add(new SqlParameter("@Symbol", symbol));
-                    cmd.Parameters.Add(new SqlParameter("@Date", md.GetReferenceDateTime()));
-                    cmd.Parameters.Add(new SqlParameter("@Interval", CandleIntervalTranslator.GetStrInterval(interval)));
-                    cmd.Parameters.Add(new SqlParameter("@Open", md.OpeningPrice));
-                    cmd.Parameters.Add(new SqlParameter("@High", md.TradingSessionHighPrice));
-                    cmd.Parameters.Add(new SqlParameter("@Low", md.TradingSessionLowPrice));
-                    cmd.Parameters.Add(new SqlParameter("@Close", md.ClosingPrice));
-                    cmd.Parameters.Add(new SqlParameter("@Trade", md.Trade));
-                    cmd.Parameters.Add(new SqlParameter("@CashVolume", md.CashVolume));
-                    cmd.Parameters.Add(new SqlParameter("@NominalVolume", md.NominalVolume));
+    //    public void Persist(string symbol, CandleInterval interval, MarketData md)
+    //    {
+    //        using (var connection = new SqlConnection(ADOConnectionString))
+    //        {
+    //            using (SqlCommand cmd = connection.CreateCommand())
+    //            {
+    //                connection.Open();
+    //                cmd.CommandType = CommandType.StoredProcedure;
+    //                cmd.CommandText = "PersistCandle";
+    //                cmd.Parameters.Add(new SqlParameter("@Symbol", symbol));
+    //                cmd.Parameters.Add(new SqlParameter("@Date", md.GetReferenceDateTime()));
+    //                cmd.Parameters.Add(new SqlParameter("@Interval", CandleIntervalTranslator.GetStrInterval(interval)));
+    //                cmd.Parameters.Add(new SqlParameter("@Open", md.OpeningPrice));
+    //                cmd.Parameters.Add(new SqlParameter("@High", md.TradingSessionHighPrice));
+    //                cmd.Parameters.Add(new SqlParameter("@Low", md.TradingSessionLowPrice));
+    //                cmd.Parameters.Add(new SqlParameter("@Close", md.ClosingPrice));
+    //                cmd.Parameters.Add(new SqlParameter("@Trade", md.Trade));
+    //                cmd.Parameters.Add(new SqlParameter("@CashVolume", md.CashVolume));
+    //                cmd.Parameters.Add(new SqlParameter("@NominalVolume", md.NominalVolume));
 
-                    cmd.ExecuteNonQuery();
-                }
-                connection.Dispose();
-            }
+    //                cmd.ExecuteNonQuery();
+    //            }
+    //            connection.Dispose();
+    //        }
 
-        }
+    //    }
 
-        #endregion
+    //    #endregion
 
 
-    }
+    //}
 }

@@ -69,6 +69,10 @@
       <Project>{453E183D-9557-4A96-AD08-D2AD0DB68765}</Project>
       <Name>zHFT.StrategyHandler.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.DataAccessLayer\zHFT.StrategyHandler.DataAccessLayer.csproj">
+      <Project>{E4C3814D-9346-4A26-A6AF-CC871021AFA7}</Project>
+      <Name>zHFT.StrategyHandler.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.LogicLayer\zHFT.StrategyHandler.LogicLayer.csproj">
       <Project>{23F19229-4E9F-4BC0-8CAA-D45C1867BD96}</Project>
       <Name>zHFT.StrategyHandler.LogicLayer</Name>

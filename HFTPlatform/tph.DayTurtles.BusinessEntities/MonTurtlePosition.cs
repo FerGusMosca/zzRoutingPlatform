@@ -243,10 +243,34 @@ namespace tph.DayTurtles.BusinessEntities
         }
 
         #endregion
-        
+
         #region Public Methods
 
-        public override bool AppendCandle(MarketData md)
+
+        public override bool AppendCandleHistorical(MarketData md)//Historical Candles come w/right Open/Close/Trade
+        {
+            bool newCandle = false;
+            if (CanCreateCandle(md))
+            {
+                string key = GetCandleKey(md);
+
+                if (!Candles.ContainsKey(key))
+                {
+
+                    Candles.Add(key, md);
+                }
+                else
+                {
+                    Candles[key] = md;
+                }
+
+            }
+
+            Security.MarketData = md;
+            return newCandle;
+        }
+
+        public override bool AppendCandle(MarketData md)//Market Data candles come with yesterday Open/Close
         {
             bool newCandle = false;
             if (CanCreateCandle(md))
@@ -268,7 +292,7 @@ namespace tph.DayTurtles.BusinessEntities
                 }
                 else
                 {
-                    Candles[key] = md;
+                    Candles[key].Trade = md.Trade;
                 }
 
             }

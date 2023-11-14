@@ -4,8 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.Abstract;
+using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.MarketClient.Common
 {
@@ -28,6 +31,21 @@ namespace zHFT.MarketClient.Common
         #endregion
 
         #region Protected Methods
+
+        public void OnPublishAsync(object param)
+        {
+            try
+            {
+                CMState state = OnMessageRcv((Wrapper)param);
+                if (!state.Success)
+                    throw state.Exception;
+            }
+            catch (Exception e)
+            {
+                BaseConfiguration conf = (BaseConfiguration)GetConfig();
+                DoLog($"CRITICAL ERROR @{conf.Name}.OnPublishAsync: {e.Message}", Constants.MessageType.Information);
+            }
+        }
 
         protected void DoLog(string msg, Constants.MessageType type)
         {

@@ -481,7 +481,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
                     Wrapper wrapper = (Wrapper) param;
 
-                    HistoricalPricesRequestDTO dto = HistoricalPriceConverter.ConvertHistoricalPriceRequest(wrapper);
+                    HistoricalPricesRequestDTO dto = InstructionBasedMarketClient.IB.Common.Converters.HistoricalPriceConverter.ConvertHistoricalPriceRequest(wrapper);
 
                     zHFT.MarketClient.IB.Common.Configuration.Contract ctr =
                         new zHFT.MarketClient.IB.Common.Configuration.Contract();

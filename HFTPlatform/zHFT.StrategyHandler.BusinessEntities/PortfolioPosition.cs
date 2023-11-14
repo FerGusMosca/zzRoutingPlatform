@@ -24,6 +24,8 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         #region public Methods
 
+        public virtual bool AppendCandleHistorical(MarketData md) { return true; }
+
 
         public virtual bool AppendCandle(MarketData md) {
 

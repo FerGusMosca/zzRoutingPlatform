@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.StrategyHandler.HistoricalPricesDownloader.Common.Configuration;
-using tph.StrategyHandler.HistoricalPricesDownloader.DAL;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
@@ -19,6 +18,7 @@ using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandler.DataAccessLayer;
 using zHFT.StrategyHandler.LogicLayer;
 using static zHFT.Main.Common.Util.Constants;
 

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Market Client Mock</Name>
+
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<PacingMarketDataMilliSec>100</PacingMarketDataMilliSec>
+	<From>2020-01-01</From>
+	<To>2020-04-30</To>
+  
+</Configuration>
