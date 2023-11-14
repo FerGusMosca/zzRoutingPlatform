@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.Util;
 
 namespace zHFT.StrategyHandler.MktDataDownloader.Common.Util
 {
@@ -19,7 +20,7 @@ namespace zHFT.StrategyHandler.MktDataDownloader.Common.Util
 
             hour += AMPM == "p. m." || AMPM == "PM" ? 12 : 0;
 
-            return new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, min, 0);
+            return new DateTime(DateTimeManager.Now.Year, DateTimeManager.Now.Month, DateTimeManager.Now.Day, hour, min, 0);
         
         }
     }

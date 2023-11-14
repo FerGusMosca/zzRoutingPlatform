@@ -61,7 +61,7 @@ namespace zHFT.OrderRouters.Common
 
         protected bool LoadConfig(string configFile)
         {
-            DoLog(DateTime.Now.ToString() + "OrderRouterBase.LoadConfig", Constants.MessageType.Information);
+            DoLog(DateTimeManager.Now.ToString() + "OrderRouterBase.LoadConfig", Constants.MessageType.Information);
 
             DoLog("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))

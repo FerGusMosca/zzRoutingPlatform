@@ -44,7 +44,7 @@ namespace zHFT.Main.Common.Abstract
 
         protected bool LoadConfig(string configFile)
         {
-            DoLog(DateTime.Now.ToString() + string.Format("BaseCommunicationModule.LoadConfig"), Constants.MessageType.Information);
+            DoLog(DateTimeManager.Now.ToString() + string.Format("BaseCommunicationModule.LoadConfig"), Constants.MessageType.Information);
 
             DoLog("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))

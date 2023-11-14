@@ -13,7 +13,7 @@ namespace zHFT.SingletonModulesHandler.Common.Util
     {
         public static bool DoLoadConfig(ISingletonModule module, string configFile)
         {
-            module.DoLog(DateTime.Now.ToString() + string.Format("ConfigLoader.LoadConfig"), Constants.MessageType.Information);
+            module.DoLog(DateTimeManager.Now.ToString() + string.Format("ConfigLoader.LoadConfig"), Constants.MessageType.Information);
 
             module.DoLog("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))

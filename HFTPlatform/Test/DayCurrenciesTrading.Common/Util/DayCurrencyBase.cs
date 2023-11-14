@@ -149,7 +149,7 @@ namespace DayCurrenciesTrading.Common.Util
         protected int GetNextMDReqId()
         {
             Thread.Sleep(10);
-            return Convert.ToInt32(DateTime.Now.Millisecond);
+            return Convert.ToInt32(DateTimeManager.Now.Millisecond);
             
         }
 

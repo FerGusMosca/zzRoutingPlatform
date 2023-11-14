@@ -68,8 +68,8 @@ namespace tph.DayTurtles.LogicLayer
                     int closeWindow = GetWindow(symbol, false);
                     int windowToUse= openWindow>closeWindow?openWindow:closeWindow;
 
-                    DateTime from = DateTime.Now.AddDays(-1);
-                    DateTime to = DateTime.Now;
+                    DateTime from = DateTimeManager.Now.AddDays(-1);
+                    DateTime to = DateTimeManager.Now;
 
                     HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
                     OnMessageRcv(reqWrapper);
@@ -94,8 +94,8 @@ namespace tph.DayTurtles.LogicLayer
                 DoLog(string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4} {5}", 
                     trdPos.TradeDirection,
                     trdPos.OpeningPosition.Security.Symbol, 
-                    trdPos.OpeningPosition.CashQty, 
-                    DateTime.Now, 
+                    trdPos.OpeningPosition.CashQty,
+                    DateTimeManager.Now, 
                     trdPos.OpeningPosition.PosId, 
                     turtlePos.SignalTriggered()),
                     Constants.MessageType.Information);
@@ -113,8 +113,8 @@ namespace tph.DayTurtles.LogicLayer
                         string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4}  {5}",
                             trdPos.TradeDirection, 
                             trdPos.OpeningPosition.Security.Symbol,
-                            trdPos.OpeningPosition.CashQty, 
-                            DateTime.Now, 
+                            trdPos.OpeningPosition.CashQty,
+                            DateTimeManager.Now, 
                             trdPos.OpeningPosition.PosId, 
                             turtlePos.SignalTriggered()),
                         Constants.MessageType.Information);
@@ -129,7 +129,7 @@ namespace tph.DayTurtles.LogicLayer
                 MarketData highest = turtlePos.HighestOnWindow(GetWindow(turtlePos.Security.Symbol, true));
                 DoLog(string.Format(
                         "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
-                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
+                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTimeManager.Now,
                         highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
                     Constants.MessageType.Information);
             }
@@ -145,7 +145,7 @@ namespace tph.DayTurtles.LogicLayer
                 {
                     RunClose(trdPos.OpeningPosition, turtlePos, trdPos);
                     DoLog(string.Format("{0} Position Closed on stop loss hit. Symbol {1} Qty={2} DateTime={3} PosId={4}",
-                        trdPos.TradeDirection, trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTime.Now,
+                        trdPos.TradeDirection, trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTimeManager.Now,
                         trdPos.OpeningPosition.PosId), Constants.MessageType.Information);
                     return true;
                 }
@@ -166,14 +166,14 @@ namespace tph.DayTurtles.LogicLayer
                 {
                     CancelRoutingPos(trdPos.OpeningPosition, trdPos);
                     DoLog(string.Format("{0} Aborting opening position to market. Symbol {1} Qty={2} DateTime={3} Pos={4}", trdPos.TradeDirection,
-                        trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTime.Now, trdPos.OpeningPosition.PosId), Constants.MessageType.Information);
+                        trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTimeManager.Now, trdPos.OpeningPosition.PosId), Constants.MessageType.Information);
                 }
 
                 if (turtlePos.EvalAbortingNewShortPosition())
                 {
                     CancelRoutingPos(trdPos.OpeningPosition, trdPos);
                     DoLog(string.Format("{0} Aborting opening position to market. Symbol {1} Qty={2} DateTime={3} Pos={4}", trdPos.TradeDirection,
-                        trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTime.Now, trdPos.OpeningPosition.PosId), Constants.MessageType.Information);
+                        trdPos.OpeningPosition.Security.Symbol, trdPos.Qty, DateTimeManager.Now, trdPos.OpeningPosition.PosId), Constants.MessageType.Information);
                 }
             }
         }
@@ -186,7 +186,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 DoLog(string.Format("Closing {0} Position  on market. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
-                        DateTime.Now,
+                        DateTimeManager.Now,
                         portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-",
                         monPos.SignalTriggered()),
                     Constants.MessageType.Information);
@@ -195,7 +195,7 @@ namespace tph.DayTurtles.LogicLayer
             else if (portfPos.IsLongDirection() && monPos.EvalClosingLongPosition() && !monPos.IsClosing())
             {
                 DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  DateTime={3} PosId={4} Signal={5}",
-                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty, DateTime.Now,
+                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty, DateTimeManager.Now,
                         portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-",
                         monPos.SignalTriggered()),
                     Constants.MessageType.Information);
@@ -209,7 +209,7 @@ namespace tph.DayTurtles.LogicLayer
                 DoLog($"{Config.Name} -> NO CLOSING SIGNAL TRIGGEREDl triggered for symbol {monPos.Security.Symbol} (MMov={monPos.CalculateSimpleMovAvg()}) ",Constants.MessageType.Information);
                 //                DoLog(string.Format(
                 //                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
-                //                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTime.Now,
+                //                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTimeManager.Now,
                 //                        lowest != null && lowest.Trade.HasValue ? lowest.Trade.ToString() : "-"),
                 //                    Constants.MessageType.Information);
             }
@@ -225,14 +225,14 @@ namespace tph.DayTurtles.LogicLayer
                 {
                     CancelRoutingPos(trdPos.ClosingPosition, trdPos);
                     DoLog(string.Format("{0} Aborting closing position. Symbol {1} Qty={2} DateTime={3} Pos={4}", trdPos.TradeDirection,
-                        trdPos.ClosingPosition.Security.Symbol, trdPos.Qty, DateTime.Now, trdPos.ClosingPosition.PosId), Constants.MessageType.Information);
+                        trdPos.ClosingPosition.Security.Symbol, trdPos.Qty, DateTimeManager.Now, trdPos.ClosingPosition.PosId), Constants.MessageType.Information);
                 }
 
                 if (turtlePos.EvalAbortingClosingShortPosition())
                 {
                     CancelRoutingPos(trdPos.ClosingPosition, trdPos);
                     DoLog(string.Format("{0} Aborting closing position. Symbol {1} Qty={2} DateTime={3} Pos={4}", trdPos.TradeDirection,
-                        trdPos.ClosingPosition.Security.Symbol, trdPos.Qty, DateTime.Now, trdPos.ClosingPosition.PosId), Constants.MessageType.Information);
+                        trdPos.ClosingPosition.Security.Symbol, trdPos.Qty, DateTimeManager.Now, trdPos.ClosingPosition.PosId), Constants.MessageType.Information);
                 }
             }
         }
@@ -295,7 +295,7 @@ namespace tph.DayTurtles.LogicLayer
         protected void EvalOpeningClosingPositions(MonTurtlePosition monPos)
         {
 
-            TimeSpan elapsed = DateTime.Now - StartTime;
+            TimeSpan elapsed = DateTimeManager.Now - StartTime;
 
             if (PortfolioPositions.Keys.Count < Config.MaxOpenedPositions
                 && !PortfolioPositions.ContainsKey(monPos.Security.Symbol)
@@ -323,7 +323,7 @@ namespace tph.DayTurtles.LogicLayer
             return new TradTurtlesPosition()
             {
                 StrategyName = Config.Name,
-                OpeningDate = DateTime.Now,
+                OpeningDate = DateTimeManager.Now,
                 OpeningPosition = pos,
                 OpeningPortfolioPosition = portfPos,
                 FeeTypePerTrade = Config.FeeTypePerTrade,
@@ -366,6 +366,7 @@ namespace tph.DayTurtles.LogicLayer
         {
             Wrapper wrapper = (Wrapper)pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
+            DateTimeManager.NullNow = md.GetReferenceDateTime();
 
             try
             {
@@ -493,7 +494,7 @@ namespace tph.DayTurtles.LogicLayer
             this.ModuleConfigFile = configFile;
             this.OnMessageRcv += pOnMessageRcv;
             this.OnLogMsg += pOnLogMsg;
-            StartTime = DateTime.Now;
+            StartTime = DateTimeManager.Now;
             LastCounterResetTime = StartTime;
 
             if (ConfigLoader.LoadConfig(this, configFile))

@@ -54,7 +54,7 @@ namespace zHFT.OrderRouters.Mock
                     foreach (Order order in PendingToExecuteOrders)
                     {
                         //Console.Beep();//DBG
-                        TimeSpan elapsed = DateTime.Now - order.EffectiveTime.Value;
+                        TimeSpan elapsed = DateTimeManager.Now - order.EffectiveTime.Value;
                         if (elapsed.TotalSeconds > Configuration.OrdeExecutionEveryNSeconds)
                         {
                             //We send the executed ER
@@ -80,7 +80,7 @@ namespace zHFT.OrderRouters.Mock
                 try
                 {
                     Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
-                    newOrder.EffectiveTime = DateTime.Now;
+                    newOrder.EffectiveTime = DateTimeManager.Now;
 
                     PendingToExecuteOrders.Add(newOrder);
                 }

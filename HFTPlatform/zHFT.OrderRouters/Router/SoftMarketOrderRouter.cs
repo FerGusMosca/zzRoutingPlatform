@@ -83,7 +83,7 @@ namespace zHFT.OrderRouters.Router
             {
                 DateTime start = PacingDict[pos.PosId];
 
-                TimeSpan elapsed = DateTime.Now - start;
+                TimeSpan elapsed = DateTimeManager.Now - start;
 
                 if (ORConfiguration.ConsecutiveOrdersPacingInSec > 0)
                     return elapsed.TotalSeconds > ORConfiguration.ConsecutiveOrdersPacingInSec;
@@ -211,7 +211,7 @@ namespace zHFT.OrderRouters.Router
 
                             PendingPartialOrderPositionsDict.Add(pos.PosId, pos);
                             if(PacingDict.ContainsKey(pos.PosId))
-                                PacingDict.Add(pos.PosId,DateTime.Now);
+                                PacingDict.Add(pos.PosId, DateTimeManager.Now);
                             ActiveOrdersDict.Add(newOrder.ClOrdId, pos);
 
                             CMState processed = OrderProxy.ProcessMessage(new NewOrderWrapper(newOrder, Config));

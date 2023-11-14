@@ -204,7 +204,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             NextPosId++;
 
             trdPos.ClosingPosition = pos;
-            trdPos.ClosingDate = DateTime.Now;
+            trdPos.ClosingDate = DateTimeManager.Now;
             trdPos.DoCloseTradingPosition(trdPos);
         
         }
@@ -353,7 +353,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             NextPosId++;
 
             trdPos.ClosingPosition = closingPos;
-            trdPos.ClosingDate = DateTime.Now;
+            trdPos.ClosingDate = DateTimeManager.Now;
             trdPos.DoCloseTradingPosition(trdPos);
         }
         
@@ -361,7 +361,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             if (Config.CancelActiveOrdersOnStart && report.IsActiveOrder())
             {
-                TimeSpan elapsed = DateTime.Now - StartTime;
+                TimeSpan elapsed = DateTimeManager.Now - StartTime;
 
                 if (elapsed.TotalSeconds > 10)
                 {
@@ -653,7 +653,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             bool validOpening = false;
             if (!string.IsNullOrEmpty(Config.OpeningTime))
             {
-                validOpening= DateTime.Now > MarketTimer.GetTodayDateTime(Config.OpeningTime);
+                validOpening= DateTimeManager.Now > MarketTimer.GetTodayDateTime(Config.OpeningTime);
             }
             else
                 validOpening = true;
@@ -661,7 +661,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             bool validClosing = false;
             if (!string.IsNullOrEmpty(Config.ClosingTime))
             {
-                validClosing = DateTime.Now < MarketTimer.GetTodayDateTime(Config.ClosingTime);
+                validClosing = DateTimeManager.Now < MarketTimer.GetTodayDateTime(Config.ClosingTime);
             }
             else
                 validClosing = true;
@@ -829,7 +829,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             try
             {
-                StartTime = DateTime.Now;
+                StartTime = DateTimeManager.Now;
                 LastCounterResetTime = StartTime;
 
                 tLock = new object();

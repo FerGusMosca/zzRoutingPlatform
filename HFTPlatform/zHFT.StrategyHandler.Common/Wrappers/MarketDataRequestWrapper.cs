@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.StrategyHandler.Common.Wrappers
@@ -33,7 +34,7 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         public MarketDataRequestWrapper(Security pSecurity, SubscriptionRequestType pSubscriptionRequestType,string pQuoteSymbol=null)
         {
-            TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+            TimeSpan elapsed = DateTimeManager.Now - new DateTime(1970, 1, 1);
             MdReqId = Convert.ToInt64(elapsed.TotalSeconds) ;
             Security = pSecurity;
             SubscriptionRequestType = pSubscriptionRequestType;

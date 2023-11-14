@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.OrderRouter.Mock.Common.Wrappers
@@ -79,7 +80,7 @@ namespace zHFT.OrderRouter.Mock.Common.Wrappers
             else if (xrField == ExecutionReportFields.Text)
                 return ExecutionReportFields.NULL;
             else if (xrField == ExecutionReportFields.TransactTime)
-                return DateTime.Now;
+                return DateTimeManager.Now;
             else if (xrField == ExecutionReportFields.LastQty)
                 return LastQty;
             else if (xrField == ExecutionReportFields.LastPx)

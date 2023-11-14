@@ -43,7 +43,7 @@ namespace tph.IntFigDayTurtles.LogicLayer
             TradTurtlesPosition tradPos= new TradIntFigTurtlesPosition()
             {
                 StrategyName = Config.Name,
-                OpeningDate = DateTime.Now,
+                OpeningDate = DateTimeManager.Now,
                 OpeningPosition = pos,
                 OpeningPortfolioPosition = portfPos,
                 FeeTypePerTrade = Config.FeeTypePerTrade,

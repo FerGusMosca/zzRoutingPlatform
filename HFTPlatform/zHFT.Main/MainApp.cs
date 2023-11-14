@@ -88,7 +88,7 @@ namespace zHFT.Main
 
         protected bool LoadConfig(string configFile)
         {
-            Log(DateTime.Now.ToString() + "MainApp.LoadConfig", Constants.MessageType.Information);
+            Log(DateTimeManager.Now.ToString() + "MainApp.LoadConfig", Constants.MessageType.Information);
 
             Log("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))

@@ -65,9 +65,9 @@ namespace zHFT.OrderRouters.Router
             lock (PositionsTimeoutDict)
             {
                 if (!PositionsTimeoutDict.ContainsKey(posId))
-                    PositionsTimeoutDict.Add(posId, DateTime.Now);
+                    PositionsTimeoutDict.Add(posId, DateTimeManager.Now);
                 else
-                    PositionsTimeoutDict[posId] = DateTime.Now;
+                    PositionsTimeoutDict[posId] = DateTimeManager.Now;
             }
         }
 
@@ -92,7 +92,7 @@ namespace zHFT.OrderRouters.Router
                     {
                         foreach (string posId in PositionsTimeoutDict.Keys)
                         {
-                            TimeSpan elapsed = DateTime.Now - PositionsTimeoutDict[posId];
+                            TimeSpan elapsed = DateTimeManager.Now - PositionsTimeoutDict[posId];
 
                             if (elapsed.TotalSeconds > 20)//20 seconds
                             {

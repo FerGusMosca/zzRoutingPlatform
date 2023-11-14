@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using tph.DayTurtles.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.DayTurtles.BusinessEntities
@@ -426,7 +427,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (lastCandle != null && lastCandle.MDLocalEntryDate.HasValue)
                 return lastCandle.MDLocalEntryDate.Value;
             else
-                return DateTime.Now;
+                return DateTimeManager.Now;
         }
 
 

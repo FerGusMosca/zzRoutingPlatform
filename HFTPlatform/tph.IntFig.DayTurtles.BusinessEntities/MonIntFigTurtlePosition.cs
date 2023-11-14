@@ -5,6 +5,7 @@ using tph.DayTurtles.BusinessEntities;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.IntFig.DayTurtles.BusinessEntities
@@ -81,7 +82,7 @@ namespace tph.IntFig.DayTurtles.BusinessEntities
                 List<MarketData> histPrices = GetHistoricalPrices();
                 double trendlinePrice = LastTrendlineTouched.CalculateTrendPrice(LastSignalMarketData.MDEntryDate.Value, histPrices);
                 return string.Format(" --> Broken Resistance: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4}   ",
-                    LastTrendlineTouched.StartDate, LastTrendlineTouched.EndDate,DateTime.Now,LastSignalMarketData.ClosingPrice,LastSignalMarketData.MDEntryDate.Value,
+                    LastTrendlineTouched.StartDate, LastTrendlineTouched.EndDate, DateTimeManager.Now,LastSignalMarketData.ClosingPrice,LastSignalMarketData.MDEntryDate.Value,
                                     trendlinePrice);
             }
             else

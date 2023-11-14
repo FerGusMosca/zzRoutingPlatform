@@ -82,7 +82,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
         private void RequestHistoricalPrices()
         {
 
-            TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+            TimeSpan elapsed = DateTimeManager.Now - new DateTime(1970, 1, 1);
 
             DateTime to = DateTime.Now;
             DateTime from = to.AddDays(-1);
@@ -375,7 +375,7 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
 
                 //TODO Remove or improve for testing
                 Security optionToReq = OptionChainEvaluated.Values.FirstOrDefault();
-                TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+                TimeSpan elapsed = DateTime.Now - new DateTimeManager(1970, 1, 1);
                 MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(Convert.ToInt32(elapsed.TotalSeconds), optionToReq, SubscriptionRequestType.Snapshot);
                 OnMessageRcv(mdrWrapper);
             }

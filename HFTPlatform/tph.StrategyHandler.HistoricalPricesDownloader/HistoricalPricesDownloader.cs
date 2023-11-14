@@ -113,7 +113,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
 
                 foreach (string symbol in Config.SymbolsToDownload)
                 {
-                    TimeSpan elapsed = DateTime.Now - new DateTime(1970, 1, 1);
+                    TimeSpan elapsed = DateTimeManager.Now - new DateTime(1970, 1, 1);
                     int reqId = Convert.ToInt32(elapsed.TotalSeconds);   
 
                     DoLog($"{Config.Name}--> Requesting Historical Prices for Symbol {symbol} From={from} To={to}", MessageType.Information);

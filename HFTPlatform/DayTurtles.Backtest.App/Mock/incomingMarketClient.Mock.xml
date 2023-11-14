@@ -2,7 +2,7 @@
 <Configuration>
   <Name>Market Client Mock</Name>
 
-	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=66.94.106.206\SQLPROD22;initial catalog=SecuritiesHistoricalData;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<PacingMarketDataMilliSec>100</PacingMarketDataMilliSec>
 	<From>2020-01-01</From>
 	<To>2020-04-30</To>

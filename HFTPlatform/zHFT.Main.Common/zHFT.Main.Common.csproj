@@ -113,6 +113,7 @@
     <Compile Include="Util\ConsoleDisplayer.cs" />
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\CurrencySeparators.cs" />
+    <Compile Include="Util\DateTimeManager.cs" />
     <Compile Include="Util\FixHelperExtended.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="Util\PositionIdTranslator.cs" />

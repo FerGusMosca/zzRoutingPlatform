@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -38,6 +40,107 @@ namespace tph.MarketClient.Mock
 
 
         #region Protected Methods
+
+        protected void DoPublishMarketDataAync(object param)
+        {
+            try
+            {
+                List<Wrapper> mdWrappperList = (List<Wrapper>)param;
+
+                foreach(Wrapper md in mdWrappperList)
+                {
+                    DoLog($"{Configuration.Name}: Publishing Market Data:{md.ToString()}", Constants.MessageType.Information);
+
+                    (new Thread(OnPublishAsync)).Start(md);
+                    Thread.Sleep(Configuration.PacingMarketDataMilliSec);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"CRITICAL ERROR Publishing Market Data!:{ex.Message}", Constants.MessageType.Error);
+            }
+        }
+
+        protected void DoProcessMarketData(MarketDataRequest mdr)
+        {
+            try
+            {
+
+                List<MarketData>  candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, Configuration.From, Configuration.To);
+
+                Security mainSec = candles.Count > 0 ? candles[0].Security : null;
+
+                List<Wrapper> mdWrapperList = new List<Wrapper>();
+                foreach(MarketData candle in candles)
+                {
+                    try
+                    {
+                        Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
+                        sec.MarketData = candle;
+                        MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
+                        mdWrapperList.Add(mdWrapper);
+                    }
+                    catch (Exception ex)
+                    {
+                        DoLog($"ERROR Processing market data por security {mainSec.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
+                    }
+                }
+
+
+                (new Thread(DoPublishMarketDataAync)).Start(mdWrapperList);
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"CRITICAL ERROR Processing market data por security {mdr.Security.Symbol} :{ex.Message}", Constants.MessageType.Error);
+            }
+        
+        
+        }
+
+        protected void ProcessMarketDataRequest(object param)
+        {
+
+            try
+            {
+                Wrapper wrapper = (Wrapper)param;
+                MarketDataRequest mdr = MarketDataRequestConverter.GetMarketDataRequest(wrapper);
+
+                if (mdr.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
+                {
+                    throw new Exception(string.Format("@{0}: Market Data snaphsot not implemented for symbol {1}", Configuration.Name, mdr.Security.Symbol));
+                }
+                else if (mdr.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
+                {
+                    if (mdr.MarketDepth == null || mdr.MarketDepth == MarketDepth.TopOfBook)
+                    {
+                        DoProcessMarketData(mdr);
+                    }
+                    else if (mdr.MarketDepth == MarketDepth.FullBook)
+                    {
+                        throw new Exception($"Full book not implmented @{Configuration.Name}");
+                    }
+                    else
+                    {
+                        throw new Exception($"{Configuration.Name}-->Not implemented market depth {mdr.MarketDepth} on order book request");
+                    }
+
+                }
+                else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
+                {
+                    //TODO implement unbsubscription
+                }
+                else
+                    throw new Exception($"@{Configuration.Name}: Value not recognized for subscription type {mdr.SubscriptionRequestType} for symbol {mdr.Security.Symbol}");
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL error requesting Market Data: {ex.Message}", Constants.MessageType.Error);
+            }
+
+        }
 
         protected void ProcessHistoricalDataRequestAsync(object param)
         {
@@ -134,7 +237,10 @@ namespace tph.MarketClient.Mock
                     Actions action = wrapper.GetAction();
                     if (Actions.MARKET_DATA_REQUEST == action)
                     {
-                        //return ProcessMarketDataRequest(wrapper);
+                        string symbol = (string)wrapper.GetField(MarketDataRequestField.Symbol);
+                        DoLog($"{Configuration.Name}: Recv Market Data Request for symbol {symbol}", Constants.MessageType.Information);
+
+                        (new Thread(ProcessMarketDataRequest)).Start(wrapper);
                         return CMState.BuildSuccess();
                     }
                     else if (Actions.HISTORICAL_PRICES_REQUEST == action)

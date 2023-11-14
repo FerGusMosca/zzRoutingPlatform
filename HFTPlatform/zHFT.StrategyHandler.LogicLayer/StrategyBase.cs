@@ -184,7 +184,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected bool LoadConfig(string configFile)
         {
-            DoLog(DateTime.Now.ToString() + "MomentumStrategyBase.LoadConfig", Constants.MessageType.Information);
+            DoLog(DateTimeManager.Now.ToString() + "MomentumStrategyBase.LoadConfig", Constants.MessageType.Information);
 
             DoLog("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))

@@ -47,7 +47,7 @@ namespace zHFT.Main.Common.Util
         
         public static bool LoadConfig(ILogger logger, string configFile)
         {
-            logger.DoLog(DateTime.Now.ToString() + "zHFT.Main.Common.Util.ConfigLoader.LoadConfig", Constants.MessageType.Information);
+            logger.DoLog(DateTimeManager.Now.ToString() + "zHFT.Main.Common.Util.ConfigLoader.LoadConfig", Constants.MessageType.Information);
 
             logger.DoLog("Loading config:" + configFile, Constants.MessageType.Information);
             if (!File.Exists(configFile))
