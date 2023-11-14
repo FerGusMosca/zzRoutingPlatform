@@ -80,8 +80,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.Common.Util
 
             string symbol =null;
 
-            if (ValidateField(wrapper, HistoricalPricesRequestFields.Symbol))
-                symbol = (string)wrapper.GetField(HistoricalPricesRequestFields.Symbol);
+            if (ValidateField(wrapper, OrderFields.Symbol))
+                symbol = (string)wrapper.GetField(OrderFields.Symbol);
             else
                 throw new Exception($"Missing field on Update Order Request: Symbol");
 

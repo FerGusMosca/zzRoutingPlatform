@@ -31,6 +31,8 @@ namespace zHFT.OrderRouters.Router
 
         protected ExecutionReportConverter ExecutionReportConverter { get; set; }
 
+        protected Dictionary<string,MarketData> MarketDataDict { get; set; }
+
         protected Common.Configuration.Configuration ORConfiguration
         {
             get { return (Common.Configuration.Configuration)Config; }
@@ -41,12 +43,35 @@ namespace zHFT.OrderRouters.Router
 
         public IList<Position> Positions { get; set; }
 
+
+
         #endregion
 
         #region Private Methods
 
+        private MarketData GetLastMarketData(string symbol)
+        {
+
+
+            lock (MarketDataDict)
+            {
+                if (MarketDataDict.ContainsKey(symbol))
+                {
+                    return MarketDataDict[symbol];
+
+                }
+                else
+                    throw new Exception($"Could not find last market data for symbol!");
+            
+            }
+
+        }
+
+
         private Order BuildOrder(Position pos, Side side, int index)
         {
+            MarketData md = GetLastMarketData(pos.Security.Symbol);
+
             Order order = new Order()
             {
                 Security = pos.Security,
@@ -58,6 +83,7 @@ namespace zHFT.OrderRouters.Router
                 QuantityType = pos.QuantityType,
                 PriceType = PriceType.FixedAmount,
                 Account = pos.AccountId,
+                Price=md.Trade,
                 Index = index
             };
             order.OrigClOrdId = order.ClOrdId;
@@ -192,6 +218,34 @@ namespace zHFT.OrderRouters.Router
 
         #region Public Methods
 
+        public void ProcessMarketDataAync(object param)
+        {
+            try
+            {
+                Wrapper wrapper = (Wrapper)param;
+                MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
+
+                lock (MarketDataDict)
+                {
+                    if (!MarketDataDict.ContainsKey(md.Security.Symbol))
+                    {
+                        MarketDataDict.Add(md.Security.Symbol, md);
+
+                    }
+                    else
+                        MarketDataDict[md.Security.Symbol] = md;
+                
+                }
+            }
+            catch(Exception ex)
+            {
+                DoLog($"CRITICAL error processing market data:{ex.Message}", Constants.MessageType.Error);
+                
+            }
+        
+        
+        }
+
         public CMState ProcessMessage(Wrapper wrapper)
         {
             try
@@ -205,6 +259,12 @@ namespace zHFT.OrderRouters.Router
                 else if (wrapper.GetAction() == Actions.CANCEL_POSITION)
                 {
                     DoLog(string.Format("There is no cancel for market orders for symbol {0}", wrapper.GetField(PositionFields.Symbol).ToString()), Constants.MessageType.Information);
+                    return CMState.BuildSuccess();
+                }
+                else if (wrapper.GetAction() == Actions.MARKET_DATA)
+                {
+                    //DoLog(string.Format("Receiving Market Data on order router: {0}",wrapper.ToString()), Constants.MessageType.Information);
+                    (new Thread(ProcessMarketDataAync)).Start(wrapper);
                     return CMState.BuildSuccess();
                 }
                 else
@@ -252,6 +312,8 @@ namespace zHFT.OrderRouters.Router
                     PositionConverter = new PositionConverter();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
+
+                    MarketDataDict = new Dictionary<string, MarketData>();
 
                     return true;
                 }

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration>
-  <Name>Outgoing Primary</Name>
+  <Name>Outgoing Mock</Name>
 
 
     <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
     <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>
 
-  <ConsecutiveOrdersPacingInSec>20</ConsecutiveOrdersPacingInSec>
+  <ConsecutiveOrdersPacingInSec>0</ConsecutiveOrdersPacingInSec>
 
-  <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
+  <OrderUpdateInMilliseconds>1</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->
 
 </Configuration>

@@ -2,6 +2,6 @@
 <Configuration>
   <Name>Order Router Mock</Name>
 
-  <OrdeExecutionEveryNSeconds>10</OrdeExecutionEveryNSeconds>
+  <OrdeExecutionEveryNSeconds>0</OrdeExecutionEveryNSeconds>
   
 </Configuration>

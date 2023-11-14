@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DayTurtlesConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Strategy Handler - TurtlesDayTrading</Name>
+  <Name>Daily_Turtles_Backtest</Name>
 
   <OpenWindow>40</OpenWindow>
   <CloseWindow>200</CloseWindow>
@@ -24,7 +24,7 @@
 	<OpeningTime>10:30 AM</OpeningTime>
   <ClosingTime>04:51 PM</ClosingTime>
 
-  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+	<OrderRouter>zHFT.OrderRouters.Router.MarketOrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 

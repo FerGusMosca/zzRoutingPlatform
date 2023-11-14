@@ -367,7 +367,7 @@ namespace tph.DayTurtles.LogicLayer
             Wrapper wrapper = (Wrapper)pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
             DateTimeManager.NullNow = md.GetReferenceDateTime();
-
+            OrderRouter.ProcessMessage(wrapper);
             try
             {
                 lock (tLock)
@@ -394,7 +394,7 @@ namespace tph.DayTurtles.LogicLayer
             }
 
 
-            OrderRouter.ProcessMessage(wrapper);
+            
         }
 
         protected override void ResetEveryNMinutes(object param)
