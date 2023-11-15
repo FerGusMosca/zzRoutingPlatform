@@ -22,5 +22,14 @@
         public string Error { get; set; }
 
         #endregion
+
+        #region Public Methods
+
+        public override string ToString()
+        {
+            return Success ? $" NewOrderAck successful! ReqId={ReqId} UUID={UUID}" : $"NewOrderAck error:{Error}  ReqId={ReqId} UUID={UUID}";
+        }
+
+        #endregion
     }
 }

@@ -18,5 +18,15 @@
         public string Error { get; set; }
 
         #endregion
+
+
+        #region Public Methods
+
+        public override string ToString()
+        {
+            return Success ? $" UpdateOrderAck successful!" : $"UpdateOrderAck error:{Error} ";
+        }
+
+        #endregion
     }
 }

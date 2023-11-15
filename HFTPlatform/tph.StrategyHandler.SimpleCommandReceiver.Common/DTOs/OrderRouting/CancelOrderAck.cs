@@ -9,5 +9,14 @@
         public string Error { get; set; }
 
         #endregion
+
+        #region Public Methods
+
+        public override string ToString()
+        {
+            return Success ? " CancelOrderAck successful!" : $"CancelOrderAck error:{Error}";
+        }
+
+        #endregion
     }
 }
