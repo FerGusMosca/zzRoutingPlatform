@@ -36,6 +36,8 @@ namespace tph.MarketClient.Mock
 
         protected object tObject { get; set; }
 
+        protected Dictionary<string,bool> MarketDataUnsubscribeFlagDict { get; set; }
+
         #endregion
 
 
@@ -45,7 +47,10 @@ namespace tph.MarketClient.Mock
         {
             try
             {
-                List<Wrapper> mdWrappperList = (List<Wrapper>)param;
+                object[] paramList = (object[])param;
+
+                Security sec = (Security)paramList[0];
+                List<Wrapper> mdWrappperList = (List<Wrapper>)paramList[1];
 
                 foreach(Wrapper md in mdWrappperList)
                 {
@@ -53,6 +58,11 @@ namespace tph.MarketClient.Mock
 
                     (new Thread(OnPublishAsync)).Start(md);
                     Thread.Sleep(Configuration.PacingMarketDataMilliSec);
+                    if (EvalUnsubscription(sec.Symbol))
+                    {
+                        DoLog($"Unbubscribing market data for symbol {sec.Symbol}", Constants.MessageType.PriorityInformation);
+                        break;
+                    }    
                 }
             }
             catch (Exception ex)
@@ -62,13 +72,26 @@ namespace tph.MarketClient.Mock
             }
         }
 
+        private bool EvalUnsubscription(string symbol)
+        {
+            lock (MarketDataUnsubscribeFlagDict)
+            {
+                if (!MarketDataUnsubscribeFlagDict.ContainsKey(symbol))
+                {
+                    MarketDataUnsubscribeFlagDict.Add(symbol, false);
+                }
+
+                return MarketDataUnsubscribeFlagDict[symbol];
+            }
+        }
+
         protected void DoProcessMarketData(MarketDataRequest mdr)
         {
             try
             {
 
                 List<MarketData>  candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, Configuration.From, Configuration.To);
-
+                
                 Security mainSec = candles.Count > 0 ? candles[0].Security : null;
 
                 List<Wrapper> mdWrapperList = new List<Wrapper>();
@@ -88,7 +111,7 @@ namespace tph.MarketClient.Mock
                 }
 
 
-                (new Thread(DoPublishMarketDataAync)).Start(mdWrapperList);
+                (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec,mdWrapperList });
             }
             catch (Exception ex)
             {
@@ -115,6 +138,11 @@ namespace tph.MarketClient.Mock
                 {
                     if (mdr.MarketDepth == null || mdr.MarketDepth == MarketDepth.TopOfBook)
                     {
+                        lock(MarketDataUnsubscribeFlagDict)
+                        {
+                            MarketDataUnsubscribeFlagDict.Add(mdr.Security.Symbol, false);
+
+                        }
                         DoProcessMarketData(mdr);
                     }
                     else if (mdr.MarketDepth == MarketDepth.FullBook)
@@ -129,7 +157,14 @@ namespace tph.MarketClient.Mock
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
                 {
-                    //TODO implement unbsubscription
+                    lock (MarketDataUnsubscribeFlagDict)
+                    {
+                        if (MarketDataUnsubscribeFlagDict.ContainsKey(mdr.Security.Symbol))
+                            MarketDataUnsubscribeFlagDict[mdr.Security.Symbol] = true;
+                        else
+                            MarketDataUnsubscribeFlagDict.Add(mdr.Security.Symbol, true);
+                    
+                    }
                 }
                 else
                     throw new Exception($"@{Configuration.Name}: Value not recognized for subscription type {mdr.SubscriptionRequestType} for symbol {mdr.Security.Symbol}");
@@ -211,6 +246,7 @@ namespace tph.MarketClient.Mock
                 if (LoadConfig(configFile))
                 {
                     tObject = new object();
+                    MarketDataUnsubscribeFlagDict = new Dictionary<string, bool>();
                     CandleManager = new CandleManager(Configuration.ConnectionString);
 
                     return true;
