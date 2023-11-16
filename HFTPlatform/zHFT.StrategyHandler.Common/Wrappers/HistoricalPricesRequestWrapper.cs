@@ -78,5 +78,10 @@ namespace zHFT.StrategyHandler.Common.Wrappers
         {
             return Actions.HISTORICAL_PRICES_REQUEST;
         }
+            
+        public override string ToString()
+        {
+            return $"Historical Prices Req.: ReqId={MdReqId} Symbol={Symbol} Currency={Currency} SecType={SecurityType} From={From} To={To} Interval={TimeInterval} ";
+        }
     }
 }

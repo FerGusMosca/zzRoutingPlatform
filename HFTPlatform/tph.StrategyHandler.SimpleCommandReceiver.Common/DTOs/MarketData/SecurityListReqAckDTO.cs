@@ -28,5 +28,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public string Error { get; set; }
 
         #endregion
+
+        #region Public Methods
+
+        public override string ToString()
+        {
+            return Success ? $" SecurityListReqAck successful! ReqId={ReqId} UUID={UUID}" : $"SecurityListReqAck error:{Error}  ReqId={ReqId} UUID={UUID}";
+        }
+
+        #endregion
     }
 }

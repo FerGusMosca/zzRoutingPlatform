@@ -91,6 +91,11 @@ namespace zHFT.StrategyHandler.Common.Wrappers
             return Actions.MARKET_DATA_REQUEST;
         }
 
+        public override string ToString()
+        {
+            return $"MdReqId={MdReqId} Symbol={Security.Symbol} SubscriptionRequestType={SubscriptionRequestType}";
+        }
+
         #endregion
     }
 }

@@ -75,6 +75,11 @@ namespace zHFT.StrategyHandler.Common.Wrappers
             return Actions.SECURITY_LIST_REQUEST;
         }
 
+        public override string ToString()
+        {
+            return $"Security List Req.: SecurityListRequestType={SecurityListRequestType} Symbol={Symbol} Currency={Currency} Exchange={Exchange}";
+        }
+
         #endregion
     }
 }

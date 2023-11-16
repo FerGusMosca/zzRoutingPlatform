@@ -23,5 +23,14 @@
         public string Error { get; set; }
 
         #endregion
+
+        #region Public Methods
+
+        public override string ToString()
+        {
+            return Success ? $" HistoricalPricesReqAck successful! ReqId={ReqId} UUID={UUID}" : $"HistoricalPricesReqAck error:{Error}  ReqId={ReqId} UUID={UUID}";
+        }
+
+        #endregion
     }
 }

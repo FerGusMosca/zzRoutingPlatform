@@ -146,12 +146,18 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                                 OnEvent(JsonConvert.DeserializeObject<UpdateOrderAck>(resp));
                             else if (wsResp.Msg == "OrderMassStatusRequestAck")
                                 OnEvent(JsonConvert.DeserializeObject<OrderMassStatusRequestAck>(resp));
+                            else if (wsResp.Msg == "HistoricalPricesReqAck")
+                                OnEvent(JsonConvert.DeserializeObject<HistoricalPricesReqAckDTO>(resp));
+                            else if (wsResp.Msg == "SecurityListReqAck")
+                                OnEvent(JsonConvert.DeserializeObject<SecurityListReqAckDTO>(resp));
                             else if (wsResp.Msg == "MarketDataMsg")
                                 OnMarketData(JsonConvert.DeserializeObject<MarketDataDTO>(resp));
                             else if (wsResp.Msg == "CandlebarMsg")
                                 OnCandlebar(JsonConvert.DeserializeObject<CandlebarDTO>(resp));
                             else if (wsResp.Msg == "SecurityListMsg")
                                 OnSecurityList(JsonConvert.DeserializeObject<SecurityListDTO>(resp));
+                            else if (wsResp.Msg == "SubscriptionResponse")
+                                OnEvent(JsonConvert.DeserializeObject<SubscriptionResponse>(resp));
                             else if (wsResp.Msg == "ExecutionReportMsg")
                             {
                                 ExecutionReport execRep = JsonConvert.DeserializeObject<ExecutionReport>(resp);
