@@ -429,11 +429,12 @@ namespace tph.OrderRouters.IB.Common
 
         public void error(int id, int errorCode, string errorMsg)
         {
-            DoLog(string.Format("DBX-Error={0} at {1}",errorMsg,DateTime.Now),Constants.MessageType.Information);
+            //DoLog(string.Format("DBX-Error={0} at {1}",errorMsg,DateTime.Now),Constants.MessageType.Information);
             DoLog(string.Format("error: reqId={0} start={1} end={2}  ",
                                 id,
                                 errorCode,
                                 errorMsg), Constants.MessageType.Information);
+            ProcessOrderError(id, errorCode, errorMsg);
         }
 
         public void error(string str)
