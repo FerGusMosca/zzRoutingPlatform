@@ -534,7 +534,6 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
         #region Public Methods
 
-
         public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string moduleConfigFile)
         {
             try

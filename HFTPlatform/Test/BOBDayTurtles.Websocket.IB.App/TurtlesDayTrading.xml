@@ -62,10 +62,9 @@
 	<!--Close window is mmov-->
   
   <StocksToMonitor>
-    <!--<Symbol>SPY</Symbol>-->
-    <!--<Symbol>QQQ</Symbol>
+    <Symbol>SPY</Symbol>
+    <Symbol>QQQ</Symbol>
     <Symbol>IWM</Symbol>
-    -->
 	  <Symbol>XLF</Symbol>
 	  
 <!--    -->

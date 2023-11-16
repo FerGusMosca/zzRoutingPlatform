@@ -147,14 +147,18 @@ namespace tph.BOBDayTurtles.LogicLayer
                 InitializeManagers(GetConfig().ConnectionString);
 
                 Thread.Sleep(2000);
-
                 
                 Thread persistTrendlinesThread = new Thread(new ParameterizedThreadStart(DoPersistTrendlinesThread));
                 persistTrendlinesThread.Start();
-                
+
+                Thread delPrevTrehdlinesThread = new Thread(new ParameterizedThreadStart(DeleteAllTrendlines));
+                delPrevTrehdlinesThread.Start();
+
                 Thread refreshTrendlinesThread = new Thread(new ParameterizedThreadStart(DoRefreshTrendlines));
                 refreshTrendlinesThread.Start();
-                
+
+
+
                 return true;
 
             }

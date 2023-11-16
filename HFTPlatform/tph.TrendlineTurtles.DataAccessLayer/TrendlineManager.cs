@@ -178,9 +178,36 @@ namespace tph.TrendlineTurtles.DataAccessLayer
                     Conn.Close();
             }
         }
-        
+
+        public void Delete(string  symbol)
+        {
+
+            SqlConnection Conn = null;
+            try
+            {
+
+                Conn = new SqlConnection(ADOConnectionString);
+
+                using (SqlCommand cmd = Conn.CreateCommand())
+                {
+                    Conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "DeleteTrendlines";
+                    cmd.Parameters.Add(new SqlParameter("@Symbol", symbol));
+
+                    cmd.ExecuteNonQuery();
+                }
+                Conn.Dispose();
+            }
+            finally
+            {
+                if (Conn != null)
+                    Conn.Close();
+            }
+        }
+
         #endregion
-        
-        
+
+
     }
 }

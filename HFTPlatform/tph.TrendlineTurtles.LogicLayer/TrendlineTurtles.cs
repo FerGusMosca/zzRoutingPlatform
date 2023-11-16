@@ -339,6 +339,31 @@ namespace tph.TrendlineTurtles.LogicLayer
             return memPosTrendline;
         }
 
+        protected void DeleteAllTrendlines(object param)
+        {
+            try
+            {
+                lock (tLock)
+                {
+                    foreach (var monPos in PortfolioPositionsToMonitor.Values)
+                    {
+                        DoLog($"Deleting prev trendlines for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
+                        TrendlineManager.Delete(monPos.Security.Symbol);
+                        DoLog($"Prev trendlines for symbol {monPos.Security.Symbol} successfully deleted", Constants.MessageType.Information);
+
+                    }
+                
+                }
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL ERROR deleting previousy existing trendlines: {ex.Message}", Constants.MessageType.Error);
+            
+            }
+        
+        }
+
         protected void DoRefreshTrendlines(object param)
         {
             while (true)
@@ -352,7 +377,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                         {
                             if (!TrendLineCreator.SymbolInitialized(updTrendline.Symbol))
                             {
-                                DoLog($"WARNING - Waiting for symbo. {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
+                                DoLog($"WARNING - Waiting for symbol {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
                                 continue;
                             }
                             
