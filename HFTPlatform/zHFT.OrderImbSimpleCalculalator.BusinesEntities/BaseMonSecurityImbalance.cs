@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
@@ -11,11 +12,11 @@ using zHFT.OrderImbSimpleCalculator.BusinesEntities;
 
 namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 {
-    public class SecurityImbalance
+    public class BaseMonSecurityImbalance: MonTurtlePosition
     {
         #region Constructors
 
-        public SecurityImbalance()
+        public BaseMonSecurityImbalance() 
         {
             ImbalanceCounter = new ImbalanceCounter();
 
@@ -26,8 +27,6 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         #region Public Attributes
 
-        public Security Security { get; set; }
-        
         public MarketData OpeningPrice { get; set; }
 
         public DateTime DateTime { get; set; }
@@ -39,6 +38,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public DateTime? LastTradedTime { get; set; }
 
         public bool Closing { get; set; }
+
+        public CustomImbalanceConfig CustomImbalanceConfig { get; set; }
 
         #endregion
 
@@ -87,7 +88,7 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         }
 
-        public virtual void AppendMarketData(MarketData md)
+        public virtual void AppendCandle(MarketData md)
         {
             Security.MarketData = md;
 
@@ -97,6 +98,8 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             //Sometimes the first MD might not have a Trade
             if (OpeningPrice != null && !OpeningPrice.Trade.HasValue && md != null && md.Trade.HasValue)
                 OpeningPrice.Trade = md.Trade;
+
+            base.AppendCandle(md);
         }
 
         public bool ValidPacing(int maxMinWaitBtwConsecutivePos)

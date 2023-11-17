@@ -7,7 +7,7 @@ using zHFT.Main.Common.Enums;
 
 namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 {
-    public class FutureImbalancePosition : ImbalancePosition
+    public class FutureImbalancePosition : BasePortfImbalancePosition
     {
         #region Public Methods
 

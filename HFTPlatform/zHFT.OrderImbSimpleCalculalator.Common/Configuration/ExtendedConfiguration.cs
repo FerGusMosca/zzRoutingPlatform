@@ -9,10 +9,6 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
     {
         #region Public Attributes
         
-        public int ClosingWindow { get; set; }
-        
-        public int  OppTrendClosingWindow { get; set; }
-        
         public string CandleReferencePrice { get; set; }
         
         public string MaxOpeningTime { get; set; }

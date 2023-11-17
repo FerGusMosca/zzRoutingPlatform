@@ -5,14 +5,12 @@
   <PositionSizeInCash>10000</PositionSizeInCash>
 
   <MaxOpenedPositions>4</MaxOpenedPositions>
-  <PositionOpeningImbalanceThreshold>0.85</PositionOpeningImbalanceThreshold>
-  <PositionOpeningImbalanceMaxThreshold>0.7</PositionOpeningImbalanceMaxThreshold>
+
   <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
-  <ClosingWindow>40</ClosingWindow>
-  <OppTrendClosingWindow>20</OppTrendClosingWindow>
+  <HistoricalPricesPeriod>-1</HistoricalPricesPeriod>
   <CandleReferencePrice>TRADE</CandleReferencePrice><!-- Cryptos ->CLOSE ; BYMA -> TRADE -->
   <MaxMinWaitBtwConsecutivePos>20</MaxMinWaitBtwConsecutivePos>
 

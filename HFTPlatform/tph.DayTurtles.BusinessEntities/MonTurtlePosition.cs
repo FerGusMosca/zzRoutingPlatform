@@ -19,6 +19,12 @@ namespace tph.DayTurtles.BusinessEntities
 
         #region Constructors
 
+        public MonTurtlePosition()
+        {
+            Candles = new Dictionary<string, MarketData>();
+        
+        }
+
 
         public MonTurtlePosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct, string candleRefPrice)
         {
@@ -155,7 +161,7 @@ namespace tph.DayTurtles.BusinessEntities
             return avg;
         }
 
-        protected bool IsHigherThanMMov(int window,bool higherOrEqual)
+        public bool IsHigherThanMMov(int window,bool higherOrEqual)
         {
             MarketData lastCandle = LastValidCandle();
 

@@ -39,11 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomImbalanceConfigManager.cs" />
     <Compile Include="ImbalancePositionManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityImbalanceManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
+      <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
+      <Name>tph.DayTurtles.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
@@ -52,6 +57,10 @@
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801E5410-738B-47C9-895F-0AD1B5860A2A}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.BusinesEntities\zHFT.OrderImbSimpleCalculator.BusinessEntities.csproj">
       <Project>{35622037-81ef-4197-a30c-5f3bad3c796b}</Project>
       <Name>zHFT.OrderImbSimpleCalculator.BusinessEntities</Name>
@@ -59,6 +68,10 @@
     <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj">
       <Project>{97a1ba19-bf4c-48cc-9c8f-e00ba9bb9734}</Project>
       <Name>zHFT.OrderImbSimpleCalculator.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
+      <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
+      <Name>zHFT.StrategyHandler.BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

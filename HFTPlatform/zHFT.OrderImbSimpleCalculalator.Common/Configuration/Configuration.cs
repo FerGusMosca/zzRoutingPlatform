@@ -48,10 +48,6 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public int MaxOpenedPositions { get; set; }
 
-        public decimal PositionOpeningImbalanceThreshold { get; set; }
-
-        public decimal PositionOpeningImbalanceMaxThreshold { get; set; }
-
         public decimal StopLossForOpenPositionPct { get; set; }
 
         public string FeeTypePerTrade { get; set; }
@@ -76,9 +72,9 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         
         public bool OnlyLong { get; set; }
         
-        public int ClosingWindow { get; set; }
-        
         public string CandleReferencePrice { get; set; }
+
+        public int HistoricalPricesPeriod { get; set; }
 
         #endregion
 

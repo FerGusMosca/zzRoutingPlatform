@@ -24,7 +24,7 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
         
         #region Protected Overriden Methods
         
-        protected override ImbalancePosition LoadNewRegularPos(SecurityImbalance secImb, Side side)
+        protected override BasePortfImbalancePosition LoadNewRegularPos(BaseMonSecurityImbalance secImb, Side side)
         {
 
             Position pos = new Position()
@@ -44,7 +44,7 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
             pos.LoadPosId(NextPosId);
             NextPosId++;
 
-            return new ImbalancePositionTurtlesExit()
+            return new PortfImbalancePos()
             {
                 StrategyName = Configuration.Name,
                 OpeningDate = DateTime.Now,
@@ -62,30 +62,29 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
             Config = new zHFT.OrderImbSimpleCalculator.Common.Configuration.ExtendedConfiguration().GetConfiguration<zHFT.OrderImbSimpleCalculator.Common.Configuration.ExtendedConfiguration>(configFile, noValueFields);
         }
 
-        protected override void EvalClosingPosition(SecurityImbalance secImb)
+        protected override void EvalClosingPosition(BaseMonSecurityImbalance monImbPos)
         {
-            ImbalancePositionTurtlesExit imbPos = (ImbalancePositionTurtlesExit) ImbalancePositions[secImb.Security.Symbol];
+            PortfImbalancePos portfImbPos = (PortfImbalancePos) PortfolioPositions[monImbPos.Security.Symbol];
 
-            if (imbPos.EvalClosingShortPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
+            if (portfImbPos.EvalClosingShortPosition(monImbPos))
             {
-                RunClose(imbPos.OpeningPosition, secImb, imbPos);
+                RunClose(portfImbPos.OpeningPosition, monImbPos, portfImbPos);
                 DoLog(string.Format("Closing {0} Position on market w/Turtles. Symbol {1} Qty={2} Imbalance={3} PosId={4} ClosingSummary={5}", 
-                        imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
-                        secImb.ImbalanceSummary,
-                        imbPos.ClosingPosition!=null? imbPos.ClosingPosition.PosId:"-",
-                        imbPos.ClosingSummary(secImb)), 
+                        portfImbPos.TradeDirection, portfImbPos.OpeningPosition.Security.Symbol, portfImbPos.Qty,
+                        monImbPos.ImbalanceSummary,
+                        portfImbPos.ClosingPosition!=null? portfImbPos.ClosingPosition.PosId:"-",
+                        portfImbPos.ClosingSummary(monImbPos)), 
                     Constants.MessageType.Information);
             }
-            else if (imbPos.EvalClosingLongPosition(secImb, Configuration.PositionOpeningImbalanceMaxThreshold))
+            else if (portfImbPos.EvalClosingLongPosition(monImbPos))
             {
-                RunClose(imbPos.OpeningPosition, secImb, imbPos);
+                RunClose(portfImbPos.OpeningPosition, monImbPos, portfImbPos);
                 DoLog(string.Format("Closing {0} Position on market w/Turtles. Symbol {1} Qty={2}  Imbalance={3} PosId={4} ClosingSummary={5}",
-                        imbPos.TradeDirection, imbPos.OpeningPosition.Security.Symbol, imbPos.Qty,
-                        secImb.ImbalanceSummary,
-                        imbPos.ClosingPosition != null ? imbPos.ClosingPosition.PosId : null,
-                        imbPos.ClosingSummary(secImb)),
+                        portfImbPos.TradeDirection, portfImbPos.OpeningPosition.Security.Symbol, portfImbPos.Qty,
+                        monImbPos.ImbalanceSummary,
+                        portfImbPos.ClosingPosition != null ? portfImbPos.ClosingPosition.PosId : null,
+                        portfImbPos.ClosingSummary(monImbPos)),
                     Constants.MessageType.Information);
-
             }
          
         }
@@ -108,15 +107,10 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
 
                     ExtendedConfiguration extConfig = (ExtendedConfiguration) Configuration;
 
-                    SecurityImbalanceTurtlesExit secImbalance = new SecurityImbalanceTurtlesExit()
-                    {
-                        Security = sec,
-                        DecimalRounding = Configuration.DecimalRounding,
-                        CandleReferencePrice = extConfig.CandleReferencePrice,
-                        CloseWindow = extConfig.ClosingWindow,
-                        OppTrendClosingWindow=extConfig.OppTrendClosingWindow
-                    };
-
+                    MonSecurityImbalance secImbalance = new MonSecurityImbalance(sec, Configuration.DecimalRounding,
+                                                                                 extConfig.CandleReferencePrice,
+                                                                                 CustomImbalanceConfigManager.GetCustomImbalanceConfigs(symbol),
+                                                                                 extConfig.StopLossForOpenPositionPct);
                     //1- We add the current security to monitor
                     SecurityImbalancesToMonitor.Add(symbol, secImbalance);
 

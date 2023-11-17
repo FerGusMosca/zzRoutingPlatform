@@ -35,9 +35,9 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
 
         #region Private Methods
 
-        private ImbalancePosition BuildImbalancePosition(SqlDataReader reader)
+        private BasePortfImbalancePosition BuildImbalancePosition(SqlDataReader reader)
         {
-            ImbalancePosition imbPos = new ImbalancePosition();
+            BasePortfImbalancePosition imbPos = new BasePortfImbalancePosition();
 
             imbPos.StrategyName = reader["strategy_name"].ToString();
             imbPos.OpeningDate = Convert.ToDateTime(reader["opening_date"]);
@@ -53,7 +53,7 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
                 Currency = Configuration.Currency,
                 SecType = Security.GetSecurityType(Configuration.SecurityTypes)
             };
-            openingPos.Side = reader["trade_direction"].ToString() == ImbalancePosition._LONG ? Side.Buy : Side.Sell;
+            openingPos.Side = reader["trade_direction"].ToString() == BasePortfImbalancePosition._LONG ? Side.Buy : Side.Sell;
             openingPos.PriceType = PriceType.FixedAmount;
             openingPos.NewPosition = true;
             openingPos.CashQty = Configuration.PositionSizeInCash;
@@ -79,7 +79,7 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
 
         #region Public Methods
 
-        public List<ImbalancePosition> GetImbalancePositions(string strategyName, bool onlyActive)
+        public List<BasePortfImbalancePosition> GetImbalancePositions(string strategyName, bool onlyActive)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {
@@ -99,7 +99,7 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
 
 
                 SqlDataReader reader = null;
-                List<ImbalancePosition> imbPositions = new List<ImbalancePosition>();
+                List<BasePortfImbalancePosition> imbPositions = new List<BasePortfImbalancePosition>();
                 try
                 {
                     reader = cmd.ExecuteReader();

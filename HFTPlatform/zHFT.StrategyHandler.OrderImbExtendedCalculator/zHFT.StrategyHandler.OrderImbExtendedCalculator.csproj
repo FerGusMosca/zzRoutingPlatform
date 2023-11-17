@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj" />
       <ProjectReference Include="..\zHFT.StrategyHandler.OrderImbSimpleCalculalator\zHFT.StrategyHandler.OrderImbSimpleCalculator.csproj" />
     </ItemGroup>
 

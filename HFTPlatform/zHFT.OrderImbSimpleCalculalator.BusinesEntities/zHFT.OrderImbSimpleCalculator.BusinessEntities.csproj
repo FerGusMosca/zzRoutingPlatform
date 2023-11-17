@@ -39,16 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomImbalanceConfig.cs" />
     <Compile Include="FutureImbalancePosition.cs" />
     <Compile Include="ImbalanceCounter.cs" />
-    <Compile Include="ImbalancePosition.cs" />
-    <Compile Include="SecurityImbalance.cs" />
+    <Compile Include="BasePortfImbalancePosition.cs" />
+    <Compile Include="BaseMonSecurityImbalance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TradeImpact.cs" />
-    <Compile Include="TurtlesExitVersion\ImbalancePositionTurtlesExit.cs" />
-    <Compile Include="TurtlesExitVersion\SecurityImbalanceTurtlesExit.cs" />
+    <Compile Include="TurtlesExitVersion\PortfImbalancePos.cs" />
+    <Compile Include="TurtlesExitVersion\MonSecurityImbalance.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
+      <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
+      <Name>tph.DayTurtles.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
@@ -60,6 +65,10 @@
     <ProjectReference Include="..\zHFT.OrderImbSimpleCalculalator.Common\zHFT.OrderImbSimpleCalculator.Common.csproj">
       <Project>{97a1ba19-bf4c-48cc-9c8f-e00ba9bb9734}</Project>
       <Name>zHFT.OrderImbSimpleCalculator.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
+      <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
+      <Name>zHFT.StrategyHandler.BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

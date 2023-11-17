@@ -28,7 +28,7 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
 
         #region Public Methods
 
-        public void PersistSecurityImbalance(SecurityImbalance secImbal)
+        public void PersistSecurityImbalance(BaseMonSecurityImbalance secImbal)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {
@@ -55,7 +55,7 @@ namespace zHFT.OrderImbSimpleCalculator.DataAccessLayer
         
         }
 
-        public void PersistSecurityImbalanceTrade(ImbalancePosition pos)
+        public void PersistSecurityImbalanceTrade(BasePortfImbalancePosition pos)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {

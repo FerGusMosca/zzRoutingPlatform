@@ -8,7 +8,7 @@ using zHFT.Main.Common.Enums;
 
 namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 {
-    public class ImbalancePosition
+    public class BasePortfImbalancePosition
     {
 
         #region Public Static COnsts
@@ -27,9 +27,9 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
         public DateTime? ClosingDate { get; set; }
 
-        public SecurityImbalance OpeningImbalance { get; set; }
+        public BaseMonSecurityImbalance OpeningImbalance { get; set; }
 
-        public SecurityImbalance ClosingImbalance { get; set; }
+        public BaseMonSecurityImbalance ClosingImbalance { get; set; }
 
         public Position OpeningPosition { get; set; }
 
@@ -245,12 +245,12 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return ClosingPosition == null;
         }
 
-        public virtual string ClosingSummary(SecurityImbalance secImb)
+        public virtual string ClosingSummary(BaseMonSecurityImbalance secImb)
         {
             return "";
         }
 
-        public virtual bool EvalStopLossHit(SecurityImbalance secImb)
+        public virtual bool EvalStopLossHit(BaseMonSecurityImbalance secImb)
         {
             if (secImb.Closing)
                 return false;
@@ -276,47 +276,48 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             return false;
         }
 
-        public virtual bool EvalClosingShortPosition(SecurityImbalance secImb,decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalClosingShortPosition(BaseMonSecurityImbalance monImb)
         {
-            return (TradeDirection == ImbalancePosition._SHORT && !secImb.Closing
-                   && secImb.ImbalanceCounter.BidSizeImbalance < positionOpeningImbalanceMaxThreshold
+            
+            return (TradeDirection == BasePortfImbalancePosition._SHORT && !monImb.Closing
+                   && monImb.ImbalanceCounter.BidSizeImbalance < monImb.CustomImbalanceConfig.CloseImbalance
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
 
-        public virtual bool EvalClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalClosingLongPosition(BaseMonSecurityImbalance monImb)
         {
-            return (TradeDirection == ImbalancePosition._LONG && !secImb.Closing
-                   && secImb.ImbalanceCounter.AskSizeImbalance < positionOpeningImbalanceMaxThreshold
+            return (TradeDirection == BasePortfImbalancePosition._LONG && !monImb.Closing
+                   && monImb.ImbalanceCounter.AskSizeImbalance < monImb.CustomImbalanceConfig.CloseImbalance
                    && (OpeningPosition.PosStatus == PositionStatus.Filled || OpeningPosition.PosStatus == PositionStatus.PartiallyFilled));
         }
 
-        public virtual bool EvalAbortingNewLongPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
+        public virtual bool EvalAbortingNewLongPosition(BaseMonSecurityImbalance monImb)
         {
-            return (TradeDirection == ImbalancePosition._LONG
-                   && secImb.ImbalanceCounter.AskSizeImbalance < PositionOpeningImbalanceThreshold
+            return (TradeDirection == BasePortfImbalancePosition._LONG
+                   && monImb.ImbalanceCounter.AskSizeImbalance < monImb.CustomImbalanceConfig.OpenImbalance.Value
                    && OpeningPosition.PositionRouting());
         }
 
-        public virtual bool EvalAbortingNewShortPosition(SecurityImbalance secImb, decimal PositionOpeningImbalanceThreshold)
+        public virtual bool EvalAbortingNewShortPosition(BaseMonSecurityImbalance monImb)
         {
-            return (TradeDirection == ImbalancePosition._SHORT
-                   && secImb.ImbalanceCounter.BidSizeImbalance < PositionOpeningImbalanceThreshold
+            return (TradeDirection == BasePortfImbalancePosition._SHORT
+                   && monImb.ImbalanceCounter.BidSizeImbalance < monImb.CustomImbalanceConfig.OpenImbalance.Value
                     && OpeningPosition.PositionRouting());
         }
 
-        public virtual bool EvalAbortingClosingLongPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalAbortingClosingLongPosition(BaseMonSecurityImbalance monImb)
         {
-            return (TradeDirection == ImbalancePosition._LONG
+            return (TradeDirection == BasePortfImbalancePosition._LONG
                    && ClosingPosition!=null
-                   && secImb.ImbalanceCounter.AskSizeImbalance > positionOpeningImbalanceMaxThreshold
+                   && monImb.ImbalanceCounter.AskSizeImbalance > monImb.CustomImbalanceConfig.OpenImbalance
                    && ClosingPosition.PositionRouting());
         }
 
-        public virtual bool EvalAbortingClosingShortPosition(SecurityImbalance secImb, decimal positionOpeningImbalanceMaxThreshold)
+        public virtual bool EvalAbortingClosingShortPosition(BaseMonSecurityImbalance monImb)
         {
-            return (TradeDirection == ImbalancePosition._SHORT
+            return (TradeDirection == BasePortfImbalancePosition._SHORT
                    && ClosingPosition != null
-                   && secImb.ImbalanceCounter.BidSizeImbalance > positionOpeningImbalanceMaxThreshold
+                   && monImb.ImbalanceCounter.BidSizeImbalance > monImb.CustomImbalanceConfig.OpenImbalance
                    && ClosingPosition.PositionRouting());
         }
       
