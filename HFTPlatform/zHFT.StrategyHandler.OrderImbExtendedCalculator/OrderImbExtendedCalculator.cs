@@ -38,7 +38,7 @@ namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
-                AccountId = Configuration.Account,
+                AccountId = "",
             };
 
             pos.LoadPosId(NextPosId);

@@ -77,14 +77,15 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
             ImbalanceCounter.ResetOldBlocks();
         }
 
-        public bool LongPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
+        public bool LongPositionThresholdTriggered()
         {
-            return ImbalanceCounter.LongPositionThresholdTriggered(positionOpeningImbalanceThreshold) && IsLongDay();
+            
+            return ImbalanceCounter.LongPositionThresholdTriggered(CustomImbalanceConfig.OpenImbalance.Value) && IsLongDay();
         }
 
-        public bool ShortPositionThresholdTriggered(decimal positionOpeningImbalanceThreshold)
+        public bool ShortPositionThresholdTriggered()
         {
-            return ImbalanceCounter.ShortPositionThresholdTriggered(positionOpeningImbalanceThreshold) && IsShortDay();
+            return ImbalanceCounter.ShortPositionThresholdTriggered(CustomImbalanceConfig.OpenImbalance.Value) && IsShortDay();
 
         }
 

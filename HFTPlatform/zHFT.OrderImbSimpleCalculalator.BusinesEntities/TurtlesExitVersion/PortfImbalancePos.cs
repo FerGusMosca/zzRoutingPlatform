@@ -21,18 +21,42 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
         public override string ClosingSummary(BaseMonSecurityImbalance monImb)
         {
             MonSecurityImbalance tSecImb = (MonSecurityImbalance) monImb;
-            return string.Format(
-                "IsLongDay={0} OpeningTrade={1} LastTrade={2} CloseWindow={3} OppTrendCloseWindow={4}",
-                tSecImb.IsLongDay(),
-                tSecImb.OpeningPrice != null && tSecImb.OpeningPrice.Trade.HasValue
+
+            string strOpeningPrice = tSecImb.OpeningPrice != null && tSecImb.OpeningPrice.Trade.HasValue
                     ? tSecImb.OpeningPrice.Trade.Value.ToString("#.##")
-                    : "<no trade>",
-                tSecImb.Security != null && tSecImb.Security.MarketData != null &&
+                    : "<no trade>";
+
+            string strLastTrade = tSecImb.Security != null && tSecImb.Security.MarketData != null &&
                 tSecImb.Security.MarketData.Trade.HasValue
                     ? tSecImb.Security.MarketData.Trade.Value.ToString("#.##")
-                    : "<no market data>",
-                tSecImb.CustomImbalanceConfig.CloseWindow,
-                tSecImb.CustomImbalanceConfig.CloseWindow);
+                    : "<no market data>";
+
+            string exitCond = "";
+            string exitValue = "";
+            if (monImb.CustomImbalanceConfig.CloseTurtles)
+            {
+                exitCond = "TURTLES";
+            }
+            else if (monImb.CustomImbalanceConfig.CloseMMov)
+            {
+                exitCond = "MMOV";
+                exitValue = monImb.CalculateSimpleMovAvg(monImb.CustomImbalanceConfig.CloseWindow.Value).ToString("#.##");
+
+            }
+            else if (monImb.CustomImbalanceConfig.CloseOnImbalance)
+            {
+                exitCond = "IMBALANCE";
+                exitValue = $"Bid Imbalance={monImb.ImbalanceCounter.BidSizeImbalance} Ask Imbalance={monImb.ImbalanceCounter.AskSizeImbalance}";
+            }
+            else 
+            {
+                exitCond = "???";
+            }
+
+            return $"Symbol={tSecImb.Security.Symbol} IsLongDay={tSecImb.IsLongDay()} " +
+                    $"OpeningTrade={strOpeningPrice} LastTrade={strLastTrade} " +
+                    $"ExitCond={exitCond} ExitValue={exitValue}";
+          
         }
 
         public override bool EvalClosingShortPosition(BaseMonSecurityImbalance monImb)

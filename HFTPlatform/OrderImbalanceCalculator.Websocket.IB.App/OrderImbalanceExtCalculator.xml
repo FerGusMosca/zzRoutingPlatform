@@ -1,23 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ExtendedConfiguration  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Order Imbalance-Websocket IB</Name>
+  <Name>Imbalance_Websocket_IB_V1.1</Name>
 
   <PositionSizeInCash>10000</PositionSizeInCash>
 
   <MaxOpenedPositions>4</MaxOpenedPositions>
 
-  <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
+  <StopLossForOpenPositionPct>0.15</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
   <HistoricalPricesPeriod>-1</HistoricalPricesPeriod>
   <CandleReferencePrice>TRADE</CandleReferencePrice><!-- Cryptos ->CLOSE ; BYMA -> TRADE -->
-  <MaxMinWaitBtwConsecutivePos>20</MaxMinWaitBtwConsecutivePos>
+  <MaxMinWaitBtwConsecutivePos>1</MaxMinWaitBtwConsecutivePos>
 
   <ActiveBlocks>3</ActiveBlocks>
   <BlockSizeInMinutes>10</BlockSizeInMinutes>
-
-  <Account>XX</Account><!--IB Test-->
 
   <Currency>USD</Currency>
   <Exchange>SMART</Exchange>

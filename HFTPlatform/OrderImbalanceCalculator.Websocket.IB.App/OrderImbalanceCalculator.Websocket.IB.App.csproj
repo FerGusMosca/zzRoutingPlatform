@@ -67,7 +67,7 @@
     <Content Include="Mock\OrderRouter.Mock.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="OrderImbalanceCalculator.xml">
+    <Content Include="backup\OrderImbalanceCalculator.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

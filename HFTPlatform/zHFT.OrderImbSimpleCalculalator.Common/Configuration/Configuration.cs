@@ -68,8 +68,6 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         
         public string ClosingTime { get; set; }
         
-        public string Account { get; set; }
-        
         public bool OnlyLong { get; set; }
         
         public string CandleReferencePrice { get; set; }

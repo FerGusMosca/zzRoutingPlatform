@@ -30,7 +30,7 @@ using zHFT.StrategyHandlers.Common.Converters;
 
 namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 {
-    public class OrderImbalanceCalculator : ICommunicationModule,ILogger
+    public abstract class OrderImbalanceCalculator : ICommunicationModule,ILogger
     {
         #region Protected Attributes
 
@@ -294,41 +294,47 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             OrderRouter.ProcessMessage(omsReq);
         }
 
-        protected  virtual void LoadMonitorsAndRequestMarketData()
-        {
-            Thread.Sleep(5000);
-            foreach (string symbol in Configuration.StocksToMonitor)
-            {
-                if (!SecurityImbalancesToMonitor.ContainsKey(symbol))
-                {
-                    Security sec = new Security()
-                    {
-                        Symbol = symbol,
-                        SecType = Security.GetSecurityType(Configuration.SecurityTypes),
-                        MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
-                        Currency = Configuration.Currency,
-                        Exchange = Configuration.Exchange
-                    };
+        protected abstract void LoadMonitorsAndRequestMarketData();
 
-                    BaseMonSecurityImbalance secImbalance = new BaseMonSecurityImbalance()
-                    {
-                        Security = sec,
-                        DecimalRounding = Configuration.DecimalRounding,
-                    };
+        //protected  virtual void LoadMonitorsAndRequestMarketData()
+        //{
+        //    Thread.Sleep(5000);
+        //    foreach (string symbol in Configuration.StocksToMonitor)
+        //    {
+        //        if (!SecurityImbalancesToMonitor.ContainsKey(symbol))
+        //        {
 
-                    //1- We add the current security to monitor
-                    SecurityImbalancesToMonitor.Add(symbol, secImbalance);
 
-                    Securities.Add(sec);//So far, this is all wehave regarding the Securities
+        //            Security sec = new Security()
+        //            {
+        //                Symbol = symbol,
+        //                SecType = Security.GetSecurityType(Configuration.SecurityTypes),
+        //                MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+        //                Currency = Configuration.Currency,
+        //                Exchange = Configuration.Exchange
+        //            };
 
-                    //2- We request market data
+        //            BaseMonSecurityImbalance secImbalance = new BaseMonSecurityImbalance()
+        //            {
+        //                Security = sec,
+        //                DecimalRounding = Configuration.DecimalRounding,
+        //            };
 
-                    MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
-                    MarketDataRequestCounter++;
-                    OnMessageRcv(wrapper);
-                }
-            }
-        }
+
+
+        //            //1- We add the current security to monitor
+        //            SecurityImbalancesToMonitor.Add(symbol, secImbalance);
+
+        //            Securities.Add(sec);//So far, this is all wehave regarding the Securities
+
+        //            //2- We request market data
+
+        //            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
+        //            MarketDataRequestCounter++;
+        //            OnMessageRcv(wrapper);
+        //        }
+        //    }
+        //}
 
         protected virtual void InitializeCommunicationModules(OnLogMessage pOnLogMsg)
         {
@@ -369,7 +375,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 QuantityType = QuantityType.CURRENCY,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
-                AccountId = Configuration.Account,
+                AccountId = "",
             };
 
             routingPos.LoadPosId(NextPosId);
@@ -407,7 +413,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 QuantityType = Configuration.PositionSizeInContracts.HasValue ? QuantityType.CONTRACTS : QuantityType.OTHER,//Tenemos un monto en dólars, pero es el ruteador de ordenes el que decide a cuantos contratos equivale
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
-                AccountId = Configuration.Account,
+                AccountId = "",
             };
 
             pos.LoadPosId(NextPosId);
@@ -455,7 +461,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 QuantityType = QuantityType.CONTRACTS ,//Tenemos un monto en dólars, pero es el ruteador de ordenes el que decide a cuantos contratos equivale
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Configuration.StopLossForOpenPositionPct),
-                AccountId = Configuration.Account,
+                AccountId = "",
             };
 
             pos.LoadPosId(NextPosId);
@@ -485,7 +491,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                 Qty = openPos.CumQty,
                 QuantityType = QuantityType.SHARES,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
-                AccountId = Configuration.Account
+                AccountId = ""
             };
 
 
@@ -643,7 +649,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
 
         protected void EvalOpeningPosition(BaseMonSecurityImbalance secImb)
         {
-            if (secImb.LongPositionThresholdTriggered(secImb.CustomImbalanceConfig.OpenImbalance.Value))
+            if (secImb.LongPositionThresholdTriggered())
             {
                 BasePortfImbalancePosition imbPos = LoadNewPos(secImb, Side.Buy);
                 PositionWrapper posWrapper = new PositionWrapper(imbPos.OpeningPosition, Config);
@@ -653,7 +659,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
                     imbPos.OpeningPosition.Security.Symbol, imbPos.OpeningPosition.CashQty, secImb.ImbalanceSummary, imbPos.OpeningPosition.PosId), Constants.MessageType.Information);
 
             }
-            else if (secImb.ShortPositionThresholdTriggered(secImb.CustomImbalanceConfig.OpenImbalance.Value))
+            else if (secImb.ShortPositionThresholdTriggered())
             {
                 if (!Configuration.OnlyLong)
                 {
