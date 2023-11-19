@@ -37,7 +37,7 @@ namespace tph.IntFigDayTurtles.LogicLayer
 
         #region Protected Methods
 
-        protected override TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
+        protected override TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
         {
             MonIntFigTurtlePosition bobPos = (MonIntFigTurtlePosition) portfPos;
             TradTurtlesPosition tradPos= new TradIntFigTurtlesPosition()

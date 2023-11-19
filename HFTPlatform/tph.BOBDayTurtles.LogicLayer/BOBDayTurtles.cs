@@ -47,7 +47,7 @@ namespace tph.BOBDayTurtles.LogicLayer
         protected void EvalOpeningClosingPositions(MonTurtlePosition turtlePos)
         {
 
-            TimeSpan elapsed = DateTime.Now - StartTime;
+            TimeSpan elapsed = DateTimeManager.Now - StartTime;
 
             if (PortfolioPositions.Keys.Count < Config.MaxOpenedPositions
                 && !PortfolioPositions.ContainsKey(turtlePos.Security.Symbol)
@@ -69,18 +69,18 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        protected override TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
+        protected override TradingPosition DoOpenTradingRegularPos(Position routingPos, MonitoringPosition monPos)
         {
-            MonBOBTurtlePosition bobPos = (MonBOBTurtlePosition) portfPos;
+            MonBOBTurtlePosition bobMonPos = (MonBOBTurtlePosition) monPos;
             return new TradBOBTurtlesPosition()
             {
                 StrategyName = Config.Name,
-                OpeningDate = DateTime.Now,
-                OpeningPosition = pos,
-                OpeningPortfolioPosition = portfPos,
+                OpeningDate = bobMonPos.GetCurrentCandleDate(),
+                OpeningPosition = routingPos,
+                OpeningPortfolioPosition = monPos,
                 FeeTypePerTrade = Config.FeeTypePerTrade,
                 FeeValuePerTrade = Config.FeeValuePerTrade,
-                OpeningTrendline = bobPos.LastOpenTrendline
+                OpeningTrendline = bobMonPos.LastOpenTrendline
             };
         }
 

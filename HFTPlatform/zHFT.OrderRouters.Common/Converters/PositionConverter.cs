@@ -91,7 +91,9 @@ namespace zHFT.OrderRouters.Common.Converters
             pos.ExecutionReports.AddRange((ValidateField(wrapper, PositionFields.ExecutionReports) ? (IList<ExecutionReport>)wrapper.GetField(PositionFields.ExecutionReports) : new List<ExecutionReport>()));
             pos.Orders.AddRange((ValidateField(wrapper, PositionFields.Orders) ? (IList<Order>)wrapper.GetField(PositionFields.Orders) : new List<Order>()));
             pos.AccountId = (ValidateField(wrapper, PositionFields.Account) ? (string)wrapper.GetField(PositionFields.Account) : null);
-            
+            pos.TriggerPrice = (ValidateField(wrapper, PositionFields.TriggerPrice) ? (MarketData)wrapper.GetField(PositionFields.TriggerPrice) : null);
+
+
             if (wrapper.GetAction() == Actions.NEW_POSITION)
             {
                 pos.NewDomFlag = false;

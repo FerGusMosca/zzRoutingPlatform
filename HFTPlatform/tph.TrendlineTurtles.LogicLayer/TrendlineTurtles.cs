@@ -55,8 +55,8 @@ namespace tph.TrendlineTurtles.LogicLayer
 
                 foreach (string symbol in PortfolioPositionsToMonitor.Keys)
                 {
-                    DateTime from = DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod);
-                    DateTime to = DateTime.Now.AddDays(1);
+                    DateTime from = DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod);
+                    DateTime to = DateTimeManager.Now.AddDays(1);
 
                     HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
                     OnMessageRcv(reqWrapper);
@@ -73,11 +73,14 @@ namespace tph.TrendlineTurtles.LogicLayer
         {
             Wrapper wrapper = (Wrapper) pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
+            
+            OrderRouter.ProcessMessage(wrapper);
 
             try
             {
                 lock (tLock)
                 {
+                    DateTimeManager.NullNow = md.GetReferenceDateTime();
                     if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null
                                                                                     && ProcessedHistoricalPrices
                                                                                         .Contains(md.Security.Symbol))
@@ -186,7 +189,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                 {
                     TrendLineCreator.InitializeCreator(monPosition.Security,
                                                        GetConfig(),
-                                                       DateTime.Now.AddDays(GetConfig().HistoricalPricesPeriod),
+                                                       DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod),
                                                        pOnLogMsg);
 
                     DoLog($"Portfolio Position for symbol {monPosition.Security.Symbol} successfully initialized",
@@ -214,10 +217,10 @@ namespace tph.TrendlineTurtles.LogicLayer
                 histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
 
                 List<Trendline> newResistances =
-                    TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, portfPos.GetLastCandle());
+                    TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, portfPos.GetLastFinishedCandle());
 
                 List<Trendline> newSupports =
-                    TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, portfPos.GetLastCandle());
+                    TrendLineCreator.UpdateSupports(portfPos.Security, histPrices, portfPos.GetLastFinishedCandle());
 
                 foreach (Trendline newRes in newResistances)
                 {
@@ -289,7 +292,7 @@ namespace tph.TrendlineTurtles.LogicLayer
         {
             if (memTrendline != null)
             {
-                memTrendline.BrokenDate = DateTime.Now;
+                memTrendline.BrokenDate = DateTimeManager.Now;
                 memTrendline.Modified = true;
                 memTrendline.BrokenTrendlinePrice = 0;
 
@@ -297,7 +300,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             else
                 throw new Exception($"Error locating trendline Id {updTrendline.Id} --> not found in memory!");
                                 
-            updTrendline.BrokenDate=DateTime.Now;
+            updTrendline.BrokenDate= DateTimeManager.Now;
             updTrendline.BrokenTrendlinePrice = 0;
             updTrendline.ToDisabled = false;
             updTrendline.Disabled = true;

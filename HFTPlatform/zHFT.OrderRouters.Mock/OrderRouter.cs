@@ -55,7 +55,7 @@ namespace zHFT.OrderRouters.Mock
                     {
                         //Console.Beep();//DBG
                         TimeSpan elapsed = DateTimeManager.Now - order.EffectiveTime.Value;
-                        if (elapsed.TotalSeconds > Configuration.OrdeExecutionEveryNSeconds)
+                        if (elapsed.TotalSeconds >= Configuration.OrdeExecutionEveryNSeconds)
                         {
                             //We send the executed ER
                             order.OrderId = InternalOrderId.ToString();
@@ -68,7 +68,7 @@ namespace zHFT.OrderRouters.Mock
 
                     toRemove.ForEach(x => PendingToExecuteOrders.Remove(x));
                 }
-                Thread.Sleep(1000);//1 seconds
+                Thread.Sleep(Configuration.OrdeExecutionEveryNSeconds);//n seconds
             }
         }
 

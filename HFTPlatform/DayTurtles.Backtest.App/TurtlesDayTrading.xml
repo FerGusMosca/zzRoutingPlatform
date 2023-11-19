@@ -21,8 +21,8 @@
 
 
 
-	<OpeningTime>10:30 AM</OpeningTime>
-  <ClosingTime>04:51 PM</ClosingTime>
+	<OpeningTime>11:30 AM</OpeningTime>
+  <ClosingTime>05:51 PM</ClosingTime>
 
 	<OrderRouter>zHFT.OrderRouters.Router.MarketOrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -47,9 +47,9 @@
   <StocksToMonitor>
 
     <!--<Symbol>BTC</Symbol>-->
-	  <!--<Symbol>GGAL</Symbol>-->
-	  <Symbol>SPY</Symbol>
-	  <!--<Symbol>YPF</Symbol>
+	  <Symbol>SUPV</Symbol>
+	  <Symbol>BBAR</Symbol>
+	  <!--
 	  <Symbol>QQQ</Symbol>
 	  <Symbol>MSFT</Symbol>
 	  <Symbol>META</Symbol>-->

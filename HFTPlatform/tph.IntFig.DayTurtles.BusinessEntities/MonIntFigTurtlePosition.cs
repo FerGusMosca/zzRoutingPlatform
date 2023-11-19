@@ -27,7 +27,7 @@ namespace tph.IntFig.DayTurtles.BusinessEntities
 
         public MonIntFigTurtlePosition(int openWindow, int closeWindow, double stopLossForOpenPositionPct,
             int outerSignalSpan) : base(openWindow, closeWindow, stopLossForOpenPositionPct,
-            PortfolioPosition._CANLDE_REF_PRICE_CLOSE)
+            MonitoringPosition._CANLDE_REF_PRICE_CLOSE)
         {
             Resistances = new List<Trendline>();
             Supports = new List<Trendline>();

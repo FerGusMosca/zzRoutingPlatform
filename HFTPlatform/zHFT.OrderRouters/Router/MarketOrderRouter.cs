@@ -49,15 +49,15 @@ namespace zHFT.OrderRouters.Router
 
         #region Private Methods
 
-        private MarketData GetLastMarketData(string symbol)
+        protected virtual MarketData GetLastMarketData(Position pos)
         {
 
 
             lock (MarketDataDict)
             {
-                if (MarketDataDict.ContainsKey(symbol))
+                if (MarketDataDict.ContainsKey(pos.Symbol))
                 {
-                    return MarketDataDict[symbol];
+                    return MarketDataDict[pos.Symbol];
 
                 }
                 else
@@ -68,9 +68,9 @@ namespace zHFT.OrderRouters.Router
         }
 
 
-        private Order BuildOrder(Position pos, Side side, int index)
+        protected virtual Order BuildOrder(Position pos, Side side, int index)
         {
-            MarketData md = GetLastMarketData(pos.Security.Symbol);
+            MarketData md = GetLastMarketData(pos);
 
             Order order = new Order()
             {
@@ -178,7 +178,7 @@ namespace zHFT.OrderRouters.Router
 
         #region Thread Methods
 
-        public void RunOnPositionCalculus(object param)
+        public void ProcessNewPosition(object param)
         {
             Wrapper positionWrapper = null;
             if (param is Wrapper)
@@ -253,7 +253,7 @@ namespace zHFT.OrderRouters.Router
                 if (wrapper.GetAction() == Actions.NEW_POSITION)
                 {
                     DoLog(string.Format("Routing to market position for symbol {0}", wrapper.GetField(PositionFields.Symbol).ToString()), Constants.MessageType.Information);
-                    RunOnPositionCalculus(wrapper);
+                    ProcessNewPosition(wrapper);
                     return CMState.BuildSuccess();
                 }
                 else if (wrapper.GetAction() == Actions.CANCEL_POSITION)

@@ -4,7 +4,7 @@ using zHFT.Main.BusinessEntities.Securities;
 
 namespace zHFT.StrategyHandler.BusinessEntities
 {
-    public class PortfolioPosition
+    public class MonitoringPosition
     {
         
       
@@ -23,6 +23,11 @@ namespace zHFT.StrategyHandler.BusinessEntities
         #endregion
 
         #region public Methods
+
+        public virtual MarketData GetLastTriggerPrice()
+        {
+            return null;
+        }
 
         public virtual bool AppendCandleHistorical(MarketData md) { return true; }
 

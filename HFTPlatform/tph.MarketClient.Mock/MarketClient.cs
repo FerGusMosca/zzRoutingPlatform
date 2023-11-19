@@ -36,7 +36,10 @@ namespace tph.MarketClient.Mock
 
         protected object tObject { get; set; }
 
-        protected Dictionary<string,bool> MarketDataUnsubscribeFlagDict { get; set; }
+        protected Dictionary<string, bool> MarketDataUnsubscribeFlagDict { get; set; }
+
+
+        protected Dictionary<string, bool> HistoricalPricesFinishedDict { get; set; }
 
         #endregion
 
@@ -52,7 +55,7 @@ namespace tph.MarketClient.Mock
                 Security sec = (Security)paramList[0];
                 List<Wrapper> mdWrappperList = (List<Wrapper>)paramList[1];
 
-                foreach(Wrapper md in mdWrappperList)
+                foreach (Wrapper md in mdWrappperList)
                 {
                     DoLog($"{Configuration.Name}: Publishing Market Data:{md.ToString()}", Constants.MessageType.Information);
 
@@ -62,8 +65,11 @@ namespace tph.MarketClient.Mock
                     {
                         DoLog($"Unbubscribing market data for symbol {sec.Symbol}", Constants.MessageType.PriorityInformation);
                         break;
-                    }    
+                    }
                 }
+
+                DoLog($"============= ALL Market Data successfully sent  for symbol ={sec.Symbol}=============", Constants.MessageType.Information);
+
             }
             catch (Exception ex)
             {
@@ -89,13 +95,16 @@ namespace tph.MarketClient.Mock
         {
             try
             {
+                DateTime from = Configuration.From;
+                DateTime to = Configuration.To.HasValue ? Configuration.To.Value : Configuration.From.AddDays(1);
+                List<MarketData> candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, from, to);
 
-                List<MarketData>  candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, Configuration.From, Configuration.To);
-                
+                DoLog($"{candles.Count} candles successfully found for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
+
                 Security mainSec = candles.Count > 0 ? candles[0].Security : null;
 
                 List<Wrapper> mdWrapperList = new List<Wrapper>();
-                foreach(MarketData candle in candles)
+                foreach (MarketData candle in candles)
                 {
                     try
                     {
@@ -111,24 +120,51 @@ namespace tph.MarketClient.Mock
                 }
 
 
-                (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec,mdWrapperList });
+                (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec, mdWrapperList });
             }
             catch (Exception ex)
             {
 
                 DoLog($"CRITICAL ERROR Processing market data por security {mdr.Security.Symbol} :{ex.Message}", Constants.MessageType.Error);
             }
-        
-        
+
+
         }
+
+        protected void EvalSyncWithHistoricalPrices(MarketDataRequest mdr)
+        {
+
+            while (!HistoricalPricesFinished(mdr.Security.Symbol))
+            {
+                DoLog($"Waiting for historical prices to finish to process market data for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
+                Thread.Sleep(1000);
+            }
+            DoLog($"Waiting {Configuration.InitialPacingMarketDataMillisec / 1000} secs to send Market Data for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
+            Thread.Sleep(Configuration.InitialPacingMarketDataMillisec);
+        }
+
+        protected void EvalMarketDataSubscription(string symbol, bool subscrStatus)
+        {
+
+            lock (MarketDataUnsubscribeFlagDict)
+            {
+                if (MarketDataUnsubscribeFlagDict.ContainsKey(symbol))
+                    MarketDataUnsubscribeFlagDict[symbol] = subscrStatus;
+                else
+                    MarketDataUnsubscribeFlagDict.Add(symbol, subscrStatus);
+            }
+        }
+
 
         protected void ProcessMarketDataRequest(object param)
         {
-
             try
             {
+
                 Wrapper wrapper = (Wrapper)param;
                 MarketDataRequest mdr = MarketDataRequestConverter.GetMarketDataRequest(wrapper);
+
+                EvalSyncWithHistoricalPrices(mdr);
 
                 if (mdr.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
                 {
@@ -138,11 +174,7 @@ namespace tph.MarketClient.Mock
                 {
                     if (mdr.MarketDepth == null || mdr.MarketDepth == MarketDepth.TopOfBook)
                     {
-                        lock(MarketDataUnsubscribeFlagDict)
-                        {
-                            MarketDataUnsubscribeFlagDict.Add(mdr.Security.Symbol, false);
-
-                        }
+                        EvalMarketDataSubscription(mdr.Security.Symbol, false);
                         DoProcessMarketData(mdr);
                     }
                     else if (mdr.MarketDepth == MarketDepth.FullBook)
@@ -157,14 +189,7 @@ namespace tph.MarketClient.Mock
                 }
                 else if (mdr.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
                 {
-                    lock (MarketDataUnsubscribeFlagDict)
-                    {
-                        if (MarketDataUnsubscribeFlagDict.ContainsKey(mdr.Security.Symbol))
-                            MarketDataUnsubscribeFlagDict[mdr.Security.Symbol] = true;
-                        else
-                            MarketDataUnsubscribeFlagDict.Add(mdr.Security.Symbol, true);
-                    
-                    }
+                    EvalMarketDataSubscription(mdr.Security.Symbol, true);
                 }
                 else
                     throw new Exception($"@{Configuration.Name}: Value not recognized for subscription type {mdr.SubscriptionRequestType} for symbol {mdr.Security.Symbol}");
@@ -176,6 +201,36 @@ namespace tph.MarketClient.Mock
             }
 
         }
+
+        protected void UpdateHistoricalPricesDict(string symbol, bool finished)
+        {
+            if (!HistoricalPricesFinishedDict.ContainsKey(symbol))
+                HistoricalPricesFinishedDict.Add(symbol, finished);
+            else
+                HistoricalPricesFinishedDict[symbol] = finished;
+        }
+
+        protected void InitializeHistoricalPricesDict(string symbol)
+        {
+
+            UpdateHistoricalPricesDict(symbol, false);
+        }
+
+        protected void MarkHistoricalPricesFinished(string symbol)
+        {
+            UpdateHistoricalPricesDict(symbol, true);
+        }
+
+
+        protected bool HistoricalPricesFinished(string symbol)
+        {
+            if (HistoricalPricesFinishedDict.ContainsKey(symbol))
+                return HistoricalPricesFinishedDict[symbol];
+            else
+                return false;
+        }
+
+        
 
         protected void ProcessHistoricalDataRequestAsync(object param)
         {
@@ -189,9 +244,11 @@ namespace tph.MarketClient.Mock
 
                     HistoricalPricesRequestDTO dto = HistoricalPriceConverter.ConvertHistoricalPriceRequest(histPrWrapper);
 
-                    if (!dto.From.HasValue && !dto.To.HasValue)
+                    InitializeHistoricalPricesDict(dto.Symbol);
+
+                    if (!dto.From.HasValue )
                     {
-                        throw new Exception($"Historical Prices Request must have From AND To Specified");
+                        throw new Exception($"Historical Prices Request must have From Specified");
                     }
                     else
                     {
@@ -217,9 +274,8 @@ namespace tph.MarketClient.Mock
                     }
 
                     HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(dto.ReqId, mainSec, dto.Interval, marketDatWrList);
-                    
+                    MarkHistoricalPricesFinished(dto.Symbol);
                     (new Thread(OnPublishAsync)).Start(histWrp);
-
                 }
 
 
@@ -246,6 +302,7 @@ namespace tph.MarketClient.Mock
                 if (LoadConfig(configFile))
                 {
                     tObject = new object();
+                    HistoricalPricesFinishedDict = new Dictionary<string, bool>();
                     MarketDataUnsubscribeFlagDict = new Dictionary<string, bool>();
                     CandleManager = new CandleManager(Configuration.ConnectionString);
 

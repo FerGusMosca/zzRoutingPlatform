@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PortfolioPosition.cs" />
+    <Compile Include="MonitoringPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TradingPosition.cs" />
   </ItemGroup>

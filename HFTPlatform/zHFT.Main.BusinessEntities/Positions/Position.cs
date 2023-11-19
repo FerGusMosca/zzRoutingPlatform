@@ -78,6 +78,8 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         public string LastMkt { get; set; }
 
+        public MarketData TriggerPrice { get; set; }
+
         public string Symbol
         {
             set
@@ -418,6 +420,15 @@ namespace zHFT.Main.BusinessEntities.Positions
             else
                 throw new Exception($"Invalid side to flip:{Side}");
         
+        }
+
+        public double? GetTriggerPrice()
+        {
+            if (TriggerPrice != null)
+                return TriggerPrice.Trade;
+            else
+                return null;
+
         }
 
         #endregion

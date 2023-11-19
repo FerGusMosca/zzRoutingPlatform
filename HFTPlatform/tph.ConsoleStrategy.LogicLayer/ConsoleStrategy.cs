@@ -464,7 +464,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         protected int LoadFirstPostId()
         {
-            TimeSpan elapsed = DateTime.Now - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            TimeSpan elapsed = DateTimeManager.Now - new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
 
             int posIdInit = Convert.ToInt32(elapsed.TotalMinutes);
 
@@ -635,7 +635,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             
         }
 
-        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
+        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
         {
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
             OrderRouter.ProcessMessage(posWrapper);
@@ -644,7 +644,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
-        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingFuturePos(Position pos, PortfolioPosition portfPos)
+        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos)
         {
             throw new NotImplementedException();
         }

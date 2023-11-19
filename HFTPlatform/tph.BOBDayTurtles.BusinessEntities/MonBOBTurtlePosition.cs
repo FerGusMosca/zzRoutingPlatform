@@ -6,6 +6,7 @@ using tph.TrendlineTurtles.BusinessEntities;
 using tph.TrendlineTurtles.LogicLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.BOBDayTurtles.BusinessEntities
@@ -47,21 +48,21 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
             if (resistance != null)
             {
-                MarketData lastCandle = GetLastCandle();
+                MarketData lastCandle = GetLastFinishedCandle();
                 List<MarketData> histPrices = GetHistoricalPrices();
                 double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
                 return string.Format(" --> Broken Resistance: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
-                                    resistance.StartDate, resistance.EndDate,DateTime.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
+                                    resistance.StartDate, resistance.EndDate, DateTimeManager.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
                                     trendlinePrice);
             }
             
             else if (support != null)
             {
-                MarketData lastCandle = GetLastCandle();
+                MarketData lastCandle = GetLastFinishedCandle();
                 List<MarketData> histPrices = GetHistoricalPrices();
                 double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
                 return string.Format(" --> Broken Support: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
-                    support.StartDate, support.EndDate,DateTime.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
+                    support.StartDate, support.EndDate, DateTimeManager.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
                     trendlinePrice);
             }
             else

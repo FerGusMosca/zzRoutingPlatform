@@ -68,7 +68,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected Dictionary<string, TradingPosition> PortfolioPositions { get; set; }
 
-        protected Dictionary<string, PortfolioPosition> PortfolioPositionsToMonitor { get; set; }
+        protected Dictionary<string, MonitoringPosition> PortfolioPositionsToMonitor { get; set; }
 
         protected PositionIdTranslator PositionIdTranslator { get; set; }
 
@@ -112,9 +112,9 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected abstract void LoadPreviousTradingPositions();
 
-        protected abstract TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos);
+        protected abstract TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos);
 
-        protected abstract TradingPosition DoOpenTradingFuturePos(Position pos, PortfolioPosition portfPos);
+        protected abstract TradingPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos);
 
         #endregion
 
@@ -125,7 +125,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
 
             HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(hpWrapper);
-            PortfolioPosition monPortfPos = (PortfolioPosition)PortfolioPositionsToMonitor[hpDto.Symbol];
+            MonitoringPosition monPortfPos = (MonitoringPosition)PortfolioPositionsToMonitor[hpDto.Symbol];
             
             foreach (MarketData md in hpDto.MarketData)
             {
@@ -147,7 +147,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             {
                 if (PortfolioPositionsToMonitor.Values.Any(x => x.Security.Symbol == sec.Symbol))
                 {
-                    PortfolioPosition protfPos = PortfolioPositionsToMonitor.Values.Where(x => x.Security.Symbol == sec.Symbol).FirstOrDefault();
+                    MonitoringPosition protfPos = PortfolioPositionsToMonitor.Values.Where(x => x.Security.Symbol == sec.Symbol).FirstOrDefault();
                     protfPos.Security = sec;
                 }
             }
@@ -178,7 +178,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        protected void LoadCloseFuturePos(Position openPos,PortfolioPosition portfPos, TradingPosition trdPos)
+        protected void LoadCloseFuturePos(Position openPos,MonitoringPosition monPos, TradingPosition trdPos)
         {
             Position pos = new Position()
             {
@@ -189,7 +189,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 //                    Currency = Configuration.Currency,
 //                    SecType = Security.GetSecurityType(Configuration.SecurityTypes)
 //                },
-                Security = portfPos.Security,
+                Security = monPos.Security,
                 Side = openPos.Side == Side.Buy ? Side.Sell : Side.Buy,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
@@ -198,6 +198,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Config.StopLossForOpenPositionPct),
                 AccountId = Config.Account,
+                TriggerPrice=monPos.GetLastTriggerPrice()
             };
 
             pos.LoadPosId(NextPosId);
@@ -209,11 +210,11 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        private TradingPosition LoadNewRegularPos(PortfolioPosition portfPos, Side side)
+        private TradingPosition LoadNewRegularPos(MonitoringPosition monPos, Side side)
         {
-            Position pos = new Position()
+            Position trdPos = new Position()
             {
-                Security = portfPos.Security,
+                Security = monPos.Security,
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
@@ -222,21 +223,22 @@ namespace zHFT.StrategyHandler.LogicLayer
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Config.StopLossForOpenPositionPct),
                 AccountId = Config.Account,
+                TriggerPrice=monPos.GetLastTriggerPrice()
             };
 
             //pos.LoadPosId(NextPosId);
-            pos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
+            trdPos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
             NextPosId++;
 
-            return DoOpenTradingRegularPos(pos, portfPos);
+            return DoOpenTradingRegularPos(trdPos, monPos);
         
         }
         
-        private TradingPosition LoadNewFuturePos(PortfolioPosition portfPos, Side side)
+        private TradingPosition LoadNewFuturePos(MonitoringPosition monfPos, Side side)
         {
             Position pos = new Position()
             {
-                Security = portfPos.Security,
+                Security = monfPos.Security,
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
@@ -246,15 +248,16 @@ namespace zHFT.StrategyHandler.LogicLayer
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
                 StopLossPct = Convert.ToDouble(Config.StopLossForOpenPositionPct),
                 AccountId = Config.Account,
+                TriggerPrice=monfPos.GetLastTriggerPrice()
             };
 
             pos.LoadPosId(NextPosId);
             NextPosId++;
             
-            return DoOpenTradingRegularPos(pos, portfPos);
+            return DoOpenTradingRegularPos(pos, monfPos);
         }
         
-        protected TradingPosition LoadNewPos(PortfolioPosition portPos, Side side)
+        protected TradingPosition LoadNewPos(MonitoringPosition portPos, Side side)
         {
 
             if (Security.GetSecurityType(Config.SecurityTypes) == SecurityType.FUT)
@@ -325,7 +328,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         }
         
-        private void LoadCloseRegularPos(Position openPos, PortfolioPosition portfPos, TradingPosition trdPos)
+        private void LoadCloseRegularPos(Position openPos, MonitoringPosition monPos, TradingPosition trdPos)
         {
             Position closingPos = new Position()
             {
@@ -336,14 +339,15 @@ namespace zHFT.StrategyHandler.LogicLayer
 //                    Currency = Configuration.Currency,
 //                    SecType = SecurityType.CS
 //                },
-                Security = portfPos.Security,
+                Security = monPos.Security,
                 Side = openPos.Side == Side.Buy ? Side.Sell : Side.Buy,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,
                 Qty = openPos.CumQty,
                 QuantityType = QuantityType.SHARES,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
-                AccountId = Config.Account
+                AccountId = Config.Account,
+                TriggerPrice=monPos.GetLastTriggerPrice()
             };
 
 
@@ -380,19 +384,19 @@ namespace zHFT.StrategyHandler.LogicLayer
             try
             {
              
-                lock (tLock)
-                {
-                    ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
+                //lock (tLock) --> //TODO--. Eval replace by concurrent dict
+                //{
+                ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
 
-                    EvalCancellingOrdersOnStartup(report);
-                    DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus})", Constants.MessageType.Information);
-                    if (PortfolioPositions.ContainsKey(report.Order.Symbol))
-                    {
-                        TradingPosition trdPos = PortfolioPositions[report.Order.Symbol];
-                        AssignMainERParameters(trdPos, report);
-                        LogExecutionReport(trdPos, report);
-                    }
+                EvalCancellingOrdersOnStartup(report);
+                DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus})", Constants.MessageType.Information);
+                if (PortfolioPositions.ContainsKey(report.Order.Symbol))
+                {
+                    TradingPosition trdPos = PortfolioPositions[report.Order.Symbol];
+                    AssignMainERParameters(trdPos, report);
+                    LogExecutionReport(trdPos, report);
                 }
+                //}
              
             }
             catch (Exception e)
@@ -441,7 +445,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        protected CMState RunClose(Position openRoutingPos, PortfolioPosition monfPos, TradingPosition portfPos)
+        protected CMState RunClose(Position openRoutingPos, MonitoringPosition monfPos, TradingPosition portfPos)
         {
             if (openRoutingPos.PosStatus == PositionStatus.Filled)
             {
@@ -582,7 +586,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                         Exchange = Config.Exchange
                     };
 
-                    PortfolioPosition portfPos = new PortfolioPosition()
+                    MonitoringPosition portfPos = new MonitoringPosition()
                     {
                         Security = sec,
                         DecimalRounding = Config.DecimalRounding,
@@ -616,32 +620,19 @@ namespace zHFT.StrategyHandler.LogicLayer
            
         }
 
-        protected void UpdateLastPrice(PortfolioPosition portfPos,MarketData md)
+        protected void UpdateLastPrice(MonitoringPosition portfPos,MarketData md)
         {
             if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
             {
                 TradingPosition trdPos = PortfolioPositions[portfPos.Security.Symbol];
 
-                if(trdPos.OpeningPosition!=null)
+                if(trdPos.OpeningPosition!=null && trdPos.OpeningPosition.CumQty>0)
                 {
                     trdPos.LastPrice = md.Trade;
                     Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
                     persitThread.Start(trdPos);
-
-
                 }
 
-                //if (trdPos.OpeningPosition.PosStatus == PositionStatus.Filled
-                //    || trdPos.OpeningPosition.PosStatus == PositionStatus.PartiallyFilled)
-                //{
-                //    if (trdPos.ClosingPosition == null)
-                //    {
-                //        trdPos.LastPrice = md.Trade;
-                //        Thread persitThread = new Thread(new ParameterizedThreadStart(DoPersistThread));
-                //        persitThread.Start(trdPos);
-                        
-                //    }
-                //}
             }
         
         }
@@ -683,7 +674,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     {
                         if (!IsTradingTime())
                         {
-                            foreach (PortfolioPosition portfPos in PortfolioPositionsToMonitor.Values)
+                            foreach (MonitoringPosition portfPos in PortfolioPositionsToMonitor.Values)
                             {
                                 if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
                                 {
@@ -835,7 +826,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 tLock = new object();
                 tSynchronizationLock = new object();
                 tPersistLock =new object();
-                PortfolioPositionsToMonitor = new Dictionary<string, PortfolioPosition>();
+                PortfolioPositionsToMonitor = new Dictionary<string, MonitoringPosition>();
                 PortfolioPositions = new Dictionary<string, TradingPosition>();
                 PendingCancels = new Dictionary<string, TradingPosition>();
                 MarketDataConverter = new MarketDataConverter();

@@ -49,7 +49,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         public double FeeValuePerTrade { get; set; }
 
-        public PortfolioPosition OpeningPortfolioPosition { get; set; }
+        public MonitoringPosition OpeningPortfolioPosition { get; set; }
 
         public double? LastPrice { get; set; }
 

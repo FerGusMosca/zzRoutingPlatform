@@ -3,11 +3,13 @@
   <Name>Market Client Mock</Name>
 
 	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
-	<PacingMarketDataMilliSec>10</PacingMarketDataMilliSec>
-	<From>2020-01-01</From>
-	<To>2020-01-31</To>
 
 	<SyncHistoricalWithMarketData>true</SyncHistoricalWithMarketData>
-	<InitialPacingMarketDataMillisec>20000</InitialPacingMarketDataMillisec>
+	<InitialPacingMarketDataMillisec>10000</InitialPacingMarketDataMillisec>
+	
+	
+	<PacingMarketDataMilliSec>100</PacingMarketDataMilliSec>
+	<From>2023-11-14</From>
+	<!--<To>2020-01-07</To>--><!--Not included-->
   
 </Configuration>

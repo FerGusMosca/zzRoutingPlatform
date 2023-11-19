@@ -8,7 +8,7 @@ using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.DayTurtles.BusinessEntities
 {
-    public class MonTurtlePosition : PortfolioPosition
+    public class MonTurtlePosition : MonitoringPosition
     {
         #region Protected Static Consts
 
@@ -287,7 +287,7 @@ namespace tph.DayTurtles.BusinessEntities
                 if (!Candles.ContainsKey(key))
                 {
 
-                    MarketData lastCandle = GetLastCandle();
+                    MarketData lastCandle = GetLastFinishedCandle();
                     if(lastCandle!=null)
                         lastCandle.ClosingPrice = lastCandle.Trade;
 
@@ -316,7 +316,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (isHighestTurtles && higherMMov)
             {
 
-                LastSignalTriggered = $"LONG : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                LastSignalTriggered = $"LONG : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                 return true;
             }
             else
@@ -332,7 +332,7 @@ namespace tph.DayTurtles.BusinessEntities
             if (isLowestTurtles && !higherMMov)
             {
 
-                LastSignalTriggered = $"SHORT : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                LastSignalTriggered = $"SHORT : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                 return true;
             }
             else
@@ -348,7 +348,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool higherMMov = IsHigherThanMMov(CloseWindow, true);
                 if (!higherMMov)
                 {
-                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else
@@ -360,7 +360,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool isLowestTurtles = IsLowest(CloseWindow);
                 if (isLowestTurtles)
                 {
-                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else 
@@ -379,7 +379,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool higherMMov = IsHigherThanMMov(CloseWindow, true);
                 if (higherMMov)
                 {
-                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else
@@ -391,7 +391,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool isHighestTurtles = IsLowest(CloseWindow);
                 if (isHighestTurtles)
                 {
-                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
                     return true;
                 }
                 else
@@ -414,26 +414,50 @@ namespace tph.DayTurtles.BusinessEntities
             return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[cowntdown];
         }
         
-        public virtual MarketData GetLastCandle()
+        public virtual MarketData GetLastFinishedCandle()
         {
-            return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            //return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            return GetLastFinishedCandle(1);
         }
-        
+
+        public virtual MarketData GetCurrentCandle()
+        {
+            //return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).FirstOrDefault();
+            return GetLastFinishedCandle(0);
+        }
+
         public virtual bool HasHistoricalCandles()
         {
             return Candles.Keys.Count > 0;
         }
-        
-        public virtual DateTime GetLastCandleDate()
-        {
-            MarketData lastCandle = GetLastCandle();
 
-            if (lastCandle != null && lastCandle.MDEntryDate.HasValue)
-                return lastCandle.MDEntryDate.Value;
-            if (lastCandle != null && lastCandle.MDLocalEntryDate.HasValue)
-                return lastCandle.MDLocalEntryDate.Value;
+        protected DateTime GetDateForCandle(MarketData md)
+        {
+            if (md != null && md.MDEntryDate.HasValue)
+                return md.MDEntryDate.Value;
+            if (md != null && md.MDLocalEntryDate.HasValue)
+                return md.MDLocalEntryDate.Value;
             else
                 return DateTimeManager.Now;
+        }
+        
+        public virtual DateTime GetLastFinishedCandleDate()
+        {
+            MarketData lastCandle = GetLastFinishedCandle();
+
+            return GetDateForCandle(lastCandle);
+        }
+
+        public virtual DateTime GetCurrentCandleDate()
+        {
+            MarketData lastCandle = GetCurrentCandle();
+
+            return GetDateForCandle(lastCandle);
+        }
+
+        public override MarketData GetLastTriggerPrice()
+        {
+            return GetCurrentCandle();
         }
 
 

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Daily_Turtles_Backtest</Name>
+
+  <!--Websocket-->
+    <IncomingConfigPath>.\Mock\incomingMarketClient.Mock.xml</IncomingConfigPath>
+    <IncomingModule>tph.MarketClient.Mock.MarketClient,tph.MarketClient.Mock</IncomingModule>
+
+
+	<OutgoingModule>tph.BOBDayTurtles.LogicLayer.BOBDayTurtles,tph.BOBDayTurtles.LogicLayer</OutgoingModule>
+  <OutgoingConfigPath>.\BOBTurtlesDayTrading.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>

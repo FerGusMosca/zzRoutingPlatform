@@ -83,11 +83,11 @@ namespace tph.DayTurtles.LogicLayer
         }
 
 
-        protected void EvalOpeningPosition(MonTurtlePosition turtlePos)
+        protected void EvalOpeningPosition(MonTurtlePosition monPos)
         {
-            if (turtlePos.LongSignalTriggered())
+            if (monPos.LongSignalTriggered())
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition)LoadNewPos(turtlePos, Side.Buy);
+                TradTurtlesPosition trdPos = (TradTurtlesPosition)LoadNewPos(monPos, Side.Buy);
                 PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
                 PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                 CMState state = OrderRouter.ProcessMessage(posWrapper);
@@ -97,15 +97,16 @@ namespace tph.DayTurtles.LogicLayer
                     trdPos.OpeningPosition.CashQty,
                     DateTimeManager.Now, 
                     trdPos.OpeningPosition.PosId, 
-                    turtlePos.SignalTriggered()),
+                    monPos.SignalTriggered()),
                     Constants.MessageType.Information);
 
             }
-            else if (turtlePos.ShortSignalTriggered())
+            else if (monPos.ShortSignalTriggered())
             {
                 if (!Config.OnlyLong)
                 {
-                    TradTurtlesPosition trdPos = (TradTurtlesPosition)LoadNewPos(turtlePos, Side.Sell);
+                    TradTurtlesPosition trdPos = (TradTurtlesPosition)LoadNewPos(monPos, Side.Sell);
+                    trdPos.OpeningPosition.TriggerPrice = monPos.GetCurrentCandle();
                     PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
                     PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                     CMState state = OrderRouter.ProcessMessage(posWrapper);
@@ -116,20 +117,20 @@ namespace tph.DayTurtles.LogicLayer
                             trdPos.OpeningPosition.CashQty,
                             DateTimeManager.Now, 
                             trdPos.OpeningPosition.PosId, 
-                            turtlePos.SignalTriggered()),
+                            monPos.SignalTriggered()),
                         Constants.MessageType.Information);
                 }
                 else
                 {
-                    DoLog(string.Format("SHORT signal for symbol {0} triggered but OnlyLong mode is enabled", turtlePos.Security.Symbol), Constants.MessageType.Information);
+                    DoLog(string.Format("SHORT signal for symbol {0} triggered but OnlyLong mode is enabled", monPos.Security.Symbol), Constants.MessageType.Information);
                 }
             }
             else
             {
-                MarketData highest = turtlePos.HighestOnWindow(GetWindow(turtlePos.Security.Symbol, true));
+                MarketData highest = monPos.HighestOnWindow(GetWindow(monPos.Security.Symbol, true));
                 DoLog(string.Format(
                         "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
-                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTimeManager.Now,
+                        monPos.Security.Symbol, monPos.Security.MarketData.Trade, DateTimeManager.Now,
                         highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
                     Constants.MessageType.Information);
             }
@@ -218,15 +219,14 @@ namespace tph.DayTurtles.LogicLayer
 
             }
             else
-            {
-
-                MarketData lowest = monPos.LowestOnWindow(GetWindow(monPos.Security.Symbol, false));
-                DoLog($"{Config.Name} -> NO CLOSING SIGNAL TRIGGEREDl triggered for symbol {monPos.Security.Symbol} (MMov={monPos.CalculateSimpleMovAvg()}) ",Constants.MessageType.Information);
-                //                DoLog(string.Format(
-                //                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO CLOSING SIGNAL TRIGGERED (lowest={3})",
-                //                        turtlePos.Security.Symbol, turtlePos.Security.MarketData.Trade, DateTimeManager.Now,
-                //                        lowest != null && lowest.Trade.HasValue ? lowest.Trade.ToString() : "-"),
-                //                    Constants.MessageType.Information);
+            { 
+                double? price = ReferencePriceCalculator.GetReferencePrice(monPos.GetLastFinishedCandle(), GetConfig().CandleReferencePrice);
+                string currPrice= price.HasValue ? price.Value.ToString("#.##") : "";
+                DoLog($"{Config.Name} -> @{DateTimeManager.Now} (Price={currPrice}) " +
+                         "NO CLOSING SIGNAL TRIGGERED triggered for symbol " +
+                         $"{monPos.Security.Symbol} (Side={portfPos.OpeningPosition.Side} TriggerPrice={portfPos.OpeningPosition.GetTriggerPrice()}) " +
+                         $"(MMov={monPos.CalculateSimpleMovAvg().ToString("#.##")}) ",
+                         Constants.MessageType.Information);
             }
         }
 
@@ -332,12 +332,12 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
 
-        protected override TradingPosition DoOpenTradingFuturePos(Position pos, PortfolioPosition portfPos)
+        protected override TradingPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos)
         {
             throw new NotImplementedException();
         }
 
-        protected override TradingPosition DoOpenTradingRegularPos(Position pos, PortfolioPosition portfPos)
+        protected override TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
         {
             return new TradTurtlesPosition()
             {
