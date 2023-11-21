@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using tph.DayTurtles.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Util;
@@ -411,7 +412,10 @@ namespace tph.DayTurtles.BusinessEntities
         
         public virtual MarketData GetLastFinishedCandle(int cowntdown)
         {
-            return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[cowntdown];
+            if (Candles.Count > (cowntdown + 1))
+                return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[cowntdown];
+            else
+                return null;
         }
         
         public virtual MarketData GetLastFinishedCandle()

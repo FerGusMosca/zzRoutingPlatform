@@ -78,8 +78,11 @@ namespace zHFT.Main.Common.Util
 
             try
             {
-                if(type==Constants.MessageType.Error)
+                if (type == Constants.MessageType.Error)
+                {
                     Console.BackgroundColor = ConsoleColor.Red;
+                    //Console.Beep(100,1000);
+                }
 
 
                 if (ToConsole)

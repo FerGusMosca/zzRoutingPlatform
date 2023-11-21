@@ -22,6 +22,9 @@ namespace tph.DayTurtles.Common.Util
 
         public static double? GetReferencePrice(MarketData md,string CandleReferencePrice)
         {
+            if (md == null)
+                return null;
+
             if (string.IsNullOrEmpty(CandleReferencePrice))
             {
                 return md.ClosingPrice;

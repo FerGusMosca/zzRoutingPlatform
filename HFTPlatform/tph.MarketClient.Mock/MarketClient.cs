@@ -91,44 +91,60 @@ namespace tph.MarketClient.Mock
             }
         }
 
+        protected DateTime GetFrom()
+        {
+            return DateTimeManager.Now;
+        }
+
+        protected DateTime GetTo()
+        {
+            return DateTimeManager.Now.AddDays(1);
+        }
+
         protected void DoProcessMarketData(MarketDataRequest mdr)
         {
             try
             {
-                DateTime from = Configuration.From;
-                DateTime to = Configuration.To.HasValue ? Configuration.To.Value : Configuration.From.AddDays(1);
+                DateTime from = GetFrom();
+                DateTime to = GetTo() ;
                 List<MarketData> candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, from, to);
 
                 DoLog($"{candles.Count} candles successfully found for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
 
-                Security mainSec = candles.Count > 0 ? candles[0].Security : null;
-
                 List<Wrapper> mdWrapperList = new List<Wrapper>();
-                foreach (MarketData candle in candles)
+                if (candles.Count > 0)
                 {
-                    try
+                    Security mainSec = candles.Count > 0 ? candles[0].Security : null;
+                    foreach (MarketData candle in candles)
                     {
-                        Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
-                        sec.MarketData = candle;
-                        MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
-                        mdWrapperList.Add(mdWrapper);
+                        try
+                        {
+                            Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
+                            sec.MarketData = candle;
+                            MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
+                            mdWrapperList.Add(mdWrapper);
+                        }
+                        catch (Exception ex)
+                        {
+                            DoLog($"ERROR Processing market data por security {mainSec.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
+                        }
                     }
-                    catch (Exception ex)
-                    {
-                        DoLog($"ERROR Processing market data por security {mainSec.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
-                    }
+
+
+                    (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec, mdWrapperList });
+                }
+                else
+                {
+                    DoLog($"Closing Trading Day because no candles found from={from} to={to} for symbol ={mdr.Security.Symbol}", Constants.MessageType.Information);
+                    TradingBacktestingManager.EndTradingDay();
                 }
 
-
-                (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec, mdWrapperList });
             }
             catch (Exception ex)
             {
 
                 DoLog($"CRITICAL ERROR Processing market data por security {mdr.Security.Symbol} :{ex.Message}", Constants.MessageType.Error);
             }
-
-
         }
 
         protected void EvalSyncWithHistoricalPrices(MarketDataRequest mdr)
@@ -254,8 +270,8 @@ namespace tph.MarketClient.Mock
                     {
                         TimeSpan distance = dto.To.Value - dto.From.Value ;
 
-                        dto.From = Configuration.From.AddMinutes(-1 * distance.TotalMinutes);
-                        dto.To = Configuration.From;
+                        dto.From = GetFrom().AddMinutes(-1 * distance.TotalMinutes);
+                        dto.To = GetFrom();
                     
                     }
 

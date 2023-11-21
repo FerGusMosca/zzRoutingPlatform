@@ -19,10 +19,6 @@ namespace tph.MarketClient.Mock.Common.Configuration
 
         public int InitialPacingMarketDataMillisec { get; set; }
 
-        public DateTime From { get; set; }
-
-        public DateTime? To { get; set; }
-
         public bool SyncHistoricalWithMarketData { get; set; }
 
 
@@ -56,11 +52,7 @@ namespace tph.MarketClient.Mock.Common.Configuration
                 res = false;
             }
 
-            if (DateTime.Compare(From,DateTime.MinValue) == 0)
-            {
-                result.Add("From");
-                res = false;
-            }
+        
 
             return res;
         }

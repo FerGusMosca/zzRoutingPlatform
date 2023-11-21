@@ -328,7 +328,9 @@ namespace tph.DayTurtles.LogicLayer
             }
             else if (!IsTradingTime())
             {
+                
                 CloseAllOpenPositions(monPos);
+                TradingBacktestingManager.EndTradingDay();
             }
         }
 

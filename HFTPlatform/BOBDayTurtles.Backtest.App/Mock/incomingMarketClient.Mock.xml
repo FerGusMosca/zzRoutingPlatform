@@ -9,7 +9,6 @@
 	
 	
 	<PacingMarketDataMilliSec>100</PacingMarketDataMilliSec>
-	<From>2023-11-14</From>
-	<!--<To>2020-01-07</To>--><!--Not included-->
+
   
 </Configuration>

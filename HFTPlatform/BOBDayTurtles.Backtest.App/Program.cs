@@ -5,6 +5,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ToolsShared.Logging;
 using zHFT.Main;
@@ -29,6 +30,9 @@ namespace BOBDayTurtles.Backtest.App
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             archivoConfig = Directory.GetCurrentDirectory() + "\\" + archivoConfig;
             ToConsole = Convert.ToBoolean(ConfigurationManager.AppSettings["allwaysToConsole"]);
+           DateTime from = Convert.ToDateTime(ConfigurationManager.AppSettings["from"]);
+            DateTime to = Convert.ToDateTime(ConfigurationManager.AppSettings["to"]);
+
             ILogSource appLogger;
             ILogSource incommingLogger;
             ILogSource outgoingLogger;
@@ -51,9 +55,29 @@ namespace BOBDayTurtles.Backtest.App
                 DeleteDays = 20
             };
 
-            MainApp app = new MainApp(incommingLogger, outgoingLogger, appLogger, archivoConfig, Program.DoLog);
+            DateTime today = from;
 
-            app.Run();
+            while (DateTime.Compare(today, to) <= 0)
+            {
+
+                DateTimeManager.Now = today;
+                TradingBacktestingManager.StartTradingDay();
+
+                DoLog($"========Starting Trading Day for {today}========", Constants.MessageType.Information);
+                MainApp app = new MainApp(incommingLogger, outgoingLogger, appLogger, archivoConfig, Program.DoLog);
+                
+                app.Run();
+
+                while (TradingBacktestingManager.IsTradingDayActive())
+                {
+                    Thread.Sleep(100);
+                }
+                Thread.Sleep(10000);//wait prevmarket to close everything
+               today = today.AddDays(1);
+            }
+
+
+           
 
             Console.WriteLine("Press Enter to quit.");
             Console.ReadLine();

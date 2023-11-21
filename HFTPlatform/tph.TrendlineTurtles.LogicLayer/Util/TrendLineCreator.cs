@@ -572,8 +572,11 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                     InnerTrendlinesSpan = config.InnerTrendlinesSpan,
                     CandleReferencePrice=config.CandleReferencePrice
                 }, CandleInterval.Minute_1, minSafeDate, minSafeDate, pOnLogMsg);
-                
-            TrdCreatorDict.Add(sec.Symbol,trdCreator);
+
+            if (!TrdCreatorDict.ContainsKey(sec.Symbol))
+                TrdCreatorDict.Add(sec.Symbol, trdCreator);
+            else
+                TrdCreatorDict[sec.Symbol] = trdCreator;
         }
 
         public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,TrendlineConfiguration config)

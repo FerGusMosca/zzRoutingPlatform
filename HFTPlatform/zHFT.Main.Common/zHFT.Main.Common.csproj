@@ -119,6 +119,7 @@
     <Compile Include="Util\PositionIdTranslator.cs" />
     <Compile Include="Util\SecurityTypeTranslator.cs" />
     <Compile Include="Util\SideTranslator.cs" />
+    <Compile Include="Util\TradingBacktestingManager.cs" />
     <Compile Include="Wrappers\Wrapper.cs" />
   </ItemGroup>
   <ItemGroup />

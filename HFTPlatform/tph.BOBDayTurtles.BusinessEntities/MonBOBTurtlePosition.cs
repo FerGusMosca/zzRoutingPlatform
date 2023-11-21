@@ -49,21 +49,31 @@ namespace tph.BOBDayTurtles.BusinessEntities
             if (resistance != null)
             {
                 MarketData lastCandle = GetLastFinishedCandle();
-                List<MarketData> histPrices = GetHistoricalPrices();
-                double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
-                return string.Format(" --> Broken Resistance: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
-                                    resistance.StartDate, resistance.EndDate, DateTimeManager.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
-                                    trendlinePrice);
+                if (lastCandle != null)
+                {
+                    List<MarketData> histPrices = GetHistoricalPrices();
+                    double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
+                    return string.Format(" --> Broken Resistance: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
+                                        resistance.StartDate, resistance.EndDate, DateTimeManager.Now, lastCandle.Trade, lastCandle.MDEntryDate.Value,
+                                        trendlinePrice);
+                }
+                else
+                    return "NO SIGNAL- NO CANDLES";
             }
             
             else if (support != null)
             {
                 MarketData lastCandle = GetLastFinishedCandle();
-                List<MarketData> histPrices = GetHistoricalPrices();
-                double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
-                return string.Format(" --> Broken Support: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
-                    support.StartDate, support.EndDate, DateTimeManager.Now,lastCandle.Trade,lastCandle.MDEntryDate.Value,
-                    trendlinePrice);
+                if (lastCandle != null)
+                {
+                    List<MarketData> histPrices = GetHistoricalPrices();
+                    double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
+                    return string.Format(" --> Broken Support: Start={0} End={1} Now={2} LastCandlePrice={3} LastCandleDate={4} TrendlinePrice={5}  ",
+                        support.StartDate, support.EndDate, DateTimeManager.Now, lastCandle.Trade, lastCandle.MDEntryDate.Value,
+                        trendlinePrice);
+                }
+                else
+                    return "NO SIGNAL- NO CANDLES";
             }
             else
             {

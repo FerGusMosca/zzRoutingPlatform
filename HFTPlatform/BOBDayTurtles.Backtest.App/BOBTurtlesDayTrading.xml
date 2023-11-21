@@ -5,9 +5,9 @@
   <OpenWindow>20</OpenWindow>
   <CloseWindow>10</CloseWindow>
   
-  <PositionSizeInCash>100000</PositionSizeInCash>
+  <PositionSizeInCash>50000</PositionSizeInCash>
 
-  <MaxOpenedPositions>6</MaxOpenedPositions>
+  <MaxOpenedPositions>2</MaxOpenedPositions>
   <StopLossForOpenPositionPct>0.15</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
@@ -24,7 +24,7 @@
   <Exchange>NYSE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>05:51 PM</ClosingTime>
+  <ClosingTime>04:51 PM</ClosingTime>
 
 	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -55,6 +55,7 @@
   
   <StocksToMonitor>
     <Symbol>SPY</Symbol>
+	
     <!--<Symbol>QQQ</Symbol>
     <Symbol>IWM</Symbol>
 	  <Symbol>XLF</Symbol>-->

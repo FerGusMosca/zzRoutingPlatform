@@ -38,6 +38,8 @@
 
   <OnlyLong>false</OnlyLong>
 
+	<HistoricalPricesPeriod>-3</HistoricalPricesPeriod>
+
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
 
@@ -47,8 +49,11 @@
   <StocksToMonitor>
 
     <!--<Symbol>BTC</Symbol>-->
-	  <Symbol>SUPV</Symbol>
+	  <Symbol>GGAL</Symbol>
+	  <Symbol>YPF</Symbol>
 	  <Symbol>BBAR</Symbol>
+	  <Symbol>SUPV</Symbol>
+	  <!--<Symbol>BBAR</Symbol>-->
 	  <!--
 	  <Symbol>QQQ</Symbol>
 	  <Symbol>MSFT</Symbol>
