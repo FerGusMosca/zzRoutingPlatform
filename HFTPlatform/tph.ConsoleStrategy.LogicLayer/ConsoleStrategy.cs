@@ -620,7 +620,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             OrderRouter.ProcessMessage(wrapper);
         }
 
-        protected override void DoPersist(TradingPosition trdPos)
+        protected override void DoPersist(PortfolioPosition trdPos)
         {
             //No managers no DB
         }
@@ -635,7 +635,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             
         }
 
-        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
+        protected override zHFT.StrategyHandler.BusinessEntities.PortfolioPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
         {
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
             OrderRouter.ProcessMessage(posWrapper);
@@ -644,7 +644,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
-        protected override zHFT.StrategyHandler.BusinessEntities.TradingPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos)
+        protected override zHFT.StrategyHandler.BusinessEntities.PortfolioPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos)
         {
             throw new NotImplementedException();
         }

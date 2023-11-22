@@ -3,7 +3,7 @@
   <Name>Market Client Mock</Name>
 
 	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
-	<PacingMarketDataMilliSec>10</PacingMarketDataMilliSec>
+	<PacingMarketDataMilliSec>50</PacingMarketDataMilliSec>
 
 
 	<SyncHistoricalWithMarketData>true</SyncHistoricalWithMarketData>

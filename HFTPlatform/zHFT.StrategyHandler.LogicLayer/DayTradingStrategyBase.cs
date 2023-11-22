@@ -64,9 +64,9 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected List<Security> Securities { get; set; }
 
-        protected Dictionary<string, TradingPosition> PendingCancels { get; set; }
+        protected Dictionary<string, PortfolioPosition> PendingCancels { get; set; }
 
-        protected Dictionary<string, TradingPosition> PortfolioPositions { get; set; }
+        protected Dictionary<string, PortfolioPosition> PortfolioPositions { get; set; }
 
         protected Dictionary<string, MonitoringPosition> PortfolioPositionsToMonitor { get; set; }
 
@@ -106,15 +106,15 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         protected abstract  void ProcessMarketData(object pWrapper);
 
-        protected abstract void DoPersist(TradingPosition trdPos);
+        protected abstract void DoPersist(PortfolioPosition trdPos);
 
         protected abstract void ResetEveryNMinutes(object param);
 
         protected abstract void LoadPreviousTradingPositions();
 
-        protected abstract TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos);
+        protected abstract PortfolioPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos);
 
-        protected abstract TradingPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos);
+        protected abstract PortfolioPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos);
 
         #endregion
 
@@ -153,7 +153,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
         
-        protected void EvalRemoval(TradingPosition trdPos, ExecutionReport report)
+        protected void EvalRemoval(PortfolioPosition trdPos, ExecutionReport report)
         {
             trdPos.CurrentPos().PositionCanceledOrRejected = true;
             trdPos.CurrentPos().PositionCleared = false;
@@ -178,7 +178,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        protected void LoadCloseFuturePos(Position openPos,MonitoringPosition monPos, TradingPosition trdPos)
+        protected void LoadCloseFuturePos(Position openPos,MonitoringPosition monPos, PortfolioPosition trdPos)
         {
             Position pos = new Position()
             {
@@ -210,7 +210,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        private TradingPosition LoadNewRegularPos(MonitoringPosition monPos, Side side)
+        private PortfolioPosition LoadNewRegularPos(MonitoringPosition monPos, Side side)
         {
             Position trdPos = new Position()
             {
@@ -234,7 +234,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        private TradingPosition LoadNewFuturePos(MonitoringPosition monfPos, Side side)
+        private PortfolioPosition LoadNewFuturePos(MonitoringPosition monfPos, Side side)
         {
             Position pos = new Position()
             {
@@ -257,7 +257,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             return DoOpenTradingRegularPos(pos, monfPos);
         }
         
-        protected TradingPosition LoadNewPos(MonitoringPosition portPos, Side side)
+        protected PortfolioPosition LoadNewPos(MonitoringPosition portPos, Side side)
         {
 
             if (Security.GetSecurityType(Config.SecurityTypes) == SecurityType.FUT)
@@ -266,7 +266,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 return LoadNewRegularPos(portPos, side);
         }
         
-        protected void AssignMainERParameters(TradingPosition portfPos,ExecutionReport report)
+        protected void AssignMainERParameters(PortfolioPosition portfPos,ExecutionReport report)
         {
             if (!report.IsCancelationExecutionReport())
             {
@@ -328,7 +328,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         }
         
-        private void LoadCloseRegularPos(Position openPos, MonitoringPosition monPos, TradingPosition trdPos)
+        private void LoadCloseRegularPos(Position openPos, MonitoringPosition monPos, PortfolioPosition trdPos)
         {
             Position closingPos = new Position()
             {
@@ -392,7 +392,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus})", Constants.MessageType.Information);
                 if (PortfolioPositions.ContainsKey(report.Order.Symbol))
                 {
-                    TradingPosition trdPos = PortfolioPositions[report.Order.Symbol];
+                    PortfolioPosition trdPos = PortfolioPositions[report.Order.Symbol];
                     AssignMainERParameters(trdPos, report);
                     LogExecutionReport(trdPos, report);
                 }
@@ -427,7 +427,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
 
-        protected CMState CancelRoutingPos(Position routPos, TradingPosition tradingPos)
+        protected CMState CancelRoutingPos(Position routPos, PortfolioPosition tradingPos)
         {
             if (!PendingCancels.ContainsKey(routPos.Symbol))
             {
@@ -445,7 +445,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        protected CMState RunClose(Position openRoutingPos, MonitoringPosition monfPos, TradingPosition portfPos)
+        protected CMState RunClose(Position openRoutingPos, MonitoringPosition monfPos, PortfolioPosition portfPos)
         {
             if (openRoutingPos.PosStatus == PositionStatus.Filled)
             {
@@ -473,7 +473,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
         
-        protected void ProcessOrderRejection(TradingPosition tradPos, ExecutionReport report)
+        protected void ProcessOrderRejection(PortfolioPosition tradPos, ExecutionReport report)
         {
             if (tradPos.CurrentPos().PosStatus == PositionStatus.PendingNew)
             {
@@ -503,12 +503,12 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         }
         
-        protected void ProcessOrderCancellation(TradingPosition tradPos,ExecutionReport report)
+        protected void ProcessOrderCancellation(PortfolioPosition tradPos,ExecutionReport report)
         {
             lock (PendingCancels)
             {
                 //We canceled a position that has to be closed!
-                TradingPosition pendImbPos = PendingCancels[report.Order.Symbol];
+                PortfolioPosition pendImbPos = PendingCancels[report.Order.Symbol];
                 DoLog(string.Format("Recv ER for Pending Cancel position for symbol {0}", report.Order.Symbol), 
                             Main.Common.Util.Constants.MessageType.Information);
 
@@ -562,7 +562,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
         
-        protected void LogExecutionReport(TradingPosition tradingPos, ExecutionReport report)
+        protected void LogExecutionReport(PortfolioPosition tradingPos, ExecutionReport report)
         {
 
             DoLog(string.Format("{0} Position {7} ER on Position. Symbol {1} ExecType={7} OrdStatus={8} Qty={2} CumQty={3} LeavesQty={4} AvgPx={5} First Leg={6}",
@@ -610,7 +610,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             try
             {
-                TradingPosition trdPos = (TradingPosition) param;
+                PortfolioPosition trdPos = (PortfolioPosition) param;
                 DoPersist(trdPos);
             }
             catch (Exception e)
@@ -624,7 +624,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
             {
-                TradingPosition trdPos = PortfolioPositions[portfPos.Security.Symbol];
+                PortfolioPosition trdPos = PortfolioPositions[portfPos.Security.Symbol];
 
                 if(trdPos.OpeningPosition!=null && trdPos.OpeningPosition.CumQty>0)
                 {
@@ -678,7 +678,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                             {
                                 if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
                                 {
-                                    TradingPosition tradPos = PortfolioPositions[portfPos.Security.Symbol];
+                                    PortfolioPosition tradPos = PortfolioPositions[portfPos.Security.Symbol];
                                     if (tradPos.OpeningPosition != null)
                                     {
                                         foundToClose = true;
@@ -827,8 +827,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                 tSynchronizationLock = new object();
                 tPersistLock =new object();
                 PortfolioPositionsToMonitor = new Dictionary<string, MonitoringPosition>();
-                PortfolioPositions = new Dictionary<string, TradingPosition>();
-                PendingCancels = new Dictionary<string, TradingPosition>();
+                PortfolioPositions = new Dictionary<string, PortfolioPosition>();
+                PendingCancels = new Dictionary<string, PortfolioPosition>();
                 MarketDataConverter = new MarketDataConverter();
                 ExecutionReportConverter = new ExecutionReportConverter();
                 SecurityListConverter = new SecurityListConverter();

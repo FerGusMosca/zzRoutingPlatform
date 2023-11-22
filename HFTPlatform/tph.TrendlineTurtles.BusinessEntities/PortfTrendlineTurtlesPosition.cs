@@ -2,7 +2,7 @@
 
 namespace tph.TrendlineTurtles.BusinessEntities
 {
-    public class TradTrendlineTurtlesPosition:TradTurtlesPosition
+    public class PortfTrendlineTurtlesPosition:PortfTurtlesPosition
     {
         #region Public Attributes
         

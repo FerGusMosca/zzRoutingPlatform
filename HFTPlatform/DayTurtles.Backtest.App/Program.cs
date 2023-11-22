@@ -70,7 +70,7 @@ namespace DayTurtles.Backtest.App
                 {
                     Thread.Sleep(100);
                 }
-                Thread.Sleep(10000);//wait prevmarket to close everything
+                Thread.Sleep(20000);//wait prevmarket to close everything
                 today = today.AddDays(1);
             }
 

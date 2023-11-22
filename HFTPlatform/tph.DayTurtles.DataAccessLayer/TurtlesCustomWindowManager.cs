@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
+using zHFT.Main.DataAccessLayer.Managers.ADO;
 
 namespace tph.DayTurtles.DataAccessLayer
 {
-    public class TurtlesCustomWindowManager
+    public class TurtlesCustomWindowManager: ADOBaseManager
     {
 
         //
@@ -30,7 +31,7 @@ namespace tph.DayTurtles.DataAccessLayer
         #endregion
 
 
-        public List<TurtlesCustomWindow> GetTurtlesCustomWindow()
+        public List<TurtlesCustomConfig> GetTurtlesCustomWindow()
         {
             //DatabaseConnection = new MySqlConnection(ConnectionString);
             SqlCommand cmd = new SqlCommand("GetCustomTurtleWindows", new SqlConnection(ADOConnectionString));
@@ -43,7 +44,7 @@ namespace tph.DayTurtles.DataAccessLayer
 
             // Open DB
             SqlDataReader reader;
-            List < TurtlesCustomWindow > windowList= new   List<TurtlesCustomWindow>(); 
+            List < TurtlesCustomConfig > windowList= new   List<TurtlesCustomConfig>(); 
 
             try
             {
@@ -55,11 +56,14 @@ namespace tph.DayTurtles.DataAccessLayer
                     while (reader.Read())
                     {
 
-                        TurtlesCustomWindow window = new TurtlesCustomWindow()
+                        TurtlesCustomConfig window = new TurtlesCustomConfig()
                         {
                             Symbol = reader["symbol"].ToString(),
                             OpenWindow = Convert.ToInt32(reader["open_window"]),
                             CloseWindow = Convert.ToInt32(reader["close_window"]),
+                            TakeProfitPct = GetNullableDecimal(reader, "take_profit_pct"),
+                            ExitOnMMov = GetSafeBoolean(reader,"exit_on_mmov"),
+                            ExitOnTurtles = GetSafeBoolean(reader, "exit_on_turtles"),
 
                         };
                         windowList.Add(window);

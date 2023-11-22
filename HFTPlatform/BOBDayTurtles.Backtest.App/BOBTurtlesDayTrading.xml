@@ -50,17 +50,9 @@
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
 
-	<ExitOnMMov>true</ExitOnMMov>
-	<!--Close window is mmov-->
   
   <StocksToMonitor>
     <Symbol>SPY</Symbol>
-	
-    <!--<Symbol>QQQ</Symbol>
-    <Symbol>IWM</Symbol>
-	  <Symbol>XLF</Symbol>-->
-	  
-<!--    -->
   </StocksToMonitor>
 
 </Configuration>

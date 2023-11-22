@@ -16,8 +16,8 @@ namespace tph.BOBDayTurtles.BusinessEntities
         
         #region Constructors
 
-        public MonBOBTurtlePosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct,
-            int outerSignalSpan,string candleReferencePrice) : base(openWindow, closeWindow, pExitOnMMov, stopLossForOpenPositionPct,candleReferencePrice)
+        public MonBOBTurtlePosition(TurtlesCustomConfig pTurtlesCustomWindow, double stopLossForOpenPositionPct,
+            int outerSignalSpan,string candleReferencePrice) : base(pTurtlesCustomWindow, stopLossForOpenPositionPct,candleReferencePrice)
         {
             Resistances = new List<Trendline>();
             Supports = new List<Trendline>();
@@ -30,13 +30,13 @@ namespace tph.BOBDayTurtles.BusinessEntities
 
         public override bool LongSignalTriggered()
         {
-            return EvalResistanceBroken() && IsHigherThanMMov(CloseWindow, false);
+            return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
             
         }
         
         public override bool ShortSignalTriggered()
         {
-            return EvalSupportBroken() && !IsHigherThanMMov(CloseWindow, false);
+            return EvalSupportBroken() && !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
         
         public override string SignalTriggered()

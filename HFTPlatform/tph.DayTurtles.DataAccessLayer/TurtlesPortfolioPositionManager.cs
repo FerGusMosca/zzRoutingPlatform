@@ -24,7 +24,7 @@ namespace tph.DayTurtles.DataAccessLayer
         
         #region Public Methods
 
-        public void PersistPortfolioPositionTrade(TradTurtlesPosition pos)
+        public void PersistPortfolioPositionTrade(PortfTurtlesPosition pos)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {

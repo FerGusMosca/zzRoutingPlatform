@@ -133,6 +133,17 @@ namespace zHFT.Main.DataAccessLayer.Managers.ADO
 
         }
 
+        protected decimal? GetNullableDecimal(SqlDataReader rdr, string col)
+        {
+            var ordinal = rdr.GetOrdinal(col);
+            if (!rdr.IsDBNull(ordinal))
+                return (decimal?)Convert.ToDecimal(rdr[ordinal]);
+            else
+
+                return null;
+
+        }
+
 
         protected bool GetSafeBoolean(SqlDataReader rdr, string col)
         {

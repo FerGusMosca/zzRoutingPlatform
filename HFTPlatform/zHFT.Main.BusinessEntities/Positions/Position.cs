@@ -431,6 +431,16 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         }
 
+        public bool IsLongPosition()
+        {
+            return Side == Side.Buy;
+        }
+
+        public bool IsShortPosition()
+        {
+            return Side == Side.Sell || Side == Side.SellShort;
+        }
+
         #endregion
 
     }

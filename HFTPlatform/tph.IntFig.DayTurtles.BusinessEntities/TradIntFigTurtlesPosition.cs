@@ -4,7 +4,7 @@ using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.IntFig.DayTurtles.BusinessEntities
 {
-    public class TradIntFigTurtlesPosition:TradTrendlineTurtlesPosition
+    public class TradIntFigTurtlesPosition:PortfTrendlineTurtlesPosition
     {
         
         #region Public Attributes
@@ -12,7 +12,7 @@ namespace tph.IntFig.DayTurtles.BusinessEntities
         public Trendline OpeningTrendline { get; set; }
         
         #endregion
-        public override void DoCloseTradingPosition(TradingPosition trdPos)
+        public override void DoCloseTradingPosition(PortfolioPosition trdPos)
         {
             
         }

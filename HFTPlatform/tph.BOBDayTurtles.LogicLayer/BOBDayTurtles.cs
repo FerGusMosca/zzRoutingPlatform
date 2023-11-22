@@ -69,10 +69,10 @@ namespace tph.BOBDayTurtles.LogicLayer
             }
         }
 
-        protected override TradingPosition DoOpenTradingRegularPos(Position routingPos, MonitoringPosition monPos)
+        protected override PortfolioPosition DoOpenTradingRegularPos(Position routingPos, MonitoringPosition monPos)
         {
             MonBOBTurtlePosition bobMonPos = (MonBOBTurtlePosition) monPos;
-            return new TradBOBTurtlesPosition()
+            return new PortfBOBTurtlesPosition()
             {
                 StrategyName = Config.Name,
                 OpeningDate = bobMonPos.GetCurrentCandleDate(),
@@ -100,9 +100,8 @@ namespace tph.BOBDayTurtles.LogicLayer
                         Exchange = Config.Exchange
                     };
 
-                    MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(GetWindow(symbol, true),
-                        GetWindow(symbol, false),
-                        GetConfig().ExitOnMMov,
+                    MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(
+                        GetCustomConfig(symbol),
                         GetConfig().StopLossForOpenPositionPct,
                         GetConfig().OuterTrendlineSpan,
                         GetConfig().CandleReferencePrice)

@@ -2,18 +2,16 @@
 
 namespace tph.DayTurtles.BusinessEntities
 {
-    public class TradTurtlesPosition:TradingPosition
+    public class PortfTurtlesPosition:PortfolioPosition
     {
         
         #region Overriden Methods
-        public override void DoCloseTradingPosition(TradingPosition trdPos)
+        public override void DoCloseTradingPosition(PortfolioPosition trdPos)
         {
             
         }
         
         #endregion
-        
-        
         
         #region Public Methods
 

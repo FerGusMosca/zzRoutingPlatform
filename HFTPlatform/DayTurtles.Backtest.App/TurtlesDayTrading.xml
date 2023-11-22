@@ -43,16 +43,14 @@
   <SaveEvery>HOUR</SaveEvery>
   <!--HOUR,_10MIN,_30MIN-->
 
-    <ExitOnMMov>true</ExitOnMMov>
-    <!--Close window is mmov-->
 
   <StocksToMonitor>
 
     <!--<Symbol>BTC</Symbol>-->
 	  <Symbol>GGAL</Symbol>
 	  <Symbol>YPF</Symbol>
-	  <Symbol>BBAR</Symbol>
-	  <Symbol>SUPV</Symbol>
+	  <!--<Symbol>BBAR</Symbol>
+	  <Symbol>SUPV</Symbol>-->
 	  <!--<Symbol>BBAR</Symbol>-->
 	  <!--
 	  <Symbol>QQQ</Symbol>

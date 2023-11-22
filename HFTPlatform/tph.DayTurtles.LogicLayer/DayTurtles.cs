@@ -33,7 +33,7 @@ namespace tph.DayTurtles.LogicLayer
         protected TurtlesCustomWindowManager TurtlesCustomWindowManager { get; set; }
 
 
-        protected List<TurtlesCustomWindow> TurtlesWindowList { get; set; }
+        protected List<TurtlesCustomConfig> TurtlesWindowList { get; set; }
 
         #endregion
 
@@ -64,8 +64,8 @@ namespace tph.DayTurtles.LogicLayer
 
                 foreach (string symbol in PortfolioPositionsToMonitor.Keys)
                 {
-                    int openWindow = GetWindow(symbol, true);
-                    int closeWindow = GetWindow(symbol, false);
+                    int openWindow = GetCustomConfig(symbol).OpenWindow;
+                    int closeWindow = GetCustomConfig(symbol).CloseWindow;
                     int windowToUse= openWindow>closeWindow?openWindow:closeWindow;
 
                     DateTime from = DateTimeManager.Now.AddDays(-1);
@@ -87,7 +87,7 @@ namespace tph.DayTurtles.LogicLayer
         {
             if (monPos.LongSignalTriggered())
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition)LoadNewPos(monPos, Side.Buy);
+                PortfTurtlesPosition trdPos = (PortfTurtlesPosition)LoadNewPos(monPos, Side.Buy);
                 PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
                 PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                 CMState state = OrderRouter.ProcessMessage(posWrapper);
@@ -105,7 +105,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 if (!Config.OnlyLong)
                 {
-                    TradTurtlesPosition trdPos = (TradTurtlesPosition)LoadNewPos(monPos, Side.Sell);
+                    PortfTurtlesPosition trdPos = (PortfTurtlesPosition)LoadNewPos(monPos, Side.Sell);
                     trdPos.OpeningPosition.TriggerPrice = monPos.GetCurrentCandle();
                     PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
                     PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
@@ -127,7 +127,7 @@ namespace tph.DayTurtles.LogicLayer
             }
             else
             {
-                MarketData highest = monPos.HighestOnWindow(GetWindow(monPos.Security.Symbol, true));
+                MarketData highest = monPos.HighestOnWindow(GetCustomConfig(monPos.Security.Symbol).OpenWindow);
                 DoLog(string.Format(
                         "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
                         monPos.Security.Symbol, monPos.Security.MarketData.Trade, DateTimeManager.Now,
@@ -140,7 +140,7 @@ namespace tph.DayTurtles.LogicLayer
         {
             if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol))
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition)PortfolioPositions[turtlePos.Security.Symbol];
+                PortfTurtlesPosition trdPos = (PortfTurtlesPosition)PortfolioPositions[turtlePos.Security.Symbol];
 
                 if (turtlePos.EvalStopLossHit(trdPos))
                 {
@@ -161,7 +161,7 @@ namespace tph.DayTurtles.LogicLayer
         {
             if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol))
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition)PortfolioPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
+                PortfTurtlesPosition trdPos = (PortfTurtlesPosition)PortfolioPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
 
                 if (turtlePos.EvalAbortingNewLongPosition())
                 {
@@ -181,7 +181,7 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void CloseAllOpenPositions(MonTurtlePosition monPos)
         {
-            foreach (TradTurtlesPosition portfPos in PortfolioPositions.Values)
+            foreach (PortfTurtlesPosition portfPos in PortfolioPositions.Values)
             {
                 DoLog(string.Format("Closing {0} Position  on market CLOSED. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
@@ -196,9 +196,9 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void EvalClosingPosition(MonTurtlePosition monPos)
         {
-            TradTurtlesPosition portfPos = (TradTurtlesPosition)PortfolioPositions[monPos.Security.Symbol];
+            PortfTurtlesPosition portfPos = (PortfTurtlesPosition)PortfolioPositions[monPos.Security.Symbol];
 
-            if (portfPos.IsShortDirection() && monPos.EvalClosingShortPosition() && !monPos.IsClosing())
+            if (monPos.EvalClosingShortPosition(portfPos) && !monPos.IsClosing())
             {
                 DoLog(string.Format("Closing {0} Position  on market. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
@@ -208,7 +208,7 @@ namespace tph.DayTurtles.LogicLayer
                     Constants.MessageType.Information);
                 RunClose(portfPos.OpeningPosition, monPos, portfPos);
             }
-            else if (portfPos.IsLongDirection() && monPos.EvalClosingLongPosition() && !monPos.IsClosing())
+            else if ( monPos.EvalClosingLongPosition(portfPos) && !monPos.IsClosing())
             {
                 DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2}  DateTime={3} PosId={4} Signal={5}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty, DateTimeManager.Now,
@@ -234,7 +234,7 @@ namespace tph.DayTurtles.LogicLayer
         {
             if (PortfolioPositions.ContainsKey(turtlePos.Security.Symbol))
             {
-                TradTurtlesPosition trdPos = (TradTurtlesPosition)PortfolioPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
+                PortfTurtlesPosition trdPos = (PortfTurtlesPosition)PortfolioPositions.Values.Where(x => x.OpeningPosition.Security.Symbol == turtlePos.Security.Symbol).FirstOrDefault();
 
                 if (turtlePos.EvalAbortingClosingLongPosition())
                 {
@@ -266,7 +266,7 @@ namespace tph.DayTurtles.LogicLayer
                         DoLog($"=========SUMMARY OF PORTF STATUS!=========", Constants.MessageType.Information);
                         foreach (string symbol in PortfolioPositions.Keys)
                         {
-                            TradingPosition portfPos = PortfolioPositions[symbol];
+                            PortfolioPosition portfPos = PortfolioPositions[symbol];
 
                             DoLog($"Summary for Symbol={symbol} FirstLeg={portfPos.IsFirstLeg()} LongCumQty={portfPos.OpenCumQty()} CloseCumQty={portfPos.CloseCumQty()}", Constants.MessageType.Information);
 
@@ -334,14 +334,14 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
 
-        protected override TradingPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos)
+        protected override PortfolioPosition DoOpenTradingFuturePos(Position pos, MonitoringPosition portfPos)
         {
             throw new NotImplementedException();
         }
 
-        protected override TradingPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
+        protected override PortfolioPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
         {
-            return new TradTurtlesPosition()
+            return new PortfTurtlesPosition()
             {
                 StrategyName = Config.Name,
                 OpeningDate = DateTimeManager.Now,
@@ -429,46 +429,30 @@ namespace tph.DayTurtles.LogicLayer
             //TODO: implement  second priority
         }
 
-        protected override void DoPersist(TradingPosition trdPos)
+        protected override void DoPersist(PortfolioPosition trdPos)
         {
             if (PortfolioPositionsToMonitor.ContainsKey(trdPos.CurrentPos().Security.Symbol))
             {
                 lock (tPersistLock)
                 {
-                    TradTurtlesPosition portfPos = (TradTurtlesPosition)trdPos;
+                    PortfTurtlesPosition portfPos = (PortfTurtlesPosition)trdPos;
                     TurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(portfPos);
                 }
 
             }
         }
 
-        protected int GetWindow(string symbol, bool isOpen)
+        protected TurtlesCustomConfig GetCustomConfig(string symbol)
         {
 
             if (TurtlesWindowList.Any(x => x.Symbol == symbol))
             {
 
-                if (isOpen)
-                    return TurtlesWindowList.Where(x => x.Symbol == symbol).FirstOrDefault().OpenWindow;
-                else
-                    return TurtlesWindowList.Where(x => x.Symbol == symbol).FirstOrDefault().CloseWindow;
+                return TurtlesWindowList.Where(x => x.Symbol == symbol).FirstOrDefault();
 
             }
             else
-            {
-                if (isOpen)
-                    return GetConfig().OpenWindow;
-                else
-                    return GetConfig().CloseWindow;
-            }
-
-        }
-
-        private void TestCode()
-        {
-           
-            
-        
+                throw new Exception($"Not found custom config for symbol {symbol}");
         }
         
         protected override void LoadMonitorsAndRequestMarketData()
@@ -487,9 +471,8 @@ namespace tph.DayTurtles.LogicLayer
                         Exchange = Config.Exchange
                     };
 
-                    MonTurtlePosition portfPos = new MonTurtlePosition(GetWindow(symbol,true),
-                        GetWindow(symbol, false),
-                        GetConfig().ExitOnMMov,
+                    MonTurtlePosition portfPos = new MonTurtlePosition(
+                        GetCustomConfig(symbol),
                         GetConfig().StopLossForOpenPositionPct,
                         GetConfig().CandleReferencePrice)
                     {

@@ -85,18 +85,18 @@ namespace tph.TrendlineTurtles.LogicLayer
                                                                                     && ProcessedHistoricalPrices
                                                                                         .Contains(md.Security.Symbol))
                     {
-                        MonTrendlineTurtlesPosition portfPos =(MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[md.Security.Symbol];
-                        if (portfPos.HasHistoricalCandles())
+                        MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[md.Security.Symbol];
+                        if (monPos.HasHistoricalCandles())
                         {
-                            bool newCandle = portfPos.AppendCandle(md);
+                            bool newCandle = monPos.AppendCandle(md);
 
-                            EvalOpeningClosingPositions(portfPos);
-                            UpdateLastPrice(portfPos, md);
+                            EvalOpeningClosingPositions(monPos);
+                            UpdateLastPrice(monPos, md);
 
                             if (newCandle && GetConfig().RecalculateTrendlines) //THIS MUST BE EVALUATED AFTER THE EvalOpening
-                                RecalculateNewTrendlines(portfPos);
+                                RecalculateNewTrendlines(monPos);
                             else
-                                EvalBrokenTrendlines(portfPos, md);
+                                EvalBrokenTrendlines(monPos, md);
                             
                         }
                     }
@@ -253,20 +253,20 @@ namespace tph.TrendlineTurtles.LogicLayer
 
         }
         
-        protected virtual void DoPersistPosition(TradingPosition trdPos)
+        protected virtual void DoPersistPosition(PortfolioPosition trdPos)
         {
             if (PortfolioPositionsToMonitor.ContainsKey(trdPos.CurrentPos().Security.Symbol))
             {
                 lock (tPersistLock)
                 {
-                    TradTrendlineTurtlesPosition turtlesTradPos = (TradTrendlineTurtlesPosition) trdPos;
+                    PortfTrendlineTurtlesPosition turtlesTradPos = (PortfTrendlineTurtlesPosition) trdPos;
                     TrendlineTurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(turtlesTradPos);
                 }
 
             }
         }
 
-        protected override void DoPersist(TradingPosition trdPos)
+        protected override void DoPersist(PortfolioPosition trdPos)
         {
             DoPersistPosition(trdPos);
         }

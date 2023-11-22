@@ -22,7 +22,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         #endregion
         
         #region Constructors
-        public MonTrendlineTurtlesPosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct, string candleRefPrice) : base(openWindow, closeWindow, pExitOnMMov, stopLossForOpenPositionPct, candleRefPrice)
+        public MonTrendlineTurtlesPosition(TurtlesCustomConfig pTurtlesCustomWindow, double stopLossForOpenPositionPct, string candleRefPrice) : base(pTurtlesCustomWindow, stopLossForOpenPositionPct, candleRefPrice)
         {
             Supports=new List<Trendline>();
             Resistances=new List<Trendline>();
@@ -30,7 +30,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         
         #endregion
         
-        #region Protected Attributes
+        #region Public Methods
         
         public void PopulateTrendlines(List<Trendline> resistances,List<Trendline> supports)
         {

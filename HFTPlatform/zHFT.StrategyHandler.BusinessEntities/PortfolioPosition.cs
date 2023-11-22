@@ -1,11 +1,12 @@
 ﻿using System;
+using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.Common.Enums;
 
 namespace zHFT.StrategyHandler.BusinessEntities
 {
-    public abstract class TradingPosition
+    public abstract class PortfolioPosition
     {
         #region Public Static COnsts
 
@@ -272,6 +273,34 @@ namespace zHFT.StrategyHandler.BusinessEntities
         
         }
 
+        public decimal CalculateProfit(MarketData lastCandle)
+        {
+            if (lastCandle == null)
+                throw new Exception($"Could not calculate profit with null candle for symbol {OpeningPosition.Security.Symbol}");
+
+
+            if (OpeningPosition.IsLongPosition())
+            {
+                if (lastCandle.Trade.HasValue && OpeningPosition.AvgPx.HasValue)
+                    return Convert.ToDecimal((lastCandle.Trade.Value / OpeningPosition.AvgPx.Value)) - 1;
+                else
+                    return 0;
+
+            }
+            else if (OpeningPosition.IsShortPosition())
+            {
+                if (lastCandle.Trade.HasValue && OpeningPosition.AvgPx.HasValue)
+                    return Convert.ToDecimal((OpeningPosition.AvgPx.Value / lastCandle.Trade.Value)) - 1;
+                else
+                    return 0;
+
+            }
+            else
+                return 0;
+
+
+        }
+
 
 
 
@@ -279,7 +308,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
         
         #region Public Abstract Methods
 
-        public abstract void DoCloseTradingPosition(TradingPosition trdPos);
+        public abstract void DoCloseTradingPosition(PortfolioPosition trdPos);
 
         #endregion
     }

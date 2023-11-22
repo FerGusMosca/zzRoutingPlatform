@@ -27,25 +27,20 @@ namespace tph.DayTurtles.BusinessEntities
         }
 
 
-        public MonTurtlePosition(int openWindow, int closeWindow, bool pExitOnMMov, double stopLossForOpenPositionPct, string candleRefPrice)
+        public MonTurtlePosition(TurtlesCustomConfig pTurtlesCustomConfig, double stopLossForOpenPositionPct, string candleRefPrice)
         {
             Candles = new Dictionary<string, MarketData>();
-            OpenWindow = openWindow;
-            CloseWindow = closeWindow;
+            TurtlesCustomConfig = pTurtlesCustomConfig;
             StopLossForOpenPositionPct = stopLossForOpenPositionPct;
             CandleReferencePrice = candleRefPrice;
-            ExitOnMMov = pExitOnMMov;
+            
         }
 
         #endregion
 
         #region Protected Attributes
 
-        public int OpenWindow { get; set; }
-
-        public int CloseWindow { get; set; }
-
-        public bool ExitOnMMov { get; set; }
+        public TurtlesCustomConfig TurtlesCustomConfig { get; set; }
 
         public double StopLossForOpenPositionPct { get; set; }
 
@@ -137,7 +132,7 @@ namespace tph.DayTurtles.BusinessEntities
 
         public double CalculateSimpleMovAvg()
         {
-            return CalculateSimpleMovAvg(CloseWindow);
+            return CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow);
         }
 
         public double CalculateSimpleMovAvg(int window)
@@ -311,13 +306,13 @@ namespace tph.DayTurtles.BusinessEntities
 
         public virtual bool LongSignalTriggered()
         {
-            bool isHighestTurtles = IsHighest(OpenWindow);
-            bool higherMMov = IsHigherThanMMov(CloseWindow, false);
+            bool isHighestTurtles = IsHighest(TurtlesCustomConfig.OpenWindow);
+            bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
 
             if (isHighestTurtles && higherMMov)
             {
 
-                LastSignalTriggered = $"LONG : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                LastSignalTriggered = $"LONG : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                 return true;
             }
             else
@@ -327,72 +322,103 @@ namespace tph.DayTurtles.BusinessEntities
         public virtual bool ShortSignalTriggered()
         {
 
-            bool isLowestTurtles = IsLowest(OpenWindow);
-            bool higherMMov = IsHigherThanMMov(CloseWindow, false);
+            bool isLowestTurtles = IsLowest(TurtlesCustomConfig.OpenWindow);
+            bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
 
             if (isLowestTurtles && !higherMMov)
             {
 
-                LastSignalTriggered = $"SHORT : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                LastSignalTriggered = $"SHORT : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                 return true;
             }
             else
                 return false;
             
         }
-        
-        public virtual bool EvalClosingLongPosition()
-        {
 
-            if (ExitOnMMov)
+        public virtual bool EvalClosingOnTargetPct(PortfolioPosition portfPos)
+        {
+            if (TurtlesCustomConfig.TakeProfitPct.HasValue)
             {
-                bool higherMMov = IsHigherThanMMov(CloseWindow, true);
+                MarketData lastCandle = GetCurrentCandle();
+                decimal currProfit = portfPos.CalculateProfit(lastCandle);
+                LastSignalTriggered = $"CLOSE Pos w/Target Profit: CurrProfit= {portfPos.CalculateProfit(lastCandle).ToString("#.##")}" +
+                                      $"Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)}";
+                return currProfit > TurtlesCustomConfig.TakeProfitPct.Value;
+
+            }
+            else
+                return false;
+        
+        }
+        
+        public virtual bool EvalClosingLongPosition(PortfolioPosition portfPos)
+        {
+            if (!portfPos.IsLongDirection())
+                return false;
+
+            if (EvalClosingOnTargetPct(portfPos))
+                return true;
+            
+            if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
                 if (!higherMMov)
                 {
-                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
                 else
                     return false;
 
             }
-            else
+            else if (TurtlesCustomConfig.ExitOnTurtles)
             {
-                bool isLowestTurtles = IsLowest(CloseWindow);
+                bool isLowestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
                 if (isLowestTurtles)
                 {
-                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
-                else 
-                { 
-                
+                else
+                {
                     return false;
                 }
-                
+
+            }
+            else
+            {
+                throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
+            
             }
         }
 
-        public virtual bool EvalClosingShortPosition()
+        public virtual bool EvalClosingShortPosition(PortfolioPosition portfPos)
         {
-            if (ExitOnMMov)
+            if (!portfPos.IsShortDirection())
+                return false;
+
+            if (EvalClosingOnTargetPct(portfPos))
+                return true;
+
+            if (TurtlesCustomConfig.ExitOnMMov)
             {
-                bool higherMMov = IsHigherThanMMov(CloseWindow, true);
+                bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
                 if (higherMMov)
                 {
-                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
                 else
                     return false;
 
             }
-            else
+            else if(TurtlesCustomConfig.ExitOnTurtles)
             {
-                bool isHighestTurtles = IsLowest(CloseWindow);
+                bool isHighestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
                 if (isHighestTurtles)
                 {
-                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(CloseWindow)}";
+                    LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
                 else
@@ -400,6 +426,11 @@ namespace tph.DayTurtles.BusinessEntities
 
                     return false;
                 }
+            }
+            else
+            {
+                throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
+
             }
         }
         
@@ -465,7 +496,7 @@ namespace tph.DayTurtles.BusinessEntities
         }
 
 
-        public virtual bool EvalStopLossHit(TradTurtlesPosition tradPos)
+        public virtual bool EvalStopLossHit(PortfTurtlesPosition tradPos)
         {
 
             if (tradPos.OpeningPosition != null && !tradPos.OpeningPosition.PositionRouting())
