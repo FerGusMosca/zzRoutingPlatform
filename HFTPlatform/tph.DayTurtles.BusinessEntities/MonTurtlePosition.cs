@@ -492,7 +492,8 @@ namespace tph.DayTurtles.BusinessEntities
 
         public override MarketData GetLastTriggerPrice()
         {
-            return GetCurrentCandle();
+            //return GetCurrentCandle();
+            return GetLastFinishedCandle();
         }
 
 
@@ -501,19 +502,19 @@ namespace tph.DayTurtles.BusinessEntities
 
             if (tradPos.OpeningPosition != null && !tradPos.OpeningPosition.PositionRouting())
             {
-                if (tradPos.IsFirstLeg() && tradPos.IsLongDirection())
+                if (tradPos.IsFirstLeg() && tradPos.IsLongDirection())// ex:At 15:02, we use 15:01 candle
                 {
                     double pct = StopLossForOpenPositionPct / 100;
                     double closingPrice = tradPos.OpeningPosition.AvgPx.Value * (1 - pct);
 
-                    return Security.MarketData.Trade < closingPrice;
+                    return GetLastFinishedCandle().Trade < closingPrice;
                 }
-                else if (tradPos.IsFirstLeg() && tradPos.IsShortDirection())
+                else if (tradPos.IsFirstLeg() && tradPos.IsShortDirection())// ex:At 15:02, we use 15:01 candle
                 {
                     double pct = StopLossForOpenPositionPct / 100;
                     double closingPrice = tradPos.OpeningPosition.AvgPx.Value * (1 + pct);
 
-                    return Security.MarketData.Trade > closingPrice;
+                    return GetLastFinishedCandle().Trade > closingPrice;
                 }
                 else
                 {

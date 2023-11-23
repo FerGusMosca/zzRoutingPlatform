@@ -89,7 +89,7 @@ namespace tph.BOBDayTurtles.LogicLayer
             Thread.Sleep(5000);
             foreach (string symbol in Config.StocksToMonitor)
             {
-                if (!PortfolioPositionsToMonitor.ContainsKey(symbol))
+                if (!MonitorPositions.ContainsKey(symbol))
                 {
                     Security sec = new Security()
                     {
@@ -111,7 +111,7 @@ namespace tph.BOBDayTurtles.LogicLayer
                     };
 
                     //1- We add the current security to monitor
-                    PortfolioPositionsToMonitor.Add(symbol, portfPos);
+                    MonitorPositions.Add(symbol, portfPos);
 
                     Securities.Add(sec); //So far, this is all wehave regarding the Securities
 
@@ -134,7 +134,10 @@ namespace tph.BOBDayTurtles.LogicLayer
 
             if (ConfigLoader.LoadConfig(this, configFile))
             {
+
+                pOnLogMsg($"Initializing BOB Day Turtles @{DateTimeManager.Now}", Constants.MessageType.Information);
                 ProcessedHistoricalPrices=new List<string>();
+                
 
 //                Trendline._SHORT_SOFT_UPWARD_SLOPE = GetConfig().MaxShortPositiveSlope;
 //                Trendline._SHORT_SOFT_DOWNARD_SLOPE = GetConfig().MaxShortNegativeSlope;

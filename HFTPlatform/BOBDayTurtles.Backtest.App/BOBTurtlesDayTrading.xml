@@ -8,14 +8,14 @@
   <PositionSizeInCash>50000</PositionSizeInCash>
 
   <MaxOpenedPositions>2</MaxOpenedPositions>
-  <StopLossForOpenPositionPct>0.15</StopLossForOpenPositionPct><!--1=1%-->
+  <StopLossForOpenPositionPct>0.05</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
   
   <InnerTrendlinesSpan>90</InnerTrendlinesSpan><!--in candles-->
   <OuterTrendlinesSpan>60</OuterTrendlinesSpan><!--in candles-->
-  <PerforationThresholds>0.0005</PerforationThresholds><!--in pct 0-1-->
+  <PerforationThresholds>0</PerforationThresholds><!--in pct 0-1-->
 
 
   <Account>9732</Account>

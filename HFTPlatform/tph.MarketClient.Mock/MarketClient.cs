@@ -115,10 +115,11 @@ namespace tph.MarketClient.Mock
                 if (candles.Count > 0)
                 {
                     Security mainSec = candles.Count > 0 ? candles[0].Security : null;
-                    foreach (MarketData candle in candles)
+                    foreach (MarketData candle in candles.OrderBy(x=>x.GetReferenceDateTime()))
                     {
                         try
                         {
+                            DoLog($"@{Configuration.Name}--> Publ. Market Data for symbol {mdr.Security.Symbol} on date {candle.GetReferenceDateTime()}", Constants.MessageType.Information);
                             Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
                             sec.MarketData = candle;
                             MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);

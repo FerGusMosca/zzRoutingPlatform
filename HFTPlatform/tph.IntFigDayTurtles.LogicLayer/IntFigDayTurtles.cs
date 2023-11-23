@@ -60,7 +60,7 @@ namespace tph.IntFigDayTurtles.LogicLayer
             Thread.Sleep(5000);
             foreach (string symbol in Config.StocksToMonitor)
             {
-                if (!PortfolioPositionsToMonitor.ContainsKey(symbol))
+                if (!MonitorPositions.ContainsKey(symbol))
                 {
                     Security sec = new Security()
                     {
@@ -82,7 +82,7 @@ namespace tph.IntFigDayTurtles.LogicLayer
                     };
 
                     //1- We add the current security to monitor
-                    PortfolioPositionsToMonitor.Add(symbol, portfPos);
+                    MonitorPositions.Add(symbol, portfPos);
 
                     Securities.Add(sec); //So far, this is all wehave regarding the Securities
 

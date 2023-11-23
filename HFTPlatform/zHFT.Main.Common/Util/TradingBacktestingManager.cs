@@ -12,6 +12,8 @@ namespace zHFT.Main.Common.Util
 
         protected static bool TradingDayActive= false;
 
+        
+
 
         #endregion
 
@@ -21,11 +23,13 @@ namespace zHFT.Main.Common.Util
         public static void StartTradingDay()
         {
             TradingDayActive = true;
+            
         
         }
 
         public static void EndTradingDay()
         {
+            Console.Beep(1000, 1000);
             TradingDayActive =false;
 
         }
@@ -35,6 +39,7 @@ namespace zHFT.Main.Common.Util
             return TradingDayActive;
         }
 
+   
 
         #endregion
     }

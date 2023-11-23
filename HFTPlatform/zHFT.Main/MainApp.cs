@@ -16,7 +16,7 @@ using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.Main
 {
-    public class MainApp : MainAppBase
+    public class MainApp : MainAppBase,IDisposable
     {
         #region Private Attributes
 
@@ -278,6 +278,11 @@ namespace zHFT.Main
                 Log(string.Format("ProcessMessageToOutgoing Error: {0}", ex.Message));
                 return CMState.BuildFail(ex);
             }
+        }
+
+        public void Dispose()
+        {
+            Log($"Disposing main module MainApp", Constants.MessageType.Information);
         }
 
         #endregion

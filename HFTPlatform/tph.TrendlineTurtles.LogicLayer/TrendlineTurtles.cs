@@ -53,7 +53,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             {
                 int i = 1;
 
-                foreach (string symbol in PortfolioPositionsToMonitor.Keys)
+                foreach (string symbol in MonitorPositions.Keys)
                 {
                     DateTime from = DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod);
                     DateTime to = DateTimeManager.Now.AddDays(1);
@@ -81,11 +81,11 @@ namespace tph.TrendlineTurtles.LogicLayer
                 lock (tLock)
                 {
                     DateTimeManager.NullNow = md.GetReferenceDateTime();
-                    if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null
+                    if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null
                                                                                     && ProcessedHistoricalPrices
                                                                                         .Contains(md.Security.Symbol))
                     {
-                        MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[md.Security.Symbol];
+                        MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) MonitorPositions[md.Security.Symbol];
                         if (monPos.HasHistoricalCandles())
                         {
                             bool newCandle = monPos.AppendCandle(md);
@@ -93,14 +93,26 @@ namespace tph.TrendlineTurtles.LogicLayer
                             EvalOpeningClosingPositions(monPos);
                             UpdateLastPrice(monPos, md);
 
-                            if (newCandle && GetConfig().RecalculateTrendlines) //THIS MUST BE EVALUATED AFTER THE EvalOpening
+                            //if (newCandle && GetConfig().RecalculateTrendlines) //THIS MUST BE EVALUATED AFTER THE EvalOpening
+                            //    RecalculateNewTrendlines(monPos);
+                            //else
+                            //    EvalBrokenTrendlines(monPos, md);
+
+
+                            //Always eval broken trendlines
+                            //Not a problem w/ First candle of day scenario
+                            // Becasue it works with the prev trendline
+                            //10:30 --> uses 16:59 candle
+                            //10:31 --> uses 10:30 candle and the position was already opened
+                            if (GetConfig().RecalculateTrendlines)
                                 RecalculateNewTrendlines(monPos);
-                            else
-                                EvalBrokenTrendlines(monPos, md);
+
+                            EvalBrokenTrendlines(monPos, md);
                             
                         }
                     }
                 }
+                
             }
             catch (Exception e)
             {
@@ -137,7 +149,7 @@ namespace tph.TrendlineTurtles.LogicLayer
         
         protected void BuildTrendlines(string symbol)
         {
-            MonTrendlineTurtlesPosition portfPos = (MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[symbol];
+            MonTrendlineTurtlesPosition portfPos = (MonTrendlineTurtlesPosition) MonitorPositions[symbol];
             
             List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
             histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
@@ -185,7 +197,7 @@ namespace tph.TrendlineTurtles.LogicLayer
 
             if (init)
             {
-                foreach (var monPosition in PortfolioPositionsToMonitor.Values)
+                foreach (var monPosition in MonitorPositions.Values)
                 {
                     TrendLineCreator.InitializeCreator(monPosition.Security,
                                                        GetConfig(),
@@ -255,7 +267,7 @@ namespace tph.TrendlineTurtles.LogicLayer
         
         protected virtual void DoPersistPosition(PortfolioPosition trdPos)
         {
-            if (PortfolioPositionsToMonitor.ContainsKey(trdPos.CurrentPos().Security.Symbol))
+            if (MonitorPositions.ContainsKey(trdPos.CurrentPos().Security.Symbol))
             {
                 lock (tPersistLock)
                 {
@@ -348,7 +360,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             {
                 lock (tLock)
                 {
-                    foreach (var monPos in PortfolioPositionsToMonitor.Values)
+                    foreach (var monPos in MonitorPositions.Values)
                     {
                         DoLog($"Deleting prev trendlines for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
                         TrendlineManager.Delete(monPos.Security.Symbol);
@@ -385,7 +397,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                             }
                             
 
-                            MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) PortfolioPositionsToMonitor[updTrendline.Security.Symbol];
+                            MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) MonitorPositions[updTrendline.Security.Symbol];
 
 
                             if (updTrendline.ToDisabled.HasValue && updTrendline.ToDisabled.Value)
@@ -436,22 +448,24 @@ namespace tph.TrendlineTurtles.LogicLayer
             {
                 try
                 {
-                    lock (tLock)
+                    //lock (tLock)
+                    //{
+
+                    foreach (MonTrendlineTurtlesPosition monPos in MonitorPositions.Values)
                     {
-
-                        foreach (MonTrendlineTurtlesPosition portfPos in PortfolioPositionsToMonitor.Values)
-                        {
-                            DoPersistTrendline(portfPos,portfPos.Resistances);
-                            DoPersistTrendline(portfPos,portfPos.Supports);
-                        }
-                        
+                        List<Trendline> resToPersist = new List<Trendline>(monPos.Resistances);
+                        List<Trendline> supToPersist = new List<Trendline>(monPos.Supports);
+                        DoPersistTrendline(monPos, resToPersist);
+                        DoPersistTrendline(monPos, supToPersist);
                     }
+                        
+                    //}
 
-                    Thread.Sleep(5000);//5 seconds sleep
+                    Thread.Sleep(2000);//2 seconds sleep
                 }
                 catch (Exception e)
                 {
-                    DoLog(string.Format("@BOBDayTurtles - Critical ERROR Persisting Trendlines:{0}",e.Message),Constants.MessageType.Error);
+                    DoLog(string.Format("@BOBDayTurtles - Warning Persisting Trendlines:{0}",e.Message),Constants.MessageType.Debug);
                 }
             }
             

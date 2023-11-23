@@ -23,6 +23,13 @@ namespace BOBDayTurtles.Backtest.App
 
         }
 
+        public static void DoLog(string msg, Constants.MessageType type, ILogSource logger )
+        {
+            DoLog(msg, type);
+            logger.Alert(msg);
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -63,20 +70,22 @@ namespace BOBDayTurtles.Backtest.App
                 DateTimeManager.Now = today;
                 TradingBacktestingManager.StartTradingDay();
 
-                DoLog($"========Starting Trading Day for {today}========", Constants.MessageType.Information);
-                MainApp app = new MainApp(incommingLogger, outgoingLogger, appLogger, archivoConfig, Program.DoLog);
-                
-                app.Run();
-
-                while (TradingBacktestingManager.IsTradingDayActive())
+                DoLog($"========Starting Trading Day for {today}========", Constants.MessageType.Information, appLogger);
+                using (MainApp app = new MainApp(incommingLogger, outgoingLogger, appLogger, archivoConfig, Program.DoLog))
                 {
-                    Thread.Sleep(100);
+                    app.Run();
+
+                    while (TradingBacktestingManager.IsTradingDayActive())
+                    {
+                        Thread.Sleep(100);
+                    }
                 }
+                GC.Collect();
                 Thread.Sleep(10000);//wait prevmarket to close everything
-               today = today.AddDays(1);
+                DoLog($"========Finished Tradng Day for {today}========", Constants.MessageType.Information, appLogger);
+
+                today = today.AddDays(1);
             }
-
-
            
 
             Console.WriteLine("Press Enter to quit.");

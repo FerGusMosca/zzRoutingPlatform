@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Threading;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -52,6 +53,10 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected DateTime StartTime { get; set; }
 
+        protected DateTime? EndTime { get; set; }
+
+        protected bool TradingStarted { get; set; }//Set to true when the first candle arrives
+
         protected DateTime LastCounterResetTime { get; set; }
 
         protected Thread CloseOnTradingTimeOffThread { get; set; }
@@ -68,7 +73,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected Dictionary<string, PortfolioPosition> PortfolioPositions { get; set; }
 
-        protected Dictionary<string, MonitoringPosition> PortfolioPositionsToMonitor { get; set; }
+        protected Dictionary<string, MonitoringPosition> MonitorPositions { get; set; }
 
         protected PositionIdTranslator PositionIdTranslator { get; set; }
 
@@ -125,12 +130,12 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
 
             HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(hpWrapper);
-            MonitoringPosition monPortfPos = (MonitoringPosition)PortfolioPositionsToMonitor[hpDto.Symbol];
+            MonitoringPosition monPortfPos = (MonitoringPosition)MonitorPositions[hpDto.Symbol];
             
             foreach (MarketData md in hpDto.MarketData)
             {
 
-                if (PortfolioPositionsToMonitor.ContainsKey(md.Security.Symbol) && Securities != null)
+                if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null)
                 {
                     monPortfPos.AppendCandleHistorical(md);
                 }
@@ -145,9 +150,9 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             foreach (Security sec in Securities)
             {
-                if (PortfolioPositionsToMonitor.Values.Any(x => x.Security.Symbol == sec.Symbol))
+                if (MonitorPositions.Values.Any(x => x.Security.Symbol == sec.Symbol))
                 {
-                    MonitoringPosition protfPos = PortfolioPositionsToMonitor.Values.Where(x => x.Security.Symbol == sec.Symbol).FirstOrDefault();
+                    MonitoringPosition protfPos = MonitorPositions.Values.Where(x => x.Security.Symbol == sec.Symbol).FirstOrDefault();
                     protfPos.Security = sec;
                 }
             }
@@ -285,7 +290,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     if (!portfPos.IsFirstLeg())
                     {
                         //DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
-                        PortfolioPositionsToMonitor[portfPos.OpeningPosition.Security.Symbol].Closing = false;
+                        MonitorPositions[portfPos.OpeningPosition.Security.Symbol].Closing = false;
                         PortfolioPositions.Remove(portfPos.OpeningPosition.Security.Symbol);
                     }
                     else
@@ -546,7 +551,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                         }
                     }
 
-                    PortfolioPositionsToMonitor[tradPos.OpeningPosition.Security.Symbol].Closing = false;
+                    MonitorPositions[tradPos.OpeningPosition.Security.Symbol].Closing = false;
                     //Now we can finally close the position
                     PendingCancels.Remove(report.Order.Symbol);
                 }
@@ -575,7 +580,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             Thread.Sleep(5000);
             foreach (string symbol in Config.StocksToMonitor)
             {
-                if (!PortfolioPositionsToMonitor.ContainsKey(symbol))
+                if (!MonitorPositions.ContainsKey(symbol))
                 {
                     Security sec = new Security()
                     {
@@ -593,7 +598,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     };
 
                     //1- We add the current security to monitor
-                    PortfolioPositionsToMonitor.Add(symbol, portfPos);
+                    MonitorPositions.Add(symbol, portfPos);
 
                     Securities.Add(sec);//So far, this is all wehave regarding the Securities
 
@@ -674,7 +679,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     {
                         if (!IsTradingTime())
                         {
-                            foreach (MonitoringPosition portfPos in PortfolioPositionsToMonitor.Values)
+                            foreach (MonitoringPosition portfPos in MonitorPositions.Values)
                             {
                                 if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
                                 {
@@ -759,7 +764,16 @@ namespace zHFT.StrategyHandler.LogicLayer
                 return CMState.BuildFail(ex);
             }
         }
-        
+
+        protected void CloseTradingDay()
+        {
+            if (TradingStarted && EndTime == null)
+            {
+                EndTime = DateTimeManager.Now;
+                TradingBacktestingManager.EndTradingDay();
+            }
+        }
+
         public CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
         {
             try
@@ -826,7 +840,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 tLock = new object();
                 tSynchronizationLock = new object();
                 tPersistLock =new object();
-                PortfolioPositionsToMonitor = new Dictionary<string, MonitoringPosition>();
+                MonitorPositions = new Dictionary<string, MonitoringPosition>();
                 PortfolioPositions = new Dictionary<string, PortfolioPosition>();
                 PendingCancels = new Dictionary<string, PortfolioPosition>();
                 MarketDataConverter = new MarketDataConverter();

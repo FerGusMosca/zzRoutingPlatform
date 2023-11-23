@@ -62,7 +62,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 int i = 1;
 
-                foreach (string symbol in PortfolioPositionsToMonitor.Keys)
+                foreach (string symbol in MonitorPositions.Keys)
                 {
                     int openWindow = GetCustomConfig(symbol).OpenWindow;
                     int closeWindow = GetCustomConfig(symbol).CloseWindow;
@@ -106,7 +106,6 @@ namespace tph.DayTurtles.LogicLayer
                 if (!Config.OnlyLong)
                 {
                     PortfTurtlesPosition trdPos = (PortfTurtlesPosition)LoadNewPos(monPos, Side.Sell);
-                    trdPos.OpeningPosition.TriggerPrice = monPos.GetCurrentCandle();
                     PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
                     PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
                     CMState state = OrderRouter.ProcessMessage(posWrapper);
@@ -307,10 +306,17 @@ namespace tph.DayTurtles.LogicLayer
 
         }
 
+
+
         protected void EvalOpeningClosingPositions(MonTurtlePosition monPos)
         {
 
-            TimeSpan elapsed = DateTimeManager.Now - StartTime;
+            if (IsTradingTime() && !TradingStarted)//First Candle
+            {
+                TradingStarted = true;
+                StartTime = DateTimeManager.Now;
+                EndTime = null;
+            }
 
             if (PortfolioPositions.Keys.Count < Config.MaxOpenedPositions
                 && !PortfolioPositions.ContainsKey(monPos.Security.Symbol)
@@ -328,9 +334,8 @@ namespace tph.DayTurtles.LogicLayer
             }
             else if (!IsTradingTime())
             {
-                
+                CloseTradingDay();
                 CloseAllOpenPositions(monPos);
-                TradingBacktestingManager.EndTradingDay();
             }
         }
 
@@ -395,11 +400,11 @@ namespace tph.DayTurtles.LogicLayer
                 {
                     
                     string cleanSymbol = SymbolConverter.GetCleanSymbol(md.Security.Symbol);
-                    if (PortfolioPositionsToMonitor.Keys.Any(x => SymbolConverter.GetCleanSymbol(x) == cleanSymbol) && Securities != null)
+                    if (MonitorPositions.Keys.Any(x => SymbolConverter.GetCleanSymbol(x) == cleanSymbol) && Securities != null)
                     //if (PortfolioPositionsToMonitor.ContainsKey(cleanSymbol) && Securities!=null)
                     {
-                        string symbol = PortfolioPositionsToMonitor.Keys.Where(x => SymbolConverter.GetCleanSymbol(x) == cleanSymbol).FirstOrDefault();
-                        MonTurtlePosition portfPos = (MonTurtlePosition)PortfolioPositionsToMonitor[symbol];
+                        string symbol = MonitorPositions.Keys.Where(x => SymbolConverter.GetCleanSymbol(x) == cleanSymbol).FirstOrDefault();
+                        MonTurtlePosition portfPos = (MonTurtlePosition)MonitorPositions[symbol];
                         portfPos.AppendCandle(md);
                         EvalOpeningClosingPositions(portfPos);
                         UpdateLastPrice(portfPos, md);
@@ -431,7 +436,7 @@ namespace tph.DayTurtles.LogicLayer
 
         protected override void DoPersist(PortfolioPosition trdPos)
         {
-            if (PortfolioPositionsToMonitor.ContainsKey(trdPos.CurrentPos().Security.Symbol))
+            if (MonitorPositions.ContainsKey(trdPos.CurrentPos().Security.Symbol))
             {
                 lock (tPersistLock)
                 {
@@ -460,7 +465,7 @@ namespace tph.DayTurtles.LogicLayer
             Thread.Sleep(5000);
             foreach (string symbol in Config.StocksToMonitor)
             {
-                if (!PortfolioPositionsToMonitor.ContainsKey(symbol))
+                if (!MonitorPositions.ContainsKey(symbol))
                 {
                     Security sec = new Security()
                     {
@@ -481,7 +486,7 @@ namespace tph.DayTurtles.LogicLayer
                     };
 
                     //1- We add the current security to monitor
-                    PortfolioPositionsToMonitor.Add(symbol, portfPos);
+                    MonitorPositions.Add(symbol, portfPos);
 
                     Securities.Add(sec);//So far, this is all wehave regarding the Securities
 
