@@ -44,7 +44,7 @@ namespace tph.DayTurtles.BusinessEntities
 
         public double StopLossForOpenPositionPct { get; set; }
 
-        public Dictionary<string, MarketData> Candles { get; set; }
+        
 
         protected string LastSignalTriggered { get; set; }
 
@@ -441,13 +441,7 @@ namespace tph.DayTurtles.BusinessEntities
             return histPrices.OrderBy(x => x.GetOrderingDate()).ToList();
         }
         
-        public virtual MarketData GetLastFinishedCandle(int cowntdown)
-        {
-            if (Candles.Count > (cowntdown + 1))
-                return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[cowntdown];
-            else
-                return null;
-        }
+
         
         public virtual MarketData GetLastFinishedCandle()
         {

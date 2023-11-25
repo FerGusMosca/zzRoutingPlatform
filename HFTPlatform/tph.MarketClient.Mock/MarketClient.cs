@@ -112,7 +112,7 @@ namespace tph.MarketClient.Mock
                 DoLog($"{candles.Count} candles successfully found for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
 
                 List<Wrapper> mdWrapperList = new List<Wrapper>();
-                if (candles.Count > 0)
+                if (candles.Count > 10)
                 {
                     Security mainSec = candles.Count > 0 ? candles[0].Security : null;
                     foreach (MarketData candle in candles.OrderBy(x=>x.GetReferenceDateTime()))

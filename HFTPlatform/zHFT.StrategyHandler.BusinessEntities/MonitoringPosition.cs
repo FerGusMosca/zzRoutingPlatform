@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 
@@ -7,12 +9,12 @@ namespace zHFT.StrategyHandler.BusinessEntities
     public class MonitoringPosition
     {
         
-      
-        
         #region Public Attributes
         
         public Security Security { get; set; }
-        
+
+        public Dictionary<string, MarketData> Candles { get; set; }
+
         public bool Closing { get; set; }
         
         
@@ -46,6 +48,14 @@ namespace zHFT.StrategyHandler.BusinessEntities
         public bool IsClosing()
         {
             return Closing;
+        }
+
+        public virtual MarketData GetLastFinishedCandle(int cowntdown)
+        {
+            if (Candles.Count > (cowntdown + 1))
+                return Candles.Values.OrderByDescending(x => x.GetOrderingDate()).ToArray()[cowntdown];
+            else
+                return null;
         }
 
         #endregion
