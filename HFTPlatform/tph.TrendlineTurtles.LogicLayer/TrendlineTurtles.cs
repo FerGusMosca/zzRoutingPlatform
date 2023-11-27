@@ -127,10 +127,9 @@ namespace tph.TrendlineTurtles.LogicLayer
             try
             {
                 HistoricalPricesDTO dto = null;
-                lock (tLock)
-                {
-                        dto=LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
-                }
+               
+                dto=LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
+               
 
                 if (dto != null && dto.Symbol!=null)
                 {
@@ -365,18 +364,13 @@ namespace tph.TrendlineTurtles.LogicLayer
         {
             try
             {
-                lock (tLock)
+                foreach (var monPos in MonitorPositions.Values)
                 {
-                    foreach (var monPos in MonitorPositions.Values)
-                    {
-                        DoLog($"Deleting prev trendlines for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
-                        TrendlineManager.Delete(monPos.Security.Symbol);
-                        DoLog($"Prev trendlines for symbol {monPos.Security.Symbol} successfully deleted", Constants.MessageType.Information);
+                    DoLog($"Deleting prev trendlines for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
+                    TrendlineManager.Delete(monPos.Security.Symbol);
+                    DoLog($"Prev trendlines for symbol {monPos.Security.Symbol} successfully deleted", Constants.MessageType.Information);
 
-                    }
-                
                 }
-
             }
             catch (Exception ex)
             {
@@ -393,51 +387,50 @@ namespace tph.TrendlineTurtles.LogicLayer
                 try
                 {
                     List<Trendline> toRefresh =  TrendlineManager.GetTrendlines();
-                    lock (tLock)
+                   
+                    foreach (Trendline updTrendline in toRefresh)
                     {
-                        foreach (Trendline updTrendline in toRefresh)
+                        if (!TrendLineCreator.SymbolInitialized(updTrendline.Symbol))
                         {
-                            if (!TrendLineCreator.SymbolInitialized(updTrendline.Symbol))
-                            {
-                                DoLog($"WARNING - Waiting for symbol {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
-                                continue;
-                            }
+                            DoLog($"WARNING - Waiting for symbol {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
+                            continue;
+                        }
                             
 
-                            MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) MonitorPositions[updTrendline.Security.Symbol];
+                        MonTrendlineTurtlesPosition monPos =(MonTrendlineTurtlesPosition) MonitorPositions[updTrendline.Security.Symbol];
 
 
-                            if (updTrendline.ToDisabled.HasValue && updTrendline.ToDisabled.Value)
-                            {
-                                if (updTrendline.TrendlineType == TrendlineType.Resistance)
-                                    UpdateResistance(updTrendline, monPos);
+                        if (updTrendline.ToDisabled.HasValue && updTrendline.ToDisabled.Value)
+                        {
+                            if (updTrendline.TrendlineType == TrendlineType.Resistance)
+                                UpdateResistance(updTrendline, monPos);
                                 
-                                if (updTrendline.TrendlineType == TrendlineType.Support)
-                                    UpdateSupport(updTrendline, monPos);
-                            }
+                            if (updTrendline.TrendlineType == TrendlineType.Support)
+                                UpdateSupport(updTrendline, monPos);
+                        }
 
 
-                            if (updTrendline.ManualNew.HasValue && updTrendline.ManualNew.Value)
+                        if (updTrendline.ManualNew.HasValue && updTrendline.ManualNew.Value)
+                        {
+                            if (updTrendline.TrendlineType==TrendlineType.Resistance)
                             {
-                                if (updTrendline.TrendlineType==TrendlineType.Resistance)
-                                {
-                                    monPos.AppendResistance(updTrendline);
-                                    TrendLineCreator.AppendResistance(updTrendline.Security.Symbol,updTrendline);
+                                monPos.AppendResistance(updTrendline);
+                                TrendLineCreator.AppendResistance(updTrendline.Security.Symbol,updTrendline);
                                     
-                                }
-                                else if(updTrendline.TrendlineType==TrendlineType.Support)
-                                {
-                                    monPos.AppendSupport(updTrendline);
-                                    TrendLineCreator.AppendSupport(updTrendline.Security.Symbol,updTrendline);
-                                }
-
-                                updTrendline.ManualNew = false;
-                                TrendlineManager.Persist(updTrendline,monPos);
-
                             }
+                            else if(updTrendline.TrendlineType==TrendlineType.Support)
+                            {
+                                monPos.AppendSupport(updTrendline);
+                                TrendLineCreator.AppendSupport(updTrendline.Security.Symbol,updTrendline);
+                            }
+
+                            updTrendline.ManualNew = false;
+                            TrendlineManager.Persist(updTrendline,monPos);
 
                         }
+
                     }
+                    
 
                     Thread.Sleep(1000);//1 sec sleep
                 }

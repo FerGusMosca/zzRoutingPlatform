@@ -101,19 +101,40 @@ namespace tph.MarketClient.Mock
             return DateTimeManager.Now.AddDays(1);
         }
 
-        protected void DoProcessMarketData(MarketDataRequest mdr)
+        protected void SetMarketClosingTime(List<MarketData> candles)
+        {
+            MarketData lastCandle = candles.OrderByDescending(x => x.GetReferenceDateTime().Value).FirstOrDefault();
+
+            if (lastCandle != null)
+            {
+                if (Configuration.ClosingMinutesBeforeLastCandle.HasValue && lastCandle.GetReferenceDateTime().HasValue)
+                {
+                    ClosingTimeManager.ClosingTime = lastCandle.GetReferenceDateTime().Value.AddMinutes(-1 * Configuration.ClosingMinutesBeforeLastCandle.Value);
+                
+                }
+                else
+                {
+                    ClosingTimeManager.ClosingTime = null;
+
+                }
+            }
+        }
+
+        protected void DoProcessMarketDataRequest(MarketDataRequest mdr)
         {
             try
             {
                 DateTime from = GetFrom();
                 DateTime to = GetTo() ;
                 List<MarketData> candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, from, to);
+                
 
                 DoLog($"{candles.Count} candles successfully found for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
 
                 List<Wrapper> mdWrapperList = new List<Wrapper>();
                 if (candles.Count > 10)
                 {
+                    SetMarketClosingTime(candles);
                     Security mainSec = candles.Count > 0 ? candles[0].Security : null;
                     foreach (MarketData candle in candles.OrderBy(x=>x.GetReferenceDateTime()))
                     {
@@ -192,7 +213,7 @@ namespace tph.MarketClient.Mock
                     if (mdr.MarketDepth == null || mdr.MarketDepth == MarketDepth.TopOfBook)
                     {
                         EvalMarketDataSubscription(mdr.Security.Symbol, false);
-                        DoProcessMarketData(mdr);
+                        DoProcessMarketDataRequest(mdr);
                     }
                     else if (mdr.MarketDepth == MarketDepth.FullBook)
                     {

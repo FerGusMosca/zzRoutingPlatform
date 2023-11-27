@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -71,7 +72,7 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected Dictionary<string, PortfolioPosition> PendingCancels { get; set; }
 
-        protected Dictionary<string, PortfolioPosition> PortfolioPositions { get; set; }
+        protected ConcurrentDictionary<string, PortfolioPosition> PortfolioPositions { get; set; }
 
         protected Dictionary<string, MonitoringPosition> MonitorPositions { get; set; }
 
@@ -130,7 +131,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
 
             HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(hpWrapper);
-            MonitoringPosition monPortfPos = (MonitoringPosition)MonitorPositions[hpDto.Symbol];
+            MonitoringPosition monPortfPos =MonitorPositions[hpDto.Symbol];
             
             foreach (MarketData md in hpDto.MarketData)
             {
@@ -166,7 +167,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             if (trdPos.IsFirstLeg() )
             {
                 if (trdPos.OpeningPosition.CumQty == 0)
-                    PortfolioPositions.Remove(trdPos.OpeningPosition.Security.Symbol);
+                    PortfolioPositions.TryRemove(trdPos.OpeningPosition.Security.Symbol,out _);
                 else //it was filled and will have to be treated as such
                     trdPos.CurrentPos().SetPositionStatusFromExecutionStatus(OrdStatus.Filled); 
 
@@ -174,7 +175,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             else
             {
                 if (trdPos.ClosingPosition.CumQty == 0)
-                    PortfolioPositions.Remove(trdPos.ClosingPosition.Security.Symbol);
+                    PortfolioPositions.TryRemove(trdPos.ClosingPosition.Security.Symbol, out _);
                 else //it was filled and will have to be treated as such
                     trdPos.CurrentPos().SetPositionStatusFromExecutionStatus(OrdStatus.Filled);
 
@@ -291,7 +292,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                     {
                         //DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
                         MonitorPositions[portfPos.OpeningPosition.Security.Symbol].Closing = false;
-                        PortfolioPositions.Remove(portfPos.OpeningPosition.Security.Symbol);
+                        PortfolioPositions.TryRemove(portfPos.OpeningPosition.Security.Symbol, out _);
                     }
                     else
                     {
@@ -406,7 +407,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
             catch (Exception e)
             {
-                DoLog(string.Format("Error persisting execution report {0}:{1}",wrapper.ToString(),e.Message),Constants.MessageType.Information);
+                DoLog(string.Format("CRITICAL ERROR persisting execution report {0}:{1}",wrapper.ToString(),e.Message),Constants.MessageType.Information);
             }
         }
         
@@ -543,7 +544,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                         }
                         else
                         {
-                            PortfolioPositions.Remove(tradPos.OpeningPosition.Security.Symbol);
+                           
+                            PortfolioPositions.TryRemove(tradPos.OpeningPosition.Security.Symbol,out _);
                             DoLog(string.Format("ER Cancelled for Pending Cancel for symbol {0} (PosId={1}): We were opening the position position. Live Qty<flat>=0",
                                                       report.Order.Symbol,tradPos.OpeningPosition.PosId), Main.Common.Util.Constants.MessageType.Information);
 
@@ -655,7 +657,12 @@ namespace zHFT.StrategyHandler.LogicLayer
                 validOpening = true;
 
             bool validClosing = false;
-            if (!string.IsNullOrEmpty(Config.ClosingTime))
+
+            if (ClosingTimeManager.ClosingTime.HasValue)
+            {
+                validClosing = DateTimeManager.Now < ClosingTimeManager.ClosingTime.Value;
+            }
+            else if (!string.IsNullOrEmpty(Config.ClosingTime))
             {
                 validClosing = DateTimeManager.Now < MarketTimer.GetTodayDateTime(Config.ClosingTime);
             }
@@ -675,30 +682,29 @@ namespace zHFT.StrategyHandler.LogicLayer
                 while (true)
                 {
                     bool foundToClose = false;
-                    lock (tLock)
+                   
+                    if (!IsTradingTime())
                     {
-                        if (!IsTradingTime())
+                        foreach (MonitoringPosition portfPos in MonitorPositions.Values)
                         {
-                            foreach (MonitoringPosition portfPos in MonitorPositions.Values)
+                            if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
                             {
-                                if (PortfolioPositions.ContainsKey(portfPos.Security.Symbol))
+                                PortfolioPosition tradPos = PortfolioPositions[portfPos.Security.Symbol];
+                                if (tradPos.OpeningPosition != null)
                                 {
-                                    PortfolioPosition tradPos = PortfolioPositions[portfPos.Security.Symbol];
-                                    if (tradPos.OpeningPosition != null)
-                                    {
-                                        foundToClose = true;
-                                        RunClose(tradPos.OpeningPosition, portfPos, tradPos);
-                                        DoLog(
-                                            string.Format(
-                                                "{0} Position Closed on trading closed @{3}. Symbol {1} Qty={2} ",
-                                                tradPos.TradeDirection, tradPos.OpeningPosition.Security.Symbol,
-                                                tradPos.Qty,Config.ClosingTime), Constants.MessageType.Information);
-                                    }
-
+                                    foundToClose = true;
+                                    RunClose(tradPos.OpeningPosition, portfPos, tradPos);
+                                    DoLog(
+                                        string.Format(
+                                            "{0} Position Closed on trading closed @{3}. Symbol {1} Qty={2} ",
+                                            tradPos.TradeDirection, tradPos.OpeningPosition.Security.Symbol,
+                                            tradPos.Qty,Config.ClosingTime), Constants.MessageType.Information);
                                 }
+
                             }
                         }
                     }
+                    
 
                     if (!foundToClose)
                         Thread.Sleep(10 * 1000); //10 seconds
@@ -718,13 +724,11 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
             try
             {
-                lock (tLock)
-                {
-                    SecurityList secList = SecurityListConverter.GetSecurityList(wrapper, Config);
-                    Securities = secList.Securities;
-                    LoadTradingParameters();
-                    DoLog(string.Format("@{0} Saving security list:{1} securities ", Config.Name, secList.Securities != null ? secList.Securities.Count : 0), Constants.MessageType.Information);
-                }
+                SecurityList secList = SecurityListConverter.GetSecurityList(wrapper, Config);
+                Securities = secList.Securities;
+                LoadTradingParameters();
+                DoLog(string.Format("@{0} Saving security list:{1} securities ", Config.Name, secList.Securities != null ? secList.Securities.Count : 0), Constants.MessageType.Information);
+                
             }
             catch (Exception ex)
             {
@@ -841,7 +845,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 tSynchronizationLock = new object();
                 tPersistLock =new object();
                 MonitorPositions = new Dictionary<string, MonitoringPosition>();
-                PortfolioPositions = new Dictionary<string, PortfolioPosition>();
+                PortfolioPositions = new ConcurrentDictionary<string, PortfolioPosition>();
                 PendingCancels = new Dictionary<string, PortfolioPosition>();
                 MarketDataConverter = new MarketDataConverter();
                 ExecutionReportConverter = new ExecutionReportConverter();

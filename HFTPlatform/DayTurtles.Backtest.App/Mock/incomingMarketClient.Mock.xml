@@ -8,5 +8,7 @@
 
 	<SyncHistoricalWithMarketData>true</SyncHistoricalWithMarketData>
 	<InitialPacingMarketDataMillisec>10000</InitialPacingMarketDataMillisec>
+
+	<ClosingMinutesBeforeLastCandle>9</ClosingMinutesBeforeLastCandle>
   
 </Configuration>

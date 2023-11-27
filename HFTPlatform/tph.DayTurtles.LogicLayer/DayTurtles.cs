@@ -82,42 +82,42 @@ namespace tph.DayTurtles.LogicLayer
             }
         }
 
+        protected PositionWrapper OpenRoutingPos(MonTurtlePosition monPos, Side side)
+        {
+            PortfTurtlesPosition trdPos = (PortfTurtlesPosition)LoadNewPos(monPos, side);
+            PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
+
+            bool added = PortfolioPositions.TryAdd(trdPos.OpeningPosition.Security.Symbol, trdPos);
+            if (!added)
+                throw new Exception($"Could not add symbol {trdPos.OpeningPosition.Security.Symbol} to the PortfolioPositions dictionary because it already exists!!!!! ");
+
+            DoLog(string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4} {5}",
+                trdPos.TradeDirection,
+                trdPos.OpeningPosition.Security.Symbol,
+                trdPos.OpeningPosition.CashQty,
+                DateTimeManager.Now,
+                trdPos.OpeningPosition.PosId,
+                monPos.SignalTriggered()),
+                Constants.MessageType.Information);
+
+            return posWrapper;
+        }
+
 
         protected void EvalOpeningPosition(MonTurtlePosition monPos)
         {
             if (monPos.LongSignalTriggered())
             {
-                PortfTurtlesPosition trdPos = (PortfTurtlesPosition)LoadNewPos(monPos, Side.Buy);
-                PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
-                PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
-                CMState state = OrderRouter.ProcessMessage(posWrapper);
-                DoLog(string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4} {5}", 
-                    trdPos.TradeDirection,
-                    trdPos.OpeningPosition.Security.Symbol, 
-                    trdPos.OpeningPosition.CashQty,
-                    DateTimeManager.Now, 
-                    trdPos.OpeningPosition.PosId, 
-                    monPos.SignalTriggered()),
-                    Constants.MessageType.Information);
+                PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Buy);
+                OrderRouter.ProcessMessage(posWrapper);
 
             }
             else if (monPos.ShortSignalTriggered())
             {
                 if (!Config.OnlyLong)
                 {
-                    PortfTurtlesPosition trdPos = (PortfTurtlesPosition)LoadNewPos(monPos, Side.Sell);
-                    PositionWrapper posWrapper = new PositionWrapper(trdPos.OpeningPosition, Config);
-                    PortfolioPositions.Add(trdPos.OpeningPosition.Security.Symbol, trdPos);
-                    CMState state = OrderRouter.ProcessMessage(posWrapper);
-                    DoLog(
-                        string.Format("{0} Position Opened to market. Symbol {1} CashQty={2} DateTime={3} PosId={4}  {5}",
-                            trdPos.TradeDirection, 
-                            trdPos.OpeningPosition.Security.Symbol,
-                            trdPos.OpeningPosition.CashQty,
-                            DateTimeManager.Now, 
-                            trdPos.OpeningPosition.PosId, 
-                            monPos.SignalTriggered()),
-                        Constants.MessageType.Information);
+                    PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Sell);
+                    OrderRouter.ProcessMessage(posWrapper);
                 }
                 else
                 {
@@ -253,53 +253,45 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void EvalDepuratingPositionsThread(object param)
         {
-
-
             while (true)
             {
-                lock (tLock)
+               
+                try
                 {
-                    try
+                    List<string> toRemove = new List<string>();
+                    DoLog($"=========SUMMARY OF PORTF STATUS!=========", Constants.MessageType.Information);
+                    foreach (string symbol in PortfolioPositions.Keys)
                     {
-                        List<string> toRemove = new List<string>();
-                        DoLog($"=========SUMMARY OF PORTF STATUS!=========", Constants.MessageType.Information);
-                        foreach (string symbol in PortfolioPositions.Keys)
+                        PortfolioPosition portfPos = PortfolioPositions[symbol];
+
+                        DoLog($"Summary for Symbol={symbol} FirstLeg={portfPos.IsFirstLeg()} LongCumQty={portfPos.OpenCumQty()} CloseCumQty={portfPos.CloseCumQty()}", Constants.MessageType.Information);
+
+
+                        if (portfPos.OpeningPosition != null
+                            && portfPos.OpeningPosition.PositionNoLongerActive()
+                            && portfPos.ClosingPosition != null
+                            && portfPos.ClosingPosition.PositionNoLongerActive()
+                            && portfPos.IsInFactClosedPortfPos()
+                            )
                         {
-                            PortfolioPosition portfPos = PortfolioPositions[symbol];
-
-                            DoLog($"Summary for Symbol={symbol} FirstLeg={portfPos.IsFirstLeg()} LongCumQty={portfPos.OpenCumQty()} CloseCumQty={portfPos.CloseCumQty()}", Constants.MessageType.Information);
-
-
-                            if (portfPos.OpeningPosition != null
-                                && portfPos.OpeningPosition.PositionNoLongerActive()
-                                && portfPos.ClosingPosition != null
-                                && portfPos.ClosingPosition.PositionNoLongerActive()
-                                && portfPos.IsInFactClosedPortfPos()
-                                )
-                            {
-                                toRemove.Add(symbol);
-                            }
-
-
-                        }
-
-                        foreach (string symbol in toRemove)
-                        {
-                            DoLog($"Portf Poisition removed cuz considered closed: {symbol} ", Constants.MessageType.Information);
-                            PortfolioPositions.Remove(symbol);
-
+                            toRemove.Add(symbol);
                         }
 
 
+                    }
+
+                    foreach (string symbol in toRemove)
+                    {
+                        DoLog($"Portf Poisition removed cuz considered closed: {symbol} ", Constants.MessageType.Information);
+                        PortfolioPositions.TryRemove(symbol,out _);
 
                     }
-                    catch (Exception ex)
-                    {
-                        DoLog($"CRITICAL error removing closed positions with unperfect closing:{ex.Message}", Constants.MessageType.Error);
-                    }
+
                 }
-
-
+                catch (Exception ex)
+                {
+                    DoLog($"CRITICAL error removing closed positions with unperfect closing:{ex.Message}", Constants.MessageType.Error);
+                }
 
                 Thread.Sleep(60 * 1000);//1 minute
             }
@@ -375,10 +367,9 @@ namespace tph.DayTurtles.LogicLayer
         {
             try
             {
-                lock (tLock)
-                {
-                    LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
-                }
+               
+                LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
+                
             }
             catch (Exception e)
             {

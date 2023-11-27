@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>BOB_TRENDLINES_WEBSOCKET_IB_TEST_PERF_OPT_2511</Name>
+  <Name>BOB_TRENDLINES_WEBSOCKET_IB_TEST_PERF_TIME_ZONE_CHANGE</Name>
 
   <PositionSizeInCash>50000</PositionSizeInCash>
 

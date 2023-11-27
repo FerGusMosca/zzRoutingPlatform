@@ -21,6 +21,8 @@ namespace tph.MarketClient.Mock.Common.Configuration
 
         public bool SyncHistoricalWithMarketData { get; set; }
 
+        public int? ClosingMinutesBeforeLastCandle { get; set; }
+
 
         #endregion
         public override bool CheckDefaults(List<string> result)
@@ -52,7 +54,16 @@ namespace tph.MarketClient.Mock.Common.Configuration
                 res = false;
             }
 
-        
+            //ClosingMinutesBeforeLastCandle
+
+            if (!ClosingMinutesBeforeLastCandle.HasValue || ClosingMinutesBeforeLastCandle.Value<0)
+            {
+                result.Add("ClosingMinutesBeforeLastCandle");
+                res = false;
+
+            }
+
+
 
             return res;
         }

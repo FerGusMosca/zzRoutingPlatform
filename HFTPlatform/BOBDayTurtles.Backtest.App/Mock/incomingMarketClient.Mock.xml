@@ -10,5 +10,8 @@
 	
 	<PacingMarketDataMilliSec>100</PacingMarketDataMilliSec>
 
+
+	<ClosingMinutesBeforeLastCandle>8</ClosingMinutesBeforeLastCandle>
+
   
 </Configuration>
