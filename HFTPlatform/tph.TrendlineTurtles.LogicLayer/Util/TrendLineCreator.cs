@@ -678,15 +678,21 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,TrendlineConfiguration config)
         {
 
-            DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
-            DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
+            if (prices != null && prices.Count > 0)
+            {
 
-            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
-                                        prices, true, minDate,
-                                        maxDate, false, null);
+                DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
+                DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
 
-            TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate,prices,config.InnerTrendlinesSpan);
-            return trendlines;
+                List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
+                                            prices, true, minDate,
+                                            maxDate, false, null);
+
+                TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices, config.InnerTrendlinesSpan);
+                return trendlines;
+            }
+            else
+                return new List<Trendline>();
 
         }
 
@@ -749,19 +755,23 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         
         public static List<Trendline> BuildSupports(Security sec, List<MarketData> prices,TrendlineConfiguration config)
         {
+            if (prices != null && prices.Count > 0)
+            {
 
-            
-            
-            DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
-            DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
-            
-            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
-                prices, true, minDate, maxDate,
-                false, null);
-            
-            
-            TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices,config.InnerTrendlinesSpan);
-            return trendlines;
+
+                DateTime minDate = prices.OrderBy(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
+                DateTime maxDate = prices.OrderByDescending(x => x.MDEntryDate.Value).FirstOrDefault().MDEntryDate.Value;
+
+                List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
+                    prices, true, minDate, maxDate,
+                    false, null);
+
+
+                TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices, config.InnerTrendlinesSpan);
+                return trendlines;
+            }
+            else
+                return new List<Trendline>();
 
         }
         
