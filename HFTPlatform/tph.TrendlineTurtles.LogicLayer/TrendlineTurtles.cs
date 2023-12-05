@@ -105,10 +105,11 @@ namespace tph.TrendlineTurtles.LogicLayer
                             // Becasue it works with the prev trendline
                             //10:30 --> uses 16:59 candle
                             //10:31 --> uses 10:30 candle and the position was already opened
-                            
-                            RecalculateNewTrendlines(monPos, GetConfig().RecalculateTrendlines);
-                            EvalBrokenTrendlines(monPos, md);
-                            
+                            if (newCandle)
+                            {
+                                RecalculateNewTrendlines(monPos, GetConfig().RecalculateTrendlines);
+                                EvalBrokenTrendlines(monPos, md);
+                            }
                         }
                     }
                 }
