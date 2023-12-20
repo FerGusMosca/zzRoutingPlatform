@@ -11,6 +11,6 @@
 
   <SearchForInstructionsInMilliseconds >1000</SearchForInstructionsInMilliseconds > <!--1 segundos-->
   
-  <Exchange>NYSE</Exchange>
+  <Exchange>SMART</Exchange>
   
 </Configuration>

@@ -8,6 +8,8 @@ namespace zHFT.Main.Common.Converter
         #region Protected Static Consts
         
         private static string _US_PRIMARY_EXCHANGE = "ISLAND";
+
+        private static string _CBOE_PRIMARY_EXCHANGE = "CBOE";
         
         protected static string _DEF_CURRENCY = "USD";
         
@@ -44,6 +46,8 @@ namespace zHFT.Main.Common.Converter
         {
             if (secType == SecurityType.CASH || secType == SecurityType.CMDTY)
                 return null;
+            else if (secType == SecurityType.IND)
+                return _CBOE_PRIMARY_EXCHANGE;
             else
             {
                 return _US_PRIMARY_EXCHANGE;

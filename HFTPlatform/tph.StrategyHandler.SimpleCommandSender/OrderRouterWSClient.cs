@@ -448,17 +448,22 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 Wrapper wrapper = (Wrapper) param;
                 string symbol = (string) wrapper.GetField(MarketDataRequestField.Symbol);
                 long mdReq = Convert.ToInt64( wrapper.GetField(MarketDataRequestField.MDReqId));
+                string exchange = (string)wrapper.GetField(MarketDataRequestField.Exchange);
+                SecurityType? securityType = (SecurityType?)wrapper.GetField(MarketDataRequestField.SecurityType);
 
-                if (symbol == null)
+                string fullSymbol = FullSymbolManager.BuildFullSymbol(symbol, exchange, securityType);
+
+
+                if (fullSymbol == null)
                     throw new Exception($"Could not find a symbol for market data request");
 
                 lock (MarketDataRequests)
                 {
 
-                    if (MarketDataRequests.ContainsKey(symbol))
-                        MarketDataRequests.Remove(symbol);
+                    if (MarketDataRequests.ContainsKey(fullSymbol))
+                        MarketDataRequests.Remove(fullSymbol);
 
-                    MarketDataRequests.Add(symbol, mdReq);
+                    MarketDataRequests.Add(fullSymbol, mdReq);
                 }
                 
 
@@ -467,7 +472,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     Msg = "Subscribe",
                     SubscriptionType = WebSocketSubscribeMessage._SUSBSCRIPTION_TYPE_SUBSCRIBE,
                     Service = "MD",
-                    ServiceKey = symbol,
+                    ServiceKey = fullSymbol,
                     UUID = Guid.NewGuid().ToString()
                 };
                 DoLog($"Subscribing Market Data for symbol {symbol}", Constants.MessageType.Information);

@@ -3,6 +3,7 @@ using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 
 namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
 {
@@ -12,21 +13,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
         
         public static Security GetSecurityFullSymbol(string fullSymbol)
         {
-            string[] fields = fullSymbol.Split(new string[] {"."},StringSplitOptions.RemoveEmptyEntries);
 
-            string symbol = fields[0];
-            string exchange = fields.Length >= 2 ? fields[1] : null;
-            string strSecType = fields.Length >= 3 ? fields[2] : null;
-
-            exchange = exchange != "*" ? exchange : null;
-            strSecType = strSecType != "*" ? strSecType : null;
-
-            SecurityType secType = SecurityType.CS;//Default security type
-
-            if (strSecType != null)
-                secType = Security.GetSecurityType(strSecType);
-
-            return new Security() {Symbol = symbol, Exchange = exchange, SecType = secType};
+            return new Security()
+            {
+                Symbol = FullSymbolManager.GetCleanSymbol(fullSymbol),
+                Exchange = FullSymbolManager.GetExchange(fullSymbol),
+                SecType=FullSymbolManager.GetSecurityType(fullSymbol)
+            };
+            
 
         }
 

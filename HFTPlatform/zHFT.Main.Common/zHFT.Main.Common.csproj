@@ -116,6 +116,7 @@
     <Compile Include="Util\CurrencySeparators.cs" />
     <Compile Include="Util\DateTimeManager.cs" />
     <Compile Include="Util\FixHelperExtended.cs" />
+    <Compile Include="Util\FullSymbolManager.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="Util\PositionIdTranslator.cs" />
     <Compile Include="Util\SecurityTypeTranslator.cs" />
@@ -123,7 +124,12 @@
     <Compile Include="Util\TradingBacktestingManager.cs" />
     <Compile Include="Wrappers\Wrapper.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csproj">
+      <Project>{3515B58C-6998-48FE-B794-58989C65CE04}</Project>
+      <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

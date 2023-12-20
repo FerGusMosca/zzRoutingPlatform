@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 
 namespace zHFT.Main.BusinessEntities.Securities
 {
@@ -192,29 +193,7 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         public static SecurityType GetSecurityType(string secType)
         {
-            if(string.IsNullOrEmpty(secType))
-                return SecurityType.OTH;
-
-            if (secType.ToUpper() == SecurityType.CASH.ToString())
-                return SecurityType.CASH;
-            else if (secType.ToUpper() == SecurityType.CS.ToString())
-                return SecurityType.CS;
-            else if (secType.ToUpper() == SecurityType.FUT.ToString())
-                return SecurityType.FUT;
-            else if (secType.ToUpper() == SecurityType.IND.ToString())
-                return SecurityType.IND;
-            else if (secType.ToUpper() == SecurityType.OPT.ToString())
-                return SecurityType.OPT;
-            else if (secType.ToUpper() == SecurityType.TB.ToString())
-                return SecurityType.TB;
-            else if (secType.ToUpper() == SecurityType.TBOND.ToString())
-                return SecurityType.TBOND;
-            else if (secType.ToUpper() == SecurityType.CMDTY.ToString())
-                return SecurityType.CMDTY;
-            else if (secType.ToUpper() == SecurityType.OTH.ToString())
-                return SecurityType.OTH;
-            else
-                return SecurityType.OTH;
+            return FullSymbolManager.GetSecurityTypeFromStr(secType);
         }
 
         #endregion
