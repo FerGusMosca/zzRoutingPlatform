@@ -286,7 +286,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             ctr.Exchange = sec.Exchange != null ? sec.Exchange : IBConfiguration.Exchange ;
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
             ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
-            ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
+            ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchangeOnSecType(sec.SecType);
             //sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
             if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
@@ -310,7 +310,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             ctr.SecType = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(sec.SecType);
             ctr.Currency = SecurityConverter.GetCurrency(sec.SecType,sec.Currency,sec.Symbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
             ctr.Symbol = SecurityConverter.GetSymbol(sec.SecType, sec.Symbol, CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
-            ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(sec.SecType);
+            ctr.PrimaryExchange = sec.Exchange!=null? sec.Exchange: SecurityConverter.GetPrimaryExchangeOnSecType(sec.SecType);
             //sec.Symbol= sec.Symbol.Replace(_SECURITY_SYMBOL_SEP_ORIG,_SECURITY_SYMBOL_SEP_DEST);
 
             if (!ActiveSecurities.Values.Any(x => x.Symbol == sec.Symbol) 
@@ -486,15 +486,12 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                     zHFT.MarketClient.IB.Common.Configuration.Contract ctr =
                         new zHFT.MarketClient.IB.Common.Configuration.Contract();
 
-                    ctr.Exchange = IBConfiguration.Exchange;
-                    ctr.SecType =
-                        zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(
-                            dto.SecurityType);
-                    ctr.Currency = SecurityConverter.GetCurrency(dto.SecurityType, dto.Currency, dto.Symbol,
-                        CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
-                    ctr.Symbol = SecurityConverter.GetSymbol(dto.SecurityType, dto.Symbol,
-                        CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
-                    ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchange(dto.SecurityType);
+                    
+                    ctr.Exchange = dto.Exchange != null ? dto.Exchange : IBConfiguration.Exchange;
+                    ctr.SecType =zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter.GetSecurityType(dto.SecurityType);
+                    ctr.Currency = SecurityConverter.GetCurrency(dto.SecurityType, dto.Currency, dto.Symbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+                    ctr.Symbol = SecurityConverter.GetSymbol(dto.SecurityType, dto.Symbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
+                    ctr.PrimaryExchange = SecurityConverter.GetPrimaryExchangeOnSecType(dto.SecurityType);
 
                     Contract ibContract = new Contract();
 

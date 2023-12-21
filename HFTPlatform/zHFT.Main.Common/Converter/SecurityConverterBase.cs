@@ -42,7 +42,7 @@ namespace zHFT.Main.Common.Converter
 
         }
         
-        public static string GetPrimaryExchange(SecurityType secType)
+        public static string GetPrimaryExchangeOnSecType(SecurityType secType)
         {
             if (secType == SecurityType.CASH || secType == SecurityType.CMDTY)
                 return null;

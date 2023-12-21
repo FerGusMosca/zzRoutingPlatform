@@ -310,9 +310,12 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
 
                 HistoricalPricesReqDTO dto =JsonConvert.DeserializeObject<HistoricalPricesReqDTO>(m);
 
+                Security sec = OrderConverter.GetSecurityFullSymbol(dto.Symbol);
+
                 HistoricalPricesRequestWrapper hprWrapper = new HistoricalPricesRequestWrapper(dto.HistPrReqId,
-                    dto.Symbol,
-                    dto.From, dto.To, dto.GetCandleInterval());
+                                                            sec.Symbol,
+                                                            dto.From, dto.To, dto.GetCandleInterval(),
+                                                            dto.Currency, sec.SecType, sec.Exchange);
                 
                 CMState resp = OnMessageReceived(hprWrapper);
                 

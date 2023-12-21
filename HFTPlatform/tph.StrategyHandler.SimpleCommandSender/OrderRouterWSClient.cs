@@ -423,12 +423,14 @@ namespace tph.StrategyHandler.SimpleCommandSender
             try
             {
                 HistoricalPricesReqDTO reqDTO=HistoricalPricesRequestConverter.ConvertHistoricalPricesRequest( (Wrapper) param);
+                string cleanSymbol = reqDTO.Symbol;
+                reqDTO.Symbol= FullSymbolManager.BuildFullSymbol(reqDTO.Symbol, reqDTO.Exchange, reqDTO.SecurityType);
 
                 lock (HistoricalPricesRequests)
                 {
-                    if (HistoricalPricesRequests.ContainsKey(reqDTO.Symbol))
-                        HistoricalPricesRequests.Remove(reqDTO.Symbol);
-                    HistoricalPricesRequests.Add(reqDTO.Symbol, reqDTO.HistPrReqId);
+                    if (HistoricalPricesRequests.ContainsKey(cleanSymbol))
+                        HistoricalPricesRequests.Remove(cleanSymbol);
+                    HistoricalPricesRequests.Add(cleanSymbol, reqDTO.HistPrReqId);
                 }
                 
                 DoLog($"Subscribing historical prices for symbol {reqDTO.Symbol}", Constants.MessageType.Information);

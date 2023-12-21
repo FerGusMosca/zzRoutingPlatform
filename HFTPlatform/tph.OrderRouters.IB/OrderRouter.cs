@@ -73,7 +73,7 @@ namespace tph.OrderRouters.IB
             contract.Symbol=SecurityConverter.GetSymbol(type,fullSymbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
             contract.Currency=SecurityConverter.GetCurrency(type,null,fullSymbol,CurrencySeparators._SECURITY_SYMBOL_SEP_ORIG);
             contract.Exchange = exchange != null ? exchange : IBConfiguration.Exchange ;;
-            contract.PrimaryExch = SecurityConverter.GetPrimaryExchange(type);;
+            contract.PrimaryExch = SecurityConverter.GetPrimaryExchangeOnSecType(type);;
 
             return contract;
         

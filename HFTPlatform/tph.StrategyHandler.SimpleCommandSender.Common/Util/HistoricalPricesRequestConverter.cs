@@ -25,6 +25,21 @@ namespace tph.StrategyHandler.SimpleCommandSender.Common.Util
             else
                 throw new Exception($"Missing field on Historical Price Request: MDReqId");
 
+            if (ValidateField(wrapper, HistoricalPricesRequestFields.Exchange))
+                dto.Exchange = (string)wrapper.GetField(HistoricalPricesRequestFields.Exchange);
+            else
+                throw new Exception($"Missing field on Historical Price Request: Exchange");
+
+            if (ValidateField(wrapper, HistoricalPricesRequestFields.Currency))
+                dto.Currency = (string)wrapper.GetField(HistoricalPricesRequestFields.Currency);
+            else
+                throw new Exception($"Missing field on Historical Price Request: Currency");
+
+            if (ValidateField(wrapper, HistoricalPricesRequestFields.SecurityType))
+                dto.SecurityType = (SecurityType?)wrapper.GetField(HistoricalPricesRequestFields.SecurityType);
+            else
+                throw new Exception($"Missing field on Historical Price Request: Exchange");
+
             if (ValidateField(wrapper, HistoricalPricesRequestFields.From))
                 dto.From = (DateTime?) wrapper.GetField(HistoricalPricesRequestFields.From);
             else

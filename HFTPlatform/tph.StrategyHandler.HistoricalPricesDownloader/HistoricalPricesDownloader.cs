@@ -118,7 +118,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
 
                     DoLog($"{Config.Name}--> Requesting Historical Prices for Symbol {symbol} From={from} To={to}", MessageType.Information);
                     HistoricalPricesRequestWrapper wrapper = new HistoricalPricesRequestWrapper(
-                        reqId,symbol, from, to, interval,Config.Currency, secType);
+                        reqId,symbol, from, to, interval,Config.Currency, secType,Config.Exchange);
 
                     HistoricalPricesRequests.Add(reqId, symbol);
                     (new Thread(DoSendAsync)).Start(wrapper);

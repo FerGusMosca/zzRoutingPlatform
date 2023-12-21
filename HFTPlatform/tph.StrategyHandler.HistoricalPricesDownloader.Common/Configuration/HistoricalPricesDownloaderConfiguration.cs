@@ -26,6 +26,8 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader.Common.Configuration
 
         public string Currency { get; set; }
 
+        public string Exchange { get; set; }
+
         [JsonConverter(typeof(DateFormatConverter), "yyyy-MM-dd")]
         public DateTime? From { get; set; }
 

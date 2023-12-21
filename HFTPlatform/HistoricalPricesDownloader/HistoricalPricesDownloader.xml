@@ -4,8 +4,9 @@
 
 	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
-	<SecurityType>CS</SecurityType><!--CS=Common Stock-->
+	<SecurityType>IND</SecurityType><!--CS=Common Stock,IND=Index-->
 	<Currency>USD</Currency>
+	<Exchange>CBOE</Exchange>
 
 	<From>2023-10-18</From><!--yyyy-MM-dd-->
 	
@@ -19,8 +20,8 @@
 	<SymbolsToDownload>
 
     <!--<Symbol>BTC</Symbol>-->
-	  <Symbol>QQQ</Symbol>
-	  <Symbol>SPY</Symbol>
+	  <Symbol>VIX</Symbol>
+	
 
 
   </SymbolsToDownload>

@@ -26,6 +26,12 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData
         public int HistPrReqId { get; set; }
 
         public string Symbol { get; set; }
+
+        public string Currency { get; set; }
+
+        public string Exchange { get; set; }
+
+        public SecurityType? SecurityType { get; set; }
         
         [JsonConverter(typeof(DateFormatConverter), "dd-MM-yyyy hh:mm:ss")]
         public DateTime? From { get; set; }

@@ -116,7 +116,12 @@ namespace tph.InstructionBasedMarketClient.IB.Common.Converters
                     dto.SecurityType = (SecurityType) wrapper.GetField(HistoricalPricesRequestFields.SecurityType);
                 else
                     dto.SecurityType = _DEF_SECURITY_TYPE;
-                
+
+                if (ValidateField(wrapper, HistoricalPricesRequestFields.Exchange))
+                    dto.Exchange = (string)wrapper.GetField(HistoricalPricesRequestFields.Exchange);
+                else
+                    dto.Exchange = null;
+
 
                 DateTime? from = null;
                 DateTime? to = null;

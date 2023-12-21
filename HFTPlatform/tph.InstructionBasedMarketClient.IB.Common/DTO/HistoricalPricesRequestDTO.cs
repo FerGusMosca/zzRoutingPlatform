@@ -33,6 +33,8 @@ namespace tph.InstructionBasedMarketClient.IB.Common.DTO
         
         public  SecurityType SecurityType { get; set; }
         
+
+        public string Exchange { get; set; }
         public  string QueryTime { get; set; }// TO in yyyyMMdd-HH:mm:ss format
         
         // The amount of time (or Valid Duration String units) to go back from the request's given end date and time.

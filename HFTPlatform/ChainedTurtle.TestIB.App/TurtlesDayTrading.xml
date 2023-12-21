@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>CHAINED_TURTLES_WEBSOCKET_IB_TEST</Name>
+
+
+  <PositionSizeInCash>1000</PositionSizeInCash>
+
+  <MaxOpenedPositions>6</MaxOpenedPositions>
+  <StopLossForOpenPositionPct>1</StopLossForOpenPositionPct><!--1=1%-->
+  <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
+  <FeeValuePerTrade>0</FeeValuePerTrade>
+  <DecimalRounding>3</DecimalRounding>
+
+
+  <ClosingTime>05:51 PM</ClosingTime>
+
+  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+  <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+  <ResetOnPersistance>true</ResetOnPersistance>
+
+  <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+
+  <CandleReferencePrice>TRADE</CandleReferencePrice> <!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
+
+  <OnlyLong>false</OnlyLong>
+
+  <HistoricalPricesPeriod>-6</HistoricalPricesPeriod><!---4= -4 days-->
+
+  <SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln><!--0=No Skip-->
+
+
+  <StocksToMonitor>
+    <Symbol>SPY</Symbol>
+    <Symbol>QQQ</Symbol>
+    <Symbol>IWM</Symbol>
+	<Symbol>XLF</Symbol>
+<!--    -->
+  </StocksToMonitor>
+
+	<TurtleConfigs>
+		<TurtleConfig>
+			<Assembly>xxx</Assembly>
+			<SignalType>yyy</SignalType>
+		</TurtleConfig>
+	</TurtleConfigs>
+
+</ChainedConfiguration>

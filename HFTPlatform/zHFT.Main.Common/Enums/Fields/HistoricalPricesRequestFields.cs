@@ -11,7 +11,8 @@
         public static readonly HistoricalPricesRequestFields MDReqId = new HistoricalPricesRequestFields(6);
         public static readonly HistoricalPricesRequestFields Currency = new HistoricalPricesRequestFields(7);
         public static readonly HistoricalPricesRequestFields SecurityType = new HistoricalPricesRequestFields(8);
-        
+        public static readonly HistoricalPricesRequestFields Exchange = new HistoricalPricesRequestFields(9);
+
         protected HistoricalPricesRequestFields(int pInternalValue)
             : base(pInternalValue)
         {

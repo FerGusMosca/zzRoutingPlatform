@@ -19,7 +19,7 @@ namespace zHFT.StrategyHandler.Common.Wrappers
         }
 
         public HistoricalPricesRequestWrapper(int reqId, string pSymbol, DateTime? pFrom, DateTime? pTo,
-            CandleInterval pInterval,string pCurrency,SecurityType pSecurityType)
+            CandleInterval pInterval,string pCurrency,SecurityType? pSecurityType,string pExchange)
         {
             MdReqId = reqId;
             Symbol = pSymbol;
@@ -28,6 +28,8 @@ namespace zHFT.StrategyHandler.Common.Wrappers
             TimeInterval = pInterval;
             Currency = pCurrency;
             SecurityType = pSecurityType;
+
+            Exchange = pExchange;
 
 
         }
@@ -47,7 +49,9 @@ namespace zHFT.StrategyHandler.Common.Wrappers
         
         public  string Currency { get; set; }
         
-        public  SecurityType SecurityType { get; set; }
+        public  SecurityType? SecurityType { get; set; }
+
+        public string Exchange { get; set; }
         
         #endregion
         
@@ -70,7 +74,9 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return Currency;
             else if (sField == HistoricalPricesRequestFields.SecurityType)
                 return SecurityType;
-          
+            else if (sField == HistoricalPricesRequestFields.Exchange)
+                return Exchange;
+
             return HistoricalPricesRequestFields.NULL;
         }
 
