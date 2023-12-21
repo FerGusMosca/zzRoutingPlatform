@@ -20,6 +20,9 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
     public class Configuration : BaseConfiguration
     {
+
+
+
         #region Public Attributes
 
         public string ConnectionString { get; set; }
@@ -80,69 +83,71 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
 
         public override bool CheckDefaults(List<string> result)
         {
-            bool resultado = true;
+            bool res = true;
 
-            if (StocksToMonitor.Count==0)
-            {
-                result.Add("StocksToMonitor");
-                resultado = false;
-            }
+            //if (StocksToMonitor.Count==0)
+            //{
+            //    result.Add("StocksToMonitor");
+            //    resultado = false;
+            //}
 
             if (string.IsNullOrEmpty(ConnectionString))
             {
                 result.Add("ConnectionString");
-                resultado = false;
+                res = false;
             }
 
-            if (string.IsNullOrEmpty(SaveEvery))
+            //if (string.IsNullOrEmpty(SaveEvery))
+            //{
+            //    result.Add("SaveEvery");
+            //    resultado = false;
+            //}
+
+            if (string.IsNullOrEmpty(OrderRouter))
             {
-                result.Add("SaveEvery");
-                resultado = false;
+                result.Add("OrderRouter");
+                res = false;
             }
 
             if (string.IsNullOrEmpty(OrderRouter))
             {
                 result.Add("OrderRouter");
-                resultado = false;
-            }
-
-            if (string.IsNullOrEmpty(OrderRouter))
-            {
-                result.Add("OrderRouter");
-                resultado = false;
+                res = false;
             }
 
             if (string.IsNullOrEmpty(Currency))
             {
-                result.Add("Currency");
-                resultado = false;
+                //result.Add("Currency");
+                //res = false;
+                Currency = _DEFAULT_CURRENCY;
             }
 
             if (string.IsNullOrEmpty(Exchange))
             {
-                result.Add("Exchange");
-                resultado = false;
+                //result.Add("Exchange");
+                //res = false;
+                Exchange = _DEFAULT_EXCHANGE;
             }
 
             if (string.IsNullOrEmpty(FeeTypePerTrade))
             {
-                result.Add("FeeTypePerTrade");
-                resultado = false;
+                //result.Add("FeeTypePerTrade");
+                //res = false;
             }
 
             if (string.IsNullOrEmpty(SecurityTypes))
             {
-                result.Add("SecurityTypes");
-                resultado = false;
+                //result.Add("SecurityTypes");
+                //res = false;
+                SecurityTypes = _DEFAULT_SECURITY_TYPE;
             }
             
             
             if (string.IsNullOrEmpty(ClosingTime))
             {
                 result.Add("ClosingTime");
-                resultado = false;
+                res = false;
             }
-
 
 
             if (SecurityTypes == SecurityType.FUT.ToString())
@@ -155,11 +160,11 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
                 if (!PositionSizeInCash.HasValue)
                 {
                     result.Add("PositionSizeInCash");
-                    resultado = false;
+                    res = false;
                 }
             }
 
-            return resultado;
+            return res;
         }
 
 

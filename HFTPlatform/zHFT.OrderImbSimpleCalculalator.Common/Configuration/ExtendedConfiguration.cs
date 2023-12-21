@@ -23,11 +23,11 @@ namespace zHFT.OrderImbSimpleCalculator.Common.Configuration
         {
             bool resultado = true;
 
-            if (StocksToMonitor.Count==0)
-            {
-                result.Add("StocksToMonitor");
-                resultado = false;
-            }
+            //if (StocksToMonitor.Count==0)
+            //{
+            //    result.Add("StocksToMonitor");
+            //    resultado = false;
+            //}
 
             if (string.IsNullOrEmpty(ConnectionString))
             {

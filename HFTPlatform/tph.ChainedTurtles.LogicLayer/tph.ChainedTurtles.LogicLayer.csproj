@@ -49,6 +49,10 @@
       <Project>{4149F067-9C2E-436A-9398-4E19FD3C6BB8}</Project>
       <Name>tph.ChainedTurtles.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
+      <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
+      <Name>tph.DayTurtles.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj">
       <Project>{C1380514-5FE0-401E-8DC5-3BD93EF13EE4}</Project>
       <Name>tph.DayTurtles.Common</Name>
@@ -57,9 +61,17 @@
       <Project>{9437079F-8917-4EA1-AE33-3ECDF3B4C1FE}</Project>
       <Name>tph.DayTurtles.LogicLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4A57ED3B-774D-4344-B091-3328838F57F5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
+      <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
+      <Name>zHFT.StrategyHandler.BusinessEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.Common\zHFT.StrategyHandler.Common.csproj">
       <Project>{453E183D-9557-4A96-AD08-D2AD0DB68765}</Project>

@@ -56,6 +56,19 @@ namespace tph.DayTurtles.LogicLayer
 
         #region Public Methods
 
+        protected void DoRequestHistoricalPrice(int i,string symbol, int openWindow, int closeWindow)
+        {
+
+            
+            int windowToUse = openWindow > closeWindow ? openWindow : closeWindow;
+
+            DateTime from = DateTimeManager.Now.AddDays(-1);
+            DateTime to = DateTimeManager.Now;
+
+            HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
+            OnMessageRcv(reqWrapper);
+        }
+
         protected override void DoRequestHistoricalPricesThread(object param)
         {
             try
@@ -64,15 +77,8 @@ namespace tph.DayTurtles.LogicLayer
 
                 foreach (string symbol in MonitorPositions.Keys)
                 {
-                    int openWindow = GetCustomConfig(symbol).OpenWindow;
-                    int closeWindow = GetCustomConfig(symbol).CloseWindow;
-                    int windowToUse= openWindow>closeWindow?openWindow:closeWindow;
 
-                    DateTime from = DateTimeManager.Now.AddDays(-1);
-                    DateTime to = DateTimeManager.Now;
-
-                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
-                    OnMessageRcv(reqWrapper);
+                    DoRequestHistoricalPrice(i,symbol, GetCustomConfig(symbol).OpenWindow, GetCustomConfig(symbol).CloseWindow);
                     i++;
                 }
             }

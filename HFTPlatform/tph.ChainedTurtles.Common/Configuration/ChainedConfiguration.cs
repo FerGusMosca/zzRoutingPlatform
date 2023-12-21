@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using tph.DayTurtles.Common.Configuration;
+using zHFT.Main.Common.DTO;
 
 namespace tph.ChainedTurtles.Common.Configuration
 {
@@ -17,7 +18,9 @@ namespace tph.ChainedTurtles.Common.Configuration
         #region Public Attributes
 
 
-        public List<TurtleConfig> TurtleConfigs{ get; set; }
+        public List<SecurityToMonitor> SecuritiesToMonitor { get; set; }
+
+        public List<ChainedTurtleIndicator> ChainedTurtleIndicators { get; set; }
 
         #endregion
 

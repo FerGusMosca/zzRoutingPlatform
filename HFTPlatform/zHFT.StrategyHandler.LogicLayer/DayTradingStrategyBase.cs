@@ -576,42 +576,45 @@ namespace zHFT.StrategyHandler.LogicLayer
                 tradingPos.TradeDirection, tradingPos.OpeningPosition.Security.Symbol, tradingPos.Qty, tradingPos.CurrentPos().CumQty, tradingPos.CurrentPos().LeavesQty,
                 tradingPos.CurrentPos().AvgPx, tradingPos.IsFirstLeg(), report.ExecType,report.OrdStatus), Constants.MessageType.Information);
         }
-        
-        protected virtual void LoadMonitorsAndRequestMarketData()
-        {
-            Thread.Sleep(5000);
-            foreach (string symbol in Config.StocksToMonitor)
-            {
-                if (!MonitorPositions.ContainsKey(symbol))
-                {
-                    Security sec = new Security()
-                    {
-                        Symbol = symbol,
-                        SecType = Security.GetSecurityType(Config.SecurityTypes),
-                        MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
-                        Currency = Config.Currency,
-                        Exchange = Config.Exchange
-                    };
 
-                    MonitoringPosition portfPos = new MonitoringPosition()
-                    {
-                        Security = sec,
-                        DecimalRounding = Config.DecimalRounding,
-                    };
 
-                    //1- We add the current security to monitor
-                    MonitorPositions.Add(symbol, portfPos);
+        protected abstract void LoadMonitorsAndRequestMarketData();
 
-                    Securities.Add(sec);//So far, this is all wehave regarding the Securities
+        //protected virtual void LoadMonitorsAndRequestMarketData()
+        //{
+        //    Thread.Sleep(5000);
+        //    foreach (string symbol in Config.StocksToMonitor)
+        //    {
+        //        if (!MonitorPositions.ContainsKey(symbol))
+        //        {
+        //            Security sec = new Security()
+        //            {
+        //                Symbol = symbol,
+        //                SecType = Security.GetSecurityType(Config.SecurityTypes),
+        //                MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+        //                Currency = Config.Currency,
+        //                Exchange = Config.Exchange
+        //            };
 
-                    //2- We request market data
+        //            MonitoringPosition portfPos = new MonitoringPosition()
+        //            {
+        //                Security = sec,
+        //                DecimalRounding = Config.DecimalRounding,
+        //            };
 
-                    MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
-                    MarketDataRequestCounter++;
-                    OnMessageRcv(wrapper);
-                }
-            }
-        }
+        //            //1- We add the current security to monitor
+        //            MonitorPositions.Add(symbol, portfPos);
+
+        //            Securities.Add(sec);//So far, this is all wehave regarding the Securities
+
+        //            //2- We request market data
+
+        //            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
+        //            MarketDataRequestCounter++;
+        //            OnMessageRcv(wrapper);
+        //        }
+        //    }
+        //}
 
         protected void DoPersistThread(object param)
         {

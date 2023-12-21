@@ -56,11 +56,11 @@ namespace zHFT.StrategyHandler.Common
         {
             bool resultado = true;
 
-            if (StocksToMonitor.Count==0)
-            {
-                result.Add("StocksToMonitor");
-                resultado = false;
-            }
+            //if (StocksToMonitor.Count==0)
+            //{
+            //    result.Add("StocksToMonitor");
+            //    resultado = false;
+            //}
 
             if (string.IsNullOrEmpty(OrderRouter))
             {
@@ -76,14 +76,16 @@ namespace zHFT.StrategyHandler.Common
 
             if (string.IsNullOrEmpty(Currency))
             {
-                result.Add("Currency");
-                resultado = false;
+                //result.Add("Currency");
+                //resultado = false;
+                Currency = _DEFAULT_CURRENCY;
             }
 
             if (string.IsNullOrEmpty(Exchange))
             {
-                result.Add("Exchange");
-                resultado = false;
+                //result.Add("Exchange");
+                //resultado = false;
+                Exchange = _DEFAULT_EXCHANGE;
             }
 
             if (string.IsNullOrEmpty(FeeTypePerTrade))
@@ -94,8 +96,9 @@ namespace zHFT.StrategyHandler.Common
 
             if (string.IsNullOrEmpty(SecurityTypes))
             {
-                result.Add("SecurityTypes");
-                resultado = false;
+                //result.Add("SecurityTypes");
+                //resultado = false;
+                SecurityTypes = _DEFAULT_SECURITY_TYPE;
             }
             
             

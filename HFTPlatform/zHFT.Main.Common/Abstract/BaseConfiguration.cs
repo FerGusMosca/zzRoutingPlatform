@@ -13,6 +13,17 @@ namespace zHFT.Main.Common.Abstract
 {
     public abstract class BaseConfiguration:IConfiguration
     {
+
+        #region Protected Static Consts
+
+        protected static string _DEFAULT_CURRENCY = "USD";
+
+        protected static string _DEFAULT_EXCHANGE = "SMART";
+
+        protected static string _DEFAULT_SECURITY_TYPE = "CS";
+
+        #endregion
+
         #region Public Attributes
 
         public string Name { get; set; }

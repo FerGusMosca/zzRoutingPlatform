@@ -77,6 +77,10 @@
       <Project>{FDD95744-0AD8-4AD3-80A4-94B490A29B85}</Project>
       <Name>zHFT.Main</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Mock\zHFT.OrderRouters.Mock.csproj">
+      <Project>{e111cc36-f829-4666-85eb-a1819708ea17}</Project>
+      <Name>zHFT.OrderRouters.Mock</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters\zHFT.OrderRouters.csproj">
       <Project>{bf29314e-defa-4597-b01b-df7529f33ac7}</Project>
       <Name>zHFT.OrderRouters</Name>
