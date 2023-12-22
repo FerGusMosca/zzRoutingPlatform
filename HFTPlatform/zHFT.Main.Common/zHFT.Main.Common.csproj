@@ -58,6 +58,7 @@
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Converter\ConverterBase.cs" />
     <Compile Include="Converter\SecurityConverterBase.cs" />
+    <Compile Include="DTO\IndicatorToMonitor.cs" />
     <Compile Include="DTO\SecurityToMonitor.cs" />
     <Compile Include="Enums\Actions.cs" />
     <Compile Include="Apps\MainAppBase.cs" />

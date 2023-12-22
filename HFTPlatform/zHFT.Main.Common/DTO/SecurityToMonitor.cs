@@ -32,6 +32,8 @@ namespace zHFT.Main.Common.DTO
 
         public string Exchange { get; set; }
 
+        public List<IndicatorToMonitor> Indicators { get; set; }
+
         #endregion
 
         #region Public Methods

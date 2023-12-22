@@ -44,15 +44,11 @@
 			<Exchange>SMART</Exchange><!-- Default: SMART -->
 			
 			<Indicators>
-				<IndicatorCode>VIX_TRENDLINES_VIX</IndicatorCode>
-				<!--<IndicatorCode></IndicatorCode>
-				<IndicatorCode></IndicatorCode>-->
-				
+				<IndicatorToMonitor>
+					<Code>VIX_TRENDLINES_VIX</Code>
+				</IndicatorToMonitor>
 			</Indicators>
-			
 		</SecurityToMonitor>
-		
-		
 		
 	</SecuritiesToMonitor>
 
@@ -66,8 +62,8 @@
 				<Currency>USD</Currency>
 				<Exchange>CBOE</Exchange>
 			</SecurityToMonitor>
-			<Assembly>xxx</Assembly>
-			<SignalType>yyy</SignalType>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedTrendlineTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB</SignalType><!--BOB= Trendlines-->
 			<RequestPrices>true</RequestPrices>
 		</ChainedTurtleIndicator>
 	</ChainedTurtleIndicators>

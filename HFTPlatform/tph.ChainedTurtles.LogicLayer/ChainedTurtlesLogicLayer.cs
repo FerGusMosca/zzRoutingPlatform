@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.ChainedTurtles.BusinessEntities;
+using tph.ChainedTurtles.Common;
 using tph.ChainedTurtles.Common.Configuration;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
@@ -20,7 +22,14 @@ namespace tph.ChainedTurtles.LogicLayer
     public class ChainedTurtlesLogicLayer : tph.DayTurtles.LogicLayer.DayTurtles
     {
 
-        #region Public Attributes
+        #region Protected Attributes
+
+        public Dictionary<string , MonTurtlePosition> ChainedIndicatos { get; set; }
+
+        #endregion
+
+
+        #region Public Overriden Methods
 
         public override void DoLoadConfig(string configFile, List<string> noValFlds)
         {
@@ -37,11 +46,92 @@ namespace tph.ChainedTurtles.LogicLayer
 
         #region Overriden Methods
 
+
+        private void InitializeMonitorIndicator(ChainedTurtleIndicator indicator,Security sec)
+        {
+            
+            var indType = Type.GetType(indicator.Assembly);
+            if (indType != null)
+            {
+                MonTurtlePosition monInd = (MonTurtlePosition)Activator.CreateInstance(indType, new object[]
+                                                                                    {
+                                                                                                sec,
+                                                                                                GetCustomConfig(indicator.SecurityToMonitor.Symbol),
+                                                                                                GetConfig().CandleReferencePrice,
+                                                                                                indicator.SignalType,
+                                                                                                indicator.RequestPrices
+                                                                                    }
+                                                                                    );
+
+
+                if (!ChainedIndicatos.ContainsKey(indicator.Code))
+                    ChainedIndicatos.Add(indicator.Code, monInd);
+                else
+                    throw new Exception($"Duplcated asembly indicator for indicator code {indicator.Code}");
+
+
+            }
+            else
+                throw new Exception($"Assembly not found: {indicator.Assembly} ");
+        }
+
+        private void LoadMonitorIndicators()
+        {
+            try
+            {
+                
+
+                lock (Config)
+                {
+                    foreach (var indicator in GetConfig().ChainedTurtleIndicators)
+                    {
+
+                        //This security works as an inner indicator of another trading security
+                        Security ind = new Security()
+                        {
+                            Symbol = indicator.SecurityToMonitor.Symbol,
+                            SecType = Security.GetSecurityType(indicator.SecurityToMonitor.SecurityType),
+                            MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+                            Currency = indicator.SecurityToMonitor.Currency,
+                            Exchange = indicator.SecurityToMonitor.Exchange
+                        };
+
+
+                        InitializeMonitorIndicator(indicator, ind);
+
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"@{GetConfig().Name}--> CRITITAL ERROR initializing monitor indicators:{ex.Message}", Constants.MessageType.Error);
+            
+            }
+        
+        }
+
+        protected MonTurtlePosition FetchIndicator(string code)
+        {
+
+            if (ChainedIndicatos.ContainsKey(code))
+            {
+                return ChainedIndicatos[code];
+            }
+            else
+                throw new Exception($"Could not find a pre loaded indicator for code {code}!");
+        
+        
+        }
+
         protected override void LoadMonitorsAndRequestMarketData()
         {
             try
             {
 
+
+                LoadMonitorIndicators();
                 lock (Config)
                 {
                     foreach (var security in GetConfig().SecuritiesToMonitor)
@@ -59,30 +149,27 @@ namespace tph.ChainedTurtles.LogicLayer
                                 Exchange = security.Exchange
                             };
 
-                            MonTurtlePosition portfPos = new MonTurtlePosition(
-                                GetCustomConfig(security.Symbol),
+                            MonChainedTurtlePosition monChPos = new MonChainedTurtlePosition(
+                                sec, GetCustomConfig(security.Symbol),
                                 GetConfig().StopLossForOpenPositionPct,
-                                GetConfig().CandleReferencePrice)
-                            {
-                                Security = sec,
-                                DecimalRounding = Config.DecimalRounding,
-                            };
+                                GetConfig().CandleReferencePrice);
 
                             //1- We add the current security to monitor
-                            MonitorPositions.Add(security.Exchange, portfPos);
+                            MonitorPositions.Add(security.Exchange, monChPos);
 
                             Securities.Add(sec);//So far, this is all wehave regarding the Securities
 
-                            //2- No market data to request until Historical Prices are recevied
+                            //2- Load all the indicators pre loaded for the newly monitored security
+                            foreach (var indicator in security.Indicators)
+                            {
+                                MonTurtlePosition innerIndicator = FetchIndicator(indicator.Code);
+                                monChPos.AppendIndicator(innerIndicator);
+                            }
 
 
+                            //3- No market data to request until Historical Prices are recevied
                         }
-
-
                     }
-
-
-                    //#2- Load monitors for INDICATORS
                 }
 
             }
@@ -153,6 +240,8 @@ namespace tph.ChainedTurtles.LogicLayer
 
             if (ConfigLoader.LoadConfig(this, configFile))
             {
+
+                ChainedIndicatos = new Dictionary<string, MonTurtlePosition>();
                 LoadCustomTurtlesWindows();
 
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);

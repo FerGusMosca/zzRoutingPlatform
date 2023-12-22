@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MonChainedTrendlineTurtleIndicator.cs" />
+    <Compile Include="MonChainedTurtleIndicator.cs" />
     <Compile Include="MonChainedTurtlePosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -49,9 +51,17 @@
       <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
       <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
       <Name>zHFT.StrategyHandler.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntitie\zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities.csproj">
+      <Project>{3515B58C-6998-48FE-B794-58989C65CE04}</Project>
+      <Name>zHFT.StrategyHandler.CryptocurrencyListSaver.BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\tph.ChainedTurtles.BusinessEntities\tph.ChainedTurtles.BusinessEntities.csproj">
+      <Project>{6343690B-5E67-4141-9659-C98E9C167A25}</Project>
+      <Name>tph.ChainedTurtles.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.ChainedTurtles.Common\tph.ChainedTurtles.Common.csproj">
       <Project>{4149F067-9C2E-436A-9398-4E19FD3C6BB8}</Project>
       <Name>tph.ChainedTurtles.Common</Name>
