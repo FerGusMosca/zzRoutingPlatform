@@ -51,6 +51,10 @@
       <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.TrendlineTurtles.BusinessEntities\tph.TrendlineTurtles.BusinessEntities.csproj">
+      <Project>{B4182EA0-D65E-4F6A-B508-07AED70DA76F}</Project>
+      <Name>tph.TrendlineTurtles.BusinessEntities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

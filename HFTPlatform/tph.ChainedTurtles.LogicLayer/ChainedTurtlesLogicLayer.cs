@@ -10,16 +10,20 @@ using tph.ChainedTurtles.Common.Configuration;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
 using tph.DayTurtles.LogicLayer;
+using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.MarketClient.Common.Common.Wrappers;
+using zHFT.StrategyHandler.BusinessEntities;
+using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 
 namespace tph.ChainedTurtles.LogicLayer
 {
-    public class ChainedTurtlesLogicLayer : tph.DayTurtles.LogicLayer.DayTurtles
+    public class ChainedTurtlesLogicLayer : tph.TrendlineTurtles.LogicLayer.TrendlineTurtles
     {
 
         #region Protected Attributes
@@ -129,9 +133,8 @@ namespace tph.ChainedTurtles.LogicLayer
         {
             try
             {
-
-
                 LoadMonitorIndicators();
+                
                 lock (Config)
                 {
                     foreach (var security in GetConfig().SecuritiesToMonitor)
@@ -209,7 +212,10 @@ namespace tph.ChainedTurtles.LogicLayer
                         DoLog($"@{GetConfig().Name}--> Requesting historical prices for indicator {indicator.SecurityToMonitor.Symbol}", Constants.MessageType.Information);
                         DoRequestHistoricalPrice(i, indicator.SecurityToMonitor.Symbol,
                                                 GetCustomConfig(indicator.SecurityToMonitor.Symbol).OpenWindow,
-                                                GetCustomConfig(indicator.SecurityToMonitor.Symbol).CloseWindow);
+                                                GetCustomConfig(indicator.SecurityToMonitor.Symbol).CloseWindow,
+                                                indicator.SecurityToMonitor.Currency,
+                                                SecurityTypeTranslator.TranslateNonMandatorySecurityType(indicator.SecurityToMonitor.SecurityType),
+                                                indicator.SecurityToMonitor.Exchange);
 
                         i++;
 
@@ -224,6 +230,45 @@ namespace tph.ChainedTurtles.LogicLayer
                 DoLog($"@{Config.Name}--> CRITICAL ERROR requesting historical prices: {ex.Message}", Constants.MessageType.Error);
             
             }
+        }
+
+        protected override void ProcessHistoricalPrices(object pWrapper)
+        {
+            try
+            {
+                HistoricalPricesDTO dto = null;
+
+                dto = LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
+
+
+                if (dto != null && dto.Symbol != null)
+                {
+                    lock (tSynchronizationLock)
+                    {
+                        if (MonitorPositions.ContainsKey(dto.Symbol))
+                            BuildTrendlines((MonTrendlineTurtlesPosition)MonitorPositions[dto.Symbol]);
+                        else if (ChainedIndicatos.Values.Any(x => x.Security.Symbol == dto.Symbol))
+                        {
+                            foreach (var indicator in ChainedIndicatos.Values.Where(x => x.Security.Symbol == dto.Symbol))
+                            {
+                                DoLog($"Buiding trendlines for indicator {indicator.Security.Symbol}", Constants.MessageType.Information);
+                                BuildTrendlines((MonTrendlineTurtlesPosition)indicator);
+                            }
+
+                        }
+                        else
+                            DoLog($"Could not find monitoring position for symbol {dto.Symbol} processing historical prices", Constants.MessageType.Debug);
+
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("Critical ERROR processing Trendlines : {0}", e.Message),
+                    Constants.MessageType.Error);
+            }
+
+
         }
 
         #endregion

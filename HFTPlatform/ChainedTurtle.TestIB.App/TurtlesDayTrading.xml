@@ -12,6 +12,13 @@
 	<FeeValuePerTrade>0</FeeValuePerTrade>
 	<DecimalRounding>3</DecimalRounding>
 
+	<InnerTrendlinesSpan>120</InnerTrendlinesSpan>
+	<!--in candles-->
+	<OuterTrendlinesSpan>60</OuterTrendlinesSpan>
+	<!--in candles-->
+	<PerforationThresholds>0.0005</PerforationThresholds>
+	<!--in pct 0-1-->
+
 
 	<ClosingTime>05:51 PM</ClosingTime>
 

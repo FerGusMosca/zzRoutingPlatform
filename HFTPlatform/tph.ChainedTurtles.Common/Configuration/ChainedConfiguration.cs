@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using tph.DayTurtles.Common.Configuration;
+using tph.TrendlineTurtles.Common.Configuration;
 using zHFT.Main.Common.DTO;
 
 namespace tph.ChainedTurtles.Common.Configuration
 {
-    public class ChainedConfiguration : DayTurtlesConfiguration
+    public class ChainedConfiguration : TrendlineConfiguration
     {
         //Chained logic --> assembly
         //Chain setting --> open signal type

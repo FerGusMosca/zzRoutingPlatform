@@ -51,6 +51,10 @@
       <Project>{C1380514-5FE0-401E-8DC5-3BD93EF13EE4}</Project>
       <Name>tph.DayTurtles.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.TrendlineTurtles.Common\tph.TrendlineTurtles.Common.csproj">
+      <Project>{8DD493CB-4798-4334-ACC4-305D8E938D9A}</Project>
+      <Name>tph.TrendlineTurtles.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4A57ED3B-774D-4344-B091-3328838F57F5}</Project>
       <Name>zHFT.Main.Common</Name>
