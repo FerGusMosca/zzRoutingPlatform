@@ -131,14 +131,18 @@ namespace zHFT.StrategyHandler.LogicLayer
         {
 
             HistoricalPricesDTO hpDto = HistoricalPricesConverter.ConvertHistoricalPrices(hpWrapper);
-            MonitoringPosition monPortfPos =MonitorPositions[hpDto.Symbol];
-            
-            foreach (MarketData md in hpDto.MarketData)
-            {
 
-                if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null)
+            if (MonitorPositions.ContainsKey(hpDto.Symbol))
+            {
+                MonitoringPosition monPortfPos = MonitorPositions[hpDto.Symbol];
+
+                foreach (MarketData md in hpDto.MarketData)
                 {
-                    monPortfPos.AppendCandleHistorical(md);
+
+                    if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null)
+                    {
+                        monPortfPos.AppendCandleHistorical(md);
+                    }
                 }
             }
 

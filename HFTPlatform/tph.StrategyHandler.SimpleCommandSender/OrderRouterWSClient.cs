@@ -462,10 +462,10 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 lock (MarketDataRequests)
                 {
 
-                    if (MarketDataRequests.ContainsKey(fullSymbol))
-                        MarketDataRequests.Remove(fullSymbol);
+                    if (MarketDataRequests.ContainsKey(symbol))
+                        MarketDataRequests.Remove(symbol);
 
-                    MarketDataRequests.Add(fullSymbol, mdReq);
+                    MarketDataRequests.Add(symbol, mdReq);
                 }
                 
 

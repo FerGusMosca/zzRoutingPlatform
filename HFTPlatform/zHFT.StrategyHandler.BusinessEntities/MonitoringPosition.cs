@@ -26,6 +26,12 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         #region public Methods
 
+        public virtual bool IsTrendlineMonPosition()
+        {
+            return false;
+        
+        }
+
         public virtual MarketData GetLastTriggerPrice()
         {
             return null;

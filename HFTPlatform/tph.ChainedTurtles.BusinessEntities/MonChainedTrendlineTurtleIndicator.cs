@@ -22,5 +22,14 @@ namespace tph.ChainedTurtles.BusinessEntities
         }
 
         #endregion
+
+        #region Public Overriden Methods
+
+        public override bool IsTrendlineMonPosition()
+        {
+            return true;
+        }
+
+        #endregion
     }
 }
