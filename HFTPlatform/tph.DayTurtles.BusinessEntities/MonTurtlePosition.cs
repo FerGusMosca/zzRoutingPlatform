@@ -304,6 +304,7 @@ namespace tph.DayTurtles.BusinessEntities
             return newCandle;
         }
 
+
         public virtual bool LongSignalTriggered()
         {
             bool isHighestTurtles = IsHighest(TurtlesCustomConfig.OpenWindow);

@@ -46,6 +46,46 @@ namespace tph.ChainedTurtles.BusinessEntities
         
         }
 
+        public override bool LongSignalTriggered() 
+        {
+            
+            foreach (var indicator in InnerIndicators)
+            {
+                if (!indicator.LongSignalTriggered())
+                    return false;
+            
+            }
+
+            return true;    
+        }
+
+
+        public override bool ShortSignalTriggered()
+        {
+
+            foreach (var indicator in InnerIndicators)
+            {
+                if (!indicator.ShortSignalTriggered())
+                    return false;
+
+            }
+
+            return true;
+        }
+
+        public override string SignalTriggered()
+        {
+            string resp = $" Eval indicators for symbol {Security.Symbol}";
+
+
+            foreach (var indicator in InnerIndicators)
+            {
+                resp += $" {indicator.SignalTriggered()} -";
+            
+            }
+
+            return resp;
+        }
 
 
         #endregion

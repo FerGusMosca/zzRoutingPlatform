@@ -30,7 +30,7 @@ namespace tph.ChainedTurtles.LogicLayer
 
         #region Protected Attributes
 
-        public Dictionary<string, MonTurtlePosition> ChainedIndicatos { get; set; }
+        public Dictionary<string, MonTurtlePosition> ChainedIndicators { get; set; }
 
         #endregion
 
@@ -148,8 +148,47 @@ namespace tph.ChainedTurtles.LogicLayer
             Wrapper wrapper = (Wrapper)pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
 
-            DoLog($"TEST--> Recv market data for symbol {md.Security.Symbol}", Constants.MessageType.Information);
+            OrderRouter.ProcessMessage(wrapper);
 
+
+            try
+            {
+                lock (tLock)
+                {
+                    DateTimeManager.NullNow = md.GetReferenceDateTime();
+
+                    if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null
+                                                                                    && ProcessedHistoricalPrices
+                                                                                        .Contains(md.Security.Symbol))
+                    {
+                        MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition)MonitorPositions[md.Security.Symbol];
+                        if (monPos.HasHistoricalCandles())
+                        {
+                            bool newCandle = monPos.AppendCandle(md);
+
+                            EvalOpeningClosingPositions(monPos);//We will see the inner indicatros if they are on
+                            UpdateLastPrice(monPos, md);
+                        }
+                    }
+                    else if (ChainedIndicators.ContainsKey(md.Security.Symbol))
+                    {
+                        MonTurtlePosition indicator = ChainedIndicators[md.Security.Symbol];
+                        bool newCandle = indicator.AppendCandle(md);
+                        EvalMarketDataCalculations(indicator, md);
+                    }
+                    else
+                    { 
+                        //Non tracked symbol
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                DoLog(
+                    string.Format("ERROR @DailyTurtles- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
+                    Constants.MessageType.Error);
+            }
         }
 
         #endregion
@@ -177,8 +216,8 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                     );
 
 
-                if (!ChainedIndicatos.ContainsKey(indicator.Code))
-                    ChainedIndicatos.Add(indicator.Code, monInd);
+                if (!ChainedIndicators.ContainsKey(indicator.Code))
+                    ChainedIndicators.Add(indicator.Code, monInd);
                 else
                     throw new Exception($"Duplcated asembly indicator for indicator code {indicator.Code}");
 
@@ -227,9 +266,9 @@ namespace tph.ChainedTurtles.LogicLayer
         private MonTurtlePosition FetchIndicator(string code)
         {
 
-            if (ChainedIndicatos.ContainsKey(code))
+            if (ChainedIndicators.ContainsKey(code))
             {
-                return ChainedIndicatos[code];
+                return ChainedIndicators[code];
             }
             else
                 throw new Exception($"Could not find a pre loaded indicator for code {code}!");
@@ -239,7 +278,7 @@ namespace tph.ChainedTurtles.LogicLayer
 
         protected void InitializeIndicators(OnLogMessage pOnLogMsg)
         {
-            foreach (var indicator in ChainedIndicatos.Values)
+            foreach (var indicator in ChainedIndicators.Values)
             {
 
                 TrendLineCreator.InitializeCreator(indicator.Security,
@@ -258,6 +297,22 @@ namespace tph.ChainedTurtles.LogicLayer
             {
                 DoLog($"Buiding trendlines for indicator {monPos.Security.Symbol}", Constants.MessageType.Information);
                 BuildTrendlines((MonTrendlineTurtlesPosition)monPos);
+            }
+        }
+
+        protected void EvalMarketDataCalculations(MonitoringPosition indicator,MarketData md)
+        {
+            bool newCandle = indicator.AppendCandle(md);
+
+            if (indicator.IsTrendlineMonPosition())
+            {
+                if (newCandle)
+                {
+                    RecalculateNewTrendlines((MonTrendlineTurtlesPosition)indicator, GetConfig().RecalculateTrendlines);
+                    indicator.EvalSignalTriggered();
+                    EvalBrokenTrendlines((MonTrendlineTurtlesPosition)indicator, md);
+                }
+
             }
         }
 
@@ -290,9 +345,9 @@ namespace tph.ChainedTurtles.LogicLayer
                             DoRequestMarketData(monPos);
                             //If I am going to calculate the trendlines , it should be setup as an INDICATOR!!
                         }
-                        else if (ChainedIndicatos.Values.Any(x => x.Security.Symbol == dto.Symbol))
+                        else if (ChainedIndicators.Values.Any(x => x.Security.Symbol == dto.Symbol))
                         {
-                            foreach (var indicator in ChainedIndicatos.Values.Where(x => x.Security.Symbol == dto.Symbol))
+                            foreach (var indicator in ChainedIndicators.Values.Where(x => x.Security.Symbol == dto.Symbol))
                             {
                                 dto.MarketData.ForEach(x => indicator.AppendCandleHistorical(x));
                                 EvalHistoricalPricesPrecalculations(indicator);
@@ -330,7 +385,7 @@ namespace tph.ChainedTurtles.LogicLayer
             if (ConfigLoader.LoadConfig(this, configFile))
             {
 
-                ChainedIndicatos = new Dictionary<string, MonTurtlePosition>();
+                ChainedIndicators = new Dictionary<string, MonTurtlePosition>();
                 ProcessedHistoricalPrices = new List<string>();
 
                 LoadCustomTurtlesWindows();

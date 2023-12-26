@@ -642,15 +642,15 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         
         #region Static Methods
         
-        public static void EvalBrokenTrendlines(MonTrendlineTurtlesPosition portfPos,MarketData price)
+        public static void EvalBrokenTrendlines(MonTrendlineTurtlesPosition monfPos,MarketData price)
         {
-            if (TrdCreatorDict.ContainsKey(portfPos.Security.Symbol))
+            if (TrdCreatorDict.ContainsKey(monfPos.Security.Symbol))
             {
-                List<MarketData> histPrices = new List<MarketData>(portfPos.Candles.Values);
+                List<MarketData> histPrices = new List<MarketData>(monfPos.Candles.Values);
                 histPrices = histPrices.OrderBy(x => x.MDEntryDate).ToList();
                 
-                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrndLineForNewPrice(price,portfPos.Supports,histPrices,true);
-                TrdCreatorDict[portfPos.Security.Symbol].EvalBrokenTrndLineForNewPrice(price,portfPos.Resistances,histPrices,false);
+                TrdCreatorDict[monfPos.Security.Symbol].EvalBrokenTrndLineForNewPrice(price,monfPos.Supports,histPrices,true);
+                TrdCreatorDict[monfPos.Security.Symbol].EvalBrokenTrndLineForNewPrice(price,monfPos.Resistances,histPrices,false);
             }
         }
 
