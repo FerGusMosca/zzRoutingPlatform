@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Market Client Mock</Name>
+
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+	<SyncHistoricalWithMarketData>true</SyncHistoricalWithMarketData>
+	<InitialPacingMarketDataMillisec>10000</InitialPacingMarketDataMillisec>
+	
+	
+	<PacingMarketDataMilliSec>100</PacingMarketDataMilliSec>
+
+
+	<ClosingMinutesBeforeLastCandle>8</ClosingMinutesBeforeLastCandle>
+
+  
+</Configuration>

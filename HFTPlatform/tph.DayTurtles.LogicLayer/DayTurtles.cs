@@ -69,14 +69,14 @@ namespace tph.DayTurtles.LogicLayer
             OnMessageRcv(reqWrapper);
         }
 
-        protected void DoRequestHistoricalPrice(int i, string symbol, int openWindow, int closeWindow,string currency, 
+        protected void DoRequestHistoricalPrice(int i, string symbol, int window,string currency, 
                                                 SecurityType? pSecurityType,string exchange)
         {
 
 
-            int windowToUse = openWindow > closeWindow ? openWindow : closeWindow;
+          
 
-            DateTime from = DateTimeManager.Now.AddDays(-1);
+            DateTime from = DateTimeManager.Now.AddDays(window);
             DateTime to = DateTimeManager.Now;
 
             HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, 

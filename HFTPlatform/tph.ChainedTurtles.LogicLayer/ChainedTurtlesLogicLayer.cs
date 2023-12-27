@@ -14,6 +14,7 @@ using tph.TrendlineTurtles.BusinessEntities;
 using tph.TrendlineTurtles.LogicLayer.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
@@ -69,6 +70,7 @@ namespace tph.ChainedTurtles.LogicLayer
                                 GetConfig().StopLossForOpenPositionPct,
                                 GetConfig().CandleReferencePrice);
 
+
                             //1- We add the current security to monitor
                             MonitorPositions.Add(security.Symbol, monChPos);
 
@@ -111,8 +113,7 @@ namespace tph.ChainedTurtles.LogicLayer
                         DoLog($"@{GetConfig().Name}--> Requesting historical prices for monitored symbol {security.Symbol}", Constants.MessageType.Information);
                         
                         DoRequestHistoricalPrice(i, security.Symbol,
-                                                GetCustomConfig(security.Symbol).OpenWindow,
-                                                GetCustomConfig(security.Symbol).CloseWindow,
+                                                GetConfig().HistoricalPricesPeriod,
                                                 security.Currency,
                                                 SecurityTypeTranslator.TranslateNonMandatorySecurityType(security.SecurityType),
                                                 security.Exchange
@@ -127,8 +128,7 @@ namespace tph.ChainedTurtles.LogicLayer
 
                         DoLog($"@{GetConfig().Name}--> Requesting historical prices for indicator {indicator.SecurityToMonitor.Symbol}", Constants.MessageType.Information);
                         DoRequestHistoricalPrice(i, indicator.SecurityToMonitor.Symbol,
-                                                GetCustomConfig(indicator.SecurityToMonitor.Symbol).OpenWindow,
-                                                GetCustomConfig(indicator.SecurityToMonitor.Symbol).CloseWindow,
+                                                GetConfig().HistoricalPricesPeriod,
                                                 indicator.SecurityToMonitor.Currency,
                                                 SecurityTypeTranslator.TranslateNonMandatorySecurityType(indicator.SecurityToMonitor.SecurityType),
                                                 indicator.SecurityToMonitor.Exchange);
@@ -165,7 +165,6 @@ namespace tph.ChainedTurtles.LogicLayer
                         if (monPos.HasHistoricalCandles())
                         {
                             bool newCandle = monPos.AppendCandle(md);
-
                             EvalOpeningClosingPositions(monPos);//We will see the inner indicatros if they are on
                             UpdateLastPrice(monPos, md);
                         }
@@ -173,7 +172,6 @@ namespace tph.ChainedTurtles.LogicLayer
                     else if (ChainedIndicators.ContainsKey(md.Security.Symbol))
                     {
                         MonTurtlePosition indicator = ChainedIndicators[md.Security.Symbol];
-                        bool newCandle = indicator.AppendCandle(md);
                         EvalMarketDataCalculations(indicator, md);
                     }
                     else
@@ -210,14 +208,15 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                                 sec,
                                                                                                 GetCustomConfig(indicator.SecurityToMonitor.Symbol),
                                                                                                 GetConfig().CandleReferencePrice,
+                                                                                                indicator.Code,
                                                                                                 indicator.SignalType,
                                                                                                 indicator.RequestPrices
                                                                                     }
                                                                                     );
 
 
-                if (!ChainedIndicators.ContainsKey(indicator.Code))
-                    ChainedIndicators.Add(indicator.Code, monInd);
+                if (!ChainedIndicators.ContainsKey(indicator.SecurityToMonitor.Symbol))
+                    ChainedIndicators.Add(indicator.SecurityToMonitor.Symbol, monInd);
                 else
                     throw new Exception($"Duplcated asembly indicator for indicator code {indicator.Code}");
 
@@ -266,14 +265,18 @@ namespace tph.ChainedTurtles.LogicLayer
         private MonTurtlePosition FetchIndicator(string code)
         {
 
-            if (ChainedIndicators.ContainsKey(code))
+            foreach (var indicator in ChainedIndicators.Values)
             {
-                return ChainedIndicators[code];
+                if (((MonChainedTurtleIndicator)indicator).Code == code)
+                {
+                    return indicator;
+                }
+            
+            
             }
-            else
-                throw new Exception($"Could not find a pre loaded indicator for code {code}!");
 
 
+            throw new Exception($"Could not find a pre loaded indicator for code {code}!");
         }
 
         protected void InitializeIndicators(OnLogMessage pOnLogMsg)
@@ -342,6 +345,7 @@ namespace tph.ChainedTurtles.LogicLayer
                         {
                             MonTurtlePosition monPos = (MonTurtlePosition)MonitorPositions[dto.Symbol];
                             dto.MarketData.ForEach(x => monPos.AppendCandleHistorical(x));
+                            ProcessedHistoricalPrices.Add(dto.Symbol);
                             DoRequestMarketData(monPos);
                             //If I am going to calculate the trendlines , it should be setup as an INDICATOR!!
                         }
@@ -351,6 +355,7 @@ namespace tph.ChainedTurtles.LogicLayer
                             {
                                 dto.MarketData.ForEach(x => indicator.AppendCandleHistorical(x));
                                 EvalHistoricalPricesPrecalculations(indicator);
+                                ProcessedHistoricalPrices.Add(dto.Symbol);
                                 DoRequestMarketData(indicator);
                             }
 
@@ -398,6 +403,14 @@ namespace tph.ChainedTurtles.LogicLayer
 
                 Thread depuarateThread = new Thread(EvalDepuratingPositionsThread);
                 depuarateThread.Start();
+
+                Thread persistTrendlinesThread = new Thread(new ParameterizedThreadStart(DoPersistTrendlinesThread));
+                persistTrendlinesThread.Start();
+
+                Thread delPrevTrehdlinesThread = new Thread(new ParameterizedThreadStart(DeleteAllTrendlines));
+                delPrevTrehdlinesThread.Start();
+
+                //DoRefreshTrendlines --> In case we want to implement some manual implementation of the trendlines
 
                 return true;
 

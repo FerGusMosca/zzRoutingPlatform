@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Chained Turtles Backtest</Name>
+
+	<IncomingConfigPath>.\Mock\incomingMarketClient.Mock.xml</IncomingConfigPath>
+	<IncomingModule>tph.MarketClient.Mock.MarketClient,tph.MarketClient.Mock</IncomingModule>
+
+	<OutgoingModule>tph.ChainedTurtles.LogicLayer.ChainedTurtlesLogicLayer, tph.ChainedTurtles.LogicLayer</OutgoingModule>
+	<OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>

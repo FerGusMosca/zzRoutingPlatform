@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>CHAINED_TURTLES_WEBSOCKET_IB_TEST</Name>
+	<Name>CHAINED_TURTLES_BACKTEST_IB_TEST</Name>
 
 	<PositionSizeInCash>1000</PositionSizeInCash>
-
+	
 	<MaxOpenedPositions>6</MaxOpenedPositions>
 	<StopLossForOpenPositionPct>1</StopLossForOpenPositionPct>
 	<!--1=1%-->
@@ -27,11 +27,9 @@
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
 	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
-
 	<ResetOnPersistance>true</ResetOnPersistance>
-
+	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-
 	<CandleReferencePrice>TRADE</CandleReferencePrice>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 
@@ -70,7 +68,7 @@
 				<Exchange>CBOE</Exchange>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
-			<SignalType>BOB</SignalType><!--BOB= Trendlines-->
+			<SignalType>BOB_INV</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>true</RequestPrices>
 		</ChainedTurtleIndicator>
 	</ChainedTurtleIndicators>

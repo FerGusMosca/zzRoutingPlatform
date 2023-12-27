@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Util;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -14,25 +15,80 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         #region Public Attributes
 
+        public string Code { get; set; }
+
         public string SignalType { get; set; }
 
         public bool ReqPrices { get; set; }
 
+        protected bool LongSignalOn { get; set; }
+
+        protected bool ShortSignalOn { get; set; }
+
+        protected DateTime? LastSignalTimestamp { get; set; }
+
         #endregion
+
+        #region Protected Consts
+
+        public static string _BOB_SIGNAL_TYPE = "BOB";
+        public static string _BOB_INV_SIGNAL_TYPE = "BOB_INV";
+
+        protected static int _SIGNAL_EXPIRATION_IN_MIN = 5;
+
+        #endregion
+
 
 
         #region Constructor 
 
         public MonChainedTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig,
-                                        string candleRefPrice,string signalType,bool reqPrices) :base(pTurtlesCustomConfig, 0,candleRefPrice)
+                                        string candleRefPrice,string pCode,string signalType,bool reqPrices) :base(pTurtlesCustomConfig, 0,candleRefPrice)
         {
 
 
             Security = pSecurity;
+            Code = pCode;
             SignalType = signalType;
             ReqPrices = reqPrices;
 
+            LongSignalOn = false;
+            ShortSignalOn = false;
+            LastSignalTimestamp = null;
 
+
+        }
+
+        #endregion
+
+
+        #region Protected Methods
+
+        public void EvalTimestampExpiration()
+        {
+
+            if (LastSignalTimestamp.HasValue)
+            {
+                TimeSpan elapsed = DateTimeManager.Now - LastSignalTimestamp.Value;
+
+                if (elapsed.TotalMinutes > _SIGNAL_EXPIRATION_IN_MIN)
+                {
+                    LastSignalTimestamp = null;
+                    LongSignalOn = false;
+                    ShortSignalOn = false;
+                }
+            }
+
+        }
+
+        public bool DownsideBreaktrhough()
+        {
+            return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+        }
+
+        public bool UpsideBreaktrhough()
+        {
+            return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
 
         #endregion

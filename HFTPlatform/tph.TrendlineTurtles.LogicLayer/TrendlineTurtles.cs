@@ -374,6 +374,20 @@ namespace tph.TrendlineTurtles.LogicLayer
                     TrendlineManager.Delete(monPos.Security.Symbol);
                     DoLog($"Prev trendlines for symbol {monPos.Security.Symbol} successfully deleted", Constants.MessageType.Information);
 
+                    List<MonitoringPosition> innerIndicators = monPos.GetInnerIndicators();
+                    if (innerIndicators != null)
+                    {
+                        foreach (var innerIndicator in innerIndicators)
+                        {
+                            if (innerIndicator is MonTrendlineTurtlesPosition)
+                            {
+                                DoLog($"Deleting prev trendlines for inner symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
+                                TrendlineManager.Delete(innerIndicator.Security.Symbol);
+                                DoLog($"Prev trendlines for inner symbol {monPos.Security.Symbol} successfully deleted", Constants.MessageType.Information);
+
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -461,6 +475,24 @@ namespace tph.TrendlineTurtles.LogicLayer
                         List<Trendline> supToPersist = new List<Trendline>(monPos.Supports);
                         DoPersistTrendline(monPos, resToPersist);
                         DoPersistTrendline(monPos, supToPersist);
+
+                        List<MonitoringPosition> innerIndicators= monPos.GetInnerIndicators();
+
+                        if (innerIndicators != null)
+                        {
+                            foreach(var innerIndicator in innerIndicators)
+                            {
+                                //MonTrendlineTurtlesPosition
+                                if (innerIndicator is MonTrendlineTurtlesPosition)
+                                {
+                                    MonTrendlineTurtlesPosition trndIndicator = (MonTrendlineTurtlesPosition)innerIndicator;
+                                    List<Trendline> innerResToPersist = new List<Trendline>(trndIndicator.Resistances);
+                                    List<Trendline> innerSuppToPersist = new List<Trendline>(trndIndicator.Supports);
+                                    DoPersistTrendline(trndIndicator, innerResToPersist);
+                                    DoPersistTrendline(trndIndicator, innerSuppToPersist);
+                                }
+                            }
+                        }
                     }
                         
                     //}

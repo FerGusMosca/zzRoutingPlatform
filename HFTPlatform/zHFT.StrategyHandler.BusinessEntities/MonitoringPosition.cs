@@ -26,6 +26,11 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         #region public Methods
 
+        public virtual List<MonitoringPosition> GetInnerIndicators()
+        {
+            return new List<MonitoringPosition>();//empty
+        }
+
         public virtual bool IsTrendlineMonPosition()
         {
             return false;

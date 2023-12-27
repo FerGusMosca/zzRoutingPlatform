@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -56,7 +57,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             
             }
 
-            return true;    
+            return InnerIndicators.Count>0;    
         }
 
 
@@ -70,7 +71,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
             }
 
-            return true;
+            return InnerIndicators.Count > 0;
         }
 
         public override string SignalTriggered()
@@ -85,6 +86,14 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
 
             return resp;
+        }
+
+        public override List<MonitoringPosition> GetInnerIndicators()
+        {
+
+            List<MonitoringPosition> indicators = new List<MonitoringPosition>(InnerIndicators);
+
+            return indicators;
         }
 
 

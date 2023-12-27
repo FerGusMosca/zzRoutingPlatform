@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MonChainedTrendlineTurtleIndicator.cs" />
+    <Compile Include="MonChainedInvBOBTurtleIndicator.cs" />
+    <Compile Include="MonChainedBOBTurtleIndicator.cs" />
     <Compile Include="MonChainedTurtleIndicator.cs" />
     <Compile Include="MonChainedTurtlePosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

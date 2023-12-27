@@ -10,6 +10,8 @@ using zHFT.Main.Common.Util;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
+    //LONG Signal on downside breakthroughs
+    //SHORT Signal on upside breakthroughs
     public class MonChainedTrendlineTurtleIndicator: MonChainedTurtleIndicator
     {
         #region Constructor 
@@ -17,51 +19,20 @@ namespace tph.ChainedTurtles.BusinessEntities
         public MonChainedTrendlineTurtleIndicator(Security pSecurity,
                                                   TurtlesCustomConfig pTurtlesCustomConfig,
                                                     string candleRefPrice,
+                                                    string pCode,
                                                     string signalType,
-                                                    bool reqMarketData):base(pSecurity,pTurtlesCustomConfig,candleRefPrice,signalType,reqMarketData)
+                                                    bool reqMarketData):base(pSecurity,pTurtlesCustomConfig,candleRefPrice,pCode,signalType,reqMarketData)
         {
-            LongSignalOn = false;
-            ShortSignalOn = false;
-
-            LastSignalTimestamp = null;
+           
         }
 
         #endregion
 
-        #region Protected Static Consts
-
-        protected static int _SIGNAL_EXPIRATION_IN_MIN = 5;
-
-        #endregion
-
-        #region Protected Attributes
-
-        protected bool LongSignalOn { get; set; }
-
-        protected bool ShortSignalOn { get; set; }
-
-        protected DateTime? LastSignalTimestamp { get; set; }
-
-        #endregion
+     
 
         #region Protected Methods
 
-        public void EvalTimestampExpiration()
-        {
-
-            if (LastSignalTimestamp.HasValue)
-            {
-                TimeSpan elapsed = DateTimeManager.Now - LastSignalTimestamp.Value;
-
-                if (elapsed.TotalMinutes > _SIGNAL_EXPIRATION_IN_MIN)
-                {
-                    LastSignalTimestamp = null;
-                    LongSignalOn = false;
-                    ShortSignalOn = false;
-                }
-            }
-        
-        }
+     
 
         #endregion
 
@@ -80,7 +51,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         {
             if (!LongSignalOn)
             {
-                if (EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false))
+                if (DownsideBreaktrhough())
                 {
                     LongSignalOn = true;
                     LastSignalTimestamp = DateTimeManager.Now;
@@ -104,7 +75,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
             if (!ShortSignalOn)
             {
-                if (EvalSupportBroken() && !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false))
+                if (UpsideBreaktrhough())
                 {
                     ShortSignalOn = true;
                     LastSignalTimestamp = DateTimeManager.Now;
