@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using tph.ChainedTurtles.BusinessEntities;
 using tph.ChainedTurtles.Common;
 using tph.ChainedTurtles.Common.Configuration;
+using tph.ChainedTurtles.DataAccessLayer;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Configuration;
 using tph.DayTurtles.LogicLayer;
@@ -33,6 +34,8 @@ namespace tph.ChainedTurtles.LogicLayer
         #region Protected Attributes
 
         public Dictionary<string, MonTurtlePosition> ChainedIndicators { get; set; }
+
+        protected TurtlesPortfolioPositionManager TurtlesPortfolioPositionManager { get; set; }
 
         #endregion
 
@@ -143,7 +146,8 @@ namespace tph.ChainedTurtles.LogicLayer
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
 
             OrderRouter.ProcessMessage(wrapper);
-
+            
+            Thread.Sleep(1000);
 
             try
             {
@@ -279,6 +283,17 @@ namespace tph.ChainedTurtles.LogicLayer
                     Constants.MessageType.Information);
             }
         }
+
+        protected override void InitializeManagers(string connStr)
+        {
+
+            TurtlesPortfolioPositionManager = new TurtlesPortfolioPositionManager(connStr);
+
+            base.InitializeManagers(connStr);
+
+        }
+
+
 
         protected void EvalHistoricalPricesPrecalculations(MonitoringPosition monPos)
         {
@@ -416,6 +431,19 @@ namespace tph.ChainedTurtles.LogicLayer
             }
 
 
+        }
+
+        protected override void DoPersistPosition(PortfolioPosition trdPos)
+        {
+            if (MonitorPositions.ContainsKey(trdPos.CurrentPos().Security.Symbol))
+            {
+                lock (tPersistLock)
+                {
+                    PortfTurtlesPosition portfPos = (PortfTurtlesPosition)trdPos;
+                    TurtlesPortfolioPositionManager.Persist(portfPos);
+                }
+
+            }
         }
 
         #endregion

@@ -26,7 +26,7 @@ namespace tph.TrendlineTurtles.DataAccessLayer
         
         #region Public Methods
 
-        public void PersistPortfolioPositionTrade(PortfTrendlineTurtlesPosition pos)
+        public void Persist(PortfTrendlineTurtlesPosition pos)
         {
             using (var connection = new SqlConnection(ADOConnectionString))
             {

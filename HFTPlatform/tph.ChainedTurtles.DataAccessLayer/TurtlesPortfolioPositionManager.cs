@@ -1,9 +1,13 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
 
-namespace tph.DayTurtles.DataAccessLayer
+namespace tph.ChainedTurtles.DataAccessLayer
 {
     public class TurtlesPortfolioPositionManager
     {
@@ -21,7 +25,7 @@ namespace tph.DayTurtles.DataAccessLayer
         }
 
         #endregion
-        
+
         #region Public Methods
 
         public void Persist(PortfTurtlesPosition pos)
@@ -36,7 +40,7 @@ namespace tph.DayTurtles.DataAccessLayer
                     cmd.Parameters.Add(new SqlParameter("@StrategyName", pos.StrategyName));
                     cmd.Parameters.Add(new SqlParameter("@OpeningDate", pos.OpeningDate));
                     cmd.Parameters.Add(new SqlParameter("@ClosingDate", pos.ClosingDate));
-                    cmd.Parameters.Add(new SqlParameter("@Symbol",pos.OpeningPosition.Security.Symbol ));
+                    cmd.Parameters.Add(new SqlParameter("@Symbol", pos.OpeningPosition.Security.Symbol));
                     cmd.Parameters.Add(new SqlParameter("@Qty", pos.OpeningPosition.GetPositionQty()));
                     cmd.Parameters.Add(new SqlParameter("@TradeDirection", pos.TradeDirection));
                     cmd.Parameters.Add(new SqlParameter("@OpeningPrice", pos.OpeningPrice));
@@ -48,28 +52,13 @@ namespace tph.DayTurtles.DataAccessLayer
                     cmd.Parameters.Add(new SqlParameter("@FeeValue", pos.FeeValuePerTrade));
                     cmd.Parameters.Add(new SqlParameter("@InitialCap", pos.InitialCap));
                     cmd.Parameters.Add(new SqlParameter("@FinalCap", pos.FinalCap));
+
+                    cmd.Parameters.Add(new SqlParameter("@TrendlineStartDate",null));
+
+                    cmd.Parameters.Add(new SqlParameter("@TrendlineEndDate", null));
+
                     cmd.Parameters.Add(new SqlParameter("@Profit", pos.Profit));
 
-                    if (pos.IsFirstLeg())
-                    {
-                        cmd.Parameters.Add(new SqlParameter("@IsClosing", "N"));
-                        cmd.Parameters.Add(new SqlParameter("@OpenPosId", pos.OpeningPosition.PosId));
-                        cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", pos.OpeningPosition.GetLastFilledClOrdId()));
-                        cmd.Parameters.Add(new SqlParameter("@OpenQty", pos.OpeningPosition.CumQty));
-                        //cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", null));
-                        //cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", null));
-
-                    }
-                    else {
-
-                        cmd.Parameters.Add(new SqlParameter("@IsClosing", "Y"));
-                        cmd.Parameters.Add(new SqlParameter("@ClosingPosId", pos.ClosingPosition.PosId));
-                        cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", pos.ClosingPosition.GetLastFilledClOrdId()));
-                        cmd.Parameters.Add(new SqlParameter("@CloseQty", pos.ClosingPosition.CumQty));
-                        //cmd.Parameters.Add(new SqlParameter("@OpenPosClOrdId", null));
-                        //cmd.Parameters.Add(new SqlParameter("@ClosingPosClOrId", null));
-
-                    }
 
                     cmd.ExecuteNonQuery();
                 }

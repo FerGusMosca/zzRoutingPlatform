@@ -52,24 +52,27 @@ namespace tph.MarketClient.Mock
             try
             {
                 object[] paramList = (object[])param;
+                Queue<Wrapper> mdWrappperQueue = (Queue<Wrapper>)paramList[0];
 
-                Security sec = (Security)paramList[0];
-                List<Wrapper> mdWrappperList = (List<Wrapper>)paramList[1];
 
-                foreach (Wrapper md in mdWrappperList)
+                while(mdWrappperQueue.Count>0)
+                //foreach (Wrapper md in mdWrappperQueue)
                 {
+                    Wrapper md = mdWrappperQueue.Dequeue();
                     DoLog($"{Configuration.Name}: Publishing Market Data:{md.ToString()}", Constants.MessageType.Information);
 
                     (new Thread(OnPublishAsync)).Start(md);
                     Thread.Sleep(Configuration.PacingMarketDataMilliSec);
-                    if (EvalUnsubscription(sec.Symbol))
+
+                    string symbol = (string) md.GetField(MarketDataFields.Symbol);
+                    if (EvalUnsubscription(symbol))
                     {
-                        DoLog($"Unbubscribing market data for symbol {sec.Symbol}", Constants.MessageType.PriorityInformation);
+                        DoLog($"Unbubscribing market data for symbol {symbol}", Constants.MessageType.PriorityInformation);
                         break;
                     }
                 }
 
-                DoLog($"============= ALL Market Data successfully sent  for symbol ={sec.Symbol}=============", Constants.MessageType.Information);
+                DoLog($"============= ALL Market Data successfully sent =============", Constants.MessageType.Information);
 
             }
             catch (Exception ex)
@@ -264,29 +267,30 @@ namespace tph.MarketClient.Mock
             DateTime from = GetFrom();
             DateTime to = GetTo();
 
-            List<Wrapper> mdWrapperList = new List<Wrapper>();
+            Queue<Wrapper> mdWrapperQueue = new Queue<Wrapper>();
             if (candles.Count > 10)
             {
                 SetMarketClosingTime(candles);
-                Security mainSec = candles.Count > 0 ? candles[0].Security : null;
-                foreach (MarketData candle in candles.OrderBy(x => x.GetReferenceDateTime()))
+                
+                foreach (MarketData candle in candles)
                 {
                     try
                     {
                         DoLog($"@{Configuration.Name}--> Publ. Market Data for symbol {candle.Security.Symbol} on date {candle.GetReferenceDateTime()}", Constants.MessageType.Information);
-                        Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
-                        sec.MarketData = candle;
+
+                        Security sec = candle.Security.Clone(candle.Security.Symbol);
+                        sec.MarketData = candle.Clone();
                         MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
-                        mdWrapperList.Add(mdWrapper);
+                        mdWrapperQueue.Enqueue(mdWrapper);
                     }
                     catch (Exception ex)
                     {
-                        DoLog($"ERROR Processing market data por security {mainSec.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
+                        DoLog($"ERROR Processing market data por security {candle.Security.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
                     }
                 }
 
 
-                (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec, mdWrapperList });
+                (new Thread(DoPublishMarketDataAync)).Start(new object[] {  mdWrapperQueue });
             }
             else
             {
@@ -319,7 +323,7 @@ namespace tph.MarketClient.Mock
                 DateTime to = GetTo();
                 List<MarketData> candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, from, to);
 
-
+                candles = candles.OrderBy(x => x.GetReferenceDateTime()).ToList();
                 DoPublish(candles);
 
             }

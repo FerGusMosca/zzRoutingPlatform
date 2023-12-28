@@ -140,6 +140,52 @@ namespace zHFT.Main.BusinessEntities.Market_Data
 
         }
 
+        public MarketData Clone()
+        {
+            MarketData cloned = new MarketData();
+
+            cloned.OpeningPrice = OpeningPrice;
+            cloned.ClosingPrice = ClosingPrice;
+            cloned.SettlementPrice = SettlementPrice;
+            cloned.TradingSessionHighPrice = TradingSessionHighPrice;
+            cloned.TradingSessionLowPrice = TradingSessionLowPrice;
+            cloned.TradingSessionVWAPPrice = TradingSessionVWAPPrice;
+            cloned.Imbalance = Imbalance;
+            cloned.TradeVolume = TradeVolume;
+            cloned.OpenInterest = OpenInterest;
+            cloned.CompositeUnderlyingPrice = CompositeUnderlyingPrice;
+            cloned.MarginRate = MarginRate;
+            cloned.MidPrice = MidPrice;
+            cloned.SettleHighPrice = SettleHighPrice;
+            cloned.SettlPriorPrice = SettlPriorPrice;
+            cloned.SessionHighBid = SessionHighBid;
+            cloned.SessionLowOffer = SessionLowOffer;
+            cloned.EarlyPrices = EarlyPrices;
+            cloned.AuctionClearingPrice = AuctionClearingPrice;
+            cloned.Trade = Trade;
+            cloned.BestBidPrice = BestBidPrice;
+            cloned.BestBidSize = BestBidSize;
+            cloned.BestBidExch = BestBidExch;
+            cloned.BestAskPrice = BestAskPrice;
+            cloned.BestAskSize = BestAskSize;
+            cloned.BestAskExch = BestAskExch;
+            cloned.BestBidCashSize = BestBidCashSize;
+            cloned.BestAskCashSize = BestAskCashSize;
+            cloned.CashVolume = CashVolume;
+            cloned.NominalVolume = NominalVolume;
+            cloned.MDUpdateAction = MDUpdateAction;
+            cloned.Currency = Currency;
+            cloned.MDEntryDate = MDEntryDate;
+            cloned.MDLocalEntryDate = MDLocalEntryDate;
+            cloned.TickDirection = TickDirection;
+            cloned.MDTradeSize = MDTradeSize;
+            cloned.SettlType = SettlType;
+            cloned.SettlDate = SettlDate;
+            cloned.LastTradeDateTime = LastTradeDateTime;
+            cloned.Security = Security;
+            return cloned;
+        }
+
         #endregion
     }
 }

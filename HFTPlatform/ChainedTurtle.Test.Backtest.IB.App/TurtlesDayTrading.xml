@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<Name>CHAINED_TURTLES_BACKTEST_IB_TEST</Name>
+	<Account>xxx</Account>
 
-	<PositionSizeInCash>1000</PositionSizeInCash>
+	<PositionSizeInCash>50000</PositionSizeInCash>
 	
 	<MaxOpenedPositions>6</MaxOpenedPositions>
 	<StopLossForOpenPositionPct>1</StopLossForOpenPositionPct>
@@ -22,7 +23,7 @@
 
 	<ClosingTime>05:51 PM</ClosingTime>
 
-	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 

@@ -282,7 +282,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                 lock (tPersistLock)
                 {
                     PortfTrendlineTurtlesPosition turtlesTradPos = (PortfTrendlineTurtlesPosition) trdPos;
-                    TrendlineTurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(turtlesTradPos);
+                    TrendlineTurtlesPortfolioPositionManager.Persist(turtlesTradPos);
                 }
 
             }

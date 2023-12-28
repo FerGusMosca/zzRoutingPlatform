@@ -454,7 +454,7 @@ namespace tph.DayTurtles.LogicLayer
                 lock (tPersistLock)
                 {
                     PortfTurtlesPosition portfPos = (PortfTurtlesPosition)trdPos;
-                    TurtlesPortfolioPositionManager.PersistPortfolioPositionTrade(portfPos);
+                    TurtlesPortfolioPositionManager.Persist(portfPos);
                 }
 
             }
