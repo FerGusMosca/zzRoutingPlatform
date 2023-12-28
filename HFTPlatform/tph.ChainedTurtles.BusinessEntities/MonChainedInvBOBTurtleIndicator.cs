@@ -4,19 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
+using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Util;
+using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
     //LONG Signal on downside breakthroughs
     //SHORT Signal on upside breakthroughs
-    public class MonChainedTrendlineTurtleIndicator: MonChainedTurtleIndicator
+    public class MonChainedInvBOBTurtleIndicator : MonChainedTurtleIndicator
     {
         #region Constructor 
 
-        public MonChainedTrendlineTurtleIndicator(Security pSecurity,
+        public MonChainedInvBOBTurtleIndicator(Security pSecurity,
                                                   TurtlesCustomConfig pTurtlesCustomConfig,
                                                     string candleRefPrice,
                                                     string pCode,
@@ -90,6 +92,34 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
                 EvalTimestampExpiration();
                 return ShortSignalOn;
+            }
+        }
+
+
+        public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
+        {
+            bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+            if (!higherMMov)
+            {
+                LastSignalTriggered = $"CLOSE SHORT w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public override bool EvalClosingLongPosition(PortfolioPosition portfPos)
+        {
+            bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+            if (higherMMov)
+            {
+                LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
+                return true;
+            }
+            else
+            {
+
+                return false;
             }
         }
 

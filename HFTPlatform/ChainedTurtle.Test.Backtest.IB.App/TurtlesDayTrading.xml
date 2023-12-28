@@ -69,7 +69,7 @@
 				<Currency>USD</Currency>
 				<Exchange>CBOE</Exchange>
 			</SecurityToMonitor>
-			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType>BOB_INV</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>true</RequestPrices>
 		</ChainedTurtleIndicator>

@@ -254,7 +254,6 @@ namespace tph.MarketClient.Mock
                 candlesDict.Add(sec.Symbol, candles);
             }
 
-
             if (depurateTimeDiffs)
                 DepurateTimeDiffs(candlesDict, from, to);
 

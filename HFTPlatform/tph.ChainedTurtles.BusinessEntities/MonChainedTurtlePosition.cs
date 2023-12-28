@@ -5,6 +5,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
+using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.StrategyHandler.BusinessEntities;
@@ -87,6 +88,72 @@ namespace tph.ChainedTurtles.BusinessEntities
 
             return resp;
         }
+
+        public override bool EvalClosingLongPosition(PortfolioPosition portfPos)
+        {
+            if (!portfPos.IsLongDirection())
+                return false;
+
+            if (EvalClosingOnTargetPct(portfPos))
+                return true;
+
+
+            if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                foreach (var indicator in InnerIndicators)
+                {
+                    if (!indicator.EvalClosingLongPosition(portfPos))
+                        return false;
+
+                }
+
+                return true;
+
+            }
+            else if (TurtlesCustomConfig.ExitOnTurtles)
+            {
+                return base.EvalClosingLongPosition(portfPos);
+
+            }
+            else
+            {
+                throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
+
+            }
+             
+        }
+
+        public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
+        {
+            if (!portfPos.IsShortDirection())
+                return false;
+
+            if (EvalClosingOnTargetPct(portfPos))
+                return true;
+
+            if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                foreach (var indicator in InnerIndicators)
+                {
+                    if (!indicator.EvalClosingShortPosition(portfPos))
+                        return false;
+
+                }
+
+                return true;
+
+            }
+            else if (TurtlesCustomConfig.ExitOnTurtles)
+            {
+                return base.EvalClosingShortPosition(portfPos);
+            }
+            else
+            {
+                throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
+
+            }
+        }
+
 
         public override List<MonitoringPosition> GetInnerIndicators()
         {

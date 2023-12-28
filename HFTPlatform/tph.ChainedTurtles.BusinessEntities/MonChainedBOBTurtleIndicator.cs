@@ -51,7 +51,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         {
             if (!LongSignalOn)
             {
-                if (UpsideBreaktrhough())
+                if (DownsideBreaktrhough())
                 {
                     LongSignalOn = true;
                     LastSignalTimestamp = DateTimeManager.Now;
@@ -76,7 +76,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (!ShortSignalOn)
             {
 
-                if (DownsideBreaktrhough())
+                if (UpsideBreaktrhough())
                 {
                     ShortSignalOn = true;
                     LastSignalTimestamp = DateTimeManager.Now;

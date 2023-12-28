@@ -83,7 +83,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public bool DownsideBreaktrhough()
         {
-            return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+            return EvalSupportBroken() && !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
 
         public bool UpsideBreaktrhough()
