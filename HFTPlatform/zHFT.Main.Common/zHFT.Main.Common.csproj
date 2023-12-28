@@ -75,6 +75,7 @@
     <Compile Include="Enums\Fields\HistoricalPricesFields.cs" />
     <Compile Include="Enums\Fields\HistoricalPricesRequestFields.cs" />
     <Compile Include="Enums\Fields\MarketDataFields.cs" />
+    <Compile Include="Enums\Fields\MarketDataRequestBulkField.cs" />
     <Compile Include="Enums\Fields\MarketDataRequestField.cs" />
     <Compile Include="Enums\Fields\OfferFields.cs" />
     <Compile Include="Enums\Fields\OrderBookFields.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -13,6 +14,45 @@ namespace zHFT.MarketClient.Common.Converters
 {
     public class MarketDataRequestConverter: ConverterBase
     {
+
+        public static MarketDataRequestBulk GetMarketDataRequestBulk(Wrapper wrapper)
+        {
+            MarketDataRequestBulk mdrb = new MarketDataRequestBulk();
+
+
+            Security[] securities  = (Security[])wrapper.GetField(MarketDataRequestBulkField.Securities);
+            if (securities != null)
+                mdrb.Securities = securities;
+            else
+                throw new Exception($"Missing mandatory field Securities @MarketDataRequestBulkRequest ");
+
+
+
+
+            SubscriptionRequestType srt= (SubscriptionRequestType)wrapper.GetField(MarketDataRequestBulkField.SubscriptionRequestType);
+            if (srt != null)
+                mdrb.SubscriptionRequestType = srt;
+            else
+                throw new Exception($"Missing mandatory field SubscriptionRequestType @MarketDataRequestBulkRequest");
+
+
+
+
+            if (ValidateField(wrapper, MarketDataRequestBulkField.MarketDepth))
+                mdrb.MarketDepth = (MarketDepth)wrapper.GetField(MarketDataRequestBulkField.MarketDepth);
+            else
+                mdrb.MarketDepth = MarketDepth.TopOfBook;
+
+
+            mdrb.SettlType = (SettlType)wrapper.GetField(MarketDataRequestBulkField.SettlType);
+
+
+            return mdrb;
+
+
+        }
+
+
         public static  MarketDataRequest GetMarketDataRequest(Wrapper wrapper)
         {
             MarketDataRequest mdr = new MarketDataRequest();

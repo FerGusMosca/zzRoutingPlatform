@@ -14,7 +14,8 @@ namespace tph.ChainedTurtles.Common.Configuration
     {
         //Chained logic --> assembly
         //Chain setting --> open signal type
-        //
+        
+        public bool BulkMarketDataRequest { get; set; }
 
         #region Public Attributes
 

@@ -649,10 +649,15 @@ namespace tph.ConsoleStrategy.LogicLayer
             throw new NotImplementedException();
         }
 
-    #endregion
+        protected override void LoadMonitorsAndRequestMarketData()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
 
 
 
-    #endregion
+        #endregion
     }
 }

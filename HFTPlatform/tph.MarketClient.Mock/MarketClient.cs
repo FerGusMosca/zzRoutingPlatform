@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Messaging;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -110,7 +111,7 @@ namespace tph.MarketClient.Mock
                 if (Configuration.ClosingMinutesBeforeLastCandle.HasValue && lastCandle.GetReferenceDateTime().HasValue)
                 {
                     ClosingTimeManager.ClosingTime = lastCandle.GetReferenceDateTime().Value.AddMinutes(-1 * Configuration.ClosingMinutesBeforeLastCandle.Value);
-                
+
                 }
                 else
                 {
@@ -120,46 +121,206 @@ namespace tph.MarketClient.Mock
             }
         }
 
+        private DateTime FindLatestStartTime(Dictionary<string, List<MarketData>> candlesDict)
+        {
+            DateTime? latesttStart = null; 
+            foreach (string symbol in candlesDict.Keys)
+            {
+                if (!latesttStart.HasValue)
+                {
+                    latesttStart = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                     .OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                     .GetReferenceDateTime();
+
+                }
+                else
+
+                { 
+                    DateTime? currSymbolLatestStart = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                     .OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                     .GetReferenceDateTime();
+
+                    if (currSymbolLatestStart.HasValue && DateTime.Compare(currSymbolLatestStart.Value, latesttStart.Value) >0)
+                    {
+                        latesttStart = currSymbolLatestStart;
+                    }
+                }
+            }
+
+
+            if (!latesttStart.HasValue)
+                throw new Exception($"Could not calculate the Latest Start Time on Market Data Request Bulk for {candlesDict.Keys.Count} securities!. Potentially missing market data");
+            else 
+                return latesttStart.Value;
+        }
+
+        private DateTime FindEarliestEndTime(Dictionary<string, List<MarketData>> candlesDict)
+        {
+            DateTime? earliestEnd = null;
+            foreach (string symbol in candlesDict.Keys)
+            {
+                if (!earliestEnd.HasValue)
+                {
+                    earliestEnd = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                     .OrderByDescending(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                     .GetReferenceDateTime();
+
+                }
+                else
+
+                {
+                    DateTime? currSymbolEarliestEnd = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                     .OrderByDescending(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                     .GetReferenceDateTime();
+
+                    if (currSymbolEarliestEnd.HasValue && DateTime.Compare(currSymbolEarliestEnd.Value, earliestEnd.Value) < 0)
+                    {
+                        earliestEnd = currSymbolEarliestEnd;
+                    }
+                }
+            }
+
+            if (!earliestEnd.HasValue)
+                throw new Exception($"Could not calculate the Earliest End Time on Market Data Request Bulk for {candlesDict.Keys.Count} securities!. Potentially missing market data");
+            else
+                return earliestEnd.Value;
+        }
+
+
+        private void DepurateTimeDiffs(Dictionary<string, List<MarketData>> candlesDict, DateTime from, DateTime to)
+        {
+
+            try
+            {
+                //We fetch the lowest start time
+                DateTime lowestStartTime = FindLatestStartTime(candlesDict);
+                DateTime earliestEndTime = FindEarliestEndTime(candlesDict);
+
+
+                List<string> symbols = new List<string>(candlesDict.Keys);
+                foreach (string symbol in symbols)
+                { 
+                    List<MarketData> candles = candlesDict[symbol];
+
+                    candles = candles.Where(x => x.GetReferenceDateTime() != null &&
+                                               DateTime.Compare(lowestStartTime, x.GetReferenceDateTime().Value) <= 0 &&
+                                               DateTime.Compare(x.GetReferenceDateTime().Value, earliestEndTime) <= 0).ToList();
+
+                    candlesDict[symbol] = candles;
+
+                    //We filtered the out of range dates/candles
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"Missing market data for date {from}/{to}.Potential weekend/holiday", Constants.MessageType.Information);
+
+            }
+
+        }
+
+
+        private List<MarketData> ResuhffleMultiSecMarketData(Dictionary<string, List<MarketData>> candlesDict)
+        {
+
+            List<MarketData> allCandles = new List<MarketData>();
+
+            foreach (List<MarketData> symbolCandles in candlesDict.Values)
+            {
+                allCandles.AddRange(symbolCandles);
+            }
+
+            List<MarketData> ordCandles= allCandles.OrderBy(x => x.GetReferenceDateTime()).ThenBy(x=>x.Security.RankSecurityType()).ToList();
+
+            return ordCandles;
+        }
+
+        private List<MarketData> ExtractAllMarketDataBulk(Security[] securities, bool depurateTimeDiffs)
+        {
+            DateTime from = GetFrom();
+            DateTime to = GetTo();
+            Dictionary<string, List<MarketData>> candlesDict = new Dictionary<string, List<MarketData>>();
+
+
+            foreach (Security sec in securities)
+            {
+                List<MarketData> candles = CandleManager.GetCandles(sec.Symbol, CandleInterval.Minute_1, from, to);
+                candles.ForEach(x => x.Security = sec);
+                candlesDict.Add(sec.Symbol, candles);
+            }
+
+
+            if (depurateTimeDiffs)
+                DepurateTimeDiffs(candlesDict, from, to);
+
+            return ResuhffleMultiSecMarketData(candlesDict);
+        }
+
+        protected void DoPublish(List<MarketData> candles)
+        {
+
+            DateTime from = GetFrom();
+            DateTime to = GetTo();
+
+            List<Wrapper> mdWrapperList = new List<Wrapper>();
+            if (candles.Count > 10)
+            {
+                SetMarketClosingTime(candles);
+                Security mainSec = candles.Count > 0 ? candles[0].Security : null;
+                foreach (MarketData candle in candles.OrderBy(x => x.GetReferenceDateTime()))
+                {
+                    try
+                    {
+                        DoLog($"@{Configuration.Name}--> Publ. Market Data for symbol {candle.Security.Symbol} on date {candle.GetReferenceDateTime()}", Constants.MessageType.Information);
+                        Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
+                        sec.MarketData = candle;
+                        MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
+                        mdWrapperList.Add(mdWrapper);
+                    }
+                    catch (Exception ex)
+                    {
+                        DoLog($"ERROR Processing market data por security {mainSec.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
+                    }
+                }
+
+
+                (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec, mdWrapperList });
+            }
+            else
+            {
+                DoLog($"Closing Trading Day because no candles found from={from} to={to} ", Constants.MessageType.Information);
+                TradingBacktestingManager.EndTradingDay();
+            }
+
+        }
+
+        protected void DoProcessMarketDataRequestBulk(MarketDataRequestBulk mdrb)
+        {
+            try
+            {
+                List<MarketData> candles = ExtractAllMarketDataBulk(mdrb.Securities, true);
+
+                DoPublish(candles);
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"CRITICAL ERROR Processing market data request bulk :{ex.Message}", Constants.MessageType.Error);
+            }
+        }
+
         protected void DoProcessMarketDataRequest(MarketDataRequest mdr)
         {
             try
             {
                 DateTime from = GetFrom();
-                DateTime to = GetTo() ;
+                DateTime to = GetTo();
                 List<MarketData> candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, from, to);
-                
-
-                DoLog($"{candles.Count} candles successfully found for symbol {mdr.Security.Symbol}", Constants.MessageType.Information);
-
-                List<Wrapper> mdWrapperList = new List<Wrapper>();
-                if (candles.Count > 10)
-                {
-                    SetMarketClosingTime(candles);
-                    Security mainSec = candles.Count > 0 ? candles[0].Security : null;
-                    foreach (MarketData candle in candles.OrderBy(x=>x.GetReferenceDateTime()))
-                    {
-                        try
-                        {
-                            DoLog($"@{Configuration.Name}--> Publ. Market Data for symbol {mdr.Security.Symbol} on date {candle.GetReferenceDateTime()}", Constants.MessageType.Information);
-                            Security sec = new Security() { Symbol = mainSec.Symbol, SecurityDesc = mainSec.SecurityDesc, SecType = mainSec.SecType, Currency = mainSec.Currency, Exchange = mainSec.Exchange };
-                            sec.MarketData = candle;
-                            MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
-                            mdWrapperList.Add(mdWrapper);
-                        }
-                        catch (Exception ex)
-                        {
-                            DoLog($"ERROR Processing market data por security {mainSec.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
-                        }
-                    }
 
 
-                    (new Thread(DoPublishMarketDataAync)).Start(new object[] { mainSec, mdWrapperList });
-                }
-                else
-                {
-                    DoLog($"Closing Trading Day because no candles found from={from} to={to} for symbol ={mdr.Security.Symbol}", Constants.MessageType.Information);
-                    TradingBacktestingManager.EndTradingDay();
-                }
+                DoPublish(candles);
 
             }
             catch (Exception ex)
@@ -167,6 +328,24 @@ namespace tph.MarketClient.Mock
 
                 DoLog($"CRITICAL ERROR Processing market data por security {mdr.Security.Symbol} :{ex.Message}", Constants.MessageType.Error);
             }
+        }
+
+        protected void EvalSyncBulkWithHistoricalPrices(MarketDataRequestBulk mdrb)
+        {
+
+            foreach(Security sec in mdrb.Securities)
+            {
+
+                while (!HistoricalPricesFinished(sec.Symbol))
+                {
+                    DoLog($"Waiting for historical prices to finish to process market data request bulk for symbol {sec.Symbol}", Constants.MessageType.Information);
+                    Thread.Sleep(1000);
+                }
+                double timeToWaitMilisec = Configuration.InitialPacingMarketDataMillisec / mdrb.Securities.Length;
+                DoLog($"Waiting {timeToWaitMilisec / 1000} secs to send Market Data for symbol {sec.Symbol}", Constants.MessageType.Information);
+                Thread.Sleep(Convert.ToInt32(timeToWaitMilisec));
+            }
+
         }
 
         protected void EvalSyncWithHistoricalPrices(MarketDataRequest mdr)
@@ -193,6 +372,53 @@ namespace tph.MarketClient.Mock
             }
         }
 
+        protected void ProcessMarketDataRequestBulk(object param)
+        {
+            try
+            {
+
+                Wrapper wrapper = (Wrapper)param;
+                MarketDataRequestBulk mdrb = MarketDataRequestConverter.GetMarketDataRequestBulk(wrapper);
+
+                EvalSyncBulkWithHistoricalPrices(mdrb);
+
+                if (mdrb.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
+                {
+                    throw new Exception($"@{Configuration.Name}: Market Data Request bulk snaphsot not implemented");
+                }
+                else if (mdrb.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
+                {
+                    if (mdrb.MarketDepth == null || mdrb.MarketDepth == MarketDepth.TopOfBook)
+                    {
+                        mdrb.Securities.ToList().ForEach(x => EvalMarketDataSubscription(x.Symbol, false));
+                        DoProcessMarketDataRequestBulk(mdrb);
+                    }
+                    else if (mdrb.MarketDepth == MarketDepth.FullBook)
+                    {
+                        throw new Exception($"Market Data Request Bulk --> Full book not implmented @{Configuration.Name}");
+                    }
+                    else
+                    {
+                        throw new Exception($"{Configuration.Name}-->Not implemented market depth {mdrb.MarketDepth} on order book request");
+                    }
+
+                }
+                else if (mdrb.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
+                {
+                    mdrb.Securities.ToList().ForEach(x => EvalMarketDataSubscription(x.Symbol, true));
+                }
+                else
+                    throw new Exception($"@{Configuration.Name}: Value not recognized for subscription type {mdrb.SubscriptionRequestType}");
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL error requesting Market Data: {ex.Message}", Constants.MessageType.Error);
+            }
+
+
+
+        }
 
         protected void ProcessMarketDataRequest(object param)
         {
@@ -372,6 +598,14 @@ namespace tph.MarketClient.Mock
                         DoLog($"{Configuration.Name}: Recv Market Data Request for symbol {symbol}", Constants.MessageType.Information);
 
                         (new Thread(ProcessMarketDataRequest)).Start(wrapper);
+                        return CMState.BuildSuccess();
+                    }
+                    else if (Actions.MARKET_DATA_REQUEST_BULK == action)
+                    {
+                        Security[] securities = (Security[])wrapper.GetField(MarketDataRequestBulkField.Securities);
+                        DoLog($"{Configuration.Name}: Recv Market Data Request bulk for securities {securities.Length}", Constants.MessageType.Information);
+
+                        (new Thread(ProcessMarketDataRequestBulk)).Start(wrapper);
                         return CMState.BuildSuccess();
                     }
                     else if (Actions.HISTORICAL_PRICES_REQUEST == action)

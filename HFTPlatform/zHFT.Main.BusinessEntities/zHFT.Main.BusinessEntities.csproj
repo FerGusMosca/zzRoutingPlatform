@@ -47,6 +47,7 @@
     <Compile Include="Market Data\Candlebar.cs" />
     <Compile Include="Market Data\MarketData.cs" />
     <Compile Include="Market Data\MarketDataRequest.cs" />
+    <Compile Include="Market Data\MarketDataRequestBulk.cs" />
     <Compile Include="Market Data\OrderBook.cs" />
     <Compile Include="Market Data\OrderBookEntry.cs" />
     <Compile Include="Securities\BaseTradingRule.cs" />

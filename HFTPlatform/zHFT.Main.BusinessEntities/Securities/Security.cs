@@ -196,6 +196,46 @@ namespace zHFT.Main.BusinessEntities.Securities
             return FullSymbolManager.GetSecurityTypeFromStr(secType);
         }
 
+        public int RankSecurityType()
+        {
+            if (SecType == SecurityType.IND)//Always first the indexes
+                return 1;
+            else if (SecType == SecurityType.CASH)
+                return 2;
+            else if (SecType == SecurityType.CS)
+                return 3;
+            else if (SecType == SecurityType.FUT)
+                return 4;
+            else if (SecType == SecurityType.OPT)
+                return 5;
+            else if (SecType == SecurityType.TBOND)
+                return 6;
+            else if (SecType == SecurityType.TB)
+                return 7;
+            else if (SecType == SecurityType.IRS)
+                return 8;
+            else if (SecType == SecurityType.REPO)
+                return 9;
+            else if (SecType == SecurityType.CC)
+                return 10;
+            else if (SecType == SecurityType.CMDTY)
+                return 11;
+            else if (SecType == SecurityType.SWAP)
+                return 12;
+            else if (SecType == SecurityType.MF)
+                return 13;
+            else if (SecType == SecurityType.IND)
+                return 14;
+            else if (SecType == SecurityType.CASH)
+                return 15;
+            else if (SecType == SecurityType.OTH)
+                return 16;
+            else 
+                return 17;
+
+
+        }
+
         #endregion
     }
 }

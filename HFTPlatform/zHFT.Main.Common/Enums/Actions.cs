@@ -29,6 +29,7 @@ namespace zHFT.Main.Common.Enums
         ORDER_MASS_STATUS_REQUEST,
         HISTORICAL_PRICES_REQUEST,
         HISTORICAL_PRICES,
-        CANDLE_BAR_REQUEST
+        CANDLE_BAR_REQUEST,
+        MARKET_DATA_REQUEST_BULK,
     }
 }

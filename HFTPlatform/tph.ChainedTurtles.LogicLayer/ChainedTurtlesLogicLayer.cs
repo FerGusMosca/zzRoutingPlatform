@@ -23,6 +23,7 @@ using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
+using static System.Collections.Specialized.BitVector32;
 
 namespace tph.ChainedTurtles.LogicLayer
 {
@@ -56,14 +57,7 @@ namespace tph.ChainedTurtles.LogicLayer
                         //#1- Load monitors for trading securites
                         if (!MonitorPositions.ContainsKey(security.Symbol))
                         {
-                            Security sec = new Security()
-                            {
-                                Symbol = security.Symbol,
-                                SecType = Security.GetSecurityType(security.SecurityType),
-                                MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
-                                Currency = security.Currency,
-                                Exchange = security.Exchange
-                            };
+                            Security sec = BuildFromConfigSecurityToMonitor(security);
 
                             MonChainedTurtlePosition monChPos = new MonChainedTurtlePosition(
                                 sec, GetCustomConfig(security.Symbol),
@@ -111,7 +105,7 @@ namespace tph.ChainedTurtles.LogicLayer
                     {
 
                         DoLog($"@{GetConfig().Name}--> Requesting historical prices for monitored symbol {security.Symbol}", Constants.MessageType.Information);
-                        
+
                         DoRequestHistoricalPrice(i, security.Symbol,
                                                 GetConfig().HistoricalPricesPeriod,
                                                 security.Currency,
@@ -175,7 +169,7 @@ namespace tph.ChainedTurtles.LogicLayer
                         EvalMarketDataCalculations(indicator, md);
                     }
                     else
-                    { 
+                    {
                         //Non tracked symbol
                     }
                 }
@@ -238,15 +232,7 @@ namespace tph.ChainedTurtles.LogicLayer
                     {
 
                         //This security works as an inner indicator of another trading security
-                        Security ind = new Security()
-                        {
-                            Symbol = indicator.SecurityToMonitor.Symbol,
-                            SecType = Security.GetSecurityType(indicator.SecurityToMonitor.SecurityType),
-                            MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
-                            Currency = indicator.SecurityToMonitor.Currency,
-                            Exchange = indicator.SecurityToMonitor.Exchange
-                        };
-
+                        Security ind = BuildFromConfigSecurityToMonitor(indicator.SecurityToMonitor);
 
                         InitializeMonitorIndicator(indicator, ind);
                     }
@@ -271,8 +257,8 @@ namespace tph.ChainedTurtles.LogicLayer
                 {
                     return indicator;
                 }
-            
-            
+
+
             }
 
 
@@ -303,7 +289,7 @@ namespace tph.ChainedTurtles.LogicLayer
             }
         }
 
-        protected void EvalMarketDataCalculations(MonitoringPosition indicator,MarketData md)
+        protected void EvalMarketDataCalculations(MonitoringPosition indicator, MarketData md)
         {
             bool newCandle = indicator.AppendCandle(md);
 
@@ -319,13 +305,71 @@ namespace tph.ChainedTurtles.LogicLayer
             }
         }
 
+        private Security BuildFromConfigSecurityToMonitor(SecurityToMonitor secToMon)
+        {
+            Security sec = new Security()
+            {
+                Symbol = secToMon.Symbol,
+                Currency = secToMon.Currency,
+                Exchange = secToMon.Exchange,
+                SecType = Security.GetSecurityType(secToMon.SecurityType),
+                MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+
+
+            };
+            return sec;
+
+        }
+
+        protected void EvalSendBulkMarketDataRequest()
+        {
+            int securitiesToReq = (GetConfig().ChainedTurtleIndicators != null ? GetConfig().ChainedTurtleIndicators.Count : 0)
+                                 + (GetConfig().SecuritiesToMonitor != null ? GetConfig().SecuritiesToMonitor.Count : 0);
+
+
+            if (ProcessedHistoricalPrices.Count == securitiesToReq)
+            {
+                //All the historical pricess have been received
+
+
+                List<Security> securities = new List<Security>();
+               //1- Build all the SecuritiesToMonitor
+
+                foreach (var secToMon in GetConfig().SecuritiesToMonitor)
+                {
+                    securities.Add(BuildFromConfigSecurityToMonitor(secToMon));
+                }
+
+
+                foreach (var indicator in GetConfig().ChainedTurtleIndicators)
+                {
+                    securities.Add(BuildFromConfigSecurityToMonitor(indicator.SecurityToMonitor));
+                }
+
+
+                MarketDataRequestBulkWrapper reqBulkWr = new MarketDataRequestBulkWrapper(securities, SubscriptionRequestType.SnapshotAndUpdates);
+                MarketDataRequestCounter++;
+                OnMessageRcv(reqBulkWr);
+            }
+        }
+
         protected void DoRequestMarketData(MonTurtlePosition monPos)
         {
-            DoLog($"Requesting market data for security/indicator {monPos.Security.Symbol}", Constants.MessageType.Information);
-            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, monPos.Security,
-                                                                            SubscriptionRequestType.SnapshotAndUpdates);
-            MarketDataRequestCounter++;
-            OnMessageRcv(wrapper);
+            if (!GetConfig().BulkMarketDataRequest)
+            {
+                DoLog($"Requesting market data for security/indicator {monPos.Security.Symbol}", Constants.MessageType.Information);
+                MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, monPos.Security,
+                                                                                SubscriptionRequestType.SnapshotAndUpdates);
+                MarketDataRequestCounter++;
+                OnMessageRcv(wrapper);
+            }
+            else
+            {
+                // Only will be triggered on the last historical price received
+                EvalSendBulkMarketDataRequest();
+
+
+            }
         }
 
         protected override void ProcessHistoricalPrices(object pWrapper)
@@ -354,8 +398,7 @@ namespace tph.ChainedTurtles.LogicLayer
                             foreach (var indicator in ChainedIndicators.Values.Where(x => x.Security.Symbol == dto.Symbol))
                             {
                                 dto.MarketData.ForEach(x => indicator.AppendCandleHistorical(x));
-                                EvalHistoricalPricesPrecalculations(indicator);
-                                ProcessedHistoricalPrices.Add(dto.Symbol);
+                                EvalHistoricalPricesPrecalculations(indicator);//already updates the ProcessedHistoricalPrices
                                 DoRequestMarketData(indicator);
                             }
 
@@ -368,7 +411,7 @@ namespace tph.ChainedTurtles.LogicLayer
             }
             catch (Exception e)
             {
-                DoLog(string.Format("Critical ERROR processing Trendlines : {0}", e.Message),
+                DoLog(string.Format("Critical ERROR processing Historical Prices! : {0}", e.Message),
                     Constants.MessageType.Error);
             }
 
