@@ -45,6 +45,13 @@ namespace tph.MarketClient.Mock
         #endregion
 
 
+        #region Protected Static Consts
+
+        private static int _MIN_CANDLES_FOR_DAY = 10;
+
+        #endregion
+
+
         #region Protected Methods
 
         protected void DoPublishMarketDataAync(object param)
@@ -131,21 +138,31 @@ namespace tph.MarketClient.Mock
             {
                 if (!latesttStart.HasValue)
                 {
-                    latesttStart = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
-                                                     .OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault()
-                                                     .GetReferenceDateTime();
+                    if (candlesDict[symbol].Count > 0)// In case we are running this on weekends or holidays
+                    {
+                        latesttStart = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                         .OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                         .GetReferenceDateTime();
+                    }
+                    else
+                    {
+                        latesttStart = DateTime.MaxValue;
+                    }
 
                 }
                 else
 
-                { 
-                    DateTime? currSymbolLatestStart = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
-                                                     .OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault()
-                                                     .GetReferenceDateTime();
-
-                    if (currSymbolLatestStart.HasValue && DateTime.Compare(currSymbolLatestStart.Value, latesttStart.Value) >0)
+                {
+                    if (candlesDict[symbol].Count > 0)
                     {
-                        latesttStart = currSymbolLatestStart;
+                        DateTime? currSymbolLatestStart = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                         .OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                         .GetReferenceDateTime();
+
+                        if (currSymbolLatestStart.HasValue && DateTime.Compare(currSymbolLatestStart.Value, latesttStart.Value) > 0)
+                        {
+                            latesttStart = currSymbolLatestStart;
+                        }
                     }
                 }
             }
@@ -164,21 +181,31 @@ namespace tph.MarketClient.Mock
             {
                 if (!earliestEnd.HasValue)
                 {
-                    earliestEnd = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
-                                                     .OrderByDescending(x => x.GetReferenceDateTime()).FirstOrDefault()
-                                                     .GetReferenceDateTime();
+                    if (candlesDict[symbol].Count > 0)// In case we are running this on weekends or holidays
+                    {
+                        earliestEnd = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                                                         .OrderByDescending(x => x.GetReferenceDateTime()).FirstOrDefault()
+                                                         .GetReferenceDateTime();
+                    }
+                    else
+                    {
+                        earliestEnd = DateTime.MinValue;
+                    }
 
                 }
                 else
 
                 {
-                    DateTime? currSymbolEarliestEnd = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
+                    if (candlesDict[symbol].Count > 0)
+                    {
+                        DateTime? currSymbolEarliestEnd = candlesDict[symbol].Where(x => x.GetReferenceDateTime() != null)
                                                      .OrderByDescending(x => x.GetReferenceDateTime()).FirstOrDefault()
                                                      .GetReferenceDateTime();
 
-                    if (currSymbolEarliestEnd.HasValue && DateTime.Compare(currSymbolEarliestEnd.Value, earliestEnd.Value) < 0)
-                    {
-                        earliestEnd = currSymbolEarliestEnd;
+                        if (currSymbolEarliestEnd.HasValue && DateTime.Compare(currSymbolEarliestEnd.Value, earliestEnd.Value) < 0)
+                        {
+                            earliestEnd = currSymbolEarliestEnd;
+                        }
                     }
                 }
             }
@@ -262,40 +289,29 @@ namespace tph.MarketClient.Mock
 
         protected void DoPublish(List<MarketData> candles)
         {
-
-            DateTime from = GetFrom();
-            DateTime to = GetTo();
-
             Queue<Wrapper> mdWrapperQueue = new Queue<Wrapper>();
-            if (candles.Count > 10)
-            {
-                SetMarketClosingTime(candles);
+           
+            
                 
-                foreach (MarketData candle in candles)
-                {
-                    try
-                    {
-                        DoLog($"@{Configuration.Name}--> Publ. Market Data for symbol {candle.Security.Symbol} on date {candle.GetReferenceDateTime()}", Constants.MessageType.Information);
-
-                        Security sec = candle.Security.Clone(candle.Security.Symbol);
-                        sec.MarketData = candle.Clone();
-                        MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
-                        mdWrapperQueue.Enqueue(mdWrapper);
-                    }
-                    catch (Exception ex)
-                    {
-                        DoLog($"ERROR Processing market data por security {candle.Security.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
-                    }
-                }
-
-
-                (new Thread(DoPublishMarketDataAync)).Start(new object[] {  mdWrapperQueue });
-            }
-            else
+            foreach (MarketData candle in candles)
             {
-                DoLog($"Closing Trading Day because no candles found from={from} to={to} ", Constants.MessageType.Information);
-                TradingBacktestingManager.EndTradingDay();
+                try
+                {
+                    DoLog($"@{Configuration.Name}--> Publ. Market Data for symbol {candle.Security.Symbol} on date {candle.GetReferenceDateTime()}", Constants.MessageType.Information);
+
+                    Security sec = candle.Security.Clone(candle.Security.Symbol);
+                    sec.MarketData = candle.Clone();
+                    MarketDataWrapper mdWrapper = new MarketDataWrapper(sec, Configuration);
+                    mdWrapperQueue.Enqueue(mdWrapper);
+                }
+                catch (Exception ex)
+                {
+                    DoLog($"ERROR Processing market data por security {candle.Security.Symbol} and date {candle.GetDateTime()}:{ex.Message}", Constants.MessageType.Error);
+                }
             }
+
+
+            (new Thread(DoPublishMarketDataAync)).Start(new object[] {  mdWrapperQueue });
 
         }
 
@@ -303,9 +319,21 @@ namespace tph.MarketClient.Mock
         {
             try
             {
+                DateTime from = GetFrom();
+                DateTime to = GetTo();
                 List<MarketData> candles = ExtractAllMarketDataBulk(mdrb.Securities, true);
 
-                DoPublish(candles);
+                if (candles.Count > _MIN_CANDLES_FOR_DAY)
+                {
+                    SetMarketClosingTime(candles);
+                    DoPublish(candles);
+                }
+                else
+                {
+                    DoLog($"Closing Trading Day because no candles found from={from} to={to} ", Constants.MessageType.Information);
+                    TradingBacktestingManager.EndTradingDay();
+                }
+
             }
             catch (Exception ex)
             {
@@ -322,8 +350,17 @@ namespace tph.MarketClient.Mock
                 DateTime to = GetTo();
                 List<MarketData> candles = CandleManager.GetCandles(mdr.Security.Symbol, CandleInterval.Minute_1, from, to);
 
-                candles = candles.OrderBy(x => x.GetReferenceDateTime()).ToList();
-                DoPublish(candles);
+                if (candles.Count > _MIN_CANDLES_FOR_DAY)
+                {
+                    SetMarketClosingTime(candles);
+                    candles = candles.OrderBy(x => x.GetReferenceDateTime()).ToList();
+                    DoPublish(candles);
+                }
+                else
+                {
+                    DoLog($"Closing Trading Day because no candles found from={from} to={to} ", Constants.MessageType.Information);
+                    TradingBacktestingManager.EndTradingDay();
+                }
 
             }
             catch (Exception ex)
