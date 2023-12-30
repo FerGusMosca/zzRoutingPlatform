@@ -96,6 +96,22 @@ namespace tph.ChainedTurtles.LogicLayer
 
         }
 
+        protected override void DoRequestHistoricalPrice(int i, string symbol, int window, string currency,
+                                               SecurityType? pSecurityType, string exchange)
+        {
+
+
+
+
+            DateTime from = DateTimeManager.Now.AddDays(window);
+            DateTime to = MarketTimer.GetTodayDateTime(Config.OpeningTime);
+
+            HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to,
+                                                                                            CandleInterval.Minute_1,
+                                                                                            currency, pSecurityType, exchange);
+            OnMessageRcv(reqWrapper);
+        }
+
         protected override void DoRequestHistoricalPricesThread(object param)
         {
             try
@@ -306,15 +322,20 @@ namespace tph.ChainedTurtles.LogicLayer
 
         protected void EvalMarketDataCalculations(MonitoringPosition indicator, MarketData md)
         {
+            DoLog($"Recv markt data for indicator {indicator.Security.Symbol}: LastTrade={indicator.Security.MarketData.Trade} @{indicator.Security.MarketData.GetReferenceDateTime()}",Constants.MessageType.Information);
             bool newCandle = indicator.AppendCandle(md);
-
+           
             if (indicator.IsTrendlineMonPosition())
             {
                 if (newCandle)
                 {
-                    RecalculateNewTrendlines((MonTrendlineTurtlesPosition)indicator, GetConfig().RecalculateTrendlines);
-                    indicator.EvalSignalTriggered();
+                    if (indicator.EvalSignalTriggered())
+                    {
+                        DoLog($"SIGNAL TRIGGERED!-->{indicator.SignalTriggered()}", Constants.MessageType.Information);
+                    
+                    }
                     EvalBrokenTrendlines((MonTrendlineTurtlesPosition)indicator, md);
+                    RecalculateNewTrendlines((MonTrendlineTurtlesPosition)indicator, GetConfig().RecalculateTrendlines);
                 }
 
             }

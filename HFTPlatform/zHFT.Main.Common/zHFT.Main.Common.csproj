@@ -121,6 +121,7 @@
     <Compile Include="Util\FixHelperExtended.cs" />
     <Compile Include="Util\FullSymbolManager.cs" />
     <Compile Include="Util\Logger.cs" />
+    <Compile Include="Util\MarketTimer.cs" />
     <Compile Include="Util\PositionIdTranslator.cs" />
     <Compile Include="Util\SecurityTypeTranslator.cs" />
     <Compile Include="Util\SideTranslator.cs" />

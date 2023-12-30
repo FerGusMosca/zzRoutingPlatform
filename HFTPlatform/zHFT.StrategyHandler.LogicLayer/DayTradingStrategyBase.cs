@@ -23,6 +23,7 @@ using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandlers.Common.Converters;
+using MarketTimer = zHFT.Main.Common.Util.MarketTimer;
 
 namespace zHFT.StrategyHandler.LogicLayer
 {
@@ -653,7 +654,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         protected bool IsTradingTime()
         {
-            DateTime closeTime = MarketTimer.GetTodayDateTime(Config.ClosingTime);
+            DateTime closeTime = Main.Common.Util.MarketTimer.GetTodayDateTime(Config.ClosingTime);
 
             bool validOpening = false;
             if (!string.IsNullOrEmpty(Config.OpeningTime))

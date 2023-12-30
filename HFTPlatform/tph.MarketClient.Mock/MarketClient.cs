@@ -66,7 +66,7 @@ namespace tph.MarketClient.Mock
                 //foreach (Wrapper md in mdWrappperQueue)
                 {
                     Wrapper md = mdWrappperQueue.Dequeue();
-                    DoLog($"{Configuration.Name}: Publishing Market Data:{md.ToString()}", Constants.MessageType.Information);
+                    //DoLog($"{Configuration.Name}: Publishing Market Data:{md.ToString()}", Constants.MessageType.Information);
 
                     (new Thread(OnPublishAsync)).Start(md);
                     Thread.Sleep(Configuration.PacingMarketDataMilliSec);
@@ -558,9 +558,9 @@ namespace tph.MarketClient.Mock
                     {
                         TimeSpan distance = dto.To.Value - dto.From.Value ;
 
-                        dto.From = GetFrom().AddMinutes(-1 * distance.TotalMinutes);
-                        dto.To = GetFrom();
-                    
+                        //dto.From = GetFrom().AddMinutes(-1 * distance.TotalMinutes);
+                        //dto.To = GetFrom();
+                        dto.From = dto.To.Value.AddMinutes(-1 * distance.TotalMinutes);
                     }
 
                     List<MarketData> candles=  CandleManager.GetCandles(dto.Symbol, dto.Interval, dto.From.Value, dto.To.Value);

@@ -42,10 +42,12 @@ namespace tph.ChainedTurtles.BusinessEntities
 
 
         //Activates the signal indicator or other statistical calculations depending the monitoring position role in the trading strategy
-        public override void EvalSignalTriggered()
+        public override bool EvalSignalTriggered()
         {
-            LongSignalTriggered();
-            ShortSignalTriggered();
+            bool longSignal=LongSignalTriggered();
+            bool shortSignal= ShortSignalTriggered();
+
+            return longSignal || shortSignal;
 
         }
 

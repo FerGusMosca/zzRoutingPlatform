@@ -69,7 +69,7 @@ namespace tph.DayTurtles.LogicLayer
             OnMessageRcv(reqWrapper);
         }
 
-        protected void DoRequestHistoricalPrice(int i, string symbol, int window,string currency, 
+        protected virtual void DoRequestHistoricalPrice(int i, string symbol, int window,string currency, 
                                                 SecurityType? pSecurityType,string exchange)
         {
 

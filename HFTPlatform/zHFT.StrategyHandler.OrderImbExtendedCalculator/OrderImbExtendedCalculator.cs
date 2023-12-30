@@ -12,6 +12,7 @@ using zHFT.OrderImbSimpleCalculator.Common.Configuration;
 using zHFT.OrderImbSimpleCalculator.Common.Util;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.OrderImbSimpleCalculator;
+using MarketTimer = zHFT.Main.Common.Util.MarketTimer;
 
 namespace zHFT.StrategyHandler.OrderImbExtendedCalculator
 {

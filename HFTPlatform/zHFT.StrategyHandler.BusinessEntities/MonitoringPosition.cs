@@ -57,8 +57,9 @@ namespace zHFT.StrategyHandler.BusinessEntities
         }
 
         //Activates the signal indicator or other statistical calculations depending the monitoring position role in the trading strategy
-        public virtual void EvalSignalTriggered()
+        public virtual bool EvalSignalTriggered()
         {
+            return false;
         }
 
 
