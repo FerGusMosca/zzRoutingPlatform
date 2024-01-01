@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
+using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Util;
+using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -51,7 +53,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         {
             if (!LongSignalOn)
             {
-                if (DownsideBreaktrhough())
+                if (UpsideBreaktrhough())
                 {
                     LongSignalOn = true;
                     LastSignalTimestamp = DateTimeManager.Now;
@@ -76,7 +78,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (!ShortSignalOn)
             {
 
-                if (UpsideBreaktrhough())
+                if (DownsideBreaktrhough())
                 {
                     ShortSignalOn = true;
                     LastSignalTimestamp = DateTimeManager.Now;
@@ -97,6 +99,33 @@ namespace tph.ChainedTurtles.BusinessEntities
         public override bool IsTrendlineMonPosition()
         {
             return true;
+        }
+
+        public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
+        {
+            bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+            if (higherMMov)
+            {
+                LastSignalTriggered = $"CLOSE SHORT w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public override bool EvalClosingLongPosition(PortfolioPosition portfPos)
+        {
+            bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+            if (!higherMMov)
+            {
+                LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
+                return true;
+            }
+            else
+            {
+
+                return false;
+            }
         }
 
         #endregion
