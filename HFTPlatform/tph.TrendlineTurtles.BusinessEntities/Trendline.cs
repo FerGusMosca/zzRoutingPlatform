@@ -366,6 +366,29 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
         }
 
+
+        public bool ValidateMinDistanceForBreakthrough(List<MarketData> prices,MarketData newPrice, int minDistance)
+        {
+            
+            if (newPrice.GetReferenceDateTime().HasValue)
+            {
+                int unitsToStart = CountTradingUnits(prices, StartDate, newPrice.GetReferenceDateTime().Value);
+                if (unitsToStart>0 && unitsToStart <minDistance)
+                {
+                    return false;//To close to start date to consider rupture
+                }
+                int unitsToEnd = CountTradingUnits(prices, newPrice.GetReferenceDateTime().Value, EndDate);
+                if (unitsToEnd>0 && unitsToEnd < minDistance)
+                {
+                    return false;//To close to end date to consider rupture
+                }
+
+            }
+            return true;
+
+
+        }
+
         //Evaluates that a trendline has been just broken by this new price
         public bool EvalTrendlineJustBroken(MarketData price, List<MarketData> histPrices, double perfThreshold,  bool downside)
         {

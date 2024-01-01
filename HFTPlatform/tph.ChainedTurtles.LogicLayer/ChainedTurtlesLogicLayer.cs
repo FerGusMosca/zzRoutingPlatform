@@ -31,6 +31,15 @@ namespace tph.ChainedTurtles.LogicLayer
     public class ChainedTurtlesLogicLayer : tph.TrendlineTurtles.LogicLayer.TrendlineTurtles
     {
 
+        #region Protected Static Consts
+
+        protected static int _REPEATED_MAX_MIN_MAX_DISTANCE = 5;
+
+        protected static int _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE = 5;
+
+        #endregion
+
+
         #region Protected Attributes
 
         public Dictionary<string, MonTurtlePosition> ChainedIndicators { get; set; }
@@ -293,7 +302,9 @@ namespace tph.ChainedTurtles.LogicLayer
                 TrendLineCreator.InitializeCreator(indicator.Security,
                                                    GetConfig(),
                                                    DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod),
-                                                   pOnLogMsg);
+                                                   pOnLogMsg,
+                                                   _REPEATED_MAX_MIN_MAX_DISTANCE,
+                                                   _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
 
                 DoLog($"Portfolio Position for indicator {indicator.Security.Symbol} successfully initialized",
                     Constants.MessageType.Information);

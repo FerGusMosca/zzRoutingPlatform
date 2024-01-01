@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>CHAINED_TURTLES_BACKTEST_IB_TEST</Name>
+	<Name>CHAINED_TURTLES_BACKTEST_IB_TEST_DEC_DEBUG</Name>
 	<Account>xxx</Account>
 
 	<PositionSizeInCash>50000</PositionSizeInCash>

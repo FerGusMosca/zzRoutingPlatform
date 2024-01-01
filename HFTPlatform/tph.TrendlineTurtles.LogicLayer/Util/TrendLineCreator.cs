@@ -22,6 +22,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         protected static int _REPEATED_MAX_MIN_MAX_DISTANCE = 10;
 
+        protected static int _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE = 5;
+
         #endregion
 
         #region Private Static Attributes
@@ -64,7 +66,9 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         public TrendLineCreator(Security pStock,TrendlineConfiguration pConfig,CandleInterval pInterval,
                                 DateTime pMinSafeDateResistances,DateTime pMinSafeDateSupports,
-                                OnLogMessage pOnLogMsg)
+                                OnLogMessage pOnLogMsg, 
+                                int? _P_REPEATED_MAX_MIN_MAX_DISTANCE = null, 
+                                int? _P__BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE = null)
         {
             Stock = pStock;
 
@@ -87,6 +91,12 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             LastSafeMinDateSupports = pMinSafeDateSupports;
 
             OnLogMsg += pOnLogMsg;
+
+            if (_P_REPEATED_MAX_MIN_MAX_DISTANCE.HasValue)
+                _REPEATED_MAX_MIN_MAX_DISTANCE = _P_REPEATED_MAX_MIN_MAX_DISTANCE.Value;
+
+            if (_P__BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE.HasValue)
+                _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE = _P__BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE.Value;
 
         }
         
@@ -281,8 +291,11 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
             foreach (MarketData price in pricesInPeriod)
             {
-                if (possTrnd.EvalTrendlineJustBroken(price, histPrices, TrendlineConfiguration.PerforationThresholds, downside))
-                    return true;
+                if (possTrnd.ValidateMinDistanceForBreakthrough(histPrices, price, _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE))
+                {
+                    if (possTrnd.EvalTrendlineJustBroken(price, histPrices, TrendlineConfiguration.PerforationThresholds, downside))
+                        return true;
+                }
             }
 
             return false;
@@ -655,7 +668,8 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         }
 
 
-        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate, OnLogMessage pOnLogMsg)
+        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate, OnLogMessage pOnLogMsg,
+                                             int? _REPEATED_MAX_MIN_MAX_DISTANCE=null,int? _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE=null)
         {
             if(TrdCreatorDict==null)
                 TrdCreatorDict=new Dictionary<string, TrendLineCreator>();
@@ -667,7 +681,9 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                     PerforationThresholds = config.PerforationThresholds,
                     InnerTrendlinesSpan = config.InnerTrendlinesSpan,
                     CandleReferencePrice=config.CandleReferencePrice
-                }, CandleInterval.Minute_1, minSafeDate, minSafeDate, pOnLogMsg);
+                }, CandleInterval.Minute_1, minSafeDate, minSafeDate, pOnLogMsg,
+                _REPEATED_MAX_MIN_MAX_DISTANCE, _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE
+                );
 
             if (!TrdCreatorDict.ContainsKey(sec.Symbol))
                 TrdCreatorDict.Add(sec.Symbol, trdCreator);
