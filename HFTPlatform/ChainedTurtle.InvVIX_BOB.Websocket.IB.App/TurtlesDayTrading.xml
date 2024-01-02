@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>CHAINED_TURTLES_BACKTEST_IB_TEST_DEC_DEBUG</Name>
+	<Name>CHAINED_TURTLES_INV_VIX_BOB_WEBSOCKET_IB_MOCK</Name>
 	<Account>xxx</Account>
 
 	<PositionSizeInCash>50000</PositionSizeInCash>
@@ -21,9 +21,11 @@
 	<!--in pct 0-1-->
 
 
+	<OpeningTime>11:30</OpeningTime>
+	<!--Needed for historical prices recovery-->
 	<ClosingTime>05:51 PM</ClosingTime>
 
-	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
+	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
@@ -31,11 +33,11 @@
 	<ResetOnPersistance>true</ResetOnPersistance>
 	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-	<BulkMarketDataRequest>true</BulkMarketDataRequest>
+	<BulkMarketDataRequest>false</BulkMarketDataRequest>
 	<CandleReferencePrice>TRADE</CandleReferencePrice>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 
-	<OpeningTime>11:30</OpeningTime><!--Needed for historical prices recovery-->
+	
 
 	<OnlyLong>false</OnlyLong>
 
