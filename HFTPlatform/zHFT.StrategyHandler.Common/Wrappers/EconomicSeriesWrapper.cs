@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.DTO;
@@ -20,19 +21,40 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         public DateTime To { get; set; }
 
+        protected CandleInterval Interval { get; set; }
+
         public List<EconomicSeriesValue> EconomicSeriesValues { get; set; }
+
+        public bool Success { get; set; }
+
+        public string Error { get; set; }
 
         #endregion
 
 
         #region Constructors
 
-        public EconomicSeriesWrapper(string pSeriesID,DateTime pFrom, DateTime pTo,List<EconomicSeriesValue> pEconomicSeriesValue)
+        public EconomicSeriesWrapper(string pSeriesID,DateTime pFrom, DateTime pTo,CandleInterval pInterval,List<EconomicSeriesValue> pEconomicSeriesValue)
         {
             SeriesID = pSeriesID;
             To = pTo;
             From = pFrom;
+            Interval = pInterval;
             EconomicSeriesValues = pEconomicSeriesValue;
+            Success = true;
+
+
+        }
+
+        public EconomicSeriesWrapper(string pSeriesID, DateTime pFrom, DateTime pTo, CandleInterval pInterval, bool pSuccess, string pError)
+        {
+            SeriesID = pSeriesID;
+            To = pTo;
+            From = pFrom;
+            Interval = pInterval;
+            EconomicSeriesValues = new List<EconomicSeriesValue>();
+            Success = pSuccess;
+            Error = pError;
 
 
         }
@@ -59,6 +81,12 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return To;
             else if (sField == EconomicSeriesField.Values)
                 return EconomicSeriesValues;
+            else if (sField == EconomicSeriesField.Interval)
+                return Interval;
+            else if (sField == EconomicSeriesField.Success)
+                return Success;
+            else if (sField == EconomicSeriesField.Error)
+                return Error;
 
 
             return EconomicSeriesRequestField.NULL;

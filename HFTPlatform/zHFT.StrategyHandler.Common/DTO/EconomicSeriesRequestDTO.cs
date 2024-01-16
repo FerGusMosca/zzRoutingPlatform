@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.Enums;
 
 namespace zHFT.StrategyHandler.Common.DTO
 {
@@ -16,6 +17,8 @@ namespace zHFT.StrategyHandler.Common.DTO
         public DateTime From { get; set; }
         
         public DateTime To { get; set; }
+
+        public CandleInterval Interval { get; set; }
 
         #endregion
     }

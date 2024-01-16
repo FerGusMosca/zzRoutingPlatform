@@ -45,6 +45,22 @@ namespace zHFT.StrategyHandler.Common.Converters
                 throw new Exception($"Missing mandatory field for economic series!:Values");
 
 
+            if (wrapper.GetField(EconomicSeriesField.Interval) != EconomicSeriesField.NULL)
+                respDTO.Interval = (CandleInterval)wrapper.GetField(EconomicSeriesField.Interval);
+            else
+                throw new Exception($"Missing mandatory field for economic series!:Interval");
+
+
+            if (wrapper.GetField(EconomicSeriesField.Success) != EconomicSeriesField.NULL)
+                respDTO.Success = (bool)wrapper.GetField(EconomicSeriesField.Success);
+            else
+                throw new Exception($"Missing mandatory field for economic series!:Success");
+
+            if (wrapper.GetField(EconomicSeriesField.Error) != EconomicSeriesField.NULL)
+                respDTO.Error = (string)wrapper.GetField(EconomicSeriesField.Error);
+            else
+                respDTO.Error = null;
+
 
             return respDTO;
 

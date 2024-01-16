@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Enums;
 
 namespace zHFT.StrategyHandler.Common.DTO
 {
@@ -17,7 +18,13 @@ namespace zHFT.StrategyHandler.Common.DTO
 
         public DateTime To { get; set; }
 
+        public CandleInterval Interval { get; set; }
+
         public List<EconomicSeriesValue> Values { get; set; }
+
+        public bool Success { get; set; }
+
+        public string Error { get; set; }
 
         #endregion
     }

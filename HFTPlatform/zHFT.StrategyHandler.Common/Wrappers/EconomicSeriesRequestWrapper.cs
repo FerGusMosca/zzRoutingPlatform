@@ -14,12 +14,13 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         #region Constructors
 
-        public EconomicSeriesRequestWrapper(string pSeriesID, DateTime pFrom, DateTime pTo)
+        public EconomicSeriesRequestWrapper(string pSeriesID, DateTime pFrom, DateTime pTo,CandleInterval pInterval)
         {
             this.SeriesID = pSeriesID;
 
             this.From = pFrom;
             this.To = pTo;
+            Interval = pInterval;
         
         }
 
@@ -27,11 +28,13 @@ namespace zHFT.StrategyHandler.Common.Wrappers
 
         #region Protectec Attributes
 
-        public string SeriesID { get; set; }
+        protected string SeriesID { get; set; }
 
-        public DateTime From { get; set; }
+        protected DateTime From { get; set; }
 
-        public DateTime To { get; set; }
+        protected DateTime To { get; set; }
+
+        protected CandleInterval Interval { get; set; }
 
         #endregion
 
@@ -53,7 +56,9 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return From;
             else if (sField == EconomicSeriesRequestField.To)
                 return To;
-          
+            else if (sField == EconomicSeriesRequestField.Interval)
+                return Interval;
+
 
             return EconomicSeriesRequestField.NULL;
         }

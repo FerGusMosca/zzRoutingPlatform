@@ -22,6 +22,7 @@ using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
+using zHFT.StrategyHandler.DataAccessLayer;
 using zHFT.StrategyHandler.LogicLayer;
 using zHFT.StrategyHandlers.Common.Converters;
 using static zHFT.Main.Common.Util.Constants;
@@ -50,6 +51,8 @@ namespace tph.ConsoleStrategy.LogicLayer
         protected static int _POS_ID_LENGTH = 36;
 
         protected ICommunicationModule EconomicDataModule { get; set; }
+
+        protected CandleManager CandleManager { get; set; }
 
 
         #endregion
@@ -308,8 +311,8 @@ namespace tph.ConsoleStrategy.LogicLayer
 
                 DoLog($"Requesting Economic Series for SeriesID={seriesID} from={strFrom} to={strTo} ", MessageType.PriorityInformation);
 
-
-                EconomicSeriesRequestWrapper wrapper = new EconomicSeriesRequestWrapper(seriesID, from, to);
+                //All the economic indicators are supposed to be daily values
+                EconomicSeriesRequestWrapper wrapper = new EconomicSeriesRequestWrapper(seriesID, from, to,CandleInterval.DAY);
                 (new Thread(RequestSeriesAsync)).Start(new object[] { wrapper });
             }
             catch (Exception ex)
@@ -646,6 +649,8 @@ namespace tph.ConsoleStrategy.LogicLayer
 
                 OrderRouter =LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 
+                CandleManager = new CandleManager(GetConfig().CandlesConnectionString);
+
                 if (OrderRouter == null)
                     throw new Exception($"Could not initialize order router!:{Config.OrderRouter}");
 
@@ -712,19 +717,44 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
 
             Wrapper wrapper = (Wrapper)param;
+            EconomicSeriesDTO seriesDTO = EconomicSeriesConverter.ConvertEconomicSeries(wrapper);
             try
             {
-                
-                EconomicSeriesDTO seriesDTO = EconomicSeriesConverter.ConvertEconomicSeries(wrapper);
+                if (!seriesDTO.Success)
+                    throw new Exception(seriesDTO.Error);
 
-                //TODO ver que llego bien la serie --> PERSISTIRRRRRR
+
+                DoLog($"@{Config.Name} Persisting {seriesDTO.Values.Count} values for seriesID {seriesDTO.SeriesID} (Interval={seriesDTO.Interval})", Constants.MessageType.PriorityInformation);
+
+                List<MarketData> observations = new List<MarketData>();
+                foreach (EconomicSeriesValue obs in seriesDTO.Values)
+                {
+                    MarketData obsMD = new MarketData();
+                    obsMD.MDEntryDate = obs.Date;
+                    obsMD.OpeningPrice = obs.Value;
+                    obsMD.TradingSessionHighPrice = obs.Value;
+                    obsMD.TradingSessionLowPrice = obs.Value;
+                    obsMD.ClosingPrice = obs.Value;
+                    obsMD.Trade = obs.Value;
+                    obsMD.Security = new Security() { Symbol = seriesDTO.SeriesID, SecType = SecurityType.IND };
+
+                    observations.Add(obsMD);
+                }
+
+                foreach (MarketData obs in observations)
+                {
+                    DoLog($"@{Config.Name} --> Persisting value of {obs.Trade} and date {obs.GetReferenceDateTime()} for seriesID {seriesDTO.SeriesID} (Interval={seriesDTO.Interval})", Constants.MessageType.PriorityInformation);
+
+                    CandleManager.Persist(seriesDTO.SeriesID, seriesDTO.Interval, obs);
+                }
+
+
+                DoLog($"@{Config.Name} Succesfully persisted {seriesDTO.Values.Count} values for seriesID {seriesDTO.SeriesID} (Interval={seriesDTO.Interval})", Constants.MessageType.PriorityInformation);
 
             }
             catch (Exception ex)
-            { 
-                //TODO log
-            
-            
+            {
+                DoLog($"@{Config.Name} Critical error persisting economic indicator for seriesID {seriesDTO.SeriesID}: {ex.Message}", Constants.MessageType.Error);
             }
 
         }

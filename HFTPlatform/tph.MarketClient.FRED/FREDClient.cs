@@ -48,16 +48,35 @@ namespace tph.MarketClient.FRED
 
         #region  Protected Methods
 
-        protected CMState ProcessEconomicSeriesRequest(Wrapper wrapper)
+
+        protected void PublishSeriesAsync(object param)
         {
 
             try
             {
+                Wrapper wrapper = (Wrapper)param;
 
-                EconomicSeriesRequestDTO dto = EconomicSeriesRequestConverter.ConvertEconomicSeriesRequest(wrapper);
+                OnMessageRcv(wrapper);
+            }
+            catch (Exception ex)
+            {
+                DoLog($"@{FREDConfiguration.Name}--> CRITICAL ERROR publishing series: {ex.Message}", Constants.MessageType.Error);
+            
+            }
+        }
+
+        protected CMState ProcessEconomicSeriesRequest(Wrapper wrapper)
+        {
+            EconomicSeriesRequestDTO dto = EconomicSeriesRequestConverter.ConvertEconomicSeriesRequest(wrapper);
+
+            try
+            {
 
 
                 DoLog($"{FREDConfiguration.Name}--> Received Econmic Series Req. for SeriesID {dto.SeriesID}: From={dto.From} To={dto.To}", Constants.MessageType.Information);
+
+                if (dto.Interval != CandleInterval.DAY)
+                    throw new Exception($"All economic series request are supposed to be for daily values: Candle Interval=DAY");
 
                 var fredAPIClient = new Fred(FREDConfiguration.APIKey);
 
@@ -78,10 +97,9 @@ namespace tph.MarketClient.FRED
 
                 DoLog($"{FREDConfiguration.Name}--> Puublic Series w/{economicSeries.Count} records for SeriesID {dto.SeriesID}: From={dto.From} To={dto.To}", Constants.MessageType.Information);
 
-                //TODO eval publish async
-                EconomicSeriesWrapper economicSeriesWrp = new EconomicSeriesWrapper(dto.SeriesID, dto.From, dto.To, economicSeries);
+                EconomicSeriesWrapper economicSeriesWrp = new EconomicSeriesWrapper(dto.SeriesID, dto.From, dto.To,dto.Interval, economicSeries);
 
-                OnMessageRcv(economicSeriesWrp);
+                (new Thread(PublishSeriesAsync)).Start(economicSeriesWrp);
 
                 return CMState.BuildSuccess();
             }
@@ -89,6 +107,10 @@ namespace tph.MarketClient.FRED
             {
 
                 DoLog($"{FREDConfiguration.Name}--> ERROR processing Econmic Series Req.:{ex.Message}", Constants.MessageType.Error);
+
+                EconomicSeriesWrapper errWrapper = new EconomicSeriesWrapper(dto.SeriesID, dto.From, dto.To, dto.Interval, false, ex.Message);
+
+                (new Thread(PublishSeriesAsync)).Start(errWrapper);
 
                 return CMState.BuildFail(ex);
             
@@ -109,8 +131,6 @@ namespace tph.MarketClient.FRED
 
                 if (LoadConfig(configFile))
                 {
-
-                    //TestFREDTresuryYields();
 
                     return true;
                 }

@@ -33,6 +33,12 @@ namespace zHFT.StrategyHandler.Common.Converters
                 throw new Exception($"Missing mandatory field requesting econmic serieres!:To");
 
 
+            if (wrapper.GetField(EconomicSeriesRequestField.Interval) != EconomicSeriesRequestField.NULL)
+                respDTO.Interval = (CandleInterval)wrapper.GetField(EconomicSeriesRequestField.Interval);
+            else
+                throw new Exception($"Missing mandatory field requesting econmic serieres!:Interval");
+
+
 
             return respDTO;
 

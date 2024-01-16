@@ -15,12 +15,22 @@ namespace tph.ConsoleStrategy.Common.Configuration
 
         public string EconomicDataModuleConfigFile { get; set; }
 
+        public string CandlesConnectionString { set; get; }
+
         public override bool CheckDefaults(List<string> result)
         {
             if (string.IsNullOrEmpty(OrderRouter))
                 return false;
             else if (string.IsNullOrEmpty(OrderRouterConfigFile))
                 return false;
+
+
+            if (string.IsNullOrEmpty(CandlesConnectionString))
+            {
+                result.Add("CandlesConnectionString");
+                return  false;
+            }
+
 
             else return true;
         }
