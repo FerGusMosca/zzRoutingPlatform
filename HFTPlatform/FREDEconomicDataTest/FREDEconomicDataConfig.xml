@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FREDConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>FRED Economic Data Config</Name>
+
+
+	<APIKey>f2ce50dffe53ff839d739d66cdc4ed3c</APIKey>
+
+
+</FREDConfiguration>

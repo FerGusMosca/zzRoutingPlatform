@@ -129,41 +129,49 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
         public override string SignalTriggered()
         {
-            //It logs information abou the signal that has been triggered
-
-            Trendline resistance = Resistances.Where(x => x.JustBroken).FirstOrDefault();
-            Trendline support = Supports.Where(x => x.JustBroken).FirstOrDefault();
-
-            if (resistance != null)
+            try
             {
-                MarketData lastCandle = GetLastFinishedCandle();
-                if (lastCandle != null)
+                //It logs information abou the signal that has been triggered
+
+                Trendline resistance = Resistances.Where(x => x.JustBroken).FirstOrDefault();
+                Trendline support = Supports.Where(x => x.JustBroken).FirstOrDefault();
+
+                if (resistance != null)
                 {
-                    List<MarketData> histPrices = GetHistoricalPrices();
-                    double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
-                    return $"{Security.Symbol} --> Broken Resistance: Start={resistance.StartDate} End={resistance.EndDate} Now={DateTimeManager.Now} " +
-                        $"LastCandlePrice={lastCandle.Trade} LastCandleDate={lastCandle.MDEntryDate.Value} TrendlinePrice={trendlinePrice} ";
+                    MarketData lastCandle = GetLastFinishedCandle();
+                    if (lastCandle != null)
+                    {
+                        List<MarketData> histPrices = GetHistoricalPrices();
+                        double trendlinePrice = resistance.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
+                        return $"{Security.Symbol} --> Broken Resistance: Start={resistance.StartDate} End={resistance.EndDate} Now={DateTimeManager.Now} " +
+                            $"LastCandlePrice={lastCandle.Trade} LastCandleDate={lastCandle.MDEntryDate.Value} TrendlinePrice={trendlinePrice} ";
+                    }
+                    else
+                        return $"{Security.Symbol} --> NO SIGNAL- NO CANDLES";
+                }
+
+                else if (support != null)
+                {
+                    MarketData lastCandle = GetLastFinishedCandle();
+                    if (lastCandle != null)
+                    {
+                        List<MarketData> histPrices = GetHistoricalPrices();
+                        double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
+                        return $"{Security.Symbol} --> Broken Support: Start={resistance.StartDate} End={resistance.EndDate} Now={DateTimeManager.Now} " +
+                               $"LastCandlePrice={lastCandle.Trade} LastCandleDate={lastCandle.MDEntryDate.Value} TrendlinePrice={trendlinePrice} ";
+                    }
+                    else
+                        return $"{Security.Symbol} --> NO SIGNAL- NO CANDLES";
                 }
                 else
-                    return $"{Security.Symbol} --> NO SIGNAL- NO CANDLES";
-            }
-
-            else if (support != null)
-            {
-                MarketData lastCandle = GetLastFinishedCandle();
-                if (lastCandle != null)
                 {
-                    List<MarketData> histPrices = GetHistoricalPrices();
-                    double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
-                    return $"{Security.Symbol} --> Broken Support: Start={resistance.StartDate} End={resistance.EndDate} Now={DateTimeManager.Now} " +
-                           $"LastCandlePrice={lastCandle.Trade} LastCandleDate={lastCandle.MDEntryDate.Value} TrendlinePrice={trendlinePrice} ";
+                    return "";
                 }
-                else
-                    return $"{Security.Symbol} --> NO SIGNAL- NO CANDLES";
             }
-            else
+            catch (Exception ex)
             {
-                return "";
+                return $"ERROR calculating signal triggered:{ex.Message}";
+            
             }
 
         }

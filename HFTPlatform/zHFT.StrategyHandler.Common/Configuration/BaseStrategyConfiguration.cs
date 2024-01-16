@@ -8,8 +8,14 @@ namespace zHFT.StrategyHandler.Common
 {
     public class BaseStrategyConfiguration: BaseConfiguration, IConfiguration
     {
+        #region Private Static COnsts
+
+        private static string _LIVE_MODE = "LIVE_MODE";
+
+        #endregion
+
         #region Public Attributes
-        
+
         [XmlArray]
         [XmlArrayItem(ElementName = "Symbol")]
         public List<string> StocksToMonitor { get; set; }
@@ -25,6 +31,8 @@ namespace zHFT.StrategyHandler.Common
         public string OrderRouterConfigFile { get; set; }
 
         public string OpeningTime { get; set; }
+
+        public string TradingMode { get; set; }
         
         public string ClosingTime { get; set; }
         
@@ -49,8 +57,18 @@ namespace zHFT.StrategyHandler.Common
         public bool OnlyLong { get; set; }
         
         public string CandleReferencePrice { get; set; }
-        
+
         #endregion
+
+        public bool IsLiveMode()
+        {
+            if (!string.IsNullOrEmpty(OpeningTime))
+            {
+                return TradingMode == _LIVE_MODE;
+            }
+            else
+                return false;
+        }
 
         public override bool CheckDefaults(List<string> result)
         {
@@ -105,6 +123,12 @@ namespace zHFT.StrategyHandler.Common
             if (string.IsNullOrEmpty(ClosingTime))
             {
                 result.Add("ClosingTime");
+                resultado = false;
+            }
+
+            if (string.IsNullOrEmpty(TradingMode))
+            {
+                result.Add("TradingMonde");
                 resultado = false;
             }
 

@@ -79,6 +79,27 @@ namespace tph.ConsoleStrategy.Common.Util
 
         }
 
+
+        public static DateTime GetNonMandatoryDate(string strDate, string strFormat,DateTime def)
+        {
+
+
+            if (!string.IsNullOrEmpty(strDate))
+            {
+                DateTime parsedDate;
+
+                if (!DateTime.TryParseExact(strDate, strFormat, null, System.Globalization.DateTimeStyles.None, out parsedDate))
+                {
+                    throw new FormatException($"The date '{strDate}' is not in the expected format '{strFormat}'.");
+                }
+                else
+                    return parsedDate;
+            }
+            else
+                return def;
+
+        }
+
         #endregion
     }
 }

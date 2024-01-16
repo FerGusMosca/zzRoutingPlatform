@@ -113,7 +113,12 @@ namespace tph.ChainedTurtles.LogicLayer
 
 
             DateTime from = DateTimeManager.Now.AddDays(window);
-            DateTime to = MarketTimer.GetTodayDateTime(Config.OpeningTime);
+            DateTime to;
+            if (Config.IsLiveMode())
+                to = DateTime.Now.AddDays(1);//The last info that you have
+            else
+                to = MarketTimer.GetTodayDateTime(Config.OpeningTime);
+            
 
             HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to,
                                                                                             CandleInterval.Minute_1,
@@ -419,6 +424,27 @@ namespace tph.ChainedTurtles.LogicLayer
             }
         }
 
+        protected void LogHistoricalPricesReceived(HistoricalPricesDTO dto)
+        {
+            MarketData oldestPrice = null;
+            MarketData newestPrice = null;
+
+            if (dto.MarketData != null)
+            {
+                oldestPrice = dto.MarketData.OrderBy(x => x.GetReferenceDateTime()).FirstOrDefault();
+                newestPrice = dto.MarketData.OrderByDescending(x => x.GetReferenceDateTime()).FirstOrDefault();
+            }
+
+            string strOldestPr = oldestPrice != null && oldestPrice.Trade.HasValue ? oldestPrice.Trade.Value.ToString("#.##") : "?";
+            string strNewestPr = newestPrice != null && newestPrice.Trade.HasValue ? newestPrice.Trade.Value.ToString("#.##") : "?";
+            string strOldestHr = oldestPrice != null && oldestPrice.GetReferenceDateTime()!=null ? oldestPrice.GetReferenceDateTime().Value.ToString("MM/dd/yyyy HH:mm:ss") : "?";
+            string strNewstHr = newestPrice != null && newestPrice.GetReferenceDateTime() != null ? newestPrice.GetReferenceDateTime().Value.ToString("MM/dd/yyyy HH:mm:ss") : "?";
+
+
+            DoLog($"@{Config.Name}--> Recv Historical Prices for Symbol {dto.Symbol}: From={strOldestHr} FromVal={strNewstHr} To={strNewestPr} ToVal={strNewestPr}",Constants.MessageType.Information);
+
+        }
+
         protected override void ProcessHistoricalPrices(object pWrapper)
         {
             try
@@ -426,6 +452,7 @@ namespace tph.ChainedTurtles.LogicLayer
                 HistoricalPricesDTO dto = null;
 
                 dto = LoadHistoricalPrices((HistoricalPricesWrapper)pWrapper);
+                LogHistoricalPricesReceived(dto);
 
 
                 if (dto != null && dto.Symbol != null)

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Cryptos Day Turtles</Name>
+
+
+	<OutgoingModule>tph.MarketClient.FRED.FREDClient, tph.MarketClient.FRED</OutgoingModule>
+	<OutgoingConfigPath>.\FREDEconomicDataConfig.xml</OutgoingConfigPath>
+	
+	<LogToConsole>true</LogToConsole>
+</Configuration>

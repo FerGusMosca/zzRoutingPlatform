@@ -21,7 +21,9 @@
 	<!--in pct 0-1-->
 
 
-	<OpeningTime>11:30</OpeningTime>
+	<OpeningTime>11:30</OpeningTime><!--Opening Time for backtests or LIVE_MODE-->
+	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
+	
 	<!--Needed for historical prices recovery-->
 	<ClosingTime>05:51 PM</ClosingTime>
 

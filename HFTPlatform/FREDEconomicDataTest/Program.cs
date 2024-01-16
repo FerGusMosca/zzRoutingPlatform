@@ -5,13 +5,12 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using ToolsShared.Logging;
 using zHFT.Main;
 using zHFT.Main.Common.Util;
 
-namespace ChainedTurtle.Test.Backtest.IB.App
+namespace FREDEconomicDataTest
 {
     internal class Program
     {
@@ -19,30 +18,27 @@ namespace ChainedTurtle.Test.Backtest.IB.App
 
         public static void DoLog(string msg, Constants.MessageType type)
         {
-            ConsoleDisplayer.GetInstance(ToConsole).DoLog(msg, type);
+            if (ToConsole)
+                Console.WriteLine(msg);
+            else if (msg.StartsWith("toConsole->"))
+            {
+                Console.WriteLine(msg.Replace("toConsole->", ""));//
+                Console.WriteLine("");
+            }
+
 
         }
 
-        public static void DoLog(string msg, Constants.MessageType type, ILogSource logger)
-        {
-            DoLog(msg, type);
-            logger.Alert(msg);
 
-        }
-
-
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string archivoConfig = Const.ConfigFileDefault;
             Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
             archivoConfig = Directory.GetCurrentDirectory() + "\\" + archivoConfig;
             ToConsole = Convert.ToBoolean(ConfigurationManager.AppSettings["allwaysToConsole"]);
-            DateTime from = Convert.ToDateTime(ConfigurationManager.AppSettings["from"]);
-            DateTime to = Convert.ToDateTime(ConfigurationManager.AppSettings["to"]);
-
             ILogSource appLogger;
             ILogSource incommingLogger;
-            ILogSource outgoingLogger;
+            ILogSource outgoingLogger;//xx
 
             appLogger = new PerDayFileLogSource(Directory.GetCurrentDirectory() + "\\Log", Directory.GetCurrentDirectory() + "\\Log\\Backup")
             {
@@ -62,34 +58,13 @@ namespace ChainedTurtle.Test.Backtest.IB.App
                 DeleteDays = 20
             };
 
-            DateTime today = from;
+            MainApp app = new MainApp(incommingLogger, outgoingLogger, appLogger, archivoConfig, Program.DoLog);
 
-            while (DateTime.Compare(today, to) <= 0)
-            {
-
-                DateTimeManager.Now = today;
-                TradingBacktestingManager.StartTradingDay();
-
-                DoLog($"========Starting Trading Day for {today}========", Constants.MessageType.Information, appLogger);
-                using (MainApp app = new MainApp(incommingLogger, outgoingLogger, appLogger, archivoConfig, Program.DoLog))
-                {
-                    app.Run();
-
-                    while (TradingBacktestingManager.IsTradingDayActive())
-                    {
-                        Thread.Sleep(300);
-                    }
-                }
-                GC.Collect();
-                Thread.Sleep(10000);//wait prevmarket to close everything
-                DoLog($"========Finished Tradng Day for {today}========", Constants.MessageType.Information, appLogger);
-
-                today = today.AddDays(1);
-            }
-
+            app.Run();
 
             Console.WriteLine("Press Enter to quit.");
             Console.ReadLine();
         }
     }
+
 }

@@ -58,6 +58,7 @@
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="Converter\ConverterBase.cs" />
     <Compile Include="Converter\SecurityConverterBase.cs" />
+    <Compile Include="DTO\EconomicSeriesValue.cs" />
     <Compile Include="DTO\IndicatorToMonitor.cs" />
     <Compile Include="DTO\SecurityToMonitor.cs" />
     <Compile Include="Enums\Actions.cs" />
@@ -67,6 +68,8 @@
     <Compile Include="Enums\Currency.cs" />
     <Compile Include="Enums\CxlRejReason.cs" />
     <Compile Include="Enums\CxlRejResponseTo .cs" />
+    <Compile Include="Enums\Fields\EconomicSeriesField.cs" />
+    <Compile Include="Enums\Fields\EconomicSeriesRequestField.cs" />
     <Compile Include="Enums\ExecType.cs" />
     <Compile Include="Enums\Fields\BusinessMessageRejectField.cs" />
     <Compile Include="Enums\Fields\CryptoCurrencyFields.cs" />

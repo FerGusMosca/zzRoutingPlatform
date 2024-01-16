@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -19,6 +20,7 @@ using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Converters;
+using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandler.LogicLayer;
 using zHFT.StrategyHandlers.Common.Converters;
@@ -29,6 +31,11 @@ namespace tph.ConsoleStrategy.LogicLayer
     public class ConsoleStrategy : DayTradingStrategyBase
     {
 
+        #region Protected Static Consts
+
+        protected static string _DATE_FORMAT = "MM/dd/yyyy";
+
+        #endregion
 
         #region Protected Attributes
 
@@ -41,6 +48,8 @@ namespace tph.ConsoleStrategy.LogicLayer
         protected PositionIdTranslator PositionIdTranslator { get; set; }
 
         protected static int _POS_ID_LENGTH = 36;
+
+        protected ICommunicationModule EconomicDataModule { get; set; }
 
 
         #endregion
@@ -281,6 +290,36 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
+        protected void GetEconomicSeries(string[] param)
+        {
+            try
+            {
+                string cmd = param[0];
+
+                CommandValidator.ValidateCommandVariableParams(cmd, param, 2, 4);
+
+                string seriesID = CommandValidator.ExtractMandatoryParam(param, 1);
+                string strFrom = CommandValidator.ExtractNonMandatoryParam(param, 2);
+                string strTo = CommandValidator.ExtractNonMandatoryParam(param, 3);
+
+                DateTime from = CommandValidator.GetNonMandatoryDate(strFrom, _DATE_FORMAT, DateTime.MinValue);
+                DateTime to = CommandValidator.GetNonMandatoryDate(strTo, _DATE_FORMAT, DateTime.Now);
+
+
+                DoLog($"Requesting Economic Series for SeriesID={seriesID} from={strFrom} to={strTo} ", MessageType.PriorityInformation);
+
+
+                EconomicSeriesRequestWrapper wrapper = new EconomicSeriesRequestWrapper(seriesID, from, to);
+                (new Thread(RequestSeriesAsync)).Start(new object[] { wrapper });
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"{Config.Name}--> CRITICAL ERROR Requesting Market Data:{ex.Message}", MessageType.Error);
+            }
+
+        }
+
         protected void ListRoutedPositions(string[] param)
         {
             lock (RoutedPosDict)
@@ -330,6 +369,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             Console.WriteLine($"#5-CancelAll");
             Console.WriteLine($"#6-UnwindPos <PosId>");
             Console.WriteLine($"#7-RequestMarketData <symbol> <SecType*> <Currency*> <Echange*>");
+            Console.WriteLine($"#8-GetEconomicSeries <SeriresID> <From*> <To*>");
             Console.WriteLine();
         }
 
@@ -368,6 +408,10 @@ namespace tph.ConsoleStrategy.LogicLayer
                 else if (mainCmd == "RequestMarketData")
                 {
                     RequestMarketdata(cmdArr);
+                }
+                else if (mainCmd == "GetEconomicSeries")
+                {
+                    GetEconomicSeries(cmdArr);
                 }
                 else if (mainCmd == "cls")
                 {
@@ -444,6 +488,26 @@ namespace tph.ConsoleStrategy.LogicLayer
             {
                 DoLog($"CRITICAL ERROR Requesting market data for symbol {symbol}", MessageType.Error);
             
+            }
+        }
+
+        protected void RequestSeriesAsync(object param)
+        {
+            Wrapper seriesReqWrapper = (Wrapper)((object[])param)[0];
+            
+
+            try
+            {
+
+                lock (MarketDataRequests)
+                {
+                    EconomicDataModule.ProcessMessage(seriesReqWrapper);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL ERROR Running Sries Request:{ex.Message}", MessageType.Error);
+
             }
         }
 
@@ -548,6 +612,13 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
             Config = ConfigLoader.GetConfiguration<ConsoleConfiguration>(this, configFile, listaCamposSinValor);
         }
+
+
+        public ConsoleConfiguration GetConfig()
+        {
+
+            return (ConsoleConfiguration)Config;
+        }
      
 
         public void DoLog(string msg, Constants.MessageType type)
@@ -570,6 +641,8 @@ namespace tph.ConsoleStrategy.LogicLayer
                 MarketDataDict = new Dictionary<string, MarketData>();
                 PositionIdTranslator = new PositionIdTranslator(1);
                 ExecutionReportConverter = new ExecutionReportConverter();
+
+                EconomicDataModule = LoadModules(GetConfig().EconomicDataModule, GetConfig().EconomicDataModuleConfigFile, pOnLogMsg);
 
                 OrderRouter =LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 
@@ -635,6 +708,28 @@ namespace tph.ConsoleStrategy.LogicLayer
             
         }
 
+        protected void ProcessEconomicSeriesAsync(object param)
+        {
+
+            Wrapper wrapper = (Wrapper)param;
+            try
+            {
+                
+                EconomicSeriesDTO seriesDTO = EconomicSeriesConverter.ConvertEconomicSeries(wrapper);
+
+                //TODO ver que llego bien la serie --> PERSISTIRRRRRR
+
+            }
+            catch (Exception ex)
+            { 
+                //TODO log
+            
+            
+            }
+
+        }
+
+
         protected override zHFT.StrategyHandler.BusinessEntities.PortfolioPosition DoOpenTradingRegularPos(Position pos, MonitoringPosition portfPos)
         {
             PositionWrapper posWrapper = new PositionWrapper(pos, Config);
@@ -652,6 +747,30 @@ namespace tph.ConsoleStrategy.LogicLayer
         protected override void LoadMonitorsAndRequestMarketData()
         {
             throw new NotImplementedException();
+        }
+
+        protected override CMState ProcessOutgoing(Wrapper wrapper)
+        {
+            try
+            {
+                if (wrapper != null)
+                    DoLog($"Incoming message from order routing w/ Action {wrapper.GetAction()}: " + wrapper.ToString(), Constants.MessageType.Information);
+
+                if (wrapper.GetAction() == Actions.ECONOMIC_SERIES)
+                {
+                    (new Thread(ProcessEconomicSeriesAsync)).Start(wrapper);
+                    return CMState.BuildSuccess();
+                }
+               else
+                    return base.ProcessOutgoing(wrapper);
+            }
+            catch (Exception ex)
+            {
+
+                DoLog("Error processing message from order routing: " + (wrapper != null ? wrapper.ToString() : "") + " Error:" + ex.Message, Constants.MessageType.Error);
+
+                return CMState.BuildFail(ex);
+            }
         }
 
         #endregion

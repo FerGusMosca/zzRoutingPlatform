@@ -7,8 +7,12 @@
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
 
+  <EconomicDataModule>tph.MarketClient.FRED.FREDClient, tph.MarketClient.FRED</EconomicDataModule>
+  <EconomicDataModuleConfigFile>FREDEconomicDataConfig.xml</EconomicDataModuleConfigFile>
+	
 
-  <OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 

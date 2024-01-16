@@ -31,5 +31,7 @@ namespace zHFT.Main.Common.Enums
         HISTORICAL_PRICES,
         CANDLE_BAR_REQUEST,
         MARKET_DATA_REQUEST_BULK,
+        ECONOMIC_SERIES_REQUEST,
+        ECONOMIC_SERIES
     }
 }

@@ -11,6 +11,10 @@ namespace tph.ConsoleStrategy.Common.Configuration
     public class ConsoleConfiguration : BaseStrategyConfiguration
     {
 
+        public string EconomicDataModule { get; set; }
+
+        public string EconomicDataModuleConfigFile { get; set; }
+
         public override bool CheckDefaults(List<string> result)
         {
             if (string.IsNullOrEmpty(OrderRouter))

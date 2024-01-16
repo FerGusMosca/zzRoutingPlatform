@@ -749,7 +749,7 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         #region Public Methods
         
-        protected CMState ProcessOutgoing(Wrapper wrapper)
+        protected virtual CMState ProcessOutgoing(Wrapper wrapper)
         {
             try
             {
@@ -826,7 +826,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                 if (typeModule != null)
                 {
                     ICommunicationModule dest = (ICommunicationModule)Activator.CreateInstance(typeModule);
-                    dest.Initialize(ProcessOutgoing, pOnLogMsg, Config.OrderRouterConfigFile);
+                    dest.Initialize(ProcessOutgoing, pOnLogMsg, configFile);
                     return dest;
                 }
                 else

@@ -552,7 +552,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             int i = 0;
             ExtractPrevMaximums(usePrevTrendlines, startPrevTrendlineDate);
 
-         MarketData[] pricesArr = allHistPrices.Where(x =>   DateTime.Compare(startDate, x.MDEntryDate.Value) <= 0 
+            MarketData[] pricesArr = allHistPrices.Where(x =>   DateTime.Compare(startDate, x.MDEntryDate.Value) <= 0 
                                                                && DateTime.Compare(x.MDEntryDate.Value, endDate) <= 0).ToArray();
 
 
@@ -615,7 +615,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         public  void SetNextDateToStartForTrendlines(DateTime lastDate, List<MarketData> prices, int innerSpan)
         {
-
+            
             List<MarketData> orderedPrices = prices.Where(x => DateTime.Compare(x.MDEntryDate.Value, lastDate) < 0).OrderByDescending(x => x.MDEntryDate.Value).ToList();
             List<MarketData> filteredPrices = orderedPrices
                                                             .Take(2 * innerSpan)
