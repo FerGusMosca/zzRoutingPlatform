@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1A00FD37-BF8E-42AD-9DBD-D54D0B86A42F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ChainedTurtle.InvVIX_BOB.Backtest.IB.App</RootNamespace>
-    <AssemblyName>ChainedTurtle.InvVIX_BOB.Backtest.IB.App</AssemblyName>
+    <RootNamespace>ChainedTurtle.InvVIX_BOB.Websocket.IB.App</RootNamespace>
+    <AssemblyName>ChainedTurtle.InvVIX_BOB.Websocket.IB.App</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

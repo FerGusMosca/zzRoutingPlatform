@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>BOB_TRENDLINES_WEBSOCKET_IB_TEST_MARCH_2023_PERF</Name>
+  <Name>BOB_TRENDLINES_WEBSOCKET_IB_TEST_JANUARY_2024_PERF</Name>
 
   <PositionSizeInCash>50000</PositionSizeInCash>
 
   <MaxOpenedPositions>2</MaxOpenedPositions>
-  <StopLossForOpenPositionPct>0.05</StopLossForOpenPositionPct><!--1=1%-->
+  <StopLossForOpenPositionPct>2</StopLossForOpenPositionPct><!--1=1%-->
   <FeeTypePerTrade>Nominal</FeeTypePerTrade><!--OrderRouter,Nominal,Percentage-->
   <FeeValuePerTrade>0</FeeValuePerTrade>
   <DecimalRounding>3</DecimalRounding>
@@ -13,7 +13,7 @@
   <InnerTrendlinesSpan>90</InnerTrendlinesSpan><!--in candles-->
   <OuterTrendlinesSpan>60</OuterTrendlinesSpan><!--in candles-->
   <PerforationThresholds>0</PerforationThresholds><!--in pct 0-1-->
-
+  <TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
 
   <Account>9732</Account>
 
@@ -21,7 +21,7 @@
   <Exchange>NYSE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>04:51 PM</ClosingTime>
+  <ClosingTime>05:51 PM</ClosingTime>
 
 	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -38,8 +38,8 @@
 
 
   <OnlyLong>false</OnlyLong>
-  <RecalculateTrendlines>false</RecalculateTrendlines>
-  <HistoricalPricesPeriod>-6</HistoricalPricesPeriod><!---4= -4 days-->
+  <RecalculateTrendlines>true</RecalculateTrendlines>
+  <HistoricalPricesPeriod>-7</HistoricalPricesPeriod><!---4= -4 days-->
 
 	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
 	<!--0=No Skip-->

@@ -57,9 +57,11 @@ namespace tph.TrendlineTurtles.LogicLayer
                 foreach (string symbol in MonitorPositions.Keys)
                 {
                     DateTime from = DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod);
-                    DateTime to = DateTimeManager.Now.AddDays(1);
-
-                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1);
+                    //DateTime to = DateTimeManager.Now.AddDays(1);
+                    DateTime to = DateTimeManager.Now;
+                    
+                    HistoricalPricesRequestWrapper reqWrapper = new HistoricalPricesRequestWrapper(i, symbol, from, to, CandleInterval.Minute_1,
+                                                                                                    Config.Currency, SecurityTypeTranslator.TranslateMandatorySecurityType(Config.SecurityTypes), Config.Exchange);
                     OnMessageRcv(reqWrapper);
                     i++;
                 }

@@ -75,6 +75,8 @@ namespace tph.TrendlineTurtles.BusinessEntities
             List<MarketData> histPrices = GetHistoricalPrices();
 
             MarketData lastClosedCandle = GetLastFinishedCandle(1);
+
+
             bool found = false;
             List<Trendline> activeResistances = Resistances.Where(x => x.TrendlineType == TrendlineType.Resistance
                                                                        && !x.IsBroken(lastClosedCandle.MDEntryDate)

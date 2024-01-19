@@ -36,6 +36,7 @@
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 
 	<OpeningTime>10:30</OpeningTime><!--Needed for historical prices recovery-->
+	<TradingMode>BACKTEST</TradingMode><!--BACKTEST,LIVE_MODE-->
 
 	<OnlyLong>false</OnlyLong>
 

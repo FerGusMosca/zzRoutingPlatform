@@ -126,11 +126,11 @@ namespace zHFT.StrategyHandler.Common
                 resultado = false;
             }
 
-            if (string.IsNullOrEmpty(TradingMode))
-            {
-                result.Add("TradingMonde");
-                resultado = false;
-            }
+            //if (string.IsNullOrEmpty(TradingMode))
+            //{
+            //    result.Add("TradingMonde");
+            //    resultado = false;
+            //}
 
             if (SecurityTypes == SecurityType.FUT.ToString())
             {

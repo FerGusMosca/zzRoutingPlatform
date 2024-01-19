@@ -23,7 +23,7 @@
   <OuterTrendlinesSpan>60</OuterTrendlinesSpan><!--in candles-->
   <PerforationThresholds>0.0005</PerforationThresholds><!--in pct 0-1-->
 
-
+  <TradingMode>BACKTEST</TradingMode><!--BACKTEST,LIVE_MODE-->
   <Account>9732</Account>
 
   <Currency>USD</Currency>
