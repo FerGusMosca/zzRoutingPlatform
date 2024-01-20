@@ -12,6 +12,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.InstructionBasedMarketClient.IB.Common.Converters;
 using tph.InstructionBasedMarketClient.IB.Common.DTO;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -102,7 +103,7 @@ namespace tph.MarketClient.IB.Common
                 Symbol = ctr.Symbol,
                 Exchange = ctr.Exchange,
                 Currency = ctr.Currency,
-                SecType = SecurityConverter.GetSecurityTypeFromIBCode(ctr.SecType)
+                SecType = zHFT.MarketClient.IB.Common.Converters.SecurityConverter.GetSecurityTypeFromIBCode(ctr.SecType)
             };
 
             return sec;
@@ -370,7 +371,7 @@ namespace tph.MarketClient.IB.Common
                         if (contract.Exchange == exchange)
                         {
 
-                            List<Security> optionChain = SecurityConverter.BuildOptionChainSecurities(reqId, contract.Symbol, contract.Currency,
+                            List<Security> optionChain = zHFT.MarketClient.IB.Common.Converters.SecurityConverter.BuildOptionChainSecurities(reqId, contract.Symbol, contract.Currency,
                                                                                                       exchange, underlyingConId, tradingClass,
                                                                                                       multiplier, expirations, strikes);
 
@@ -617,18 +618,10 @@ namespace tph.MarketClient.IB.Common
                         HistoricalPricesHoldingDTO dtoRecord = HistoricalPricesRequest[reqId];
                         zHFT.Main.BusinessEntities.Market_Data.MarketData md =new zHFT.Main.BusinessEntities.Market_Data.MarketData();
 
-                        DateTime date;
-                        string format = "yyyyMMdd  HH:mm:ss";
-                       
-                        if (DateTime.TryParseExact(bar.Time, format, CultureInfo.InvariantCulture, DateTimeStyles.None,
-                            out date))
-                        {
-                            md.MDEntryDate = date;
-                            md.MDLocalEntryDate = date;
-                        }
-                        else
-                            throw new Exception($"Could not convert date {bar.ToString()} with format {format}");
-                        
+                        DateTime date = IBDateTimeConverter.ConvertBarDateTime(bar.Time);
+
+                        md.MDEntryDate = date;
+                        md.MDLocalEntryDate = date;
                         md.Trade = bar.Close;
                         md.OpeningPrice = bar.Open;
                         md.ClosingPrice = bar.Close;
