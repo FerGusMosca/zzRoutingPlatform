@@ -192,6 +192,7 @@ namespace tph.ChainedTurtles.LogicLayer
                         MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition)MonitorPositions[md.Security.Symbol];
                         if (monPos.HasHistoricalCandles())
                         {
+                            DoLog($"DBG3-Evaluating opening closing for symbol {md.Security.Symbol}", Constants.MessageType.Information);
                             bool newCandle = monPos.AppendCandle(md);
                             EvalOpeningClosingPositions(monPos);//We will see the inner indicatros if they are on
                             UpdateLastPrice(monPos, md);
@@ -343,8 +344,10 @@ namespace tph.ChainedTurtles.LogicLayer
            
             if (indicator.IsTrendlineMonPosition())
             {
+                DoLog("DBG1-->indicator.IsTrendlineMonPosition()==True", Constants.MessageType.Information);
                 if (newCandle)
                 {
+                    DoLog("DBG2-->new candle==True", Constants.MessageType.Information);
                     if (indicator.EvalSignalTriggered())
                     {
                         DoLog($"SIGNAL TRIGGERED!-->{indicator.SignalTriggered()}", Constants.MessageType.Information);

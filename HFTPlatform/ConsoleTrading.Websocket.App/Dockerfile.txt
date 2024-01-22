@@ -1,0 +1,20 @@
+# Use the official Microsoft .NET SDK image as a base image
+FROM mcr.microsoft.com/dotnet/framework/sdk:4.7.2 AS build-env
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the necessary files to the container
+COPY . ./
+COPY ../../Librerias ./
+
+# Build the C# application
+RUN msbuild /p:Configuration=Release /p:OutputPath=out
+
+# Create a runtime image
+FROM mcr.microsoft.com/dotnet/runtime:6.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+# Specify the entry point for the container
+ENTRYPOINT ["ConsoleTrading.Websocket.App.exe"]

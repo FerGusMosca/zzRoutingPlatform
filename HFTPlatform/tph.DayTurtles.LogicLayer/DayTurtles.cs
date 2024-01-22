@@ -128,14 +128,17 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void EvalOpeningPosition(MonTurtlePosition monPos)
         {
+            DoLog($"DBG4-Eval signals triggered for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
             if (monPos.LongSignalTriggered())
             {
+                DoLog($"DBG5-LONG signal triggered for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
                 PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Buy);
                 OrderRouter.ProcessMessage(posWrapper);
 
             }
             else if (monPos.ShortSignalTriggered())
             {
+                DoLog($"DBG6-SHORT signal triggered for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
                 if (!Config.OnlyLong)
                 {
                     PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Sell);

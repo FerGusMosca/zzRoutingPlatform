@@ -27,7 +27,7 @@
   <Account>9732</Account>
 
   <Currency>USD</Currency>
-  <Exchange>NYSE</Exchange>
+  <Exchange>SMART</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
   <ClosingTime>08:51 PM</ClosingTime>
@@ -50,7 +50,7 @@
 
   <RecalculateTrendlines>true</RecalculateTrendlines>
 
-  <HistoricalPricesPeriod>-6</HistoricalPricesPeriod><!---4= -4 days-->
+  <HistoricalPricesPeriod>-7</HistoricalPricesPeriod><!---4= -4 days-->
 
 	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
 	<!--0=No Skip-->
@@ -63,9 +63,6 @@
   
   <StocksToMonitor>
     <Symbol>SPY</Symbol>
-    <Symbol>QQQ</Symbol>
-    <Symbol>IWM</Symbol>
-	  <Symbol>XLF</Symbol>
 	  
 <!--    -->
   </StocksToMonitor>

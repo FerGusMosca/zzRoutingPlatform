@@ -3,7 +3,7 @@
   <Name>ConsoleTrading_v1_0</Name>
 
   <Currency>USD</Currency>
-  <Exchange>BUE</Exchange>
+  <Exchange>SMART</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
 

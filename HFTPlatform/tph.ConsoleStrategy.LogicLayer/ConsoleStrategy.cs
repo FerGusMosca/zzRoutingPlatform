@@ -68,9 +68,9 @@ namespace tph.ConsoleStrategy.LogicLayer
 
             string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
 
-            string currency = CommandValidator.ExtractNonMandatoryParam(param, 4);
-            string exchange = CommandValidator.ExtractNonMandatoryParam(param, 5);
-            string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 6);
+            string currency = CommandValidator.ExtractNonMandatoryParam(param, 4,def: Config.Currency);
+            string exchange = CommandValidator.ExtractNonMandatoryParam(param, 5,def: Config.Exchange);
+            string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 6,def:Config.SecurityTypes);
             SecurityType? secType = SecurityTypeTranslator.TranslateNonMandatorySecurityType(strSecType);
 
             (new Thread(RequestMarketDataAsync)).Start(new object[] { symbol, currency, exchange, secType });
@@ -135,9 +135,9 @@ namespace tph.ConsoleStrategy.LogicLayer
             string strSide = CommandValidator.ExtractMandatoryParam(param, 2);
             Side side = SideTranslator.TranslateMandatorySide(strSide);
             double qty = CommandValidator.ExtractMandatoryDouble(param, 3);
-            string currency = CommandValidator.ExtractNonMandatoryParam(param, 4);
-            string exchange = CommandValidator.ExtractNonMandatoryParam(param, 5);
-            string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 6);
+            string currency = CommandValidator.ExtractNonMandatoryParam(param, 4,def:Config.Currency);
+            string exchange = CommandValidator.ExtractNonMandatoryParam(param, 5,def:Config.Exchange);
+            string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 6,def:Config.SecurityTypes);
             SecurityType? secType = SecurityTypeTranslator.TranslateNonMandatorySecurityType(strSecType);
 
 
@@ -276,10 +276,10 @@ namespace tph.ConsoleStrategy.LogicLayer
                 CommandValidator.ValidateCommandVariableParams(cmd, param, 2, 5);
 
                 string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
-                string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 2);
+                string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 2,def: Config.SecurityTypes);
                 SecurityType? secType = SecurityTypeTranslator.TranslateNonMandatorySecurityType(strSecType);
-                string currency = CommandValidator.ExtractNonMandatoryParam(param, 3);
-                string exchange = CommandValidator.ExtractNonMandatoryParam(param, 4);
+                string currency = CommandValidator.ExtractNonMandatoryParam(param, 3,def:Config.Currency);
+                string exchange = CommandValidator.ExtractNonMandatoryParam(param, 4,def:Config.Exchange);
 
                 DoLog($"Requesting Market Data for Symbol={symbol} SecType={secType} Currency={currency} exchange={exchange}", MessageType.PriorityInformation);
                 (new Thread(RequestMarketDataAsync)).Start(new object[] { symbol, currency, exchange, secType });
