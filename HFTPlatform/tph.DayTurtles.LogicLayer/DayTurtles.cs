@@ -128,17 +128,14 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void EvalOpeningPosition(MonTurtlePosition monPos)
         {
-            DoLog($"DBG4-Eval signals triggered for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
             if (monPos.LongSignalTriggered())
             {
-                DoLog($"DBG5-LONG signal triggered for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
                 PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Buy);
                 OrderRouter.ProcessMessage(posWrapper);
 
             }
             else if (monPos.ShortSignalTriggered())
             {
-                DoLog($"DBG6-SHORT signal triggered for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
                 if (!Config.OnlyLong)
                 {
                     PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Sell);
@@ -151,12 +148,8 @@ namespace tph.DayTurtles.LogicLayer
             }
             else
             {
-                MarketData highest = monPos.HighestOnWindow(GetCustomConfig(monPos.Security.Symbol).OpenWindow);
-                DoLog(string.Format(
-                        "Recv markt data for symbol {0}: LastTrade={1} @{2} - NO SIGNAL TRIGGERED (highest={3})",
-                        monPos.Security.Symbol, monPos.Security.MarketData.Trade, DateTimeManager.Now,
-                        highest != null && highest.Trade.HasValue ? highest.Trade.ToString() : "-"),
-                    Constants.MessageType.Information);
+                DoLog($"Recv markt data for symbol {monPos.Security.Symbol}: LastTrade={monPos.Security.MarketData.Trade} @{DateTimeManager.Now} - NO SIGNAL TRIGGERED",Constants.MessageType.Information);
+                DoLog($"Inner Pos Info for {monPos.Security.Symbol}:{monPos.RelevantInnerInfo()}", Constants.MessageType.Information);
             }
         }
 

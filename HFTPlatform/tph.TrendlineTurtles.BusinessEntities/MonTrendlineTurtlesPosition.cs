@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Enums;
@@ -70,18 +71,80 @@ namespace tph.TrendlineTurtles.BusinessEntities
               return elapsed.TotalMinutes >= OuterSignalSpan;
          }
 
+        protected List<Trendline> GetActiveSupports()
+        {
+
+            List<MarketData> histPrices = GetHistoricalPrices();
+
+            MarketData lastClosedCandle = GetLastFinishedCandle(1);
+            bool found = false;
+            List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
+                                                                 && !x.IsBroken(lastClosedCandle.MDEntryDate)
+                                                                 && x.ValidDistanceToEndDate(histPrices, lastClosedCandle.MDEntryDate.Value, OuterSignalSpan, CandleInterval.Minute_1)
+                                                                 && x.IsSoftSlope(histPrices)).ToList();
+
+            return activeSupports;
+        }
+
+
+        protected List<Trendline> GetActiveResistances()
+        {
+
+            List<MarketData> histPrices = GetHistoricalPrices();
+
+            MarketData lastClosedCandle = GetLastFinishedCandle(1);
+            List<Trendline> activeResistances = Resistances.Where(x => x.TrendlineType == TrendlineType.Resistance
+                                                                           && !x.IsBroken(lastClosedCandle.MDEntryDate)
+                                                                           && x.ValidDistanceToEndDate(histPrices, lastClosedCandle.MDEntryDate.Value, OuterSignalSpan, CandleInterval.Minute_1)
+                                                                           && x.IsSoftSlope(histPrices)).ToList();
+
+            return activeResistances;
+        }
+
+        public override  string RelevantInnerInfo() 
+        {
+
+            string resp = System.Environment.NewLine+"";
+            resp += $"MovAvg={CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}" + System.Environment.NewLine;
+            resp+= ListActiveTrendlines();
+            return resp;
+        
+        }
+
+        protected string ListActiveTrendlines()
+        {
+            List<MarketData> histPrices = GetHistoricalPrices();
+
+            MarketData lastClosedCandle = GetLastFinishedCandle(1);
+
+            string resp = "";
+
+            List<Trendline> actResistances = GetActiveResistances();
+            foreach (Trendline resistance in actResistances)
+            {
+                double trendlinePrice = resistance.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
+                resp += $"==> Act. Resistance:Start Date={resistance.StartDate} EndDate={resistance.EndDate} Res Price={trendlinePrice}" + System.Environment.NewLine;
+            }
+
+            List<Trendline> actSupports = GetActiveSupports();
+            foreach (Trendline support in actSupports)
+            {
+                double trendlinePrice = support.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
+                resp += $"==> Act. Support:Start Date={support.StartDate} EndDate={support.EndDate} Res Price={trendlinePrice}" + System.Environment.NewLine;
+            }
+
+            return resp;
+
+        }
+
         protected bool EvalResistanceBroken()
         {
             List<MarketData> histPrices = GetHistoricalPrices();
 
             MarketData lastClosedCandle = GetLastFinishedCandle(1);
 
-
             bool found = false;
-            List<Trendline> activeResistances = Resistances.Where(x => x.TrendlineType == TrendlineType.Resistance
-                                                                       && !x.IsBroken(lastClosedCandle.MDEntryDate)
-                                                                       && x.ValidDistanceToEndDate(histPrices,lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
-                                                                       && x.IsSoftSlope(histPrices)).ToList();
+            List<Trendline> activeResistances = GetActiveResistances();
             foreach (Trendline trendline in activeResistances)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
@@ -108,10 +171,8 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
             MarketData lastClosedCandle = GetLastFinishedCandle(1);
             bool found = false;
-            List<Trendline> activeSupports = Supports.Where(x => x.TrendlineType == TrendlineType.Support
-                                                                 && !x.IsBroken(lastClosedCandle.MDEntryDate)
-                                                                 && x.ValidDistanceToEndDate(histPrices,lastClosedCandle.MDEntryDate.Value,OuterSignalSpan,CandleInterval.Minute_1)
-                                                                 && x.IsSoftSlope(histPrices)).ToList();
+            List<Trendline> activeSupports = GetActiveSupports();
+
             foreach (Trendline trendline in activeSupports)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);

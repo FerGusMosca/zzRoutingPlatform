@@ -44,6 +44,8 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         public virtual bool AppendCandleHistorical(MarketData md) { return true; }
 
+        public virtual string RelevantInnerInfo() { return "None"; }
+
 
         public virtual bool AppendCandle(MarketData md) {
 
