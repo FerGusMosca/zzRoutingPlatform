@@ -154,6 +154,20 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
         }
 
+        public override string RelevantInnerInfo()
+        {
+            string resp = "";
+            foreach (var indicator in InnerIndicators)
+            {
+                resp += $"Inner Info ofr ind {indicator.Security.Symbol}: {indicator.RelevantInnerInfo()}";
+
+            }
+
+            return resp;
+
+        }
+
+
 
         public override List<MonitoringPosition> GetInnerIndicators()
         {
