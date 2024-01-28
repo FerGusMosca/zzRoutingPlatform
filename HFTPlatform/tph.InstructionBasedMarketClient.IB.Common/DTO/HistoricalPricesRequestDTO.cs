@@ -44,6 +44,8 @@ namespace tph.InstructionBasedMarketClient.IB.Common.DTO
         public string BarSize { get; set; }
         
         public string WhatToShow { get; set; }
+
+        public CandleInterval Interval { get; set; }
         
         #endregion
     }

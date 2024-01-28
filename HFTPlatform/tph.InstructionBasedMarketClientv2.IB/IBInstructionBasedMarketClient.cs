@@ -511,6 +511,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                             HistoricalPricesRequest.Add(dto.ReqId, new HistoricalPricesHoldingDTO(dto.ReqId,
                                                                                                     dto.Symbol,
                                                                                                     dto.Currency,
+                                                                                                    dto.Interval,
                                                                                                     dto.SecurityType));
                     }
 

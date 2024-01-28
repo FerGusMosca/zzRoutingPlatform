@@ -11,9 +11,10 @@ namespace tph.InstructionBasedMarketClient.IB.Common.DTO
         
         #region Constructors
 
-        public HistoricalPricesHoldingDTO(int pReqId,string pSymbol, string pCurrency, SecurityType pSecType)
+        public HistoricalPricesHoldingDTO(int pReqId,string pSymbol, string pCurrency, CandleInterval pInterval, SecurityType pSecType)
         {
             ReqId = pReqId;
+            Interval = pInterval;
             Security = new Security() {Symbol = pSymbol, Currency = pCurrency, SecType = pSecType};
             MarketDataList = new List<MarketData>();
 
@@ -26,6 +27,8 @@ namespace tph.InstructionBasedMarketClient.IB.Common.DTO
         public  int ReqId { get; set; }
         
         public  Security Security { get; set; }
+
+        public CandleInterval Interval { get; set; }
         
         public  List<MarketData> MarketDataList { get; set; }
         

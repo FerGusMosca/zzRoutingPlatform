@@ -712,7 +712,7 @@ namespace tph.MarketClient.IB.Common
                         }
 
 
-                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(reqId,mainSec, CandleInterval.Minute_1,marketDataWrapper);
+                        HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(reqId,mainSec, dtoRecord.Interval, marketDataWrapper);
                         HistoricalPricesRequest.Remove(reqId);
                         (new Thread(OnPublishAsync)).Start(histWrp);
                     }

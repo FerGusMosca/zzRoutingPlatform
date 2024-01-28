@@ -101,10 +101,17 @@ namespace tph.InstructionBasedMarketClient.IB.Common.Converters
 
 
                 if (ValidateField(wrapper, HistoricalPricesRequestFields.Interval))
+                {
                     dto.BarSize =
-                        GetBarSize((CandleInterval) wrapper.GetField(HistoricalPricesRequestFields.Interval));
+                        GetBarSize((CandleInterval)wrapper.GetField(HistoricalPricesRequestFields.Interval));
+                    dto.Interval = (CandleInterval)wrapper.GetField(HistoricalPricesRequestFields.Interval);
+
+                }
                 else
+                {
                     dto.BarSize = HistoricalPricesRequestDTO._INT_1_MIN;
+                    dto.Interval = CandleInterval.Minute_1;
+                }
 
                 if (ValidateField(wrapper, HistoricalPricesRequestFields.Currency))
                     dto.Currency = (string) wrapper.GetField(HistoricalPricesRequestFields.Currency);
