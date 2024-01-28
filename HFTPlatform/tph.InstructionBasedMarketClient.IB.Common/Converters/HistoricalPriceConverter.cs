@@ -65,7 +65,9 @@ namespace tph.InstructionBasedMarketClient.IB.Common.Converters
 
             TimeSpan elapsed = to.Value - from.Value;
 
-            if (elapsed.TotalDays > 0)
+            if(elapsed.TotalDays>365)
+                return $"{Convert.ToInt32(elapsed.TotalDays/365)} Y";
+            else if (elapsed.TotalDays > 0)
                 return $"{Convert.ToInt32(elapsed.TotalDays)} D";
             else if (elapsed.TotalHours > 0)
                 return $"{Convert.ToInt32(elapsed.TotalHours)} H";

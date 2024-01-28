@@ -8,19 +8,19 @@
 	<Currency>USD</Currency>
 	<Exchange>SMART</Exchange><!--SAMRT,CBOE-->
 
-	<From>2022-10-01</From><!--yyyy-MM-dd-->
+	<From>2019-01-01</From><!--yyyy-MM-dd-->
 	
-	<To>2022-10-31</To><!--yyyy-MM-dd-->
+	<To>2020-06-30</To><!--yyyy-MM-dd-->
 
 	<PacingBtwRequests>1000</PacingBtwRequests><!--milliseconds-->
 	<PacingOnConnections>3000</PacingOnConnections><!--milliseconds-->
 
-	<Interval>MINUTE</Interval><!--MINUTE,DAY-->
+	<Interval>DAY</Interval><!--MINUTE,DAY-->
 		
 	<SymbolsToDownload>
 
     <!--<Symbol>BTC</Symbol>-->
-	  <Symbol>NVDA</Symbol>
+	  <Symbol>INTC</Symbol>
 	
 
 
