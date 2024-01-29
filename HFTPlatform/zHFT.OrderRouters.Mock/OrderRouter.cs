@@ -48,27 +48,37 @@ namespace zHFT.OrderRouters.Mock
 
             while (true)
             {
-                lock (tLock)
+                try
                 {
-                    List<Order> toRemove = new List<Order>();
-                    foreach (Order order in PendingToExecuteOrders)
+                    lock (tLock)
                     {
-                        //Console.Beep();//DBG
-                        TimeSpan elapsed = DateTimeManager.Now - order.EffectiveTime.Value;
-                        if (elapsed.TotalSeconds >= Configuration.OrdeExecutionEveryNSeconds)
+                        List<Order> toRemove = new List<Order>();
+                        foreach (Order order in PendingToExecuteOrders)
                         {
-                            //We send the executed ER
-                            order.OrderId = InternalOrderId.ToString();
-                            ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Trade, OrdStatus.Filled,
-                                                                                           0, order.OrderQty.Value, order.Price, order.Price,order.OrderQty, order);
-                            toRemove.Add(order);
-                            OnMessageRcv(erWrapper);
+                            DoLog($"@{Configuration.Name}--> Evaluating order id {order.ClOrdId} for symbol {order.Security.Symbol} to fill", Constants.MessageType.Information);
+                            //Console.Beep();//DBG
+                            TimeSpan elapsed = DateTimeManager.Now - order.EffectiveTime.Value;
+                            if (elapsed.TotalSeconds >= Configuration.OrdeExecutionEveryNSeconds)
+                            {
+                                DoLog($"@{Configuration.Name}--> Filling order id {order.ClOrdId} for symbol {order.Security.Symbol}", Constants.MessageType.Information);
+                                //We send the executed ER
+                                order.OrderId = InternalOrderId.ToString();
+                                ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Trade, OrdStatus.Filled,
+                                                                                               0, order.OrderQty.Value, order.Price, order.Price, order.OrderQty, order);
+                                toRemove.Add(order);
+                                OnMessageRcv(erWrapper);
+                            }
                         }
-                    }
 
-                    toRemove.ForEach(x => PendingToExecuteOrders.Remove(x));
+                        toRemove.ForEach(x => PendingToExecuteOrders.Remove(x));
+                    }
+                    Thread.Sleep(Configuration.OrdeExecutionEveryNSeconds);//n seconds
                 }
-                Thread.Sleep(Configuration.OrdeExecutionEveryNSeconds);//n seconds
+                catch (Exception ex)
+                {
+                    DoLog($"@{Configuration.Name}-->CRITICAL ERROR Filling Mock Orders: {ex.Message}", Constants.MessageType.Error);
+                
+                }
             }
         }
 

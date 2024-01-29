@@ -877,8 +877,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                 ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
                 ResetEveryNMinutesThread.Start();
                 
-                CloseOnTradingTimeOffThread = new Thread(CloseOnTradingTimeOff);
-                CloseOnTradingTimeOffThread.Start();
+                //CloseOnTradingTimeOffThread = new Thread(CloseOnTradingTimeOff);
+                //CloseOnTradingTimeOffThread.Start();
 
                 LoadPreviousTradingPositions();
                 
