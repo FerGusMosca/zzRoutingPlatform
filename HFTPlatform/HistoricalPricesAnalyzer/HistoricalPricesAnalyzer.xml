@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Historical Prices Analyzer</Name>
+
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+	<SecurityType>IND</SecurityType><!--CS=Common Stock,IND=Index-->
+	<Currency>USD</Currency>
+	<Exchange>CBOE</Exchange><!--SAMRT,CBOE-->
+
+	<From>2023-12-21</From><!--yyyy-MM-dd-->
+	
+	<To>2024-01-17</To><!--yyyy-MM-dd-->
+
+	<PacingBtwRequests>1000</PacingBtwRequests><!--milliseconds-->
+	<PacingOnConnections>3000</PacingOnConnections><!--milliseconds-->
+
+	<Interval>DAY</Interval><!--MINUTE,DAY-->
+
+	<IndicatorName>VIX_CANDLES</IndicatorName>
+
+	<IndicatorAnalysisClass>tph.StrategyHandler.HistoricalPricesAnalyzer.BE.CandleIndicator,tph.StrategyHandler.HistoricalPricesAnalyzer.BE</IndicatorAnalysisClass>
+
+	<OutputConnectionString>Data Source=.\SQLDEV17;initial catalog=machine_learning_research;integrated security=True;multipleactiveresultsets=True</OutputConnectionString>
+
+		
+	<SymbolsToDownload>
+	  <Symbol>SPY</Symbol>
+	 </SymbolsToDownload>
+
+</Configuration>

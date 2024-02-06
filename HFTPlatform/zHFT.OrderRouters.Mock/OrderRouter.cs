@@ -128,10 +128,16 @@ namespace zHFT.OrderRouters.Mock
                     pendingOrder.OrigClOrdId = origClOrdId;
                     pendingOrder.ClOrdId = clOrdId;
 
-                    ExecutionReportWrapper erWrapper = new ExecutionReportWrapper(ExecType.Replaced, OrdStatus.Replaced,
+                    ExecutionReportWrapper erWrapperRepl = new ExecutionReportWrapper(ExecType.Replaced, OrdStatus.Replaced,
                                                                                   0, pendingOrder.OrderQty.Value, null, null,null, pendingOrder);
 
-                    OnMessageRcv(erWrapper);
+                    OnMessageRcv(erWrapperRepl);
+
+                    ExecutionReportWrapper erWrapperNew = new ExecutionReportWrapper(ExecType.New, OrdStatus.New,
+                                                                                  0, pendingOrder.OrderQty.Value, null, null, null, pendingOrder);
+
+                    OnMessageRcv(erWrapperNew);
+
                 }
                 else
                 {

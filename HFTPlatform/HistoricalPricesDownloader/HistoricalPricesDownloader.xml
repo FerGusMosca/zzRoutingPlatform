@@ -15,7 +15,8 @@
 	<PacingBtwRequests>1000</PacingBtwRequests><!--milliseconds-->
 	<PacingOnConnections>3000</PacingOnConnections><!--milliseconds-->
 
-	<Interval>DAY</Interval><!--MINUTE,DAY-->
+	<Interval>DAY</Interval><!--MINUTE,DAY-->'
+	
 		
 	<SymbolsToDownload>
 

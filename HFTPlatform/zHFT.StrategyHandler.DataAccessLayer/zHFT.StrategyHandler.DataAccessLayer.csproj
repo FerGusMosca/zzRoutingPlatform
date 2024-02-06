@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CandleManager.cs" />
+    <Compile Include="DateRangeClassificationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +100,10 @@
     <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
       <Project>{801E5410-738B-47C9-895F-0AD1B5860A2A}</Project>
       <Name>zHFT.Main.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
+      <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
+      <Name>zHFT.StrategyHandler.BusinessEntities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

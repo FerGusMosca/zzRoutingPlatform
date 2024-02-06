@@ -29,7 +29,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
 
         #region Protected Attributes
 
-        protected HistoricalPricesDownloaderConfiguration Config { get; set; }
+        protected virtual HistoricalPricesDownloaderConfiguration Config { get; set; }
 
         public string ModuleConfigFile { get; set; }
 
@@ -100,7 +100,22 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
         
         }
 
-        protected void RequestHistoricalPrices()
+        protected virtual Security EvalBuildProcessingEntities(string symbol, SecurityType secType,string currency,string exchange)
+        {
+            Security sec = new Security()
+            {
+                Symbol = symbol,
+                SecType = secType,
+                Currency = currency,
+                Exchange = exchange
+
+            };
+
+            return sec;
+        
+        }
+
+        protected virtual void RequestHistoricalPrices()
         {
             try
             {
@@ -113,12 +128,12 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
 
                 foreach (string symbol in Config.SymbolsToDownload)
                 {
+                    Security sec = EvalBuildProcessingEntities(symbol,secType,Config.Currency,Config.Exchange);
                     TimeSpan elapsed = DateTimeManager.Now - new DateTime(1970, 1, 1);
                     int reqId = Convert.ToInt32(elapsed.TotalSeconds);   
 
-                    DoLog($"{Config.Name}--> Requesting Historical Prices for Symbol {symbol} From={from} To={to}", MessageType.Information);
-                    HistoricalPricesRequestWrapper wrapper = new HistoricalPricesRequestWrapper(
-                        reqId,symbol, from, to, interval,Config.Currency, secType,Config.Exchange);
+                    DoLog($"{Config.Name}--> Requesting Historical Prices for Symbol {sec.Symbol} From={from} To={to}", MessageType.Information);
+                    HistoricalPricesRequestWrapper wrapper = new HistoricalPricesRequestWrapper(reqId,sec.Symbol, from, to, interval,sec.Currency, sec.SecType,sec.Exchange);
 
                     HistoricalPricesRequests.Add(reqId, symbol);
                     (new Thread(DoSendAsync)).Start(wrapper);
@@ -136,7 +151,7 @@ namespace tph.StrategyHandler.HistoricalPricesDownloader
         #endregion
 
         #region Interface Methods
-        public void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
+        public virtual void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             Config = ConfigLoader.GetConfiguration<HistoricalPricesDownloaderConfiguration>(this, configFile, listaCamposSinValor);
         }
