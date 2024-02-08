@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
@@ -13,24 +11,27 @@ using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
 {
-    public class CandleIndicator: Indicator
+    public class MovAvgIndicator: Indicator
     {
+
+        #region Protected Attributes
+
+        protected MovAvgIndicatorConfig Config { get; set; }
+
+        #endregion
+
         #region Constructor
 
-        public CandleIndicator(Security pSecurity,string pConfigFile):base() 
-        { 
-        
-            Security= pSecurity;
+        public MovAvgIndicator(Security pSecurity, string pConfigFile) : base()
+        {
 
-            CandleIndicatorConfig config = LoadConfigDTO<CandleIndicatorConfig>(OpenConigFile(pConfigFile));
+            Security = pSecurity;
 
-            IndicatorClassifKey = string.Format(config.Key, pSecurity.Symbol);
+            Config = LoadConfigDTO<MovAvgIndicatorConfig>(OpenConigFile(pConfigFile));
 
-            //IndicatorClassifKey = $"CANDLE_CLASSIF_DAILY_{pSecurity.Symbol}";
+            IndicatorClassifKey = string.Format(Config.Key, pSecurity.Symbol);
 
             DateRangeClassifications = new List<DateRangeClassification>();
-
-
 
         }
 
@@ -41,56 +42,23 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
 
         public override bool LongSignalTriggered()
         {
-            MarketData tMinus2 = GetLastFinishedCandle(1);
-            MarketData tMinus1 = GetLastFinishedCandle(0);
 
-            if (tMinus1 != null && tMinus2 != null && tMinus2.OpeningPrice.HasValue && tMinus2.ClosingPrice.HasValue)
-            {
-
-                double triggerPointDelta = Math.Abs(tMinus2.OpeningPrice.Value - tMinus2.ClosingPrice.Value)/2;
-                double offset = tMinus2.OpeningPrice > tMinus2.ClosingPrice ? tMinus2.ClosingPrice.Value : tMinus2.OpeningPrice.Value;
-
-                double refPrice = offset + triggerPointDelta;
-
-                return tMinus1.ClosingPrice > refPrice;
-
-
-            }
-            else
-                return false;
+            return IsHigherThanMMov(Config.Window, true);
         }
 
         public override bool ShortSignalTriggered()
         {
 
-            MarketData tMinus2 = GetLastFinishedCandle(1);
-            MarketData tMinus1 = GetLastFinishedCandle(0);
-
-            if (tMinus1 != null && tMinus2 != null && tMinus2.OpeningPrice.HasValue && tMinus2.ClosingPrice.HasValue)
-            {
-
-                double triggerPointDelta = Math.Abs(tMinus2.OpeningPrice.Value - tMinus2.ClosingPrice.Value)/2;
-                double offset = tMinus2.OpeningPrice < tMinus2.ClosingPrice ? tMinus2.OpeningPrice.Value : tMinus2.ClosingPrice.Value;
-
-                double refPrice = offset + triggerPointDelta;
-
-                return tMinus1.ClosingPrice < refPrice;
-
-
-            }
-            else
-                return false;
+            return !IsHigherThanMMov(Config.Window, false);
         }
 
         public override bool EvalClosingLongPosition(PortfolioPosition portfPos)
         {
-            //TODO eval closing LONG position if implemented
             return false;
         }
 
         public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
         {
-            //TODO eval closing SHORT position if implemented
             return false;
         }
 
@@ -120,8 +88,8 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
 
             if (md.GetReferenceDateTime().HasValue)
             {
-
-                if (LastOpenedClassification==null)
+                AppendCandleLight(md);
+                if (LastOpenedClassification == null)
                 {
                     OpenSemiRandomInitialPos(md);
                 }
@@ -130,8 +98,8 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
                     if (LastOpenedClassification.IsLongClassif())
                     {
                         if (ShortSignalTriggered())
-                            SwitchRangeClassification(GetLastFinishedCandle(0).GetReferenceDateTime().Value,md.GetReferenceDateTime().Value, DateRangeClassification._SHORT_CLASSIF);
-                        
+                            SwitchRangeClassification(GetLastFinishedCandle(0).GetReferenceDateTime().Value, md.GetReferenceDateTime().Value, DateRangeClassification._SHORT_CLASSIF);
+
 
                     }
                     else if (LastOpenedClassification.IsShortClassif())
@@ -144,7 +112,7 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
                             $"for symbol {Security.Symbol} on Date {md.GetReferenceDateTime()}");
                 }
 
-                return AppendCandleLight(md);
+                return true;
             }
             else
                 return false;

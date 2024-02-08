@@ -273,6 +273,13 @@ namespace tph.DayTurtles.BusinessEntities
             return newCandle;
         }
 
+        public bool AppendCandleLight(MarketData md)
+        {
+            string key = GetCandleKey(md);
+            Candles[key] = md;
+            return true;
+        }
+
         public override bool AppendCandle(MarketData md)//Market Data candles come with yesterday Open/Close
         {
             bool newCandle = false;

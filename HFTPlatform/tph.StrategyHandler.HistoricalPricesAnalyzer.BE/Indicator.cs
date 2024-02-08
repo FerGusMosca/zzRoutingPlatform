@@ -48,6 +48,51 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
             return config;
         }
 
+        public void OpenDateRangeClassification(DateTime date, string classif)
+        {
+            DateRangeClassification rangeClassif = new DateRangeClassification()
+            {
+                Key = IndicatorClassifKey,
+                DateStart = date,
+                Classification = classif,
+            };
+
+            LastOpenedClassification = rangeClassif;
+
+            DateRangeClassifications.Add(rangeClassif);
+
+        }
+
+        public void SwitchRangeClassification(DateTime closeDate, DateTime newOpenDate, string newClassif)
+        {
+            LastOpenedClassification.DateEnd = closeDate;
+
+            DateRangeClassification newRangeClassif = new DateRangeClassification()
+            {
+                Key = IndicatorClassifKey,
+                DateStart = newOpenDate,
+                Classification = newClassif,
+            };
+
+            DateRangeClassifications.Add(newRangeClassif);
+
+            LastOpenedClassification = newRangeClassif;
+
+        }
+
+        protected void OpenSemiRandomInitialPos(MarketData md)
+        {
+            if (md.BiggerGreendCandle(int.MinValue))
+            {
+                OpenDateRangeClassification(md.GetReferenceDateTime().Value, DateRangeClassification._LONG_CLASSIF);
+            }
+            else if (md.LowerRedCandle(int.MaxValue))
+            {
+                OpenDateRangeClassification(md.GetReferenceDateTime().Value, DateRangeClassification._SHORT_CLASSIF);
+
+            }
+        }
+
         #endregion
 
         #region Public Methods

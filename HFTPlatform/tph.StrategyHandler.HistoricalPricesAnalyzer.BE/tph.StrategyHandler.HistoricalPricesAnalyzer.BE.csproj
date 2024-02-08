@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CandleIndicator.cs" />
     <Compile Include="Indicator.cs" />
+    <Compile Include="MovAvgIndicator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

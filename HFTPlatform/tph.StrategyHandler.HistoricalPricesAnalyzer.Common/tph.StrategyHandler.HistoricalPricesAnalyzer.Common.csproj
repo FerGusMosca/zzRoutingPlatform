@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="DTOs\CandleIndicatorConfig.cs" />
+    <Compile Include="DTOs\MovAvgIndicatorConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
