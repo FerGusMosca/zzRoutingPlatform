@@ -99,7 +99,7 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer
                 var indicatorCls = Type.GetType(GetConfig().IndicatorAnalysisClass);
                 if (indicatorCls != null)
                 {
-                    object[] param = new object[] { sec };
+                    object[] param = new object[] { sec, GetConfig().IndicatorConfigafile };
                     var indicatorIns = (MonTurtlePosition)Activator.CreateInstance(indicatorCls, param);
                     AvailableIndicators.Add(sec.Symbol, indicatorIns);
 

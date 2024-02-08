@@ -8,19 +8,21 @@
 	<Currency>USD</Currency>
 	<Exchange>CBOE</Exchange><!--SAMRT,CBOE-->
 
-	<From>2023-12-21</From><!--yyyy-MM-dd-->
+	<From>2023-01-01</From><!--yyyy-MM-dd-->
 	
-	<To>2024-01-17</To><!--yyyy-MM-dd-->
+	<To>2023-12-31</To><!--yyyy-MM-dd-->
 
 	<PacingBtwRequests>1000</PacingBtwRequests><!--milliseconds-->
 	<PacingOnConnections>3000</PacingOnConnections><!--milliseconds-->
 
 	<Interval>DAY</Interval><!--MINUTE,DAY-->
 
-	<IndicatorName>VIX_CANDLES</IndicatorName>
+	<IndicatorName>SPY_CANDLES</IndicatorName>
 
 	<IndicatorAnalysisClass>tph.StrategyHandler.HistoricalPricesAnalyzer.BE.CandleIndicator,tph.StrategyHandler.HistoricalPricesAnalyzer.BE</IndicatorAnalysisClass>
 
+	<IndicatorConfigafile>./ConfigFiles/vix_candle_config_file.json</IndicatorConfigafile><!--VIX CANDLES-->
+	
 	<OutputConnectionString>Data Source=.\SQLDEV17;initial catalog=machine_learning_research;integrated security=True;multipleactiveresultsets=True</OutputConnectionString>
 
 		

@@ -4,13 +4,13 @@
 
 	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
-	<SecurityType>CS</SecurityType><!--CS=Common Stock,IND=Index-->
+	<SecurityType>IND</SecurityType><!--CS=Common Stock,IND=Index-->
 	<Currency>USD</Currency>
-	<Exchange>SMART</Exchange><!--SAMRT,CBOE-->
+	<Exchange>CBOE</Exchange><!--SAMRT,CBOE-->
 
-	<From>2019-01-01</From><!--yyyy-MM-dd-->
+	<From>2023-01-01</From><!--yyyy-MM-dd-->
 	
-	<To>2020-06-30</To><!--yyyy-MM-dd-->
+	<To>2023-12-31</To><!--yyyy-MM-dd-->
 
 	<PacingBtwRequests>1000</PacingBtwRequests><!--milliseconds-->
 	<PacingOnConnections>3000</PacingOnConnections><!--milliseconds-->
@@ -21,7 +21,7 @@
 	<SymbolsToDownload>
 
     <!--<Symbol>BTC</Symbol>-->
-	  <Symbol>INTC</Symbol>
+	  <Symbol>VIX</Symbol>
 	
 
 

@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +53,10 @@
     <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
       <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.HistoricalPricesAnalyzer.Common\tph.StrategyHandler.HistoricalPricesAnalyzer.Common.csproj">
+      <Project>{CD11B07D-4682-410B-B20C-82D5A8C9D488}</Project>
+      <Name>tph.StrategyHandler.HistoricalPricesAnalyzer.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>

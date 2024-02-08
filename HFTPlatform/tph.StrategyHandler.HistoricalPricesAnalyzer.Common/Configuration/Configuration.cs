@@ -16,6 +16,8 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.Common.Configuration
 
         public string IndicatorAnalysisClass { get;set; }
 
+        public string IndicatorConfigafile { get; set; }
+
         public string OutputConnectionString { get; set; }
 
         #endregion

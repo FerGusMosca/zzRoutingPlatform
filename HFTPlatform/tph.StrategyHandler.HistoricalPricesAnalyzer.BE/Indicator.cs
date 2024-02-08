@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,34 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
         protected List<DateRangeClassification> DateRangeClassifications { get; set; }
 
         protected DateRangeClassification LastOpenedClassification { get; set; }
+
+        #endregion
+
+        #region Protected Methods
+
+        public string OpenConigFile(string pConfigFile)
+        {
+            try {
+
+                string jsonContent = System.IO.File.ReadAllText(pConfigFile);
+                return jsonContent;
+
+
+            }
+            catch (Exception ex) {
+
+                throw new Exception($"Could not open config file {pConfigFile}:{ex.Message}");
+            
+            }
+        
+        }
+
+        protected T LoadConfigDTO<T>(string jsonContent)
+        {
+            T config = JsonConvert.DeserializeObject<T>(jsonContent);
+
+            return config;
+        }
 
         #endregion
 

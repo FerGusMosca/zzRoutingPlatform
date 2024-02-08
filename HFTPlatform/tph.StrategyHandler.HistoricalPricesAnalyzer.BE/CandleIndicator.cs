@@ -6,6 +6,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using tph.DayTurtles.BusinessEntities;
+using tph.StrategyHandler.HistoricalPricesAnalyzer.Common.DTOs;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.StrategyHandler.BusinessEntities;
@@ -16,12 +17,16 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
     {
         #region Constructor
 
-        public CandleIndicator(Security pSecurity):base() 
+        public CandleIndicator(Security pSecurity,string pConfigFile):base() 
         { 
         
             Security= pSecurity;
 
-            IndicatorClassifKey = $"CANDLE_CLASSIF_DAILY_{pSecurity.Symbol}";
+            CandleIndicatorConfig config = LoadConfigDTO<CandleIndicatorConfig>(OpenConigFile(pConfigFile));
+
+            IndicatorClassifKey = string.Format(config.Key, pSecurity.Symbol);
+
+            //IndicatorClassifKey = $"CANDLE_CLASSIF_DAILY_{pSecurity.Symbol}";
 
             DateRangeClassifications = new List<DateRangeClassification>();
 
