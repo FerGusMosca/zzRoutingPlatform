@@ -26,12 +26,7 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
 
             IndicatorClassifKey = string.Format(config.Key, pSecurity.Symbol);
 
-            //IndicatorClassifKey = $"CANDLE_CLASSIF_DAILY_{pSecurity.Symbol}";
-
             DateRangeClassifications = new List<DateRangeClassification>();
-
-
-
         }
 
 

@@ -8,7 +8,7 @@
 	<Currency>USD</Currency>
 	<Exchange>CBOE</Exchange><!--SAMRT,CBOE-->
 
-	<From>2023-01-01</From><!--yyyy-MM-dd-->
+	<From>2010-01-01</From><!--yyyy-MM-dd-->
 	
 	<To>2023-12-31</To><!--yyyy-MM-dd-->
 
@@ -17,16 +17,23 @@
 
 	<Interval>DAY</Interval><!--MINUTE,DAY-->
 
-	<IndicatorName>VIX_MOV_AVG</IndicatorName>
-	
+
+	<!--MOV AVG-->
+	<!--<IndicatorName>VIX_MOV_AVG</IndicatorName>
 	<IndicatorAnalysisClass>tph.StrategyHandler.HistoricalPricesAnalyzer.BE.MovAvgIndicator,tph.StrategyHandler.HistoricalPricesAnalyzer.BE</IndicatorAnalysisClass>
-	<IndicatorConfigafile>./ConfigFiles/mov_avg_indicator_config_file.json</IndicatorConfigafile>
+	<IndicatorConfigafile>./ConfigFiles/mov_avg_indicator_config_file.json</IndicatorConfigafile>-->
 	
-	<!--VIX CANDLES-->
+	<!--VIX DAILY CANDLES-->
 	<!--
+	<IndicatorName>VIX_DAILY_CANDLES</IndicatorName>
 	<IndicatorAnalysisClass>tph.StrategyHandler.HistoricalPricesAnalyzer.BE.CandleIndicator,tph.StrategyHandler.HistoricalPricesAnalyzer.BE</IndicatorAnalysisClass>
 	<IndicatorConfigafile>./ConfigFiles/vix_candle_config_file.json</IndicatorConfigafile>
 	-->
+
+	<!--VIX WEEKLY CANDLES-->
+	<IndicatorName>VIX_WEEKLY_CANNLDES</IndicatorName>
+	<IndicatorAnalysisClass>tph.StrategyHandler.HistoricalPricesAnalyzer.BE.NPeriodCandleIndicator,tph.StrategyHandler.HistoricalPricesAnalyzer.BE</IndicatorAnalysisClass>
+	<IndicatorConfigafile>./ConfigFiles/vix_n_period_candle_config_file.json</IndicatorConfigafile>
 	
 	<OutputConnectionString>Data Source=.\SQLDEV17;initial catalog=machine_learning_research;integrated security=True;multipleactiveresultsets=True</OutputConnectionString>
 		

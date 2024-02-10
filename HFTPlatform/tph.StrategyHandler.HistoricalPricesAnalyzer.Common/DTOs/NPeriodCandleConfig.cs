@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace tph.StrategyHandler.HistoricalPricesAnalyzer.Common.DTOs
 {
-    public class MovAvgIndicatorConfig
+    public class NPeriodCandleConfig
     {
         #region Pubic Attributes
 
         public string Key { get; set; }
 
-        public int Window { get; set; }
+        public int Period { get; set; }
 
-        public int Skip { get; set; }
+        public string RecalculationDay { get; set; }
+
 
         #endregion
-
     }
 }

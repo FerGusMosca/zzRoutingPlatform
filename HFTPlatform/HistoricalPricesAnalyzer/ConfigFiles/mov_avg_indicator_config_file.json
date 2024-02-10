@@ -1,5 +1,6 @@
 {
 
   "Key": "MOV_AVG_INDICATOR_{0}",
-  "Window": 5
+  "Window": 5,
+  "Skip": 3
 }

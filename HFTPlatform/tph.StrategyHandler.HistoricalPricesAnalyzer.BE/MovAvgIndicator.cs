@@ -38,18 +38,24 @@ namespace tph.StrategyHandler.HistoricalPricesAnalyzer.BE
 
         #endregion
 
+
         #region Overriden Methods
 
         public override bool LongSignalTriggered()
         {
+            bool prevSlope= IsPositiveSlope(Config.Window, 1);
+            bool currSlope = IsPositiveSlope(Config.Window, 0);
 
-            return IsHigherThanMMov(Config.Window, true);
+            return !prevSlope && currSlope;
         }
 
         public override bool ShortSignalTriggered()
         {
+            bool prevSlope = IsNegativeSlope(Config.Window, 1);
+            bool currSlope = IsNegativeSlope(Config.Window, 0);
 
-            return !IsHigherThanMMov(Config.Window, false);
+            return !prevSlope && currSlope;
+
         }
 
         public override bool EvalClosingLongPosition(PortfolioPosition portfPos)

@@ -62,7 +62,8 @@
 	<!--Close window is mmov-->
   
   <StocksToMonitor>
-    <Symbol>SPY</Symbol>
+    <Symbol>GGAL</Symbol>
+	<Symbol>YPF</Symbol>
 	  
 <!--    -->
   </StocksToMonitor>

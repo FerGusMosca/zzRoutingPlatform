@@ -23,7 +23,7 @@ namespace tph.DayTurtles.BusinessEntities
         public MonTurtlePosition()
         {
             Candles = new Dictionary<string, MarketData>();
-        
+
         }
 
 
@@ -33,7 +33,7 @@ namespace tph.DayTurtles.BusinessEntities
             TurtlesCustomConfig = pTurtlesCustomConfig;
             StopLossForOpenPositionPct = stopLossForOpenPositionPct;
             CandleReferencePrice = candleRefPrice;
-            
+
         }
 
         #endregion
@@ -44,7 +44,7 @@ namespace tph.DayTurtles.BusinessEntities
 
         public double StopLossForOpenPositionPct { get; set; }
 
-        
+
 
         protected string LastSignalTriggered { get; set; }
 
@@ -120,13 +120,13 @@ namespace tph.DayTurtles.BusinessEntities
 
         public bool IsBigger(MarketData md, MarketData lastCandle)
         {
-            return ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice) > ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice);
+            return ReferencePriceCalculator.GetReferencePrice(md, CandleReferencePrice) > ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice);
 
         }
 
         public bool Islower(MarketData md, MarketData lastCandle)
         {
-            return ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice) < ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice);
+            return ReferencePriceCalculator.GetReferencePrice(md, CandleReferencePrice) < ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice);
 
         }
 
@@ -135,20 +135,20 @@ namespace tph.DayTurtles.BusinessEntities
             return CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow);
         }
 
-        public double CalculateSimpleMovAvg(int window)
+        public double CalculateSimpleMovAvg(int window, int skip = 0)
         {
             List<MarketData> windowcandles = Candles.Values.Where(x => x.GetOrderingDate() != null)
                                               .OrderByDescending(x => x.GetOrderingDate().Value)
-                                              .Take(window).ToList();
+                                              .Skip(skip).Take(window).ToList();
 
             //calculate the avg
             double sum = 0;
             int count = 0;
             foreach (MarketData md in windowcandles)
             {
-                if (ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice) != null)
+                if (ReferencePriceCalculator.GetReferencePrice(md, CandleReferencePrice) != null)
                 {
-                    sum += ReferencePriceCalculator.GetReferencePrice(md,CandleReferencePrice).Value;
+                    sum += ReferencePriceCalculator.GetReferencePrice(md, CandleReferencePrice).Value;
                     count++;
                 }
             }
@@ -157,24 +157,101 @@ namespace tph.DayTurtles.BusinessEntities
             return avg;
         }
 
-        public bool IsHigherThanMMov(int window,bool higherOrEqual)
+        public bool IsHigherThanMMov(int window, bool higherOrEqual)
         {
             MarketData lastCandle = LastValidCandle();
 
             double avg = CalculateSimpleMovAvg(window);
 
-            if (ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice) != null)
+            if (ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice) != null)
             {
-                if(higherOrEqual)
-                    return ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice).Value >= avg;
+                if (higherOrEqual)
+                    return ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice).Value >= avg;
                 else
-                    return ReferencePriceCalculator.GetReferencePrice(lastCandle,CandleReferencePrice).Value > avg;
+                    return ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice).Value > avg;
 
             }
             else
-                return false; 
+                return false;
 
         }
+
+        public Dictionary<int, double> GetPrevMovAvgs(int window, int skip)
+        {
+
+            int i = skip;
+
+            Dictionary<int, double> prevMovAvgs = new Dictionary<int, double>();
+
+            while (i != -1)
+            {
+
+                double movAvg = CalculateSimpleMovAvg(window, i);
+                prevMovAvgs.Add(i, movAvg);
+                i--;
+            }
+
+            return prevMovAvgs;
+        }
+
+
+        public bool IsPositiveSlope(int window,int skip)
+        {
+            Dictionary<int, double> prevMovAvgs = GetPrevMovAvgs(window, skip);
+
+            double? prevMovAvg = null;
+            foreach (int key in prevMovAvgs.Keys.OrderByDescending(x => x))
+            {
+
+                if (!prevMovAvg.HasValue)
+                {
+                    prevMovAvg = prevMovAvgs[key];
+
+                }
+                else
+                {
+                    double currMovAvg = prevMovAvgs[key];
+
+                    if (currMovAvg < prevMovAvg || double.IsNaN(currMovAvg))
+                        return false;
+
+                    prevMovAvg = currMovAvg;
+                }
+            }
+
+            return true;
+        
+        }
+
+
+        public bool IsNegativeSlope(int window, int skip)
+        {
+            Dictionary<int, double> prevMovAvgs = GetPrevMovAvgs(window, skip);
+
+            double? prevMovAvg = null;
+            foreach (int key in prevMovAvgs.Keys.OrderByDescending(x => x))
+            {
+
+                if (!prevMovAvg.HasValue)
+                {
+                    prevMovAvg = prevMovAvgs[key];
+
+                }
+                else
+                {
+                    double currMovAvg = prevMovAvgs[key];
+
+                    if (currMovAvg > prevMovAvg || double.IsNaN(currMovAvg))
+                        return false;
+
+                    prevMovAvg = currMovAvg;
+                }
+            }
+
+            return true;
+
+        }
+
 
         public MarketData LastValidCandle()
         {
