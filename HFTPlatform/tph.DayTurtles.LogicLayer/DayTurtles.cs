@@ -198,17 +198,31 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void CloseAllOpenPositions(MonTurtlePosition monPos)
         {
-            foreach (PortfTurtlesPosition portfPos in PortfolioPositions.Values)
+
+            if (PortfolioPositions.Values.Any(x => x.OpeningPosition != null && x.OpeningPosition.Security.Symbol == monPos.Security.Symbol))
             {
-                DoLog(string.Format("Closing {0} Position  on market CLOSED. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
-                        portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
-                        DateTimeManager.Now,
-                        portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-",
-                        "MARKET CLOSED"),
-                    Constants.MessageType.Information);
-                RunClose(portfPos.OpeningPosition, monPos, portfPos);
+                PortfolioPosition portfPos = PortfolioPositions.Values.Where(x => x.OpeningPosition != null
+                                                                                && x.OpeningPosition.Security.Symbol == monPos.Security.Symbol)
+                                                                    .FirstOrDefault();
+                if (!monPos.IsClosing() && portfPos.ClosingPosition == null)
+                {
+                    DoLog(string.Format("Closing {0} Position on market CLOSED. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
+                           portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
+                           DateTimeManager.Now,
+                           portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-",
+                           "MARKET CLOSED"),
+                       Constants.MessageType.Information);
+                    RunClose(portfPos.OpeningPosition, monPos, portfPos);
+
+
+                }
+                else
+                {
+                    string posId = portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-";
+                    DoLog($"WAITING CLOSING {portfPos.TradeDirection} Position on market CLOSED. Symbol {portfPos.OpeningPosition.Security.Symbol} Qty={portfPos.Qty} DateTime={DateTimeManager.Now} PosId={posId} Signal=ON CLOSING ON MARKET CLOSED",
+                           Constants.MessageType.Information);
+                }
             }
-        
         }
 
         protected void EvalClosingPosition(MonTurtlePosition monPos)
@@ -217,7 +231,7 @@ namespace tph.DayTurtles.LogicLayer
 
             if (monPos.EvalClosingShortPosition(portfPos) && !monPos.IsClosing())
             {
-                DoLog(string.Format("Closing {0} Position  on market. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
+                DoLog(string.Format("Closing {0} Position on market. Symbol {1} Qty={2} DateTime={3} PosId={4} Signal={5}",
                         portfPos.TradeDirection, portfPos.OpeningPosition.Security.Symbol, portfPos.Qty,
                         DateTimeManager.Now,
                         portfPos.ClosingPosition != null ? portfPos.ClosingPosition.PosId : "-",

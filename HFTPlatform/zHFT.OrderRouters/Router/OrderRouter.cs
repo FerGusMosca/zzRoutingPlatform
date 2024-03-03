@@ -24,6 +24,8 @@ namespace zHFT.OrderRouters.Router
     {
         #region Protected Attributes
 
+        protected Dictionary<string,DateTime> OrderCreationTimestamp { get; set; }
+
         protected ICommunicationModule OrderProxy { get; set; }
 
         protected PositionConverter PositionConverter { get; set; }
@@ -624,9 +626,45 @@ namespace zHFT.OrderRouters.Router
                 throw new Exception(string.Format("ERROR-Could not cancel order if no PosId was specified"));
         }
 
+        protected bool CandSendOrderPacing(string symbol)
+        {
+
+            if (OrderCreationTimestamp.ContainsKey(symbol))
+            {
+
+                DateTime start = OrderCreationTimestamp[symbol];
+
+                TimeSpan elapsed = DateTime.Now - start;
+
+                if (elapsed.TotalSeconds > ORConfiguration.ConsecutiveOrdersPacingInSec)
+                {
+                    DoLog($"WARNING- Reseting timestamp managemnt period for symbol {symbol} @{DateTime.Now}", Constants.MessageType.Information);
+                    OrderCreationTimestamp[symbol] = DateTime.Now;
+                    return true;
+
+
+                }
+                else
+                {
+                    DoLog($"WARNING- Preventing sending new order for symbol {symbol} @{DateTime.Now} because pacing not elapsed!", Constants.MessageType.Information);
+                    return false;
+                }
+            }
+            else
+            {
+                DoLog($"Adding new symbol to timestamp security management:{symbol}", Constants.MessageType.Information);
+                OrderCreationTimestamp.Add(symbol, DateTime.Now);
+                return true;
+            
+            }
+        
+        
+        }
+
         #endregion 
 
         #region Thread Methods
+
 
         public void RunOnPositionCalculus(object param)
         {
@@ -644,6 +682,11 @@ namespace zHFT.OrderRouters.Router
                 lock (tLockCalculus)
                 {
                     currentPos = PositionConverter.GetPosition(positionWrapper, Config);
+
+                    if (!CandSendOrderPacing(currentPos.Security.Symbol))
+                        return;
+
+
                     if (!Positions.ContainsKey(currentPos.PosId))
                     {
                         DoLog(String.Format("<Gen. Order Router> - Adding new position with PosId {0} for symbol {1}",currentPos.PosId,currentPos.Security.Symbol),Constants.MessageType.Information);
@@ -802,7 +845,9 @@ namespace zHFT.OrderRouters.Router
                     PositionConverter = new PositionConverter();
                     MarketDataConverter = new MarketDataConverter();
                     ExecutionReportConverter = new ExecutionReportConverter();
-                    
+                    OrderCreationTimestamp = new Dictionary<string, DateTime>();
+
+
 
 
                     DoLog("Initializing Generic Order Router " + ORConfiguration.Proxy, Constants.MessageType.Information);

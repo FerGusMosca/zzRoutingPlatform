@@ -374,10 +374,10 @@ namespace tph.StrategyHanders.TestStrategies.TestModule
                 }
 
                 //TODO Remove or improve for testing
-                Security optionToReq = OptionChainEvaluated.Values.FirstOrDefault();
-                TimeSpan elapsed = DateTime.Now - new DateTimeManager(1970, 1, 1);
-                MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(Convert.ToInt32(elapsed.TotalSeconds), optionToReq, SubscriptionRequestType.Snapshot);
-                OnMessageRcv(mdrWrapper);
+                //Security optionToReq = OptionChainEvaluated.Values.FirstOrDefault();
+                //TimeSpan elapsed = DateTime.Now - new DateTimeManager(1970, 1, 1);
+                //MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(Convert.ToInt32(elapsed.TotalSeconds), optionToReq, SubscriptionRequestType.Snapshot);
+                //OnMessageRcv(mdrWrapper);
             }
             catch (Exception ex)
             {
