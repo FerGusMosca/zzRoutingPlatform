@@ -291,11 +291,9 @@ namespace zHFT.StrategyHandler.LogicLayer
                 {
                     DoLog($"Persisting ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus} (AvgPx={report.AvgPx}) --> FirstLeg?={portfPos}", Constants.MessageType.Information);
 
-                    
-
                     if (!portfPos.IsFirstLeg())
                     {
-                        //DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})",trdPos.OpeningPosition.Security.Symbol,report.CumQty),Constants.MessageType.Information);
+                        DoLog(string.Format("DB-Closing position for symbol {0} (CumQty={1})", portfPos.OpeningPosition.Security.Symbol, report.CumQty),Constants.MessageType.Information);
                         MonitorPositions[portfPos.OpeningPosition.Security.Symbol].Closing = false;
                         PortfolioPositions.TryRemove(portfPos.OpeningPosition.Security.Symbol, out _);
                     }
@@ -558,6 +556,7 @@ namespace zHFT.StrategyHandler.LogicLayer
                         }
                     }
 
+                    DoLog(string.Format("Cancel Closing position for symbol {0} - The portfolio position is still OPEN", report.Order.Symbol),Main.Common.Util.Constants.MessageType.Information);
                     MonitorPositions[tradPos.OpeningPosition.Security.Symbol].Closing = false;
                     //Now we can finally close the position
                     PendingCancels.Remove(report.Order.Symbol);

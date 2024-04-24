@@ -72,7 +72,7 @@ namespace zHFT.OrderRouters.Mock
 
                         toRemove.ForEach(x => PendingToExecuteOrders.Remove(x));
                     }
-                    Thread.Sleep(Configuration.OrdeExecutionEveryNSeconds);//n seconds
+                    Thread.Sleep(Configuration.OrdeExecutionEveryNSeconds*1000);//n seconds
                 }
                 catch (Exception ex)
                 {
