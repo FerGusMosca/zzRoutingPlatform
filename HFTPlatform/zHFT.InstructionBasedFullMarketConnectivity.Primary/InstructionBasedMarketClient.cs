@@ -78,10 +78,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         private InstructionManager InstructionManager { get; set; }
 
-        private AccountManager AccountManager { get; set; }
-
-        private PositionManager PositionManager { get; set; }
-
         protected MarketManager MarketManager { get; set; }
 
         protected StockManager StockManager { get; set; }
@@ -147,6 +143,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 string market = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
                 string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol,market);
+
+
+                if (UseCleanSymbols())
+                    fullSymbol=SymbolConverter.GetCleanSymbolFromFullSymbol(fullSymbol);
+
                 zHFT.Main.Common.Enums.SecurityType secType;
                 if (SecurityTypes.Keys.Contains(fullSymbol))
                     secType = SecurityTypes[fullSymbol];
@@ -218,6 +219,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         #region Protected Methods
 
         #region SecurityList
+
+        protected override bool UseCleanSymbols()
+        {
+            return PrimaryConfiguration.UseCleanSymbols;
+        }
 
         protected override void CancelMarketData(Security sec)
         {

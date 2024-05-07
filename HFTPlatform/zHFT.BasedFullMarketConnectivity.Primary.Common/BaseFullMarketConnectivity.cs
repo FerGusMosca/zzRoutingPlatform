@@ -81,6 +81,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected abstract void CancelMarketData(Security sec);
 
+        protected abstract bool UseCleanSymbols();
+
         #endregion
 
         #region abstract QuickFix Methods
@@ -368,8 +370,17 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     {
                         if (!ExchangeConverter.IsFullSymbol(rq.Security.AltIntSymbol))
                         {
-                            SecurityTypes.Add(rq.Security.GetFullSymbol(), rq.Security.SecType);
-                            ActiveSecurities.Add(rq.ReqId, new Security() { Symbol = rq.Security.GetFullSymbol(), Active = true });
+
+                            if (!UseCleanSymbols())
+                            {
+                                SecurityTypes.Add(rq.Security.GetFullSymbol(), rq.Security.SecType);
+                                ActiveSecurities.Add(rq.ReqId, new Security() { Symbol = rq.Security.GetFullSymbol(), Active = true });
+                            }
+                            else
+                            {
+                                SecurityTypes.Add(rq.Security.AltIntSymbol, rq.Security.SecType);
+                                ActiveSecurities.Add(rq.ReqId, new Security() { Symbol = rq.Security.AltIntSymbol, Active = true });
+                            }
                         }
                         else
                         {

@@ -41,6 +41,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configurati
 
         public bool RequestFullMarketData { get; set; }
 
+        public bool UseCleanSymbols { get;set; }
+
         public bool SaveFullMarketData { get; set; }
 
         [XmlArray]

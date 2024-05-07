@@ -43,6 +43,8 @@
   <RequestSecurityList>false</RequestSecurityList> <!--Pide y guarda la securityList-->
   <RequestFullMarketData>false</RequestFullMarketData>
   <SaveFullMarketData>false</SaveFullMarketData>
+
+  <UseCleanSymbols>true</UseCleanSymbols>
   
   
 </Configuration>
