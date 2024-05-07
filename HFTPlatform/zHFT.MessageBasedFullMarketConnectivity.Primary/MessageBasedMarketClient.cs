@@ -91,7 +91,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
 
             FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
 
-            MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+            MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration,false);
 
             OnIncomingMessageRcv(mdWrapper);
         

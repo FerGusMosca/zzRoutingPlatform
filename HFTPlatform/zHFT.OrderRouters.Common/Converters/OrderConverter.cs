@@ -69,6 +69,7 @@ namespace zHFT.OrderRouters.Common.Converters
             string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
             string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
             string currency = (string)wrapper.GetField(OrderFields.Currency);
+            string exchange = (string)wrapper.GetField(OrderFields.Exchange);
 
 
             Order order = new Order();
@@ -84,6 +85,7 @@ namespace zHFT.OrderRouters.Common.Converters
             order.Account = account;
             order.Symbol = symbol;
             order.Currency = currency;
+            order.Exchange = exchange;
             order.Security = new Security() { Symbol = symbol, SecType = secType };
 
             return order;

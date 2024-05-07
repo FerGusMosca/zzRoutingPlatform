@@ -80,7 +80,7 @@ namespace zHFT.StrategyHandler.Common.Wrappers
                 return new SecurityWrapper(Position.Security, Config);
             else if (pField == PositionFields.Currency)
             {
-                if (Position.Security.MarketData != null)
+                if (Position.Security.MarketData != null && Position.Security.MarketData.Currency!=null)
                     return Position.Security.MarketData.Currency;
                 else
                     return Position.Security.Currency;

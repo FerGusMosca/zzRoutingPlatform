@@ -46,6 +46,7 @@ namespace zHFT.OrderRouters.Common.Converters
             Security sec = new Security();
             sec.Symbol = (ValidateField(wrapper, PositionFields.Symbol) ? Convert.ToString(wrapper.GetField(PositionFields.Symbol)) : null);
             sec.Currency = (ValidateField(wrapper, PositionFields.Currency) ? Convert.ToString(wrapper.GetField(PositionFields.Currency)) : null);
+            sec.Exchange = (ValidateField(wrapper, PositionFields.Exchange) ? Convert.ToString(wrapper.GetField(PositionFields.Exchange)) : null);
             sec.SecType = (ValidateField(wrapper, PositionFields.SecurityType) ? (SecurityType)wrapper.GetField(PositionFields.SecurityType) : SecurityType.OTH);
             
             Wrapper securityWrapper = (Wrapper)wrapper.GetField(PositionFields.Security);

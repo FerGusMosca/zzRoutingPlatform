@@ -86,6 +86,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             {
 
                 Security = sec,
+                Exchange=sec.Exchange,
                 Side = side,
                 PriceType = PriceType.FixedAmount,
                 NewPosition = true,

@@ -53,6 +53,7 @@ namespace tph.StrategyHandler.SimpleCommandSender.Common.Util
             newOrderReqJson.Type = newOrder.Price != null ? NewOrderReq._ORD_TYPE_LIMIT : NewOrderReq._ORD_TYPE_MKT;
             newOrderReqJson.Price = newOrder.Price;
             newOrderReqJson.Currency = newOrder.Currency;
+            newOrderReqJson.Exchange = newOrder.Exchange;
 
             if (newOrder.Side == Side.Buy)
                 newOrderReqJson.Side = NewOrderReq._BUY;

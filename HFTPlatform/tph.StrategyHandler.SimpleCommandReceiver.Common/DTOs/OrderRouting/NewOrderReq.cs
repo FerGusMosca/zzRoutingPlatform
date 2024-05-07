@@ -56,7 +56,9 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
         public double? Price { get; set; }
 
         public string Currency { get; set; }
-        
+
+        public string Exchange { get; set; }
+
         public string TimeInForce { get; set; }
         
         public DateTime CreationTime { get; set; }

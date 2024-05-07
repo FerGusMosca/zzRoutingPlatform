@@ -17,13 +17,17 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
 
         protected string Market { get; set; }
 
+        protected bool UseCleanSymbols { get; set; }
+
         #endregion
 
         #region Constructors
 
-        public MarketDataWrapper(Security pSecurity,string pMarket, IConfiguration pConfig):base(pSecurity,pConfig)
+        public MarketDataWrapper(Security pSecurity,string pMarket, IConfiguration pConfig, bool pUseCleanSymbols):base(pSecurity,pConfig)
         {
             Market = pMarket;
+
+            UseCleanSymbols = pUseCleanSymbols;
         }
 
         #endregion
@@ -38,7 +42,12 @@ namespace zHFT.MarketClient.Primary.Common.Wrappers
                 if (base.Security.SecType == SecurityType.OPT || base.Security.SecType == SecurityType.FUT)
                     return base.Security.Symbol;
                 else //Todos los demas securities deben tener el postfijo de mercado
-                    return SymbolConverter.GetFullSymbolFromCleanSymbol(base.Security.Symbol, Market);
+                {
+                    if (UseCleanSymbols)
+                        return base.Security.Symbol;
+                    else
+                        return SymbolConverter.GetFullSymbolFromCleanSymbol(base.Security.Symbol, Market);
+                }
             }
             else
                 return base.GetField(field);

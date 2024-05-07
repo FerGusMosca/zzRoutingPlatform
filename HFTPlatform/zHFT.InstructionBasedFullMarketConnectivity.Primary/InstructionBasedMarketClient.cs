@@ -191,7 +191,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                         FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
 
-                        zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+                        zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration,UseCleanSymbols());
 
                         Thread publishMarketDataThread = new Thread(DoRunPublishSecurity);
                         publishMarketDataThread.Start(mdWrapper);
@@ -618,7 +618,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             try
             {
-                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, sec.Exchange, Config);
+                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, sec.Exchange, Config, UseCleanSymbols());
 
                 Thread publishMarketDataThread = new Thread(DoRunPublishSecurity);
                 publishMarketDataThread.Start(wrapper);

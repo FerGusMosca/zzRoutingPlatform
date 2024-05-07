@@ -63,7 +63,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             order.PriceType = PriceType.FixedAmount;
 
             order.Security = GetSecurityFullSymbol(newOrdeReq.Symbol);
-            order.Exchange = order.Security.Exchange;
+            order.Exchange = order.Security.Exchange != null ? order.Security.Exchange : newOrdeReq.Exchange; 
             return order;
         }
 

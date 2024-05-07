@@ -192,7 +192,7 @@ namespace zHFT.SecurityListMarketClient.Primary.Client
 
                 FIXMessageCreator.ProcessMarketData(message, sec, OnLogMsg);
 
-                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration);
+                zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper mdWrapper = new zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper(sec, market, PrimaryConfiguration,false);
 
                 OnMessageRcv(mdWrapper);
             }

@@ -110,7 +110,8 @@ namespace zHFT.OrderRouters.Primary.Common
             double ordQty = (double)wrapper.GetField(OrderFields.OrderQty);
             string account = (string)wrapper.GetField(OrderFields.Account);
             string symbol = (string)wrapper.GetField(OrderFields.Symbol);
-            
+            string currency = (string)wrapper.GetField(OrderFields.Currency);
+
             SecurityType secType = (SecurityType)wrapper.GetField(OrderFields.SecurityType);
 
             string exchange = "";
@@ -140,8 +141,9 @@ namespace zHFT.OrderRouters.Primary.Common
             order.OrderQty = ordQty;
             order.Account = account;
             order.Symbol = symbol;
-            order.Security = new Security() { Symbol = symbol, SecType = secType };
+            order.Security = new Security() { Symbol = symbol, SecType = secType, Exchange = exchange, Currency = currency };
             order.Exchange = exchange;
+            order.Currency = currency;
 
             return order;
         }

@@ -220,6 +220,7 @@ namespace zHFT.OrderRouters.Router
                 Currency = pos.Security.MarketData.Currency != null
                     ? pos.Security.MarketData.Currency
                     : pos.Security.Currency,
+                Exchange=pos.Exchange,
                 QuantityType = pos.QuantityType,
                 PriceType = PriceType.FixedAmount,
                 Account = pos.AccountId,
