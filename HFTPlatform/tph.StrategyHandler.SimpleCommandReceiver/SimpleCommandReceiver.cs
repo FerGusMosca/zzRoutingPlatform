@@ -120,6 +120,17 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             {
                 if (!MarketDataSubscriptions.ContainsKey(security.Symbol))
                     MarketDataSubscriptions.Add(security.Symbol, DateTime.Now);
+
+                if (FullSymbolManager.IsCleanSymbol(security.Symbol))//GGAL --> GGAL.BUE <some FIX connectors send data like this>
+                {//Clean Symbol --> Some modules implement the exchange 
+
+                    string fullSymbol = FullSymbolManager.BuildSemiFullSymbol(security.Symbol, security.Exchange);
+                    if(!MarketDataSubscriptions.ContainsKey(fullSymbol))
+                        MarketDataSubscriptions.Add(fullSymbol, DateTime.Now);
+
+
+                }
+
             }
         }
 

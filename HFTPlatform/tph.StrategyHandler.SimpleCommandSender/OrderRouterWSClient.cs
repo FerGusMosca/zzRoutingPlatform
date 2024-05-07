@@ -443,6 +443,27 @@ namespace tph.StrategyHandler.SimpleCommandSender
             
         }
 
+        protected void ProcessMarketDataReqDict(string symbol,string exchange, long mdReq)
+        {
+
+            lock (MarketDataRequests)
+            {
+
+                if (MarketDataRequests.ContainsKey(symbol))
+                    MarketDataRequests.Remove(symbol);
+
+                MarketDataRequests.Add(symbol, mdReq);
+
+                string fullSymbol = FullSymbolManager.BuildSemiFullSymbol(symbol, exchange);
+
+                if(MarketDataRequests.ContainsKey(fullSymbol))
+                    MarketDataRequests.Remove(fullSymbol);
+
+                MarketDataRequests.Add(fullSymbol, mdReq);
+
+            }
+        }
+
         protected  void ProcessMarketDataRequest(object param)
         {
             try
@@ -459,15 +480,8 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 if (fullSymbol == null)
                     throw new Exception($"Could not find a symbol for market data request");
 
-                lock (MarketDataRequests)
-                {
 
-                    if (MarketDataRequests.ContainsKey(symbol))
-                        MarketDataRequests.Remove(symbol);
-
-                    MarketDataRequests.Add(symbol, mdReq);
-                }
-                
+                ProcessMarketDataReqDict(symbol, exchange, mdReq);
 
                 WebSocketSubscribeMessage subscr = new WebSocketSubscribeMessage()
                 {

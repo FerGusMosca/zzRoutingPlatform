@@ -15,10 +15,18 @@ namespace zHFT.Main.Common.Util
 
         private static string _MISSING_KEY_WILDCARD = "*";
 
+        private static string _FIELDS_SEPARATORS = ".";
+
         #endregion
 
 
         #region Public Static Methods
+
+        public static bool IsCleanSymbol(string symbol)
+        { 
+            return !symbol.Contains(_FIELDS_SEPARATORS);
+        
+        }
 
         public static SecurityType GetSecurityTypeFromStr(string secType)
         {
@@ -67,7 +75,22 @@ namespace zHFT.Main.Common.Util
             return fullSymbol;
 
         }
-     
+
+        public static string BuildSemiFullSymbol(string symbol, string exchange)
+        {
+            string fullSymbol = "";
+
+            //We appply the full symbol convention
+            if (string.IsNullOrEmpty(exchange))
+                fullSymbol = symbol;
+            
+            else
+                fullSymbol = $"{symbol}.{exchange}";//only exchange
+
+            return fullSymbol;
+
+        }
+
 
         public static string GetCleanSymbol(string fullSymbol)
         {
