@@ -28,7 +28,7 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             option.Symbol = optionDB.symbol;
             option.SymbolSfx = optionDB.symbol_sfx;
             option.StrikePrice = Convert.ToDouble(optionDB.strike_price);
-            option.PutOrCall = optionDB.put_or_call;
+            //option.PutOrCall = optionDB.put_or_call;
             option.StrikeMultiplier = optionDB.strike_multiplier;
             option.StrikeCurrency = optionDB.strike_currency;
             option.MaturityMonthYear = optionDB.maturity_month_year;
@@ -44,8 +44,8 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             optionDB.symbol = option.Symbol;
             optionDB.symbol_sfx = option.SymbolSfx;
             optionDB.strike_price = Convert.ToDecimal(option.StrikePrice);
-            optionDB.put_or_call = option.PutOrCall;
-            optionDB.strike_multiplier = option.StrikeMultiplier;
+            //optionDB.put_or_call = option.PutOrCall;
+            //optionDB.strike_multiplier = option.StrikeMultiplier;
             optionDB.strike_currency = option.StrikeCurrency;
             optionDB.maturity_month_year = option.MaturityMonthYear;
             optionDB.maturity_date = option.MaturityDate.HasValue ? option.MaturityDate.Value : DateTime.Now.Date;
@@ -58,8 +58,8 @@ namespace zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers
             optionDB.symbol = option.Symbol;
             optionDB.symbol_sfx = option.SymbolSfx;
             optionDB.strike_price = Convert.ToDecimal(option.StrikePrice);
-            optionDB.put_or_call = option.PutOrCall;
-            optionDB.strike_multiplier = option.StrikeMultiplier;
+            //optionDB.put_or_call = option.PutOrCall;
+            //optionDB.strike_multiplier = option.StrikeMultiplier;
             optionDB.strike_currency = option.StrikeCurrency;
             optionDB.maturity_month_year = option.MaturityMonthYear;
             optionDB.maturity_date = option.MaturityDate.HasValue ? option.MaturityDate.Value : DateTime.Now.Date;

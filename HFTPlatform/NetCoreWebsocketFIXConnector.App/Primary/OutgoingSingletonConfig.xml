@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Outgoing Singleton FIX</Name>
+  <SingletonAssembly>zHFT.InstructionBasedFullMarketConnectivity.Primary.InstructionBasedMarketClient, zHFT.InstructionBasedFullMarketConnectivity.Primary</SingletonAssembly>
+  <SingletonConfigFile>.\Primary\Primary.xml</SingletonConfigFile>
+  <ModuleDirection>O</ModuleDirection>
+  <!--I=incoming,O=outgoing-->
+</Configuration>

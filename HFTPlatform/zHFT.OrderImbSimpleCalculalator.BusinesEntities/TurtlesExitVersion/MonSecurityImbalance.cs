@@ -20,10 +20,10 @@ namespace zHFT.OrderImbSimpleCalculator.BusinessEntities
 
 
             //Turtles
-            OpenWindow = 0;
-            CloseWindow = pCustomImbalanceConfig.CloseWindow.HasValue ? pCustomImbalanceConfig.CloseWindow.Value : 0;
+            //OpenWindow = 0;
+            //CloseWindow = pCustomImbalanceConfig.CloseWindow.HasValue ? pCustomImbalanceConfig.CloseWindow.Value : 0;
             StopLossForOpenPositionPct = Convert.ToDouble(pStopLoss);
-            ExitOnMMov = pCustomImbalanceConfig.CloseMMov;
+            //ExitOnMMov = pCustomImbalanceConfig.CloseMMov;
 
             ValidateConfig();
         }

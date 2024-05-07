@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>WebSocket</Name>
+  
+  <WebSocketURL>ws://0.0.0.0:9193</WebSocketURL>
+
+	<IncomingConfigPath>.\Primary\IncomingSingletonConfig.xml</IncomingConfigPath>
+	<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+
+
+	<OutgoingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</OutgoingModule>
+	<OutgoingConfigPath>.\Primary\OutgoingSingletonConfig.xml</OutgoingConfigPath>
+
+
+</Configuration>

@@ -38,7 +38,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
     {
         #region Constructors
 
-        private InstructionBasedMarketClient(OnLogMessage pOnLogMsg, string configFile)
+        public InstructionBasedMarketClient(OnLogMessage pOnLogMsg, string configFile)
         {
             Initialize(pOnLogMsg, configFile);
         }
@@ -303,7 +303,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             if (optExample != null)
             {
                 option.SymbolSfx = optExample.SymbolSfx;
-                option.PutOrCall = temp.GetPutOrCall();
+                //option.PutOrCall = temp.GetPutOrCall();
                 option.StrikeCurrency = temp.GetStrikeCurrency();
             }
             else

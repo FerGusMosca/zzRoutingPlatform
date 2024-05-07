@@ -26,6 +26,7 @@ using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.DTO;
 using zHFT.StrategyHandler.Common.Wrappers;
 using zHFT.StrategyHandlers.Common.Converters;
+using MarketTimer = zHFT.OrderImbSimpleCalculator.Common.Util.MarketTimer;
 
 
 namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
@@ -219,7 +220,7 @@ namespace zHFT.StrategyHandler.OrderImbSimpleCalculator
             {
                 TimeSpan elapsed = DateTime.Now - LastCounterResetTime;
 
-                if (!MarketTimer.ValidMarketTime(Configuration.MarketStartTime, Configuration.MarketEndTime))
+                if (!zHFT.OrderImbSimpleCalculator.Common.Util.MarketTimer.ValidMarketTime(Configuration.MarketStartTime, Configuration.MarketEndTime))
                 {
                     foreach (BaseMonSecurityImbalance secImb in SecurityImbalancesToMonitor.Values)
                     {
