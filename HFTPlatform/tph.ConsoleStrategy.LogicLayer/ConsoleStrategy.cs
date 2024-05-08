@@ -64,7 +64,7 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
             string cmd = param[0];
 
-            CommandValidator.ValidateCommandParams(cmd, param, 4, 7);
+            CommandValidator.ValidateCommandParams(cmd, param, 4, 8);
 
             string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
 
@@ -79,7 +79,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
        
 
-        protected virtual Position LoadNewRegularPos(Security sec, Side side,QuantityType qtyType, double qty)
+        protected virtual Position LoadNewRegularPos(Security sec, Side side,QuantityType qtyType, double qty,string accountId)
         {
 
             Position pos = new Position()
@@ -94,7 +94,7 @@ namespace tph.ConsoleStrategy.LogicLayer
                 Qty= qtyType == QuantityType.SHARES ? (double?)qty : null,
                 QuantityType = qtyType,
                 PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
-                AccountId = "",
+                AccountId = accountId,
 
 
             };
@@ -130,7 +130,7 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
             string cmd = param[0];
 
-            CommandValidator.ValidateCommandParams(cmd, param, 4, 7);
+            CommandValidator.ValidateCommandParams(cmd, param, 4, 8);
 
             string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
             string strSide = CommandValidator.ExtractMandatoryParam(param, 2);
@@ -139,6 +139,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             string currency = CommandValidator.ExtractNonMandatoryParam(param, 4,def:Config.Currency);
             string exchange = CommandValidator.ExtractNonMandatoryParam(param, 5,def:Config.Exchange);
             string strSecType = CommandValidator.ExtractNonMandatoryParam(param, 6,def:Config.SecurityTypes);
+            string accountId = CommandValidator.ExtractNonMandatoryParam(param, 7, def: "");
             SecurityType? secType = SecurityTypeTranslator.TranslateNonMandatorySecurityType(strSecType);
 
 
@@ -146,7 +147,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             lock (RoutedPosDict)
             {
                 Security sec = GetSecurity(symbol, currency, exchange, secType);
-                pos = LoadNewRegularPos(sec, side, qtyType, qty);
+                pos = LoadNewRegularPos(sec, side, qtyType, qty, accountId);
 
                 DoLog($"ROUTING {symbol} Pos for Symbol {0} Side={strSide} CashQty={qty.ToString("0.00")}", Constants.MessageType.PriorityInformation);
                 RoutedPosDict.Add(pos.PosId, pos);
@@ -466,7 +467,8 @@ namespace tph.ConsoleStrategy.LogicLayer
                 Symbol = symbol,
                 Currency = currency,
                 Exchange = exchange,
-                SecType = secType.HasValue ? secType.Value : SecurityType.CS
+                SecType = secType.HasValue ? secType.Value : SecurityType.CS,
+                
             };
         }
 
