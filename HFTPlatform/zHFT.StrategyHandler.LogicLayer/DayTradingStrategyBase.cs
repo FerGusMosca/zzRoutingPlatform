@@ -152,6 +152,21 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected virtual void DoRequestHistoricalPricesThread(object param) { }
 
+        protected virtual void DoRequestSecurityListThread(object param) {
+
+            try
+            {
+
+                SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);
+                OnMessageRcv(slWrapper);
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"CRITICAL ERROR Requsting Security List:{ex.Message}", Constants.MessageType.Error);
+            }
+        }
+
         protected void LoadTradingParameters()
         {
             foreach (Security sec in Securities)
@@ -868,10 +883,9 @@ namespace zHFT.StrategyHandler.LogicLayer
 
                 Thread historicalPricesThread = new Thread(new ParameterizedThreadStart(DoRequestHistoricalPricesThread));
                 historicalPricesThread.Start();
-                
 
-                SecurityListRequestWrapper slWrapper = new SecurityListRequestWrapper(SecurityListRequestType.AllSecurities, null);
-                OnMessageRcv(slWrapper);
+                Thread secListReqThread = new Thread(new ParameterizedThreadStart(DoRequestSecurityListThread));
+                secListReqThread.Start();
 
                 ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
                 ResetEveryNMinutesThread.Start();

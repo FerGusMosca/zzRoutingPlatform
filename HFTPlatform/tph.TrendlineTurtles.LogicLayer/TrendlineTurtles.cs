@@ -37,6 +37,14 @@ namespace tph.TrendlineTurtles.LogicLayer
 
         #region Protected Static Consts
 
+        protected static int _REPEATED_MAX_MIN_MAX_DISTANCE = 5;
+
+        protected static int _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE = 5;
+
+        #endregion
+
+        #region Protected Static Consts
+
         public static int _DAYS_TO_SUBSTRACT = -10;
 
         #endregion

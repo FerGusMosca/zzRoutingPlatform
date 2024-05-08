@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Cryptos Day Turtles</Name>
+
+  <!--Incoming messages-->
+	<IncomingModule>tph.StrategyHandler.SimpleCommandReceiver.SimpleCommandReceiver, tph.StrategyHandler.SimpleCommandReceiver</IncomingModule>
+	<IncomingConfigPath>.\SimpleCommModuleRecv.xml</IncomingConfigPath>
+
+
+  <OutgoingModule>tph.ManualTrendlinesAdvisorTurtles.LogicLayer.ManualTrendlinesAdvisorTurtles, tph.ManualTrendlinesAdvisorTurtles.LogicLayer</OutgoingModule>
+  <OutgoingConfigPath>.\ManualTrendlinesAdvisor.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>

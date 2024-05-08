@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AdvisorConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Manual Trendlines Advisor</Name>
+	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
+	<ClosingTime>23:50 PM</ClosingTime>
+	<PositionSizeInCash>0</PositionSizeInCash>
+
+	  <Currency>ARS</Currency>
+	  <Exchange>BUE</Exchange>
+	  <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
+
+
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=manual_trendlines_advisor;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+
+	<!--Websocket to subscribe market data to connector-->
+	<OrderRouterConfigFile>.\Websocket\IncomingSingletonConfig.xml</OrderRouterConfigFile>
+	<OrderRouter>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</OrderRouter>
+	
+
+	<StocksToMonitor>
+    <Symbol>GGAL</Symbol>
+  </StocksToMonitor>
+
+
+</AdvisorConfiguration>

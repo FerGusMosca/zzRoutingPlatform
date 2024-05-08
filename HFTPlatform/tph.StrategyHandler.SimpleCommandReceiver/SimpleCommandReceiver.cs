@@ -85,8 +85,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
 
         protected void LoadModules( )
         {
-            MarketDataModule= DoLoadModule(Config.IncomingModule,Config.IncomingConfigPath,"Market Data Client");
-            OrderRouterModule = DoLoadModule(Config.OutgoingModule,Config.OutgoingConfigPath,"Order Router");
+            if(Config.IncomingModule!= null)
+                MarketDataModule= DoLoadModule(Config.IncomingModule,Config.IncomingConfigPath,"Market Data Client");
+
+            if(Config.OutgoingModule!=null)
+                OrderRouterModule = DoLoadModule(Config.OutgoingModule,Config.OutgoingConfigPath,"Order Router");
         }
 
         protected CMState ProcessOrderBook(Wrapper wrapper)
@@ -353,15 +356,24 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
             else if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
             {
-                return MarketDataModule.ProcessMessage(wrapper);
+                if(MarketDataModule!=null)
+                    return MarketDataModule.ProcessMessage(wrapper);
+                else
+                    return CMState.BuildFail(new Exception($"Markt Data Module not Implemented at {Config.Name}"));
             }
             else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES_REQUEST)
             {
-                return MarketDataModule.ProcessMessage(wrapper);
+                if(MarketDataModule!=null)
+                    return MarketDataModule.ProcessMessage(wrapper);
+                else
+                    return CMState.BuildFail(new Exception($"Markt Data Module not Implemented at {Config.Name}"));
             }
             else if (wrapper.GetAction() == Actions.SECURITY_LIST_REQUEST)
             {
-                return MarketDataModule.ProcessMessage(wrapper);
+                if (MarketDataModule != null)
+                    return MarketDataModule.ProcessMessage(wrapper);
+                else
+                    return CMState.BuildFail(new Exception($"Markt Data Module not Implemented at {Config.Name}"));
             }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
             {
