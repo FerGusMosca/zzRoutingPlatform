@@ -24,7 +24,46 @@
 	
 
 	<StocksToMonitor>
-    <Symbol>METR</Symbol>
+		<Symbol>AGRO</Symbol>
+		<Symbol>AUSO</Symbol>
+		<Symbol>BHIP</Symbol>
+		<Symbol>BOLT</Symbol>
+		<Symbol>BPAT</Symbol>
+		<Symbol>CADO</Symbol>
+		<Symbol>CAPX</Symbol>
+		<Symbol>CARC</Symbol>
+		<Symbol>CECO2</Symbol>
+		<Symbol>CGPA2</Symbol>
+		<Symbol>CTIO</Symbol>
+		<Symbol>DGCU2</Symbol>
+		<Symbol>DOME</Symbol>
+		<Symbol>DYCA</Symbol>
+		<Symbol>FERR</Symbol>
+		<Symbol>FIPL</Symbol>
+		<Symbol>GAMI</Symbol>
+		<Symbol>GBAN</Symbol>
+		<Symbol>GCDI</Symbol>
+		<Symbol>GCLA</Symbol>
+		<Symbol>GRIM</Symbol>
+		<Symbol>HAVA</Symbol>
+		<Symbol>INTR</Symbol>
+		<Symbol>INVJ</Symbol>
+		<Symbol>IRSA</Symbol>
+		<Symbol>LEDE</Symbol>
+		<Symbol>LONG</Symbol>
+		<Symbol>METR</Symbol>
+		<Symbol>MOLA</Symbol>
+		<Symbol>MOLI</Symbol>
+		<Symbol>MORI</Symbol>
+		<Symbol>MTR</Symbol>
+		<Symbol>OEST</Symbol>
+		<Symbol>PATA</Symbol>
+		<Symbol>POLL</Symbol>
+		<!--<Symbol>RICH</Symbol>-->
+		<Symbol>RIGO</Symbol>
+		<Symbol>SAMI</Symbol>
+		<Symbol>SEMI</Symbol>
+		
   </StocksToMonitor>
 
 

@@ -213,12 +213,13 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                                     Trendline justBroken = monPos.Resistances.Where(x => x.JustBroken).FirstOrDefault();
                                     DoLog($"FOUND NEW BROKEN RESISTANCE for symbol {monPos.Security.Symbol}: Trendline={justBroken.GetBrokenData()}!!", Constants.MessageType.PriorityInformation);
                                 }
-
-                                if (monPos.Supports.Any(x => x.JustBroken))
+                                else if (monPos.Supports.Any(x => x.JustBroken))
                                 {
                                     Trendline justBroken = monPos.Resistances.Where(x => x.JustBroken).FirstOrDefault();
                                     DoLog($"FOUND NEW BROKEN SUPPORT  for symbol {monPos.Security.Symbol}: Trendline={justBroken.GetBrokenData()}!!", Constants.MessageType.PriorityInformation);
                                 }
+                                else
+                                    DoLog($"NO trendlines broken for symbol {monPos.Security.Symbol}", Constants.MessageType.Information);
                             }
                         }
                     }
@@ -228,7 +229,7 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
             catch (Exception e)
             {
                 DoLog(
-                    string.Format("ERROR @ManualTrendlinesAdvisorTurtles- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
+                    $"ERROR @ManualTrendlinesAdvisorTurtles- Error processing market data for symbol {md.Security.Symbol}:{e.Message}-{e.StackTrace}",
                     Constants.MessageType.Error);
             }
         }

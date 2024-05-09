@@ -418,6 +418,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                    
                     foreach (Trendline updTrendline in toRefresh)
                     {
+                        DoLog($"Udating trendline {updTrendline.Id} for symbol {updTrendline.Security.Symbol}", Constants.MessageType.Information);
                         if (!TrendLineCreator.SymbolInitialized(updTrendline.Symbol))
                         {
                             DoLog($"WARNING - Waiting for symbol {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
@@ -453,7 +454,11 @@ namespace tph.TrendlineTurtles.LogicLayer
                             }
 
                             updTrendline.ManualNew = false;
-                            TrendlineManager.Persist(updTrendline,monPos);
+
+                            if (monPos.HasHistoricalCandles())
+                                TrendlineManager.Persist(updTrendline, monPos);
+                            else
+                                DoLog($"Skipping updating trendline as symbol {monPos.Security.Symbol} still does not have historical prices!", Constants.MessageType.Information);
 
                         }
 
