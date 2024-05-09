@@ -275,13 +275,19 @@ namespace tph.TrendlineTurtles.BusinessEntities
             if(AllHistoricalPrices==null)
                 AllHistoricalPrices = prices;
 
-            double finalPrice = 0;
+            if (prices.Count !=0)
+            {
 
-            int countDaysFromStartPrice = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, date);
+                double finalPrice = 0;
 
-            finalPrice = GetPriceToUse(StartPrice).Value + (Slope * Convert.ToDouble(countDaysFromStartPrice));
+                int countDaysFromStartPrice = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, date);
 
-            return finalPrice;
+                finalPrice = GetPriceToUse(StartPrice).Value + (Slope * Convert.ToDouble(countDaysFromStartPrice));
+
+                return finalPrice;
+            }
+            else
+                return 0;
         }
         
         public double GetSlopeDegrees()

@@ -374,7 +374,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             return memPosTrendline;
         }
 
-        protected void DeleteAllTrendlines(object param)
+        protected virtual void DeleteAllTrendlines(object param)
         {
             try
             {

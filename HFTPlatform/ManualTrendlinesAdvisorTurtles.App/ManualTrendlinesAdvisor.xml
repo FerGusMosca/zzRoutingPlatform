@@ -17,9 +17,14 @@
 	<OrderRouterConfigFile>.\Websocket\IncomingSingletonConfig.xml</OrderRouterConfigFile>
 	<OrderRouter>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</OrderRouter>
 	
+	
+	<YahooPricesDownloadURL>https://query1.finance.yahoo.com/v7/finance/download/{0}?</YahooPricesDownloadURL>
+	<YahooTokenURL>https://finance.yahoo.com/quote/{0}?p={0}</YahooTokenURL>
+	<YahooPostfix>.BA</YahooPostfix>
+	
 
 	<StocksToMonitor>
-    <Symbol>GGAL</Symbol>
+    <Symbol>METR</Symbol>
   </StocksToMonitor>
 
 

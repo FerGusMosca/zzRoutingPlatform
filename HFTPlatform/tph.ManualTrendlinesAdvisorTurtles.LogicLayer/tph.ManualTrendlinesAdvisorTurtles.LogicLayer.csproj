@@ -86,6 +86,10 @@
       <Project>{DF5336C9-9A40-4FED-9350-9D60C1CD9F53}</Project>
       <Name>tph.ManualTrendlinesAdvisorTurtles.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.ManualTrendlinesAdvisorTurtles.Yahoo.Common\tph.ManualTrendlinesAdvisorTurtles.Yahoo.Common.csproj">
+      <Project>{37E3BAC3-6B2B-49CC-8D30-EC58F473D338}</Project>
+      <Name>tph.ManualTrendlinesAdvisorTurtles.Yahoo.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.TrendlineTurtles.BusinessEntities\tph.TrendlineTurtles.BusinessEntities.csproj">
       <Project>{b4182ea0-d65e-4f6a-b508-07aed70da76f}</Project>
       <Name>tph.TrendlineTurtles.BusinessEntities</Name>

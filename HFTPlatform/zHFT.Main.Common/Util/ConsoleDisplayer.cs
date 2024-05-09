@@ -83,7 +83,11 @@ namespace zHFT.Main.Common.Util
                     Console.BackgroundColor = ConsoleColor.Red;
                     //Console.Beep(100,1000);
                 }
-
+                else if (type == Constants.MessageType.PriorityInformation)
+                {
+                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                    //Console.Beep(100,1000);
+                }
 
                 if (ToConsole)
                     Console.WriteLine(msg);

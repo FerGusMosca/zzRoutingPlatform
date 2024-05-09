@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.BOBDayTurtles.BusinessEntities;
 using tph.ManualTrendlinesAdvisorTurtles.Common.Configuration;
+using tph.ManualTrendlinesAdvisorTurtles.Yahoo.Common;
+using tph.ManualTrendlinesAdvisorTurtles.Yahoo.Common.DTO;
 using tph.TrendlineTurtles.BusinessEntities;
+using tph.TrendlineTurtles.DataAccessLayer;
 using tph.TrendlineTurtles.LogicLayer.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
@@ -15,12 +20,21 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Wrappers;
 
 namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
 {
-    public class ManualTrendlinesAdvisorTurtles: BOBDayTurtles.LogicLayer.BOBDayTurtles
+    public class ManualTrendlinesAdvisorTurtles : BOBDayTurtles.LogicLayer.BOBDayTurtles
     {
+
+        # region Protected Attributes
+
+            protected YahooTokenServiceClient YahooTokenServiceClient { get; set; }
+
+            protected YahooPricesServiceClient YahooPricesServiceClient { get; set; }
+
+            #endregion
 
         #region Overriden Methods
 
@@ -40,9 +54,90 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
 
         #region Protected Overriden Methods
 
-        protected override void DoRequestHistoricalPricesThread(object param) { }
+        protected override void DoRequestHistoricalPricesThread(object param) 
+        {
+            try
+            {
+                TrendlineManager mgr = new TrendlineManager(GetConfig().ConnectionString);
+                foreach (string symbol in Config.StocksToMonitor)
+                {
+
+                    MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition) MonitorPositions.Values.Where(x=>x.Security.Symbol==symbol).FirstOrDefault();
+
+                    if (monPos == null)
+                        throw new Exception($"CRITICAL ERROR --> Could not find position :{symbol}");
+
+                    List<Trendline>  trendlines = mgr.GetTrendlines();
+                    Trendline firstTrendline = trendlines.Where(x => x.Symbol == symbol).OrderByDescending(x => x.StartDate).FirstOrDefault();
+                    DateTime minDate = firstTrendline != null ? firstTrendline.StartDate : DateTime.Now;
+
+                    bool success = false;
+                    int i = 0;
+
+                    DoLog($"Downloading historical prices for symbol {symbol}", Constants.MessageType.Information);
+                    while (!success)
+                    {
+                        try
+                        {
+                            YahooTokenServiceClient.Refresh();
+
+                            YahooPricesServiceClient = new YahooPricesServiceClient(GetConfig().YahooPricesDownloadURL, YahooTokenServiceClient.Cookie, YahooTokenServiceClient.Crumb);
+
+                            List<Price> prices = YahooPricesServiceClient.GetPrices(symbol + GetConfig().YahooPostfix, minDate.AddDays(-10), DateTime.Now) ;
+                            DoLog($"Found {prices.Count} prices for {symbol} since date {minDate.AddDays(-10)} ", Constants.MessageType.Information);
+
+                            foreach (Price price in prices)
+                            {
+
+                                
+                                MarketData currCandle = new MarketData()
+                                {
+                                    Security = new Security() { Symbol = symbol },
+                                    OpeningPrice = Convert.ToDouble(price.Open),
+                                    TradingSessionHighPrice = Convert.ToDouble(price.Maximum),
+                                    TradingSessionLowPrice = Convert.ToDouble(price.Minimum),
+                                    ClosingPrice = Convert.ToDouble(price.AdjClose),
+                                    MDEntryDate = price.Date,
+                                    MDLocalEntryDate = price.Date,
+                                    NominalVolume = price.Volume
+                                };
+
+
+                                DoLog($"Appending candle {currCandle.ToString()} for symbol {symbol}", Constants.MessageType.Information);
+                                monPos.AppendCandle(currCandle);
+                            }
+
+                            DoLog($"All candles added for symbol {symbol}", Constants.MessageType.Information);
+                            
+                            success = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            YahooTokenServiceClient.Cookie = null;
+                            YahooTokenServiceClient.Crumb = null;
+                            i++;
+
+                            if (i >= 10)
+                                throw ex;
+                        }
+                    }
+                }
+
+
+
+            }
+            catch (Exception e) {
+
+                DoLog(string.Format("CRITICAL ERROR downloading historical prices :{0}-{1}", e.Message, e.StackTrace),Constants.MessageType.Error);
+
+            }
+        
+        
+        }
 
         protected override void DoRequestSecurityListThread(object param) { }
+
+        protected override void DeleteAllTrendlines(object param) {}
 
         protected override void LoadMonitorsAndRequestMarketData()
         {
@@ -106,18 +201,24 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                     {
                         MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition)MonitorPositions[md.Security.Symbol];
                         
-                        
-                        //TODO--> Tengo el precio + tengo las trendlines -->Se rompio algo?
-                        
                         if (monPos.HasHistoricalCandles())
                         {
                             bool newCandle = monPos.AppendCandle(md);
-
-
                             if (newCandle)
                             {
-                                //TODO --> Implementar el siguiente método
-                                //EvalBrokenTrendlines(monPos, md);
+                                EvalBrokenTrendlines(monPos, md);
+
+                                if (monPos.Resistances.Any(x => x.JustBroken))
+                                {
+                                    Trendline justBroken = monPos.Resistances.Where(x => x.JustBroken).FirstOrDefault();
+                                    DoLog($"FOUND NEW BROKEN RESISTANCE for symbol {monPos.Security.Symbol}: Trendline={justBroken.GetBrokenData()}!!", Constants.MessageType.PriorityInformation);
+                                }
+
+                                if (monPos.Supports.Any(x => x.JustBroken))
+                                {
+                                    Trendline justBroken = monPos.Resistances.Where(x => x.JustBroken).FirstOrDefault();
+                                    DoLog($"FOUND NEW BROKEN SUPPORT  for symbol {monPos.Security.Symbol}: Trendline={justBroken.GetBrokenData()}!!", Constants.MessageType.PriorityInformation);
+                                }
                             }
                         }
                     }
@@ -177,7 +278,8 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
 
                     DoLog($"Initializing Manual Trendlines Turtles advisor @{DateTimeManager.Now}", Constants.MessageType.Information);
                     ProcessedHistoricalPrices = new List<string>();
-
+                    YahooTokenServiceClient = new YahooTokenServiceClient(GetConfig().YahooTokenURL);
+                    
                     base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
                     InitializeManagers(GetConfig().ConnectionString);
@@ -187,7 +289,7 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                     Thread refreshTrendlinesThread = new Thread(new ParameterizedThreadStart(DoRefreshTrendlines));
                     refreshTrendlinesThread.Start();
 
-                    DoLog($"Successfully initialized Manual Trendline Advisot!", Constants.MessageType.Information);
+                    DoLog($"Successfully initialized Manual Trendline Advisor!", Constants.MessageType.Information);
                     return true;
                 }
                 catch(Exception ex)

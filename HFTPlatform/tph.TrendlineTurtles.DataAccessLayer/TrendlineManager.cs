@@ -57,6 +57,7 @@ namespace tph.TrendlineTurtles.DataAccessLayer
                     TradingSessionHighPrice = Convert.ToDouble(reader["start_price"]),
                     TradingSessionLowPrice = Convert.ToDouble(reader["start_price"]),
                     ClosingPrice = Convert.ToDouble(reader["start_price"]),
+                    Trade = Convert.ToDouble(reader["start_price"]),
                 },
                 EndPrice = new MarketData()
                 {
@@ -65,6 +66,7 @@ namespace tph.TrendlineTurtles.DataAccessLayer
                     TradingSessionHighPrice = Convert.ToDouble(reader["end_price"]),
                     TradingSessionLowPrice = Convert.ToDouble(reader["end_price"]),
                     ClosingPrice = Convert.ToDouble(reader["end_price"]),
+                    Trade = Convert.ToDouble(reader["end_price"]),
                 },
                 BrokenDate = null,
                 BrokenMarketPrice = null,

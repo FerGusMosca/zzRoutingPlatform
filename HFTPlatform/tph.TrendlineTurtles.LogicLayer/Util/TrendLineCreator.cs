@@ -793,7 +793,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         
         public static bool SymbolInitialized(string symbol)
         {
-            return TrdCreatorDict.ContainsKey(symbol);
+            return TrdCreatorDict!=null && TrdCreatorDict.ContainsKey(symbol);
         }
 
 

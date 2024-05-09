@@ -10,5 +10,15 @@ namespace tph.ManualTrendlinesAdvisorTurtles.Common.Configuration
 {
     public class AdvisorConfiguration : tph.BOBDayTurtles.Common.Configuration.Configuration
     {
+        #region Public Attributes
+
+        public   string YahooPricesDownloadURL { get; set; }
+
+        public string YahooTokenURL { get; set; }   
+
+        public string YahooPostfix { get; set; }
+
+
+        #endregion
     }
 }
