@@ -498,7 +498,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         {
             if (order.CumQty.HasValue && order.CumQty.Value > 0)
             {
-                DoLog("DB1-UPD Partially Filled", Constants.MessageType.Information);
+                
                 DoLog(string.Format("CumQty={0} OrdQty={1} -->  Using OrdQty",order.CumQty.Value,order.OrderQty.Value),Constants.MessageType.Information);
                 double ordQty = order.OrderQty.Value ;//v1:FIX Protocol version
                 

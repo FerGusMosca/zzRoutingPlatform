@@ -554,7 +554,7 @@ namespace zHFT.OrderRouters.Router
                             CleanTimeoutPosDict(pos.PosId);
                             OnMessageRcv(wrapper);
                         }
-                        else if (report.ExecType == ExecType.New)
+                        else if (report.ExecType == ExecType.New || report.ExecType == ExecType.Replaced)
                         {
                             pos.PendingCxlRepl = false;
                             CleanTimeoutPosDict(pos.PosId);
