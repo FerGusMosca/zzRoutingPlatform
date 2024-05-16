@@ -284,13 +284,19 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 lock (JsonOrdersDict)
                 {
 
-                    if (JsonOrdersDict.ContainsKey(msg.ClOrdId))
+                    if (!string.IsNullOrEmpty(msg.ClOrdId) && JsonOrdersDict.ContainsKey(msg.ClOrdId))
                     {
                         DoLog($"{Config.Name}--> Recv ExecutionReport:{msg.ToString()}",
                             Constants.MessageType.Information);
                         NewOrderReq order = JsonOrdersDict[msg.ClOrdId];
                         ExecutionReportWrapper execReportWrapper = new ExecutionReportWrapper(msg, order);
                         (new Thread(ProcessExecutionReportAsync)).Start(execReportWrapper);
+                    }
+                    else
+                    {
+                        DoLog($"{Config.Name}--> Warning Received unknown order!:{msg.ToString()}",Constants.MessageType.PriorityInformation);
+
+
                     }
                 }
             }
