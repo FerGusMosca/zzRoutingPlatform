@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+	<Name> Multiple Market Client</Name>
+
+
+	<MarketCLients>
+		<MarketClient> <!-- FIX Connector -->
+			<IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
+			<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+			<Type>PUBLISH</Type><!--INCOMING, PUBLISH-->
+			<PublishKey>GenOrderRouterModule</PublishKey>
+		</MarketClient>
+
+
+
+		<MarketClient><!-- IB Connector -->
+			<IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
+			<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+			<Type>INCOMING</Type><!--INCOMING, PUBLISH-->
+			<PublishKey></PublishKey>
+		</MarketClient>
+		
+		
+		
+	</MarketCLients>
+
+
+	<PublishClients>
+		<PublishClient>
+			<!--Singleton to Generic Order Router to publish FIX market data-->
+			<Key>GenOrderRouterModule</Key>
+			<OutgoingConfigPath></OutgoingConfigPath><!--TODO!: Singleton Gen Order Router-->
+			<OutgoingModule></OutgoingModule><!--TODO!: Singleton Gen Order Router-->
+		</PublishClient>
+		
+		
+	</PublishClients>
+	
+	
+</Configuration>
