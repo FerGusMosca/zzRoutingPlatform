@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Cryptos Day Turtles</Name>
+  <Name>BOBDayTurtles.Websocket.FIX.App</Name>
 
 	<!--Websocket-->
-	<IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
-	<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+	<IncomingConfigPath>MultipleLegsMarketClient.xml</IncomingConfigPath>
+	<IncomingModule>tph.MultipleLegsMarketClient.LogicLayer.MultiLegMarketClient,tph.MultipleLegsMarketClient.LogicLayer</IncomingModule>
 
 	<OutgoingModule>tph.BOBDayTurtles.LogicLayer.BOBDayTurtles,tph.BOBDayTurtles.LogicLayer</OutgoingModule>
 	<OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>

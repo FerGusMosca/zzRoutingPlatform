@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration>
+  <Name>Websocket Client FIX</Name>
+  
+  <WebSocketURL>ws://localhost:9192</WebSocketURL>
+
+
+
+  <!--I=incoming,O=outgoing-->
+</Configuration>

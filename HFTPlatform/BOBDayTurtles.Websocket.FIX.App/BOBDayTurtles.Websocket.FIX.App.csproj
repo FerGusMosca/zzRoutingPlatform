@@ -61,24 +61,38 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GenOrderRouter.xml">
+    <Content Include="GenOrderRouter\GenOrderRouter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GenOrderRouter\IncomingSingletonConfigGenOrderRouter.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GenOrderRouter\OutgoingSingletonConfigGenOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Mock\outgoingOrderRouter.Mock.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="MultipleLegsMarketClient.xml" />
+    <Content Include="MultipleLegsMarketClient.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TurtlesDayTrading.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\IncomingSingletonConfig.xml">
+    <Content Include="Websocket\IncomingSingletonConfigIB.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\OutgoingSingletonConfig.xml">
+    <Content Include="Websocket\IncomingSingletonConfigFIX.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\Websocket.xml">
+    <Content Include="Websocket\OutgoingSingletonConfigFIX.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Websocket\WebsocketIB.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Websocket\WebsocketFIX.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -86,6 +100,10 @@
     <ProjectReference Include="..\tph.BOBDayTurtles.LogicLayer\tph.BOBDayTurtles.LogicLayer.csproj">
       <Project>{247f9bc4-ceb4-46be-8f1e-54616fc692a8}</Project>
       <Name>tph.BOBDayTurtles.LogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tph.MultipleLegsMarketClient.LogicLayer\tph.MultipleLegsMarketClient.LogicLayer.csproj">
+      <Project>{fd209199-5f2f-4b80-ad1a-6a93d46b7169}</Project>
+      <Name>tph.MultipleLegsMarketClient.LogicLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj">
       <Project>{da0d57b6-a469-4956-ac61-f8dd684e80b7}</Project>

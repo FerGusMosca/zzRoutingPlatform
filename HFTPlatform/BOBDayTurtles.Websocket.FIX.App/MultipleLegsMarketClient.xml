@@ -5,19 +5,19 @@
 
 	<MarketCLients>
 		<MarketClient> <!-- FIX Connector -->
-			<IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
+			<IncomingConfigPath>.\Websocket\IncomingSingletonConfigFIX.xml</IncomingConfigPath>
 			<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
 			<Type>PUBLISH</Type><!--INCOMING, PUBLISH-->
-			<PublishKey>GenOrderRouterModule</PublishKey>
+			<PublisherKey>GenOrderRouterModule</PublisherKey>
 		</MarketClient>
 
 
 
-		<MarketClient><!-- IB Connector -->
-			<IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
+		<MarketClient><!-- IB Connector  -->
+			<IncomingConfigPath>.\Websocket\IncomingSingletonConfigIB.xml</IncomingConfigPath>
 			<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
 			<Type>INCOMING</Type><!--INCOMING, PUBLISH-->
-			<PublishKey></PublishKey>
+			<PublisherKey></PublisherKey>
 		</MarketClient>
 		
 		
@@ -30,7 +30,7 @@
 			<!--Singleton to Generic Order Router to publish FIX market data-->
 			<Key>GenOrderRouterModule</Key>
 			<OutgoingConfigPath></OutgoingConfigPath><!--TODO!: Singleton Gen Order Router-->
-			<OutgoingModule></OutgoingModule><!--TODO!: Singleton Gen Order Router-->
+			<OutgoingModule>zHFT.OrderRouters.Router.SingletonOrderRouter, zHFT.OrderRouters</OutgoingModule><!--TODO!: Singleton Gen Order Router-->
 		</PublishClient>
 		
 		

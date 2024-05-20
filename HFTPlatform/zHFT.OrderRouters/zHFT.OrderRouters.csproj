@@ -52,6 +52,7 @@
     <Compile Include="Router\MarketOrderRouter.cs" />
     <Compile Include="Router\OrderRouter.cs" />
     <Compile Include="Router\PrimaryOrderRouter.cs" />
+    <Compile Include="Router\SingletonOrderRouter.cs" />
     <Compile Include="Router\SoftDecimalMarketOrderRouter.cs" />
     <Compile Include="Router\SoftMarketOrderRouter.cs" />
   </ItemGroup>
@@ -71,6 +72,10 @@
     <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
       <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
       <Name>zHFT.OrderRouters.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.SingletonModulesHandler.Common\zHFT.SingletonModulesHandler.Common.csproj">
+      <Project>{89DCBA08-FAF9-47DF-8CD1-8D076CE75C9C}</Project>
+      <Name>zHFT.SingletonModulesHandler.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

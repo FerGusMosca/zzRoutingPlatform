@@ -17,7 +17,7 @@ namespace tph.MultipleLegsMarketClient.Common.Configuration
 
         public string Type { get; set; }
 
-        public string PublishKey { get; set; }
+        public string PublisherKey { get; set; }
 
 
         #endregion
