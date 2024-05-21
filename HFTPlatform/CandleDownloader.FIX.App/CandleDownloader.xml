@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>Historical Prices Downloader</Name>
+
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+
+	<SecurityType>CS</SecurityType><!--CS=Common Stock,IND=Index-->
+	<Currency>ARS</Currency>
+	<Exchange>BUE</Exchange><!--SAMRT,CBOE-->
+	<CandleReferencePrice>TRADE</CandleReferencePrice>
+
+	<SymbolsToDownload>
+
+		<!--<Symbol>BTC</Symbol>-->
+		<Symbol>GGAL</Symbol>
+		<Symbol>YPF</Symbol>
+		<Symbol>COME</Symbol>
+		<Symbol>BMA</Symbol>
+
+	</SymbolsToDownload>
+
+</Configuration>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>CandleDownloader.FIX.App</Name>
+
+  <!--Websocket-->
+    <IncomingConfigPath>.\Websocket\IncomingSingletonConfig.xml</IncomingConfigPath>
+    <IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
+
+
+  <OutgoingModule>tph.StrategyHandler.CandleDownloader.LogicLayer.CandleDownloader, tph.StrategyHandler.CandleDownloader.LogicLayer</OutgoingModule>
+  <OutgoingConfigPath>.\CandleDownloader.xml</OutgoingConfigPath>
+  <LogToConsole>true</LogToConsole>
+</Configuration>
