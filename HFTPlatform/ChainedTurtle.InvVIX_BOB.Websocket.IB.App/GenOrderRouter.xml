@@ -6,9 +6,9 @@
 
 	 <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
     <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>
-	
 
 
+  <ConsecutiveOrdersPacingInSec>60</ConsecutiveOrdersPacingInSec>
   <OrderUpdateInMilliseconds>2000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->
 

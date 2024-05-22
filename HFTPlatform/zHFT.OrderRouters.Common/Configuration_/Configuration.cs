@@ -20,7 +20,7 @@ namespace zHFT.OrderRouters.Common.Configuration
         
         public int ConsecutiveOrdersPacingInSec { get; set; }
 
-        public int DOMUpdateInMilliseconds { get; set; }
+        //public int DOMUpdateInMilliseconds { get; set; }
 
         public int? OrderIdStart { get; set; }
 

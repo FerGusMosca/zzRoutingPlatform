@@ -430,6 +430,14 @@ namespace zHFT.OrderRouters.Router
             }
         }
 
+
+        protected Common.Configuration.Configuration GetConfig()
+        {
+
+            return (Common.Configuration.Configuration)Config;
+        
+        }
+
         protected override void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             List<string> noValueFields = new List<string>();
@@ -852,6 +860,7 @@ namespace zHFT.OrderRouters.Router
 
 
                     DoLog("Initializing Generic Order Router " + ORConfiguration.Proxy, Constants.MessageType.Information);
+                    DoLog($"{Config.Name}- GenOrderRouterMainSettings ConsecutiveOrdersPacingInSec={GetConfig().ConsecutiveOrdersPacingInSec} OrderUpdateInMilliseconds={GetConfig().OrderUpdateInMilliseconds} OrderIdStart={GetConfig().OrderIdStart}", Constants.MessageType.Information);
                     if (!string.IsNullOrEmpty(ORConfiguration.Proxy))
                     {
                         var orderProxyType = Type.GetType(ORConfiguration.Proxy);
