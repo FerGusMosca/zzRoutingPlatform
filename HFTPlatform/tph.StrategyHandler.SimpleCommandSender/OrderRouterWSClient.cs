@@ -294,7 +294,7 @@ namespace tph.StrategyHandler.SimpleCommandSender
                     }
                     else
                     {
-                        DoLog($"{Config.Name}--> Warning Received unknown order!:{msg.ToString()}",Constants.MessageType.PriorityInformation);
+                        DoLog($"{Config.Name}--> Warning Received unknown order!:{msg.ToString()}",Constants.MessageType.Debug);
 
 
                     }

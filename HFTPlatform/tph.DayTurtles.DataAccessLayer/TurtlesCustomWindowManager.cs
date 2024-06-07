@@ -62,10 +62,12 @@ namespace tph.DayTurtles.DataAccessLayer
                             OpenWindow = Convert.ToInt32(reader["open_window"]),
                             CloseWindow = Convert.ToInt32(reader["close_window"]),
                             TakeProfitPct = GetNullableDecimal(reader, "take_profit_pct"),
-                            ExitOnMMov = GetSafeBoolean(reader,"exit_on_mmov"),
+                            ExitOnMMov = GetSafeBoolean(reader, "exit_on_mmov"),
                             ExitOnTurtles = GetSafeBoolean(reader, "exit_on_turtles"),
+                            CustomConfig = GetSafeString(reader, "custom_config")
 
                         };
+
                         windowList.Add(window);
                     }
                 }

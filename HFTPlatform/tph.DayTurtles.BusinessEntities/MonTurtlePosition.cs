@@ -27,12 +27,14 @@ namespace tph.DayTurtles.BusinessEntities
         }
 
 
-        public MonTurtlePosition(TurtlesCustomConfig pTurtlesCustomConfig, double stopLossForOpenPositionPct, string candleRefPrice)
+        public MonTurtlePosition(TurtlesCustomConfig pTurtlesCustomConfig, double stopLossForOpenPositionPct, string candleRefPrice, string marketStartTime=null, string marketEndTime = null)
         {
             Candles = new Dictionary<string, MarketData>();
             TurtlesCustomConfig = pTurtlesCustomConfig;
             StopLossForOpenPositionPct = stopLossForOpenPositionPct;
             CandleReferencePrice = candleRefPrice;
+            MarketStartTime = marketStartTime;
+            MarketEndTime   = marketEndTime;
 
         }
 
@@ -47,6 +49,11 @@ namespace tph.DayTurtles.BusinessEntities
 
 
         protected string LastSignalTriggered { get; set; }
+
+        protected string MarketStartTime { get; set; }
+
+
+        protected string MarketEndTime { get; set; }
 
         #endregion
 

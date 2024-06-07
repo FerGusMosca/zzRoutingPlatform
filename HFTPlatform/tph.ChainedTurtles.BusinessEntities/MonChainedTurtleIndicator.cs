@@ -43,7 +43,8 @@ namespace tph.ChainedTurtles.BusinessEntities
         #region Constructor 
 
         public MonChainedTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig,
-                                        string candleRefPrice,string pCode,string signalType,bool reqPrices) :base(pTurtlesCustomConfig, 0,candleRefPrice)
+                                        string candleRefPrice,string pCode,string signalType,bool reqPrices, 
+                                        string marketStartTime=null,string marketEndTime=null) :base(pTurtlesCustomConfig, 0,candleRefPrice,marketStartTime,marketEndTime)
         {
 
 

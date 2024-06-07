@@ -30,6 +30,8 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
 
         # region Protected Attributes
 
+            protected bool SkipHistoricalPricesPacing { get; set; }
+
             protected YahooTokenServiceClient YahooTokenServiceClient { get; set; }
 
             protected YahooPricesServiceClient YahooPricesServiceClient { get; set; }
@@ -58,6 +60,8 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
         {
             try
             {
+                SkipHistoricalPricesPacing = true;
+                return; //TODO no need to request historical prices to Yahoo
                 TrendlineManager mgr = new TrendlineManager(GetConfig().ConnectionString);
                 foreach (string symbol in Config.StocksToMonitor)
                 {
@@ -201,7 +205,7 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                     {
                         MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition)MonitorPositions[md.Security.Symbol];
                         
-                        if (monPos.HasHistoricalCandles())
+                        if (monPos.HasHistoricalCandles() || SkipHistoricalPricesPacing)
                         {
                             bool newCandle = monPos.AppendCandle(md);
                             if (newCandle)
@@ -280,7 +284,10 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                     DoLog($"Initializing Manual Trendlines Turtles advisor @{DateTimeManager.Now}", Constants.MessageType.Information);
                     ProcessedHistoricalPrices = new List<string>();
                     YahooTokenServiceClient = new YahooTokenServiceClient(GetConfig().YahooTokenURL);
-                    
+
+                    SkipHistoricalPricesPacing = false;
+
+
                     base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
                     InitializeManagers(GetConfig().ConnectionString);

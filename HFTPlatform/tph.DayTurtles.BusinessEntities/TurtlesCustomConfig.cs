@@ -23,6 +23,8 @@ namespace tph.DayTurtles.BusinessEntities
 
         public bool ExitOnTurtles { get; set; }
 
+        public string CustomConfig { get; set; }
+
         #endregion
     }
 }
