@@ -1,12 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.ChainedTurtles.Common.DTO;
 using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Util;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -67,6 +72,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
 
         #region Public Attributs
+
+        public Security Security { get; set; }
         public MarketData LastProcessed { get; set; }
 
         public int CountTradeOnBid { get; set; }
@@ -126,6 +133,8 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
         }
 
+        protected Thread ResetEveryNMinutesThread { get; set; }
+
         #endregion
 
         #region Constructors
@@ -139,6 +148,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public MonChainedImbalanceTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig, string candleRefPrice, string pCode, string signalType, bool reqPrices) : base(pSecurity, pTurtlesCustomConfig, candleRefPrice, pCode, signalType, reqPrices)
         {
+            Security = pSecurity;
+
             LastProcessed = null;
             CountTradeOnBid = 0;
             CountTradeOnAsk = 0;    
@@ -148,17 +159,16 @@ namespace tph.ChainedTurtles.BusinessEntities
             LastCounterResetTime = DateTime.Now;
             StartTime = DateTime.Now;
 
-            //TODO indicator config section
-            BlockSizeInMinutes = 0;
-            ActiveBlocksSetting = 0;
+            
+            LoadConfigValues(pTurtlesCustomConfig.CustomConfig);
+
             tLock = new object();
-
             ActiveBlocks = new List<MonChainedImbalanceTurtleIndicator>();
-            MarketStartTime=null;
-            MarketEndTime = null;
-
-
             TradeImpacts =new List<TradeImpact>();
+
+            ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
+            ResetEveryNMinutesThread.Start();
+
         }
 
 
@@ -166,6 +176,65 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         #region Private Methods
 
+        private void EvalTime(string time)
+        {
+
+            try
+            {
+                DateTime extrTime =MarketTimer.GetTodayDateTime(time);
+                //If we got here, it worked ok
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"The following time is not properly formatted: {time}");
+            }
+
+        }
+
+        private void LoadConfigValues(string customConfig)
+        {
+            //
+            try
+            {
+                ImbalanceTurtleIndicatorConfigDTO resp= JsonConvert.DeserializeObject<ImbalanceTurtleIndicatorConfigDTO>(customConfig);
+
+
+                if (!string.IsNullOrEmpty(resp.marketStartTime))
+                {
+                    EvalTime(resp.marketStartTime);
+                    MarketStartTime = resp.marketStartTime;
+                }
+                else
+                    throw new Exception("Missing config value marketStartTime");
+
+                if (!string.IsNullOrEmpty(resp.marketEndTime))
+                {
+                    EvalTime(resp.marketEndTime);
+                    MarketEndTime = resp.marketEndTime;
+                }
+                else
+                    throw new Exception("Missing config value marketEndTime");
+
+
+                if (resp.blockSizeInMinutes>0)
+                    BlockSizeInMinutes = resp.blockSizeInMinutes;
+                else
+                    throw new Exception("config value blockSizeInMinutes must be greater than 0");
+
+
+                if (resp.activeBlocksSetting > 0)
+                    ActiveBlocksSetting = resp.activeBlocksSetting;
+                else
+                    throw new Exception("config value activeBlocksSetting must be greater than 0");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"CRITICAL error deserializing custom config for symbol {Security.Symbol}:{ex.Message} ");
+            }
+        }
 
         public void ResetCounters()
         {

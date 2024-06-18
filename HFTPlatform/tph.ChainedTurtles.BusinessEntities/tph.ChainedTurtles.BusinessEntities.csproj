@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\tph.ChainedTurtles.Common\tph.ChainedTurtles.Common.csproj">
+      <Project>{4149F067-9C2E-436A-9398-4E19FD3C6BB8}</Project>
+      <Name>tph.ChainedTurtles.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
       <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>

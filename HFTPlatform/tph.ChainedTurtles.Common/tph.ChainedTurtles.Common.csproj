@@ -44,6 +44,7 @@
     <Compile Include="Configuration\ChainedTurtleIndicator.cs" />
     <Compile Include="Configuration\ChainedConfiguration.cs" />
     <Compile Include="Configuration\TurtleConfig.cs" />
+    <Compile Include="DTO\ImbalanceTurtleIndicatorConfigDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

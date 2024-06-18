@@ -24,7 +24,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         #endregion
         
         #region Constructors
-        public MonTrendlineTurtlesPosition(TurtlesCustomConfig pTurtlesCustomWindow, double stopLossForOpenPositionPct, string candleRefPrice) : base(pTurtlesCustomWindow, stopLossForOpenPositionPct, candleRefPrice)
+        public MonTrendlineTurtlesPosition(TurtlesCustomConfig pTurtlesCustomWindow, double stopLossForOpenPositionPct, string candleRefPrice, string marketStartTime=null, string marketEndTime=null) : base(pTurtlesCustomWindow, stopLossForOpenPositionPct, candleRefPrice)
         {
             Supports=new List<Trendline>();
             Resistances=new List<Trendline>();

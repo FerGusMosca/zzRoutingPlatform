@@ -61,7 +61,6 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
             try
             {
                 SkipHistoricalPricesPacing = true;
-                return; //TODO no need to request historical prices to Yahoo
                 TrendlineManager mgr = new TrendlineManager(GetConfig().ConnectionString);
                 foreach (string symbol in Config.StocksToMonitor)
                 {
