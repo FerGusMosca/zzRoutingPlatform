@@ -16,9 +16,10 @@ namespace zHFT.MarketClient.Primary.Common.Converters
         private static string _BYMA_PRIMARY_PREFIX_CODE = "MERV - XMEV";
         private static string _ROFX_PRIMARY_PREFIX_CODE = "";
 
-        private static string _BYMA_CS_CLEARINGID = "48hs";
+        //private static string _BYMA_CS_CLEARINGID = "48hs";
+        private static string _BYMA_CS_CLEARINGID = "24hs";
         private static string _BYMA_OPT_CLEARINGID = "24hs";
-        private static string _BYMA_BOND_CLEARINGID = "48hs";
+        private static string _BYMA_BOND_CLEARINGID = "24hs";
         private static string _BYMA_BILL_CLEARINGID = "CI";
         private static string _ROFX_CLEARINGID = "";
 
