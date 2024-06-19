@@ -22,6 +22,10 @@ namespace tph.ChainedTurtles.Common.DTO
 
         public int activeBlocksSetting { get; set;}
 
+        public decimal positionOpeningImbalanceThreshold { get; set; }
+
+        public decimal positionClosingImbalanceThreshold { get; set; }
+
         #endregion
     }
 }

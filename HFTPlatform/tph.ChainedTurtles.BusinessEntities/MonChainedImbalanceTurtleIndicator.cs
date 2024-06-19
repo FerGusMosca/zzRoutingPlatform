@@ -58,6 +58,10 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         protected int ActiveBlocksSetting { get; set; }
 
+        protected decimal PositionOpeningImbalanceThreshold { get; set; }
+
+        protected decimal PositionClosingImbalanceThreshold { get; set; }
+
 
         protected List<MonChainedImbalanceTurtleIndicator> ActiveBlocks { get; set; }
 
@@ -66,6 +70,8 @@ namespace tph.ChainedTurtles.BusinessEntities
         protected string MarketEndTime { get; set; }
 
         protected object tLock { get; set; }
+
+        public string ImbSignalTriggered { get; set; }
 
 
         #endregion
@@ -226,6 +232,18 @@ namespace tph.ChainedTurtles.BusinessEntities
                     ActiveBlocksSetting = resp.activeBlocksSetting;
                 else
                     throw new Exception("config value activeBlocksSetting must be greater than 0");
+
+
+                if (resp.positionOpeningImbalanceThreshold > 0)
+                    PositionOpeningImbalanceThreshold = resp.positionOpeningImbalanceThreshold;
+                else
+                    throw new Exception("config value positionOpeningImbalanceThreshold must be greater than 0");
+
+
+                if (resp.positionClosingImbalanceThreshold > 0)
+                    PositionClosingImbalanceThreshold = resp.positionClosingImbalanceThreshold;
+                else
+                    throw new Exception("config value positionClosingImbalanceThreshold must be greater than 0");
 
 
 
@@ -409,23 +427,45 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered()
         {
-            //TODO--> Long imbalance activated?
-            return false;
+
+
+            if (AskSizeImbalance > PositionOpeningImbalanceThreshold)
+            {
+                ImbSignalTriggered = $"LONG Imbalance for {Security.Symbol}: Ask Imbalance: {AskSizeImbalance}";
+
+                return true;
+            }
+            else
+                return false;
+            
+            
         
         }
 
 
         public override bool ShortSignalTriggered()
         {
-            //TODO --> Short imbalance activated?
-            return false;
 
+            if (BidSizeImbalance > PositionOpeningImbalanceThreshold)
+            {
+                ImbSignalTriggered = $"SHORT Imbalance for {Security.Symbol}: Bid Imbalance: {BidSizeImbalance}";
+
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+
+        public override string SignalTriggered()
+        {
+            return ImbSignalTriggered;
         }
 
 
         //EvalClosingShortPosition --> Uses standard closing mechanism
         //EvalClosingLongPosition -->  Uses standard closing mehcanism
-
 
         #endregion
     }
