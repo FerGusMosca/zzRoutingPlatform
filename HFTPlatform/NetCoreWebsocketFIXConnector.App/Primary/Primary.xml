@@ -12,6 +12,10 @@
   <User>fmosca</User>
   <Password>Msk7w6cB_</Password>
 
+
+  <HistoricalPricesOnDB>true</HistoricalPricesOnDB>
+  <HistoricalPricesConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</HistoricalPricesConnectionString>
+
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
 
   <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds>

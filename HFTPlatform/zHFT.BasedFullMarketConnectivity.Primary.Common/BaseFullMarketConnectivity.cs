@@ -403,6 +403,25 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected abstract void DoProcessHistoricalPricesRequestThread(object param);
+        protected CMState ProcessHistoricalPricesRequest(Wrapper histPricesReqWrapper)
+        {
+            try
+            {
+                Thread reqHistoricalPrices = new Thread(DoProcessHistoricalPricesRequestThread);
+
+                reqHistoricalPrices.Start(histPricesReqWrapper);
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                string msg = $"CRICITAL error requesting historical prices for wrapper {histPricesReqWrapper.ToString()}:{ex.Message}";
+                DoLog(msg, Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(msg));
+            }
+        }
+
         protected int GetNextOrderId()
         {
 

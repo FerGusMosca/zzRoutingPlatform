@@ -61,38 +61,38 @@
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GenOrderRouter\GenOrderRouter.xml">
+    <Content Include="GenOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GenOrderRouter\IncomingSingletonConfigGenOrderRouter.xml">
+    <Content Include="_backup\GenOrderRouter\IncomingSingletonConfigGenOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GenOrderRouter\OutgoingSingletonConfigGenOrderRouter.xml">
+    <Content Include="_backup\GenOrderRouter\OutgoingSingletonConfigGenOrderRouter.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Mock\outgoingOrderRouter.Mock.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="MultipleLegsMarketClient.xml">
+    <Content Include="_backup\MultipleLegsMarketClient.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TurtlesDayTrading.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\IncomingSingletonConfigIB.xml">
+    <Content Include="_backup\IncomingSingletonConfigIB.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\IncomingSingletonConfigFIX.xml">
+    <Content Include="Websocket\IncomingSingletonConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\OutgoingSingletonConfigFIX.xml">
+    <Content Include="Websocket\OutgoingSingletonConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\WebsocketIB.xml">
+    <Content Include="_backup\WebsocketIB.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Websocket\WebsocketFIX.xml">
+    <Content Include="Websocket\Websocket.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -105,9 +105,9 @@
       <Project>{fd209199-5f2f-4b80-ad1a-6a93d46b7169}</Project>
       <Name>tph.MultipleLegsMarketClient.LogicLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver\tph.StrategyHandler.SimpleCommandReceiver.csproj">
-      <Project>{da0d57b6-a469-4956-ac61-f8dd684e80b7}</Project>
-      <Name>tph.StrategyHandler.SimpleCommandReceiver</Name>
+    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandSender\tph.StrategyHandler.SimpleCommandSender.csproj">
+      <Project>{4067f749-8dd4-45ef-9630-391a64631b57}</Project>
+      <Name>tph.StrategyHandler.SimpleCommandSender</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>

@@ -80,10 +80,6 @@
       <Project>{04d747c2-c117-461c-a751-57a3b35518c5}</Project>
       <Name>zHFT.InstructionBasedFullMarketConnectivity.CoinApi.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.csproj">
-      <Project>{1fc8714d-80f5-40d8-a202-56aedbf57a6d}</Project>
-      <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
       <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
       <Name>zHFT.InstructionBasedMarketClient.BusinessEntities</Name>

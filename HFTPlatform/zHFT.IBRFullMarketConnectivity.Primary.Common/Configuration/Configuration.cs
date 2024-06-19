@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using zHFT.Main.Common.Abstract;
 using zHFT.Main.Common.Interfaces;
 
-namespace zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.Configuration
+namespace zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration
 {
     public class Configuration : BaseConfiguration, IConfiguration
     {

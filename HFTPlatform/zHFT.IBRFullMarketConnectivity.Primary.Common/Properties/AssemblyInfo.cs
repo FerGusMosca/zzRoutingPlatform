@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("zHFT.InstructionBasedFullMarketConnectivity.Primary.Common")]
+[assembly: AssemblyTitle("zHFT.IBRFullMarketConnectivity.Primary.Common")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("zHFT.InstructionBasedFullMarketConnectivity.Primary.Common")]
+[assembly: AssemblyProduct("zHFT.IBRFullMarketConnectivity.Primary.Common")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bc612920-272b-4659-835f-371312451992")]
+[assembly: Guid("28266d98-9cc1-4a59-8ce7-789ceed42cc3")]
 
 // Version information for an assembly consists of the following four values:
 //

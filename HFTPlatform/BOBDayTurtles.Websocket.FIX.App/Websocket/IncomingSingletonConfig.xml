@@ -2,7 +2,7 @@
 <Configuration>
   <Name>Incoming Singleton Websocket</Name>
   <SingletonAssembly>tph.StrategyHandler.SimpleCommandSender.OrderRouterWSClient, tph.StrategyHandler.SimpleCommandSender</SingletonAssembly>
-  <SingletonConfigFile>.\Websocket\WebsocketFIX.xml</SingletonConfigFile>
+  <SingletonConfigFile>.\Websocket\Websocket.xml</SingletonConfigFile>
   <ModuleDirection>I</ModuleDirection>
   <!--I=incoming,O=outgoing-->
 </Configuration>

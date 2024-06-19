@@ -81,9 +81,13 @@
       <Project>{0d4cb00d-382b-4503-a9a0-b05574ef4218}</Project>
       <Name>zHFT.FixMessageCreator.Primary.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common\zHFT.InstructionBasedFullMarketConnectivity.Primary.Common.csproj">
-      <Project>{1fc8714d-80f5-40d8-a202-56aedbf57a6d}</Project>
-      <Name>zHFT.InstructionBasedFullMarketConnectivity.Primary.Common</Name>
+    <ProjectReference Include="..\zHFT.IBRFullMarketConnectivity.Primary.Common\zHFT.IBRFullMarketConnectivity.Primary.Common.csproj">
+      <Project>{28266d98-9cc1-4a59-8ce7-789ceed42cc3}</Project>
+      <Name>zHFT.IBRFullMarketConnectivity.Primary.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.DAL\zHFT.InstructionBasedFullMarketConnectivity.DAL.csproj">
+      <Project>{201A751F-BDF2-468B-8E0C-574CFD4E8EB0}</Project>
+      <Name>zHFT.InstructionBasedFullMarketConnectivity.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedMarketClient.BusinessEntities\zHFT.InstructionBasedMarketClient.BusinessEntities.csproj">
       <Project>{38d7aa3e-b1a2-4678-8725-e9c13b15553f}</Project>
@@ -108,6 +112,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.DataAccessLayer\zHFT.Main.DataAccessLayer.csproj">
+      <Project>{801E5410-738B-47C9-895F-0AD1B5860A2A}</Project>
+      <Name>zHFT.Main.DataAccessLayer</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
       <Project>{43a49a1c-0367-4000-a144-ff3cdc6b198a}</Project>

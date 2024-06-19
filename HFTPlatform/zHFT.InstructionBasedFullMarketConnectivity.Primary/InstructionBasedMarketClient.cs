@@ -18,6 +18,8 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Converters;
+using zHFT.MarketClient.Common.DTO;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 using zHFT.MarketClient.Primary.Common.Wrappers;
@@ -31,6 +33,11 @@ using zHFT.StrategyHandler.SecurityListSaver.BusinessEntities;
 using zHFT.StrategyHandler.SecurityListSaver.Common.Interfaces;
 using zHFT.StrategyHandler.SecurityListSaver.DataAccessLayer.Managers;
 using SecurityListWrapper = zHFT.MarketClient.Primary.Common.Wrappers.SecurityListWrapper;
+using zHFT.InstructionBasedFullMarketConnectivity.Primary;
+using zHFT.InstructionBasedFullMarketConnectivity.DAL;
+using zHFT.MarketClient.Common.Common.Wrappers;
+using zHFT.Main.BusinessEntities.Market_Data;
+using MarketDataWrapper = zHFT.MarketClient.Common.Wrappers.MarketDataWrapper;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {
@@ -69,10 +76,10 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         protected IConfiguration Config { get; set; }
 
         protected ISecurityTranslator SecurityTranslator { get; set; }
-
-        protected Common.Configuration.Configuration PrimaryConfiguration
+        
+        protected zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration.Configuration PrimaryConfiguration
         {
-            get { return (Common.Configuration.Configuration)Config; }
+            get { return (zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration.Configuration)Config; }
             set { Config = value; }
         }
 
@@ -804,6 +811,47 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
+        protected override void DoProcessHistoricalPricesRequestThread(object param)
+        {
+            try
+            {
+                Wrapper histPricesReqWrapper = (Wrapper)param;
+                HistoricalPricesRequestDTO dtoRecord= HistoricalPriceConverter.ConvertHistoricalPriceRequest(histPricesReqWrapper);
+                if (PrimaryConfiguration.HistoricalPricesOnDB)
+                {
+                    CandleManager cnldMgr = new CandleManager(PrimaryConfiguration.HistoricalPricesConnectionString);
+                    List<MarketData> candles = cnldMgr.GetCandles(dtoRecord.Symbol, dtoRecord.Interval,
+                                                                  dtoRecord.From.HasValue ? dtoRecord.From.Value : DateTime.MinValue,
+                                                                  dtoRecord.To.HasValue ? dtoRecord.To.Value : DateTime.MaxValue); 
+
+
+                    List<Wrapper> marketDataWrapperList = new List<Wrapper>();
+                    foreach (MarketData md in candles)
+                    {
+                        Security currSec = new Security() { Symbol = dtoRecord.Symbol, SecType = dtoRecord.SecurityType, Currency = dtoRecord.Currency };
+                        currSec.MarketData = md;
+                        MarketDataWrapper mdWrapper = new MarketDataWrapper(currSec, GetConfig());
+                        marketDataWrapperList.Add(mdWrapper);
+                    }
+
+                    Security sec = new Security() { Symbol = dtoRecord.Symbol, SecType = dtoRecord.SecurityType, Currency = dtoRecord.Currency };
+                    HistoricalPricesWrapper histWrp = new HistoricalPricesWrapper(0, sec, dtoRecord.Interval, marketDataWrapperList);
+                    OnMarketDataMessageRcv(histWrp);
+
+                }
+                else
+                {
+                    DoLog($"@{PrimaryConfiguration.Name}- Ignoring historical prices request for symbol {dtoRecord.Symbol}: Historical Prices from DB is disabled! ", Constants.MessageType.Error);
+                
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"@{PrimaryConfiguration.Name}- CRITICAL ERROR Processing Historical Prices Request: {ex.Message}", Constants.MessageType.Error);
+
+            }
+        }
+
         protected override void DoRunNewOrder(object param)
         {
             
@@ -878,6 +926,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     {
                         DoLog(string.Format("Receiving Market Data Request: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
                         return ProcessMarketDataRequest(wrapper);
+                    }
+                    else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES_REQUEST)
+                    {
+                        DoLog(string.Format("Receiving Historical Prices Request: {0}", wrapper.ToString()), Main.Common.Util.Constants.MessageType.Information);
+                        return ProcessHistoricalPricesRequest(wrapper);
                     }
                     else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
                     {
@@ -1137,7 +1190,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         public void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
         {
             List<string> noValueFields = new List<string>();
-            Config = new Common.Configuration.Configuration().GetConfiguration<Common.Configuration.Configuration>(configFile, noValueFields);
+            Config = new zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration.Configuration().GetConfiguration<zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration.Configuration>(configFile, noValueFields);
         }
 
         public void SetOutgoingEvent(OnMessageReceived OnMessageRcv)
