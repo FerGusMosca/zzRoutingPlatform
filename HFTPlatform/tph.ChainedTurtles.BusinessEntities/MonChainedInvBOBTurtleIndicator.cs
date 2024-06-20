@@ -7,6 +7,7 @@ using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 
@@ -23,7 +24,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                                                     string candleRefPrice,
                                                     string pCode,
                                                     string signalType,
-                                                    bool reqMarketData):base(pSecurity,pTurtlesCustomConfig,candleRefPrice,pCode,signalType,reqMarketData)
+                                                    bool reqMarketData, ILogger pLogger) :base(pSecurity,pTurtlesCustomConfig,candleRefPrice,pCode,signalType,reqMarketData)
         {
            
         }

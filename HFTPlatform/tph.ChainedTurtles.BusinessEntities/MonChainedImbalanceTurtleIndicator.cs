@@ -11,6 +11,7 @@ using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 
 namespace tph.ChainedTurtles.BusinessEntities
@@ -72,6 +73,8 @@ namespace tph.ChainedTurtles.BusinessEntities
         protected object tLock { get; set; }
 
         public string ImbSignalTriggered { get; set; }
+
+        protected ILogger Logger { get; set; }
 
 
         #endregion
@@ -152,7 +155,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         
         }
 
-        public MonChainedImbalanceTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig, string candleRefPrice, string pCode, string signalType, bool reqPrices) : base(pSecurity, pTurtlesCustomConfig, candleRefPrice, pCode, signalType, reqPrices)
+        public MonChainedImbalanceTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig, string candleRefPrice, string pCode, string signalType, bool reqPrices, ILogger pLogger) : base(pSecurity, pTurtlesCustomConfig, candleRefPrice, pCode, signalType, reqPrices)
         {
             Security = pSecurity;
 
@@ -161,6 +164,8 @@ namespace tph.ChainedTurtles.BusinessEntities
             CountTradeOnAsk = 0;    
             SizeTradeOnBid = 0;
             SizeTradeOnAsk = 0;
+
+            Logger = pLogger;
 
             LastCounterResetTime = DateTime.Now;
             StartTime = DateTime.Now;
@@ -312,6 +317,10 @@ namespace tph.ChainedTurtles.BusinessEntities
                         LastProcessed = marketdata;
                         UpdateTradeImpact(Security, ImpactSide.Ask);
                     }
+
+                    Logger.DoLog($" Ind. Imbalance for {Security.Symbol}-->  CountTradeOnBid={CountTradeOnBid} SizeTradeOnBid={SizeTradeOnBid} " +
+                                $"CountTradeOnAsk={CountTradeOnAsk} SizeTradeOnAsk={SizeTradeOnAsk}: " +
+                                $"AskSizeImbalance={Math.Round(AskSizeImbalance,2)} BidSizeImbalance={Math.Round(BidSizeImbalance,2)}", Constants.MessageType.Information);
                 }
             }
             else
@@ -428,12 +437,17 @@ namespace tph.ChainedTurtles.BusinessEntities
         public override bool LongSignalTriggered()
         {
 
-
-            if (AskSizeImbalance > PositionOpeningImbalanceThreshold)
+            if (ActiveBlocks.Count > ActiveBlocksSetting)
             {
-                ImbSignalTriggered = $"LONG Imbalance for {Security.Symbol}: Ask Imbalance: {AskSizeImbalance}";
 
-                return true;
+                if (AskSizeImbalance > PositionOpeningImbalanceThreshold)
+                {
+                    ImbSignalTriggered = $"LONG Imbalance for {Security.Symbol}: Ask Imbalance: {AskSizeImbalance}";
+
+                    return true;
+                }
+                else
+                    return false;
             }
             else
                 return false;
@@ -445,12 +459,17 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-
-            if (BidSizeImbalance > PositionOpeningImbalanceThreshold)
+            if (ActiveBlocks.Count > ActiveBlocksSetting)
             {
-                ImbSignalTriggered = $"SHORT Imbalance for {Security.Symbol}: Bid Imbalance: {BidSizeImbalance}";
 
-                return true;
+                if (BidSizeImbalance > PositionOpeningImbalanceThreshold)
+                {
+                    ImbSignalTriggered = $"SHORT Imbalance for {Security.Symbol}: Bid Imbalance: {BidSizeImbalance}";
+
+                    return true;
+                }
+                else
+                    return false;
             }
             else
                 return false;

@@ -18,8 +18,8 @@
   <TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
   <Account>9732</Account>
 
-  <Currency>USD</Currency>
-  <Exchange>SMART</Exchange>
+  <Currency>ARS</Currency>
+  <Exchange>BUE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
   <ClosingTime>08:51 PM</ClosingTime>
@@ -55,7 +55,11 @@
   
   <StocksToMonitor>
     <Symbol>GGAL</Symbol>
-	<Symbol>YPF</Symbol>
+	<Symbol>YPFD</Symbol>
+	<Symbol>BBAR</Symbol>
+	<Symbol>BMA</Symbol>
+	<Symbol>COME</Symbol>
+	<Symbol>SUPV</Symbol>
 	  
 <!--    -->
   </StocksToMonitor>

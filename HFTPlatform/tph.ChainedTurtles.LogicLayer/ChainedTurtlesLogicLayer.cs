@@ -188,7 +188,8 @@ namespace tph.ChainedTurtles.LogicLayer
                             UpdateLastPrice(monPos, md);
                         }
                     }
-                    else if (ChainedIndicators.ContainsKey(md.Security.Symbol))
+
+                    if (ChainedIndicators.ContainsKey(md.Security.Symbol))
                     {
                         MonTurtlePosition indicator = ChainedIndicators[md.Security.Symbol];
                         EvalMarketDataCalculations(indicator, md);
@@ -229,7 +230,8 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                                 GetConfig().CandleReferencePrice,
                                                                                                 indicator.Code,
                                                                                                 indicator.SignalType,
-                                                                                                indicator.RequestPrices
+                                                                                                indicator.RequestPrices,
+                                                                                                this
                                                                                     }
                                                                                     );
 
@@ -329,9 +331,9 @@ namespace tph.ChainedTurtles.LogicLayer
 
         protected void EvalMarketDataCalculations(MonitoringPosition indicator, MarketData md)
         {
-            DoLog($"Recv markt data for indicator {indicator.Security.Symbol}: LastTrade={indicator.Security.MarketData.Trade} @{indicator.Security.MarketData.GetReferenceDateTime()}",Constants.MessageType.Information);
+            DoLog($"Recv markt data for indicator {indicator.Security.Symbol}: LastTrade={md.Trade} @{md.GetReferenceDateTime()}",Constants.MessageType.Information);
             bool newCandle = indicator.AppendCandle(md);
-           
+
             if (indicator.IsTrendlineMonPosition())
             {
                 if (newCandle)
@@ -339,12 +341,23 @@ namespace tph.ChainedTurtles.LogicLayer
                     if (indicator.EvalSignalTriggered())
                     {
                         DoLog($"SIGNAL TRIGGERED!-->{indicator.SignalTriggered()}", Constants.MessageType.Information);
-                    
+
                     }
                     EvalBrokenTrendlines((MonTrendlineTurtlesPosition)indicator, md);
                     RecalculateNewTrendlines((MonTrendlineTurtlesPosition)indicator, GetConfig().RecalculateTrendlines);
                 }
 
+            }
+            else
+            {
+                if (newCandle)
+                {
+                    if (indicator.EvalSignalTriggered())
+                    {
+                        DoLog($"SIGNAL TRIGGERED!-->{indicator.SignalTriggered()}", Constants.MessageType.Information);
+
+                    }
+                }
             }
         }
 

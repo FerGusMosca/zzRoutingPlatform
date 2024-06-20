@@ -62,6 +62,38 @@
 				</IndicatorToMonitor>
 			</Indicators>
 		</SecurityToMonitor>
+
+		<SecurityToMonitor>
+			<Symbol>YPFD</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>USD</Currency>
+			<!-- Default: USD-->
+			<Exchange>SMART</Exchange>
+			<!-- Default: SMART -->
+
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_YPFD</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
+
+		<SecurityToMonitor>
+			<Symbol>BMA</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>USD</Currency>
+			<!-- Default: USD-->
+			<Exchange>SMART</Exchange>
+			<!-- Default: SMART -->
+
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_BMA</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
 		
 	</SecuritiesToMonitor>
 
@@ -77,6 +109,32 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			<RequestPrices>false</RequestPrices>
+		</ChainedTurtleIndicator>
+		<ChainedTurtleIndicator>
+			<Code>IMBALANCE_INNER_IND_YPFD</Code>
+			<SecurityToMonitor>
+				<Symbol>YPFD</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType></SignalType>
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			<RequestPrices>false</RequestPrices>
+		</ChainedTurtleIndicator>
+		<ChainedTurtleIndicator>
+			<Code>IMBALANCE_INNER_IND_BMA</Code>
+			<SecurityToMonitor>
+				<Symbol>BMA</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType></SignalType>
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>
 	</ChainedTurtleIndicators>
