@@ -293,13 +293,18 @@ namespace tph.TrendlineTurtles.BusinessEntities
         public double GetSlopeDegrees()
         {
             double pctGrowth = (EndPrice.Trade.Value / StartPrice.Trade.Value) - 1;
-            pctGrowth *= 100;
-            
-            int countUnitsInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
+            if (!double.IsNaN(pctGrowth) && !double.IsInfinity(pctGrowth))
+            {
+                pctGrowth *= 100;
 
-            double hourAdjust = 60 / Convert.ToDouble(countUnitsInTrendline);
+                int countUnitsInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
 
-            return pctGrowth * hourAdjust;
+                double hourAdjust = 60 / Convert.ToDouble(countUnitsInTrendline);
+
+                return pctGrowth * hourAdjust;
+            }
+            else
+                return 0; 
         }
 
 
