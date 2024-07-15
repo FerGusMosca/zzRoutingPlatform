@@ -166,6 +166,11 @@ namespace tph.ChainedTurtles.LogicLayer
             Wrapper wrapper = (Wrapper)pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
 
+
+            if (md.GetReferenceDateTime() == null)
+                DoLog($"Ignoring market data for symbol {md.Security.Symbol} because missing data:{md.ToString()}", Constants.MessageType.PriorityInformation);
+            
+
             OrderRouter.ProcessMessage(wrapper);
             
             Thread.Sleep(1000);
@@ -174,6 +179,8 @@ namespace tph.ChainedTurtles.LogicLayer
             {
                 lock (tLock)
                 {
+                    if (ValidateMarketDataRec(md)) { return; }
+
                     DateTimeManager.NullNow = md.GetReferenceDateTime();
 
                     if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null
@@ -204,7 +211,7 @@ namespace tph.ChainedTurtles.LogicLayer
             catch (Exception e)
             {
                 DoLog(
-                    string.Format("ERROR @DailyTurtles- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
+                    string.Format("ERROR @ChainedTurtlesLogicLayer- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
                     Constants.MessageType.Error);
             }
         }

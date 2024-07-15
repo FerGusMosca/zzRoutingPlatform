@@ -91,6 +91,8 @@ namespace tph.TrendlineTurtles.LogicLayer
             {
                 lock (tLock)
                 {
+                    if (ValidateMarketDataRec(md)) { return; }
+
                     DateTimeManager.NullNow = md.GetReferenceDateTime();
                     if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null
                                                                                     && ProcessedHistoricalPrices
@@ -128,7 +130,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             catch (Exception e)
             {
                 DoLog(
-                    string.Format("ERROR @DailyTurtles- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
+                    string.Format("ERROR @TrendlinesTurtlesLogicLayer- Error processing market data:{0}-{1}", e.Message, e.StackTrace),
                     Constants.MessageType.Error);
             }
         }

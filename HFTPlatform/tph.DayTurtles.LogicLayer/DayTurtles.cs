@@ -410,7 +410,23 @@ namespace tph.DayTurtles.LogicLayer
                     Constants.MessageType.Error);
             }
         }
-    
+
+        protected bool ValidateMarketDataRec(MarketData md)
+        {
+            if (md.GetReferenceDateTime() == null)
+            {
+                DoLog($"WARNING-Ignoring market data for symbol {md.Security.Symbol} because missing data:{md.ToString()}", Constants.MessageType.PriorityInformation);
+
+                return false;
+
+            }
+            else
+                return true;
+
+
+
+        }
+
 
         protected override void ProcessMarketData(object pWrapper)
         {
@@ -422,6 +438,7 @@ namespace tph.DayTurtles.LogicLayer
             {
                 lock (tLock)
                 {
+                    if(ValidateMarketDataRec(md)) { return; }
                     
                     string cleanSymbol = SymbolConverter.GetCleanSymbol(md.Security.Symbol);
                     if (MonitorPositions.Keys.Any(x => SymbolConverter.GetCleanSymbol(x) == cleanSymbol) && Securities != null)
