@@ -166,11 +166,6 @@ namespace tph.ChainedTurtles.LogicLayer
             Wrapper wrapper = (Wrapper)pWrapper;
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
 
-
-            if (md.GetReferenceDateTime() == null)
-                DoLog($"Ignoring market data for symbol {md.Security.Symbol} because missing data:{md.ToString()}", Constants.MessageType.PriorityInformation);
-            
-
             OrderRouter.ProcessMessage(wrapper);
             
             Thread.Sleep(1000);
@@ -179,7 +174,7 @@ namespace tph.ChainedTurtles.LogicLayer
             {
                 lock (tLock)
                 {
-                    if (ValidateMarketDataRec(md)) { return; }
+                    if (!ValidateMarketDataRec(md)) { return; }
 
                     DateTimeManager.NullNow = md.GetReferenceDateTime();
 

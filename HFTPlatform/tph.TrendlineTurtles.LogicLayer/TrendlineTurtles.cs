@@ -91,7 +91,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             {
                 lock (tLock)
                 {
-                    if (ValidateMarketDataRec(md)) { return; }
+                    if (!ValidateMarketDataRec(md)) { return; }
 
                     DateTimeManager.NullNow = md.GetReferenceDateTime();
                     if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null
