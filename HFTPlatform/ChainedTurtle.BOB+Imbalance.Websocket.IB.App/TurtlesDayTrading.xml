@@ -21,7 +21,7 @@
 	<!--in pct 0-1-->
 
 
-	<OpeningTime>11:30</OpeningTime>
+	<OpeningTime>10:30</OpeningTime>
 	<!--Opening Time for backtests or LIVE_MODE-->
 	<TradingMode>LIVE_MODE</TradingMode>
 	<!--BACKTEST,LIVE_MODE-->
@@ -33,7 +33,7 @@
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles_ib_uat;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
 	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
@@ -68,14 +68,14 @@
 			</Indicators>
 		</SecurityToMonitor>
 
-		<SecurityToMonitor>
+		<!--<SecurityToMonitor>
 			<Symbol>YPFD</Symbol>
 			<SecurityType>CS</SecurityType>
-			<!-- Default: CS-->
+			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			<!-- Default: USD-->
+			--><!-- Default: USD--><!--
 			<Exchange>SMART</Exchange>
-			<!-- Default: SMART -->
+			--><!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -87,11 +87,11 @@
 		<SecurityToMonitor>
 			<Symbol>BMA</Symbol>
 			<SecurityType>CS</SecurityType>
-			<!-- Default: CS-->
+			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			<!-- Default: USD-->
+			--><!-- Default: USD--><!--
 			<Exchange>SMART</Exchange>
-			<!-- Default: SMART -->
+			--><!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -104,11 +104,11 @@
 		<SecurityToMonitor>
 			<Symbol>BBAR</Symbol>
 			<SecurityType>CS</SecurityType>
-			<!-- Default: CS-->
+			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			<!-- Default: USD-->
+			--><!-- Default: USD--><!--
 			<Exchange>SMART</Exchange>
-			<!-- Default: SMART -->
+			--><!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -120,11 +120,11 @@
 		<SecurityToMonitor>
 			<Symbol>SUPV</Symbol>
 			<SecurityType>CS</SecurityType>
-			<!-- Default: CS-->
+			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			<!-- Default: USD-->
+			--><!-- Default: USD--><!--
 			<Exchange>SMART</Exchange>
-			<!-- Default: SMART -->
+			--><!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -137,18 +137,18 @@
 		<SecurityToMonitor>
 			<Symbol>COME</Symbol>
 			<SecurityType>CS</SecurityType>
-			<!-- Default: CS-->
+			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			<!-- Default: USD-->
+			--><!-- Default: USD--><!--
 			<Exchange>SMART</Exchange>
-			<!-- Default: SMART -->
+			--><!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_COME</Code>
 				</IndicatorToMonitor>
 			</Indicators>
-		</SecurityToMonitor>
+		</SecurityToMonitor>-->
 
 	</SecuritiesToMonitor>
 

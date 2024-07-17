@@ -436,7 +436,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered()
         {
-
+            
             if (ActiveBlocks.Count > ActiveBlocksSetting)
             {
 
@@ -447,10 +447,17 @@ namespace tph.ChainedTurtles.BusinessEntities
                     return true;
                 }
                 else
+                {
+                    Logger.DoLog($"{Security.Symbol}-->Ask Imbalance = {AskSizeImbalance} - Min. Trigger Imbalance = {PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     return false;
+                }
             }
+            
             else
+            {
+                Logger.DoLog($"{Security.Symbol}--> LONG Active Blocks = {ActiveBlocks.Count} - Min Blocks = {ActiveBlocksSetting}", Constants.MessageType.Information);
                 return false;
+            }
             
             
         
@@ -469,10 +476,16 @@ namespace tph.ChainedTurtles.BusinessEntities
                     return true;
                 }
                 else
+                {
+                    Logger.DoLog($"{Security.Symbol}-->Bid Imbalance = {AskSizeImbalance} - Min. Trigger Imbalance = {PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     return false;
+                }
             }
             else
+            {
+                Logger.DoLog($"{Security.Symbol}--> SHORT Active Blocks = {ActiveBlocks.Count} - Min Blocks = {ActiveBlocksSetting}", Constants.MessageType.Information);
                 return false;
+            }
 
         }
 
