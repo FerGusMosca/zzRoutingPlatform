@@ -349,17 +349,19 @@ namespace tph.ChainedTurtles.BusinessEntities
                 //Every BlockSize y save what I had in memory with the counters for every position
                 if (elapsed.TotalMinutes > BlockSizeInMinutes)
                 {
+                    Logger.DoLog($"Reseting counters for symbol {Security.Symbol}", Constants.MessageType.Information);
                     lock (tLock)
                     {
 
-
+                        Logger.DoLog($"Reseting counters for symbol {Security.Symbol}: CountTradeOnAsk:{CountTradeOnAsk} CountTradeOnBid:{CountTradeOnBid} SizeTradeOnAsk:{SizeTradeOnBid} SizeTradeOnAsk:{SizeTradeOnBid}--> AskSizeImbalance={BidSizeImbalance} AskSizeImbalance={BidSizeImbalance}", Constants.MessageType.Information);
                         PersistCounters();
 
                         if (ActiveBlocks.Count > ActiveBlocksSetting)
                             ResetOldBlocks();
 
-                       
+                        Logger.DoLog($"NEW counters for symbol {Security.Symbol}: CountTradeOnAsk:{CountTradeOnAsk} CountTradeOnBid:{CountTradeOnBid} SizeTradeOnAsk:{SizeTradeOnBid} SizeTradeOnAsk:{SizeTradeOnBid}--> AskSizeImbalance={BidSizeImbalance} AskSizeImbalance={BidSizeImbalance}", Constants.MessageType.Information);
                         LastCounterResetTime = DateTime.Now;
+                        Logger.DoLog($"Last counters reset time for symbol {Security.Symbol}:{LastCounterResetTime}", Constants.MessageType.Information);
                     }
                 }
 
@@ -440,7 +442,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (ActiveBlocks.Count > ActiveBlocksSetting)
             {
 
-                if (AskSizeImbalance > PositionOpeningImbalanceThreshold)
+                if (AskSizeImbalance >= PositionOpeningImbalanceThreshold)
                 {
                     ImbSignalTriggered = $"LONG Imbalance for {Security.Symbol}: Ask Imbalance: {AskSizeImbalance}";
 
@@ -466,7 +468,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-            if (ActiveBlocks.Count > ActiveBlocksSetting)
+            if (ActiveBlocks.Count >= ActiveBlocksSetting)
             {
 
                 if (BidSizeImbalance > PositionOpeningImbalanceThreshold)
