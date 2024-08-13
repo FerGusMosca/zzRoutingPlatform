@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
 
 namespace zHFT.StrategyHandler.BusinessEntities
 {
@@ -22,6 +23,8 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         public string CandleReferencePrice { get; set; }
 
+        public MonitoringType MonitoringType { get; set; }
+
         #endregion
 
         #region public Methods
@@ -33,7 +36,8 @@ namespace zHFT.StrategyHandler.BusinessEntities
 
         public virtual bool IsTrendlineMonPosition()
         {
-            return false;
+
+            return MonitoringType==MonitoringType.ONLY_TRENDLINE || MonitoringType==MonitoringType.TRENDLINE_PLUS_ROUTING;
         
         }
 

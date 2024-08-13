@@ -8,6 +8,7 @@ using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Enums;
 using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
@@ -25,7 +26,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public MonChainedTurtlePosition(Security pSecurity,TurtlesCustomConfig pTurtlesCustomConfig, 
                                         double stopLossForOpenPositionPct, 
-                                        string candleRefPrice):base(pTurtlesCustomConfig,stopLossForOpenPositionPct,candleRefPrice)
+                                        string candleRefPrice, 
+                                        MonitoringType pMonitoringType):base(pTurtlesCustomConfig,stopLossForOpenPositionPct,candleRefPrice)
         {
 
             Security = pSecurity;
@@ -33,9 +35,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             InnerIndicators = new List<MonTurtlePosition>();
 
 
-
-
-
+            MonitoringType = pMonitoringType;
         }
 
         #endregion

@@ -36,6 +36,9 @@ namespace tph.DayTurtles.BusinessEntities
             MarketStartTime = marketStartTime;
             MarketEndTime   = marketEndTime;
 
+
+            MonitoringType = zHFT.Main.Common.Enums.MonitoringType.ONLY_ROUTING;
+
         }
 
         #endregion

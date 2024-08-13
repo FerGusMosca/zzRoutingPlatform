@@ -91,6 +91,7 @@
     <Compile Include="Enums\Fields\TimeInterval.cs" />
     <Compile Include="Enums\Halted.cs" />
     <Compile Include="Enums\MarketDepth.cs" />
+    <Compile Include="Enums\MonitoringType.cs" />
     <Compile Include="Enums\OrdRejReason.cs" />
     <Compile Include="Enums\OrdStatus.cs" />
     <Compile Include="Enums\OrdType.cs" />

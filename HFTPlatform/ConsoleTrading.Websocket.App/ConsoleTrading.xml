@@ -10,7 +10,7 @@
   <EconomicDataModule>tph.MarketClient.FRED.FREDClient, tph.MarketClient.FRED</EconomicDataModule>
   <EconomicDataModuleConfigFile>FREDEconomicDataConfig.xml</EconomicDataModuleConfigFile>
 
-	<CandlesConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</CandlesConnectionString>
+	<CandlesConnectionString>Data Source=.\SQLDEV;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</CandlesConnectionString>
 
 	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 

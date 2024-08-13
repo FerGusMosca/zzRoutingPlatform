@@ -100,7 +100,7 @@ namespace tph.BOBDayTurtles.LogicLayer
                         Exchange = Config.Exchange
                     };
 
-                    MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(
+                    MonBOBTurtlePosition monPos = new MonBOBTurtlePosition(
                         GetCustomConfig(symbol),
                         GetConfig().StopLossForOpenPositionPct,
                         GetConfig().OuterTrendlineSpan,
@@ -111,7 +111,7 @@ namespace tph.BOBDayTurtles.LogicLayer
                     };
 
                     //1- We add the current security to monitor
-                    MonitorPositions.Add(symbol, portfPos);
+                    MonitorPositions.Add(symbol, monPos);
 
                     Securities.Add(sec); //So far, this is all wehave regarding the Securities
 

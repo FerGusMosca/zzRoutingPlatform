@@ -28,6 +28,8 @@ namespace tph.TrendlineTurtles.BusinessEntities
         {
             Supports=new List<Trendline>();
             Resistances=new List<Trendline>();
+
+            MonitoringType = zHFT.Main.Common.Enums.MonitoringType.TRENDLINE_PLUS_ROUTING;
         }
         
         #endregion

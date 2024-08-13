@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.Enums;
 
 namespace zHFT.Main.Common.DTO
 {
@@ -21,7 +22,7 @@ namespace zHFT.Main.Common.DTO
 
         #endregion
 
-        #region Public Methods
+        #region Public Attributes
 
 
         public string Symbol { get; set; }
@@ -31,6 +32,8 @@ namespace zHFT.Main.Common.DTO
         public string Currency { get; set; }
 
         public string Exchange { get; set; }
+
+        public string MonitoringType { get; set; }
 
         public List<IndicatorToMonitor> Indicators { get; set; }
 
@@ -49,6 +52,27 @@ namespace zHFT.Main.Common.DTO
             if (string.IsNullOrEmpty(Exchange))
                 Exchange = _DEFAULT_EXCHANGE;
         
+        }
+
+        public bool LoadTrendliens()
+        {
+            return MonitoringType == zHFT.Main.Common.Enums.MonitoringType.ONLY_TRENDLINE.ToString()
+                || MonitoringType == zHFT.Main.Common.Enums.MonitoringType.TRENDLINE_PLUS_ROUTING.ToString();
+
+
+
+        }
+
+        public MonitoringType GetMonitoringType()
+        {
+            if (MonitoringType == zHFT.Main.Common.Enums.MonitoringType.ONLY_ROUTING.ToString())
+                return Common.Enums.MonitoringType.ONLY_ROUTING;
+            else if (MonitoringType == zHFT.Main.Common.Enums.MonitoringType.ONLY_TRENDLINE.ToString())
+                return Common.Enums.MonitoringType.ONLY_TRENDLINE;
+            else if (MonitoringType == zHFT.Main.Common.Enums.MonitoringType.TRENDLINE_PLUS_ROUTING.ToString())
+                return Common.Enums.MonitoringType.TRENDLINE_PLUS_ROUTING;
+            else throw new Exception($"Could not process a Monitoring Type of value {MonitoringType}");
+
         }
 
         #endregion 

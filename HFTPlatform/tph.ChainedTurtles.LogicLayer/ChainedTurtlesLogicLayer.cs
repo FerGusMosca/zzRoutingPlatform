@@ -54,27 +54,28 @@ namespace tph.ChainedTurtles.LogicLayer
 
                 lock (Config)
                 {
-                    foreach (var security in GetConfig().SecuritiesToMonitor)
+                    foreach (var secToMonitor in GetConfig().SecuritiesToMonitor)
                     {
 
                         //#1- Load monitors for trading securites
-                        if (!MonitorPositions.ContainsKey(security.Symbol))
+                        if (!MonitorPositions.ContainsKey(secToMonitor.Symbol))
                         {
-                            Security sec = BuildFromConfigSecurityToMonitor(security);
+                            Security sec = BuildFromConfigSecurityToMonitor(secToMonitor);
 
                             MonChainedTurtlePosition monChPos = new MonChainedTurtlePosition(
-                                sec, GetCustomConfig(security.Symbol),
+                                sec, GetCustomConfig(secToMonitor.Symbol),
                                 GetConfig().StopLossForOpenPositionPct,
-                                GetConfig().CandleReferencePrice);
+                                GetConfig().CandleReferencePrice,
+                                secToMonitor.GetMonitoringType());
 
 
                             //1- We add the current security to monitor
-                            MonitorPositions.Add(security.Symbol, monChPos);
+                            MonitorPositions.Add(secToMonitor.Symbol, monChPos);
 
                             Securities.Add(sec);//So far, this is all wehave regarding the Securities
 
                             //2- Load all the indicators pre loaded for the newly monitored security
-                            foreach (var indicator in security.Indicators)
+                            foreach (var indicator in secToMonitor.Indicators)
                             {
                                 MonTurtlePosition innerIndicator = FetchIndicator(indicator.Code);
                                 monChPos.AppendIndicator(innerIndicator);
@@ -83,6 +84,8 @@ namespace tph.ChainedTurtles.LogicLayer
                             //3- No market data to request until Historical Prices are recevied
                         }
                     }
+
+                    InitializeIndicators(DoLog);
                 }
 
             }
@@ -237,6 +240,8 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                     }
                                                                                     );
 
+                monInd.MonitoringType = indicator.SecurityToMonitor.GetMonitoringType();
+
 
                 if (!ChainedIndicators.ContainsKey(indicator.SecurityToMonitor.Symbol))
                     ChainedIndicators.Add(indicator.SecurityToMonitor.Symbol, monInd);
@@ -299,12 +304,17 @@ namespace tph.ChainedTurtles.LogicLayer
             foreach (var indicator in ChainedIndicators.Values)
             {
 
-                TrendLineCreator.InitializeCreator(indicator.Security,
-                                                   GetConfig(),
-                                                   DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod),
-                                                   pOnLogMsg,
-                                                   _REPEATED_MAX_MIN_MAX_DISTANCE,
-                                                   _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
+                if (indicator.IsTrendlineMonPosition())
+                {
+                    DoLog($"Initializing trendlines for indicator {indicator.Security.Symbol} ",Constants.MessageType.Information);
+                    TrendLineCreator.InitializeCreator(indicator.Security,
+                                                       GetConfig(),
+                                                       DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod),
+                                                       pOnLogMsg,
+                                                       _REPEATED_MAX_MIN_MAX_DISTANCE,
+                                                       _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
+                    DoLog($"Trendlines for indicator {indicator.Security.Symbol} successfully initalizing ", Constants.MessageType.Information);
+                }
 
                 DoLog($"Portfolio Position for indicator {indicator.Security.Symbol} successfully initialized",
                     Constants.MessageType.Information);
@@ -533,7 +543,7 @@ namespace tph.ChainedTurtles.LogicLayer
 
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
-                InitializeIndicators(pOnLogMsg);
+                //InitializeIndicators(pOnLogMsg);
 
                 InitializeManagers(GetConfig().ConnectionString);
 

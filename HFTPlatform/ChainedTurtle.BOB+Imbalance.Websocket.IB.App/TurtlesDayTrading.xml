@@ -33,7 +33,7 @@
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=daily_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
 	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
@@ -59,6 +59,7 @@
 			<Currency>USD</Currency>
 			<!-- Default: USD-->
 			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
 			<!-- Default: SMART -->
 
 			<Indicators>
@@ -73,9 +74,12 @@
 			<SecurityType>CS</SecurityType>
 			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			--><!-- Default: USD--><!--
+			--><!-- Default: USD-->
+				<!--
 			<Exchange>SMART</Exchange>
-			--><!-- Default: SMART --><!--
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			-->
+				<!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -89,9 +93,12 @@
 			<SecurityType>CS</SecurityType>
 			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			--><!-- Default: USD--><!--
+			--><!-- Default: USD-->
+				<!--
 			<Exchange>SMART</Exchange>
-			--><!-- Default: SMART --><!--
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			-->
+				<!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -106,9 +113,12 @@
 			<SecurityType>CS</SecurityType>
 			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			--><!-- Default: USD--><!--
+			--><!-- Default: USD-->
+				<!--
 			<Exchange>SMART</Exchange>
-			--><!-- Default: SMART --><!--
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			-->
+				<!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -122,9 +132,12 @@
 			<SecurityType>CS</SecurityType>
 			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			--><!-- Default: USD--><!--
+			--><!-- Default: USD-->
+				<!--
 			<Exchange>SMART</Exchange>
-			--><!-- Default: SMART --><!--
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			-->
+				<!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -139,9 +152,12 @@
 			<SecurityType>CS</SecurityType>
 			--><!-- Default: CS--><!--
 			<Currency>USD</Currency>
-			--><!-- Default: USD--><!--
+			--><!-- Default: USD-->
+				<!--
 			<Exchange>SMART</Exchange>
-			--><!-- Default: SMART --><!--
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			-->
+				<!-- Default: SMART --><!--
 
 			<Indicators>
 				<IndicatorToMonitor>
@@ -161,6 +177,7 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
@@ -173,6 +190,7 @@
 				<Symbol>YPF</Symbol>
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 				<Exchange>SMART</Exchange>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
@@ -187,6 +205,7 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
@@ -201,6 +220,7 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
@@ -215,6 +235,7 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
@@ -229,6 +250,7 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
