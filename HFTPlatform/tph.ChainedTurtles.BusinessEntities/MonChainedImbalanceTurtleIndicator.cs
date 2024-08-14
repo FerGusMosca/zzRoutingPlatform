@@ -149,13 +149,13 @@ namespace tph.ChainedTurtles.BusinessEntities
         #region Constructors
 
         //Only as DTO constructor
-        public MonChainedImbalanceTurtleIndicator() : base(null, null, null, null, null, false)
+        public MonChainedImbalanceTurtleIndicator() : base(null, null, null)
         { 
         
         
         }
 
-        public MonChainedImbalanceTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig, string candleRefPrice, string pCode, string signalType, bool reqPrices, ILogger pLogger) : base(pSecurity, pTurtlesCustomConfig, candleRefPrice, pCode, signalType, reqPrices)
+        public MonChainedImbalanceTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig, string pCode, ILogger pLogger) : base(pSecurity, pTurtlesCustomConfig, pCode)
         {
             Security = pSecurity;
 
@@ -187,20 +187,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         #region Private Methods
 
-        private void EvalTime(string time)
-        {
 
-            try
-            {
-                DateTime extrTime =MarketTimer.GetTodayDateTime(time);
-                //If we got here, it worked ok
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"The following time is not properly formatted: {time}");
-            }
-
-        }
 
         private void LoadConfigValues(string customConfig)
         {

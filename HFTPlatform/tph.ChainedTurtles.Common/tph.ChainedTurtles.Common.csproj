@@ -45,6 +45,11 @@
     <Compile Include="Configuration\ChainedConfiguration.cs" />
     <Compile Include="Configuration\TurtleConfig.cs" />
     <Compile Include="DTO\ImbalanceTurtleIndicatorConfigDTO.cs" />
+    <Compile Include="DTO\MonPosTrutleIndicatorConfigDTO.cs" />
+    <Compile Include="DTO\TrendlineTurtleIndicatorConfigDTO.cs" />
+    <Compile Include="Interfaces\IMonPosition.cs" />
+    <Compile Include="Interfaces\ITradingEnity.cs" />
+    <Compile Include="Interfaces\ITrendlineIndicator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

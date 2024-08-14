@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using tph.ChainedTurtles.Common.DTO;
+using tph.ChainedTurtles.Common.Interfaces;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
@@ -13,7 +16,7 @@ using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
-    public class MonChainedTurtlePosition: MonTrendlineTurtlesPosition
+    public class MonChainedTurtlePosition: MonTrendlineTurtlesPosition, IMonPosition
     {
 
         #region Protected Attributes
@@ -25,17 +28,91 @@ namespace tph.ChainedTurtles.BusinessEntities
         #region Constructor 
 
         public MonChainedTurtlePosition(Security pSecurity,TurtlesCustomConfig pTurtlesCustomConfig, 
-                                        double stopLossForOpenPositionPct, 
-                                        string candleRefPrice, 
-                                        MonitoringType pMonitoringType):base(pTurtlesCustomConfig,stopLossForOpenPositionPct,candleRefPrice)
+                                        MonitoringType pMonitoringType):base(pTurtlesCustomConfig,0,null)
         {
 
             Security = pSecurity;
 
             InnerIndicators = new List<MonTurtlePosition>();
 
+            LoadConfigValues(pTurtlesCustomConfig.CustomConfig);//This is where Stop Loss and CandleRef price are loaded
 
             MonitoringType = pMonitoringType;
+        }
+
+        #endregion
+
+        #region Protected Attributes
+
+        protected int HistoricalPricesPeriod { get; set; }
+
+        protected double StopLossForOpenPositionPct { get; set; }
+
+        #endregion
+
+
+        #region Private Methods
+
+        private void LoadConfigValues(string customConfig)
+        {
+            //
+            try
+            {
+                MonPosTrutleIndicatorConfigDTO resp = JsonConvert.DeserializeObject<MonPosTrutleIndicatorConfigDTO>(customConfig);
+
+
+                if (!string.IsNullOrEmpty(resp.marketStartTime))
+                {
+                    EvalTime(resp.marketStartTime);
+                    MarketStartTime = resp.marketStartTime;
+                }
+                else
+                    throw new Exception("Missing config value marketStartTime");
+
+                if (!string.IsNullOrEmpty(resp.marketEndTime))
+                {
+                    EvalTime(resp.marketEndTime);
+                    MarketEndTime = resp.marketEndTime;
+                }
+                else
+                    throw new Exception("Missing config value marketEndTime");
+
+
+                if (!string.IsNullOrEmpty(resp.closingTime))
+                {
+                    EvalTime(resp.closingTime);
+                    ClosingTime = resp.closingTime;
+                }
+                else
+                    throw new Exception("Missing config value closingTime");
+
+
+
+                if (!string.IsNullOrEmpty(resp.candleReferencePrice))
+                {
+
+                    CandleReferencePrice = resp.candleReferencePrice;
+                }
+                else
+                    throw new Exception("Missing config value candleReferencePrice");
+
+
+                if (resp.historicalPricesPeriod <= 0)
+                    HistoricalPricesPeriod = resp.historicalPricesPeriod;
+                else
+                    throw new Exception("config value historicalPricesPeriod must be lower than 0");
+
+                if (resp.stopLossForOpenPositionPct >= 0)
+                    StopLossForOpenPositionPct = resp.stopLossForOpenPositionPct;
+                else
+                    throw new Exception("config value stopLossForOpenPositionPct must be greater or equal than 0");
+
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"CRITICAL error deserializing custom config for symbol {Security.Symbol}:{ex.Message} ");
+            }
         }
 
         #endregion
@@ -175,6 +252,29 @@ namespace tph.ChainedTurtles.BusinessEntities
             List<MonitoringPosition> indicators = new List<MonitoringPosition>(InnerIndicators);
 
             return indicators;
+        }
+
+
+
+
+        #endregion
+
+
+        #region IMonPosition
+
+        public string GetCandleReferencePrice()
+        {
+            return CandleReferencePrice;
+        }
+
+        public int GetHistoricalPricesPeriod()
+        {
+            return HistoricalPricesPeriod;
+        }
+
+        public double GetStopLossForOpenPositionPct()
+        {
+            return StopLossForOpenPositionPct;
         }
 
 

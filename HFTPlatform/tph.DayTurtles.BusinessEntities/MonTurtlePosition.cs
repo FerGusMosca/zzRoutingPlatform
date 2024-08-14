@@ -58,6 +58,8 @@ namespace tph.DayTurtles.BusinessEntities
 
         protected string MarketEndTime { get; set; }
 
+        protected string ClosingTime { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -641,6 +643,24 @@ namespace tph.DayTurtles.BusinessEntities
         {
             //It logs information abou the signal that has been triggered
             return LastSignalTriggered;
+
+        }
+
+        #endregion
+
+        #region Protected Methods
+        protected void EvalTime(string time)
+        {
+
+            try
+            {
+                DateTime extrTime = MarketTimer.GetTodayDateTime(time);
+                //If we got here, it worked ok
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"The following time is not properly formatted: {time}");
+            }
 
         }
 

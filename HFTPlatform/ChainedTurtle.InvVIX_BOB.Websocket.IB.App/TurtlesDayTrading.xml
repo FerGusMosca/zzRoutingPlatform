@@ -6,26 +6,17 @@
 	<PositionSizeInCash>50000</PositionSizeInCash>
 	
 	<MaxOpenedPositions>6</MaxOpenedPositions>
-	<StopLossForOpenPositionPct>1</StopLossForOpenPositionPct>
+	
 	<!--1=1%-->
 	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
 	<!--OrderRouter,Nominal,Percentage-->
 	<FeeValuePerTrade>0</FeeValuePerTrade>
 	<DecimalRounding>3</DecimalRounding>
 
-	<InnerTrendlinesSpan>120</InnerTrendlinesSpan>
-	<!--in candles-->
-	<OuterTrendlinesSpan>60</OuterTrendlinesSpan>
-	<!--in candles-->
-	<PerforationThresholds>0</PerforationThresholds>
-	<!--in pct 0-1-->
-
-
 	<OpeningTime>11:30</OpeningTime><!--Opening Time for backtests or LIVE_MODE-->
-	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
-	
 	<!--Needed for historical prices recovery-->
 	<ClosingTime>05:51 PM</ClosingTime>
+	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
 
 	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
@@ -33,21 +24,11 @@
 
 	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_inv_vix_bob_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
-	<RecalculateTrendlines>true</RecalculateTrendlines>
+	
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
 	<BulkMarketDataRequest>false</BulkMarketDataRequest>
-	<CandleReferencePrice>TRADE</CandleReferencePrice>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
-
-	
-
 	<OnlyLong>false</OnlyLong>
-
-	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
-	<!---4= -4 days-->
-
-	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
-	<!--0=No Skip-->
 
 	<SecuritiesToMonitor>
 		<SecurityToMonitor>

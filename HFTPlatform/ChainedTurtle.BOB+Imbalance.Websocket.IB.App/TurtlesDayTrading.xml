@@ -66,6 +66,9 @@
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_GGAL</Code>
 				</IndicatorToMonitor>
+				<IndicatorToMonitor>
+					<Code>VIX_TRENDLINES_VIX</Code>
+				</IndicatorToMonitor>
 			</Indicators>
 		</SecurityToMonitor>
 
@@ -190,7 +193,7 @@
 				<Symbol>YPF</Symbol>
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 				<Exchange>SMART</Exchange>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
@@ -205,14 +208,13 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>
-
 		<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_BBAR</Code>
 			<SecurityToMonitor>
@@ -220,14 +222,13 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>
-
 		<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_SUPV</Code>
 			<SecurityToMonitor>
@@ -235,14 +236,13 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>
-
 		<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_COME</Code>
 			<SecurityToMonitor>
@@ -250,14 +250,27 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>
-
+		<ChainedTurtleIndicator>
+			<Code>VIX_TRENDLINES_VIX</Code>
+			<SecurityToMonitor>
+				<Symbol>VIX</Symbol>
+				<SecurityType>IND</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>CBOE</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB_INV</SignalType>
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			<RequestPrices>true</RequestPrices>
+		</ChainedTurtleIndicator>
 
 	</ChainedTurtleIndicators>
 

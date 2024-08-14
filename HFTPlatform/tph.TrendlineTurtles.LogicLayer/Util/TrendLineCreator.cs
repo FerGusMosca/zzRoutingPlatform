@@ -668,20 +668,22 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
         }
 
 
-        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate, OnLogMessage pOnLogMsg,
-                                             int? _REPEATED_MAX_MIN_MAX_DISTANCE=null,int? _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE=null)
+        public static void InitializeCreator(Security sec, double pPerforationThreshold, int pInnerTrendlineSpan , 
+                                             string pCandleReferencePrice,CandleInterval pCandleInterval,
+                                             DateTime minSafeDate, OnLogMessage pOnLogMsg,
+                                             int? _REPEATED_MAX_MIN_MAX_DISTANCE = null, int? _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE = null)
         {
-            if(TrdCreatorDict==null)
-                TrdCreatorDict=new Dictionary<string, TrendLineCreator>();
+            if (TrdCreatorDict == null)
+                TrdCreatorDict = new Dictionary<string, TrendLineCreator>();
 
 
             TrendLineCreator trdCreator = new TrendLineCreator(sec,
                 new TrendlineConfiguration()
                 {
-                    PerforationThresholds = config.PerforationThresholds,
-                    InnerTrendlinesSpan = config.InnerTrendlinesSpan,
-                    CandleReferencePrice=config.CandleReferencePrice
-                }, CandleInterval.Minute_1, minSafeDate, minSafeDate, pOnLogMsg,
+                    PerforationThresholds = pPerforationThreshold,
+                    InnerTrendlinesSpan = pInnerTrendlineSpan,
+                    CandleReferencePrice = pCandleReferencePrice,
+                }, pCandleInterval, minSafeDate, minSafeDate, pOnLogMsg,
                 _REPEATED_MAX_MIN_MAX_DISTANCE, _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE
                 );
 
@@ -689,6 +691,16 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                 TrdCreatorDict.Add(sec.Symbol, trdCreator);
             else
                 TrdCreatorDict[sec.Symbol] = trdCreator;
+        }
+
+
+        public static void InitializeCreator(Security sec,TrendlineConfiguration config, DateTime minSafeDate, OnLogMessage pOnLogMsg,
+                                             int? _REPEATED_MAX_MIN_MAX_DISTANCE=null,int? _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE=null)
+        {
+
+            InitializeCreator(sec, config.PerforationThresholds, config.InnerTrendlinesSpan, config.CandleReferencePrice, 
+                              CandleInterval.Minute_1, minSafeDate,pOnLogMsg, _REPEATED_MAX_MIN_MAX_DISTANCE, 
+                              _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
         }
 
         public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,TrendlineConfiguration config)

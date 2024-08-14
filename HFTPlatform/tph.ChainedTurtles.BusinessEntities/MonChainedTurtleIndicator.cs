@@ -17,10 +17,6 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public string Code { get; set; }
 
-        public string SignalType { get; set; }
-
-        public bool ReqPrices { get; set; }
-
         protected bool LongSignalOn { get; set; }
 
         protected bool ShortSignalOn { get; set; }
@@ -39,24 +35,19 @@ namespace tph.ChainedTurtles.BusinessEntities
         #endregion
 
 
-
         #region Constructor 
 
         public MonChainedTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig,
-                                        string candleRefPrice,string pCode,string signalType,bool reqPrices, 
-                                        string marketStartTime=null,string marketEndTime=null) :base(pTurtlesCustomConfig, 0,candleRefPrice,marketStartTime,marketEndTime)
+                                        string pCode) :base(pTurtlesCustomConfig, 0,null,null)
         {
 
 
             Security = pSecurity;
             Code = pCode;
-            SignalType = signalType;
-            ReqPrices = reqPrices;
 
             LongSignalOn = false;
             ShortSignalOn = false;
             LastSignalTimestamp = null;
-
 
         }
 

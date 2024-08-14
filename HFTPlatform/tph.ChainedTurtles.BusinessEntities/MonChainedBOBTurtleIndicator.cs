@@ -7,6 +7,7 @@ using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 
@@ -20,10 +21,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public MonChainedBOBTurtleIndicator(Security pSecurity,
                                                   TurtlesCustomConfig pTurtlesCustomConfig,
-                                                    string candleRefPrice,
                                                     string pCode,
-                                                    string signalType,
-                                                    bool reqMarketData):base(pSecurity,pTurtlesCustomConfig,candleRefPrice,pCode,signalType,reqMarketData)
+                                                   ILogger pLogger) :base(pSecurity,pTurtlesCustomConfig,pCode)
         {
            
         }
