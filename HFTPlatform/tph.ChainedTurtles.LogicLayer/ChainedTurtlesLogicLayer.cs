@@ -224,14 +224,17 @@ namespace tph.ChainedTurtles.LogicLayer
                         }
                     }
 
-                    if (ChainedIndicators.ContainsKey(md.Security.Symbol))
+                    if (ChainedIndicators.Values.Any(x => x.Security.Symbol == md.Security.Symbol))
                     {
-                        MonTurtlePosition indicator = ChainedIndicators[md.Security.Symbol];
-                        EvalMarketDataCalculations(indicator, md);
+                        foreach (var indicator in ChainedIndicators.Values.Where(x => x.Security.Symbol == md.Security.Symbol))
+                        {
+                            EvalMarketDataCalculations(indicator, md);
+                        }
                     }
                     else
                     {
                         //Non tracked symbol
+                        DoLog($"Recv Market Data for Non Tracked Symbol {md.Security.Symbol}", Constants.MessageType.Information);
                     }
                 }
 
@@ -270,8 +273,8 @@ namespace tph.ChainedTurtles.LogicLayer
                 monInd.MonitoringType = indicator.SecurityToMonitor.GetMonitoringType();
 
 
-                if (!ChainedIndicators.ContainsKey(indicator.SecurityToMonitor.Symbol))
-                    ChainedIndicators.Add(indicator.SecurityToMonitor.Symbol, monInd);
+                if (!ChainedIndicators.ContainsKey(indicator.Code))
+                    ChainedIndicators.Add(indicator.Code, monInd);
                 else
                     throw new Exception($"Duplcated asembly indicator for indicator code {indicator.Code}");
 
@@ -303,7 +306,9 @@ namespace tph.ChainedTurtles.LogicLayer
             }
             catch (Exception ex)
             {
-                DoLog($"@{GetConfig().Name}--> CRITITAL ERROR initializing monitor indicators:{ex.Message}", Constants.MessageType.Error);
+                string msg = $"@{GetConfig().Name}--> CRITITAL ERROR initializing monitor indicators:{ex.Message}";
+                //DoLog(msg, Constants.MessageType.Error);
+                throw new Exception(msg);
 
             }
 

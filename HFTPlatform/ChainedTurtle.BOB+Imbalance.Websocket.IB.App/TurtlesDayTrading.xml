@@ -4,22 +4,12 @@
 	<Account>xxx</Account>
 
 	<PositionSizeInCash>5000</PositionSizeInCash>
-
 	<MaxOpenedPositions>6</MaxOpenedPositions>
-	<StopLossForOpenPositionPct>1</StopLossForOpenPositionPct>
 	<!--1=1%-->
 	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
 	<!--OrderRouter,Nominal,Percentage-->
 	<FeeValuePerTrade>0</FeeValuePerTrade>
 	<DecimalRounding>3</DecimalRounding>
-
-	<InnerTrendlinesSpan>120</InnerTrendlinesSpan>
-	<!--in candles-->
-	<OuterTrendlinesSpan>60</OuterTrendlinesSpan>
-	<!--in candles-->
-	<PerforationThresholds>0</PerforationThresholds>
-	<!--in pct 0-1-->
-
 
 	<OpeningTime>10:30</OpeningTime>
 	<!--Opening Time for backtests or LIVE_MODE-->
@@ -33,23 +23,13 @@
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-	<ConnectionString>Data Source=.\SQLDEV;initial catalog=daily_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_bob_imb_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
-	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
 	<BulkMarketDataRequest>false</BulkMarketDataRequest>
-	<CandleReferencePrice>TRADE</CandleReferencePrice>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 
-
-
 	<OnlyLong>false</OnlyLong>
-
-	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
-	<!---4= -4 days-->
-
-	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
-	<!--0=No Skip-->
 
 	<SecuritiesToMonitor>
 		<SecurityToMonitor>
@@ -67,7 +47,7 @@
 					<Code>IMBALANCE_INNER_IND_GGAL</Code>
 				</IndicatorToMonitor>
 				<IndicatorToMonitor>
-					<Code>VIX_TRENDLINES_VIX</Code>
+					<Code>GGAL_BOB_SETTING</Code>
 				</IndicatorToMonitor>
 			</Indicators>
 		</SecurityToMonitor>
@@ -180,14 +160,15 @@
 				<SecurityType>CS</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>SMART</Exchange>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>
-		<ChainedTurtleIndicator>
+		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_YPFD</Code>
 			<SecurityToMonitor>
 				<Symbol>YPF</Symbol>
@@ -198,10 +179,11 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
 			<RequestPrices>false</RequestPrices>
-		</ChainedTurtleIndicator>
-		<ChainedTurtleIndicator>
+		</ChainedTurtleIndicator>-->
+		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_BMA</Code>
 			<SecurityToMonitor>
 				<Symbol>BMA</Symbol>
@@ -212,10 +194,12 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			
+			-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
 			<RequestPrices>false</RequestPrices>
-		</ChainedTurtleIndicator>
-		<ChainedTurtleIndicator>
+		</ChainedTurtleIndicator>-->
+		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_BBAR</Code>
 			<SecurityToMonitor>
 				<Symbol>BBAR</Symbol>
@@ -226,10 +210,11 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
 			<RequestPrices>false</RequestPrices>
-		</ChainedTurtleIndicator>
-		<ChainedTurtleIndicator>
+		</ChainedTurtleIndicator>-->
+		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_SUPV</Code>
 			<SecurityToMonitor>
 				<Symbol>SUPV</Symbol>
@@ -239,11 +224,13 @@
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			
 			<SignalType></SignalType>
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
 			<RequestPrices>false</RequestPrices>
-		</ChainedTurtleIndicator>
-		<ChainedTurtleIndicator>
+		</ChainedTurtleIndicator>-->
+		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_COME</Code>
 			<SecurityToMonitor>
 				<Symbol>COME</Symbol>
@@ -254,10 +241,12 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			
+			-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
 			<RequestPrices>false</RequestPrices>
-		</ChainedTurtleIndicator>
-		<ChainedTurtleIndicator>
+		</ChainedTurtleIndicator>-->
+		<!--<ChainedTurtleIndicator>
 			<Code>VIX_TRENDLINES_VIX</Code>
 			<SecurityToMonitor>
 				<Symbol>VIX</Symbol>
@@ -268,6 +257,24 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType>BOB_INV</SignalType>
+			
+			-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
+			<RequestPrices>true</RequestPrices>
+		</ChainedTurtleIndicator>-->
+
+		<ChainedTurtleIndicator>
+			<Code>GGAL_BOB_SETTING</Code>
+			<SecurityToMonitor>
+				<Symbol>GGAL</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB</SignalType>
+			
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			<RequestPrices>true</RequestPrices>
 		</ChainedTurtleIndicator>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tph.ChainedTurtles.Common;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
@@ -15,7 +16,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 {
     //SHORT Signal on downside breakthroughs
     //LONG Signal on upside breakthroughs
-    public class MonChainedBOBTurtleIndicator: MonChainedTurtleIndicator
+    public class MonChainedBOBTurtleIndicator: MonChainedTurtleIndicator, ITrendlineIndicator
     {
         #region Constructor 
 
@@ -24,7 +25,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                                                     string pCode,
                                                    ILogger pLogger) :base(pSecurity,pTurtlesCustomConfig,pCode)
         {
-           
+            LoadConfigValues(pTurtlesCustomConfig.CustomConfig);
         }
 
         #endregion
@@ -125,6 +126,50 @@ namespace tph.ChainedTurtles.BusinessEntities
 
                 return false;
             }
+        }
+
+
+        #endregion
+
+        #region ITrendlineIndicator
+
+
+        public int GetInnerTrendlinesSpan()
+        {
+            return InnerTrendlinesSpan;
+        }
+
+        public int GetOutterTrendlinesSpan()
+        {
+            return OutterTrendlinesSpan;
+        }
+
+        public double GetPerforationThreshold()
+        {
+            return PerforationThreshold;
+        }
+
+        public string GetCandleReferencePrice()
+        {
+            return CandleReferencePrice;
+        }
+
+        public bool GetRecalculateTrendlines()
+        {
+            return RecalculateTrendlines;
+        }
+
+
+        public int GetHistoricalPricesPeriod()
+        {
+            return HistoricalPricesPeriod;
+
+        }
+
+        public int GetSkipCandlesToBreakTrndln()
+        {
+            return SkipCandlesToBreakTrndln;
+
         }
 
         #endregion
