@@ -48,6 +48,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         protected double StopLossForOpenPositionPct { get; set; }
 
+        protected MonPosInnerIndicatorsOrchestationLogicDTO OrchestationLogic { get; set; }
+
         #endregion
 
 
@@ -107,13 +109,102 @@ namespace tph.ChainedTurtles.BusinessEntities
                 else
                     throw new Exception("config value stopLossForOpenPositionPct must be greater or equal than 0");
 
+                if (resp.innerIndicatorsOrchestationLogic != null)
+                {
+                    resp.innerIndicatorsOrchestationLogic.ValidateOrchestationLogic(Security.Symbol);
+                    OrchestationLogic = resp.innerIndicatorsOrchestationLogic;
 
+
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception($"CRITICAL error deserializing custom config for symbol {Security.Symbol}:{ex.Message} ");
             }
         }
+
+
+        private bool AllIndicatorsLongSignal()
+        {
+            foreach (var indicator in InnerIndicators)
+            {
+                if (!indicator.LongSignalTriggered())
+                    return false;
+
+            }
+
+            return InnerIndicators.Count > 0;
+
+        }
+
+        private bool AllIndicatorsShortSignal()
+        {
+            foreach (var indicator in InnerIndicators)
+            {
+                if (!indicator.ShortSignalTriggered())
+                    return false;
+
+            }
+
+            return InnerIndicators.Count > 0;
+
+        }
+
+
+        private bool FirstIndicatorLongSignal()
+        {
+            foreach (var indicator in InnerIndicators)
+            {
+                if (indicator.LongSignalTriggered())
+                    return true;
+
+            }
+
+            return false;
+
+        }
+
+        private bool FirstIndicatorShortSignal()
+        {
+            foreach (var indicator in InnerIndicators)
+            {
+                if (indicator.ShortSignalTriggered())
+                    return true;
+
+            }
+
+            return false;
+
+        }
+
+        private bool CustomQtyLongSignal()
+        {
+            int customQty = 0;
+            foreach (var indicator in InnerIndicators)
+            {
+                if (indicator.LongSignalTriggered())
+                    customQty++;
+
+            }
+
+
+            return customQty >= OrchestationLogic.qtySignals;
+        }
+
+        private bool CustomQtyShortSignal()
+        {
+            int customQty = 0;
+            foreach (var indicator in InnerIndicators)
+            {
+                if (indicator.ShortSignalTriggered())
+                    customQty++;
+
+            }
+
+
+            return customQty >= OrchestationLogic.qtySignals;
+        }
+
 
         #endregion
 
@@ -127,29 +218,30 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered() 
         {
-            
-            foreach (var indicator in InnerIndicators)
-            {
-                if (!indicator.LongSignalTriggered())
-                    return false;
-            
-            }
 
-            return InnerIndicators.Count>0;    
+            if (OrchestationLogic.IsAllIndicators())
+                return AllIndicatorsLongSignal();
+            else if (OrchestationLogic.IsFirstSignal())
+                return FirstIndicatorLongSignal();
+            else if (OrchestationLogic.IsCustomQtySignals())
+                return CustomQtyLongSignal();
+            else
+                throw new Exception($"CRITICAL error evaluating LONG signal for symbol {Security.Symbol}:no proper value for orchestation logic");
         }
 
 
         public override bool ShortSignalTriggered()
         {
 
-            foreach (var indicator in InnerIndicators)
-            {
-                if (!indicator.ShortSignalTriggered())
-                    return false;
+            if (OrchestationLogic.IsAllIndicators())
+                return AllIndicatorsShortSignal();
+            else if (OrchestationLogic.IsFirstSignal())
+                return FirstIndicatorShortSignal();
+            else if (OrchestationLogic.IsCustomQtySignals())
+                return CustomQtyShortSignal();
+            else
+                throw new Exception($"CRITICAL error evaluating SHORT signal for symbol {Security.Symbol}:no proper value for orchestation logic");
 
-            }
-
-            return InnerIndicators.Count > 0;
         }
 
         public override string SignalTriggered()

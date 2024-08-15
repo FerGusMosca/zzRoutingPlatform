@@ -23,6 +23,8 @@ namespace tph.ChainedTurtles.Common.DTO
 
         public double stopLossForOpenPositionPct { get; set; }
 
+        public MonPosInnerIndicatorsOrchestationLogicDTO innerIndicatorsOrchestationLogic {  get; set; }
+
         #endregion
     }
 }
