@@ -56,11 +56,13 @@ namespace tph.ChainedTurtles.BusinessEntities
                 if (UpsideBreaktrhough())
                 {
                     LongSignalOn = true;
+                    LastSignalTriggered = $"OPEN LONG w/Resistance broken: Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} ";
                     LastSignalTimestamp = DateTimeManager.Now;
                     return LongSignalOn;
                 }
                 else
                 {
+                    LastSignalTriggered = "";
                     return false;
 
                 }
@@ -81,11 +83,13 @@ namespace tph.ChainedTurtles.BusinessEntities
                 if (DownsideBreaktrhough())
                 {
                     ShortSignalOn = true;
+                    LastSignalTriggered = $"OPEN SHORT w/Support broken: Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} ";
                     LastSignalTimestamp = DateTimeManager.Now;
                     return ShortSignalOn;
                 }
                 else
                 {
+                    LastSignalTriggered = "";
                     return false;
                 }
             }
@@ -128,6 +132,10 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
         }
 
+        public override string SignalTriggered()
+        {
+            return LastSignalTriggered;
+        }
 
         #endregion
 
