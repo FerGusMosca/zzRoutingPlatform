@@ -244,22 +244,6 @@
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
 			<RequestPrices>false</RequestPrices>
 		</ChainedTurtleIndicator>-->
-		<!--<ChainedTurtleIndicator>
-			<Code>VIX_TRENDLINES_VIX</Code>
-			<SecurityToMonitor>
-				<Symbol>VIX</Symbol>
-				<SecurityType>IND</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>CBOE</Exchange>
-				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
-			</SecurityToMonitor>
-			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
-			<SignalType>BOB_INV</SignalType>
-			
-			-->
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			<RequestPrices>true</RequestPrices>
-		</ChainedTurtleIndicator>-->
 	</ChainedTurtleIndicators>
 
 

@@ -48,6 +48,7 @@
     <Compile Include="MonChainedImbalanceTurtleIndicator.cs" />
     <Compile Include="MonChainedInvBOBTurtleIndicator.cs" />
     <Compile Include="MonChainedBOBTurtleIndicator.cs" />
+    <Compile Include="MonChainedMovAvgTurtleIndicator.cs" />
     <Compile Include="MonChainedTurtleIndicator.cs" />
     <Compile Include="MonChainedTurtlePosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
