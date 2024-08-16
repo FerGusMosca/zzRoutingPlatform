@@ -99,8 +99,8 @@ namespace tph.ChainedTurtles.BusinessEntities
                     throw new Exception("Missing config value candleReferencePrice");
 
 
-                if (resp.historicalPricesPeriod <= 0)
-                    HistoricalPricesPeriod = resp.historicalPricesPeriod;
+                if (resp.historicalPricesPeriod.HasValue && resp.historicalPricesPeriod <= 0)
+                    HistoricalPricesPeriod = resp.historicalPricesPeriod.Value;
                 else
                     throw new Exception("config value historicalPricesPeriod must be lower than 0");
 

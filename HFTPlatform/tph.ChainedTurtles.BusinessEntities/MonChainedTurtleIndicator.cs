@@ -141,8 +141,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
 
 
-                if (resp.historicalPricesPeriod <= 0)
-                    HistoricalPricesPeriod = resp.historicalPricesPeriod;
+                if (resp.historicalPricesPeriod.HasValue && resp.historicalPricesPeriod.Value <= 0)
+                    HistoricalPricesPeriod = resp.historicalPricesPeriod.Value;
                 else
                     throw new Exception("config value historicalPricesPeriod must be lower than 0");
 

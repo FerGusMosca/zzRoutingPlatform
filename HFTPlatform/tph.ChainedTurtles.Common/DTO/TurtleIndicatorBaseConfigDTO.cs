@@ -18,6 +18,8 @@ namespace tph.ChainedTurtles.Common.DTO
 
         public string closingTime { get; set; }
 
+        public int? historicalPricesPeriod { get; set; }
+
 
         #endregion
     }

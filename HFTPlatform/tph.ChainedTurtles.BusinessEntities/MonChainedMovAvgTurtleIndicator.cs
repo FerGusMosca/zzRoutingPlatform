@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tph.ChainedTurtles.Common.DTO;
+using tph.ChainedTurtles.Common.Interfaces;
 using tph.DayTurtles.BusinessEntities;
 using tph.DayTurtles.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -13,7 +14,7 @@ using zHFT.Main.Common.Interfaces;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
-    public class MonChainedMovAvgTurtleIndicator : MonChainedTurtleIndicator
+    public class MonChainedMovAvgTurtleIndicator : MonChainedTurtleIndicator, ITradingEnity
     {
         #region Constructor 
 
@@ -45,12 +46,15 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
                 MovAvgTurtleIndicatorConfigDTO resp = JsonConvert.DeserializeObject<MovAvgTurtleIndicatorConfigDTO>(pCustomConfig);
 
-
-
                 if (resp.avgPeriod > 0)
                     AvgPeriod = resp.avgPeriod;
                 else
                     throw new Exception("config value avgPeriod must be greater than 0");
+
+                if (resp.historicalPricesPeriod.HasValue && resp.historicalPricesPeriod < 0)
+                    HistoricalPricesPeriod = resp.historicalPricesPeriod.Value;
+                else
+                    HistoricalPricesPeriod = -1;//We implement the default value
 
 
 
@@ -109,6 +113,16 @@ namespace tph.ChainedTurtles.BusinessEntities
         public override string SignalTriggered()
         {
             return MovAvgSignalTriggered;
+        }
+
+        public string GetCandleReferencePrice()
+        {
+            return CandleReferencePrice;
+        }
+
+        public int GetHistoricalPricesPeriod()
+        {
+            return HistoricalPricesPeriod;
         }
 
 

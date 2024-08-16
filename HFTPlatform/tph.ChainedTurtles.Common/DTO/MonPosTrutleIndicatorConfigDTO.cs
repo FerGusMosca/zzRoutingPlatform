@@ -13,8 +13,6 @@ namespace tph.ChainedTurtles.Common.DTO
 
         public string candleReferencePrice { get; set; }    
 
-        public int historicalPricesPeriod { get; set; }
-
 
         public double stopLossForOpenPositionPct { get; set; }
 

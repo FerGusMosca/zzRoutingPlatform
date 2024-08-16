@@ -22,8 +22,6 @@ namespace tph.ChainedTurtles.Common.DTO
         
         public bool? recalculateTrendlines { get; set; }
 
-        public int historicalPricesPeriod { get; set; }
-
         public int skipCandlesToBreakTrndln { get; set; }
 
         #endregion
