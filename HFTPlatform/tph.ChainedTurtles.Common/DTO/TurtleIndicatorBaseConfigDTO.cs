@@ -20,6 +20,8 @@ namespace tph.ChainedTurtles.Common.DTO
 
         public int? historicalPricesPeriod { get; set; }
 
+        public bool? requestHistoricalPrices { get; set; }
+
 
         #endregion
     }

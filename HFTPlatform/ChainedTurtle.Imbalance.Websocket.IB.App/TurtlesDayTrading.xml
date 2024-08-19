@@ -164,7 +164,7 @@
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 			
-			<RequestPrices>false</RequestPrices>
+			
 		</ChainedTurtleIndicator>
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_YPFD</Code>
@@ -179,7 +179,7 @@
 			<SignalType></SignalType>
 			-->
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			<RequestPrices>false</RequestPrices>
+			
 		</ChainedTurtleIndicator>-->
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_BMA</Code>
@@ -195,7 +195,7 @@
 			
 			-->
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			<RequestPrices>false</RequestPrices>
+			
 		</ChainedTurtleIndicator>-->
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_BBAR</Code>
@@ -210,7 +210,7 @@
 			<SignalType></SignalType>
 			-->
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			<RequestPrices>false</RequestPrices>
+			
 		</ChainedTurtleIndicator>-->
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_SUPV</Code>
@@ -226,7 +226,7 @@
 			<SignalType></SignalType>
 			-->
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			<RequestPrices>false</RequestPrices>
+			
 		</ChainedTurtleIndicator>-->
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_COME</Code>
@@ -242,7 +242,7 @@
 			
 			-->
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			<RequestPrices>false</RequestPrices>
+			
 		</ChainedTurtleIndicator>-->
 	</ChainedTurtleIndicators>
 

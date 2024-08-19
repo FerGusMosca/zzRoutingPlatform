@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tph.ChainedTurtles.Common.DTO;
+using tph.ChainedTurtles.Common.Util;
 using tph.DayTurtles.BusinessEntities;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
@@ -39,6 +40,8 @@ namespace tph.ChainedTurtles.BusinessEntities
         protected int HistoricalPricesPeriod { get; set; }
 
         protected int SkipCandlesToBreakTrndln { get; set; }
+
+        public bool RequestHistoricalPrices{ get; set; }
 
         #endregion
 
@@ -80,31 +83,11 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
                 TrendlineTurtleIndicatorConfigDTO resp = JsonConvert.DeserializeObject<TrendlineTurtleIndicatorConfigDTO>(customConfig);
 
-
-                if (!string.IsNullOrEmpty(resp.marketStartTime))
-                {
-                    EvalTime(resp.marketStartTime);
-                    MarketStartTime = resp.marketStartTime;
-                }
-                else
-                    throw new Exception("Missing config value marketStartTime");
-
-                if (!string.IsNullOrEmpty(resp.marketEndTime))
-                {
-                    EvalTime(resp.marketEndTime);
-                    MarketEndTime = resp.marketEndTime;
-                }
-                else
-                    throw new Exception("Missing config value marketEndTime");
-
-
-                if (!string.IsNullOrEmpty(resp.closingTime))
-                {
-                    EvalTime(resp.closingTime);
-                    ClosingTime = resp.closingTime;
-                }
-                else
-                    throw new Exception("Missing config value closingTime");
+                MarketStartTime = TurtleIndicatorBaseConfigLoader.GetMarketStartTime(  resp);
+                MarketEndTime = TurtleIndicatorBaseConfigLoader.GetMarketEndTime(resp);
+                ClosingTime = TurtleIndicatorBaseConfigLoader.GetClosingTime(resp);
+                HistoricalPricesPeriod = TurtleIndicatorBaseConfigLoader.GetHistoricalPricesPeriod(resp);
+                RequestHistoricalPrices = TurtleIndicatorBaseConfigLoader.GetRequestHistoricalPrices(resp, true);
 
 
                 if (resp.innerTrendlinesSpan > 0)
@@ -125,7 +108,6 @@ namespace tph.ChainedTurtles.BusinessEntities
                     throw new Exception("config value perforationThresholds must be greater or equal than 0");
 
 
-
                 if (!string.IsNullOrEmpty(resp.candleReferencePrice))
                 {
 
@@ -138,13 +120,6 @@ namespace tph.ChainedTurtles.BusinessEntities
                     RecalculateTrendlines = resp.recalculateTrendlines.Value;
                 else
                     RecalculateTrendlines = true;
-
-
-
-                if (resp.historicalPricesPeriod.HasValue && resp.historicalPricesPeriod.Value <= 0)
-                    HistoricalPricesPeriod = resp.historicalPricesPeriod.Value;
-                else
-                    throw new Exception("config value historicalPricesPeriod must be lower than 0");
 
                 if (resp.skipCandlesToBreakTrndln >= 0)
                     SkipCandlesToBreakTrndln = resp.skipCandlesToBreakTrndln;

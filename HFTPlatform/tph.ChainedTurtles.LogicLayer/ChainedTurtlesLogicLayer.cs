@@ -75,21 +75,27 @@ namespace tph.ChainedTurtles.LogicLayer
 
                             Securities.Add(sec);//So far, this is all wehave regarding the Securities
 
-                            Thread reqMonPosHistoricalPrices = new Thread(new ParameterizedThreadStart(DoRequestMonPosHistoricalPricesThread));
-                            reqMonPosHistoricalPrices.Start();
+
+                            if (monChPos.RequestHistoricalPrices)
+                            {
+                                Thread reqMonPosHistoricalPrices = new Thread(new ParameterizedThreadStart(DoRequestMonPosHistoricalPricesThread));
+                                reqMonPosHistoricalPrices.Start();
+                            }
 
                             //2- Load all the indicators pre loaded for the newly monitored security
                             foreach (var indicator in secToMonitor.Indicators)
                             {
-                                MonTurtlePosition innerIndicator = FetchIndicator(indicator.Code);
+                                MonChainedTurtleIndicator innerIndicator = FetchIndicator(indicator.Code);
                                 monChPos.AppendIndicator(innerIndicator);
                             }
 
-                            //3- No market data to request until Historical Prices are recevied
-                            Thread reqIndicatorsHistoricalPrices = new Thread(new ParameterizedThreadStart(DoRequestIndicatorsHistoricalPricesThread));
-                            reqIndicatorsHistoricalPrices.Start();
+
                         }
                     }
+
+                    //3- No market data to request until Historical Prices are recevied
+                    Thread reqIndicatorsHistoricalPrices = new Thread(new ParameterizedThreadStart(DoRequestIndicatorsHistoricalPricesThread));
+                    reqIndicatorsHistoricalPrices.Start();
 
                     InitializeIndicators(DoLog);
                 }
@@ -168,17 +174,25 @@ namespace tph.ChainedTurtles.LogicLayer
                 lock (Config)
                 {
                     
-                    foreach (var indicator in GetConfig().ChainedTurtleIndicators.Where(x => x.RequestPrices && x.SecurityToMonitor != null))
+                    foreach (var indicator in GetConfig().ChainedTurtleIndicators.Where(x =>  x.SecurityToMonitor != null))
                     {
                         var memInd = FetchIndicator(indicator.Code);
 
-                        DoLog($"@{GetConfig().Name}--> Requesting historical prices for indicator {indicator.SecurityToMonitor.Symbol}", Constants.MessageType.Information);
-                        DoRequestHistoricalPrice(HistoricalPricesRequetsID, indicator.SecurityToMonitor.Symbol,
-                                                GetTradingEntity(memInd).GetHistoricalPricesPeriod(),
-                                                indicator.SecurityToMonitor.Currency,
-                                                SecurityTypeTranslator.TranslateNonMandatorySecurityType(indicator.SecurityToMonitor.SecurityType),
-                                                indicator.SecurityToMonitor.Exchange);
-                        HistoricalPricesRequetsID++;
+                        if (memInd.RequestHistoricalPrices)
+                        {
+                            DoLog($"@{GetConfig().Name}--> Requesting historical prices for indicator {indicator.SecurityToMonitor.Symbol}", Constants.MessageType.Information);
+                            DoRequestHistoricalPrice(HistoricalPricesRequetsID, indicator.SecurityToMonitor.Symbol,
+                                                    GetTradingEntity(memInd).GetHistoricalPricesPeriod(),
+                                                    indicator.SecurityToMonitor.Currency,
+                                                    SecurityTypeTranslator.TranslateNonMandatorySecurityType(indicator.SecurityToMonitor.SecurityType),
+                                                    indicator.SecurityToMonitor.Exchange);
+                            HistoricalPricesRequetsID++;
+                        }
+                        else//we go straight for Market Data
+                        {
+                            DoRequestMarketData(memInd);
+
+                        }
                     }
                 }
             }
@@ -323,14 +337,14 @@ namespace tph.ChainedTurtles.LogicLayer
                 throw new Exception($"COULD NOT find a monitoring position for symbol {symbol}. Position not loaded in memory yet?");
         }
 
-        private MonTurtlePosition FetchIndicator(string code)
+        private MonChainedTurtleIndicator FetchIndicator(string code)
         {
 
             foreach (var indicator in ChainedIndicators.Values)
             {
                 if (((MonChainedTurtleIndicator)indicator).Code == code)
                 {
-                    return indicator;
+                    return (MonChainedTurtleIndicator) indicator;
                 }
 
 
@@ -581,6 +595,7 @@ namespace tph.ChainedTurtles.LogicLayer
                             foreach (var indicator in ChainedIndicators.Values.Where(x => x.Security.Symbol == dto.Symbol))
                             {
                                 dto.MarketData.ForEach(x => indicator.AppendCandleHistorical(x));
+
                                 EvalHistoricalPricesPrecalculations(indicator);//already updates the ProcessedHistoricalPrices
                                 DoRequestMarketData(indicator);
                             }

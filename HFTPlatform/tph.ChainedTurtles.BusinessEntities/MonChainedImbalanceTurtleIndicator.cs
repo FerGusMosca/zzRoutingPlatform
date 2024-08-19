@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using tph.ChainedTurtles.Common.DTO;
+using tph.ChainedTurtles.Common.Util;
 using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
@@ -197,21 +198,15 @@ namespace tph.ChainedTurtles.BusinessEntities
                 ImbalanceTurtleIndicatorConfigDTO resp= JsonConvert.DeserializeObject<ImbalanceTurtleIndicatorConfigDTO>(customConfig);
 
 
-                if (!string.IsNullOrEmpty(resp.marketStartTime))
-                {
-                    EvalTime(resp.marketStartTime);
-                    MarketStartTime = resp.marketStartTime;
-                }
-                else
-                    throw new Exception("Missing config value marketStartTime");
+                MarketStartTime = TurtleIndicatorBaseConfigLoader.GetMarketStartTime(resp);
+                MarketEndTime = TurtleIndicatorBaseConfigLoader.GetMarketEndTime(resp);
+                ClosingTime = TurtleIndicatorBaseConfigLoader.GetClosingTime(resp);
+                RequestHistoricalPrices = TurtleIndicatorBaseConfigLoader.GetRequestHistoricalPrices(resp, true);
 
-                if (!string.IsNullOrEmpty(resp.marketEndTime))
-                {
-                    EvalTime(resp.marketEndTime);
-                    MarketEndTime = resp.marketEndTime;
-                }
+                if (RequestHistoricalPrices)
+                    HistoricalPricesPeriod = TurtleIndicatorBaseConfigLoader.GetHistoricalPricesPeriod(resp);
                 else
-                    throw new Exception("Missing config value marketEndTime");
+                    HistoricalPricesPeriod = 0;
 
 
                 if (resp.blockSizeInMinutes>0)
@@ -236,8 +231,6 @@ namespace tph.ChainedTurtles.BusinessEntities
                     PositionClosingImbalanceThreshold = resp.positionClosingImbalanceThreshold;
                 else
                     throw new Exception("config value positionClosingImbalanceThreshold must be greater than 0");
-
-
 
             }
             catch (Exception ex)

@@ -59,7 +59,7 @@
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType>BOB_INV</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
-			<RequestPrices>true</RequestPrices>
+			
 		</ChainedTurtleIndicator>
 	</ChainedTurtleIndicators>
 	

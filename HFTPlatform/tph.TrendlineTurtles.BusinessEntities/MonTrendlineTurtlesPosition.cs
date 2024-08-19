@@ -62,11 +62,13 @@ namespace tph.TrendlineTurtles.BusinessEntities
                 Resistances.Add(resistance);
             }
         }
-        
+
         #endregion
-        
+
         #region Protected Methods
-          
+
+      
+
         protected bool EnoughSpan(Trendline trendline, MarketData md)
         {
               TimeSpan elapsed = md.MDEntryDate.Value - trendline.EndDate;

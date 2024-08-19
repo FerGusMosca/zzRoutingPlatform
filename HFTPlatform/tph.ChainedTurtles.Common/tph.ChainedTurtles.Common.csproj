@@ -54,6 +54,7 @@
     <Compile Include="Interfaces\ITradingEnity.cs" />
     <Compile Include="Interfaces\ITrendlineIndicator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\TurtleIndicatorBaseConfigLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\tph.DayTurtles.Common\tph.DayTurtles.Common.csproj">
