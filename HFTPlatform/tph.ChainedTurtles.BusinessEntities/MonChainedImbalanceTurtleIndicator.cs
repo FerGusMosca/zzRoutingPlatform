@@ -426,7 +426,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         public override bool LongSignalTriggered()
         {
             
-            if (ActiveBlocks.Count > ActiveBlocksSetting)
+            if (ActiveBlocks.Count >= ActiveBlocksSetting)
             {
 
                 if (AskSizeImbalance >= PositionOpeningImbalanceThreshold)
@@ -458,7 +458,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (ActiveBlocks.Count >= ActiveBlocksSetting)
             {
 
-                if (BidSizeImbalance > PositionOpeningImbalanceThreshold)
+                if (BidSizeImbalance >= PositionOpeningImbalanceThreshold)
                 {
                     ImbSignalTriggered = $"SHORT Imbalance for {Security.Symbol}: Bid Imbalance: {BidSizeImbalance}";
 
