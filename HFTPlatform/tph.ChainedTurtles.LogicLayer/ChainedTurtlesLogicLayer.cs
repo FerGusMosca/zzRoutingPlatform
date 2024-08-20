@@ -81,6 +81,11 @@ namespace tph.ChainedTurtles.LogicLayer
                                 Thread reqMonPosHistoricalPrices = new Thread(new ParameterizedThreadStart(DoRequestMonPosHistoricalPricesThread));
                                 reqMonPosHistoricalPrices.Start();
                             }
+                            else//we go straight for Market Data
+                            {
+                                DoRequestMarketData(monChPos);
+
+                            }
 
                             //2- Load all the indicators pre loaded for the newly monitored security
                             foreach (var indicator in secToMonitor.Indicators)
