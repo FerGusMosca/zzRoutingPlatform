@@ -234,8 +234,8 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                     && ProcessedHistoricalPrices
                                                                                         .Contains(md.Security.Symbol))
                     {
-                        MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition)MonitorPositions[md.Security.Symbol];
-                        if (monPos.HasHistoricalCandles())
+                        MonChainedTurtleIndicator monPos = (MonChainedTurtleIndicator)MonitorPositions[md.Security.Symbol];
+                        if (monPos.HasHistoricalCandles() || !monPos.RequestHistoricalPrices)
                         {
                             bool newCandle = monPos.AppendCandle(md);
                             EvalOpeningClosingPositions(monPos);//We will see the inner indicatros if they are on
