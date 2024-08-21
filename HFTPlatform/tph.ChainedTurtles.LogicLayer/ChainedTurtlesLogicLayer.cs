@@ -83,6 +83,8 @@ namespace tph.ChainedTurtles.LogicLayer
                             }
                             else//we go straight for Market Data
                             {
+                                if(!ProcessedHistoricalPrices.Contains(secToMonitor.Symbol))
+                                    ProcessedHistoricalPrices.Add(monChPos.Security.Symbol);
                                 DoRequestMarketData(monChPos);
 
                             }
@@ -195,6 +197,8 @@ namespace tph.ChainedTurtles.LogicLayer
                         }
                         else//we go straight for Market Data
                         {
+                            if (!ProcessedHistoricalPrices.Contains(indicator.SecurityToMonitor.Symbol))
+                                ProcessedHistoricalPrices.Add(indicator.SecurityToMonitor.Symbol);
                             DoRequestMarketData(memInd);
 
                         }
@@ -234,7 +238,7 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                     && ProcessedHistoricalPrices
                                                                                         .Contains(md.Security.Symbol))
                     {
-                        MonChainedTurtleIndicator monPos = (MonChainedTurtleIndicator)MonitorPositions[md.Security.Symbol];
+                        MonChainedTurtlePosition monPos = (MonChainedTurtlePosition)MonitorPositions[md.Security.Symbol];
                         if (monPos.HasHistoricalCandles() || !monPos.RequestHistoricalPrices)
                         {
                             bool newCandle = monPos.AppendCandle(md);
