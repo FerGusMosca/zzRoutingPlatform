@@ -233,7 +233,7 @@ namespace tph.ChainedTurtles.LogicLayer
                     if (!ValidateMarketDataRec(md)) { return; }
 
                     DateTimeManager.NullNow = md.GetReferenceDateTime();
-
+                    bool monPosOrIndicatorFound = false;
                     if (MonitorPositions.ContainsKey(md.Security.Symbol) && Securities != null
                                                                                     && ProcessedHistoricalPrices
                                                                                         .Contains(md.Security.Symbol))
@@ -245,6 +245,8 @@ namespace tph.ChainedTurtles.LogicLayer
                             EvalOpeningClosingPositions(monPos);//We will see the inner indicatros if they are on
                             UpdateLastPrice(monPos, md);
                         }
+
+                        monPosOrIndicatorFound = true;
                     }
 
                     if (ChainedIndicators.Values.Any(x => x.Security.Symbol == md.Security.Symbol))
@@ -253,8 +255,11 @@ namespace tph.ChainedTurtles.LogicLayer
                         {
                             EvalMarketDataCalculations(indicator, md);
                         }
+
+                        monPosOrIndicatorFound = true;
                     }
-                    else
+
+                    if(!monPosOrIndicatorFound)
                     {
                         //Non tracked symbol
                         DoLog($"Recv Market Data for Non Tracked Symbol {md.Security.Symbol}", Constants.MessageType.Information);
