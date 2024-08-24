@@ -47,8 +47,6 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         protected int HistoricalPricesPeriod { get; set; }
 
-        protected double StopLossForOpenPositionPct { get; set; }
-
         public bool RequestHistoricalPrices { get; set; }
 
         protected MonPosInnerIndicatorsOrchestationLogicDTO OrchestationLogic { get; set; }
