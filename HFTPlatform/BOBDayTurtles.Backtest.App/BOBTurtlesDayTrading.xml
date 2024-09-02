@@ -21,15 +21,15 @@
   <Exchange>NYSE</Exchange>
   <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
-  <ClosingTime>05:51 PM</ClosingTime>
+  <ClosingTime>04:51 PM</ClosingTime>
 
 	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV;initial catalog=daily_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+<ConnectionString>Data Source=.\SQLDEV;initial catalog=daily_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
-  <ResetOnPersistance>true</ResetOnPersistance>
+<ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
 
@@ -49,7 +49,7 @@
 
   
   <StocksToMonitor>
-    <Symbol>SPY</Symbol>
+    <Symbol>GGAL</Symbol>
   </StocksToMonitor>
 
 </Configuration>

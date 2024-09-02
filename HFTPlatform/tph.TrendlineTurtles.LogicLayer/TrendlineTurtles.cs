@@ -253,6 +253,8 @@ namespace tph.TrendlineTurtles.LogicLayer
 
                 if (doRecalculate)
                 {
+                    DoLog($"DBG1-Trendline Creator Inner Status: {TrendLineCreator.LogInnerStatus(portfPos.Security.Symbol)}", Constants.MessageType.Debug);
+
                     List<Trendline> newResistances =
                         TrendLineCreator.UpdateResistances(portfPos.Security, histPrices, portfPos.GetLastFinishedCandle());
 

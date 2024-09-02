@@ -2,7 +2,7 @@
 <Configuration>
   <Name>Market Client Mock</Name>
 
-	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
 	<SyncHistoricalWithMarketData>true</SyncHistoricalWithMarketData>
 	<InitialPacingMarketDataMillisec>10000</InitialPacingMarketDataMillisec>

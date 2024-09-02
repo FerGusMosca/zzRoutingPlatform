@@ -843,6 +843,27 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
 
         }
 
+        public static string LogInnerStatus(string symbol)
+        {
+            string innerStatus = "";
+            if (TrdCreatorDict.ContainsKey(symbol))
+            {
+                innerStatus += $" Act. Supports={TrdCreatorDict[symbol].SupportTrendlines.Count} ";
+                innerStatus += $" Act. Resistances={TrdCreatorDict[symbol].ResistanceTrendlines.Count} ";
+                innerStatus += $" LastSafeMinDateResistances= {TrdCreatorDict[symbol].LastSafeMinDateResistances}";
+                innerStatus += $" LastSafeMinDateSupports= {TrdCreatorDict[symbol].LastSafeMinDateSupports}";
+
+
+            }
+            else
+            {
+                innerStatus += $" -- NO tracked symbol: {symbol} --";
+            }
+        
+
+            return innerStatus;
+        }
+
         #endregion
         
         #endregion
