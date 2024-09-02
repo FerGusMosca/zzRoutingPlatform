@@ -124,7 +124,6 @@ namespace tph.ChainedTurtles.BusinessEntities
             return HistoricalPricesPeriod;
         }
 
-
         //EvalClosingShortPosition --> Uses standard closing mechanism
         //EvalClosingLongPosition -->  Uses standard closing mehcanism
 

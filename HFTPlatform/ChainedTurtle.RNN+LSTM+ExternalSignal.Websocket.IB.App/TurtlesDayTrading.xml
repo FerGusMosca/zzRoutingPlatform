@@ -1,50 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>CHAINED_TURTLES_BACKTEST_IB_TEST_DEC_JAN_5_TEST_2_0</Name>
+	<Name>CHAINED_TURTLES_RNN_LSTM_EXTERNAL_SIGN_WEBSOCKET_IB_MOCK</Name>
 	<Account>xxx</Account>
 
 	<PositionSizeInCash>50000</PositionSizeInCash>
 	
 	<MaxOpenedPositions>6</MaxOpenedPositions>
-	<StopLossForOpenPositionPct>1</StopLossForOpenPositionPct>
+	
 	<!--1=1%-->
 	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
 	<!--OrderRouter,Nominal,Percentage-->
 	<FeeValuePerTrade>0</FeeValuePerTrade>
 	<DecimalRounding>3</DecimalRounding>
 
-	<InnerTrendlinesSpan>120</InnerTrendlinesSpan>
-	<!--in candles-->
-	<OuterTrendlinesSpan>60</OuterTrendlinesSpan>
-	<!--in candles-->
-	<PerforationThresholds>0</PerforationThresholds>
-	<!--in pct 0-1-->
-
-
+	<OpeningTime>11:30</OpeningTime><!--Opening Time for backtests or LIVE_MODE-->
+	<!--Needed for historical prices recovery-->
 	<ClosingTime>05:51 PM</ClosingTime>
+	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
 
-	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
+	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
 	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_inv_vix_bob_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
-	<RecalculateTrendlines>true</RecalculateTrendlines>
+	
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-	<BulkMarketDataRequest>true</BulkMarketDataRequest>
-	<CandleReferencePrice>TRADE</CandleReferencePrice>
+	<BulkMarketDataRequest>false</BulkMarketDataRequest>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
-
-	<OpeningTime>10:30</OpeningTime><!--Needed for historical prices recovery-->
-	<TradingMode>BACKTEST</TradingMode><!--BACKTEST,LIVE_MODE-->
-
 	<OnlyLong>false</OnlyLong>
-
-	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
-	<!---4= -4 days-->
-
-	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
-	<!--0=No Skip-->
 
 	<SecuritiesToMonitor>
 		<SecurityToMonitor>
@@ -52,11 +36,12 @@
 			<SecurityType>CS</SecurityType> <!-- Default: CS-->
 			<Currency>USD</Currency> <!-- Default: USD-->
 			<Exchange>SMART</Exchange><!-- Default: SMART -->
-			
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
 			<Indicators>
 				<IndicatorToMonitor>
-					<Code>VIX_TRENDLINES_VIX</Code>
+					<Code>MULTI_SYMBOL_IND_RNN_LSTM</Code>
 				</IndicatorToMonitor>
+				
 			</Indicators>
 		</SecurityToMonitor>
 		
@@ -65,17 +50,34 @@
 
 	<ChainedTurtleIndicators>
 		<ChainedTurtleIndicator>
-			<Code>VIX_TRENDLINES_VIX</Code>
-			<SecurityToMonitor>
-				<Symbol>VIX</Symbol>
-				<SecurityType>IND</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>CBOE</Exchange>
-			</SecurityToMonitor>
-			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
-			<SignalType>BOB_INV</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
-			<RequestPrices>true</RequestPrices>
+			<Code>MULTI_SYMBOL_IND_RNN_LSTM</Code>
+			<SecuritiesToMonitor>
+				<SecurityToMonitor>
+					<Symbol>VIX</Symbol>
+					<SecurityType>IND</SecurityType>
+					<Currency>USD</Currency>
+					<Exchange>CBOE</Exchange>
+					<MonitoringType>ONLY_ROUTING</MonitoringType>
+				</SecurityToMonitor>
+				<SecurityToMonitor>
+					<Symbol>TLT</Symbol>
+					<SecurityType>CS</SecurityType>
+					<Currency>USD</Currency>
+					<Exchange>SMART</Exchange>
+					<MonitoringType>ONLY_ROUTING</MonitoringType>
+				</SecurityToMonitor>
+				
+			</SecuritiesToMonitor>
+			
+			
+		
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvExternalSignalIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>MULT_SYMBOL_INDICATOR</SignalType>
+				<!--BOB=Trendlines,BOB_INV= Trendlines inverted,MULT_SYMBOL_INDICATOR=Multi Symbol Indicator -->
+			
 		</ChainedTurtleIndicator>
+
+		
 	</ChainedTurtleIndicators>
 	
 	

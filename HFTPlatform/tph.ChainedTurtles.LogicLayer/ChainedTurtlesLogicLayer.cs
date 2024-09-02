@@ -173,6 +173,21 @@ namespace tph.ChainedTurtles.LogicLayer
 
         }
 
+        protected void DoRequestHistoricalPrices(Security sec, int historicalPricesPeriod)
+        {
+            DoLog($"@{GetConfig().Name}--> Requesting historical prices for symbol {sec.Symbol}", Constants.MessageType.Information);
+            DoRequestHistoricalPrice(HistoricalPricesRequetsID, sec.Symbol,
+                                    historicalPricesPeriod,
+                                    sec.Currency,
+                                    sec.SecType,
+                                    sec.Exchange);
+
+            DoLog($"@{GetConfig().Name}-->  historical prices for symbol {sec.Symbol} successfully requested", Constants.MessageType.Information);
+
+            HistoricalPricesRequetsID++;
+
+        }
+
         protected void DoRequestIndicatorsHistoricalPricesThread(object param)
         {
             try
@@ -181,26 +196,25 @@ namespace tph.ChainedTurtles.LogicLayer
                 lock (Config)
                 {
                     
-                    foreach (var indicator in GetConfig().ChainedTurtleIndicators.Where(x =>  x.SecurityToMonitor != null))
+                    foreach (MonChainedTurtleIndicator memInd in ChainedIndicators.Values)
                     {
-                        var memInd = FetchIndicator(indicator.Code);
-
                         if (memInd.RequestHistoricalPrices)
                         {
-                            DoLog($"@{GetConfig().Name}--> Requesting historical prices for indicator {indicator.SecurityToMonitor.Symbol}", Constants.MessageType.Information);
-                            DoRequestHistoricalPrice(HistoricalPricesRequetsID, indicator.SecurityToMonitor.Symbol,
-                                                    GetTradingEntity(memInd).GetHistoricalPricesPeriod(),
-                                                    indicator.SecurityToMonitor.Currency,
-                                                    SecurityTypeTranslator.TranslateNonMandatorySecurityType(indicator.SecurityToMonitor.SecurityType),
-                                                    indicator.SecurityToMonitor.Exchange);
-                            HistoricalPricesRequetsID++;
+
+                            foreach (var sec in memInd.GetSecurities())
+                            {
+                                DoRequestHistoricalPrices(sec, GetTradingEntity(memInd).GetHistoricalPricesPeriod());
+                            }
+                            
                         }
                         else//we go straight for Market Data
                         {
-                            if (!ProcessedHistoricalPrices.Contains(indicator.SecurityToMonitor.Symbol))
-                                ProcessedHistoricalPrices.Add(indicator.SecurityToMonitor.Symbol);
-                            DoRequestMarketData(memInd);
-
+                            foreach (var sec in memInd.GetSecurities())
+                            {
+                                if (!ProcessedHistoricalPrices.Contains(sec.Symbol))
+                                    ProcessedHistoricalPrices.Add(sec.Symbol);
+                                DoRequestMarketData(memInd);
+                            }
                         }
                     }
                 }
@@ -283,28 +297,53 @@ namespace tph.ChainedTurtles.LogicLayer
             return (ChainedConfiguration)Config;
         }
 
-        private void InitializeMonitorIndicator(ChainedTurtleIndicator indicator, Security sec)
+        private void InitializeMonitorIndicator(ChainedTurtleIndicator indicator)
         {
 
             var indType = Type.GetType(indicator.Assembly);
             if (indType != null)
             {
-                var monInd = (MonTurtlePosition)Activator.CreateInstance(indType, new object[]
-                                                                                    {
+                MonTurtlePosition monInd = null;
+                if (indicator.IsMultipleSecurity())
+                {
+                    List<Security> securities = new List<Security>();
+                    indicator.SecuritiesToMonitor.ForEach(x => securities.Add(BuildFromConfigSecurityToMonitor(x)));
+
+                    monInd = (MonTurtlePosition)Activator.CreateInstance(indType, new object[]
+                                                                    {
+                                                                                                securities,
+                                                                                                GetCustomConfig(indicator.Code),
+                                                                                                indicator.Code,
+                                                                                                this
+                                                                    }
+                                                                    );
+                    //The first security Monitoring Type is the indicator monitoring type (must all be the same)
+                    monInd.MonitoringType = indicator.SecuritiesToMonitor.FirstOrDefault().GetMonitoringType();
+                }
+                else
+                {
+                    
+                    Security sec = BuildFromConfigSecurityToMonitor(indicator.SecurityToMonitor);
+                    monInd = (MonTurtlePosition)Activator.CreateInstance(indType, new object[]
+                                                                                        {
                                                                                                 sec,
                                                                                                 GetCustomConfig(indicator.Code),
                                                                                                 indicator.Code,
                                                                                                 this
-                                                                                    }
-                                                                                    );
+                                                                                        }
+                                                                                        );
 
-                monInd.MonitoringType = indicator.SecurityToMonitor.GetMonitoringType();
+                    monInd.MonitoringType = indicator.SecurityToMonitor.GetMonitoringType();
 
+
+                }
+
+                
 
                 if (!ChainedIndicators.ContainsKey(indicator.Code))
                     ChainedIndicators.Add(indicator.Code, monInd);
                 else
-                    throw new Exception($"Duplcated asembly indicator for indicator code {indicator.Code}");
+                    throw new Exception($"Duplicated asembly indicator for indicator code {indicator.Code}");
 
 
             }
@@ -322,11 +361,10 @@ namespace tph.ChainedTurtles.LogicLayer
                 {
                     foreach (var indicator in GetConfig().ChainedTurtleIndicators)
                     {
+                        DoLog($"Initializing indicator {indicator.Code} in memory!", Constants.MessageType.Information);
+                        InitializeMonitorIndicator(indicator);
+                        DoLog($"Indicator {indicator.Code} successfully initialized!", Constants.MessageType.Information);
 
-                        //This security works as an inner indicator of another trading security
-                        Security ind = BuildFromConfigSecurityToMonitor(indicator.SecurityToMonitor);
-
-                        InitializeMonitorIndicator(indicator, ind);
                     }
                 }
 
@@ -353,19 +391,11 @@ namespace tph.ChainedTurtles.LogicLayer
 
         private MonChainedTurtleIndicator FetchIndicator(string code)
         {
-
-            foreach (var indicator in ChainedIndicators.Values)
-            {
-                if (((MonChainedTurtleIndicator)indicator).Code == code)
-                {
-                    return (MonChainedTurtleIndicator) indicator;
-                }
-
-
-            }
-
-
-            throw new Exception($"Could not find a pre loaded indicator for code {code}!");
+            
+            if(ChainedIndicators.ContainsKey(code))
+                return (MonChainedTurtleIndicator)ChainedIndicators[code];
+            else
+                throw new Exception($"Could not find a pre loaded indicator for code {code}!");
         }
 
         protected void InitializeIndicators(OnLogMessage pOnLogMsg)
@@ -538,15 +568,37 @@ namespace tph.ChainedTurtles.LogicLayer
             }
         }
 
-        protected void DoRequestMarketData(MonTurtlePosition monPos)
+        protected void DoRequestMarketData(Security sec)
+        {
+            DoLog($"Requesting market data for security/indicator {sec.Symbol}", Constants.MessageType.Information);
+            MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec, SubscriptionRequestType.SnapshotAndUpdates);
+            MarketDataRequestCounter++;
+            OnMessageRcv(wrapper);
+
+        }
+
+        protected void DoRequestMarketData(MonTurtlePosition monPos,string symbolRecv=null)
         {
             if (!GetConfig().BulkMarketDataRequest)
             {
-                DoLog($"Requesting market data for security/indicator {monPos.Security.Symbol}", Constants.MessageType.Information);
-                MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, monPos.Security,
-                                                                                SubscriptionRequestType.SnapshotAndUpdates);
-                MarketDataRequestCounter++;
-                OnMessageRcv(wrapper);
+
+                if (symbolRecv == null)
+                {
+
+                    foreach (Security sec in monPos.GetSecurities())
+                    {
+                        DoRequestMarketData(sec);
+                    }
+                }
+                else
+                {
+                    Security sec = monPos.GetSecurities().Where(x=>x.Symbol==symbolRecv).FirstOrDefault();
+
+                    if (sec != null)
+                        DoRequestMarketData(sec);
+                    else
+                        throw new Exception($"Could not find indicator security {symbolRecv} to track!");
+                }
             }
             else
             {
@@ -603,15 +655,16 @@ namespace tph.ChainedTurtles.LogicLayer
                             //If I am going to calculate the trendlines , it should be setup as an INDICATOR!!
                         }
                         
-                        if (ChainedIndicators.Values.Any(x => x.Security.Symbol == dto.Symbol))
+                        if(ChainedIndicators.Values.Any(x=>  x.GetSecurities().Any(w=>w.Symbol==dto.Symbol   )))
                         {
+
                             foundSecurity = true;
-                            foreach (var indicator in ChainedIndicators.Values.Where(x => x.Security.Symbol == dto.Symbol))
+                            foreach (var indicator in ChainedIndicators.Values.Where(x=> x.GetSecurities().Any(w=>w.Symbol==dto.Symbol)  ))
                             {
                                 dto.MarketData.ForEach(x => indicator.AppendCandleHistorical(x));
 
                                 EvalHistoricalPricesPrecalculations(indicator);//already updates the ProcessedHistoricalPrices
-                                DoRequestMarketData(indicator);
+                                DoRequestMarketData(indicator,dto.Symbol);
                             }
 
                         }

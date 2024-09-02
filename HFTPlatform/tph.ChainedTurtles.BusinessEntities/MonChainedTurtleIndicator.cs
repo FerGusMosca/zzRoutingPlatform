@@ -43,12 +43,15 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public bool RequestHistoricalPrices{ get; set; }
 
+        public bool IsSingleSecurityIndicator { get; set; }
+
         #endregion
 
         #region Protected Consts
 
         public static string _BOB_SIGNAL_TYPE = "BOB";
         public static string _BOB_INV_SIGNAL_TYPE = "BOB_INV";
+        public static string _MULT_SYMBOL_INDICATOR = "MULT_SYMBOL_INDICATOR";
 
         protected static int _SIGNAL_EXPIRATION_IN_MIN = 5;
 
@@ -58,7 +61,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         #region Constructor 
 
         public MonChainedTurtleIndicator(Security pSecurity, TurtlesCustomConfig pTurtlesCustomConfig,
-                                        string pCode) :base(pTurtlesCustomConfig, 0,null,null)
+                                        string pCode,bool pIsSingleSecurityIndicator=true) :base(pTurtlesCustomConfig, 0,null,null)
         {
 
 
@@ -68,6 +71,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             LongSignalOn = false;
             ShortSignalOn = false;
             LastSignalTimestamp = null;
+            IsSingleSecurityIndicator = pIsSingleSecurityIndicator;
 
         }
 

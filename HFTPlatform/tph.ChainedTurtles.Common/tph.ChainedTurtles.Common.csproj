@@ -44,6 +44,7 @@
     <Compile Include="Configuration\ChainedTurtleIndicator.cs" />
     <Compile Include="Configuration\ChainedConfiguration.cs" />
     <Compile Include="Configuration\TurtleConfig.cs" />
+    <Compile Include="DTO\ExternalSignalTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\ImbalanceTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\MonPosInnerIndicatorsOrchestationLogicDTO.cs" />
     <Compile Include="DTO\MonPosTrutleIndicatorConfigDTO.cs" />
@@ -64,6 +65,10 @@
     <ProjectReference Include="..\tph.TrendlineTurtles.Common\tph.TrendlineTurtles.Common.csproj">
       <Project>{8DD493CB-4798-4334-ACC4-305D8E938D9A}</Project>
       <Name>tph.TrendlineTurtles.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
+      <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
+      <Name>zHFT.Main.BusinessEntities</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4A57ED3B-774D-4344-B091-3328838F57F5}</Project>

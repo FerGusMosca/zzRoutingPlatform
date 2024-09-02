@@ -83,6 +83,17 @@ namespace zHFT.StrategyHandler.BusinessEntities
                 return null;
         }
 
+
+        public virtual List<Security> GetSecurities()
+        {
+
+            List<Security> securities = new List<Security>();
+
+            securities.Add(Security);
+
+            return securities;
+        }
+
         #endregion
 
 
