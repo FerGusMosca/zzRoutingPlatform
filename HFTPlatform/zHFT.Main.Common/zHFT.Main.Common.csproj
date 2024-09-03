@@ -122,6 +122,7 @@
     <Compile Include="Util\Constants.cs" />
     <Compile Include="Util\CurrencySeparators.cs" />
     <Compile Include="Util\DateTimeManager.cs" />
+    <Compile Include="Util\EpochConverter.cs" />
     <Compile Include="Util\FixHelperExtended.cs" />
     <Compile Include="Util\FullSymbolManager.cs" />
     <Compile Include="Util\Logger.cs" />

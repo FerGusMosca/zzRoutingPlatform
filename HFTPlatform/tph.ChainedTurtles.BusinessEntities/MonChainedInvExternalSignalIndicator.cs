@@ -10,6 +10,7 @@ using tph.ChainedTurtles.Common.Util;
 using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -20,6 +21,10 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         protected List<Security> Securities { get; set; }
 
+        protected IExternalSignalClient SignalClient { get; set; }
+
+        protected ILogger Logger { get; set; }  
+
         #endregion
 
         #region Ctor
@@ -28,6 +33,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             Security = new Security() { Symbol = "<Multiple Symbol Indicators>", SecType = zHFT.Main.Common.Enums.SecurityType.OTH };
             Securities = pSecurities;
             IsSingleSecurityIndicator = true;
+            Logger=pLogger;
             LoadConfigValues(pTurtlesCustomConfig.CustomConfig);
         }
 
@@ -35,6 +41,12 @@ namespace tph.ChainedTurtles.BusinessEntities
 
 
         #region Private Methods
+
+        public void OnLogMessage(string msg, Constants.MessageType type)
+        { 
+            if(Logger!=null)
+                Logger.DoLog(msg, type);
+        }
 
         private void LoadConfigValues(string customConfig)
         {
@@ -53,6 +65,19 @@ namespace tph.ChainedTurtles.BusinessEntities
                     HistoricalPricesPeriod = TurtleIndicatorBaseConfigLoader.GetHistoricalPricesPeriod(resp);
                 else
                     HistoricalPricesPeriod = 0;
+
+                if (resp.commConfig == null)
+                    throw new Exception("config value commConfig does not exist and it is mandatory for an external signal indicator");
+
+                if (string.IsNullOrEmpty(resp.extSignalAssembly))
+                    throw new Exception("config value extSignalAssembly does not exist and it is mandatory for an external signal indicator");
+                else
+                {
+                    SignalClient = InstanceBuilder.BuildInsance<IExternalSignalClient>(resp.extSignalAssembly,  resp.commConfig, new zHFT.Main.Common.Interfaces.OnLogMessage(OnLogMessage) );
+
+                    SignalClient.Connect();
+                };
+                
             }
             catch (Exception ex)
             {

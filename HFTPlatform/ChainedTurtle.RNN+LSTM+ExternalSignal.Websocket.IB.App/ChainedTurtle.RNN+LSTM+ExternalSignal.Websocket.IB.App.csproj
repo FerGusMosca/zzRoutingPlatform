@@ -92,6 +92,10 @@
       <Project>{7a0af78a-8cea-4330-84ff-a83c28dac156}</Project>
       <Name>tph.ChainedTurtles.LogicLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.ChainedTurtles.ServiceLayer\tph.ChainedTurtles.ServiceLayer.csproj">
+      <Project>{ac702b6c-f734-46c6-81e1-7de65fd1ef5d}</Project>
+      <Name>tph.ChainedTurtles.ServiceLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandSender\tph.StrategyHandler.SimpleCommandSender.csproj">
       <Project>{4067f749-8dd4-45ef-9630-391a64631b57}</Project>
       <Name>tph.StrategyHandler.SimpleCommandSender</Name>

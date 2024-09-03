@@ -44,17 +44,21 @@
     <Compile Include="Configuration\ChainedTurtleIndicator.cs" />
     <Compile Include="Configuration\ChainedConfiguration.cs" />
     <Compile Include="Configuration\TurtleConfig.cs" />
+    <Compile Include="DTO\BaseSignalResponseDTO.cs" />
     <Compile Include="DTO\ExternalSignalTurtleIndicatorConfigDTO.cs" />
+    <Compile Include="DTO\ExternalSignalTurtleIndicatorWebsocketConfig.cs" />
     <Compile Include="DTO\ImbalanceTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\MonPosInnerIndicatorsOrchestationLogicDTO.cs" />
     <Compile Include="DTO\MonPosTrutleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\MovAvgTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\TrendlineTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\TurtleIndicatorBaseConfigDTO.cs" />
+    <Compile Include="Interfaces\IExternalSignalClient.cs" />
     <Compile Include="Interfaces\IMonPosition.cs" />
     <Compile Include="Interfaces\ITradingEnity.cs" />
     <Compile Include="Interfaces\ITrendlineIndicator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\InstanceBuilder.cs" />
     <Compile Include="Util\TurtleIndicatorBaseConfigLoader.cs" />
   </ItemGroup>
   <ItemGroup>

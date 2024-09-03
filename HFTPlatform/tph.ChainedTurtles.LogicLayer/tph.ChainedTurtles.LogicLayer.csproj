@@ -57,6 +57,10 @@
       <Project>{96E55F4F-D66D-4F80-A90C-332FBB9534A6}</Project>
       <Name>tph.ChainedTurtles.DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.ChainedTurtles.ServiceLayer\tph.ChainedTurtles.ServiceLayer.csproj">
+      <Project>{ac702b6c-f734-46c6-81e1-7de65fd1ef5d}</Project>
+      <Name>tph.ChainedTurtles.ServiceLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
       <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>
