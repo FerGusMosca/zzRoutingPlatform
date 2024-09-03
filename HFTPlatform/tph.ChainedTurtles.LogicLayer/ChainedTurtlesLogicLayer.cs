@@ -318,7 +318,7 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                     }
                                                                     );
                     //The first security Monitoring Type is the indicator monitoring type (must all be the same)
-                    monInd.MonitoringType = indicator.SecuritiesToMonitor.FirstOrDefault().GetMonitoringType();
+                    monInd.MonitoringType = indicator.GetMonitorType();
                 }
                 else
                 {

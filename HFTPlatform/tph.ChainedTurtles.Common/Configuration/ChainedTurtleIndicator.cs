@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Enums;
 
 namespace tph.ChainedTurtles.Common
 {
-    public  class ChainedTurtleIndicator
+    public class ChainedTurtleIndicator
     {
         #region Private Consts
 
@@ -62,6 +63,37 @@ namespace tph.ChainedTurtles.Common
         public string GetIndicatorKey(SecurityToMonitor sec)
         {
             return Code + _CODE_SYMBOL_SEP + sec.Symbol;
+        }
+
+
+        public MonitoringType GetMonitorType()
+        {
+            if (IsMultipleSecurity())
+            {
+                MonitoringType? monitoringType = null;
+
+
+                foreach (SecurityToMonitor sec in SecuritiesToMonitor)
+                {
+
+                    if (!monitoringType.HasValue)
+                        monitoringType = sec.GetMonitoringType();
+                    else
+                    {
+                        if (monitoringType.Value != sec.GetMonitoringType())
+                            throw new Exception($"ALL the securities of a multi security indicator must have the same monitoring type!");
+                    
+                    }
+                }
+                return monitoringType.Value;
+
+            }
+            else
+            {
+                return SecurityToMonitor.GetMonitoringType();
+            }
+        
+        
         }
 
         #endregion
