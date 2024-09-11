@@ -459,7 +459,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 }
                 else
                 {
-                    Logger.DoLog($"{Security.Symbol}-->Bid Imbalance = {AskSizeImbalance} - Min. Trigger Imbalance = {PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
+                    Logger.DoLog($"{Security.Symbol}-->Bid Imbalance = {BidSizeImbalance} - Min. Trigger Imbalance = {PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     return false;
                 }
             }
