@@ -4,6 +4,8 @@ using System.Linq;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace zHFT.StrategyHandler.BusinessEntities
 {
@@ -11,6 +13,8 @@ namespace zHFT.StrategyHandler.BusinessEntities
     {
         
         #region Public Attributes
+
+        protected ILogger Logger { get; set; }
         
         public Security Security { get; set; }
 
@@ -28,6 +32,13 @@ namespace zHFT.StrategyHandler.BusinessEntities
         #endregion
 
         #region public Methods
+
+        public void DoLog(string msg, MessageType type)
+        { 
+            if(Logger!=null)
+                Logger.DoLog(msg, type);
+        
+        }
 
         public virtual List<MonitoringPosition> GetInnerIndicators()
         {

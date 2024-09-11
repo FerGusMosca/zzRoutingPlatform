@@ -13,6 +13,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -27,6 +28,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                                                string pCode,
                                                ILogger pLogger) :base(pSecurity,pTurtlesCustomConfig,pCode)
         {
+            Logger= pLogger;
             LoadConfigValues(pTurtlesCustomConfig.CustomConfig);
         }
 
@@ -48,6 +50,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered()
         {
+            DoLog($"DBG3-LongSignalOn?={LongSignalOn}", MessageType.Debug);
             if (!LongSignalOn)
             {
                 if (DownsideBreaktrhough())
@@ -59,6 +62,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 }
                 else
                 {
+                    DoLog($"DBG4-NO downside breakthrough", MessageType.Debug);
                     LastSignalTriggered = "";
                     return false;
 
@@ -73,7 +77,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-
+            DoLog($"DBG3-LongSignalOn?={LongSignalOn}", MessageType.Debug);
             if (!ShortSignalOn)
             {
                 if (UpsideBreaktrhough())
@@ -85,6 +89,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 }
                 else
                 {
+                    DoLog($"DBG4-NO upside breakthrough", MessageType.Debug);
                     LastSignalTriggered = "";
                     return false;
                 }
