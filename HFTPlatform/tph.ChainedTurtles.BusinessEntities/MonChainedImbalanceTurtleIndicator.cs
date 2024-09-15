@@ -424,6 +424,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
                 if (AskSizeImbalance >= PositionOpeningImbalanceThreshold)
                 {
+                    Logger.DoLog($"LONG Signal for Imbalance IND: AskSizeImbalance={AskSizeImbalance} PositionOpeningImbalanceThreshold={PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     ImbSignalTriggered = $"LONG Imbalance for {Security.Symbol}: Ask Imbalance: {AskSizeImbalance}";
 
                     return true;
@@ -453,6 +454,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
                 if (BidSizeImbalance >= PositionOpeningImbalanceThreshold)
                 {
+                    Logger.DoLog($"SHORT Signal for Imbalance IND: AskSizeImbalance={AskSizeImbalance} PositionOpeningImbalanceThreshold={PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     ImbSignalTriggered = $"SHORT Imbalance for {Security.Symbol}: Bid Imbalance: {BidSizeImbalance}";
 
                     return true;

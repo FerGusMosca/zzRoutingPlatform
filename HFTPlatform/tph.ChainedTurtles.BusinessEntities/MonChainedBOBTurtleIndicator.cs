@@ -11,6 +11,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -46,11 +47,14 @@ namespace tph.ChainedTurtles.BusinessEntities
         {
             bool longSignal=LongSignalTriggered();
             bool shortSignal=ShortSignalTriggered();
+
+           
             return longSignal || shortSignal;
         }
 
         public override bool LongSignalTriggered()
         {
+            DoLog($"DBG3-LongSignalOn?={LongSignalOn} for sec {Security.Symbol}", MessageType.Debug);
             if (!LongSignalOn)
             {
                 if (UpsideBreaktrhough())
@@ -62,6 +66,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 }
                 else
                 {
+                    DoLog($"DBG4-NO upside breakthrough for sec {Security.Symbol}", MessageType.Debug);
                     LastSignalTriggered = "";
                     return false;
 
@@ -76,7 +81,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-
+            DoLog($"DBG3-LongSignalOn?={LongSignalOn} for sec {Security.Symbol}", MessageType.Debug);
             if (!ShortSignalOn)
             {
 
@@ -89,6 +94,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 }
                 else
                 {
+                    DoLog($"DBG4-NO downside breakthrough for sec {Security.Symbol}", MessageType.Debug);
                     LastSignalTriggered = "";
                     return false;
                 }
