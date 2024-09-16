@@ -50,7 +50,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered()
         {
-            DoLog($"DBG3-LongSignalOn?={LongSignalOn}", MessageType.Debug);
+            DoLog($"DBG3-LongSignalOn?={LongSignalOn} CloseWindow={TurtlesCustomConfig.CloseWindow}", MessageType.Debug);
             if (!LongSignalOn)
             {
                 if (DownsideBreaktrhough())
@@ -77,7 +77,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-            DoLog($"DBG3-LongSignalOn?={LongSignalOn}", MessageType.Debug);
+            DoLog($"DBG3-ShortSignalOn?={ShortSignalOn} CloseWindow={TurtlesCustomConfig.CloseWindow}", MessageType.Debug);
             if (!ShortSignalOn)
             {
                 if (UpsideBreaktrhough())
