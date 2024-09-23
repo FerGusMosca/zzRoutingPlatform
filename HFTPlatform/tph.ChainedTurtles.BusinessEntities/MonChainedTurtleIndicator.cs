@@ -157,11 +157,17 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public bool DownsideBreaktrhough()
         {
+            DoLog($"DBG5d-MMov={CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)} Candle={LastValidCandle().Trade}", Constants.MessageType.Information);
+            
+
             return EvalSupportBroken() && !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
 
         public bool UpsideBreaktrhough()
         {
+            DoLog($"DBG5u-MMov={CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)} Candle={LastValidCandle().Trade}", Constants.MessageType.Information);
+
+
             return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
 
