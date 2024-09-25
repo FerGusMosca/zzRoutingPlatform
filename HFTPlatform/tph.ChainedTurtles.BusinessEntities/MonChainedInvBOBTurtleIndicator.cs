@@ -105,8 +105,10 @@ namespace tph.ChainedTurtles.BusinessEntities
         public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
         {
             bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+            
             if (!higherMMov)
             {
+                DoLog($"DBG7- Closing SHORT signal CloseWindow={TurtlesCustomConfig.CloseWindow} LastCandle={ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)}", MessageType.Debug);
                 LastSignalTriggered = $"CLOSE SHORT w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                 return true;
             }
@@ -119,6 +121,8 @@ namespace tph.ChainedTurtles.BusinessEntities
             bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
             if (higherMMov)
             {
+                DoLog($"DBG7- Closing LONG signal CloseWindow={TurtlesCustomConfig.CloseWindow} LastCandle={ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)}", MessageType.Debug);
+
                 LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                 return true;
             }
