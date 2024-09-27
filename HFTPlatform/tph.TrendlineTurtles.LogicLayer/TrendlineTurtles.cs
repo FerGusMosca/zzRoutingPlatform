@@ -149,7 +149,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                     lock (tSynchronizationLock)
                     {
                         if (MonitorPositions.ContainsKey(dto.Symbol))
-                            BuildTrendlines((MonTrendlineTurtlesPosition)MonitorPositions[dto.Symbol]);
+                            BuildTrendlines((MonTrendlineTurtlesPosition)MonitorPositions[dto.Symbol],GetConfig().InnerTrendlinesSpan);
                         else
                             DoLog($"Could not find monitoring position for symbol {dto.Symbol} processing historical prices", Constants.MessageType.Debug);
                     }
@@ -162,7 +162,7 @@ namespace tph.TrendlineTurtles.LogicLayer
             }
         }
         
-        protected void BuildTrendlines(MonTrendlineTurtlesPosition monPos)
+        protected void BuildTrendlines(MonTrendlineTurtlesPosition monPos,int innerTrendlinesSpan)
         {
             
             
@@ -173,8 +173,8 @@ namespace tph.TrendlineTurtles.LogicLayer
                 Constants.MessageType.Information);
 
             List<Trendline> resistances =
-                TrendLineCreator.BuildResistances(monPos.Security, histPrices, GetConfig());
-            List<Trendline> supports = TrendLineCreator.BuildSupports(monPos.Security, histPrices, GetConfig());
+                TrendLineCreator.BuildResistances(monPos.Security, histPrices, innerTrendlinesSpan);
+            List<Trendline> supports = TrendLineCreator.BuildSupports(monPos.Security, histPrices, innerTrendlinesSpan);
             monPos.PopulateTrendlines(resistances, supports);
 
             List<Trendline> activeResistancces = resistances.Where(x => x.BrokenDate == null).ToList();

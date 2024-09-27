@@ -703,7 +703,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                               _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
         }
 
-        public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,TrendlineConfiguration config)
+        public static List<Trendline> BuildResistances(Security sec, List<MarketData> prices,int innerTrendlinesSpan)
         {
 
             if (prices != null && prices.Count > 0)
@@ -716,7 +716,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                                             prices, true, minDate,
                                             maxDate, false, null);
 
-                TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices, config.InnerTrendlinesSpan);
+                TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices, innerTrendlinesSpan);
                 return trendlines;
             }
             else
@@ -735,16 +735,22 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             if (TrdCreatorDict == null)
                 throw new Exception(
                     string.Format("TrendlineCreator has to be instantiated first building the resistances!"));
-            
-            DateTime minDate = TrdCreatorDict[sec.Symbol].LastSafeMinDateResistances;
-            DateTime maxDate = lastCandle.MDEntryDate.Value;
 
-            //List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
-            //    prices, true, minDate,
-            //    maxDate, false, null,markJustFound:true);
-            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].UpdatePotentialNewResistance(prices, minDate, maxDate, lastCandle, markJustFound: true);
+            if (lastCandle != null)
+            {
 
-            return trendlines.Where(x=>x.JustFound).ToList();
+                DateTime minDate = TrdCreatorDict[sec.Symbol].LastSafeMinDateResistances;
+                DateTime maxDate = lastCandle.MDEntryDate.Value;
+
+                //List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessResistanceTrendlines(sec,
+                //    prices, true, minDate,
+                //    maxDate, false, null,markJustFound:true);
+                List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].UpdatePotentialNewResistance(prices, minDate, maxDate, lastCandle, markJustFound: true);
+
+                return trendlines.Where(x => x.JustFound).ToList();
+            }
+            else
+                return new List<Trendline>();
 
         }
 
@@ -766,22 +772,29 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
             if (TrdCreatorDict == null)
                 throw new Exception(
                     string.Format("TrendlineCreator has to be instantiated first building the supports!"));
-            
-            DateTime minDate = TrdCreatorDict[sec.Symbol].LastSafeMinDateSupports;
-            DateTime maxDate = lastCandle.MDEntryDate.Value;
 
-            List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].UpdatePotentialNewSupport(prices, minDate, maxDate, lastCandle, markJustFound: true);
-            
+            if (lastCandle != null)
+            {
 
-            //List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
-            //                             prices, true, minDate,
-            //                            maxDate, false, null,markJustFound:true);
-            
-            return trendlines.Where(x => x.JustFound).ToList();
+                DateTime minDate = TrdCreatorDict[sec.Symbol].LastSafeMinDateSupports;
+                DateTime maxDate = lastCandle.MDEntryDate.Value;
+
+                List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].UpdatePotentialNewSupport(prices, minDate, maxDate, lastCandle, markJustFound: true);
+
+
+                //List<Trendline> trendlines = TrdCreatorDict[sec.Symbol].ProcessSupportTrendlines(sec,
+                //                             prices, true, minDate,
+                //                            maxDate, false, null,markJustFound:true);
+
+                return trendlines.Where(x => x.JustFound).ToList();
+            }
+            else
+                return new List<Trendline>();
+                
 
         }
         
-        public static List<Trendline> BuildSupports(Security sec, List<MarketData> prices,TrendlineConfiguration config)
+        public static List<Trendline> BuildSupports(Security sec, List<MarketData> prices, int innerTrendlinesSpan)
         {
             if (prices != null && prices.Count > 0)
             {
@@ -795,7 +808,7 @@ namespace tph.TrendlineTurtles.LogicLayer.Util
                     false, null);
 
 
-                TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices, config.InnerTrendlinesSpan);
+                TrdCreatorDict[sec.Symbol].SetNextDateToStartForTrendlines(maxDate, prices, innerTrendlinesSpan);
                 return trendlines;
             }
             else

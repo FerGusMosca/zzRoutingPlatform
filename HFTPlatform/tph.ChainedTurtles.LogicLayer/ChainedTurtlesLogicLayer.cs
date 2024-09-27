@@ -440,7 +440,7 @@ namespace tph.ChainedTurtles.LogicLayer
             if (monPos.IsTrendlineMonPosition())
             {
                 DoLog($"Buiding trendlines for indicator {monPos.Security.Symbol}", Constants.MessageType.Information);
-                BuildTrendlines((MonTrendlineTurtlesPosition)monPos);
+                BuildTrendlines((MonTrendlineTurtlesPosition)monPos,GetTrendlineIndicator(monPos).GetInnerTrendlinesSpan());
             }
         }
 
