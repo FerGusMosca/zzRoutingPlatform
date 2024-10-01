@@ -502,8 +502,10 @@ namespace tph.ChainedTurtles.LogicLayer
                         DoLog($"SIGNAL TRIGGERED!-->{indicator.SignalTriggered()}", Constants.MessageType.Information);
                     }
                     DoLog($"DBG1-Recalculating new trendlines at {DateTime.Now} for symbol {indicator.Security.Symbol} ---> Do Recalculate = {GetTrendlineIndicator(indicator).GetRecalculateTrendlines()}", Constants.MessageType.Information);
-                    EvalBrokenTrendlines((MonTrendlineTurtlesPosition)indicator, md);
-                    RecalculateNewTrendlines((MonTrendlineTurtlesPosition)indicator, GetTrendlineIndicator(indicator).GetRecalculateTrendlines());
+
+                    ITrendlineIndicator trndInd = GetTrendlineIndicator(indicator);
+                    EvalBrokenTrendlines((MonTrendlineTurtlesPosition)indicator, md,trndInd.GetSkipCandlesToBreakTrndln());
+                    RecalculateNewTrendlines((MonTrendlineTurtlesPosition)indicator, trndInd.GetRecalculateTrendlines());
                 }
 
             }

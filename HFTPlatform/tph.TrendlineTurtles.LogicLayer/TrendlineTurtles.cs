@@ -120,7 +120,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                             if (newCandle)
                             {
                                 RecalculateNewTrendlines(monPos, GetConfig().RecalculateTrendlines);
-                                EvalBrokenTrendlines(monPos, md);
+                                EvalBrokenTrendlines(monPos, md,GetConfig().SkipCandlesToBreakTrndln);
                             }
                         }
                     }
@@ -234,10 +234,10 @@ namespace tph.TrendlineTurtles.LogicLayer
             return init;
         }
 
-        protected void EvalBrokenTrendlines(MonTrendlineTurtlesPosition monPortfPos,MarketData price)
+        protected void EvalBrokenTrendlines(MonTrendlineTurtlesPosition monPortfPos,MarketData price,int skipCandlesToBreakTrndln)
         {
-
-            MarketData priceToUse = monPortfPos.GetLastFinishedCandle(GetConfig().SkipCandlesToBreakTrndln);
+            DoLog($"DBG7- Evaluating broken trendlikes for symbol {monPortfPos.Security.Symbol} w/skipCandlesToBreakTrndln={skipCandlesToBreakTrndln}", Constants.MessageType.Information);
+            MarketData priceToUse = monPortfPos.GetLastFinishedCandle(skipCandlesToBreakTrndln);
 
             TrendLineCreator.EvalBrokenTrendlines(monPortfPos, priceToUse);
             

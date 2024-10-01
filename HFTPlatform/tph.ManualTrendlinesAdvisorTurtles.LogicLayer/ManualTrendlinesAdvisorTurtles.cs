@@ -209,7 +209,7 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                             bool newCandle = monPos.AppendCandle(md);
                             if (newCandle)
                             {
-                                EvalBrokenTrendlines(monPos, md);
+                                EvalBrokenTrendlines(monPos, md,GetConfig().SkipCandlesToBreakTrndln);
 
                                 if (monPos.Resistances.Any(x => x.JustBroken))
                                 {

@@ -152,7 +152,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
             foreach (Trendline trendline in activeResistances)
             {
                 double trendlinePrice = trendline.CalculateTrendPrice(lastClosedCandle.MDEntryDate.Value, histPrices);
-                DoLog($"DBG6r-Eval Support--> lastCandle={lastClosedCandle.Trade} trendline={trendlinePrice}  trendline_start={trendline.StartDate} trendline_end={trendline.EndDate}", Constants.MessageType.Information);
+                DoLog($"DBG6r-Eval Resistance--> lastCandle={lastClosedCandle.Trade} trendline={trendlinePrice}  trendline_start={trendline.StartDate} trendline_end={trendline.EndDate}", Constants.MessageType.Information);
                 if (lastClosedCandle.BiggerGreendCandle(trendlinePrice))
                 {
                     DoLog($"DBG7r-BROKEN!", Constants.MessageType.Information);
