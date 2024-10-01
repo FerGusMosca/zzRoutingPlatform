@@ -97,54 +97,58 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         private bool AllIndicatorsLongSignal()
         {
+            bool allOn = true;
             foreach (var indicator in InnerIndicators)
             {
                 if (!indicator.LongSignalTriggered())
-                    return false;
+                    allOn = false ;
 
             }
 
-            return InnerIndicators.Count > 0;
+            return InnerIndicators.Count > 0 && allOn;
 
         }
 
         private bool AllIndicatorsShortSignal()
         {
+            bool allOn = true;
             foreach (var indicator in InnerIndicators)
             {
                 if (!indicator.ShortSignalTriggered())
-                    return false;
+                    allOn = false;
 
             }
 
-            return InnerIndicators.Count > 0;
+            return InnerIndicators.Count > 0 &allOn;
 
         }
 
 
         private bool FirstIndicatorLongSignal()
         {
+            bool oneTrue = false;
             foreach (var indicator in InnerIndicators)
             {
                 if (indicator.LongSignalTriggered())
-                    return true;
+                    oneTrue= true;
 
             }
 
-            return false;
+            return oneTrue;
 
         }
 
         private bool FirstIndicatorShortSignal()
         {
+            bool oneTrue = false;
             foreach (var indicator in InnerIndicators)
             {
                 if (indicator.ShortSignalTriggered())
-                    return true;
+                    oneTrue = true;
 
             }
 
-            return false;
+            return oneTrue;
 
         }
 
