@@ -71,8 +71,11 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
         protected bool EnoughSpan(Trendline trendline, MarketData md)
         {
-              TimeSpan elapsed = md.MDEntryDate.Value - trendline.EndDate;
-              return elapsed.TotalMinutes >= OuterSignalSpan;
+
+            TimeSpan elapsed = md.MDEntryDate.Value - trendline.EndDate;
+            DoLog($"DBG8.1-EVAL Enough Span: MDEntryDate={md.MDEntryDate.Value} trendlineEndDate={trendline.EndDate}", Constants.MessageType.Information);
+            DoLog($"DBG8.2-EVAL Enough Span: ElapsedMin={elapsed.TotalMinutes} OuterSignalSpan={OuterSignalSpan}", Constants.MessageType.Information);
+            return elapsed.TotalMinutes >= OuterSignalSpan;
          }
 
         protected List<Trendline> GetActiveSupports()
@@ -160,6 +163,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
 
                     if (EnoughSpan(trendline, lastClosedCandle))
                     {
+                        DoLog($"DBG7r-ENOUGH-SPAN!", Constants.MessageType.Information);
                         found = true;
                         LastOpenTrendline = trendline;
                     }
@@ -189,6 +193,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
                     trendline.DoBreak(lastClosedCandle, histPrices);
                     if (EnoughSpan(trendline, lastClosedCandle))
                     {
+                        DoLog($"DBG7s-ENOUGH-SPAN!", Constants.MessageType.Information);
                         LastOpenTrendline = trendline;
                         found = true;
                     }

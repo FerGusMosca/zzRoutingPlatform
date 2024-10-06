@@ -105,7 +105,6 @@ namespace tph.ChainedTurtles.BusinessEntities
                 else
                     throw new Exception("config value outterTrendlinesSpan must be greater than 0");
 
-
                 if (resp.perforationThresholds >= 0)
                     PerforationThreshold = resp.perforationThresholds;
                 else
