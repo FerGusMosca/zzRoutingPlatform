@@ -56,7 +56,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 if (DownsideBreaktrhough())
                 {
                     LongSignalOn = true;
-                    LastSignalTriggered = $"OPEN LONG w/Support broken: Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} ";
+                    LastSignalTriggered = $"OPEN LONG w/Support broken: Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(GetSkipCandlesToBreakTrndln()), CandleReferencePrice)} ";
                     LastSignalTimestamp = DateTimeManager.Now;
                     return LongSignalOn;
                 }
@@ -83,7 +83,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 if (UpsideBreaktrhough())
                 {
                     ShortSignalOn = true;
-                    LastSignalTriggered = $"OPEN SHORT w/Resistance broken: Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} ";
+                    LastSignalTriggered = $"OPEN SHORT w/Resistance broken: Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(GetSkipCandlesToBreakTrndln()), CandleReferencePrice)} ";
                     LastSignalTimestamp = DateTimeManager.Now;
                     return ShortSignalOn;
                 }
@@ -108,8 +108,8 @@ namespace tph.ChainedTurtles.BusinessEntities
             
             if (!higherMMov)
             {
-                DoLog($"DBG7- Closing SHORT signal CloseWindow={TurtlesCustomConfig.CloseWindow} LastCandle={ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)}", MessageType.Debug);
-                LastSignalTriggered = $"CLOSE SHORT w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
+                DoLog($"DBG7- Closing SHORT signal CloseWindow={TurtlesCustomConfig.CloseWindow} LastCandle={ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(GetSkipCandlesToBreakTrndln()), CandleReferencePrice)}", MessageType.Debug);
+                LastSignalTriggered = $"CLOSE SHORT w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(GetSkipCandlesToBreakTrndln()), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                 return true;
             }
             else
@@ -121,9 +121,9 @@ namespace tph.ChainedTurtles.BusinessEntities
             bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
             if (higherMMov)
             {
-                DoLog($"DBG7- Closing LONG signal CloseWindow={TurtlesCustomConfig.CloseWindow} LastCandle={ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)}", MessageType.Debug);
+                DoLog($"DBG7- Closing LONG signal CloseWindow={TurtlesCustomConfig.CloseWindow} LastCandle={ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(GetSkipCandlesToBreakTrndln()), CandleReferencePrice)}", MessageType.Debug);
 
-                LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
+                LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(GetSkipCandlesToBreakTrndln()), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                 return true;
             }
             else
