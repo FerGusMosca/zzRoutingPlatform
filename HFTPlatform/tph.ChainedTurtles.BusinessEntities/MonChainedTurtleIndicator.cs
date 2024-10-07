@@ -33,7 +33,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         protected double PerforationThreshold { get; set; }
 
-        protected string CandleReferencePrice { get; set; }
+        //protected string CandleReferencePrice { get; set; }
 
         protected bool RecalculateTrendlines { get; set; }
 
@@ -158,8 +158,8 @@ namespace tph.ChainedTurtles.BusinessEntities
         {
             if(LastValidCandle()!=null)
                 DoLog($"DBG5d-MMov={CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)} Candle={LastValidCandle().Trade}", Constants.MessageType.Information);
-            
 
+            DoLog($"DBG9d-CandleReferencePrice={CandleReferencePrice} CloseWindow={TurtlesCustomConfig.CloseWindow}", Constants.MessageType.Information);
             return EvalSupportBroken() && !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
 
@@ -168,7 +168,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if(LastValidCandle()!=null)
                 DoLog($"DBG5u-MMov={CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)} Candle={LastValidCandle().Trade}", Constants.MessageType.Information);
 
-
+            DoLog($"DBG9u-CandleReferencePrice={CandleReferencePrice} CloseWindow={TurtlesCustomConfig.CloseWindow}", Constants.MessageType.Information);
             return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
         }
 
