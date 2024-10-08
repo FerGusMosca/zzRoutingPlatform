@@ -29,8 +29,6 @@ namespace tph.ChainedTurtles.BusinessEntities
         protected int InnerTrendlinesSpan { get; set; }
 
 
-        protected int OutterTrendlinesSpan { get; set; }
-
         protected double PerforationThreshold { get; set; }
 
         //protected string CandleReferencePrice { get; set; }
@@ -101,7 +99,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
 
                 if (resp.outterTrendlinesSpan > 0)
-                    OutterTrendlinesSpan = resp.outterTrendlinesSpan;
+                    OuterSignalSpan = resp.outterTrendlinesSpan;
                 else
                     throw new Exception("config value outterTrendlinesSpan must be greater than 0");
 

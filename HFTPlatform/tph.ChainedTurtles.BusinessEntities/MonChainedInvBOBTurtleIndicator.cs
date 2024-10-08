@@ -155,7 +155,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public int GetOutterTrendlinesSpan()
         {
-            return OutterTrendlinesSpan;
+            return OuterSignalSpan;
         }
 
         public double GetPerforationThreshold()
