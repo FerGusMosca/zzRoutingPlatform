@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>CHAINED_TURTLES_INV_VIX_BOB_+_ON_OFF_WEBSOCKET_IB_MOCK</Name>
+	<Account>xxx</Account>
+
+	<PositionSizeInCash>50000</PositionSizeInCash>
+	
+	<MaxOpenedPositions>6</MaxOpenedPositions>
+	
+	<!--1=1%-->
+	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
+	<!--OrderRouter,Nominal,Percentage-->
+	<FeeValuePerTrade>0</FeeValuePerTrade>
+	<DecimalRounding>3</DecimalRounding>
+
+	<OpeningTime>11:30</OpeningTime><!--Opening Time for backtests or LIVE_MODE-->
+	<!--Needed for historical prices recovery-->
+	<ClosingTime>05:51 PM</ClosingTime>
+	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
+
+	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+
+	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_inv_vix_bob_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ResetOnPersistance>true</ResetOnPersistance>
+	
+	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+	<BulkMarketDataRequest>false</BulkMarketDataRequest>
+	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
+	<OnlyLong>false</OnlyLong>
+
+	<SecuritiesToMonitor>
+		<SecurityToMonitor>
+			<Symbol>SPY</Symbol>
+			<SecurityType>CS</SecurityType> <!-- Default: CS-->
+			<Currency>USD</Currency> <!-- Default: USD-->
+			<Exchange>SMART</Exchange><!-- Default: SMART -->
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>VIX_TRENDLINES_VIX</Code>
+				</IndicatorToMonitor>
+				<IndicatorToMonitor>
+					<Code>ON_OFF_SIGNAL</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
+		
+	</SecuritiesToMonitor>
+
+
+	<ChainedTurtleIndicators>
+		<ChainedTurtleIndicator>
+			<Code>VIX_TRENDLINES_VIX</Code>
+			<SecurityToMonitor>
+				<Symbol>VIX</Symbol>
+				<SecurityType>IND</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>CBOE</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB_INV</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			
+		</ChainedTurtleIndicator>
+
+		<ChainedTurtleIndicator>
+			<Code>ON_OFF_SIGNAL</Code>
+			<SecuritiesToMonitor>
+				<SecurityToMonitor>
+					<Symbol>ON_OFF_SIGNAL</Symbol>
+					<SecurityType>OTH</SecurityType>
+					<Currency>USD</Currency>
+					<Exchange>SMART</Exchange>
+					<MonitoringType>ONLY_SIGNAL</MonitoringType>
+				</SecurityToMonitor>
+
+			</SecuritiesToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvExternalSignalIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>MULT_SYMBOL_INDICATOR</SignalType>
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted, IND=Indicator,MULT_SYMBOL_INDICATOR -->
+			
+		</ChainedTurtleIndicator>
+	</ChainedTurtleIndicators>
+	
+	
+
+</ChainedConfiguration>

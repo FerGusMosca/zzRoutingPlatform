@@ -11,6 +11,7 @@ namespace zHFT.Main.Common.Enums
         ONLY_ROUTING,
         ONLY_TRENDLINE,
         TRENDLINE_PLUS_ROUTING,
+        ONLY_SIGNAL
         
 
     }

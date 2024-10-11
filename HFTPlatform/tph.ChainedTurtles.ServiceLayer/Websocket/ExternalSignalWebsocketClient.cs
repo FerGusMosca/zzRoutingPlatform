@@ -6,6 +6,7 @@ using System.Net.WebSockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using tph.ChainedTurtles.Common.DTO;
 using tph.ChainedTurtles.Common.Interfaces;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
@@ -152,7 +153,7 @@ namespace tph.ChainedTurtles.ServiceLayer.Websocket
         }
 
 
-        public string EvalSignal(string featuresPayload)
+        public TimestampRangeClassificationDTO EvalSignal(string featuresPayload)
         {
             return null;
         }

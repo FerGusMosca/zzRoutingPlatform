@@ -45,12 +45,16 @@
     <Compile Include="Configuration\ChainedConfiguration.cs" />
     <Compile Include="Configuration\TurtleConfig.cs" />
     <Compile Include="DTO\BaseSignalResponseDTO.cs" />
+    <Compile Include="DTO\DataBaseConnectionConfigDTO.cs" />
     <Compile Include="DTO\ExternalSignalTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\ExternalSignalTurtleIndicatorWebsocketConfig.cs" />
     <Compile Include="DTO\ImbalanceTurtleIndicatorConfigDTO.cs" />
+    <Compile Include="DTO\MockClassificationDTO.cs" />
     <Compile Include="DTO\MonPosInnerIndicatorsOrchestationLogicDTO.cs" />
     <Compile Include="DTO\MonPosTrutleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\MovAvgTurtleIndicatorConfigDTO.cs" />
+    <Compile Include="DTO\OnOffTimestampRangeClassificationDTO.cs" />
+    <Compile Include="DTO\TimestampRangeClassificationDTO.cs" />
     <Compile Include="DTO\TrendlineTurtleIndicatorConfigDTO.cs" />
     <Compile Include="DTO\TurtleIndicatorBaseConfigDTO.cs" />
     <Compile Include="Interfaces\IExternalSignalClient.cs" />

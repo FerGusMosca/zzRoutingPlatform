@@ -71,6 +71,8 @@ namespace zHFT.Main.Common.DTO
                 return Common.Enums.MonitoringType.ONLY_TRENDLINE;
             else if (MonitoringType == zHFT.Main.Common.Enums.MonitoringType.TRENDLINE_PLUS_ROUTING.ToString())
                 return Common.Enums.MonitoringType.TRENDLINE_PLUS_ROUTING;
+            else if (MonitoringType == zHFT.Main.Common.Enums.MonitoringType.ONLY_SIGNAL.ToString())
+                return Common.Enums.MonitoringType.ONLY_SIGNAL;
             else throw new Exception($"Could not process a Monitoring Type of value {MonitoringType}");
 
         }

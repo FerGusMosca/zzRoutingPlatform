@@ -31,7 +31,7 @@ namespace tph.ChainedTurtles.ServiceLayer.Mock
 
         #region Public Methods
 
-        public string EvalSignal(string featuresPayload)
+        public TimestampRangeClassificationDTO EvalSignal(string featuresPayload)
         {
 
             BaseSignalResponseDTO mockResp = new BaseSignalResponseDTO()
@@ -44,8 +44,10 @@ namespace tph.ChainedTurtles.ServiceLayer.Mock
             };
 
             string json = JsonConvert.SerializeObject(mockResp, Formatting.Indented);
+
+            //TODO 
             
-            return json;
+            return null;
         }
 
         public ExternalSignalMockClient(Dictionary<string, string> pConfigDict, OnLogMessage pOnLogMessage)
@@ -65,6 +67,7 @@ namespace tph.ChainedTurtles.ServiceLayer.Mock
 
         public bool Connect() { return true; }
 
+       
         #endregion
     }
 }

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,10 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExternalBiasManager.cs" />
+    <Compile Include="OnOffValveManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TurtlesPortfolioPositionManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\tph.ChainedTurtles.Common\tph.ChainedTurtles.Common.csproj">
+      <Project>{4149f067-9c2e-436a-9398-4e19fd3c6bb8}</Project>
+      <Name>tph.ChainedTurtles.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tph.DayTurtles.BusinessEntities\tph.DayTurtles.BusinessEntities.csproj">
       <Project>{515F567E-797D-4248-BCEF-3A97CACF8723}</Project>
       <Name>tph.DayTurtles.BusinessEntities</Name>
@@ -53,10 +62,17 @@
       <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
+      <Project>{4A57ED3B-774D-4344-B091-3328838F57F5}</Project>
+      <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
       <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
       <Name>zHFT.StrategyHandler.BusinessEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

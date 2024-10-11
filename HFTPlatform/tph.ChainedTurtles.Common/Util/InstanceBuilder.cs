@@ -11,7 +11,7 @@ namespace tph.ChainedTurtles.Common.Util
     public class InstanceBuilder
     {
 
-        public static T BuildInsance<T>(string buildAssembly, Dictionary<string, string> pConfigDict, OnLogMessage pOnLogMessage)
+        public static T BuildInsance<T>(string buildAssembly, Dictionary<string, string> pConfigDict, ILogger pLogger)
         {
 
             try
@@ -44,7 +44,7 @@ namespace tph.ChainedTurtles.Common.Util
                 }
 
                 // Create an instance of the type
-                T instance = (T)Activator.CreateInstance(type, pConfigDict,pOnLogMessage);
+                T instance = (T)Activator.CreateInstance(type, pConfigDict, pLogger);
 
                 // Return the created instance
                 return instance;
