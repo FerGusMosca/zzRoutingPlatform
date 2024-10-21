@@ -98,13 +98,19 @@ namespace tph.ChainedTurtles.BusinessEntities
         private bool AllIndicatorsLongSignal()
         {
             bool allOn = true;
+            DoLog($"ALL_IND_DBG1-Evaluating All indicator LONG for symbol {Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
             foreach (var indicator in InnerIndicators)
             {
+                DoLog($"ALL_IND_DBG2-Evaluating  LONG indicator  {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
                 if (!indicator.LongSignalTriggered())
-                    allOn = false ;
+                {
+                    DoLog($"ALL_IND_DBG3-INDICATOR IS FALSE discarding LONG signal", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+                    allOn = false;
+                }
 
             }
 
+            DoLog($"ALL_IND_DBG4-INDICATOR Final LONG result for security {Security.Symbol}:allOn={allOn} InnerInd={InnerIndicators.Count}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
             return InnerIndicators.Count > 0 && allOn;
 
         }
@@ -112,13 +118,18 @@ namespace tph.ChainedTurtles.BusinessEntities
         private bool AllIndicatorsShortSignal()
         {
             bool allOn = true;
+            DoLog($"ALL_IND_DBG1-Evaluating All indicator SHORT for symbol {Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
             foreach (var indicator in InnerIndicators)
             {
+                DoLog($"ALL_IND_DBG2-Evaluating  SHORT indicator  {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
                 if (!indicator.ShortSignalTriggered())
+                {
+                    DoLog($"ALL_IND_DBG3-INDICATOR IS FALSE discarding SHORT signal", zHFT.Main.Common.Util.Constants.MessageType.Debug);
                     allOn = false;
+                }
 
             }
-
+            DoLog($"ALL_IND_DBG4-INDICATOR Final SHORT result for security {Security.Symbol}:allOn={allOn} InnerInd={InnerIndicators.Count}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
             return InnerIndicators.Count > 0 &allOn;
 
         }

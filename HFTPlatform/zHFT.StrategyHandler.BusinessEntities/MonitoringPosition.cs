@@ -48,7 +48,7 @@ namespace zHFT.StrategyHandler.BusinessEntities
         public virtual bool IsTrendlineMonPosition()
         {
 
-            return MonitoringType==MonitoringType.ONLY_TRENDLINE || MonitoringType==MonitoringType.TRENDLINE_PLUS_ROUTING;
+            return MonitoringType==MonitoringType.ONLY_TRENDLINE || MonitoringType==MonitoringType.TRENDLINE_PLUS_ROUTING ;
         
         }
 
