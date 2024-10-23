@@ -67,7 +67,8 @@ namespace tph.ChainedTurtles.LogicLayer
 
                             MonChainedTurtlePosition monChPos = new MonChainedTurtlePosition(
                                 sec, GetCustomConfig(secToMonitor.Symbol),
-                                secToMonitor.GetMonitoringType());
+                                secToMonitor.GetMonitoringType(),
+                                this);
 
 
                             //1- We add the current security to monitor

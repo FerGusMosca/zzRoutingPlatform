@@ -13,6 +13,7 @@ using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
@@ -29,7 +30,7 @@ namespace tph.ChainedTurtles.BusinessEntities
         #region Constructor 
 
         public MonChainedTurtlePosition(Security pSecurity,TurtlesCustomConfig pTurtlesCustomConfig, 
-                                        MonitoringType pMonitoringType):base(pTurtlesCustomConfig,0,null)
+                                        MonitoringType pMonitoringType,ILogger pLogger=null):base(pTurtlesCustomConfig,0,null)
         {
 
             Security = pSecurity;
@@ -39,6 +40,8 @@ namespace tph.ChainedTurtles.BusinessEntities
             LoadConfigValues(pTurtlesCustomConfig.CustomConfig);//This is where Stop Loss and CandleRef price are loaded
 
             MonitoringType = pMonitoringType;
+
+            Logger=pLogger;
         }
 
         #endregion
@@ -98,19 +101,19 @@ namespace tph.ChainedTurtles.BusinessEntities
         private bool AllIndicatorsLongSignal()
         {
             bool allOn = true;
-            DoLog($"ALL_IND_DBG1-Evaluating All indicator LONG for symbol {Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+            DoLog($"ALL_IND_DBG1-Evaluating All indicator LONG for symbol {Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
             foreach (var indicator in InnerIndicators)
             {
-                DoLog($"ALL_IND_DBG2-Evaluating  LONG indicator  {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+                DoLog($"ALL_IND_DBG2-Evaluating  LONG indicator  {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
                 if (!indicator.LongSignalTriggered())
                 {
-                    DoLog($"ALL_IND_DBG3-INDICATOR IS FALSE discarding LONG signal", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+                    DoLog($"ALL_IND_DBG3-INDICATOR IS FALSE discarding LONG signal", zHFT.Main.Common.Util.Constants.MessageType.Information);
                     allOn = false;
                 }
 
             }
 
-            DoLog($"ALL_IND_DBG4-INDICATOR Final LONG result for security {Security.Symbol}:allOn={allOn} InnerInd={InnerIndicators.Count}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+            DoLog($"ALL_IND_DBG4-INDICATOR Final LONG result for security {Security.Symbol}:allOn={allOn} InnerInd={InnerIndicators.Count}", zHFT.Main.Common.Util.Constants.MessageType.Information);
             return InnerIndicators.Count > 0 && allOn;
 
         }
@@ -118,18 +121,18 @@ namespace tph.ChainedTurtles.BusinessEntities
         private bool AllIndicatorsShortSignal()
         {
             bool allOn = true;
-            DoLog($"ALL_IND_DBG1-Evaluating All indicator SHORT for symbol {Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+            DoLog($"ALL_IND_DBG1-Evaluating All indicator SHORT for symbol {Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
             foreach (var indicator in InnerIndicators)
             {
-                DoLog($"ALL_IND_DBG2-Evaluating  SHORT indicator  {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+                DoLog($"ALL_IND_DBG2-Evaluating  SHORT indicator  {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
                 if (!indicator.ShortSignalTriggered())
                 {
-                    DoLog($"ALL_IND_DBG3-INDICATOR IS FALSE discarding SHORT signal", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+                    DoLog($"ALL_IND_DBG3-INDICATOR IS FALSE discarding SHORT signal", zHFT.Main.Common.Util.Constants.MessageType.Information);
                     allOn = false;
                 }
 
             }
-            DoLog($"ALL_IND_DBG4-INDICATOR Final SHORT result for security {Security.Symbol}:allOn={allOn} InnerInd={InnerIndicators.Count}", zHFT.Main.Common.Util.Constants.MessageType.Debug);
+            DoLog($"ALL_IND_DBG4-INDICATOR Final SHORT result for security {Security.Symbol}:allOn={allOn} InnerInd={InnerIndicators.Count}", zHFT.Main.Common.Util.Constants.MessageType.Information);
             return InnerIndicators.Count > 0 &allOn;
 
         }
