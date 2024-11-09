@@ -190,7 +190,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
         {
             get 
             {
-                if (_Slope == double.MinValue && AllHistoricalPrices!=null)
+                if (_Slope == double.MinValue && AllHistoricalPrices!=null && AllHistoricalPrices.Count>1)
                 {
                     int countDaysInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
 
@@ -297,11 +297,17 @@ namespace tph.TrendlineTurtles.BusinessEntities
             {
                 pctGrowth *= 100;
 
-                int countUnitsInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
+                if (pctGrowth > 0)
+                {
 
-                double hourAdjust = 60 / Convert.ToDouble(countUnitsInTrendline);
+                    int countUnitsInTrendline = CountTradingUnits(AllHistoricalPrices, StartPrice.MDEntryDate.Value, EndPrice.MDEntryDate.Value);
 
-                return pctGrowth * hourAdjust;
+                    double hourAdjust = 60 / Convert.ToDouble(countUnitsInTrendline);
+
+                    return pctGrowth * hourAdjust;
+                }
+                else
+                    return 0;
             }
             else
                 return 0; 

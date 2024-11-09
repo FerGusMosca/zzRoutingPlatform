@@ -10,7 +10,7 @@
 	  <SecurityTypes>CS</SecurityTypes>  <!--CS=Common Stock, CC= Cryptocurrency,TBOND= Bond-->
 
 
-	<ConnectionString>Data Source=.\SQLDEV17;initial catalog=manual_trendlines_advisor;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=manual_trendlines_advisor;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
 
 	<!--Websocket to subscribe market data to connector-->

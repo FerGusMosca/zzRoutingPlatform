@@ -65,6 +65,9 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
                 foreach (string symbol in Config.StocksToMonitor)
                 {
 
+                    DoLog($"No need to download historical prices for symbol {symbol}", Constants.MessageType.Debug);
+                    continue;
+
                     MonTrendlineTurtlesPosition monPos = (MonTrendlineTurtlesPosition) MonitorPositions.Values.Where(x=>x.Security.Symbol==symbol).FirstOrDefault();
 
                     if (monPos == null)
@@ -147,45 +150,52 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
             Thread.Sleep(5000);
             foreach (string symbol in Config.StocksToMonitor)
             {
-                if (!MonitorPositions.ContainsKey(symbol))
+                try
                 {
-                    Security sec = new Security()
+                    if (!MonitorPositions.ContainsKey(symbol))
                     {
-                        Symbol = symbol,
-                        SecType = Security.GetSecurityType(Config.SecurityTypes),
-                        MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
-                        Currency = Config.Currency,
-                        Exchange = Config.Exchange
-                    };
+                        Security sec = new Security()
+                        {
+                            Symbol = symbol,
+                            SecType = Security.GetSecurityType(Config.SecurityTypes),
+                            MarketData = new MarketData() { SettlType = SettlType.Tplus2 },
+                            Currency = Config.Currency,
+                            Exchange = Config.Exchange
+                        };
 
-                    MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(
-                        GetCustomConfig(symbol),
-                        GetConfig().StopLossForOpenPositionPct,
-                        GetConfig().OuterTrendlineSpan,
-                        GetConfig().CandleReferencePrice)
-                    {
-                        Security = sec,
-                        DecimalRounding = Config.DecimalRounding,
-                    };
+                        MonBOBTurtlePosition portfPos = new MonBOBTurtlePosition(
+                            GetCustomConfig(symbol),
+                            GetConfig().StopLossForOpenPositionPct,
+                            GetConfig().OuterTrendlineSpan,
+                            GetConfig().CandleReferencePrice)
+                        {
+                            Security = sec,
+                            DecimalRounding = Config.DecimalRounding,
+                        };
 
-                    //1- We add the current security to monitor
-                    MonitorPositions.Add(symbol, portfPos);
+                        //1- We add the current security to monitor
+                        MonitorPositions.Add(symbol, portfPos);
 
-                    Securities.Add(sec); //So far, this is all wehave regarding the Securities
+                        Securities.Add(sec); //So far, this is all wehave regarding the Securities
 
-                    TrendLineCreator.InitializeCreator(sec, GetConfig(),
-                                                   DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod),
-                                                   DoLog,
-                                                   _REPEATED_MAX_MIN_MAX_DISTANCE,
-                                                   _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
+                        TrendLineCreator.InitializeCreator(sec, GetConfig(),
+                                                       DateTimeManager.Now.AddDays(GetConfig().HistoricalPricesPeriod),
+                                                       DoLog,
+                                                       _REPEATED_MAX_MIN_MAX_DISTANCE,
+                                                       _BREAKING_TRENDLINES_MIN_DISTANCE_TO_REF_DATE);
 
-                    //2- We request market data --> TODO properly request Market data to the right module
+                        //2- We request market data --> TODO properly request Market data to the right module
 
-                    MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec,
-                        SubscriptionRequestType.SnapshotAndUpdates);
-                    MarketDataRequestCounter++;
-                    OrderRouter.ProcessMessage(wrapper);
-                    //OnMessageRcv(wrapper);
+                        MarketDataRequestWrapper wrapper = new MarketDataRequestWrapper(MarketDataRequestCounter, sec,
+                            SubscriptionRequestType.SnapshotAndUpdates);
+                        MarketDataRequestCounter++;
+                        OrderRouter.ProcessMessage(wrapper);
+                        //OnMessageRcv(wrapper);
+                    }
+                }
+                catch (Exception ex) {
+                    DoLog($"CRITICAL ERROR initializing {symbol}:{ex.Message}", Constants.MessageType.Error);
+                
                 }
             }
         }

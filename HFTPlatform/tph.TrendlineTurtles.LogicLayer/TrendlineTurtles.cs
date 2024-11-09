@@ -430,7 +430,7 @@ namespace tph.TrendlineTurtles.LogicLayer
                    
                     foreach (Trendline updTrendline in toRefresh)
                     {
-                        DoLog($"Udating trendline {updTrendline.Id} for symbol {updTrendline.Security.Symbol}", Constants.MessageType.Information);
+                        DoLog($"Updating trendline {updTrendline.Id} for symbol {updTrendline.Security.Symbol}", Constants.MessageType.Information);
                         if (!TrendLineCreator.SymbolInitialized(updTrendline.Symbol))
                         {
                             DoLog($"WARNING - Waiting for symbol {updTrendline.Symbol} to be initialized to process trendlines",Constants.MessageType.Information);
