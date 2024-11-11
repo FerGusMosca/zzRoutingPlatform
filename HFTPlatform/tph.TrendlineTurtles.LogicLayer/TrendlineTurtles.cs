@@ -420,6 +420,12 @@ namespace tph.TrendlineTurtles.LogicLayer
         
         }
 
+        protected virtual void UpdateManualNew(Trendline updTrendline)
+        {
+
+            updTrendline.ManualNew = false;
+        }
+
         protected void DoRefreshTrendlines(object param)
         {
             while (true)
@@ -465,7 +471,8 @@ namespace tph.TrendlineTurtles.LogicLayer
                                 TrendLineCreator.AppendSupport(updTrendline.Security.Symbol,updTrendline);
                             }
 
-                            updTrendline.ManualNew = false;
+
+                            UpdateManualNew(updTrendline);
 
                             if (monPos.HasHistoricalCandles())
                                 TrendlineManager.Persist(updTrendline, monPos);

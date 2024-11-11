@@ -247,7 +247,11 @@ namespace tph.ManualTrendlinesAdvisorTurtles.LogicLayer
             }
         }
 
+        protected override void UpdateManualNew(Trendline updTrendline)
+        {
 
+            //updTrendline.ManualNew = false;
+        }
         protected override CMState ProcessOutgoing(Wrapper wrapper)
         {
             try
