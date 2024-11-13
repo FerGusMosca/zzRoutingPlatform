@@ -14,6 +14,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -479,6 +480,20 @@ namespace tph.ChainedTurtles.BusinessEntities
             return ImbSignalTriggered;
         }
 
+
+        public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
+        {
+            bool isHigherThanMMov=IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+            bool isHighestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
+            DoLog($"DBG_SHORT_IMB-->TurtlesCustomConfig.ExitOnMMov={TurtlesCustomConfig.ExitOnMMov} isHigherThanMMov={isHigherThanMMov} TurtlesCustomConfig.ExitOnTurtles={TurtlesCustomConfig.ExitOnTurtles} isHighestTurtles={isHighestTurtles}", Constants.MessageType.Debug);
+            return base.EvalClosingShortPosition(portfPos);
+        }
+
+
+        public override bool EvalClosingLongPosition(PortfolioPosition portfPos)
+        {
+            return base.EvalClosingLongPosition(portfPos);
+        }
 
         //EvalClosingShortPosition --> Uses standard closing mechanism
         //EvalClosingLongPosition -->  Uses standard closing mehcanism

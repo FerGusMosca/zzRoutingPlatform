@@ -164,7 +164,18 @@ namespace tph.TrendlineTurtles.DataAccessLayer
                     cmd.Parameters.Add(new SqlParameter("@BrokenDate", trendline.BrokenDate));
                     cmd.Parameters.Add(new SqlParameter("@BrokenMarketPrice", trendline.BrokenMarketPrice!=null?trendline.BrokenMarketPrice.ClosingPrice:null));
                     cmd.Parameters.Add(new SqlParameter("@BrokenTrendlinePrice", trendline.BrokenTrendlinePrice));
-                    cmd.Parameters.Add(new SqlParameter("@CurrentTrendlinePrice", trendline.CalculateTrendPrice(monPortfpPos.GetLastFinishedCandleDate(),monPortfpPos.GetHistoricalPrices())));
+
+
+                    try
+                    {
+                        cmd.Parameters.Add(new SqlParameter("@CurrentTrendlinePrice", trendline.CalculateTrendPrice(monPortfpPos.GetLastFinishedCandleDate(), monPortfpPos.GetHistoricalPrices())));
+                    }
+                    catch (Exception ex)
+                    {
+                        //No need to avoid persisting the trendline if there was a problem calculating the trendline price
+                        cmd.Parameters.Add(new SqlParameter("@CurrentTrendlinePrice", -1));
+                    }
+
                     cmd.Parameters.Add(new SqlParameter("@SlopeDegrees", trendline.GetSlopeDegrees()));
                     cmd.Parameters.Add(new SqlParameter("@TrendlineType", Convert.ToChar(trendline.TrendlineType)));
                     cmd.Parameters.Add(new SqlParameter("@ManualNew", trendline.ManualNew));
