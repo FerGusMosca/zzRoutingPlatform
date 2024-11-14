@@ -283,6 +283,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
         {
+            DoLog($"DBG_SHORT_IMB_2 --> EvalClosingShortPosition: IsShortDirection{portfPos.IsShortDirection()} EvalClosingOnTargetPct={EvalClosingOnTargetPct(portfPos)}", zHFT.Main.Common.Util.Constants.MessageType.Information);
             if (!portfPos.IsShortDirection())
                 return false;
 
@@ -293,11 +294,12 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
                 foreach (var indicator in InnerIndicators)
                 {
+                    DoLog($"DBG_SHORT_IMB_2--> Evaluationg indicator {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
                     if (!indicator.EvalClosingShortPosition(portfPos))
                         return false;
 
                 }
-
+                DoLog($"DBG_SHORT_IMB_2--> Returning true as ALL the indicators were TRUE on EvalClosingShortPosition ", zHFT.Main.Common.Util.Constants.MessageType.Information);
                 return true;
 
             }
