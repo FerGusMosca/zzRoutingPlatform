@@ -35,13 +35,13 @@ namespace tph.ChainedTurtles.BusinessEntities
 
             Security = pSecurity;
 
+            Logger = pLogger;
+
             InnerIndicators = new List<MonTurtlePosition>();
 
             LoadConfigValues(pTurtlesCustomConfig.CustomConfig);//This is where Stop Loss and CandleRef price are loaded
 
             MonitoringType = pMonitoringType;
-
-            Logger=pLogger;
         }
 
         #endregion

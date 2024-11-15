@@ -54,15 +54,15 @@
 		</Indicators>
 	</SecurityToMonitor>
 
-	<SecurityToMonitor>
+	<!--<SecurityToMonitor>
 		<Symbol>YPF</Symbol>
 		<SecurityType>CS</SecurityType>
-		<!-- Default: CS-->
+		--><!-- Default: CS--><!--
 		<Currency>USD</Currency>
-		<!-- Default: USD-->
+		--><!-- Default: USD--><!--
 		<Exchange>SMART</Exchange>
 		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		<!-- Default: SMART -->
+		--><!-- Default: SMART --><!--
 
 		<Indicators>
 			<IndicatorToMonitor>
@@ -77,12 +77,12 @@
 	<SecurityToMonitor>
 		<Symbol>BMA</Symbol>
 		<SecurityType>CS</SecurityType>
-		<!-- Default: CS-->
+		--><!-- Default: CS--><!--
 		<Currency>USD</Currency>
-		<!-- Default: USD-->
+		--><!-- Default: USD--><!--
 		<Exchange>SMART</Exchange>
 		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		<!-- Default: SMART -->
+		--><!-- Default: SMART --><!--
 
 		<Indicators>
 			<IndicatorToMonitor>
@@ -97,12 +97,12 @@
 	<SecurityToMonitor>
 		<Symbol>SUPV</Symbol>
 		<SecurityType>CS</SecurityType>
-		<!-- Default: CS-->
+		--><!-- Default: CS--><!--
 		<Currency>USD</Currency>
-		<!-- Default: USD-->
+		--><!-- Default: USD--><!--
 		<Exchange>SMART</Exchange>
 		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		<!-- Default: SMART -->
+		--><!-- Default: SMART --><!--
 
 		<Indicators>
 			<IndicatorToMonitor>
@@ -112,7 +112,7 @@
 				<Code>SUPV_BOB_SETTING</Code>
 			</IndicatorToMonitor>
 		</Indicators>
-	</SecurityToMonitor>
+	</SecurityToMonitor>-->
 
 	</SecuritiesToMonitor>
 

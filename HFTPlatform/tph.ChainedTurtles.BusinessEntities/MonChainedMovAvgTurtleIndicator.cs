@@ -24,6 +24,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                                                     string pCode,
                                                    ILogger pLogger) : base(pSecurity, pTurtlesCustomConfig, pCode)
         {
+            Logger= pLogger;
             LoadConfigValues(pTurtlesCustomConfig.CustomConfig);
         }
 

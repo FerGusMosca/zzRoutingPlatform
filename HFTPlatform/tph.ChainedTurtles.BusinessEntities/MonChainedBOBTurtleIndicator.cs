@@ -26,6 +26,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                                                     string pCode,
                                                    ILogger pLogger) :base(pSecurity,pTurtlesCustomConfig,pCode)
         {
+            Logger=pLogger;
             LoadConfigValues(pTurtlesCustomConfig.CustomConfig);
         }
 
@@ -81,7 +82,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-            DoLog($"DBG3-LongSignalOn?={LongSignalOn} for sec {Security.Symbol}", MessageType.Debug);
+            DoLog($"DBG3-ShortSignalOn?={ShortSignalOn} for sec {Security.Symbol}", MessageType.Debug);
             if (!ShortSignalOn)
             {
 
