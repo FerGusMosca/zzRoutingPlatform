@@ -180,8 +180,6 @@ namespace tph.ChainedTurtles.BusinessEntities
             ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
             ResetEveryNMinutesThread.Start();
 
-            DoLog($"TEST TEST", Constants.MessageType.Debug);
-
         }
 
 
