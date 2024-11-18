@@ -76,8 +76,6 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public string ImbSignalTriggered { get; set; }
 
-        protected ILogger Logger { get; set; }
-
 
         #endregion
 
@@ -181,6 +179,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
             ResetEveryNMinutesThread = new Thread(ResetEveryNMinutes);
             ResetEveryNMinutesThread.Start();
+
+            DoLog($"TEST TEST", Constants.MessageType.Debug);
 
         }
 

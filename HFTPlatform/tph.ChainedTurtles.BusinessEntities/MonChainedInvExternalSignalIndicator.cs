@@ -23,8 +23,6 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         protected IExternalSignalClient SignalClient { get; set; }
 
-        protected ILogger Logger { get; set; }  
-
         protected bool IsLongSignalTriggered {  get; set; }
 
         protected bool IsShortSignalTriggered {  get; set; }
