@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>CHAINED_TURTLES_IMB_WEBSOCKET_IB_MOCK_V1_1</Name>
+	<Name>CHAINED_TURTLES_IMB_WEBSOCKET_FIX_MOCK_V1_1</Name>
 	<Account>xxx</Account>
 
-	<PositionSizeInCash>5000</PositionSizeInCash>
+	<PositionSizeInCash>1400000</PositionSizeInCash>
 	<MaxOpenedPositions>6</MaxOpenedPositions>
 	<!--1=1%-->
 	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
@@ -36,9 +36,9 @@
 			<Symbol>GGAL</Symbol>
 			<SecurityType>CS</SecurityType>
 			<!-- Default: CS-->
-			<Currency>USD</Currency>
+			<Currency>ARS</Currency>
 			<!-- Default: USD-->
-			<Exchange>SMART</Exchange>
+			<Exchange>BUE</Exchange>
 			<MonitoringType>ONLY_ROUTING</MonitoringType>
 			<!-- Default: SMART -->
 
@@ -50,41 +50,39 @@
 			</Indicators>
 		</SecurityToMonitor>
 
-		<!--<SecurityToMonitor>
+		<SecurityToMonitor>
 			<Symbol>YPFD</Symbol>
 			<SecurityType>CS</SecurityType>
-			--><!-- Default: CS--><!--
-			<Currency>USD</Currency>
-			--><!-- Default: USD-->
-				<!--
-			<Exchange>SMART</Exchange>
+			<!-- Default: CS-->
+			<Currency>ARS</Currency>
+			<!-- Default: USD-->
+			<Exchange>BUE</Exchange>
 			<MonitoringType>ONLY_ROUTING</MonitoringType>
-			-->
-				<!-- Default: SMART --><!--
+			<!-- Default: SMART -->
 
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_YPFD</Code>
 				</IndicatorToMonitor>
+
 			</Indicators>
 		</SecurityToMonitor>
-
+		
 		<SecurityToMonitor>
 			<Symbol>BMA</Symbol>
 			<SecurityType>CS</SecurityType>
-			--><!-- Default: CS--><!--
-			<Currency>USD</Currency>
-			--><!-- Default: USD-->
-				<!--
-			<Exchange>SMART</Exchange>
+			<!-- Default: CS-->
+			<Currency>ARS</Currency>
+			<!-- Default: USD-->
+			<Exchange>BUE</Exchange>
 			<MonitoringType>ONLY_ROUTING</MonitoringType>
-			-->
-				<!-- Default: SMART --><!--
+			<!-- Default: SMART -->
 
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_BMA</Code>
 				</IndicatorToMonitor>
+
 			</Indicators>
 		</SecurityToMonitor>
 
@@ -92,38 +90,36 @@
 		<SecurityToMonitor>
 			<Symbol>BBAR</Symbol>
 			<SecurityType>CS</SecurityType>
-			--><!-- Default: CS--><!--
-			<Currency>USD</Currency>
-			--><!-- Default: USD-->
-				<!--
-			<Exchange>SMART</Exchange>
+			<!-- Default: CS-->
+			<Currency>ARS</Currency>
+			<!-- Default: USD-->
+			<Exchange>BUE</Exchange>
 			<MonitoringType>ONLY_ROUTING</MonitoringType>
-			-->
-				<!-- Default: SMART --><!--
+			<!-- Default: SMART -->
 
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_BBAR</Code>
 				</IndicatorToMonitor>
+
 			</Indicators>
 		</SecurityToMonitor>
 
 		<SecurityToMonitor>
 			<Symbol>SUPV</Symbol>
 			<SecurityType>CS</SecurityType>
-			--><!-- Default: CS--><!--
-			<Currency>USD</Currency>
-			--><!-- Default: USD-->
-				<!--
-			<Exchange>SMART</Exchange>
+			<!-- Default: CS-->
+			<Currency>ARS</Currency>
+			<!-- Default: USD-->
+			<Exchange>BUE</Exchange>
 			<MonitoringType>ONLY_ROUTING</MonitoringType>
-			-->
-				<!-- Default: SMART --><!--
+			<!-- Default: SMART -->
 
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_SUPV</Code>
 				</IndicatorToMonitor>
+
 			</Indicators>
 		</SecurityToMonitor>
 
@@ -131,21 +127,24 @@
 		<SecurityToMonitor>
 			<Symbol>COME</Symbol>
 			<SecurityType>CS</SecurityType>
-			--><!-- Default: CS--><!--
-			<Currency>USD</Currency>
-			--><!-- Default: USD-->
-				<!--
-			<Exchange>SMART</Exchange>
+			<!-- Default: CS-->
+			<Currency>ARS</Currency>
+			<!-- Default: USD-->
+			<Exchange>BUE</Exchange>
 			<MonitoringType>ONLY_ROUTING</MonitoringType>
-			-->
-				<!-- Default: SMART --><!--
+			<!-- Default: SMART -->
 
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>IMBALANCE_INNER_IND_COME</Code>
 				</IndicatorToMonitor>
+
 			</Indicators>
-		</SecurityToMonitor>-->
+		</SecurityToMonitor>
+
+
+
+		
 
 	</SecuritiesToMonitor>
 
@@ -156,8 +155,8 @@
 			<SecurityToMonitor>
 				<Symbol>GGAL</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>SMART</Exchange>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
@@ -166,14 +165,32 @@
 			
 			
 		</ChainedTurtleIndicator>
+
+
+		<ChainedTurtleIndicator>
+			<Code>IMBALANCE_INNER_IND_YPFD</Code>
+			<SecurityToMonitor>
+				<Symbol>YPFD</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType></SignalType>
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+		</ChainedTurtleIndicator>
+		
+		
+		
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_YPFD</Code>
 			<SecurityToMonitor>
 				<Symbol>YPF</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
+				<Currency>ARS</Currency>
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
-				<Exchange>SMART</Exchange>
+				<Exchange>BUE</Exchange>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
@@ -186,8 +203,8 @@
 			<SecurityToMonitor>
 				<Symbol>BMA</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>SMART</Exchange>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
@@ -202,8 +219,8 @@
 			<SecurityToMonitor>
 				<Symbol>BBAR</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>SMART</Exchange>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
@@ -217,8 +234,8 @@
 			<SecurityToMonitor>
 				<Symbol>SUPV</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>SMART</Exchange>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
@@ -233,8 +250,8 @@
 			<SecurityToMonitor>
 				<Symbol>COME</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>SMART</Exchange>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
 				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
