@@ -52,6 +52,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public bool RequestHistoricalPrices { get; set; }
 
+        public bool CloseOnInnnerIndicators { get; set; }
+
         protected MonPosInnerIndicatorsOrchestationLogicDTO OrchestationLogic { get; set; }
 
         #endregion
@@ -72,6 +74,7 @@ namespace tph.ChainedTurtles.BusinessEntities
                 HistoricalPricesPeriod = TurtleIndicatorBaseConfigLoader.GetHistoricalPricesPeriod(resp);
                 RequestHistoricalPrices = TurtleIndicatorBaseConfigLoader.GetRequestHistoricalPrices(resp,true);
 
+                CloseOnInnnerIndicators = resp.DoCloseOnInnnerIndicators();
 
                 if (!string.IsNullOrEmpty(resp.candleReferencePrice))
                 {
@@ -255,30 +258,35 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (EvalClosingOnTargetPct(portfPos))
                 return true;
 
-
-            if (TurtlesCustomConfig.ExitOnMMov)
+            if (CloseOnInnnerIndicators)
             {
-                foreach (var indicator in InnerIndicators)
+
+
+                if (TurtlesCustomConfig.ExitOnMMov)
                 {
-                    if (!indicator.EvalClosingLongPosition(portfPos))
-                        return false;
+                    foreach (var indicator in InnerIndicators)
+                    {
+                        if (!indicator.EvalClosingLongPosition(portfPos))
+                            return false;
+
+                    }
+
+                    return true;
 
                 }
+                else if (TurtlesCustomConfig.ExitOnTurtles)
+                {
+                    return base.EvalClosingLongPosition(portfPos);
 
-                return true;
+                }
+                else
+                {
+                    throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
 
-            }
-            else if (TurtlesCustomConfig.ExitOnTurtles)
-            {
-                return base.EvalClosingLongPosition(portfPos);
-
+                }
             }
             else
-            {
-                throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
-
-            }
-             
+                return base.EvalClosingLongPosition(portfPos);
         }
 
         public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
@@ -290,27 +298,35 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (EvalClosingOnTargetPct(portfPos))
                 return true;
 
-            if (TurtlesCustomConfig.ExitOnMMov)
+            if (CloseOnInnnerIndicators)
             {
-                foreach (var indicator in InnerIndicators)
+
+                if (TurtlesCustomConfig.ExitOnMMov)
                 {
-                    DoLog($"DBG_SHORT_IMB_2--> Evaluationg indicator {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
-                    if (!indicator.EvalClosingShortPosition(portfPos))
-                        return false;
+                    foreach (var indicator in InnerIndicators)
+                    {
+                        DoLog($"DBG_SHORT_IMB_2--> Evaluationg indicator {indicator.Security.Symbol}", zHFT.Main.Common.Util.Constants.MessageType.Information);
+                        if (!indicator.EvalClosingShortPosition(portfPos))
+                            return false;
+
+                    }
+                    DoLog($"DBG_SHORT_IMB_2--> Returning true as ALL the indicators were TRUE on EvalClosingShortPosition ", zHFT.Main.Common.Util.Constants.MessageType.Information);
+                    return true;
 
                 }
-                DoLog($"DBG_SHORT_IMB_2--> Returning true as ALL the indicators were TRUE on EvalClosingShortPosition ", zHFT.Main.Common.Util.Constants.MessageType.Information);
-                return true;
+                else if (TurtlesCustomConfig.ExitOnTurtles)
+                {
+                    return base.EvalClosingShortPosition(portfPos);
+                }
+                else
+                {
+                    throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
 
-            }
-            else if (TurtlesCustomConfig.ExitOnTurtles)
-            {
-                return base.EvalClosingShortPosition(portfPos);
+                }
             }
             else
             {
-                throw new Exception($"No proper exit algo specified for symbol {Security.Symbol}");
-
+                return base.EvalClosingShortPosition(portfPos);
             }
         }
 

@@ -16,8 +16,26 @@ namespace tph.ChainedTurtles.Common.DTO
 
         public double stopLossForOpenPositionPct { get; set; }
 
+        public bool? closeOnInnerIndicators { get;set; }
+
 
         public MonPosInnerIndicatorsOrchestationLogicDTO innerIndicatorsOrchestationLogic {  get; set; }
+
+        #endregion
+
+
+        #region Public Methods
+
+        public bool DoCloseOnInnnerIndicators()
+        {
+            if (closeOnInnerIndicators.HasValue)
+            {
+                return closeOnInnerIndicators.Value;
+            }
+            else
+                return true;
+        
+        }
 
         #endregion
     }

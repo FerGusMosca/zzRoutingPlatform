@@ -180,24 +180,22 @@
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 		</ChainedTurtleIndicator>
-		
-		
-		
-		<!--<ChainedTurtleIndicator>
-			<Code>IMBALANCE_INNER_IND_YPFD</Code>
+
+		<ChainedTurtleIndicator>
+			<Code>IMBALANCE_INNER_IND_BMA</Code>
 			<SecurityToMonitor>
-				<Symbol>YPF</Symbol>
+				<Symbol>BMA</Symbol>
 				<SecurityType>CS</SecurityType>
 				<Currency>ARS</Currency>
-				<MonitoringType>ONLY_ROUTING</MonitoringType>
 				<Exchange>BUE</Exchange>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType></SignalType>
-			-->
-			<!--BOB=Trendlines,BOB_INV= Trendlines inverted --><!--
-			
-		</ChainedTurtleIndicator>-->
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+		</ChainedTurtleIndicator>
+		
+		
 		<!--<ChainedTurtleIndicator>
 			<Code>IMBALANCE_INNER_IND_BMA</Code>
 			<SecurityToMonitor>
