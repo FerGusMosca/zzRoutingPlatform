@@ -4,14 +4,16 @@
   
 <!--  Binance-->
   <IncomingConfigPath>.\Binance\incomingBinance.xml</IncomingConfigPath>
-  <IncomingModule>zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance</IncomingModule>
+  <!--<IncomingModule>zHFT.InstructionBasedMarketClient.Binance.Client.BinanceInstructionBasedMarketClient, zHFT.InstructionBasedMarketClient.Binance</IncomingModule>-->
+	<IncomingModule>tph.InstructionBasedMarketClient.Binance2.Client.BinanceInstructionBasedMarketClient, tph.InstructionBasedMarketClient.Binance2</IncomingModule>
 
-	<!-- <OutgoingModule>tph.DayTurtles.LogicLayer.DayTurtles,tph.DayTurtles.LogicLayer</OutgoingModule>-->
-	<!-- <OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>-->
+
+	<OutgoingModule>tph.DayTurtles.LogicLayer.DayTurtles,tph.DayTurtles.LogicLayer</OutgoingModule>
+	 <OutgoingConfigPath>.\TurtlesDayTrading.xml</OutgoingConfigPath>
 	
 	
-	<OutgoingModule>tph.StrategyHanders.TestStrategies.TestModule.TestStrategy,tph.StrategyHanders.TestStrategies.TestModule</OutgoingModule>
-	<OutgoingConfigPath>.\TestStrategyConfig.xml</OutgoingConfigPath>
+	<!--<OutgoingModule>tph.StrategyHanders.TestStrategies.TestModule.TestStrategy,tph.StrategyHanders.TestStrategies.TestModule</OutgoingModule>
+	<OutgoingConfigPath>.\TestStrategyConfig.xml</OutgoingConfigPath>-->
 	
 	<LogToConsole>true</LogToConsole>
 </Configuration>

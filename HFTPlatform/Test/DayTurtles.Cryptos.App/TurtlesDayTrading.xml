@@ -26,7 +26,7 @@
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_bob_imb_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <ResetOnPersistance>true</ResetOnPersistance>
 
@@ -41,11 +41,11 @@
 
   <StocksToMonitor>
 
-    <!--<Symbol>BTC</Symbol>-->
-    <Symbol>ETH</Symbol>
+    <Symbol>BTC</Symbol>
+    <!--<Symbol>ETH</Symbol>
     <Symbol>DOGE</Symbol>
     <Symbol>ADA</Symbol>
-    <Symbol>XRP</Symbol>
+    <Symbol>XRP</Symbol>-->
     <!--    <Symbol>DOGE</Symbol>-->
     <!--    <Symbol>BNB</Symbol>-->
     <!--    <Symbol>ADA</Symbol>-->

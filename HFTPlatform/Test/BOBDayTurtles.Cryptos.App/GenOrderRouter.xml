@@ -5,11 +5,11 @@
 	<!--  <Proxy>zHFT.OrderRouters.Binance.OrderRouter, zHFT.OrderRouters.Binance</Proxy>-->
 	<!--  <ProxyConfigFile>.\Binance\outgoingOrderRouter.Binance.xml</ProxyConfigFile>-->
 
-	<!-- <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
-    <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>-->
+	 <Proxy>zHFT.OrderRouters.Mock.OrderRouter, zHFT.OrderRouters.Mock</Proxy>
+    <ProxyConfigFile>.\Mock\outgoingOrderRouter.Mock.xml</ProxyConfigFile>
 
-	<Proxy>tph.OrderRouter.Bittrex.OrderRouter, tph.OrderRouter.Bittrex</Proxy>
-	<ProxyConfigFile>.\Bittrex\outgoingOrderRouter.Bittrex.xml</ProxyConfigFile>
+	<!--<Proxy>tph.OrderRouter.Bittrex.OrderRouter, tph.OrderRouter.Bittrex</Proxy>
+	<ProxyConfigFile>.\Bittrex\outgoingOrderRouter.Bittrex.xml</ProxyConfigFile>-->
 
   <OrderUpdateInMilliseconds>5000</OrderUpdateInMilliseconds>
   <!--<OrderIdStart>00</OrderIdStart>-->

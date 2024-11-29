@@ -13,7 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\tph.DayTurtles.LogicLayer\tph.DayTurtles.LogicLayer.csproj" />
-      <ProjectReference Include="..\..\tph.OrderRouter.Bittrex\tph.OrderRouter.Bittrex.csproj" />
+      <ProjectReference Include="..\..\tph.InstructionBasedMarketClient.Binance2\tph.InstructionBasedMarketClient.Binance2.csproj" />
       <ProjectReference Include="..\..\tph.StrategyHanders.TestStrategies.TestModule\tph.StrategyHanders.TestStrategies.TestModule.csproj" />
       <ProjectReference Include="..\..\zHFT.InstructionBasedMarketClient.Binance\zHFT.InstructionBasedMarketClient.Binance.csproj" />
       <ProjectReference Include="..\..\zHFT.Main.Common\zHFT.Main.Common.csproj" />

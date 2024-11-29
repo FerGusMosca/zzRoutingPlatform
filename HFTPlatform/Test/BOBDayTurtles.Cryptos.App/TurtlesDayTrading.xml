@@ -34,13 +34,17 @@
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV17;initial catalog=daily_bob_turtles;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_bob_imb_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <ResetOnPersistance>true</ResetOnPersistance>
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-  
-  <OnlyLong>false</OnlyLong>
+
+  <HistoricalPricesPeriod>-7</HistoricalPricesPeriod>
+   <!---4= -4 days-->
+
+
+	<OnlyLong>false</OnlyLong>
 
   <RecalculateTrendlines>false</RecalculateTrendlines>
 
@@ -52,10 +56,10 @@
 
 	<StocksToMonitor>
     <Symbol>BTC</Symbol>
-    <Symbol>ETH</Symbol>
+    <!--<Symbol>ETH</Symbol>
     <Symbol>DOGE</Symbol>
     <Symbol>ADA</Symbol>
-    <Symbol>XRP</Symbol>
+    <Symbol>XRP</Symbol>-->
 
 <!--    -->
   </StocksToMonitor>

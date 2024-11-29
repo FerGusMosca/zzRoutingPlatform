@@ -1,7 +1,8 @@
-﻿using Binance.API.Csharp.Client;
-using Binance.API.Csharp.Client.Models.Account;
-using Binance.API.Csharp.Client.Models.Enums;
-using Binance.API.Csharp.Client.Utils;
+﻿//using Binance.API.Csharp.Client;
+//using Binance.API.Csharp.Client.Models.Account;
+//using Binance.API.Csharp.Client.Models.Enums;
+//using Binance.API.Csharp.Client.Utils;
+using Binance.Net.Clients;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,10 +16,10 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
     {
         #region Constructors
 
-        public BinanceClientProxy(ApiClient pApiClient)
-            : base(pApiClient)
-        { 
-        }
+        //public BinanceClientProxy(ApiClient pApiClient)
+        //    : base(pApiClient)
+        //{ 
+        //}
 
         #endregion
 
@@ -58,24 +59,24 @@ namespace zHFT.OrderRouters.BINANCE.Common.Util
 
         #region Public Methods
 
-        public async Task<NewOrder> PostNewLimitOrder(string symbol, decimal quantity, decimal price, OrderSide side,int decimalPrecission)
-        {
+        //public async Task<NewOrder> PostNewLimitOrder(string symbol, decimal quantity, decimal price, OrderSide side,int decimalPrecission)
+        //{
 
-            quantity = TruncateDecimal(quantity, decimalPrecission);
+        //    quantity = TruncateDecimal(quantity, decimalPrecission);
 
-            string qty = quantity.ToString("0." + GetMaxDecimals(decimalPrecission));
-            string strPrice = price.ToString("0.########");
+        //    string qty = quantity.ToString("0." + GetMaxDecimals(decimalPrecission));
+        //    string strPrice = price.ToString("0.########");
 
-            var args = string.Format("symbol={0}&side={1}&type={2}&quantity={3}&timeInForce={4}&price={5}&recvWindow=5000",
-                                      symbol, side == OrderSide.BUY ? "BUY" : "SELL", "LIMIT", qty, "GTC", strPrice);
+        //    var args = string.Format("symbol={0}&side={1}&type={2}&quantity={3}&timeInForce={4}&price={5}&recvWindow=5000",
+        //                              symbol, side == OrderSide.BUY ? "BUY" : "SELL", "LIMIT", qty, "GTC", strPrice);
 
-            //var args = string.Format("symbol={0}&side={1}&type={2}&quantity={3}&timeInForce={4}&price={5}&recvWindow=5000",
-            //                          "ETHBTC", "BUY", "LIMIT", "0.017", "GTC", "0.097444");
+        //    //var args = string.Format("symbol={0}&side={1}&type={2}&quantity={3}&timeInForce={4}&price={5}&recvWindow=5000",
+        //    //                          "ETHBTC", "BUY", "LIMIT", "0.017", "GTC", "0.097444");
 
-            var result = await _apiClient.CallAsync<NewOrder>(ApiMethod.POST, EndPoints.NewOrder, true, args);
+        //    var result = await _apiClient.CallAsync<NewOrder>(ApiMethod.POST, EndPoints.NewOrder, true, args);
 
-            return result;
-        }
+        //    return result;
+        //}
 
         #endregion
     }

@@ -881,6 +881,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainedTurtle.InvVIX_BOB+On
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainedTurtle.Imbalance.Websocket.FIX.App", "ChainedTurtle.Imbalance.Websocket.FIX.App\ChainedTurtle.Imbalance.Websocket.FIX.App.csproj", "{11626EBE-460E-495C-BB0E-82EFB34CF3F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.InstructionBasedMarketClient.Binance2", "tph.InstructionBasedMarketClient.Binance2\tph.InstructionBasedMarketClient.Binance2.csproj", "{522D7089-5993-4A2A-8599-A3A4CDB45B4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -4539,6 +4541,18 @@ Global
 		{11626EBE-460E-495C-BB0E-82EFB34CF3F2}.Release|x64.Build.0 = Release|Any CPU
 		{11626EBE-460E-495C-BB0E-82EFB34CF3F2}.Release|x86.ActiveCfg = Release|Any CPU
 		{11626EBE-460E-495C-BB0E-82EFB34CF3F2}.Release|x86.Build.0 = Release|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Debug|x64.Build.0 = Debug|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Debug|x86.Build.0 = Debug|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Release|x64.ActiveCfg = Release|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Release|x64.Build.0 = Release|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Release|x86.ActiveCfg = Release|Any CPU
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -4971,6 +4985,7 @@ Global
 		{AC702B6C-F734-46C6-81E1-7DE65FD1EF5D} = {21933AAC-2184-4342-8ADB-FC2EAC138EAC}
 		{44E2F172-4D3C-4106-8511-ADB75C472FBE} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 		{11626EBE-460E-495C-BB0E-82EFB34CF3F2} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
+		{522D7089-5993-4A2A-8599-A3A4CDB45B4C} = {290823C3-256A-41B2-B7AD-CC35E769BE34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}

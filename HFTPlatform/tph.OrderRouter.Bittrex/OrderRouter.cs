@@ -1,10 +1,10 @@
-﻿using Bittrex.Data;
+﻿//using Bittrex.Data;
 using Bittrex.Net.Clients;
 using Bittrex.Net.Enums;
 using Bittrex.Net.Objects.Models;
 using Bittrex.Net.Objects.Models.Socket;
-using CryptoExchange.Net.Authentication;
-using CryptoExchange.Net.Sockets;
+//using CryptoExchange.Net.Authentication;
+//using CryptoExchange.Net.Sockets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -430,20 +430,22 @@ namespace tph.OrderRouter.Bittrex
                     if (bittrexData == null)
                         throw new Exception(string.Format("No se encontró ninguna configuración de autenticación contra Bittrex de la cuenta {0}", BittrexConfiguration.AccountNumber));
 
-                    BittrexConfiguration.ApiKey = bittrexData.APIKey;
-                    BittrexConfiguration.Secret = bittrexData.Secret;
 
-                    BittrexRestClient = new BittrexRestClient(options =>
-                    {
-                        options.ApiCredentials = new ApiCredentials(BittrexConfiguration.ApiKey, BittrexConfiguration.Secret);
-                        options.RequestTimeout = TimeSpan.FromSeconds(60);
-                    });
+                    //TODO BROKEN CODEs
+                    //BittrexConfiguration.ApiKey = bittrexData.APIKey;
+                    //BittrexConfiguration.Secret = bittrexData.Secret;
 
-                    BittrexSocketClient = new BittrexSocketClient(options =>
-                    {
-                        options.ApiCredentials = new ApiCredentials(BittrexConfiguration.ApiKey, BittrexConfiguration.Secret);
-                        options.RequestTimeout = TimeSpan.FromSeconds(60);
-                    });
+                    //BittrexRestClient = new BittrexRestClient(options =>
+                    //{
+                    //    options.ApiCredentials = new ApiCredentials(BittrexConfiguration.ApiKey, BittrexConfiguration.Secret);
+                    //    options.RequestTimeout = TimeSpan.FromSeconds(60);
+                    //});
+
+                    //BittrexSocketClient = new BittrexSocketClient(options =>
+                    //{
+                    //    options.ApiCredentials = new ApiCredentials(BittrexConfiguration.ApiKey, BittrexConfiguration.Secret);
+                    //    options.RequestTimeout = TimeSpan.FromSeconds(60);
+                    //});
 
                     SubscribeExecutionReports();
 
