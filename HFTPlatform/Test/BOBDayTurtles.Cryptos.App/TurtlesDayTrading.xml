@@ -40,7 +40,7 @@
 
   <CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
 
-  <HistoricalPricesPeriod>-7</HistoricalPricesPeriod>
+  <HistoricalPricesPeriod>-1</HistoricalPricesPeriod>
    <!---4= -4 days-->
 
 
@@ -56,10 +56,10 @@
 
 	<StocksToMonitor>
     <Symbol>BTC</Symbol>
-    <!--<Symbol>ETH</Symbol>
+    <Symbol>ETH</Symbol>
     <Symbol>DOGE</Symbol>
     <Symbol>ADA</Symbol>
-    <Symbol>XRP</Symbol>-->
+    <Symbol>XRP</Symbol>
 
 <!--    -->
   </StocksToMonitor>

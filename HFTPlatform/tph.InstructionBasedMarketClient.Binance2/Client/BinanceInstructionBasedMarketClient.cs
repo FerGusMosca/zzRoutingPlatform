@@ -233,8 +233,15 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
                 zHFT.Main.Common.Enums.CandleInterval interval = (zHFT.Main.Common.Enums.CandleInterval)wrapper.GetField(HistoricalPricesRequestFields.Interval);
                 string quoteSymbol = BinanceConfiguration.QuoteCurrency;
 
+                if (interval == CandleInterval.Minute_1 && BinanceConfiguration.MaxMinutesResponse.HasValue && to.HasValue)
+                {
+                    //We have to be careful to handle the max response amount by Binance
+                    from = to.Value.AddMinutes(-1 * BinanceConfiguration.MaxMinutesResponse.Value);
+                }
 
-                var histPrices = await binanceClient.SpotApi.ExchangeData.GetKlinesAsync(symbol + quoteSymbol, GetTimeInterval(interval),from,to);
+
+                var histPrices = await binanceClient.SpotApi.ExchangeData.GetKlinesAsync(symbol + quoteSymbol, GetTimeInterval(interval),from,to,
+                                                                                    limit:1400);
 
                 List<BinanceMarketDataWrapper> result = new List<BinanceMarketDataWrapper>();
 
