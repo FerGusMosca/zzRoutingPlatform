@@ -233,7 +233,7 @@ namespace tph.TrendlineTurtles.BusinessEntities
                     {
                         List<MarketData> histPrices = GetHistoricalPrices();
                         double trendlinePrice = support.CalculateTrendPrice(lastCandle.MDEntryDate.Value, histPrices);
-                        return $"{Security.Symbol} --> Broken Support: Start={resistance.StartDate} End={resistance.EndDate} Now={DateTimeManager.Now} " +
+                        return $"{Security.Symbol} --> Broken Support: Start={support.StartDate} End={support.EndDate} Now={DateTimeManager.Now} " +
                                $"LastCandlePrice={lastCandle.Trade} LastCandleDate={lastCandle.MDEntryDate.Value} TrendlinePrice={trendlinePrice} ";
                     }
                     else
