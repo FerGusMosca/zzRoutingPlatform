@@ -34,7 +34,7 @@
 
   <OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-  <ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_bob_imb_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+  <ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 
   <ResetOnPersistance>true</ResetOnPersistance>
 

@@ -81,7 +81,7 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
 
         }
 
-        protected async void  DoPopulateL1(Security sec, string symbol, string quoteSymbol)
+        protected  void  DoPopulateL1(Security sec, string symbol, string quoteSymbol)
         {
             var apiCredentials = new BinanceApiCredentials(AccountBinanceData.APIKey, AccountBinanceData.Secret);
 
@@ -92,7 +92,7 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
                        options.ApiCredentials = apiCredentials;
                    });
 
-            var orderBook = await binanceClient.SpotApi.ExchangeData.GetOrderBookAsync(symbol + quoteSymbol);
+            var orderBook =  binanceClient.SpotApi.ExchangeData.GetOrderBookAsync(symbol + quoteSymbol).Result;
 
             if (orderBook.Data != null)
             {
@@ -151,6 +151,7 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
                             }
                         }
 
+                        DoLog($"Fetching market data for symbol {symbol + quoteSymbol}", MessageType.Information);
                         var tradingDayInfo = await binanceClient.SpotApi.ExchangeData.GetTradingDayTickerAsync(symbol + quoteSymbol);
                                             Security sec = new Security();
 
