@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>CHAINED_TURTLES_BOB_CRYPTOS_BINANCE</Name>
+	<Account>xxx</Account>
+
+	<PositionSizeInCash>1000</PositionSizeInCash>
+	
+	<MaxOpenedPositions>6</MaxOpenedPositions>
+	<StopLossForOpenPositionPct>2</StopLossForOpenPositionPct>
+	<!--1=1%-->
+	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
+	<!--OrderRouter,Nominal,Percentage-->
+	<FeeValuePerTrade>0</FeeValuePerTrade>
+	<DecimalRounding>3</DecimalRounding>
+
+	<InnerTrendlinesSpan>120</InnerTrendlinesSpan>
+	<!--in candles-->
+	<OuterTrendlinesSpan>60</OuterTrendlinesSpan>
+	<!--in candles-->
+	<PerforationThresholds>0</PerforationThresholds>
+	<!--in pct 0-1-->
+
+
+	<ClosingTime>23:59 PM</ClosingTime>
+
+	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ResetOnPersistance>true</ResetOnPersistance>
+	<RecalculateTrendlines>true</RecalculateTrendlines>
+	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+	<BulkMarketDataRequest>true</BulkMarketDataRequest>
+	<CandleReferencePrice>TRADE</CandleReferencePrice>
+	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
+
+	<OpeningTime>00:00</OpeningTime><!--Needed for historical prices recovery-->
+	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
+
+	<OnlyLong>false</OnlyLong>
+
+	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
+	<!---4= -4 days-->
+
+	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
+	<!--0=No Skip-->
+
+	<SecuritiesToMonitor>
+		<SecurityToMonitor>
+			<Symbol>BTC</Symbol>
+			<SecurityType>CC</SecurityType> <!-- Default: CS-->
+			<Currency>USDT</Currency> <!-- Default: USD-->
+			<Exchange>SMART</Exchange><!-- Default: SMART -->
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>BTC_BOB_BTC</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
+		
+	</SecuritiesToMonitor>
+
+
+	<ChainedTurtleIndicators>
+		<ChainedTurtleIndicator>
+			<Code>BTC_BOB_BTC</Code>
+			<SecurityToMonitor>
+				<Symbol>BTC</Symbol>
+				<SecurityType>CC</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+			<RequestPrices>true</RequestPrices>
+		</ChainedTurtleIndicator>
+	</ChainedTurtleIndicators>
+	
+	
+
+</ChainedConfiguration>
