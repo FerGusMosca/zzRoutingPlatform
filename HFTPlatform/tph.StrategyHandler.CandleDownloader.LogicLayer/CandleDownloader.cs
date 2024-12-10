@@ -87,7 +87,14 @@ namespace tph.StrategyHandler.CandleDownloader.LogicLayer
                             if (candleToPersist != null)
                             {
                                 DoLog($"{Config.Name}- Persistign Candle :{md.ToString()}", MessageType.Information);
-                                CandleManager.Persist(md.Security.Symbol, CandleInterval.Minute_1, candleToPersist);
+
+                                string symbol = md.Security.Symbol;
+                                if (Config.PersistWithFullSymbol) {
+
+                                    symbol = md.Security.Symbol + "." + md.Security.Exchange;
+                                }
+
+                                CandleManager.Persist(symbol, CandleInterval.Minute_1, candleToPersist);
                                 DoLog($"{Config.Name}-  Candle for symbol {md.Security.Symbol} successfully persisted", MessageType.Information);
                             }
                         }

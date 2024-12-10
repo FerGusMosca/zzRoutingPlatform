@@ -24,6 +24,7 @@ namespace tph.StrategyHandler.CandleDownloader.Common.Configuration
         public string CandleReferencePrice { get; set; }
 
 
+        public bool PersistWithFullSymbol { get; set; }
 
         [XmlArray]
         [XmlArrayItem(ElementName = "Symbol")]

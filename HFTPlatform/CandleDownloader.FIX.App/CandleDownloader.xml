@@ -9,6 +9,8 @@
 	<Exchange>BUE</Exchange><!--SAMRT,CBOE-->
 	<CandleReferencePrice>TRADE</CandleReferencePrice>
 
+	<PersistWithFullSymbol>true</PersistWithFullSymbol><!--Ex: GGAL-> GGAL.BUE -->
+
 	<SymbolsToDownload>
 
 		<!--<Symbol>BTC</Symbol>-->
