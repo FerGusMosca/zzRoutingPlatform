@@ -24,6 +24,8 @@
   <MaxWaitingTimeForMarketDataRequest>5</MaxWaitingTimeForMarketDataRequest>
   <!--Seconds-->
 
+	<FetchHistoricalPricesWithFullSymbol>true</FetchHistoricalPricesWithFullSymbol>
+
   <WaitingTimeForOrderRoutingInMiliseconds>1000</WaitingTimeForOrderRoutingInMiliseconds><!--No más de una orden por segundo-->
 
   <SecurityTypes>

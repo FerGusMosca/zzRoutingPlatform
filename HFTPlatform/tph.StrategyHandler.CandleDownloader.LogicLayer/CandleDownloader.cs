@@ -91,7 +91,7 @@ namespace tph.StrategyHandler.CandleDownloader.LogicLayer
                                 string symbol = md.Security.Symbol;
                                 if (Config.PersistWithFullSymbol) {
 
-                                    symbol = md.Security.Symbol + "." + md.Security.Exchange;
+                                    symbol = md.Security.Symbol + "." + (!String.IsNullOrEmpty(md.Security.Exchange) ? md.Security.Exchange : Config.Exchange);
                                 }
 
                                 CandleManager.Persist(symbol, CandleInterval.Minute_1, candleToPersist);

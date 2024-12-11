@@ -57,6 +57,8 @@ namespace zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration
 
         public bool HistoricalPricesOnDB { get; set; }
 
+        public bool FetchHistoricalPricesWithFullSymbol { get; set; }
+
         #endregion
 
         #region Public Methods

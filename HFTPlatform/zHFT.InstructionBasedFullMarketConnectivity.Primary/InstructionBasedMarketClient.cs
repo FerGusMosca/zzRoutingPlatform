@@ -38,6 +38,7 @@ using zHFT.InstructionBasedFullMarketConnectivity.DAL;
 using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using MarketDataWrapper = zHFT.MarketClient.Common.Wrappers.MarketDataWrapper;
+using QuickFix40;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {
@@ -819,8 +820,15 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 HistoricalPricesRequestDTO dtoRecord= HistoricalPriceConverter.ConvertHistoricalPriceRequest(histPricesReqWrapper);
                 if (PrimaryConfiguration.HistoricalPricesOnDB)
                 {
+                    string symbol = dtoRecord.Symbol;
+
+                    if (PrimaryConfiguration.FetchHistoricalPricesWithFullSymbol)
+                    {
+                        symbol = dtoRecord.Symbol + "." + "BUE";
+                    }
+
                     CandleManager cnldMgr = new CandleManager(PrimaryConfiguration.HistoricalPricesConnectionString);
-                    List<MarketData> candles = cnldMgr.GetCandles(dtoRecord.Symbol, dtoRecord.Interval,
+                    List<MarketData> candles = cnldMgr.GetCandles(symbol, dtoRecord.Interval,
                                                                   dtoRecord.From.HasValue ? dtoRecord.From.Value : DateTime.MinValue,
                                                                   dtoRecord.To.HasValue ? dtoRecord.To.Value : DateTime.MaxValue); 
 
