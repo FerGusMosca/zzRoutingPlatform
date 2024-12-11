@@ -17,6 +17,8 @@ namespace zHFT.MarketClient.Common.DTO
 
         public string Currency { get; set; }
 
+        public string Exchange { get; set; }
+
         public SecurityType SecurityType { get; set; }
 
         public CandleInterval Interval { get; set; }

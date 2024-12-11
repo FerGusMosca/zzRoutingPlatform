@@ -824,7 +824,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                     if (PrimaryConfiguration.FetchHistoricalPricesWithFullSymbol)
                     {
-                        symbol = dtoRecord.Symbol + "." + "BUE";
+                        symbol = dtoRecord.Symbol + "." + (!string.IsNullOrEmpty(dtoRecord.Exchange) ? dtoRecord.Exchange : (PrimaryConfiguration.Markets != null ? PrimaryConfiguration.Markets.FirstOrDefault() : _MAIN_EXCHANGE));
                     }
 
                     CandleManager cnldMgr = new CandleManager(PrimaryConfiguration.HistoricalPricesConnectionString);
@@ -1094,7 +1094,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         #region QuickFix Methods
 
-        public override void fromApp(Message value, SessionID sessionId)
+        public override void fromApp(QuickFix.Message value, SessionID sessionId)
         {
             try
             {
@@ -1146,7 +1146,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             
         }
 
-        public override void toAdmin(Message value, SessionID sessionId)
+        public override void toAdmin(QuickFix.Message value, SessionID sessionId)
         {
             try
             {
@@ -1210,6 +1210,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             OnMarketDataMessageRcv += OnMessageRcv;
         }
+
+
 
         #endregion
     }

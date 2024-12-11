@@ -14,7 +14,7 @@
 
 
   <HistoricalPricesOnDB>true</HistoricalPricesOnDB>
-  <HistoricalPricesConnectionString>Data Source=.\SQLDEV17;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</HistoricalPricesConnectionString>
+  <HistoricalPricesConnectionString>Data Source=.\SQLDEV;initial catalog=SecuritiesHistoricalData_Light;integrated security=True;multipleactiveresultsets=True</HistoricalPricesConnectionString>
 
   <SecuritiesMarketTranslator>zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer.Translators.PrimarySecurityTranslator, zHFT.StrategyHandler.SecurityListSaver.Primary.LogicLayer</SecuritiesMarketTranslator>
 

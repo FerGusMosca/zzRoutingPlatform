@@ -16,6 +16,8 @@ namespace zHFT.MarketClient.Common.Converters
 
         public static string _DEF_CURRENCY = "USD";
 
+        public static string _DEF_EXCHANGE = "BUE";
+
         #endregion
 
         #region Public Static Methods
@@ -44,6 +46,13 @@ namespace zHFT.MarketClient.Common.Converters
                 dto.Currency = (string)wrapper.GetField(HistoricalPricesRequestFields.Currency);
             else
                 dto.Currency = _DEF_CURRENCY;
+
+
+
+            if (ValidateField(wrapper, HistoricalPricesRequestFields.Exchange))
+                dto.Exchange = (string)wrapper.GetField(HistoricalPricesRequestFields.Exchange);
+            else
+                dto.Exchange = null;
 
 
             if (ValidateField(wrapper, HistoricalPricesRequestFields.SecurityType))
