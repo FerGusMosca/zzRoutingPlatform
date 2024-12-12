@@ -5,7 +5,7 @@
 
   <PublishUpdateInMilliseconds>2000</PublishUpdateInMilliseconds>
 
-  <MaxMinutesResponse>1000</MaxMinutesResponse>
+  <MaxMinutesResponse>2440</MaxMinutesResponse><!--1000 + 1440 because Binance returns Max=1000 canldes, and Chained adds 1 day to the TO-->
   
   <Key>tmhXIW2T2bivhqegxL8NDBV97YcT5DyK9qgY5OtB2AEcfdTKEnMr5qFv5EP6x54L</Key>
   <Secret>TcN8EQDcma4Bp7OAI1NBMK0cB6qufA7zXdRTC8N9nXNjxy389L4kFH9AA6Itf2T7</Secret>

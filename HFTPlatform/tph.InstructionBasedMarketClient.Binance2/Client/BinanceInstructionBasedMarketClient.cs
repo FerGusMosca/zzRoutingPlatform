@@ -62,6 +62,9 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
 
         protected AccountBinanceData AccountBinanceData { get; set; }
 
+
+        protected long mdReqId { get; set; }
+
         #endregion
 
         #region Protected Methods
@@ -350,6 +353,72 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
             }
         }
 
+
+        protected void ProcessMarketDataRequestBulkThread(object param)
+        {
+            try
+            {
+
+                Wrapper wrapper = (Wrapper)param;
+                MarketDataRequestBulk mdrb = MarketDataRequestConverter.GetMarketDataRequestBulk(wrapper);
+
+                //EvalSyncBulkWithHistoricalPrices(mdrb);
+
+                if (mdrb.SubscriptionRequestType == SubscriptionRequestType.Snapshot)
+                {
+                    throw new Exception($"@{GetConfig().Name}: Market Data Request bulk snaphsot not implemented");
+                }
+                else if (mdrb.SubscriptionRequestType == SubscriptionRequestType.SnapshotAndUpdates)
+                {
+                    if (mdrb.MarketDepth == null || mdrb.MarketDepth == MarketDepth.TopOfBook)
+                    {
+                        foreach (Security sec in mdrb.Securities)
+                        {
+                            if (!ActiveSecurities.ContainsKey(mdReqId))
+                            {
+                                ActiveSecurities.Add(mdReqId, sec);
+                                RequestMarketDataThread = new Thread(DoRequestMarketData);
+                                RequestMarketDataThread.Start(new object[] { sec.Symbol, BinanceConfiguration.QuoteCurrency});
+
+                                mdReqId++;
+                            }
+                        }
+                    }
+                    else if (mdrb.MarketDepth == MarketDepth.FullBook)
+                    {
+                        throw new Exception($"Market Data Request Bulk --> Full book not implmented @{GetConfig().Name}");
+                    }
+                    else
+                    {
+                        throw new Exception($"{GetConfig().Name}-->Not implemented market depth {mdrb.MarketDepth} on order book request");
+                    }
+
+                }
+                else if (mdrb.SubscriptionRequestType == SubscriptionRequestType.Unsuscribe)
+                {
+                    //TODO implement unsubsription
+                    //mdrb.Securities.ToList().ForEach(x => EvalMarketDataSubscription(x.Symbol, true));
+                }
+                else
+                    throw new Exception($"@{GetConfig().Name}: Value not recognized for subscription type {mdrb.SubscriptionRequestType}");
+
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL error requesting Market Data: {ex.Message}", MessageType.Error);
+            }
+        }
+
+
+        protected override CMState ProcessMarketDataRequestBulk(Wrapper wrapper)
+        {
+            Security[] securities = (Security[])wrapper.GetField(MarketDataRequestBulkField.Securities);
+            DoLog($"{GetConfig().Name}: Recv Market Data Request bulk for securities {securities.Length}", MessageType.Information);
+
+            (new Thread(ProcessMarketDataRequestBulkThread)).Start(wrapper);
+            return CMState.BuildSuccess();
+        }
+
         protected override CMState ProcessMarketDataRequest(Wrapper wrapper)
         {
             try
@@ -431,6 +500,8 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
                     ContractsTimeStamps = new Dictionary<long, DateTime>();
                     ReverseCurrency = new Dictionary<string, bool>();
                     HistoricalPricesRequests = new Dictionary<int, Wrapper>();
+
+                    mdReqId = 1;
 
                     CleanOldSecuritiesThread = new Thread(DoCleanOldSecurities);
                     CleanOldSecuritiesThread.Start();

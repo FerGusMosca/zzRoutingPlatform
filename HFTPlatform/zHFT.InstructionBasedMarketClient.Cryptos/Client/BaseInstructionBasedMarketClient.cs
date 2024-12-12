@@ -9,9 +9,11 @@ using zHFT.InstructionBasedMarketClient.BusinessEntities;
 using zHFT.InstructionBasedMarketClient.Cryptos.DataAccessLayer.Managers;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Abstract;
+using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 
 namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
@@ -53,6 +55,8 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
         {
             return CMState.BuildSuccess();
         }
+
+        protected virtual CMState ProcessMarketDataRequestBulk(Wrapper wrapper) { return CMState.BuildFail(new Exception("Not implemented ProcessMarketDataRequestBulk in base IBR Market Client")); }
 
         protected abstract CMState ProcessMarketDataRequest(Wrapper wrapper);
 
@@ -211,6 +215,10 @@ namespace zHFT.InstructionBasedMarketClient.Cryptos.Client
                     else if (Actions.MARKET_DATA_REQUEST == action)
                     {
                         return ProcessMarketDataRequest(wrapper);
+                    }
+                    else if (Actions.MARKET_DATA_REQUEST_BULK == action)
+                    {
+                        return ProcessMarketDataRequestBulk(wrapper);
                     }
                     else if (Actions.HISTORICAL_PRICES_REQUEST == action)
                     {

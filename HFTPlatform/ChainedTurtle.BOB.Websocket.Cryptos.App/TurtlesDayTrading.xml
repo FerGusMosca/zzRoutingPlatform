@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<Name>CHAINED_TURTLES_BOB_CRYPTOS_BINANCE</Name>
+	<Name>CHAINED_TURTLES_BOB_CRYPTOS_v1_6_TEST</Name>
 	<Account>xxx</Account>
 
 	<PositionSizeInCash>1000</PositionSizeInCash>
@@ -40,7 +40,7 @@
 
 	<OnlyLong>false</OnlyLong>
 
-	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
+	<HistoricalPricesPeriod>1</HistoricalPricesPeriod>
 	<!---4= -4 days-->
 
 	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
