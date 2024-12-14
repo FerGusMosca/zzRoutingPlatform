@@ -21,7 +21,7 @@
 	<!--in pct 0-1-->
 
 
-	<ClosingTime>23:59 PM</ClosingTime>
+	<ClosingTime></ClosingTime>
 
 	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
 

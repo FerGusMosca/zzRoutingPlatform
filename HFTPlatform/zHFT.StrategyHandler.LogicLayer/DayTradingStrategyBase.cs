@@ -668,8 +668,6 @@ namespace zHFT.StrategyHandler.LogicLayer
         
         protected bool IsTradingTime()
         {
-            DateTime closeTime = Main.Common.Util.MarketTimer.GetTodayDateTime(Config.ClosingTime);
-
             bool validOpening = false;
             if (!string.IsNullOrEmpty(Config.OpeningTime))
             {
