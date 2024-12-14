@@ -734,8 +734,17 @@ namespace tph.ChainedTurtles.LogicLayer
                 Thread persistTrendlinesThread = new Thread(new ParameterizedThreadStart(DoPersistTrendlinesThread));
                 persistTrendlinesThread.Start();
 
-                Thread delPrevTrehdlinesThread = new Thread(new ParameterizedThreadStart(DeleteAllTrendlines));
-                delPrevTrehdlinesThread.Start();
+                if (!GetConfig().SkipTrendlinesDeletion.HasValue || !GetConfig().SkipTrendlinesDeletion.Value)
+                {
+
+                    Thread delPrevTrehdlinesThread = new Thread(new ParameterizedThreadStart(DeleteAllTrendlines));
+                    delPrevTrehdlinesThread.Start();
+                }
+                else
+                {
+                    DoLog($"Skipping deleting trendlines because of config SkipTrendlinesDeletion={GetConfig().SkipTrendlinesDeletion}", Constants.MessageType.PriorityInformation);
+                
+                }
 
                 //DoRefreshTrendlines --> In case we want to implement some manual implementation of the trendlines
 

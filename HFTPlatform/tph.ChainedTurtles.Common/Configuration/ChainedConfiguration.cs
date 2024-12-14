@@ -17,6 +17,8 @@ namespace tph.ChainedTurtles.Common.Configuration
         
         public bool BulkMarketDataRequest { get; set; }
 
+        public bool? SkipTrendlinesDeletion { get; set; }
+
         #region Public Attributes
 
 
