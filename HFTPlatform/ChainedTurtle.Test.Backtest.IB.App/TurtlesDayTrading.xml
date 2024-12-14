@@ -39,6 +39,7 @@
 	<TradingMode>BACKTEST</TradingMode><!--BACKTEST,LIVE_MODE-->
 
 	<OnlyLong>false</OnlyLong>
+	<SkipTrendlinesDeletion>false</SkipTrendlinesDeletion>
 
 	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
 	<!---4= -4 days-->
