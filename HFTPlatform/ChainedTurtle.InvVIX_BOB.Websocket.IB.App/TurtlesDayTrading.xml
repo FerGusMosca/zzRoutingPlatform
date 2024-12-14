@@ -30,6 +30,8 @@
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 	<OnlyLong>false</OnlyLong>
 
+	<SkipTrendlinesDeletion>false</SkipTrendlinesDeletion>
+
 	<SecuritiesToMonitor>
 		<SecurityToMonitor>
 			<Symbol>SPY</Symbol>
