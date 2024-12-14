@@ -31,7 +31,7 @@
 
 	<OnlyLong>false</OnlyLong>
 
-
+	<SkipTrendlinesDeletion>false</SkipTrendlinesDeletion>
 
 	<SecuritiesToMonitor>
 	<SecurityToMonitor>
