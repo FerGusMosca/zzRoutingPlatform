@@ -120,11 +120,11 @@ namespace zHFT.StrategyHandler.Common
             }
             
             
-            if (string.IsNullOrEmpty(ClosingTime))
-            {
-                result.Add("ClosingTime");
-                resultado = false;
-            }
+            //if (string.IsNullOrEmpty(ClosingTime))
+            //{
+            //    result.Add("ClosingTime");
+            //    resultado = false;
+            //}
 
             //if (string.IsNullOrEmpty(TradingMode))
             //{
