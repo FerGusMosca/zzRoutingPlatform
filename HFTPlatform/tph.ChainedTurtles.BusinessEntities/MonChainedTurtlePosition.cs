@@ -15,6 +15,7 @@ using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.StrategyHandler.BusinessEntities;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -286,7 +287,11 @@ namespace tph.ChainedTurtles.BusinessEntities
                 }
             }
             else
+            {
+                bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"DBG8- Eval Closing LONG signal CloseWindow={TurtlesCustomConfig.CloseWindow} higherMMov={higherMMov}", MessageType.Debug);
                 return base.EvalClosingLongPosition(portfPos);
+            }
         }
 
         public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
@@ -326,6 +331,8 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
             else
             {
+                bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"DBG8- Eval Closing SHORT signal CloseWindow={TurtlesCustomConfig.CloseWindow} higherMMov={higherMMov}", MessageType.Debug);
                 return base.EvalClosingShortPosition(portfPos);
             }
         }
