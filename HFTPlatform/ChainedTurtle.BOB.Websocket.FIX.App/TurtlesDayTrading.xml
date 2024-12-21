@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ChainedConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Name>CHAINED_TURTLES_BOB_WEBSOCKET_FIX_MOCK_V_1_6</Name>
+	<Account>xxx</Account>
+
+	<PositionSizeInCash>1400000</PositionSizeInCash>
+	
+	<MaxOpenedPositions>6</MaxOpenedPositions>
+	<StopLossForOpenPositionPct>1</StopLossForOpenPositionPct>
+	<!--1=1%-->
+	<FeeTypePerTrade>Nominal</FeeTypePerTrade>
+	<!--OrderRouter,Nominal,Percentage-->
+	<FeeValuePerTrade>0</FeeValuePerTrade>
+	<DecimalRounding>3</DecimalRounding>
+
+	<InnerTrendlinesSpan>120</InnerTrendlinesSpan>
+	<!--in candles-->
+	<OuterTrendlinesSpan>60</OuterTrendlinesSpan>
+	<!--in candles-->
+	<PerforationThresholds>0</PerforationThresholds>
+	<!--in pct 0-1-->
+
+
+	<ClosingTime>05:51 PM</ClosingTime>
+
+	<OrderRouter>zHFT.OrderRouters.Router.BackTestOrderRouter, zHFT.OrderRouters</OrderRouter>
+
+	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ResetOnPersistance>true</ResetOnPersistance>
+	<RecalculateTrendlines>true</RecalculateTrendlines>
+	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
+	<BulkMarketDataRequest>true</BulkMarketDataRequest>
+	<CandleReferencePrice>TRADE</CandleReferencePrice>
+	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
+
+	<OpeningTime>10:30</OpeningTime><!--Needed for historical prices recovery-->
+	<TradingMode>LIVE_MODE</TradingMode><!--BACKTEST,LIVE_MODE-->
+
+	<OnlyLong>false</OnlyLong>
+	<SkipTrendlinesDeletion>false</SkipTrendlinesDeletion>
+
+	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
+	<!---4= -4 days-->
+
+	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>
+	<!--0=No Skip-->
+
+	<SecuritiesToMonitor>
+		<SecurityToMonitor>
+			<Symbol>GGAL</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>ARS</Currency>
+			<!-- Default: USD-->
+			<Exchange>BUE</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<!-- Default: SMART -->
+
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>GGAL_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+
+			</Indicators>
+		</SecurityToMonitor>
+		
+	</SecuritiesToMonitor>
+
+
+	<ChainedTurtleIndicators>
+		<ChainedTurtleIndicator>
+			<Code>GGAL_BOB_SETTING</Code>
+			<SecurityToMonitor>
+				<Symbol>GGAL</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB</SignalType>
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+		</ChainedTurtleIndicator>
+
+	</ChainedTurtleIndicators>
+	
+	
+
+</ChainedConfiguration>

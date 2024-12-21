@@ -885,6 +885,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tph.InstructionBasedMarketC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainedTurtle.BOB.Websocket.Cryptos.App", "ChainedTurtle.BOB.Websocket.Cryptos.App\ChainedTurtle.BOB.Websocket.Cryptos.App.csproj", "{3B8A96BF-D033-4A30-984D-B82A6E85EC61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainedTurtle.BOB.Websocket.FIX.App", "ChainedTurtle.BOB.Websocket.FIX.App\ChainedTurtle.BOB.Websocket.FIX.App.csproj", "{C162EAA8-C104-4E25-85E7-2CC186F09C44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -4567,6 +4569,18 @@ Global
 		{3B8A96BF-D033-4A30-984D-B82A6E85EC61}.Release|x64.Build.0 = Release|Any CPU
 		{3B8A96BF-D033-4A30-984D-B82A6E85EC61}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B8A96BF-D033-4A30-984D-B82A6E85EC61}.Release|x86.Build.0 = Release|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Debug|x64.Build.0 = Debug|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Debug|x86.Build.0 = Debug|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Release|x64.ActiveCfg = Release|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Release|x64.Build.0 = Release|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Release|x86.ActiveCfg = Release|Any CPU
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -5001,6 +5015,7 @@ Global
 		{11626EBE-460E-495C-BB0E-82EFB34CF3F2} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 		{522D7089-5993-4A2A-8599-A3A4CDB45B4C} = {290823C3-256A-41B2-B7AD-CC35E769BE34}
 		{3B8A96BF-D033-4A30-984D-B82A6E85EC61} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
+		{C162EAA8-C104-4E25-85E7-2CC186F09C44} = {8CD2D128-F892-4805-9D24-13ACAD2242D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4CD8F25-10DF-4465-927C-81F845215E3F}
