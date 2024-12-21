@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using tph.ChainedTurtles.Common.DTO;
 using tph.ChainedTurtles.Common.Util;
 using tph.DayTurtles.BusinessEntities;
+using tph.DayTurtles.Common.Util;
 using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Util;
@@ -168,6 +169,48 @@ namespace tph.ChainedTurtles.BusinessEntities
 
             DoLog($"DBG9u-CandleReferencePrice={CandleReferencePrice} CloseWindow={TurtlesCustomConfig.CloseWindow}", Constants.MessageType.Information);
             return EvalResistanceBroken() && IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, false);
+        }
+
+
+        public bool EvalSkippingFalseLong()
+        {
+            if (TurtlesCustomConfig.ExitOnTurtles)
+            {
+                
+                bool isLowestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
+                DoLog($"Eval Skipping Long <turtles> for {Code} --> isLowestTurtles={isLowestTurtles} ", Constants.MessageType.Debug);
+                return isLowestTurtles;
+
+            }
+            else if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                bool isHigherMMov= IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"Eval Skipping Long <mmov> for {Code} --> isHigherMMov={isHigherMMov} ", Constants.MessageType.Debug);
+                return !isHigherMMov;
+            }
+            else
+                return false;
+        }
+
+
+        public bool EvalSkippingFalseShort()
+        {
+            if (TurtlesCustomConfig.ExitOnTurtles)
+            {
+
+                bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
+                DoLog($"Eval Skipping Long <turtles> for {Code} --> isHighest={isHighestTurtles} ", Constants.MessageType.Debug);
+                return isHighestTurtles;
+
+            }
+            else if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                bool isHigherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"Eval Skipping Long <mmov> for {Code} --> isHigherMMov={isHigherMMov} ", Constants.MessageType.Debug);
+                return isHigherMMov;
+            }
+            else
+                return false;
         }
 
         #endregion

@@ -421,7 +421,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (ActiveBlocks.Count >= ActiveBlocksSetting)
             {
 
-                if (AskSizeImbalance >= PositionOpeningImbalanceThreshold)
+                if (AskSizeImbalance >= PositionOpeningImbalanceThreshold && !EvalSkippingFalseLong())
                 {
                     Logger.DoLog($"LONG Signal for Imbalance IND: AskSizeImbalance={AskSizeImbalance} PositionOpeningImbalanceThreshold={PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     ImbSignalTriggered = $"LONG Imbalance for {Security.Symbol}: Ask Imbalance: {AskSizeImbalance}";
@@ -451,7 +451,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             if (ActiveBlocks.Count >= ActiveBlocksSetting)
             {
 
-                if (BidSizeImbalance >= PositionOpeningImbalanceThreshold)
+                if (BidSizeImbalance >= PositionOpeningImbalanceThreshold && !!EvalSkippingFalseShort())
                 {
                     Logger.DoLog($"SHORT Signal for Imbalance IND: AskSizeImbalance={AskSizeImbalance} PositionOpeningImbalanceThreshold={PositionOpeningImbalanceThreshold}", Constants.MessageType.Information);
                     ImbSignalTriggered = $"SHORT Imbalance for {Security.Symbol}: Bid Imbalance: {BidSizeImbalance}";
