@@ -199,15 +199,15 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
 
                 bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
-                DoLog($"Eval Skipping Long <turtles> for {Code} --> isHighest={isHighestTurtles} ", Constants.MessageType.Debug);
+                DoLog($"Eval Skipping Short <turtles> for {Code} --> isHighest={isHighestTurtles} ", Constants.MessageType.Debug);
                 return isHighestTurtles;
 
             }
             else if (TurtlesCustomConfig.ExitOnMMov)
             {
-                bool isHigherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
-                DoLog($"Eval Skipping Long <mmov> for {Code} --> isHigherMMov={isHigherMMov} ", Constants.MessageType.Debug);
-                return isHigherMMov;
+                bool isLowerMMov = !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"Eval Skipping Short <mmov> for {Code} --> isLowerMMov={isLowerMMov} ", Constants.MessageType.Debug);
+                return isLowerMMov;
             }
             else
                 return false;
