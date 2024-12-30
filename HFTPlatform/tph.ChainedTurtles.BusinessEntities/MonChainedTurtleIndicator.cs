@@ -178,14 +178,14 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
                 
                 bool isLowestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
-                DoLog($"Eval Skipping Long <turtles> for {Code} --> isLowestTurtles={isLowestTurtles} ", Constants.MessageType.Debug);
+                DoLog($"Eval Skipping Long <turtles>--> isLowestTurtles={isLowestTurtles} for {Code}", Constants.MessageType.Debug);
                 return isLowestTurtles;
 
             }
             else if (TurtlesCustomConfig.ExitOnMMov)
             {
                 bool isHigherMMov= IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
-                DoLog($"Eval Skipping Long <mmov> for {Code} --> isHigherMMov={isHigherMMov} ", Constants.MessageType.Debug);
+                DoLog($"Eval Skipping Long <mmov>--> isHigherMMov={isHigherMMov} for {Code}", Constants.MessageType.Debug);
                 return !isHigherMMov;
             }
             else
@@ -199,14 +199,14 @@ namespace tph.ChainedTurtles.BusinessEntities
             {
 
                 bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
-                DoLog($"Eval Skipping Short <turtles> for {Code} --> isHighest={isHighestTurtles} ", Constants.MessageType.Debug);
+                DoLog($"Eval Skipping Short <turtles>--> isHighest={isHighestTurtles} for {Code}", Constants.MessageType.Debug);
                 return isHighestTurtles;
 
             }
             else if (TurtlesCustomConfig.ExitOnMMov)
             {
                 bool isLowerMMov = !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
-                DoLog($"Eval Skipping Short <mmov> for {Code} --> isLowerMMov={isLowerMMov} ", Constants.MessageType.Debug);
+                DoLog($"Eval Skipping Short <mmov>--> isLowerMMov={isLowerMMov} for {Code}", Constants.MessageType.Debug);
                 return isLowerMMov;
             }
             else

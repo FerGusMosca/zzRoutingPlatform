@@ -4,10 +4,10 @@
   
   <!--<WebSocketURL>ws://localhost:9193</WebSocketURL>-->
 
-  <!--<WebSocketURL>ws://66.94.106.206:9193</WebSocketURL>--><!--FIX-->
+  <WebSocketURL>ws://66.94.106.206:9193</WebSocketURL><!--FIX-->
 
 
-	<WebSocketURL>ws://localhost:9193</WebSocketURL><!--FIX-->
+	<!--<WebSocketURL>ws://localhost:9193</WebSocketURL>--><!--FIX-->
 
 	<!--I=incoming,O=outgoing-->
 </Configuration>
