@@ -14,6 +14,7 @@ using tph.TrendlineTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
+using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
 using static zHFT.Main.Common.Util.Constants;
 
@@ -198,7 +199,7 @@ namespace tph.ChainedTurtles.BusinessEntities
             return customQty >= OrchestationLogic.qtySignals;
         }
 
-
+      
         #endregion
 
         #region Public Overriden Methods
@@ -211,6 +212,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered() 
         {
+            if (!EvalSkippingFalseLong())
+                return false;//We will not open a position that will be inmediately closed
 
             if (OrchestationLogic.IsAllIndicators())
                 return AllIndicatorsLongSignal();
@@ -225,6 +228,8 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
+            if (!EvalSkippingFalseShort())
+                return false;//We will not open a position that will be inmediately closed
 
             if (OrchestationLogic.IsAllIndicators())
                 return AllIndicatorsShortSignal();

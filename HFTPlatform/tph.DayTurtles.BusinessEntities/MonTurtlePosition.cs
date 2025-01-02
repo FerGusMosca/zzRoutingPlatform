@@ -336,6 +336,47 @@ namespace tph.DayTurtles.BusinessEntities
 
         }
 
+        public bool EvalSkippingFalseLong()
+        {
+            if (TurtlesCustomConfig.ExitOnTurtles)
+            {
+
+                bool isLowestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
+                DoLog($"Eval Skipping Long <turtles>--> isLowestTurtles={isLowestTurtles} for {Security.Symbol}", Constants.MessageType.Debug);
+                return isLowestTurtles;
+
+            }
+            else if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                bool isHigherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"Eval Skipping Long <mmov>--> isHigherMMov={isHigherMMov} for {Security.Symbol}", Constants.MessageType.Debug);
+                return !isHigherMMov;
+            }
+            else
+                return false;
+        }
+
+        public bool EvalSkippingFalseShort()
+        {
+            if (TurtlesCustomConfig.ExitOnTurtles)
+            {
+
+                bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
+                DoLog($"Eval Skipping Short <turtles>--> isHighest={isHighestTurtles} for {Security.Symbol}", Constants.MessageType.Debug);
+                return isHighestTurtles;
+
+            }
+            else if (TurtlesCustomConfig.ExitOnMMov)
+            {
+                bool isLowerMMov = !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
+                DoLog($"Eval Skipping Short <mmov>--> isLowerMMov={isLowerMMov} for {Security.Symbol}", Constants.MessageType.Debug);
+                return isLowerMMov;
+            }
+            else
+                return false;
+        }
+
+
         #endregion
 
         #region Public Methods
