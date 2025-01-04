@@ -120,6 +120,7 @@
     <Compile Include="Util\ConfigLoader.cs" />
     <Compile Include="Util\ConsoleDisplayer.cs" />
     <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\CSVFileReader.cs" />
     <Compile Include="Util\CurrencySeparators.cs" />
     <Compile Include="Util\DateTimeManager.cs" />
     <Compile Include="Util\EpochConverter.cs" />

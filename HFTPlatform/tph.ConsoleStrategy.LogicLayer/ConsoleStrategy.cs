@@ -320,10 +320,61 @@ namespace tph.ConsoleStrategy.LogicLayer
             catch (Exception ex)
             {
 
-                DoLog($"{Config.Name}--> CRITICAL ERROR Requesting Market Data:{ex.Message}", MessageType.Error);
+                DoLog($"{Config.Name}--> CRITICAL ERROR at GetEconomicSeries:{ex.Message}", MessageType.Error);
             }
 
         }
+
+
+        protected void ParseEconomicSeries(string[] param)
+        {
+            try
+            {
+                string cmd = param[0];
+
+                CommandValidator.ValidateCommandVariableParams(cmd, param, 2, 4);
+
+                string path = CommandValidator.ExtractNonMandatoryParam(param, 1);
+                string seriesID = CommandValidator.ExtractMandatoryParam(param, 2);
+                string dateFormat = CommandValidator.ExtractMandatoryParam(param, 3);
+
+                EconomicSeriesValue[] econSeries =  CSVFileReader.ReadCSVDataSeries(path, dateFormat);
+
+                DoLog($"Found {econSeries.Length} records in {path} file", MessageType.Information);
+                List<MarketData> observations = new List<MarketData>();
+                foreach (EconomicSeriesValue obs in econSeries)
+                {
+                    MarketData obsMD = new MarketData();
+                    obsMD.MDEntryDate = obs.Date;
+                    obsMD.OpeningPrice = obs.Value;
+                    obsMD.TradingSessionHighPrice = obs.Value;
+                    obsMD.TradingSessionLowPrice = obs.Value;
+                    obsMD.ClosingPrice = obs.Value;
+                    obsMD.Trade = obs.Value;
+                    obsMD.Security = new Security() { Symbol = seriesID, SecType = SecurityType.IND };
+
+                    observations.Add(obsMD);
+                }
+
+
+                DoLog($"Persisting {observations.Count} records in the DB",MessageType.Information);
+                foreach (MarketData obs in observations)
+                {
+                    DoLog($"@{Config.Name} --> Persisting value of {obs.Trade} and date {obs.GetReferenceDateTime()} for seriesID {seriesID} (Interval={CandleInterval.DAY})", Constants.MessageType.PriorityInformation);
+
+                    CandleManager.Persist(seriesID, CandleInterval.DAY, obs);
+                }
+                DoLog($"{observations.Count} records for series {seriesID} successfully persisted in DB", MessageType.Information);
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"{Config.Name}--> CRITICAL ERROR at ParseEconomicSeries:{ex.Message}", MessageType.Error);
+            }
+
+        }
+
+        //
 
         protected void ListRoutedPositions(string[] param)
         {
@@ -375,6 +426,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             Console.WriteLine($"#6-UnwindPos <PosId>");
             Console.WriteLine($"#7-RequestMarketData <symbol> <SecType*> <Currency*> <Echange*>");
             Console.WriteLine($"#8-GetEconomicSeries <SeriresID> <From*> <To*>");
+            Console.WriteLine($"#9-ParseEconomicSeries <Path> <SeriesID> <DateFormat>");
             Console.WriteLine();
         }
 
@@ -417,6 +469,10 @@ namespace tph.ConsoleStrategy.LogicLayer
                 else if (mainCmd == "GetEconomicSeries")
                 {
                     GetEconomicSeries(cmdArr);
+                }
+                else if (mainCmd == "ParseEconomicSeries")
+                {
+                    ParseEconomicSeries(cmdArr);
                 }
                 else if (mainCmd == "cls")
                 {
