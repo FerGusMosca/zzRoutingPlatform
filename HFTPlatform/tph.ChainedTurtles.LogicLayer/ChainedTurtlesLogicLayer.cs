@@ -362,10 +362,19 @@ namespace tph.ChainedTurtles.LogicLayer
                 {
                     foreach (var indicator in GetConfig().ChainedTurtleIndicators)
                     {
-                        DoLog($"Initializing indicator {indicator.Code} in memory!", Constants.MessageType.Information);
-                        InitializeMonitorIndicator(indicator);
-                        DoLog($"Indicator {indicator.Code} successfully initialized!", Constants.MessageType.Information);
+                        if (GetConfig().SecuritiesToMonitor.Any(x => x.Symbol == indicator.SecurityToMonitor.Symbol))
+                        {
 
+
+                            DoLog($"Initializing indicator {indicator.Code} in memory!", Constants.MessageType.Information);
+                            InitializeMonitorIndicator(indicator);
+                            DoLog($"Indicator {indicator.Code} successfully initialized!", Constants.MessageType.Information);
+                        }
+                        else
+                        {
+                            DoLog($"Skipping initailization of indicator {indicator.Code} because there is not a security to monitor with symbol {indicator.SecurityToMonitor.Symbol}", Constants.MessageType.PriorityInformation);
+                        
+                        }
                     }
                 }
 

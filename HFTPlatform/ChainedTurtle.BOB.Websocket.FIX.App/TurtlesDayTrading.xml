@@ -31,7 +31,7 @@
 	<ResetOnPersistance>true</ResetOnPersistance>
 	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
-	<BulkMarketDataRequest>true</BulkMarketDataRequest>
+	<BulkMarketDataRequest>false</BulkMarketDataRequest>
 	<CandleReferencePrice>TRADE</CandleReferencePrice>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 
