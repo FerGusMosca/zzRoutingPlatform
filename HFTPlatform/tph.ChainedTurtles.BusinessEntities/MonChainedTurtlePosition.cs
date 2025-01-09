@@ -293,8 +293,9 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
             else
             {
+                bool isLowestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
                 bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
-                DoLog($"DBG8- Eval Closing LONG signal CloseWindow={TurtlesCustomConfig.CloseWindow} higherMMov={higherMMov}", MessageType.Debug);
+                DoLog($"DBG8- Eval Closing LONG signal CloseWindow={TurtlesCustomConfig.CloseWindow} higherMMov={higherMMov} isLowestTurtles={isLowestTurtles}", MessageType.Debug);
                 return base.EvalClosingLongPosition(portfPos);
             }
         }
@@ -336,8 +337,9 @@ namespace tph.ChainedTurtles.BusinessEntities
             }
             else
             {
+                bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
                 bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
-                DoLog($"DBG8- Eval Closing SHORT signal CloseWindow={TurtlesCustomConfig.CloseWindow} higherMMov={higherMMov}", MessageType.Debug);
+                DoLog($"DBG8- Eval Closing SHORT signal CloseWindow={TurtlesCustomConfig.CloseWindow} higherMMov={higherMMov} isHighestTurtles={isHighestTurtles}", MessageType.Debug);
                 return base.EvalClosingShortPosition(portfPos);
             }
         }

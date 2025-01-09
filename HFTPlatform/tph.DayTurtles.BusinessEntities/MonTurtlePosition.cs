@@ -555,7 +555,7 @@ namespace tph.DayTurtles.BusinessEntities
             }
             else if(TurtlesCustomConfig.ExitOnTurtles)
             {
-                bool isHighestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
+                bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
                 if (isHighestTurtles)
                 {
                     LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
