@@ -6,6 +6,7 @@ using tph.DayTurtles.Common.Util;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.Common.Util;
 using zHFT.StrategyHandler.BusinessEntities;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace tph.DayTurtles.BusinessEntities
 {
@@ -285,6 +286,8 @@ namespace tph.DayTurtles.BusinessEntities
 
             MarketData lastCandle = LastValidCandle();
 
+            DoLog($"DBG8.IV- IsHighest--> LastCandle.Date={lastCandle.GetOrderingDate()} Price={ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice)}", MessageType.Debug);
+
             List<MarketData> candles = Candles.Values
                                                       .Where(x=>  x.GetOrderingDate()!=null)
                                                       .OrderByDescending(x => x.GetOrderingDate())
@@ -300,6 +303,7 @@ namespace tph.DayTurtles.BusinessEntities
                     && DateTime.Compare(md.GetOrderingDate().Value, lastCandle.GetOrderingDate().Value) < 0)
                 {
                     foundBigger = true;
+                    DoLog($"DBG8.V- FoundBigger--> LastCandle.Date={md.GetOrderingDate()} Price={ReferencePriceCalculator.GetReferencePrice(md, CandleReferencePrice)}", MessageType.Debug);
                     break;
                 }
             }
@@ -314,6 +318,7 @@ namespace tph.DayTurtles.BusinessEntities
                 return false;
 
             MarketData lastCandle = LastValidCandle();
+            DoLog($"DBG8.IV- IsLowest--> LastCandle.Date={lastCandle.GetOrderingDate()} Price={ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice)}", MessageType.Debug);
 
             List<MarketData> candles = Candles.Values.Where(x=>  x.GetOrderingDate()!=null)
                                                       .OrderByDescending(x => x.GetOrderingDate())
@@ -328,10 +333,11 @@ namespace tph.DayTurtles.BusinessEntities
                     && DateTime.Compare(md.GetOrderingDate().Value, lastCandle.GetOrderingDate().Value) < 0)
                 {
                     foundLower = true;
+                    DoLog($"DBG8.V- FoundLower--> LastCandle.Date={md.GetOrderingDate()} Price={ReferencePriceCalculator.GetReferencePrice(md, CandleReferencePrice)}", MessageType.Debug);
                     break;
                 }
             }
-
+            
             return !foundLower;
 
         }
@@ -498,13 +504,17 @@ namespace tph.DayTurtles.BusinessEntities
                 return false;
 
             if (EvalClosingOnTargetPct(portfPos))
+            {
+                DoLog($"DBG8.I- Closing LONG on Tgt. Pct", MessageType.Debug);
                 return true;
-            
+            }
+
             if (TurtlesCustomConfig.ExitOnMMov)
             {
                 bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
                 if (!higherMMov)
                 {
+                    DoLog($"DBG8.II- Closing LONG on MMOV", MessageType.Debug);
                     LastSignalTriggered = $"CLOSE LONG w/MMov : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
@@ -517,6 +527,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool isLowestTurtles = IsLowest(TurtlesCustomConfig.CloseWindow);
                 if (isLowestTurtles)
                 {
+                    DoLog($"DBG8.III- Closing LONG Lowest Turtles", MessageType.Debug);
                     LastSignalTriggered = $"CLOSE LONG w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(), CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
@@ -539,13 +550,17 @@ namespace tph.DayTurtles.BusinessEntities
                 return false;
 
             if (EvalClosingOnTargetPct(portfPos))
+            {
+                DoLog($"DBG8.I- Closing SHORT On Tgt Pct.", MessageType.Debug);
                 return true;
+            }
 
             if (TurtlesCustomConfig.ExitOnMMov)
             {
                 bool higherMMov = IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
                 if (higherMMov)
                 {
+                    DoLog($"DBG8.II- Closing SHORT On MMov", MessageType.Debug);
                     LastSignalTriggered = $"CLOSE SHORT w/MMOV : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
@@ -558,6 +573,7 @@ namespace tph.DayTurtles.BusinessEntities
                 bool isHighestTurtles = IsHighest(TurtlesCustomConfig.CloseWindow);
                 if (isHighestTurtles)
                 {
+                    DoLog($"DBG8.III- Closing SHORT On Turtles", MessageType.Debug);
                     LastSignalTriggered = $"CLOSE SHORT w/Turtles : Last Candle:{ReferencePriceCalculator.GetReferencePrice(GetLastFinishedCandle(),CandleReferencePrice)} MMov:{CalculateSimpleMovAvg(TurtlesCustomConfig.CloseWindow)}";
                     return true;
                 }
