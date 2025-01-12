@@ -75,8 +75,8 @@
 			<SecurityToMonitor>
 				<Symbol>GGAL</Symbol>
 				<SecurityType>CS</SecurityType>
-				<Currency>USD</Currency>
-				<Exchange>SMART</Exchange>
+				<Currency>ARS</Currency>
+				<Exchange>BUE</Exchange>
 				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>

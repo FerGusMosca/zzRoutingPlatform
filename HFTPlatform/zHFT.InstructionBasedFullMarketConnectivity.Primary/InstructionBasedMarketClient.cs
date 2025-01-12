@@ -826,18 +826,19 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     {
                         symbol = dtoRecord.Symbol + "." + (!string.IsNullOrEmpty(dtoRecord.Exchange) ? dtoRecord.Exchange : (PrimaryConfiguration.Markets != null ? PrimaryConfiguration.Markets.FirstOrDefault() : _MAIN_EXCHANGE));
                     }
-
+                    DoLog($"FETCHING Historical Prices from DB for {symbol}", Constants.MessageType.Information);
                     CandleManager cnldMgr = new CandleManager(PrimaryConfiguration.HistoricalPricesConnectionString);
                     List<MarketData> candles = cnldMgr.GetCandles(symbol, dtoRecord.Interval,
                                                                   dtoRecord.From.HasValue ? dtoRecord.From.Value : DateTime.MinValue,
-                                                                  dtoRecord.To.HasValue ? dtoRecord.To.Value : DateTime.MaxValue); 
+                                                                  dtoRecord.To.HasValue ? dtoRecord.To.Value : DateTime.MaxValue);
 
-
+                    DoLog($"FOUND {candles.Count} candles for symbol {symbol}", Constants.MessageType.Information);
                     List<Wrapper> marketDataWrapperList = new List<Wrapper>();
                     foreach (MarketData md in candles)
                     {
                         Security currSec = new Security() { Symbol = dtoRecord.Symbol, SecType = dtoRecord.SecurityType, Currency = dtoRecord.Currency };
                         currSec.MarketData = md;
+                        DoLog($"PUBLISHING Historical Price for symbol {symbol}: Date={md.GetDateTime()} Open={md.OpeningPrice} High={md.TradingSessionHighPrice} Low={md.TradingSessionLowPrice} Close={md.ClosingPrice} Trade={md.Trade}", Constants.MessageType.Information);
                         MarketDataWrapper mdWrapper = new MarketDataWrapper(currSec, GetConfig());
                         marketDataWrapperList.Add(mdWrapper);
                     }
