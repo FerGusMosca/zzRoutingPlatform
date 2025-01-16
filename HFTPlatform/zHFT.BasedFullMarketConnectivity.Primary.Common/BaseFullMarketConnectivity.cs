@@ -71,6 +71,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected Dictionary<int, Security> ActiveSecurities { get; set; }
 
+        protected List<Wrapper> MarketDataSubscriptions { get; set; } 
+
         #endregion
 
         #region abstract Methods
@@ -364,6 +366,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 else
                 {
                     QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
+                    MarketDataSubscriptions.Add(marketDataRequestWrapper);
                     MarketDataRequestId++;
 
                     if (!SecurityTypes.ContainsKey(rq.Security.AltIntSymbol))

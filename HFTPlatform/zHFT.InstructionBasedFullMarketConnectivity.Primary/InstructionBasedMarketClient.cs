@@ -39,6 +39,7 @@ using zHFT.MarketClient.Common.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
 using MarketDataWrapper = zHFT.MarketClient.Common.Wrappers.MarketDataWrapper;
 using QuickFix40;
+using MarketDataRequestConverter = zHFT.MarketClient.Primary.Common.Converters.MarketDataRequestConverter;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {
@@ -970,6 +971,43 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
+        protected void MarketDataResubscriptionThread(object param)
+        {
+            try
+            {
+             
+                List<Wrapper> newSubscrList = new List<Wrapper>(MarketDataSubscriptions);
+                MarketDataSubscriptions.Clear();//It will be re filled ont he subscriptions
+                foreach (Wrapper mdReqWrapper in MarketDataSubscriptions)
+                {
+                    MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(mdReqWrapper);
+
+                    DoLog($"RESUBSCRIBING MarketData for symbol {rq.Security.Symbol} ", Constants.MessageType.PriorityInformation);
+
+                    CMState state = ProcessMarketDataRequest(mdReqWrapper);
+
+                    if (state.Success)
+                    {
+                        DoLog($"Successful subscription for symbol {rq.Security.Symbol}", Constants.MessageType.PriorityInformation);
+
+                    }
+                    else
+                    {
+                        DoLog($"ERROR subscribing market data for symbol {rq.Security.Symbol}:{state.Exception.Message}", Constants.MessageType.Error);
+                    
+                    }
+                }
+            }
+            catch (Exception ex) {
+
+
+                DoLog($"CRITICAL ERROR reconnecting to market data subscriptions :{ex.Message}", Constants.MessageType.Error);
+            
+            }
+        
+        
+        }
+
         public  bool Initialize(OnLogMessage pOnLogMsg, string configFile)
         {
             try
@@ -979,6 +1017,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 if (zHFT.SingletonModulesHandler.Common.Util.ConfigLoader.DoLoadConfig(this,configFile))
                 {
                     ActiveSecurities = new Dictionary<int, Security>();
+                    MarketDataSubscriptions= new List<Wrapper> ();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
                     OrderConverter = new OrderConverter();
                     SecurityListConverter = new SecurityListConverter();
@@ -1151,6 +1190,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             try
             {
+                
                 if (value is QuickFixT11.Logon)
                 {
                     QuickFixT11.Logon logon = (QuickFixT11.Logon)value;
@@ -1186,7 +1226,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     ProcessSecurityListRequest(slWrapper);
                 }
                 DoLog(string.Format("Logged for SessionId : {0}", value.ToString()), Constants.MessageType.Information);
-                    
+
+
+                //Re subscribing to the market data if any previous
+                Thread resubscribeThread = new Thread(MarketDataResubscriptionThread);
+                resubscribeThread.Start(new object[] { });
             }
             else
                 DoLog("Error logging to FIX Session! : " + value.ToString(), Constants.MessageType.Error);
