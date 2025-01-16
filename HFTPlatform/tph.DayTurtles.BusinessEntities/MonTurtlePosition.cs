@@ -376,7 +376,7 @@ namespace tph.DayTurtles.BusinessEntities
             {
                 bool isLowerMMov = !IsHigherThanMMov(TurtlesCustomConfig.CloseWindow, true);
                 DoLog($"Eval Skipping Short <mmov>--> isLowerMMov={isLowerMMov} for {Security.Symbol}", Constants.MessageType.Debug);
-                return isLowerMMov;
+                return !isLowerMMov;
             }
             else
                 return false;

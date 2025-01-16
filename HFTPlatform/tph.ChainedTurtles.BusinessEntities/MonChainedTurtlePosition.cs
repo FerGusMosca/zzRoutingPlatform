@@ -212,7 +212,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool LongSignalTriggered() 
         {
-            if (!EvalSkippingFalseLong())
+            if (EvalSkippingFalseLong())
                 return false;//We will not open a position that will be inmediately closed
 
             if (OrchestationLogic.IsAllIndicators())
@@ -228,7 +228,7 @@ namespace tph.ChainedTurtles.BusinessEntities
 
         public override bool ShortSignalTriggered()
         {
-            if (!EvalSkippingFalseShort())
+            if (EvalSkippingFalseShort())
                 return false;//We will not open a position that will be inmediately closed
 
             if (OrchestationLogic.IsAllIndicators())
