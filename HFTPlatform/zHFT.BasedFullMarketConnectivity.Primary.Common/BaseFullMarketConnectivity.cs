@@ -365,6 +365,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 }
                 else
                 {
+                    DoLog($"CREATING Market Data Request for Security {rq.Security.Symbol}", Constants.MessageType.PriorityInformation);
                     QuickFix.Message msg = FIXMessageCreator.RequestMarketData(MarketDataRequestId, rq.Security.Symbol, rq.SubscriptionRequestType);
                     MarketDataSubscriptions.Add(marketDataRequestWrapper);
                     MarketDataRequestId++;

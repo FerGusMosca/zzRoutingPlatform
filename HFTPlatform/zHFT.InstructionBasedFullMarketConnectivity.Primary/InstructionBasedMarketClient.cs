@@ -975,7 +975,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         {
             try
             {
-             
+                DoLog($"Processing market data re-subscriptions for {MarketDataSubscriptions.Count} securities", Constants.MessageType.PriorityInformation);
                 List<Wrapper> newSubscrList = new List<Wrapper>(MarketDataSubscriptions);
                 MarketDataSubscriptions.Clear();//It will be re filled ont he subscriptions
                 foreach (Wrapper mdReqWrapper in MarketDataSubscriptions)
@@ -1016,6 +1016,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                 if (zHFT.SingletonModulesHandler.Common.Util.ConfigLoader.DoLoadConfig(this,configFile))
                 {
+                    DoLog($"Initializing FIX Connector at {DateTime.Now}", Constants.MessageType.PriorityInformation);
                     ActiveSecurities = new Dictionary<int, Security>();
                     MarketDataSubscriptions= new List<Wrapper> ();
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
