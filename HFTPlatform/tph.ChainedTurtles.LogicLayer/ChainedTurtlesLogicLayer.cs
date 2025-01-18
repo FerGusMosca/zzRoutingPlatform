@@ -238,11 +238,13 @@ namespace tph.ChainedTurtles.LogicLayer
             MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
 
             OrderRouter.ProcessMessage(wrapper);
-            
+
             Thread.Sleep(1000);
 
             try
             {
+
+                DoLog($"@DBG_MD - Recv Market Data For Symbol {md.Security.Symbol}", Constants.MessageType.Debug);
                 lock (tLock)
                 {
                     if (!ValidateMarketDataRec(md)) { return; }
@@ -254,8 +256,10 @@ namespace tph.ChainedTurtles.LogicLayer
                                                                                         .Contains(md.Security.Symbol))
                     {
                         MonChainedTurtlePosition monPos = (MonChainedTurtlePosition)MonitorPositions[md.Security.Symbol];
+                        DoLog($"@DBG_MD2 - Processing Market Data For MonPos {md.Security.Symbol} <HasHistoricalCandles={monPos.HasHistoricalCandles()} - RequestHistPrices={monPos.RequestHistoricalPrices}>", Constants.MessageType.Debug);
                         if (monPos.HasHistoricalCandles() || !monPos.RequestHistoricalPrices)
                         {
+                            DoLog($"@DBG_MD3 - Eval Open/Close For MonPos {md.Security.Symbol}", Constants.MessageType.Debug);
                             bool newCandle = monPos.AppendCandle(md);
                             EvalOpeningClosingPositions(monPos);//We will see the inner indicatros if they are on
                             UpdateLastPrice(monPos, md);
@@ -266,6 +270,8 @@ namespace tph.ChainedTurtles.LogicLayer
 
                     if (ChainedIndicators.Values.Any(x => x.Security.Symbol == md.Security.Symbol))
                     {
+
+                        DoLog($"@DBG_MD2 - Processing Market Data For Indicator {md.Security.Symbol}", Constants.MessageType.Debug);
                         foreach (var indicator in ChainedIndicators.Values.Where(x => x.Security.Symbol == md.Security.Symbol))
                         {
                             EvalMarketDataCalculations(indicator, md);

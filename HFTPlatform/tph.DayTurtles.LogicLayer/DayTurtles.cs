@@ -128,6 +128,8 @@ namespace tph.DayTurtles.LogicLayer
 
         protected void EvalOpeningPosition(MonTurtlePosition monPos)
         {
+            DoLog($"@DBG_MD3 - Evaluating LONG/SHORT for MonPos {monPos.Security.Symbol} ", Constants.MessageType.Debug);
+
             if (monPos.LongSignalTriggered())
             {
                 PositionWrapper posWrapper = OpenRoutingPos(monPos, Side.Buy);
