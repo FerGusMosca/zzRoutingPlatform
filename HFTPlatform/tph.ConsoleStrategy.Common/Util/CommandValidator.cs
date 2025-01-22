@@ -17,7 +17,7 @@ namespace tph.ConsoleStrategy.Common.Util
                 throw new Exception($"Command {cmd} must have at least {minParams} params");
 
 
-            if (param.Length > minParams && param.Length != maxParams)
+            if (param.Length > minParams && param.Length < maxParams)
                 throw new Exception($"Command {cmd} on its extended version must have {maxParams} params");
         
         
