@@ -4,7 +4,7 @@
 
 	<!--<WebSocketURL>ws://localhost:9192</WebSocketURL>--><!--IB-->
 
-	<WebSocketURL>ws://66.94.106.206:9192</WebSocketURL> <!--IB-->
+	<WebSocketURL>ws://66.94.106.206:8182</WebSocketURL> <!--IB Paper-->
 
 	<!--<WebSocketURL>ws://localhost:9193</WebSocketURL>-->   <!--FIX-->
 

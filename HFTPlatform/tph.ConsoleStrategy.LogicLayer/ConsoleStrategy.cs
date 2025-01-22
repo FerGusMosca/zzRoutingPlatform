@@ -64,7 +64,7 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
             string cmd = param[0];
 
-            CommandValidator.ValidateCommandParams(cmd, param, 4, 8);
+            CommandValidator.ValidateCommandParams(cmd, param, 4, 7);
 
             string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
 
@@ -130,7 +130,7 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
             string cmd = param[0];
 
-            CommandValidator.ValidateCommandParams(cmd, param, 4, 8);
+            CommandValidator.ValidateCommandParams(cmd, param, 4, 7);
 
             string symbol = CommandValidator.ExtractMandatoryParam(param, 1);
             string strSide = CommandValidator.ExtractMandatoryParam(param, 2);
