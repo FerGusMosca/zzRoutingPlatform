@@ -978,7 +978,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 DoLog($"Processing market data re-subscriptions for {MarketDataSubscriptions.Count} securities", Constants.MessageType.PriorityInformation);
                 List<Wrapper> newSubscrList = new List<Wrapper>(MarketDataSubscriptions);
                 MarketDataSubscriptions.Clear();//It will be re filled ont he subscriptions
-                foreach (Wrapper mdReqWrapper in MarketDataSubscriptions)
+                foreach (Wrapper mdReqWrapper in newSubscrList)
                 {
                     MarketDataRequest rq = MarketDataRequestConverter.GetMarketDataRequest(mdReqWrapper);
 
