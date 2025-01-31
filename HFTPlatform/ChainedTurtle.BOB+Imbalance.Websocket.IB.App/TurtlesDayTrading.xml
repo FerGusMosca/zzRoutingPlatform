@@ -23,7 +23,7 @@
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=daily_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
 	<BulkMarketDataRequest>false</BulkMarketDataRequest>
@@ -33,86 +33,125 @@
 
 	<SkipTrendlinesDeletion>false</SkipTrendlinesDeletion>
 
+
 	<SecuritiesToMonitor>
-	<SecurityToMonitor>
-		<Symbol>GGAL</Symbol>
-		<SecurityType>CS</SecurityType>
-		<!-- Default: CS-->
-		<Currency>USD</Currency>
-		<!-- Default: USD-->
-		<Exchange>SMART</Exchange>
-		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		<!-- Default: SMART -->
+		<SecurityToMonitor>
+			<Symbol>GGAL</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>USD</Currency>
+			<!-- Default: USD-->
+			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<!-- Default: SMART -->
 
-		<Indicators>
-			<IndicatorToMonitor>
-				<Code>IMBALANCE_INNER_IND_GGAL</Code>
-			</IndicatorToMonitor>
-			<IndicatorToMonitor>
-				<Code>GGAL_BOB_SETTING</Code>
-			</IndicatorToMonitor>
-		</Indicators>
-	</SecurityToMonitor>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_GGAL</Code>
+				</IndicatorToMonitor>
+				<IndicatorToMonitor>
+					<Code>GGAL_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
 
-	<!--<SecurityToMonitor>
-		<Symbol>YPF</Symbol>
-		<SecurityType>CS</SecurityType>
-		--><!-- Default: CS--><!--
-		<Currency>USD</Currency>
-		--><!-- Default: USD--><!--
-		<Exchange>SMART</Exchange>
-		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		--><!-- Default: SMART --><!--
+		<SecurityToMonitor>
+			<Symbol>YPF</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>USD</Currency>
+			<!-- Default: USD-->
+			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<!-- Default: SMART -->
 
-		<Indicators>
-			<IndicatorToMonitor>
-				<Code>IMBALANCE_INNER_IND_YPF</Code>
-			</IndicatorToMonitor>
-			<IndicatorToMonitor>
-				<Code>YPF_BOB_SETTING</Code>
-			</IndicatorToMonitor>
-		</Indicators>
-	</SecurityToMonitor>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_YPF</Code>
+				</IndicatorToMonitor>
+				<IndicatorToMonitor>
+					<Code>YPF_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
 
-	<SecurityToMonitor>
-		<Symbol>BMA</Symbol>
-		<SecurityType>CS</SecurityType>
-		--><!-- Default: CS--><!--
-		<Currency>USD</Currency>
-		--><!-- Default: USD--><!--
-		<Exchange>SMART</Exchange>
-		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		--><!-- Default: SMART --><!--
+		<SecurityToMonitor>
+			<Symbol>BMA</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>USD</Currency>
+			<!-- Default: USD-->
+			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<!-- Default: SMART -->
 
-		<Indicators>
-			<IndicatorToMonitor>
-				<Code>IMBALANCE_INNER_IND_BMA</Code>
-			</IndicatorToMonitor>
-			<IndicatorToMonitor>
-				<Code>BMA_BOB_SETTING</Code>
-			</IndicatorToMonitor>
-		</Indicators>
-	</SecurityToMonitor>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_BMA</Code>
+				</IndicatorToMonitor>
+				<IndicatorToMonitor>
+					<Code>BMA_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
 
-	<SecurityToMonitor>
-		<Symbol>SUPV</Symbol>
-		<SecurityType>CS</SecurityType>
-		--><!-- Default: CS--><!--
-		<Currency>USD</Currency>
-		--><!-- Default: USD--><!--
-		<Exchange>SMART</Exchange>
-		<MonitoringType>ONLY_ROUTING</MonitoringType>
-		--><!-- Default: SMART --><!--
+		<SecurityToMonitor>
+			<Symbol>SUPV</Symbol>
+			<SecurityType>CS</SecurityType>
+			<!-- Default: CS-->
+			<Currency>USD</Currency>
+			<!-- Default: USD-->
+			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<!-- Default: SMART -->
 
-		<Indicators>
-			<IndicatorToMonitor>
-				<Code>IMBALANCE_INNER_IND_SUPV</Code>
-			</IndicatorToMonitor>
-			<IndicatorToMonitor>
-				<Code>SUPV_BOB_SETTING</Code>
-			</IndicatorToMonitor>
-		</Indicators>
-	</SecurityToMonitor>-->
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_SUPV</Code>
+				</IndicatorToMonitor>
+				<IndicatorToMonitor>
+					<Code>SUPV_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
+
+
+
+		<SecurityToMonitor>
+			<Symbol>SPY</Symbol>
+			<SecurityType>CS</SecurityType>
+			<Currency>USD</Currency>
+			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_SPY</Code>
+				</IndicatorToMonitor>
+
+				<IndicatorToMonitor>
+					<Code>SPY_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
+
+
+		<SecurityToMonitor>
+			<Symbol>QQQ</Symbol>
+			<SecurityType>CS</SecurityType>
+			<Currency>USD</Currency>
+			<Exchange>SMART</Exchange>
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
+			<Indicators>
+				<IndicatorToMonitor>
+					<Code>IMBALANCE_INNER_IND_QQQ</Code>
+				</IndicatorToMonitor>
+
+				<IndicatorToMonitor>
+					<Code>QQQ_BOB_SETTING</Code>
+				</IndicatorToMonitor>
+			</Indicators>
+		</SecurityToMonitor>
+
 
 	</SecuritiesToMonitor>
 
@@ -131,7 +170,7 @@
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 
-			<RequestPrices>false</RequestPrices>
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -147,7 +186,7 @@
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 
-			<RequestPrices>false</RequestPrices>
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -163,7 +202,7 @@
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 
-			<RequestPrices>false</RequestPrices>
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -179,7 +218,7 @@
 			<SignalType></SignalType>
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
 
-			<RequestPrices>false</RequestPrices>
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -195,7 +234,7 @@
 			<SignalType>BOB</SignalType>
 
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
-			
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -211,7 +250,7 @@
 			<SignalType>BOB</SignalType>
 
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
-			
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -227,7 +266,7 @@
 			<SignalType>BOB</SignalType>
 
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
-			
+
 		</ChainedTurtleIndicator>
 
 		<ChainedTurtleIndicator>
@@ -243,11 +282,80 @@
 			<SignalType>BOB</SignalType>
 
 			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
-		
+
 		</ChainedTurtleIndicator>
 
-	</ChainedTurtleIndicators>
 
+		<ChainedTurtleIndicator>
+			<Code>SPY_BOB_SETTING</Code>
+			<SecurityToMonitor>
+				<Symbol>SPY</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB</SignalType>
+
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+
+		</ChainedTurtleIndicator>
+
+
+		<ChainedTurtleIndicator>
+			<Code>QQQ_BOB_SETTING</Code>
+			<SecurityToMonitor>
+				<Symbol>QQQ</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+			<SignalType>BOB</SignalType>
+
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+
+		</ChainedTurtleIndicator>
+
+		<ChainedTurtleIndicator>
+			<Code>IMBALANCE_INNER_IND_SPY</Code>
+			<SecurityToMonitor>
+				<Symbol>SPY</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+
+			<SignalType></SignalType>
+
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+
+		</ChainedTurtleIndicator>
+
+
+		<ChainedTurtleIndicator>
+			<Code>IMBALANCE_INNER_IND_QQQ</Code>
+			<SecurityToMonitor>
+				<Symbol>QQQ</Symbol>
+				<SecurityType>CS</SecurityType>
+				<Currency>USD</Currency>
+				<Exchange>SMART</Exchange>
+				<MonitoringType>ONLY_ROUTING</MonitoringType>
+			</SecurityToMonitor>
+			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedImbalanceTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
+
+			<SignalType></SignalType>
+
+			<!--BOB=Trendlines,BOB_INV= Trendlines inverted -->
+
+		</ChainedTurtleIndicator>
+
+
+	</ChainedTurtleIndicators>
 
 
 </ChainedConfiguration>

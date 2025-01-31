@@ -80,7 +80,7 @@ namespace tph.ChainedTurtles.LogicLayer
                             if (monChPos.RequestHistoricalPrices)
                             {
                                 Thread reqMonPosHistoricalPrices = new Thread(new ParameterizedThreadStart(DoRequestMonPosHistoricalPricesThread));
-                                reqMonPosHistoricalPrices.Start();
+                                reqMonPosHistoricalPrices.Start(monChPos);
                             }
                             else//we go straight for Market Data
                             {
@@ -146,23 +146,25 @@ namespace tph.ChainedTurtles.LogicLayer
             try
             {
 
+                MonChainedTurtlePosition monChPos = (MonChainedTurtlePosition)param;
+
                 lock (Config)
                 {
-                    
-                    foreach (var security in GetConfig().SecuritiesToMonitor)
-                    {
 
-                        DoLog($"@{GetConfig().Name}--> Requesting historical prices for monitored symbol {security.Symbol}", Constants.MessageType.Information);
-                        var monPos = FetchMonitoringPosition(security.Symbol);
-                        IMonPosition monPosEntity = GetMonPositionConfigInterface(monPos);
-                        DoRequestHistoricalPrice(HistoricalPricesRequetsID, security.Symbol,
-                                                monPosEntity.GetHistoricalPricesPeriod(),
-                                                security.Currency,
-                                                SecurityTypeTranslator.TranslateNonMandatorySecurityType(security.SecurityType),
-                                                security.Exchange
-                                                );
-                        HistoricalPricesRequetsID++;
-                    }
+                    DoLog($"@{GetConfig().Name}--> Requesting historical prices for monitored symbol {monChPos.Security.Symbol}", Constants.MessageType.Information);
+                    
+                    IMonPosition monPosEntity = GetMonPositionConfigInterface(monChPos);
+                    DoRequestHistoricalPrice(HistoricalPricesRequetsID, monChPos.Security.Symbol,
+                                            monPosEntity.GetHistoricalPricesPeriod(),
+                                            monChPos.Security.Currency,
+                                            monChPos.Security.SecType,
+                                            //SecurityTypeTranslator.TranslateNonMandatorySecurityType(monChPos.Security.SecType),
+                                            monChPos.Security.Exchange
+                                            );
+                    HistoricalPricesRequetsID++;
+
+
+                   
                    
                 }
             }
