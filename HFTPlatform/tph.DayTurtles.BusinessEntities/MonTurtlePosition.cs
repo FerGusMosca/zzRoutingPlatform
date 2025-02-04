@@ -177,6 +177,7 @@ namespace tph.DayTurtles.BusinessEntities
             MarketData lastCandle = LastValidCandle();
 
             double avg = CalculateSimpleMovAvg(window);
+            DoLog($"DBG8.IV- IsLowest--> LastCandle.Date={lastCandle.GetOrderingDate()} Price={ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice)} avg={avg}", MessageType.Debug);
 
             if (ReferencePriceCalculator.GetReferencePrice(lastCandle, CandleReferencePrice) != null)
             {
