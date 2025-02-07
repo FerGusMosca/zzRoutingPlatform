@@ -421,16 +421,19 @@ namespace tph.DayTurtles.BusinessEntities
 
         public override bool AppendCandle(MarketData md)//Market Data candles come with yesterday Open/Close
         {
+            DoLog($"@DBG_MD3.i- Eval Can Create Candle", MessageType.Debug);
             bool newCandle = false;
             if (CanCreateCandle(md))
             {
                 string key = GetCandleKey(md);
+                DoLog($"@DBG_MD3.i- Candle Key ={key}", MessageType.Debug);
 
                 if (!Candles.ContainsKey(key))
                 {
 
                     MarketData lastCandle = GetLastFinishedCandle();
-                    if(lastCandle!=null)
+                    DoLog($"@DBG_MD3.i- Adding Candle Time={lastCandle.GetReferenceDateTime()} Close={lastCandle.ClosingPrice} Trade={lastCandle.Trade}", MessageType.Debug);
+                    if (lastCandle!=null)
                         lastCandle.ClosingPrice = lastCandle.Trade;
 
                     newCandle = true;
