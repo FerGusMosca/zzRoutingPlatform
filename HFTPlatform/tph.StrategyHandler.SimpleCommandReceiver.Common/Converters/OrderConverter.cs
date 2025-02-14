@@ -51,7 +51,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
             order.ClOrdId = newOrdeReq.ClOrdId;
             order.OrigClOrdId = null;
             order.OrderQty = newOrdeReq.Qty;
-            order.CashOrderQty = null;
+            order.CashOrderQty = newOrdeReq.CashQty;
             order.OrdType = newOrdeReq.Price != null ? OrdType.Limit : OrdType.Market;
             order.Price = newOrdeReq.Price;
             order.StopPx = null;

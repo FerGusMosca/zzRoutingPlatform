@@ -47,7 +47,9 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting
 
         public string Side { get; set; }
 
-        public double Qty { get; set; }
+        public double? Qty { get; set; }
+
+        public double? CashQty { get; set; }
 
         public string  Account  { get; set; }
         

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Order Book Mock</Name>
+
+  <IncomingModule>tph.StrategyHandler.SimpleCommandReceiver.SimpleCommandReceiver, tph.StrategyHandler.SimpleCommandReceiver</IncomingModule>
+  <IncomingConfigPath>.\RecvSimpleCommModule.xml</IncomingConfigPath>
+
+
+	<OutgoingModule>tph.GatewayStrategy.LogicLayer.GatewayLayer, tph.GatewayStrategy.LogicLayer</OutgoingModule>
+	<OutgoingConfigPath>.\GatewayModule.xml</OutgoingConfigPath>
+  
+  
+  <LogToConsole>true</LogToConsole>
+</Configuration>

@@ -798,7 +798,7 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
         }
 
-        public CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
+        public virtual CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
         {
             try
             {
@@ -875,7 +875,8 @@ namespace zHFT.StrategyHandler.LogicLayer
                 NextPosId = 1;
                 PositionIdTranslator = new PositionIdTranslator(NextPosId);
 
-                OrderRouter = LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
+                if(Config!=null && Config.OrderRouter!=null)
+                    OrderRouter = LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, pOnLogMsg);
 
                 LoadMonitorsAndRequestMarketData();
 

@@ -359,41 +359,56 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 if(MarketDataModule!=null)
                     return MarketDataModule.ProcessMessage(wrapper);
                 else
-                    return CMState.BuildFail(new Exception($"Markt Data Module not Implemented at {Config.Name}"));
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES_REQUEST)
             {
                 if(MarketDataModule!=null)
                     return MarketDataModule.ProcessMessage(wrapper);
                 else
-                    return CMState.BuildFail(new Exception($"Markt Data Module not Implemented at {Config.Name}"));
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.SECURITY_LIST_REQUEST)
             {
                 if (MarketDataModule != null)
                     return MarketDataModule.ProcessMessage(wrapper);
                 else
-                    return CMState.BuildFail(new Exception($"Markt Data Module not Implemented at {Config.Name}"));
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
             {
-                return OrderRouterModule.ProcessMessage(wrapper);
+                if(OrderRouterModule!=null)
+                    return OrderRouterModule.ProcessMessage(wrapper);
+                else
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.CANCEL_ORDER)
             {
-                return OrderRouterModule.ProcessMessage(wrapper);
+                if(OrderRouterModule!=null)
+                    return OrderRouterModule.ProcessMessage(wrapper);
+                else
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.UPDATE_ORDER)
             {
-                return OrderRouterModule.ProcessMessage(wrapper);
+                if(OrderRouterModule!=null)
+                    return OrderRouterModule.ProcessMessage(wrapper);
+                else
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.CANCEL_ALL_POSITIONS)
             {
-                return OrderRouterModule.ProcessMessage(wrapper);
+                if(OrderRouterModule!=null)
+                    return OrderRouterModule.ProcessMessage(wrapper);
+                else
+                    return OnMessageRcv(wrapper);
             }
             else if (wrapper.GetAction() == Actions.ORDER_MASS_STATUS_REQUEST)
             {
-                return OrderRouterModule.ProcessMessage(wrapper);
+                if(OrderRouterModule!=null) 
+                    return OrderRouterModule.ProcessMessage(wrapper);
+                else
+                    return OnMessageRcv(wrapper);
             }
             else
             {

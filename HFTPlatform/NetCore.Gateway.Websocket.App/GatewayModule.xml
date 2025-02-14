@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GatewayConfiguration>
+	<Name>GatewayModule</Name>
+
+
+
+	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
+	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
+
+
+</GatewayConfiguration>
