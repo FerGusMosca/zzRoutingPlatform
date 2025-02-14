@@ -432,18 +432,23 @@ namespace tph.DayTurtles.BusinessEntities
                 {
 
                     MarketData lastCandle = GetLastFinishedCandle();
-                    DoLog($"@DBG_MD3.i- Adding Candle Time={lastCandle.GetReferenceDateTime()} Close={lastCandle.ClosingPrice} Trade={lastCandle.Trade}", MessageType.Debug);
-                    if (lastCandle!=null)
+                    if (lastCandle != null)
+                    {
+                        DoLog($"@DBG_MD3.i- Adding Candle Time={lastCandle.GetReferenceDateTime()} Close={lastCandle.ClosingPrice} Trade={lastCandle.Trade}", MessageType.Debug);
                         lastCandle.ClosingPrice = lastCandle.Trade;
-
+                    }
+                    DoLog($"@DBG_MD3.i - New Candle, opening prices is the last trade Key {key}: Trade={md.Trade}", MessageType.Debug);
                     newCandle = true;
                     md.OpeningPrice = md.Trade;
                     Candles.Add(key, md);
+                    DoLog($"@DBG_MD3.i - New Candle - Candles.Count {Candles.Count}: Trade={md.Trade}", MessageType.Debug);
+
                     //The trade price is always the Close price of the candle
                     //The last candle will have a Trade and when switching to the next candle, that trade will be the close price
                 }
                 else
                 {
+                    DoLog($"@DBG_MD3.i - Updating current market price for Key {key}: Trade={md.Trade}", MessageType.Debug);
                     Candles[key].Trade = md.Trade;
                 }
 
@@ -490,6 +495,7 @@ namespace tph.DayTurtles.BusinessEntities
         {
             if (TurtlesCustomConfig.TakeProfitPct.HasValue)
             {
+                DoLog($"DBG_MD - Evaluating Closing on Target Pct : Candle Count= {Candles.Count}", MessageType.Debug);
                 MarketData lastCandle = GetCurrentCandle();
                 decimal currProfit = portfPos.CalculateProfit(lastCandle);
                 LastSignalTriggered = $"CLOSE Pos w/Target Profit: CurrProfit= {portfPos.CalculateProfit(lastCandle).ToString("#.##")}" +

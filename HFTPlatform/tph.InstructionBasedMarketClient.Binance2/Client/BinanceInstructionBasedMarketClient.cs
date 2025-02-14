@@ -252,7 +252,7 @@ namespace tph.InstructionBasedMarketClient.Binance2.Client
                 if (histPrices.Data != null)
                 {
                     foreach (BinanceSpotKline candle  in histPrices.Data.OrderBy(x => x.OpenTime))
-                {
+                    {
 
                         Security sec = new Security();
                         ;
