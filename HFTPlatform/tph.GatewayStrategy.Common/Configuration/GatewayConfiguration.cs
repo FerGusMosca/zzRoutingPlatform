@@ -13,6 +13,11 @@ namespace tph.GatewayStrategy.Common.Configuration
     {
         #region Public Attributes
 
+
+        public string IncomingModule { get; set; }
+
+        public string IncomingModuleConfigFile { get; set; }
+
         public string OrderRouter { get; set; }
 
         public string OrderRouterConfigFile { get; set; }

@@ -15,6 +15,13 @@ using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Util;
 using tph.GatewayStrategy.Common.Configuration;
+using zHFT.OrderRouters.Common.Converters;
+using zHFT.Main.BusinessEntities.Orders;
+using System.Security.AccessControl;
+using zHFT.Main.BusinessEntities.Securities;
+using zHFT.Main.BusinessEntities.Positions;
+using zHFT.StrategyHandler.BusinessEntities;
+
 
 namespace tph.GatewayStrategy.LogicLayer
 {
@@ -25,6 +32,110 @@ namespace tph.GatewayStrategy.LogicLayer
         protected GatewayConfiguration Config { get;set; }
 
         protected Dictionary<string, MarketData> MarketDataDict { get; set; }
+
+        protected Dictionary<string, Position> RoutedPosDict { get; set; }
+
+        #endregion
+
+
+        #region Potected Methods
+
+
+        private Security GetSecurity(string symbol, string currency, string exchange, SecurityType? secType)
+        {
+            return new Security()
+            {
+                Symbol = symbol,
+                Currency = currency,
+                Exchange = exchange,
+                SecType = secType.HasValue ? secType.Value : SecurityType.CS,
+
+            };
+        }
+
+        protected virtual Position LoadNewRegularPos(Security sec, Side side, QuantityType qtyType, double? qty, double? cashQty, string accountId)
+        {
+
+            Position pos = new Position()
+            {
+
+                Security = sec,
+                Exchange = sec.Exchange,
+                Side = side,
+                PriceType = PriceType.FixedAmount,
+                NewPosition = true,
+                CashQty = qtyType == QuantityType.CURRENCY ? (double?)cashQty : null,
+                Qty = qtyType == QuantityType.SHARES ? (double?)qty : null,
+                QuantityType = qtyType,
+                PosStatus = zHFT.Main.Common.Enums.PositionStatus.PendingNew,
+                AccountId = accountId,
+
+
+            };
+
+            pos.LoadPosGuid(PositionIdTranslator.GetNextGuidPosId());
+
+            return pos;
+        }
+
+
+        private void DoRequestMarketData(Order newOrder)
+        {
+            Security sec = GetSecurity(newOrder.Security.Symbol, newOrder.Currency,  newOrder.Exchange, newOrder.Security.SecType);
+            MarketDataRequestWrapper mdrWrapper = new MarketDataRequestWrapper(sec, SubscriptionRequestType.SnapshotAndUpdates, sec.Currency);
+            IncomingModule.ProcessMessage(mdrWrapper);
+        }
+
+        private void DoOpenTradingRegularPos(Position pos)
+        {
+            PositionWrapper posWrapper = new PositionWrapper(pos, Config);
+            OrderRouter.ProcessMessage(posWrapper);
+        }
+
+        private void LoadNewPos(Order newOrder)
+        {
+            Security sec = GetSecurity(newOrder.Security.Symbol, newOrder.Currency, newOrder.Exchange, newOrder.Security.SecType);
+            Position pos = LoadNewRegularPos(sec, newOrder.Side, newOrder.QuantityType, newOrder.OrderQty,newOrder.CashOrderQty,newOrder.Account);
+
+            DoLog($"ROUTING Pos for Symbol {pos.Security.Symbol} Side={newOrder.Side} CashQty={newOrder.CashOrderQty} ", Constants.MessageType.PriorityInformation);
+            lock (RoutedPosDict)
+            {
+
+                RoutedPosDict.Add(pos.PosId, pos);
+            }
+            
+            DoOpenTradingRegularPos(pos);
+            DoLog($"Position sent to the exchange...", MessageType.Information);
+        }
+
+        protected CMState RoutePositionOnNewOrder(Wrapper wrapper)
+        {
+
+            try
+            {
+                DoLog($"Extracting order to create new position", MessageType.Debug);
+                var conv = new tph.GatewayStrategy.Common.Util.OrderConverter();
+
+                Order order = conv.ConvertNewOrder(wrapper);
+
+                DoLog($"New order found for symbol {order.Symbol} Qty={order.OrderQty} CashQty={order.CashOrderQty} Type={order.OrdType} Price={order.Price}", MessageType.Information);
+                DoLog($"Requesting market data for symbol {order.Symbol}", MessageType.Information);
+                
+                DoRequestMarketData(order);
+                DoLog($"Building new position for symbol {order.Symbol}", MessageType.Information);
+                LoadNewPos(order);
+                DoLog($"Position for symbol {order.Symbol} successfully sent to the exchange", MessageType.Information);
+
+                return CMState.BuildSuccess();
+
+
+            }
+            catch (Exception ex) {
+
+                DoLog($"ERROR building new new position :{ex.Message}", MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+        }
 
         #endregion
 
@@ -62,9 +173,13 @@ namespace tph.GatewayStrategy.LogicLayer
                 DoLog($"Initializing Gateway Layer...", MessageType.PriorityInformation);
                 //We load different entities
                 MarketDataDict = new Dictionary<string, MarketData>();
+                RoutedPosDict = new Dictionary<string, Position>();
 
 
                 OrderRouter = LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, DoLog);
+
+                IncomingModule = LoadModules(Config.IncomingModule, Config.IncomingModuleConfigFile, DoLog);
+
 
                 DoLog($"Gateway Layer successfully initialized...", MessageType.PriorityInformation);
             }
@@ -125,8 +240,7 @@ namespace tph.GatewayStrategy.LogicLayer
             {
                 if (wrapper.GetAction() == Actions.NEW_ORDER)
                 {
-                    //TODO Transform into a NEW_POSITION and send to Gen Order Roeuter
-                    return CMState.BuildSuccess();
+                    return RoutePositionOnNewOrder(wrapper);
                 }
                 else
                     return base.ProcessMessage(wrapper);

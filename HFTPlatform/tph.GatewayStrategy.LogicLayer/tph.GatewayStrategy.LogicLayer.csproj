@@ -49,6 +49,10 @@
       <Project>{78227C3A-736D-4E68-92C3-74A562A4623C}</Project>
       <Name>tph.GatewayStrategy.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandSender.Common\tph.StrategyHandler.SimpleCommandSender.Common.csproj">
+      <Project>{12EE0D1F-D9F9-4AD5-A757-CF58C717A314}</Project>
+      <Name>tph.StrategyHandler.SimpleCommandSender.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97f7f85d-864c-44ed-8901-547f2f693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>
@@ -56,6 +60,10 @@
     <ProjectReference Include="..\zHFT.Main.Common\zHFT.Main.Common.csproj">
       <Project>{4A57ED3B-774D-4344-B091-3328838F57F5}</Project>
       <Name>zHFT.Main.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
+      <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
+      <Name>zHFT.OrderRouters.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
       <Project>{f0d1b9aa-e500-460f-9b01-5a818b5283c9}</Project>

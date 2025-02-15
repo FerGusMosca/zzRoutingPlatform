@@ -33,6 +33,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected int NextPosId { get; set; }
 
+        protected ICommunicationModule IncomingModule { get; set; }
+
         protected ICommunicationModule OrderRouter { get; set; }
 
         protected ExecutionReportConverter ExecutionReportConverter { get; set; }

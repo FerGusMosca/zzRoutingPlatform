@@ -2,6 +2,9 @@
 <GatewayConfiguration>
 	<Name>GatewayModule</Name>
 
+	<!--Websocket-->
+	<IncomingModuleConfigFile>.\Websocket\IncomingSingletonConfig.xml</IncomingModuleConfigFile>
+	<IncomingModule>zHFT.SingletonModulesHandler.SingletonModulesHandler, zHFT.SingletonModulesHandler</IncomingModule>
 
 
 	<OrderRouter>zHFT.OrderRouters.Router.OrderRouter, zHFT.OrderRouters</OrderRouter>
