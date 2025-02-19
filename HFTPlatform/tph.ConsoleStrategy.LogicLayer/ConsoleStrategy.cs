@@ -754,6 +754,7 @@ namespace tph.ConsoleStrategy.LogicLayer
 
             }
 
+
             OrderRouter.ProcessMessage(wrapper);
         }
 

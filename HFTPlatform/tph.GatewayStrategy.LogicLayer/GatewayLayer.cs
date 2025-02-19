@@ -219,8 +219,26 @@ namespace tph.GatewayStrategy.LogicLayer
                 }
 
             }
-
+            OnMessageRcv(wrapper);
             OrderRouter.ProcessMessage(wrapper);
+        }
+
+
+        protected override void ProcessExecutionReport(object param)
+        {
+            Wrapper wrapper = (Wrapper)param;
+
+            try
+            {
+                ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
+                DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus})", Constants.MessageType.Information);
+                OnMessageRcv(wrapper);
+
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("CRITICAL ERROR processing execution report {0}:{1}", wrapper.ToString(), e.Message), Constants.MessageType.Information);
+            }
         }
 
         protected override void ResetEveryNMinutes(object param)
@@ -283,7 +301,20 @@ namespace tph.GatewayStrategy.LogicLayer
                 if (wrapper != null)
                     DoLog($"Incoming message from order routing w/ Action {wrapper.GetAction()}: " + wrapper.ToString(), Constants.MessageType.Information);
 
-                return base.ProcessOutgoing(wrapper);
+
+                if (wrapper.GetAction() == Actions.MARKET_DATA)  
+                {
+                    MarketData md = MarketDataConverter.GetMarketData(wrapper, Config);
+                    DoLog($"Publishing Market Data for Symbol {md.Security.Symbol}--> Open={md.OpeningPrice} High={md.TradingSessionHighPrice} Low={md.TradingSessionLowPrice} Close={md.ClosingPrice} Trade={md.Trade}  ", MessageType.Information);
+                    Thread mdThread = new Thread(ProcessMarketData);
+                    mdThread.Start(wrapper);
+                    DoLog($"Market Data successfully published...", MessageType.Information);
+                    return CMState.BuildSuccess();
+                }
+                else 
+                {
+                    return base.ProcessOutgoing(wrapper);
+                }
             }
             catch (Exception ex)
             {
@@ -306,6 +337,7 @@ namespace tph.GatewayStrategy.LogicLayer
         {
 
             OnLogMsg += pOnLogMsg;
+            OnMessageRcv += pOnMessageRcv;
 
             if (ConfigLoader.LoadConfig(this, configFile))
             {

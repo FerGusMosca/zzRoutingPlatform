@@ -2,9 +2,9 @@
 <Configuration>
   <Name>Websocket Client</Name>
 
-	<!--<WebSocketURL>ws://66.94.106.206:9192</WebSocketURL>--> <!--IB lIVE-->
+	<WebSocketURL>ws://66.94.106.206:9192</WebSocketURL> <!--IB lIVE-->
 
-	<WebSocketURL>ws://66.94.106.206:8182</WebSocketURL> <!--PAPER-->
+	<!--<WebSocketURL>ws://66.94.106.206:8182</WebSocketURL>--> <!--PAPER-->
 
 	<!--I=incoming,O=outgoing-->
 </Configuration>
