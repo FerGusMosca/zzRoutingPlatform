@@ -11,6 +11,7 @@ using tph.DayTurtles.BusinessEntities;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.StrategyHandler.BusinessEntities;
 
 namespace tph.ChainedTurtles.BusinessEntities
 {
@@ -150,6 +151,21 @@ namespace tph.ChainedTurtles.BusinessEntities
                 Logger.DoLog(msg, Constants.MessageType.Error);
                 return false;
             }
+        }
+
+        public override bool EvalClosingOnTargetPct(PortfolioPosition portfPos)
+        {
+            return false;//Discarding this option for this kind of ind
+        }
+
+        public override bool EvalClosingLongPosition(PortfolioPosition portfPos)
+        {
+            return true;//This one always closes. Then it depends on the other indicators
+        }
+
+        public override bool EvalClosingShortPosition(PortfolioPosition portfPos)
+        {
+            return true;//This one always closes. Then it depends on the other indicators
         }
 
         #endregion

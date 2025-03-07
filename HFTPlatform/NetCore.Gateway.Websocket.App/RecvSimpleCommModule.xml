@@ -2,7 +2,12 @@
 <Configuration>
   <Name>WebSocket_Receiver</Name>
   
-  <WebSocketURL>ws://0.0.0.0:7172</WebSocketURL> <!--Open Port to Incoming messages from Ext. Apps-->
+  <!--<WebSocketURL>ws://0.0.0.0:7172</WebSocketURL>--><!-- LIVE--> <!--Open Port to Incoming messages from Ext. Apps-->
 
+
+	<!--<WebSocketURL>ws://0.0.0.0:6162</WebSocketURL>--> <!--PAPER-->
+
+
+	<WebSocketURL>ws://0.0.0.0:7173</WebSocketURL> <!--FIX-->
 
 </Configuration>
