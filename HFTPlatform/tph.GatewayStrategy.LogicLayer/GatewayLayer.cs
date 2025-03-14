@@ -35,6 +35,15 @@ namespace tph.GatewayStrategy.LogicLayer
 
         protected Dictionary<string, Position> RoutedPosDict { get; set; }
 
+        protected Dictionary<string,Position> OrdersToPositionsDict { get; set; }
+
+        #endregion
+
+
+        #region Public Static Consts
+
+        protected static int _POS_ID_LENGTH = 36;
+
         #endregion
 
 
@@ -108,6 +117,47 @@ namespace tph.GatewayStrategy.LogicLayer
             DoLog($"Position sent to the exchange...", MessageType.Information);
         }
 
+        protected CMState RouteCancelOrder(Wrapper wrapper)
+        {
+            try
+            {
+                DoLog($"Extracting cancel order message", MessageType.Debug);
+                var conv = new tph.GatewayStrategy.Common.Util.OrderConverter();
+
+
+                
+                string clOrdId = (string)wrapper.GetField(OrderFields.ClOrdID);
+                string origClOrdId = (string)wrapper.GetField(OrderFields.OrigClOrdID);
+                DoLog($"Canceling order for OrigClOrdId={origClOrdId} ClOrdId={clOrdId}", MessageType.Debug);
+
+                Position posToCxl = null;
+                if (OrdersToPositionsDict.ContainsKey(origClOrdId))
+                {
+                    posToCxl = OrdersToPositionsDict[origClOrdId];
+                }
+                else if (OrdersToPositionsDict.ContainsKey(clOrdId))
+                {
+                    posToCxl = OrdersToPositionsDict[clOrdId];
+                }
+                else
+                    return CMState.BuildFail(new Exception($"Could not find a routed position for OrigClOrdId ={origClOrdId} ClOrdId = {clOrdId}"));
+
+                CancelPositionWrapper cxlWrapper = new CancelPositionWrapper(posToCxl, Config);
+
+                int friendlyPosId = PositionIdTranslator.GetFriendlyPosId(posToCxl.PosId);
+                DoLog($"Sending cancelation for PosId {friendlyPosId} ({posToCxl.PosId})", MessageType.PriorityInformation);
+                OrderRouter.ProcessMessage(cxlWrapper);
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"ERROR building new new position :{ex.Message}", MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+
+        }
+
         protected CMState RoutePositionOnNewOrder(Wrapper wrapper)
         {
 
@@ -174,6 +224,7 @@ namespace tph.GatewayStrategy.LogicLayer
                 //We load different entities
                 MarketDataDict = new Dictionary<string, MarketData>();
                 RoutedPosDict = new Dictionary<string, Position>();
+                OrdersToPositionsDict   =   new Dictionary<string, Position>();
 
 
                 OrderRouter = LoadModules(Config.OrderRouter, Config.OrderRouterConfigFile, DoLog);
@@ -224,6 +275,8 @@ namespace tph.GatewayStrategy.LogicLayer
         }
 
 
+
+
         protected override void ProcessExecutionReport(object param)
         {
             Wrapper wrapper = (Wrapper)param;
@@ -232,6 +285,29 @@ namespace tph.GatewayStrategy.LogicLayer
             {
                 ExecutionReport report = ExecutionReportConverter.GetExecutionReport(wrapper, Config);
                 DoLog($"Recv ER for symbol {report.Order.Symbol} w/Status ={report.OrdStatus})", Constants.MessageType.Information);
+
+
+                if (report.Order != null && !string.IsNullOrEmpty(report.Order.ClOrdId))
+                {
+                    string posId = Position.ExtractPosIDPrefix(report.Order.ClOrdId, _POS_ID_LENGTH);
+
+
+                    if (RoutedPosDict.ContainsKey(posId))
+                    {
+                        Position pos = RoutedPosDict[posId];
+
+                        if (!OrdersToPositionsDict.ContainsKey(report.Order.ClOrdId))
+                        {
+                            OrdersToPositionsDict.Add(report.Order.ClOrdId, pos);   
+                        }
+
+                    }
+                    else
+                        DoLog($"Ignoring order for unknwon pos Id for ClOrId {report.Order.ClOrdId}", MessageType.PriorityInformation);
+                }
+                else
+                    DoLog($"ignoring order for execution report without ClOrId! ", MessageType.PriorityInformation);
+                
                 OnMessageRcv(wrapper);
 
             }
@@ -259,6 +335,10 @@ namespace tph.GatewayStrategy.LogicLayer
                 if (wrapper.GetAction() == Actions.NEW_ORDER)
                 {
                     return RoutePositionOnNewOrder(wrapper);
+                }
+                else if(wrapper.GetAction() == Actions.CANCEL_ORDER)
+                {
+                    return RouteCancelOrder(wrapper);
                 }
                 else
                     return base.ProcessMessage(wrapper);
@@ -309,6 +389,12 @@ namespace tph.GatewayStrategy.LogicLayer
                     Thread mdThread = new Thread(ProcessMarketData);
                     mdThread.Start(wrapper);
                     DoLog($"Market Data successfully published...", MessageType.Information);
+                    return CMState.BuildSuccess();
+                }
+                else if (wrapper.GetAction() == Actions.EXECUTION_REPORT)
+                {
+                    Thread ProcessExecutionReportThread = new Thread(new ParameterizedThreadStart(ProcessExecutionReport));
+                    ProcessExecutionReportThread.Start(wrapper);
                     return CMState.BuildSuccess();
                 }
                 else 

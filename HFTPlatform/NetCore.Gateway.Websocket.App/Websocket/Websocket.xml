@@ -6,7 +6,10 @@
 
 	<!--<WebSocketURL>ws://66.94.106.206:8182</WebSocketURL>--> <!--PAPER-->
 
-	<WebSocketURL>ws://66.94.106.206:9193</WebSocketURL> <!--FIX-->
+	<!--<WebSocketURL>ws://66.94.106.206:9193</WebSocketURL>--> <!--FIX-->
+
+	<WebSocketURL>ws://127.0.0.1:8182</WebSocketURL>-->
+	<!--PAPER LOCAL-->
 
 	<!--I=incoming,O=outgoing-->
 </Configuration>

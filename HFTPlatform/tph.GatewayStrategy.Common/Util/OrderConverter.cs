@@ -112,6 +112,7 @@ namespace tph.GatewayStrategy.Common.Util
             return order;
         }
 
+
         #endregion
     }
 }
