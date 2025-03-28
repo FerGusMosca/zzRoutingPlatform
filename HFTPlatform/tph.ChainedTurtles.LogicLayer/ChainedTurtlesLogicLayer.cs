@@ -180,7 +180,7 @@ namespace tph.ChainedTurtles.LogicLayer
         {
             DoLog($"@{GetConfig().Name}--> Requesting historical prices for symbol {sec.Symbol}", Constants.MessageType.Information);
             DoRequestHistoricalPrice(HistoricalPricesRequetsID, sec.Symbol,
-                                    historicalPricesPeriod,
+                                    CalendarDateManager.GetNaturalDaysOffset( historicalPricesPeriod),
                                     sec.Currency,
                                     sec.SecType,
                                     sec.Exchange);
