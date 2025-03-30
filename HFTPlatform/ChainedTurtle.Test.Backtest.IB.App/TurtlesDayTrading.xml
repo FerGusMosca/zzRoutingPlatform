@@ -27,7 +27,7 @@
 
 	<OrderRouterConfigFile>.\GenOrderRouter.xml</OrderRouterConfigFile>
 
-	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_inv_vix_bob_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
+	<ConnectionString>Data Source=.\SQLDEV;initial catalog=chained_turtles_dev;integrated security=True;multipleactiveresultsets=True</ConnectionString>
 	<ResetOnPersistance>true</ResetOnPersistance>
 	<RecalculateTrendlines>true</RecalculateTrendlines>
 	<CancelActiveOrdersOnStart>false</CancelActiveOrdersOnStart>
@@ -53,7 +53,7 @@
 			<SecurityType>CS</SecurityType> <!-- Default: CS-->
 			<Currency>USD</Currency> <!-- Default: USD-->
 			<Exchange>SMART</Exchange><!-- Default: SMART -->
-			
+			<MonitoringType>ONLY_ROUTING</MonitoringType>
 			<Indicators>
 				<IndicatorToMonitor>
 					<Code>VIX_TRENDLINES_VIX</Code>
@@ -72,6 +72,7 @@
 				<SecurityType>IND</SecurityType>
 				<Currency>USD</Currency>
 				<Exchange>CBOE</Exchange>
+				<MonitoringType>ONLY_TRENDLINE</MonitoringType>
 			</SecurityToMonitor>
 			<Assembly>tph.ChainedTurtles.BusinessEntities.MonChainedInvBOBTurtleIndicator,tph.ChainedTurtles.BusinessEntities</Assembly>
 			<SignalType>BOB_INV</SignalType><!--BOB=Trendlines,BOB_INV= Trendlines inverted -->

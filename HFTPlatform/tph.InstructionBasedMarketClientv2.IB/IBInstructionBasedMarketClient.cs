@@ -576,7 +576,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
             }
             catch (Exception ex)
             {
-                DoLog("Critic error initializing " + moduleConfigFile + ":" + ex.Message, Constants.MessageType.Error);
+                DoLog("Critical error initializing " + moduleConfigFile + ":" + ex.Message, Constants.MessageType.Error);
                 return false;
             }
         }

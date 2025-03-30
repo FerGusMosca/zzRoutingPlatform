@@ -59,6 +59,10 @@ namespace zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration
 
         public bool FetchHistoricalPricesWithFullSymbol { get; set; }
 
+        public string PortfolioManagementInterface { get; set; }//Must implement IPortfolioManagementInterface
+
+        public string PortfolioManagementRESTURL { get; set; }
+
         #endregion
 
         #region Public Methods

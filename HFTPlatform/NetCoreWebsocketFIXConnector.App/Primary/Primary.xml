@@ -51,6 +51,9 @@
   <SaveFullMarketData>false</SaveFullMarketData>
 
   <UseCleanSymbols>true</UseCleanSymbols>
-  
+
+
+  <PortfolioManagementInterface>zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer.PrimaryRiskAPI, zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer</PortfolioManagementInterface>
+  <PortfolioManagementRESTURL>https://api.nasini.xoms.com.ar/</PortfolioManagementRESTURL>
   
 </Configuration>

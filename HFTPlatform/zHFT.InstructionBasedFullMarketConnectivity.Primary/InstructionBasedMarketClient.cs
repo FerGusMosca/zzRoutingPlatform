@@ -40,6 +40,7 @@ using zHFT.Main.BusinessEntities.Market_Data;
 using MarketDataWrapper = zHFT.MarketClient.Common.Wrappers.MarketDataWrapper;
 using QuickFix40;
 using MarketDataRequestConverter = zHFT.MarketClient.Primary.Common.Converters.MarketDataRequestConverter;
+using zHFT.InstructionBasedFullMarketConnectivity.Common;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {
@@ -74,6 +75,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         #endregion
 
         #region Protected Attributes
+
+        protected IPortfolioManagementInterface PortfolioManagementGateway { get; set; }
 
         protected IConfiguration Config { get; set; }
 
@@ -900,11 +903,42 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         #endregion
 
+        #region Portfolio Management
+
+        public void EvalPortfolioMarketInterfaceInitialization()
+        {
+            if (!string.IsNullOrEmpty(PrimaryConfiguration.PortfolioManagementInterface)
+                && !string.IsNullOrEmpty(PrimaryConfiguration.PortfolioManagementRESTURL))
+            {
+                var portfMgmtGatewayCls = Type.GetType(PrimaryConfiguration.PortfolioManagementInterface);
+                if (portfMgmtGatewayCls != null)
+                {
+                    PortfolioManagementGateway = (IPortfolioManagementInterface)Activator.CreateInstance(portfMgmtGatewayCls, PrimaryConfiguration.PortfolioManagementRESTURL,
+                                                                                  PrimaryConfiguration.User, PrimaryConfiguration.Password);
+                
+                
+                    PortfolioManagementGateway.Authenticate();
+                }
+                else
+                    throw new Exception("assembly not found: " + PrimaryConfiguration.PortfolioManagementInterface);
+
+
+            }
+            else
+                DoLog($"NOT INITIALIZING Portfolio Management interface because not PortfolioManagementInterface OR PortfolioManagementRESTURL attr. found ", Constants.MessageType.PriorityInformation);
+        
+        
+        }
+
+        
+
+        #endregion
+
         #endregion
 
         #region Public Methods
 
-        public  CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
+        public CMState ProcessMessage(Main.Common.Wrappers.Wrapper wrapper)
         {
             try
             {
@@ -1053,6 +1087,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                                 DoLog(string.Format("@{0}:Market {0} not found", market), Main.Common.Util.Constants.MessageType.Error);
                             }
                         }
+
                     }
                     else
                     {
@@ -1110,6 +1145,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                     if (PrimaryConfiguration.WaitingTimeForOrderRoutingInMiliseconds.HasValue)
                         LastRoutingTimestamp = DateTime.Now;
+
+                    EvalPortfolioMarketInterfaceInitialization();
 
                     return true;
                 }

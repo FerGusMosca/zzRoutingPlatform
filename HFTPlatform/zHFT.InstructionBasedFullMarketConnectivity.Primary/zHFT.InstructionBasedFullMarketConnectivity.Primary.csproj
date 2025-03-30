@@ -85,6 +85,10 @@
       <Project>{28266d98-9cc1-4a59-8ce7-789ceed42cc3}</Project>
       <Name>zHFT.IBRFullMarketConnectivity.Primary.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.Common\zHFT.InstructionBasedFullMarketConnectivity.Common.csproj">
+      <Project>{31EE2B06-DFF1-41C2-AD03-110BB8C97F3E}</Project>
+      <Name>zHFT.InstructionBasedFullMarketConnectivity.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.InstructionBasedFullMarketConnectivity.DAL\zHFT.InstructionBasedFullMarketConnectivity.DAL.csproj">
       <Project>{201A751F-BDF2-468B-8E0C-574CFD4E8EB0}</Project>
       <Name>zHFT.InstructionBasedFullMarketConnectivity.DAL</Name>

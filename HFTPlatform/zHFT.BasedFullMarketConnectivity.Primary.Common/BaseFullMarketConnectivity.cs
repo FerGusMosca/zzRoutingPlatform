@@ -73,6 +73,7 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         protected List<Wrapper> MarketDataSubscriptions { get; set; } 
 
+
         #endregion
 
         #region abstract Methods

@@ -34,6 +34,10 @@
     <Reference Include="MDFShared">
       <HintPath>..\..\Librerias\MDFShared.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="quickfix_net">
       <HintPath>..\..\Librerias\quickfix-bin-vs9-1.13.3\quickfix\lib\quickfix_net.dll</HintPath>
     </Reference>
@@ -42,6 +46,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +67,8 @@
     <Compile Include="Converter\ConverterBase.cs" />
     <Compile Include="Converter\SecurityConverterBase.cs" />
     <Compile Include="DTO\EconomicSeriesValue.cs" />
+    <Compile Include="DTO\GenericError.cs" />
+    <Compile Include="DTO\GenericResponse.cs" />
     <Compile Include="DTO\IndicatorToMonitor.cs" />
     <Compile Include="DTO\SecurityToMonitor.cs" />
     <Compile Include="Enums\Actions.cs" />
