@@ -1,11 +1,15 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
 using zHFT.Main.Common.DTO;
+using zHFT.Main.Common.Interfaces;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 {
@@ -13,13 +17,22 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
     {
         #region Protected Attributes
 
-       
+        protected ILogger Logger { get; set; }
 
         protected string AccessToken { get; set; }
 
         #endregion
 
         #region Private Methods
+
+        protected void DoLog(string msg, MessageType type=MessageType.Information) {
+        
+            if(Logger!=null)
+                Logger.DoLog(msg, type);
+            else
+                Console.WriteLine(msg);
+        
+        }
 
         protected GenericResponse DoInvoke(string url, Dictionary<string, string> headers, string body, HttpMethod method)
         {
@@ -128,21 +141,72 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 
         protected HttpRequestMessage CreateAuthFormRequest(string url, Dictionary<string, string> headers)
         {
-            //string encoded = System.Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(DwollaSetting.ClientId + ":" + DwollaSetting.Secret));
-            string token = "";
-
             var request = new HttpRequestMessage(HttpMethod.Post, url);
-            request.Headers.Add("Authorization", "Bearer " + token);
 
-            var collection = new List<KeyValuePair<string, string>>();
-            collection.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+            // Add the headers directly to the request
+            foreach (string key in headers.Keys)
+            {
+                request.Headers.Add(key, headers[key]);
+            }
 
-            var content = new FormUrlEncodedContent(collection);
-            request.Content = content;
+            // Do not set a body (mimic Postman's empty body)
+            // request.Content = null; // This is the default, so we can omit setting it
 
             return request;
-
         }
+
+        //For future references
+        //protected void EvalRedirectionError(HttpResponseMessage response)
+        //{
+        //    // Check for redirect status codes
+        //    if (response.StatusCode == System.Net.HttpStatusCode.Redirect ||
+        //        response.StatusCode == System.Net.HttpStatusCode.MovedPermanently ||
+        //        response.StatusCode == System.Net.HttpStatusCode.TemporaryRedirect ||
+        //        response.StatusCode == System.Net.HttpStatusCode.SeeOther)
+        //    {
+        //        var location = response.Headers.Location;
+        //        DoLog($"Redirect detected! Location: {location}",MessageType.Error);
+
+        //        // Check for X-Auth-Token in the redirect response
+        //        DoLog("Checking response.Headers in redirect response:");
+        //        bool foundInHeaders = false;
+        //        string authToken = null;
+        //        foreach (var header in response.Headers)
+        //        {
+        //            DoLog($"{header.Key}: {string.Join(", ", header.Value)}");
+        //            if (string.Equals(header.Key, "X-Auth-Token", StringComparison.OrdinalIgnoreCase))
+        //            {
+        //                DoLog("Found X-Auth-Token in response.Headers of redirect response!");
+        //                authToken = header.Value.FirstOrDefault();
+        //                foundInHeaders = true;
+        //            }
+        //        }
+
+        //        if (!foundInHeaders)
+        //        {
+        //            DoLog("Checking response.Content.Headers in redirect response:");
+        //            foreach (var header in response.Content.Headers)
+        //            {
+        //                DoLog($"{header.Key}: {string.Join(", ", header.Value)}");
+        //                if (string.Equals(header.Key, "X-Auth-Token", StringComparison.OrdinalIgnoreCase))
+        //                {
+        //                    DoLog("Found X-Auth-Token in response.Content.Headers of redirect response!");
+        //                    authToken = header.Value.FirstOrDefault();
+        //                }
+        //            }
+        //        }
+
+
+        //        if (foundInHeaders && !string.IsNullOrEmpty(authToken))
+        //        {
+        //            return;
+        //        }
+        //        else
+        //        {
+        //            throw new Exception($"Redirect detected to {location}. X-Auth-Token not found in initial response.");
+        //        }
+        //    }
+        //}
 
         protected HttpRequestMessage CreateRequest(string url, string body, HttpMethod method)
         {
@@ -178,12 +242,31 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
         {
             HttpRequestMessage request = CreateAuthFormRequest(url, headers);
             HttpResponseMessage response = null;
+
             try
             {
-                var client = new HttpClient();
-                response = client.SendAsync(request).Result;
-                response.EnsureSuccessStatusCode();
+                // Create HttpClient with redirect handling disabled
+                var handler = new HttpClientHandler
+                {
+                    AllowAutoRedirect = false
+                };
+                var client = new HttpClient(handler);
 
+                // Set headers to match Postman
+                request.Headers.Add("User-Agent", "PostmanRuntime/7.43.3");
+                request.Headers.Add("Accept", "*/*");
+                request.Headers.Add("Accept-Encoding", "gzip, deflate, br");
+                request.Headers.Add("Connection", "keep-alive");
+
+                // Send the request synchronously
+                response = client.SendAsync(request).Result;
+
+                // Log the response status code
+                DoLog($"Response Status Code: {(int)response.StatusCode} {response.StatusCode}");
+
+
+                // If not a redirect, ensure the response is successful
+                response.EnsureSuccessStatusCode();
 
                 return ProcessSuccessfulResponse(response);
             }
@@ -193,16 +276,19 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
             }
             catch (Exception ex)
             {
-                return new GenericResponse()
+                return new GenericResponse
                 {
                     success = false,
-                    error =
-                        new GenericError()
-                        {
-                            code = "0",
-                            message = $"Critical error invoking Dwolla service @url {url} :{ex.Message}"
-                        }
+                    error = new GenericError
+                    {
+                        code = "0",
+                        message = $"Critical error invoking Dwolla service @url {url} :{ex.Message}"
+                    }
                 };
+            }
+            finally
+            {
+                response?.Dispose();
             }
         }
 

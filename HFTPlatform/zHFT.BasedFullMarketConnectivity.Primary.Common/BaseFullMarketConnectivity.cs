@@ -23,7 +23,7 @@ using ExecType = QuickFix.ExecType;
 
 namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 {
-    public abstract class BaseFullMarketConnectivity : Application
+    public abstract class BaseFullMarketConnectivity : Application, zHFT.Main.Common.Interfaces.ILogger
     {
         #region Private  Consts
 
@@ -794,6 +794,11 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         {
             if (OnLogMsg != null)
                 OnLogMsg(msg, type);
+        }
+
+        public void DoLoadConfig(string configFile, List<string> listaCamposSinValor)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

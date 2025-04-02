@@ -914,7 +914,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 if (portfMgmtGatewayCls != null)
                 {
                     PortfolioManagementGateway = (IPortfolioManagementInterface)Activator.CreateInstance(portfMgmtGatewayCls, PrimaryConfiguration.PortfolioManagementRESTURL,
-                                                                                  PrimaryConfiguration.User, PrimaryConfiguration.Password);
+                                                                                  PrimaryConfiguration.User, PrimaryConfiguration.Password,this);
                 
                 
                     PortfolioManagementGateway.Authenticate();

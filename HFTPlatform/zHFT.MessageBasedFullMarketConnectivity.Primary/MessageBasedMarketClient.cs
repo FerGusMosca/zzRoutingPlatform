@@ -512,5 +512,15 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
         {
             throw new NotImplementedException();
         }
+
+        protected override bool UseCleanSymbols()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void DoProcessHistoricalPricesRequestThread(object param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
