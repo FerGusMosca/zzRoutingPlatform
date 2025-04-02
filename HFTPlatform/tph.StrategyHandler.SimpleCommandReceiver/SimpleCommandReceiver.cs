@@ -361,6 +361,13 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                 else
                     return OnMessageRcv(wrapper);
             }
+            else if (wrapper.GetAction() == Actions.PORTFOLIO_REQUEST)
+            {
+                if (MarketDataModule != null)
+                    return MarketDataModule.ProcessMessage(wrapper);
+                else
+                    return OnMessageRcv(wrapper);
+            }
             else if (wrapper.GetAction() == Actions.HISTORICAL_PRICES_REQUEST)
             {
                 if(MarketDataModule!=null)

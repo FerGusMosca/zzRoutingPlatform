@@ -522,5 +522,10 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Primary
         {
             throw new NotImplementedException();
         }
+
+        protected override void DoProcessPortfolioRequestThread(object param)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

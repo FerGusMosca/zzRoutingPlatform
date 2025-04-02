@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.Positions;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using tph.StrategyHandler.SimpleCommandSender.Common.Configuration;
 using tph.StrategyHandler.SimpleCommandSender.Common.Util;
@@ -424,6 +425,29 @@ namespace tph.StrategyHandler.SimpleCommandSender
             }
         }
 
+        protected void ProcessPortfolioRequest(object param)
+        {
+            try
+            {
+
+                string accountNumber = (string)((Wrapper)param).GetField(PortfolioRequestFields.AccountNumber);
+
+                if (string.IsNullOrEmpty(accountNumber))
+                    throw new Exception($"Could not process account number from portfolio request");
+
+                PortfolioReqDTO reqDTO = new PortfolioReqDTO() {AccountNumber=accountNumber };
+
+
+                DoLog($"Requesting portfolio for account {reqDTO.AccountNumber}", Constants.MessageType.Information);
+                DoSendAsync<PortfolioReqDTO>(reqDTO);
+            }
+            catch (Exception ex)
+            {
+                DoLog($"ERROR sending portfolio request: {ex.Message}", Constants.MessageType.Information);
+            }
+
+        }
+
         protected void ProcessHistoricalPricesRequest(object param)
         {
             try
@@ -603,6 +627,13 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 (new Thread(ProcessHistoricalPricesRequest)).Start(wrapper);
                 DoLog("Historical Prices Request successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
                 return  CMState.BuildSuccess();
+            }
+            else if (wrapper.GetAction() == Actions.PORTFOLIO_REQUEST)
+            {
+                DoLog("Processing Portfolio Request:" + wrapper.ToString(), Constants.MessageType.Information);
+                (new Thread(ProcessPortfolioRequest)).Start(wrapper);
+                DoLog("Portfolio Request successfully processed:" + wrapper.ToString(), Constants.MessageType.Information);
+                return CMState.BuildSuccess();
             }
             else if (wrapper.GetAction() == Actions.CANDLE_BAR_REQUEST)
             {

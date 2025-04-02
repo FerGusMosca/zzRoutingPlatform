@@ -816,6 +816,23 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             }
         }
 
+        protected override void DoProcessPortfolioRequestThread(object param)
+        {
+            try
+            {
+                Wrapper portfRequestWrapper = (Wrapper)param;
+
+                string accountNumner = (string)(portfRequestWrapper.GetField(PortfolioRequestFields.AccountNumber));
+
+                //TODO process and publish portfolio
+            }
+            catch (Exception ex)
+            {
+                DoLog($"@{PrimaryConfiguration.Name}- CRITICAL ERROR Processing Portfolio Request: {ex.Message}", Constants.MessageType.Error);
+
+            }
+        }
+
         protected override void DoProcessHistoricalPricesRequestThread(object param)
         {
             try
@@ -918,6 +935,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 
                 
                     PortfolioManagementGateway.Authenticate();
+
+                    PortfolioManagementGateway.GetPortfolio("10262");
                 }
                 else
                     throw new Exception("assembly not found: " + PrimaryConfiguration.PortfolioManagementInterface);
@@ -985,6 +1004,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                     {
                         DoLog(string.Format("@{0}:Requesting status for all the orders @ Primary", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
                         return RequestOrderMassStatus();
+                    }
+                    else if (wrapper.GetAction() == Actions.PORTFOLIO_REQUEST)
+                    {
+                        DoLog(string.Format("@{0}:Requesting portfolio for account @ Primary", PrimaryConfiguration.Name), Main.Common.Util.Constants.MessageType.Information);
+                        return ProcessPortfolioRequest(wrapper);
                     }
                     else
                     {

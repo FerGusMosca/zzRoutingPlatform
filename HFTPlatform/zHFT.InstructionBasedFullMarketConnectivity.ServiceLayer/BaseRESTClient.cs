@@ -212,12 +212,18 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
         {
 
             var request = new HttpRequestMessage(method, url);
-            request.Headers.Add("Authorization", "Bearer " + AccessToken);
+            if (AccessToken != null)
+                request.Headers.Add("Authorization", "Bearer " + AccessToken);
+            else
+                throw new Exception($"Not authenticated with {url} !!");
+
+
             request.Headers.Add("Accept", "application/vnd.dwolla.v1.hal+json");
             //request.Headers.Add("Content-Type", "text/plain");
 
             if (body != null)
                 request.Content = new StringContent(body, null, "application/json");
+
 
             return request;
 

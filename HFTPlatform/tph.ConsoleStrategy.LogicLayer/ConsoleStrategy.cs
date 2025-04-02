@@ -18,6 +18,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.BusinessEntities;
 using zHFT.StrategyHandler.Common.Converters;
 using zHFT.StrategyHandler.Common.DTO;
@@ -295,6 +296,29 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
+        //
+        protected void PortfolioRequest(string[] param)
+        {
+            try
+            {
+                string cmd = param[0];
+
+                CommandValidator.ValidateCommandVariableParams(cmd, param, 2, 2);
+
+                string accountNumber = CommandValidator.ExtractMandatoryParam(param, 1);
+               
+
+                DoLog($"Requesting Portfolio for Account {accountNumber}", MessageType.PriorityInformation);
+                (new Thread(RequestPortfolioAsync)).Start(new object[] { accountNumber });
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"{Config.Name}--> CRITICAL ERROR at PortfolioRequest:{ex.Message}", MessageType.Error);
+            }
+
+        }
+
         protected void GetEconomicSeries(string[] param)
         {
             try
@@ -427,6 +451,7 @@ namespace tph.ConsoleStrategy.LogicLayer
             Console.WriteLine($"#7-RequestMarketData <symbol> <SecType*> <Currency*> <Echange*>");
             Console.WriteLine($"#8-GetEconomicSeries <SeriresID> <From*> <To*>");
             Console.WriteLine($"#9-ParseEconomicSeries <Path> <SeriesID> <DateFormat>");
+            Console.WriteLine($"#10-PortfolioRequest <AccountNumber>");
             Console.WriteLine();
         }
 
@@ -470,6 +495,11 @@ namespace tph.ConsoleStrategy.LogicLayer
                 {
                     GetEconomicSeries(cmdArr);
                 }
+                else if (mainCmd == "PortfolioRequest")
+                {
+                    PortfolioRequest(cmdArr);
+                }
+                //
                 else if (mainCmd == "ParseEconomicSeries")
                 {
                     ParseEconomicSeries(cmdArr);
@@ -550,6 +580,30 @@ namespace tph.ConsoleStrategy.LogicLayer
             {
                 DoLog($"CRITICAL ERROR Requesting market data for symbol {symbol}", MessageType.Error);
             
+            }
+        }
+
+
+        protected void RequestPortfolioAsync(object param)
+        {
+            object[] paramArr = (object[])param;
+            string accountNumber = (string)paramArr[0];
+
+            try
+            {
+              
+
+                lock (MarketDataRequests)
+                {
+                  
+                    PortfolioRequestWrapper wrapper = new PortfolioRequestWrapper(accountNumber);
+                    OnMessageRcv(wrapper);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"CRITICAL ERROR Requesting portfolio for account number {accountNumber}", MessageType.Error);
+
             }
         }
 

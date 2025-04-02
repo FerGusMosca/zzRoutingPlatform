@@ -61,6 +61,10 @@
       <Project>{801E5410-738B-47C9-895F-0AD1B5860A2A}</Project>
       <Name>zHFT.Main.DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43A49A1C-0367-4000-A144-FF3CDC6B198A}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.StrategyHandler.BusinessEntities\zHFT.StrategyHandler.BusinessEntities.csproj">
       <Project>{F0D1B9AA-E500-460F-9B01-5A818B5283C9}</Project>
       <Name>zHFT.StrategyHandler.BusinessEntities</Name>

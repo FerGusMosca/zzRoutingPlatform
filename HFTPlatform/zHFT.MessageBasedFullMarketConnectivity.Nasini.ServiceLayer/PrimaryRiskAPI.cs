@@ -31,6 +31,9 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
 
         public string _AUTHENTICATE = "auth/getToken";
 
+
+        public string _PORTF_POSITIONS = "rest/risk/position/getPositions/{0}";
+
         #endregion
 
 
@@ -48,6 +51,31 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
         #endregion
 
         #region Public Methods
+
+
+        public GenericResponse GetPortfolio(string accNumber)
+        {
+            //string fullUrl = $"{URL}{string.Format(_PORTF_POSITIONS, accNumber)}";
+            //Dictionary<string, string> headers = new Dictionary<string, string>();
+
+            //GenericResponse genResp = DoGetJson(fullUrl, headers);
+
+
+            //if (genResp.success)
+            //{
+            //    Process response and extract
+            //    return null;
+            //}
+            //else
+            //{
+            //    return genResp;
+            //}
+
+            return null;
+
+
+
+        }
 
         public GenericResponse Authenticate() // Generates the token and locally saves it
         {

@@ -9,6 +9,7 @@ using tph.StrategyHandler.SimpleCommandReceiver.Common.Converters;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.Positions;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Securities;
@@ -17,6 +18,7 @@ using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
+using zHFT.MarketClient.Common.Wrappers;
 using zHFT.OrderRouters.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
 using CancelOrderWrapper = tph.StrategyHandler.SimpleCommandReceiver.Common.Wrapper.CancelOrderWrapper;
@@ -257,6 +259,46 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                     Success = false,
                     Error = ex.Message
 
+                };
+            }
+        }
+
+        //
+        protected void ProcessPortfolioRequest(IWebSocketConnection socket, string m)
+        {
+
+            try
+            {
+                DoLog(string.Format("Incoming ProcessPortfolioRequest msg"), Constants.MessageType.Information);
+
+                PortfolioReqDTO dto = JsonConvert.DeserializeObject<PortfolioReqDTO>(m);
+
+                PortfolioRequestWrapper portfReqWrapper = new PortfolioRequestWrapper(dto.AccountNumber);
+
+                CMState resp = OnMessageReceived(portfReqWrapper);
+
+                if (resp.Success)
+                {
+                    PortfolioReqAckDTO ackMsg = new PortfolioReqAckDTO()
+                    {
+                        Success = true,
+                    };
+
+                    DoSend<PortfolioReqAckDTO>(socket, ackMsg);
+                    DoLog(string.Format("Portfolio Request  successfully processed"), Constants.MessageType.Information);
+                }
+                else
+                    throw resp.Exception;
+
+            }
+            catch (Exception ex)
+            {
+                DoLog(string.Format("Critical ERROR for Security List Request. Error:{0}", ex.Message), Constants.MessageType.Error);
+
+                SecurityListReqAckDTO ackMsg = new SecurityListReqAckDTO()
+                {
+                    Success = false,
+                    Error = ex.Message
                 };
             }
         }
@@ -652,6 +694,10 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 else if (wsResp.Msg == "SecurityListRequest")
                 {
                     ProcessSecurityListRequest(socket, m);
+                }
+                else if (wsResp.Msg == "PortfolioRequest")
+                {
+                    ProcessPortfolioRequest(socket, m);
                 }
                 else
                 {

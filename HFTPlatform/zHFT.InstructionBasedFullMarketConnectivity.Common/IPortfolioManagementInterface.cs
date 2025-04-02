@@ -10,5 +10,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Common
     public interface IPortfolioManagementInterface
     {
         GenericResponse Authenticate();
+
+        GenericResponse GetPortfolio(string accNumber);
     }
 }

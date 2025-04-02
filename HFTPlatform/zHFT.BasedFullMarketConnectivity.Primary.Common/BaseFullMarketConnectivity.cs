@@ -408,6 +408,8 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
             }
         }
 
+        protected abstract void DoProcessPortfolioRequestThread(object param);
+
         protected abstract void DoProcessHistoricalPricesRequestThread(object param);
         protected CMState ProcessHistoricalPricesRequest(Wrapper histPricesReqWrapper)
         {
@@ -425,6 +427,28 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                 DoLog(msg, Constants.MessageType.Error);
                 return CMState.BuildFail(new Exception(msg));
             }
+        }
+
+
+        //ProcessPortfolioRequest
+        protected CMState ProcessPortfolioRequest(Wrapper portfolioReqWrapper)
+        {
+            try
+            {
+                Thread reqPortfolioRequest = new Thread(DoProcessPortfolioRequestThread);
+
+                reqPortfolioRequest.Start(portfolioReqWrapper);
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                string msg = $"CRICITAL error requesting portfolio for wrapper {portfolioReqWrapper.ToString()}:{ex.Message}";
+                DoLog(msg, Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(msg));
+            }
+
+
         }
 
         protected int GetNextOrderId()

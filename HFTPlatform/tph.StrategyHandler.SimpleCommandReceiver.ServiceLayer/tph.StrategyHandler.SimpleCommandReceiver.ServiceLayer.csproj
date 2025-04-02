@@ -66,6 +66,10 @@
       <Project>{4a57ed3b-774d-4344-b091-3328838f57f5}</Project>
       <Name>zHFT.Main.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MarketClient.Common\zHFT.MarketClient.Common.csproj">
+      <Project>{43A49A1C-0367-4000-A144-FF3CDC6B198A}</Project>
+      <Name>zHFT.MarketClient.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.OrderRouters.Common\zHFT.OrderRouters.Common.csproj">
       <Project>{2dc0ec9c-69be-4dce-bcac-9774b83defd9}</Project>
       <Name>zHFT.OrderRouters.Common</Name>
