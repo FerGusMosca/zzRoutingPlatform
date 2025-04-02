@@ -33,12 +33,12 @@ namespace zHFT.MarketClient.Common.Wrappers
             PortfolioRequestFields mdField = (PortfolioRequestFields)field;
 
             if (AccountNumber == null)
-                return MarketDataFields.NULL;
+                return PortfolioRequestFields.NULL;
 
             if (mdField == PortfolioRequestFields.AccountNumber)
                 return AccountNumber;
             
-            return MarketDataFields.NULL;
+            return PortfolioRequestFields.NULL;
         }
 
         public override Main.Common.Enums.Actions GetAction()

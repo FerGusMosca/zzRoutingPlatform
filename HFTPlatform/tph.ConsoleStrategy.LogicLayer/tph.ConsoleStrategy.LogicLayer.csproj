@@ -49,6 +49,10 @@
       <Project>{23191040-ADF0-46D9-BCA2-65E68EA1B9C7}</Project>
       <Name>tph.ConsoleStrategy.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tph.StrategyHandler.SimpleCommandReceiver.Common\tph.StrategyHandler.SimpleCommandReceiver.Common.csproj">
+      <Project>{d5516f31-ceff-4a5a-85ca-29de1f3a8156}</Project>
+      <Name>tph.StrategyHandler.SimpleCommandReceiver.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">
       <Project>{97F7F85D-864C-44ED-8901-547F2F693427}</Project>
       <Name>zHFT.Main.BusinessEntities</Name>

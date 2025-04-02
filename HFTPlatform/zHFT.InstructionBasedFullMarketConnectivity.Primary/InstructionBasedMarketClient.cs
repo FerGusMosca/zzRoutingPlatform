@@ -41,6 +41,10 @@ using MarketDataWrapper = zHFT.MarketClient.Common.Wrappers.MarketDataWrapper;
 using QuickFix40;
 using MarketDataRequestConverter = zHFT.MarketClient.Primary.Common.Converters.MarketDataRequestConverter;
 using zHFT.InstructionBasedFullMarketConnectivity.Common;
+using zHFT.Main.BusinessEntities.Positions;
+using SecurityType = zHFT.Main.Common.Enums.SecurityType;
+using QuantityType = zHFT.Main.Common.Enums.QuantityType;
+using static zHFT.Main.Common.Util.Constants;
 
 namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 {
@@ -822,9 +826,88 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
             {
                 Wrapper portfRequestWrapper = (Wrapper)param;
 
-                string accountNumner = (string)(portfRequestWrapper.GetField(PortfolioRequestFields.AccountNumber));
+                string accountNumber = (string)(portfRequestWrapper.GetField(PortfolioRequestFields.AccountNumber));
 
-                //TODO process and publish portfolio
+                //TODO --> Implement portfolio position fetch from IPortfolioManagementInterface
+
+                Position portfPos1 = new Position()
+                {
+                    Security = new Security() { Symbol = "GGAL", SecType = SecurityType.CS, Currency = "ARS" },
+                    Exchange = "XXX",
+                    QuantityType = QuantityType.SHARES,
+                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
+                    Qty = 100,//100 shares example,
+                    CumQty = 100,
+                    LeavesQty = 0,
+                    LastPx= 100.5d,
+                    Side=Main.Common.Enums.Side.Buy,
+                    AccountId=accountNumber
+                };
+
+
+                Position portfPos2 = new Position()
+                {
+                    Security = new Security() { Symbol = "YPFD", SecType = SecurityType.CS, Currency = "ARS" },
+                    Exchange = "XXX",
+                    QuantityType = QuantityType.SHARES,
+                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
+                    Qty = 200,//100 shares example,
+                    CumQty = 200,
+                    LeavesQty = 0,
+                    LastPx = 300.5d,
+                    Side = Main.Common.Enums.Side.Buy,
+                    AccountId = accountNumber
+                };
+
+
+                Position liqPos1 = new Position()
+                {
+                    Security = new Security() { Symbol = "ARS", SecType = SecurityType.CS, Currency = "ARS" },
+                    Exchange = "XXX",
+                    QuantityType = QuantityType.CURRENCY,
+                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
+                    Qty = 1000000,//1M ARS example,
+                    CumQty = 1000000,
+                    LeavesQty = 0,
+                    LastPx = 1,
+                    Side = Main.Common.Enums.Side.Buy,
+                    AccountId = accountNumber
+                };
+
+                Position liqPos2 = new Position()
+                {
+                    Security = new Security() { Symbol = "USD", SecType = SecurityType.CS, Currency = "USD" },
+                    Exchange = "XXX",
+                    QuantityType = QuantityType.CURRENCY,
+                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
+                    Qty = 2000,//2k USD example,
+                    CumQty = 2000,
+                    LeavesQty = 0,
+                    LastPx = 1,
+                    Side = Main.Common.Enums.Side.Buy,
+                    AccountId = accountNumber
+                };
+
+
+                List<Position> securityPositions = new List<Position>();
+                securityPositions.Add(portfPos1);
+                securityPositions.Add(portfPos2);
+
+
+                List<Position> liqPoisitions = new List<Position>();
+                liqPoisitions.Add(liqPos1);
+                liqPoisitions.Add(liqPos2);
+
+                //TODO process and publish portfolio for real
+
+                DoLog($"Publishing portfolio posigiosn of {securityPositions.Count} securities and {liqPoisitions.Count} liquid positions", Constants.MessageType.Information);
+
+                PortfolioWrapper portfolioWrapper = new PortfolioWrapper(securityPositions, liqPoisitions, accountNumber);
+                OnMarketDataMessageRcv(portfolioWrapper);
+
+                DoLog("PortfolioSuccessfully Published", MessageType.Information);
+
+               
             }
             catch (Exception ex)
             {

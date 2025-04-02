@@ -441,6 +441,11 @@ namespace zHFT.Main.BusinessEntities.Positions
             return Side == Side.Sell || Side == Side.SellShort;
         }
 
+        public override string ToString()
+        {
+            return $" Security=<{Security.ToString()}> Status={PosStatus} Side={Side} Exchange={Exchange} Qty. Type={QuantityType} PriceType={PriceType} Qty={Qty} Last Pr.={LastPx}";
+        }
+
         #endregion
 
     }

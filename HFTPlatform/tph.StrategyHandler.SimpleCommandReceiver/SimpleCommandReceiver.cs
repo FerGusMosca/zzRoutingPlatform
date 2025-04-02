@@ -5,6 +5,7 @@ using System.Security;
 using System.Security.Permissions;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.Positions;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.Util;
 using tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer;
 using zHFT.Main.BusinessEntities.Market_Data;
@@ -148,6 +149,34 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
                     CandleBarHandler.InitializeNewSubscription(security);
 
                 }
+            }
+        }
+
+        protected CMState ProcessPortfolio(Wrapper wrapper)
+        {
+
+            try
+            {
+
+                if (!(wrapper is PortfolioWrapper))
+                {
+                    throw new Exception($"Invaled wrapper type at ProcessPortfolio: {wrapper.ToString()}");
+                }
+
+
+                PortfolioDTO portfolioDTO = LocalSecurityListConverter.SecurityListConverter.ConvertPortfolio((PortfolioWrapper)wrapper);
+                DoLog($"Publishing portfolio for account {portfolioDTO.AccountNumber}: {portfolioDTO.SecurityPositions.Count} security positions and {portfolioDTO.LiquidPositions.Count} liquid positions", Constants.MessageType.Information);
+                Server.PublishEntity<PortfolioDTO>(portfolioDTO);
+                DoLog($"Portfolio successfully published",Constants.MessageType.Information);
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+
+                DoLog(string.Format("Error processing portfolio:{0}", ex.Message), Constants.MessageType.Error);
+                return CMState.BuildFail(ex);
+
             }
         }
 
@@ -353,6 +382,11 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             {
                 DoLog("Processing Order Cancel/Replace Reject:" + wrapper.ToString(), Constants.MessageType.Information);
                 return ProcessOrderCancelReplaceReject(wrapper);
+            }
+            else if (wrapper.GetAction() == Actions.PORTFOLIO)
+            {
+                DoLog("Processing Portfolio:" + wrapper.ToString(), Constants.MessageType.Information);
+                return ProcessPortfolio(wrapper);
             }
             else if (wrapper.GetAction() == Actions.MARKET_DATA_REQUEST)
             {

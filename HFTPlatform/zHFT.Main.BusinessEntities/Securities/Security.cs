@@ -145,6 +145,11 @@ namespace zHFT.Main.BusinessEntities.Securities
 
         }
 
+        public override string ToString()
+        {
+            return $" Symbol={Symbol} Sec.Type={SecType} Currency={Currency}";
+        }
+
         #endregion
 
         #region Public Static Methods

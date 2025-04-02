@@ -99,6 +99,15 @@ namespace tph.StrategyHandler.SimpleCommandSender
                 //TODO process ClientDepthOfBook
 
             }
+            else if (msg.Msg == "PortfolioMsg")
+            {
+                PortfolioDTO portfolioDTO = (PortfolioDTO)msg;
+                PortfolioWrapper portfWrapper = new PortfolioWrapper(portfolioDTO.SecurityPositions, portfolioDTO.LiquidPositions, portfolioDTO.AccountNumber);
+
+                (new Thread(ProcessIncomingAsync)).Start(portfWrapper);
+                DoLog($"{Config.Name}--> Recv Portfolio:{msg.ToString()}", Constants.MessageType.Information);
+                
+            }
 
             DoLog($"{Config.Name}--> Recv msg:{msg.ToString()}", Constants.MessageType.Information);
         }

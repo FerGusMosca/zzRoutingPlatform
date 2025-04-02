@@ -67,6 +67,7 @@
     <Compile Include="DTOs\OrderRouting\OrderMassStatusRequestAck.cs" />
     <Compile Include="DTOs\OrderRouting\UpdateOrderAck.cs" />
     <Compile Include="DTOs\OrderRouting\UpdateOrderReq.cs" />
+    <Compile Include="DTOs\Positions\PortfolioDTO.cs" />
     <Compile Include="DTOs\Positions\PortfolioReqAckDTO.cs" />
     <Compile Include="DTOs\Positions\PortfolioReqDTO.cs" />
     <Compile Include="DTOs\SubscriptionResponse.cs" />

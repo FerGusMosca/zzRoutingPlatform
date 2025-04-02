@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using tph.ConsoleStrategy.Common.Configuration;
 using tph.ConsoleStrategy.Common.Util;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.Positions;
 using zHFT.Main.BusinessEntities.Market_Data;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.BusinessEntities.Positions;
@@ -78,7 +79,42 @@ namespace tph.ConsoleStrategy.LogicLayer
 
         }
 
-       
+        protected override void ProcessPortfolio(Wrapper wrapper)
+        {
+            try
+            {
+
+                if (!(wrapper is PortfolioWrapper))
+                    throw new Exception("wrapper is not a PortfolioWrapper in ProcessPortfolio");
+
+                PortfolioDTO portfDTO = tph.StrategyHandler.SimpleCommandReceiver.Common.Converters.SecurityListConverter.ConvertPortfolio((PortfolioWrapper)wrapper);
+
+
+                DoLog("", MessageType.PriorityInformation);
+                DoLog("", MessageType.PriorityInformation);
+                DoLog($"============= Displaying Security Positions for Account {portfDTO.AccountNumber} =============", MessageType.PriorityInformation);
+                foreach (Position pos in portfDTO.SecurityPositions) {
+                    DoLog($"  {pos.ToString()}", MessageType.PriorityInformation);
+                }
+
+
+                DoLog($"============= Displaying Liquid Positions for Account {portfDTO.AccountNumber} =============", MessageType.PriorityInformation);
+                foreach (Position pos in portfDTO.LiquidPositions)
+                {
+                    DoLog($"  {pos.ToString()}", MessageType.PriorityInformation);
+
+                }
+                DoLog("", MessageType.PriorityInformation);
+                DoLog("", MessageType.PriorityInformation);
+
+
+            }
+            catch (Exception ex) {
+
+                DoLog($"ERROR Processing Portfolio:{ex.Message}", MessageType.Error);
+            
+            }
+        }
 
         protected virtual Position LoadNewRegularPos(Security sec, Side side,QuantityType qtyType, double qty,string accountId)
         {
@@ -741,6 +777,8 @@ namespace tph.ConsoleStrategy.LogicLayer
         {
             if (OnLogMsg != null)
                 OnLogMsg(msg, type);
+            else
+                Console.WriteLine(msg);
         }
 
         public override bool Initialize(OnMessageReceived pOnMessageRcv, OnLogMessage pOnLogMsg, string configFile)

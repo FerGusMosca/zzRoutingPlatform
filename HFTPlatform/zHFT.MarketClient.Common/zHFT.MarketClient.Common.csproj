@@ -48,6 +48,7 @@
     <Compile Include="Wrappers\HistoricalPricesWrapper.cs" />
     <Compile Include="Wrappers\MarketDataWrapper.cs" />
     <Compile Include="Wrappers\PortfolioRequestWrapper.cs" />
+    <Compile Include="Wrappers\PortfolioWrapper.cs" />
     <Compile Include="Wrappers\SecurityListWrapper.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -741,6 +741,11 @@ namespace zHFT.StrategyHandler.LogicLayer
             }
             
         }
+
+        protected async virtual void ProcessPortfolio(Wrapper wrapper)
+        { 
+        
+        }
         
         protected  async void  ProcessSecurityList(Wrapper wrapper)
         {
@@ -819,6 +824,11 @@ namespace zHFT.StrategyHandler.LogicLayer
                 else if (wrapper.GetAction() == Actions.SECURITY_LIST)
                 {
                     ProcessSecurityList(wrapper);
+                    return OrderRouter.ProcessMessage(wrapper);
+                }
+                else if (wrapper.GetAction() == Actions.PORTFOLIO)
+                {
+                    ProcessPortfolio(wrapper);
                     return OrderRouter.ProcessMessage(wrapper);
                 }
                 else

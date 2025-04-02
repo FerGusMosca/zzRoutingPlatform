@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.Positions;
+using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Wrappers;
@@ -26,6 +28,42 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.Common.Converters
         #endregion
 
         #region Public Static Methods
+
+
+        public static PortfolioDTO ConvertPortfolio(PortfolioWrapper portfolioWrapper)
+        {
+            List<Position> securityPositions = null;
+            if (ValidateField(portfolioWrapper, PortfolioFields.SecurityPositions))
+                securityPositions = (List<Position>)portfolioWrapper.GetField(PortfolioFields.SecurityPositions);
+            else
+                throw new Exception($"Missing mandatory SecurityPositions for Portfolio");
+
+
+
+            List<Position> liquidPositions = null;
+            if (ValidateField(portfolioWrapper, PortfolioFields.LiquidPositions))
+                liquidPositions = (List<Position>)portfolioWrapper.GetField(PortfolioFields.LiquidPositions);
+            else
+                throw new Exception($"Missing mandatory LiquidPositions for Portfolio");
+
+
+            string accountNumber = null;
+            if (ValidateField(portfolioWrapper, PortfolioFields.AccountNumber))
+                accountNumber = (string)portfolioWrapper.GetField(PortfolioFields.AccountNumber);
+            else
+                throw new Exception($"Missing mandatory AccountNumber for Portfolio");
+
+
+            return new PortfolioDTO()
+            {
+
+                SecurityPositions = securityPositions,
+                LiquidPositions = liquidPositions,
+                AccountNumber = accountNumber
+
+
+            };
+        } 
 
         public static SecurityListDTO ConvertSecurityList(SecurityListWrapper securityListWrapper)
         {

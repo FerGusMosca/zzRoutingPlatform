@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.MarketData;
 using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.OrderRouting;
+using tph.StrategyHandler.SimpleCommandReceiver.Common.DTOs.Positions;
 using zHFT.Main.BusinessEntities.Orders;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
@@ -158,6 +159,8 @@ namespace tph.StrategyHandler.SimpleCommandSender.ServiceLayer
                                 OnSecurityList(JsonConvert.DeserializeObject<SecurityListDTO>(resp));
                             else if (wsResp.Msg == "SubscriptionResponse")
                                 OnEvent(JsonConvert.DeserializeObject<SubscriptionResponse>(resp));
+                            else if (wsResp.Msg == "PortfolioMsg")
+                                OnEvent(JsonConvert.DeserializeObject<PortfolioDTO>(resp));
                             else if (wsResp.Msg == "ExecutionReportMsg")
                             {
                                 ExecutionReport execRep = JsonConvert.DeserializeObject<ExecutionReport>(resp);

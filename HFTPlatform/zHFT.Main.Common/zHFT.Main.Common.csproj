@@ -94,6 +94,7 @@
     <Compile Include="Enums\Fields\OrderBookFields.cs" />
     <Compile Include="Enums\Fields\OrderCancelRejectField.cs" />
     <Compile Include="Enums\Fields\OrderFields.cs" />
+    <Compile Include="Enums\Fields\PortfolioFields.cs" />
     <Compile Include="Enums\Fields\PortfolioRequestFields.cs" />
     <Compile Include="Enums\Fields\PositionFields.cs" />
     <Compile Include="Enums\Fields\SecurityFields.cs" />
