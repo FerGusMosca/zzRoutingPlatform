@@ -79,6 +79,10 @@
       <Project>{fdd95744-0ad8-4ad3-80a4-94b490a29b85}</Project>
       <Name>zHFT.Main</Name>
     </ProjectReference>
+    <ProjectReference Include="..\zHFT.MessageBasedFullMarketConnectivity.Nasini.Common\zHFT.MessageBasedFullMarketConnectivity.Nasini.Common.csproj">
+      <Project>{cdca540a-32f6-452d-9577-5ad5191dfc22}</Project>
+      <Name>zHFT.MessageBasedFullMarketConnectivity.Nasini.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer\zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer.csproj">
       <Project>{38097cc0-07ab-4bf0-a638-a8d3e9e23631}</Project>
       <Name>zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer</Name>

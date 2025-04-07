@@ -9,6 +9,7 @@ using zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.MessageBasedFullMarketConnectivity.Nasini.Common.Generic;
 
 namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
 {
@@ -19,11 +20,9 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
 
         protected string URL { get; set; }
 
-        protected string Login { get; set; }
 
-        protected string Password { get; set; }
 
-        protected string AuthToken { get; set; }
+        
 
         #endregion
 
@@ -55,24 +54,21 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
 
         public GenericResponse GetPortfolio(string accNumber)
         {
-            //string fullUrl = $"{URL}{string.Format(_PORTF_POSITIONS, accNumber)}";
-            //Dictionary<string, string> headers = new Dictionary<string, string>();
+            string fullUrl = $"{URL}{string.Format(_PORTF_POSITIONS, accNumber)}";
+            Dictionary<string, string> headers = new Dictionary<string, string>();
 
-            //GenericResponse genResp = DoGetJson(fullUrl, headers);
+            GenericResponse genResp = DoGetJson(fullUrl, headers);
 
-
-            //if (genResp.success)
-            //{
-            //    Process response and extract
-            //    return null;
-            //}
-            //else
-            //{
-            //    return genResp;
-            //}
-
-            return null;
-
+            if (genResp.success)
+            {
+                var result = JsonConvert.DeserializeObject<GetPositionsResp>(genResp.respContent);
+                result.success= true;
+                return result;
+            }
+            else
+            {
+                    return genResp;
+            }
 
 
         }
@@ -98,7 +94,7 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
                     if (!string.IsNullOrEmpty(token))
                     {
                         DoLog($"Successfully authenticated with Nasini REST :{token}", Constants.MessageType.PriorityInformation);
-                        AuthToken = token;
+                        AccessToken = token;
                         return genResp;
                     }
                     else

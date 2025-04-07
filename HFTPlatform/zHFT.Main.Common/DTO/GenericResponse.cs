@@ -13,6 +13,8 @@ namespace zHFT.Main.Common.DTO
         [JsonIgnore]
         public HttpResponseMessage resp { get; set; }
 
+        public string respContent { get; set; }
+
         public bool success { get; set; }
 
         public GenericError error { get; set; }

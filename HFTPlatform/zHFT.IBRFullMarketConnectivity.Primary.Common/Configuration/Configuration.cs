@@ -61,6 +61,8 @@ namespace zHFT.IBRFullMarketConnectivity.Primary.Common.Configuration
 
         public string PortfolioManagementInterface { get; set; }//Must implement IPortfolioManagementInterface
 
+        public string PortfolioConverterInterface { get; set; }
+
         public string PortfolioManagementRESTURL { get; set; }
 
         #endregion

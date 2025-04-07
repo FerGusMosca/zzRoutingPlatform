@@ -82,6 +82,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         protected IPortfolioManagementInterface PortfolioManagementGateway { get; set; }
 
+        protected IPortfolioPositionConverter PortfolioConverterGateway { get; set; }
+
         protected IConfiguration Config { get; set; }
 
         protected ISecurityTranslator SecurityTranslator { get; set; }
@@ -828,37 +830,11 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                 string accountNumber = (string)(portfRequestWrapper.GetField(PortfolioRequestFields.AccountNumber));
 
-                //TODO --> Implement portfolio position fetch from IPortfolioManagementInterface
+                GenericResponse resp= PortfolioManagementGateway.GetPortfolio(accountNumber);
 
-                Position portfPos1 = new Position()
-                {
-                    Security = new Security() { Symbol = "GGAL", SecType = SecurityType.CS, Currency = "ARS" },
-                    Exchange = "XXX",
-                    QuantityType = QuantityType.SHARES,
-                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
-                    Qty = 100,//100 shares example,
-                    CumQty = 100,
-                    LeavesQty = 0,
-                    LastPx= 100.5d,
-                    Side=Main.Common.Enums.Side.Buy,
-                    AccountId=accountNumber
-                };
-
-
-                Position portfPos2 = new Position()
-                {
-                    Security = new Security() { Symbol = "YPFD", SecType = SecurityType.CS, Currency = "ARS" },
-                    Exchange = "XXX",
-                    QuantityType = QuantityType.SHARES,
-                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
-                    Qty = 200,//100 shares example,
-                    CumQty = 200,
-                    LeavesQty = 0,
-                    LastPx = 300.5d,
-                    Side = Main.Common.Enums.Side.Buy,
-                    AccountId = accountNumber
-                };
-
+                var  secPosColl = PortfolioConverterGateway.ConvertPositions(resp,accountNumber,UseCleanSymbols(), SecurityTypes);
+              
+                
 
                 Position liqPos1 = new Position()
                 {
@@ -890,8 +866,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
 
                 List<Position> securityPositions = new List<Position>();
-                securityPositions.Add(portfPos1);
-                securityPositions.Add(portfPos2);
+                securityPositions.AddRange(secPosColl);
 
 
                 List<Position> liqPoisitions = new List<Position>();
@@ -1019,7 +994,6 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                 
                     PortfolioManagementGateway.Authenticate();
 
-                    PortfolioManagementGateway.GetPortfolio("10262");
                 }
                 else
                     throw new Exception("assembly not found: " + PrimaryConfiguration.PortfolioManagementInterface);
@@ -1032,7 +1006,23 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
         
         }
 
-        
+        public void EvalPortfolioConverterInterfaceInitialization()
+        {
+            if (!string.IsNullOrEmpty(PrimaryConfiguration.PortfolioConverterInterface))
+            {
+                var portfConvInterfaceCls = Type.GetType(PrimaryConfiguration.PortfolioConverterInterface);
+                if (portfConvInterfaceCls != null)
+                {
+                    PortfolioConverterGateway = (IPortfolioPositionConverter)Activator.CreateInstance(portfConvInterfaceCls);
+                }
+                else
+                    throw new Exception("assembly not found: " + PrimaryConfiguration.PortfolioManagementInterface);
+
+            }
+            else
+                DoLog($"NOT INITIALIZING Portfolio Converter interface because not PortfolioConverterInterface OR PortfolioManagementRESTURL attr. found ", Constants.MessageType.PriorityInformation);
+        }
+
 
         #endregion
 
@@ -1254,6 +1244,8 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
                         LastRoutingTimestamp = DateTime.Now;
 
                     EvalPortfolioMarketInterfaceInitialization();
+
+                    EvalPortfolioConverterInterfaceInitialization();
 
                     return true;
                 }

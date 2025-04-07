@@ -54,6 +54,7 @@
 
 
   <PortfolioManagementInterface>zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer.PrimaryRiskAPI, zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer</PortfolioManagementInterface>
+  <PortfolioConverterInterface>zHFT.MessageBasedFullMarketConnectivity.Nasini.Common.util.PositionConverter, zHFT.MessageBasedFullMarketConnectivity.Nasini.Common</PortfolioConverterInterface>
   <PortfolioManagementRESTURL>https://api.nasini.xoms.com.ar/</PortfolioManagementRESTURL>
   
 </Configuration>

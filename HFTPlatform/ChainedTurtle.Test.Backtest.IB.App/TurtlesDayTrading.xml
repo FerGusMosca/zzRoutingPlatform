@@ -35,13 +35,13 @@
 	<CandleReferencePrice>TRADE</CandleReferencePrice>
 	<!-- IMPORTANT: bacause candle CLOSE prices do not always have, the candle close -->
 
-	<OpeningTime>10:30</OpeningTime><!--Needed for historical prices recovery-->
+	<OpeningTime>11:30</OpeningTime><!--Needed for historical prices recovery-->
 	<TradingMode>BACKTEST</TradingMode><!--BACKTEST,LIVE_MODE-->
 
 	<OnlyLong>false</OnlyLong>
 	<SkipTrendlinesDeletion>false</SkipTrendlinesDeletion>
 
-	<HistoricalPricesPeriod>-6</HistoricalPricesPeriod>
+	<HistoricalPricesPeriod>-2</HistoricalPricesPeriod>
 	<!---4= -4 days-->
 
 	<SkipCandlesToBreakTrndln>1</SkipCandlesToBreakTrndln>

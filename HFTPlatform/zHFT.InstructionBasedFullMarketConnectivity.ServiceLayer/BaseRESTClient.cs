@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.NetworkInformation;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,10 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 
         protected string AccessToken { get; set; }
 
+        protected string Login { get; set; }
+
+        protected string Password { get; set; }
+
         #endregion
 
         #region Private Methods
@@ -34,70 +40,66 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
         
         }
 
-        protected GenericResponse DoInvoke(string url, Dictionary<string, string> headers, string body, HttpMethod method)
+        protected GenericResponse DoInvokeWithBasic(string url, Dictionary<string, string> headers, string body, HttpMethod method)
         {
-            HttpRequestMessage request = CreateRequest(url, body, method);
-            HttpResponseMessage response = null;
+            //HttpRequestMessage request = CreateRequestAccessToken(url, body, method);
+            HttpRequestMessage request = CreateRequestBasicAuth(url, body, method, Login, Password);
 
             try
             {
-                var client = new HttpClient();
-                response = client.SendAsync(request).Result;
-                response.EnsureSuccessStatusCode();
-                return ProcessSuccessfulResponse(response);
-            }
-            catch (HttpRequestException ex)
-            {
-                return ProcessUnsuccessfulResponse(response, ex);
+                var handler = new HttpClientHandler
+                {
+                    AllowAutoRedirect = true // Don't follow redirects automatically (e.g. to login page)
+                };
+
+                using (var client = new HttpClient(handler))
+                {
+                    using (var response = client.SendAsync(request).Result)
+                    {
+                        // Debug: Print status and headers
+                        if (response.IsSuccessStatusCode)
+                        {
+                            // Success: process the successful response
+                            string responseBody = response.Content.ReadAsStringAsync().Result;
+                            return ProcessSuccessfulResponse(response,responseBody);
+                        }
+                        else
+                        {
+                            // Read the body BEFORE the response is disposed
+                            string errorContent = response.Content.ReadAsStringAsync().Result;
+
+                            // Handle non-successful response
+                            return ProcessUnsuccessfulResponse(errorContent);
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
+                // Fallback for unexpected exceptions
                 return new GenericResponse()
                 {
                     success = false,
-                    error =
-                        new GenericError()
-                        {
-                            code = "0",
-                            message = $"Critical error invoking Remote service @url {url} :{ex.Message}"
-                        }
+                    error = new GenericError()
+                    {
+                        code = "0",
+                        message = $"Critical error invoking Remote service @url {url} : {ex.Message}"
+                    }
                 };
             }
         }
 
-        private GenericResponse ProcessSuccessfulResponse(HttpResponseMessage response)
+
+        private GenericResponse ProcessSuccessfulResponse(HttpResponseMessage response, string respContent)
         {
-            return new GenericResponse() { success = true, resp = response };
+            return new GenericResponse() { success = true, resp = response, respContent = respContent };
         }
 
-        private GenericResponse ProcessUnsuccessfulResponse(HttpResponseMessage response, HttpRequestException ex)
+        private GenericResponse ProcessUnsuccessfulResponse(string errorContent)
         {
 
-            try
-            {
-                GenericResponse genResp = new GenericResponse() { success = false };
-
-                genResp.error =
-                    JsonConvert.DeserializeObject<GenericError>(response.Content
-                        .ReadAsStringAsync().Result);
-
-                return genResp;
-
-            }
-            catch (Exception e)
-            {
-                return new GenericResponse()
-                {
-                    success = false,
-                    error =
-                        new GenericError()
-                        {
-                            code = "0",
-                            message = ex.Message
-                        }
-                };
-            }
-
+            GenericResponse genResp = new GenericResponse() { success = false, error = new GenericError() { message = errorContent } };
+            return genResp;
         }
 
         #endregion
@@ -136,7 +138,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 
         protected GenericResponse DoGetJson(string url, Dictionary<string, string> headers)
         {
-            return DoInvoke(url, headers, null, HttpMethod.Get);
+            return DoInvokeWithBasic(url, headers, null, HttpMethod.Get);
         }
 
         protected HttpRequestMessage CreateAuthFormRequest(string url, Dictionary<string, string> headers)
@@ -208,18 +210,19 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
         //    }
         //}
 
-        protected HttpRequestMessage CreateRequest(string url, string body, HttpMethod method)
+        protected HttpRequestMessage CreateRequestAccessToken(string url, string body, HttpMethod method)
         {
 
             var request = new HttpRequestMessage(method, url);
             if (AccessToken != null)
-                request.Headers.Add("Authorization", "Bearer " + AccessToken);
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", AccessToken);
             else
                 throw new Exception($"Not authenticated with {url} !!");
 
-
-            request.Headers.Add("Accept", "application/vnd.dwolla.v1.hal+json");
-            //request.Headers.Add("Content-Type", "text/plain");
+            request.Headers.Add("User-Agent", "PostmanRuntime/7.43.3");
+            request.Headers.Add("Accept", "*/*");
+            request.Headers.Add("Accept-Encoding", "gzip, deflate, br");
+            request.Headers.Add("Connection", "keep-alive");
 
             if (body != null)
                 request.Content = new StringContent(body, null, "application/json");
@@ -227,6 +230,36 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 
             return request;
 
+        }
+
+        protected HttpRequestMessage CreateRequestBasicAuth(string url, string body, HttpMethod method, string username = null, string password = null)
+        {
+            var request = new HttpRequestMessage(method, url);
+
+            // Basic Authentication header
+            if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
+            {
+                var credentials = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{username}:{password}"));
+                request.Headers.Authorization = new AuthenticationHeaderValue("Basic", credentials);
+            }
+            else
+            {
+                throw new Exception($"Username and password must be provided for Basic Authentication ({url})");
+            }
+
+            // Headers (copied from Postman)
+            request.Headers.Add("User-Agent", "PostmanRuntime/7.43.3");
+            request.Headers.Add("Accept", "*/*");
+            request.Headers.Add("Accept-Encoding", "gzip, deflate, br");
+            request.Headers.Add("Connection", "keep-alive");
+
+            // Body (if present)
+            if (body != null)
+            {
+                request.Content = new StringContent(body, null, "application/json");
+            }
+
+            return request;
         }
 
 
@@ -273,12 +306,24 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 
                 // If not a redirect, ensure the response is successful
                 response.EnsureSuccessStatusCode();
-
-                return ProcessSuccessfulResponse(response);
+                string responseBody = response.Content.ReadAsStringAsync().Result;
+                return ProcessSuccessfulResponse(response, responseBody);
             }
             catch (HttpRequestException ex)
             {
-                return ProcessUnsuccessfulResponse(response, ex);
+                string errorContent = "";
+
+                if (response != null && response.Content != null)
+                {
+                    try
+                    {
+                        errorContent = response.Content.ReadAsStringAsync().Result;
+                    }
+                    catch (ObjectDisposedException) { /* ignora si ya se cerró */ }
+                }
+
+
+                return ProcessUnsuccessfulResponse(errorContent);
             }
             catch (Exception ex)
             {
@@ -300,7 +345,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer
 
         protected GenericResponse DoPost(string url, string json)
         {
-            return DoInvoke(url, new Dictionary<string, string>(), json, HttpMethod.Post);
+            return DoInvokeWithBasic(url, new Dictionary<string, string>(), json, HttpMethod.Post);
         }
 
         #endregion
