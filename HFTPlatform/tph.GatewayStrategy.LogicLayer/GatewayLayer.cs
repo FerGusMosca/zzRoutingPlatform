@@ -117,6 +117,25 @@ namespace tph.GatewayStrategy.LogicLayer
             DoLog($"Position sent to the exchange...", MessageType.Information);
         }
 
+        
+        protected CMState RoutePortfolioRequest(Wrapper wrapper)
+        {
+            try
+            {
+                DoLog($"Redirecting Portfolio Request Message", MessageType.PriorityInformation);
+                IncomingModule.ProcessMessage(wrapper);
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+
+                DoLog($"ERROR  redirecting portfolio request message :{ex.Message}", MessageType.Error);
+                return CMState.BuildFail(ex);
+            }
+
+        }
+
+
         protected CMState RouteCancelOrder(Wrapper wrapper)
         {
             try
@@ -274,7 +293,22 @@ namespace tph.GatewayStrategy.LogicLayer
             OrderRouter.ProcessMessage(wrapper);
         }
 
+        //
+        protected  void ProcessPortfolio(object param)
+        {
+            Wrapper wrapper = (Wrapper)param;
 
+            try
+            {
+                DoLog($"Rerouting portfolio received", Constants.MessageType.Information);
+                OnMessageRcv(wrapper);
+
+            }
+            catch (Exception e)
+            {
+                DoLog(string.Format("CRITICAL ERROR re routing portfolio {0}:{1}", wrapper.ToString(), e.Message), Constants.MessageType.Information);
+            }
+        }
 
 
         protected override void ProcessExecutionReport(object param)
@@ -340,6 +374,10 @@ namespace tph.GatewayStrategy.LogicLayer
                 {
                     return RouteCancelOrder(wrapper);
                 }
+                else if (wrapper.GetAction() == Actions.PORTFOLIO_REQUEST)
+                {
+                    return RoutePortfolioRequest(wrapper);
+                }
                 else
                     return base.ProcessMessage(wrapper);
             }
@@ -395,6 +433,12 @@ namespace tph.GatewayStrategy.LogicLayer
                 {
                     Thread ProcessExecutionReportThread = new Thread(new ParameterizedThreadStart(ProcessExecutionReport));
                     ProcessExecutionReportThread.Start(wrapper);
+                    return CMState.BuildSuccess();
+                }
+                else if (wrapper.GetAction() == Actions.PORTFOLIO)
+                {
+                    Thread ProcessPortfolioThread = new Thread(new ParameterizedThreadStart(ProcessPortfolio));
+                    ProcessPortfolioThread.Start(wrapper);
                     return CMState.BuildSuccess();
                 }
                 else 
