@@ -16,5 +16,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Common
        IEnumerable<Position> ConvertPositions(GenericResponse resp,string accountNumber, 
                                               bool useCleanSymbol,
                                               Dictionary<string, zHFT.Main.Common.Enums.SecurityType> secTypes);
+
+       IEnumerable<zHFT.Main.BusinessEntities.Positions.Position> ConvertAccountReport(GenericResponse resp, string accountNumber);
     }
 }

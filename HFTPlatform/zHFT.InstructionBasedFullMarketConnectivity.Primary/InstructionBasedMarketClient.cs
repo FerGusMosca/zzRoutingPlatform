@@ -830,39 +830,13 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
                 string accountNumber = (string)(portfRequestWrapper.GetField(PortfolioRequestFields.AccountNumber));
 
-                GenericResponse resp= PortfolioManagementGateway.GetPortfolio(accountNumber);
+                GenericResponse respPortf= PortfolioManagementGateway.GetPortfolio(accountNumber);
 
-                var  secPosColl = PortfolioConverterGateway.ConvertPositions(resp,accountNumber,UseCleanSymbols(), SecurityTypes);
-              
-                
+                var  secPosColl = PortfolioConverterGateway.ConvertPositions(respPortf,accountNumber,UseCleanSymbols(), SecurityTypes);
 
-                Position liqPos1 = new Position()
-                {
-                    Security = new Security() { Symbol = "ARS", SecType = SecurityType.CS, Currency = "ARS" },
-                    Exchange = "XXX",
-                    QuantityType = QuantityType.CURRENCY,
-                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
-                    Qty = 1000000,//1M ARS example,
-                    CumQty = 1000000,
-                    LeavesQty = 0,
-                    LastPx = 1,
-                    Side = Main.Common.Enums.Side.Buy,
-                    AccountId = accountNumber
-                };
+                GenericResponse respAcct = PortfolioManagementGateway.GetAccountReport(accountNumber);
 
-                Position liqPos2 = new Position()
-                {
-                    Security = new Security() { Symbol = "USD", SecType = SecurityType.CS, Currency = "USD" },
-                    Exchange = "XXX",
-                    QuantityType = QuantityType.CURRENCY,
-                    PriceType = Main.Common.Enums.PriceType.FixedAmount,
-                    Qty = 2000,//2k USD example,
-                    CumQty = 2000,
-                    LeavesQty = 0,
-                    LastPx = 1,
-                    Side = Main.Common.Enums.Side.Buy,
-                    AccountId = accountNumber
-                };
+                var liqPosColl = PortfolioConverterGateway.ConvertAccountReport(respAcct, accountNumber);
 
 
                 List<Position> securityPositions = new List<Position>();
@@ -870,10 +844,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
 
                 List<Position> liqPoisitions = new List<Position>();
-                liqPoisitions.Add(liqPos1);
-                liqPoisitions.Add(liqPos2);
-
-                //TODO process and publish portfolio for real
+                liqPoisitions.AddRange(liqPosColl);
 
                 DoLog($"Publishing portfolio posigiosn of {securityPositions.Count} securities and {liqPoisitions.Count} liquid positions", Constants.MessageType.Information);
 

@@ -12,5 +12,7 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Common
         GenericResponse Authenticate();
 
         GenericResponse GetPortfolio(string accNumber);
+
+        GenericResponse GetAccountReport(string accNumber);
     }
 }

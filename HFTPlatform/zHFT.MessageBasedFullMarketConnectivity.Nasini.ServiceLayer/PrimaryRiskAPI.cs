@@ -9,6 +9,7 @@ using zHFT.InstructionBasedFullMarketConnectivity.ServiceLayer;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
+using zHFT.MessageBasedFullMarketConnectivity.Nasini.Common.DTO.Generic;
 using zHFT.MessageBasedFullMarketConnectivity.Nasini.Common.Generic;
 
 namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
@@ -32,6 +33,8 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
 
 
         public string _PORTF_POSITIONS = "rest/risk/position/getPositions/{0}";
+
+        public string _ACCOUNT_REPORT = "rest/risk/accountReport/{0}";
 
         #endregion
 
@@ -68,6 +71,27 @@ namespace zHFT.MessageBasedFullMarketConnectivity.Nasini.ServiceLayer
             else
             {
                     return genResp;
+            }
+
+
+        }
+
+        public GenericResponse GetAccountReport(string accNumber)
+        {
+            string fullUrl = $"{URL}{string.Format(_ACCOUNT_REPORT, accNumber)}";
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+
+            GenericResponse genResp = DoGetJson(fullUrl, headers);
+
+            if (genResp.success)
+            {
+                var result = JsonConvert.DeserializeObject<GetAccountReportResp>(genResp.respContent);
+                result.success = true;
+                return result;
+            }
+            else
+            {
+                return genResp;
             }
 
 

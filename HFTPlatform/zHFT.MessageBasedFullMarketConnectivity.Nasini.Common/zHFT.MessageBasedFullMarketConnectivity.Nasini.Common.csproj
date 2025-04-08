@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Librerias\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,8 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Generic\GetAccountReportResp.cs" />
     <Compile Include="DTO\Generic\GetPositionsResp.cs" />
+    <Compile Include="DTO\Position\AccountDetail.cs" />
+    <Compile Include="DTO\Position\AvailableToOperate.cs" />
+    <Compile Include="DTO\Position\Cash.cs" />
+    <Compile Include="DTO\Position\CurrencyAmount.cs" />
+    <Compile Include="DTO\Position\CurrencyBalance.cs" />
     <Compile Include="DTO\Position\PortfolioPosition.cs" />
+    <Compile Include="DTO\Position\AccountData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO\SecurityList\Security.cs" />
     <Compile Include="util\PositionConverter.cs" />
