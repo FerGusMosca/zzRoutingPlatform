@@ -3,11 +3,42 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using zHFT.Main.Common.Generic;
 
 namespace zHFT.Main.Common.Util
 {
     public class MarketTimer
     {
+        #region Protected Attributes
+
+        public static List<LightSavingPeriod> LightSavingPeriods { get; set; }
+
+        #endregion
+
+        #region Public Methods
+
+        private static DateTime EvalOffset(DateTime time)
+        {
+            if (LightSavingPeriods == null)
+                return time;
+
+            foreach (var period in LightSavingPeriods)
+            {
+                if (time >= period.StartDate && time <= period.EndDate)
+                {
+                    return time.AddHours(period.OffsetHours);
+                }
+            }
+
+            return time;
+        }
+
+        public static void InitializeLightSavingPeriods(List<LightSavingPeriod> lightSavingPeriods)
+        {
+            LightSavingPeriods= lightSavingPeriods;
+        }
+
+
         public static DateTime GetTodayDateTime(string time)
         {
             DateTime parsed = DateTime.Parse(time);
@@ -17,7 +48,7 @@ namespace zHFT.Main.Common.Util
 
             hour += AMPM == "p. m." || AMPM == "PM" ? 12 : 0;
 
-            return new DateTime(DateTimeManager.Now.Year, DateTimeManager.Now.Month, DateTimeManager.Now.Day, hour, min, 0);
+            return EvalOffset(new DateTime(DateTimeManager.Now.Year, DateTimeManager.Now.Month, DateTimeManager.Now.Day, hour, min, 0));
         }
 
 
@@ -35,5 +66,7 @@ namespace zHFT.Main.Common.Util
 
 
         }
+
+        #endregion
     }
 }

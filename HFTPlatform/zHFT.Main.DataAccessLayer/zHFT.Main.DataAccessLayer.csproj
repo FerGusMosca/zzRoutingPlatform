@@ -106,6 +106,7 @@
     <Compile Include="Helpers\PositionHelper.cs" />
     <Compile Include="Managers\ADO\ADOBaseManager.cs" />
     <Compile Include="Managers\ADO\ADOExecutionSummaryManager.cs" />
+    <Compile Include="Managers\ADO\LightSavingPeriodManager.cs" />
     <Compile Include="Managers\ExecutionSummaryManager.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Mapping\MappingEnabledAbstract.cs" />

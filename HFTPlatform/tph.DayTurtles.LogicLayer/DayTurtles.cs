@@ -561,6 +561,8 @@ namespace tph.DayTurtles.LogicLayer
             {
                 LoadCustomTurtlesWindows();
 
+                InitializeLightSavingPeriods((GetConfig().ConnectionString));
+
                 base.Initialize(pOnMessageRcv, pOnLogMsg, configFile);
 
                 InitializeManagers(GetConfig().ConnectionString);

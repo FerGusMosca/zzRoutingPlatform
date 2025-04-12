@@ -70,6 +70,7 @@
     <Compile Include="DTO\GenericError.cs" />
     <Compile Include="DTO\GenericResponse.cs" />
     <Compile Include="DTO\IndicatorToMonitor.cs" />
+    <Compile Include="DTO\LightSavingPeriod.cs" />
     <Compile Include="DTO\SecurityToMonitor.cs" />
     <Compile Include="Enums\Actions.cs" />
     <Compile Include="Apps\MainAppBase.cs" />

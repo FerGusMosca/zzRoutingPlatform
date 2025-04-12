@@ -12,6 +12,7 @@ using zHFT.Main.BusinessEntities.Security_List;
 using zHFT.Main.Common.Configuration;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
+using zHFT.Main.Common.Generic;
 using zHFT.Main.Common.Interfaces;
 using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
@@ -81,6 +82,8 @@ namespace zHFT.StrategyHandler.LogicLayer
 
         protected PositionIdTranslator PositionIdTranslator { get; set; }
 
+        protected LightSavingPeriodManager LightSavingPeriodManager { get; set; }
+
         protected object tSynchronizationLock { get; set; }
 
         #endregion
@@ -128,6 +131,29 @@ namespace zHFT.StrategyHandler.LogicLayer
         #endregion
 
         #region Protected Methods
+
+
+        protected void InitializeLightSavingPeriods(string cs)
+        {
+
+            try
+            {
+                LightSavingPeriodManager = new LightSavingPeriodManager(cs);
+
+                List<LightSavingPeriod> lightSavingPeriods = LightSavingPeriodManager.GetAll();
+
+                MarketTimer.InitializeLightSavingPeriods(lightSavingPeriods);
+
+                DoLog($"Initialize light saving periods! {lightSavingPeriods.Count} periods found", Constants.MessageType.Information);
+
+            }
+            catch (Exception ex) {
+
+                DoLog($"CRITICAL ERROR Initializing Light Saving Periods! :{ex.Message}", Constants.MessageType.Error);
+            
+            }
+
+        }
 
 
         protected HistoricalPricesDTO LoadHistoricalPrices(HistoricalPricesWrapper hpWrapper)
