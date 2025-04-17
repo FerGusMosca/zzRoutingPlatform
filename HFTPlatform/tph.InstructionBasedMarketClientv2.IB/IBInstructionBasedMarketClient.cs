@@ -9,6 +9,7 @@ using tph.InstructionBasedMarketClient.IB.Common.Converters;
 using tph.InstructionBasedMarketClient.IB.Common.DTO;
 using tph.MarketClient.IB.Common;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
@@ -18,6 +19,7 @@ using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Common.Converters;
 using zHFT.MarketClient.Common.Wrappers;
 using zHFT.StrategyHandler.Common.Wrappers;
+using static zHFT.Main.Common.Util.Constants;
 using Constants = zHFT.Main.Common.Util.Constants;
 using SecurityConverter = zHFT.InstructionBasedMarketClient.IB.Common.Converters.SecurityConverter;
 
@@ -326,6 +328,27 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                 DoLog(string.Format("@{0}:Market data already subscribed for symbol: {1}", IBConfiguration.Name, sec.Symbol), Constants.MessageType.Information);
         }
 
+        protected override void TryPublishCompletePositions()
+        {
+            foreach (var account in PositionsRequest.Keys.ToList())
+            {
+                var dto = PositionsRequest[account];
+
+                if (dto.IsComplete())
+                {
+                    var securityPositions = dto.GetSecurityPositions();
+                    var liquidPositions = dto.GetLiquidPositions();
+
+                    DoLog($"Publishing portfolio positions of {securityPositions.Count} securities and {liquidPositions.Count} liquid positions", MessageType.Information);
+
+                    var wrapper = new PortfolioWrapper(securityPositions, liquidPositions, account);
+                    OnMessageRcv(wrapper);
+
+                    PositionsRequest.Remove(account);
+                }
+            }
+        }
+
         protected void CancelMarketData(Security sec)
         { 
             if(ActiveSecurities.Values.Any(x=>x.Symbol==sec.Symbol))
@@ -418,6 +441,55 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
 
                 throw;
             }
+        }
+
+        protected  void DoProcessPortfolioRequestThread(object param)
+        {
+            try
+            {
+                var wrapper = (Wrapper)param;
+                string accountNumber = (string)wrapper.GetField(PortfolioRequestFields.AccountNumber);
+
+                lock (PositionsRequest)
+                {
+                    if (!PositionsRequest.ContainsKey(accountNumber))
+                    {
+                        PositionsRequest.Add(accountNumber, new AccountPositionsDTO());
+                        ClientSocket.reqAccountUpdates(true, "All");
+                        ClientSocket.reqPositions();
+                        DoLog($"Positions successfully requested for Account Number {accountNumber}", MessageType.Information);
+                    }
+                    else
+                        DoLog($"Discarding positions request as pending Positions request for account numebr {accountNumber}", MessageType.PriorityInformation);
+                }
+
+                DoLog($"Requested portfolio positions for account {accountNumber}", MessageType.Information);
+            }
+            catch (Exception ex)
+            {
+                DoLog($"@{IBConfiguration.Name}- CRITICAL ERROR Processing Portfolio Request: {ex.Message}", MessageType.Error);
+            }
+        }
+
+
+        protected CMState ProcessPortfolioRequest(Wrapper portfolioReqWrapper)
+        {
+            try
+            {
+                Thread reqPortfolioRequest = new Thread(DoProcessPortfolioRequestThread);
+
+                reqPortfolioRequest.Start(portfolioReqWrapper);
+
+                return CMState.BuildSuccess();
+            }
+            catch (Exception ex)
+            {
+                string msg = $"CRICITAL error requesting portfolio for wrapper {portfolioReqWrapper.ToString()}:{ex.Message}";
+                DoLog(msg, Constants.MessageType.Error);
+                return CMState.BuildFail(new Exception(msg));
+            }
+
+
         }
 
         protected CMState ProcessSecurityListRequest(Wrapper wrapper)
@@ -547,6 +619,7 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                     ContractsTimeStamps = new Dictionary<int, DateTime>();
                     HistoricalPricesRequest = new Dictionary<int, HistoricalPricesHoldingDTO>();
                     OptionChainRequested = new Dictionary<int, Contract>();
+                    PositionsRequest = new Dictionary<string, AccountPositionsDTO>();
                     tLockHistoricalPricesRequest = new object();
 
                     ClientSocket = new EClientSocket(this, this);
@@ -603,6 +676,11 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                     {
                         DoLog($"{IBConfiguration.Name}: Recv Security List Request ", Constants.MessageType.Information);
                         return ProcessSecurityListRequest(wrapper);
+                    }
+                    else if (wrapper.GetAction() == Actions.PORTFOLIO_REQUEST)
+                    {
+                        DoLog(string.Format("@{0}:Requesting portfolio for account @ Primary", IBConfiguration.Name), Constants.MessageType.Information);
+                        return ProcessPortfolioRequest(wrapper);
                     }
                     else
                     {

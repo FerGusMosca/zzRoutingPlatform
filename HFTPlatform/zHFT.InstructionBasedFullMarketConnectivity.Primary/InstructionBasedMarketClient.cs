@@ -615,6 +615,9 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
         #region Market Data
 
+
+       
+
         protected void DoRunPublishSecurity(object param)
         {
             zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper wrapper = (zHFT.MarketClient.Primary.Common.Wrappers.MarketDataWrapper)param;

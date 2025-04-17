@@ -4,7 +4,8 @@
 
   <Active>true</Active>
   <IP>localhost</IP>
-  <Port>7496</Port>
+  <!--<Port>7496</Port>--><!--Real MD-->
+  <Port>7497</Port><!-- PAPER MD and Positions-->
   <IdIBClient>3</IdIBClient>
 
   <PublishUpdateInMilliseconds>5000</PublishUpdateInMilliseconds><!--5 segundos-->

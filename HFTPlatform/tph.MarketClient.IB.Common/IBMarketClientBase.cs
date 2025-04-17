@@ -1,4 +1,5 @@
-﻿using IBApi;
+﻿using Connection.Enums;
+using IBApi;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ using tph.InstructionBasedMarketClient.IB.Common.Converters;
 using tph.InstructionBasedMarketClient.IB.Common.DTO;
 using zHFT.InstructionBasedMarketClient.Binance.Common.Wrappers;
 using zHFT.Main.BusinessEntities.Market_Data;
+using zHFT.Main.BusinessEntities.Positions;
 using zHFT.Main.BusinessEntities.Securities;
 using zHFT.Main.Common.DTO;
 using zHFT.Main.Common.Enums;
@@ -28,6 +30,7 @@ using zHFT.MarketClient.Common.Wrappers;
 using zHFT.MarketClient.IB.Common.Configuration;
 using zHFT.MarketClient.IB.Common.Converters;
 using zHFT.StrategyHandler.Common.Wrappers;
+using static zHFT.Main.Common.Util.Constants;
 using Constants = zHFT.Main.Common.Util.Constants;
 using Contract = IBApi.Contract;
 using MarketData = zHFT.Main.BusinessEntities.Market_Data.MarketData;
@@ -48,6 +51,9 @@ namespace tph.MarketClient.IB.Common
 
         protected Dictionary<int, Security> ContractRequests { get; set; }
 
+        protected Dictionary<string , AccountPositionsDTO> PositionsRequest { get; set; }
+        protected static readonly object _globalLock = new object();
+
         protected EClientSocket ClientSocket { get; set; }
 
         protected EReader EReader { get; set; }
@@ -60,6 +66,8 @@ namespace tph.MarketClient.IB.Common
 
         protected Dictionary<int, Contract> OptionChainRequested { get; set; }
         protected object tLockHistoricalPricesRequest { get; set; }
+
+        
 
 
         #endregion
@@ -176,9 +184,24 @@ namespace tph.MarketClient.IB.Common
 
         public void accountDownloadEnd(string account)
         {
-            DoLog(string.Format("accountDownloadEnd: account={0}",
-                                account), Constants.MessageType.Information);
+            try
+            {
+                lock (_globalLock)
+                {
+                    if (PositionsRequest.ContainsKey(account))
+                        PositionsRequest[account].ReceivedLiquidPositions = true;
+
+                    TryPublishCompletePositions();
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"[accountDownloadEnd] Error: {ex.Message}", MessageType.Error);
+            }
         }
+
+        protected abstract void TryPublishCompletePositions();
+
 
         public void orderStatus(int orderId, string status, double filled, double remaining, double avgFillPrice, int permId,
             int parentId, double lastFillPrice, int clientId, string whyHeld, double mktCapPrice)
@@ -198,16 +221,37 @@ namespace tph.MarketClient.IB.Common
 
         public void accountSummary(int reqId, string account, string tag, string value, string currency)
         {
-            DoLog(string.Format("accountSummary: reqId={0} account={1} tag={2} value={3} currency={4}  ",
-                                reqId,
-                                account,
-                                tag,
-                                value,
-                                currency), Constants.MessageType.Information);
+
+
+            if (tag == "CashBalance" || tag == "AvailableFunds" || tag == "TotalCashValue")
+            {
+                // Ejemplo: USD = 1,196,610 | CAD = 15,013 | JPY = -4,699,159
+                DoLog(string.Format("accountSummary: reqId={0} account={1} tag={2} value={3} currency={4}  ",
+                               reqId,
+                               account,
+                               tag,
+                               value,
+                               currency), Constants.MessageType.Information);
+
+                //lock (_cashByCurrency)
+                //{
+                //    _cashByCurrency.Add(new IBPosition
+                //    {
+                //        Account = account,
+                //        Symbol = currency,
+                //        Position = double.Parse(value),
+                //        SecType = "CASH",  // o "FX" si querés
+                //        AvgCost = 1.0
+                //    });
+                //}
+            }
+
+           
         }
 
         public void accountSummaryEnd(int reqId)
         {
+
             DoLog(string.Format("accountSummaryEnd: reqId={0}",
                                 reqId), Constants.MessageType.Information);
         }
@@ -761,16 +805,54 @@ namespace tph.MarketClient.IB.Common
 
         public void position(string account, Contract contract, double pos, double avgCost)
         {
-            DoLog(string.Format("position: account={0} contract={1} pos={2} avgCost={3} ",
-                account,
-                contract.Symbol.ToString(),
-                pos,
-                avgCost), Constants.MessageType.Information);
+            try
+            {
+                DoLog($"position: account={account} contract={contract.Symbol} pos={pos} avgCost={avgCost}", MessageType.Information);
+
+                if (string.IsNullOrEmpty(account)) return;
+
+                lock (_globalLock)
+                {
+                    if (!PositionsRequest.ContainsKey(account)) return;
+
+                    var dto = PositionsRequest[account];
+
+                    if (pos == 0) return; // filtramos posición nula
+
+                    var newPos = new Position
+                    {
+                        Symbol = contract.Symbol,
+                        Security = new Security() { Symbol = contract.Symbol, Currency = contract.Currency, Exchange = contract.Exchange },
+                        Side = pos > 0 ? Side.Buy : Side.Sell,
+                        Qty = pos,
+                        AvgPx = avgCost,
+                    };
+
+                    dto.AddSecurityPosition(newPos);
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"[position] Error: {ex.Message}", MessageType.Error);
+            }
         }
 
         public void positionEnd()
         {
-            DoLog(string.Format("positionEnd "), Constants.MessageType.Information);
+            try
+            {
+                lock (_globalLock)
+                {
+                    foreach (var kv in PositionsRequest)
+                        kv.Value.ReceivedSecurityPositions = true;
+
+                    TryPublishCompletePositions();
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"[positionEnd] Error: {ex.Message}", MessageType.Error);
+            }
         }
 
         public void realtimeBar(int reqId, long time, double open, double high, double low, double close, long volume, double WAP, int count)
@@ -902,11 +984,37 @@ namespace tph.MarketClient.IB.Common
 
         public void updateAccountValue(string key, string value, string currency, string accountName)
         {
-            DoLog(string.Format("updateAccountValue: key={0} value={1} currency={2} accountName={3}",
-                                key,
-                                value,
-                                currency,
-                                accountName), Constants.MessageType.Information);
+            try
+            {
+                DoLog($"updateAccountValue: key={key} value={value} currency={currency} accountName={accountName}", MessageType.Information);
+
+                lock (_globalLock)
+                {
+                    if (!PositionsRequest.ContainsKey(accountName)) return;
+
+                    var dto = PositionsRequest[accountName];
+
+                    if (key == "NetLiquidation" || key == "CashBalance")
+                    {
+                        double parsedValue = 0;
+                        if (!double.TryParse(value, out parsedValue)) return;
+
+                        var liquidPos = new Position
+                        {
+                            Symbol = key,
+                            Security = new Security() { Symbol = key, Currency = currency },
+                            Side = parsedValue > 0 ? Side.Buy : Side.Sell,
+                            Qty = parsedValue,
+                        };
+
+                        dto.AddLiquidPosition(liquidPos);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DoLog($"[updateAccountValue] Error: {ex.Message}", MessageType.Error);
+            }
         }
 
         public void updateMktDepth(int tickerId, int position, int operation, int side, double price, int size)

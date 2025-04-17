@@ -443,7 +443,7 @@ namespace zHFT.Main.BusinessEntities.Positions
 
         public override string ToString()
         {
-            return $" Security=<{Security.ToString()}> Status={PosStatus} Side={Side} Exchange={Exchange} Qty. Type={QuantityType} PriceType={PriceType} Qty={Qty} Last Pr.={LastPx}";
+            return $" Security=<{Security.ToString()}> Status={PosStatus} Side={Side} Exchange={Exchange} Qty. Type={QuantityType} PriceType={PriceType} Qty={Qty} Avg Pr.={AvgPx}";
         }
 
         #endregion
