@@ -450,17 +450,19 @@ namespace tph.InstructionBasedMarketClientv2.IB.Client
                 var wrapper = (Wrapper)param;
                 string accountNumber = (string)wrapper.GetField(PortfolioRequestFields.AccountNumber);
 
-                lock (PositionsRequest)
+                lock (_globalLock)
                 {
                     if (!PositionsRequest.ContainsKey(accountNumber))
                     {
                         PositionsRequest.Add(accountNumber, new AccountPositionsDTO());
-                        ClientSocket.reqAccountUpdates(true, "All");
-                        ClientSocket.reqPositions();
-                        DoLog($"Positions successfully requested for Account Number {accountNumber}", MessageType.Information);
                     }
-                    else
-                        DoLog($"Discarding positions request as pending Positions request for account numebr {accountNumber}", MessageType.PriorityInformation);
+
+                    //We allow new requests to override old ones
+
+                    DoLog($"Positions successfully requested for Account Number {accountNumber}", MessageType.Information);
+                    ClientSocket.reqAccountUpdates(true, "All");
+                    ClientSocket.reqPositions();
+
                 }
 
                 DoLog($"Requested portfolio positions for account {accountNumber}", MessageType.Information);

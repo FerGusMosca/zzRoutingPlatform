@@ -4,8 +4,11 @@
 
 	<!--<WebSocketURL>ws://localhost:9192</WebSocketURL>--><!--IB-->
 
-	<WebSocketURL>ws://localhost:8182</WebSocketURL> <!--IB Paper-->
+	<!--<WebSocketURL>ws://localhost:8182</WebSocketURL>--> <!--IB Paper-->
 
+	<WebSocketURL>ws://localhost:6162</WebSocketURL> <!--IB Paper Gateway-->
+
+	
 	<!--<WebSocketURL>ws://localhost:9193</WebSocketURL>-->   <!--FIX-->
 
   <!--I=incoming,O=outgoing-->
