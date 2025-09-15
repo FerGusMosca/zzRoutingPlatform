@@ -53,6 +53,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
 
         public void DoLog(string msg, Constants.MessageType type)
         {
+            Console.WriteLine($"Console:{msg}");
             if (OnLogMsg != null)
                 OnLogMsg(msg, type);
         }
@@ -418,7 +419,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver
             }
             else if (wrapper.GetAction() == Actions.NEW_ORDER)
             {
-                if(OrderRouterModule!=null)
+                DoLog("New Order Recv:" + wrapper.ToString(), Constants.MessageType.Information);
+                if (OrderRouterModule!=null)
                     return OrderRouterModule.ProcessMessage(wrapper);
                 else
                     return OnMessageRcv(wrapper);

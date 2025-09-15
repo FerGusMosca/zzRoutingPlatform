@@ -6,8 +6,8 @@
 
 	<!--<WebSocketURL>ws://localhost:8182</WebSocketURL>--> <!--IB Paper-->
 
-	<WebSocketURL>ws://localhost:6162</WebSocketURL> <!--IB Paper Gateway-->
-
+	<!--<WebSocketURL>ws://localhost:6162</WebSocketURL>--> <!--IB Paper Gateway-->
+	<WebSocketURL>ws://66.94.106.206:9192</WebSocketURL> <!--IB VPS-->
 	
 	<!--<WebSocketURL>ws://localhost:9193</WebSocketURL>-->   <!--FIX-->
 

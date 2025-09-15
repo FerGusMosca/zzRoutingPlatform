@@ -36,6 +36,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         #region Protected Methods
 
         protected void DoLog(string message,Constants.MessageType type) {
+
+            Console.WriteLine($"Console2:{message}");
             if (Logger != null)
                 Logger.DoLog(message, type);
         

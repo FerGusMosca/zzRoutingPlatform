@@ -42,6 +42,8 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
         {
             URL = pURL;
 
+
+            Console.WriteLine($"DEBUG");
             ConnectedClients = new Dictionary<int, IWebSocketConnection>();
 
             HeartbeatThreads = new Dictionary<int, Thread>();
@@ -662,13 +664,14 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
             try
             {
                 WebSocketMessage wsResp = JsonConvert.DeserializeObject<WebSocketMessage>(m);
-
+               
                 if (wsResp.Msg == "Subscribe")
                 {
                     ProcessSubscriptions(socket, m);
                 }
                 else if (wsResp.Msg == "NewOrderReq")
                 {
+                    
                     ProcessRouteOrderReq(socket, m);
                 }
                 else if (wsResp.Msg == "CancelOrderReq")
@@ -697,6 +700,7 @@ namespace tph.StrategyHandler.SimpleCommandReceiver.DataAccessLayer
                 }
                 else if (wsResp.Msg == "PortfolioRequest")
                 {
+                    
                     ProcessPortfolioRequest(socket, m);
                 }
                 else
