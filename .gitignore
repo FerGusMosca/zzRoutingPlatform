@@ -397,3 +397,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Custom rules for Trading Platform
+**/bin/
+**/obj/
+**/Backup/
+*.log
