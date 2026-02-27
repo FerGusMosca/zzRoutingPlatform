@@ -220,10 +220,65 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
                     ActiveOrders.Remove(origClOrdId);
                     ActiveOrderIdMapper.Remove(origClOrdId);
                 }
-                else if (execType == zHFT.Main.Common.Enums.ExecType.Rejected)//Replace Rejected
+                else if (execType == zHFT.Main.Common.Enums.ExecType.Rejected)
                 {
-                    DoLog(string.Format("Rejected replacement for OrigClOrdId={0} ClOrdId={1}",origClOrdId,clOrdId),Constants.MessageType.Information);
-                    ReplacingActiveOrderIdMapper.Remove(clOrdId);
+                    string rejectText = (string)erWrapper.GetField(ExecutionReportFields.Text);
+                    bool isOrderNotFound = rejectText != null &&
+                                           rejectText.Contains("Order not found");
+
+                    if (isOrderNotFound && ActiveOrders.ContainsKey(origClOrdId))
+                    {
+                        // El exchange ejecutó la orden antes de procesar el replace.
+                        // Nunca llegó el ER de fill (bug del exchange / sesión separada),
+                        // así que sintetizamos un Filled para que upstream no la vea como Rejected.
+                        Order order = ActiveOrders[origClOrdId];
+                        order.CumQty = (decimal?)order.OrderQty;   // fully filled asumido
+
+                        ActiveOrders.Remove(origClOrdId);
+                        ActiveOrderIdMapper.Remove(origClOrdId);
+                        if (!string.IsNullOrEmpty(clOrdId))
+                            ReplacingActiveOrderIdMapper.Remove(clOrdId);
+
+                        // Sobreescribir el wrapper → upstream ve Trade/Filled en lugar de Rejected
+                        erWrapper.ClOrdId = origClOrdId;
+                        erWrapper.OrigClOrdId = null;
+                        erWrapper.OrdStatusOverride = zHFT.Main.Common.Enums.OrdStatus.Filled;
+                        erWrapper.ExecTypeOverride = zHFT.Main.Common.Enums.ExecType.Trade;
+                        erWrapper.CumQtyOverride = (double?)order.OrderQty;
+                        erWrapper.LeavesQtyOverride = 0d;
+
+                        DoLog(string.Format(
+                            "@{0}: Synthesized Filled for OrigClOrdId={1} — replace rejected with 'Order not found' (assumed filled by exchange)",
+                            GetConfig().Name, origClOrdId),
+                            Constants.MessageType.Information);
+                    }
+                    else
+                    {
+                        DoLog(string.Format(
+                            "Rejected replacement for OrigClOrdId={0} ClOrdId={1}",
+                            origClOrdId, clOrdId),
+                            Constants.MessageType.Information);
+                        ReplacingActiveOrderIdMapper.Remove(clOrdId);
+                    }
+                }
+                else if (execType == zHFT.Main.Common.Enums.ExecType.Trade)
+                {
+                    Order order = ActiveOrders[origClOrdId];
+                    order.CumQty = (decimal?)Convert.ToDecimal(erWrapper.GetField(ExecutionReportFields.CumQty));
+
+                    if (ordStatus == zHFT.Main.Common.Enums.OrdStatus.Filled)
+                    {
+                        ActiveOrders.Remove(origClOrdId);
+                        ActiveOrderIdMapper.Remove(origClOrdId);
+                        // También limpiar el clOrdId del replace si quedó colgado
+                        if (!string.IsNullOrEmpty(clOrdId) && ActiveOrders.ContainsKey(clOrdId))
+                            ActiveOrders.Remove(clOrdId);
+                        if (!string.IsNullOrEmpty(clOrdId) && ActiveOrderIdMapper.ContainsKey(clOrdId))
+                            ActiveOrderIdMapper.Remove(clOrdId);
+                    }
+
+                    erWrapper.ClOrdId = origClOrdId;   // la identidad del fill es la orden original
+                    erWrapper.OrigClOrdId = null;
                 }
 
                 // El formato de los ClOrdId/OrigClOrdId @Primary es distinto al manejado por el OrderRouter

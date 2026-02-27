@@ -1,13 +1,8 @@
 ﻿using QuickFix;
 using Shared.Bussiness.Fix;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using zHFT.Main.Common.Enums;
 using zHFT.Main.Common.Interfaces;
-using zHFT.Main.Common.Util;
 using zHFT.Main.Common.Wrappers;
 using zHFT.MarketClient.Primary.Common.Converters;
 
@@ -16,19 +11,41 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
     public class ExecutionReportWrapper : Wrapper
     {
         #region Private Attributes
-        
+
         protected QuickFix50.ExecutionReport ExecutionReport { get; set; }
 
         protected IConfiguration Config { get; set; }
 
         #endregion
-        
+
         #region Public Attributes
-        
+
         public string ClOrdId { get; set; }
-        
+
         public string OrigClOrdId { get; set; }
-        
+
+        /// <summary>
+        /// When set, overrides the OrdStatus read from the FIX message.
+        /// Used to synthesize status changes (e.g. Rejected → Filled) without
+        /// modifying the underlying QuickFix message.
+        /// </summary>
+        public zHFT.Main.Common.Enums.OrdStatus? OrdStatusOverride { get; set; }
+
+        /// <summary>
+        /// When set, overrides the ExecType read from the FIX message.
+        /// </summary>
+        public zHFT.Main.Common.Enums.ExecType? ExecTypeOverride { get; set; }
+
+        /// <summary>
+        /// When set, overrides CumQty read from the FIX message.
+        /// </summary>
+        public double? CumQtyOverride { get; set; }
+
+        /// <summary>
+        /// When set, overrides LeavesQty read from the FIX message.
+        /// </summary>
+        public double? LeavesQtyOverride { get; set; }
+
         #endregion
 
         #region Constructors
@@ -36,7 +53,6 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
         public ExecutionReportWrapper(QuickFix50.ExecutionReport pExecReport, IConfiguration pConfig)
         {
             ExecutionReport = pExecReport;
-
             Config = pConfig;
         }
 
@@ -125,7 +141,6 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
                 return zHFT.Main.Common.Enums.OrdType.LimitOnClose;
             else
                 return null;
-        
         }
 
         protected zHFT.Main.Common.Enums.Side GetSide(char estado)
@@ -134,13 +149,11 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
                 return zHFT.Main.Common.Enums.Side.Buy;
             else if (estado == QuickFix.Side.SELL)
                 return zHFT.Main.Common.Enums.Side.Sell;
-
             else
                 return zHFT.Main.Common.Enums.Side.Unknown;
         }
 
         #endregion
-
 
         #region Public Overriden Methods
 
@@ -163,17 +176,25 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.OrigClOrdID)
                 return GetOrdId(ExecutionReport, OrigClOrdID.FIELD);
             else if (xrField == ExecutionReportFields.ExecType)
-                return GetExecType(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.ExecType.FIELD));
+                return ExecTypeOverride.HasValue
+                    ? ExecTypeOverride.Value
+                    : GetExecType(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.ExecType.FIELD));
             else if (xrField == ExecutionReportFields.ExecID)
                 return ExecutionReport.getString(ExecID.FIELD);
             else if (xrField == ExecutionReportFields.OrdStatus)
-                return GetOrdStatus(ExecutionReport.getChar(QuickFix.OrdStatus.FIELD));
+                return OrdStatusOverride.HasValue
+                    ? OrdStatusOverride.Value
+                    : GetOrdStatus(ExecutionReport.getChar(QuickFix.OrdStatus.FIELD));
             else if (xrField == ExecutionReportFields.OrdRejReason)
                 return FixHelper.GetNullIntFieldIfSet(ExecutionReport, QuickFix.OrdRejReason.FIELD);
             else if (xrField == ExecutionReportFields.LeavesQty)
-                return ExecutionReport.getInt(LeavesQty.FIELD);
+                return LeavesQtyOverride.HasValue
+                    ? LeavesQtyOverride.Value
+                    : (object)ExecutionReport.getInt(LeavesQty.FIELD);
             else if (xrField == ExecutionReportFields.CumQty)
-                return ExecutionReport.getInt(CumQty.FIELD);
+                return CumQtyOverride.HasValue
+                    ? CumQtyOverride.Value
+                    : (object)ExecutionReport.getInt(CumQty.FIELD);
             else if (xrField == ExecutionReportFields.AvgPx)
                 return FixHelper.GetDoubleFieldIfSet(ExecutionReport, AvgPx.FIELD);
             else if (xrField == ExecutionReportFields.Commission)
@@ -187,13 +208,11 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.LastPx)
                 return FixHelper.GetNullDoubleFieldIfSet(ExecutionReport, LastPx.FIELD);
             else if (xrField == ExecutionReportFields.LastMkt)
-                return FixHelper.GetFieldIfSet(ExecutionReport,LastMkt.FIELD);
-
-
+                return FixHelper.GetFieldIfSet(ExecutionReport, LastMkt.FIELD);
             else if (xrField == ExecutionReportFields.Symbol)
             {
                 string primarySymbol = FixHelper.GetFieldIfSet(ExecutionReport, Symbol.FIELD);
-                string exchange=ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
+                string exchange = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
                 return SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, exchange);
             }
             else if (xrField == ExecutionReportFields.OrderQty)
@@ -213,29 +232,35 @@ namespace zHFT.OrderRouters.Primary.Common.Wrappers
             else if (xrField == ExecutionReportFields.MinQty)
                 return FixHelper.GetNullDoubleFieldIfSet(ExecutionReport, MinQty.FIELD);
             else if (xrField == ExecutionReportFields.Side)
-                GetSide(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.Side.FIELD));
+                return GetSide(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.Side.FIELD)); // ← fixed missing return
             else if (xrField == ExecutionReportFields.QuantityType)
-                return zHFT.Main.Common.Enums.QuantityType.SHARES;//In Primary v1.0 we only work with SHARE orders
+                return zHFT.Main.Common.Enums.QuantityType.SHARES;
             else if (xrField == ExecutionReportFields.PriceType)
-                return zHFT.Main.Common.Enums.PriceType.FixedAmount;//In Primary v1.0 we only work with FIXED AMMOUNT orders
+                return zHFT.Main.Common.Enums.PriceType.FixedAmount;
             else if (xrField == ExecutionReportFields.Account)
                 return FixHelper.GetFieldIfSet(ExecutionReport, Account.FIELD);
             else if (xrField == ExecutionReportFields.ExecInst)
-                FixHelper.GetFieldIfSet(ExecutionReport, ExecInst.FIELD);
+                return FixHelper.GetFieldIfSet(ExecutionReport, ExecInst.FIELD); // ← fixed missing return
 
             return ExecutionReportFields.NULL;
         }
 
         public override string ToString()
         {
-            zHFT.Main.Common.Enums.OrdStatus ordStatus = GetOrdStatus(ExecutionReport.getChar(QuickFix.OrdStatus.FIELD));
-            zHFT.Main.Common.Enums.ExecType? execType = GetExecType(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.ExecType.FIELD));
+            zHFT.Main.Common.Enums.OrdStatus ordStatus = OrdStatusOverride.HasValue
+                ? OrdStatusOverride.Value
+                : GetOrdStatus(ExecutionReport.getChar(QuickFix.OrdStatus.FIELD));
+
+            zHFT.Main.Common.Enums.ExecType execType = ExecTypeOverride.HasValue
+                ? ExecTypeOverride.Value
+                : GetExecType(FixHelper.GetCharFieldIfSet(ExecutionReport, QuickFix.ExecType.FIELD));
+
             string primarySymbol = FixHelper.GetFieldIfSet(ExecutionReport, Symbol.FIELD);
             string exchange = ExchangeConverter.GetMarketFromPrimarySymbol(primarySymbol);
-            string fullSymbol =  SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, exchange);
+            string fullSymbol = SymbolConverter.GetFullSymbolFromPrimary(primarySymbol, exchange);
 
             return string.Format("Execution Report for symbol {2}: Order Status={0} - Exec Type={1}",
-                                               ordStatus.ToString(), execType.ToString(), fullSymbol);
+                                 ordStatus.ToString(), execType.ToString(), fullSymbol);
         }
 
         #endregion
