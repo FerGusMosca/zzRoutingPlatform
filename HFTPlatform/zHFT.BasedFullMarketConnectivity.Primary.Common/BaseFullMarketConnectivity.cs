@@ -133,6 +133,13 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
 
         #region Protected Methods
 
+        protected virtual void ProcessRouteError(string clOrdId, string symbol, Exception ex)
+        {
+            DoLog(string.Format("ProcessRouteError not implemented"), Main.Common.Util.Constants.MessageType.Error);
+
+        }
+
+      
         protected void ProcessNewOrderExecutionReport(string clOrdId,ExecutionReportWrapper erWrapper)
         {
             
@@ -465,63 +472,72 @@ namespace zHFT.BasedFullMarketConnectivity.Primary.Common
         protected CMState RouteNewOrder(Wrapper wrapper)
         {
             string marketClOrdId = "";
+            string clOrdId = "";
+            string symbol = "";
+
             try
             {
                 if (SessionID != null)
                 {
-                    
                     Order newOrder = OrderConverter.ConvertNewOrder(wrapper);
                     newOrder.EffectiveTime = DateTime.Now;
 
+                    // Capture these early so the catch block can reference them
+                    clOrdId = newOrder.ClOrdId;
+                    symbol = newOrder.Symbol;
+
                     lock (tLock)
                     {
-                        //Tengo hasta 10.000 replacements de la misma orden
                         marketClOrdId = (OrderIndexId * 10000).ToString();
                         OrderIndexId++;
                     }
-                    
-                    DoLog(string.Format("FIX ClOrdId mapping on New: ClOrdId: {0}->{1}",newOrder.ClOrdId,marketClOrdId),Constants.MessageType.Information);
+
+                    DoLog(string.Format("FIX ClOrdId mapping on New: ClOrdId: {0}->{1}",
+                                        newOrder.ClOrdId, marketClOrdId),
+                          Main.Common.Util.Constants.MessageType.Information);
 
                     double orderQty = newOrder.OrderQty.Value;
-                    //Procesamientos especiales de la cantidad de las ordenes
-                    //if (newOrder.Security.SecType == zHFT.Main.Common.Enums.SecurityType.TB)
-                    //{
-                    //    orderQty *= 1000;
-                    //}
 
-                    QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(marketClOrdId, 
-                                                                                    newOrder.Symbol, 
-                                                                                    newOrder.Side, 
-                                                                                    newOrder.OrdType,
-                                                                                    newOrder.SettlType, 
-                                                                                    newOrder.TimeInForce, 
-                                                                                    newOrder.EffectiveTime.Value,
-                                                                                    orderQty, 
-                                                                                    newOrder.Price,
-                                                                                    newOrder.StopPx, 
-                                                                                    newOrder.Account);
-                    
-                    DoLog(string.Format("Sending new order {0} for symbol {1} to the exchange",marketClOrdId,newOrder.Symbol),Constants.MessageType.Information);
 
+                    QuickFix.Message msg = FIXMessageCreator.CreateNewOrderSingle(
+                                                marketClOrdId,
+                                                newOrder.Symbol,
+                                                newOrder.Side,
+                                                newOrder.OrdType,
+                                                newOrder.SettlType,
+                                                newOrder.TimeInForce,
+                                                newOrder.EffectiveTime.Value,
+                                                orderQty,
+                                                newOrder.Price,
+                                                newOrder.StopPx,
+                                                newOrder.Account);
+
+                    DoLog(string.Format("Sending new order {0} for symbol {1} to the exchange",
+                                        marketClOrdId, newOrder.Symbol),
+                          Main.Common.Util.Constants.MessageType.Information);
 
                     Thread newOrdThread = new Thread(DoRunNewOrder);
                     newOrdThread.Start(msg);
 
                     ActiveOrders.Add(newOrder.ClOrdId, newOrder);
-                    ActiveOrderIdMapper.Add(newOrder.ClOrdId,marketClOrdId);
-                   
+                    ActiveOrderIdMapper.Add(newOrder.ClOrdId, marketClOrdId);
+
                     return CMState.BuildSuccess();
                 }
                 else
                 {
-                    DoLog(string.Format("@{0}:Session not initialized on new order ", GetConfig().Name), Main.Common.Util.Constants.MessageType.Error);
-                    return CMState.BuildSuccess();
+                    string sessionError = string.Format("@{0}:Session not initialized on new order", GetConfig().Name);
+                    DoLog(sessionError, Main.Common.Util.Constants.MessageType.Error);
+                    ProcessRouteError(clOrdId, symbol, new Exception(sessionError));
+                    return CMState.BuildFail(new Exception(sessionError));
                 }
-
             }
             catch (Exception ex)
             {
-                DoLog(string.Format("Critical error sending order {0} to the exchange:{1}",marketClOrdId,ex.Message),Constants.MessageType.Error);
+                DoLog(string.Format("@{0}:Critical error sending order {1} to the exchange:{2}",
+                                    GetConfig().Name, marketClOrdId, ex.Message),
+                      Main.Common.Util.Constants.MessageType.Error);
+                ProcessRouteError(clOrdId, symbol, ex);
                 return CMState.BuildFail(ex);
             }
         }

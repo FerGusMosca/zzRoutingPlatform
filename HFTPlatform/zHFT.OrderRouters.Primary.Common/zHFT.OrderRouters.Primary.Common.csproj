@@ -58,6 +58,7 @@
     <Compile Include="Wrappers\BusinessMessageRejectWrapper.cs" />
     <Compile Include="Wrappers\ExecutionReportWrapper.cs" />
     <Compile Include="Wrappers\OrderCancelRejectWrapper.cs" />
+    <Compile Include="Wrappers\OrderRouteErrorWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\zHFT.Main.BusinessEntities\zHFT.Main.BusinessEntities.csproj">

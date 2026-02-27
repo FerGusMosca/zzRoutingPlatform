@@ -137,6 +137,32 @@ namespace zHFT.InstructionBasedFullMarketConnectivity.Primary
 
             OnExecutionReportMessageRcv(ocrWrapper);
         }
+        protected override void ProcessRouteError(string clOrdId, string symbol, Exception ex)
+        {
+            try
+            {
+                string errorText = string.Format("RouteNewOrder exception for ClOrdId={0} Symbol={1}: {2}",
+                                                 clOrdId, symbol,
+                                                 ex != null ? ex.Message : "unknown error");
+
+                DoLog(string.Format("@{0}:{1}", GetConfig().Name, errorText),
+                      Main.Common.Util.Constants.MessageType.Error);
+
+                OrderRouteErrorWrapper errorWrapper = new OrderRouteErrorWrapper(clOrdId, symbol, errorText);
+
+                // Re-use the same outgoing channel as OCR rejections
+                if (OnExecutionReportMessageRcv != null)
+                    OnExecutionReportMessageRcv(errorWrapper);
+            }
+            catch (Exception innerEx)
+            {
+                // Last-resort log — never let error reporting itself throw
+                DoLog(string.Format("@{0}:CRITICAL — ProcessRouteError itself failed: {1}",
+                                    GetConfig().Name, innerEx.Message),
+                      Main.Common.Util.Constants.MessageType.Error);
+            }
+        }
+
         protected OnMessageReceived OnExecutionReportMessageRcv { get; set; }
 
         
